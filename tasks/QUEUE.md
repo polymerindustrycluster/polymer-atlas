@@ -209,6 +209,8 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 
 ## programs-db crosswalk + census-gap researcher wave (2026-11-03)
 
+- [ ] `in-pr:claude-code 2026-11-18` **IPEDS completions layer (owner ruling 2026-11-18, "Into the Atlas"; SCHEMA v1.14 §4.23, V-63):** phase 1 of moving polymer-programs-db into the Atlas. Three generated tables (343 institutions, 825 programs, 10,486 program-years, 1991-2023) from the federal IPEDS series, every row equal to programs-db. Phase 2 owner questions (credentials, global programs, society chapters, CIP-invisible programs): `tasks/ipeds-layer-2026-11-18/README.md`.
+
 - [ ] `in-pr:claude-code 2026-11-03` **programs-db crosswalk (integrator pass):**
   - 69 `ror_id` values were verified at api.ror.org and added. 10 are held. — `in-pr:claude-code 2026-11-03`: the 10 holds are resolved: 3 linked (Purdue Indianapolis, Edmonds, WSU Tech) and 7 held with the settling fact named (`tasks/ror-holds-2026-11-03/`).
   - Texas A&M `ORG-004656` was re-pointed from the A&M System Office (UNITID 228732, tamus.edu) to College Station (228723, www.tamu.edu), per IPEDS HD2024.

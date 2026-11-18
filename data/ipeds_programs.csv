@@ -1,0 +1,826 @@
+program_key,unitid,cip,cip_title,cip_group,award_level,award,level,first_year,last_year,years_seen,total_awards,status
+100663-141801-7,100663,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,356,active
+100663-141801-9,100663,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,204,active
+100663-141801-20,100663,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1992,2008,17,41,ended
+100663-141801-22,100663,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,14,40,active
+100663-401001-22,100663,401001,Materials Science,materials,22,Doctorate (research),doctorate,2021,2022,2,2,unclear
+100706-401001-22,100706,401001,Materials Science,materials,22,Doctorate (research),doctorate,2014,2023,3,4,active
+100751-141801-20,100751,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,54,ended
+100751-141801-22,100751,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,14,42,active
+100751-401001-22,100751,401001,Materials Science,materials,22,Doctorate (research),doctorate,2013,2023,11,65,active
+100858-141801-7,100858,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,280,active
+100858-141801-9,100858,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,229,active
+100858-141801-20,100858,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,17,79,ended
+100858-141801-22,100858,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,69,active
+100858-143201-7,100858,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,2009,2019,11,126,ended
+100858-143201-9,100858,143201,Polymer/Plastics Engineering,polymer,9,Master,master,2009,2023,13,48,active
+100858-143201-22,100858,143201,Polymer/Plastics Engineering,polymer,22,Doctorate (research),doctorate,2010,2023,12,30,active
+102377-141801-9,102377,141801,Materials Engineering,materials,9,Master,master,2020,2023,4,10,active
+102377-141801-22,102377,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2020,2022,3,5,unclear
+102377-401001-9,102377,401001,Materials Science,materials,9,Master,master,2013,2019,7,29,ended
+102377-401001-22,102377,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2018,7,20,ended
+104151-141801-7,104151,141801,Materials Engineering,materials,7,Bachelor,bachelor,1992,2023,31,490,active
+104151-141801-9,104151,141801,Materials Engineering,materials,9,Master,master,2000,2023,23,427,active
+104151-141801-22,104151,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,16,216,active
+104179-401001-7,104179,401001,Materials Science,materials,7,Bachelor,bachelor,2010,2023,14,255,active
+104179-401001-9,104179,401001,Materials Science,materials,9,Master,master,2010,2023,14,112,active
+104179-401001-22,104179,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,50,active
+105330-401001-9,105330,401001,Materials Science,materials,9,Master,master,2020,2023,2,3,active
+105330-401001-22,105330,401001,Materials Science,materials,22,Doctorate (research),doctorate,2021,2023,3,4,active
+106397-141801-9,106397,141801,Materials Engineering,materials,9,Master,master,2022,2023,2,3,active
+106397-141801-22,106397,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2020,2023,4,7,active
+106397-401001-9,106397,401001,Materials Science,materials,9,Master,master,2021,2023,3,4,active
+106397-401002-9,106397,401002,Materials Chemistry,materials,9,Master,master,2010,2022,13,100,unclear
+106397-401002-22,106397,401002,Materials Chemistry,materials,22,Doctorate (research),doctorate,2010,2023,14,68,active
+110404-141801-7,110404,141801,Materials Engineering,materials,7,Bachelor,bachelor,2010,2023,11,30,active
+110404-141801-8,110404,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2014,2014,1,1,ended
+110404-141801-9,110404,141801,Materials Engineering,materials,9,Master,master,1991,2023,19,120,active
+110404-141801-20,110404,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,1994,4,15,ended
+110404-141801-22,110404,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,137,active
+110422-141801-7,110422,141801,Materials Engineering,materials,7,Bachelor,bachelor,2007,2023,17,674,active
+110422-400507-9,110422,400507,Polymer Chemistry,polymer,9,Master,master,2003,2023,19,107,active
+110529-141801-7,110529,141801,Materials Engineering,materials,7,Bachelor,bachelor,1997,2007,9,27,ended
+110529-141801-9,110529,141801,Materials Engineering,materials,9,Master,master,2021,2023,3,10,active
+110592-141801-9,110592,141801,Materials Engineering,materials,9,Master,master,2020,2023,4,17,active
+110608-141801-9,110608,141801,Materials Engineering,materials,9,Master,master,2016,2023,8,67,active
+110635-141801-7,110635,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2002,12,226,ended
+110635-141801-9,110635,141801,Materials Engineering,materials,9,Master,master,1991,2002,12,218,ended
+110635-141801-20,110635,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2002,12,207,ended
+110635-401001-7,110635,401001,Materials Science,materials,7,Bachelor,bachelor,2010,2023,14,351,active
+110635-401001-9,110635,401001,Materials Science,materials,9,Master,master,2010,2023,14,423,active
+110635-401001-22,110635,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,257,active
+110644-141801-7,110644,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,31,338,active
+110644-141801-9,110644,141801,Materials Engineering,materials,9,Master,master,1999,2023,24,109,active
+110644-141801-20,110644,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1999,2008,10,48,ended
+110644-141801-22,110644,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,115,active
+110653-141801-7,110653,141801,Materials Engineering,materials,7,Bachelor,bachelor,2004,2023,20,268,active
+110653-141801-9,110653,141801,Materials Engineering,materials,9,Master,master,1992,2023,32,353,active
+110653-141801-20,110653,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1993,2008,16,96,ended
+110653-141801-22,110653,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,112,active
+110653-401001-9,110653,401001,Materials Science,materials,9,Master,master,2022,2023,2,4,active
+110653-401001-22,110653,401001,Materials Science,materials,22,Doctorate (research),doctorate,2022,2023,2,2,active
+110662-141801-7,110662,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,612,active
+110662-141801-8,110662,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,1991,2021,3,3,ended
+110662-141801-9,110662,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,659,active
+110662-141801-20,110662,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,152,ended
+110662-141801-22,110662,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,274,active
+110662-401001-7,110662,401001,Materials Science,materials,7,Bachelor,bachelor,2010,2023,14,177,active
+110671-141801-7,110671,141801,Materials Engineering,materials,7,Bachelor,bachelor,2009,2023,15,197,active
+110671-401001-9,110671,401001,Materials Science,materials,9,Master,master,2010,2023,14,89,active
+110671-401001-22,110671,401001,Materials Science,materials,22,Doctorate (research),doctorate,2013,2023,11,114,active
+110680-141801-9,110680,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,581,active
+110680-141801-20,110680,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1992,2008,17,79,ended
+110680-141801-22,110680,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,298,active
+110705-141801-9,110705,141801,Materials Engineering,materials,9,Master,master,1991,2001,10,46,ended
+110705-141801-20,110705,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2001,11,113,ended
+110705-401001-9,110705,401001,Materials Science,materials,9,Master,master,2010,2023,14,102,active
+110705-401001-22,110705,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,308,active
+111887-150607-4,111887,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2023,24,57,active
+111887-150607-31,111887,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1993,2023,24,53,active
+111887-150607-32,111887,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2009,2010,2,2,ended
+117724-150607-4,117724,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,1993,3,13,ended
+117724-150607-32,117724,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1991,1993,3,17,ended
+117867-150607-4,117867,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1993,1993,1,1,ended
+117867-150607-32,117867,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1993,1993,1,1,ended
+117946-141801-8,117946,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2003,2003,1,1,ended
+122755-141801-7,122755,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,266,active
+122755-141801-9,122755,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,277,active
+123961-141801-9,123961,141801,Materials Engineering,materials,9,Master,master,1992,2023,31,646,active
+123961-401001-9,123961,401001,Materials Science,materials,9,Master,master,2010,2023,14,82,active
+123961-401001-22,123961,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,85,active
+125231-141801-9,125231,141801,Materials Engineering,materials,9,Master,master,2004,2004,1,1,ended
+126614-141801-9,126614,141801,Materials Engineering,materials,9,Master,master,2014,2023,10,105,active
+126614-141801-22,126614,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2015,2023,8,46,active
+126775-141801-9,126775,141801,Materials Engineering,materials,9,Master,master,1991,2023,32,222,active
+126775-141801-20,126775,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1992,2008,16,70,ended
+126775-141801-22,126775,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2010,2023,14,142,active
+126818-401001-9,126818,401001,Materials Science,materials,9,Master,master,2019,2023,5,17,active
+126818-401001-22,126818,401001,Materials Science,materials,22,Doctorate (research),doctorate,2021,2023,3,5,active
+127060-141801-9,127060,141801,Materials Engineering,materials,9,Master,master,1991,1997,4,7,ended
+127060-141801-20,127060,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1994,2002,6,10,ended
+127060-401001-9,127060,401001,Materials Science,materials,9,Master,master,2010,2022,11,18,unclear
+127060-401001-22,127060,401001,Materials Science,materials,22,Doctorate (research),doctorate,2014,2023,6,8,active
+127565-141801--1,127565,141801,Materials Engineering,materials,-1,Unreported award level,unknown,2019,2019,1,26,ended
+127565-141801-31,127565,141801,Materials Engineering,materials,31,Cert <1yr,certificate,2015,2023,8,222,active
+128328-401001-7,128328,401001,Materials Science,materials,7,Bachelor,bachelor,2010,2010,1,6,ended
+128328-401002-7,128328,401002,Materials Chemistry,materials,7,Bachelor,bachelor,2011,2017,7,38,ended
+128771-150607-7,128771,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,2000,2002,2,2,ended
+129020-141801-7,129020,141801,Materials Engineering,materials,7,Bachelor,bachelor,2003,2023,21,462,active
+129020-141801-8,129020,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2021,2022,2,4,unclear
+129020-141801-9,129020,141801,Materials Engineering,materials,9,Master,master,2009,2023,15,94,active
+129020-141801-22,129020,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,174,active
+129020-400507-9,129020,400507,Polymer Chemistry,polymer,9,Master,master,1991,2021,26,91,ended
+129020-400507-20,129020,400507,Polymer Chemistry,polymer,20,Doctorate (pre-2008),doctorate,1991,2007,17,99,ended
+129020-400507-22,129020,400507,Polymer Chemistry,polymer,22,Doctorate (research),doctorate,2008,2023,16,60,active
+129729-150607-4,129729,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1998,2011,11,15,ended
+129941-141801-7,129941,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,1998,6,11,ended
+130217-143201-4,130217,143201,Polymer/Plastics Engineering,polymer,4,Associate,associate,1995,1997,2,3,ended
+130217-150607-4,130217,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1998,2003,2,4,ended
+130217-150607-31,130217,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1996,2003,3,5,ended
+130703-143201-31,130703,143201,Polymer/Plastics Engineering,polymer,31,Cert <1yr,certificate,1991,1993,3,19,ended
+130943-141801-7,130943,141801,Materials Engineering,materials,7,Bachelor,bachelor,1992,1992,1,33,ended
+130943-141801-9,130943,141801,Materials Engineering,materials,9,Master,master,1991,1992,2,6,ended
+130943-141801-20,130943,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,1992,2,15,ended
+130943-401001-7,130943,401001,Materials Science,materials,7,Bachelor,bachelor,2022,2023,2,31,active
+130943-401001-9,130943,401001,Materials Science,materials,9,Master,master,2010,2023,14,84,active
+130943-401001-22,130943,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,147,active
+131283-401001-9,131283,401001,Materials Science,materials,9,Master,master,2011,2023,12,45,active
+131283-401001-32,131283,401001,Materials Science,materials,32,Cert 1-2yr,certificate,2021,2021,1,2,ended
+131469-141801-8,131469,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,1995,1995,1,1,ended
+131469-141801-9,131469,141801,Materials Engineering,materials,9,Master,master,1991,1998,7,20,ended
+131469-141801-20,131469,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1994,1999,6,12,ended
+131469-400507-9,131469,400507,Polymer Chemistry,polymer,9,Master,master,2017,2023,7,33,active
+132903-141801-7,132903,141801,Materials Engineering,materials,7,Bachelor,bachelor,2021,2023,3,29,active
+132903-141801-9,132903,141801,Materials Engineering,materials,9,Master,master,1999,2023,25,265,active
+132903-141801-20,132903,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2000,2008,9,39,ended
+132903-141801-22,132903,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,105,active
+133951-141801-9,133951,141801,Materials Engineering,materials,9,Master,master,2003,2023,20,91,active
+133951-141801-20,133951,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2008,2008,1,3,ended
+133951-141801-22,133951,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,59,active
+134097-401001-9,134097,401001,Materials Science,materials,9,Master,master,2010,2023,12,27,active
+134097-401001-22,134097,401001,Materials Science,materials,22,Doctorate (research),doctorate,2014,2023,9,24,active
+134130-141801--1,134130,141801,Materials Engineering,materials,-1,Unreported award level,unknown,2019,2019,1,43,ended
+134130-141801-7,134130,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,1295,active
+134130-141801-8,134130,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2018,2023,5,12,active
+134130-141801-9,134130,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,1494,active
+134130-141801-20,134130,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,401,ended
+134130-141801-22,134130,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,334,active
+134130-141801-31,134130,141801,Materials Engineering,materials,31,Cert 12wk-1yr,certificate,2020,2023,4,134,active
+134130-141801-32,134130,141801,Materials Engineering,materials,32,Cert 1-2yr,certificate,2018,2018,1,9,ended
+135726-141801-9,135726,141801,Materials Engineering,materials,9,Master,master,2023,2023,1,1,active
+136172-401001-9,136172,401001,Materials Science,materials,9,Master,master,2022,2023,2,7,active
+137078-150607-4,137078,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1999,2003,3,3,ended
+137087-150607-32,137087,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1998,1998,1,11,ended
+137096-150607-4,137096,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2007,2008,2,4,ended
+137351-141801-9,137351,141801,Materials Engineering,materials,9,Master,master,2010,2023,14,119,active
+139755-141801-7,139755,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,1148,active
+139755-141801-9,139755,141801,Materials Engineering,materials,9,Master,master,1993,2023,30,431,active
+139755-141801-20,139755,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1997,2007,11,109,ended
+139755-141801-22,139755,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,16,347,active
+139755-143201-9,139755,143201,Polymer/Plastics Engineering,polymer,9,Master,master,1992,2006,14,63,ended
+139755-400507-7,139755,400507,Polymer Chemistry,polymer,7,Bachelor,bachelor,2003,2004,2,7,ended
+139959-401001-22,139959,401001,Materials Science,materials,22,Doctorate (research),doctorate,2015,2023,7,18,active
+139986-150607-33,139986,150607,Plastics and Polymer Engineering Technology/Technician,polymer,33,Award 2-4yr,certificate,2005,2005,1,1,ended
+141228-150607-31,141228,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2004,2004,1,7,ended
+142115-141801-7,142115,141801,Materials Engineering,materials,7,Bachelor,bachelor,2009,2023,15,251,active
+142115-141801-8,142115,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2018,2018,1,1,ended
+142115-141801-9,142115,141801,Materials Engineering,materials,9,Master,master,2009,2023,15,117,active
+142115-141801-22,142115,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2013,2023,10,57,active
+142285-141801-7,142285,141801,Materials Engineering,materials,7,Bachelor,bachelor,2004,2022,19,95,unclear
+142285-141801-9,142285,141801,Materials Engineering,materials,9,Master,master,2004,2022,18,51,unclear
+142285-141801-20,142285,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2004,2008,5,9,ended
+142285-141801-22,142285,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2022,11,15,unclear
+143279-150607-31,143279,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2014,2015,2,2,ended
+143899-150607-31,143899,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1992,1994,3,92,ended
+144740-400507-9,144740,400507,Polymer Chemistry,polymer,9,Master,master,2018,2022,4,5,unclear
+144865-150607-4,144865,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1992,2004,6,9,ended
+144865-150607-31,144865,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1991,2002,12,148,ended
+144865-150607-32,144865,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2007,2007,1,1,ended
+144944-150607-31,144944,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1991,2021,15,30,ended
+144944-150607-32,144944,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1991,2022,11,17,unclear
+144962-400507-7,144962,400507,Polymer Chemistry,polymer,7,Bachelor,bachelor,1992,1993,2,2,ended
+145600-141801-7,145600,141801,Materials Engineering,materials,7,Bachelor,bachelor,1992,1993,2,4,ended
+145600-141801-9,145600,141801,Materials Engineering,materials,9,Master,master,1994,2023,24,107,active
+145600-141801-20,145600,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1994,2006,10,24,ended
+145600-141801-22,145600,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,12,29,active
+145637-141801-7,145637,141801,Materials Engineering,materials,7,Bachelor,bachelor,2009,2023,15,1241,active
+145637-141801-9,145637,141801,Materials Engineering,materials,9,Master,master,2009,2023,15,281,active
+145637-141801-22,145637,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,355,active
+145725-141801-7,145725,141801,Materials Engineering,materials,7,Bachelor,bachelor,2004,2023,20,138,active
+145725-141801-9,145725,141801,Materials Engineering,materials,9,Master,master,2004,2023,20,137,active
+145725-141801-20,145725,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2003,2008,5,8,ended
+145725-141801-22,145725,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2010,2023,14,42,active
+145725-401002-9,145725,401002,Materials Chemistry,materials,9,Master,master,2010,2023,11,23,active
+145831-150607-31,145831,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1993,1998,5,11,ended
+147004-150607-31,147004,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1998,2002,4,10,ended
+147004-150607-32,147004,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2001,2002,2,4,ended
+147767-141801-7,147767,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,537,active
+147767-141801-9,147767,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,463,active
+147767-141801-20,147767,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2007,17,339,ended
+147767-141801-22,147767,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,16,475,active
+147767-401001-7,147767,401001,Materials Science,materials,7,Bachelor,bachelor,2011,2023,9,15,active
+149532-150607-4,149532,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1992,2002,4,4,ended
+150978-150607-4,150978,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,1991,1,1,ended
+150978-150607-32,150978,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1992,1992,1,1,ended
+151050-150607-4,151050,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1993,1994,2,3,ended
+151069-150607-4,151069,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1992,1993,2,6,ended
+151102-401002-7,151102,401002,Materials Chemistry,materials,7,Bachelor,bachelor,2020,2022,2,2,unclear
+152080-141801-7,152080,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,1992,2,8,ended
+152080-141801-9,152080,141801,Materials Engineering,materials,9,Master,master,1991,1995,5,11,ended
+152080-141801-20,152080,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,1996,5,11,ended
+152080-141801-22,152080,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2020,2023,4,5,active
+152080-401001-22,152080,401001,Materials Science,materials,22,Doctorate (research),doctorate,2022,2023,2,3,active
+152637-150607-4,152637,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1992,1999,8,111,ended
+153472-150607-32,153472,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1994,1996,3,5,ended
+153603-141801-7,153603,141801,Materials Engineering,materials,7,Bachelor,bachelor,2000,2023,24,909,active
+153603-141801-9,153603,141801,Materials Engineering,materials,9,Master,master,1995,2009,15,131,ended
+153603-141801-20,153603,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1998,2008,10,69,ended
+153603-141801-22,153603,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2009,1,13,ended
+153825-400507-7,153825,400507,Polymer Chemistry,polymer,7,Bachelor,bachelor,2000,2000,1,1,ended
+154095-141801-9,154095,141801,Materials Engineering,materials,9,Master,master,2015,2015,1,2,ended
+154800-150607-4,154800,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2010,2014,3,4,ended
+154800-150607-32,154800,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2010,2014,5,10,ended
+155681-150607-4,155681,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2022,2022,1,1,unclear
+155681-150607-7,155681,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1991,2023,33,713,active
+155681-400507-7,155681,400507,Polymer Chemistry,polymer,7,Bachelor,bachelor,2015,2022,7,15,unclear
+155681-400507-9,155681,400507,Polymer Chemistry,polymer,9,Master,master,2015,2023,9,56,active
+155681-401001-9,155681,401001,Materials Science,materials,9,Master,master,2020,2023,4,11,active
+156107-150607--1,156107,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,64,ended
+156107-150607-4,156107,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2011,2021,11,27,ended
+156107-150607-31,156107,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2013,2023,10,390,active
+156107-150607-32,156107,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2011,2022,12,106,unclear
+156125-141801-8,156125,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2022,2023,2,3,active
+156125-141801-9,156125,141801,Materials Engineering,materials,9,Master,master,2023,2023,1,1,active
+156125-141801-31,156125,141801,Materials Engineering,materials,31,Cert <12wk,certificate,2020,2023,4,10,active
+156231-150607--1,156231,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,1,ended
+156231-150607-31,156231,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2020,2023,4,6,active
+157085-141801-7,157085,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,327,active
+157085-141801-9,157085,141801,Materials Engineering,materials,9,Master,master,1991,2022,24,64,unclear
+157085-141801-20,157085,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,17,40,ended
+157085-141801-22,157085,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,63,active
+157085-401001-8,157085,401001,Materials Science,materials,8,Post-bacc/post-master cert,postgrad certificate,2021,2023,2,2,active
+157289-141801-9,157289,141801,Materials Engineering,materials,9,Master,master,2022,2023,2,4,active
+157331-150607-31,157331,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2011,2011,1,1,ended
+157438-150607-31,157438,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert 12wk-1yr,certificate,2023,2023,1,1,active
+157553-150607-31,157553,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert 12wk-1yr,certificate,2023,2023,1,1,active
+157711-150607--1,157711,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,1,ended
+157711-150607-31,157711,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2016,2023,7,46,active
+159391-141801-8,159391,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2015,2023,8,24,active
+160755-141801-9,160755,141801,Materials Engineering,materials,9,Master,master,2020,2023,4,13,active
+160755-141801-22,160755,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2021,2023,3,6,active
+161208-141801-32,161208,141801,Materials Engineering,materials,32,Cert 1-2yr,certificate,2007,2011,5,42,ended
+161208-150607-32,161208,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2014,2023,9,65,active
+161253-141801-7,161253,141801,Materials Engineering,materials,7,Bachelor,bachelor,2010,2010,1,1,ended
+161253-141801-8,161253,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2012,2012,1,1,ended
+161545-141801-4,161545,141801,Materials Engineering,materials,4,Associate,associate,2012,2018,7,21,ended
+162928-141801-7,162928,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,32,344,active
+162928-141801-9,162928,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,425,active
+162928-141801-20,162928,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2007,16,118,ended
+162928-141801-22,162928,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,16,129,active
+163286-141801-7,163286,141801,Materials Engineering,materials,7,Bachelor,bachelor,1999,2023,25,449,active
+163286-141801-9,163286,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,209,active
+163286-141801-20,163286,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2007,17,114,ended
+163286-141801-22,163286,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,16,159,active
+164988-141801-9,164988,141801,Materials Engineering,materials,9,Master,master,2008,2023,16,323,active
+164988-141801-22,164988,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,15,71,active
+165820-150607-31,165820,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1994,2016,14,30,ended
+166513-141801-9,166513,141801,Materials Engineering,materials,9,Master,master,2000,2001,2,5,ended
+166513-143201-7,166513,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,1991,2023,33,1070,active
+166513-143201-8,166513,143201,Polymer/Plastics Engineering,polymer,8,Post-bacc/post-master cert,postgrad certificate,2009,2023,15,142,active
+166513-143201-9,166513,143201,Polymer/Plastics Engineering,polymer,9,Master,master,1991,2023,33,1233,active
+166513-143201-20,166513,143201,Polymer/Plastics Engineering,polymer,20,Doctorate (pre-2008),doctorate,1991,2007,16,71,ended
+166513-143201-22,166513,143201,Polymer/Plastics Engineering,polymer,22,Doctorate (research),doctorate,2008,2023,16,94,active
+166513-150607-8,166513,150607,Plastics and Polymer Engineering Technology/Technician,polymer,8,Post-bacc/post-master cert,postgrad certificate,2009,2023,15,173,active
+166513-150607-31,166513,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2009,2009,1,1,ended
+166513-400507-9,166513,400507,Polymer Chemistry,polymer,9,Master,master,1991,1994,4,9,ended
+166513-400507-20,166513,400507,Polymer Chemistry,polymer,20,Doctorate (pre-2008),doctorate,1991,2007,17,87,ended
+166513-400507-22,166513,400507,Polymer Chemistry,polymer,22,Doctorate (research),doctorate,2008,2023,15,30,active
+166629-141801--1,166629,141801,Materials Engineering,materials,-1,Unreported award level,unknown,2019,2019,1,2,ended
+166629-141801-9,166629,141801,Materials Engineering,materials,9,Master,master,2023,2023,1,1,active
+166629-141801-31,166629,141801,Materials Engineering,materials,31,Cert 12wk-1yr,certificate,2020,2023,3,18,active
+166629-143201-9,166629,143201,Polymer/Plastics Engineering,polymer,9,Master,master,1991,2023,25,384,active
+166629-143201-20,166629,143201,Polymer/Plastics Engineering,polymer,20,Doctorate (pre-2008),doctorate,1991,2001,10,151,ended
+166629-143201-22,166629,143201,Polymer/Plastics Engineering,polymer,22,Doctorate (research),doctorate,2009,2023,15,231,active
+166629-400507-9,166629,400507,Polymer Chemistry,polymer,9,Master,master,2000,2005,6,71,ended
+166629-400507-20,166629,400507,Polymer Chemistry,polymer,20,Doctorate (pre-2008),doctorate,2000,2005,5,63,ended
+166629-401001-8,166629,401001,Materials Science,materials,8,Post-bacc/post-master cert,postgrad certificate,2011,2023,10,28,active
+166629-401001-31,166629,401001,Materials Science,materials,31,Cert <1yr,certificate,2011,2018,7,44,ended
+166683-141801-7,166683,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,1184,active
+166683-141801-9,166683,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,661,active
+166683-141801-20,166683,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2006,16,429,ended
+166683-141801-22,166683,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,536,active
+166957-150607-4,166957,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2020,22,37,ended
+168148-141801-9,168148,141801,Materials Engineering,materials,9,Master,master,2020,2023,4,13,active
+168254-141801-7,168254,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,1998,4,5,ended
+168421-141801-9,168421,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,446,active
+168421-141801-20,168421,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1994,2008,9,13,ended
+168421-141801-22,168421,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,82,active
+169248-401001-22,169248,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,13,34,active
+169248-401002-7,169248,401002,Materials Chemistry,materials,7,Bachelor,bachelor,2022,2023,2,2,active
+169716-143201-7,169716,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,1995,1998,3,5,ended
+169716-150607-7,169716,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1991,2002,12,23,ended
+169798-143201-7,169798,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,2003,2003,1,4,ended
+169798-143201-9,169798,143201,Polymer/Plastics Engineering,polymer,9,Master,master,1991,2003,13,73,ended
+169798-150607-7,169798,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1991,2017,23,60,ended
+169798-150607-9,169798,150607,Plastics and Polymer Engineering Technology/Technician,polymer,9,Master,master,2004,2023,20,128,active
+169910-150607-4,169910,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2023,33,1268,active
+169910-150607-7,169910,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1991,2023,33,1296,active
+170055-150607--1,170055,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,10,ended
+170055-150607-4,170055,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2023,32,207,active
+170055-150607-31,170055,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1996,2023,10,62,active
+170055-150607-32,170055,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1997,2009,5,8,ended
+170541-150607-4,170541,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2003,12,26,ended
+170541-150607-32,170541,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1992,1998,3,4,ended
+170550-150607-4,170550,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2003,2004,2,2,ended
+170550-150607-32,170550,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2000,2001,2,3,ended
+170620-150607-4,170620,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2000,2015,9,19,ended
+170620-150607-32,170620,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2004,2010,4,6,ended
+170790-150607-4,170790,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2003,11,21,ended
+170790-150607-32,170790,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1991,2001,5,8,ended
+170976-141801-7,170976,141801,Materials Engineering,materials,7,Bachelor,bachelor,2009,2023,15,719,active
+170976-141801-9,170976,141801,Materials Engineering,materials,9,Master,master,2009,2023,15,392,active
+170976-141801-20,170976,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,1991,1,1,ended
+170976-141801-22,170976,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,250,active
+170976-143201-9,170976,143201,Polymer/Plastics Engineering,polymer,9,Master,master,2001,2007,5,6,ended
+170976-400507-9,170976,400507,Polymer Chemistry,polymer,9,Master,master,2003,2023,19,83,active
+170976-400507-20,170976,400507,Polymer Chemistry,polymer,20,Doctorate (pre-2008),doctorate,2003,2006,4,14,ended
+170976-400507-22,170976,400507,Polymer Chemistry,polymer,22,Doctorate (research),doctorate,2007,2023,17,94,active
+171100-141801-7,171100,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,15,326,active
+171100-141801-9,171100,141801,Materials Engineering,materials,9,Master,master,1991,1991,1,6,ended
+171100-141801-20,171100,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,1991,1,7,ended
+171100-401001-9,171100,401001,Materials Science,materials,9,Master,master,2010,2023,14,51,active
+171100-401001-22,171100,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,13,89,active
+171128-141801-7,171128,141801,Materials Engineering,materials,7,Bachelor,bachelor,1992,2023,27,616,active
+171128-141801-9,171128,141801,Materials Engineering,materials,9,Master,master,1999,2023,24,134,active
+171128-141801-20,171128,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1999,2006,8,19,ended
+171128-141801-22,171128,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,61,active
+171137-141801-9,171137,141801,Materials Engineering,materials,9,Master,master,2023,2023,1,3,active
+171155-150607-4,171155,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2015,2019,5,13,ended
+171155-150607-32,171155,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2015,2016,2,2,ended
+171225-141801-4,171225,141801,Materials Engineering,materials,4,Associate,associate,2005,2005,1,1,ended
+171225-141801-32,171225,141801,Materials Engineering,materials,32,Cert 1-2yr,certificate,2002,2002,1,1,ended
+171304-141801-4,171304,141801,Materials Engineering,materials,4,Associate,associate,2002,2007,2,2,ended
+172200-150607--1,172200,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,3,ended
+172200-150607-4,172200,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2018,2021,3,3,ended
+172200-150607-31,172200,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2015,2021,5,10,ended
+172200-150607-32,172200,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2018,2019,2,3,ended
+172264-150607-7,172264,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1996,2004,5,7,ended
+172291-150607-4,172291,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2004,9,12,ended
+172291-150607-32,172291,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1992,2002,7,10,ended
+172644-141801-7,172644,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,1992,2,2,ended
+172644-141801-9,172644,141801,Materials Engineering,materials,9,Master,master,1992,1993,2,13,ended
+172644-141801-20,172644,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1993,1993,1,1,ended
+172644-143201-8,172644,143201,Polymer/Plastics Engineering,polymer,8,Post-bacc/post-master cert,postgrad certificate,1991,2019,20,30,ended
+172644-143201-9,172644,143201,Polymer/Plastics Engineering,polymer,9,Master,master,1992,1992,1,1,ended
+172644-401001-9,172644,401001,Materials Science,materials,9,Master,master,2010,2023,14,57,active
+172644-401001-22,172644,401001,Materials Science,materials,22,Doctorate (research),doctorate,2011,2022,11,20,unclear
+172699-141801-7,172699,141801,Materials Engineering,materials,7,Bachelor,bachelor,1997,2005,7,17,ended
+172699-150607-7,172699,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1993,2003,5,14,ended
+172699-401001-9,172699,401001,Materials Science,materials,9,Master,master,2011,2011,1,1,ended
+173708-150607--1,173708,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,22,ended
+173708-150607-4,173708,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1993,2007,9,18,ended
+173708-150607-31,173708,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1991,2023,29,424,active
+173708-150607-32,173708,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1991,2023,28,256,active
+173708-150607-33,173708,150607,Plastics and Polymer Engineering Technology/Technician,polymer,33,Award 2-4yr,certificate,1994,1996,3,30,ended
+174066-141801-7,174066,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,826,active
+174066-141801-9,174066,141801,Materials Engineering,materials,9,Master,master,1991,2023,31,163,active
+174066-141801-20,174066,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2007,17,177,ended
+174066-141801-22,174066,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,16,161,active
+174233-141801-9,174233,141801,Materials Engineering,materials,9,Master,master,2020,2023,4,12,active
+174376-150607-4,174376,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2001,7,24,ended
+174570-150607-31,174570,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2015,2016,2,5,ended
+174659-150607-4,174659,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1995,2002,5,8,ended
+174659-150607-32,174659,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1997,1997,1,1,ended
+174659-150607-33,174659,150607,Plastics and Polymer Engineering Technology/Technician,polymer,33,Award 2-4yr,certificate,1995,1996,2,2,ended
+174783-401001-9,174783,401001,Materials Science,materials,9,Master,master,2016,2018,3,6,ended
+175236-150607-31,175236,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2002,2003,2,2,ended
+175263-150607-4,175263,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,1994,4,14,ended
+175263-150607-32,175263,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1993,1993,1,6,ended
+175272-141801-7,175272,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,649,active
+175810-150607-32,175810,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1996,1996,1,1,ended
+175883-150607-4,175883,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1995,2005,11,25,ended
+175883-150607-32,175883,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1996,2005,6,10,ended
+176017-141801-9,176017,141801,Materials Engineering,materials,9,Master,master,2016,2018,2,2,ended
+176017-141801-22,176017,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2013,2021,5,9,ended
+176026-141801-9,176026,141801,Materials Engineering,materials,9,Master,master,2010,2011,2,4,ended
+176026-141801-22,176026,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2010,2010,1,1,ended
+176372-143201-7,176372,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,2015,2023,9,98,active
+176372-143201-9,176372,143201,Polymer/Plastics Engineering,polymer,9,Master,master,2003,2023,20,87,active
+176372-143201-20,176372,143201,Polymer/Plastics Engineering,polymer,20,Doctorate (pre-2008),doctorate,2003,2008,6,60,ended
+176372-143201-22,176372,143201,Polymer/Plastics Engineering,polymer,22,Doctorate (research),doctorate,2009,2023,15,154,active
+178411-141801-9,178411,141801,Materials Engineering,materials,9,Master,master,2005,2022,17,64,unclear
+178411-141801-20,178411,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2005,2007,3,5,ended
+178411-141801-22,178411,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,15,69,active
+179292-150607-4,179292,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2007,2007,1,1,ended
+179292-150607-31,179292,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2001,2004,2,8,ended
+179566-401001-9,179566,401001,Materials Science,materials,9,Master,master,2010,2023,14,103,active
+179867-141801-9,179867,141801,Materials Engineering,materials,9,Master,master,1991,2023,28,136,active
+179867-141801-20,179867,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1992,2001,7,15,ended
+179867-141801-22,179867,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2017,2021,2,2,ended
+179867-401001-9,179867,401001,Materials Science,materials,9,Master,master,2013,2013,1,1,ended
+180416-141801-9,180416,141801,Materials Engineering,materials,9,Master,master,2019,2023,5,18,active
+180416-401001-22,180416,401001,Materials Science,materials,22,Doctorate (research),doctorate,2017,2023,7,15,active
+180461-401001-9,180461,401001,Materials Science,materials,9,Master,master,2022,2023,2,13,active
+180461-401001-22,180461,401001,Materials Science,materials,22,Doctorate (research),doctorate,2018,2023,5,11,active
+180489-401001-22,180489,401001,Materials Science,materials,22,Doctorate (research),doctorate,2018,2019,2,2,ended
+182290-141801-7,182290,141801,Materials Engineering,materials,7,Bachelor,bachelor,2018,2023,6,50,active
+182290-141801-9,182290,141801,Materials Engineering,materials,9,Master,master,2018,2022,5,16,unclear
+182290-141801-22,182290,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2018,2023,5,17,active
+183044-401001-9,183044,401001,Materials Science,materials,9,Master,master,2013,2023,8,11,active
+183044-401001-22,183044,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2022,9,13,unclear
+183150-141801--1,183150,141801,Materials Engineering,materials,-1,Unreported award level,unknown,2019,2019,1,8,ended
+183150-141801-31,183150,141801,Materials Engineering,materials,31,Cert <1yr,certificate,2013,2021,7,139,ended
+184205-150607-4,184205,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,1998,3,4,ended
+184205-150607-32,184205,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1991,1993,3,6,ended
+184782-141801-31,184782,141801,Materials Engineering,materials,31,Cert 12wk-1yr,certificate,2021,2021,1,3,ended
+184782-401001-22,184782,401001,Materials Science,materials,22,Doctorate (research),doctorate,2020,2023,4,5,active
+185828-141801-9,185828,141801,Materials Engineering,materials,9,Master,master,1997,2023,27,163,active
+185828-141801-20,185828,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2000,2008,8,24,ended
+185828-141801-22,185828,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2022,14,62,unclear
+186867-141801-7,186867,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2001,10,43,ended
+186867-141801-8,186867,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2000,2022,8,14,unclear
+186867-141801-9,186867,141801,Materials Engineering,materials,9,Master,master,1999,2023,20,113,active
+186867-141801-22,186867,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2010,2023,8,16,active
+186867-143201-7,186867,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,1992,1997,6,12,ended
+186867-143201-8,186867,143201,Polymer/Plastics Engineering,polymer,8,Post-bacc/post-master cert,postgrad certificate,2011,2011,1,1,ended
+186867-143201-9,186867,143201,Polymer/Plastics Engineering,polymer,9,Master,master,2011,2012,2,4,ended
+186867-401001-8,186867,401001,Materials Science,materials,8,Post-bacc/post-master cert,postgrad certificate,2022,2023,2,5,active
+186867-401001-9,186867,401001,Materials Science,materials,9,Master,master,2010,2023,14,157,active
+186867-401001-22,186867,401001,Materials Science,materials,22,Doctorate (research),doctorate,2012,2020,7,19,ended
+187444-401002-9,187444,401002,Materials Chemistry,materials,9,Master,master,2019,2023,5,30,active
+187967-141801-7,187967,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,257,active
+187967-141801-9,187967,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,206,active
+187967-141801-20,187967,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,13,34,ended
+187967-141801-22,187967,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,12,26,active
+187985-401001-9,187985,401001,Materials Science,materials,9,Master,master,2010,2023,14,99,active
+187985-401001-22,187985,401001,Materials Science,materials,22,Doctorate (research),doctorate,2011,2023,13,67,active
+188058-401001-4,188058,401001,Materials Science,materials,4,Associate,associate,2010,2013,2,2,ended
+188641-141801-7,188641,141801,Materials Engineering,materials,7,Bachelor,bachelor,2002,2023,22,220,active
+188641-141801-9,188641,141801,Materials Engineering,materials,9,Master,master,2002,2023,22,90,active
+188641-141801-20,188641,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2004,2008,4,5,ended
+188641-141801-22,188641,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,12,23,active
+190044-141801-22,190044,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2012,2021,8,13,ended
+190150-141801-7,190150,141801,Materials Engineering,materials,7,Bachelor,bachelor,1992,1995,4,11,ended
+190150-401001-7,190150,401001,Materials Science,materials,7,Bachelor,bachelor,2010,2023,14,72,active
+190150-401001-8,190150,401001,Materials Science,materials,8,Post-bacc/post-master cert,postgrad certificate,2010,2023,13,43,active
+190150-401001-9,190150,401001,Materials Science,materials,9,Master,master,2010,2023,14,341,active
+190150-401001-22,190150,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,41,active
+190415-141801-7,190415,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,849,active
+190415-141801-9,190415,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,754,active
+190415-141801-20,190415,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,155,ended
+190415-141801-22,190415,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,132,active
+190415-150607-9,190415,150607,Plastics and Polymer Engineering Technology/Technician,polymer,9,Master,master,2018,2023,5,11,active
+190415-150607-22,190415,150607,Plastics and Polymer Engineering Technology/Technician,polymer,22,Doctorate (research),doctorate,2018,2022,4,7,unclear
+190576-401002-9,190576,401002,Materials Chemistry,materials,9,Master,master,2021,2023,2,2,active
+193900-400507-22,193900,400507,Polymer Chemistry,polymer,22,Doctorate (research),doctorate,2013,2017,5,16,ended
+194541-141801-7,194541,141801,Materials Engineering,materials,7,Bachelor,bachelor,1994,1995,2,3,ended
+194541-141801-9,194541,141801,Materials Engineering,materials,9,Master,master,1991,1997,6,22,ended
+194541-141801-20,194541,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1993,1996,4,6,ended
+194541-141801-22,194541,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2010,2012,3,6,ended
+194541-143201-9,194541,143201,Polymer/Plastics Engineering,polymer,9,Master,master,2001,2001,1,1,ended
+194541-400507-9,194541,400507,Polymer Chemistry,polymer,9,Master,master,1998,2006,3,8,ended
+194541-400507-20,194541,400507,Polymer Chemistry,polymer,20,Doctorate (pre-2008),doctorate,1998,2008,11,41,ended
+194541-400507-22,194541,400507,Polymer Chemistry,polymer,22,Doctorate (research),doctorate,2009,2009,1,3,ended
+194824-141801-7,194824,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,664,active
+194824-141801-9,194824,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,337,active
+194824-141801-20,194824,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,145,ended
+194824-141801-22,194824,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,129,active
+195003-141801-8,195003,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2007,2007,1,1,ended
+195003-141801-9,195003,141801,Materials Engineering,materials,9,Master,master,1991,2007,17,115,ended
+195003-400507-7,195003,400507,Polymer Chemistry,polymer,7,Bachelor,bachelor,2003,2012,9,14,ended
+195003-400507-9,195003,400507,Polymer Chemistry,polymer,9,Master,master,2003,2003,1,2,ended
+195003-401001-8,195003,401001,Materials Science,materials,8,Post-bacc/post-master cert,postgrad certificate,2011,2020,2,2,ended
+195003-401001-9,195003,401001,Materials Science,materials,9,Master,master,2010,2023,14,197,active
+195030-141801-9,195030,141801,Materials Engineering,materials,9,Master,master,1991,2009,18,76,ended
+195030-141801-20,195030,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2007,15,48,ended
+195030-401001-9,195030,401001,Materials Science,materials,9,Master,master,2010,2023,14,114,active
+195030-401001-22,195030,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,50,active
+195322-150607-4,195322,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1993,1993,1,1,ended
+196051-150607-4,196051,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2004,8,13,ended
+196060-401001-9,196060,401001,Materials Science,materials,9,Master,master,2010,2011,2,32,ended
+196060-401001-22,196060,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2011,2,29,ended
+196079-141801-9,196079,141801,Materials Engineering,materials,9,Master,master,2003,2023,21,73,active
+196079-141801-20,196079,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2004,2008,5,10,ended
+196079-141801-22,196079,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,76,active
+196079-401001-9,196079,401001,Materials Science,materials,9,Master,master,2011,2011,1,2,ended
+196079-401001-22,196079,401001,Materials Science,materials,22,Doctorate (research),doctorate,2011,2011,1,6,ended
+196088-141801-7,196088,141801,Materials Engineering,materials,7,Bachelor,bachelor,2023,2023,1,4,active
+196088-401001-9,196088,401001,Materials Science,materials,9,Master,master,2013,2023,11,124,active
+196088-401001-22,196088,401001,Materials Science,materials,22,Doctorate (research),doctorate,2019,2023,5,22,active
+196097-141801-9,196097,141801,Materials Engineering,materials,9,Master,master,1991,2023,32,474,active
+196097-141801-20,196097,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,136,ended
+196097-141801-22,196097,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,179,active
+196413-141801-9,196413,141801,Materials Engineering,materials,9,Master,master,1991,1995,5,8,ended
+198367-150607-31,198367,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2011,2014,4,20,ended
+198376-150607-4,198376,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1995,2007,12,49,ended
+198376-150607-31,198376,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1996,2007,12,62,ended
+198376-150607-32,198376,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2000,2007,4,10,ended
+198419-141801-8,198419,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2023,2023,1,4,active
+198419-141801-9,198419,141801,Materials Engineering,materials,9,Master,master,2012,2022,8,9,unclear
+198419-401001-9,198419,401001,Materials Science,materials,9,Master,master,2019,2023,5,32,active
+198419-401001-22,198419,401001,Materials Science,materials,22,Doctorate (research),doctorate,2022,2023,2,8,active
+198622-150607-4,198622,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2001,2002,2,2,ended
+198710-150607-4,198710,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1997,2003,4,9,ended
+199087-150607-4,199087,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2004,2004,1,1,ended
+199120-401001-9,199120,401001,Materials Science,materials,9,Master,master,2011,2020,7,10,ended
+199120-401001-22,199120,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,49,active
+199148-401001-8,199148,401001,Materials Science,materials,8,Post-bacc/post-master cert,postgrad certificate,2023,2023,1,1,active
+199193-141801-7,199193,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,840,active
+199193-141801-8,199193,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2022,2022,1,2,unclear
+199193-141801-9,199193,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,477,active
+199193-141801-20,199193,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,240,ended
+199193-141801-22,199193,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,236,active
+199856-150607-4,199856,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2003,2007,3,4,ended
+199856-150607-31,199856,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2004,2008,4,12,ended
+199856-150607-32,199856,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2006,2006,1,1,ended
+199953-150607-4,199953,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2004,2004,1,2,ended
+200332-141801-20,200332,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2008,2008,1,2,ended
+200332-400507-9,200332,400507,Polymer Chemistry,polymer,9,Master,master,2003,2022,13,22,unclear
+200332-400507-20,200332,400507,Polymer Chemistry,polymer,20,Doctorate (pre-2008),doctorate,1996,2008,8,24,ended
+200332-400507-22,200332,400507,Polymer Chemistry,polymer,22,Doctorate (research),doctorate,2009,2023,15,51,active
+200697-401001-9,200697,401001,Materials Science,materials,9,Master,master,2010,2023,14,46,active
+200697-401001-22,200697,401001,Materials Science,materials,22,Doctorate (research),doctorate,2014,2022,4,4,unclear
+200794-150607-32,200794,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1994,2001,8,347,ended
+200800-143201-7,200800,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,1999,2015,17,96,ended
+200800-143201-9,200800,143201,Polymer/Plastics Engineering,polymer,9,Master,master,1991,2023,33,393,active
+200800-143201-20,200800,143201,Polymer/Plastics Engineering,polymer,20,Doctorate (pre-2008),doctorate,1991,2008,18,194,ended
+200800-143201-22,200800,143201,Polymer/Plastics Engineering,polymer,22,Doctorate (research),doctorate,2009,2023,15,197,active
+200800-143201-31,200800,143201,Polymer/Plastics Engineering,polymer,31,Cert <1yr,certificate,2013,2018,4,5,ended
+200800-150607-4,200800,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2005,2008,3,4,ended
+200800-400507-7,200800,400507,Polymer Chemistry,polymer,7,Bachelor,bachelor,2002,2023,15,36,active
+200800-400507-8,200800,400507,Polymer Chemistry,polymer,8,Post-bacc/post-master cert,postgrad certificate,2022,2022,1,2,unclear
+200800-400507-9,200800,400507,Polymer Chemistry,polymer,9,Master,master,1991,2023,31,476,active
+200800-400507-20,200800,400507,Polymer Chemistry,polymer,20,Doctorate (pre-2008),doctorate,1991,2008,18,394,ended
+200800-400507-22,200800,400507,Polymer Chemistry,polymer,22,Doctorate (research),doctorate,2009,2023,15,286,active
+201645-141801-7,201645,141801,Materials Engineering,materials,7,Bachelor,bachelor,1992,2023,32,275,active
+201645-141801-9,201645,141801,Materials Engineering,materials,9,Master,master,1992,2023,32,304,active
+201645-141801-20,201645,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1992,2008,17,89,ended
+201645-141801-22,201645,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,61,active
+201645-143201-7,201645,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,1991,2023,26,249,active
+201645-143201-9,201645,143201,Polymer/Plastics Engineering,polymer,9,Master,master,2000,2023,23,163,active
+201645-143201-20,201645,143201,Polymer/Plastics Engineering,polymer,20,Doctorate (pre-2008),doctorate,2000,2008,9,85,ended
+201645-143201-22,201645,143201,Polymer/Plastics Engineering,polymer,22,Doctorate (research),doctorate,2009,2023,15,143,active
+201885-141801-7,201885,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2014,24,356,ended
+201885-141801-9,201885,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,380,active
+201885-141801-20,201885,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,129,ended
+201885-141801-22,201885,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,86,active
+201928-150607-4,201928,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1998,2013,14,51,ended
+202480-141801-8,202480,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2021,2023,2,6,active
+202480-141801-9,202480,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,535,active
+202480-141801-20,202480,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2006,16,55,ended
+202480-141801-22,202480,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,59,active
+202648-143201-4,202648,143201,Polymer/Plastics Engineering,polymer,4,Associate,associate,2000,2000,1,7,ended
+202648-150607-4,202648,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2003,2006,4,9,ended
+202648-150607-32,202648,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2003,2005,3,10,ended
+203155-141801-4,203155,141801,Materials Engineering,materials,4,Associate,associate,1995,1996,2,4,ended
+203155-150607-31,203155,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2001,2001,1,2,ended
+203155-401001-4,203155,401001,Materials Science,materials,4,Associate,associate,2010,2016,7,22,ended
+203483-150607-4,203483,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2002,2002,1,1,ended
+203517-150607-31,203517,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2001,2002,2,3,ended
+203517-401001-9,203517,401001,Materials Science,materials,9,Master,master,2021,2023,3,15,active
+203517-401001-22,203517,401001,Materials Science,materials,22,Doctorate (research),doctorate,2021,2021,1,2,ended
+203599-150607-31,203599,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2013,2013,1,1,ended
+203599-150607-32,203599,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2013,2013,1,1,ended
+204440-150607-4,204440,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2003,2022,17,57,unclear
+204440-150607-32,204440,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2005,2022,11,15,unclear
+204796-141801-7,204796,141801,Materials Engineering,materials,7,Bachelor,bachelor,1992,2023,32,1061,active
+204796-141801-9,204796,141801,Materials Engineering,materials,9,Master,master,1992,2023,32,690,active
+204796-141801-20,204796,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1992,2006,15,135,ended
+204796-141801-22,204796,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,277,active
+205443-150607-4,205443,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2023,23,92,active
+205443-150607-7,205443,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1991,2023,33,336,active
+205443-150607-32,205443,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1995,2002,5,7,ended
+205470-150607-4,205470,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1999,2007,7,9,ended
+205470-150607-31,205470,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2018,2023,5,76,active
+206011-150607--1,206011,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,3,ended
+206011-150607-4,206011,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2015,25,206,ended
+206011-150607-31,206011,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1992,2020,12,45,ended
+206011-150607-32,206011,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1993,2007,11,28,ended
+206084-150607-4,206084,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1992,1995,3,9,ended
+206604-141801-7,206604,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,31,181,active
+206604-141801-9,206604,141801,Materials Engineering,materials,9,Master,master,1991,2023,32,163,active
+206695-141801-7,206695,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2000,9,50,ended
+206695-141801-9,206695,141801,Materials Engineering,materials,9,Master,master,1991,1996,6,19,ended
+206695-401001-22,206695,401001,Materials Science,materials,22,Doctorate (research),doctorate,2015,2023,8,19,active
+207388-141801-9,207388,141801,Materials Engineering,materials,9,Master,master,2014,2023,10,30,active
+207388-141801-22,207388,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2017,2023,6,10,active
+208318-143201-31,208318,143201,Polymer/Plastics Engineering,polymer,31,Cert <1yr,certificate,2006,2008,2,2,ended
+208318-143201-32,208318,143201,Polymer/Plastics Engineering,polymer,32,Cert 1-2yr,certificate,2007,2008,2,3,ended
+209542-401001-9,209542,401001,Materials Science,materials,9,Master,master,2010,2023,14,73,active
+209542-401001-22,209542,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,50,active
+209807-141801-8,209807,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2021,2023,3,43,active
+209807-141801-9,209807,141801,Materials Engineering,materials,9,Master,master,2004,2023,17,119,active
+210605-150607--1,210605,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,1,ended
+210605-150607-31,210605,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert 12wk-1yr,certificate,2020,2023,3,11,active
+211440-141801-7,211440,141801,Materials Engineering,materials,7,Bachelor,bachelor,1996,2003,8,123,ended
+211440-141801-9,211440,141801,Materials Engineering,materials,9,Master,master,1996,2003,8,129,ended
+211440-141801-20,211440,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1996,2003,8,81,ended
+211440-400507-7,211440,400507,Polymer Chemistry,polymer,7,Bachelor,bachelor,2002,2006,2,2,ended
+211440-400507-9,211440,400507,Polymer Chemistry,polymer,9,Master,master,2002,2008,2,2,ended
+211440-401001-7,211440,401001,Materials Science,materials,7,Bachelor,bachelor,2010,2023,14,490,active
+211440-401001-9,211440,401001,Materials Science,materials,9,Master,master,2010,2023,14,542,active
+211440-401001-22,211440,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,256,active
+212054-141801-7,212054,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,559,active
+212054-141801-9,212054,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,352,active
+212054-141801-20,212054,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2006,16,79,ended
+212054-141801-22,212054,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,153,active
+213543-141801-7,213543,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,778,active
+213543-141801-9,213543,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,207,active
+213543-141801-20,213543,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2007,17,107,ended
+213543-141801-22,213543,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,16,63,active
+213543-143201-8,213543,143201,Polymer/Plastics Engineering,polymer,8,Post-bacc/post-master cert,postgrad certificate,2018,2023,5,12,active
+213543-143201-9,213543,143201,Polymer/Plastics Engineering,polymer,9,Master,master,2002,2023,22,139,active
+213543-143201-20,213543,143201,Polymer/Plastics Engineering,polymer,20,Doctorate (pre-2008),doctorate,2002,2007,5,12,ended
+213543-143201-22,213543,143201,Polymer/Plastics Engineering,polymer,22,Doctorate (research),doctorate,2008,2023,9,16,active
+214379-150607-31,214379,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1994,2004,8,23,ended
+214591-143201-7,214591,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,2000,2023,22,805,active
+214591-150607-4,214591,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1996,2012,15,82,ended
+214591-150607-7,214591,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1991,2003,11,294,ended
+214591-150607-31,214591,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2011,2023,9,52,active
+214777-141801-9,214777,141801,Materials Engineering,materials,9,Master,master,1991,2023,31,256,active
+214777-141801-20,214777,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2006,16,158,ended
+214777-141801-22,214777,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,15,275,active
+214777-141801-31,214777,141801,Materials Engineering,materials,31,Cert <1yr,certificate,2001,2001,1,2,ended
+214777-400507-7,214777,400507,Polymer Chemistry,polymer,7,Bachelor,bachelor,1991,1997,7,48,ended
+214777-400507-9,214777,400507,Polymer Chemistry,polymer,9,Master,master,1991,1998,6,19,ended
+214777-400507-20,214777,400507,Polymer Chemistry,polymer,20,Doctorate (pre-2008),doctorate,1991,1999,7,31,ended
+214777-401001-7,214777,401001,Materials Science,materials,7,Bachelor,bachelor,2010,2023,12,691,active
+214777-401001-22,214777,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2015,5,24,ended
+214786-143201-7,214786,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,2023,2023,1,1,active
+214801-401001-7,214801,401001,Materials Science,materials,7,Bachelor,bachelor,2016,2016,1,1,ended
+215062-141801-7,215062,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,524,active
+215062-141801-9,215062,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,750,active
+215062-141801-20,215062,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,130,ended
+215062-141801-22,215062,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,124,active
+215099-143201-9,215099,143201,Polymer/Plastics Engineering,polymer,9,Master,master,1999,1999,1,3,ended
+215099-400507-7,215099,400507,Polymer Chemistry,polymer,7,Bachelor,bachelor,1992,1996,2,2,ended
+215293-141801-7,215293,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,413,active
+215293-141801-9,215293,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,250,active
+215293-141801-20,215293,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2006,14,43,ended
+215293-141801-22,215293,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,16,79,active
+215798-141801-7,215798,141801,Materials Engineering,materials,7,Bachelor,bachelor,2023,2023,1,2,active
+216597-141801-8,216597,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2020,2023,4,15,active
+216825-150607-4,216825,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2023,2023,1,1,active
+216931-141801-7,216931,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,1999,9,29,ended
+217475-150607-4,217475,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2000,2009,5,6,ended
+217484-141801-7,217484,141801,Materials Engineering,materials,7,Bachelor,bachelor,1994,1994,1,1,ended
+217484-143201-8,217484,143201,Polymer/Plastics Engineering,polymer,8,Post-bacc/post-master cert,postgrad certificate,2015,2016,2,3,ended
+217882-141801-7,217882,141801,Materials Engineering,materials,7,Bachelor,bachelor,2011,2023,13,423,active
+217882-141801-9,217882,141801,Materials Engineering,materials,9,Master,master,1993,2023,29,192,active
+217882-141801-20,217882,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1993,2008,16,47,ended
+217882-141801-22,217882,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,110,active
+218113-150607-31,218113,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2003,2003,1,2,ended
+219347-141801-9,219347,141801,Materials Engineering,materials,9,Master,master,1997,2023,27,196,active
+219347-141801-20,219347,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2006,14,31,ended
+219347-141801-22,219347,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2022,15,33,unclear
+219471-401002-22,219471,401002,Materials Chemistry,materials,22,Doctorate (research),doctorate,2012,2023,11,44,active
+221333-150607-31,221333,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2006,2012,7,35,ended
+221333-150607-32,221333,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2009,2012,4,21,ended
+221759-141801-7,221759,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,376,active
+221759-141801-9,221759,141801,Materials Engineering,materials,9,Master,master,2001,2023,23,226,active
+221759-141801-20,221759,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2002,2006,5,47,ended
+221759-141801-22,221759,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,209,active
+221759-143201-9,221759,143201,Polymer/Plastics Engineering,polymer,9,Master,master,1991,2012,21,63,ended
+221759-143201-20,221759,143201,Polymer/Plastics Engineering,polymer,20,Doctorate (pre-2008),doctorate,1991,2005,13,33,ended
+221759-143201-22,221759,143201,Polymer/Plastics Engineering,polymer,22,Doctorate (research),doctorate,2007,2015,6,14,ended
+221999-141801-9,221999,141801,Materials Engineering,materials,9,Master,master,1991,2000,9,45,ended
+221999-141801-20,221999,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2002,10,20,ended
+221999-401001-9,221999,401001,Materials Science,materials,9,Master,master,2010,2022,9,14,unclear
+221999-401001-22,221999,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,14,71,active
+224642-141801-4,224642,141801,Materials Engineering,materials,4,Associate,associate,2013,2023,11,33,active
+224642-150607-4,224642,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2001,2006,6,9,ended
+224642-150607-31,224642,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2002,2005,3,5,ended
+225511-141801-9,225511,141801,Materials Engineering,materials,9,Master,master,1991,2023,32,126,active
+225511-141801-20,225511,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,12,28,ended
+225511-141801-22,225511,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,13,91,active
+227216-141801-7,227216,141801,Materials Engineering,materials,7,Bachelor,bachelor,2009,2023,15,221,active
+227216-141801-9,227216,141801,Materials Engineering,materials,9,Master,master,2009,2023,15,154,active
+227216-141801-22,227216,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,126,active
+227757-141801-7,227757,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2013,22,102,ended
+227757-141801-9,227757,141801,Materials Engineering,materials,9,Master,master,1991,2013,6,10,ended
+227757-141801-20,227757,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2003,2008,3,4,ended
+227757-141801-22,227757,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2013,5,19,ended
+228459-141801-22,228459,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2013,2023,11,74,active
+228680-150607-4,228680,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1993,1994,2,15,ended
+228723-141801-7,228723,141801,Materials Engineering,materials,7,Bachelor,bachelor,2020,2023,4,183,active
+228723-141801-8,228723,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2019,2023,4,7,active
+228723-141801-9,228723,141801,Materials Engineering,materials,9,Master,master,2004,2023,20,192,active
+228723-141801-20,228723,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2004,2006,3,9,ended
+228723-141801-22,228723,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,270,active
+228723-141801-31,228723,141801,Materials Engineering,materials,31,Cert 12wk-1yr,certificate,2020,2023,4,33,active
+228723-401001--1,228723,401001,Materials Science,materials,-1,Unreported award level,unknown,2019,2019,1,3,ended
+228723-401001-8,228723,401001,Materials Science,materials,8,Post-bacc/post-master cert,postgrad certificate,2018,2023,6,34,active
+228723-401001-31,228723,401001,Materials Science,materials,31,Cert <1yr,certificate,2018,2023,5,27,active
+228769-141801-9,228769,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,348,active
+228769-141801-20,228769,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1992,2006,14,33,ended
+228769-141801-22,228769,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,82,active
+228778-141801-9,228778,141801,Materials Engineering,materials,9,Master,master,1991,2023,32,209,active
+228778-141801-20,228778,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2006,16,156,ended
+228778-141801-22,228778,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,187,active
+228787-141801-9,228787,141801,Materials Engineering,materials,9,Master,master,2007,2023,17,138,active
+228787-141801-20,228787,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,2005,2008,2,4,ended
+228787-141801-22,228787,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,121,active
+228796-141801-7,228796,141801,Materials Engineering,materials,7,Bachelor,bachelor,1998,1998,1,3,ended
+228796-141801-9,228796,141801,Materials Engineering,materials,9,Master,master,1991,2023,32,188,active
+228796-141801-20,228796,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1996,2008,13,50,ended
+228796-141801-22,228796,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,87,active
+229027-141801-9,229027,141801,Materials Engineering,materials,9,Master,master,2014,2023,10,32,active
+229328-150607-4,229328,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1998,1998,1,1,ended
+229355-150607-4,229355,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1995,1996,2,2,ended
+229355-150607-32,229355,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1995,1995,1,1,ended
+230162-141801-31,230162,141801,Materials Engineering,materials,31,Cert <1yr,certificate,2007,2018,12,408,ended
+230162-141801-32,230162,141801,Materials Engineering,materials,32,Cert 1-2yr,certificate,2017,2018,2,63,ended
+230162-150607--1,230162,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,3,ended
+230162-150607-31,230162,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2015,2022,6,22,unclear
+230162-150607-32,230162,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2016,2019,4,10,ended
+230490-141801-31,230490,141801,Materials Engineering,materials,31,Cert <1yr,certificate,2009,2018,10,231,ended
+230490-141801-32,230490,141801,Materials Engineering,materials,32,Cert 1-2yr,certificate,2008,2008,1,2,ended
+230597-141801-31,230597,141801,Materials Engineering,materials,31,Cert 12wk-1yr,certificate,2022,2023,2,15,active
+230603-141801-4,230603,141801,Materials Engineering,materials,4,Associate,associate,1998,1998,1,1,ended
+230746-141801-4,230746,141801,Materials Engineering,materials,4,Associate,associate,1996,2020,11,15,ended
+230764-141801-7,230764,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,417,active
+230764-141801-9,230764,141801,Materials Engineering,materials,9,Master,master,1991,2023,32,177,active
+230764-141801-20,230764,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2007,17,91,ended
+230764-141801-22,230764,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,16,67,active
+230782-150607-7,230782,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,2010,2016,6,9,ended
+231174-401001-9,231174,401001,Materials Science,materials,9,Master,master,2010,2022,9,11,unclear
+231174-401001-22,231174,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2023,12,22,active
+232937-401001-22,232937,401001,Materials Science,materials,22,Doctorate (research),doctorate,2011,2023,13,53,active
+233921-141801-7,233921,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,1098,active
+233921-141801-9,233921,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,320,active
+233921-141801-20,233921,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2006,16,123,ended
+233921-141801-22,233921,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,134,active
+233921-143201-9,233921,143201,Polymer/Plastics Engineering,polymer,9,Master,master,2001,2022,18,37,unclear
+233921-143201-20,233921,143201,Polymer/Plastics Engineering,polymer,20,Doctorate (pre-2008),doctorate,2003,2006,4,16,ended
+233921-143201-22,233921,143201,Polymer/Plastics Engineering,polymer,22,Doctorate (research),doctorate,2007,2023,17,106,active
+234076-141801-7,234076,141801,Materials Engineering,materials,7,Bachelor,bachelor,2021,2023,3,14,active
+234076-141801-9,234076,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,400,active
+234076-141801-20,234076,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,125,ended
+234076-141801-22,234076,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,132,active
+235103-150607-4,235103,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2020,2023,4,19,active
+235149-150607--1,235149,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,32,ended
+235149-150607-4,235149,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2011,2023,12,67,active
+235149-150607-31,235149,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2011,2023,12,469,active
+235431-150607-4,235431,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1998,1998,1,1,ended
+236188-150607--1,236188,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,2,ended
+236188-150607-31,236188,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2011,2020,9,102,ended
+236188-150607-32,236188,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2015,2020,6,13,ended
+236258-150607-4,236258,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2013,2019,6,18,ended
+236258-150607-31,236258,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2012,2018,7,156,ended
+236258-150607-32,236258,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2007,2019,10,21,ended
+236638-150607-31,236638,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2011,2021,9,57,ended
+236692-150607-31,236692,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2012,2013,2,16,ended
+236692-150607-32,236692,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2013,2023,11,174,active
+236753-141801-4,236753,141801,Materials Engineering,materials,4,Associate,associate,2023,2023,1,1,active
+236939-141801-7,236939,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,31,392,active
+236939-141801-9,236939,141801,Materials Engineering,materials,9,Master,master,1991,2023,31,178,active
+236939-141801-22,236939,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2011,2023,13,114,active
+236939-401001-22,236939,401001,Materials Science,materials,22,Doctorate (research),doctorate,2010,2016,4,13,ended
+236948-141801-7,236948,141801,Materials Engineering,materials,7,Bachelor,bachelor,2002,2023,22,926,active
+236948-141801-9,236948,141801,Materials Engineering,materials,9,Master,master,1996,2023,28,572,active
+236948-141801-20,236948,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1996,2008,13,69,ended
+236948-141801-22,236948,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,129,active
+237011-143201-7,237011,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,2015,2023,9,176,active
+237011-150607-7,237011,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1991,2016,19,216,ended
+237039-141801-4,237039,141801,Materials Engineering,materials,4,Associate,associate,2021,2023,3,7,active
+237686-150607-32,237686,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2015,2023,9,94,active
+238032-141801-9,238032,141801,Materials Engineering,materials,9,Master,master,2016,2023,8,14,active
+238139-150607-32,238139,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1991,1993,2,4,ended
+238148-150607-32,238148,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1993,1993,1,1,ended
+238263-150607-4,238263,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2008,2010,3,3,ended
+238722-141801-4,238722,141801,Materials Engineering,materials,4,Associate,associate,1998,1998,1,1,ended
+239008-150607-4,239008,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,1994,3,6,ended
+239105-141801-9,239105,141801,Materials Engineering,materials,9,Master,master,1991,1998,8,16,ended
+239105-141801-20,239105,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2003,11,16,ended
+239248-141801-4,239248,141801,Materials Engineering,materials,4,Associate,associate,1992,2008,13,30,ended
+239248-150607-4,239248,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2003,8,14,ended
+240125-141801-4,240125,141801,Materials Engineering,materials,4,Associate,associate,1991,1991,1,1,ended
+240125-150607-32,240125,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2001,2001,1,7,ended
+240268-141801-7,240268,141801,Materials Engineering,materials,7,Bachelor,bachelor,2018,2023,6,44,active
+240268-401001-7,240268,401001,Materials Science,materials,7,Bachelor,bachelor,2011,2023,13,85,active
+240268-401001-31,240268,401001,Materials Science,materials,31,Cert 12wk-1yr,certificate,2022,2022,1,1,unclear
+240417-143201-7,240417,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,2011,2023,13,152,active
+240444-141801-7,240444,141801,Materials Engineering,materials,7,Bachelor,bachelor,1993,2023,31,687,active
+240444-141801-9,240444,141801,Materials Engineering,materials,9,Master,master,1991,2023,32,423,active
+240444-141801-20,240444,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2006,16,116,ended
+240444-141801-22,240444,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2007,2023,17,232,active
+240444-143201-8,240444,143201,Polymer/Plastics Engineering,polymer,8,Post-bacc/post-master cert,postgrad certificate,2021,2023,3,5,active
+240453-141801-7,240453,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,221,active
+242617-150607-7,242617,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1999,1999,1,13,ended
+243133-141801-7,243133,141801,Materials Engineering,materials,7,Bachelor,bachelor,2003,2005,3,50,ended
+243197-401001-9,243197,401001,Materials Science,materials,9,Master,master,2023,2023,1,3,active
+243744-141801-7,243744,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,249,active
+243744-141801-8,243744,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,1994,2009,4,4,ended
+243744-141801-9,243744,141801,Materials Engineering,materials,9,Master,master,1991,2023,33,1270,active
+243744-141801-20,243744,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2008,18,280,ended
+243744-141801-22,243744,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2009,2023,15,313,active
+243780-141801-7,243780,141801,Materials Engineering,materials,7,Bachelor,bachelor,1991,2023,33,1231,active
+243780-141801-8,243780,141801,Materials Engineering,materials,8,Post-bacc/post-master cert,postgrad certificate,2007,2009,3,3,ended
+243780-141801-9,243780,141801,Materials Engineering,materials,9,Master,master,1991,2023,32,238,active
+243780-141801-20,243780,141801,Materials Engineering,materials,20,Doctorate (pre-2008),doctorate,1991,2007,17,62,ended
+243780-141801-22,243780,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2008,2023,15,294,active
+243780-141801-32,243780,141801,Materials Engineering,materials,32,Cert 1-2yr,certificate,2004,2004,1,1,ended
+244446-150607-33,244446,150607,Plastics and Polymer Engineering Technology/Technician,polymer,33,Award 2-4yr,certificate,2002,2002,1,1,ended
+247764-141801-9,247764,141801,Materials Engineering,materials,9,Master,master,2000,2003,4,18,ended
+366252-143201-7,366252,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,2018,2023,6,118,active
+366252-150607-4,366252,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,1991,2023,32,212,active
+366252-150607-7,366252,150607,Plastics and Polymer Engineering Technology/Technician,polymer,7,Bachelor,bachelor,1994,2017,24,318,ended
+381848-150607-31,381848,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,1994,1995,2,27,ended
+381848-150607-32,381848,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1997,2000,4,12,ended
+413617-401001-4,413617,401001,Materials Science,materials,4,Associate,associate,2012,2012,1,1,ended
+418287-150607-32,418287,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,1997,1998,2,3,ended
+437237-150607-31,437237,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert 12wk-1yr,certificate,2020,2020,1,8,ended
+437237-150607-32,437237,150607,Plastics and Polymer Engineering Technology/Technician,polymer,32,Cert 1-2yr,certificate,2010,2023,13,157,active
+445188-141801-7,445188,141801,Materials Engineering,materials,7,Bachelor,bachelor,2009,2023,15,103,active
+445188-141801-9,445188,141801,Materials Engineering,materials,9,Master,master,2019,2023,5,26,active
+445188-141801-22,445188,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2018,2023,5,10,active
+446455-150607-31,446455,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert <1yr,certificate,2005,2007,2,2,ended
+446774-150607-4,446774,150607,Plastics and Polymer Engineering Technology/Technician,polymer,4,Associate,associate,2022,2022,1,1,unclear
+448248-141801-31,448248,141801,Materials Engineering,materials,31,Cert <1yr,certificate,2010,2017,7,108,ended
+483124-141801-9,483124,141801,Materials Engineering,materials,9,Master,master,2017,2023,7,108,active
+495767-141801-9,495767,141801,Materials Engineering,materials,9,Master,master,2019,2020,2,38,ended
+495767-141801-22,495767,141801,Materials Engineering,materials,22,Doctorate (research),doctorate,2019,2020,2,62,ended
+495767-143201-7,495767,143201,Polymer/Plastics Engineering,polymer,7,Bachelor,bachelor,2019,2020,2,80,ended
+495767-150607--1,495767,150607,Plastics and Polymer Engineering Technology/Technician,polymer,-1,Unreported award level,unknown,2019,2019,1,10,ended
+495767-150607-31,495767,150607,Plastics and Polymer Engineering Technology/Technician,polymer,31,Cert 12wk-1yr,certificate,2020,2020,1,6,ended
+495767-401001-7,495767,401001,Materials Science,materials,7,Bachelor,bachelor,2019,2020,2,178,ended

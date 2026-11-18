@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.13.3 — 2026-11-18 (§1 R13 gains a fourth employee-band source: SBA PPP historical job counts, blank bands only, under the owner ruling of 2026-11-16, "Strict matches"; recorded 2026-11-18).
+**Version:** v1.14 — 2026-11-18 (§4.23 IPEDS completions reference layer: three generated tables from the federal IPEDS completions series, moved from polymer-programs-db under the owner ruling of 2026-11-18, "Into the Atlas"; validator V-63).
+Previous: v1.13.3 — 2026-11-18 (§1 R13 gains a fourth employee-band source: SBA PPP historical job counts, blank bands only, under the owner ruling of 2026-11-16, "Strict matches"; recorded 2026-11-18).
 Previous: v1.13.2 — 2026-11-16 (§4.5 permits blank ZIP fills from unique Exact Census batch matches as reference address normalization — owner ruling 2026-11-16).
 Previous: v1.13.1 — 2026-11-12 (§4.21 `identifier_type` enum gains `GOOGLE_SCHOLAR`, `WOS_RESEARCHER_ID`, `GITHUB` under strict per-type mint rules — owner rulings 2026-11-12; no rows minted by the revision itself).
 Previous: v1.13 — 2026-11-12 (academic-passes battery, owner rulings 2026-11-12: §3.1 gains `dyeing_finishing` and `fiber_formation` (S2); §3.5 gains `liquid_crystals` (S1); §4.11 `scale_band` conversion rule (S3); §4.13 `tier_effect` gains `supports_U` (S4); §4.21 ORCID name-match clarification for the given-names record shape (S5); §4.9 people field set gains `lab_url` (S6)).
@@ -2369,6 +2370,43 @@ missing link asserts nothing. Append-only, like §4.13. Validator V-59 enforces 
 shape, that the capture is of the page the evidence row cites (`source_ref`, ignoring scheme, `www.` and a trailing
 slash), the date and one row per evidence id.
 
+### 4.23 IPEDS completions reference layer **[v1.14]** (`data/ipeds_*.csv`)
+
+**Owner ruling 2026-11-18** ("Into the Atlas"): the federal layer of polymer-programs-db moves into this repository. It
+answers where polymer, plastics and materials degrees are taught in the United States and how that has changed since
+1991. The layer is **reference data**, like coordinates (§1): never evidence, never an input to a verification tier,
+and never hand-edited.
+
+- **Generated.** `scripts/ipeds_build.py` derives the three tables from `data/ipeds/raw_ipeds_national.json`, which is
+  the record. `scripts/ipeds_fetch.py` (the Urban Institute Education Data API) and `scripts/ipeds_fetch_nces.py` (NCES
+  complete data files) refresh it. Validator V-63 refuses any table that differs from a fresh derivation.
+- **Six CIP codes.** Polymer: 14.3201, 40.0507, 15.0607. Materials: 14.1801, 40.1001, 40.1002. 40.0510 is forensic
+  chemistry and is excluded. No rubber CIP exists; rubber is taught inside 14.3201 and 15.0607.
+- **Years** are labelled by the fall of the academic year: 2023 means awards conferred July 2023 to June 2024 (NCES file
+  C2024_A). The build refuses a hole, a label clash, an out-of-order map, or a quarantined 2020 that no longer repeats
+  2019 (`scripts/test_ipeds_year_labels.py`).
+- **A program** is one (institution, CIP, award level) observed in any year. IPEDS counts completions, not programs, so
+  programs are enumerated from the union of all years. Certificate levels re-coded in 2020 are mapped onto the post-2020
+  codes so that one certificate stays one program.
+
+| Table | Key | Fields |
+|---|---|---|
+| `ipeds_institutions.csv` | `unitid` | `unitid`, `name`, `state`, `city`, `sector`, `control`, `url`, `closed_after` |
+| `ipeds_programs.csv` | `program_key` = `<unitid>-<cip>-<award level>` | `program_key`, `unitid`, `cip`, `cip_title`, `cip_group` (polymer \| materials), `award_level`, `award`, `level`, `first_year`, `last_year`, `years_seen`, `total_awards`, `status` |
+| `ipeds_completions.csv` | (`program_key`, `year`) | `program_key`, `year`, `awards` |
+
+`status` is derived. It is `active` if the last year with completions is the final year of the series, `ended` if
+completions stopped two or more years earlier, and `unclear` for the year in between. **`ended` does not mean closed.**
+A program can lapse in IPEDS and still run, so a catalog check comes before any closure claim.
+
+**Join to the Atlas** on `unitid` = `ecosystem.ipeds_unitid` (or a §4.8 `IPEDS_UNITID` registry link). The layer
+carries no `org_id`, so an Atlas change never forces a rebuild.
+
+**Quoting.** Any count from this layer goes with this caveat: it counts only programs that institutions chose to file
+under these CIP codes. Programs filed under chemistry, chemical engineering or general engineering codes are invisible,
+non-degree training is out of scope, and 2024 is missing. It is a floor, not a census. The reading guide and the
+corrections log are in `docs/IPEDS.md`.
+
 ## 5. Entity Resolution Rules — Dedupe Identically
 
 **Goal:** Three researchers given the same firm reach the same Parent/Site split, the same canonical name, and the same merge decision. When in doubt, **do not merge** — link with `related_org_ids[]` + note and flag for review. A false merge destroys data; a false split is cheap to fix.
@@ -2463,6 +2501,7 @@ files** in `data/`. Every other table stays a **single file**.
 | sites | **sharded by physical state** (non-US → `INTL`) | `data/sites_<TAG>.csv` |
 | ecosystem, programs, people, people_identifiers **[v1.10]**, members, registry_links, inclusion_log | single | `data/<table>.csv` |
 | events, event_participation (v1.5); evidence, relationships, site_capabilities (v1.6) | single | `data/<table>.csv` |
+| ipeds_institutions, ipeds_programs, ipeds_completions **[v1.14]** (generated; raw input in `data/ipeds/`) | single | `data/<table>.csv` |
 
 `<TAG>` is a USPS state code (`OH`, `PA`, … including `DC` and the
 territories) or one of two special tags: `INTL` (organizations,
@@ -3079,5 +3118,6 @@ unchanged.
 
 - **v1.13.2 — 2026-11-16 (owner ruling in session, GEO-ZIP).** §4.5 permits a ZIP from a unique Census batch `Match, Exact` result to fill a blank site `zip` as reference address normalization, with the retained response as provenance and no separate evidence row. Existing ZIPs are never overwritten.
 
+- **v1.14 — 2026-11-18 (owner ruling 2026-11-18, "Into the Atlas").** §4.23 adds the IPEDS completions reference layer: `data/ipeds_institutions.csv` (343), `data/ipeds_programs.csv` (825) and `data/ipeds_completions.csv` (10,486 program-years, 1991-2023). `scripts/ipeds_build.py` generates them from `data/ipeds/raw_ipeds_national.json`, ported from polymer-programs-db build_db.py (a9d89b5) with every row equal. Validator V-63 enforces parity with the raw file. Reference data, never evidence. The hand-researched layers (credentials, global programs, society chapters, aliases, CIP-invisible programs) are phase-2 owner questions (`tasks/ipeds-layer-2026-11-18/README.md`). No existing data row is changed.
 - **v1.13.3 — 2026-11-18 (records the owner ruling of 2026-11-16, "Strict matches").** §1 R13 gains SBA PPP historical job counts as a fourth employee-band source: blank bands only, dated to the loan, single-site Ohio-only organizations with an exact borrower name, street and city match. The ruling was applied in PR #348 before this record. No data row is changed by this revision.
 
