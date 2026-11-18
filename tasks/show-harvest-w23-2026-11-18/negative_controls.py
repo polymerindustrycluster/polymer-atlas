@@ -49,6 +49,8 @@ ok.append(run("show_key without a year", dec([l if l != trelleborg else l.replac
 ok.append(run("non-ASCII year digits", dec([l if l != trelleborg else l.replace(",2027,Trelleborg", ",٢٠٢٧,Trelleborg") for l in dec_lines])))
 ok.append(run("decision naming an inactive org", dec([l if l != trelleborg else l.replace("ORG-004243", "ORG-002893") for l in dec_lines])))
 ok.append(run("same event, year and name under a second show_key", dec(dec_lines[:i] + [baystar_npe.replace("npe-the-plastics-show:2027", "npe-the-plastics-show:2028", 1)] + dec_lines[i:])))
+# fourth round (codex + agy)
+ok.append(run("a name both held and accepted at one event", dec(dec_lines[:i] + [baystar_npe.replace("accept,", "hold,", 1).replace(",2027,Baystar,ORG-003071,", ",2028,Baystar,ORG-003071,")] + dec_lines[i:])))
 
 # row cases (check.py)
 rows = list(csv.DictReader(io.StringIO(orig[PK].decode("utf-8"))))
@@ -67,5 +69,16 @@ ok.append(plant("Baystar in the wrong year", event_id="EVT-000001", edition_year
 ok.append(plant("Baystar under a show the decision does not name", event_id="EVT-000001", edition_year="2027", org_id="ORG-003071",
                 sources=src("Baystar"), notes="matched a trade name, adjudicated the same entity by cross-family review; "
                 "list banked in staging (harvest-2026-11, npe-the-plastics-show:2028)."))
+pp, npe = "ppxxiii-plastic-pipes-conference-and-exhibition:2027", "npe-the-plastics-show:2027"
+note = lambda show: f"Exhibitor name matched to the org by exact normalized legal name; list banked in staging (harvest-2026-11, {show})."  # noqa: E731
+ok.append(plant("held Trelleborg under NPE's event with PP XXIII's show in its notes (codex)", event_id="EVT-000001",
+                edition_year="2027", org_id="ORG-004243", evidence_source_url="https://ppxxiii.com/map-of-exhibition/",
+                sources=src("Trelleborg"), notes=note(pp)))
+ok.append(plant("held Aaron Industries in another year (agy)", event_id="EVT-000001", edition_year="2026",
+                org_id="ORG-004008", sources=src("Aaron Industries, Inc."), notes=note(npe)))
+ok.append(plant("notes with a malformed show slug (agy)", event_id="EVT-000001", edition_year="2027",
+                org_id="ORG-003780", sources=src("ADG Solutions"), notes=note("---:2027")))
+ok.append(plant("legal-name row whose notes show is another event's", event_id="EVT-000017", edition_year="2026",
+                org_id="ORG-003780", sources=src("ADG Solutions"), notes=note(npe)))
 print(f"{sum(ok)} of {len(ok)} negative controls fail check.py as required")
 sys.exit(0 if all(ok) else 1)

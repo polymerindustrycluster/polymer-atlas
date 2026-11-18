@@ -11,7 +11,7 @@ Same method as tasks/show-harvest-w1-2026-11-06/build.py, plus the lessons of it
   organization. A hit on a trade name only is held for review (trade_name_holds.csv): trade_names carries brands,
   parents and subsidiaries, and #252 credited Coperion to Hillenbrand that way. review_decisions.csv records the
   cross-family review: trade-name hits both families judged the same entity (`accept`, for one org) and legal-name
-  hits the review held (`hold`), each keyed by show, role, edition year and listed name.
+  hits the review held (`hold`); decisions.py validates the file and defines how each applies.
 - An edition abroad mints only when the list gives the company's country AND it equals the organization's
   hq_country; otherwise held (the Momentive GmbH / MPM Silicones LLC trap, tasks/exhibitor-links-2026-11-06).
 - Attendee lists are not minted here: SPE Polyolefins 2026 is a delegate list naming people (owner ruling
@@ -55,7 +55,8 @@ NOT_EVENT_LISTS = {
 }
 # The cross-family review of PR #384 (codex + agy, 2026-11-18) lives in review_decisions.csv, loaded and validated by
 # decisions.py (shared with check.py): `hold` = a legal-name hit that does not pin one legal entity, `accept` = a
-# trade-name hit both families judged the same entity. Each applies only to its show, role, year, name AND org.
+# trade-name hit both families judged the same entity. A hold binds its name at its event for every year, show and
+# org; an accept binds only its exact show, year, name and org (decisions.held_names / decisions.accepted_keys).
 REVIEW_NOTES = {
     ("sampe-conference-and-exhibition:2027", "exhibitor", "2027", "Fiber Dynamics"):
         ' Listed in a joint entry, "NIAR | Fiber Dynamics | FILL USA INC".',
@@ -123,9 +124,8 @@ def main():
     # names are stored hashed: a drop can be a person's name, and this repo is public (AGENTS section 6)
     drops = {(r["show_key"], r["role"], r["name_sha256_16"]) for r in read(HERE / "controller_drops.csv")}
     by_key, orgs = org_index(data)
-    review = decisions.load(HERE / "review_decisions.csv", events, orgs)
-    held = {(d["event_id"], d["role"], d["edition_year"], A.name_key(d["listed_name"]), d["org_id"])
-            for d in review.values() if d["decision"] == "hold"}
+    review = decisions.load(HERE / "review_decisions.csv", events, orgs, shows=set(shows))
+    held, accepted_keys = decisions.held_names(review), decisions.accepted_keys(review)
     part = read(data / "event_participation.csv")
     have = {(p["event_id"], p["org_id"], p["edition_year"], p["role"]) for p in part}
     nxt = max(int(p["participation_id"][4:]) for p in part) + 1
@@ -168,20 +168,20 @@ def main():
                     skip["labelled for a co-located show"] += 1; continue
                 if norm(name) not in raw:
                     skip["name not in the page's visible text (logo alt text or rebuilt)"] += 1; continue
-                hits = by_key.get(A.name_key(name), {})
+                nk = A.name_key(name)
+                if (ev, role, nk) in held:  # a hold binds its name at the event for every year, show and org
+                    skip["held by the cross-family review (review_decisions.csv)"] += 1; continue
+                hits = by_key.get(nk, {})
                 if len(hits) != 1:
                     (leads.append({"show_key": key, "role": role, "year": yr, "name": name}) if not hits
                      else skip.update(["ambiguous name key"]))
                     continue
                 org, kind = next(iter(hits.items()))
-                if (ev, role, yr, A.name_key(name), org) in held:  # a hold binds the event, whatever show listed it
-                    skip["held by the cross-family review (review_decisions.csv)"] += 1; continue
-                decision = review.get((key, role, yr, A.name_key(name)), {})
-                if decision.get("org_id") != org:
-                    decision = {}  # an accept binds only its exact show and the organization it names
                 if abroad and (not iso(c.get("country")) or iso(c["country"]) != iso(orgs[org]["hq_country"])):
                     skip["edition abroad, listed country missing or not the org's HQ country"] += 1; continue
-                accepted = decision["reason"] if kind == "trade" and decision.get("decision") == "accept" else None
+                # an accept binds only its exact show, event, role, year, name and organization
+                accepted = review[(key, role, yr, nk)]["reason"] if kind == "trade" and \
+                    (key, ev, role, yr, nk, org) in accepted_keys else None
                 if kind == "trade" and not accepted:
                     holds.append({"show_key": key, "event_id": ev, "edition_year": yr, "role": role,
                                   "listed_name": name, "org_id": org, "legal_name": orgs[org]["legal_name"],

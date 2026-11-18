@@ -89,6 +89,18 @@ from an evidence packet: the org record and a page excerpt for every row. Both r
   notes. A hold binds the event whatever show listed the name; an accept binds only its exact show.
   `negative_controls.py` now runs 22 reviewer counterexamples, and each fails `check.py`. The data is unchanged
   (rebuilt rows byte-identical to the reviewed fix).
+- **Fourth confirmation (codex and agy, both REFUTE, on `check.py` only):** it never checked that a row's show (from
+  its notes) is a series of the row's event, so a hand-made row with another event's id slipped past a hold; agy
+  added a hold evaded by a different year, and a malformed show slug in the notes. agy also asked that a decision's
+  show-key year equal its edition year; that is not applied, because a staging key's year is the harvest's label and
+  often differs from the list's year (SPE ABC: key 2027, list 2026). The owner chose a fifth round (2026-11-18).
+  Applied: `check.py` requires each row's notes show to be a series of its event, with the same strict show-key form
+  as `decisions.py`; a hold now binds its name at its event for every year, show and organization (its reason does
+  not depend on them), while an accept binds only its exact show, year, name and organization; one definition of
+  both lives in `decisions.py`; the loader rejects a name both held and accepted at one event, and `build.py`
+  requires each decision's show to be a harvested show. `negative_controls.py`: 27 of 27 fail `check.py`. `check.py`
+  states its limit: without the staging harvest it checks the committed rows against the build's rules, and the
+  build, which reads the banked pages, is the provenance guarantee. Data unchanged.
 - **Still held (6):** Blueshift and Cambium (codex: same, citing their legal pages; agy: unsure), Alpek Polyester,
   3A Composites Core Materials, Airtech Advanced Materials Group, Brighton Science (both unsure or split).
 - **Split, kept (2):** agy would also drop "Atomic Industries" and "Fiber Dynamics" for lack of profile text. Codex
