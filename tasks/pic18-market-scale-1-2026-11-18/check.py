@@ -24,8 +24,8 @@ WORDS = {
     'electronics_electrical': r'electronic|electrical', 'medical_healthcare_general': r'medical|health ?care', 'medical_device': r'medical device|implant|stent|thrombectomy',
     'pharmaceutical_biotech': r'pharmaceutical', 'construction_building_products': r'construction|building', 'energy_oil_gas': r'oil and gas|petroleum',
     'marine': r'marine|boat', 'chemical_mining_metals_processing': r'chemical|mining', 'rail_transportation': r'\brail\b', 'agriculture': r'agricult|farm',
-    'general_industrial': r'industrial', 'food_processing_foodservice': r'food processing', 'plastics_rubber_processors': r'plastic|rubber|rotomold|molders',
-    'telecom_datacom': r'telecom', 'energy_renewables_battery': r'batter(y|ies)', 'rv_powersports_trailers': r'\brv\b', 'furniture_office': r'furniture',
+    'general_industrial': r'industrial', 'food_processing_foodservice': r'food processing|food ?service|catering', 'plastics_rubber_processors': r'plastic|rubber|rotomold|molders',
+    'telecom_datacom': r'telecom', 'energy_renewables_battery': r'batter(y|ies)', 'rv_powersports_trailers': r'\brv\b'
 }
 HOLD_CLASSES = {'no_market_claim', 'scope_owner_ruling', 'no_vocab_market', 'off_vocabulary_or_ambiguous_market', 'menu_or_nav_only', 'group_or_redirect_attribution', 'list_item_only'}
 READ_BASES = {'page_read', 'text_screened'}
@@ -72,6 +72,9 @@ def verify(inputs, verdicts, frame_all=None, frame=None):
         assert any(len((CORPUS / p['text_file']).read_text()) >= 1000 for p in pages if p['org_id'] == oid), ('no stored text page of 1 KB', oid)
     ids = [v['org_id'] for v in verdicts]
     assert sorted(ids) == sorted(frame) and len(set(ids)) == len(ids) == len(frame), 'frame ID with no verdict, or two'
+    retired = {r['evidence_id'] for r in read(HERE / 'withdrawn.csv')}
+    assert not retired & {r['evidence_id'] for r in inputs}, 'retired evidence ID reused'
+    assert all(f'EVD-{FIRST_ID:06d}' <= i <= f'EVD-{LAST_ID}' for i in retired), 'retired ID outside the block'
     seen = set()
     for r in inputs:
         key = (r['org_id'], r['value'])
@@ -125,6 +128,28 @@ def cell_writes(before, after, values):
     return changed
 
 
+def derived_evidence(inputs, tiers):
+    """Every applied evidence row, rebuilt from inputs.csv and the stored page bytes (sha256 recomputed here), never from the editable evidence packet."""
+    out = []
+    for r in inputs:
+        raw, _, _ = locate(r['org_id'], r['source_kind'], r['source_url'])
+        out.append(dict(evidence_id=r['evidence_id'], record_table='organizations', record_id=r['org_id'], claim_type='activity',
+                        claim_detail=f'markets_served {r["value"]}: "{r["quote"]}"', source_class='own_site', source_ref=r['source_url'],
+                        observed_date='2026-11-18', tier_effect='supports_U' if tiers[r['org_id']] == 'U' else 'supports_A',
+                        created_by='claude atlas-w18-mktscale', notes='Own-company source; field witness retained, SHA256 ' + sha(raw)))
+    return out
+
+
+def packet_matches(packet, derived):
+    assert packet == derived, 'evidence packet differs from the rows derived from inputs.csv and the stored pages'
+
+
+def evidence_delta(before, after, add):
+    """The canonical shard is the base rows plus exactly the derived rows, every field equal (source_class, date, digest note, strength)."""
+    assert not {r['evidence_id'] for r in add} & {r['evidence_id'] for r in before}, 'reused evidence ID'
+    assert after == sorted(before + add, key=lambda r: r['evidence_id']), 'evidence delta mismatch (a field differs from the value derived from inputs.csv and the stored page)'
+
+
 def boundary(inputs, evidence):
     values = {}
     for r in inputs:
@@ -140,8 +165,7 @@ def boundary(inputs, evidence):
         before, after = git_rows(f'data/{p.name}'), read(p)
         if p.name.startswith('evidence_organizations_'):
             add = [r for r in evidence if home[r['record_id']].replace('organizations_', 'evidence_organizations_') == p.name]
-            assert not {r['evidence_id'] for r in evidence} & {r['evidence_id'] for r in before}, 'reused evidence ID'
-            assert after == sorted(before + add, key=lambda r: r['evidence_id']), ('evidence delta mismatch', p.name)
+            evidence_delta(before, after, add)
             new_evs += len(add)
         else:
             assert before == after, ('out of scope data change', p.name)
@@ -244,6 +268,7 @@ def main():
         ('text digest of the wrong bytes', 'text hash mismatch', lambda i, v: i[0].update(text_sha256='f' * 64)),
         ('tampered verdict value', 'verdict values differ', lambda i, v: next(x for x in v if x['org_id'] == first).update(values='aerospace_defense;marine')),
         ('value on a hold', 'verdict values differ', lambda i, v: held(v).update(values='aerospace_defense')),
+        ('retired evidence ID reused', 'retired evidence ID reused', lambda i, v: i[0].update(evidence_id=read(HERE / 'withdrawn.csv')[0]['evidence_id'])),
         ('read basis missing', 'read basis missing', lambda i, v: v[0].update(read_basis='')),
         ('wrong tier effect for the record tier', 'strength', lambda i, v: i[0].update(tier_effect='supports_C' if i[0]['tier_effect'] == 'supports_A' else 'supports_A')),
     ]
@@ -312,12 +337,36 @@ def main():
     tiers = {o: base[o]['verification_tier'] for o in base}
     expected = counts_for(tiers, inputs, verdict_rows(inputs))
     assert json.loads((HERE / 'counts.json').read_text()) == expected, 'counts.json stale'
-    evidence = read(HERE / 'evidence_packet.csv')
-    assert [e['evidence_id'] for e in evidence] == [r['evidence_id'] for r in inputs] and len(evidence) == expected['applied_values']
+    evidence = derived_evidence(inputs, tiers)
+    packet_matches(read(HERE / 'evidence_packet.csv'), evidence)
+    assert len(evidence) == expected['applied_values']
     assert all(f'EVD-{FIRST_ID:06d}' <= e['evidence_id'] <= f'EVD-{LAST_ID}' for e in evidence), 'evidence ID outside block'
-    for ev, r in zip(evidence, inputs):
-        assert ev['record_id'] == r['org_id'] and ev['source_ref'] == r['source_url'] and ev['tier_effect'] == r['tier_effect']
-        assert ev['claim_detail'] == f'markets_served {r["value"]}: "{r["quote"]}"'
+    # falsified provenance, in the packet and in the canonical shard, must both be refused
+    home_shard = {r['org_id']: p.name for p in shards() for r in read(p)}
+    first_shard = home_shard[inputs[0]['org_id']].replace('organizations_', 'evidence_organizations_')
+    base_ev = git_rows(f'data/{first_shard}')
+    mine = [e for e in evidence if home_shard[e['record_id']].replace('organizations_', 'evidence_organizations_') == first_shard]
+    good = sorted(base_ev + mine, key=lambda r: r['evidence_id'])
+    evidence_delta(base_ev, good, mine)
+    for field, bad in [('source_class', 'government_filing'), ('observed_date', '2020-01-01'), ('notes', 'unsupported digest'), ('tier_effect', 'supports_C')]:
+        forged = copy.deepcopy(good)
+        next(r for r in forged if r['evidence_id'] == mine[0]['evidence_id'])[field] = bad
+        try:
+            evidence_delta(base_ev, forged, mine)
+        except AssertionError as e:
+            assert 'evidence delta mismatch' in str(e), str(e)
+            print('REFUSED: falsified', field, 'in the canonical evidence shard')
+        else:
+            raise AssertionError('silent pass: falsified ' + field)
+    forged_packet = copy.deepcopy(evidence)
+    forged_packet[0]['source_class'] = 'government_filing'
+    try:
+        packet_matches(forged_packet, evidence)
+    except AssertionError as e:
+        assert 'evidence packet differs' in str(e), str(e)
+        print('REFUSED: falsified source_class in the evidence packet (packet must equal the derived rows)')
+    else:
+        raise AssertionError('silent pass: falsified packet')
     if not packet_only:
         boundary(inputs, evidence)
     print('PASS:', json.dumps(expected))
