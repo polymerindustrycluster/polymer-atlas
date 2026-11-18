@@ -20,7 +20,7 @@ STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-at
 CORPUS, LIVE = STORE / 'pic18-corpus-2026-11-16', STORE / 'pic18-market-scale-2026-11-18'
 SNAPSHOT = STORE / 'pic18-markets-3/manifest.snapshot.csv'
 BASE = 'dd07afc9'  # merge-base this packet was built on; replaying after main changes these shards needs it updated
-FIRST_ID, LAST_ID = 396750, 396899
+FIRST_ID, LAST_ID = 397300, 397449  # controller decision 2026-11-18: supersedes 396750-396899 (main's maximum is EVD-397103, open PRs use up to 397200)
 BATCH, BATCH_SIZE = 2, 96
 import frame as F  # the pool is recomputed from git at F.FRAME_REF; the canary's 10 are removed
 FRAME_ALL = F.frame()
@@ -165,7 +165,32 @@ def counts_for(tiers, inputs, verdicts):
                 live_fetches=len(read(HERE / 'fetches.csv')) if (HERE / 'fetches.csv').exists() else 0)
 
 
+def renumber(old_first, new_first):
+    """The only way pinned evidence IDs change (never sed): a fixed offset over every ID in selection.tsv. Refuses an ID below the old block start, and the number
+    renumbered must equal the number matched; no ID of the old block may remain."""
+    path = HERE / 'selection.tsv'
+    lines = [l.split('\t') for l in path.read_text().splitlines()]
+    matched = done = 0
+    for l in lines:
+        new = []
+        for i in l[2].split(';'):
+            n = int(i[4:])
+            assert n >= old_first, ('ID below the old block', i)
+            matched += 1
+            new.append(f'EVD-{n - old_first + new_first:06d}')
+            done += 1
+        l[2] = ';'.join(new)
+    assert matched == done, 'renumbered differs from matched'
+    old_ids = {f'EVD-{n:06d}' for n in range(old_first, old_first + matched + 200)}
+    assert not old_ids & {i for l in lines for i in l[2].split(';')} or old_first == new_first, 'an old ID remains'
+    path.write_text('\n'.join('\t'.join(l) for l in lines) + '\n')
+    print(f'renumbered {done} of {matched} matched IDs: EVD-{old_first:06d}.. to EVD-{new_first:06d}..')
+
+
 def main():
+    if '--renumber' in sys.argv:
+        i = sys.argv.index('--renumber')
+        return renumber(int(sys.argv[i + 1]), int(sys.argv[i + 2]))
     orgs = {r['org_id']: (p, r) for p in shards() for r in read(p)}
     tiers = {o: orgs[o][1]['verification_tier'] for o in FRAME}
     inputs = proposals(tiers)
