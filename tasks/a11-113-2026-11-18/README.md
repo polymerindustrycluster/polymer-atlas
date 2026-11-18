@@ -22,6 +22,7 @@ The removal is declared in `REMOVALS.csv` (table `registry_links`, key `org_id|r
 
 ## Checks run
 - `python3 tasks/a11-113-2026-11-18/check.py`: recomputes against the pinned base (`base.txt`); the removed keys equal the one CREATION_ERROR uei_links item counted independently in the adjudication; every kept row unchanged and in order; `REMOVALS.csv` lists exactly the removed key; only `registry_links.csv` changed under `data/`; `check_row_loss.py` passes; `build.py` has no network code and is idempotent. It fails on 5 injected defects: a removal without a REMOVALS row, a second UEI link removed, a second non-UEI link removed, the A11-113 link left in place, a kept row altered.
+- Dependents of the removed link: `scripts/derive_tier1.py` in check mode reports 0 organizations with qualifier drift, identical with and without this change (the organization's tier-1 basis rests on its TRI link, which is kept); no organization evidence row of ORG-000889 cites a UEI or SAM source.
 - `python3 scripts/validate.py`: 0 errors. `check_row_loss.py --base origin/main`: OK with the manifest, fails without it. `export_vocab.py --check`: current.
 
 ## Self-refute (contract rule 15)
@@ -37,4 +38,3 @@ The removal is declared in `REMOVALS.csv` (table `registry_links`, key `org_id|r
 
 ## Proposed follow-ups (not in this PR)
 - A11-047 (ProVia `newsroom_feed_url`): held until `organizations_OH.csv` is free.
-- The audit document `docs/reviews/BLIND_AUDIT_11_2026-11-17.md` still names the entity in a parenthetical; a scrub is an owner call under R-SAM.
