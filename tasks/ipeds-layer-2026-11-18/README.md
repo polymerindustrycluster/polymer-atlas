@@ -31,6 +31,29 @@ the Atlas"**. This pass is phase 1 of that move: the federal IPEDS layer.
 9. **Clean checks.** `validate.py` exits 0 on the committed tree, and the row-loss guard passes; the change only adds
    rows.
 
+## Result
+
+All nine criteria hold.
+
+- **Equality with programs-db.** Every one of the 825 programs and 10,486 completion rows equals the programs-db build,
+  compared per row: first and last year, years seen, total awards, status, level and awards per year. The polymer
+  series and the 35 / 27 figure are unchanged.
+- **One deliberate difference: certificate labels (124 programs).** Each canonical certificate level now carries one
+  label naming the codes merged into it, for example "Cert under 1yr (codes 1, 30, 31)". Before, a program took the
+  label of whichever raw row came first, so a code-30 "under 12 weeks" program could read "12wk-1yr".
+
+## Review fixes (codex, deep, on 23d9786: UNSOUND, 7 findings, all fixed)
+
+| # | Finding | Fix |
+|-|-|-|
+| 1 | `ipeds_fetch_nces.py` imported the old module name | Imports `ipeds_fetch` |
+| 2 | A failed page or CIP request silently wrote a smaller raw file | `paged()` aborts on a later-page failure; a served year with a failed CIP, or any failed directory request, aborts the refresh with the raw file unchanged (tested) |
+| 3 | Parity alone could not catch a program whose institution has no directory entry | The build refuses it (tested) |
+| 4 | The row-loss guard keyed completions on `program_key` alone | Composite key (`program_key`, `year`) in `check_row_loss.py` |
+| 5 | Certificate code 30 inherited code 31's label | One explicit label per canonical level |
+| 6 | V-63 skipped silently when the whole layer was absent | A missing raw file is a V-63 error |
+| 7 | "343 institutions conferred an award" | 343 reported; 310 conferred at least one award, and 33 reported only zeros |
+
 ## Out of scope (phase 2, each an owner question)
 
 - **Hand-researched layers** in polymer-programs-db: US non-degree credentials (29), global programs (101), society

@@ -75,6 +75,25 @@ class YearLabelTests(unittest.TestCase):
         self.refuses("no longer repeats", raw=raw)
 
 
+class RefusalTests(unittest.TestCase):  # codex #388 findings 2 and 3
+    def test_a_program_without_a_directory_entry_is_refused(self):
+        raw = copy.deepcopy(RAW)
+        unitid = str(next(r["unitid"] for r in raw["rows"] if r["awards"] > 0))
+        del raw["directory"][unitid]
+        with self.assertRaises(SystemExit) as cm:
+            ipeds_build.derive(raw)
+        self.assertIn("no directory entry", str(cm.exception))
+
+    def test_a_failed_later_page_aborts_and_a_failed_first_page_is_reported(self):
+        import ipeds_fetch
+        pages = iter([{"results": [{"unitid": 1}], "next": "page2"}, None])
+        with mock.patch.object(ipeds_fetch, "get", lambda url: next(pages)):
+            with self.assertRaises(SystemExit):
+                ipeds_fetch.paged("page1")
+        with mock.patch.object(ipeds_fetch, "get", lambda url: None):
+            self.assertIsNone(ipeds_fetch.paged("page1"))
+
+
 class ParityTests(unittest.TestCase):
     def test_committed_tables_match_the_raw_file(self):
         self.assertEqual(ipeds_build.mismatches(ipeds_build.ROOT / "data"), [])

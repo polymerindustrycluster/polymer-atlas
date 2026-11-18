@@ -37,6 +37,9 @@ def data_dir():
 # without canonicalisation, one continuous certificate becomes a program that "ended 2018" and one that "started
 # 2020"; that once manufactured a fake 19-program closure spike (CORRECTIONS in docs/IPEDS.md, 2026-08-21).
 CERT_CANON = {1: 31, 2: 32, 3: 32, 5: 33, 6: 33, 30: 31, 31: 31, 32: 32, 33: 33}
+# One label per canonical certificate level, naming the codes merged into it (a first-seen raw label would call a
+# code-30 "under 12 weeks" program "12wk-1yr": codex, #388). Other levels keep the source's label.
+CANON_AWARD = {31: "Cert under 1yr (codes 1, 30, 31)", 32: "Cert 1-2yr (codes 2, 3, 32)", 33: "Cert 1-4yr (codes 5, 6, 33)"}
 DEGREE_LEVEL = {
     -1: "unknown",  # award_level absent in the source; completions still real
     1: "certificate", 2: "certificate", 3: "certificate", 30: "certificate", 31: "certificate", 32: "certificate",
@@ -133,13 +136,17 @@ def derive(raw):
         lvl = -1 if r["award_level"] is None else canon_level(r["award_level"])
         p = prog.setdefault((r["unitid"], r["cip"], lvl), {
             "cip_title": r["cip_title"], "group": r["group"],
-            "award": "Unreported award level" if r["award_level"] is None else r["award"], "years": {}})
+            "award": "Unreported award level" if r["award_level"] is None else CANON_AWARD.get(lvl, r["award"]),
+            "years": {}})
         p["years"][r["year"]] = p["years"].get(r["year"], 0) + r["awards"]
     progs, comps = [], []
+    named = {int(u) for u in raw["directory"]}
     for (unitid, cip, lvl), p in sorted(prog.items()):
         active = {y: n for y, n in p["years"].items() if n > 0}
         if not active:  # a row of pure zeros is IPEDS reporting an absence, not evidence of a program
             continue
+        if unitid not in named:  # parity alone cannot catch this: both tables would be derived without it
+            raise SystemExit(f"refusing to build: program {unitid}-{cip}-{lvl} has no directory entry for {unitid}")
         first, last = min(active), max(active)
         key = f"{unitid}-{cip}-{lvl}"
         progs.append({"program_key": key, "unitid": str(unitid), "cip": cip, "cip_title": p["cip_title"],

@@ -893,8 +893,8 @@ if (DATA / "ipeds" / "raw_ipeds_national.json").exists():
                           f"generated, never hand-edited: rerun scripts/ipeds_build.py (V-63)")
     except SystemExit as e:  # the derivation's own year-label refusals
         errors.append(f"ipeds/raw_ipeds_national.json: {e} (V-63)")
-elif any((DATA / f).exists() for f in ipeds_build.TABLES):
-    errors.append("ipeds tables present without ipeds/raw_ipeds_national.json to derive them from (V-63)")
+else:
+    errors.append("ipeds/raw_ipeds_national.json is missing; the §4.23 tables cannot be derived (V-63)")
 
 evt_ids = set()
 _slug_events = {}

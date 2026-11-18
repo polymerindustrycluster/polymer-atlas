@@ -6,7 +6,7 @@ reading guide.
 
 | Table | Rows | What it holds |
 |-|-|-|
-| `data/ipeds_institutions.csv` | 343 | US institutions that conferred an award under one of the six CIP codes below in any year from 1991 to 2023 |
+| `data/ipeds_institutions.csv` | 343 | US institutions that reported under one of the six CIP codes below in any year from 1991 to 2023; 310 of them conferred at least one award, and 33 reported only zeros |
 | `data/ipeds_programs.csv` | 825 | One row per institution, CIP code and award level ever observed |
 | `data/ipeds_completions.csv` | 10,486 | Completions per program per year |
 

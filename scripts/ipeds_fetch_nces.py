@@ -18,7 +18,7 @@ import urllib.request
 import zipfile
 from collections import Counter, defaultdict
 
-from fetch_ipeds_national import CIP, AWARD
+from ipeds_fetch import CIP, AWARD
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)

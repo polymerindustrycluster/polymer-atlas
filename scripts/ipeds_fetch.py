@@ -93,12 +93,17 @@ def get(url, tries=4, quiet=False):
 
 
 def paged(url):
-    """Follow the API's `next` links. Returns every result row across all pages."""
+    """Follow the API's `next` links. Returns every result row across all pages, or None when the FIRST page fails
+    (the caller decides whether that is the end of the series). A failure on a later page aborts: a partial result
+    must never overwrite the raw file (codex, #388)."""
     out, seen = [], 0
     while url:
         d = get(url)
         if not d:
-            break
+            if seen:
+                raise SystemExit(f"refusing to write: page {seen + 1} of {url} failed; the raw file is unchanged")
+            return None
+
         out.extend(d.get("results", []))
         url = d.get("next")
         seen += 1
@@ -133,7 +138,7 @@ def main():
     rows, per_year = [], {}
     year = FIRST_YEAR
     while True:
-        got_year = 0
+        got_year, failed = 0, []
         for cip, (title, group) in CIP.items():
             if cip in NEW_IN_CIP2010 and year < 2010:
                 continue
@@ -141,7 +146,10 @@ def main():
                    f"&race=99&sex=99")
             if year >= 2000:               # the field does not exist before 2000
                 url += "&majornum=1"
-            for r in paged(url):
+            page = paged(url)
+            if page is None:
+                failed.append(cip); continue
+            for r in page:
                 aw = r.get("awards_6digit")
                 rows.append({
                     "year": year,
@@ -156,6 +164,8 @@ def main():
                 })
                 got_year += 1
         per_year[year] = got_year
+        if failed and (got_year or year <= 2020):  # one CIP missing from a served year would pass every year check
+            raise SystemExit(f"refusing to write: {year} CIP {failed} failed while the year is served; raw file unchanged")
         if got_year:
             last = year
             print(f"  {year}  {got_year:5d} rows")
@@ -172,7 +182,10 @@ def main():
     directory = {}
     for i in range(0, len(insts), 300):
         chunk = ",".join(map(str, insts[i:i + 300]))
-        for r in paged(f"{BASE}/directory/2023/?unitid={chunk}"):
+        page = paged(f"{BASE}/directory/2023/?unitid={chunk}")
+        if page is None:
+            raise SystemExit("refusing to write: a directory request failed; raw file unchanged")
+        for r in page:
             directory[r["unitid"]] = {
                 "name": r.get("inst_name"), "state": r.get("state_abbr"),
                 "city": r.get("city"), "sector": r.get("sector"),
