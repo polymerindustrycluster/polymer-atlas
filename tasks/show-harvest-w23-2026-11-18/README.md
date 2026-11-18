@@ -101,6 +101,13 @@ from an evidence packet: the org record and a page excerpt for every row. Both r
   requires each decision's show to be a harvested show. `negative_controls.py`: 27 of 27 fail `check.py`. `check.py`
   states its limit: without the staging harvest it checks the committed rows against the build's rules, and the
   build, which reads the banked pages, is the provenance guarantee. Data unchanged.
+- **Fifth confirmation:** agy CONFIRM. Codex REFUTE with two offline-checkable gaps in `check.py`: it skipped the
+  build's ambiguity rule (a name held by two organizations, such as "ACH Foam Technologies", passed), and it looked
+  for excluded lists only in `evidence_source_url`, not in `sources`. Owner's choice (2026-11-18): fix both, then a
+  codex-only confirmation of that change. Applied: `check.py` uses the build's own `org_index` and requires the
+  listed name's key to be held by exactly the row's organization; `sources` must cite the row's
+  `evidence_source_url`. `negative_controls.py` now requires each control to fail with its expected message (some
+  had been failing for an unrelated reason) and plants rows that are otherwise valid: 30 of 30. Data unchanged.
 - **Still held (6):** Blueshift and Cambium (codex: same, citing their legal pages; agy: unsure), Alpek Polyester,
   3A Composites Core Materials, Airtech Advanced Materials Group, Brighton Science (both unsure or split).
 - **Split, kept (2):** agy would also drop "Atomic Industries" and "Fiber Dynamics" for lack of profile text. Codex

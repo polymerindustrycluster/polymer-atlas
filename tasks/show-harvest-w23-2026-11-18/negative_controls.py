@@ -1,7 +1,13 @@
 """Negative controls for this pass's review_decisions.csv loader (decisions.py) and check.py: every counterexample the
-cross-family review of PR #384 raised. Each case mutates a file, runs check.py, expects it to fail, then restores the
-file's original bytes. Exit 0 = every control failed check.py as required.
-    python3 tasks/show-harvest-w23-2026-11-18/negative_controls.py      (from the repo root)"""
+cross-family review of PR #384 raised. Each case mutates a file, runs check.py, and passes only if check.py fails
+WITH THE EXPECTED MESSAGE (a failure for some other reason proves nothing); then the file's original bytes are
+restored. Planted rows are otherwise valid (their source URL, show key and event agree), so only the rule under test
+can catch them. Exit 0 = every control failed as required.
+    python3 tasks/show-harvest-w23-2026-11-18/negative_controls.py      (from the repo root)
+
+Not reachable here: the loader's "both held and accepted" rule (no real org has a legal name that is another org's
+trade name at these events, so any such pair first fails "hold: listed name is not this org's legal name") and
+build.py's "show_key is not a harvested show" (needs the staging harvest; check.py loads without it)."""
 import csv, io, subprocess, sys
 from pathlib import Path
 
@@ -11,74 +17,94 @@ orig = {p: p.read_bytes() for p in (DEC, PK, TAB)}
 dec_lines = orig[DEC].decode("utf-8").split("\n")  # header + 7 rows + trailing ""
 baystar_npe = next(l for l in dec_lines if l.startswith("accept,npe-the-plastics-show"))
 trelleborg = next(l for l in dec_lines if ",Trelleborg," in l)
+ok = []
 
 
-def run(label, files):
+def run(label, files, expect):
     for p, b in files.items():
         p.write_bytes(b)
     r = subprocess.run([sys.executable, str(T / "check.py")], capture_output=True, text=True)
     for p, b in orig.items():
         p.write_bytes(b)
-    last = (r.stderr or r.stdout).strip().splitlines()[-1][:150]
-    print(("PASS " if r.returncode else "MISS ") + label, "|", last)
-    return r.returncode != 0
+    out = r.stdout + r.stderr
+    good = r.returncode != 0 and expect in out
+    print(("PASS " if good else "MISS ") + label, "| expected:", expect, "|", out.strip().splitlines()[-1][:120])
+    ok.append(good)
 
 
 def dec(lines):
     return {DEC: "\n".join(lines).encode("utf-8")}
 
 
-ok = []
-# loader cases (both reviewers)
-i = dec_lines.index(baystar_npe)
-ok.append(run("bogus row before a valid duplicate", dec(dec_lines[:i] + [baystar_npe.replace("accept,", "bogus,", 1)] + dec_lines[i:])))
-ok.append(run("extra field before a valid duplicate", dec(dec_lines[:i] + [baystar_npe + ",extra"] + dec_lines[i:])))
-ok.append(run("hold then accept, same key", dec(dec_lines[:i] + [baystar_npe.replace("accept,", "hold,", 1)] + dec_lines[i:])))
-ok.append(run("exact duplicate row", dec(dec_lines[:i] + [baystar_npe] + dec_lines[i:])))
-ok.append(run("empty org_id", dec([l.replace(",ORG-002944,", ",,") for l in dec_lines])))
-ok.append(run("empty reason on an accept", dec([l if l != baystar_npe else l.rsplit(",", 1)[0].rsplit(',"', 1)[0] + ',' for l in dec_lines])))
-ok.append(run("event_id not the show's series", dec([l.replace(",EVT-000069,exhibitor,2027,Trelleborg", ",EVT-999999,exhibitor,2027,Trelleborg") for l in dec_lines])))
-ok.append(run("accept with wrong event_id", dec([l if l != baystar_npe else l.replace(",EVT-000001,", ",EVT-999999,") for l in dec_lines])))
-ok.append(run("hold names another org (Trelleborg -> ORG-003071)", dec([l if l != trelleborg else l.replace("ORG-004243", "ORG-003071") for l in dec_lines])))
-ok.append(run("unknown org_id", dec([l if l != trelleborg else l.replace("ORG-004243", "ORG-999999") for l in dec_lines])))
-ok.append(run("bad year", dec([l if l != trelleborg else l.replace(",2027,Trelleborg", ",27,Trelleborg") for l in dec_lines])))
-ok.append(run("bad role", dec([l if l != trelleborg else l.replace(",exhibitor,2027,Trelleborg", ",attendee,2027,Trelleborg") for l in dec_lines])))
-# agy, third round
-ok.append(run("show_key with a trailing space", dec([l if l != trelleborg else l.replace("exhibition:2027,", "exhibition:2027 ,", 1) for l in dec_lines])))
-ok.append(run("show_key without a year", dec([l if l != trelleborg else l.replace("exhibition:2027,", "exhibition,", 1) for l in dec_lines])))
-ok.append(run("non-ASCII year digits", dec([l if l != trelleborg else l.replace(",2027,Trelleborg", ",٢٠٢٧,Trelleborg") for l in dec_lines])))
-ok.append(run("decision naming an inactive org", dec([l if l != trelleborg else l.replace("ORG-004243", "ORG-002893") for l in dec_lines])))
-ok.append(run("same event, year and name under a second show_key", dec(dec_lines[:i] + [baystar_npe.replace("npe-the-plastics-show:2027", "npe-the-plastics-show:2028", 1)] + dec_lines[i:])))
-# fourth round (codex + agy)
-ok.append(run("a name both held and accepted at one event", dec(dec_lines[:i] + [baystar_npe.replace("accept,", "hold,", 1).replace(",2027,Baystar,ORG-003071,", ",2028,Baystar,ORG-003071,")] + dec_lines[i:])))
+def swap(line, old, new):
+    return dec([l if l != line else l.replace(old, new, 1) for l in dec_lines])
 
-# row cases (check.py)
+
+# --- loader cases (decisions.py, via check.py)
+i = dec_lines.index(baystar_npe)
+before = lambda extra: dec(dec_lines[:i] + [extra] + dec_lines[i:])  # noqa: E731
+run("bogus row before a valid duplicate", before(baystar_npe.replace("accept,", "bogus,", 1)), "decision must be hold or accept")
+run("extra field before a valid duplicate", before(baystar_npe + ",extra"), "needs 8 non-empty fields")
+run("hold before an accept, same key", before(baystar_npe.replace("accept,", "hold,", 1)), "hold: listed name is not this org's legal name")
+run("exact duplicate row", before(baystar_npe), "duplicate key (show_key")
+run("empty org_id", dec([l.replace(",ORG-002944,", ",,") for l in dec_lines]), "needs 8 non-empty fields")
+run("empty reason on an accept", swap(baystar_npe, baystar_npe[baystar_npe.index(',"'):], ","), "needs 8 non-empty fields")
+run("event_id not the show's series", swap(trelleborg, ",EVT-000069,", ",EVT-999999,"), "show_key's series is not event_id")
+run("accept with a wrong event_id", swap(baystar_npe, ",EVT-000001,", ",EVT-999999,"), "show_key's series is not event_id")
+run("hold names another org", swap(trelleborg, "ORG-004243", "ORG-003071"), "hold: listed name is not this org's legal name")
+run("unknown org_id", swap(trelleborg, "ORG-004243", "ORG-999999"), "org_id is not an active/unknown organization")
+run("decision naming an inactive org", swap(trelleborg, "ORG-004243", "ORG-002893"), "org_id is not an active/unknown organization")
+run("bad year", swap(trelleborg, ",2027,Trelleborg", ",27,Trelleborg"), "edition_year must be 4 ASCII digits")
+run("non-ASCII year digits", swap(trelleborg, ",2027,Trelleborg", ",٢٠٢٧,Trelleborg"), "edition_year must be 4 ASCII digits")
+run("bad role", swap(trelleborg, ",exhibitor,", ",attendee,"), "role must be exhibitor, sponsor or speaker")
+run("show_key with a trailing space", swap(trelleborg, "exhibition:2027,", "exhibition:2027 ,"), "without surrounding spaces")
+run("show_key without a year", swap(trelleborg, "exhibition:2027,", "exhibition,"), "show_key must be <slug>:<4 digits>")
+run("same event, year and name under a second show_key",
+    before(baystar_npe.replace("npe-the-plastics-show:2027", "npe-the-plastics-show:2028", 1)), "duplicate key (event_id")
+
+# --- row cases (check.py). Each planted row is valid except for the defect under test.
 rows = list(csv.DictReader(io.StringIO(orig[PK].decode("utf-8"))))
 fields = list(rows[0])
-def plant(label, **kw):
-    extra = dict(rows[0], participation_id="EVP-999999", **kw)
+SHOW = {"EVT-000001": "npe-the-plastics-show:2027", "EVT-000069": "ppxxiii-plastic-pipes-conference-and-exhibition:2027",
+        "EVT-000035": "sampe-conference-and-exhibition:2027", "EVT-000047": "fakuma:2027",
+        "EVT-000017": "spe-annual-blow-molding-conference-abc:2027"}
+URL = {r["event_id"]: r["evidence_source_url"] for r in rows}
+LEGAL = "Exhibitor name matched to the org by exact normalized legal name; "
+TRADE = "Exhibitor name matched a trade name, adjudicated the same entity by cross-family review: test; "
+
+
+def plant(label, expect, event, year, org, listed, show=None, prefix=LEGAL, url=None, cite=None):
+    url = url or URL[event]
+    extra = dict(rows[0], participation_id="EVP-999999", event_id=event, edition_year=year, org_id=org,
+                 evidence_source_url=url, sources=f'{cite or url} (read 2026-11-09; listed as "{listed}")',
+                 notes=f"{prefix}list banked in staging (harvest-2026-11, {show or SHOW[event]}).")
     b = io.StringIO(); csv.DictWriter(b, fieldnames=fields, lineterminator="\n").writerow(extra)
-    return run(label, {PK: orig[PK] + b.getvalue().encode(), TAB: orig[TAB] + b.getvalue().encode()})
-src = lambda n: f'x (read 2026-11-09; listed as "{n}")'
-ok.append(plant("held Trelleborg listed as 'Trelleborg Corp'", event_id="EVT-000069", edition_year="2027", org_id="ORG-004243", sources=src("Trelleborg Corp")))
-ok.append(plant("held Aaron listed as 'Aaron Industries Inc.'", event_id="EVT-000001", edition_year="2027", org_id="ORG-004008", sources=src("Aaron Industries Inc.")))
-ok.append(plant("Blueshift with the phrase only", event_id="EVT-000035", edition_year="2027", org_id="ORG-003852", sources=src("Blueshift"),
-                notes="Exhibitor name NOT adjudicated the same entity by cross-family review; remains held."))
-ok.append(plant("Baystar in the wrong year", event_id="EVT-000001", edition_year="2024", org_id="ORG-003071", sources=src("Baystar"),
-                notes="matched a trade name, adjudicated the same entity by cross-family review"))
-ok.append(plant("Baystar under a show the decision does not name", event_id="EVT-000001", edition_year="2027", org_id="ORG-003071",
-                sources=src("Baystar"), notes="matched a trade name, adjudicated the same entity by cross-family review; "
-                "list banked in staging (harvest-2026-11, npe-the-plastics-show:2028)."))
-pp, npe = "ppxxiii-plastic-pipes-conference-and-exhibition:2027", "npe-the-plastics-show:2027"
-note = lambda show: f"Exhibitor name matched to the org by exact normalized legal name; list banked in staging (harvest-2026-11, {show})."  # noqa: E731
-ok.append(plant("held Trelleborg under NPE's event with PP XXIII's show in its notes (codex)", event_id="EVT-000001",
-                edition_year="2027", org_id="ORG-004243", evidence_source_url="https://ppxxiii.com/map-of-exhibition/",
-                sources=src("Trelleborg"), notes=note(pp)))
-ok.append(plant("held Aaron Industries in another year (agy)", event_id="EVT-000001", edition_year="2026",
-                org_id="ORG-004008", sources=src("Aaron Industries, Inc."), notes=note(npe)))
-ok.append(plant("notes with a malformed show slug (agy)", event_id="EVT-000001", edition_year="2027",
-                org_id="ORG-003780", sources=src("ADG Solutions"), notes=note("---:2027")))
-ok.append(plant("legal-name row whose notes show is another event's", event_id="EVT-000017", edition_year="2026",
-                org_id="ORG-003780", sources=src("ADG Solutions"), notes=note(npe)))
-print(f"{sum(ok)} of {len(ok)} negative controls fail check.py as required")
+    run(label, {PK: orig[PK] + b.getvalue().encode(), TAB: orig[TAB] + b.getvalue().encode()}, expect)
+
+
+HELD = "held by review_decisions.csv"
+plant("held Trelleborg listed as 'Trelleborg Corp'", HELD, "EVT-000069", "2027", "ORG-004243", "Trelleborg Corp")
+plant("held Aaron listed as 'Aaron Industries Inc.'", HELD, "EVT-000001", "2027", "ORG-004008", "Aaron Industries Inc.")
+plant("held Aaron Industries in another year (agy)", HELD, "EVT-000001", "2026", "ORG-004008", "Aaron Industries, Inc.")
+plant("held Trelleborg at PP XXIII under another show key", HELD, "EVT-000069", "2027", "ORG-004243", "Trelleborg",
+      show="ppxxiii-plastic-pipes-conference-and-exhibition:2028")
+plant("Blueshift with the adjudication phrase but no accept", "Blueshift Materials, Inc.", "EVT-000035", "2027",
+      "ORG-003852", "Blueshift", prefix="Exhibitor name NOT adjudicated the same entity by cross-family review; ")
+plant("Baystar in the wrong year", "Bayport Polymers LLC", "EVT-000001", "2024", "ORG-003071", "Baystar", prefix=TRADE)
+plant("Baystar under a show the accept does not name", "Bayport Polymers LLC", "EVT-000001", "2027", "ORG-003071",
+      "Baystar", show="npe-the-plastics-show:2028", prefix=TRADE)
+plant("held Trelleborg under NPE's event with PP XXIII's show in its notes (codex)", "is not a series of EVT-000001",
+      "EVT-000001", "2027", "ORG-004243", "Trelleborg", show=SHOW["EVT-000069"])
+plant("notes with a malformed show slug (agy)", "notes lack the staging show key", "EVT-000001", "2027", "ORG-003780",
+      "ADG Solutions", show="---:2027")
+plant("legal-name row whose notes show is another event's", "is not a series of EVT-000017", "EVT-000017", "2026",
+      "ORG-003780", "ADG Solutions", show=SHOW["EVT-000001"])
+plant("ambiguous name key: ACH Foam Technologies, two orgs (codex)", "listed name's key is held by", "EVT-000001",
+      "2027", "ORG-004921", "ACH Foam Technologies")
+plant("sources cites an excluded list, evidence_source_url does not (codex)", "sources does not cite evidence_source_url",
+      "EVT-000001", "2027", "ORG-003780", "ADG Solutions",
+      cite="https://www.blowmoldingdivision.org/corporate-education-sponsors")
+plant("both URL fields cite an excluded list", "excluded list", "EVT-000017", "2026", "ORG-003780", "ADG Solutions",
+      url="https://www.blowmoldingdivision.org/corporate-education-sponsors")
+print(f"{sum(ok)} of {len(ok)} negative controls fail check.py with the expected message")
 sys.exit(0 if all(ok) else 1)
