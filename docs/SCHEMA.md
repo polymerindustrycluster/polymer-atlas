@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.13.2 — 2026-11-16 (§4.5 permits blank ZIP fills from unique Exact Census batch matches as reference address normalization — owner ruling 2026-11-16).
+**Version:** v1.13.3 — 2026-11-18 (§1 R13 gains a fourth employee-band source: SBA PPP historical job counts, blank bands only, under the owner ruling of 2026-11-16, "Strict matches"; recorded 2026-11-18).
+Previous: v1.13.2 — 2026-11-16 (§4.5 permits blank ZIP fills from unique Exact Census batch matches as reference address normalization — owner ruling 2026-11-16).
 Previous: v1.13.1 — 2026-11-12 (§4.21 `identifier_type` enum gains `GOOGLE_SCHOLAR`, `WOS_RESEARCHER_ID`, `GITHUB` under strict per-type mint rules — owner rulings 2026-11-12; no rows minted by the revision itself).
 Previous: v1.13 — 2026-11-12 (academic-passes battery, owner rulings 2026-11-12: §3.1 gains `dyeing_finishing` and `fiber_formation` (S2); §3.5 gains `liquid_crystals` (S1); §4.11 `scale_band` conversion rule (S3); §4.13 `tier_effect` gains `supports_U` (S4); §4.21 ORCID name-match clarification for the given-names record shape (S5); §4.9 people field set gains `lab_url` (S6)).
 Previous: v1.12 — 2026-11-06 (events crosswalk `pic_events_slug` and participation role `attendee`, §4.12; owner decisions 2026-11-06 B-CROSSWALK and attendee role). Prior: v1.11.1 — 2026-11-06 (§4.9: "Deputy Group Leader" is not folded to `group_leader`, owner ruling 2026-11-06). Prior: v1.11 — 2026-11-05 (newsroom, newsroom feed and LinkedIn organization columns; §4.22 evidence archive links — owner battery 2026-11-04 B-NEWS, B-LINKEDIN, B-ARCHIVE). Prior: v1.10 — 2026-11-04 (people join the §4.13 evidence classes; §4.21 person identifier link table carries ORCID — owner ruling 2026-11-04). Prior: v1.9.1 — 2026-11-03 (owner battery B-VOC: §3.1/§3.2 vocabulary and §4.5 site other-note columns). Prior: v1.9 — 2026-11-03 (equipment layer §3.7/§4.19 and people engagement §4.20 — owner ruling 2026-11-03). Prior: v1.8.2 — 2026-11-02 (`senior_lecturer` joins the §4.9 role enum — owner ruling 2026-11-02, applied in integration pass 46). Prior: v1.8.1 — 2026-11-02 (`IPEDS_UNITID` joins the §4.8 registry enum — owner ruling 2026-11-02, applied in integration pass 44). Prior: v1.8 — 2026-11-02 (evidence sharding — §4.13's table is partitioned into `data/evidence_*.csv` files mirroring the record shards; owner ruling 2026-11-02, applied in integration pass 43). Prior: v1.7.7 — 2026-11-01 (battery addendum R10–R13: optional `site_id` on registry links for facility-grain IDs, the employer `EIN` registry value, the edition-less certification note rule, and site employee-band source precedence — see "Owner rulings — 2026-11-01 addendum" in §1). Prior: v1.7.6 — 2026-11-01 (owner battery 2026-11-01 micro-revision: vocabulary additions in §3.1–§3.4 and §4.5, the CRM-in-public-rows and certification-currency rules, the confidence-scale and Form 5500 band rulings — see "Owner rulings — 2026-11-01" in §1 and the revision history). Prior: v1.7.5 — 2026-10-31 (Gate A rank line +
@@ -415,6 +416,12 @@ R11. **No data row is changed by this revision.**
   or with an existing in-vocabulary band, the row goes to review and is not
   applied automatically. The band is always stored with
   `employee_count_source_date` and never as a precise headcount (§4.4).
+
+  **[v1.13.3]** 4. SBA PPP loan job counts (owner ruling 2026-11-16, "Strict matches"), filling a
+     **blank** band only (site `employee_band_site` or organization `employee_band_ohio`), labelled with the 2020 or 2021 loan date, never overwriting an existing band, and
+     only for a single-site, Ohio-only organization whose borrower name, street and city all match. A
+     name-and-city match, and every other use of the PPP data, stays a lead. Applied in PR #348;
+     recorded in `tasks/owner-rulings-2026-11-18/README.md`.
 
 ### Owner rulings — 2026-11-03 (equipment and availability) **[v1.9]**
 
@@ -3071,3 +3078,6 @@ unchanged.
   carry the new role. No participation row is added or changed.
 
 - **v1.13.2 — 2026-11-16 (owner ruling in session, GEO-ZIP).** §4.5 permits a ZIP from a unique Census batch `Match, Exact` result to fill a blank site `zip` as reference address normalization, with the retained response as provenance and no separate evidence row. Existing ZIPs are never overwritten.
+
+- **v1.13.3 — 2026-11-18 (records the owner ruling of 2026-11-16, "Strict matches").** §1 R13 gains SBA PPP historical job counts as a fourth employee-band source: blank bands only, dated to the loan, single-site Ohio-only organizations with an exact borrower name, street and city match. The ruling was applied in PR #348 before this record. No data row is changed by this revision.
+

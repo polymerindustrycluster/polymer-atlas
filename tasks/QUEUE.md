@@ -521,14 +521,32 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [x] `done 2026-11-17` #364 Archive top-up 2: +2,188 archive_links rows from 711 Wayback snapshots (716 of 1,251 attempted PIC-18 source URLs yielded one); 249 frame URLs unfinished at the deadline.
 - [x] `done 2026-11-17` #365 CAP2A capabilities, first half: 14 site rows tagged, 40 evidence rows, 35 capability rows from 51 term decisions; 10 terms on 7 sites held because the cell was not blank; Flex SITE-000909 (4+1 terms) and Neff-Perkins SITE-000490 (7 terms) withdrawn, 12 evidence and 10 capability IDs retired. The PR title still reads 15 sites / 45 rows.
 - [x] `done 2026-11-17` #366 QUEUE: student-opportunities question parked (docs only, 0 data rows).
+- [x] `done 2026-11-17` #367 PIC-18 discovery pass 2: 72 held leads adjudicated, 0 data rows (replaces #362, closed after the lead names were stripped).
+- [x] `done 2026-11-17` #368 QUEUE resync to merged work (docs only).
+- [x] `done 2026-11-17` #369 STREETNOTES: 51 PIC-18 site street addresses from site notes, 51 evidence rows.
+- [x] `done 2026-11-17` #370 PIC-18 faculty completeness (CWRU, Kent State, YSU, Walsh, Cleveland State, NASA Glenn): 3 people, 6 evidence rows.
+- [x] `done 2026-11-17` #371 PIC-18 faculty completeness (University of Akron): 1 person, 2 evidence rows; 2 identifier-URL holds and 13 teaching-track holds.
+- [x] `done 2026-11-17` #372 Blind audit 11 (0 data rows): 118 agree, 1 field error, 1 creation error; design-weighted error 1.8% (Wilson 95% 0.5%–6.4%).
+- [x] `done 2026-11-17` #373 tier1 re-derivation: 27 Ohio organizations gain `tri_reporter`.
+- [x] `done 2026-11-17` #374 README inventory refresh (docs only).
+
+### Wave W18 (2026-11-18)
+
+- [ ] `claimed:claude-code 2026-11-18` Record the owner rulings of 2026-11-18 and the PPP ruling (SCHEMA v1.13.3) — `tasks/owner-rulings-2026-11-18/`.
+- [ ] `claimed:claude-code 2026-11-18` Organization-level `processes` canary: 10 PIC-18 organizations with an unknown process, filled only from corporate claims on stored own-site pages (SCHEMA §4.4 `processes` row: "unless Parent claims it corporately").
+- [ ] `claimed:claude-code 2026-11-18` `scripts/integrate/mergepr.sh` gains `MERGE_MODE=squash`, keeping `--match-head-commit`.
+- [ ] `open` People identifier URLs (owner items 1 and 1b): 18 `?u=` and 11 `/~` people rows, plus 8 evidence_people rows, remediated per `tasks/owner-rulings-2026-11-18/README.md`.
+- [ ] `open` Blind audit 11 corrections: A11-047 ProVia `newsroom_feed_url`; A11-113 retire UEI link SJZCEMGNC9D1 on ORG-000889.
+- [ ] `open` Re-verify Pedro Cortes (PERSON-001142): UTEP on record, Youngstown State in the 2022-23 catalog (owner item 5).
+- [ ] `open` Add Sen Gupta and Akkus from CWRU bulletin lines (roster-grade Gate B, owner item 3); add West when a current page states his research.
 
 ### Follow-ups surfaced in W16 (not commitments)
 
 - [ ] `open` Flex Technologies' own page names Mt. Eaton and Baltic, Ohio plants that the Atlas does not hold — source PR #365.
 - [ ] `open` A Midvale `pvc` row could come from the "We specialize in PVC extrusion" line — source PR #365.
 - [ ] `open` Inter-Ion (ORG-001681): its stored markets pages carry narrative sentences that could replace the withdrawn tab-label `markets_served` values — source PR #360.
-- [ ] `open` **OWNER:** may held capability terms be appended to non-blank processes/materials cells? 10 terms on 7 sites (PR #365), plus SITE-001986 (PR #361).
-- [ ] `open` PIC-18 discovery pass 2 (72 held leads, zero data rows): PR #362 was closed on 2026-11-17 after the lead names were stripped and replaced by open PR #367 (a fresh commit, so the names stay out of main history); the item stays open until #367 merges.
+- [ ] `open` Append the 10 held terms on 7 sites (PR #365) and SITE-001986's verified term (PR #361) to their non-blank cells: the CAP2A terms by controller decision (2026-11-17); SITE-001986 by owner ruling (2026-11-18, item 8, the same union rule).
+- [x] `done 2026-11-17` PIC-18 discovery pass 2 (72 held leads, zero data rows): PR #362 was closed after the lead names were stripped; #367 (a fresh commit) merged.
 
 ### Parked by the owner (not scheduled)
 
