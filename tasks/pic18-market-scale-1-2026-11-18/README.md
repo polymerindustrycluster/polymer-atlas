@@ -61,7 +61,7 @@ Classes: `no_market_claim` no customer industry or product market named; `group_
 ## Writes (rule 13) and outcome check
 
 - Only `markets_served` changes, on 25 organization rows, each blank at base: `data/organizations_OH.csv`, `data/organizations_NC.csv`, `data/organizations_TX.csv`. 45 evidence rows appended to the matching `evidence_organizations_*.csv`, IDs EVD-396600 to EVD-396645 of the block 396600-396749 (45 IDs used; EVD-396606 is retired, see the review rounds), pinned in `selection.tsv` and allocated with `scripts/shard_io.py` `append_sorted`. `check.py` compares every data file with base: nothing else changes.
-- Outcome: `python3 S/harness/pic18_unknown.py "$PWD" <ref>` (unit: PIC-18 organization rows, 794). At merge-base `0720cc06`: `mkt_unknown=379`. At HEAD: `mkt_unknown=357`. **It fell by exactly 22, the number of organizations applied.** `proc_unknown` and `band_unknown` unchanged.
+- Outcome: `python3 S/harness/pic18_unknown.py "$PWD" <ref>` (unit: PIC-18 organization rows, 794). At merge-base `163f6c25`: `mkt_unknown=379`. At HEAD: `mkt_unknown=354`. **It fell by exactly 25, the number of organizations applied.** `proc_unknown` and `band_unknown` unchanged.
 
 ## Live fetches (rule 14)
 
