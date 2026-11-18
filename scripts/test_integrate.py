@@ -109,12 +109,13 @@ class MergeModeTests(unittest.TestCase):
             for tool in ('git', 'gh'):
                 (root / tool).write_text(f'#!/bin/bash\necho {tool} "$*" >> "{log}"\n')
                 (root / tool).chmod(0o755)
-            env = {**os.environ, 'PATH': f"{root}:{os.environ['PATH']}", 'MERGE_MODE': 'rebase'}
-            r = subprocess.run(['bash', str(TOOLS.resolve() / 'mergepr.sh'), '1', 'a' * 40, 'b' * 40],
-                               env=env, capture_output=True, text=True)
-            self.assertEqual(r.returncode, 2, r.stderr)
-            self.assertIn('MERGE_MODE must be merge or squash', r.stderr)
-            self.assertFalse(log.exists(), 'no git or gh call may happen before the mode is checked')
+            for mode in ('rebase', ''):  # an explicitly empty mode must not fall back to merge
+                env = {**os.environ, 'PATH': f"{root}:{os.environ['PATH']}", 'MERGE_MODE': mode}
+                r = subprocess.run(['bash', str(TOOLS.resolve() / 'mergepr.sh'), '1', 'a' * 40, 'b' * 40],
+                                   env=env, capture_output=True, text=True)
+                self.assertEqual(r.returncode, 2, f'{mode!r}: {r.stderr}')
+                self.assertIn('MERGE_MODE must be merge or squash', r.stderr)
+                self.assertFalse(log.exists(), 'no git or gh call may happen before the mode is checked')
 
     def test_both_modes_keep_the_approved_head_check(self):
         text = (TOOLS / 'mergepr.sh').read_text()
