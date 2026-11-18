@@ -49,8 +49,8 @@ the gates alone.
 |-|-|
 | Tagged (section-3 terms applied) | 7 |
 | Capability rows only | 2 more |
-| Held, with a reason and settling fact (`verdicts.csv`) | the rest of the 37 the lanes decided |
-| Nothing accepted, or no readable page | 63 |
+| Lane-decided but held after the gates and reviews (each with a reason and settling fact in `verdicts.csv`) | 28 |
+| Nothing accepted by the lanes (63), including the 10 with no readable page | 63 |
 
 Yield is 9 of 100 sites, close to the PIC-18 corpus lane's 10 of 110. Most single-site companies' own pages do not
 state their processes in a form that survives both reviews.
