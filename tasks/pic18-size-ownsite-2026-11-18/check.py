@@ -1,11 +1,17 @@
 """Checker: recomputes every count, verifies each fill against its stored page, and proves it fails on injected defects."""
-import copy,csv,hashlib,io,json,re,subprocess,sys
+import copy,csv,hashlib,io,json,re,subprocess,sys,tempfile
+from unittest.mock import patch
 from collections import Counter
 from pathlib import Path
 from build import *
+import build as B
 
 SCHEMA_BANDS=[(1,9,'1-9'),(10,49,'10-49'),(50,99,'50-99'),(100,249,'100-249'),(250,499,'250-499'),(500,999,'500-999'),(1000,4999,'1000-4999'),(5000,10**9,'5000+')]  # SCHEMA §4.4, independent of build.band
 def schema_band(n):return next(b for lo,hi,b in SCHEMA_BANDS if lo<=n<=hi)
+def role_ok(n,quote):
+ """The number must be the headcount itself (employ/staff of/team of N, or N employees/people/associates), not 'two shifts'."""
+ q=re.sub(r'(?<=\d),(?=\d{3})','',quote)
+ return bool(re.search(rf'(?:employ\w*|staff of|team of|organization of)\s+(?:over |about |nearly |just over |approximately |more than )?~?{n}\b',q) or re.search(rf'\b{n}\+?\s+(?:full[- ]time\s+)?(?:employees|people|associates|team members)',q))
 def norm(t):return re.sub(r'\s+',' ',t)
 def git(*a):return subprocess.check_output(['git',*a],cwd=ROOT,text=True)
 def at(rev,path):return list(csv.DictReader(io.StringIO(git('show',f'{rev}:{path}'))))
@@ -31,6 +37,7 @@ def check_packet(fills,evs,verdicts,frame,orgs,sites):
   if v['disposition']=='applied':
    assert v['ohio_only']=='true','applied verdict on a non-Ohio-only organization'
    n=int(v['stated_count']);assert str(n) in [x.replace(',','') for x in re.findall(r'\d[\d,]*',v['quote'])],'stated count not in the quote'
+   assert role_ok(n,v['quote']),'stated count is not the headcount in the quote (wrong role): '+v['org_id']
    assert schema_band(n)==v['band'],'band does not contain the quoted count'
  applied={v['org_id']:v for v in verdicts if v['disposition']=='applied'}
  assert {f['record_id'] for f in fills}==set(applied) and len(fills)==len(applied),'fills differ from applied verdicts'
@@ -69,6 +76,40 @@ def check_tree(base,fills,evs):
   assert ne==sorted(be+[e for e in evs if e['record_id'] in mine],key=lambda e:e['evidence_id']),'evidence append mismatch'
  return 'applied'
 
+def builder_faults(base):
+ """Run the real apply() in a temp tree seeded from the base shards, with a truncated input and a failure between writes."""
+ names=['organizations_OH.csv','sites_OH.csv','evidence_organizations_OH.csv'];keep=(B.ROOT,B.D,B.os.replace)
+ for case in ('truncated input shard','failure between shard writes'):
+  with tempfile.TemporaryDirectory() as t:
+   B.ROOT=Path(t);B.D=B.ROOT/'packet';B.D.mkdir();(B.D/'verdicts.csv').write_bytes((D/'verdicts.csv').read_bytes());(B.ROOT/'data').mkdir()
+   try:
+    for n in names:(B.ROOT/'data'/n).write_text(git('show',f'{base}:data/{n}'))
+    org=B.ROOT/'data'/'organizations_OH.csv';rows=read(org)
+    if case=='truncated input shard':write(org,rows[:-1],list(rows[0]))
+    before={n:(B.ROOT/'data'/n).read_bytes() for n in names};fills,evs,_=B.plan()
+    if case=='truncated input shard':
+     try:B.apply(fills,evs,base)
+     except AssertionError as ex:print('injected builder defect rejected:',case,'->',str(ex)[:60])
+     else:raise AssertionError('silent pass: '+case)
+     assert before=={n:(B.ROOT/'data'/n).read_bytes() for n in names} and not list((B.ROOT/'data').glob('*.stage')),'truncated input changed data or left a stage file'
+    else:
+     calls=[]
+     def flaky(a,b):
+      calls.append(1)
+      if len(calls)==2:raise OSError('interrupted between writes')
+      return keep[2](a,b)
+     try:
+      with patch.object(B.os,'replace',flaky):B.apply(fills,evs,base)
+     except OSError as ex:print('injected builder defect handled:',case,'->',ex)
+     else:raise AssertionError('silent pass: '+case)
+     now={r['org_id']:r[FIELD] for r in read(org)};ev={e['evidence_id'] for e in read(B.ROOT/'data'/'evidence_organizations_OH.csv')}
+     assert all(now[f['record_id']]=='' for f in fills) and {e['evidence_id'] for e in evs}<=ev,'interrupted apply left a cell without its evidence or evidence missing'
+     assert not list((B.ROOT/'data').glob('*.stage')),'stage files left behind'
+     B.apply(fills,evs,base)  # a retry must succeed
+     now={r['org_id']:r[FIELD] for r in read(org)};assert all(now[f['record_id']]==f['new'] for f in fills),'retry did not fill'
+     print('retry after failure succeeded: cells filled, evidence present')
+   finally:B.ROOT,B.D,B.os.replace=keep
+
 def main():
  base=sys.argv[1] if len(sys.argv)>1 else git('merge-base','HEAD','origin/main').strip()
  fills=read(D/'fills.csv');evs=read(D/'evidence_rows.csv');verdicts=read(D/'verdicts.csv');frame=read(D/'frame.csv');orgs,shard,sites=load()
@@ -97,12 +138,15 @@ def main():
  def sites_not_ohio(F,E,V,O,SI):SI[F[0]['record_id']][0]['state']='PA'
  def nonblank_cell(F,E,V,O,SI):O[F[0]['record_id']][FIELD]='1-9'
  def site_write(F,E,V,O,SI):F[0].update(record_table='sites',field='employee_band_site')
+ def wrong_role(F,E,V,O,SI):
+  v=next(v for v in V if v['org_id']=='ORG-000564');v.update(stated_count='2',band='1-9');F[0].update(new='1-9') if F[0]['record_id']=='ORG-000564' else None;next(f for f in F if f['record_id']=='ORG-000564').update(new='1-9')
  def quote_missing(F,E,V,O,SI):V[0]['quote']='We employ forty people in a building not on this page'
  def frame_no_verdict(F,E,V,O,SI):V.pop(5)
- for n,fn in [('band not containing the count',wrong_band),('band and verdict both moved off the count',wrong_band_both),('write to non-Ohio-only org',non_ohio_only),('write to org with a non-Ohio site',sites_not_ohio),('write to non-blank cell',nonblank_cell),('write to a site row',site_write),('quote not in stored page',quote_missing),('frame ID without a verdict',frame_no_verdict)]:inject(n,fn)
+ for n,fn in [('band not containing the count',wrong_band),('band and verdict both moved off the count',wrong_band_both),('write to non-Ohio-only org',non_ohio_only),('write to org with a non-Ohio site',sites_not_ohio),('write to non-blank cell',nonblank_cell),('write to a site row',site_write),('count with the wrong role (two shifts read as 2 employees)',wrong_role),('quote not in stored page',quote_missing),('frame ID without a verdict',frame_no_verdict)]:inject(n,fn)
+ builder_faults(base)
  if mode=='applied':
   snap={p:p.read_bytes() for p in (ROOT/'data').glob('*OH.csv')}
   subprocess.run([sys.executable,str(D/'build.py'),'--apply'],check=True,stdout=subprocess.DEVNULL)
   assert all(p.read_bytes()==b for p,b in snap.items()),'apply not idempotent'
- print(f'PASS ({mode}): {len(fills)} fills, {len(evs)} evidence rows, 37 frame verdicts, 8 injected defects rejected')
+ print(f'PASS ({mode}): {len(fills)} fills, {len(evs)} evidence rows, 37 frame verdicts, 10 injected defects rejected')
 if __name__=='__main__':main()

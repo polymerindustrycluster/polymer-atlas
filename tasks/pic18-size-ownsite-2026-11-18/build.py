@@ -1,9 +1,9 @@
 """Own-site Ohio size bands for the 20 Ohio-only frame organizations; blank-only, organization rows only.
 Idempotent: plans from verdicts.csv + the current data/, writes fills/evidence packets, --apply edits data/."""
-import argparse,csv,json,sys
+import argparse,csv,json,os,sys
 from collections import Counter
 from pathlib import Path
-D=Path(__file__).resolve().parent;ROOT=D.parents[1];sys.path.insert(0,str(ROOT/'scripts'))
+D=Path(__file__).resolve().parent;ROOT=GITROOT=D.parents[1];sys.path.insert(0,str(ROOT/'scripts'))
 from build_form5500_spine import band_of
 from shard_io import append_sorted
 S=Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas')
@@ -46,22 +46,43 @@ def plan():
   if orgs[f['record_id']][FIELD]==f['new']:assert have.get(e['evidence_id'])==e,'cell already holds this band without this pass\'s evidence row: '+f['record_id']
  return fills,evs,verdicts
 
+def git_base_count(base,path):
+ import subprocess,io
+ return len(list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show',f'{base}:{path}'],cwd=GITROOT,text=True)))))
+
+def apply(fills,evs,base):
+ """Stage every shard as a temp sibling, check each staged row count against its count at base (+ this packet's
+ evidence rows), then replace evidence first and organizations last: a failure leaves no cell without its evidence."""
+ existing={e['evidence_id']:e for p in (ROOT/'data').glob('evidence_organizations_*.csv') for e in read(p)}
+ for e in evs:assert e['evidence_id'] not in existing or existing[e['evidence_id']]==e,'evidence ID collision'
+ staged=[]  # (temp, target) in replace order
+ try:
+  for sh in sorted({f['shard'] for f in fills}):
+   mine={f['record_id']:f for f in fills if f['shard']==sh}
+   org=ROOT/'data'/f'organizations_{sh}.csv';ev=ROOT/'data'/f'evidence_organizations_{sh}.csv'
+   rows=read(org)
+   for r in rows:
+    f=mine.get(r['org_id'])
+    if f:assert r[FIELD] in ('',f['new']),'refuse a non-blank cell';r[FIELD]=f['new']
+   t_org=org.with_name(org.name+'.stage');write(t_org,rows,list(rows[0]))
+   assert len(read(t_org))==git_base_count(base,f'data/{org.name}'),f'{org.name}: staged rows differ from the count at base'
+   t_ev=ev.with_name(ev.name+'.stage');t_ev.write_bytes(ev.read_bytes())
+   append_sorted(t_ev,[e for e in evs if e['record_id'] in mine and e['evidence_id'] not in existing],'evidence_id')
+   assert len(read(t_ev))==git_base_count(base,f'data/{ev.name}')+sum(e['record_id'] in mine for e in evs),f'{ev.name}: staged rows differ from base + packet'
+   staged+= [(t_ev,ev),(t_org,org)]
+  for t,target in staged:os.replace(t,target)
+ finally:
+  for t,_ in staged:
+   if t.exists():t.unlink()
+
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--apply',action='store_true');a=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('--apply',action='store_true');ap.add_argument('--base');a=ap.parse_args()
  fills,evs,verdicts=plan()
  write(D/'fills.csv',fills,list(fills[0]));write(D/'evidence_rows.csv',evs,list(evs[0]))
  c=Counter(v['disposition'] for v in verdicts)
  (D/'counts.json').write_text(json.dumps(dict(frame=len(verdicts),ohio_only=sum(v['ohio_only']=='true' for v in verdicts),dispositions=dict(c),fills=len(fills),evidence_rows=len(evs),fills_by_band=dict(Counter(f['new'] for f in fills))),indent=2,sort_keys=True)+'\n')
  if a.apply:
-  existing={e['evidence_id']:e for p in (ROOT/'data').glob('evidence_organizations_*.csv') for e in read(p)}
-  for e in evs:assert e['evidence_id'] not in existing or existing[e['evidence_id']]==e,'evidence ID collision'
-  for sh in sorted({f['shard'] for f in fills}):
-   target=ROOT/'data'/f'organizations_{sh}.csv';rows=read(target);mine={f['record_id']:f for f in fills if f['shard']==sh}
-   for r in rows:
-    f=mine.get(r['org_id'])
-    if f:assert r[FIELD] in ('',f['new']),'refuse a non-blank cell';r[FIELD]=f['new']
-   write(target,rows,list(rows[0]))
-   ep=ROOT/'data'/f'evidence_organizations_{sh}.csv'
-   append_sorted(ep,[e for e in evs if e['record_id'] in mine and e['evidence_id'] not in existing],'evidence_id')
+  import subprocess
+  apply(fills,evs,a.base or subprocess.check_output(['git','merge-base','HEAD','origin/main'],cwd=GITROOT,text=True).strip())
  print(open(D/'counts.json').read())
 if __name__=='__main__':main()

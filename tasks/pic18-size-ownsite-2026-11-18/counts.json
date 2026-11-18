@@ -1,15 +1,14 @@
 {
   "dispositions": {
-    "applied": 3,
-    "held": 9,
+    "applied": 2,
+    "held": 10,
     "held_lead": 9,
     "no_claim": 16
   },
-  "evidence_rows": 3,
-  "fills": 3,
+  "evidence_rows": 2,
+  "fills": 2,
   "fills_by_band": {
     "10-49": 1,
-    "250-499": 1,
     "50-99": 1
   },
   "frame": 37,
