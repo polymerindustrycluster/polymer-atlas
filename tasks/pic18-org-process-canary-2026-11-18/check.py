@@ -51,8 +51,10 @@ def check_verdicts(verdicts, claims, holds):
     """Every frame ID has exactly one verdict; VERIFIED iff it has claims; a held verdict matches holds.csv."""
     ids = [v["org_id"] for v in verdicts]
     assert sorted(ids) == sorted(build.ORGS), f"verdicts do not cover the frame exactly once: {sorted(set(build.ORGS) ^ set(ids)) or 'duplicate id'}"
+    held = sorted(set(build.ORGS) - {c["org_id"] for c in claims})
+    assert sorted(h["org_id"] for h in holds) == held, "holds.csv must have exactly one row per held org id (missing, extra or duplicate row)"  # list, before any dict
     hd = {h["org_id"]: h for h in holds}
-    assert sorted(hd) == sorted(build.ORGS), "holds.csv does not cover the frame exactly once"
+    assert all(h["reason"].strip() and h["settling_fact"].strip() for h in holds), "a hold has a blank reason or settling fact"
     for v in verdicts:
         o = v["org_id"]; terms = ";".join(sorted(c["term"] for c in claims if c["org_id"] == o))
         assert v["stratum"] == build.STRATUM[o] and v["terms"] == terms, f"{o}: stratum or terms disagree with the frame and claims"
@@ -94,6 +96,10 @@ def selftest(pages):
     fails("held verdict missing", lambda: check_verdicts(ver[:-1], [], hold_rows))
     fails("verdict duplicated", lambda: check_verdicts(ver[:-1] + [ver[0]], [], hold_rows))
     fails("held verdict differs from holds.csv", lambda: check_verdicts([{**ver[0], "settling_fact": "x"}] + ver[1:], [], hold_rows))
+    fails("conflicting duplicate hold row", lambda: check_verdicts(ver, [], [{**hold_rows[-1], "settling_fact": "conflicting entry"}] + hold_rows))
+    blank_v = ver[:-1] + [{**ver[-1], "settling_fact": ""}]; blank_h = hold_rows[:-1] + [{**hold_rows[-1], "settling_fact": ""}]
+    fails("blank settling fact (verdict and hold both empty)", lambda: check_verdicts(blank_v, [], blank_h))
+    fails("hold row missing", lambda: check_verdicts(ver, [], hold_rows[:-1]))
     with tempfile.TemporaryDirectory() as d:  # image bodies are not pages
         g = Path(d) / "a.txt"; g.write_bytes(b"GIF89a\x01\x00"); assert build.is_image(g)
         g.write_bytes(b"\x89PNG\r\n\x1a\n"); assert build.is_image(g)
