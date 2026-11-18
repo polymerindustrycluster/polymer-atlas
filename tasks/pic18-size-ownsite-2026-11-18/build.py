@@ -25,23 +25,28 @@ def load():
   for r in read(p):sites.setdefault(r['org_id'],[]).append(r)
  return orgs,shard,sites
 
-def open_ended_ok(quote,n,lo,hi):
- """An open-ended count ("over/more than/at least N", "N+") settles no band unless an upper bound under the band's top is also stated."""
+NOUN=r'(?:full[- ]time\s+)?(?:employees|people|associates|team members|staff)'
+def count_kind(quote,n):
+ """'exact' or 'closed_range' only: the number must be the employee/people count itself, stated exactly (about/~ allowed)
+ or as a closed range whose two ends fall in one band. Any bound that needs inference ("over", "at most", "fewer than",
+ "N+", "nearly") or a number for another quantity returns None: the statement is held, "no exact count or closed range"."""
  q=re.sub(r'(?<=\d),(?=\d{3})','',quote)
- if not (re.search(rf'(?:over|more than|at least|exceeds)\s+~?{n}\b',q,re.I) or re.search(rf'\b{n}\s*\+',q)):return True
- return any(lo<=n<int(m)<=hi+1 for m in re.findall(r'(?:under|fewer than|less than|up to|no more than|at most)\s+(\d+)',q,re.I))
+ if re.search(rf'(?:over|more than|at least|exceeds|at most|no more than|fewer than|less than|under|up to|nearly|almost)\s+(?:about\s+)?~?{n}\b|\b{n}\s*\+',q,re.I):return None
+ m=re.search(rf'\b{n}\s*(?:-|–|to)\s*(\d+)\s+{NOUN}\b',q,re.I)
+ if m:return 'closed_range' if int(m[1])>=n and band(int(m[1]))==band(n) else None
+ if re.search(rf'(?:employ\w*|staff of|team of|organization of)\s+(?:about\s+|approximately\s+)?~?{n}\b(?!\s*(?:-|–|to)\s*\d)',q,re.I) or re.search(rf'\b{n}\s+{NOUN}\b',q,re.I):return 'exact'
+ return None
 
 def ohio_only(o,ss):return o['hq_state']=='OH' and bool(ss) and all(s['state']=='OH' for s in ss)
 
-def plan():
- orgs,shard,sites=load();verdicts=read(D/'verdicts.csv');fills=[];evs=[];held=[]
+def plan(verdicts=None,check_existing=True):
+ orgs,shard,sites=load();verdicts=verdicts or read(D/'verdicts.csv');fills=[];evs=[];held=[]
  applied=sorted((v for v in verdicts if v['disposition']=='applied'),key=lambda v:v['org_id'])
  for k,v in enumerate(applied):
   oid=v['org_id'];o=orgs[oid]
   assert ohio_only(o,sites.get(oid,[])),f'{oid} is not Ohio-only in the current data'
   new=band(int(v['stated_count']));assert new==v['band'],f'{oid} band {v["band"]} != band of {v["stated_count"]}'
-  lo,hi=next((l,h) for l,h,lab in BANDS if lab==new) if new!='5000+' else (5000,10**9)
-  assert open_ended_ok(v['quote'],int(v['stated_count']),lo,hi),f'{oid}: open-ended count (over/more than/at least/+) with no stated upper bound'
+  assert count_kind(v['quote'],int(v['stated_count'])),f'{oid}: no exact count or closed range'
   assert o[FIELD] in ('',new),f'{oid} already holds a different band {o[FIELD]!r}'
   eid=FIRST_ID+k;assert eid<=LAST_ID
   fills.append(dict(record_table='organizations',record_id=oid,field=FIELD,old='',new=new,stated_count=v['stated_count'],url=v['url'],evidence_id=f'EVD-{eid}',shard=shard[oid]))
@@ -50,7 +55,7 @@ def plan():
    source_class='own_site',source_ref=v['url'],observed_date=v['observed_date'],tier_effect='supports_U' if o['verification_tier']=='U' else 'supports_B',created_by=CREATED_BY,
    notes=f'stored page sha256 {v["raw_sha256"]}; fetched {v["observed_date"]}; observed_date is the stored fetch date; page date: {v['page_date']}; blank-only fill of {FIELD}; no site row written'))
  have={e['evidence_id']:e for p in (ROOT/'data').glob('evidence_organizations_*.csv') for e in read(p)}
- for f,e in zip(fills,evs):
+ for f,e in zip(fills,evs if check_existing else []):
   if orgs[f['record_id']][FIELD]==f['new']:assert have.get(e['evidence_id'])==e,'cell already holds this band without this pass\'s evidence row: '+f['record_id']
  return fills,evs,verdicts
 

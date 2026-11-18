@@ -8,10 +8,6 @@ import build as B
 
 SCHEMA_BANDS=[(1,9,'1-9'),(10,49,'10-49'),(50,99,'50-99'),(100,249,'100-249'),(250,499,'250-499'),(500,999,'500-999'),(1000,4999,'1000-4999'),(5000,10**9,'5000+')]  # SCHEMA §4.4, independent of build.band
 def schema_band(n):return next(b for lo,hi,b in SCHEMA_BANDS if lo<=n<=hi)
-def role_ok(n,quote):
- """The number must be the headcount itself (employ/staff of/team of N, or N employees/people/associates), not 'two shifts'."""
- q=re.sub(r'(?<=\d),(?=\d{3})','',quote)
- return bool(re.search(rf'(?:employ\w*|staff of|team of|organization of)\s+(?:over |about |nearly |just over |approximately |more than )?~?{n}\b',q) or re.search(rf'\b{n}\+?\s+(?:full[- ]time\s+)?(?:employees|people|associates|team members)',q))
 def norm(t):return re.sub(r'\s+',' ',t)
 def git(*a):return subprocess.check_output(['git',*a],cwd=ROOT,text=True)
 def at(rev,path):return list(csv.DictReader(io.StringIO(git('show',f'{rev}:{path}'))))
@@ -37,8 +33,7 @@ def check_packet(fills,evs,verdicts,frame,orgs,sites):
   if v['disposition']=='applied':
    assert v['ohio_only']=='true','applied verdict on a non-Ohio-only organization'
    n=int(v['stated_count']);assert str(n) in [x.replace(',','') for x in re.findall(r'\d[\d,]*',v['quote'])],'stated count not in the quote'
-   lo,hi=next((l,h) for l,h,lab in SCHEMA_BANDS if lab==v['band']);assert open_ended_ok(v['quote'],n,lo,hi),'open-ended count (over/more than/at least/+) with no stated upper bound: '+v['org_id']
-   assert role_ok(n,v['quote']),'stated count is not the headcount in the quote (wrong role): '+v['org_id']
+   assert B.count_kind(v['quote'],n),'no exact count or closed range: '+v['org_id']
    assert schema_band(n)==v['band'],'band does not contain the quoted count'
  applied={v['org_id']:v for v in verdicts if v['disposition']=='applied'}
  assert {f['record_id'] for f in fills}==set(applied) and len(fills)==len(applied),'fills differ from applied verdicts'
@@ -76,6 +71,27 @@ def check_tree(base,fills,evs):
   be=at(base,f'data/evidence_organizations_{sh}.csv');ne=read(ROOT/f'data/evidence_organizations_{sh}.csv')
   assert ne==sorted(be+[e for e in evs if e['record_id'] in mine],key=lambda e:e['evidence_id']),'evidence append mismatch'
  return 'applied'
+
+def count_probes(verdicts,frame,orgs,sites):
+ """Predicate probes, then the GLI promotion: it must fail for the missing exact count only, and pass when that predicate is disabled."""
+ for q,n,want in [('We employ over 340 people and at most 500 people.',340,None),('We employ over 340 people and at most 500 people.',500,None),
+  ('We employ over 340 people and produce fewer than 400 parts per day.',340,None),('We employ over 340 people and produce fewer than 400 parts per day.',400,None),
+  ('We employ at least 60 people.',60,None),('We have 60+ employees.',60,None),('We employ nearly 60 people.',60,None),
+  ('They currently employ about 60 people that process 15,000 tons.',60,'exact'),('We employ ~30 people that work 2 shifts/5 days per week.',30,'exact'),
+  ('We employ ~30 people that work 2 shifts/5 days per week.',2,None),('Our team of 50 to 99 employees',50,'closed_range'),('Our team of 40 to 60 employees',40,None),('about 1,000 people',1000,'exact')]:
+  got=B.count_kind(q,n);assert got==want,f'count_kind probe {q!r} n={n}: got {got}, want {want}'
+ print('count probes: over/at most/fewer-than/at least/N+/nearly and wrong-noun counts all None; exact and closed-range forms accepted')
+ V=copy.deepcopy(verdicts);g=next(v for v in V if v['org_id']=='ORG-000416')
+ assert g['page_date'],'GLI keeps its real page date'
+ g.update(disposition='applied',verdict='VERIFIED',stated_count='340',band='250-499')
+ with patch.object(B,'count_kind',lambda q,n:'exact'):F,E,_=B.plan(V,check_existing=False)  # the full packet GLI would produce
+ assert any(f['record_id']=='ORG-000416' for f in F)
+ try:check_packet(F,E,V,frame,orgs,sites)
+ except AssertionError as ex:
+  assert 'no exact count or closed range' in str(ex) and 'ORG-000416' in str(ex),'rejected for a different reason: '+str(ex);print('injected defect rejected (GLI "over 340" promoted, real page date, own evidence row):',str(ex)[:60])
+ else:raise AssertionError('silent pass: GLI over 340')
+ with patch.object(B,'count_kind',lambda q,n:'exact'):check_packet(F,E,V,frame,orgs,sites)
+ print('with the exact-count predicate disabled the same GLI packet passes: that predicate is the only reason for the rejection')
 
 def builder_faults(base):
  """Run the real apply() in a temp tree seeded from the base shards, with a truncated input and a failure between writes."""
@@ -142,16 +158,13 @@ def main():
  def site_write(F,E,V,O,SI):F[0].update(record_table='sites',field='employee_band_site')
  def wrong_role(F,E,V,O,SI):
   v=next(v for v in V if v['org_id']=='ORG-000564');v.update(stated_count='2',band='1-9');F[0].update(new='1-9') if F[0]['record_id']=='ORG-000564' else None;next(f for f in F if f['record_id']=='ORG-000564').update(new='1-9')
- def open_ended(F,E,V,O,SI):
-  v=next(v for v in V if v['org_id']=='ORG-000416');v.update(disposition='applied',verdict='VERIFIED',stated_count='340',band='250-499')
-  F.append(dict(F[0],record_id='ORG-000416',new='250-499',old='',evidence_id='EVD-396399'));E.append(dict(E[0],record_id='ORG-000416',evidence_id='EVD-396399'))
  def quote_missing(F,E,V,O,SI):V[0]['quote']='We employ forty people in a building not on this page'
  def frame_no_verdict(F,E,V,O,SI):V.pop(5)
- for n,fn in [('band not containing the count',wrong_band),('band and verdict both moved off the count',wrong_band_both),('write to non-Ohio-only org',non_ohio_only),('write to org with a non-Ohio site',sites_not_ohio),('write to non-blank cell',nonblank_cell),('write to a site row',site_write),('count with the wrong role (two shifts read as 2 employees)',wrong_role),('open-ended "over 340" taken as a band (GLI switched back to applied)',open_ended),('quote not in stored page',quote_missing),('frame ID without a verdict',frame_no_verdict)]:inject(n,fn)
- builder_faults(base)
+ for n,fn in [('band not containing the count',wrong_band),('band and verdict both moved off the count',wrong_band_both),('write to non-Ohio-only org',non_ohio_only),('write to org with a non-Ohio site',sites_not_ohio),('write to non-blank cell',nonblank_cell),('write to a site row',site_write),('count with the wrong role (two shifts read as 2 employees)',wrong_role),('quote not in stored page',quote_missing),('frame ID without a verdict',frame_no_verdict)]:inject(n,fn)
+ builder_faults(base);count_probes(verdicts,frame,orgs,sites)
  if mode=='applied':
   snap={p:p.read_bytes() for p in (ROOT/'data').glob('*OH.csv')}
   subprocess.run([sys.executable,str(D/'build.py'),'--apply'],check=True,stdout=subprocess.DEVNULL)
   assert all(p.read_bytes()==b for p,b in snap.items()),'apply not idempotent'
- print(f'PASS ({mode}): {len(fills)} fills, {len(evs)} evidence rows, 37 frame verdicts, 11 injected defects rejected')
+ print(f'PASS ({mode}): {len(fills)} fills, {len(evs)} evidence rows, 37 frame verdicts, 12 injected defects rejected')
 if __name__=='__main__':main()
