@@ -1,10 +1,10 @@
 """Own-site Ohio size bands for the 20 Ohio-only frame organizations; blank-only, organization rows only.
 Idempotent: plans from verdicts.csv + the current data/, writes fills/evidence packets, --apply edits data/."""
-import argparse,csv,json,os,sys
+import argparse,csv,json,os,re,sys
 from collections import Counter
 from pathlib import Path
 D=Path(__file__).resolve().parent;ROOT=GITROOT=D.parents[1];sys.path.insert(0,str(ROOT/'scripts'))
-from build_form5500_spine import band_of
+from build_form5500_spine import band_of,BANDS
 from shard_io import append_sorted
 S=Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas')
 CORPUS=S/'persist/pic18-corpus-2026-11-16'
@@ -25,6 +25,12 @@ def load():
   for r in read(p):sites.setdefault(r['org_id'],[]).append(r)
  return orgs,shard,sites
 
+def open_ended_ok(quote,n,lo,hi):
+ """An open-ended count ("over/more than/at least N", "N+") settles no band unless an upper bound under the band's top is also stated."""
+ q=re.sub(r'(?<=\d),(?=\d{3})','',quote)
+ if not (re.search(rf'(?:over|more than|at least|exceeds)\s+~?{n}\b',q,re.I) or re.search(rf'\b{n}\s*\+',q)):return True
+ return any(lo<=n<int(m)<=hi+1 for m in re.findall(r'(?:under|fewer than|less than|up to|no more than|at most)\s+(\d+)',q,re.I))
+
 def ohio_only(o,ss):return o['hq_state']=='OH' and bool(ss) and all(s['state']=='OH' for s in ss)
 
 def plan():
@@ -34,6 +40,8 @@ def plan():
   oid=v['org_id'];o=orgs[oid]
   assert ohio_only(o,sites.get(oid,[])),f'{oid} is not Ohio-only in the current data'
   new=band(int(v['stated_count']));assert new==v['band'],f'{oid} band {v["band"]} != band of {v["stated_count"]}'
+  lo,hi=next((l,h) for l,h,lab in BANDS if lab==new) if new!='5000+' else (5000,10**9)
+  assert open_ended_ok(v['quote'],int(v['stated_count']),lo,hi),f'{oid}: open-ended count (over/more than/at least/+) with no stated upper bound'
   assert o[FIELD] in ('',new),f'{oid} already holds a different band {o[FIELD]!r}'
   eid=FIRST_ID+k;assert eid<=LAST_ID
   fills.append(dict(record_table='organizations',record_id=oid,field=FIELD,old='',new=new,stated_count=v['stated_count'],url=v['url'],evidence_id=f'EVD-{eid}',shard=shard[oid]))

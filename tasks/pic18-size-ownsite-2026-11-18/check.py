@@ -37,6 +37,7 @@ def check_packet(fills,evs,verdicts,frame,orgs,sites):
   if v['disposition']=='applied':
    assert v['ohio_only']=='true','applied verdict on a non-Ohio-only organization'
    n=int(v['stated_count']);assert str(n) in [x.replace(',','') for x in re.findall(r'\d[\d,]*',v['quote'])],'stated count not in the quote'
+   lo,hi=next((l,h) for l,h,lab in SCHEMA_BANDS if lab==v['band']);assert open_ended_ok(v['quote'],n,lo,hi),'open-ended count (over/more than/at least/+) with no stated upper bound: '+v['org_id']
    assert role_ok(n,v['quote']),'stated count is not the headcount in the quote (wrong role): '+v['org_id']
    assert schema_band(n)==v['band'],'band does not contain the quoted count'
  applied={v['org_id']:v for v in verdicts if v['disposition']=='applied'}
@@ -141,13 +142,16 @@ def main():
  def site_write(F,E,V,O,SI):F[0].update(record_table='sites',field='employee_band_site')
  def wrong_role(F,E,V,O,SI):
   v=next(v for v in V if v['org_id']=='ORG-000564');v.update(stated_count='2',band='1-9');F[0].update(new='1-9') if F[0]['record_id']=='ORG-000564' else None;next(f for f in F if f['record_id']=='ORG-000564').update(new='1-9')
+ def open_ended(F,E,V,O,SI):
+  v=next(v for v in V if v['org_id']=='ORG-000416');v.update(disposition='applied',verdict='VERIFIED',stated_count='340',band='250-499')
+  F.append(dict(F[0],record_id='ORG-000416',new='250-499',old='',evidence_id='EVD-396399'));E.append(dict(E[0],record_id='ORG-000416',evidence_id='EVD-396399'))
  def quote_missing(F,E,V,O,SI):V[0]['quote']='We employ forty people in a building not on this page'
  def frame_no_verdict(F,E,V,O,SI):V.pop(5)
- for n,fn in [('band not containing the count',wrong_band),('band and verdict both moved off the count',wrong_band_both),('write to non-Ohio-only org',non_ohio_only),('write to org with a non-Ohio site',sites_not_ohio),('write to non-blank cell',nonblank_cell),('write to a site row',site_write),('count with the wrong role (two shifts read as 2 employees)',wrong_role),('quote not in stored page',quote_missing),('frame ID without a verdict',frame_no_verdict)]:inject(n,fn)
+ for n,fn in [('band not containing the count',wrong_band),('band and verdict both moved off the count',wrong_band_both),('write to non-Ohio-only org',non_ohio_only),('write to org with a non-Ohio site',sites_not_ohio),('write to non-blank cell',nonblank_cell),('write to a site row',site_write),('count with the wrong role (two shifts read as 2 employees)',wrong_role),('open-ended "over 340" taken as a band (GLI switched back to applied)',open_ended),('quote not in stored page',quote_missing),('frame ID without a verdict',frame_no_verdict)]:inject(n,fn)
  builder_faults(base)
  if mode=='applied':
   snap={p:p.read_bytes() for p in (ROOT/'data').glob('*OH.csv')}
   subprocess.run([sys.executable,str(D/'build.py'),'--apply'],check=True,stdout=subprocess.DEVNULL)
   assert all(p.read_bytes()==b for p,b in snap.items()),'apply not idempotent'
- print(f'PASS ({mode}): {len(fills)} fills, {len(evs)} evidence rows, 37 frame verdicts, 10 injected defects rejected')
+ print(f'PASS ({mode}): {len(fills)} fills, {len(evs)} evidence rows, 37 frame verdicts, 11 injected defects rejected')
 if __name__=='__main__':main()
