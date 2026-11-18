@@ -19,7 +19,7 @@ MKT3 = ROOT / 'tasks/pic18-markets-3-2026-11-16'
 STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist')
 CORPUS, LIVE = STORE / 'pic18-corpus-2026-11-16', STORE / 'pic18-market-scale-2026-11-18'
 SNAPSHOT = STORE / 'pic18-markets-3/manifest.snapshot.csv'
-BASE = 'dd07afc9'  # merge-base this packet was built on; replaying after main changes these shards needs it updated
+BASE = '01414bce'  # merge-base this packet was built on; replaying after main changes these shards needs it updated
 FIRST_ID, LAST_ID = 397300, 397449  # controller decision 2026-11-18: supersedes 396750-396899 (main's maximum is EVD-397103, open PRs use up to 397200)
 BATCH, BATCH_SIZE = 2, 96
 import frame as F  # the pool is recomputed from git at F.FRAME_REF; the canary's 10 are removed
