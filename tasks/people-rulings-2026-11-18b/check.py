@@ -177,13 +177,37 @@ def main():
         else: caught = False
         print(f"inject truncated base (PERSON-000941 absent): {'refused' if caught else 'NOT REFUSED'}")
         if not caught: fails.append("defect not caught: truncated base")
-    def all_nine_removed():  # no frame row survives: the guard must still refuse (old-schema data would otherwise be rewritten)
+    def main_refuses(mod, cut):
+        """Run mod.main() on a disposable old-schema base made of the rows `cut`: (refused before any write, inputs byte-identical, no output file)."""
+        import io, tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as root:
+            d = Path(root) / "data"; d.mkdir()
+            buf = io.StringIO(); w = csv.DictWriter(buf, fieldnames=list(base_people[0]), lineterminator="\n"); w.writeheader(); w.writerows(cut)
+            (d / "people.csv").write_text(buf.getvalue()); (d / "evidence_people.csv").write_text(bev)
+            before = {n: (d / n).read_bytes() for n in ("people.csv", "evidence_people.csv")}
+            mod.REPO, mod.HERE = root, Path(root)
+            try: mod.main()
+            except SystemExit: refused = True
+            else: refused = False
+            return refused, all((d / n).read_bytes() == before[n] for n in before), not any(Path(root, n).exists() for n in ("witness.csv", "manifest.csv"))
+    def all_nine_removed():  # through build.main(): no frame row survives and the old-schema base still must not be rewritten
         cut = [r for r in base_people if r["person_id"] not in build.EXPECTED_FRAME]
-        try: build.guard(cut, [])
-        except SystemExit: caught = True
-        else: caught = False
-        print(f"inject truncated base (all nine frame rows absent): {'refused' if caught else 'NOT REFUSED'}")
-        if not caught: fails.append("defect not caught: all nine frame rows removed")
+        refused, untouched, no_output = main_refuses(build, cut)
+        ok = refused and untouched and no_output
+        print(f"inject truncated base through build.main() (all nine frame rows absent): refused={refused} inputs unchanged={untouched} no witness/manifest file={no_output}: {'OK' if ok else 'NOT REFUSED'}")
+        if not ok: fails.append("defect not caught: all nine frame rows removed (through build.main)")
+        # plant the round-2 bug in memory (guard only when a frame row survives); the same injection must now fail
+        import types
+        src = open(build.__file__).read()
+        old = "    guard(people, frame)  # every path"
+        if old not in src: fails.append("planted-bug self-test: guard call not found in build.py"); return
+        planted = types.ModuleType("build_planted"); planted.__file__ = build.__file__
+        exec(compile(src.replace(old, "    if frame: guard(people, frame)  # every path", 1), build.__file__, "exec"), planted.__dict__)
+        p_refused, p_untouched, p_no_out = main_refuses(planted, cut)
+        detected = not (p_refused and p_untouched and p_no_out)
+        print(f"planted round-2 bug (guard skipped when no frame row survives): refused={p_refused} inputs unchanged={p_untouched} no output file={p_no_out}: {'injection fails as it must' if detected else 'BUG NOT DETECTED'}")
+        if not detected: fails.append("planted round-2 bug was not detected by the all-nine injection")
     truncated_base(); all_nine_removed()
     inject("planned no-evidence row given an evidence row", lambda p, e, w: (e.append({**e[-1], "evidence_id": "EVD-396940", "record_id": "PERSON-002011"}), w.append({**w[-1], "evidence_id": "EVD-396940", "person_id": "PERSON-002011"})))
     if fails:
