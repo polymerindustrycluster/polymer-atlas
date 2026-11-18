@@ -502,6 +502,16 @@ class ValidatorMutationTests(unittest.TestCase):
         self._people_row(sources="host.example.edu/" + "~abc")
         self.assert_fails_with("PERSON-000001 sources carries a personal-account identifier URL")
 
+    def test_v62_explicit_port_tilde_rejected(self):
+        self._people_row(public_profile_url="https://www.example.edu:443/" + "~abc/profile")
+        self.assert_fails_with("PERSON-000001 public_profile_url carries a personal-account identifier URL")
+
+    def test_v62_fragment_text_is_not_a_query(self):
+        self._people_row(public_profile_url="https://www.example.edu/guide#faq?" + "u=abc")
+        code, out = run_validator(self.data)
+        self.assertNotIn("V-62", out)
+        self.assertEqual(code, 0, out[-2000:])
+
     def test_v62_placeholder_and_non_people_table_pass(self):
         self._people_row(public_profile_url="https://www.example.edu/people/profile.dot?u=<id>")
         self.edit_rows("organizations_OH.csv", lambda r: True,

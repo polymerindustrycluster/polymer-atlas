@@ -2,8 +2,8 @@
 import csv, hashlib, html, io, os, re, unicodedata
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 PERSIST = "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/people-identifier-urls-2026-11-18/"
-# The pattern the pre-push disclosure scan uses.
-ID_RE = re.compile(r'(?:https?://)?[\w.-]+\.[A-Za-z]{2,}(?:/[^\s,"]*)?(?:[?&]u=|/~)[A-Za-z0-9]')
+# The pre-push scan's pattern, plus an optional explicit port and no '#' in the path (a fragment is not a query). Same as V-62.
+ID_RE = re.compile(r'(?:https?://)?[\w.-]+\.[A-Za-z]{2,}(?::\d+)?(?:/[^\s,"#]*)?(?:[?&]u=|/~)[A-Za-z0-9]')
 URL_COLS = ("public_profile_url", "lab_url", "sources")
 ALLOWED_COLS = {"public_profile_url", "lab_url", "sources", "last_verified"}
 EVD_LO, EVD_HI = 396100, 396199

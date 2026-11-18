@@ -585,8 +585,8 @@ for r in people:
         debt("V-51", r["person_id"].strip(), f"{r['person_id'].strip()} public_profile_url contains an email-like string (AGENTS.md §6)")
 # V-62 [v1.13.4, owner rulings 2026-11-18 items 1 and 1b]: no personal-account identifier URL in a people row
 # (`?u=<network id>` or `/~<account>`), in public_profile_url, lab_url or sources. Errors on any row, no baseline;
-# evidence_people is out of scope (its old rows are append-only, SCHEMA 4.13). Pattern = the pre-push scan's.
-PEOPLE_ID_URL = re.compile(r'(?:https?://)?[\w.-]+\.[A-Za-z]{2,}(?:/[^\s,"]*)?(?:[?&]u=|/~)[A-Za-z0-9]')
+# evidence_people is out of scope (its old rows are append-only, SCHEMA 4.13). Pattern = the pre-push scan's, plus an optional explicit port; a '#' ends the path (fragment text is not a query).
+PEOPLE_ID_URL = re.compile(r'(?:https?://)?[\w.-]+\.[A-Za-z]{2,}(?::\d+)?(?:/[^\s,"#]*)?(?:[?&]u=|/~)[A-Za-z0-9]')
 for r in people:
     for col in ("public_profile_url", "lab_url", "sources"):
         if PEOPLE_ID_URL.search(r.get(col) or ""):

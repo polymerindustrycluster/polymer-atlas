@@ -13,6 +13,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from common import *
+import build  # PLAN / BLANK / EXTRA / NARROW: the intended outcome per row, independent of what evidence survived
 
 def git_show(ref, path):
     return subprocess.run(["git", "show", f"{ref}:{path}"], cwd=REPO, capture_output=True, text=True, check=True).stdout
@@ -23,11 +24,13 @@ def base_ref():
 def frame_ids(people):
     return [r["person_id"] for r in people if any(has_id(r[c]) for c in URL_COLS)]
 
-def prove(base_people, base_ev, now_people, now_ev, witness, pages):
+def prove(base_people, base_ev, now_people, now_ev, witness, pages, pairs):
     """Return a list of failures (empty = all proofs hold). pages: sha -> visible text."""
     bad = []
     bp = {r["person_id"]: r for r in base_people}
     base_frame = frame_ids(base_people)
+    expected = {"PERSON-%06d" % n for n in set(build.PLAN) | set(build.BLANK)}
+    if set(base_frame) != expected: bad.append(f"frame {sorted(set(base_frame) ^ expected)} differs from the build plan")
     if frame_ids(now_people):
         bad.append(f"identifier URLs remain on people rows: {frame_ids(now_people)}")
     if len(now_people) != len(base_people) or [r["person_id"] for r in now_people] != [r["person_id"] for r in base_people]:
@@ -60,21 +63,34 @@ def prove(base_people, base_ev, now_people, now_ev, witness, pages):
         if not row or e["source_ref"] not in sources_list(row["sources"]): bad.append(f"{e['evidence_id']} source_ref not in the row's sources")
         if e["record_id"] not in base_frame: bad.append(f"{e['evidence_id']} is on a non-frame row")
         segs = w["segments"].split(SEP.strip())
+        if (w["url"], w["sha256"]) not in pairs: bad.append(f"{e['evidence_id']}: witness digest is not the fetch-manifest digest of its url")
         text = pages.get(w["sha256"])
         if text is None: bad.append(f"{e['evidence_id']}: stored page {w['sha256'][:12]} missing or hash mismatch")
         elif not in_order(text, segs): bad.append(f"{e['evidence_id']}: quote not found in order in stored page")
         if any(s.strip() not in e["notes"] for s in segs): bad.append(f"{e['evidence_id']}: note does not carry its quote")
         if w["url"] != e["source_ref"]: bad.append(f"{e['evidence_id']}: witness url differs from source_ref")
     cited = {(e["record_id"], e["source_ref"]) for e in new}
-    for pid in base_frame:
-        r = next(r for r in now_people if r["person_id"] == pid); b = bp[pid]
+    per_person = {}
+    for e in new: per_person.setdefault(e["record_id"], []).append(e)
+    for n in sorted(set(build.PLAN) | set(build.BLANK)):
+        pid = "PERSON-%06d" % n
+        r = next((r for r in now_people if r["person_id"] == pid), None); b = bp.get(pid)
+        if r is None or b is None: bad.append(f"{pid} missing"); continue
+        got = per_person.get(pid, [])
+        if n in build.BLANK:
+            if got: bad.append(f"{pid} is a planned blank but has new evidence")
+            if r["last_verified"] != b["last_verified"]: bad.append(f"{pid} blanked but last_verified changed")
+            continue
+        pages_ = [build.PLAN[n]] + ([build.EXTRA[n]] if n in build.EXTRA else [])
+        want = sorted((c[0], p[0], c[2]) for p in pages_ for c in p[2])
+        if sorted((e["claim_type"], e["source_ref"], e["tier_effect"]) for e in got) != want:
+            bad.append(f"{pid} is a planned replacement; its new evidence rows differ from the plan ({len(got)} found, {len(want)} planned)")
+        if n in build.NARROW:
+            if r["last_verified"] != b["last_verified"]: bad.append(f"{pid} role not established by its page but last_verified changed")
+        elif r["last_verified"] != TODAY: bad.append(f"{pid} replaced but last_verified not {TODAY}")
         vals = lambda row, c: set(sources_list(row[c])) if c == "sources" else ({row[c]} - {""})
-        added = {u for c in URL_COLS for u in vals(r, c) - vals(b, c)}
-        for u in added:
+        for u in {u for c in URL_COLS for u in vals(r, c) - vals(b, c)}:
             if (pid, u) not in cited: bad.append(f"{pid}: new URL on the row has no new evidence row citing it")
-        if pid in replaced:
-            r = next(r for r in now_people if r["person_id"] == pid)
-            if r["last_verified"] != TODAY: bad.append(f"{pid} replaced but last_verified not {TODAY}")
     return bad
 
 def load_pages(witness):
@@ -107,14 +123,23 @@ def main():
     if raw != len(bf): fails.append(f"frame yield {len(bf)} differs from independent raw-line count {raw}")
     if now_idev != base_idev: fails.append("identifier-bearing evidence row count changed")
     pages = load_pages(witness)
-    fails += prove(base_people, base_ev, now_people, now_ev, witness, pages)
+    man_rows = read_csv(open(HERE / "manifest.csv", encoding="utf-8").read())
+    pairs = {(m["url"], m["sha256"]) for m in man_rows}
+    pairs_persist = {(m["url"], m["sha256"]) for m in csv.DictReader(open(PERSIST + "manifest.csv"))}
+    if not pairs <= pairs_persist: fails.append("committed manifest.csv has entries the persist manifest lacks")
+    for n in sorted(build.BLANK):
+        pid = "PERSON-%06d" % n
+        old = [e for e in base_ev if e["record_id"] == pid]
+        row = next(r for r in now_people if r["person_id"] == pid)
+        print(f"blank {pid}: base evidence rows {len(old)}, citing the removed URL {sum(any(has_id(e[c]) for c in e) for e in old)}, sources now {len(sources_list(row['sources']))}")
+    fails += prove(base_people, base_ev, now_people, now_ev, witness, pages, pairs)
 
     # ---- inject defects; each must be caught ----
     import copy
     def inject(name, mut):
         p, e, w = copy.deepcopy(now_people), copy.deepcopy(now_ev), copy.deepcopy(witness)
         mut(p, e, w)
-        caught = prove(base_people, base_ev, p, e, w, pages)
+        caught = prove(base_people, base_ev, p, e, w, pages, pairs)
         print(f"inject {name}: {'caught' if caught else 'NOT CAUGHT'}")
         if not caught: fails.append(f"defect not caught: {name}")
     rep = replaced[0]
@@ -124,6 +149,14 @@ def main():
     inject("disallowed column changed", lambda p, e, w: next(r for r in p if r["person_id"] == rep).update(role="department_chair"))
     inject("evidence id outside the block", lambda p, e, w: (e[-1].update(evidence_id="EVD-399999"), w[-1].update(evidence_id="EVD-399999")))
     inject("replacement without its evidence row", lambda p, e, w: ([e.remove(x) for x in [x for x in e if x["record_id"] == rep and x["evidence_id"] >= "EVD-396100"]], [w.remove(x) for x in [x for x in w if x["person_id"] == rep]]))
+    def only_evidence_of_1132(p, e, w):
+        ids = {x["evidence_id"] for x in w if x["person_id"] == "PERSON-001132"}
+        e[:] = [x for x in e if x["evidence_id"] not in ids]; w[:] = [x for x in w if x["evidence_id"] not in ids]
+    inject("only evidence of a source-only replacement deleted", only_evidence_of_1132)
+    def swap_digest(p, e, w):
+        w[0].update(sha256=w[-1]["sha256"], segments=w[-1]["segments"])
+        next(x for x in e if x["evidence_id"] == w[0]["evidence_id"])["notes"] = w[-1]["segments"]
+    inject("witness digest and quote swapped for another page's", swap_digest)
     if fails:
         print("FAIL"); [print(" -", f) for f in fails]; sys.exit(1)
     print("OK: all proofs hold and all injected defects were caught")
