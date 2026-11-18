@@ -27,10 +27,10 @@ PLAN = {
         [("existence", EXIST, "supports_A", ["Sijia Huang Assistant Professor"])], "faculty-list entry; contact details on the page are omitted from the quote"),
  1304: ("https://kramerlab.bme.utah.edu/aboutkramer.html", Q % "Jessica Kramer Stratton associate professor biomedical engineering University of Utah",
         [("existence", EXIST, "supports_A", ["Dr. Jessica R. Kramer Stratton, Ph.D. Associate Professor", "joined the Department of Bioengineering at the University of Utah in January, 2017"])],
-        "the lab's own page for this person (kramerlab.bme.utah.edu); PERSON-000941 carries the same person under the name Jessica R. Kramer (same account), a possible duplicate (follow-up, no merge here)"),
+        "the lab's own page for this person (kramerlab.bme.utah.edu); PERSON-000941 carries the same account value under the name Jessica R. Kramer: possible duplicate (same account value), not adjudicated; both IDs stay distinct"),
  2009: ("https://www.ceas.uc.edu/academics/departments/biomedical-engineering/people.html", Q % "John Martin biomedical engineering faculty University of Cincinnati organoselenium polymer regenerative orthopedic' with allowed_domains uc.edu",
         [("existence", EXIST, "supports_A", ["John Robert Martin , Asst Professor (F2)"])], "department faculty-list entry"),
- 2010: (CE, HELD + " (PERSON-000104's search; the page is a source on PERSON-002112)",
+ 2010: (CE, "held record: people.csv sources of PERSON-002112 (the same department page)",
         [("existence", EXIST, "supports_A", ["Jonathan David Nickels , Assoc Professor"])], "department faculty-list entry"),
  2111: ("https://www.artsci.uc.edu/natural-sciences/chemistry/faculty-and-staff-directory.html", HELD,
         [("existence", EXIST, "supports_A", ["Jianbing Jiang Assoc Professor , A&S Chemistry"])], "directory line"),
@@ -43,7 +43,38 @@ BLANK = {
  2011: "the department page lists him as department head and chair holder (George Rieveschl Eminent Scholar), not as Professor; the recorded role is Professor of Chemical Engineering, so no page states it and no evidence row is added; the page is kept as a plain source so `sources` is not empty",
 }
 KEEP_SOURCE = {2011: CE}
+EVD_ID = {941: 396900, 1303: 396901, 1304: 396902, 2009: 396903, 2010: 396904, 2111: 396905, 2112: 396906}  # bound to person, never to order
+EXPECTED_FRAME = {"PERSON-%06d" % n for n in set(PLAN) | set(BLANK)}
+BASE_PEOPLE_ROWS = 1517  # people.csv rows at the base this packet was built on
+ANSWERABLE = ("existence", "parent")  # old claim types whose facts (name, title, institution) the new quote establishes; scope rows are not answered
 pid = lambda n: "PERSON-%06d" % n
+
+def guard(people, frame):
+    """Refuse to write unless the base is the base: the exact row count and all nine frame rows."""
+    got = {r["person_id"] for r in frame}
+    if got != EXPECTED_FRAME: sys.exit(f"frame rows {sorted(got ^ EXPECTED_FRAME)} differ from the nine expected; refusing to write")
+    if len(people) != BASE_PEOPLE_ROWS: sys.exit(f"people.csv has {len(people)} rows, expected {BASE_PEOPLE_ROWS}; refusing to write")
+
+def expected_evidence(people, ev, man):
+    """The exact new evidence rows (every field) and witness rows, from the plan, the base rows and the fetch manifest."""
+    new_ev, witness = [], []
+    for r in people:
+        n = int(r["person_id"][7:])
+        if n not in PLAN: continue
+        url, route, claims, caveat = PLAN[n]
+        sha = man[url]
+        old = sorted(e["evidence_id"] for e in ev if e["record_id"] == r["person_id"] and e["claim_type"] in ANSWERABLE
+                     and any(has_account_identifier(e[c]) for c in e))
+        for k, (ct, detail, eff, segs) in enumerate(claims):
+            eid = "EVD-%06d" % (EVD_ID[n] + k)
+            ans = f"; answers {', '.join(old)} (unedited; they cite an identifier URL; the research-scope rows are not answered)" if old else ""
+            note = (f"Raw words in order (segments separated by …; contact details omitted): {SEP.join(segs)}; replaces an identifier URL on the people row (owner rulings 2026-11-18b item 3, following 2026-11-18 items 1 and 1b){ans}; "
+                    f"page located by: {route}; stored page sha256 {sha[:12]}" + (f"; caveat: {caveat}" if caveat else ""))
+            new_ev.append({"evidence_id": eid, "record_table": "people", "record_id": r["person_id"], "claim_type": ct,
+                           "claim_detail": detail, "source_class": "own_site", "source_ref": url, "observed_date": TODAY,
+                           "tier_effect": eff, "created_by": CREATED_BY, "notes": note})
+            witness.append({"evidence_id": eid, "person_id": r["person_id"], "url": url, "sha256": sha, "segments": SEP.join(segs)})
+    return new_ev, witness
 
 def main(write=True):
     people_path, ev_path = REPO + "/data/people.csv", REPO + "/data/evidence_people.csv"
@@ -53,14 +84,13 @@ def main(write=True):
     need_cols = [c for c in NEW_COLS if c not in fields]
     if not frame and not need_cols:
         print("nothing to do: no identifier URLs on people rows, status columns present"); return
-    unplanned = {int(r["person_id"][7:]) for r in frame} - set(PLAN) - set(BLANK)
-    if unplanned: sys.exit(f"frame rows without a plan: {sorted(unplanned)}")
+    if frame: guard(people, frame)
     man = {}
-    new_ev, witness = [], []
-    nxt = EVD_LO
+    for n, (url, route, claims, caveat) in PLAN.items():  # fetch any page the manifest lacks (rule-14 route recorded)
+        if url not in manifest_now(man): fetch.fetch(url, route); man.clear()
+    new_ev, witness = expected_evidence(frame, ev, manifest_now(man)) if frame else ([], [])
     for r in frame:
         n = int(r["person_id"][7:])
-        old_ev = [e["evidence_id"] for e in ev if e["record_id"] == r["person_id"] and any(has_account_identifier(e[c]) for c in e)]
         if n in BLANK:
             for c in ("public_profile_url", "lab_url"):
                 if has_account_identifier(r[c]): r[c] = ""
@@ -71,29 +101,19 @@ def main(write=True):
             if not r["sources"]: sys.exit(f"{r['person_id']}: blanking would empty sources; hold instead")
             continue
         url, route, claims, caveat = PLAN[n]
-        if url not in manifest_now(man): fetch.fetch(url, route); man.clear()
         sha = manifest_now(man)[url]; text = page_text(sha)
         for ct, detail, eff, segs in claims:
             if not in_order(text, segs): sys.exit(f"{r['person_id']}: quote not in stored page {sha[:12]}: {segs}")
         for c in ("public_profile_url", "lab_url"):
             if has_account_identifier(r[c]): r[c] = url
         out = []
-        for s in sources_list(r["sources"]):
-            s = url if has_account_identifier(s) else s
-            if s not in out: out.append(s)
+        for s_ in sources_list(r["sources"]):
+            s_ = url if has_account_identifier(s_) else s_
+            if s_ not in out: out.append(s_)
         if url not in out: out.append(url)
         r["sources"] = ";".join(out)
         r["last_verified"] = TODAY
-        for ct, detail, eff, segs in claims:
-            eid = "EVD-%06d" % nxt; nxt += 1
-            ans = f"; answers {', '.join(old_ev)} (unedited; they cite an identifier URL)" if old_ev else ""
-            note = (f"Raw words in order (segments separated by …; contact details omitted): {SEP.join(segs)}; replaces an identifier URL on the people row (owner rulings 2026-11-18b item 3, following 2026-11-18 items 1 and 1b){ans}; "
-                    f"page located by: {route}; stored page sha256 {sha[:12]}" + (f"; caveat: {caveat}" if caveat else ""))
-            new_ev.append({"evidence_id": eid, "record_table": "people", "record_id": r["person_id"], "claim_type": ct,
-                           "claim_detail": detail, "source_class": "own_site", "source_ref": url, "observed_date": TODAY,
-                           "tier_effect": eff, "created_by": CREATED_BY, "notes": note})
-            witness.append({"evidence_id": eid, "person_id": r["person_id"], "url": url, "sha256": sha, "segments": SEP.join(segs)})
-    if nxt - 1 > EVD_HI: sys.exit("evidence block exhausted")
+    if any(not EVD_LO <= int(e["evidence_id"][4:]) <= EVD_HI for e in new_ev): sys.exit("evidence id outside the block")
     if write:
         # Recovery order: witness files, then evidence, then people LAST (a failure before that leaves the frame, so a retry recomputes).
         with open(HERE / "witness.csv", "w", newline="") as f:

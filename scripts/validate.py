@@ -863,16 +863,17 @@ for i, r in enumerate(people, 2):
     if (r.get("verification_tier") or "").strip() in {"A", "B"} and not (r.get("last_verified") or "").strip():
         errors.append(f"people.csv:{i} {pid} tier A/B without last_verified")
     # V-64 [v1.15, owner ruling 2026-11-18b item 6]: status is blank (not recorded) or active|deceased with an ISO status_date;
-    # status_date is the date the source states (a death date for `deceased`); deceased also needs an evidence_people row for the
-    # person observed on or after status_date (the source is read after the event). Blank never means active.
+    # status_date is the date the source states (a death date for `deceased`); deceased also needs an evidence_people liveness row for the
+    # person whose claim_detail states status=deceased, observed on or after status_date (the source is read after the event). Blank never means active.
     st, sd = (r.get("status") or "").strip(), (r.get("status_date") or "").strip()
     if st or sd:
         if st not in {"active", "deceased"}:
             errors.append(f"people.csv:{i} {pid} status {st!r} not active|deceased (V-64)")
         elif not re.fullmatch(r"\d{4}-\d{2}-\d{2}", sd) or not _iso_ok(sd):
             errors.append(f"people.csv:{i} {pid} status {st} without a valid ISO status_date (V-64)")
-        elif st == "deceased" and not any(e["record_id"].strip() == pid and (e.get("observed_date") or "") and e["observed_date"].strip() >= sd for e in evidence if e.get("record_table") == "people"):
-            errors.append(f"people.csv:{i} {pid} deceased with no evidence_people row observed on or after status_date {sd} (V-64)")
+        elif st == "deceased" and not any(e["record_id"].strip() == pid and e.get("record_table") == "people" and e.get("claim_type") == "liveness"
+                                          and re.search(r"\bstatus=deceased\b", e.get("claim_detail") or "") and (e.get("observed_date") or "").strip() >= sd for e in evidence):
+            errors.append(f"people.csv:{i} {pid} {st} with no evidence_people liveness row stating status=deceased, observed on or after status_date {sd} (V-64)")
 
 
 # V-17..V-21 [v1.5]: events layer (SCHEMA §4.12)

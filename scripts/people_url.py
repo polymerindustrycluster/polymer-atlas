@@ -3,10 +3,11 @@ people-identifier-urls task checker, so both read a URL the same way.
 
 Each whitespace/`;`/`,`/quote-separated token is parsed with urlsplit ("//" prefixed when there is no scheme). A token
 is an account URL when its host has a dot and one of: a query parameter named `u` or `unid` has a value starting with a
-letter or digit (any position); a path segment starts with `~` plus a letter or digit; on researchdirectory.uc.edu a path
-segment `p` is followed by a segment starting with a letter or digit (owner rulings 2026-11-18b item 3). The fragment is
-ignored. Placeholders (`unid=<id>`, `/p/<shortname>`) start with `<` and pass; `fisid_<id>` is a directory record number
-and is not matched.
+letter or digit (any position); a path segment starts with `~` plus a letter or digit; or the host is exactly
+researchdirectory.uc.edu (case-insensitive, one trailing root dot ignored) and the path is `/p/<value>` with the value
+starting with a letter or digit (owner rulings 2026-11-18b item 3). The query key must be exactly `unid`. The fragment is
+ignored. Placeholders (`unid=<id>`, `/p/<shortname>`) start with `<` and pass; `fisid_<id>` is accepted (owner rulings
+2026-11-18b item 3; what the institution uses the number for is not established) and is not matched.
 """
 import re
 from urllib.parse import parse_qsl, unquote, urlsplit
@@ -28,7 +29,7 @@ def url_has_account(token):
     if any(k in ("u", "unid") and _ALNUM.match(v) for k, v in query):
         return True
     segs = unquote(parts.path).split("/")
-    if host.lower().endswith("researchdirectory.uc.edu") and any(a == "p" and _ALNUM.match(b[:1]) for a, b in zip(segs, segs[1:])):
+    if host.lower().rstrip(".") == "researchdirectory.uc.edu" and len(segs) >= 3 and segs[0] == "" and segs[1] == "p" and _ALNUM.match(segs[2][:1]):
         return True
     return any(seg.startswith("~") and _ALNUM.match(seg[1:2]) for seg in segs)
 

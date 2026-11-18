@@ -333,9 +333,11 @@ the rulings to existing rows is integrator work, queued in `tasks/QUEUE.md`.
 - **P2. No email-like string in `people.public_profile_url`** (V-51).
 - **P2b. No personal-account identifier URL in a people row [v1.13.4, owner rulings 2026-11-18 items 1 and 1b; widened v1.15, owner ruling 2026-11-18b item 3].**
   A `?u=<network id>` query or a `/~<account>` home-directory path carries a person's university account name. So does
-  a `?unid=<id>` query, and so does `researchdirectory.uc.edu/p/<shortname>` **[v1.15]** (the rule parses the URL: query
-  parameter `unid`, or on that host a path segment `p` followed by a segment starting with a letter or digit). The
-  directory record number `fisid_<id>` (e.g. `experts.colorado.edu/...fisid_<id>`) is **not** an account name and is accepted. No
+  a `?unid=<id>` query, and so does `researchdirectory.uc.edu/p/<shortname>` **[v1.15]** (the rule parses the URL: the query
+  parameter key is exactly `unid`; for the research directory the host is exactly `researchdirectory.uc.edu`, case-insensitive
+  with one trailing root dot ignored, and the path is `/p/<value>`; a sibling host or a nested path does not match). The
+  identifier `fisid_<id>` (e.g. `experts.colorado.edu/...fisid_<id>`) is accepted; what the institution uses the number for is not
+  established (owner rulings 2026-11-18b item 3). No
   `public_profile_url`, `lab_url` or `sources` cell of a people row may contain one (validator V-62: an error on any
   row, no baseline; decided by parsing each URL token: a query parameter `u` whose value starts with a letter or digit, or a path segment starting `~` plus a letter or digit; the fragment is ignored). Where an identifier-free
   department or lab page states the same facts, the row cites it and a new evidence row answers the old one; otherwise
@@ -1225,8 +1227,9 @@ in every rank.
 
 **People status [v1.15] (owner ruling 2026-11-18b item 6; validator V-64).** `status` and `status_date` are both blank,
 or `status` is `active` or `deceased` and `status_date` is a valid ISO date. `deceased` also requires at least one
-`evidence_people` row for the person, quoting the death, whose `observed_date` is **on or after** `status_date` (a death is
-observed after it happens); the row names the public source (a university or department notice, or an obituary from a
+`evidence_people` row for the person, whose `claim_type` is `liveness` and whose `claim_detail` states `status=deceased`, and whose
+`observed_date` is **on or after** `status_date` (a death is observed after it happens); an appointment or other row never
+satisfies it. The row names the public source (a university or department notice, or an obituary from a
 named outlet). `active` with a date needs no evidence-date check. A source that prints no full date (only a month or year),
 or a search-result summary that was never fetched, cannot set the row: it stays blank. No existing row is populated by v1.15.
 

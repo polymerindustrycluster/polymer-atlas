@@ -9,7 +9,7 @@ Base = BASE env var, else merge-base of HEAD and origin/main; "now" = the workin
   every status cell is blank (not recorded); new evidence ids only in EVD-396900..396949; PERSON-000359 is unchanged.
 Then injects 8 defects into the "now" data and requires each to be caught. Exit 0 only when all hold.
 """
-import copy, csv, os, re, subprocess, sys
+import copy, csv, os, re, subprocess, sys, uuid
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -46,7 +46,7 @@ def expected_cells(b, n):
     out["sources"] = ";".join(srcs)
     return out
 
-def prove(base_people, base_ev, now_people, now_ev, witness, pages, pairs):
+def prove(base_people, base_ev, now_people, now_ev, witness, pages, pairs, man):
     bad = []
     bp = {r["person_id"]: r for r in base_people}
     base_frame = frame_ids(base_people)
@@ -101,10 +101,17 @@ def prove(base_people, base_ev, now_people, now_ev, witness, pages, pairs):
             if got: bad.append(f"{pid} is a planned no-evidence row but has new evidence")
             if r["last_verified"] != b["last_verified"]: bad.append(f"{pid} no-evidence row but last_verified changed")
             continue
-        planned = sorted((c[0], build.PLAN[n][0], c[2], SEP.join(c[3])) for c in build.PLAN[n][2])
-        have = sorted((e["claim_type"], e["source_ref"], e["tier_effect"], (wit.get(e["evidence_id"]) or {}).get("segments")) for e in got)
-        if have != planned: bad.append(f"{pid}: evidence rows or witness quotes differ from the plan ({len(got)} found, {len(planned)} planned)")
         if r["last_verified"] != TODAY: bad.append(f"{pid} replaced but last_verified not {TODAY}")
+    # every field of every new evidence row, and every witness row, equals what the plan and the stored pages produce
+    exp_ev, exp_wit = build.expected_evidence(base_people, base_ev, man)
+    if sorted(new, key=lambda e: e["evidence_id"]) != sorted(exp_ev, key=lambda e: e["evidence_id"]):
+        diff = [e["evidence_id"] for e in exp_ev if e not in new] + [e["evidence_id"] for e in new if e not in exp_ev]
+        bad.append(f"new evidence rows differ from the planned rows in some field: {sorted(set(diff))}")
+    if sorted(witness, key=lambda w: w["evidence_id"]) != sorted(exp_wit, key=lambda w: w["evidence_id"]):
+        bad.append("witness.csv differs from the planned witness rows")
+    for e in exp_ev:
+        if build.EVD_ID[int(e["record_id"][7:])] > int(e["evidence_id"][4:]) or int(e["evidence_id"][4:]) >= build.EVD_ID[int(e["record_id"][7:])] + 1:
+            bad.append(f"{e['evidence_id']} is not the id bound to {e['record_id']}")
     return bad
 
 def main():
@@ -141,16 +148,17 @@ def main():
     pairs = {(m["url"], m["sha256"]) for m in read_csv(open(HERE / "manifest.csv", encoding="utf-8").read())}
     pairs_persist = {(m["url"], m["sha256"]) for m in csv.DictReader(open(PERSIST + "manifest.csv"))}
     if not pairs <= pairs_persist: fails.append("committed manifest.csv has entries the persist manifest lacks")
-    fails += prove(base_people, base_ev, now_people, now_ev, witness, pages, pairs)
+    man = manifest()
+    fails += prove(base_people, base_ev, now_people, now_ev, witness, pages, pairs, man)
 
     def inject(name, mut):
         p, e, w = copy.deepcopy(now_people), copy.deepcopy(now_ev), copy.deepcopy(witness)
         mut(p, e, w)
-        caught = prove(base_people, base_ev, p, e, w, pages, pairs)
+        caught = prove(base_people, base_ev, p, e, w, pages, pairs, man)
         print(f"inject {name}: {'caught' if caught else 'NOT CAUGHT'}")
         if not caught: fails.append(f"defect not caught: {name}")
     row = lambda p, n: next(r for r in p if r["person_id"] == n)
-    inject("identifier URL left on a people row", lambda p, e, w: row(p, "PERSON-002010").update(sources="https://researchdirectory.uc.edu/" + "p/nickeljo"))
+    inject("identifier URL left on a people row", lambda p, e, w: row(p, "PERSON-002010").update(sources="https://researchdirectory.uc.edu/" + "p/" + uuid.uuid4().hex))
     inject("old evidence row edited", lambda p, e, w: next(x for x in e if x["evidence_id"] == "EVD-280082").update(notes="edited"))
     inject("quote not on the stored page", lambda p, e, w: w[0].update(segments="Dr. Nobody Title: Chancellor of Mars"))
     inject("write to a cell outside scope (role)", lambda p, e, w: row(p, "PERSON-002010").update(role="department_chair"))
@@ -159,6 +167,17 @@ def main():
     inject("evidence id outside the block", lambda p, e, w: (e[-1].update(evidence_id="EVD-399999"), w[-1].update(evidence_id="EVD-399999")))
     inject("replacement without its evidence row", lambda p, e, w: ([e.remove(x) for x in [x for x in e if x["record_id"] == "PERSON-002010" and x["evidence_id"] >= "EVD-396900"]], [w.remove(x) for x in [x for x in w if x["person_id"] == "PERSON-002010"]]))
     inject("a source of an unaffected row dropped", lambda p, e, w: row(p, "PERSON-002112").update(sources=";".join(row(p, "PERSON-002112")["sources"].split(";")[1:])))
+    inject("claim_detail of a new evidence row changed", lambda p, e, w: next(x for x in e if x["evidence_id"] == "EVD-396900").update(claim_detail="Wrong role: professor emeritus"))
+    inject("source_class of a new evidence row changed", lambda p, e, w: next(x for x in e if x["evidence_id"] == "EVD-396900").update(source_class="government_filing"))
+    inject("evidence id bound to another person (order-assigned)", lambda p, e, w: (next(x for x in e if x["evidence_id"] == "EVD-396900").update(record_id="PERSON-001303"), next(x for x in e if x["evidence_id"] == "EVD-396901").update(record_id="PERSON-000941")))
+    def truncated_base():  # a base missing one frame row must be refused by the builder before anything is written
+        cut = [r for r in base_people if r["person_id"] != "PERSON-000941"]
+        try: build.guard(cut, [r for r in cut if frame_ids([r])])
+        except SystemExit: caught = True
+        else: caught = False
+        print(f"inject truncated base (PERSON-000941 absent): {'refused' if caught else 'NOT REFUSED'}")
+        if not caught: fails.append("defect not caught: truncated base")
+    truncated_base()
     inject("planned no-evidence row given an evidence row", lambda p, e, w: (e.append({**e[-1], "evidence_id": "EVD-396940", "record_id": "PERSON-002011"}), w.append({**w[-1], "evidence_id": "EVD-396940", "person_id": "PERSON-002011"})))
     if fails:
         print("FAIL"); [print(" -", f) for f in fails]; sys.exit(1)
