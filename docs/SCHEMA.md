@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.15 — 2026-11-18 (§4.9 people `status` (`active` | `deceased`) and `status_date`, validator V-64; §1 P2b / V-62 widened to `?unid=<id>` and `researchdirectory.uc.edu/p/<shortname>` — owner rulings 2026-11-18b items 3 and 6, `tasks/owner-rulings-2026-11-18b/README.md`).
+**Version:** v1.16 — 2026-11-18 (§3.1 gains `rubber_molding_transfer` and `composites_spray_up` — owner ruling 2026-11-18b item 2, `tasks/owner-rulings-2026-11-18b/README.md`).
+Previous: v1.15 — 2026-11-18 (§4.9 people `status` (`active` | `deceased`) and `status_date`, validator V-64; §1 P2b / V-62 widened to `?unid=<id>` and `researchdirectory.uc.edu/p/<shortname>` — owner rulings 2026-11-18b items 3 and 6, `tasks/owner-rulings-2026-11-18b/README.md`).
 Previous: v1.14 — 2026-11-18 (§4.23 IPEDS completions reference layer: three generated tables from the federal IPEDS completions series, moved from polymer-programs-db under the owner ruling of 2026-11-18, "Into the Atlas"; validator V-63).
 Previous: v1.13.4 — 2026-11-18 (§1 P2b / V-62: no personal-account identifier URL (`?u=<network id>` or `/~<account>`) in a people row — owner rulings 2026-11-18 items 1 and 1b).
 Previous: v1.13.3 — 2026-11-18 (§1 R13 gains a fourth employee-band source: SBA PPP historical job counts, blank bands only, under the owner ruling of 2026-11-16, "Strict matches"; recorded 2026-11-18).
@@ -648,13 +649,13 @@ doctrine.
 `injection_molding` · `injection_molding_micro` · `injection_molding_lsr_silicone` · `insert_overmolding` · `two_shot_molding` · `blow_molding_extrusion` · `blow_molding_injection` · `blow_molding_stretch` · `extrusion_film_blown` · `extrusion_film_cast` · `extrusion_sheet` · `extrusion_profile` · `extrusion_pipe_tube` · `extrusion_wire_cable_coating` · `thermoforming_vacuum` · `thermoforming_pressure` · `rotational_molding` · `compression_molding` · `transfer_molding` · `calendering` · `foam_molding_bead` · `foam_molding_structural` · `foam_extrusion` · `foam_fabrication` · `blow_molding` *(legacy umbrella — use only when subtype unknown)*
 
 **Primary shaping — rubber / elastomer:**
-`rubber_mixing_compounding` · `rubber_molding_compression` · `rubber_molding_injection` · `rubber_extrusion` · `rubber_calendering` · `tire_manufacturing` · `tire_retreading` · `latex_dipping_foaming` · `hose_belting_manufacturing` · `vulcanization_curing_services`
+`rubber_mixing_compounding` · `rubber_molding_compression` · `rubber_molding_transfer` **[v1.16]** · `rubber_molding_injection` · `rubber_extrusion` · `rubber_calendering` · `tire_manufacturing` · `tire_retreading` · `latex_dipping_foaming` · `hose_belting_manufacturing` · `vulcanization_curing_services`
 
 **Materials production / formulation:**
 `polymerization` · `compounding_extrusion` · `custom_compounding` · `color_masterbatch` · `pulverizing_grinding_resin` · `coating_formulation` · `adhesive_sealant_formulation` · `ink_formulation` · `silicone_formulation`
 
 **Composites:**
-`composites_hand_layup` · `composites_rtm_infusion` · `composites_pultrusion` · `composites_filament_winding` · `composites_compression_smc_bmc` · `composites_prepreg_autoclave`
+`composites_hand_layup` · `composites_spray_up` **[v1.16]** · `composites_rtm_infusion` · `composites_pultrusion` · `composites_filament_winding` · `composites_compression_smc_bmc` · `composites_prepreg_autoclave`
 
 **Additive:**
 `additive_manufacturing_polymer` · `additive_manufacturing_polymer_production` *(end-use; implies Ring 1 candidacy)* · `additive_manufacturing_metal` *(record only as secondary capability)*
@@ -832,7 +833,7 @@ designed.
 | `thermoforming` | ROLLUP — §3.1 has `thermoforming_vacuum` + `thermoforming_pressure` only |
 | `rotational_molding` | = §3.1 |
 | `compression_molding` | = §3.1 (plastics/composites grain; rubber compression is `rubber_molding` below) |
-| `rubber_molding` | ROLLUP — §3.1 `rubber_molding_compression` + `rubber_molding_injection` |
+| `rubber_molding` | ROLLUP — §3.1 `rubber_molding_compression` + `rubber_molding_transfer` **[v1.16]** + `rubber_molding_injection` |
 | `rubber_mixing_compounding` | = §3.1 |
 | `compounding` | ROLLUP — §3.1 `compounding_extrusion` + `custom_compounding` |
 | `color_masterbatch` | = §3.1 (process side; cf. the material-axis string above) |
@@ -3149,4 +3150,5 @@ unchanged.
 - **v1.13.4 — 2026-11-18 (owner rulings 2026-11-18, items 1 and 1b: identifier URLs on people rows).** §1 gains P2b and the validator gains V-62 (an error on any people row whose `public_profile_url`, `lab_url` or `sources` carries a `?u=<network id>` or `/~<account>` URL; no baseline entries). Applied in the same PR to the 29 people rows that carried one (18 `?u=`, 11 `/~`): 23 rows cite an identifier-free page with new evidence rows (EVD-396100 to EVD-396125), 6 rows have the URL blanked, with any old evidence rows left as the record's source. Evidence rows are never edited (§4.13). `people.csv` changes only `public_profile_url`, `lab_url`, `sources` and `last_verified` on those rows.
 - **v1.14 — 2026-11-18 (owner ruling 2026-11-18, "Into the Atlas").** §4.23 adds the IPEDS completions reference layer: `data/ipeds_institutions.csv` (343), `data/ipeds_programs.csv` (825) and `data/ipeds_completions.csv` (10,486 program-years, 1991-2023). `scripts/ipeds_build.py` generates them from `data/ipeds/raw_ipeds_national.json`, ported from polymer-programs-db build_db.py (a9d89b5) with every row equal. Validator V-63 enforces parity with the raw file. Reference data, never evidence. The hand-researched layers (credentials, global programs, society chapters, aliases, CIP-invisible programs) are phase-2 owner questions (`tasks/ipeds-layer-2026-11-18/README.md`). No existing data row is changed.
 - **v1.15 — 2026-11-18 (owner rulings 2026-11-18b, items 3 and 6; `tasks/owner-rulings-2026-11-18b/README.md`).** (1) §1 P2b / V-62 is widened to `?unid=<id>` and `researchdirectory.uc.edu/p/<shortname>`; `fisid_<id>` is accepted. Applied in the same PR (`tasks/people-rulings-2026-11-18b/`): of the 9 `people.csv` rows the widened rule catches (3 `?unid=`, 6 UC `/p/`), 7 cite an identifier-free page with new evidence rows (EVD-396900 to EVD-396906) and 2 drop the identifier URL with no new evidence; the 13 `evidence_people` rows citing the UC form are never edited. `people.csv` changes only `public_profile_url`, `lab_url`, `sources` and `last_verified` on those rows. (2) §4.9 gains `status` and `status_date` (appended last in `people.csv`; validator V-64: `deceased` needs an ISO `status_date` and an affirmative (`supports_*`) `evidence_people` `liveness` row whose `claim_detail` starts `status=deceased`, observed on or after `status_date`); every existing row is blank. PERSON-000359 stays blank: no fetched page prints a dated death.
+- **v1.16 — 2026-11-18 (owner ruling 2026-11-18b item 2; `tasks/owner-rulings-2026-11-18b/README.md`).** §3.1 gains two process terms: `rubber_molding_transfer` (rubber transfer molding; beside `rubber_molding_compression`, and in the `rubber_molding` rollup) and `composites_spray_up` (spray-up open molding, distinct from `composites_hand_layup`). `scripts/validate.py` PROCESSES and `docs/schema/vocab.json` are updated. Applied in the same PR (`tasks/process-terms-2026-11-18b/`): `rubber_molding_transfer` unions into SITE-000562 `processes` (a tier C site; one `supports_C` evidence row, EVD-397200). SITE-000248 and the permit sites are untouched. No other data row changes.
 
