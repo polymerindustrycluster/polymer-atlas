@@ -110,7 +110,7 @@ The other four stay held: their text is a product list or a product-link list, n
 ## Writes (rule 13) and outcome check
 
 - Only `markets_served` changes, on 35 organization rows, each blank at base: `data/organizations_OH.csv` and `data/organizations_TX.csv`. 66 evidence rows appended to the matching `evidence_organizations_*.csv`, IDs EVD-397300 to EVD-397368 of the block 397300-397449 (controller re-allocation 2026-11-18; the decision recorded main's maximum as EVD-397103 and open PRs up to 397200; the merge-base maximum is EVD-397115) (66 IDs in use; 3 retired: EVD-397310, EVD-397320, EVD-397331; `withdrawn.csv`), pinned in `selection.tsv` and allocated with `scripts/shard_io.py` `append_sorted`. `check.py` compares every data file with base: nothing else changes.
-- Outcome: `python3 S/harness/pic18_unknown.py "$PWD" <ref>` (unit: PIC-18 organization rows, 794). At merge-base `01414bce`: `mkt_unknown=354`. At HEAD: `mkt_unknown=319`. **It fell by exactly 35, the number of organizations applied.** `proc_unknown` (331) and `band_unknown` (445) unchanged.
+- Outcome: `python3 S/harness/pic18_unknown.py "$PWD" <ref>` (unit: PIC-18 organization rows, 794). At merge-base `c1dafc8d`: `mkt_unknown=354`. At HEAD: `mkt_unknown=319`. **It fell by exactly 35, the number of organizations applied.** `proc_unknown` (331) and `band_unknown` (443) unchanged.
 
 ## Self-refute (rule 15)
 
