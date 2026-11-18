@@ -1,5 +1,5 @@
 person_id,new_role_as_published,title_url,status,rank_note
-PERSON-000054,BF Goodrich Professor,https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=janas,CONFIRMED,"Profile prints 'Title: BF Goodrich Professor'; label dropped. Rank professor matches."
+PERSON-000054,BF Goodrich Professor,https://www.uakron.edu/polymer/about-us/our-people/profile.dot?u=<id>,CONFIRMED,"Profile prints 'Title: BF Goodrich Professor'; label dropped. Rank professor matches."
 PERSON-000056,,https://www.uakron.edu/im/online-newsroom/news_details.dot?newsId=045fbb65-82f0-4b3d-bb3e-ea9936d0587e&com.dotmarketing.htmlpage.language=1,CANNOT_CONFIRM,"reason: news page gives title only in prose ('professor of mechanical engineering'); Centire news page prints no title line for him. No profile or directory page found."
 PERSON-000059,,https://www.uakron.edu/polymer/research/polymer-physics,CANNOT_CONFIRM,"reason: faculty list shows name only; news page gives only prose ('professor in the School of Polymer Science and Polymer Engineering'), not a title line."
 PERSON-000067,Associate Professor of Practice,https://udayton.edu/directory/engineering/deans-office/huelskamp-scott.php,CONFIRMED,"Rank associate professor matches; page adds 'of Practice' qualifier."

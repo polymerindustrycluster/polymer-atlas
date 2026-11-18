@@ -13,7 +13,7 @@ PERSON-001029,"Kern Professor and Chair",https://mcw.marquette.edu/biomedical-en
 PERSON-001030,"",https://www.tuskegee.edu,CANNOT_CONFIRM,"Institution root page does not list Rangari; no profile URL in sources"
 PERSON-001031,"Professor; Lloyd G and Joyce Austin Presidential Professor",https://www.ou.edu/coe/scbme/people/faculty/foudazi,CONFIRMED,"Record role associate_professor; page shows Professor"
 PERSON-001036,"",https://lingroup.uconn.edu/yao-lin/,CANNOT_CONFIRM,"Group page and polymer.ims.uconn.edu both HTTP 503; no title read"
-PERSON-001037,"",www2.latech.edu/~apeters/member-apeters.html,CANNOT_CONFIRM,"Page gives only prose ('an assistant professor in Chemical Engineering'); no title line"
+PERSON-001037,"",www2.latech.edu/~<acct>/member-apeters.html,CANNOT_CONFIRM,"Page gives only prose ('an assistant professor in Chemical Engineering'); no title line"
 PERSON-001039,"",umassd.edu,CANNOT_CONFIRM,"UMass Dartmouth root page does not show Chalivendra; no title line found"
 PERSON-001040,"Associate Professor; Mechanical and Aerospace Engineering",https://samueli.ucla.edu/people/lihua-jin/,CONFIRMED,""
 PERSON-001044,"",https://engineering.jhu.edu/chembe/faculty/paulette-clancy/,CANNOT_CONFIRM,"Profile HTTP 403; IDIES page lists her only as PI with no title line"

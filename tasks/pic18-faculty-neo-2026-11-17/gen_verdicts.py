@@ -70,7 +70,7 @@ su("KENT", "AMLCI/Chemistry", "John L. West", "Gate A met on the AMLCI profile (
    gate_a_url="https://www.kent.edu/amlci/john-l-west", gate_a_quote="Trustees Research Professor",
    gate_b_url="https://www.kent.edu/chemistry/dr-john-west-liquid-crystals-flexible-electronics", gate_b_quote="consisting of a liquid crystal core surrounded by a polymer sheath")
 su("YSU", "Chemistry", "Russell J. Moser", "Own page states 'Organic, Polymer, Biological & Analytical Chemistry' but shows no faculty rank on the page fetched. Settling fact: a YSU page styling him in a professor rank",
-   gate_b_url="http://people.ysu.edu/~rmoser", gate_b_quote="Organic, Polymer, Biological & Analytical Chemistry")
+   gate_b_url="http://people.ysu.edu/~<acct>", gate_b_quote="Organic, Polymer, Biological & Analytical Chemistry")
 su("YSU", "Chemistry", "Allen D. Hunter", "Home page fetch failed (HTTP 000, availability only). Settling fact: a successful fetch of his YSU page stating rank and polymer research")
 su("WALSH", "Chemistry", "Neil Walsh", "Gate A met (Associate Professor of Chemistry) but profile lists only 1990s styrene/butadiene copolymer publications and no current research statement. Settling fact: a statement of current polymer research",
    gate_a_url="https://www.walsh.edu/directory/neil-walsh.html", gate_a_quote="Chair, Mathematics and Sciences; Associate Professor of Chemistry")
