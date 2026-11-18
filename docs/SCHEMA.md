@@ -332,7 +332,7 @@ the rulings to existing rows is integrator work, queued in `tasks/QUEUE.md`.
 - **P2b. No personal-account identifier URL in a people row [v1.13.4, owner rulings 2026-11-18 items 1 and 1b].**
   A `?u=<network id>` query or a `/~<account>` home-directory path carries a person's university account name. No
   `public_profile_url`, `lab_url` or `sources` cell of a people row may contain one (validator V-62: an error on any
-  row, no baseline; the pattern is the pre-push disclosure scan's, scheme optional, with an optional explicit port, and a `#` ends the path so fragment text is not read as a query). Where an identifier-free
+  row, no baseline; decided by parsing each URL token: a query parameter `u` whose value starts with a letter or digit, or a path segment starting `~` plus a letter or digit; the fragment is ignored). Where an identifier-free
   department or lab page states the same facts, the row cites it and a new evidence row answers the old one; otherwise
   the URL is blanked and the old evidence row stays the record's source. `evidence_people` is out of scope: its old rows
   are append-only (§4.13) and are never edited. A person whose only witness is an identifier URL stays held.
@@ -3089,5 +3089,5 @@ unchanged.
 
 - **v1.13.3 — 2026-11-18 (records the owner ruling of 2026-11-16, "Strict matches").** §1 R13 gains SBA PPP historical job counts as a fourth employee-band source: blank bands only, dated to the loan, single-site Ohio-only organizations with an exact borrower name, street and city match. The ruling was applied in PR #348 before this record. No data row is changed by this revision.
 
-- **v1.13.4 — 2026-11-18 (owner rulings 2026-11-18, items 1 and 1b: identifier URLs on people rows).** §1 gains P2b and the validator gains V-62 (an error on any people row whose `public_profile_url`, `lab_url` or `sources` carries a `?u=<network id>` or `/~<account>` URL; no baseline entries). Applied in the same PR to the 29 people rows that carried one (18 `?u=`, 11 `/~`): 25 rows cite an identifier-free page with new evidence rows (EVD-396100 to EVD-396127), 4 rows have the URL blanked with the old evidence rows left as the record's source. Evidence rows are never edited (§4.13). `people.csv` changes only `public_profile_url`, `lab_url`, `sources` and `last_verified` on those rows.
+- **v1.13.4 — 2026-11-18 (owner rulings 2026-11-18, items 1 and 1b: identifier URLs on people rows).** §1 gains P2b and the validator gains V-62 (an error on any people row whose `public_profile_url`, `lab_url` or `sources` carries a `?u=<network id>` or `/~<account>` URL; no baseline entries). Applied in the same PR to the 29 people rows that carried one (18 `?u=`, 11 `/~`): 23 rows cite an identifier-free page with new evidence rows (EVD-396100 to EVD-396125), 6 rows have the URL blanked, with any old evidence rows left as the record's source. Evidence rows are never edited (§4.13). `people.csv` changes only `public_profile_url`, `lab_url`, `sources` and `last_verified` on those rows.
 

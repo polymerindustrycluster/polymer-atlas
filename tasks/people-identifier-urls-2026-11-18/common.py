@@ -1,9 +1,9 @@
 """Shared helpers for build.py and check.py (people identifier URLs, owner rulings 2026-11-18 items 1 and 1b)."""
-import csv, hashlib, html, io, os, re, unicodedata
+import csv, hashlib, html, io, os, re, sys, unicodedata
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 PERSIST = "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/people-identifier-urls-2026-11-18/"
-# The pre-push scan's pattern, plus an optional explicit port and no '#' in the path (a fragment is not a query). Same as V-62.
-ID_RE = re.compile(r'(?:https?://)?[\w.-]+\.[A-Za-z]{2,}(?::\d+)?(?:/[^\s,"#]*)?(?:[?&]u=|/~)[A-Za-z0-9]')
+sys.path.insert(0, os.path.join(REPO, "scripts"))
+from people_url import has_account_identifier  # the function V-62 uses (urlsplit tokens, not a regex)
 URL_COLS = ("public_profile_url", "lab_url", "sources")
 ALLOWED_COLS = {"public_profile_url", "lab_url", "sources", "last_verified"}
 EVD_LO, EVD_HI = 396100, 396199
@@ -14,7 +14,7 @@ def read_csv(text):
     return list(csv.DictReader(io.StringIO(text, newline="")))
 
 def has_id(cell):
-    return bool(ID_RE.search(cell or ""))
+    return has_account_identifier(cell)
 
 def sources_list(cell):
     return [s for s in (cell or "").split(";") if s]

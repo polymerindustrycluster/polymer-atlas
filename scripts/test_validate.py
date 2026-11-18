@@ -512,6 +512,16 @@ class ValidatorMutationTests(unittest.TestCase):
         self.assertNotIn("V-62", out)
         self.assertEqual(code, 0, out[-2000:])
 
+    def test_v62_account_in_second_query_parameter_without_path_rejected(self):
+        self._people_row(public_profile_url="https://www.example.edu?lang=en&" + "u=abc")
+        self.assert_fails_with("PERSON-000001 public_profile_url carries a personal-account identifier URL")
+
+    def test_v62_filename_then_query_inside_fragment_passes(self):
+        self._people_row(public_profile_url="https://www.example.edu/guide#paper.pdf?" + "u=abc")
+        code, out = run_validator(self.data)
+        self.assertNotIn("V-62", out)
+        self.assertEqual(code, 0, out[-2000:])
+
     def test_v62_placeholder_and_non_people_table_pass(self):
         self._people_row(public_profile_url="https://www.example.edu/people/profile.dot?u=<id>")
         self.edit_rows("organizations_OH.csv", lambda r: True,

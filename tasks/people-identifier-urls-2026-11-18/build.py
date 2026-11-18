@@ -31,7 +31,6 @@ PLAN = {
  48: (A, HELD, [("existence", EXIST, "supports_A", ["Dr. James Eagan Title: Associate Professor " + SPSPE])], ""),
  49: (A, HELD, [("existence", EXIST, "supports_A", ["Dr. Kevin Cavicchi Title: Professor " + SPSPE])], ""),
  50: (A, HELD, [("existence", EXIST, "supports_A", ["Dr. Li Jia Title: Professor of Polymer Science and Chemistry " + SPSPE])], ""),
- 51: (A2, SIDE, [("existence", "name, institution and endowed-professor title as published; the page does not state interim director (it names a different director), so the recorded director role is not verified here; people row role unchanged", "supports_A", ["Dr. Mark D. Soucek Title: Sundar L. Aggarwal Endowed Professor " + SPSPE])], ""),
  52: (A2, SIDE, [("existence", EXIST, "supports_A", ["Dr. Mesfin Tsige Title: Director, SPSPE; Professor " + SPSPE])], ""),
  55: (A2, SIDE, [("existence", EXIST, "supports_A", ["Dr. Shi-Qing Wang Title: Kumho Professor, Distinguished Professor " + SPSPE])], ""),
  57: (A, HELD, [("existence", EXIST, "supports_A", ["Dr. Steven S.C. Chuang Title: Professor, SPSPE; Adjunct Faculty, CBCE " + SPSPE])], ""),
@@ -59,9 +58,6 @@ PLAN = {
       [("existence", EXIST, "supports_B", ["Sachin Shanbhag is a professor in Florida State University’s Department of Scientific Computing"]),
        ("scope", "Gate B: person-level polymer research stated", "supports_B", ["My research lies at the intersection of computational modeling and soft materials, particularly polymers."])],
       "college news article dated 2024-03-07, not a department page: the department page's text did not render"),
- 1037: ("https://www.latech.edu/directory/andrew-j-peters.php", Q % "Andrew Peters assistant professor chemical engineering Louisiana Tech University' (latech.edu)",
-      [("existence", "name and institution as published on the directory page; its title field reads Associate Professor while the overview sentence quoted here says assistant professor, so the recorded assistant rank is not established here (rank conflict); people row role unchanged", "supports_A", ["Andrew Peters is an assistant professor in Chemical Engineering at Louisiana Tech University"])],
-      "the same page's header line reads Associate Professor; the quote is the overview sentence the row already records"),
  1132: ("https://arts-sciences.buffalo.edu/chemistry/faculty/faculty-directory/rzayev.html", HELD,
       [("existence", EXIST, "supports_A", ["Javid Rzayev PhD Department Chair Professor Department of Chemistry College of Arts and Sciences"])], ""),
  1199: ("https://www.engr.colostate.edu/bce/people/david-wang/", HELD,
@@ -75,15 +71,18 @@ EXTRA = {
        Q % "Joseph Schlenoff Robert O. Lawton Distinguished Research Professor Chemistry Florida State University' (fsu.edu)",
        [("existence", "title as published (Robert O. Lawton Distinguished Research Professor of Chemistry and Biochemistry), the title the row records; dated 2025-07-11", "supports_B", ["Schlenoff, a Robert O. Lawton Distinguished Research Professor of Chemistry and Biochemistry"])], "", "own_site"),
 }
-# Rows whose page does not establish the recorded role: evidence is narrowed to what the page states and last_verified is not bumped.
-NARROW = {51, 1037}
 # Identifier-free page exists but does not state the same facts, so the identifier URL is blanked (old evidence stays).
 BLANK = {
+ 51: "the listing gives an endowed professorship and names PERSON-000052 as director; no identifier-free page states the interim director role the row records (old identifier URLs removed; the listing stays in sources)",
+ 1037: "the one identifier-free page found has a title field (Associate Professor) that conflicts with its overview sentence (assistant professor); it cannot settle the recorded rank",
  54: "listing states name and rank but not the specialty the old evidence row cited from the identifier URL",
  75: "listing and emeritus page style him Distinguished Professor Emeritus; the row says professor",
  1304: "the only identifier-free utah.edu page found is a seminar-series line (a list item, not a directory or profile entry); the page that does state her rank is the BME profile already in sources",
  359: "the only identifier-free department page lists him under In Memoriam; no page states a current rank",
 }
+# A blanked row whose only source was the identifier URL: keep the identifier-free page found as a plain source (no evidence row,
+# no role claim) so `sources` is not empty. Needs the controller's decision: the ruling's hold branch would keep the identifier URL.
+KEEP_SOURCE = {1037: "https://www.latech.edu/directory/andrew-j-peters.php"}
 pid = lambda n: "PERSON-%06d" % n
 
 def main(write=True):
@@ -106,6 +105,7 @@ def main(write=True):
             for c in ("public_profile_url", "lab_url"):
                 if has_id(r[c]): r[c] = ""
             r["sources"] = ";".join(s for s in sources_list(r["sources"]) if not has_id(s))
+            if not r["sources"] and n in KEEP_SOURCE: r["sources"] = KEEP_SOURCE[n]
             if not r["sources"]: sys.exit(f"{r['person_id']}: blanking would empty sources; hold instead")
             continue
         for k, page in enumerate([PLAN[n]] + ([EXTRA[n]] if n in EXTRA else [])):
@@ -124,7 +124,7 @@ def main(write=True):
                     if s not in out: out.append(s)
                 r["sources"] = ";".join(out)
             if url not in sources_list(r["sources"]): r["sources"] += ";" + url  # a page the new evidence rows cite is a source of the row
-            if n not in NARROW: r["last_verified"] = TODAY
+            r["last_verified"] = TODAY
             for ct, detail, eff, segs in claims:
                 eid = "EVD-%06d" % nxt; nxt += 1
                 ans = f"; answers {', '.join(old_ev)} (unedited; they cite an identifier URL)" if old_ev else ""

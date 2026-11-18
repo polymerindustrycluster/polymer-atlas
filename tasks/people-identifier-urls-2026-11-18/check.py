@@ -15,6 +15,10 @@ sys.path.insert(0, str(HERE))
 from common import *
 import build  # PLAN / BLANK / EXTRA / NARROW: the intended outcome per row, independent of what evidence survived
 
+# independent of the urlsplit rule: a raw-text regex over the base file's lines, used only to count the frame
+import re
+RAW_ID = re.compile(r'[\w.-]+\.[A-Za-z]{2,}[^\s,"]*(?:[?&]u=|/~)[A-Za-z0-9]')
+
 def git_show(ref, path):
     return subprocess.run(["git", "show", f"{ref}:{path}"], cwd=REPO, capture_output=True, text=True, check=True).stdout
 
@@ -23,6 +27,25 @@ def base_ref():
 
 def frame_ids(people):
     return [r["person_id"] for r in people if any(has_id(r[c]) for c in URL_COLS)]
+
+def expected_cells(b, n):
+    """Planned value of each URL cell of base row b for person number n, from the plan alone."""
+    out = {}
+    if n in build.BLANK:
+        for c in ("public_profile_url", "lab_url"): out[c] = "" if has_id(b[c]) else b[c]
+        srcs = [s for s in sources_list(b["sources"]) if not has_id(s)]
+        if not srcs and n in build.KEEP_SOURCE: srcs = [build.KEEP_SOURCE[n]]
+    else:
+        url = build.PLAN[n][0]
+        for c in ("public_profile_url", "lab_url"): out[c] = url if has_id(b[c]) else b[c]
+        srcs = []
+        for s in sources_list(b["sources"]):
+            s = url if has_id(s) else s
+            if s not in srcs: srcs.append(s)
+        for p in [build.PLAN[n]] + ([build.EXTRA[n]] if n in build.EXTRA else []):
+            if p[0] not in srcs: srcs.append(p[0])
+    out["sources"] = ";".join(srcs)
+    return out
 
 def prove(base_people, base_ev, now_people, now_ev, witness, pages, pairs):
     """Return a list of failures (empty = all proofs hold). pages: sha -> visible text."""
@@ -77,20 +100,23 @@ def prove(base_people, base_ev, now_people, now_ev, witness, pages, pairs):
         r = next((r for r in now_people if r["person_id"] == pid), None); b = bp.get(pid)
         if r is None or b is None: bad.append(f"{pid} missing"); continue
         got = per_person.get(pid, [])
+        # planned outcome of every URL cell (replaced with the planned URL, or blanked) and the other URLs preserved
+        want_cells = expected_cells(b, n)
+        for c in URL_COLS:
+            if r[c] != want_cells[c]: bad.append(f"{pid} {c} is not its planned outcome")
         if n in build.BLANK:
             if got: bad.append(f"{pid} is a planned blank but has new evidence")
             if r["last_verified"] != b["last_verified"]: bad.append(f"{pid} blanked but last_verified changed")
             continue
         pages_ = [build.PLAN[n]] + ([build.EXTRA[n]] if n in build.EXTRA else [])
-        want = sorted((c[0], p[0], c[2]) for p in pages_ for c in p[2])
-        if sorted((e["claim_type"], e["source_ref"], e["tier_effect"]) for e in got) != want:
-            bad.append(f"{pid} is a planned replacement; its new evidence rows differ from the plan ({len(got)} found, {len(want)} planned)")
-        if n in build.NARROW:
-            if r["last_verified"] != b["last_verified"]: bad.append(f"{pid} role not established by its page but last_verified changed")
-        elif r["last_verified"] != TODAY: bad.append(f"{pid} replaced but last_verified not {TODAY}")
-        vals = lambda row, c: set(sources_list(row[c])) if c == "sources" else ({row[c]} - {""})
-        for u in {u for c in URL_COLS for u in vals(r, c) - vals(b, c)}:
-            if (pid, u) not in cited: bad.append(f"{pid}: new URL on the row has no new evidence row citing it")
+        planned = sorted((c[0], p[0], c[2], SEP.join(c[3])) for p in pages_ for c in p[2])
+        have = sorted((e["claim_type"], e["source_ref"], e["tier_effect"], (wit.get(e["evidence_id"]) or {}).get("segments")) for e in got)
+        if have != planned:
+            bad.append(f"{pid} is a planned replacement; its evidence rows or witness quotes differ from the plan ({len(got)} found, {len(planned)} planned)")
+        for e in got:
+            if any(s.strip() not in e["notes"] for s in (wit.get(e["evidence_id"]) or {"segments": ""})["segments"].split(SEP.strip())):
+                bad.append(f"{e['evidence_id']}: note does not carry the planned person's quote")
+        if r["last_verified"] != TODAY: bad.append(f"{pid} replaced but last_verified not {TODAY}")
     return bad
 
 def load_pages(witness):
@@ -108,7 +134,7 @@ def main():
     now_ev = read_csv(open(REPO + "/data/evidence_people.csv", encoding="utf-8").read())
     witness = read_csv(open(HERE / "witness.csv", encoding="utf-8").read())
     bf = frame_ids(base_people)
-    raw = sum(1 for ln in bpt.splitlines() if ln.startswith("PERSON-") and any(ID_RE.search(c) for c in [ln]))
+    raw = sum(1 for ln in bpt.splitlines() if ln.startswith("PERSON-") and RAW_ID.search(ln))
     by_form = {"?u=": sum(1 for r in base_people if any(__import__("re").search(r"[?&]u=[A-Za-z0-9]", r[c]) for c in URL_COLS)),
                "/~": sum(1 for r in base_people if any(__import__("re").search(r"/~[A-Za-z0-9]", r[c]) for c in URL_COLS))}
     base_idev = sum(1 for e in base_ev if any(has_id(e[c]) for c in e))
@@ -157,6 +183,17 @@ def main():
         w[0].update(sha256=w[-1]["sha256"], segments=w[-1]["segments"])
         next(x for x in e if x["evidence_id"] == w[0]["evidence_id"])["notes"] = w[-1]["segments"]
     inject("witness digest and quote swapped for another page's", swap_digest)
+    def swapped_person(p, e, w):  # a genuine quote from the same page, but another person's, in note and witness
+        a = next(x for x in w if x["person_id"] == "PERSON-000043"); b = next(x for x in w if x["person_id"] == "PERSON-000045")
+        r = next(x for x in e if x["evidence_id"] == a["evidence_id"])
+        r["notes"] = r["notes"].replace(a["segments"], b["segments"]); a["segments"] = b["segments"]
+    inject("another person's real quote on a roster page", swapped_person)
+    inject("planned replacement left with an empty profile URL", lambda p, e, w: next(r for r in p if r["person_id"] == "PERSON-000043").update(public_profile_url=""))
+    inject("planned blank given an unwitnessed URL", lambda p, e, w: next(r for r in p if r["person_id"] == "PERSON-000075").update(public_profile_url="https://example.invalid/"))
+    def drop_other_source(p, e, w):  # PERSON-000050 keeps an unrelated source that must survive
+        r = next(x for x in p if x["person_id"] == "PERSON-000050"); parts = r["sources"].split(";")
+        assert len(parts) > 1; r["sources"] = ";".join(parts[1:])
+    inject("unaffected source URL dropped", drop_other_source)
     if fails:
         print("FAIL"); [print(" -", f) for f in fails]; sys.exit(1)
     print("OK: all proofs hold and all injected defects were caught")
