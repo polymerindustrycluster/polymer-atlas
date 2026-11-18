@@ -9,7 +9,8 @@ Same method as tasks/show-harvest-w1-2026-11-06/build.py, plus the lessons of it
 - Show slug -> event from events.csv `pic_events_slug` (schema v1.12), not a side file.
 - A name mints only when its normalized key (atlas.name_key) is the LEGAL name of exactly one active/unknown
   organization. A hit on a trade name only is held for review (trade_name_holds.csv): trade_names carries brands,
-  parents and subsidiaries, and #252 credited Coperion to Hillenbrand that way.
+  parents and subsidiaries, and #252 credited Coperion to Hillenbrand that way. TRADE_ACCEPT lists the trade-name
+  hits both review families judged the same entity; REVIEW_HOLDS lists legal-name hits the review held.
 - An edition abroad mints only when the list gives the company's country AND it equals the organization's
   hq_country; otherwise held (the Momentive GmbH / MPM Silicones LLC trap, tasks/exhibitor-links-2026-11-06).
 - Attendee lists are not minted here: SPE Polyolefins 2026 is a delegate list naming people (owner ruling
@@ -48,6 +49,31 @@ COUNTRY_NAME = {"DE": "Germany", "FR": "France", "JP": "Japan", "CA": "Canada", 
 NOT_EVENT_LISTS = {
     "https://www.blowmoldingdivision.org/corporate-education-sponsors":
         "the SPE Blow Molding Division's 2025 scholarship sponsors, not sponsors of an ABC conference edition",
+}
+# cross-family review of PR #384 (codex deep, 2026-11-18): the listed name does not pin one legal entity
+REVIEW_HOLDS = {
+    ("ppxxiii-plastic-pipes-conference-and-exhibition:2027", "exhibitor", "Trelleborg"):
+        "bare group name; Atlas holds more than one Trelleborg entity and the page does not say which exhibited",
+    ("ppxxiii-plastic-pipes-conference-and-exhibition:2027", "exhibitor", "iNOEX"):
+        "bare brand; iNOEX GmbH (Germany) and iNOEX LLC (Lancaster PA) both exist, and the page does not say which",
+    ("npe-the-plastics-show:2027", "exhibitor", "Aaron Industries, Inc."):
+        "listed as Inc.; the company calls itself Aaron Industries Corporation, so the suffix may name another entity",
+    ("npe-the-plastics-show:2027", "exhibitor", "ACS Group"):
+        "a family of equipment brands; the group label does not identify the legal entity",
+    ("ppxxiii-plastic-pipes-conference-and-exhibition:2027", "exhibitor", "Hultec"):
+        "a brand over four owned companies; the bare label does not identify the entity behind the booth",
+}
+# trade-name hits that BOTH review families (codex + agy, 2026-11-18) judged the same legal entity
+TRADE_ACCEPT = {
+    ("npe-the-plastics-show:2027", "exhibitor", "Baystar"):
+        "Baystar is Bayport Polymers LLC's brand (the brand's privacy policy names Bayport Polymers LLC; the NPE "
+        "profile places it in Pasadena TX, the record's HQ)",
+    ("ppxxiii-plastic-pipes-conference-and-exhibition:2027", "exhibitor", "Baystar"):
+        "Baystar is Bayport Polymers LLC's brand (the brand's privacy policy names Bayport Polymers LLC)",
+}
+REVIEW_NOTES = {
+    ("sampe-conference-and-exhibition:2027", "exhibitor", "Fiber Dynamics"):
+        ' Listed in a joint entry, "NIAR | Fiber Dynamics | FILL USA INC".',
 }
 USPS = set("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH "
            "OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY PR".split())
@@ -154,6 +180,8 @@ def main():
                     skip["labelled for a co-located show"] += 1; continue
                 if norm(name) not in raw:
                     skip["name not in the page's visible text (logo alt text or rebuilt)"] += 1; continue
+                if (key, role, name) in REVIEW_HOLDS:
+                    skip["held by the cross-family review (REVIEW_HOLDS)"] += 1; continue
                 hits = by_key.get(A.name_key(name), {})
                 if len(hits) != 1:
                     (leads.append({"show_key": key, "role": role, "year": yr, "name": name}) if not hits
@@ -162,7 +190,8 @@ def main():
                 org, kind = next(iter(hits.items()))
                 if abroad and (not iso(c.get("country")) or iso(c["country"]) != iso(orgs[org]["hq_country"])):
                     skip["edition abroad, listed country missing or not the org's HQ country"] += 1; continue
-                if kind == "trade":
+                accepted = TRADE_ACCEPT.get((key, role, name)) if kind == "trade" else None
+                if kind == "trade" and not accepted:
                     holds.append({"show_key": key, "event_id": ev, "edition_year": yr, "role": role,
                                   "listed_name": name, "org_id": org, "legal_name": orgs[org]["legal_name"],
                                   "trade_names": orgs[org].get("trade_names", ""), "source_url": L["source_url"]})
@@ -192,8 +221,11 @@ def main():
                     "evidence_source_url": L["source_url"], "evidence_date": d["retrieved"],
                     "sources": f"{L['source_url']} (read {d['retrieved']}; listed as \"{name}\")",
                     "verification_tier": "A", "last_verified": d["retrieved"], "created_by": BY,
-                    "notes": f"{role.capitalize()} name matched to the org by exact normalized legal name; "
-                             f"list banked in staging (harvest-2026-11, {key})." + staged + pre + partial
+                    "notes": (f"{role.capitalize()} name matched to the org by exact normalized legal name; " if not
+                              accepted else f"{role.capitalize()} name matched a trade name, adjudicated the same "
+                              f"entity by cross-family review: {accepted}; ")
+                             + f"list banked in staging (harvest-2026-11, {key})." + staged + pre + partial
+                             + REVIEW_NOTES.get((key, role, name), "")
                              + (f" Edition abroad: the list gives the company's country ({c['country']}), which "
                                 f"matches the organization's HQ country." if abroad else "")})
                 nxt += 1

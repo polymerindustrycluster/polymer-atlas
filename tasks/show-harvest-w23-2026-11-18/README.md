@@ -1,14 +1,14 @@
 # Show harvest, waves 2 and 3 (2026-11-18)
 
-**+55 exhibitor rows** in `data/event_participation.csv` (1,296 → 1,351), for 5 event series already held in
+**+52 exhibitor rows** in `data/event_participation.csv` (1,296 → 1,348), for 5 event series already held in
 `data/events.csv`. All tier A (the organizer's own published list, SCHEMA §4.12.2). No organization, event or other
 row is added or changed.
 
 | Event | List year | Rows | Source |
 |-|-|-|-|
-| EVT-000001 NPE: The Plastics Show | 2027 | 25 | Map Your Show alpha list, read A–B only (partial; pre-show) |
+| EVT-000001 NPE: The Plastics Show | 2027 | 24 | Map Your Show list: the A–B entries plus NPE's featured exhibitors, 200 of 1,749 (partial; pre-show) |
 | EVT-000017 SPE Annual Blow Molding Conference | 2026 | 17 | blowmoldingdivision.org ABC 2026 exhibitors |
-| EVT-000069 Plastic Pipes Conference (PP XXIII, The Woodlands TX) | 2027 | 6 | ppxxiii.com exhibition map (pre-show) |
+| EVT-000069 Plastic Pipes Conference (PP XXIII, The Woodlands TX) | 2027 | 4 | ppxxiii.com exhibition map (pre-show) |
 | EVT-000047 Fakuma | 2026 | 4 | fakuma-messe.de exhibitor list (edition abroad; see below) |
 | EVT-000035 SAMPE Conference & Exhibition | 2027 | 3 | Map Your Show alpha list (pre-show); 37 more matches already held |
 
@@ -28,8 +28,9 @@ of that PR's 2026-11-09 review built in:
 
 - **Event** from `events.csv` `pic_events_slug` (schema v1.12).
 - **Organization: legal names only.** A name mints only when its `atlas.name_key` is the legal name of exactly one
-  active/unknown organization. A hit on a trade name is held in `trade_name_holds.csv` (8 names) for review, because
-  `trade_names` carries brands, parents and subsidiaries (#252 credited Coperion to Hillenbrand that way).
+  active/unknown organization. A hit on a trade name is held in `trade_name_holds.csv` for review, because
+  `trade_names` carries brands, parents and subsidiaries (#252 credited Coperion to Hillenbrand that way). Of the 8
+  trade-name hits, the review added 2 (below) and 6 stay held.
 - **Edition abroad:** mints only when the list gives the company's country and it equals the organization's
   `hq_country` (74 matched names held). Fakuma's 4 rows are three US-listed US companies and one German-listed
   organization whose record is German-headquartered.
@@ -48,7 +49,8 @@ of that PR's 2026-11-09 review built in:
 | Media-partner lists filed as sponsors (NPE 2027 media partners; K "Cooperating Media") | 60 |
 | Not a list for this event (SPE Blow Molding Division 2025 scholarship sponsors, not ABC sponsors) | 10 |
 | Edition abroad, listed country missing or not the org's HQ country | 74 |
-| Trade-name hit, held for review | 8 |
+| Trade-name hit, held (`trade_name_holds.csv`) | 6 |
+| Legal-name hit held by the cross-family review (`REVIEW_HOLDS` in build.py) | 5 |
 | Already held | 59 |
 
 **Attendees.** SPE International Polyolefins 2026 publishes a delegate workbook (first name, last name, title,
@@ -56,8 +58,25 @@ organization): a delegate list naming people never mints (owner ruling 2026-11-0
 ("Industry leaders were here", 800 organizations) is printed in a sponsorship brochure; whether that counts as an
 organizer-published attendee list or a brochure line is an owner question, so nothing is minted from it.
 
-**For reviewers:** bare "Trelleborg" (→ Trelleborg Corp, Pawling NY) and bare "iNOEX" (→ iNOEX LLC) at PP XXIII are
-legal-name hits on a group name; say if either should be held.
+## Cross-family review (2026-11-18)
+
+Codex (deep) and agy (Gemini 4 Hydrogen, XHigh) each reviewed all 55 first-build rows and the 8 trade-name holds
+from an evidence packet: the org record and a page excerpt for every row. Both returned SHIP-WITH-FIXES.
+
+- **Held, both families (5):** "Trelleborg" and "iNOEX" at PP XXIII (bare group or brand names; NPE's "iNOEX, LLC"
+  stays), "Aaron Industries, Inc." at NPE (the company calls itself a Corporation), "ACS Group" at NPE (a family of
+  brands), "Hultec" at PP XXIII (a brand over four companies). Recorded in `REVIEW_HOLDS`.
+- **Added, both families SAME (2):** "Baystar" at NPE and at PP XXIII → Bayport Polymers LLC (the brand's privacy
+  policy names the LLC; NPE's profile gives Pasadena TX). Recorded in `TRADE_ACCEPT`; the notes say so.
+- **Still held (6):** Blueshift and Cambium (codex: same, citing their legal pages; agy: unsure), Alpek Polyester,
+  3A Composites Core Materials, Airtech Advanced Materials Group, Brighton Science (both unsure or split).
+- **Split, kept (2):** agy would also drop "Atomic Industries" and "Fiber Dynamics" for lack of profile text. Codex
+  checked Atomic Industries' own site, which matches the Warren MI record, and found no other company of that name.
+  Fiber Dynamics is named outright in the joint entry "NIAR | Fiber Dynamics | FILL USA INC", which the row's notes
+  now quote.
+- **For the integrator, not this PR:** codex noted Brighton Science's terms name Brighton Technologies, LLC, while
+  the record says Brighton Technologies Group, Inc. agy noted record gaps: ORG-007105 has no HQ, ORG-003769 has no
+  city, and ORG-003278 has `hq_country` "United States" rather than "US".
 
 ## Follow-ups (not in this PR)
 
