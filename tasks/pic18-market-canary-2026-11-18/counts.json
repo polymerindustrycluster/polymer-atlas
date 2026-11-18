@@ -1,23 +1,24 @@
 {
   "applied_by_source": {
     "live": 1,
-    "stored": 2
+    "stored": 3
   },
-  "applied_organizations": 3,
+  "applied_organizations": 4,
   "applied_tiers": {
+    "A": 1,
     "B": 3
   },
-  "applied_values": 4,
+  "applied_values": 5,
   "frame_organizations": 10,
   "held_by_class": {
     "group_or_redirect_attribution": 1,
     "menu_or_nav_only": 1,
     "no_market_claim": 1,
     "no_vocab_market": 1,
-    "off_vocabulary_or_ambiguous_market": 2,
+    "off_vocabulary_or_ambiguous_market": 1,
     "scope_owner_ruling": 1
   },
-  "held_organizations": 7,
+  "held_organizations": 6,
   "live_fetches": 13,
   "mkt3_reach": {
     "cannot_tell": 6,
