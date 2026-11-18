@@ -32,7 +32,7 @@ CAP_MAP.update({"rubber_calendering": "calendering", "compounding_extrusion": "c
                 **{t: "injection_molding" for t in ("injection_molding_micro", "injection_molding_lsr_silicone", "insert_overmolding", "two_shot_molding")},
                 "additive_manufacturing_polymer_production": "additive_manufacturing_polymer", "regrind_pelletizing": "recycling_mechanical"})
 CAP_MAP.pop("composites_pultrusion", None); CAP_MAP["composites_pultrusion"] = "composites_pultrusion"
-ANCILLARY = re.compile(r"\b(boilers?|generators?|storage tanks?|baghouses?|dust collectors?|paint(?:ing)?\s+(?:spray\s+)?booths?|spray\s+paint\s+booths?|hand\s+spray|clean(?:ing|up)|degreas\w*)\b", re.I)
+ANCILLARY = re.compile(r"\b(boilers?|generators?|tanks?|baghouses?|dust collectors?|paint(?:ing)?\s+(?:spray\s+)?booths?|spray\s+paint\s+booths?|hand\s+spray|clean(?:ing|up)|degreas\w*)\b", re.I)
 NEAR = {"pkwy": "parkway", "rte": "route"}   # the only format variants the near-bound report tries; none is accepted as a bind
 
 def read_csv(p): return list(csv.DictReader(open(p, newline="")))
@@ -67,6 +67,7 @@ def position(text, quote):
         if re.match(r"\s*\d+\.\s+([A-Z]\d{3}\b|Emissions Unit Group)", lines[ln]): return "unit_heading"
         for k in range(ln, max(-1, ln - 60), -1):
             L = lines[k]
+            if re.match(r"\s*[a-z]\)\s", L): break   # a lettered term opens the terms and conditions: not a unit description
             if re.search(r"Permit Description:", L): cls = "permit_description" if ln - k < 6 else ""
             elif re.search(r"Facility Description:", L): cls = "facility_description" if ln - k < 3 else ""
             elif re.search(r"Operations,?\s+Propert\S*\s+and/or\s+Equipment\s+Description:\s*$", L): cls = "unit_paragraph" if ln - k < 8 else ""
@@ -255,10 +256,13 @@ def readme(model, m):
             elif p["route"] == "capability": out.append(f"capability `{p['capability_term']}` (supports_C)")
             elif p["route"] == "already_held": out.append(f"none: capability `{p['capability_term']}` already held")
         return "; ".join(out) or "none"
+    def cited(r, P):
+        ps = sorted({(p["permit_number"], p["issue_date"], p["expiry"]) for p in P.get(r["site_id"], []) if p["term"]})
+        return "; ".join(f"{a} {b} → {c.replace(' (permit-to-install)', '')}" for a, b, c in ps) if ps else f"(none cited; newest {r['newest_permit']} {r['newest_issue']} → {r['newest_expiry']})"
     rows = []
     for r in model["sites"]:
         ps = P.get(r["site_id"], []); terms = "; ".join(sorted({p["term"] for p in ps if p["term"]})) or "none"
-        rows.append(f"| {r['site_id']} | {r['tier']} | {r['strict_bind']}{' (near: format only)' if r['near_bound_rule'] else ''} | {r['newest_permit']} {r['newest_issue']} → {r['newest_expiry']} | {terms} | {writes(r['site_id'])} | "
+        rows.append(f"| {r['site_id']} | {r['tier']} | {r['strict_bind']}{' (near: format only)' if r['near_bound_rule'] else ''} | {cited(r, P)} | {terms} | {writes(r['site_id'])} | "
                     f"{r['verdict']}{(': ' + r['hold_reason']) if r['hold_reason'] else ''}{('; ' + settle(r)) if r['verdict'] != 'VERIFIED' else ''}{('. ' + r['note']) if r['note'] and r['hold_reason'] == 'not_bound' else ''} |")
     outcome = (HERE / "outcome.txt").read_text() if (HERE / "outcome.txt").exists() else "_(run after the data apply)_"
     return f"""# PIC-18 Ohio EPA air-permit lane: {m['sites_with_process_written']} sites with a process written, {m['capability_rows']} capability row, {m['process_terms_written']} terms, {m['still_uncertain_sites']} sites held
@@ -301,7 +305,7 @@ First user: the Atlas integrator, who decides at the next wave review whether th
 
 ## Per site
 
-| Site | Tier | Bind (strict) | Newest permit issued → expiry | §3.1 terms proposed | Write | Verdict |
+| Site | Tier | Bind (strict) | Permit(s) cited: issued → expiry | §3.1 terms proposed | Write | Verdict |
 |---|---|---|---|---|---|---|
 """ + "\n".join(rows) + f"""
 
@@ -312,6 +316,8 @@ Per quote: `proposals.csv` (document, permit number, issue and expiry dates, bin
 1. **Canary flips.** Under the ruling, SITE-000664 (`laminating`) and SITE-000248 (now `composites_spray_up`, not `coating_applying`) stand; SITE-000997 (dip stations) and SITE-000814 (paint manufacture) are now held, because the only words that name the process are in the permit description, not the unit description; SITE-000601 and SITE-001530 are not written (tier A, no capability term; tier B, already held as a capability from TRI); SITE-000535, SITE-000140 and SITE-001833 stay unbound. SITE-000248's `coating_applying` is not carried: the spray-up unit is the process.
 2. **Permit descriptions.** If the owner rules that a `Permit Description` line counts at `supports_C`, the permit_description_only holds become writes (3 sites; see the per-site table). Not applied.
 3. **`coating_applying` has no capability term** (§3.6: applying is a trade service, not seeded), so it can never land on a tier A/B site from a `supports_C` witness.
+4. **SITE-000238 is written although both its permits are past their printed expiry** (2024-04-08, no later permit in the portal listing). The brief's verdict list names "expired with no current permit" as a STILL_UNCERTAIN reason; the ruling instead says an expired permit caps at `supports_C`, and the brief names SITE-000238's chopper booths for the new spray-up term, so both terms are written at `supports_C` on a tier C site (1 of 5 sites, 2 of 6 terms). The controller can strike them if the brief's list governs.
+5. **The one `supports_A` row** (SITE-000664, `laminating`) follows the canary's grading of the same sentence (CQ-13); the same shape elsewhere (SITE-000448's "Extrusion process including cooling, pelletizing, and screening", SITE-000346's label) is graded `supports_C`, because the sentence names an operation and a product rather than a label plus equipment.
 
 ## Self-refute (contract rule 15)
 
@@ -326,12 +332,12 @@ Per quote: `proposals.csv` (document, permit number, issue and expiry dates, bin
 - `python3 tasks/pic18-permit-lane-2026-11-18/build.py` stages and hash-checks the stored permits, recomputes everything and writes `sites.csv`, `proposals.csv`, `metrics.json`, `doc_hashes.json` and this README. `--apply` writes the planned rows to `data/`; ids are allocated above the maximum of every other row at apply time and re-allocated the same way after each merge of origin/main.
 - Named check: `python3 tasks/pic18-permit-lane-2026-11-18/check.py`. It recomputes the frame (and recounts it from the canary's caches), every bind, expiry (and fails on a printed expiry it cannot parse), witness position, strength and route; compares the published files with the recomputed ones; audits the data diff against the merge-base (only a planned `processes` union on a planned OH site row, and new evidence or capability rows by this lane; ids above the base maximum); scans every task file for emails, phones and the names printed in the stored permits; then runs 14 injected defects and fails unless each is caught: a quote not in its document; a reordered quote; a term not in §3.1; ancillary text mapped to a process; an unbound site written (two ways); a `supports_C` term in `processes` on a tier A/B site; an expired permit at `supports_A`; a changed cell other than `processes`; a changed existing row; an evidence id not above the base maximum; a person's name; an email; a changed frame count.
 
-## Proposed follow-ups (not in this PR)
+## Proposed follow-ups (not in this PR): owner questions, with a recommendation
 
-- Owner ruling: do USPS-standard abbreviations (`Pkwy`, `Rte`) and a `Twp.` suffix bind? (3 near-bound sites.)
-- Owner ruling: does a permit's `Permit Description` count as an emissions-unit description at `supports_C`? (3 held sites.)
-- Owner ruling: capability terms for `coating_applying` and the `_unspecified` process terms, so a tier A/B `supports_C` witness has a destination.
-- The 16 not-bound sites: 8 have a blank Atlas street; filling it from a primary source would let a later pass bind them.
+- **Do USPS-standard abbreviations (`Pkwy`, `Rte`) and a `Twp.` suffix bind?** Recommend yes, as a dated revision, when the printed Facility ID, holder, street number and street name all agree. Evidence: SITE-000264, SITE-001137 and SITE-002113 each match on Facility ID, holder and street number; the Facility ID alone is unique to one establishment. Only SITE-000264 would gain a (capability) write; the other two stay held on the term. Not applied.
+- **Does a permit's `Permit Description` count as an emissions-unit description?** Recommend yes at `supports_C` only (never `supports_A`, and a tier A/B site would get a capability row only): it is the regulator's own statement of what the permitted unit does, bound by the same Facility ID. Evidence: SITE-000630 ("expansion of polystyrene (EPS) pellets"), SITE-000814 ("paint and coatings manufacturing facility"), SITE-000997 ("coating lines") each name the process only there. Against: it is a summary, and canary finding 5 rejected the same for SITE-000814. Not applied.
+- **Capability terms for `_unspecified` terms and `coating_applying`.** Recommend mapping `compounding_unspecified` to `compounding` and `extrusion_unspecified` to `extrusion` (their §3.6 parents), and leaving `coating_applying` and `foam_molding_bead` unmapped (§3.6 keeps applying out on purpose). Evidence: SITE-000601 (tier A, `compounding_unspecified` on a unit group heading) would gain a capability row; `coating_applying` has three held sites (SITE-000601, SITE-001888, SITE-000997).
+- **The 16 not-bound sites:** 8 have a blank Atlas street; filling it from a primary source would let a later pass bind them.
 
 Not checked: permits beyond the newest six documents per site; local-agency permits; whether any plant still runs the permitted equipment; OCR accuracy beyond the quoted words. A permit is a statement as of its issue date and never a status finding.
 """

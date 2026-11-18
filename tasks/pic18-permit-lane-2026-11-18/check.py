@@ -1,7 +1,7 @@
 """Named check for the PIC-18 air-permit lane: python3 tasks/pic18-permit-lane-2026-11-18/check.py
 
 Recomputes every published count from the stored permits, the Atlas rows and the canary screen; audits every proposal and every data change;
-then proves the audit fails on 11 injected defects. Missing caches fail the run (a skipped check is not a pass).
+then proves the audit fails on every injected defect. Missing caches fail the run (a skipped check is not a pass).
 """
 import copy, csv, glob, io, json, re, subprocess, sys
 from pathlib import Path
@@ -64,6 +64,16 @@ def audit_data(base_files, now_files, props):
         else: v.append(("FILE", f"{path}: a data file this lane may not touch changed"))
     return v
 
+def audit_written(now_files, props, sites, hashes):
+    """The rows this lane wrote must equal the rows rebuilt from the proposals (site, term, strength, source, dates, notes), at the ids found."""
+    v = []
+    for path, key, build in (("data/evidence_sites_OH.csv", "evidence_id", B.evidence_rows), ("data/site_capabilities.csv", "capability_id", B.capability_rows)):
+        mine = sorted((r for r in now_files.get(path, []) if r["created_by"] == B.WHO), key=lambda r: r[key])
+        if not mine: continue
+        want = build(props, hashes, sites, int(mine[0][key][4:]))
+        if [dict(r) for r in mine] != want: v.append(("WRITTEN", f"{path}: the rows written differ from the rows rebuilt from proposals.csv"))
+    return v
+
 def audit_ids(new_ids, floor, what):
     low = [i for i in new_ids if i <= floor]
     return [("ID", f"{what}: ids {low} are not above the maximum {floor} at the base")] if low else []
@@ -117,6 +127,7 @@ def main():
     mine_cp = [int(r["capability_id"][4:]) for r in nf.get("data/site_capabilities.csv", []) if r["created_by"] == B.WHO]
     others_ev = max([int(r["evidence_id"][4:]) for p in glob.glob(str(ROOT / "data/evidence_*.csv")) for r in B.read_csv(p) if r["created_by"] != B.WHO] + [ev_base_max])
     assert not audit_data(bf, nf, props), audit_data(bf, nf, props)
+    assert not audit_written(nf, props, sites, hashes), "written rows differ from the plan"
     assert not audit_ids(mine_ev, others_ev, "evidence") and not audit_ids(mine_cp, cap_base_max, "capability")
     n_ev = sum(p["route"] == "processes" for p in props); n_cp = sum(p["route"] == "capability" for p in props)
     assert len(mine_ev) in (0, n_ev) and len(mine_cp) in (0, n_cp), f"partial apply: {len(mine_ev)}/{n_ev} evidence rows, {len(mine_cp)}/{n_cp} capability rows"
@@ -129,6 +140,7 @@ def main():
             r = mut(P, S2) or P; got = audit(r, S2, O2)
         elif kind == "frame": got = audit_frame(mut(copy.deepcopy(inp["scr"])))
         elif kind == "data": got = audit_data(*mut(copy.deepcopy(bf), copy.deepcopy(nf)), props)
+        elif kind == "written": got = audit_written(mut(copy.deepcopy(nf)), props, sites, hashes)
         elif kind == "ids": got = audit_ids(*mut())
         elif kind == "privacy": got = audit_privacy(mut(), names)
         assert any(g[0] == rule for g in got), f"injected defect {rule} was NOT caught: {got[:3]}"
@@ -155,7 +167,10 @@ def main():
         b = {"data/sites_OH.csv": copy.deepcopy(sites_base)}; n = {"data/sites_OH.csv": copy.deepcopy(sites_base)}; n["data/sites_OH.csv"][5]["street_address"] = "tampered"; return b, n
     def row_defect(b, n):
         b = {"data/evidence_sites_OH.csv": rd(B.git("show", f"{base}:data/evidence_sites_OH.csv"))}; n = {"data/evidence_sites_OH.csv": copy.deepcopy(b["data/evidence_sites_OH.csv"])}; n["data/evidence_sites_OH.csv"][3]["notes"] = "edited"; return b, n
-    done += [one("CELLS", cell_defect, "data"), one("ROWS", row_defect, "data"),
+    def flip_tier(n):
+        i = next(i for i, r in enumerate(n["data/evidence_sites_OH.csv"]) if r["created_by"] == B.WHO and r["record_id"] == "SITE-000238"); n["data/evidence_sites_OH.csv"][i]["tier_effect"] = "supports_A"; return n
+    done += [one("WITNESS", lambda P, S2: row(P, site_id="SITE-000814").update(route="processes", strength="supports_C")),
+             one("WRITTEN", flip_tier, "written"), one("CELLS", cell_defect, "data"), one("ROWS", row_defect, "data"),
              one("ID", lambda: ([ev_base_max], ev_base_max, "evidence"), "ids"),
              one("PRIVACY", lambda: {"README.md": "contact " + sorted(names)[0] + " about the permit"}, "privacy"),
              one("PRIVACY", lambda: {"README.md": "write to someone" + chr(64) + "example.com"}, "privacy"),
