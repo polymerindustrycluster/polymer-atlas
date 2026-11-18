@@ -583,6 +583,15 @@ for _p in sorted(DATA.glob("*.csv")):
 for r in people:
     if "@" in (r.get("public_profile_url") or ""):
         debt("V-51", r["person_id"].strip(), f"{r['person_id'].strip()} public_profile_url contains an email-like string (AGENTS.md §6)")
+# V-62 [v1.13.4, owner rulings 2026-11-18 items 1 and 1b]: no personal-account identifier URL in a people row
+# (`?u=<network id>` or `/~<account>`), in public_profile_url, lab_url or sources. Errors on any row, no baseline;
+# evidence_people is out of scope (its old rows are append-only, SCHEMA 4.13). Each URL token is parsed with urlsplit,
+# not matched by regex (scripts/people_url.py): query parameter `u`, path segment `~`+alnum, fragment ignored.
+from people_url import has_account_identifier
+for r in people:
+    for col in ("public_profile_url", "lab_url", "sources"):
+        if has_account_identifier(r.get(col) or ""):
+            errors.append(f"{r['person_id'].strip()} {col} carries a personal-account identifier URL (?u= or /~; V-62, owner rulings 2026-11-18)")
 # V-60 [2026-11-09]: an evidence row never cites a licensed publication (AGENTS.md §5: leads only). Rows that did
 # before the rule are grandfathered; each is answered by a later public-source row (append-only, SCHEMA §4.13).
 LICENSED_SOURCE = re.compile(r"plasticsnews\.com|rubbernews\.com|dnb\.com|zoominfo\.com|data-axle\.com|dataaxle\.com", re.I)
@@ -883,6 +892,19 @@ if events or participation:
     if part_fields != PART_FIELDS:
         errors.append("event_participation.csv: header does not match the v1.5 field set (V-17)")
 ALL_ORG_IDS = {r["org_id"] for r in orgs} | {r["org_id"] for r in eco}
+# V-63 [v1.14]: the IPEDS completions layer (SCHEMA §4.23) is generated from data/ipeds/raw_ipeds_national.json by
+# scripts/ipeds_build.py; every table must equal a fresh derivation (field sets, keys and foreign keys follow from it).
+import ipeds_build
+if (DATA / "ipeds" / "raw_ipeds_national.json").exists():
+    try:
+        for f in ipeds_build.mismatches(DATA):
+            errors.append(f"{f}: missing or differs from a fresh derivation of ipeds/raw_ipeds_national.json; the table is "
+                          f"generated, never hand-edited: rerun scripts/ipeds_build.py (V-63)")
+    except (SystemExit, Exception) as e:  # the derivation's own refusals, or a malformed raw file
+        errors.append(f"ipeds/raw_ipeds_national.json: {type(e).__name__}: {e} (V-63)")
+else:
+    errors.append("ipeds/raw_ipeds_national.json is missing; the §4.23 tables cannot be derived (V-63)")
+
 evt_ids = set()
 _slug_events = {}
 for i, r in enumerate(events, 2):

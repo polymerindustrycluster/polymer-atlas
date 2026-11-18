@@ -1,0 +1,154 @@
+{
+ "pool_sites": 58,
+ "unknown_process_orgs": 331,
+ "air_record_sites": 41,
+ "retrievable_permit_sites": 33,
+ "status_counts": {
+  "no_air_record": 17,
+  "air_record_no_document_found": 6,
+  "retrievable_permit": 33,
+  "air_record_no_final_permit_in_newest_6": 2
+ },
+ "retrievable_wilson95_of_58": [
+  0.4412,
+  0.6882
+ ],
+ "canary_n": 10,
+ "bound_registered": 7,
+ "bound_broadened": 10,
+ "registered_specific": {
+  "hit": 6,
+  "wilson95": [
+   0.3127,
+   0.8318
+  ],
+  "projected_sites_of_58": 19.8,
+  "projected_range": [
+   10.3,
+   27.4
+  ],
+  "share_of_331_pct": 6.0,
+  "share_range_pct": [
+   3.1,
+   8.3
+  ]
+ },
+ "registered_specific_sites": [
+  "SITE-000238",
+  "SITE-000248",
+  "SITE-000601",
+  "SITE-000664",
+  "SITE-000997",
+  "SITE-001530"
+ ],
+ "registered_any_term": {
+  "hit": 6,
+  "wilson95": [
+   0.3127,
+   0.8318
+  ],
+  "projected_sites_of_58": 19.8,
+  "projected_range": [
+   10.3,
+   27.4
+  ],
+  "share_of_331_pct": 6.0,
+  "share_range_pct": [
+   3.1,
+   8.3
+  ]
+ },
+ "registered_specific_excluding_coating_only": {
+  "hit": 4,
+  "wilson95": [
+   0.1682,
+   0.6873
+  ],
+  "projected_sites_of_58": 13.2,
+  "projected_range": [
+   5.6,
+   22.7
+  ],
+  "share_of_331_pct": 4.0,
+  "share_range_pct": [
+   1.7,
+   6.9
+  ]
+ },
+ "registered_specific_narrative_strength": {
+  "hit": 1,
+  "wilson95": [
+   0.0179,
+   0.4042
+  ],
+  "projected_sites_of_58": 3.3,
+  "projected_range": [
+   0.6,
+   13.3
+  ],
+  "share_of_331_pct": 1.0,
+  "share_range_pct": [
+   0.2,
+   4.0
+  ]
+ },
+ "broadened_specific": {
+  "hit": 9,
+  "wilson95": [
+   0.5958,
+   0.9821
+  ],
+  "projected_sites_of_58": 29.7,
+  "projected_range": [
+   19.7,
+   32.4
+  ],
+  "share_of_331_pct": 9.0,
+  "share_range_pct": [
+   5.9,
+   9.8
+  ]
+ },
+ "broadened_specific_sites": [
+  "SITE-000140",
+  "SITE-000238",
+  "SITE-000248",
+  "SITE-000535",
+  "SITE-000601",
+  "SITE-000664",
+  "SITE-000814",
+  "SITE-000997",
+  "SITE-001530"
+ ],
+ "broadened_any_term": {
+  "hit": 10,
+  "wilson95": [
+   0.7225,
+   1.0
+  ],
+  "projected_sites_of_58": 33.0,
+  "projected_range": [
+   23.8,
+   33.0
+  ],
+  "share_of_331_pct": 10.0,
+  "share_range_pct": [
+   7.2,
+   10.0
+  ]
+ },
+ "hard_ceiling_sites": 58,
+ "hard_ceiling_share_of_331_pct": 17.5,
+ "canary_draw": [
+  "SITE-000814",
+  "SITE-001530",
+  "SITE-000248",
+  "SITE-000238",
+  "SITE-001833",
+  "SITE-000140",
+  "SITE-000535",
+  "SITE-000664",
+  "SITE-000601",
+  "SITE-000997"
+ ]
+}

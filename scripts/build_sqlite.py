@@ -17,7 +17,9 @@ TABLES = {
           "people_identifiers": "people_identifiers.csv",
           "archive_links": "archive_links.csv",
           "ref_codes": "ref_codes.csv", "ref_code_map": "ref_code_map.csv",
-          "code_assignments": "code_assignments.csv"}
+          "code_assignments": "code_assignments.csv",
+          "ipeds_institutions": "ipeds_institutions.csv", "ipeds_programs": "ipeds_programs.csv",
+          "ipeds_completions": "ipeds_completions.csv"}
 
 OUT.parent.mkdir(exist_ok=True)
 if OUT.exists():

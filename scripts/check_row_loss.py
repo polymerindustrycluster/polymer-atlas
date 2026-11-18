@@ -31,6 +31,7 @@ WHOLE_ROW = {"inclusion_log"}
 COMPOSITE = {
     "registry_links": ("org_id", "registry", "registry_id", "site_id"),
     "people_identifiers": ("person_id", "identifier_type", "identifier_id"),
+    "ipeds_completions": ("program_key", "year"),
 }
 
 
