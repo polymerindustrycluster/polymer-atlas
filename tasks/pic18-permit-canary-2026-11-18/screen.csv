@@ -1,0 +1,59 @@
+site_id,air_record,echo_air_ids,edoc_documents_listed,docs_fetched,final_permit_docids,status,reason
+SITE-000025,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-000038,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-000048,Y,OH0000001677011283,0,0,,air_record_no_document_found,"ECHO air record; Ohio EPA eDocument Permit search by printed Facility ID returned 0 documents (availability signal, not absence)"
+SITE-000081,Y,OH0000001677020197,0,0,,air_record_no_document_found,"ECHO air record; Ohio EPA eDocument Permit search by printed Facility ID returned 0 documents (availability signal, not absence)"
+SITE-000140,Y,OH0000001318007657,8,6,1533707;4150862,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000153,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-000182,Y,OH0000001677050021,0,0,,air_record_no_document_found,"ECHO air record; Ohio EPA eDocument Permit search by printed Facility ID returned 0 documents (availability signal, not absence)"
+SITE-000238,Y,OH0000001576011516,5,5,1028919;1201698,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000248,Y,OH0000001318008262,25,6,2000055;2098198;2321443,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000264,Y,OH0000001652070030,18,6,1049884;1315096;686599;891729,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000346,Y,OH0000001677010029,43,6,3665326;4129970;4129971;4325660;4325729,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000363,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-000448,Y,OH0000001667060181,5,4,1851131;4325581,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000469,Y,OH0000000247030884,6,6,1751578;1785814;4002864,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000517,Y,OH0000000228000101,15,6,,air_record_no_final_permit_in_newest_6,documents listed but none of the newest 6 non-draft ones is a final permit with unit terms
+SITE-000535,Y,OH0000000204000441,36,6,2105248;2173968;2764525,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000547,Y,OH0000001677110102,3,3,2744566,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000569,Y,OH0000001318008667,0,0,,air_record_no_document_found,"ECHO air record; Ohio EPA eDocument Permit search by printed Facility ID returned 0 documents (availability signal, not absence)"
+SITE-000570,Y,OH0000001677130080,0,0,,air_record_no_document_found,"ECHO air record; Ohio EPA eDocument Permit search by printed Facility ID returned 0 documents (availability signal, not absence)"
+SITE-000590,Y,OH0000001677011342,2,1,3367904,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000601,Y,OH0000001667040015,31,6,1324400;4238201,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000615,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-000630,Y,OH0000001318008130,3,3,1583652;218064,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000637,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-000664,Y,OH0000001576111601,7,6,3821372,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000676,Y,OH0000000285030027,2,2,,air_record_no_final_permit_in_newest_6,documents listed but none of the newest 6 non-draft ones is a final permit with unit terms
+SITE-000814,Y,OH0000000322020129,14,6,2545441,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000936,Y,OH0000000339030016,49,6,1631819;4213969;4213970,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-000997,Y,OH0000000679000129,3,3,3056606,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001137,Y,OH0000000679005044,21,6,3149888;3288547;3288548;3494452;3755890,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001394,Y,OH0000000243020004,28,6,3300346;4055410;4130970;4130971,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001422,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-001504,Y,OH0000001318002448,9,6,1105626;200319,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001510,Y,OH0000001652080002,10,6,202666;3482838;3967110,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001513,Y,OH0000000322000048 OH0000000322002004,22,6,2606258;4073758;4073759,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001530,Y,OH0000001318002813,22,6,1638095;2540958,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001563,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-001591,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-001651,Y,OH0000001318005609,0,0,,air_record_no_document_found,"ECHO air record; Ohio EPA eDocument Permit search by printed Facility ID returned 0 documents (availability signal, not absence)"
+SITE-001703,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-001743,Y,OH0000001667080084,12,6,2197892;2509398;2512984;2676480,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001744,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-001785,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-001792,Y,OH0000001677010000,22,6,2322961;3915322;3958223,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001833,Y,OH0000000243082019,14,6,1182457;3409034;3409036;3489627,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001837,Y,OH0000001667040037,29,6,1840670,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001854,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-001859,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-001868,Y,OH0000001318008351,2,2,209387,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001888,Y,OH0000001318005362,11,6,1390432;1600646,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-001910,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-001913,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-001923,Y,OH0000001318347780,3,3,1881861,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-002091,N,,0,0,,no_air_record,ECHO exporter AIR_FLAG is not Y for the FRS ID(s) on the Atlas record
+SITE-002113,Y,OH0000000228000245,11,6,1015038;1784662;1815636,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-002114,Y,OH0000001667020035,70,6,2741327;2819015,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-002124,Y,OH0000000679005057,2,1,3267030,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
+SITE-002855,Y,OH0000000339010104,18,6,2242238;2277640;2283293;2283297;2314844;2335020,retrievable_permit,final permit with printed Facility ID and emissions-unit terms stored
