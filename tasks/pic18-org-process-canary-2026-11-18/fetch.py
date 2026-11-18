@@ -3,8 +3,8 @@ Cache: S/persist/pic18-org-process-canary-2026-11-18/cache (outside the repo). R
 import json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
-from site_corpus import Corpus
-CACHE = "/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/pic18-org-process-canary-2026-11-18/cache"
+from site_corpus import Corpus, DEFAULT_CACHE
+CACHE = DEFAULT_CACHE.parents[1] / "persist/pic18-org-process-canary-2026-11-18/cache"
 # (org, url, why it is allowed)
 URLS = [
  ("ORG-000107", "http://www.tmplasticsusa.com/", "website on the org record"),
@@ -13,6 +13,12 @@ URLS = [
  ("ORG-000488", "https://pharmacylite.com/biodegradable", "href on stored home page (biodegradable)"),
  ("ORG-001513", "https://www.coltene.com/company/about/", "link on stored company page"),
  ("ORG-001513", "https://www.coltene.com/science/", "link on stored company page"),
+ ("ORG-001986", "https://optimaxplastic.com/index.php/rotomolding/", "website on the org record"),
+ ("ORG-000488", "https://pharmacylite.com/products/simple-safe-vial-system", "href on stored home page"),
+ ("ORG-000488", "https://pharmacylite.com/products/convenient-vial-sets", "href on stored home page"),
+ ("ORG-000488", "https://pharmacylite.com/products/compounding-solutions", "href on stored home page"),
+ ("ORG-000488", "https://pharmacylite.com/pdf/bio-sheet-2021.pdf", "href on stored home page"),
+ ("ORG-002047", "https://www.wayne-dalton.com/garage-doors/by-material/vinyl", "link on stored home page"),
 ]
 if __name__ == "__main__":
     c = Corpus(CACHE); out = []

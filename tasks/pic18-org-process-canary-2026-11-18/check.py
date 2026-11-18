@@ -110,13 +110,19 @@ def main():
     assert all(p["sha_ok"] for p in pages if p["status"] == "ok"), "a stored page fails its sha256"
     assert not [p for p in pages if p["status"] == "ok" and not p["text_file"]], "an ok page has no text"
     assert len(base_o) and sum(1 for r in head_o if r["org_id"] in build.ORGS and r["processes"] == "") == 10 - len(applied)
+    allowed = {f"data/{build.ORG_SHARD}", f"data/{build.EVD_SHARD}"}
+    touched = set(git("diff", "--name-only", base, "--", "data/").split()) | set(git("ls-files", "--others", "--exclude-standard", "data/").split())
+    assert touched <= allowed, f"files outside the allowed shards changed: {sorted(touched - allowed)}"
     selftest(pages)
     have = {o for o in build.ORGS if any(p["org_id"] == o and p["text_file"] for p in pages)}
-    print(f"frame={len(build.ORGS)} orgs (H {len(build.FRAME['H'])}, N {len(build.FRAME['N'])}); manifest/live rows={len(pages)}; readable pages={manifest_ok}; "
+    print(f"frame={len(build.ORGS)} orgs (H {len(build.FRAME['H'])}, N {len(build.FRAME['N'])}); manifest/live rows={len(pages)}; status-ok pages with text={manifest_ok}; "
           f"orgs with >=1 readable page={len(have)}; claims={len(claims)}; orgs applied={len(applied)} "
           f"(H {sum(build.STRATUM[o]=='H' for o in applied)}/5, N {sum(build.STRATUM[o]=='N' for o in applied)}/5); evidence rows={n_ev}; base={base[:7]}")
     out = lambda ref: subprocess.run(["python3", str(build.S.parent / "harness/pic18_unknown.py"), str(ROOT), ref], capture_output=True, text=True, check=True).stdout
-    print(out(base).strip()); print(out("HEAD").strip(), "(HEAD = last commit; run again after committing)")
+    unk = lambda ref: int(re.search(r"proc_unknown=(\d+)", out(ref))[1])
+    assert unk(base) == 331, "baseline process_unknown at 099497f is 331"
+    assert unk(base) - unk("HEAD") == len(applied), "process_unknown fall != organizations applied (commit first: the harness reads git refs)"
+    print(out(base).strip()); print(out("HEAD").strip(), f"fall={unk(base) - unk('HEAD')}")
     print("check.py OK")
 
 

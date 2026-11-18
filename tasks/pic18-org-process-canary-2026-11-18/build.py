@@ -9,7 +9,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent; ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from shard_io import append_sorted
-S = Path("/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist")
+from site_corpus import DEFAULT_CACHE
+S = DEFAULT_CACHE.parents[1] / "persist"  # S/persist; DEFAULT_CACHE is S/cache/site_corpus
 CORPUS, LIVE = S / "pic18-corpus-2026-11-16", S / "pic18-org-process-canary-2026-11-18"
 SEED = 20261118
 FRAME = {"H": "ORG-000488 ORG-001513 ORG-001774 ORG-001986 ORG-002047".split(), "N": "ORG-000066 ORG-000107 ORG-000192 ORG-001497 ORG-001855".split()}
