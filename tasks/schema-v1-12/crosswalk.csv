@@ -21,7 +21,7 @@ EVT-000019,SPE Automotive Composites Conference & Expo (ACCE),spe-automotive-com
 EVT-000020,Foam Expo North America,foam-expo-north-america,exact name,
 EVT-000021,Adhesives & Bonding Expo,adhesives-and-bonding-expo-north-america,exact name,
 EVT-000022,MAPP Benchmarking and Best Practices Conference,mapp-benchmarking-and-best-practices-conference,exact name,
-EVT-000023,Silicone Expo USA,materials-week-usa,curated,Silicone Expo USA now runs inside Materials Week USA (Detroit) with Specialty Polymers World and Gaskets & Seals; reviewer to confirm umbrella vs series
+EVT-000023,Silicone Expo USA,,curated,Cleared 2026-11-18 (codex post-merge review): materials-week-usa is the umbrella of several co-located expos and cannot identify Silicone Expo USA; the conferences repo has no Silicone Expo slug yet
 EVT-000024,National Plastics Conference,national-plastics-conference,exact name,
 EVT-000025,Global Plastics Summit,,curated,no conferences series
 EVT-000026,Innovation and Emerging Plastics Technologies Conference,,curated,no conferences series

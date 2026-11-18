@@ -928,6 +928,11 @@ _slug_events = {}
 for i, r in enumerate(events, 2):
     eid = r["event_id"]
     # V-61 [v1.12]: cross-repo identity; CI cannot check conferences-repo existence. (V-60 is the licensed-source rule.)
+    # DictReader keys surplus cells under None and fills missing ones with None; an explicitly empty last cell is ""
+    if None in r:
+        errors.append(f"events.csv:{i} {eid} has more fields than the header (V-61)")
+    elif None in r.values():
+        errors.append(f"events.csv:{i} {eid} has fewer fields than the header (V-61)")
     crosswalk = r.get("pic_events_slug") or ""
     _cell = set()
     for slug in crosswalk.split(";") if crosswalk else []:

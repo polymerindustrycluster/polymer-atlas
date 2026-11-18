@@ -30,6 +30,10 @@ mirror its structure:
   script, `tasks/schema-v1-12/add_crosswalk.py`, as v1.11 did, and keep every other byte of `events.csv` unchanged.
 
 ### 2. `event_participation.role` gains `attendee`
+
+> **Superseded in part (owner ruling 2026-11-09):** brochure "companies attending" lines and delegate lists that name
+> people never mint a row. Only a list of attending companies that the organizer itself published for a named
+> edition qualifies. docs/SCHEMA.md §4.12.2 holds the ruled wording; the definition below is the original brief.
 - **Definition (put it in §4.12.2's role notes, verbatim in substance):** the organization attended a specific
   edition, as shown by a list the ORGANIZER itself published: a post-show report, a delegate-company list, or a
   brochure's "companies attending <edition>".
