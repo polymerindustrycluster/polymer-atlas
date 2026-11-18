@@ -8,7 +8,7 @@ Fill blank `employee_band_ohio` on organization rows from the company's own publ
 - **Held: 9 Ohio-only rows:** 4 on grain (GrafTech, Technoform and Kinetico say worldwide/global; H.B. Chemical sits on the 50 band edge), 1 on department-only wording (Alpha Tool and Mold), 4 on attribution (the page is another entity's: Seco Machine, Team Wendy, Youngstown Rubber Products, Pinnacle Recycling).
 - **No claim: 8 Ohio-only rows** (parent/group count, history only, animated 0-counter, or no count on the pages).
 - **Non-Ohio-only: 17 rows recorded, none applied:** 9 carry the record's own company-wide statement (held leads), 8 have no usable statement for that record (4 are parent/group pages or a different entity than the record; 4 have nothing).
-- **Outcome check** (`python3 S/harness/pic18_unknown.py "$PWD" <ref>`; unit: PIC-18 organization rows = 794; S = the controller storage dir): merge-base `origin/main` 200859b5 **band_unknown = 445 (56.0%)**; with the 3 fills applied (local apply, unpushed) **band_unknown = 442 (55.7%)**: a fall of exactly 3 = the organizations applied. proc_unknown 331 and mkt_unknown 383 unchanged. `validate.py` passes on the applied tree.
+- **Outcome check** (`python3 S/harness/pic18_unknown.py "$PWD" <ref>`; unit: PIC-18 organization rows = 794; S = the controller storage dir): merge-base `origin/main` e1df30e4 **band_unknown = 445 (56.0%)**; with the 3 fills applied **band_unknown = 442 (55.7%)**: a fall of exactly 3 = the organizations applied. proc_unknown 331 and mkt_unknown 383 unchanged. `validate.py` passes on the applied tree.
 - **Yield is small by design:** 3 of 445 unknown-band rows closed here (0.7%). The other 442 need a different source or an owner ruling on company-wide counts.
 
 ## Method
@@ -79,9 +79,9 @@ A company-wide count needs an owner ruling before it can stand for an organizati
 ## Check commands
 `python3 tasks/pic18-size-ownsite-2026-11-18/build.py` (writes fills.csv, evidence_rows.csv, counts.json; `--apply` edits data/, idempotent) then `cd tasks/pic18-size-ownsite-2026-11-18 && python3 check.py [base-ref]` (default base = merge-base with origin/main). `check.py` diffs the whole `data/` tree against base (only the 3 band cells and 3 appended evidence rows may differ), recomputes counts against the controller frame and the stored corpus, then rejects 8 injected defects: band not containing the quoted count, verdict and fill both moved off the count, write to a non-Ohio-only organization, write to an organization with a non-Ohio site, write to a non-blank cell, write to a site row, quote not in its stored page, frame ID with no verdict. Last output: `PASS (applied): 3 fills, 3 evidence rows, 37 frame verdicts, 8 injected defects rejected`.
 
-## Apply status / order
-The market canary (atlas-w18-mktcanary) is the first writer of the organization and evidence_organizations shards this wave. **This PR carries 0 data rows until that PR merges.** Then: merge the new main into this branch (no rebase after the first push), re-run `build.py --apply`, `check.py`, `validate.py`, and push the data commit.
+## Apply status
+Applied 2026-11-18 on main e1df30e4 (after the market canary #385 merged): 3 organization cells in `data/organizations_OH.csv` and 3 appended rows in `data/evidence_organizations_OH.csv`; no other file or row changed (`check.py` diffs the whole `data/` tree). Outcome check at merge-base e1df30e4 vs HEAD: band_unknown 445 (56.0%) -> 442 (55.7%), exactly the 3 organizations filled; proc_unknown 331 and mkt_unknown 379 unchanged.
 
 ## Proposed follow-ups
-- Owner ruling: may a company-wide own-site count stand for an organization whose page says it has sites or staff outside Ohio? (9 leads waiting, plus GrafTech, Technoform, Kinetico.)
+- Owner ruling (the owner battery will carry company-wide counts as existing precedent, since `employee_band_ohio` is Ohio-grain; these 12 stay held leads meanwhile): may a company-wide own-site count stand for an organization whose page says it has sites or staff outside Ohio? (9 leads waiting, plus GrafTech, Technoform, Kinetico.)
 - Five holds each need a page of the record's own giving its own count: Seco Machine, Team Wendy, Youngstown Rubber Products, Pinnacle Recycling, Alpha Tool and Mold (company-wide); H.B. Chemical needs an Ohio-grain count.
