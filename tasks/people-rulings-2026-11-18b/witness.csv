@@ -1,0 +1,8 @@
+evidence_id,person_id,url,sha256,segments
+EVD-396900,PERSON-000941,https://bioscience.utah.edu/faculty/kramer/index.php,008af7980b3a52d43f6a31478242d59734d91ab88d873e5770b347bdf3fdd2d6,Jessica Kramer Associate Professor of Biomedical Engineering and Adjunct Associate Professor of Molecular Pharmaceutics and of Chemistry
+EVD-396901,PERSON-001303,https://www.mse.utah.edu/faculty/,8c4b537d2bc8e0615b83205e1b9d16e26ac1230b3f349d818b3603349522687e,Sijia Huang Assistant Professor
+EVD-396902,PERSON-001304,https://kramerlab.bme.utah.edu/aboutkramer.html,8faaec6d0e0f24ca2454ab78534ef2c1abf31baa46c1150ed507fec9acd8d65e,"Dr. Jessica R. Kramer Stratton, Ph.D. Associate Professor … joined the Department of Bioengineering at the University of Utah in January, 2017"
+EVD-396903,PERSON-002009,https://www.ceas.uc.edu/academics/departments/biomedical-engineering/people.html,da3e68de7c84ceca7e480ca9addc9b2176a306f78a6b1d33151d9027c7029e1a,"John Robert Martin , Asst Professor (F2)"
+EVD-396904,PERSON-002010,https://www.ceas.uc.edu/academics/departments/chemical-environmental-engineering/people.html,29ac24e5cac76a2813f7bdbc9df02bc95bf1bd253ed367d26c3801a8a56770f7,"Jonathan David Nickels , Assoc Professor"
+EVD-396905,PERSON-002111,https://www.artsci.uc.edu/natural-sciences/chemistry/faculty-and-staff-directory.html,8ce5ac71c7562ff08c46d291be33c3e215e02c7a7ab6f4429d1a7d1ce41784bb,"Jianbing Jiang Assoc Professor , A&S Chemistry"
+EVD-396906,PERSON-002112,https://www.ceas.uc.edu/academics/departments/chemical-environmental-engineering/people.html,29ac24e5cac76a2813f7bdbc9df02bc95bf1bd253ed367d26c3801a8a56770f7,"Yoonjee Park , Professor (F2)"
