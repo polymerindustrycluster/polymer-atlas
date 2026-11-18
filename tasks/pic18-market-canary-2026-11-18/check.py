@@ -166,6 +166,20 @@ def builder_tests(inputs, evidence):
                 raise AssertionError('silent pass: occupied evidence ID')
             assert snapshot() == before, 'a market cell was written despite an occupied ID'
             print('REFUSED: occupied evidence ID (no market cell written)')
+            for n in ('organizations_OH.csv', 'evidence_organizations_OH.csv'):  # truncated input shard: one row removed
+                reset()
+                p = root / 'data' / n
+                lines = p.read_bytes().split(b'\n')
+                p.write_bytes(b'\n'.join(lines[:5] + lines[6:]))  # drop one data row (the 4th)
+                before = snapshot()
+                try:
+                    B.apply(inputs, evidence)
+                except AssertionError as e:
+                    assert 'differs from base' in str(e), str(e)
+                else:
+                    raise AssertionError('silent pass: truncated ' + n)
+                assert snapshot() == before, 'a shard changed despite a truncated input'
+            print('REFUSED: truncated input shard (organization and evidence), nothing replaced')
     with tempfile.TemporaryDirectory() as td:  # scrub: purge then a lookup must refetch, not raise
         c = fetch.Corpus(td)
         url = 'https://example.test/page'

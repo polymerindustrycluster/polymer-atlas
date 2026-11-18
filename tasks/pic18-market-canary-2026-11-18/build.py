@@ -13,6 +13,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
+REPO = ROOT  # the real checkout; ROOT is patched to a temp tree by check.py's builder tests, REPO is not
 MKT3 = ROOT / 'tasks/pic18-markets-3-2026-11-16'
 STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist')
 CORPUS, LIVE = STORE / 'pic18-corpus-2026-11-16', STORE / 'pic18-market-canary-2026-11-18'
@@ -77,8 +78,10 @@ def proposals(orgs):
 
 
 def apply(inputs, evidence):
-    """Stage every changed shard as a temp sibling, check row counts against the base, then os.replace each. No market cell is written
-    if any allocated evidence ID is occupied by different content or a different home shard."""
+    """Stage every changed shard as a temp sibling, then os.replace each. Before replacing, each staged shard's row count must equal its row
+    count at BASE (git show BASE:data/<shard>) plus the rows this packet adds to it: organization shards +0 (cell fills only), evidence
+    shards + the packet's evidence rows for that shard. A truncated input shard therefore fails, whatever the current file holds. No market
+    cell is written if any allocated evidence ID is occupied by different content or a different home shard."""
     rows = {p: read(p) for p in shards()}
     orgs = {r['org_id']: (p, r) for p, rs in rows.items() for r in rs}
     have = {r['evidence_id']: (p, r) for p in (ROOT / 'data').glob('evidence_*.csv') for r in read(p)}
@@ -107,6 +110,13 @@ def apply(inputs, evidence):
     for path in set(touched) | set(add):
         if not (backup / path.name).exists():
             shutil.copyfile(path, backup / path.name)
+    def base_count(path):
+        return len(list(csv.DictReader(io.StringIO(subprocess.check_output(['git', 'show', f'{BASE}:data/{path.name}'], cwd=REPO, text=True)))))
+    packet_rows = {}
+    for ev in evidence:
+        home = orgs[ev['record_id']][0]
+        shard = home.with_name(home.name.replace('organizations_', 'evidence_organizations_')).name
+        packet_rows[shard] = packet_rows.get(shard, 0) + 1
     staged = {}
     for path, rs in touched.items():
         tmp = path.with_name(path.name + '.tmp')
@@ -115,13 +125,13 @@ def apply(inputs, evidence):
         w.writeheader()
         w.writerows(rs)
         tmp.write_bytes(buf.getvalue().encode('utf-8'))
-        assert len(read(tmp)) == len(read(path)), ('row count changed', path.name)
+        assert len(read(tmp)) == base_count(path), ('organization row count differs from base', path.name)
         staged[path] = tmp
     for path, evs in add.items():
         tmp = path.with_name(path.name + '.tmp')
         shutil.copyfile(path, tmp)
         append_sorted(tmp, evs, 'evidence_id')
-        assert len(read(tmp)) == len(read(path)) + len(evs), ('evidence row count', path.name)
+        assert len(read(tmp)) == base_count(path) + packet_rows[path.name], ('evidence row count differs from base + packet rows', path.name)
         staged[path] = tmp
     for path, tmp in staged.items():
         os.replace(tmp, path)
