@@ -24,7 +24,15 @@ Printed `302 Conwell Ave.` against Atlas `302 S. Conwell Ave`: a direction word 
 
 ### Outcome check (harness `pic18_unknown.py`, process-unknown organizations)
 
-_(run after the data apply)_
+`python3 pic18_unknown.py "$PWD" <ref>` (controller harness; unit: PIC-18 organization rows, 794 at both refs; filter: process unknown):
+
+| Ref | proc_unknown | share of 794 |
+|---|---|---|
+| merge-base c96d4699 (origin/main, PR #402 merged) | **322** | 40.6% |
+| HEAD of this branch | **322** | 40.6% |
+
+`proc_unknown` does not move, as expected: the one new row is a `site_capabilities` row (SITE-000264 `extrusion`) and no `processes` cell changes. `mkt_unknown` (316) and `band_unknown` (443) are unchanged.
+
 
 ## Self-refute (contract rule 15)
 
