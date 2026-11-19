@@ -2,8 +2,9 @@
 sibling hosts and prose pass. Synthetic accounts only. UC-host fixtures are split ("…/p/" "smithjq") so that no
 line of this file holds the form and the pre-push disclosure scan stays quiet."""
 import unittest
+from urllib.parse import quote
 
-from check_account_urls import findings
+from check_account_urls import findings, read
 
 UC = "https://researchdirectory.uc.edu/p/"
 
@@ -35,6 +36,14 @@ class TestFindings(unittest.TestCase):
             "{" + UC + "smithjq}",
             UC + "%73mithjq",
             "https://researchdirectory.uc.edu/%70/" "smithjq",
+            # Codex r2: an encoded key, an entity for "=", path punctuation, a JS hex escape, a URL-encoded redirect target
+            "https://www.example.org/?u%6eid=jq9",
+            "https://www.example.org/?u&equals;jq9",
+            "https://www.example.org/people;jsessionid=1?unid=jq9",
+            "https://www.example.org/entry(1)?unid=jq9",
+            "https://www.example.org/last,first?unid=jq9",
+            "https://www.example.org/\\x7ejq9",
+            "https://www.example.org/login?next=" + quote(UC + "smithjq", safe=""),
         ):
             self.assertEqual(findings(line), [1], line)
 
@@ -49,8 +58,13 @@ class TestFindings(unittest.TestCase):
             "https://www.example.org/researchdirectory.uc.edu/p/" "smithjq",
             "https://www.example.org/page#?u=jq9",
             "a `?unid=<id>` query, and `**[v1.15]**` prose; ~99 candidates; menu=1",
+            "(see https://www.example.org/page), ~99 items; u=1",
         ):
             self.assertEqual(findings(line), [], line)
+
+    def test_reads_utf16_by_bom(self):  # Codex r2: a UTF-16 export was decoded as UTF-8 and passed
+        for enc in ("utf-16", "utf-8-sig", "utf-32"):
+            self.assertEqual(findings(read("url\nhttps://www.example.org/?u=jq9\n".encode(enc))), [2], enc)
 
     def test_reports_line_numbers(self):
         self.assertEqual(findings("ok\nhttps://www.example.org/~jq9\nok\n?u=x https://a.example.org/?u=jq1"), [2, 4])

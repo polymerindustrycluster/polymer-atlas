@@ -14,51 +14,22 @@ The authority for "still carries an account" is scripts/people_url.py, the helpe
 redacted file still has one by that test.
 Usage: scrub.py [--apply]  -- without --apply it only counts. --apply writes manifest.csv and refuses to overwrite it.
 """
-import argparse, csv, hashlib, re, subprocess, sys
+import argparse, csv, hashlib, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 from check_account_urls import findings  # noqa: E402  (the CI guard: same token test as V-62)
 
+sys.path.insert(0, str(ROOT / "tasks" / "people-identifier-urls-2026-11-18"))
+from common import scan  # noqa: E402  (the one redactor, shared with that task's manifest build and check)
+
 MANIFEST = Path(__file__).resolve().parent / "manifest.csv"
-END = r"[^\s,;\"'()<>\[\]{}`|#\\]"  # also ends at a table pipe, a fragment and a backslash (Codex r1)
-UC = r"(?:(?<=//)|(?<![\w./-]))(?i:researchdirectory\.uc\.edu)\.?/p/[A-Za-z0-9]" + END + "*"  # the host itself is the form
-OTHER = r"[\w.-]+\.[A-Za-z]{2,}\.?(?::\d+)?(?:/" + END + r"*?)?(?:[?&](?:u|unid)=|/~)[A-Za-z0-9]" + END + "*"
-TOKEN = re.compile(r"(?:https?://)?(?:" + UC + "|" + OTHER + ")")
-ACCOUNT = re.compile(r"([?&]u=|[?&]unid=|/~|(?i:researchdirectory\.uc\.edu)\.?/p/)([A-Za-z0-9][A-Za-z0-9._%-]*)")
-
-
-def placeholder(kind):
-    return "<acct>" if kind == "/~" else "<shortname>" if kind.endswith("/p/") else "<id>"
 
 
 def tracked():
     out = subprocess.run(["git", "ls-files", "-z", "--", "tasks", "docs"], cwd=ROOT, capture_output=True, check=True).stdout
     return [p for p in out.decode().split("\0") if p]
-
-
-def redact_token(tok):
-    """Return (redacted token, accounts redacted, extra repeats of an account elsewhere in the token)."""
-    values = [(m.group(1), m.group(2)) for m in ACCOUNT.finditer(tok)]
-    new = ACCOUNT.sub(lambda m: m.group(1) + placeholder(m.group(1)), tok)
-    extra = 0
-    for kind, v in values:
-        rep = re.compile(r"(?<![A-Za-z0-9])" + re.escape(v) + r"(?![A-Za-z0-9])")
-        new, k = rep.subn(placeholder(kind), new)
-        extra += k
-    return new, len(values), extra
-
-
-def scan(text):
-    sites = extra = 0
-
-    def sub(m):
-        nonlocal sites, extra
-        new, s, e = redact_token(m.group(0))
-        sites += s; extra += e
-        return new
-    return TOKEN.sub(sub, text), sites, extra
 
 
 def selftest():
@@ -74,6 +45,9 @@ def selftest():
         "https://x.example.org/?u={A}|{A}": "https://x.example.org/?u=<id>|{A}",
         "https://x.example.org/#?u={A}": "https://x.example.org/#?u={A}",
         "https://x.example.org/researchdirectory.uc.edu/p/{A}": "https://x.example.org/researchdirectory.uc.edu/p/{A}",
+        # Codex r2: the value repeated earlier in the URL, and a bare UC host (common.redact is now this same scan)
+        "https://x.example.org/{A}?unid={A}": "https://x.example.org/<id>?unid=<id>",
+        "researchdirectory.uc.edu/p/{A}": "researchdirectory.uc.edu/p/<shortname>",
     }
     for src, want in cases.items():
         src, want = src.replace("{A}", "jq9"), want.replace("{A}", "jq9")
