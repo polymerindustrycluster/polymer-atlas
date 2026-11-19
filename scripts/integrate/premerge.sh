@@ -4,7 +4,7 @@ set -euo pipefail
 R=$(git rev-parse --show-toplevel); PR=$1
 cd "$R"
 git fetch -q origin main "+refs/pull/$PR/head:refs/remotes/pr/$PR"
-H=$(git rev-parse "pr/$PR")
+H=$(git rev-parse "refs/remotes/pr/$PR^{commit}")
 [ -z "${2:-}" ] || [ "$H" = "$2" ]
 W=$(mktemp -d); rmdir "$W"
 trap 'git -C "$R" worktree remove --force "$W" 2>/dev/null || true' EXIT

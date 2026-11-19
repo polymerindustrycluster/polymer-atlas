@@ -1,7 +1,10 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.16 — 2026-11-18 (§3.1 gains `rubber_molding_transfer` and `composites_spray_up` — owner ruling 2026-11-18b item 2, `tasks/owner-rulings-2026-11-18b/README.md`).
+**Version:** v1.16.3 — 2026-11-19 (§3.6 `extrusion` capability rollup adds `rubber_extrusion` — owner ruling 2026-11-19c item 1, `tasks/owner-rulings-2026-11-19c/README.md`).
+Previous: v1.16.2 — 2026-11-19 (§4.12.1 worked seams 4–7: a branded plastics sector show, tire and aftermarket trade shows, corrosion-and-coatings shows, composites-centered shows and UV/EB curing of coatings, inks, adhesives and composites qualify; the Geosynthetics Conference does not — owner rulings 2026-11-19, `tasks/owner-rulings-2026-11-19b/README.md`).
+Previous: v1.16.1 — 2026-11-19 (§4.12.2: an organizer's complete attendee-company list for a named edition counts even when printed in its own sponsorship brochure, and a name the organizer wrote as a logo's alt or title text counts as on the list — owner rulings 2026-11-18c, `tasks/owner-rulings-2026-11-18c/README.md`).
+Previous: v1.16 — 2026-11-18 (§3.1 gains `rubber_molding_transfer` and `composites_spray_up` — owner ruling 2026-11-18b item 2, `tasks/owner-rulings-2026-11-18b/README.md`).
 Previous: v1.15.1 — 2026-11-18 (§4.11 prong (b) extends to `training` rows whose own description says they teach plastics or polymer processing — owner ruling 2026-11-18).
 Previous: v1.15 — 2026-11-18 (§4.9 people `status` (`active` | `deceased`) and `status_date`, validator V-64; §1 P2b / V-62 widened to `?unid=<id>` and `researchdirectory.uc.edu/p/<shortname>` — owner rulings 2026-11-18b items 3 and 6, `tasks/owner-rulings-2026-11-18b/README.md`).
 Previous: v1.14 — 2026-11-18 (§4.23 IPEDS completions reference layer: three generated tables from the federal IPEDS completions series, moved from polymer-programs-db under the owner ruling of 2026-11-18, "Into the Atlas"; validator V-63).
@@ -830,7 +833,7 @@ designed.
 |---|---|
 | `injection_molding` | = §3.1 (capability grain: `injection_molding_micro`, `injection_molding_lsr_silicone`, `insert_overmolding`, `two_shot_molding` roll into it) |
 | `blow_molding` | = §3.1 legacy umbrella (covers `blow_molding_extrusion` / `_injection` / `_stretch`) |
-| `extrusion` | ROLLUP — §3.1 has subtypes only: `extrusion_film_blown`, `extrusion_film_cast`, `extrusion_sheet`, `extrusion_profile`, `extrusion_pipe_tube`, `extrusion_wire_cable_coating`, `foam_extrusion` |
+| `extrusion` | ROLLUP — §3.1 has subtypes only: `extrusion_film_blown`, `extrusion_film_cast`, `extrusion_sheet`, `extrusion_profile`, `extrusion_pipe_tube`, `extrusion_wire_cable_coating`, `foam_extrusion`, and, from v1.16.3, `rubber_extrusion` (owner ruling 2026-11-19c item 1, `tasks/owner-rulings-2026-11-19c/README.md`; covers it at capability grain as `calendering` covers `rubber_calendering`) |
 | `thermoforming` | ROLLUP — §3.1 has `thermoforming_vacuum` + `thermoforming_pressure` only |
 | `rotational_molding` | = §3.1 |
 | `compression_molding` | = §3.1 (plastics/composites grain; rubber compression is `rubber_molding` below) |
@@ -1448,6 +1451,23 @@ nothing: the test reads the event's subject, not its roster.
    there is nothing to seed. MD&M West's primary subject is medical
    design & manufacturing, with plastics one sector among several —
    the polymer-corner case, which prong (a) excludes.
+4. **EXPOPLAST (ADM Montréal, Informa Markets) — IN** (owner ruling
+   2026-11-19). A separately branded plastics sector show inside a
+   multi-sector manufacturing event is its own series; the parent event
+   is not seeded. Seam 3 is unchanged: Plastec West no longer runs as a
+   separately branded show, so there is still nothing to seed.
+5. **Tire-trade shows (The Tire Cologne, TyreXpo Asia) — IN** (owner
+   ruling 2026-11-19). Tires are rubber products: tire and aftermarket
+   trade shows qualify.
+6. **Corrosion-and-coatings shows (AMPP Annual Conference + Expo) — IN**
+   (owner ruling 2026-11-19). A show that names coatings as a
+   co-primary subject qualifies under the coatings ruling of
+   2026-10-30.
+7. **Carbon Fiber and the SAMPE Japan Exhibition (composites-centered
+   programs), and RadTech (UV and EB curing of coatings, inks, adhesives
+   and composites) — IN; the Geosynthetics Conference — OUT**, its
+   subject being the civil-engineering uses of geosynthetics (owner
+   rulings 2026-11-19).
 
 Borderline calls are logged in the inclusion log (Appendix A) with the
 prong cited; seams stay flagged until the owner rules — a seed row
@@ -1473,7 +1493,7 @@ both are seeded, each noting the other. When in doubt, don't merge.
 | `org_id` | FK → organizations ∪ ecosystem | **MUST** | The participating organization **as named by the harvest**, resolved to a held record. Participation never creates organization records: a harvested name with no held record stays a staging discovery candidate until the organization passes the normal §4.7 gate, and only then gains participation rows — backfilled from the banked harvest and cited as such |
 | `edition_year` | integer | **MUST** | The edition's year, on the harvest's own year basis |
 | `edition_name` | string | as applicable | The name the edition actually ran under, when it differs from the series' current name. Predecessor-name editions attach to the successor series row: IEC 2022/2024 editions attach to Global Polymer Summit with `edition_name = "International Elastomer Conference"` |
-| `role` | enum | **MUST** | `exhibitor` \| `sponsor` \| `speaker` \| `organizer` \| `host` \| `attendee` **[v1.12]** — exactly one per row; an organization with two roles at one edition carries two rows. `attendee` means the organization attended a specific edition, as shown by a **list of attending companies that the organizer itself published** for that named edition (for example a post-show report's company list). Brochure or marketing lines, and delegate lists that name people, never mint a row (owner ruling 2026-11-09). Generic marketing with no named edition ("attendees include companies like …") never mints a row either. A pre-show "registered" list is valid only as of its `evidence_date`, with the same pre-show note as exhibitor rosters. Organizations only, as for every role (§6) |
+| `role` | enum | **MUST** | `exhibitor` \| `sponsor` \| `speaker` \| `organizer` \| `host` \| `attendee` **[v1.12]** — exactly one per row; an organization with two roles at one edition carries two rows. `attendee` means the organization attended a specific edition, as shown by a **list of attending companies that the organizer itself published** for that named edition (for example a post-show report's company list). Brochure or marketing lines that name only some companies, and delegate lists that name people, never mint a row (owner rulings 2026-11-09 and 2026-11-18c). The organizer's complete company list for a named edition counts even when the organizer prints it in its own sponsorship brochure, and each row from such a list says so in `notes` (owner ruling 2026-11-18c, the SAMPE 2026 list). Generic marketing with no named edition ("attendees include companies like …") never mints a row either. A pre-show "registered" list is valid only as of its `evidence_date`, with the same pre-show note as exhibitor rosters. Organizations only, as for every role (§6) |
 | `role_detail` | string | Nice | As the harvest prints it: booth number, sponsor level, session/track. Verbatim harvest text only, subject to the §6 screen below |
 | `edition_dates` | string | as harvested | The edition's dates **as printed by the harvest** ("September 21–24, 2026"). Within the Atlas, per-edition facts live here — there is no edition table and no speculative calendar. **[v1.12]** The linked conferences repo holds edition dates and place |
 | `edition_city` / `edition_state` | string | as harvested | Where **this** edition ran. `edition_state` is a USPS code, or the full country name for international editions. The series' `home_*` fields are never copied down as a substitute: an edition's city comes from the harvest or stays empty |
@@ -1493,6 +1513,9 @@ both are seeded, each noting the other. When in doubt, don't merge.
    roundups, social posts, and memory **never** mint rows; they may
    support the series row's own fields. If no list was harvested, the
    edition contributes zero rows, however certain attendance seems.
+   A name is on the list when the organizer wrote it there, as visible
+   text or as a logo's alt or title text (owner ruling 2026-11-18c); a
+   name rebuilt from a link URL or an image file name never is.
 2. **Snapshot perishability.** Exhibitor rosters decay: endpoints
    empty out after the edition passes and guides go inaccessible. Each
    current edition of a seeded expo is snapshotted into staging
@@ -3163,4 +3186,7 @@ unchanged.
 - **v1.15 — 2026-11-18 (owner rulings 2026-11-18b, items 3 and 6; `tasks/owner-rulings-2026-11-18b/README.md`).** (1) §1 P2b / V-62 is widened to `?unid=<id>` and `researchdirectory.uc.edu/p/<shortname>`; `fisid_<id>` is accepted. Applied in the same PR (`tasks/people-rulings-2026-11-18b/`): of the 9 `people.csv` rows the widened rule catches (3 `?unid=`, 6 UC `/p/`), 7 cite an identifier-free page with new evidence rows (EVD-396900 to EVD-396906) and 2 drop the identifier URL with no new evidence; the 13 `evidence_people` rows citing the UC form are never edited. `people.csv` changes only `public_profile_url`, `lab_url`, `sources` and `last_verified` on those rows. (2) §4.9 gains `status` and `status_date` (appended last in `people.csv`; validator V-64: `deceased` needs an ISO `status_date` and an affirmative (`supports_*`) `evidence_people` `liveness` row whose `claim_detail` starts `status=deceased`, observed on or after `status_date`); every existing row is blank. PERSON-000359 stays blank: no fetched page prints a dated death.
 - **v1.15.1 — 2026-11-18 (owner ruling 2026-11-18, "Yes, if the page states plastics processing").** §4.11 prong (b) also admits a `training` row whose own description says it teaches plastics or polymer processing (the meaning of the chosen option, not a literal phrase). Site-wide navigation and a bare process word do not qualify. Applied in `tasks/prong-b-training-2026-11-18/` (3 rows). No validator change: the inclusion rule is adjudicated, not machine-checked.
 - **v1.16 — 2026-11-18 (owner ruling 2026-11-18b item 2; `tasks/owner-rulings-2026-11-18b/README.md`).** §3.1 gains two process terms: `rubber_molding_transfer` (rubber transfer molding; beside `rubber_molding_compression`, and in the `rubber_molding` rollup) and `composites_spray_up` (spray-up open molding, distinct from `composites_hand_layup`). `scripts/validate.py` PROCESSES and `docs/schema/vocab.json` are updated. Applied in the same PR (`tasks/process-terms-2026-11-18b/`): `rubber_molding_transfer` unions into SITE-000562 `processes` (a tier C site; one `supports_C` evidence row, EVD-397200). SITE-000248 and the permit sites are untouched. No other data row changes.
+- **v1.16.1 — 2026-11-19 (owner rulings 2026-11-18c; `tasks/owner-rulings-2026-11-18c/README.md`).** §4.12.2 wording only, no field or vocabulary change. The `attendee` role notes: the organizer's complete company list for a named edition counts even when printed in the organizer's own sponsorship brochure, and each row from it says so (the SAMPE 2026 list); a brochure line naming only some companies stays a marketing line. The harvest-only rule 1: a name the organizer wrote as a logo's alt or title text is on the list; a name rebuilt from a link URL or image file name is not. No validator change (both are adjudicated at harvest). Applied in `tasks/show-harvest-rulings-2026-11-19/`.
+- **v1.16.2 — 2026-11-19 (owner rulings 2026-11-19; `tasks/owner-rulings-2026-11-19b/README.md`).** §4.12.1 gains worked seams 4–7 (binding precedent): a separately branded plastics sector show inside a multi-sector event is its own series (EXPOPLAST at ADM Montréal; seam 3 unchanged); tire and aftermarket trade shows qualify (tires are rubber products); a corrosion-and-coatings show that names coatings co-primary qualifies; composites-centered shows (Carbon Fiber, SAMPE Japan) and UV and EB curing of coatings, inks, adhesives and composites (RadTech) qualify; the Geosynthetics Conference does not (its subject is the civil-engineering uses of geosynthetics). No field, vocabulary or validator change. Applied in `tasks/new-series-2026-11-19/` (27 series rows, EVT-000072 to EVT-000098).
+- **v1.16.3 — 2026-11-19 (owner ruling 2026-11-19c item 1; `tasks/owner-rulings-2026-11-19c/README.md`).** §3.6's `capability_type = process` `extrusion` ROLLUP row adds §3.1 `rubber_extrusion`, as `calendering` already covers `rubber_calendering`. No term is added to §3.1 or §3.6, so `scripts/validate.py` and `docs/schema/vocab.json` are unchanged. Applied in the same PR (`tasks/permit-rubber-extrusion-2026-11-19c/`): one `site_capabilities` row, SITE-000264 `extrusion` at `supports_C`. Item 2 of the same ruling (a direction word missing from a printed street breaks binding) changes no data.
 
