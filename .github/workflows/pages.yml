@@ -1,5 +1,5 @@
 # Publish the Atlas site to GitHub Pages on every push to main (validate -> build -> deploy).
-# Requires Settings -> Pages -> Source: GitHub Actions. Reviewed copy: docs/ci/pages.yml.
+# Requires Settings -> Pages -> Source: GitHub Actions. See docs/ci/README.md.
 name: pages
 
 on:

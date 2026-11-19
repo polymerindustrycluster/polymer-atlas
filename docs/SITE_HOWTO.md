@@ -60,11 +60,15 @@ count benchmarks, not matched coverage.
 
 ## Publishing (owner decision)
 
-Nothing here publishes anything. Whether, where and when to host the site is the repository owner's decision.
+**Current setup:** the `pages` workflow (`.github/workflows/pages.yml`, live since 2026-11-02) builds the site with
+`scripts/build_pages.py` and deploys it to GitHub Pages on every push to `main`, with the Pages source set to GitHub
+Actions (docs/ci/README.md). The two options below are alternatives. Choosing one changes the hosting configuration,
+which is the repository owner's decision.
 `AGENTS.md` lets only `data/`, `docs/`, `scripts/` and `tasks/` travel in commits, so the generated site must
 not be committed to `main`. Review a build locally first, especially the "not published" list above.
 
-**Option 1: GitHub Pages from a `gh-pages` branch** (the owner runs this; it overwrites that branch each time):
+**Option 1: GitHub Pages from a `gh-pages` branch** (the owner runs this; it overwrites that branch each time, and
+switching the Pages source to a branch turns off the workflow deployment above):
 
 ```bash
 python3 scripts/build_site.py
@@ -77,7 +81,6 @@ git push --force https://github.com/polymerindustrycluster/polymer-atlas gh-page
 Then, in the repository settings under Pages, choose "Deploy from a branch", branch `gh-pages`, folder `/ (root)`.
 The output includes a `.nojekyll` marker. The site will be at
 `https://polymerindustrycluster.github.io/polymer-atlas/`; all links are relative, so a project sub-path works.
-Automating this with a workflow would need the GitHub App's Workflows permission, which is not granted today.
 
 **Option 2: Netlify drag-and-drop.** Run the build, then drag the `build/site` folder onto
 <https://app.netlify.com/drop>. With the Netlify CLI the equivalent is `netlify deploy --dir build/site --prod`.
