@@ -13,8 +13,9 @@ fields, base, ok = list(rows[0]), rows[0], []
 URL = base["evidence_source_url"]
 
 
-def plant(label, expect, **kw):
-    listed = kw.pop("listed", None)
+def plant(label, expect, strict=True, **kw):
+    listed, extra_ok = kw.pop("listed", None), not strict
+    kw.setdefault("edition_year", "2025")  # a year no real row of this pass uses, so only the defect under test fires
     extra = dict(base, participation_id="EVP-999999", **kw)
     if listed:
         extra["sources"] = f'{extra["evidence_source_url"]} (read 2026-11-09; listed as "{listed}")'
@@ -25,7 +26,8 @@ def plant(label, expect, **kw):
     for p, by in orig.items():
         p.write_bytes(by)
     out = r.stdout + r.stderr
-    good = r.returncode != 0 and expect in out
+    # the planted row must fail for exactly one reason, the one under test
+    good = r.returncode != 0 and expect in out and (extra_ok or out.count("('EVP-999999'") == 1)
     print(("PASS " if good else "MISS ") + label, "| expected:", expect, "|", out.strip().splitlines()[-1][:110])
     ok.append(good)
 
@@ -43,5 +45,23 @@ plant("notes name another event's show", "is not a series of EVT-000035",
 plant("a sponsor row that is not an alt-text name", "non-attendee row is not an alt-text name", role="sponsor")
 plant("ambiguous name key (ACH Foam Technologies, two orgs)", "listed name's key is held by", org_id="ORG-004921",
       listed="ACH Foam Technologies")
+# second round (codex + agy on #404)
+alt = " Listed by the organizer as a logo's alt text (counts as on the page under the owner ruling of 2026-11-18)."
+plant("combined-list exclusion: Foam Expo speaker page (codex)", "combined-list exclusion (COMBINED)",
+      event_id="EVT-000020", role="speaker", edition_year="2027", org_id="ORG-000683", listed="Bostik",
+      notes="Speaker name matched to the org by exact normalized legal name; list banked in staging "
+            "(harvest-2026-11, foam-expo-north-america:2027)." + alt)
+# not strict: a dropped label is never an organization's legal name, so the name checks also fire on it
+plant("controller drop list (wave 2-3: a JEC page label)", "controller drop", strict=False, event_id="EVT-000029",
+      role="exhibitor", listed="10 YEARS OF INNOVATION STARTUP BOOSTER",
+      notes="Exhibitor name matched; list banked in staging (harvest-2026-11, jec-world:2027)." + alt)
+plant("SAMPE list used for another event (agy)", "attendee row not from an ATTENDEE_LISTS list for its event",
+      event_id="EVT-000001", notes=base["notes"].replace("sampe-conference-and-exhibition:2027", "npe-the-plastics-show:2027"))
+plant("a duplicate of an existing row (agy)", "duplicate (event, org, year, role) in the table",
+      edition_year=base["edition_year"])
+plant("attendee row with a role_detail (agy)", "attendee row with a role_detail", role_detail="Booth 1234")
+plant("personal pattern in role_detail (agy)", "personal pattern in role_detail", role="sponsor",
+      role_detail="Dr. Jane Doe", notes=base["notes"] + alt)
+plant("newly held bare group name (Sun Chemical)", "held name", org_id="ORG-001489", listed="Sun Chemical")
 print(f"{sum(ok)} of {len(ok)} negative controls fail check.py with the expected message")
 sys.exit(0 if all(ok) else 1)

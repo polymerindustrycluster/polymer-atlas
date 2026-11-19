@@ -19,6 +19,7 @@ the controller drop lists of waves 1 and 2-3, that pass's review holds, combined
 the AMI umbrella mapping of wave 1, and the list's own edition year.
 """
 import argparse, csv, hashlib, html, importlib.util, json, re, sys
+from html.parser import HTMLParser
 from collections import Counter
 from pathlib import Path
 
@@ -39,32 +40,67 @@ edition, iso, org_index, state = w23.edition, w23.iso, w23.org_index, w23.state
 
 BY = "claude-code show-harvest-rulings-2026-11-19"
 ROLES = {"exhibitor", "sponsor", "speaker"}
-ATTENDEE_LISTS = {  # source_url -> the note every row from it carries
-    "https://b6e09292-fbc8-46fe-8a69-b4f2f89f8ed3.usrfiles.com/ugd/b6e092_53e0e8cd4fa74dc788418ca19fc3bd92.pdf":
+ATTENDEE_LISTS = {  # source_url -> the one event it may mint for, and the note every row from it carries
+    "https://b6e09292-fbc8-46fe-8a69-b4f2f89f8ed3.usrfiles.com/ugd/b6e092_53e0e8cd4fa74dc788418ca19fc3bd92.pdf": (
+        "EVT-000035",
         "Attendee: the organizer's own company list for SAMPE 2026 (\"Industry leaders were here\"), printed in its "
-        "sponsorship brochure; it counts as an attendee list under the owner ruling of 2026-11-18.",
+        "sponsorship brochure; it counts as an attendee list under the owner ruling of 2026-11-18."),
 }
 # wave 1 (tasks/show-harvest-w1-2026-11-06): the AMI component expos share one gallery, recorded under the umbrella
 UMBRELLA = {"EVT-000008": "EVT-000007", "EVT-000009": "EVT-000007", "EVT-000051": "EVT-000007",
             "EVT-000052": "EVT-000007"}
 COMBINED = {("foam-expo-north-america", "speaker")}  # wave 1: the shared Foam Expo + A&B conference page
-# Held by the controller before review, as the wave 2-3 review held "Trelleborg" and "ACS Group": the listed name
-# does not pin one legal entity. Keyed (event_id, role, name_key); binds every year and organization.
+# Held by the controller (before review, and after its 2026-11-19 review), as the wave 2-3 review held "Trelleborg"
+# and "ACS Group": the listed name does not pin one legal entity. Two kinds: (i) a bare group or brand name whose
+# Atlas record is one national entity of a group that has others; (ii) a name several unrelated companies use.
+# Keyed (event_id, name_key): binds every role, year and organization at the event.
 CONTROLLER_HOLDS = {
-    ("EVT-000035", "attendee", A.name_key("Arkema")): "bare group name; the Atlas record is the US subsidiary Arkema Inc.",
-    ("EVT-000035", "attendee", A.name_key("Evonik")): "bare group name; the Atlas record is the US subsidiary Evonik Corporation",
-    ("EVT-000035", "attendee", A.name_key("Henkel")): "bare group name; the Atlas record is the US subsidiary Henkel Corporation",
-    ("EVT-000035", "attendee", A.name_key("Alpha Technologies")):
-        "a name several unrelated companies use; the list gives nothing that picks the Hudson OH instruments maker",
+    ("EVT-000035", A.name_key("Arkema")): "(i) the Atlas record is the US subsidiary Arkema Inc.",
+    ("EVT-000035", A.name_key("Evonik")): "(i) the Atlas record is the US subsidiary Evonik Corporation",
+    ("EVT-000035", A.name_key("Henkel")): "(i) the Atlas record is the US subsidiary Henkel Corporation",
+    ("EVT-000035", A.name_key("United Initiators")): "(i) United Initiators GmbH and United Initiators Inc. both exist",
+    ("EVT-000035", A.name_key("Microtex Composites")):
+        "(i) Microtex Composites s.r.l. (Italy) and Microtex Composites Inc. both exist",
+    ("EVT-000035", A.name_key("Hauschild SpeedMixer")): "(i) the Atlas record is the US arm of the German Hauschild group",
+    ("EVT-000035", A.name_key("Sun Chemical")): "(i) the Atlas record is the US Sun Chemical Corporation of a global group",
+    ("EVT-000035", A.name_key("Alpha Technologies")):
+        "(ii) the list gives nothing that picks the Hudson OH instruments maker",
+    ("EVT-000035", A.name_key("Advanced Composites")):
+        "(ii) the Atlas record is a Sidney OH compounder; an unrelated Advanced Composites, Inc. in Salt Lake City "
+        "works with SAMPE",
+    ("EVT-000035", A.name_key("Specialty Materials")):
+        "(ii) a generic name; the list gives nothing that picks the Lowell MA fiber maker",
 }
 
 
+class _Text(HTMLParser):
+    """Page text; with alt=True, also the value of every real alt or title attribute (never src, href or data-*)."""
+
+    def __init__(self, alt):
+        super().__init__(convert_charrefs=True)
+        self.alt, self.parts, self.skip = alt, [], 0
+
+    def handle_starttag(self, tag, attrs):
+        self.skip += tag in ("script", "style")
+        if self.alt:
+            self.parts += [f" {v} " for k, v in attrs if k in ("alt", "title") and v]
+        self.parts.append(" ")
+
+    def handle_endtag(self, tag):
+        self.skip -= tag in ("script", "style") and self.skip > 0
+        self.parts.append(" ")
+
+    def handle_data(self, data):
+        if not self.skip:
+            self.parts.append(data)
+
+
 def text(raw, alt):
-    """Page text, lowercased; with alt=True, each tag is replaced by its alt/title values (never src or href)."""
-    raw = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", raw, flags=re.S | re.I)
-    sub = (lambda m: " " + " ".join(re.findall(r"\b(?:alt|title)\s*=\s*[\"']([^\"']*)[\"']", m.group(0), re.I))
-           + " ") if alt else " "
-    s = html.unescape(re.sub(r"<[^>]+>", sub, raw)).replace(" ", " ").replace("’", "'")
+    """Page text, lowercased: visible text, plus (alt=True) the values of real alt/title attributes."""
+    p = _Text(alt)
+    p.feed(raw)
+    p.close()
+    s = "".join(p.parts).replace("\u00a0", " ").replace("\u2019", "'")
     return re.sub(r"\s+", " ", s).lower()
 
 
@@ -88,7 +124,9 @@ def main():
     drops = {(r["show_key"], r["role"], r["name_sha256_16"])
              for p in (W1, W23) for r in read(p / "controller_drops.csv")}
     by_key, orgs = org_index(data)
-    held = decisions.held_names(decisions.load(W23 / "review_decisions.csv", events, orgs, shows=set(shows)))
+    # the wave 2-3 review holds, widened to bind their name at the event in every role (as CONTROLLER_HOLDS do)
+    held = {(e, nk) for e, _role, nk in decisions.held_names(
+        decisions.load(W23 / "review_decisions.csv", events, orgs, shows=set(shows)))} | set(CONTROLLER_HOLDS)
     part = read(data / "event_participation.csv")
     have = {(p["event_id"], p["org_id"], p["edition_year"], p["role"]) for p in part}
     nxt = max(int(p["participation_id"][4:]) for p in part) + 1
@@ -103,7 +141,7 @@ def main():
             continue
         for L in d["lists"]:
             role, url = L["role"], L["source_url"]
-            attendee = role == "attendee" and url in ATTENDEE_LISTS
+            attendee = role == "attendee" and ATTENDEE_LISTS.get(url, ("",))[0] == ev
             if role not in ROLES and not attendee:
                 continue
             if MEDIA_PARTNERS.search(url) or url in NOT_EVENT_LISTS or (slug, role) in COMBINED:
@@ -131,10 +169,8 @@ def main():
                 if c.get("show_assignment") and A.name_key(c["show_assignment"]) != A.name_key(events[ev]["name"]):
                     skip["labelled for a co-located show"] += 1; continue
                 nk = A.name_key(name)
-                if (ev, role, nk) in held:
-                    skip["held by the wave 2-3 review"] += 1; continue
-                if (ev, role, nk) in CONTROLLER_HOLDS:
-                    skip["held by the controller (CONTROLLER_HOLDS)"] += 1; continue
+                if (ev, nk) in held:
+                    skip["held (wave 2-3 review or CONTROLLER_HOLDS)"] += 1; continue
                 hits = by_key.get(nk, {})
                 if len(hits) != 1:
                     skip["no Atlas organization" if not hits else "ambiguous name key"] += 1; continue
@@ -150,15 +186,15 @@ def main():
                 if k in have:
                     skip["already held"] += 1; continue
                 have.add(k)
-                detail = {"exhibitor": c.get("booth", ""), "sponsor": c.get("sponsor_level", ""),
-                          "speaker": c.get("session_title", ""), "attendee": ""}[role].strip()
+                detail = ({"exhibitor": c.get("booth"), "sponsor": c.get("sponsor_level"),
+                           "speaker": c.get("session_title"), "attendee": ""}[role] or "").strip()
                 if PERSONAL.search(detail):
                     detail = ""
                 pre = " Pre-show list, still filling as of the evidence date." \
                     if str(ed.get("start", "")) > d["retrieved"] else ""
                 staged = f" The staging key's year ({key.split(':')[1]}) is the harvest's edition label; the row " \
                     f"year follows the year printed in the source." if key.split(":")[1] != yr else ""
-                how = ATTENDEE_LISTS[url] if attendee else ("Listed by the organizer as a logo's alt text (counts as "
+                how = ATTENDEE_LISTS[url][1] if attendee else ("Listed by the organizer as a logo's alt text (counts as "
                                                             "on the page under the owner ruling of 2026-11-18).")
                 e = events[ev]
                 rows.append({

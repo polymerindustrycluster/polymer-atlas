@@ -8,7 +8,8 @@ and `tasks/show-harvest-rulings-2026-11-19/`; item 3 is recorded in `DECISIONS.m
 
 SAMPE's sponsorship brochure for its 2027 show carries a full company list headed "SAMPE 2026 | April 27-30, 2026.
 INDUSTRY LEADERS WERE HERE. Attendees represented the organizations advancing aerospace, defense, space, energy,
-transportation, research, and advanced manufacturing worldwide", followed by 800 organization names and no people.
+transportation, research, and advanced manufacturing worldwide", followed by the organization list (800 extracted
+entries, a few of them heading fragments or names split across lines; no people).
 The 2026-11-09 ruling bars brochure or marketing lines and delegate lists that name people.
 
 - **Question:** does a complete company list for a named edition count when the organizer prints it in its brochure?
