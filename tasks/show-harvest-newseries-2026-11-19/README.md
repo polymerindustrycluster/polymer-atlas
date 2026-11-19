@@ -62,10 +62,11 @@ attended in 2025".
 - **Completeness:** the page's table has 178 cells, and the harvest holds all 178.
 - **Not all companies:** three cells name no organization: one personal name, "Retired" and "University of Michigan
   Student". Four more are organizations but not companies: Bowling Green State University, University of Akron,
-  Chicago Paint & Coatings Association and Zinc Association. None of these seven matches an Atlas organization, so
-  none mints. The rest are organization names, mostly companies, with some acronyms (for example "ACA", the American
+  Chicago Paint & Coatings Association and Zinc Association. None of the seven mints. The build matches only the
+  organization shards, and the two universities are in `data/ecosystem.csv` (ORG-000501 and ORG-002087), outside
+  its lookup. The rest are organization names, mostly companies, with some acronyms (for example "ACA", the American
   Coatings Association); they were not classified one by one.
-- **Not a delegate list:** each cell is a single name, and no cell gives a person's title or employer.
+- **Not a delegate list:** each cell holds one entry, and there are no separate person, title or employer fields.
 
 **Undated list (`UNDATED_LISTS`).** The Coatings Trends sponsor block on the organizer's home page names no year,
 and the page announces the 2027 edition. One logo's alt text also names the wrong company ("BYK" on Elinor's logo).
@@ -185,3 +186,6 @@ SHIP-WITH-FIXES. Applied:
   exhibitors.
 - **Waves 2–3 (merged):** their combined-list gate let an unlabelled entry through on a partly labelled list. A
   re-check of the merged rows against that case is worth one pass.
+- **Ecosystem participants:** every harvest pass so far matches names against the organization shards only.
+  Universities and other entities in `data/ecosystem.csv` that appear on lists (for example the University of Akron
+  and Bowling Green State University at Great Lakes 2025) are not matched. §4.12.2 allows their participation rows.
