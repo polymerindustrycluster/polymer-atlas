@@ -63,6 +63,24 @@ A row is admitted only when every one of these holds:
    `validate.py` uses).
 6. The name is not already held.
 
+## Integration refute (codex and Antigravity, deep, 2026-11-19)
+
+Both families judged the scripts NOT SOUND. Each defect was tested against the 95 admitted rows; **none admitted a bad row.**
+The scripts are fixed, each fix was tested with the reviewer's own failing input, and a rebuild from main produces
+byte-identical data.
+
+| Defect (reviewer) | Effect on these 95 rows | Fix |
+|-|-|-|
+| `dom()` took two labels, so `ox.ac.uk` and `cam.ac.uk` collide (both) | none; every gate host is `.edu` | second-level ccTLD labels kept (`ox.ac.uk`) |
+| ≥2 held people on a third-party host made it "own" (both) | none; the 10 rows admitted this way are all on the right university's `.edu` (uw.edu, psu.edu, pitt.edu, lehigh.edu, ucsb.edu) | a derived domain must be `.edu` |
+| redirects not checked (codex) | none; 121 of 124 URLs have no off-domain redirect. 3 could not be fetched to check (Rice 406, two lab sites) | a redirect off the requested domain counts as no page |
+| missing or stale `review_holds.csv` admitted everything (both) | none; the file was present and current | builder refuses without it; `review_holds.py` deletes the old file first |
+| first verdict word wins: "not SOUND", a later WRONG (both) | none; a strict all-lines parser gives the same 101 | every line naming a row counts; any non-SOUND word holds |
+| one family could pass for two (codex) | none; codex and gemini both ran | codex plus another distinct family are required |
+| approval not bound to content (codex) | none; the 115 reviewed rows equal `verified.csv` field for field, and `verified.csv` was last written before the raw check began | builder holds a row whose fields differ from the reviewed row |
+| suffix as surname, e.g. "Doe PhD" (Antigravity) | none; no admitted name ends in a suffix | suffixes skipped |
+| existence and parent quotes carry only the rank (Antigravity) | not a defect: the same convention as the 153 earlier parent rows; the page is the person's own-institution profile | — |
+
 ## Reproduce
 
 These scripts run from the corpus directory, outside the repo:

@@ -1,0 +1,40 @@
+council-ask: codex effort=deep -> model=gpt-6-astra reasoning=max
+**Integration defects found.** Line numbers refer to the supplied scripts. These failure paths were reproduced with in-memory fixtures; no files were edited. Unless specified, other gates pass.
+
+1. **Unrelated institutions collapse to the same domain — `build_people.py:44,85`.**  
+   Failing input: institution website `https://www.ox.ac.uk`; both gate URLs under `https://www.cam.ac.uk/`. `dom()` returns `ac.uk` for both, so Cambridge evidence is admitted as Oxford `own_site` evidence. Taking the last two labels does not identify a registered domain.
+
+2. **Two external profiles confer institutional ownership — `build_people.py:62–67,108`.**  
+   Failing input: institution website `https://alpha.edu`, with two held people whose profile URLs are `https://directory.example.net/people/1` and `/people/2`. The counter adds `example.net` to its own domains. Gates at that independent directory then pass and receive `source_class=own_site`, despite the institution having no ownership of that service.
+
+3. **Redirect destinations escape the domain check — `rawcheck_people.py:19–22`; `build_people.py:85,108`.**  
+   Failing input: `https://alpha.edu/outgoing/able` redirects to an independent site containing the matching name, role and polymer quotes. `urlopen()` follows redirects, but the checker never inspects the response’s final URL. The builder checks only the original institutional URL and emits `own_site` evidence. A mocked external response produced all three raw-check values as `yes`.
+
+4. **Missing or stale review output permits admission — `build_people.py:50–51,78`; `review_holds.py:17,32–33`.**  
+   Failing input: a raw-passing lead and no `review_holds.csv`. The builder substitutes `{}` and admits the unreviewed row. A second failure: retain an earlier header-only holds file, then provide an unfinished review containing `BB-0001 WRONG` without terminal `exit 0`. The reviewer raises before replacing the old file. A subsequent builder invocation reads the stale empty holds and admits the row. The consumer requires neither successful review completion nor proof of coverage.
+
+5. **A negative verdict can parse as SOUND — `review_holds.py:19–21`.**  
+   Failing input in Codex’s review:
+   ```text
+   BB-0001: not SOUND; WRONG
+   exit 0
+   ```
+   Give Gemini `BB-0001 SOUND`, with remaining review parts properly terminated. The parser takes the first verdict keyword, `SOUND`, ignoring its negation and the explicit `WRONG`. The resulting holds file is empty.
+
+6. **Later rejection cannot override an earlier approval — `review_holds.py:21`.**  
+   Failing input:
+   ```text
+   BB-0001 SOUND
+   BB-0001 WRONG
+   exit 0
+   ```
+   With Gemini reporting SOUND, `setdefault()` preserves the first verdict and silently discards the correction. The same failure occurs when the correction appears in part 2. No hold is emitted despite a family explicitly rejecting the row.
+
+7. **Two distinct model families are not enforced — `review_holds.py:8,25,28–29`.**  
+   Failing invocation: `python review_holds.py codex`, with Codex reporting SOUND and Gemini reporting WRONG. Gemini is never consulted, and the holds file is empty. Passing `codex codex` has the same effect. Both invocations can print `both SOUND` despite consulting only one family.
+
+8. **Approvals survive changes to the evidence they supposedly validate — `rawcheck_people.py:65–68`; `build_people.py:49–51,74–80,103–109`.**  
+   Failing sequence: successfully check and review `BB-0001`; then change its `gate_b_quote` to text absent from the page while retaining the lead ID. Rerunning rawcheck skips the row entirely because that ID already exists. The builder joins the old passing bits and review holds by ID, then emits the changed, unchecked quote as `supports_A` scope evidence. Neither artifact binds approval to the name, institution, URLs or quotes actually imported.
+
+All eight supplied person/evidence ID mappings match the allocation formula. These counterexamples establish integration failures; whether any affected the submitted 95 rows remains unproven.
+exit 0

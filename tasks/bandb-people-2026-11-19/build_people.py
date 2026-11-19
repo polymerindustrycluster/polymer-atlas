@@ -4,10 +4,12 @@
 A lane VERIFIED row is admitted only when ALL hold:
   - raw check (rawcheck.csv): Gate A and Gate B quotes found word for word on a fresh re-fetch, and the person's
     surname within 40 words of the Gate A quote;
-  - both gate URLs are on the institution's own registered domain (V-22: people existence/scope are own_site);
+  - both gate URLs are on the institution's own domains: its website's, plus a .edu domain >= 2 of its held people
+    already use (V-22: people existence/scope are own_site);
   - role is a SCHEMA 4.9 controlled value; no '@' in any URL and no personal-account identifier URL (V-62);
   - the name is not already held in people.csv (any institution: a same-name hold is a possible mover, held);
-  - not held by the two-family review (review_holds.csv: person rows either family did not judge SOUND).
+  - not held by the two-family review (review_holds.csv, required: rows either family did not judge SOUND), and its
+    name, institution, role, URLs and quotes equal the row the families reviewed (review_part*.md).
 Each admitted person gets existence, scope and parent evidence rows (own_site, supports_A) and tier A.
     python3 <this file> <corpus dir> [--apply]
 """
@@ -41,14 +43,37 @@ def toks(n):
 
 
 key = lambda n: (toks(n)[0], toks(n)[-1]) if len(toks(n)) >= 2 else None
-dom = lambda u: ".".join(urlparse(u if "//" in u else "https://" + u).netloc.lower().split(":")[0].split(".")[-2:])
+
+
+def dom(u):
+    """Registered domain. shortcut: a fixed list of second-level labels stands in for the Public Suffix List
+    (ox.ac.uk, not ac.uk); use the PSL if non-US institutions are ever admitted."""
+    h = urlparse(u if "//" in u else "https://" + u).netloc.lower().split(":")[0].split(".")
+    n = 3 if len(h) >= 3 and len(h[-1]) == 2 and h[-2] in ("ac", "co", "com", "edu", "gov", "net", "org") else 2
+    return ".".join(h[-n:])
+
+
+def reviewed_rows():
+    """The rows as the two families reviewed them (review_part*.md), to bind each approval to the imported content."""
+    import json
+    out = {}
+    for p in sorted(C.glob("review_part*.md")):
+        t = p.read_text(encoding="utf-8")
+        out.update({r["lead_id"]: r for r in json.loads(t[t.index("ROWS:\n") + 6:])})
+    return out
+
+
+PACKET = {"name": "full_name", "institution": "institution_org_id", "role": "role", "role_as_published": "role_as_published",
+          "gate_a_quote": "gate_a_quote", "gate_a_url": "gate_a_url", "gate_b_quote": "gate_b_quote", "gate_b_url": "gate_b_url"}
 
 
 def main():
     ver = list(csv.DictReader(open(C / "verified.csv", encoding="utf-8")))
     rc = {r["lead_id"]: r for r in csv.DictReader(open(C / "rawcheck.csv", encoding="utf-8"))}
-    rh = {r["lead_id"]: r["reason"] for r in csv.DictReader(open(C / "review_holds.csv", encoding="utf-8"))} \
-        if (C / "review_holds.csv").exists() else {}
+    if not (C / "review_holds.csv").exists():  # fail closed: no review result, no admissions
+        sys.exit("review_holds.csv missing: run review_holds.py after the two-family review")
+    rh = {r["lead_id"]: r["reason"] for r in csv.DictReader(open(C / "review_holds.csv", encoding="utf-8"))}
+    rv = reviewed_rows()
     ph, people, pe = read(ROOT / "data/people.csv")
     eh, ev, ee = read(ROOT / "data/evidence_people.csv")
     import glob
@@ -64,7 +89,8 @@ def main():
             by_inst[p["institution_org_id"]][dom(p["public_profile_url"])] += 1
     def own_domains(oid):
         d = {dom(insts.get(oid, {}).get("website", ""))} - {""}
-        return d | {x for x, n in by_inst[oid].items() if n >= 2}
+        # only .edu hosts count: a shared third-party host (github.io, an external directory) is never "own"
+        return d | {x for x, n in by_inst[oid].items() if n >= 2 and x.endswith(".edu")}
     held = {}
     for p in people:
         if key(p["full_name"]): held.setdefault(key(p["full_name"]), p["person_id"])
@@ -76,6 +102,8 @@ def main():
         idoms = own_domains(r["institution_org_id"])
         why = None
         if lid in rh: why = "review hold: " + rh[lid]
+        elif lid not in rv or any(rv[lid][f] != r[g] for f, g in PACKET.items()):
+            why = "row not reviewed, or changed since the two-family review"
         elif x.get("gate_a") != "yes" or x.get("gate_b") != "yes": why = f"raw check gate_a={x.get('gate_a')} gate_b={x.get('gate_b')}"
         elif x.get("gate_a_surname") != "yes": why = "raw check: surname not within 40 words of the Gate A quote"
         elif r["role"] not in ROLES: why = f"role {r['role']!r} not a SCHEMA 4.9 value"

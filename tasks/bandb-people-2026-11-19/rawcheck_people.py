@@ -7,6 +7,9 @@ sys.path.insert(0, r"C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-c
 from tools.layer_b_fetch import call, env  # noqa: E402
 
 W = lambda s: re.findall(r"[a-z0-9]+", unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower())
+SUFFIX = {"jr", "sr", "ii", "iii", "iv", "phd", "md", "pe", "dr", "prof"}
+surname = lambda n: next((t for t in reversed(W(n)) if t not in SUFFIX and len(t) > 1), "")
+dom = lambda u: ".".join(re.sub(r"^https?://", "", u or "").split("/")[0].split(":")[0].lower().split(".")[-2:])
 fc, key = env("FIRECRAWL_BASE_URL").rstrip("/"), env("FIRECRAWL_NAS_API_KEY")
 cache = {}
 
@@ -17,6 +20,8 @@ def plain(u):
     try:
         req = urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0 (compatible; polymer-atlas-people-check/1.0)"})
         with urllib.request.urlopen(req, timeout=30) as r:
+            if dom(r.geturl()) != dom(u):  # a redirect off the requested domain is not that page
+                return None
             raw = r.read(4_000_000).decode("utf-8", "replace")
         raw = re.sub(r"(?is)<(script|style|noscript|svg|template)[^>]*>.*?</\1>", " ", raw)
         return W(html.unescape(re.sub(r"<[^>]+>", " ", raw)))
@@ -39,7 +44,8 @@ def page(u):
     try:
         d = call(f"{fc}/v2/scrape", {"url": u, "formats": ["markdown"], "onlyMainContent": False},
                  {"Authorization": f"Bearer {key}"}, timeout=120).get("data") or {}
-        if (d.get("metadata") or {}).get("statusCode") == 200:
+        m = d.get("metadata") or {}
+        if m.get("statusCode") == 200 and dom(m.get("url") or u) == dom(u):
             words = W(d.get("markdown"))
     except Exception:
         pass
@@ -72,7 +78,7 @@ def main():
         if new:
             w.writeheader()
         for r in rows:
-            sur = W(r["full_name"])[-1] if W(r["full_name"]) else ""
+            sur = surname(r["full_name"])
             qa = len(W(r["gate_a_quote"]))
             A = pages(r["gate_a_url"]); hits = [(w, at(w, r["gate_a_quote"])) for w in A]
             ga = "unfetchable" if not A else ("yes" if any(i is not None for _, i in hits) else "no")

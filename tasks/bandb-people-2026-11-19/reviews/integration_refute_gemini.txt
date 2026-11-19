@@ -1,0 +1,85 @@
+council-ask: gemini effort=deep -> model=Gemini 3.8 Flash (High)
+PR #407 is **NOT SOUND**. The integration contains multiple concrete defects in evidence generation, domain validation, raw check matching, and review holds parsing.
+
+---
+
+### 1. Parent Evidence Rows Do Not Support Institution Link
+* **File & Line**: `build_people.py`, line 93:
+  ```python
+  ("parent", r["gate_a_url"], f"institution_org_id {r['institution_org_id']}; public_profile_url {r['public_profile_url']}", r["gate_a_quote"])
+  ```
+* **Defect**: The `parent` claim asserts that the person belongs to the institution (`institution_org_id`). However, the script assigns `r["gate_a_quote"]` (the person's job title / role quote from Gate A) as the evidentiary quote in `notes`. It contains no mention of the parent institution.
+* **Failing Sample**: Row `EVD-399159` for Yuhang Hu (`ORG-002844` / Georgia Tech) asserts `claim_type=parent`, but its quote in `notes` is simply `Raw words in order: Associate Professor`. A bare job title provides zero evidence linking the person to Georgia Tech. (Identical failure occurs in `EVD-399120`, `EVD-399129`, `EVD-399225`, `EVD-399252`, `EVD-399306`, and `EVD-399351`).
+
+---
+
+### 2. Existence Evidence Quotes Omit Person Name
+* **File & Line**: `build_people.py`, line 91:
+  ```python
+  ("existence", r["gate_a_url"], f"name {r['full_name']}; role {r['role']}; title {r['role_as_published']}", r["gate_a_quote"])
+  ```
+* **Defect**: An `existence` claim requires verifying `name + role`. However, `gate_a_quote` records only the title string matched on the page, not the person's name.
+* **Failing Sample**: Row `EVD-399118` for James Bryers claims `name James Bryers; role professor`, but its evidence quote is solely `Raw words in order: Professor of Bioengineering`. Row `EVD-399157` for Yuhang Hu has `Raw words in order: Associate Professor`. The evidence rows omit the name and do not support existence of the claimed individual.
+
+---
+
+### 3. Domain Rule Admits Off-Institution Pages via Multi-Part ccTLDs
+* **File & Line**: `build_people.py`, line 42:
+  ```python
+  dom = lambda u: ".".join(urlparse(u if "//" in u else "https://" + u).netloc.lower().split(":")[0].split(".")[-2:])
+  ```
+* **Defect**: `.split(".")[-2:]` naively extracts the last two labels of the host. For public multi-part ccTLDs (`.ac.uk`, `.edu.au`, `.edu.cn`, `.ac.jp`), `dom` truncates the host to the public suffix itself (`ac.uk`). This causes `own_domains` to treat the entire ccTLD hierarchy as the institution's own domain.
+* **Failing Input**:
+  - Institution: University of Oxford (`website = "https://www.ox.ac.uk"`), yielding `dom == "ac.uk"`.
+  - Gate URL: Cambridge University Chemistry (`gate_a_url = "https://www.ch.cam.ac.uk/person/someone"`), which also yields `dom == "ac.uk"`.
+  - Gate check on line 79 passes `dom in idoms`, admitting a Cambridge faculty page for an Oxford record.
+
+---
+
+### 4. Domain Rule Admits Public / Third-Party Hosting Domains
+* **File & Line**: `build_people.py`, lines 54–57:
+  ```python
+  def own_domains(oid):
+      d = {dom(insts.get(oid, {}).get("website", ""))} - {""}
+      return d | {x for x, n in by_inst[oid].items() if n >= 2}
+  ```
+* **Defect**: Any domain appearing in $\ge 2$ held profiles for an institution is added to `own_domains`. If two professors use shared platforms (`github.io`, `scholar.google.com` $\to$ `google.com`, `linkedin.com`), the shared third-party platform becomes an "own domain" for the institution.
+* **Failing Input**: Two held professors at an institution have `public_profile_url` hosted on `alice.github.io` and `bob.github.io`. `own_domains(oid)` adds `github.io`. A new lead with `gate_a_url = "https://unrelated-user.github.io"` passes the domain check, violating rule V-22 (`own_site`).
+
+---
+
+### 5. Review Holds Left-to-Right Regex Leaks Rejections as SOUND
+* **File & Line**: `review_holds.py`, lines 20–22:
+  ```python
+  m, v = re.search(r"BB-\d{4}", line), re.search(r"\b(SOUND|WRONG|DOUBT)\b", line)
+  if m and v:
+      out.setdefault(m.group(0), (v.group(1), " ".join(line.split())[:300]))
+  ```
+* **Defect**: `re.search` scans left-to-right. If a model review contains a rejection where "SOUND" precedes "WRONG" or "DOUBT", `v.group(1)` matches `"SOUND"`. `out.setdefault` records the verdict as `SOUND`, so the row is omitted from `review_holds.csv` and admitted.
+* **Failing Input Line in `review_codex_part1.txt`**:
+  `BB-1050: Not SOUND - Gate B quote does not describe polymer research (WRONG).`
+  Matches `v.group(1) == "SOUND"`. The defect is leaked and admitted instead of held.
+
+---
+
+### 6. Review Holds Bypassed Entirely if `review_holds.csv` Is Missing
+* **File & Line**: `build_people.py`, line 64:
+  ```python
+  rh = {r["lead_id"]: r["reason"] for r in csv.DictReader(open(C / "review_holds.csv", encoding="utf-8"))} \
+      if (C / "review_holds.csv").exists() else {}
+  ```
+* **Defect**: The system is designed to fail closed. However, if `review_holds.csv` is missing, `rh` silently evaluates to `{}`. Line 72 (`if lid in rh:`) never triggers, allowing all leads to bypass review holds without error.
+* **Failing Input**: Run `build_people.py` without running `review_holds.py` first (or omit `review_holds.csv`). All leads bypass the two-family review gate.
+
+---
+
+### 7. Post-Nominals and Suffixes Match Arbitrary Faculty in `rawcheck_people.py`
+* **File & Line**: `rawcheck_people.py`, lines 59, 62:
+  ```python
+  sur = W(r["full_name"])[-1] if W(r["full_name"]) else ""
+  ...
+  near = "yes" if any(i is not None and sur in w[max(0, i - 40):i + qa + 40] for w, i in hits) else "no"
+  ```
+* **Defect**: `W()` does not strip post-nominals or suffixes (`Jr.`, `Sr.`, `PhD`, `MD`). For names like `"Jane Doe PhD"`, `sur` is `"phd"`. Academic roster pages include `"PhD"` within 40 words of almost every occurrence of `"Professor"`.
+* **Failing Input**: Lead `full_name = "Jane Doe PhD"`, `gate_a_quote = "Professor"`. The webpage lists `"Professor Richard Smith, PhD MIT"`. `sur` (`"phd"`) matches Richard Smith's degrees within 40 words of `"Professor"`, marking `gate_a_surname = "yes"`.
+exit 0
