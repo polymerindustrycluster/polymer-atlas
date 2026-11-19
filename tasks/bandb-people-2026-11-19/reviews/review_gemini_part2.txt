@@ -1,0 +1,61 @@
+council-ask: gemini effort=deep -> model=Gemini 3.8 Flash (High)
+BB-0015: Chiara Daraio — DOUBT (settled by whether Daraio's lab actively conducts natural rubber research in the NSF initiative rather than mechanical/metamaterial characterization)
+BB-0174: Surya K. Mallapragada — SOUND
+BB-0254: Juejun Hu — SOUND
+BB-0326: Mahmoodul Haq — DOUBT (settled by whether his profile explicitly lists polymer additive manufacturing or polymer-matrix composites in his research interests outside the sensor fellowship award)
+BB-0383: Ryan Chiechi — SOUND
+BB-0393: Seth Rasmussen — SOUND
+BB-0498: Michael Lanagan — DOUBT (settled by whether funded grant titles qualify under Schema 4.9 as stating polymer-specific research on a profile lacking a narrative research section)
+BB-0515: YuanQiao Rao — SOUND
+BB-0037: Kevin Healy — SOUND
+BB-0050: Kamil Godula — SOUND
+BB-0062: Hector D. Ceniceros — SOUND
+BB-0114: Amal Narayanan — SOUND
+BB-0218: Nathan Gabrielson — WRONG (Gate B fails: the profile states no research at all, and a publication title from a bibliography does not constitute a statement of polymer-specific research)
+BB-0316: John Fourkas — SOUND
+BB-0284: Gulden Camci-Unal — SOUND
+BB-0623: Seungpyo Hong — SOUND
+BB-0001: Elizabeth Lipke — SOUND
+BB-0016: David A. Tirrell — SOUND
+BB-0143: Justin Kim — SOUND
+BB-0474: John P. Coulter — SOUND
+BB-0353: Ahmed El-Shafei — SOUND
+BB-0484: Amir Sheikhi — SOUND
+BB-0244: Alessandro Martins — SOUND
+BB-0229: Jan-Anders Mansson — SOUND
+BB-0571: Elizabeth Cosgriff-Hernandez — SOUND
+BB-0051: Karen Christman — SOUND
+BB-0064: Ryan Stowers — SOUND
+BB-0088: Sergey Dergunov — SOUND
+BB-0101: Eric M. Furst — SOUND
+BB-0220: Steven C. Zimmerman — SOUND
+BB-0275: Alireza Vakil Amirkhizi — SOUND
+BB-0337: J. Ilja Siepmann — SOUND
+BB-0521: Leo Le Wang — SOUND
+BB-0532: Sachin Velankar — SOUND
+BB-0587: Rodrigo Noriega — SOUND
+BB-0002: Jeffrey Rice — SOUND
+BB-0164: Chris J Cornelius — SOUND
+BB-0572: Guihua Yu — SOUND
+BB-0074: Richard D. Noble — SOUND
+BB-0286: James Whitten — SOUND
+BB-0245: Kshitiz Upadhyay — SOUND
+BB-0411: Fernando Escobedo — SOUND
+BB-0503: Shixian Zhang — SOUND
+BB-0543: Arun Srinivasa — SOUND
+BB-0573: Jin Yang — SOUND
+BB-0042: Thaiesha Wright — SOUND
+BB-0053: Mehran Tehrani — SOUND
+BB-0129: Peng Jiang — SOUND
+BB-0308: Bongtae Han — DOUBT (settled by whether the FBG sensor project represents polymer property characterization research versus optical packaging sensor instrumentation where polymers are merely an application)
+BB-0067: Steven R. Nutt — WRONG (Gate B fails: neither polymer nor any approved polymer keyword is named; fiber-reinforced composites and resin flow cannot be inferred as polymer-matrix composites)
+BB-0616: Mark D. Ediger — SOUND
+BB-0004: Mrinal Thakur — SOUND
+BB-0470: Mary Lynn Realff — SOUND
+BB-0564: Rui Sun — SOUND
+BB-0043: Yang Yang — SOUND
+BB-0092: Yusuf Khan — SOUND
+BB-0130: Renato S. Navarro — SOUND
+
+**Counts:** SOUND: 51 | WRONG: 2 | DOUBT: 4
+exit 0

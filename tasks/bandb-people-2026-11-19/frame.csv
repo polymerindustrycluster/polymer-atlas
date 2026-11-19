@@ -1,0 +1,516 @@
+lead_id,name,school,state,unitid,institution_org_id,census_rank,roster_page
+BB-0000,Allan E. David,Auburn University,AL,100858,ORG-004634,professor,https://eng.auburn.edu/chen/people/index.html
+BB-0001,Elizabeth A. Lipke,Auburn University,AL,100858,ORG-004634,professor,https://eng.auburn.edu/chen/people/index.html
+BB-0002,Jeffrey J. Rice,Auburn University,AL,100858,ORG-004634,teaching,https://eng.auburn.edu/chen/people/index.html
+BB-0003,Kyle D. Schulze,Auburn University,AL,100858,ORG-004634,associate,https://eng.auburn.edu/mech/people/
+BB-0004,Mrinal Thakur,Auburn University,AL,100858,ORG-004634,professor,https://eng.auburn.edu/mech/people/
+BB-0005,Nicole L. Habbit,Auburn University,AL,100858,ORG-004634,teaching,https://eng.auburn.edu/chen/people/index.html
+BB-0006,Symone L. M. Alexander,Auburn University,AL,100858,ORG-004634,assistant,https://eng.auburn.edu/chen/people/index.html
+BB-0007,Yoon Y. Lee,Auburn University,AL,100858,ORG-004634,emeritus,https://eng.auburn.edu/chen/people/emeritus
+BB-0008,Zhihua Jiang,Auburn University,AL,100858,ORG-004634,associate,https://eng.auburn.edu/chen/people/index.html
+BB-0009,Candace K. Chan,Arizona State University Campus Immersion,AZ,104151,ORG-004661,professor,https://faculty.engineering.asu.edu/directory/semte/materials-science-and-engineering
+BB-0010,Cody A. Friesen,Arizona State University Campus Immersion,AZ,104151,ORG-004661,associate,https://faculty.engineering.asu.edu/directory/semte/materials-science-and-engineering
+BB-0011,Dorsa Parviz,Arizona State University Campus Immersion,AZ,104151,ORG-004661,assistant,https://faculty.engineering.asu.edu/directory/semte/chemical-engineering
+BB-0012,Julianne L. Holloway,Arizona State University Campus Immersion,AZ,104151,ORG-004661,associate,https://faculty.engineering.asu.edu/directory/semte/chemical-engineering
+BB-0013,Sui Yang,Arizona State University Campus Immersion,AZ,104151,ORG-004661,assistant,https://faculty.engineering.asu.edu/directory/semte/materials-science-and-engineering
+BB-0014,Axel Scherer,California Institute of Technology,CA,110404,ORG-004695,professor,https://mede.caltech.edu/people/faculty
+BB-0015,Chiara Daraio,California Institute of Technology,CA,110404,ORG-004695,professor,https://mce.caltech.edu/people
+BB-0016,David A. Tirrell,California Institute of Technology,CA,110404,ORG-004695,professor,https://www.cce.caltech.edu/faculty
+BB-0018,John E. Bercaw,California Institute of Technology,CA,110404,ORG-004695,emeritus,https://www.cce.caltech.edu/faculty/emeritus-faculty
+BB-0019,Julia R. Greer,California Institute of Technology,CA,110404,ORG-004695,professor,https://mce.caltech.edu/people
+BB-0020,Linda C. Hsieh-Wilson,California Institute of Technology,CA,110404,ORG-004695,professor,https://www.cce.caltech.edu/faculty
+BB-0022,Theodor Agapie,California Institute of Technology,CA,110404,ORG-004695,professor,https://www.cce.caltech.edu/faculty
+BB-0023,Wei Gao,California Institute of Technology,CA,110404,ORG-004695,professor,https://mede.caltech.edu/people/faculty
+BB-0024,Yu-Chong Tai,California Institute of Technology,CA,110404,ORG-004695,professor,https://mede.caltech.edu/people/faculty
+BB-0025,Alan L. Kiste,California Polytechnic State University-San Luis Obispo,CA,110422,ORG-004638,professor,https://chemistry.calpoly.edu/content/about-us/Chemistry&BiochemistryDirectory
+BB-0026,Joel Galos,California Polytechnic State University-San Luis Obispo,CA,110422,ORG-004638,assistant,https://mate.calpoly.edu/faculty-and-staff
+BB-0027,John P. Hagen,California Polytechnic State University-San Luis Obispo,CA,110422,ORG-004638,professor,https://chemistry.calpoly.edu/content/about-us/Chemistry&BiochemistryDirectory
+BB-0028,Michael D. Heying,California Polytechnic State University-San Luis Obispo,CA,110422,ORG-004638,professor,https://chemistry.calpoly.edu/content/about-us/Chemistry&BiochemistryDirectory
+BB-0031,Submit Update Request,California Polytechnic State University-San Luis Obispo,CA,110422,ORG-004638,research,https://chemistry.calpoly.edu/content/about-us/faculty/emeriti
+BB-0032,Adam A. Caparco,Northeastern University,CA,167358,ORG-004716,professor,https://che.northeastern.edu/faculty/faculty-directory/
+BB-0033,Fan Yang,Stanford University,CA,243744,ORG-004688,associate,https://bioengineering.stanford.edu/people/faculty
+BB-0034,Mark R. Cutkosky,Stanford University,CA,243744,ORG-004688,professor,https://me.stanford.edu/people/faculty
+BB-0036,Junqiao Wu,University of California-Berkeley,CA,110635,ORG-004721,faculty,https://mse.berkeley.edu/faculty/
+BB-0037,Kevin E. Healy,University of California-Berkeley,CA,110635,ORG-004721,professor,https://bioeng.berkeley.edu/people
+BB-0038,Mary C. Scott,University of California-Berkeley,CA,110635,ORG-004721,faculty,https://mse.berkeley.edu/faculty/
+BB-0039,Peidong Yang,University of California-Berkeley,CA,110635,ORG-004721,teaching,https://mse.berkeley.edu/faculty/
+BB-0042,Thaiesha A. Wright,University of California-Los Angeles,CA,110662,ORG-004689,assistant,https://catalog.registrar.ucla.edu/browse/Departments/ChemicalandBiomolecularEngineering/Faculty-Roster
+BB-0043,Yang Yang,University of California-Los Angeles,CA,110662,ORG-004689,professor,https://catalog.registrar.ucla.edu/browse/Departments/Bioengineering/Faculty-Roster
+BB-0044,Yi Tang,University of California-Los Angeles,CA,110662,ORG-004689,professor,https://catalog.registrar.ucla.edu/browse/Departments/Bioengineering/Faculty-Roster
+BB-0045,Adam Jeffrey Engler,University of California-San Diego,CA,110680,ORG-004700,professor,https://bioengineering.ucsd.edu/faculty
+BB-0046,Brian A. Aguado,University of California-San Diego,CA,110680,ORG-004700,assistant,https://bioengineering.ucsd.edu/faculty
+BB-0048,Jinhye Bae,University of California-San Diego,CA,110680,ORG-004700,associate,https://cne.ucsd.edu/chemical-engineering-faculty
+BB-0049,Joseph Wang,University of California-San Diego,CA,110680,ORG-004700,professor,https://cne.ucsd.edu/chemical-engineering-faculty
+BB-0050,Kamil Godula,University of California-San Diego,CA,110680,ORG-004700,associate,https://matsci.ucsd.edu/faculty
+BB-0051,Karen L. Christman,University of California-San Diego,CA,110680,ORG-004700,professor,https://bioengineering.ucsd.edu/faculty
+BB-0052,Kolade Adebowale,University of California-San Diego,CA,110680,ORG-004700,assistant,https://bioengineering.ucsd.edu/faculty
+BB-0053,Mehran Tehrani,University of California-San Diego,CA,110680,ORG-004700,associate,https://matsci.ucsd.edu/faculty
+BB-0054,Nisarg J. Shah,University of California-San Diego,CA,110680,ORG-004700,associate,https://cne.ucsd.edu/chemical-engineering-faculty
+BB-0056,Wei Xiong,University of California-San Diego,CA,110680,ORG-004700,professor,https://matsci.ucsd.edu/faculty
+BB-0057,Alan J. Heeger,University of California-Santa Barbara,CA,110705,ORG-002854,emeritus,https://www.chem.ucsb.edu/people
+BB-0058,Bradley F. Chmelka,University of California-Santa Barbara,CA,110705,ORG-002854,professor,https://chemengr.ucsb.edu/people/faculty
+BB-0059,Fred Wudl,University of California-Santa Barbara,CA,110705,ORG-002854,emeritus,https://www.chem.ucsb.edu/people
+BB-0060,Gary L. Leal,University of California-Santa Barbara,CA,110705,ORG-002854,emeritus,https://www.materials.ucsb.edu/people/emeriti-research-faculty
+BB-0062,Hector Daniel Ceniceros,University of California-Santa Barbara,CA,110705,ORG-002854,professor,https://me.ucsb.edu/people
+BB-0064,Ryan S. Stowers,University of California-Santa Barbara,CA,110705,ORG-002854,assistant,https://bioengineering.ucsb.edu/people/faculty
+BB-0065,Scott P. Price,University of California-Santa Barbara,CA,110705,ORG-002854,teaching,https://www.chem.ucsb.edu/people
+BB-0066,Shivshankar R. Mane,University of California-Santa Barbara,CA,110705,ORG-002854,research,https://www.chem.ucsb.edu/people
+BB-0067,Steve R. Nutt,University of Southern California,CA,123961,ORG-004702,professor,https://ame.usc.edu/directory/faculty/
+BB-0068,Carson J. Bruns,University of Colorado Boulder,CO,126614,ORG-004655,associate,https://www.colorado.edu/bme/people/bme-faculty
+BB-0069,Gregory Lewis Whiting,University of Colorado Boulder,CO,126614,ORG-004655,professor,https://www.colorado.edu/mechanical/people/faculty
+BB-0070,Hendrik Heinz,University of Colorado Boulder,CO,126614,ORG-004655,professor,https://www.colorado.edu/mse/people
+BB-0071,Ivan I. Smalyukh,University of Colorado Boulder,CO,126614,ORG-004655,professor,https://www.colorado.edu/mse/people
+BB-0072,Leonidas-Dimitrios Syntrivanis,University of Colorado Boulder,CO,126614,ORG-004655,assistant,https://www.colorado.edu/chemistry/people/faculty
+BB-0073,Mark E. Rentschler,University of Colorado Boulder,CO,126614,ORG-004655,professor,https://www.colorado.edu/bme/people/bme-faculty
+BB-0074,Richard D. Noble,University of Colorado Boulder,CO,126614,ORG-004655,research,https://www.colorado.edu/chemistry/people/faculty
+BB-0076,Anna Tarakanova,University of Connecticut,CT,129020,ORG-004664,associate,https://mechanical-aerospace-manufacturing.engineering.uconn.edu/people/faculty/
+BB-0077,Anson W. K. Ma,University of Connecticut,CT,129020,ORG-004664,professor,https://chemical-biomolecular.engineering.uconn.edu/people/faculty/
+BB-0079,Cato T. Laurencin,University of Connecticut,CT,129020,ORG-004664,professor,https://chemical-biomolecular.engineering.uconn.edu/people/faculty/
+BB-0080,Computational Modeling,University of Connecticut,CT,129020,ORG-004664,emeritus,https://polymer.ims.uconn.edu/polymer-program-faculty/
+BB-0081,Fotios Papadimitrakopoulos,University of Connecticut,CT,129020,ORG-004664,professor,https://chemistry.uconn.edu/faculty/
+BB-0083,Ji Ho Jeon,University of Connecticut,CT,129020,ORG-004664,assistant,https://mechanical-aerospace-manufacturing.engineering.uconn.edu/people/faculty/
+BB-0085,Mu-Ping Nieh Director,University of Connecticut,CT,129020,ORG-004664,professor,https://polymer.ims.uconn.edu/polymer-program-faculty/
+BB-0086,Sandra S. Hill,University of Connecticut,CT,129020,ORG-004664,teaching,https://chemistry.uconn.edu/faculty/
+BB-0088,Sergey A. Dergunov,University of Connecticut,CT,129020,ORG-004664,research,https://chemistry.uconn.edu/faculty/
+BB-0089,Thanh Duc Nguyen,University of Connecticut,CT,129020,ORG-004664,professor,https://mechanical-aerospace-manufacturing.engineering.uconn.edu/people/faculty/ https://polymer.ims.uconn.edu/polymer-program-faculty/
+BB-0090,Xueju (Sophie) Wang,University of Connecticut,CT,129020,ORG-004664,associate,https://polymer.ims.uconn.edu/polymer-program-faculty/
+BB-0092,Yusuf Khan,University of Connecticut,CT,129020,ORG-004664,associate,https://mse.engr.uconn.edu/faculty
+BB-0113,Alison C. Dunn,University of Florida,FL,134130,ORG-004658,associate,https://mae.ufl.edu/people/
+BB-0114,Amal Narayanan,University of Florida,FL,134130,ORG-004658,assistant,https://chem.ufl.edu/people-2/faculty-2/
+BB-0115,Ana Maria Porras,University of Florida,FL,134130,ORG-004658,assistant,https://bme.ufl.edu/people/faculty/
+BB-0118,Blanka Sharma,University of Florida,FL,134130,ORG-004658,associate,https://bme.ufl.edu/people/faculty/
+BB-0119,Carl D. Crane,University of Florida,FL,134130,ORG-004658,teaching,https://mae.ufl.edu/people/
+BB-0121,Cherie L. Stabler,University of Florida,FL,134130,ORG-004658,professor,https://bme.ufl.edu/people/faculty/
+BB-0122,Curtis R. Taylor,University of Florida,FL,134130,ORG-004658,associate,https://mae.ufl.edu/people/
+BB-0123,Edward A. Phelps,University of Florida,FL,134130,ORG-004658,associate,https://bme.ufl.edu/people/faculty/
+BB-0124,Fan Zhang,University of Florida,FL,134130,ORG-004658,assistant,https://che.ufl.edu/people/faculty/
+BB-0125,Gregory A. Hudalla,University of Florida,FL,134130,ORG-004658,professor,https://bme.ufl.edu/people/faculty/
+BB-0126,Kamran Mohseni,University of Florida,FL,134130,ORG-004658,professor,https://mae.ufl.edu/people/
+BB-0127,Malisa Sarntinoranont,University of Florida,FL,134130,ORG-004658,professor,https://mae.ufl.edu/people/
+BB-0128,Mingjie Liu,University of Florida,FL,134130,ORG-004658,assistant,https://chem.ufl.edu/people-2/faculty-2/
+BB-0129,Peng Jiang,University of Florida,FL,134130,ORG-004658,professor,https://che.ufl.edu/people/faculty/
+BB-0130,Renato S. Navarro,University of Florida,FL,134130,ORG-004658,assistant,https://che.ufl.edu/people/faculty/
+BB-0131,Sumant Patankar,University of Florida,FL,134130,ORG-004658,teaching,https://che.ufl.edu/people/faculty/
+BB-0133,Yong Huang,University of Florida,FL,134130,ORG-004658,professor,https://che.ufl.edu/people/faculty/
+BB-0134,Ankur K. Singh,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,professor,https://www.me.gatech.edu/staff/s
+BB-0135,Anselm C. Griffin,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,emeritus,https://www.mse.gatech.edu/people
+BB-0138,David M. Collard,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,professor,https://chemistry.gatech.edu/people?role=All
+BB-0139,Huan Tran,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,research,https://www.mse.gatech.edu/people
+BB-0140,Johannes Leisen,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,research,https://chemistry.gatech.edu/people?role=All
+BB-0141,Jonathan S. Colton,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,emeritus,https://www.me.gatech.edu/staff/c
+BB-0143,Justin Kim,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,associate,https://chemistry.gatech.edu/people?role=All
+BB-0144,Kishor K. Gupta,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,research,https://www.mse.gatech.edu/people
+BB-0145,Lily Turaski,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,teaching,https://www.mse.gatech.edu/people
+BB-0148,Rao R Tummala,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,professor,https://www.mse.gatech.edu/people
+BB-0149,Rosario A. Gerhardt,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,professor,https://www.mse.gatech.edu/people
+BB-0150,Ryan P. Lively,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,professor,https://www.chbe.gatech.edu/directory/category/academic-faculty
+BB-0151,Seung Woo Lee,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,professor,https://www.me.gatech.edu/staff/l
+BB-0152,Soumen Das,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,research,https://chemistry.gatech.edu/people?role=All
+BB-0153,Susan Napier Thomas,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,professor,https://www.me.gatech.edu/staff/t
+BB-0154,Victor Breedveld,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,professor,https://www.chbe.gatech.edu/directory/category/academic-faculty
+BB-0155,Vinayak Agarwal,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,associate,https://chemistry.gatech.edu/people?role=All
+BB-0156,W. Steven Johnson,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,emeritus,https://www.mse.gatech.edu/people
+BB-0158,Yadong Zhang,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,research,https://chemistry.gatech.edu/people?role=All
+BB-0159,Yonathan S. Thio,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,teaching,https://www.chbe.gatech.edu/directory/category/academic-faculty
+BB-0160,Youjiang Wang,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,professor,https://www.mse.gatech.edu/people
+BB-0161,Yuhang Hu,Georgia Institute of Technology-Main Campus,GA,139755,ORG-002844,associate,https://www.chbe.gatech.edu/directory/category/academic-faculty
+BB-0162,Baskar Ganapathysubramanian,Iowa State University,IA,153603,ORG-004652,professor,https://www.me.iastate.edu/faculty-directory/
+BB-0163,Brent H. Shanks,Iowa State University,IA,153603,ORG-004652,professor,https://www.cbe.iastate.edu/the-department/facultystaff/
+BB-0164,Chris Cornelius,Iowa State University,IA,153603,ORG-004652,faculty,https://www.cbe.iastate.edu/the-department/facultystaff/
+BB-0165,Guowen Song,Iowa State University,IA,153603,ORG-004652,professor,https://www.me.iastate.edu/faculty-directory/
+BB-0167,Jennifer M. Heinen,Iowa State University,IA,153603,ORG-004652,teaching,https://www.cbe.iastate.edu/the-department/facultystaff/
+BB-0168,Jing Wang,Iowa State University,IA,153603,ORG-004652,assistant,https://www.cbe.iastate.edu/the-department/facultystaff/
+BB-0170,Monica H. Lamm,Iowa State University,IA,153603,ORG-004652,emeritus,https://www.cbe.iastate.edu/the-department/facultystaff/
+BB-0171,Peter C. Collins,Iowa State University,IA,153603,ORG-004652,professor,https://www.mse.iastate.edu/about/faculty-and-staff/
+BB-0172,Robert C. Brown,Iowa State University,IA,153603,ORG-004652,professor,https://www.engineering.iastate.edu/people/department/coe/cbe/cbe-courtesy/
+BB-0173,Sid Pathak,Iowa State University,IA,153603,ORG-004652,associate,https://www.mse.iastate.edu/about/faculty-and-staff/
+BB-0174,Surya K. Mallapragada,Iowa State University,IA,153603,ORG-004652,professor,https://www.cbe.iastate.edu/the-department/facultystaff/
+BB-0175,Xinwei Wang,Iowa State University,IA,153603,ORG-004652,professor,https://www.me.iastate.edu/faculty-directory/
+BB-0176,Buckley Crist,Northwestern University,IL,147767,ORG-004650,emeritus,https://www.mccormick.northwestern.edu/materials-science/people/faculty/emeritus-faculty.html
+BB-0177,Chad Alexander Mirkin,Northwestern University,IL,147767,ORG-004650,professor,https://chemistry.northwestern.edu/people/faculty/
+BB-0178,Chamille J. Lescott,Northwestern University,IL,147767,ORG-004650,teaching,https://www.mccormick.northwestern.edu/biomedical/people/faculty/
+BB-0180,Ha-Kyung Kwon,Northwestern University,IL,147767,ORG-004650,research,https://www.mccormick.northwestern.edu/research/computation-theory-soft-materials-center/people/
+BB-0181,Igal G. Szleifer,Northwestern University,IL,147767,ORG-004650,professor,https://chemistry.northwestern.edu/people/faculty/
+BB-0184,Justin M. Notestein,Northwestern University,IL,147767,ORG-004650,professor,https://www.mccormick.northwestern.edu/chemical-biological/people/faculty/
+BB-0185,Kimberly A. Gray,Northwestern University,IL,147767,ORG-004650,professor,https://www.mccormick.northwestern.edu/chemical-biological/people/faculty/
+BB-0186,Lin X. Chen,Northwestern University,IL,147767,ORG-004650,professor,https://chemistry.northwestern.edu/people/faculty/
+BB-0187,Lisa R. Volpatti,Northwestern University,IL,147767,ORG-004650,assistant,https://www.mccormick.northwestern.edu/biomedical/people/faculty/
+BB-0188,Mark C. Hersam,Northwestern University,IL,147767,ORG-004650,professor,https://chemistry.northwestern.edu/people/faculty/
+BB-0189,Mercouri G. Kanatzidis,Northwestern University,IL,147767,ORG-004650,professor,https://chemistry.northwestern.edu/people/faculty/
+BB-0190,Milan Mrksich,Northwestern University,IL,147767,ORG-004650,professor,https://chemistry.northwestern.edu/people/faculty/
+BB-0191,Omar K. Farha,Northwestern University,IL,147767,ORG-004650,professor,https://chemistry.northwestern.edu/people/faculty/
+BB-0192,Q. Jane Wang,Northwestern University,IL,147767,ORG-004650,professor,https://www.mccormick.northwestern.edu/mechanical/people/faculty/
+BB-0195,Quanbing Mou,Rice University,IL,227757,ORG-004717,assistant,https://chemistry.rice.edu/people/core-faculty
+BB-0197,Dmitri V. Talapin,University of Chicago,IL,144050,ORG-004660,professor,https://chemistry.uchicago.edu/faculty
+BB-0199,Junhong Chen,University of Chicago,IL,144050,ORG-004660,professor,https://pme.uchicago.edu/faculty-research/faculty-directory
+BB-0202,Heyi Liang,University of Florida,IL,134130,ORG-004658,assistant,https://mse.ufl.edu/people/faculty/
+BB-0203,Abigail K. Nason,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,teaching,https://matse.illinois.edu/people/faculty
+BB-0204,Ashok Zachariah Samuel,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,research,https://bioengineering.illinois.edu/people/faculty
+BB-0205,Baron G. Peters,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,professor,https://chbe.illinois.edu/people/faculty
+BB-0206,Bhagya Gunasekera,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,teaching,https://chemistry.illinois.edu/directory/faculty
+BB-0207,Brendan A.C. Harley,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,professor,https://bioengineering.illinois.edu/people/faculty
+BB-0208,Brian T. Cunningham,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,professor,https://bioengineering.illinois.edu/people/faculty
+BB-0210,Christian R. Ray,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,teaching,https://chemistry.illinois.edu/directory/faculty
+BB-0211,Cunjiang Yu,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,professor,https://bioengineering.illinois.edu/people/faculty
+BB-0212,Daniel Krogstad (Former),University of Illinois Urbana-Champaign,IL,145637,ORG-004657,research,https://matse.illinois.edu/people/faculty
+BB-0213,David Ehrhardt,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,research,https://mrl.illinois.edu/directory/faculty
+BB-0214,Deborah Elaine Leckband,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,emeritus,https://chbe.illinois.edu/people/faculty
+BB-0216,Hyunseok Kim,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,assistant,https://matse.illinois.edu/people/faculty
+BB-0217,Megan E. Griebel,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,teaching,https://bioengineering.illinois.edu/people/faculty
+BB-0218,Nathan P. Gabrielson,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,teaching,https://matse.illinois.edu/people/faculty
+BB-0220,Steven C. Zimmerman,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,research,https://chemistry.illinois.edu/directory/faculty
+BB-0221,Yuecheng Peter Zhou,University of Illinois Urbana-Champaign,IL,145637,ORG-004657,assistant,https://chbe.illinois.edu/people/faculty
+BB-0222,Chi Hwan Lee,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/ME/People
+BB-0224,Farshid Sadeghi,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/ME/People
+BB-0225,George Tsu-Chih Chiu,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/ME/People
+BB-0226,Gudrun Schmidt,Purdue University-Main Campus,IN,243780,ORG-004662,teaching,https://www.chem.purdue.edu/people/faculty/index.html
+BB-0227,Hamid Dalir,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/ME/People
+BB-0228,Ibrahim Emre Gunduz,Purdue University-Main Campus,IN,243780,ORG-004662,associate,https://engineering.purdue.edu/ME/People
+BB-0229,Jan-Anders E. Mansson,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/ChE/people
+BB-0230,Jian Jun Xie,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/ME/People
+BB-0231,Justin L. Andrews,Purdue University-Main Campus,IN,243780,ORG-004662,assistant,https://www.chem.purdue.edu/people/faculty/index.html
+BB-0233,Kelly M. Schultz,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/ChE/people
+BB-0234,Liang Pan,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/ME/People
+BB-0235,Min D. Liu,Purdue University-Main Campus,IN,243780,ORG-004662,teaching,https://engineering.purdue.edu/ME/People
+BB-0237,Rahim Rahimi,Purdue University-Main Campus,IN,243780,ORG-004662,associate,https://engineering.purdue.edu/MSE/people/ptFaculty
+BB-0238,Rakesh Agrawal,Purdue University-Main Campus,IN,243780,ORG-004662,emeritus,https://engineering.purdue.edu/ChE/people
+BB-0239,Ronald F. Agyei,Purdue University-Main Campus,IN,243780,ORG-004662,teaching,https://engineering.purdue.edu/AAE/people/Faculty/
+BB-0240,Steven F. Son,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/AAE/people/Faculty/
+BB-0241,Vilas Ganpat Pol,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/ChE/people
+BB-0242,Yung C. Shin,Purdue University-Main Campus,IN,243780,ORG-004662,professor,https://engineering.purdue.edu/ME/People
+BB-0243,Zherui Martinez-Guo,Purdue University-Main Campus,IN,243780,ORG-004662,assistant,https://engineering.purdue.edu/AAE/people/Faculty/
+BB-0244,Alessandro Francisco Martins,Pittsburg State University,KS,155681,ORG-002092,assistant,https://www.pittstate.edu/science/faculty-and-staff/index.html
+BB-0245,Kshitiz Upadhyay,University of Minnesota-Twin Cities,LA,174066,ORG-002855,assistant,https://cse.umn.edu/aem/aem-faculty
+BB-0246,Joost J. Vlassak,Harvard University,MA,166027,ORG-004653,professor,https://seas.harvard.edu/materials-science-mechanical-engineering/people
+BB-0247,Robert Wood (Former),Harvard University,MA,166027,ORG-004653,professor,https://seas.harvard.edu/materials-science-mechanical-engineering/people
+BB-0249,Allan S. Myerson,Massachusetts Institute of Technology,MA,166683,ORG-002849,teaching,https://cheme.mit.edu/people/faculty/
+BB-0250,Ariel L. Furst,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://cheme.mit.edu/people/faculty/
+BB-0251,Christine Ortiz,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://dmse.mit.edu/people/faculty/
+BB-0252,Daniel Blankschtein,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://cheme.mit.edu/people/faculty/
+BB-0253,Hadley D. Sikes,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://cheme.mit.edu/people/faculty/
+BB-0254,Juejun Hu,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://dmse.mit.edu/people/faculty/
+BB-0255,Linda G. Griffith,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://be.mit.edu/faculty/
+BB-0256,Michael J. Cima,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://dmse.mit.edu/people/faculty/
+BB-0257,Ram Sasisekharan,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://be.mit.edu/faculty/
+BB-0258,Ritu Raman,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://ppsm.mit.edu/faculty/
+BB-0259,Yang Shao-Horn,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://dmse.mit.edu/people/faculty/
+BB-0261,Yoel Fink,Massachusetts Institute of Technology,MA,166683,ORG-002849,professor,https://dmse.mit.edu/people/faculty/
+BB-0262,Adam K. Ekenseair,Northeastern University,MA,167358,ORG-004716,teaching,https://che.northeastern.edu/faculty/faculty-directory/
+BB-0265,Debra T. Auguste,Northeastern University,MA,167358,ORG-004716,professor,https://che.northeastern.edu/faculty/faculty-directory/
+BB-0266,Guohao Dai,Northeastern University,MA,167358,ORG-004716,professor,https://bioe.northeastern.edu/faculty/faculty-directory/
+BB-0269,Cathal J. Kearney,University of Massachusetts-Amherst,MA,166629,ORG-002847,assistant,https://websites.umass.edu/mseidgp/faculty/
+BB-0270,Lara A. Al-Hariri,University of Massachusetts-Amherst,MA,166629,ORG-002847,teaching,https://www.umass.edu/chemistry/faculty
+BB-0271,Laurel Kroo,University of Massachusetts-Amherst,MA,166629,ORG-002847,assistant,https://www.umass.edu/polymer-science/faculty
+BB-0272,Patricia A. Bianconi,University of Massachusetts-Amherst,MA,166629,ORG-002847,emeritus,https://www.umass.edu/chemistry/people/emeritus-faculty
+BB-0273,Vincent M. Rotello,University of Massachusetts-Amherst,MA,166629,ORG-002847,professor,https://websites.umass.edu/mseidgp/faculty/
+BB-0274,Alfred A. Donatelli,University of Massachusetts-Lowell,MA,166513,ORG-002846,emeritus,https://www.uml.edu/engineering/chemical/faculty/
+BB-0275,Alireza Amirkhizi,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/engineering/mechanical-industrial/faculty/
+BB-0276,Alkim Akyurtlu,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/research/fdc/about/faculty-staff.aspx
+BB-0277,Anne Soucy,University of Massachusetts-Lowell,MA,166513,ORG-002846,teaching,https://www.uml.edu/engineering/plastics/faculty-staff/
+BB-0278,Bhavna Gupta,University of Massachusetts-Lowell,MA,166513,ORG-002846,teaching,https://www.uml.edu/sciences/chemistry/people/
+BB-0279,Chiara E. Ghezzi,University of Massachusetts-Lowell,MA,166513,ORG-002846,associate,https://www.uml.edu/engineering/biomedical/faculty/
+BB-0280,Christopher Niezrecki,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/engineering/mechanical-industrial/faculty/
+BB-0281,Dhimiter Bello,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/research/nano/faculty-staff/faculty.aspx
+BB-0282,Dongming Xie,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/engineering/chemical/faculty/
+BB-0283,Eugene Rogers,University of Massachusetts-Lowell,MA,166513,ORG-002846,emeritus,https://www.uml.edu/research/nano/faculty-staff/faculty.aspx
+BB-0284,Gulden Camci‐Unal,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/engineering/chemical/faculty/
+BB-0285,James A. Sherwood,University of Massachusetts-Lowell,MA,166513,ORG-002846,emeritus,https://www.uml.edu/engineering/mechanical-industrial/faculty/
+BB-0286,James Whitten,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/research/nano/faculty-staff/faculty.aspx
+BB-0287,Joel Therrien,University of Massachusetts-Lowell,MA,166513,ORG-002846,associate,https://www.uml.edu/research/nano/faculty-staff/faculty.aspx
+BB-0288,Kari D. White,University of Massachusetts-Lowell,MA,166513,ORG-002846,teaching,https://www.uml.edu/engineering/mechanical-industrial/faculty/
+BB-0289,Leslie R. Farris,University of Massachusetts-Lowell,MA,166513,ORG-002846,teaching,https://www.uml.edu/sciences/chemistry/people/
+BB-0291,Melisenda J. McDonald,University of Massachusetts-Lowell,MA,166513,ORG-002846,emeritus,https://www.uml.edu/research/nano/faculty-staff/faculty.aspx
+BB-0292,Mengyan Shen,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/research/nano/faculty-staff/faculty.aspx
+BB-0293,Mingdi Yan,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/sciences/chemistry/people/
+BB-0294,Peter Avitabile,University of Massachusetts-Lowell,MA,166513,ORG-002846,emeritus,https://www.uml.edu/engineering/mechanical-industrial/faculty/
+BB-0295,Pradeep Kurup,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/research/fdc/about/faculty-staff.aspx
+BB-0296,Susan J. Braunhut,University of Massachusetts-Lowell,MA,166513,ORG-002846,emeritus,https://www.uml.edu/research/nano/faculty-staff/faculty.aspx
+BB-0297,Terri Anne Camesano,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/engineering/chemical/faculty/
+BB-0298,Wastewater Treatment,University of Massachusetts-Lowell,MA,166513,ORG-002846,emeritus,https://www.uml.edu/research/nano/faculty-staff/faculty.aspx
+BB-0299,Xingwei Wang,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/research/fdc/about/faculty-staff.aspx
+BB-0300,Xuejun Lu,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/research/fdc/about/faculty-staff.aspx
+BB-0301,Zhiyong Gu,University of Massachusetts-Lowell,MA,166513,ORG-002846,professor,https://www.uml.edu/engineering/chemical/faculty/
+BB-0302,David Hugo Gracias,Johns Hopkins University,MD,162928,ORG-004683,professor,https://chemistry.jhu.edu/people/
+BB-0303,Lan Cheng,Johns Hopkins University,MD,162928,ORG-004683,associate,https://chemistry.jhu.edu/people/
+BB-0304,Luo Gu,Johns Hopkins University,MD,162928,ORG-004683,assistant,https://engineering.jhu.edu/materials/faculty/
+BB-0305,Orla M. Wilson,Johns Hopkins University,MD,162928,ORG-004683,teaching,https://engineering.jhu.edu/materials/faculty/
+BB-0306,Thomas F. Garrison,Johns Hopkins University,MD,162928,ORG-004683,research,https://engineering.jhu.edu/materials/faculty/
+BB-0307,Yun Chen,Johns Hopkins University,MD,162928,ORG-004683,associate,https://me.jhu.edu/faculty/
+BB-0308,Bongtae Han,University of Maryland-College Park,MD,163286,ORG-004708,professor,https://www.nanocenter.umd.edu/faculty/
+BB-0309,David L. Akin,University of Maryland-College Park,MD,163286,ORG-004708,professor,https://aero.umd.edu/clark/facultydir
+BB-0310,Deborah S. Goldberg,University of Maryland-College Park,MD,163286,ORG-004708,teaching,https://bioe.umd.edu/clark/facultydir
+BB-0311,Don L. DeVoe,University of Maryland-College Park,MD,163286,ORG-004708,professor,https://chbe.umd.edu/clark/facultydir
+BB-0312,Elisabeth Smela,University of Maryland-College Park,MD,163286,ORG-004708,professor,https://www.nanocenter.umd.edu/faculty/
+BB-0313,Gregg A. Duncan,University of Maryland-College Park,MD,163286,ORG-004708,associate,https://bioe.umd.edu/clark/facultydir
+BB-0314,Hugh Bruck,University of Maryland-College Park,MD,163286,ORG-004708,professor,https://me.umd.edu/clark/facultydir
+BB-0316,John T. Fourkas,University of Maryland-College Park,MD,163286,ORG-004708,professor,https://chem.umd.edu/people
+BB-0317,Liangbing HU,University of Maryland-College Park,MD,163286,ORG-004708,associate,https://www.nanocenter.umd.edu/faculty/
+BB-0319,Sandra C. Greer,University of Maryland-College Park,MD,163286,ORG-004708,emeritus,https://chbe.umd.edu/clark/facultydir
+BB-0321,William E. Bentley,University of Maryland-College Park,MD,163286,ORG-004708,professor,https://bioe.umd.edu/clark/facultydir
+BB-0322,YuHuang Wang,University of Maryland-College Park,MD,163286,ORG-004708,professor,https://chem.umd.edu/people
+BB-0323,Atul Kumar Maurya,Michigan State University,MI,171100,ORG-002852,faculty,http://engineering.msu.edu/departments/chems/directory
+BB-0324,Edward Drown,Michigan State University,MI,171100,ORG-002852,faculty,http://engineering.msu.edu/departments/chems/directory
+BB-0325,Jian Qing Hu,Michigan State University,MI,171100,ORG-002852,professor,https://www.chemistry.msu.edu/faculty-research/faculty-members/index.aspx
+BB-0326,Mahmoodul Haq,Michigan State University,MI,171100,ORG-002852,professor,https://engineering.msu.edu/departments/me/directory
+BB-0327,Martin Case Hawley,Michigan State University,MI,171100,ORG-002852,faculty,http://engineering.msu.edu/departments/chems/directory https://www.egr.msu.edu/cmsc/personnel/faculty
+BB-0329,Tyler Johnson,Michigan State University,MI,171100,ORG-002852,faculty,http://engineering.msu.edu/departments/chems/directory
+BB-0330,Zhaohan Yu,Michigan State University,MI,171100,ORG-002852,faculty,https://engineering.msu.edu/departments/me/directory
+BB-0333,Aaron M. Massari,University of Minnesota-Twin Cities,MN,174066,ORG-002855,professor,https://cse.umn.edu/chem/core-faculty
+BB-0334,Allen Jonathan Román,University of Minnesota-Twin Cities,MN,174066,ORG-002855,assistant,https://cse.umn.edu/me/faculty
+BB-0335,Alptekin Aksan,University of Minnesota-Twin Cities,MN,174066,ORG-002855,faculty,https://cse.umn.edu/me/faculty
+BB-0336,Andrew S. Khalil,University of Minnesota-Twin Cities,MN,174066,ORG-002855,assistant,https://cse.umn.edu/bme/faculty
+BB-0337,J. Ilja Siepmann,University of Minnesota-Twin Cities,MN,174066,ORG-002855,teaching,https://cse.umn.edu/chem/core-faculty
+BB-0338,Lee Penn,University of Minnesota-Twin Cities,MN,174066,ORG-002855,teaching,https://cse.umn.edu/chem/core-faculty
+BB-0339,Michael C. McAlpine,University of Minnesota-Twin Cities,MN,174066,ORG-002855,professor,https://cse.umn.edu/me/faculty
+BB-0340,Perry H. Leo,University of Minnesota-Twin Cities,MN,174066,ORG-002855,professor,https://cse.umn.edu/aem/aem-faculty
+BB-0341,Susan C. Mantell,University of Minnesota-Twin Cities,MN,174066,ORG-002855,teaching,https://cse.umn.edu/me/faculty
+BB-0342,Wei Shen,University of Minnesota-Twin Cities,MN,174066,ORG-002855,associate,https://cse.umn.edu/bme/faculty
+BB-0343,Xiang Cheng,University of Minnesota-Twin Cities,MN,174066,ORG-002855,professor,https://cse.umn.edu/cems/cems-core-emeritus-faculty
+BB-0344,Heather Broadhead,University of Southern Mississippi,MS,176372,ORG-002848,teaching,https://www.usm.edu/faculty-directory/?keyword=School+of+Polymer+Science+and+Engineering
+BB-0345,Cate Brinson,Duke University,NC,198419,ORG-004691,professor,https://mems.duke.edu/people/
+BB-0346,Christoph F. Schmidt,Duke University,NC,198419,ORG-004691,professor,https://mems.duke.edu/people/page/3/
+BB-0348,Joel H. Collier,Duke University,NC,198419,ORG-004691,professor,https://bme.duke.edu/faculty
+BB-0349,Richard J. Sheridan,Duke University,NC,198419,ORG-004691,research,https://mems.duke.edu/people/page/3/
+BB-0350,Sharon Gerecht,Duke University,NC,198419,ORG-004691,professor,https://bme.duke.edu/faculty
+BB-0351,Tuan Vo-Dinh,Duke University,NC,198419,ORG-004691,professor,https://chem.duke.edu/people/appointed-faculty/primary-faculty
+BB-0353,Ahmed El-Shafei,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0354,Ahmed H Hassanin,North Carolina State University at Raleigh,NC,199193,ORG-002851,assistant,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0355,Amanda C. Mills,North Carolina State University at Raleigh,NC,199193,ORG-002851,assistant,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0356,Anne Porterfield,North Carolina State University at Raleigh,NC,199193,ORG-002851,associate,https://textiles.ncsu.edu/group/faculty/
+BB-0357,Ashley Carson Brown,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://bme.unc.edu/people/
+BB-0358,Behnam Pourdeyhimi,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0359,Cassandra Kwon,North Carolina State University at Raleigh,NC,199193,ORG-002851,research,https://textiles.ncsu.edu/group/faculty/
+BB-0360,Chanmi Hwang,North Carolina State University at Raleigh,NC,199193,ORG-002851,assistant,https://textiles.ncsu.edu/group/faculty/
+BB-0361,David Hinks,North Carolina State University at Raleigh,NC,199193,ORG-002851,faculty,https://textiles.ncsu.edu/group/faculty/
+BB-0362,Edward Grant,North Carolina State University at Raleigh,NC,199193,ORG-002851,emeritus,https://mae.ncsu.edu/people/
+BB-0363,Emiel DenHartog,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0364,Eunkyoung Shim,North Carolina State University at Raleigh,NC,199193,ORG-002851,associate,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0365,George Hodge,North Carolina State University at Raleigh,NC,199193,ORG-002851,emeritus,https://textiles.ncsu.edu/group/faculty/
+BB-0366,Jack F. Edwards,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://mae.ncsu.edu/people/
+BB-0367,Jeffrey W. Eischen,North Carolina State University at Raleigh,NC,199193,ORG-002851,emeritus,https://mae.ncsu.edu/people/
+BB-0368,Jingjie Hu,North Carolina State University at Raleigh,NC,199193,ORG-002851,assistant,https://mae.ncsu.edu/people/
+BB-0369,Karen K. Leonas,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0370,Kavita Mathur,North Carolina State University at Raleigh,NC,199193,ORG-002851,associate,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0371,Lisa Parrillo Chapman,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0372,Madilynn McCollum Smith,North Carolina State University at Raleigh,NC,199193,ORG-002851,teaching,https://textiles.ncsu.edu/group/faculty/
+BB-0374,Maury Balik,North Carolina State University at Raleigh,NC,199193,ORG-002851,emeritus,https://mse.ncsu.edu/people/
+BB-0375,Mehmet Dasdemir,North Carolina State University at Raleigh,NC,199193,ORG-002851,assistant,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0376,Meredith L. McQuerry,North Carolina State University at Raleigh,NC,199193,ORG-002851,assistant,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0377,Minyoung Suh,North Carolina State University at Raleigh,NC,199193,ORG-002851,associate,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0378,Philip D. Bradford,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0379,Raja Ghosh,North Carolina State University at Raleigh,NC,199193,ORG-002851,assistant,https://chemistry.sciences.ncsu.edu/group/faculty/current-faculty/
+BB-0380,Renzo Shamey,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0381,Roger J. Narayan,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0382,Roger L. Barker,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0383,Ryan C. Chiechi,North Carolina State University at Raleigh,NC,199193,ORG-002851,associate,https://chemistry.sciences.ncsu.edu/group/faculty/current-faculty/
+BB-0384,Traci A. M. Lamar,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0385,Travis P. Varner,North Carolina State University at Raleigh,NC,199193,ORG-002851,teaching,https://chemistry.sciences.ncsu.edu/group/faculty/current-faculty/
+BB-0386,Warren J. Jasper,North Carolina State University at Raleigh,NC,199193,ORG-002851,professor,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0387,Wei Gao,North Carolina State University at Raleigh,NC,199193,ORG-002851,associate,https://catalog.ncsu.edu/graduate/textiles/fiber-polymer-science/fiber-polymer-science-phd/
+BB-0388,Yevgeny Brudno,North Carolina State University at Raleigh,NC,199193,ORG-002851,associate,https://bme.unc.edu/people/
+BB-0389,Danling Wang,North Dakota State University-Main Campus,ND,200332,ORG-002841,associate,https://www.ndsu.edu/engineering/biomedical-engineering-faculty
+BB-0390,Kalpana S. Katti,North Dakota State University-Main Campus,ND,200332,ORG-002841,professor,https://www.ndsu.edu/engineering/biomedical-engineering-faculty
+BB-0391,Luke Gibbon,North Dakota State University-Main Campus,ND,200332,ORG-002841,teaching,https://www.ndsu.edu/mechanical-engineering/people
+BB-0392,Mukund P. Sibi,North Dakota State University-Main Campus,ND,200332,ORG-002841,professor,https://www.ndsu.edu/chemistry/people/teaching_research_faculty
+BB-0393,Seth C. Rasmussen,North Dakota State University-Main Campus,ND,200332,ORG-002841,professor,https://www.ndsu.edu/chemistry/people/teaching_research_faculty
+BB-0394,Xinnan Wang,North Dakota State University-Main Campus,ND,200332,ORG-002841,associate,https://www.ndsu.edu/mechanical-engineering/people
+BB-0402,Clark T. Hung,Columbia University in the City of New York,NY,190150,ORG-004696,professor,https://www.bme.columbia.edu/biomedical-engineering/about/directory
+BB-0403,Edward F. Leonard,Columbia University in the City of New York,NY,190150,ORG-004696,professor,https://www.columbia.edu/cu/cheme/directory/faculty.html
+BB-0404,Gerard A. Ateshian,Columbia University in the City of New York,NY,190150,ORG-004696,professor,https://www.bme.columbia.edu/biomedical-engineering/about/directory
+BB-0406,Santiago Correa,Columbia University in the City of New York,NY,190150,ORG-004696,assistant,https://www.bme.columbia.edu/biomedical-engineering/about/directory
+BB-0408,Claude Cohen,Cornell University,NY,190415,ORG-004633,emeritus,https://www.duffield.cornell.edu/cbe/faculty-staff/
+BB-0409,David Thomas Grubb,Cornell University,NY,190415,ORG-004633,associate,https://www.duffield.cornell.edu/mse/faculty-staff/
+BB-0411,Fernando A Escobedo (Former),Cornell University,NY,190415,ORG-004633,professor,https://www.duffield.cornell.edu/cbe/faculty-staff/
+BB-0412,Jonathan Talbot Butcher,Cornell University,NY,190415,ORG-004633,professor,https://www.duffield.cornell.edu/bme/faculty-staff/
+BB-0413,Judy J. Cha,Cornell University,NY,190415,ORG-004633,professor,https://www.duffield.cornell.edu/mse/faculty-staff/
+BB-0415,Sol Michael Gruner,Cornell University,NY,190415,ORG-004633,emeritus,https://www.duffield.cornell.edu/mse/faculty-staff/
+BB-0416,Syed S. H. Rizvi,Cornell University,NY,190415,ORG-004633,professor,https://www.duffield.cornell.edu/cbe/faculty-staff/
+BB-0417,Yadong Wang,Cornell University,NY,190415,ORG-004633,professor,https://www.duffield.cornell.edu/bme/faculty-staff/
+BB-0418,Jasper Ainsworth,New York University,NY,193900,ORG-004705,assistant,https://engineering.nyu.edu/academics/departments/chemical-and-biomolecular-engineering/people
+BB-0419,Jeremy C. M. Teo,New York University,NY,193900,ORG-004705,associate,https://engineering.nyu.edu/academics/departments/biomedical-engineering/people
+BB-0420,Jing Wang,New York University,NY,193900,ORG-004705,professor,https://engineering.nyu.edu/academics/departments/biomedical-engineering/people
+BB-0421,Khalil Ramadi,New York University,NY,193900,ORG-004705,assistant,https://engineering.nyu.edu/academics/departments/biomedical-engineering/people
+BB-0422,Mary K. Cowman,New York University,NY,193900,ORG-004705,emeritus,https://engineering.nyu.edu/academics/departments/biomedical-engineering/people
+BB-0423,Stephanie S. Lee,New York University,NY,193900,ORG-004705,professor,https://as.nyu.edu/departments/chemistry/people/faculty.html
+BB-0424,Yao Wang,New York University,NY,193900,ORG-004705,professor,https://engineering.nyu.edu/academics/departments/biomedical-engineering/people
+BB-0425,Argimiro Resende Secchi,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0426,Aurora Perez Gramatges,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0427,Bluma Guenther Soares,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0428,Cesar Liberato Petzhold,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0429,Charles Rosenblatt,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0430,Christian A. Zorman,Case Western Reserve University,OH,201645,ORG-000502,professor,https://case.edu/bme/people/associated-faculty
+BB-0431,Clare Rimnac,Case Western Reserve University,OH,201645,ORG-000502,emeritus,https://engineering.case.edu/mechanical-and-aerospace-engineering/faculty-and-staff
+BB-0432,DPhil Alexander M. Jamieson,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0433,DrScNat Christoph Weder,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0434,Elizabete Fernandes Lucas,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0435,Frederico Wanderley Tavares,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0436,Griselda Barrera Galland,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0437,Henri Stephan Schrekker,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0439,Joao Henrique Zimnoc Dos Santos,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0440,John D. Protasiewicz,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0441,Jon Pokorski,Case Western Reserve University,OH,201645,ORG-000502,associate,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0442,Kenneth Singer,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0443,Leonard Case,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0444,Leonardo Bresciani Canto,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0446,Marcio Nele De Souza,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0447,Marcio da Silveira Carvalho,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0448,Monica Feijo Naccache,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0449,Nicholas P. Ziats,Case Western Reserve University,OH,201645,ORG-000502,professor,https://case.edu/bme/people/associated-faculty
+BB-0450,Osvaldo de Lazaro Casagrande Junior,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0451,Paulo Henrique Schneider,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0452,Paulo de Souza Mendes,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0453,Raquel Santos Mauler,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0454,Roney Leon Thompson,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0455,Rosario Elida Suman Bretas,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0456,Sebastiao Vicente Canevarolo Junior,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0457,Sidnei Paciornik,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0458,Syed Qutubuddin,Case Western Reserve University,OH,201645,ORG-000502,emeritus,https://engineering.case.edu/chemical-and-biomolecular-engineering/faculty-and-staff
+BB-0459,The Joseph F. Toot,Case Western Reserve University,OH,201645,ORG-000502,professor,https://bulletin.case.edu/engineering/macromolecular-science-engineering/
+BB-0468,Eli Vestich,Shawnee State University,OH,205443,ORG-001298,associate,https://www.shawnee.edu/academics/college-business-engineering-technology/engineering-technology/faculty/
+BB-0469,Danith H. Ly,Carnegie Mellon University,PA,211440,ORG-002778,professor,https://www.cmu.edu/chemistry/people/index.html
+BB-0470,Mary Lynn Realff,Georgia Institute of Technology-Main Campus,PA,139755,ORG-002844,associate,https://www.mse.gatech.edu/people
+BB-0471,Anand Ramamurthi,Lehigh University,PA,213543,ORG-002776,professor,https://engineering.lehigh.edu/bioe/core-faculty
+BB-0472,Christina Viau Haden,Lehigh University,PA,213543,ORG-002776,teaching,https://engineering.lehigh.edu/meche/faculty
+BB-0473,David C. Angstadt,Lehigh University,PA,213543,ORG-002776,teaching,https://engineering.lehigh.edu/meche/faculty
+BB-0474,John P. Coulter,Lehigh University,PA,213543,ORG-002776,professor,https://engineering.lehigh.edu/meche/faculty
+BB-0476,Richard W. Hertzberg,Lehigh University,PA,213543,ORG-002776,emeritus,https://engineering.lehigh.edu/matsci/faculty/mse-emeritus-faculty
+BB-0477,Steven L. Regen,Lehigh University,PA,213543,ORG-002776,professor,https://chemistry.cas.lehigh.edu/faculty-staff
+BB-0478,Tomas Gonzalez‐Fernandez,Lehigh University,PA,213543,ORG-002776,assistant,https://engineering.lehigh.edu/bioe/core-faculty
+BB-0481,Kirk Cantor,Pennsylvania College of Technology,PA,366252,ORG-002780,professor,https://www.pct.edu/business-industry/workforce-development/polymers/staff
+BB-0484,Amir Sheikhi,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,associate,https://www.che.psu.edu/department/faculty-list.aspx
+BB-0485,Andrea P. Argüelles,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,assistant,https://www.matse.psu.edu/about/who-we-are/directory
+BB-0486,Angela M. Bischof,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,teaching,https://science.psu.edu/people?person_type=47&department=14&unit=All&items_per_page=20&taxonomy_entity_index_tid_depth_1=All&field_offices_and_centers=All
+BB-0487,Bellamarie Ludwig,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,research,https://www.matse.psu.edu/about/who-we-are/directory
+BB-0488,Bert D. Chandler,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,professor,https://science.psu.edu/people?person_type=47&department=14&unit=All&items_per_page=20&taxonomy_entity_index_tid_depth_1=All&field_offices_and_centers=All
+BB-0489,David Rhoades,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,teaching,https://behrend.psu.edu/school-of-engineering/academic-programs/polymer-engineering-and-science/faculty
+BB-0491,Harry R. Allcock,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,professor,https://science.psu.edu/people?person_type=47&department=14&unit=All&items_per_page=20&taxonomy_entity_index_tid_depth_1=All&field_offices_and_centers=All
+BB-0492,Hee Jeung Oh,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,assistant,https://www.che.psu.edu/department/faculty-list.aspx
+BB-0495,James P. Runt,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,emeritus,https://www.matse.psu.edu/about/who-we-are/directory
+BB-0498,Michael T. Lanagan,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,professor,https://www.matse.psu.edu/about/who-we-are/directory
+BB-0501,Qi Li,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,professor,https://www.matse.psu.edu/about/who-we-are/directory
+BB-0502,Saptarshi Das,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,associate,https://www.matse.psu.edu/about/who-we-are/directory
+BB-0503,Shixian Zhang,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,research,https://www.matse.psu.edu/about/who-we-are/directory
+BB-0504,Su Yan,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,research,https://www.bme.psu.edu/department/faculty-list.aspx
+BB-0505,Sulin Zhang,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,professor,https://www.matse.psu.edu/about/who-we-are/directory
+BB-0507,Tao Zhou,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,assistant,https://www.matse.psu.edu/about/who-we-are/directory
+BB-0508,YuanQiao Rao,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,teaching,https://behrend.psu.edu/school-of-engineering/academic-programs/polymer-engineering-and-science/faculty
+BB-0509,Yuguo Lei,Pennsylvania State University-Main Campus,PA,214777,ORG-002775,associate,https://www.bme.psu.edu/department/faculty-list.aspx
+BB-0511,David Rhoades,Pennsylvania State University-Penn State Erie-Behrend College,PA,214591,ORG-002779,teaching,https://behrend.psu.edu/directory/school-engineering/plastics-engineering-technology
+BB-0515,YuanQiao Rao,Pennsylvania State University-Penn State Erie-Behrend College,PA,214591,ORG-002779,professor,https://behrend.psu.edu/directory/school-engineering/polymer-engineering-and-science
+BB-0516,A.T. Charlie Johnson,University of Pennsylvania,PA,215062,ORG-002176,professor,https://mse.engineering.upenn.edu/faculty/
+BB-0519,Flavia Vitale,University of Pennsylvania,PA,215062,ORG-002176,associate,https://directory.engineering.upenn.edu/bioengineering/
+BB-0521,Leo L. Wang,University of Pennsylvania,PA,215062,ORG-002176,assistant,https://directory.engineering.upenn.edu/bioengineering/
+BB-0522,Lorena S. Grundy,University of Pennsylvania,PA,215062,ORG-002176,assistant,https://cbe.engineering.upenn.edu/people/faculty/
+BB-0523,Sue Ann Bidstrup-Allen,University of Pennsylvania,PA,215062,ORG-002176,emeritus,https://cbe.engineering.upenn.edu/people/faculty/
+BB-0525,Christi Lynn Kolarcik,University of Pittsburgh-Pittsburgh Campus,PA,215293,ORG-002777,research,https://www.engineering.pitt.edu/departments/bioengineering/people/faculty/
+BB-0526,Emrullah Korkmaz,University of Pittsburgh-Pittsburgh Campus,PA,215293,ORG-002777,assistant,https://www.engineering.pitt.edu/departments/bioengineering/people/faculty/
+BB-0527,George S. Hussey,University of Pittsburgh-Pittsburgh Campus,PA,215293,ORG-002777,assistant,https://www.engineering.pitt.edu/departments/bioengineering/people/faculty/
+BB-0528,Kacey Gribbin Marra,University of Pittsburgh-Pittsburgh Campus,PA,215293,ORG-002777,professor,https://www.engineering.pitt.edu/departments/bioengineering/people/faculty/
+BB-0529,"Louis D. Falo, JR.",University of Pittsburgh-Pittsburgh Campus,PA,215293,ORG-002777,professor,https://www.engineering.pitt.edu/departments/bioengineering/people/faculty/
+BB-0530,Prashant N. Kumta,University of Pittsburgh-Pittsburgh Campus,PA,215293,ORG-002777,professor,https://www.engineering.pitt.edu/departments/bioengineering/people/faculty/
+BB-0531,Rebecca Green,University of Pittsburgh-Pittsburgh Campus,PA,215293,ORG-002777,assistant,https://www.engineering.pitt.edu/departments/bioengineering/people/faculty/
+BB-0532,Sachin S Velankar (Former),University of Pittsburgh-Pittsburgh Campus,PA,215293,ORG-002777,professor,https://www.engineering.pitt.edu/departments/bioengineering/people/faculty/
+BB-0533,Sang-Ho Ye,University of Pittsburgh-Pittsburgh Campus,PA,215293,ORG-002777,research,https://www.engineering.pitt.edu/departments/bioengineering/people/faculty/
+BB-0536,James M. Tour,Rice University,TX,227757,ORG-004717,professor,https://chemistry.rice.edu/people/core-faculty
+BB-0537,Jeffrey D. Hartgerink,Rice University,TX,227757,ORG-004717,professor,https://chemistry.rice.edu/people/core-faculty
+BB-0538,Kushal Bagchi,Rice University,TX,227757,ORG-004717,assistant,https://chemistry.rice.edu/people/core-faculty
+BB-0539,Akhilesh K. Gaharwar,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://engineering.tamu.edu/biomedical/profiles/index.html
+BB-0540,Albert E. Patterson,Texas A & M University-College Station,TX,228723,ORG-004656,assistant,https://ptc.tamu.edu/faculty/
+BB-0543,Arun Srinivasa,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://engineering.tamu.edu/mechanical/profiles/index.html
+BB-0544,Carlos R. Corleto,Texas A & M University-College Station,TX,228723,ORG-004656,teaching,https://engineering.tamu.edu/mechanical/profiles/index.html
+BB-0545,Congrui Grace Jin,Texas A & M University-College Station,TX,228723,ORG-004656,assistant,https://ptc.tamu.edu/faculty/
+BB-0546,Debjyoti Banerjee,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://engineering.tamu.edu/mechanical/profiles/index.html
+BB-0547,Google Scholar Page,Texas A & M University-College Station,TX,228723,ORG-004656,associate,https://ptc.tamu.edu/faculty/
+BB-0548,Heng Pan,Texas A & M University-College Station,TX,228723,ORG-004656,associate,https://engineering.tamu.edu/mechanical/profiles/index.html
+BB-0549,Homero Castaneda,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://engineering.tamu.edu/materials/profiles/index.html
+BB-0550,Hong Liang,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://engineering.tamu.edu/mechanical/profiles/index.html
+BB-0551,Iman Borazjani,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://engineering.tamu.edu/mechanical/profiles/index.html
+BB-0552,JOHN D. WHITCOMB,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://ptc.tamu.edu/faculty/
+BB-0553,Janet Bluemel,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://artsci.tamu.edu/chemistry/contact/profiles/index.html
+BB-0554,John D. Horn,Texas A & M University-College Station,TX,228723,ORG-004656,teaching,https://engineering.tamu.edu/biomedical/profiles/index.html
+BB-0555,Jyothi U. Menon,Texas A & M University-College Station,TX,228723,ORG-004656,associate,https://engineering.tamu.edu/biomedical/profiles/index.html
+BB-0556,Kaiwen Hsiao,Texas A & M University-College Station,TX,228723,ORG-004656,assistant,https://engineering.tamu.edu/materials/profiles/index.html
+BB-0557,Martin L. Sentmanat,Texas A & M University-College Station,TX,228723,ORG-004656,teaching,https://engineering.tamu.edu/chemical/profiles/index.html
+BB-0558,Matt Pharr,Texas A & M University-College Station,TX,228723,ORG-004656,associate,https://engineering.tamu.edu/mechanical/profiles/index.html
+BB-0559,Mustafa Akbulut,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://engineering.tamu.edu/chemical/profiles/index.html
+BB-0560,Patrick J. Shamberger,Texas A & M University-College Station,TX,228723,ORG-004656,associate,https://engineering.tamu.edu/materials/profiles/index.html
+BB-0561,Perla B. Balbuena,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://engineering.tamu.edu/chemical/profiles/index.html
+BB-0562,Qing Tu,Texas A & M University-College Station,TX,228723,ORG-004656,assistant,https://engineering.tamu.edu/materials/profiles/index.html
+BB-0563,Ramesh Talreja,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://engineering.tamu.edu/materials/profiles/index.html
+BB-0564,Rui Sun,Texas A & M University-College Station,TX,228723,ORG-004656,research,https://engineering.tamu.edu/chemical/profiles/index.html
+BB-0565,Staci J. Horn,Texas A & M University-College Station,TX,228723,ORG-004656,teaching,https://engineering.tamu.edu/biomedical/profiles/index.html
+BB-0566,Tahir Cagin,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://ptc.tamu.edu/faculty/
+BB-0567,Thomas E. Lacy,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://engineering.tamu.edu/mechanical/profiles/index.html
+BB-0568,Vanessa Restrepo,Texas A & M University-College Station,TX,228723,ORG-004656,assistant,https://engineering.tamu.edu/mechanical/profiles/index.html
+BB-0569,Wayne Hung,Texas A & M University-College Station,TX,228723,ORG-004656,professor,https://ptc.tamu.edu/faculty/
+BB-0570,Wei Gao,Texas A & M University-College Station,TX,228723,ORG-004656,associate,https://engineering.tamu.edu/mechanical/profiles/index.html
+BB-0571,Elizabeth M. Cosgriff-Hernandez,The University of Texas at Austin,TX,228778,ORG-004651,professor,https://bme.utexas.edu/people/faculty/
+BB-0572,Guihua (Assistant professor) Yu,The University of Texas at Austin,TX,228778,ORG-004651,professor,https://tmi.utexas.edu/people/faculty-directory
+BB-0573,Jin Haek Yang,The University of Texas at Austin,TX,228778,ORG-004651,assistant,https://tmi.utexas.edu/people/faculty-directory
+BB-0575,Joseph H. Koo,The University of Texas at Austin,TX,228778,ORG-004651,research,https://tmi.utexas.edu/people/faculty-directory
+BB-0576,Nanshu Lu,The University of Texas at Austin,TX,228778,ORG-004651,professor,https://bme.utexas.edu/people/faculty/
+BB-0577,Qian Yin,The University of Texas at Austin,TX,228778,ORG-004651,assistant,https://tmi.utexas.edu/people/faculty-directory
+BB-0579,Wennie Wang,The University of Texas at Austin,TX,228778,ORG-004651,assistant,https://tmi.utexas.edu/people/faculty-directory
+BB-0580,Yunlan Emma Zhang,The University of Texas at Austin,TX,228778,ORG-004651,assistant,https://tmi.utexas.edu/people/faculty-directory
+BB-0581,Feng Liu,University of Utah,UT,230764,ORG-004694,professor,https://mse.utah.edu/faculty/
+BB-0582,Hossein Montazerian,University of Utah,UT,230764,ORG-004694,assistant,https://www.mech.utah.edu/directory/faculty/
+BB-0583,Huiwen Ji,University of Utah,UT,230764,ORG-004694,assistant,https://mse.utah.edu/faculty/
+BB-0584,Jan D. Miller,University of Utah,UT,230764,ORG-004694,emeritus,https://mse.utah.edu/faculty/
+BB-0585,Michael W. Czabaj,University of Utah,UT,230764,ORG-004694,associate,https://www.mech.utah.edu/directory/faculty/
+BB-0586,Ravi Chandran,University of Utah,UT,230764,ORG-004694,professor,https://mse.utah.edu/faculty/
+BB-0587,Rodrigo Noriega,University of Utah,UT,230764,ORG-004694,associate,https://www.chemistry.utah.edu/faculty-directory/
+BB-0588,Ryan E. Looper,University of Utah,UT,230764,ORG-004694,professor,https://www.chemistry.utah.edu/faculty-directory/
+BB-0589,Xuming Wang,University of Utah,UT,230764,ORG-004694,research,https://mse.utah.edu/adjunct-faculty/
+BB-0592,Candace E. Wall,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,teaching,https://chem.vt.edu/people/faculty.html
+BB-0593,Christopher C. McDowell,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,faculty,https://che.vt.edu/People/faculty.html
+BB-0594,Diego Troya,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,faculty,https://chem.vt.edu/people/faculty.html
+BB-0595,Donald G. Baird,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,faculty,https://che.vt.edu/People/faculty.html
+BB-0596,Elizabeth S. Nowak,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,assistant,https://mii.vt.edu/people/faculty.html
+BB-0597,Haibo Huang,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,professor,https://mii.vt.edu/people/faculty.html
+BB-0598,Harry W. Gibson,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,emeritus,https://chem.vt.edu/people/faculty.html
+BB-0599,Hervé Marand,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,emeritus,https://chem.vt.edu/people/faculty.html
+BB-0600,James P. Wightman,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,emeritus,https://chem.vt.edu/people/faculty.html
+BB-0602,Ranga Pitchumani,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,professor,https://me.vt.edu/people/faculty.html
+BB-0603,Robin L. McCarley,Virginia Polytechnic Institute and State University,VA,233921,ORG-002845,faculty,https://chem.vt.edu/people/faculty.html
+BB-0604,Daniel T. Chiu,University of Washington-Seattle Campus,WA,236948,ORG-004686,professor,https://bioe.uw.edu/faculty-staff/core-faculty/
+BB-0605,James D. Bryers,University of Washington-Seattle Campus,WA,236948,ORG-004686,professor,https://bioe.uw.edu/faculty-staff/core-faculty/
+BB-0607,Kelly R. Stevens,University of Washington-Seattle Campus,WA,236948,ORG-004686,professor,https://bioe.uw.edu/faculty-staff/core-faculty/
+BB-0608,Lara J. Gamble,University of Washington-Seattle Campus,WA,236948,ORG-004686,research,https://bioe.uw.edu/faculty-staff/core-faculty/
+BB-0609,Rupak M. Rajachar,University of Washington-Seattle Campus,WA,236948,ORG-004686,teaching,https://bioe.uw.edu/faculty-staff/core-faculty/
+BB-0610,Ying Bao,Western Washington University,WA,237011,ORG-004628,professor,https://chemistry.wwu.edu/directory
+BB-0611,A. Jeffery Giacomin,University of Wisconsin-Madison,WI,240444,ORG-004632,professor,https://pec.engr.wisc.edu/faculty/
+BB-0613,Heidi-Lynn Ploeg,University of Wisconsin-Madison,WI,240444,ORG-004632,associate,https://pec.engr.wisc.edu/faculty/
+BB-0614,James A. Dumesic,University of Wisconsin-Madison,WI,240444,ORG-004632,emeritus,https://directory.engr.wisc.edu/che
+BB-0615,Lian Yu,University of Wisconsin-Madison,WI,240444,ORG-004632,professor,https://chem.wisc.edu/faculty/
+BB-0616,Mark D. Ediger,University of Wisconsin-Madison,WI,240444,ORG-004632,professor,https://chem.wisc.edu/faculty/
+BB-0617,Michael Scott Arnold,University of Wisconsin-Madison,WI,240444,ORG-004632,faculty,https://engineering.wisc.edu/departments/materials-science-engineering/people/
+BB-0618,Mikhail A. Kats,University of Wisconsin-Madison,WI,240444,ORG-004632,professor,https://engineering.wisc.edu/departments/materials-science-engineering/people/
+BB-0619,Nicholas Abbott,University of Wisconsin-Madison,WI,240444,ORG-004632,emeritus,https://directory.engr.wisc.edu/che
+BB-0620,Robert Michael Jacobberger,University of Wisconsin-Madison,WI,240444,ORG-004632,assistant,https://engineering.wisc.edu/departments/materials-science-engineering/people/
+BB-0621,Robert Rowlands,University of Wisconsin-Madison,WI,240444,ORG-004632,emeritus,https://directory.engr.wisc.edu/me
+BB-0622,Samuel H. Gellman,University of Wisconsin-Madison,WI,240444,ORG-004632,research,https://chem.wisc.edu/faculty/
+BB-0623,Seungpyo Hong,University of Wisconsin-Madison,WI,240444,ORG-004632,professor,https://directory.engr.wisc.edu/bme
+BB-0624,Shannon S. Stahl,University of Wisconsin-Madison,WI,240444,ORG-004632,professor,https://chem.wisc.edu/faculty/
+BB-0625,Vilas Distinguished Achievement,University of Wisconsin-Madison,WI,240444,ORG-004632,professor,https://directory.engr.wisc.edu/bme
+BB-0626,W. Harmon Ray,University of Wisconsin-Madison,WI,240444,ORG-004632,emeritus,https://directory.engr.wisc.edu/che
+BB-0627,Wendy C. Crone,University of Wisconsin-Madison,WI,240444,ORG-004632,emeritus,https://directory.engr.wisc.edu/me
+BB-0628,Zhenqiang Ma,University of Wisconsin-Madison,WI,240444,ORG-004632,professor,https://engineering.wisc.edu/departments/materials-science-engineering/people/
+BB-0629,Continue Reading,University of Wisconsin-Stout,WI,240417,ORG-002090,professor,https://www.uwstout.edu/programs/bs-plastics-engineering
+BB-0631,Matt Ray,University of Wisconsin-Stout,WI,240417,ORG-002090,professor,https://www.uwstout.edu/programs/bs-plastics-engineering
+BB-0094,Alexandra V. Bayles,University of Delaware,DE,130943,ORG-003896,assistant,https://cbe.udel.edu/people/faculty/
+BB-0095,Bruce Chase,University of Delaware,DE,130943,ORG-003896,research,https://mseg.udel.edu/people/faculty/
+BB-0096,Charles Dhong,University of Delaware,DE,130943,ORG-003896,assistant,https://me.udel.edu/people/faculty/
+BB-0097,Chelsea S. Davis,University of Delaware,DE,130943,ORG-003896,associate,https://me.udel.edu/people/faculty/
+BB-0098,Christian W. Pester,University of Delaware,DE,130943,ORG-003896,faculty,https://mseg.udel.edu/people/faculty/
+BB-0099,Christopher J. Roberts,University of Delaware,DE,130943,ORG-003896,professor,https://cbe.udel.edu/people/faculty/
+BB-0101,Eric M. Furst,University of Delaware,DE,130943,ORG-003896,faculty,https://cbe.udel.edu/people/faculty/
+BB-0102,John F. Rabolt,University of Delaware,DE,130943,ORG-003896,faculty,https://mseg.udel.edu/people/faculty/
+BB-0103,"John W. Gillespie, Jr.",University of Delaware,DE,130943,ORG-003896,professor,https://me.udel.edu/people/faculty/
+BB-0104,Luisa L. Palmese,University of Delaware,DE,130943,ORG-003896,faculty,https://bme.udel.edu/people/
+BB-0107,Millicent O. Sullivan,University of Delaware,DE,130943,ORG-003896,professor,https://bme.udel.edu/people/
+BB-0109,Ph.D Christopher J. Kloxin,University of Delaware,DE,130943,ORG-003896,professor,https://cbe.udel.edu/people/faculty/
+BB-0112,Yushan Yan,University of Delaware,DE,130943,ORG-003896,faculty,https://cbe.udel.edu/people/faculty/
+BB-0395,Howard A. Stone,Princeton University,NJ,186131,ORG-003883,professor,https://cbe.princeton.edu/people/faculty
+BB-0397,Robert K. Prud'homme,Princeton University,NJ,186131,ORG-003883,emeritus,https://cbe.princeton.edu/people/faculty
+BB-0398,Susan K. VanderKam,Princeton University,NJ,186131,ORG-003883,teaching,https://chemistry.princeton.edu/faculty-research/
+BB-0400,Victoria G. Muir,University of Delaware,NJ,130943,ORG-003896,assistant,https://cbe.udel.edu/people/faculty/

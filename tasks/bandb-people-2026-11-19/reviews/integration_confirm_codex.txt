@@ -1,0 +1,30 @@
+council-ask: codex effort=deep -> model=gpt-6-astra reasoning=max
+Based on the supplied diff and in-memory probes; no files edited:
+
+1. **ccTLD collapse — NOT FIXED generally.** Oxford/Cambridge now separate, but `alpha.k12.ca.us` and `beta.k12.ca.us` both become `ca.us`. The fixed suffix list still merges independently controlled domains.
+
+2. **Third-party hosts treated as owned — NOT FIXED.** Two held profiles on `academia.edu` still make that third-party domain “own”: it passes `endswith(".edu")`. The restriction reduces exposure without establishing institutional ownership.
+
+3. **Unchecked redirects — NOT FIXED.** `rawcheck_people.dom()` still maps both `ox.ac.uk` and `cam.ac.uk` to `ac.uk`, allowing that redirect. Firecrawl responses with status 200 but no `metadata.url` also pass by substituting the requested URL; the final destination remains unverified.
+
+4. **Missing holds — FIXED; stale holds — NOT FIXED.** Missing files stop the builder, and failed regeneration removes the previous file. However, retain an old header-only holds file, change a review verdict for `BB-0001` to WRONG, then run the builder: the unchanged packet row remains eligible. The builder checks existence, not freshness or provenance.
+
+5. **Verdict parsing — NOT FIXED completely.** Literal `not SOUND` and later WRONG now work, but `BB-0001 not **SOUND**` produces SOUND. **NEW DEFECT introduced:** `BB-0001 SOUND; BB-0002 WRONG` assigns WRONG to both because every verdict word is attributed to every ID on the line.
+
+6. **One family passing for two — NOT FIXED.** On a case-insensitive Windows filesystem, arguments `codex CODEX` satisfy the distinct-string check while reading the same review files twice. Also, `python -O review_holds.py codex` disables the required-family assertion.
+
+7. **Approvals bound to content — NOT FIXED across packet regeneration.** Editing only `verified.csv` is caught. Regenerate both it and the matching `review_part*.md` packet with a different allowed role while retaining old verdicts/holds: equality passes. Nothing binds the verdict outputs to the packet version actually reviewed.
+
+8. **Suffix as surname — NOT FIXED.** `Jane Doe PhD` now works, but `Jane Doe Ph.D.` returns `ph`; `Jane Doe, MBA` returns `mba`. These can reject valid evidence or match an irrelevant nearby token.
+
+The README’s impact claims have different strengths:
+
+- All gate hosts being `.edu`, independently checking the ten derived domains’ ownership, and finding no suffix-bearing names support those narrow non-exposure claims.
+- A file established to be present **and current** supports the holds claim; existence alone does not.
+- “Same 101” supports parser equivalence only if it means identical IDs and decisions, rather than equal totals.
+- “Both ran” establishes participation; confirming two SOUND verdicts for every admitted ID establishes approval.
+- Equality with the **actual reviewed snapshots** supports content equality. A modification timestamp before rawchecking does not itself establish which packet the reviewers approved.
+- The redirect claim **does not follow**: three URLs remain unchecked.
+
+A byte-identical rebuild establishes unchanged output, not valid admissions. Likewise, 153 earlier rank-only quotes establish precedent, not evidentiary sufficiency; that requires the evidence rules and page context. The blanket claim **“none admitted a bad row” remains unproven**.
+exit 0
