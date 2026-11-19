@@ -1,0 +1,6 @@
+ORG-000174: SOUND. The LEI belongs to Vertex, Inc., headquartered at 2301 Renaissance Blvd in King of Prussia, PA (vertexinc.com), not our Mogadore, OH elastomeric seals manufacturer (vertexseals.com); no other registry links exist on this org.
+ORG-000780: SOUND. The LEI belongs to pool/spa supplier Custom Molded Products, LLC, headquartered at 36 Herring Road in Newnan, GA (c-m-p.com), not our Wilmington, OH custom injection molder at 92 Grant Street (custommolded.com); no other registry links exist on this org.
+ORG-001383: SOUND. The LEI belongs to New Jersey entity Delco LLC, headquartered at 200 Campbell Drive in Willingboro, NJ (delcodevelopment.com), not our Akron, OH precision mold/machining shop (delcollc.com); neither remaining link on this org (FRS 110009634217 or SAM UEI TK37ASDR6529, which matches 3300 Massillon Rd) is suspect.
+
+Count: 3 SOUND / 0 WRONG / 0 DOUBT
+exit 0
