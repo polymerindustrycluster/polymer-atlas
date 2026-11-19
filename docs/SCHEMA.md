@@ -1,7 +1,7 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.16.2 — 2026-11-19 (§4.12.1 worked seams 4–7: a branded plastics sector show, tire-trade shows, corrosion-and-coatings shows, and composites-centered and UV/EB-curing shows qualify; the Geosynthetics Conference does not — owner rulings 2026-11-19, `tasks/owner-rulings-2026-11-19b/README.md`).
+**Version:** v1.16.2 — 2026-11-19 (§4.12.1 worked seams 4–7: a branded plastics sector show, tire and aftermarket trade shows, corrosion-and-coatings shows, composites-centered shows and UV/EB curing of coatings, inks, adhesives and composites qualify; the Geosynthetics Conference does not — owner rulings 2026-11-19, `tasks/owner-rulings-2026-11-19b/README.md`).
 Previous: v1.16.1 — 2026-11-19 (§4.12.2: an organizer's complete attendee-company list for a named edition counts even when printed in its own sponsorship brochure, and a name the organizer wrote as a logo's alt or title text counts as on the list — owner rulings 2026-11-18c, `tasks/owner-rulings-2026-11-18c/README.md`).
 Previous: v1.16 — 2026-11-18 (§3.1 gains `rubber_molding_transfer` and `composites_spray_up` — owner ruling 2026-11-18b item 2, `tasks/owner-rulings-2026-11-18b/README.md`).
 Previous: v1.15.1 — 2026-11-18 (§4.11 prong (b) extends to `training` rows whose own description says they teach plastics or polymer processing — owner ruling 2026-11-18).
@@ -1456,17 +1456,17 @@ nothing: the test reads the event's subject, not its roster.
    is not seeded. Seam 3 is unchanged: Plastec West no longer runs as a
    separately branded show, so there is still nothing to seed.
 5. **Tire-trade shows (The Tire Cologne, TyreXpo Asia) — IN** (owner
-   ruling 2026-11-19). Tires are rubber products: a show whose named
-   subject is tires qualifies, though its remit also takes in the tire
-   trade, workshop and aftermarket.
+   ruling 2026-11-19). Tires are rubber products: tire and aftermarket
+   trade shows qualify.
 6. **Corrosion-and-coatings shows (AMPP Annual Conference + Expo) — IN**
    (owner ruling 2026-11-19). A show that names coatings as a
    co-primary subject qualifies under the coatings ruling of
    2026-10-30.
-7. **Composites-centered advanced-materials shows (Carbon Fiber, SAMPE
-   Japan Exhibition) and UV/EB curing of coatings, inks and adhesives
-   (RadTech) — IN; the Geosynthetics Conference — OUT** (owner rulings
-   2026-11-19).
+7. **Carbon Fiber and the SAMPE Japan Exhibition (composites-centered
+   programs), and RadTech (UV and EB curing of coatings, inks, adhesives
+   and composites) — IN; the Geosynthetics Conference — OUT**, its
+   subject being the civil-engineering uses of geosynthetics (owner
+   rulings 2026-11-19).
 
 Borderline calls are logged in the inclusion log (Appendix A) with the
 prong cited; seams stay flagged until the owner rules — a seed row
@@ -3186,5 +3186,5 @@ unchanged.
 - **v1.15.1 — 2026-11-18 (owner ruling 2026-11-18, "Yes, if the page states plastics processing").** §4.11 prong (b) also admits a `training` row whose own description says it teaches plastics or polymer processing (the meaning of the chosen option, not a literal phrase). Site-wide navigation and a bare process word do not qualify. Applied in `tasks/prong-b-training-2026-11-18/` (3 rows). No validator change: the inclusion rule is adjudicated, not machine-checked.
 - **v1.16 — 2026-11-18 (owner ruling 2026-11-18b item 2; `tasks/owner-rulings-2026-11-18b/README.md`).** §3.1 gains two process terms: `rubber_molding_transfer` (rubber transfer molding; beside `rubber_molding_compression`, and in the `rubber_molding` rollup) and `composites_spray_up` (spray-up open molding, distinct from `composites_hand_layup`). `scripts/validate.py` PROCESSES and `docs/schema/vocab.json` are updated. Applied in the same PR (`tasks/process-terms-2026-11-18b/`): `rubber_molding_transfer` unions into SITE-000562 `processes` (a tier C site; one `supports_C` evidence row, EVD-397200). SITE-000248 and the permit sites are untouched. No other data row changes.
 - **v1.16.1 — 2026-11-19 (owner rulings 2026-11-18c; `tasks/owner-rulings-2026-11-18c/README.md`).** §4.12.2 wording only, no field or vocabulary change. The `attendee` role notes: the organizer's complete company list for a named edition counts even when printed in the organizer's own sponsorship brochure, and each row from it says so (the SAMPE 2026 list); a brochure line naming only some companies stays a marketing line. The harvest-only rule 1: a name the organizer wrote as a logo's alt or title text is on the list; a name rebuilt from a link URL or image file name is not. No validator change (both are adjudicated at harvest). Applied in `tasks/show-harvest-rulings-2026-11-19/`.
-- **v1.16.2 — 2026-11-19 (owner rulings 2026-11-19; `tasks/owner-rulings-2026-11-19b/README.md`).** §4.12.1 gains worked seams 4–7 (binding precedent): a separately branded plastics sector show inside a multi-sector event is its own series (EXPOPLAST at ADM Montréal; seam 3 unchanged); tire-trade shows qualify (tires are rubber products); a corrosion-and-coatings show that names coatings co-primary qualifies; composites-centered advanced-materials shows and UV/EB curing of coatings, inks and adhesives qualify; the Geosynthetics Conference does not. No field, vocabulary or validator change. Applied in `tasks/new-series-2026-11-19/` (27 series rows, EVT-000072 to EVT-000098).
+- **v1.16.2 — 2026-11-19 (owner rulings 2026-11-19; `tasks/owner-rulings-2026-11-19b/README.md`).** §4.12.1 gains worked seams 4–7 (binding precedent): a separately branded plastics sector show inside a multi-sector event is its own series (EXPOPLAST at ADM Montréal; seam 3 unchanged); tire and aftermarket trade shows qualify (tires are rubber products); a corrosion-and-coatings show that names coatings co-primary qualifies; composites-centered shows (Carbon Fiber, SAMPE Japan) and UV and EB curing of coatings, inks, adhesives and composites (RadTech) qualify; the Geosynthetics Conference does not (its subject is the civil-engineering uses of geosynthetics). No field, vocabulary or validator change. Applied in `tasks/new-series-2026-11-19/` (27 series rows, EVT-000072 to EVT-000098).
 

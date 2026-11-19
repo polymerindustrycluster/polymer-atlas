@@ -8,7 +8,7 @@ borderline rulings as §4.12.1 worked seams 4–7 (`tasks/owner-rulings-2026-11-
 | Home | Series |
 |-|-|
 | United States (7) | AMPP Annual Conference + Expo, Carbon Fiber, Coatings Trends & Technologies Summit, Eastern Coatings Show, Great Lakes Coatings Conference, RadTech UV+EB Technology Expo & Conference, Waterborne Symposium |
-| International (20) | ArabPlast, China Composites Expo, CHINACOAT, Composites Meetings, European Coatings Show, EXPOPLAST, ICERP, India Rubber Expo, Meximold, Plástico Brasil, Plastics Recycling Show Brazil, Plastics Recycling Show Europe, Plastics Recycling Show India, Plastindia, PUTECH Eurasia, RubberTech China, SAMPE Japan Exhibition, THE TIRE COLOGNE, TyreXpo Asia, UTECH Europe |
+| International (20) | ArabPlast, China Composites Expo, CHINACOAT, Composites Meetings Europe, European Coatings Show, EXPOPLAST, ICERP, India Rubber Expo, Meximold, Plástico Brasil, Plastics Recycling Show Brazil, Plastics Recycling Show Europe, Plastics Recycling Show India, PLASTINDIA, PUTECH Eurasia, RubberTech China, SAMPE Japan Exhibition, THE TIRE COLOGNE, TyreXpo Asia, UTECH Europe |
 
 By subject (a series can carry more than one): coatings 8, composites 6, rubber 5, recycling 5, plastics general 4,
 adhesives 2, plastics processing 2, polyurethanes 2, tooling 1.
@@ -47,6 +47,26 @@ polymer-heavy their exhibitors are (the Pack Expo seam).
      rotates), AMI's two textile-recycling expos, Moulding Expo (material-agnostic toolmaking), the Packaging
      Conference, FiltXPO, and the Geosynthetics Conference (owner ruling).
 
+## PR review (2026-11-19)
+
+Codex (deep) and agy (Gemini 4 Hydrogen, XHigh) each returned SHIP-WITH-FIXES. Both found no duplicate of an
+existing series, and codex confirmed the seams and log rows match the rulings. Applied:
+- **Names:** "Composites Meetings Europe" (trade name "Composites Meetings") and "PLASTINDIA", as the organizers
+  style them.
+- **Organizer link:** the Waterborne Symposium links its organizer, the University of Southern Mississippi.
+- **Series links:** PRS Brazil and RadTech point at series-level URLs, not one edition's page. PRS Brazil is an
+  `expo`, like the other PRS shows.
+- **Countries:** TyreXpo Asia names Thailand, and PLASTINDIA names India, in `geography_note`.
+- **Organizer name:** Great Lakes Coatings Conference is styled as the conference itself; its site names no parent
+  association.
+- **Inclusion log:** owner-ruled calls record the owner's reason rather than the research lane's.
+- **Rulings text:** the rulings README counts nine rulings. SCHEMA seams 5 and 7 now say what the rulings README
+  says: tire and aftermarket trade; Carbon Fiber and SAMPE Japan as composites-centered; RadTech's composites; the
+  Geosynthetics reason.
+
+Not changed: Composites Meetings Europe stays `conference`. It is a business convention of pre-scheduled meetings
+with an exhibition, so `conference` describes it at least as well as `expo`.
+
 ## Field rules applied (`build.py`)
 
 `python3 tasks/new-series-2026-11-19/build.py --data-dir data` (dry run; `--apply --i-am-the-integrator` appends).
@@ -56,8 +76,10 @@ polymer-heavy their exhibitors are (the Pack Expo seam).
   series leaves the home city empty and names only editions that ran or are announced.
 - **Cadence:** `cadence_note` is kept only for an irregular cadence (V-17); for a regular one the lane's cadence
   source moves to `notes`.
-- **Organizer:** `organizer_org_id` links the one organizer the Atlas holds, Gardner Business Media (ORG-001502):
-  Meximold, and Carbon Fiber through its CompositesWorld brand.
+- **Organizer:** `organizer_org_id` links the two organizers the Atlas holds: Gardner Business Media (ORG-001502) for
+  Meximold, and for Carbon Fiber through its CompositesWorld brand; and the University of Southern Mississippi
+  (ORG-002848, in `ecosystem.csv`) for the Waterborne Symposium, which its School of Polymer Science and Engineering
+  runs.
 - **Backbone:** tier A (the organizer's own site); `last_verified` 2026-11-19; `pic_events_slug` is the
   conferences-repo slug.
 - **Inclusion log:** one row for each owner-ruled call, plus each OUT that names a polymer subject.

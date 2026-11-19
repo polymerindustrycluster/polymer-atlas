@@ -22,9 +22,27 @@ BY = "claude-code new-series-2026-11-19"
 READ = "2026-11-19"
 NAME = {  # the series name as the organizer styles it, without edition year or city (SCHEMA 4.12.1)
     "expoplast-montreal": "EXPOPLAST", "plastics-recycling-show-brazil-prs-brazil": "Plastics Recycling Show Brazil",
+    "composites-meetings": "Composites Meetings Europe", "plastindia": "PLASTINDIA",
 }
-TRADE = {"plastics-recycling-show-brazil-prs-brazil": "PRS Brazil", "expoplast-montreal": "EXPOPLAST Montréal"}
-ORGANIZER_ID = {"meximold": "ORG-001502", "carbon-fiber": "ORG-001502"}  # Gardner Business Media (CompositesWorld)
+TRADE = {"plastics-recycling-show-brazil-prs-brazil": "PRS Brazil", "expoplast-montreal": "EXPOPLAST Montréal",
+         "composites-meetings": "Composites Meetings"}
+ORGANIZER_ID = {"meximold": "ORG-001502", "carbon-fiber": "ORG-001502",  # Gardner Business Media (CompositesWorld)
+                "waterborne-symposium": "ORG-002848"}  # University of Southern Mississippi (ecosystem.csv)
+RULING_WHY = {  # the owner's reason, recorded in the inclusion log for each owner-ruled call (owner-rulings-2026-11-19b)
+    "carbon-fiber": "Owner ruled IN: carbon-fiber composites are polymer-matrix, as in the CAMX seam.",
+    "sampe-japan-exhibition": "Owner ruled IN: a composites-centered program; distinct from the US SAMPE series (EVT-000035).",
+    "radtech-uv-eb-technology-expo-and-conference": "Owner ruled IN: UV and EB curing of coatings, inks, adhesives and composites.",
+    "expoplast-montreal": "Owner ruled IN, against the controller's lean: a separately branded plastics sector show is its own "
+                          "series; ADM Montréal is not seeded (SCHEMA seam 4).",
+    "the-tire-cologne": "Owner ruled IN, against the controller's lean: tire and aftermarket trade shows qualify, since tires "
+                        "are rubber products (SCHEMA seam 5).",
+    "tyrexpo-asia": "Owner ruled IN, against the controller's lean: tire and aftermarket trade shows qualify, since tires are "
+                    "rubber products (SCHEMA seam 5).",
+    "ampp-annual-conference-expo": "Owner ruled IN, against the controller's lean: coatings are named co-primary, under the "
+                                   "coatings ruling of 2026-10-30 (SCHEMA seam 6).",
+    "geosynthetics-conference": "Owner ruled OUT: geosynthetics are polymer products, but the conference is about their "
+                                "civil-engineering uses (SCHEMA seam 7).",
+}
 LOG_OUT = {"acs-poly-fall-show", "amlci-materials-day-polymers-and-elastomers", "ami-textile-recycling-expo-europe",
            "ami-textiles-recycling-expo-usa", "moulding-expo", "geosynthetics-conference"}  # OUT calls naming polymers
 
@@ -108,7 +126,8 @@ def entry(v, decision, owner):
     return {"date": READ, "entity": f"{v['organizer_name'].split(';')[0]}: {v['slug']}", "decision": decision,
             "rule_cited": "SCHEMA §4.12.1 named-subject qualification test" + (" (owner ruling 2026-11-19)" if owner else ""),
             "researcher": BY,
-            "notes": f"Organizer's statement ({v['subject_quote_url']}): \"{v['subject_quote']}\". {v['reason']}"}
+            "notes": f"Organizer's statement ({v['subject_quote_url']}): \"{v['subject_quote']}\". "
+                     + RULING_WHY.get(v["slug"], v["reason"])}  # an owner-ruled call records the owner's reason
 
 
 if __name__ == "__main__":

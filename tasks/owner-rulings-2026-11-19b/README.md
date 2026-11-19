@@ -2,7 +2,7 @@
 
 (The first set of 2026-11-19, the W18 close-out battery, is in `tasks/owner-rulings-2026-11-19/README.md`.)
 
-The repo owner ruled ten borderline series in session on 2026-11-19, as multiple choice. They came out of the
+The repo owner ruled nine borderline series in session on 2026-11-19, as multiple choice. They came out of the
 research for the show harvest's untracked series (`tasks/new-series-2026-11-19/`). SCHEMA v1.16.2 §4.12.1 records
 them as worked seams 4–7.
 
