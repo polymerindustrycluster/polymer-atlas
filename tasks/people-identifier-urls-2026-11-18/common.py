@@ -9,6 +9,16 @@ ALLOWED_COLS = {"public_profile_url", "lab_url", "sources", "last_verified"}
 EVD_LO, EVD_HI = 396100, 396199
 TODAY = "2026-11-18"
 CREATED_BY = "claude-code atlas-w18-peopleurl"
+# Scrub forward (owner rulings 2026-11-18 items 1/1b, 2026-11-18b item 3; tasks/identifier-url-scrub-2026-11-19): the
+# committed manifest.csv carries placeholders, the private persist copy the fetched URLs. build.py writes redact(persist)
+# and check.py requires committed == redact(persist), so a replay never restores an account URL to tasks/.
+_ACCT = re.compile(r"([?&](?:u|unid)=|/~)[A-Za-z0-9][\w.%-]*")
+_UC = re.compile(r"(?i)((?<=//)researchdirectory\.uc\.edu\.?/p/)[A-Za-z0-9][\w.%-]*")
+
+
+def redact(text):
+    text = _UC.sub(r"\1<shortname>", text)
+    return _ACCT.sub(lambda m: m.group(1) + ("<acct>" if m.group(1) == "/~" else "<id>"), text)
 
 def read_csv(text):
     return list(csv.DictReader(io.StringIO(text, newline="")))

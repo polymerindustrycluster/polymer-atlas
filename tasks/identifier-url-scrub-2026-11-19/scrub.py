@@ -22,8 +22,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from check_account_urls import findings  # noqa: E402  (the CI guard: same token test as V-62)
 
 MANIFEST = Path(__file__).resolve().parent / "manifest.csv"
-END = r"[^\s,;\"'()<>\[\]`]"
-UC = r"(?<![\w.-])(?i:researchdirectory\.uc\.edu)\.?/p/[A-Za-z0-9]" + END + "*"  # the host itself is the form
+END = r"[^\s,;\"'()<>\[\]{}`|#\\]"  # also ends at a table pipe, a fragment and a backslash (Codex r1)
+UC = r"(?:(?<=//)|(?<![\w./-]))(?i:researchdirectory\.uc\.edu)\.?/p/[A-Za-z0-9]" + END + "*"  # the host itself is the form
 OTHER = r"[\w.-]+\.[A-Za-z]{2,}\.?(?::\d+)?(?:/" + END + r"*?)?(?:[?&](?:u|unid)=|/~)[A-Za-z0-9]" + END + "*"
 TOKEN = re.compile(r"(?:https?://)?(?:" + UC + "|" + OTHER + ")")
 ACCOUNT = re.compile(r"([?&]u=|[?&]unid=|/~|(?i:researchdirectory\.uc\.edu)\.?/p/)([A-Za-z0-9][A-Za-z0-9._%-]*)")
@@ -70,10 +70,15 @@ def selftest():
         "https://x.example.edu/?u={A}": "https://x.example.edu/?u=<id>",
         "https://researchdirectory.uc.edu/p/<shortname> stays": "https://researchdirectory.uc.edu/p/<shortname> stays",
         "**[v1.15]** and fisid_123 stay": "**[v1.15]** and fisid_123 stay",
+        # Codex r1: nothing past a table pipe, nothing in a fragment, no UC host inside another site's path
+        "https://x.example.org/?u={A}|{A}": "https://x.example.org/?u=<id>|{A}",
+        "https://x.example.org/#?u={A}": "https://x.example.org/#?u={A}",
+        "https://x.example.org/researchdirectory.uc.edu/p/{A}": "https://x.example.org/researchdirectory.uc.edu/p/{A}",
     }
     for src, want in cases.items():
-        src = src.replace("{A}", "jq9")
-        assert ("jq9" not in src) or findings(src), src  # each planted account is one the guard sees
+        src, want = src.replace("{A}", "jq9"), want.replace("{A}", "jq9")
+        assert ("jq9" not in want) or not findings(want), want  # what stays must be allowed
+        assert ("jq9" not in src) or ("jq9" in want) or findings(src), src  # each redacted account is one the guard sees
         got = scan(src)[0]
         assert got == want, (src, got)
         assert not findings(got), got
