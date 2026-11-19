@@ -554,11 +554,14 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [x] `done 2026-11-18` PIC-18 market canary: 4 of 10 filled (PR #385, e1df30e4); scaled to the other 191 in two batches: batch 1, 25 of 96 organizations, 45 values (PR #390, dd07afc9); batch 2, 35 of 100 organizations (95 plus 5 re-screens), 66 values (PR #396, 495a0018). PIC-18 organization rows with market unknown: 383 -> 319 of 794.
 - [x] `done 2026-11-18` Own-site Ohio size bands: 2 organizations filled (`employee_band_ohio`); 12 headcount leads held under owner ruling 2026-11-18b item 4 (11 company-wide or worldwide counts, 1 for a Dutch headquarters). PIC-18 organization rows with size unknown: 445 -> 443 (PR #383, c1dafc8d).
 - [x] `done 2026-11-18` Ohio EPA air-permit process scout (packet only): 33 of 58 sites retrievable; canary bound 7 of 10, specific hits 6 of 10; 0 data rows (PR #387, c9c5f616).
-- [ ] `claimed:claude-code 2026-11-18` Ohio EPA air-permit lane (owner ruling 2026-11-18b item 1, B-PERMIT option b): the 33 retrievable sites, the 10 canary sites re-scored plus the 23 not drawn — `tasks/pic18-permit-lane-2026-11-18/`.
+- [x] `done 2026-11-19` Ohio EPA air-permit lane (owner ruling 2026-11-18b item 1, B-PERMIT option b), over the 33 retrievable sites: 7 sites with a process written, 1 capability row, 24 of 33 held (PR #400, ec7e19be). Follow-up under owner rulings 2026-11-19 P2-P4: 2 more sites with a process written, 5 capability rows (3 capability-only sites), 13 of 33 verified, 20 held (PR #402, 7f11966a). PIC-18 organization rows with process unknown: 331 -> 322 of 794.
 - [x] `done 2026-11-18` Capability term unions: 7 terms on 6 sites applied, 4 held (SITE-000707 ×2, SITE-001109, and SITE-000562's transfer term) (PR #381, 15f2b154). SITE-000562's `rubber_molding_transfer` was applied by PR #397.
 - [x] `done 2026-11-18` Record the owner rulings of 2026-11-18, second battery (W18): 7 items, 0 data rows — `tasks/owner-rulings-2026-11-18b/` (PR #392, 163f6c25).
 - [x] `done 2026-11-18` People rulings (2026-11-18b items 3 and 6): 9 identifier rows (7 replaced, 2 removed), V-62 widened to `?unid=` and the UC `/p/` form, people `status` and `status_date` added (0 rows set), SCHEMA v1.15 (PR #393, f35fb750).
 - [x] `done 2026-11-18` Process terms (2026-11-18b item 2): `rubber_molding_transfer` and `composites_spray_up`, SCHEMA v1.16; SITE-000562 gains `rubber_molding_transfer` (PR #397, c8ce2d4a).
+- [x] `done 2026-11-19` Record the owner rulings of 2026-11-19 (W18 close-out battery): 7 items, 0 data rows — `tasks/owner-rulings-2026-11-19/` (PR #401, 55ab601a).
+- [x] `done 2026-11-19` PIC-18 market follow-up under owner rulings 2026-11-19 M1-M2: 3 of 14 organizations' `markets_served` filled (6 values), 11 held (PR #403, d75f8a7c). PIC-18 organization rows with market unknown: 319 -> 316 of 794.
+- [x] `done 2026-11-19` `scripts/integrate/`: `mergepr.sh` says why when the fetched pull ref is not the validated head, and `mergepr.sh`, `premerge.sh` and `sync_pr.sh` resolve that ref by its full name (PR #405, 86657a6b).
 
 ### Follow-ups surfaced in W18 (not commitments)
 
@@ -568,6 +571,8 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [ ] `open` **PERSON-001037:** the row's role disagrees with its department page (assistant vs associate). Re-verify the role. Source: PR #379.
 - [ ] `open` **widen.net links:** 2 organization rows and 2 site rows in `data/` cite widen.net PDF links whose `u` value is unnecessary (the same PDF bytes without it). Drop the value; the evidence rows stay as they are. Source: PR #378.
 - [ ] `open` **Free-text process values:** 30 off-vocabulary values (V-55 debt) appear as entries in the public process filter on the prospects page. Source: live re-grade, 2026-11-18.
+- [ ] `open` **Permit sites still not bound:** 16 of the 33 permit sites; 8 of them have a blank Atlas street, and a blank street does not bind. Filling a verified street lets the permit lane re-score those 8. Source: PR #402.
+- [ ] `open` **Owner battery candidates (from PR #402):** a §3.6 capability term for `rubber_extrusion` (SITE-000264), or leave it unmapped; and whether a direction word missing from a printed street (SITE-000936, `Conwell Ave.` vs `S. Conwell Ave`) breaks binding. The lane recommends it does.
 
 ### Follow-ups surfaced in W16 (not commitments)
 
