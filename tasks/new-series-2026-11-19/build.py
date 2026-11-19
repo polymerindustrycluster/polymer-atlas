@@ -6,7 +6,7 @@
 Input: verdicts.csv here, one row per researched candidate: the organizer's own subject statement (quoted, with its
 URL, read 2026-11-19 by a codex research lane and cross-checked by agy, Gemini 4 Hydrogen), the proposed series
 fields, and the verdict with its basis (the lane, or the owner rulings of 2026-11-19 in
-tasks/owner-rulings-2026-11-19/). Each IN row becomes one data/events.csv row (SCHEMA 4.12.1), IDs allocated from
+tasks/owner-rulings-2026-11-19b/). Each IN row becomes one data/events.csv row (SCHEMA 4.12.1), IDs allocated from
 the table's maximum. Borderline and owner-ruled calls, and the OUT calls that name a polymer subject, also get a
 data/inclusion_log.csv row (SCHEMA Appendix A). No participation row is created here.
 """

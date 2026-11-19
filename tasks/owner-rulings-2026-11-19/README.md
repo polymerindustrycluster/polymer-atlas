@@ -1,33 +1,66 @@
-# Owner rulings, 2026-11-19 (new event series from the show harvest)
+# Owner rulings, 2026-11-19 (W18 close-out battery)
 
-The repo owner ruled ten borderline series in session on 2026-11-19, as multiple choice. They came out of the
-research for the show harvest's untracked series (`tasks/new-series-2026-11-19/`). SCHEMA v1.16.2 §4.12.1 records
-them as worked seams 4–7.
+The repo owner ruled the W18 close-out battery in session on 2026-11-19, as multiple choice. Every item was ruled as
+recommended. This file records each item. Nothing in `data/` changes here; each ruling that touches data is applied in
+its own pull request. Counts are at main ec7e19be unless stated.
 
-## Ruled IN, as the controller recommended
+## E1. Evidence IDs: next-free at merge
 
-- **Carbon Fiber** (CompositesWorld): "the materials, technologies and trends shaping the entire carbon fiber value
-  chain". Carbon-fiber composites are polymer-matrix, the same reasoning as the CAMX seam.
-- **SAMPE Japan Exhibition** (SAMPE Japan with The Nikkan Kogyo Shimbun): "advanced materials and processing
-  technologies, including composite materials". Its co-sponsors include the Japan Society for Composite Materials,
-  the Japan Reinforced Plastics Society and the Japan Carbon Fiber Manufacturers Association. It is distinct from the
-  US SAMPE Conference & Exhibition (EVT-000035).
-- **RadTech UV+EB Technology Expo & Conference** (RadTech International North America): UV and EB curing of
-  "coatings, inks, adhesives, composites and other materials".
+SCHEMA's `evidence_id` field is "next-free at application", and AGENTS.md §3 says to allocate above the tree-wide
+maximum and never fill a gap. On 2026-11-18, three merges used evidence IDs below main's maximum:
 
-## Ruled IN against the controller's lean (these widen the test)
+| PR | Merge | Rows | IDs | Maximum at the merge's parent |
+|---|---|---|---|---|
+| #385 | e1df30e4 | 4 | EVD-396200 to 396203 | EVD-396506 |
+| #390 | dd07afc9 | 45 | EVD-396600 to 396645 (one ID unused) | EVD-397103 |
+| #393 | f35fb750 | 7 | EVD-396900 to 396906 | EVD-397103 |
 
-The controller saw each as a polymer slice of a broader show. The owner ruled each IN.
-- **EXPOPLAST** (Informa Markets): "one of six sectors at ADM Montréal". A separately branded plastics sector show
-  is its own series; ADM Montréal is not seeded.
-- **The Tire Cologne** (Koelnmesse) and **TyreXpo Asia** (Informa Markets). Tire and aftermarket trade shows
-  qualify, since tires are rubber products.
-- **AMPP Annual Conference + Expo**: "the world's largest corrosion and coatings tradeshow". Coatings are
-  co-primary, under the coatings ruling of 2026-10-30.
+The IDs came from fixed ranges written into lane briefs. Another orchestration's merges then raised the maximum:
+#389 (0720cc06) added EVD-397000 to 397011, and #394 (8affaf98) raised it to EVD-397103. None of the 56 IDs had appeared on main before (a `git log -G` search of the evidence shards).
 
-## Ruled OUT
+- **Ruled:** the 56 rows stand as they are; evidence IDs are immutable. This record is the note of the deviation.
+- **Ruled ("Next-free at merge"):** a PR allocates its new evidence IDs from one above the maximum across all
+  `data/evidence_*.csv` shards at its final merge of `origin/main`, re-allocating in an ID-only commit if the maximum
+  has moved; before each merge the integrator checks that the lowest new ID exceeds main's maximum.
+- Implementation methods used on individual PRs, not part of the ruling: regenerating the IDs with the PR's build
+  script, and reviewers checking the ID-only commit with the IDs masked.
+- Record since 2026-11-18: #383 (EVD-397116) and #400 (EVD-397369) started at the maximum plus one. #397 (EVD-397200,
+  maximum EVD-397117) and #396 (EVD-397300, maximum EVD-397200) started above the maximum and left gaps; they filled
+  none.
+- Not chosen: disjoint ID blocks for each concurrent orchestration.
 
-- **Geosynthetics Conference** (Geosynthetic Materials Association): geosynthetics are polymer products, but the
-  conference is about civil-engineering uses.
-- **Plastec West**: asked about directly, and left out. It no longer runs as a separately branded show (folded into
-  MD&M West from 2026), so seam 3 stands.
+## P1. Gel coat in open-molding spray-up (PR #400, SITE-000248)
+
+The Ohio EPA permit's units K001 to K005 read "Polyester gelcoat and FRP (fiberglass reinforced plastic parts) spray up
+booth". The review families split twice on whether the gel-coat spraying is also §3.1 `coating_applying`.
+
+- **Ruled:** gel coat applied inside an open-molding spray-up unit is part of `composites_spray_up`, not a separate
+  `coating_applying`. `coating_applying` stays for coating lines and finishing. SITE-000248 keeps
+  `composites_spray_up` only.
+
+## P2 to P4. Air-permit binding and mapping (PR #400, "Proposed follow-ups")
+
+These extend owner ruling 2026-11-18b item 1 (B-PERMIT, option b).
+
+- **P2, ruled:** a USPS-standard abbreviation (`Pkwy`, `Rte`) or a `Twp.` suffix does not break binding. The printed
+  Facility ID, holder, street number and street name must still agree with the Atlas site. Three sites held in PR #400
+  differ only in this way: SITE-000264, SITE-001137 and SITE-002113.
+- **P3, ruled:** a permit's "Permit Description" field counts as a witness at `supports_C` only, never higher. On a
+  tier A or B site it gives a `site_capabilities` row only (owner ruling 2026-11-14). The example is SITE-000814.
+- **P4, ruled:** `site_capabilities` mapping. `compounding_unspecified` maps to the capability term `compounding`, and
+  `extrusion_unspecified` to `extrusion`, their §3.6 parents. `coating_applying` and `foam_molding_bead` stay unmapped,
+  as §3.6 keeps applying out of the capability vocabulary.
+
+## M1 and M2. Market attribution (PRs #390 and #396)
+
+- **M1, ruled:** a market claim on a group's website may be attributed to a subsidiary or division record only where
+  the page names that subsidiary, its brand or its plant as the subject of the claim. A group-wide claim alone is not
+  attributable. The scale batches held 17 organization records in the hold class `group_or_redirect_attribution`:
+  - batch 1: ORG-000036, ORG-000119, ORG-000169, ORG-000438, ORG-000606, ORG-000752, ORG-001447, ORG-001461,
+    ORG-001462, ORG-001513;
+  - batch 2: ORG-001534, ORG-001949, ORG-002038, ORG-002047, ORG-003196, ORG-003771, ORG-004022.
+  That class also holds records for other reasons. For 4 of the 17 the stored pages are not the record's own group
+  site: ORG-000036 (a directory of other manufacturers), ORG-000169 (another manufacturer's catalogue), and ORG-001461
+  and ORG-002038 (the stored pages name another entity). The rule applies only where a group site names the record.
+- **M2, ruled:** Myrava's (ORG-001558) note "do not promote above C without own-site check" caps the record's tier.
+  It does not stop filling `markets_served` at tier C from a claim on the company's own site.

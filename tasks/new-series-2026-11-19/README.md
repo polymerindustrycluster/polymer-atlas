@@ -3,7 +3,7 @@
 **+27 event series** in `data/events.csv` (71 → 98 series; EVT-000072 to EVT-000098) and **+13 inclusion-log rows**
 in `data/inclusion_log.csv`. No organization, site or participation row is added or changed: participation rows
 for these series come from the banked harvest in a separate pull request. SCHEMA v1.16.2 records the owner's
-borderline rulings as §4.12.1 worked seams 4–7 (`tasks/owner-rulings-2026-11-19/README.md`).
+borderline rulings as §4.12.1 worked seams 4–7 (`tasks/owner-rulings-2026-11-19b/README.md`).
 
 | Home | Series |
 |-|-|
