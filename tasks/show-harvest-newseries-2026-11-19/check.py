@@ -5,11 +5,14 @@
   staging show that is a series of the row's event;
 - the listed name's key is held by exactly the row's organization and is its LEGAL name; the name is not on a
   controller drop list for that show and role, and not held by the wave 2-3 review or CONTROLLER_HOLDS;
-- an `attendee` row comes only from an ATTENDEE_LISTS list, for that list's own event, with that list's note and an
-  empty role_detail; any other row is an exhibitor, sponsor or speaker; no role_detail carries a personal pattern;
-- no row cites a media-partner or not-an-event list, or a list awaiting an owner ruling (OWNER_PENDING);
-- a row of an international series says the edition is abroad, names the listed country, and that country is the
-  organization's HQ country; its edition_state is never a USPS code (ICERP's conferences edition is keyed US/IN).
+- an `attendee` row comes only from an ATTENDEE_LISTS list, for that list's own event and edition year, with that
+  list's note and an empty role_detail; any other row is an exhibitor, sponsor or speaker; no role_detail carries a
+  personal pattern;
+- no row cites a media-partner or not-an-event list, a list awaiting an owner ruling (OWNER_PENDING), or an undated
+  list (UNDATED_LISTS); a row carries the SUPPLEMENT note exactly when its name is a SUPPLEMENT entry for its list;
+- an abroad row (an international series, an abroad note, or a non-US edition_state) names the listed country, and
+  that country is the organization's HQ country; its edition_state is never a USPS code (ICERP's conferences edition
+  is keyed US/IN).
 Limit: without the staging harvest this cannot prove a row came from its list; build.py, which reads the banked
 pages, is the provenance guarantee.
     python3 tasks/show-harvest-newseries-2026-11-19/check.py
@@ -68,10 +71,16 @@ for r in packet:
         bad.append((pid, "name held (CONTROLLER_HOLDS)"))
     if url in B.OWNER_PENDING:
         bad.append((pid, "list awaits an owner ruling (OWNER_PENDING)"))
+    if (show, r["role"]) in B.UNDATED_LISTS:
+        bad.append((pid, "list names no edition year (UNDATED_LISTS)"))
+    supplemented = listed in B.SUPPLEMENT.get((show, r["role"]), [])
+    if supplemented != (B.SUPPLEMENT_NOTE in r["notes"]):
+        bad.append((pid, "SUPPLEMENT note and SUPPLEMENT entry disagree"))
     if r["role"] == "attendee":
-        event, note = B.ATTENDEE_LISTS.get(url, ("", "\0"))
-        if event != ev or note not in r["notes"]:
-            bad.append((pid, "attendee row not from an ATTENDEE_LISTS list for its event, or without its note"))
+        event, year, note = B.ATTENDEE_LISTS.get(url, ("", "", "\0"))
+        if event != ev or year != r["edition_year"] or note not in r["notes"]:
+            bad.append((pid, "attendee row not from an ATTENDEE_LISTS list for its event and year, or without its "
+                             "note"))
         if r["role_detail"]:
             bad.append((pid, "attendee row with a role_detail"))
     elif r["role"] not in B.ROLES:
@@ -80,12 +89,12 @@ for r in packet:
         bad.append((pid, "personal pattern in role_detail"))
     if B.MEDIA_PARTNERS.search(url) or url in B.NOT_EVENT_LISTS:
         bad.append((pid, "excluded list"))
-    if events[ev]["home_region"] == "international":
-        said = re.search(r"Edition abroad: the list gives the company's country \(([^)]+)\)", r["notes"])
+    said = re.search(r"Edition abroad: the list gives the company's country \((.+?)\), which matches", r["notes"])
+    if events[ev]["home_region"] == "international" or said or r["edition_state"] not in USPS | {""}:
         if not said or not B.iso(said.group(1)) or B.iso(said.group(1)) != B.iso(o["hq_country"]):
-            bad.append((pid, "international-series row without a listed country equal to the org's HQ country"))
+            bad.append((pid, "abroad row without a listed country equal to the org's HQ country"))
         if r["edition_state"] in USPS:
-            bad.append((pid, "international-series row with a USPS edition_state"))
+            bad.append((pid, "abroad row with a USPS edition_state"))
 assert not bad, bad
 print(f"OK: {len(packet)} rows, each a legal-name match from an admitted list, none held, dropped or excluded; "
       f"every abroad row's listed country is its org's HQ country")
