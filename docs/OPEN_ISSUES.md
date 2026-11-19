@@ -30,7 +30,7 @@ coordinator for human ruling. Do not treat them as settled.
    into docs/ once the coordinator's synthesis is accepted: headline
    findings — Summit pilot found ~99 candidates from 4 source types;
    coverage and overlap stats to be summarized here after review.
-5. **CI workflow file missing from the GitHub repo — RESOLVED 2026-11-02:** `validate` and `pages` run from `.github/workflows/` (c485cfad), and the ruleset "main: require validate" requires `validate` (docs/ci/README.md). (Was, 2026-10-28:) The
+5. **CI workflow file missing from the GitHub repo — RESOLVED 2026-11-02:** `validate` and `pages` run from `.github/workflows/` (c485cfad). Since 2026-11-14 the ruleset "main: require validate" requires `validate` (docs/ci/README.md). (Was, 2026-10-28:) The
    scaffold's `.github/workflows/validate.yml` exists locally but the
    Muse GitHub App has no Workflows permission, so it cannot create
    workflow files (403). Add it by web upload (repo → Add file → Create

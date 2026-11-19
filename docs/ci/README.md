@@ -10,11 +10,14 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
   - the SQLite build;
   - the generated-artifact guard.
 
-  The repository ruleset "main: require validate" makes the `validate` check required, so a red PR cannot merge.
-  Added 2026-11-02 (c485cfad).
-- **`pages.yml`** runs on every push to `main`. It validates the data first, so a red tree is never published. Then it
-  builds the site with `scripts/build_pages.py` (public fields only; nothing generated is committed) and deploys it to
-  GitHub Pages at https://polymerindustrycluster.github.io/polymer-atlas/.
+  The workflow was added 2026-11-02 (c485cfad). Since 2026-11-14 the repository ruleset "main: require validate" makes
+  the `validate` check required before a merge into `main`. Repository admins can bypass it in an emergency
+  (DECISIONS.md, 2026-11-14).
+- **`pages.yml`** runs on every push to `main`. It runs `scripts/validate.py` first, so a tree that fails the CSV
+  validator is never published. It does not wait for the separate `validate` workflow, so a commit that fails only a
+  later `validate` step can still be deployed. It then builds the site with `scripts/build_pages.py` (public fields
+  only; nothing generated is committed) and deploys it to GitHub Pages at
+  https://polymerindustrycluster.github.io/polymer-atlas/. The Pages source is set to GitHub Actions.
 
 Preview the site locally with
 `python3 scripts/build_pages.py && python3 -m http.server -d build/pages 8000`, then open http://localhost:8000.

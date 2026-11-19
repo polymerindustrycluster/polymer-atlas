@@ -117,7 +117,7 @@ All counts are site rows or organization rows, all tiers and statuses, from
 | F-02 | **Machine-readable vocabularies** (`docs/schema/vocab.json`, derived from the validator, parity-tested). | | done → this PR |
 | F-03 | **Rules as tools:** `scripts/atlas.py` (`next-id`, `dedupe-check`, `show`, `shard-of`). | | done → this PR |
 | F-04 | **Read-only MCP server** (`scripts/atlas_mcp_server.py`) so any harness can query the Atlas. | | done → this PR |
-| F-05 | **CI:** done 2026-11-02 (c485cfad): `validate` and `pages` run from `.github/workflows/`, and the ruleset "main: require validate" requires `validate`. Campaign mode was retired 2026-11-03 (owner battery B-CAMP). | | done |
+| F-05 | **CI:** done 2026-11-02 (c485cfad): `validate` and `pages` run from `.github/workflows/`; since 2026-11-14 the ruleset "main: require validate" requires `validate`. Campaign mode was retired 2026-11-03 (owner battery B-CAMP). | | done |
 | F-06 | **One file per task** (`tasks/open/T-####.md`, claimed by PR) instead of one 52 KB `QUEUE.md` that every harness edits. Archive done items. | Removes the biggest merge-conflict hotspot. **OWNER** process change. | idea |
 | F-07 | **SCHEMA v2 consolidation:** fold dated rulings into the rules, move history to `docs/SCHEMA_CHANGELOG.md`, target under 60 KB. | Agents currently read precedent soup | idea |
 | F-08 | **Packet JSON schema + `atlas lint-packet`**, so lane packets from any harness are machine-checkable before the integrator reads them. | | idea |
