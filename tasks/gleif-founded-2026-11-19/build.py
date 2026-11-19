@@ -35,10 +35,15 @@ def write(p, head, rows, eol):
 
 
 norm = lambda s: re.sub(r"[^a-z]", "", (s or "").lower())
+# Integrator holds after review: a renamed or reorganized LEI may carry a predecessor entity's formation date.
+HOLD = {"ORG-000925": "Kraton: the LEI was renamed from Kraton Polymers LLC to Kraton Corporation (2023); the 10-K says the "
+                      "corporation was incorporated in 2009, succeeding a 2003 LLC (codex refute 2026-11-19)"}
 
 
 def gate(org, ent):
     """None when the link may be used, else the first failed gate."""
+    if org["org_id"] in HOLD:
+        return "HELD: " + HOLD[org["org_id"]]
     if org["status"] != "active":
         return "organization not active"
     if org["year_founded"].strip():
