@@ -2,14 +2,15 @@
  "frame_sites": 33,
  "strict_bound_sites": 14,
  "near_bound_sites": 3,
- "verified_sites": 12,
- "still_uncertain_sites": 21,
+ "verified_sites": 13,
+ "still_uncertain_sites": 20,
  "reject_sites": 0,
- "sites_with_process_written": 1,
+ "sites_with_process_written": 2,
  "process_sites": [
-  "SITE-000814"
+  "SITE-000814",
+  "SITE-001137"
  ],
- "process_terms_written": 1,
+ "process_terms_written": 2,
  "capability_rows": 5,
  "already_held_rows": 11,
  "capability_only_sites": [
@@ -19,7 +20,7 @@
  ],
  "held_sites_by_reason": {
   "not_bound": 16,
-  "ancillary_only": 2,
+  "ancillary_only": 1,
   "no_capability_destination": 2,
   "term_not_stated": 1
  },
@@ -28,6 +29,6 @@
   "no_capability_destination": 5
  },
  "strength_of_writes": {
-  "supports_C": 1
+  "supports_C": 2
  }
 }

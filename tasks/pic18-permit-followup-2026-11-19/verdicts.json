@@ -262,9 +262,18 @@
    "note": ""
   },
   "SITE-001137": {
-   "verdict": "STILL_UNCERTAIN",
-   "hold_reason": "ancillary_only",
+   "verdict": "VERIFIED",
+   "hold_reason": null,
    "quotes": [
+    {
+     "doc": "3288547",
+     "quote": "Conveyorized spray coatings of vinyl products with a 0.64 MMBtu/hr natural gas-fired drying oven",
+     "terms": [
+      "coating_applying"
+     ],
+     "grade": "list",
+     "note": "R005 'Vinyl Coatings Makor Flatline': a conveyorized spray coating line with a drying oven, not a booth; the unit's own terms call it 'the vinyl coating line'; an equipment phrase, so supports_C"
+    },
     {
      "doc": "3288547",
      "quote": "Conveyor spray coating application with a 1.0 MMBtu/hr natural gas fired drying oven used for topcoat application on plastic, vinyl and wood products using HVLP spray gun",
@@ -280,7 +289,7 @@
      "note": "wood, not a polymer process"
     }
    ],
-   "note": "bound under P2 ('Rte' vs 'Route'); the listed units are finishing spray booths and woodworking, no polymer process"
+   "note": "bound under P2 ('Rte' vs 'Route'); R005 is a conveyorized spray coating line for vinyl products (coating_applying, supports_C); the Q-One and drive-thru units are finishing spray booths and R006 coats wood: none of those is carried"
   },
   "SITE-001394": {
    "verdict": "STILL_UNCERTAIN",

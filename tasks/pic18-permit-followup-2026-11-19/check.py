@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent)); import build as B
 HERE, ROOT = B.HERE, B.ROOT
 WRITE = ("processes", "capability")
 PAIR_RULE = not os.environ.get("CHECK_DISABLE_PAIR_RULE")   # the env var exists only to show the pair injections go green without the rule
-EXPECTED_DEFECTS = 24   # README reads this number
+EXPECTED_DEFECTS = 26   # README reads this number
 
 def base_ref(): return B.git("merge-base", "HEAD", "origin/main").strip()
 def rd(text): return list(csv.DictReader(io.StringIO(text, newline="")))
@@ -166,6 +166,12 @@ def lane_state_ok(data, props, names):
     ev = sum(r["created_by"] == B.WHO for r in B.read_csv(data / names[1]))
     return (not published) or ev == sum(p["route"] == "processes" for p in props)
 
+def city_bound(printed, atlas):
+    """Codex's township probe on the real SITE-002113 header: does printed city `printed` bind Atlas city `atlas` (Facility ID, holder and street held equal)?"""
+    sites, orgs = B.atlas(); s = sites["SITE-002113"]; h = B.header(B.doc_text("1815636"))
+    strict, near = B.bind_near(dict(h, holder_city=printed), dict(s, city=atlas), orgs[s["org_id"]], h["facility_id"])
+    return not strict or bool(near)
+
 def probe_interrupted_replay(props, hashes, base_ref_):
     """Codex's replay probe, from a clean merge-base copy and from the applied copy, cut at every replace: live shards stay whole, no cell is published without its rows, a retry reproduces the applied state.
     Also the base probe: an unrelated site's blanked cell is refused."""
@@ -246,6 +252,10 @@ def main():
     probe_interrupted_replay(props, hashes, base)
     for s_, fmt_ok in (("SITE-000264", True), ("SITE-001137", True), ("SITE-002113", True), ("SITE-000936", False), ("SITE-002114", False)):   # P2 positive and negative probes on the real rows
         r_ = next(x for x in model["sites"] if x["site_id"] == s_); assert (r_["bind"] == "BOUND") == fmt_ok, f"{s_}: bind {r_['bind']}, expected bound={fmt_ok}"
+    assert city_bound("Newbury Twp.", "Newbury") and city_bound("Newbury", "Newbury Twp."), "a trailing township suffix must bind in both directions"
+    assert not city_bound("Twp. Newbury", "Newbury"), "a leading township marker must not bind"
+    inp3 = copy.deepcopy(inp); next(q for q in inp3["V"]["sites"]["SITE-000814"]["quotes"])["quote"] = "Permit Type: Renewal"
+    assert not [p for p in B.compute(inp3)["props"] if p["site_id"] == "SITE-000814" and p["route"] in WRITE], "build.compute wrote a proposal whose witness is a different labelled field"
     pos = copy.deepcopy([p for p in props if p["site_id"] == "SITE-000346"]); pos[0]["quote"] += ", blowdown tanks"
     assert not [g for g in audit(pos, sites, orgs) if g[0] == "ANCILLARY"], "a polymerization witness is rejected for one keyword in its equipment list"
     # ------------------------------------------------------------------------------------------------------------ injected defects
@@ -305,7 +315,9 @@ def main():
     from unittest.mock import patch
     with patch.object(B, "held_pairs", lambda props: set()):   # the probe must be live: with the pair check off, the duplicate is written
         assert duplicate_verdict(), "the verdict-level duplicate probe is inert: it is not written even with the pair check disabled"
-    done += [one("OWNER_HOLD", duplicate_row), one("OWNER_HOLD", held_in_applied, "complete"),
+    done += [one("BIND", lambda P, S2: S2["SITE-000264"].update(city="Twp. Seville")),   # a LEADING township marker on a written row must not bind
+             one("WITNESS", lambda P, S2: row(P, site_id="SITE-000814").update(quote="Permit Type: Renewal")),
+             one("OWNER_HOLD", duplicate_row), one("OWNER_HOLD", held_in_applied, "complete"),
              one("OWNER_HOLD", lambda P, S2: row(P, site_id="SITE-000248", term="coating_applying").update(route="processes")),
              one("COMPLETE", restore_base, "complete"), one("WRITTEN", fake_note, "written"), one("MANIFEST", fake_manifest, "manifest"),
              one("PRIVACY", lambda: {"README.md": "signed by " + sorted(sig)[0]}, "privacy"),
