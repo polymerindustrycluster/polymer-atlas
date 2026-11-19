@@ -64,6 +64,9 @@ class TestFindings(unittest.TestCase):
             "https://www.example.org/page#?u=jq9",
             "a `?unid=<id>` query, and `**[v1.15]**` prose; ~99 candidates; menu=1",
             "(see https://www.example.org/page), ~99 items; u=1",
+            # Codex r4: a Markdown link whose text is its own URL, and a text-selection fragment
+            "[https://researchdirectory.uc.edu](https://researchdirectory.uc.edu)",
+            "[https://www.example.org/page](https://www.example.org/page#:~:text=Polymer%20lab)",
         ):
             self.assertEqual(findings(line), [], line)
 
@@ -74,6 +77,8 @@ class TestFindings(unittest.TestCase):
     def test_reads_utf16_without_bom(self):  # Codex r3: Python's utf-16-le and Node's utf16le write no BOM
         for enc in ("utf-16-le", "utf-16-be"):
             self.assertEqual(findings(read("url\nhttps://www.example.org/?u=jq9\n".encode(enc))), [2], enc)
+            notes = "url,notes\nhttps://www.example.org/?u=jq9," + "\u65e5\u672c\u8a9e\u306e\u30e1\u30e2" * 16 + "\n"
+            self.assertEqual(findings(read(notes.encode(enc))), [2], enc + " with CJK notes (Codex r4)")
 
     def test_html_base_href(self):  # Codex r3: a root-relative link under <base href> on the UC directory
         page = '<base href="https://researchdirectory.uc.edu/">\n<a href="/p/' 'smithjq">profile</a>\n<a href="/about">x</a>'

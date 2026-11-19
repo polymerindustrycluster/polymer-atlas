@@ -24,7 +24,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from urllib.parse import unquote, urljoin
+from urllib.parse import unquote, urljoin, urlsplit
 
 from people_url import url_has_account
 
@@ -43,9 +43,19 @@ NESTED = re.compile(r"(?<==)(?=(?:[A-Za-z][A-Za-z0-9+.-]*:)?//|" + HOST + ")"
                     r"|(?<=[^\w+.-])(?=[A-Za-z][A-Za-z0-9+.-]*://)")
 
 
+def parses(u):
+    try:
+        urlsplit(u if "://" in u else "//" + u.lstrip("/"))
+        return True
+    except ValueError:
+        return False
+
+
 def candidates(view):
-    for rx in URLS:
-        for u in rx.findall(view):
+    for rx in URLS:  # the wide pass must not glue a Markdown link's text to its destination: `[text](url)`
+        for u in rx.findall(view.replace("](", "] (") if rx is URLS[-1] else view):
+            if rx is not URLS[0] and not parses(u):  # url_has_account fails closed; a longer pass may glue on `]`
+                continue
             yield u
             for m in NESTED.finditer(u):
                 n = rx.match(u, m.start())
@@ -68,7 +78,8 @@ def decode(line):
 def read(data):
     enc = next((e for b, e in BOMS if data.startswith(b)), None)
     if not enc and b"\0" in data:  # UTF-16 without a BOM (Python's utf-16-le, Node's utf16le): NUL in every other byte
-        enc = "utf-16-le" if data[1::2].count(0) > len(data) // 4 else "utf-16-be" if data[::2].count(0) > len(data) // 4 else None
+        odd, even = data[1::2], data[::2]  # a quarter of those positions: ASCII-light text (CJK notes) still qualifies
+        enc = "utf-16-le" if odd.count(0) > len(odd) // 4 else "utf-16-be" if even.count(0) > len(even) // 4 else None
     return data.decode(enc or "utf-8", "replace")
 
 
