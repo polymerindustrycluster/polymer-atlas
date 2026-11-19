@@ -8,7 +8,7 @@ source "$S/push_guard.sh"
 BR=$(gh pr view "$PR" --json headRefName --jq .headRefName)
 guard_pr_push "$PR" "$AH:refs/heads/$BR"
 git fetch -q origin main "+refs/pull/$PR/head:refs/remotes/pr/$PR"
-H=$(git rev-parse "pr/$PR")
+H=$(git rev-parse "refs/remotes/pr/$PR^{commit}")
 W=$(mktemp -d); rmdir "$W"
 trap 'git -C "$R" worktree remove --force "$W" 2>/dev/null || true' EXIT
 if git merge-base --is-ancestor origin/main "$H"; then NEW=$H
