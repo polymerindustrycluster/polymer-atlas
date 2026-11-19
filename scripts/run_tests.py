@@ -15,6 +15,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import unittest
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -40,19 +41,27 @@ def main():
         print("\n".join(map(str, loader.errors)))
         print(f"run_tests: {len(loader.errors)} test modules failed to import")
         return 1
-    units = {}  # unit -> test ids: one test of a parallel_safe class, else a whole class
+    whole, safe = {}, []  # whole classes by name; tests of parallel_safe classes, dealt out one by one
     for t in found:
         cls = type(t)
-        units.setdefault(t.id() if getattr(cls, "parallel_safe", False) else f"{cls.__module__}.{cls.__qualname__}", []).append(t.id())
+        if getattr(cls, "parallel_safe", False):
+            safe.append(t.id())
+        else:
+            whole.setdefault(f"{cls.__module__}.{cls.__qualname__}", []).append(t.id())
     shards = [[] for _ in range(jobs)]
-    for unit in sorted(units.values(), key=len, reverse=True):  # largest first, each to the lightest shard
+    for unit in sorted(whole.values(), key=len, reverse=True):  # largest first, each to the lightest shard
         min(shards, key=len).extend(unit)
+    for i, tid in enumerate(safe):  # the slow validator tests: an equal share per shard, whatever the class counts
+        shards[i % jobs].append(tid)
     shards = [s for s in shards if s]
     ids = [i for s in shards for i in s]
     assert len(ids) == len(set(ids)) == len(found), "every discovered test must be in exactly one shard"
 
     def run(shard):
-        return subprocess.run([sys.executable, "-m", "unittest", *shard], cwd=HERE, capture_output=True, text=True)
+        t0 = time.monotonic()
+        r = subprocess.run([sys.executable, "-m", "unittest", *shard], cwd=HERE, capture_output=True, text=True)
+        r.elapsed = time.monotonic() - t0
+        return r
 
     with ThreadPoolExecutor(len(shards)) as ex:
         results = list(ex.map(run, shards))
@@ -64,7 +73,7 @@ def main():
             failed += 1
             print(f"--- shard {n} of {len(shards)} FAILED (exit {r.returncode}) ---\n{r.stdout}{r.stderr}")
         else:
-            print(f"shard {n}: {r.stderr.strip().splitlines()[-1]} ({m.group(0)})")
+            print(f"shard {n}: {r.stderr.strip().splitlines()[-1]} ({m.group(0)}, {r.elapsed:.0f} s)")
     print(f"run_tests: {len(ids)} tests discovered, {ran} run in {len(shards)} shards, {failed} shards failed")
     return 1 if failed or ran != len(ids) else 0
 
