@@ -70,3 +70,13 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   in `tasks/owner-rulings-2026-11-18/README.md`. The PPP "Strict matches" ruling of 2026-11-16 is recorded as SCHEMA
   v1.13.3 (§1 R13).
 - **Decided by:** the repo owner, in session, 2026-11-18, as multiple choice.
+
+## 2026-11-19: an old commit with person names stays in main's history
+
+- **Decision:** main's history is not rewritten to remove commit 3b30b2f. PR #252 landed as a merge commit, so its
+  first commit, which stored about ten speakers' names in a drop list before a later commit replaced them with
+  hashes, is reachable from main. The names were on public speaker pages, and no current file holds them.
+- **Why:** a rewrite of main breaks every clone and open branch while several sessions merge daily, for names that
+  were already public. Since 2026-11-17 such branches land by squash (entry above), which keeps the case from recurring.
+- **Decided by:** the repo owner, in session, 2026-11-18, as multiple choice ("Leave it"). Detail:
+  `tasks/owner-rulings-2026-11-18c/README.md` item 3.
