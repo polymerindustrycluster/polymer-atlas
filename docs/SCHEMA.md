@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.16 — 2026-11-18 (§3.1 gains `rubber_molding_transfer` and `composites_spray_up` — owner ruling 2026-11-18b item 2, `tasks/owner-rulings-2026-11-18b/README.md`).
+**Version:** v1.16.2 — 2026-11-19 (§4.12.1 worked seams 4–7: a branded plastics sector show, tire-trade shows, corrosion-and-coatings shows, and composites-centered and UV/EB-curing shows qualify; the Geosynthetics Conference does not — owner rulings 2026-11-19, `tasks/owner-rulings-2026-11-19/README.md`).
+Previous: v1.16 — 2026-11-18 (§3.1 gains `rubber_molding_transfer` and `composites_spray_up` — owner ruling 2026-11-18b item 2, `tasks/owner-rulings-2026-11-18b/README.md`).
 Previous: v1.15.1 — 2026-11-18 (§4.11 prong (b) extends to `training` rows whose own description says they teach plastics or polymer processing — owner ruling 2026-11-18).
 Previous: v1.15 — 2026-11-18 (§4.9 people `status` (`active` | `deceased`) and `status_date`, validator V-64; §1 P2b / V-62 widened to `?unid=<id>` and `researchdirectory.uc.edu/p/<shortname>` — owner rulings 2026-11-18b items 3 and 6, `tasks/owner-rulings-2026-11-18b/README.md`).
 Previous: v1.14 — 2026-11-18 (§4.23 IPEDS completions reference layer: three generated tables from the federal IPEDS completions series, moved from polymer-programs-db under the owner ruling of 2026-11-18, "Into the Atlas"; validator V-63).
@@ -1448,6 +1449,23 @@ nothing: the test reads the event's subject, not its roster.
    there is nothing to seed. MD&M West's primary subject is medical
    design & manufacturing, with plastics one sector among several —
    the polymer-corner case, which prong (a) excludes.
+4. **EXPOPLAST (ADM Montréal, Informa Markets) — IN** (owner ruling
+   2026-11-19). A separately branded plastics sector show inside a
+   multi-sector manufacturing event is its own series; the parent event
+   is not seeded. Seam 3 is unchanged: Plastec West no longer runs as a
+   separately branded show, so there is still nothing to seed.
+5. **Tire-trade shows (The Tire Cologne, TyreXpo Asia) — IN** (owner
+   ruling 2026-11-19). Tires are rubber products: a show whose named
+   subject is tires qualifies, though its remit also takes in the tire
+   trade, workshop and aftermarket.
+6. **Corrosion-and-coatings shows (AMPP Annual Conference + Expo) — IN**
+   (owner ruling 2026-11-19). A show that names coatings as a
+   co-primary subject qualifies under the coatings ruling of
+   2026-10-30.
+7. **Composites-centered advanced-materials shows (Carbon Fiber, SAMPE
+   Japan Exhibition) and UV/EB curing of coatings, inks and adhesives
+   (RadTech) — IN; the Geosynthetics Conference — OUT** (owner rulings
+   2026-11-19).
 
 Borderline calls are logged in the inclusion log (Appendix A) with the
 prong cited; seams stay flagged until the owner rules — a seed row
@@ -3163,4 +3181,5 @@ unchanged.
 - **v1.15 — 2026-11-18 (owner rulings 2026-11-18b, items 3 and 6; `tasks/owner-rulings-2026-11-18b/README.md`).** (1) §1 P2b / V-62 is widened to `?unid=<id>` and `researchdirectory.uc.edu/p/<shortname>`; `fisid_<id>` is accepted. Applied in the same PR (`tasks/people-rulings-2026-11-18b/`): of the 9 `people.csv` rows the widened rule catches (3 `?unid=`, 6 UC `/p/`), 7 cite an identifier-free page with new evidence rows (EVD-396900 to EVD-396906) and 2 drop the identifier URL with no new evidence; the 13 `evidence_people` rows citing the UC form are never edited. `people.csv` changes only `public_profile_url`, `lab_url`, `sources` and `last_verified` on those rows. (2) §4.9 gains `status` and `status_date` (appended last in `people.csv`; validator V-64: `deceased` needs an ISO `status_date` and an affirmative (`supports_*`) `evidence_people` `liveness` row whose `claim_detail` starts `status=deceased`, observed on or after `status_date`); every existing row is blank. PERSON-000359 stays blank: no fetched page prints a dated death.
 - **v1.15.1 — 2026-11-18 (owner ruling 2026-11-18, "Yes, if the page states plastics processing").** §4.11 prong (b) also admits a `training` row whose own description says it teaches plastics or polymer processing (the meaning of the chosen option, not a literal phrase). Site-wide navigation and a bare process word do not qualify. Applied in `tasks/prong-b-training-2026-11-18/` (3 rows). No validator change: the inclusion rule is adjudicated, not machine-checked.
 - **v1.16 — 2026-11-18 (owner ruling 2026-11-18b item 2; `tasks/owner-rulings-2026-11-18b/README.md`).** §3.1 gains two process terms: `rubber_molding_transfer` (rubber transfer molding; beside `rubber_molding_compression`, and in the `rubber_molding` rollup) and `composites_spray_up` (spray-up open molding, distinct from `composites_hand_layup`). `scripts/validate.py` PROCESSES and `docs/schema/vocab.json` are updated. Applied in the same PR (`tasks/process-terms-2026-11-18b/`): `rubber_molding_transfer` unions into SITE-000562 `processes` (a tier C site; one `supports_C` evidence row, EVD-397200). SITE-000248 and the permit sites are untouched. No other data row changes.
+- **v1.16.2 — 2026-11-19 (owner rulings 2026-11-19; `tasks/owner-rulings-2026-11-19/README.md`).** §4.12.1 gains worked seams 4–7 (binding precedent): a separately branded plastics sector show inside a multi-sector event is its own series (EXPOPLAST at ADM Montréal; seam 3 unchanged); tire-trade shows qualify (tires are rubber products); a corrosion-and-coatings show that names coatings co-primary qualifies; composites-centered advanced-materials shows and UV/EB curing of coatings, inks and adhesives qualify; the Geosynthetics Conference does not. No field, vocabulary or validator change. Applied in `tasks/new-series-2026-11-19/` (27 series rows, EVT-000072 to EVT-000098).
 
