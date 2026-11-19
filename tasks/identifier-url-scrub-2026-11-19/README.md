@@ -57,7 +57,7 @@ One of the 51 is a single-quoted URL in `tasks/people-settle-2-2026-11-06/lanes/
 not split on quotes, so the guard extracts URLs itself.
 
 ## Checks
-- `python3 -I tasks/identifier-url-scrub-2026-11-19/scrub.py --selftest`: 9 cases. They include placeholders, `fisid_`
+- `python3 -I tasks/identifier-url-scrub-2026-11-19/scrub.py --selftest`: 11 cases. They include placeholders, `fisid_`
   and SCHEMA prose that must stay, and since review r1 a table pipe, a fragment, and a UC host inside another site's
   path.
 - `python3 -I tasks/identifier-url-scrub-2026-11-19/scrub.py`: the dry run now reports 0 sites. `--apply` refuses to

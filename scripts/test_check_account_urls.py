@@ -44,6 +44,11 @@ class TestFindings(unittest.TestCase):
             "https://www.example.org/last,first?unid=jq9",
             "https://www.example.org/\\x7ejq9",
             "https://www.example.org/login?next=" + quote(UC + "smithjq", safe=""),
+            # Codex r3: a bracketed query filter, an apostrophe in the path, a bare IPv4 host; Gemini r3: JSON \n
+            'ORG-1,"https://www.example.org/list?filter[kind]=staff&unid=jq9",2026-11-19',
+            "https://www.example.org/o'brien/profile?u=jq9",
+            "192.0.2.7/profile?u=jq9",
+            '{"note": "see\\nresearchdirectory.uc.edu/p/' 'smithjq"}',
         ):
             self.assertEqual(findings(line), [1], line)
 
@@ -65,6 +70,14 @@ class TestFindings(unittest.TestCase):
     def test_reads_utf16_by_bom(self):  # Codex r2: a UTF-16 export was decoded as UTF-8 and passed
         for enc in ("utf-16", "utf-8-sig", "utf-32"):
             self.assertEqual(findings(read("url\nhttps://www.example.org/?u=jq9\n".encode(enc))), [2], enc)
+
+    def test_reads_utf16_without_bom(self):  # Codex r3: Python's utf-16-le and Node's utf16le write no BOM
+        for enc in ("utf-16-le", "utf-16-be"):
+            self.assertEqual(findings(read("url\nhttps://www.example.org/?u=jq9\n".encode(enc))), [2], enc)
+
+    def test_html_base_href(self):  # Codex r3: a root-relative link under <base href> on the UC directory
+        page = '<base href="https://researchdirectory.uc.edu/">\n<a href="/p/' 'smithjq">profile</a>\n<a href="/about">x</a>'
+        self.assertEqual(findings(page), [2])
 
     def test_reports_line_numbers(self):
         self.assertEqual(findings("ok\nhttps://www.example.org/~jq9\nok\n?u=x https://a.example.org/?u=jq1"), [2, 4])
