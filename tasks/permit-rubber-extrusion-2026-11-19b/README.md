@@ -28,7 +28,7 @@ Printed `302 Conwell Ave.` against Atlas `302 S. Conwell Ave`: a direction word 
 
 | Ref | proc_unknown | share of 794 |
 |---|---|---|
-| merge-base c96d4699 (origin/main, PR #402 merged) | **322** | 40.6% |
+| merge-base 1642a476 (origin/main, PRs #402 and #404 merged) | **322** | 40.6% |
 | HEAD of this branch | **322** | 40.6% |
 
 `proc_unknown` does not move, as expected: the one new row is a `site_capabilities` row (SITE-000264 `extrusion`) and no `processes` cell changes. `mkt_unknown` (316) and `band_unknown` (443) are unchanged.
