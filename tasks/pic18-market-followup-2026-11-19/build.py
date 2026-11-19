@@ -26,8 +26,7 @@ import frame as F  # the frame is recomputed from the merged batches' verdicts (
 FRAME = F.frame()
 assert len(FRAME) == F.EXPECTED, ('frame count changed', len(FRAME))
 OWNER_M2 = {F.MYRAVA}  # owner ruling M2: the do-not-promote note caps the tier only
-SUBJECTS = {r['org_id']: dict(names=[n.strip() for n in r['names'].split(';')], mode=r.get('mode') or 'quote', slug=r.get('url_slug') or '')
-            for r in csv.DictReader((HERE / 'subjects.csv').open())} if (HERE / 'subjects.csv').exists() else {}
+SUBJECTS = {r['org_id']: [n.strip() for n in r['names'].split(';')] for r in csv.DictReader((HERE / 'subjects.csv').open())} if (HERE / 'subjects.csv').exists() else {}
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(MKT3))  # witness_class is reused from MKT3, not copied
 from shard_io import append_sorted
