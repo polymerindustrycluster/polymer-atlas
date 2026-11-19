@@ -19,7 +19,7 @@ MKT3 = ROOT / 'tasks/pic18-markets-3-2026-11-16'
 STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist')
 CORPUS, LIVE = STORE / 'pic18-corpus-2026-11-16', STORE / 'pic18-market-followup-2026-11-19'
 SNAPSHOT = STORE / 'pic18-markets-3/manifest.snapshot.csv'
-BASE = 'ec7e19be'  # merge-base this packet was built on; backups, row-count asserts and the new-ID check use it
+BASE = '55ab601a'  # merge-base this packet was built on; backups, row-count asserts and the new-ID check use it
 FIRST_ID, LAST_ID = 397377, 397476  # owner ruling 2026-11-19 E1: one above the maximum evidence ID across data/evidence_*.csv at the base (EVD-397376)
 BATCH = 'followup'
 import frame as F  # the frame is recomputed from the merged batches' verdicts (check.py compares it with the ruling's ID list)

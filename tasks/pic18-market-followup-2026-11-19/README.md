@@ -50,8 +50,8 @@ Term notes. `rail_transportation` for "Locomotive, Transit" and `general_industr
 ## Writes (rule 13) and outcome check
 
 - Only `markets_served` changes, on 4 organization rows, each blank at base: `data/organizations_OH.csv` and `data/organizations_INTL.csv`. 7 evidence rows appended to the matching `evidence_organizations_*.csv`. `check.py` compares every data file with the base and requires each applied row's tier unchanged (Myrava stays tier C).
-- Publish order: evidence shards, then organization shards, each staged, verified against the base row counts and replaced atomically; backups are written from `git show ec7e19be:<file>` into `pre-application-batchfollowup-ec7e19be` with sha256 recorded and verified (batch 2's hardened `build.py`).
-- Outcome: `python3 S/harness/pic18_unknown.py "$PWD" <ref>` (unit: PIC-18 organization rows, 794). At merge-base `ec7e19be`: `mkt_unknown=319`. At HEAD: `mkt_unknown=315`. **It fell by exactly 4, the number of organizations applied.**
+- Publish order: evidence shards, then organization shards, each staged, verified against the base row counts and replaced atomically; backups are written from `git show 55ab601a:<file>` into `pre-application-batchfollowup-55ab601a` with sha256 recorded and verified (batch 2's hardened `build.py`).
+- Outcome: `python3 S/harness/pic18_unknown.py "$PWD" <ref>` (unit: PIC-18 organization rows, 794). At merge-base `55ab601a`: `mkt_unknown=319`. At HEAD: `mkt_unknown=315`. **It fell by exactly 4, the number of organizations applied.**
 
 ## Live fetches (rule 14)
 
