@@ -514,6 +514,8 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [x] `done 2026-11-16` #342 Census ZIPs: 348 blank site ZIPs filled of 473 blank in the 5,631-row frame, 125 held; SCHEMA v1.13.2 reference-normalization exemption; changed sites A 54 / B 223 / C 63 / U 8.
 - [x] `done 2026-11-16` #335 SAM entity scout (packet only, 0 canonical rows): 911,820 source rows → 911,352 indexed rows / 903,667 UEIs after excluding 466 D&B and 2 undated rows.
 - [x] `done 2026-11-16` #355 SAM UEI links: +472 organization UEI links in registry_links.csv from 595 exact pairs; 123 held.
+- [ ] `in-pr:claude-code 2026-11-19` **Wrong LEI links: 3 removed** (Vertex ORG-000174, Custom Molded Products ORG-000780, Delco ORG-001383). Each pointed at a same-name company in another state; codex and Antigravity both SOUND. `tasks/lei-link-removals-2026-11-19/README.md`.
+  - **Still open:** Sterilite ORG-001384 (the LEI is the parent's; owner ruling on parent LEIs) and LyondellBasell ORG-000735 (unclear).
 - [x] `done 2026-11-16` #359 Merge train 1 (8 approved PRs; 910 cells, identical to the union of the members):
   - [x] `done 2026-11-16` #353 23 PIC-18 site street addresses filled (23 evidence rows, EVD-385000–385022; sites A 9 / B 7 / C 7); 150 sites held.
   - [x] `done 2026-11-16` #350 234 navigation cells on 176 PIC-18 organization rows: 25 LinkedIn, 162 newsroom, 47 feed URLs.
