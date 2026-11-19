@@ -1,0 +1,90 @@
+org_id,legal_name,lei,lei_legal_name,failed_gate
+ORG-000008,Struktol Company of America LLC,5493006LKGW40SX2IX80,"STRUKTOL COMPANY OF AMERICA, LLC",HELD: Struktol: GLEIF's 2009-01-01 replaced a placeholder in 2022 and may be year-only; LLC organized fresh or by conversion is unknown (grok: DOUBT; Muse: unclear)
+ORG-000030,"Piedmont Plastics, Inc.",549300NVGY7UYWAVG334,Piedmont Plastics Inc.,LEI entity status INACTIVE
+ORG-000054,"Americhem, Inc.",549300DP3DMYKBI32E81,"AMERICHEM, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000088,"PPG Industries, Inc.",549300BKPEP01R3V6C59,"PPG INDUSTRIES, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000102,Alpha Technologies,549300LXV4YNDF67JD48,ALPHA TECHNOLOGIES,"LEI entity registered outside the US (BE, jurisdiction BE)"
+ORG-000133,Oatey Co.,549300PN80VSLE8B1404,Oatey Co.,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000153,Moen Incorporated,549300QH0VXON201H732,MOEN INCORPORATED,"LEI address (WILMINGTON, US-DE; HQ WILMINGTON, US-DE) does not match the organization's HQ (North Olmsted, OH)"
+ORG-000174,"Vertex, Inc.",549300QMYW171MP1PL50,"VERTEX, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000185,"anyseals, Inc.",967600GTAQSKJKN93612,ANYSEALS,"LEI entity registered outside the US (BE, jurisdiction BE)"
+ORG-000186,SKF USA Inc.,549300FFDPJBTPFZWC97,SKF USA INC.,"LEI address (WILMINGTON, US-DE; HQ Gothenburg, SE-O) does not match the organization's HQ (, )"
+ORG-000190,Clark Rubber & Plastics Co.,254900J2E9WR0Q5QAL72,CLARK RUBBER & PLASTIC COMPANY,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000214,"Advanced Poly-Packaging, Inc.",2549004PLZNFT05VSB07,"Advanced Poly-Packaging, Inc.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000236,"Associated Materials, LLC",L0IO023097HXBMIC5V59,"ASSOCIATED MATERIALS, LLC",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000245,Luxium Solutions,529900T6KXIKJAYN4604,LUXIUM SOLUTIONS,"LEI entity registered outside the US (FR, jurisdiction FR)"
+ORG-000297,"Dar-Tech, Inc.",549300C3G8WE7I1R2A42,"Dar-Tech, Inc.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000306,Dinesol Plastics Inc,254900FTTKA5Q04WS947,"DINESOL PLASTICS, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000317,"Duramax Marine, LLC",549300LE8GNTMLA7Y130,"Duramax Marine, LLC",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000340,"Flambeau, Inc.",549300EZD5TB8DY82627,"Flambeau, Inc.",no entity.creationDate in the LEI record
+ORG-000366,"The HC Companies, Inc.",549300VO3ZOZ9G736349,"The HC Companies, Inc.",no entity.creationDate in the LEI record
+ORG-000372,Huntsman Corporation,5299000V56320A7RIQ67,HUNTSMAN CORPORATION,"LEI address (WILMINGTON, US-DE; HQ WILMINGTON, US-DE) does not match the organization's HQ (The Woodlands, TX)"
+ORG-000375,"Imperial Plastics, Inc.",5493006294IG6L5HPU40,"Imperial Plastics, Incorporated",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000386,"Iten Industries, Inc.",549300MZHKIB372GAH80,"Iten Industries, Inc.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000428,The Malish Corporation,54930062SPBLBV8VNN12,THE MALISH CORPORATION,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000430,Mar-Bal Inc.,549300X205S154UQZ886,"MAR-BAL, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000431,"Mercury Plastics, Inc.",549300DULJ6D3LLRLA89,"MERCURY PLASTICS, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000445,Miller Weldmaster Corporation,549300D1C5JIFF71VK94,MILLER WELDMASTER CORPORATION,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000457,National Polymer,335800VZEGFVO2G1KD35,NATIONAL POLYMER,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000480,"Palmer Holland, Inc",5493001TZNDE1K4AWS12,"PALMER HOLLAND, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000531,Q-Lab Corporation,JVMWMO6NGGVFIZT8IK35,Q-LAB CORPORATION,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000566,Sealed Air Corporation,Q0M0CZB4YN6JZ65WXI09,SEALED AIR CORPORATION,"LEI address (WILMINGTON, US-DE; HQ Wilmington, US-DE) does not match the organization's HQ (Charlotte, NC)"
+ORG-000569,"Shin-Etsu Silicones of America, Inc.",549300S0H5LEU2T3I109,"Shin-Etsu Silicones of America, Inc.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000572,"Silco, Inc.",2549008RMOGYK1WAF255,"SILCO, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000574,SMC Ltd.,549300PFORJVOWOUOT35,SMC LTD.,"LEI address (DEVENS, US-MA; HQ Devens, US-MA) does not match the organization's HQ (Twinsburg, OH)"
+ORG-000588,"Steere Enterprises, Inc.",5493009KBRKYGH5LKP32,"Steere Enterprises, Inc.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000600,Technoform,335800KHR87HBN4EDO21,TECHNOFORM,"LEI entity registered outside the US (IN, jurisdiction IN)"
+ORG-000625,"Venture Plastics, Inc.",549300AQWI3CI3GNBN31,"Venture Plastics, Inc.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000628,Wacker Chemical Corporation,529900EA8GT94KZ3KS25,Wacker Chemical Corporation,"LEI address (Wilmington, US-DE; HQ Adrian, US-MI) does not match the organization's HQ (North Canton, OH)"
+ORG-000664,ALPLA Inc.,549300GL8XWPNYKSXX74,ALPLA INC.,"LEI address (PEACHTREE CORNERS, US-GA; HQ McDonough, US-GA) does not match the organization's HQ (Lima, OH)"
+ORG-000686,Atalys,969500H6VKEP2SQYO504,ATALYS,"LEI entity registered outside the US (FR, jurisdiction FR)"
+ORG-000698,BASF Corporation,549300HKQQ9XYFEUZM13,BASF CORPORATION,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000720,Capital Resin Corporation,254900KYXCMJ7W8D8472,Capital Resin Corporation,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000735,LyondellBasell Advanced Polymers Inc.,5493004OGK9A7CGV3B42,LYONDELLBASELL ADVANCED POLYMERS INC.,"LEI address (WILMINGTON, US-DE; HQ Houston, US-TX) does not match the organization's HQ (Perrysburg, OH)"
+ORG-000745,Composites One LLC,549300BEU3HP0LB8IK76,Composites One LLC,"LEI address (Bristol, US-RI; HQ Bristol, US-RI) does not match the organization's HQ (Dublin, OH)"
+ORG-000761,Covestro LLC,549300O81PSVISQHM512,COVESTRO LLC,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000769,Creative Foam Corporation,549300567XGXTX27T062,Creative Foam Corporation,no entity.creationDate in the LEI record
+ORG-000777,"CTL Aerospace, Inc.",254900ZDFA99KHDVWS11,"CTL-Aerospace, Inc.",no entity.creationDate in the LEI record
+ORG-000780,"Custom Molded Products, LLC",549300PFONU4YY4GYS55,"Custom Molded Products, LLC","LEI address (Wilmington, US-DE; HQ Newnan, US-GA) does not match the organization's HQ (Wilmington, OH)"
+ORG-000793,Dimex LLC,549300S6KMFILE0Q7U23,DIMEX LLC,no entity.creationDate in the LEI record
+ORG-000853,"FXI, Inc.",549300YQV7UTT2LYDU93,"FXI, Inc.","LEI address (Wilmington, US-DE; HQ Media, US-PA) does not match the organization's HQ (Spencerville, OH)"
+ORG-000878,"HBD Industries, Inc.",549300MX21RN38T36K23,"HBD INDUSTRIES, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000880,Hexion Inc.,54930030FZF8HYAEHM46,HEXION INC.,"HELD: Hexion: the 10-Ks say 'a New Jersey corporation with predecessors dating from 1899'; that the 1899 Borden charter is this same corporation rests on unverified sources (codex and Antigravity: DOUBT, 2026-11-19 re-review)"
+ORG-000881,HFI LLC,R2WNDPIXVURVZR5I8G46,"HFI, LLC","LEI address (Wilmington, US-DE; HQ Wilmington, US-DE) does not match the organization's HQ (Canal Winchester, OH)"
+ORG-000897,Integris Composites,9695001Y23K8YUM4OP45,INTEGRIS COMPOSITES,"LEI entity registered outside the US (FR, jurisdiction FR)"
+ORG-000911,Johns Manville,549300VUEYP59S5CFZ81,Johns Manville,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000925,Kraton Corporation,549300UKP7HNTB21X136,KRATON CORPORATION,"HELD: Kraton: the LEI was renamed from Kraton Polymers LLC to Kraton Corporation (2023); the 10-K says the corporation was incorporated in 2009, succeeding a 2003 LLC (codex refute 2026-11-19)"
+ORG-000939,Magnum Magnetics Corporation,549300F2BLLRKFC4JO21,MAGNUM MAGNETICS CORPORATION,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000949,Maverick Corporation,2549009SAOCHWB45PX78,Maverick Corporation,"LEI entity registered outside the US (KY, jurisdiction KY)"
+ORG-000961,Milacron LLC,E7W7YO04IPLYNSFL9C88,MILACRON LLC,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000965,Molten North America Corporation,549300RM25BXTF73R043,Molten (North America) Corporation,"LEI address (COLUMBUS, US-OH; HQ Cleveland, US-OH) does not match the organization's HQ (Findlay, OH)"
+ORG-000967,"Moore Industries, Inc.",549300FF0467C5J3K620,"Moore Industries, Inc.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001012,Pella Corporation,254900MBM46CKZBHGZ79,Pella Corporation,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001022,"Plas-Tanks Industries, Inc.",25490066A4XBDBLOPA89,"PLAS-TANKS INDUSTRIES, INC.",no entity.creationDate in the LEI record
+ORG-001024,"Plaskolite, Inc.",549300EUA1W4GM6RVD72,"Plaskolite, Inc.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001033,"Plastipak Packaging, Inc.",549300Y39ISK7CP7EO21,"Plastipak Packaging, Inc.","LEI address (WILMINGTON, US-DE; HQ Plymouth, US-MI) does not match the organization's HQ (Medina, OH)"
+ORG-001044,"Custom Foam Products, Inc.",254900CYC6SAB1QAHG16,CUSTOM FOAM PRODUCTS INC.,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001048,"Primary Packaging, Inc.",254900ANRN7MYMZU4X25,"Primary Packaging, Incorporated",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001080,Ridge Corporation,549300FTOLN3EVCFSS85,RIDGE CORPORATION,"LEI address (GALENA, US-OH; HQ GALENA, US-OH) does not match the organization's HQ (Pataskala, OH)"
+ORG-001088,Roppe Holding Company,254900PE9AV4CHXTBI35,ROPPE HOLDING COMPANY,"LEI address (WILMINGTON, US-DE; HQ WILMINGTON, US-DE) does not match the organization's HQ (Fostoria, OH)"
+ORG-001090,Rowmark LLC,549300SNI04SZR5WG656,Rowmark LLC,"LEI address (Wilmington, US-DE; HQ Dover, US-DE) does not match the organization's HQ (Findlay, OH)"
+ORG-001110,The Shepherd Color Company,549300OO4KBUCRO7N651,THE SHEPHERD COLOR COMPANY,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001114,Sika Corporation,549300IHB83C2S4MGH72,Sika Corporation,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001128,"Storopack, Inc.",549300UCYIXHJ7CBMB49,"Storopack, Inc.","LEI address (Wilmington, US-DE; HQ Wilmington, US-DE) does not match the organization's HQ (Cincinnati, OH)"
+ORG-001184,"Vernay Laboratories, Inc.",549300VU413VKW4H3U03,"VERNAY LABORATORIES, INC.","LEI address (COLUMBUS, US-OH; HQ College Park, US-GA) does not match the organization's HQ (Yellow Springs, OH)"
+ORG-001205,YUSA Corporation,549300H4IXAKW8ZNFP71,YUSA Corporation,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001338,"Big Chief, Inc.",9845000859A1E3A38D20,Big Chief INC,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001340,French Oil Mill Machinery Company,254900TZUR0U3JZX1N45,The French Oil Mill Machinery Company,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001383,"Delco, LLC",5493008QN54WVMZHGF61,Delco LLC,"LEI address (Willingboro, US-NJ; HQ Willingboro, US-NJ) does not match the organization's HQ (Akron, OH)"
+ORG-001384,Sterilite Corporation,549300MEX0ZT317DLX14,Sterilite Corporation,"LEI address (Townsend, US-MA; HQ Townsend, US-MA) does not match the organization's HQ (Massillon, OH)"
+ORG-001399,Adient US LLC,213800SOTRCDGZUHL712,ADIENT US LLC,"LEI address (PLYMOUTH, US-MI; HQ PLYMOUTH, US-MI) does not match the organization's HQ (Greenfield, OH)"
+ORG-001404,"Deflecto, LLC",549300GYVSBOJMNL3566,"DEFLECTO, LLC","LEI address (DOVER, US-DE; HQ Chicago, US-IL) does not match the organization's HQ (Indianapolis, IN)"
+ORG-001422,Elster Perfection Corporation,5493008KYEMVZUEO4X96,ELSTER PERFECTION CORPORATION,"LEI address (WILMINGTON, None; HQ COLUMBUS, None) does not match the organization's HQ (Geneva, OH)"
+ORG-001423,ABC Technologies Inc.,5493001F3JRVFSNAPG47,ABC TECHNOLOGIES INC.,"LEI entity registered outside the US (CA, jurisdiction CA-ON)"
+ORG-001425,Cooper Tire & Rubber Company,DE46ECQ8KH195MRIQN56,COOPER TIRE & RUBBER COMPANY,no entity.creationDate in the LEI record
+ORG-001429,"Nexeo Plastics, LLC",549300OIY52G9INE2T98,"NEXEO PLASTICS, LLC","LEI address (WILMINGTON, US-DE; HQ SPRING, US-TX) does not match the organization's HQ (The Woodlands, TX)"
+ORG-001459,RFD Beaufort Inc.,5493000P874LB4Z5K384,RFD Beaufort Inc.,"LEI address (Wilmington, US-DE; HQ Wilmington, US-DE) does not match the organization's HQ (Sharon Center, OH)"
+ORG-001466,Henkel Corporation,549300H8L0V8O2825A57,HENKEL CORPORATION,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-001471,MSI Express Inc,254900HX50E22OG6NT36,"MSI EXPRESS, INC.","LEI address (NEWCOMERSTOWN, US-OH; HQ PORTAGE, US-IN) does not match the organization's HQ (Groveport, OH)"
+ORG-001481,ACE Innovations,335800I5O5OOL4LQVJ68,ACE INNOVATIONS,"LEI entity registered outside the US (IN, jurisdiction IN)"
+ORG-001491,The Gorilla Glue Company,549300LNPC7PLON68X81,THE GORILLA GLUE COMPANY,"LEI address (CINCINNATI, US-OH; HQ Cincinnati, US-OH) does not match the organization's HQ (Sharonville, OH)"

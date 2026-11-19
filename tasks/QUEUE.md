@@ -214,6 +214,8 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
 
 ## programs-db crosswalk + census-gap researcher wave (2026-11-03)
 
+- [ ] `in-pr:claude-code 2026-11-19` **year_founded from GLEIF (mechanical):** 25 fills (both-families SOUND; 7 added after the 2026-11-19 owner ruling on formation year) from LEI entity.creationDate under strict gates; 89 links not used, incl. a link-findings list of possible wrong LEI links (e.g. Vertex, Inc.). `tasks/gleif-founded-2026-11-19/README.md`.
+
 - [x] `done 2026-11-18 (#394)` **IPEDS phase 2, US non-degree credentials -> programs.csv (owner ruling 2026-11-18):** 2 program rows (Ferris Plastics Institute, Rubber Division self-paced rubber technology); 27 of 29 dispositioned, 10 already held. Owner question: polymer-process training not polymer by name (RJG Master Molder x3, Paulson ProMolder 1). Global programs, society chapters and aliases stay private (owner ruling 2026-11-18). `tasks/credentials-programs-2026-11-18/README.md`.
 - [x] `done 2026-11-18 (#395)` **SCHEMA v1.15.1, prong (b) for plastics-processing training (owner ruling 2026-11-18, "Yes, if the page states plastics processing"):** Master Molder I and II (RJG), Paulson ProMolder 1; RJG Train the Trainer held (no plastics wording in its own description). Ruling applies to `training` rows; the meaning, not a literal phrase. `tasks/prong-b-training-2026-11-18/README.md`. — merged PR #395 (2026-11-18, 01414bce): PROG-000352–354.
 
