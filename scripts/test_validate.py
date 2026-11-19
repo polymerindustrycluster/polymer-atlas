@@ -32,6 +32,8 @@ def run_validator(data_dir, *args):
 
 
 class ValidatorMutationTests(unittest.TestCase):
+    parallel_safe = True  # scripts/run_tests.py may split this class: each test copies data/ to its own temp dir
+
     @classmethod
     def setUpClass(cls):
         cls.tmp = tempfile.TemporaryDirectory()
