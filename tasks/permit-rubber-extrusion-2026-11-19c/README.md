@@ -28,7 +28,7 @@ Printed `302 Conwell Ave.` against Atlas `302 S. Conwell Ave`: a direction word 
 
 | Ref | proc_unknown | share of 794 |
 |---|---|---|
-| merge-base 1642a476 (origin/main, PRs #402 and #404 merged) | **322** | 40.6% |
+| merge-base 677c1803 (origin/main, PRs #402, #404 and #409 merged) | **322** | 40.6% |
 | HEAD of this branch | **322** | 40.6% |
 
 `proc_unknown` does not move, as expected: the one new row is a `site_capabilities` row (SITE-000264 `extrusion`) and no `processes` cell changes. `mkt_unknown` (316) and `band_unknown` (443) are unchanged.
@@ -44,6 +44,6 @@ Printed `302 Conwell Ave.` against Atlas `302 S. Conwell Ave`: a direction word 
 
 ## Checks
 
-`python3 tasks/permit-rubber-extrusion-2026-11-19c/build.py` recomputes everything and writes this README; `--apply` stages, verifies and replaces the shard atomically. `python3 tasks/permit-rubber-extrusion-2026-11-19c/check.py` reuses the #402 audits (frame, bind, expiry, witness position and field boundary, strength, route, manifest, written-row rebuild, applied state equals plan, data diff against the merge-base, privacy, interrupted-replay and unrelated-cell probes) and runs 35 injected defects, including: a `rubber_extrusion` row with any term other than `extrusion`; a second new row; a write to another cell, row or table; a capability id at or below the base maximum; SITE-000936 bound; and the #402 injections (quote not in its document, reordered quote, term not in §3.1, ancillary text, unbound site, `supports_C` in `processes` on tier A/B, expired permit above `supports_C`, Permit Description above `supports_C` or outside its field, a held pair written, falsified manifest, restored base, privacy, frame count).
+`python3 tasks/permit-rubber-extrusion-2026-11-19c/build.py` recomputes everything and writes this README; `--apply` stages, verifies and replaces the shard atomically. `python3 tasks/permit-rubber-extrusion-2026-11-19c/check.py` reuses the #402 audits (frame, bind, expiry, witness position and field boundary, strength, route, manifest, written-row rebuild, applied state equals plan, data diff against the merge-base, privacy, interrupted-replay and unrelated-cell probes) and runs 37 injected defects, including: a `rubber_extrusion` row with any term other than `extrusion`; a second new row; a write to another cell, row or table; a capability id at or below the base maximum; SITE-000936 bound; and the #402 injections (quote not in its document, reordered quote, term not in §3.1, ancillary text, unbound site, `supports_C` in `processes` on tier A/B, expired permit above `supports_C`, Permit Description above `supports_C` or outside its field, a held pair written, falsified manifest, restored base, privacy, frame count).
 
 Not checked: permits beyond the newest six documents per site; local-agency permits; whether the plant still runs the permitted equipment. A permit is a statement as of its issue date and never a status finding.

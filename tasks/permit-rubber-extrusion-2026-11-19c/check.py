@@ -12,7 +12,7 @@ WRITE = ("processes", "capability")
 REF_WRITE = ("SITE-000264", "1315096", "Renewal PTIO for banbury mixers, mills, calenders, mixing tanks, extruder, and rotocure used to fabricated rubber membrane products for liners and tanks.")
 SECTION_HEADING = "Permits for the following Emissions Unit(s) or groups of Emissions Units are in this document as indicated below:"
 PAIR_RULE = not os.environ.get("CHECK_DISABLE_PAIR_RULE")   # the env var exists only to show the pair injections go green without the rule
-EXPECTED_DEFECTS = 35   # README reads this number
+EXPECTED_DEFECTS = 37   # README reads this number
 
 def base_ref(): return B.git("merge-base", "HEAD", "origin/main").strip()
 def rd(text): return list(csv.DictReader(io.StringIO(text, newline="")))
@@ -86,6 +86,15 @@ def audit_written(now_files, props, sites, hashes):
         if not mine: continue
         want = build(props, hashes, sites, int(mine[0][key][4:]))
         if [dict(r) for r in mine] != want: v.append(("WRITTEN", f"{path}: the rows written differ from the rows rebuilt from proposals.csv"))
+    return v
+
+RECORD = "tasks/owner-rulings-2026-11-19c/README.md"; VERSION = "v1.16.3"
+def audit_collision(base_has_record, base_schema, now_schema):
+    """This PR's record path and SCHEMA version must not already exist on the merge-base (the 2026-11-19b collision with #409), and the version must be the one now in SCHEMA."""
+    v = []
+    if base_has_record: v.append(("COLLISION", f"{RECORD} already exists on the merge-base"))
+    if f"**Version:** {VERSION} " in base_schema or f"- **{VERSION} " in base_schema or f"Previous: {VERSION} " in base_schema: v.append(("COLLISION", f"SCHEMA {VERSION} is already on the merge-base"))
+    if not now_schema.startswith("") or f"**Version:** {VERSION} " not in "\n".join(now_schema.split("\n")[:8]): v.append(("COLLISION", f"SCHEMA's version line is not {VERSION}"))
     return v
 
 def audit_ids(new_ids, floor, what):
@@ -244,6 +253,9 @@ def main():
     assert [(p["site_id"], p["docid"], p["quote"]) for p in props if p["route"] in WRITE] == [REF_WRITE], "the one write is not the reviewed witness (independent reference)"
     inp4 = copy.deepcopy(inp); next(q for q in inp4["V"]["sites"]["SITE-000264"]["quotes"] if "rubber_extrusion" in q["terms"])["quote"] = "mills, calenders"
     assert B.compute(inp4)["viol"], "build.compute accepts a substituted quote for the authorized write"
+    base_has = bool(B.git("ls-tree", base_ref(), RECORD).strip()); base_schema = B.git("show", f"{base_ref()}:docs/SCHEMA.md"); now_schema = (ROOT / "docs/SCHEMA.md").read_text()
+    assert not audit_collision(base_has, base_schema, now_schema), audit_collision(base_has, base_schema, now_schema)
+    assert not B.git("diff", base_ref(), "--", "tasks/owner-rulings-2026-11-19b").strip(), "another session's tasks/owner-rulings-2026-11-19b must stay byte-identical to the merge-base"
     assert not audit_manifest(hashes, B.doc_text, inp["scr"]), audit_manifest(hashes, B.doc_text, inp["scr"])
     base = base_ref(); bf, nf = data_diff(base)
     ev_files = [f for f in B.git("ls-tree", "-r", "--name-only", base, "data/").split("\n") if re.match(r"data/evidence_.*\.csv", f)]
@@ -284,6 +296,7 @@ def main():
         elif kind == "written": got = audit_written(mut(copy.deepcopy(nf)), props, sites, hashes)
         elif kind == "complete": got = audit_complete(*mut(), props)
         elif kind == "manifest": got = audit_manifest(mut(copy.deepcopy(hashes)), B.doc_text, inp["scr"])
+        elif kind == "collision": got = audit_collision(*mut())
         elif kind == "ids": got = audit_ids(*mut())
         elif kind == "privacy": got = audit_privacy(mut(), names)
         assert any(g[0] == rule for g in got), f"injected defect {rule} was NOT caught: {got[:3]}"
@@ -349,6 +362,7 @@ def main():
              one("OWNER_HOLD", lambda P, S2: row(P, site_id="SITE-000248", term="coating_applying").update(route="processes")),
              one("COMPLETE", restore_base, "complete"), one("WRITTEN", fake_digest, "written"), one("MANIFEST", fake_manifest, "manifest"),
              one("PINNED", lambda P, S2: row(P, site_id="SITE-000264", term="rubber_extrusion").update(quote="mills, calenders")),   # Codex round 1: a real but wrong witness
+             one("COLLISION", lambda: (True, base_schema, now_schema), "collision"), one("COLLISION", lambda: (False, now_schema, now_schema), "collision"),
              one("CAP", other_term), one("BIND", site_936_bound), one("COMPLETE", second_row, "complete"), one("ROWS", other_table, "data"), one("FILE", other_file, "data"),
              one("ID", lambda: ([cap_base_max], cap_base_max, "capability"), "ids"),
              one("PRIVACY", lambda: {"README.md": "signed by " + sorted(sig)[0]}, "privacy"),
