@@ -38,16 +38,24 @@ norm = lambda s: re.sub(r"[^a-z]", "", (s or "").lower())
 # Integrator holds after review: a renamed or reorganized LEI may carry a predecessor entity's formation date.
 HOLD = {"ORG-000925": "Kraton: the LEI was renamed from Kraton Polymers LLC to Kraton Corporation (2023); the 10-K says the "
                       "corporation was incorporated in 2009, succeeding a 2003 LLC (codex refute 2026-11-19)",
-        # grok refute 2026-11-19: only rows BOTH families judged SOUND are applied
-        "ORG-000880": "Hexion: 1899-04-24 is the Borden Company New Jersey charter, an ancestor of the 2005 Hexion combination (grok: WRONG)",
-        "ORG-000007": "Vibrantz: a 2022 rebrand of a Prince/Chromaflo/Ferro combination; 2011 may be a prior vehicle; name history unchecked (grok: DOUBT)",
-        "ORG-000008": "Struktol: 2009-01-01 has the January-1 conversion pattern; name history unchecked (grok: DOUBT)",
-        "ORG-000142": "Nordson: 1935 is neither the 1909 predecessor nor the 1954 reorganization; needs a charter source (grok: DOUBT)",
-        "ORG-000451": "Molded Fiber Glass: 1946 against a usually stated 1948 start; needs a charter source (grok: DOUBT)",
-        "ORG-000844": "Flow Dry: 2006 Inc. date may be a wrapper over an older business; needs a charter source (grok: DOUBT)",
-        "ORG-000870": "H.B. Fuller: 1915 is a later charter date for an 1887 firm; needs a charter source (grok: DOUBT)",
-        "ORG-000931": "Lear: 1987 is the LBO-era Lear Seating vehicle; the record describes a plant while the LEI is the parent (grok: DOUBT)",
-        "ORG-001453": "Flow Polymers: 2010 is an ownership LLC date for an older business now under Arclin (grok: DOUBT)"}
+        # only rows BOTH families judged SOUND are applied (grok refute, then the re-review after the owner ruling below)
+        "ORG-000880": "Hexion: the 10-Ks say 'a New Jersey corporation with predecessors dating from 1899'; that the 1899 Borden "
+                      "charter is this same corporation rests on unverified sources (codex and Antigravity: DOUBT, 2026-11-19 re-review)",
+        "ORG-000008": "Struktol: GLEIF's 2009-01-01 replaced a placeholder in 2022 and may be year-only; LLC organized fresh or "
+                      "by conversion is unknown (grok: DOUBT; Muse: unclear)"}
+# Owner ruling 2026-11-19: year_founded is the legal entity's formation year even when the business is older or the
+# entity was later renamed; the older business year goes in the evidence note. Only facts re-read 2026-11-19 are noted.
+OLDER = {"ORG-000007": "Formed as PMHC II, Inc. (GLEIF previous legal name); renamed Vibrantz Technologies Inc. in 2022.",
+         "ORG-000142": "Formed as U. S. Automatic Corporation (GLEIF previous legal name).",
+         "ORG-000844": "Business older: \"Flow Dry Technology was established in 1946 in Dayton, Ohio under the name Stanhope "
+                       "Products.\" (https://www.flowdry.com/about-us/).",
+         "ORG-000870": "Business older: \"H.B. Fuller Company was founded in 1887 and incorporated as a Minnesota corporation "
+                       "in 1915.\" (FY2025 10-K, https://www.sec.gov/Archives/edgar/data/39368/000143774926001767/ful20251130_10k.htm).",
+         "ORG-000931": "Formed as Lear Seating Corporation (GLEIF previous legal name); the FY2025 10-K traces the business to "
+                       "American Metal Products and says it \"was incorporated in Delaware in 1987\" "
+                       "(https://www.sec.gov/Archives/edgar/data/842162/000084216226000011/lear-20251231.htm).",
+         "ORG-001453": "Business older: the LLC acquired the assets of Flow Polymers, Inc. on December 31, 2010 (company release, "
+                       "republished at inknowvation.com)."}
 
 
 def gate(org, ent):
@@ -104,7 +112,9 @@ def main():
             observed_date=DATE, tier_effect="supports_B", created_by=BY,
             notes=f"Legal-entity formation year per SCHEMA year_founded. Fetched {DATE}; raw copy "
                   f"tasks/gleif-founded-2026-11-19/raw/{l['registry_id']}.json. Gates: entity ACTIVE, US-registered, "
-                  f"legal or HQ address matches the organization's HQ city and state."))
+                  f"legal or HQ address matches the organization's HQ city and state."
+                  + (f" Owner ruling 2026-11-19 (formation year even when the business is older). {OLDER[l['org_id']]}"
+                     if l["org_id"] in OLDER else "")))
     with open(T / "link_findings.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=["org_id", "legal_name", "lei", "lei_legal_name", "failed_gate"], lineterminator="\n")
         w.writeheader(); w.writerows(findings)
