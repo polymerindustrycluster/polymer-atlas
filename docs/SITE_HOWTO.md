@@ -77,7 +77,7 @@ git push --force https://github.com/polymerindustrycluster/polymer-atlas gh-page
 Then, in the repository settings under Pages, choose "Deploy from a branch", branch `gh-pages`, folder `/ (root)`.
 The output includes a `.nojekyll` marker. The site will be at
 `https://polymerindustrycluster.github.io/polymer-atlas/`; all links are relative, so a project sub-path works.
-Automating this with a workflow would need the GitHub App's Workflows permission, which is not granted today.
+The `pages` workflow (`.github/workflows/pages.yml`, live since 2026-11-02) now builds and deploys the site on every push to `main`.
 
 **Option 2: Netlify drag-and-drop.** Run the build, then drag the `build/site` folder onto
 <https://app.netlify.com/drop>. With the Netlify CLI the equivalent is `netlify deploy --dir build/site --prod`.
