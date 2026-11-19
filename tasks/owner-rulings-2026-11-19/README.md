@@ -15,14 +15,18 @@ maximum and never fill a gap. On 2026-11-18, three merges used evidence IDs belo
 | #390 | dd07afc9 | 45 | EVD-396600 to 396645 (one ID unused) | EVD-397103 |
 | #393 | f35fb750 | 7 | EVD-396900 to 396906 | EVD-397103 |
 
-The IDs came from fixed ranges written into lane briefs. Another orchestration's merge (566eccb1) then raised the
-maximum to EVD-397103. None of the 56 IDs had appeared on main before (a `git log -G` search of the evidence shards).
+The IDs came from fixed ranges written into lane briefs. Another orchestration's merges then raised the maximum:
+#389 (0720cc06) added EVD-397000 to 397011, and #394 (8affaf98) raised it to EVD-397103. None of the 56 IDs had appeared on main before (a `git log -G` search of the evidence shards).
 
 - **Ruled:** the 56 rows stand as they are; evidence IDs are immutable. This record is the note of the deviation.
-- **Ruled:** a PR allocates its new evidence IDs from one above the maximum across all `data/evidence_*.csv` shards at
-  its final merge of `origin/main`. If the maximum has moved, it re-allocates through its build script in an ID-only
-  commit, and the reviewers check that commit with the IDs masked. Before each merge, the integrator checks that the
-  lowest new ID exceeds main's maximum. PRs #383, #396, #397 and #400 followed this rule.
+- **Ruled ("Next-free at merge"):** a PR allocates its new evidence IDs from one above the maximum across all
+  `data/evidence_*.csv` shards at its final merge of `origin/main`, re-allocating in an ID-only commit if the maximum
+  has moved; before each merge the integrator checks that the lowest new ID exceeds main's maximum.
+- Implementation methods used on individual PRs, not part of the ruling: regenerating the IDs with the PR's build
+  script, and reviewers checking the ID-only commit with the IDs masked.
+- Record since 2026-11-18: #383 (EVD-397116) and #400 (EVD-397369) started at the maximum plus one. #397 (EVD-397200,
+  maximum EVD-397117) and #396 (EVD-397300, maximum EVD-397200) started above the maximum and left gaps; they filled
+  none.
 - Not chosen: disjoint ID blocks for each concurrent orchestration.
 
 ## P1. Gel coat in open-molding spray-up (PR #400, SITE-000248)
@@ -51,10 +55,12 @@ These extend owner ruling 2026-11-18b item 1 (B-PERMIT, option b).
 
 - **M1, ruled:** a market claim on a group's website may be attributed to a subsidiary or division record only where
   the page names that subsidiary, its brand or its plant as the subject of the claim. A group-wide claim alone is not
-  attributable. The scale batches held 17 organization records whose only website is the group site:
+  attributable. The scale batches held 17 organization records in the hold class `group_or_redirect_attribution`:
   - batch 1: ORG-000036, ORG-000119, ORG-000169, ORG-000438, ORG-000606, ORG-000752, ORG-001447, ORG-001461,
     ORG-001462, ORG-001513;
   - batch 2: ORG-001534, ORG-001949, ORG-002038, ORG-002047, ORG-003196, ORG-003771, ORG-004022.
-  The holds are class `group_or_redirect_attribution` in each batch's `verdicts.csv`.
+  That class also holds records for other reasons. For 4 of the 17 the stored pages are not the record's own group
+  site: ORG-000036 (a directory of other manufacturers), ORG-000169 (another manufacturer's catalogue), and ORG-001461
+  and ORG-002038 (the stored pages name another entity). The rule applies only where a group site names the record.
 - **M2, ruled:** Myrava's (ORG-001558) note "do not promote above C without own-site check" caps the record's tier.
   It does not stop filling `markets_served` at tier C from a claim on the company's own site.
