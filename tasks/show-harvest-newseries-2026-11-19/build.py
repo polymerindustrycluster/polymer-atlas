@@ -16,10 +16,10 @@ tasks/show-harvest-w23-2026-11-18 and tasks/show-harvest-rulings-2026-11-19, app
 - the list's own edition year, with pre-show and partial notes;
 - attendee rows only from ATTENDEE_LISTS: organizer-published company lists for a named edition, checked on the
   banked page (owner rulings 2026-11-09 and 2026-11-18c);
-- CONTROLLER_HOLDS: listed forms that do not pin one legal entity (a bare group name whose Atlas record is the
-  group's US entity, or a generic name), binding that listed form at the event in every role and year. A listed
-  form naming the US entity itself ("Evonik Corporation") pins it and is not held. Every hold must match a
-  listing, so a mistyped hold fails the build;
+- CONTROLLER_HOLDS: listed names that do not pin one legal entity (a bare group name whose Atlas record is the
+  group's US entity, or a generic name), binding the name key at the event in every role and year, as in #404.
+  Every hold must match a listing, so a mistyped hold fails the build;
+- OWNER_PENDING: attendee lists that wait on an owner ruling mint nothing;
 - an international series (home_region, set from the organizer in #409) is held abroad: the conferences editions
   of these series mostly carry no country, and the wave 2-3 default of "US" would credit US companies with
   exhibiting in Sao Paulo or Queretaro.
@@ -55,35 +55,40 @@ BY = "claude-code show-harvest-newseries-2026-11-19"
 NEW_EVENTS = {f"EVT-{n:06d}" for n in range(72, 99)}  # seeded by PR #409
 ROLES = {"exhibitor", "sponsor", "speaker"}
 ATTENDEE_LISTS = {  # source_url -> (the one event it may mint for, the note every row from it carries)
-    "https://www.pcimag.com/coatings-conference/registered-companies": (
-        "EVT-000077", "Attendee: the organizer's \"final list of registered companies\" for the 2026 edition."),
     "https://greatlakescoatingsconference.com/attending/": (
-        "EVT-000082", "Attendee: the organizer's list \"Companies attended in 2025\"."),
+        "EVT-000082", "Attendee: the organizer's company list, titled \"Companies Attending\" and linked in its site menu "
+                      "as \"Companies attended in 2025\"."),
+}
+OWNER_PENDING = {  # attendee lists held for an owner ruling (AGENTS rule 9): url -> the question
+    "https://www.pcimag.com/coatings-conference/registered-companies":
+        "a \"final list of registered companies\" for the 2026 edition: does a registration list show attendance?",
 }
 US_ARM = "(i) a bare group name; the Atlas record is the group's US entity"
-CONTROLLER_HOLDS = {  # (event_id, the listed form as norm() gives it) -> reason. Held: the bare group name. Not held:
-    # a listed form that names the US entity itself (e.g. "Evonik Corporation", "BASF Corporation"), which pins it.
-    ("EVT-000072", "armacell"): US_ARM + " (Armacell LLC; the group is based in Luxembourg)",
-    ("EVT-000072", "henkel"): US_ARM + " (Henkel Corporation)",
-    ("EVT-000077", "evonik"): US_ARM + " (Evonik Corporation)",
-    ("EVT-000077", "covestro"): US_ARM + " (Covestro LLC)",
-    ("EVT-000077", "basf"): US_ARM + " (BASF Corporation)",
-    ("EVT-000077", "omya"): US_ARM + " (Omya, Inc.; the group is Swiss)",
-    ("EVT-000077", "arkema"): US_ARM + " (Arkema Inc.)",
-    ("EVT-000077", "sun chemical"): US_ARM + " (Sun Chemical Corporation of a global group; as held at SAMPE in #404)",
-    ("EVT-000082", "basf"): US_ARM + " (BASF Corporation)",
-    ("EVT-000082", "covestro"): US_ARM + " (Covestro LLC)",
-    ("EVT-000082", "henkel"): US_ARM + " (Henkel Corporation)",
-    ("EVT-000082", "lanxess"): US_ARM + " (LANXESS Corporation)",
-    ("EVT-000082", "omya"): US_ARM + " (Omya, Inc.)",
-    ("EVT-000082", "sun chemical"): US_ARM + " (Sun Chemical Corporation)",
-    ("EVT-000082", "synthomer"): US_ARM + " (Synthomer, Inc.; the group is British)",
-    ("EVT-000082", "resin solutions"): "(ii) a generic name; the list gives nothing that picks the Exton PA company",
-    ("EVT-000092", "alberdingk boley"): US_ARM + " (Alberdingk Boley, Inc.; the group is German)",
-    ("EVT-000092", "arkema"): US_ARM + " (Arkema Inc.)",
-    ("EVT-000095", "polyfil"): "(ii) the list gives only the name and country; nothing ties a tire-trade exhibitor to the "
-                               "Rockaway NJ masterbatch maker",
-    ("EVT-000098", "evonik"): US_ARM + " (Evonik Corporation)",
+CONTROLLER_HOLDS = {  # (event_id, name_key of the listed name) -> reason; binds the name at the event in every role
+    # and year, as in #404. A listed name that names the US entity itself ("Hauschild SpeedMixer Inc", "Hempel USA")
+    # is not held where no bare form is listed.
+    ("EVT-000072", A.name_key("Armacell")): US_ARM + " (Armacell LLC; the group is based in Luxembourg)",
+    ("EVT-000072", A.name_key("Henkel")): US_ARM + " (Henkel Corporation)",
+    ("EVT-000077", A.name_key("Evonik")): US_ARM + " (Evonik Corporation)",
+    ("EVT-000077", A.name_key("Covestro")): US_ARM + " (Covestro LLC)",
+    ("EVT-000077", A.name_key("BASF")): US_ARM + " (BASF Corporation)",
+    ("EVT-000077", A.name_key("Omya")): US_ARM + " (Omya, Inc.; the group is Swiss)",
+    ("EVT-000082", A.name_key("BASF")): US_ARM + " (BASF Corporation)",
+    ("EVT-000082", A.name_key("Covestro")): US_ARM + " (Covestro LLC)",
+    ("EVT-000082", A.name_key("Henkel")): US_ARM + " (Henkel Corporation)",
+    ("EVT-000082", A.name_key("Lanxess")): US_ARM + " (LANXESS Corporation)",
+    ("EVT-000082", A.name_key("Omya")): US_ARM + " (Omya, Inc.)",
+    ("EVT-000082", A.name_key("Orion Engineered Carbons")): US_ARM + " (the parent, Orion S.A., is registered in "
+                                                                     "Luxembourg)",
+    ("EVT-000082", A.name_key("Sun Chemical")): US_ARM + " (Sun Chemical Corporation; as held at SAMPE in #404)",
+    ("EVT-000082", A.name_key("Synthomer")): US_ARM + " (Synthomer, Inc.; the group is British)",
+    ("EVT-000082", A.name_key("Resin Solutions")): "(ii) a generic name; the list gives nothing that picks the Exton PA "
+                                                   "company",
+    ("EVT-000092", A.name_key("Alberdingk Boley")): US_ARM + " (Alberdingk Boley, Inc.; the group is German)",
+    ("EVT-000092", A.name_key("Arkema")): US_ARM + " (Arkema Inc.)",
+    ("EVT-000095", A.name_key("PolyFil")): "(ii) the list gives only the name and country; nothing ties a tire-trade "
+                                           "exhibitor to the Rockaway NJ masterbatch maker",
+    ("EVT-000098", A.name_key("Evonik")): US_ARM + " (Evonik Corporation)",
 }
 
 
@@ -120,6 +125,8 @@ def main():
         for L in d["lists"]:
             role, url, n_co = L["role"], L["source_url"], len(L["companies"])
             attendee = role == "attendee" and ATTENDEE_LISTS.get(url, ("",))[0] == ev
+            if url in OWNER_PENDING:
+                skip["attendee list awaiting an owner ruling"] += n_co; continue
             if role not in ROLES and not attendee:
                 skip[f"{role} list not admitted"] += n_co; continue
             if MEDIA_PARTNERS.search(url) or url in NOT_EVENT_LISTS:
@@ -148,8 +155,8 @@ def main():
                 nk = A.name_key(name)
                 if (ev, nk) in held:
                     skip["held by the wave 2-3 review"] += 1; continue
-                if (ev, norm(name)) in CONTROLLER_HOLDS:
-                    hit.add((ev, norm(name)))
+                if (ev, nk) in CONTROLLER_HOLDS:
+                    hit.add((ev, nk))
                     skip["held (CONTROLLER_HOLDS)"] += 1; continue
                 hits = by_key.get(nk, {})
                 if len(hits) != 1:
@@ -171,8 +178,9 @@ def main():
                 if PERSONAL.search(detail):
                     detail = ""
                 partial = "" if L.get("complete") else " The organizer's list was not read to the end (partial)."
+                # an edition with no dates on record is pre-show when its year is later than the read
                 pre = " Pre-show list, still filling as of the evidence date." \
-                    if str(ed.get("start", "")) > d["retrieved"] else ""
+                    if (str(ed["start"]) > d["retrieved"] if ed.get("start") else yr > d["retrieved"][:4]) else ""
                 staged = f" The staging key's year ({key.split(':')[1]}) is the harvest's edition label; the row " \
                     f"year follows the year printed in the source." if key.split(":")[1] != yr else ""
                 e = events[ev]

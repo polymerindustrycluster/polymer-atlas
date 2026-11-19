@@ -4,10 +4,10 @@
 - every row is for one of the 27 series #409 seeded; `sources` cites the row's evidence_source_url; the notes name a
   staging show that is a series of the row's event;
 - the listed name's key is held by exactly the row's organization and is its LEGAL name; the name is not on a
-  controller drop list for that show and role, not held by the wave 2-3 review, and not a CONTROLLER_HOLDS form;
+  controller drop list for that show and role, and not held by the wave 2-3 review or CONTROLLER_HOLDS;
 - an `attendee` row comes only from an ATTENDEE_LISTS list, for that list's own event, with that list's note and an
   empty role_detail; any other row is an exhibitor, sponsor or speaker; no role_detail carries a personal pattern;
-- no row cites a media-partner or not-an-event list;
+- no row cites a media-partner or not-an-event list, or a list awaiting an owner ruling (OWNER_PENDING);
 - a row of an international series says the edition is abroad, names the listed country, and that country is the
   organization's HQ country; its edition_state is never a USPS code (ICERP's conferences edition is keyed US/IN).
 Limit: without the staging harvest this cannot prove a row came from its list; build.py, which reads the banked
@@ -64,8 +64,10 @@ for r in packet:
         bad.append((pid, "listed name is not the org's legal name"))
     if (ev, nk) in held:
         bad.append((pid, "name held by the wave 2-3 review"))
-    if (ev, B.norm(listed)) in B.CONTROLLER_HOLDS:
-        bad.append((pid, "listed form held (CONTROLLER_HOLDS)"))
+    if (ev, nk) in B.CONTROLLER_HOLDS:
+        bad.append((pid, "name held (CONTROLLER_HOLDS)"))
+    if url in B.OWNER_PENDING:
+        bad.append((pid, "list awaits an owner ruling (OWNER_PENDING)"))
     if r["role"] == "attendee":
         event, note = B.ATTENDEE_LISTS.get(url, ("", "\0"))
         if event != ev or note not in r["notes"]:

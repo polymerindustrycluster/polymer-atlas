@@ -12,7 +12,10 @@ orig = {p: p.read_bytes() for p in (PK, TAB)}
 rows = list(csv.DictReader(io.StringIO(orig[PK].decode("utf-8"))))
 fields, ok = list(rows[0]), []
 first = lambda ev, role: next(r for r in rows if r["event_id"] == ev and r["role"] == role)  # noqa: E731
-AMPP, CTT, ECS = first("EVT-000072", "exhibitor"), first("EVT-000077", "attendee"), first("EVT-000080", "exhibitor")
+AMPP, GL, ECS = first("EVT-000072", "exhibitor"), first("EVT-000082", "attendee"), first("EVT-000080", "exhibitor")
+WB = first("EVT-000098", "sponsor")
+ORG = {o["legal_name"]: o["org_id"] for f in sorted(Path("data").glob("organizations_*.csv"))
+       for o in csv.DictReader(open(f, encoding="utf-8", newline=""))}
 
 
 def plant(label, expect, base=AMPP, strict=True, **kw):
@@ -33,20 +36,25 @@ def plant(label, expect, base=AMPP, strict=True, **kw):
     ok.append(good)
 
 
-EVONIK = next(r["org_id"] for r in rows if r["sources"].endswith('listed as "Evonik Corporation")'))
-BASF = next(r["org_id"] for r in rows if r["sources"].endswith('listed as "BASF Corporation")'))
+GL_LISTED = GL["sources"].split('listed as "')[1][:-2]
+CTT_NOTES = GL["notes"].replace("great-lakes-coatings-conference:2027", "coatings-trends-and-technologies-summit:2027")
 abroad_note = ECS["notes"].split(" Edition abroad:")[0]
 
 plant("attendee row from a list not in ATTENDEE_LISTS (SPE Polyolefins delegates)",
-      "attendee row not from an ATTENDEE_LISTS list", base=CTT, listed=CTT["sources"].split('listed as "')[1][:-2],
+      "attendee row not from an ATTENDEE_LISTS list", base=GL, listed=GL_LISTED,
       evidence_source_url="https://spe-stx.org/wp-content/uploads/2026/03/Attendees-2026-publish.xlsx")
-plant("Great Lakes list used for Coatings Trends", "attendee row not from an ATTENDEE_LISTS list for its event",
-      base=CTT, evidence_source_url="https://greatlakescoatingsconference.com/attending/",
-      listed=CTT["sources"].split('listed as "')[1][:-2])
-plant("bare group name held at this event (Evonik)", "listed form held (CONTROLLER_HOLDS)", base=CTT,
-      org_id=EVONIK, listed="Evonik")
-plant("bare group name held at this event (BASF)", "listed form held (CONTROLLER_HOLDS)", base=CTT, org_id=BASF,
-      listed="BASF")
+# not strict: the registration list is also not in ATTENDEE_LISTS, so the attendee check fires on it too
+plant("the Coatings Trends registration list, awaiting an owner ruling", "list awaits an owner ruling (OWNER_PENDING)",
+      strict=False, base=GL, listed=GL_LISTED, event_id="EVT-000077", notes=CTT_NOTES,
+      evidence_source_url="https://www.pcimag.com/coatings-conference/registered-companies")
+plant("Great Lakes list used for another event", "attendee row not from an ATTENDEE_LISTS list for its event",
+      base=GL, listed=GL_LISTED, event_id="EVT-000077", notes=CTT_NOTES)
+plant("bare group name held at this event (Evonik, Waterborne)", "name held (CONTROLLER_HOLDS)", base=WB,
+      org_id=ORG["Evonik Corporation"], listed="Evonik")
+plant("a variant form of a held name (Evonik Corporation, Waterborne)", "name held (CONTROLLER_HOLDS)", base=WB,
+      org_id=ORG["Evonik Corporation"], listed="Evonik Corporation")
+plant("a variant form of a held name (BASF Corporation, Great Lakes)", "name held (CONTROLLER_HOLDS)", base=GL,
+      org_id=ORG["BASF Corporation"], listed="BASF Corporation")
 plant("trade-name hit (The Dow Chemical Company -> Dow Inc.)", "listed name is not the org's legal name",
       org_id="ORG-002913", listed="The Dow Chemical Company")
 plant("ambiguous name key (ACH Foam Technologies, two orgs)", "listed name's key is held by", org_id="ORG-004921",
@@ -59,7 +67,7 @@ plant("a row for a series this pass does not cover (NPE)", "event is not one of 
       event_id="EVT-000001", notes=AMPP["notes"].replace("ampp-annual-conference-expo:2027", "npe-the-plastics-show:2027"))
 plant("a duplicate of an existing row", "duplicate (event, org, year, role) in the table",
       edition_year=AMPP["edition_year"])
-plant("attendee row with a role_detail", "attendee row with a role_detail", base=CTT, role_detail="Booth 1234")
+plant("attendee row with a role_detail", "attendee row with a role_detail", base=GL, role_detail="Booth 1234")
 plant("personal pattern in role_detail", "personal pattern in role_detail", role_detail="Dr. Jane Doe")
 plant("a role this pass does not admit (media partner)", "role not admitted", role="media_partner")
 plant("abroad row without the listed country", "without a listed country equal to the org's HQ country", base=ECS,
