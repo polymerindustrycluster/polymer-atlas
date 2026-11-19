@@ -1,5 +1,5 @@
 """run_tests.py exits as serial `python -m unittest discover -s scripts` does, on the fixtures Codex used to refute it
-(PR #417 r1 and r2): load_tests hooks that configure instances, wrap the suite or change between discoveries; output
+(PR #417 r1 to r3): load_tests hooks that configure instances, wrap the suite or change between discoveries; output
 that looks like a summary, or is not UTF-8; a setUpClass skip; a module fixture; the caller's working directory and
 import path. Each case runs in a fresh throwaway tree per arm. The one intended difference: a test that calls
 os._exit(0) ends serial discovery with exit 0, and fails the runner (no result file)."""
@@ -76,6 +76,20 @@ CASES = {
             if mark.exists(): raise RuntimeError("load_tests ran twice")
             mark.touch()
             return tests"""},
+    # Codex r3: an import-time module skip, a staticmethod test, a package hook with a relative import, no tests at all
+    "optional_import": {"test_optional": 'raise unittest.SkipTest("optional data unavailable")'},
+    "method_descriptor": {"test_static": """
+        class C(unittest.TestCase):
+            @staticmethod
+            def test_fixed_input(): assert sorted([2, 1]) == [1, 2]"""},
+    "package_relative_import": {"checks/__init__": """
+        def load_tests(loader, tests, pattern):
+            return loader.discover(str(Path(__file__).parent), pattern=pattern)""",
+        "checks/helpers": "expected = 7", "checks/test_values": """
+        from .helpers import expected
+        class C(unittest.TestCase):
+            def test_value(self): self.assertEqual(expected, 7)"""},
+    "no_generated_tests": {"test_rows": "def load_tests(loader, suite, pattern): return unittest.TestSuite()"},
     "binary_log": {"test_a": """
         class C(unittest.TestCase):
             def test_output(self): sys.stdout.buffer.write(bytes([255, 10]))"""},
@@ -97,6 +111,7 @@ def run(modules, parallel):
         (root / "scripts").mkdir()
         (root / "marker.txt").touch()
         for mod, src in modules.items():
+            (root / "scripts" / mod).parent.mkdir(parents=True, exist_ok=True)
             (root / "scripts" / f"{mod}.py").write_text(HEAD + textwrap.dedent(src).strip() + "\n")
         cmd = ([str(RUNNER), "--jobs", "2", "--start", "scripts"] if parallel
                else ["-m", "unittest", "discover", "-s", "scripts", "-p", "test_*.py"])
