@@ -1,0 +1,14 @@
+BB-0212 — **SOUND.** Gate A: Illinois’s [profile](https://matse.illinois.edu/people/profile/dkrogsta) identifies him as Associate Research Professor, explicitly “2025-present.” Gate B: his research statement describes designing, developing, and characterizing polymers. The former research-scientist appointment does not invalidate the current qualifying title.
+
+BB-0308 — **SOUND.** Gate A: Maryland identifies him as Professor/Keystone Professor. Gate B: his individually attributed [CALCE biography](https://calce.umd.edu/our-team-ii) explicitly lists “Characterization of advanced polymers” among his research interests. A personal biography within a team page satisfies the person-specific requirement.
+
+BB-0380 — **SOUND.** Gate A: his [profile](https://textiles.ncsu.edu/people/rshamey/) identifies him as CIBA Distinguished Professor. Gate B: developing techniques for dyeing polyolefins, explicitly polypropylene and PE, constitutes polymer-specific processing research. His broader emphasis on color science does not disqualify that work.
+
+BB-0241 — **SOUND.** Gate A: the rendered Purdue profile identifies him as Professor of Chemical Engineering. Gate B: its research statement includes electrolyte discovery and design, specifically hybrid polymer/garnet electrolyte and interface engineering. This establishes polymer-containing materials as an object of research; the battery application does not make polymers merely an incidental tool.
+
+BB-0233 — **SOUND.** Gate A: Purdue’s directory and rendered personal profile identify her as Professor of Chemical Engineering. Gate B: “Polymers and Materials” appears within her own Research Interests, followed by research on gel structure, rheology, degradation, and material design. It is attributable to Schultz’s research.
+
+BB-0617 — **SOUND.** Gate A: the university-hosted [lab page](https://arnold.engr.wisc.edu/about.html) identifies Arnold as a UW–Madison professor. Gate B: the [research page](https://arnold.engr.wisc.edu/research.html) explicitly includes semiconducting polymers among its current material research focuses, with synthesis, processing, and property investigations. SCHEMA 4.9 imposes no requirement that polymers dominate the research portfolio.
+
+**Count: SOUND 6 / WRONG 0 / DOUBT 0.**
+exit 0

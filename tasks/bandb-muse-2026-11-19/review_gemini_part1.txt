@@ -1,0 +1,9 @@
+BB-0212: SOUND — Gate A verifies current title as Associate Research Professor (research_professor) at UIUC (2025–present), and Gate B verifies polymer research specialty ("self-assembly of polymers, gels, composites") on his departmental profile.
+BB-0308: SOUND — Gate A styles him as Keystone Professor (qualifying professorial rank at UMD), and Gate B is satisfied by his bio entry on his center page explicitly listing "Characterization of advanced polymers" under his research interests.
+BB-0380: WRONG — Gate B fails; his primary research is color science, and polyolefins are cited only as a dyeing substrate/tool in non-polymer coloration work ("exploring novel techniques to dye polyolefins"), which fails Gate B.
+BB-0241: WRONG — Gate B fails; the quoted text is a publication/grant title, and polymer is mentioned only as a component/tool in non-polymer electrochemical energy storage/battery research.
+BB-0233: SOUND — Gate A verifies current styling as Professor of Chemical Engineering on the faculty directory, and Gate B is satisfied by "Polymers and Materials" listed directly under Research Interests on her profile.
+BB-0617: DOUBT — Gate A relies on a group lab page because his official UW-Madison directory profile failed to load at the check; verifying his current faculty styling/rank on the official university directory profile once loaded would settle it.
+
+Count: 3 SOUND / 2 WRONG / 1 DOUBT
+exit 0
