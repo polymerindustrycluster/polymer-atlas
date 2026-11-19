@@ -1,0 +1,12 @@
+{
+ "families": [
+  "codex",
+  "gemini"
+ ],
+ "sha256": {
+  "review_part1.md": "2eea85868c1cb541d030b3145b0f89fd33e6df9c21c4b922f73c065d5dbe0389",
+  "review_codex_part1.txt": "49753b6b07217f196b9199b82d60336233bafa076e8b12e64a4f4042b99e7071",
+  "review_gemini_part1.txt": "1efadd17617473d0a36aa3314080b9dfb4301d42795bf2032cf7b5dfd2bccd91",
+  "review_holds.csv": "1eb8645a0bf4a0585b515e96d8401715084e282179fd9a8c28826d894732b631"
+ }
+}

@@ -283,6 +283,7 @@ ORG-003910 fold-vs-reparent fork) are owner-only and never agent work.
   - **Funnel:** 572 leads went in; 515 entered the frame; lanes verified 115; all 115 passed the raw check; 101 were judged SOUND by both codex and Antigravity; 95 survived the mechanical gates.
   - **Holds:** 14 by the review, 5 already held, and 1 on a `/~` URL (V-62).
   - **Not run:** 34 STILL_UNCERTAIN lane rows, plus the 4 Ohio State leads that match no Atlas institution row.
+  - **Follow-up, stacked PR (`tasks/bandb-muse-2026-11-19/`):** Muse answered the 13 held and the 34 unsettled. +3 people (Krogstad, Han, Schultz). Of 6 raw-checked candidates, both families judged 3 SOUND; Shamey, Pol and Arnold are held. Six rows that pass only under Muse's looser Gate B wording are owner questions.
   - **Was:** **OWNER: run the remaining 572 band-B census leads?** The sample admitted 15 of 60 (25%; band A 24%), so the rest would yield ~140 records (projection). `tasks/census-gap-2-2026-11-03/README.md`. Still open: Herrera-Alonso (held at another institution; current home not re-checked, jhu.edu blocked).
 - [ ] `open` **Census-gap follow-ups:**
   - Re-run Johns Hopkins and Columbia (both bot-walled).

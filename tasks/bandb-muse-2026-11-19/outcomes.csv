@@ -1,0 +1,7 @@
+lead_id,full_name,outcome,reason
+BB-0212,Daniel Vincent Krogstad,admitted,
+BB-0308,Bongtae Han,admitted,
+BB-0380,Renzo Shamey,held,"review hold: gemini: WRONG: BB-0380: WRONG — Gate B fails; his primary research is color science, and polyolefins are cited only as a dyeing substrate/tool in non-polymer coloration work (""exploring novel techniques to dye polyolefins""), which fails Gate B."
+BB-0241,Vilas Pol,held,"review hold: gemini: WRONG: BB-0241: WRONG — Gate B fails; the quoted text is a publication/grant title, and polymer is mentioned only as a component/tool in non-polymer electrochemical energy storage/battery research."
+BB-0233,Kelly M. Schultz,admitted,
+BB-0617,Michael Scott Arnold,held,review hold: gemini: DOUBT: BB-0617: DOUBT — Gate A relies on a group lab page because his official UW-Madison directory profile failed to load at the check; verifying his current faculty styling/rank on the official university directory profile once loaded would settle it.
