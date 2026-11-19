@@ -72,6 +72,11 @@ def main():
     rc = {r["lead_id"]: r for r in csv.DictReader(open(C / "rawcheck.csv", encoding="utf-8"))}
     if not (C / "review_holds.csv").exists():  # fail closed: no review result, no admissions
         sys.exit("review_holds.csv missing: run review_holds.py after the two-family review")
+    import hashlib, json
+    meta = json.loads((C / "review_holds.meta.json").read_text(encoding="utf-8")) if (C / "review_holds.meta.json").exists() else {}
+    stale = [n for n, h in meta.get("sha256", {}).items() if not (C / n).exists() or hashlib.sha256((C / n).read_bytes()).hexdigest() != h]
+    if not meta or stale or not {p.name for p in C.glob("review_part*.md")} <= set(meta["sha256"]):
+        sys.exit(f"review_holds.csv is not bound to the current packets and reviews (changed: {stale}); re-run review_holds.py")
     rh = {r["lead_id"]: r["reason"] for r in csv.DictReader(open(C / "review_holds.csv", encoding="utf-8"))}
     rv = reviewed_rows()
     ph, people, pe = read(ROOT / "data/people.csv")
@@ -90,7 +95,8 @@ def main():
     def own_domains(oid):
         d = {dom(insts.get(oid, {}).get("website", ""))} - {""}
         # only .edu hosts count: a shared third-party host (github.io, an external directory) is never "own"
-        return d | {x for x, n in by_inst[oid].items() if n >= 2 and x.endswith(".edu")}
+        # shortcut: .edu is not proof of ownership (academia.edu); every domain admitted this way is listed for review
+        return d | {x for x, n in by_inst[oid].items() if n >= 2 and x.endswith(".edu") and x != "academia.edu"}
     held = {}
     for p in people:
         if key(p["full_name"]): held.setdefault(key(p["full_name"]), p["person_id"])

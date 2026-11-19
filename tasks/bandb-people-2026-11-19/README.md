@@ -65,21 +65,24 @@ A row is admitted only when every one of these holds:
 
 ## Integration refute (codex and Antigravity, deep, 2026-11-19)
 
-Both families judged the scripts NOT SOUND. Each defect was tested against the 95 admitted rows; **none admitted a bad row.**
-The scripts are fixed, each fix was tested with the reviewer's own failing input, and a rebuild from main produces
-byte-identical data.
+Both families judged the scripts NOT SOUND. Each defect was tested against the 95 admitted rows. **No tested defect
+admitted any of them, with one check incomplete:** Yang Yang's Gate B lab page could not be redirect-checked (row 3).
+
+The scripts were fixed in two rounds, and the second round answered the families' re-review. Each fix was tested with
+the reviewer's own failing input. A rebuild from main produces byte-identical data, and the same 14 IDs are held.
+Records are in `reviews/integration_refute_*.txt`.
 
 | Defect (reviewer) | Effect on these 95 rows | Fix |
 |-|-|-|
-| `dom()` took two labels, so `ox.ac.uk` and `cam.ac.uk` collide (both) | none; every gate host is `.edu` | second-level ccTLD labels kept (`ox.ac.uk`) |
-| ≥2 held people on a third-party host made it "own" (both) | none; the 10 rows admitted this way are all on the right university's `.edu` (uw.edu, psu.edu, pitt.edu, lehigh.edu, ucsb.edu) | a derived domain must be `.edu` |
-| redirects not checked (codex) | none; 121 of 124 URLs have no off-domain redirect. 3 could not be fetched to check (Rice 406, two lab sites) | a redirect off the requested domain counts as no page |
-| missing or stale `review_holds.csv` admitted everything (both) | none; the file was present and current | builder refuses without it; `review_holds.py` deletes the old file first |
-| first verdict word wins: "not SOUND", a later WRONG (both) | none; a strict all-lines parser gives the same 101 | every line naming a row counts; any non-SOUND word holds |
-| one family could pass for two (codex) | none; codex and gemini both ran | codex plus another distinct family are required |
-| approval not bound to content (codex) | none; the 115 reviewed rows equal `verified.csv` field for field, and `verified.csv` was last written before the raw check began | builder holds a row whose fields differ from the reviewed row |
-| suffix as surname, e.g. "Doe PhD" (Antigravity) | none; no admitted name ends in a suffix | suffixes skipped |
-| existence and parent quotes carry only the rank (Antigravity) | not a defect: the same convention as the 153 earlier parent rows; the page is the person's own-institution profile | — |
+| `dom()` took two labels, so `ox.ac.uk` and `cam.ac.uk` collide (both) | none; every gate host is `.edu` | second-level ccTLD labels kept (`ox.ac.uk`), in both scripts. shortcut: a fixed label list, not the Public Suffix List (`k12.ca.us` still collapses); fine while only US universities are admitted |
+| ≥2 held people on a third-party host made it "own" (both) | none; the 10 rows admitted this way were checked by hand and are all on the right university's `.edu` (uw.edu, psu.edu, pitt.edu, lehigh.edu, ucsb.edu) | a derived domain must be `.edu` and not academia.edu. shortcut: `.edu` is not proof of ownership, so derived-domain rows need the hand check above |
+| redirects not checked (codex) | 123 of 124 URLs show no off-domain redirect: 121 by plain GET, plus Rice and Harvard by a browser fetch (final URL equals the requested one). **Unchecked:** `yylab.seas.ucla.edu`, Yang Yang's Gate B page (PERSON row kept; it passed the raw check today, and the site is unreachable now) | a redirect off the requested domain counts as no page; Firecrawl must report its final URL. shortcut: a Jina-only pass is not redirect-checked |
+| missing or stale `review_holds.csv` admitted everything (both) | none; the file was present and regenerated from the final reviews | builder refuses without it, or when `review_holds.meta.json` (sha256 of the packets and review files) no longer matches; `review_holds.py` deletes both first |
+| first verdict word wins: "not SOUND", a later WRONG, `not **SOUND**` (both) | none; a strict all-lines parser holds the same 14 IDs | every line naming a row counts, markdown is stripped, and any non-SOUND word holds. A line naming two rows gives both rows its objections (holds more, never fewer) |
+| one family could pass for two (codex) | none; codex and gemini each judged every admitted row SOUND | codex plus another distinct family are required, compared case-insensitively, with no `assert` (`python -O` cannot skip it) |
+| approval not bound to content (codex) | none; the 115 reviewed rows equal `verified.csv` field for field | builder holds a row whose fields differ from the reviewed packet, and the meta hash binds the holds to that packet version |
+| suffix as surname, e.g. "Doe PhD", "Ph.D.", ", MBA" (Antigravity, codex) | none; no admitted name ends in a suffix | text after a comma dropped; suffix list extended |
+| existence and parent quotes carry only the rank (Antigravity) | the same convention as the 153 earlier parent rows: the page is the person's own-institution profile, and the raw check found the surname within 40 words of the quote. Codex notes that precedent is not sufficiency; changing the convention is an owner call | — |
 
 ## Reproduce
 

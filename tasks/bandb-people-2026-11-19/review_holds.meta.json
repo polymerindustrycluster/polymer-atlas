@@ -1,0 +1,15 @@
+{
+ "families": [
+  "codex",
+  "gemini"
+ ],
+ "sha256": {
+  "review_part1.md": "15b6ce66caa6bcd2d7ed1560dd4f1ec137bd2cadd606bc4be1801ce39a68d5e1",
+  "review_part2.md": "550ebb66bbb9a5e2f6012a2f2905501e476a4293b284297ba139419de05e186f",
+  "review_codex_part1.txt": "12b8ded74974bc56134e49f84ce030712bf8e7a1f3060185fb5418c300c249e8",
+  "review_codex_part2.txt": "a203091b35120866775412794e2b026e99da5eea2451f38906f98f98b385393a",
+  "review_gemini_part1.txt": "8edbba2d410f17885a2f9b663cae81b9fc89975c6de466fcaeedd925fe5173e8",
+  "review_gemini_part2.txt": "d4c92343f0d797013828ac36f22c16ac57a6b9bc46fd80da2c5e0c8e0d07a2b6",
+  "review_holds.csv": "0e5a132d70d26bc45f3ece92852bf3d47d654fb47e6716adcf5e4ada0e9a66e5"
+ }
+}

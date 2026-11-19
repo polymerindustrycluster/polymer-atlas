@@ -6,16 +6,22 @@ SOUND. Fails closed:
   - a row a family did not mention holds;
   - a row holds if ANY line naming it carries WRONG, DOUBT, "not SOUND" or "unsound" (all lines, not the first).
     python review_holds.py codex gemini"""
-import csv, re, sys
+import csv, hashlib, json, re, sys
 from pathlib import Path
 
 C = Path(__file__).resolve().parent
-OUT = C / "review_holds.csv"
-OUT.unlink(missing_ok=True)
-fams = sys.argv[1:]
-assert "codex" in fams and len(set(fams)) >= 2, "need codex plus at least one other distinct family"
+OUT, META = C / "review_holds.csv", C / "review_holds.meta.json"
+OUT.unlink(missing_ok=True); META.unlink(missing_ok=True)
+fams = list(dict.fromkeys(f.lower() for f in sys.argv[1:]))  # case-insensitive filesystem: codex == CODEX
+if "codex" not in fams or len(fams) < 2:
+    sys.exit("need codex plus at least one other distinct family")
 rc = [r["lead_id"] for r in csv.DictReader(open(C / "rawcheck.csv", encoding="utf-8"))
       if r["gate_a"] == r["gate_b"] == r["gate_a_surname"] == "yes"]
+def review_hashes(fams):
+    files = sorted(C.glob("review_part*.md")) + [C / f"review_{f}_part{p}.txt" for f in fams for p in (1, 2)] + [OUT]
+    return {"families": fams, "sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in files}}
+
+
 WORD = re.compile(r"(?i)\b(not\s+sound|unsound|sound|wrong|doubt)\b")
 
 
@@ -23,8 +29,10 @@ def verdicts(fam):
     words, lines_for = {}, {}
     for p in (1, 2):
         lines = (C / f"review_{fam}_part{p}.txt").read_text(encoding="utf-8").splitlines()
-        assert lines and lines[-1].strip() == "exit 0", f"{fam} part {p} did not finish: {lines[-1:]}"
+        if not lines or lines[-1].strip() != "exit 0":
+            sys.exit(f"{fam} part {p} did not finish: {lines[-1:]}")
         for line in lines:
+            line = re.sub(r"[*_`]", "", line)  # markdown emphasis: "not **SOUND**" is "not SOUND"
             ws = {" ".join(w.lower().split()) for w in WORD.findall(line)}
             for lid in set(re.findall(r"BB-\d{4}", line)):
                 words.setdefault(lid, set()).update(ws)
@@ -34,7 +42,7 @@ def verdicts(fam):
             for lid, ws in words.items()}
 
 
-V = {f: verdicts(f) for f in dict.fromkeys(fams)}
+V = {f: verdicts(f) for f in fams}
 holds = []
 for lid in rc:
     bad = [(f, V[f].get(lid, ("MISSING", "row not reviewed"))) for f in V]
@@ -43,6 +51,8 @@ for lid in rc:
         holds.append({"lead_id": lid, "reason": " | ".join(f"{f}: {v[0]}: {v[1]}" for f, v in bad)})
 with open(OUT, "w", newline="", encoding="utf-8") as fh:
     w = csv.DictWriter(fh, fieldnames=["lead_id", "reason"], lineterminator="\n"); w.writeheader(); w.writerows(holds)
+# Bind the holds to the exact packets reviewed and review outputs read; build_people.py refuses on any mismatch.
+META.write_text(json.dumps(review_hashes(fams), indent=1), encoding="utf-8")
 for f in V:
     print(f, sum(1 for lid in rc if V[f].get(lid, ("MISSING",))[0] == "SOUND"), "SOUND of", len(rc))
 print("both SOUND", len(rc) - len(holds), "; held", len(holds))

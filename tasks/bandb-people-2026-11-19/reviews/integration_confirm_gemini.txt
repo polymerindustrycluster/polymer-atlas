@@ -1,0 +1,50 @@
+council-ask: gemini effort=deep -> model=Gemini 3.8 Flash (High)
+### Defect Verification
+
+1. **Domain collapse on ccTLDs**
+   * `build_people.py`: **FIXED** for common ccTLD second-level labels (`ox.ac.uk` and `cam.ac.uk` no longer collide).
+   * `rawcheck_people.py`: **NEW DEFECT introduced** (`dom()` uses `split(".")[-2:]`). Failing input: `dom("https://ox.ac.uk")` and `dom("https://cam.ac.uk")` both return `"ac.uk"`.
+
+2. **Third-party hosts as own domains**
+   * **NOT FIXED** (failing input). Checking `x.endswith(".edu")` blocks `github.io`, but still allows third-party or cross-institutional `.edu` domains. 
+   * Failing input: If two rows for Institution A have profile URLs on `https://mit.edu/person`, `mit.edu` ends with `.edu` and becomes an admitted "own domain" for Institution A. (It also improperly excludes legitimate non-`.edu` domains like `.gov`, `.org`, or foreign institutions).
+
+3. **Unchecked redirects**
+   * **NOT FIXED** (failing input). 
+     * In `plain(u)`, because `dom()` in `rawcheck_people.py` collapses ccTLDs, off-domain redirects under the same ccTLD are undetected. Failing input: `u = "https://chem.ox.ac.uk/p"` redirecting to `https://chem.cam.ac.uk/p` has `dom(r.geturl()) == dom(u) == "ac.uk"` and passes.
+     * In `page(u)`, if Firecrawl scrape metadata omits `url`, `m.get("url") or u` defaults to `u`, making `dom(u) == dom(u)` always true.
+
+4. **Missing/stale holds file admitting all**
+   * **FIXED**. `build_people.py` fails closed with `sys.exit` if `review_holds.csv` does not exist. `review_holds.py` unlinks `review_holds.csv` upfront, preventing stale hold files from surviving an incomplete review run.
+
+5. **First-verdict-wins parsing**
+   * **FIXED**. `verdicts()` accumulates verdict tokens across all lines for each lead ID. Any objection (`wrong`, `doubt`, `not sound`, `unsound`) ensures `ws != {"sound"}` and holds the row.
+
+6. **One family passing for two**
+   * **FIXED**. `review_holds.py` enforces `assert "codex" in fams and len(set(fams)) >= 2`, rejecting single-family runs or duplicate inputs like `codex codex`.
+
+7. **Approvals not bound to row content**
+   * **FIXED**. `reviewed_rows()` reads `review_part*.md` and `build_people.py` holds any row whose `PACKET` fields (`name`, `institution`, `role`, quotes, URLs) differ from the reviewed content.
+
+8. **Suffix as surname**
+   * **NOT FIXED** (failing input). The hardcoded `SUFFIX` set and `len(t) > 1` filter fail on:
+     * Unlisted Roman numerals: `"John Smith VI"` yields `"vi"`.
+     * Unlisted credentials: `"Jane Doe, Esq."` yields `"esq"`.
+     * Single-letter surnames: `"David O"` skips `"o"` (`len > 1` is false) and incorrectly returns `"david"`.
+
+---
+
+### Evaluation of README Claims
+
+* **Follows:**
+  * Domain collapse (`none; every gate host is .edu`): Follows, as all 95 rows use `.edu`.
+  * Third-party hosts (`none; 10 rows admitted are on right university .edu`): Follows from manual verification of the 10 rows.
+  * Missing/stale holds (`none; file present and current`): Follows.
+  * First-verdict-wins (`none; all-lines parser gives same 101`): Follows from identical re-parse counts.
+  * One family for two (`none; codex and gemini both ran`): Follows.
+  * Approval bound to content (`none; 115 reviewed equal verified.csv`): Follows.
+  * Suffix as surname (`none; no admitted name ends in suffix`): Follows.
+
+* **DOES NOT FOLLOW:**
+  * **Unchecked redirects** (`none; 121 of 124 URLs have no off-domain redirect. 3 could not be fetched to check...`): **Does not follow.** Because 3 URLs could not be fetched, their redirect targets are unknown; one cannot claim zero effect on the 95 admitted rows from an incomplete check.
+exit 0

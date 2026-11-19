@@ -7,9 +7,16 @@ sys.path.insert(0, r"C:\Users\JohnSwanson\Documents\pic-github\polymer-faculty-c
 from tools.layer_b_fetch import call, env  # noqa: E402
 
 W = lambda s: re.findall(r"[a-z0-9]+", unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower())
-SUFFIX = {"jr", "sr", "ii", "iii", "iv", "phd", "md", "pe", "dr", "prof"}
-surname = lambda n: next((t for t in reversed(W(n)) if t not in SUFFIX and len(t) > 1), "")
-dom = lambda u: ".".join(re.sub(r"^https?://", "", u or "").split("/")[0].split(":")[0].lower().split(".")[-2:])
+SUFFIX = {"jr", "sr", "ii", "iii", "iv", "v", "vi", "phd", "ph", "d", "md", "mba", "esq", "pe", "dr", "prof"}
+# text after a comma is post-nominals ("Jane Doe, MBA"); "Ph.D." splits to ph, d
+surname = lambda n: next((t for t in reversed(W((n or "").split(",")[0])) if t not in SUFFIX), "")
+
+
+def dom(u):
+    """Registered domain; the same rule as build_people.py (ox.ac.uk, not ac.uk)."""
+    h = re.sub(r"^https?://", "", u or "").split("/")[0].split(":")[0].lower().split(".")
+    n = 3 if len(h) >= 3 and len(h[-1]) == 2 and h[-2] in ("ac", "co", "com", "edu", "gov", "net", "org") else 2
+    return ".".join(h[-n:])
 fc, key = env("FIRECRAWL_BASE_URL").rstrip("/"), env("FIRECRAWL_NAS_API_KEY")
 cache = {}
 
@@ -45,7 +52,8 @@ def page(u):
         d = call(f"{fc}/v2/scrape", {"url": u, "formats": ["markdown"], "onlyMainContent": False},
                  {"Authorization": f"Bearer {key}"}, timeout=120).get("data") or {}
         m = d.get("metadata") or {}
-        if m.get("statusCode") == 200 and dom(m.get("url") or u) == dom(u):
+        # shortcut: Jina (the fallback) reports no final URL, so a Jina-only pass is not redirect-checked
+        if m.get("statusCode") == 200 and m.get("url") and dom(m["url"]) == dom(u):
             words = W(d.get("markdown"))
     except Exception:
         pass
