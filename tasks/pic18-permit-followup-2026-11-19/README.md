@@ -29,7 +29,15 @@ The frame is #400's: **33 PIC-18 sites** (unit: sites with exactly one active PI
 
 ### Outcome check (harness `pic18_unknown.py`, process-unknown organizations)
 
-_(run after the data apply)_
+`python3 pic18_unknown.py "$PWD" <ref>` (controller harness; unit: PIC-18 organization rows, 794 at both refs; filter: process unknown):
+
+| Ref | proc_unknown | share of 794 |
+|---|---|---|
+| merge-base ec7e19be (origin/main, PR #400 merged) | **324** | 40.8% |
+| HEAD of this branch | **323** | 40.7% |
+
+`proc_unknown` falls by **1**, exactly the **1** organization whose first process lands in a `processes` cell (SITE-000814, ORG-000752; its only PIC-18 site). **3** sites got only a capability row (SITE-000264, SITE-000601, SITE-001530): 5 capability rows in all, which do not move `proc_unknown`. `mkt_unknown` (319) and `band_unknown` (443) are unchanged.
+
 
 ## Per site (* = re-scored under P2-P4)
 
