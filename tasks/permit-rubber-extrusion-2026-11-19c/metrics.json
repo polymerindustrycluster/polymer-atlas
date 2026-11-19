@@ -1,0 +1,29 @@
+{
+ "frame_sites": 33,
+ "strict_bound_sites": 14,
+ "near_bound_sites": 3,
+ "verified_sites": 13,
+ "still_uncertain_sites": 20,
+ "reject_sites": 0,
+ "sites_with_process_written": 0,
+ "process_sites": [],
+ "process_terms_written": 0,
+ "capability_rows": 1,
+ "already_held_rows": 18,
+ "capability_only_sites": [
+  "SITE-000264"
+ ],
+ "held_sites_by_reason": {
+  "not_bound": 16,
+  "ancillary_only": 1,
+  "no_capability_destination": 2,
+  "term_not_stated": 1
+ },
+ "proposal_holds_by_reason": {
+  "owner_ruled_not_carried": 1,
+  "no_capability_destination": 4
+ },
+ "strength_of_writes": {
+  "supports_C": 1
+ }
+}
