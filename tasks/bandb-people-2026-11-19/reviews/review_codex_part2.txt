@@ -1,0 +1,63 @@
+council-ask: codex effort=deep -> model=gpt-6-astra reasoning=max
+I would hold three rows for clarification; the other 54 satisfy the stated gates.
+
+- BB-0015 Chiara Daraio — SOUND: Own-group rubber research and [copolymer-composite research](https://www.daraio.caltech.edu/research.html) establish B.
+- BB-0174 Surya K. Mallapragada — SOUND: The institute’s personal profile explicitly attributes polymeric-biomaterial design to her.
+- BB-0254 Juejun Hu — SOUND: Polymer photonics is an expressly stated research direction; secondary emphasis is sufficient.
+- BB-0326 Mahmoodul Haq — SOUND: Polymer curing-process research establishes B, reinforced by his polymer mechanics/manufacturing publications.
+- BB-0383 Ryan Chiechi — SOUND: Eligible appointment and explicit conjugated-polymer research.
+- BB-0393 Seth Rasmussen — SOUND: Polymer synthesis belongs to his materials research; historical scholarship is unnecessary evidence.
+- BB-0498 Michael Lanagan — SOUND: Personally attributed funded research on polymer dielectric properties establishes B.
+- BB-0515 YuanQiao Rao — SOUND: Eligible professorship and explicit sustainable/biodegradable-polymer work; January 2026 is past.
+- BB-0037 Kevin Healy — DOUBT: B—quoted scaffold use could be incidental; an explicit hydrogel/network design or properties-research statement would settle it.
+- BB-0050 Kamil Godula — SOUND: Full research context describes developing synthetic mucin analogues and glycomaterials, establishing polymer-material development.
+- BB-0062 Hector D. Ceniceros — SOUND: His own page attributes polymeric-fluid research to him; mathematics is an eligible discipline.
+- BB-0114 Amal Narayanan — SOUND: Eligible appointment and explicit polymer-material synthesis.
+- BB-0218 Nathan Gabrielson — DOUBT: B—the paper title leaves polymer development versus delivery-tool use unresolved; an attributable polymer-research description would settle it.
+- BB-0316 John Fourkas — SOUND: Developing polymerization and polymer-structure fabrication methods establishes B.
+- BB-0284 Gulden Camci-Unal — SOUND: Hydrogels explicitly appear under Research Interests, as well as expertise.
+- BB-0623 Seungpyo Hong — SOUND: His Pharmacy professorship is at the same university; polymeric-nanodevice development establishes B.
+- BB-0001 Elizabeth Lipke — SOUND: Copolymer design establishes B; differing endowed-chair names do not change gate eligibility.
+- BB-0016 David A. Tirrell — SOUND: The professorship and macromolecular chemistry qualify; serving as provost does not disqualify him.
+- BB-0143 Justin Kim — SOUND: Eligible appointment and explicit hydrogel/polymer synthesis and properties research.
+- BB-0474 John P. Coulter — SOUND: Enhanced polymer molding is explicitly his laboratory’s research.
+- BB-0353 Ahmed El-Shafei — SOUND: Eligible professorship and explicit development of flame-retardant polymer systems.
+- BB-0484 Amir Sheikhi — SOUND: Eligible appointment and hydrogel/microgel development establish both gates.
+- BB-0244 Alessandro Martins — SOUND: Eligible appointment and explicit polymer synthesis research.
+- BB-0229 Jan-Anders Mansson — SOUND: Thermoplastic-composite processing is polymer research; his doctorate is unnecessary evidence.
+- BB-0571 Elizabeth Cosgriff-Hernandez — SOUND: Eligible appointment and explicit polymeric-biomaterial development.
+- BB-0051 Karen Christman — SOUND: Polymer chemistry is explicitly a research area; ECM-derived hydrogels are not excluded.
+- BB-0064 Ryan Stowers — SOUND: Full lab text explicitly describes developing novel, controllable hydrogel systems, establishing B.
+- BB-0088 Sergey Dergunov — SOUND: Assistant Research Professor is expressly eligible; polymer synthesis establishes B.
+- BB-0101 Eric M. Furst — SOUND: Polymers are explicit subjects of his soft-materials research.
+- BB-0220 Steven C. Zimmerman — DOUBT: A—[official profile](https://chemistry.illinois.edu/sczimmer) lists Research Professor and Professor Emeritus; confirm an active appointment satisfying the exclusion and normalize the rank accordingly.
+- BB-0275 Alireza Vakil Amirkhizi — SOUND: His research explicitly develops polymeric materials through structure–property relationships.
+- BB-0337 J. Ilja Siepmann — SOUND: An independent current Professor appointment establishes A; the teaching distinction is an additional honor.
+- BB-0521 Leo Le Wang — SOUND: Dermatology qualifies; polymer chemistry and hydrogels are explicit research expertise.
+- BB-0532 Sachin Velankar — SOUND: Current primary ChemE listing establishes A despite the unexplained “Former” marker.
+- BB-0587 Rodrigo Noriega — SOUND: Dated Associate Professor appointment resolves the stale biography; polymer charge/energy transport establishes B.
+- BB-0002 Jeffrey Rice — SOUND: Senior Lecturer qualifies; explicitly listed hybrid-hydrogel research establishes B.
+- BB-0164 Chris J Cornelius — SOUND: His MSE appointment remains at Iowa State; explicit polymer research establishes B.
+- BB-0572 Guihua Yu — SOUND: Current professor title and conductive-polymer hydrogel research establish both gates.
+- BB-0074 Richard D. Noble — SOUND: Explicit Research Professor title qualifies; polymer-network membrane development establishes B.
+- BB-0286 James Whitten — SOUND: Eligible professorship and personally attributed conjugated-polymer research.
+- BB-0245 Kshitiz Upadhyay — SOUND: Page context explicitly studies mechanics of polymers; computational/mechanical research qualifies.
+- BB-0411 Fernando Escobedo — SOUND: Current Cornell professorship and polymer structure–property research establish both gates.
+- BB-0503 Shixian Zhang — SOUND: Assistant Research Professor qualifies; polymer caloric materials establish B.
+- BB-0543 Arun Srinivasa — SOUND: Polymers are explicit objects of fracture/mechanics research; breadth does not invalidate B.
+- BB-0573 Jin Yang — SOUND: Current page also labels him Assistant Professor; hydrogel characterization research establishes B.
+- BB-0042 Thaiesha Wright — SOUND: Eligible appointment and explicit protein–polymer bioconjugation research.
+- BB-0053 Mehran Tehrani — SOUND: Eligible appointment and explicit polymer-composite manufacturing research.
+- BB-0129 Peng Jiang — SOUND: Eligible appointment and explicitly developed shape-memory polymers.
+- BB-0308 Bongtae Han — SOUND: The project investigates polymer properties; the sensor measures the polymer research subject.
+- BB-0067 Steven R. Nutt — SOUND: His [USC lab](https://composites.usc.edu/) additionally identifies thermoset-composite recycling, resolving the generic-composite concern.
+- BB-0616 Mark D. Ediger — SOUND: Eligible professorship and explicit polymer-dynamics research.
+- BB-0004 Mrinal Thakur — SOUND: Eligible professorship and explicitly listed conducting-polymer research.
+- BB-0470 Mary Lynn Realff — SOUND: Polymer manufacturing research qualifies alongside education-focused research.
+- BB-0564 Rui Sun — SOUND: Research Assistant Professor qualifies; polymer electrolytes and transport establish B.
+- BB-0043 Yang Yang — SOUND: Polymer electronics/material development establishes B within his broader semiconductor research.
+- BB-0092 Yusuf Khan — SOUND: His person-specific entry describes biodegradable-polymer scaffold development; UConn Health remains within UConn.
+- BB-0130 Renato S. Navarro — SOUND: Matching university email connects Sam and Renato Navarro; eligible appointment and explicit polymer research qualify.
+
+**SOUND: 54 / WRONG: 0 / DOUBT: 3.**
+exit 0

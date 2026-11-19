@@ -1,0 +1,62 @@
+council-ask: gemini effort=deep -> model=Gemini 3.8 Flash (High)
+BB-0022 (Theodor Agapie): SOUND — Gate A passed (Professor); Gate B passed (olefin polymerization catalysts).
+BB-0259 (Yang Shao-Horn): SOUND — Gate A passed (Professor); Gate B passed (synthesis and characterization of polymer electrolytes).
+BB-0357 (Ashley Brown): WRONG — Gate A fails (courtesy faculty at NC State MSE; primary appointment elsewhere) and Gate B fails (names microgels without stating polymer or hydrogel).
+BB-0537 (Jeffrey D. Hartgerink): SOUND — Gate A passed (Professor); Gate B passed (peptide hydrogels).
+BB-0079 (Cato T. Laurencin): SOUND — Gate A passed (University Professor); Gate B passed (polymeric materials science).
+BB-0107 (Millicent O. Sullivan): SOUND — Gate A passed (Professor and Chair); Gate B passed (peptide and polymer self-assembly).
+BB-0212 (Daniel Vincent Krogstad): DOUBT — Settled by confirming whether he currently holds the UIUC appointment (UIUC page styles him 2025–present, but the lead record designates him as Former).
+BB-0279 (Chiara E. Ghezzi): SOUND — Gate A passed (Associate Professor); Gate B passed (natural polymers).
+BB-0605 (James Bryers): SOUND — Gate A passed (primary title is Professor of Bioengineering); Gate B passed (cationic polymers and hydrogel depot).
+BB-0149 (Rosario Gerhardt): SOUND — Gate A passed (Professor); Gate B passed (polymer and ceramic composites).
+BB-0160 (Youjiang Wang): SOUND — Gate A passed (Professor); Gate B passed (polymers explicitly listed under Research Areas).
+BB-0379 (Raja Ghosh): WRONG — Gate B fails (a publication title in a publication list on a profile with no research text does not satisfy the requirement that the page state polymer research).
+BB-0507 (Tao Zhou): SOUND — Gate A passed (Assistant Professor); Gate B passed (hydrogels listed under research interests).
+BB-0556 (Kaiwen Hsiao): SOUND — Gate A passed (Assistant Professor); Gate B passed (polymeric materials).
+BB-0045 (Adam Engler): SOUND — Gate A passed (Chair/Professor); Gate B passed (polyacrylamide- and diblock copolymer-based materials).
+BB-0068 (Carson Bruns): SOUND — Gate A passed (Associate Professor); Gate B passed (slide-ring gels and elastomers).
+BB-0109 (Christopher J. Kloxin): SOUND — Gate A passed (Professor); Gate B passed (polymer-based research areas).
+BB-0123 (Edward A. Phelps): SOUND — Gate A passed (Associate Professor); Gate B passed (polyethylene-glycol hydrogel).
+BB-0270 (Lara Al Hariri): SOUND — Gate A passed (Senior Lecturer II is an approved senior_lecturer title); Gate B passed (research on commercial and novel polymers).
+BB-0527 (George Hussey): SOUND — Gate A passed (Assistant Professor); Gate B passed (natural biopolymer materials).
+BB-0582 (Hossein Montazerian): SOUND — Gate A passed (Assistant Professor); Gate B passed (tough hydrogels and bioadhesives).
+BB-0138 (David M. Collard): SOUND — Gate A passed (Professor and Senior Associate Dean); Gate B passed (molecular self-assembly in polymers).
+BB-0150 (Ryan Lively): SOUND — Gate A passed (Professor and Associate Chair); Gate B passed (high performance polymers).
+BB-0161 (Yuhang Hu): SOUND — Gate A passed (Associate Professor); Gate B passed (cross-linked polymer network gels).
+BB-0491 (Harry Allcock): DOUBT — Settled by confirming whether Penn State's "Atherton Professor" is a retired/emeritus designation (which fails Gate A) or an active professorship.
+BB-0508 (YuanQiao Rao): SOUND — Gate A passed (Professor); Gate B passed (sustainable and biodegradable polymers).
+BB-0058 (Bradley Chmelka): SOUND — Gate A passed (Professor); Gate B passed (hierarchically ordered polymers).
+BB-0400 (Victoria G. Muir): SOUND — Gate A passed (Assistant Professor); Gate B passed (hydrogel biomaterials).
+BB-0124 (Fan Zhang): SOUND — Gate A passed (Assistant Professor); Gate B passed (development of polymer-based delivery platforms).
+BB-0312 (Elisabeth Smela): SOUND — Gate A passed (Professor); Gate B passed (polymer MEMS and organic materials from polymers to cells).
+BB-0271 (Laurel Kroo): SOUND — Gate A passed (Assistant Professor); Gate B passed (macromolecular hydrodynamics).
+BB-0333 (Aaron M. Massari): SOUND — Gate A passed (Professor); Gate B passed (polymer chemistry and conducting polymer dynamics).
+BB-0602 (Ranga Pitchumani): SOUND — Gate A passed (Professor); Gate B passed (advanced polymer processing).
+BB-0012 (Julianne Holloway): SOUND — Gate A passed (Associate Professor); Gate B passed (polymers listed under research interests).
+BB-0440 (John D. Protasiewicz): SOUND — Gate A passed (Professor); Gate B passed (polymers listed under research interests).
+BB-0417 (Yadong Wang): SOUND — Gate A passed (Professor); Gate B passed (biodegradable elastomer and polymer degradation).
+BB-0246 (Joost J. Vlassak): SOUND — Gate A passed (Professor); Gate B passed (mechanical behavior of hydrogels).
+BB-0172 (Robert C. Brown): SOUND — Gate A passed (Professor); Gate B passed (processing of plastic wastes explicitly stated).
+BB-0381 (Roger Narayan): SOUND — Gate A passed (Distinguished Professor); Gate B passed (investigation of printed polymers under gamma irradiation).
+BB-0191 (Omar Farha): SOUND — Gate A passed (Professor); Gate B passed (porous organic polymers).
+BB-0492 (Hee Jeung Oh): SOUND — Gate A passed (Assistant Professor); Gate B passed (polymer membranes).
+BB-0070 (Hendrik Heinz): SOUND — Gate A passed (Professor); Gate B passed (polymer nanocomposites).
+BB-0097 (Chelsea Davis): SOUND — Gate A passed (Associate Professor); Gate B passed (attachment and separation of polymeric materials).
+BB-0112 (Yushan Yan): SOUND — Gate A passed (Professor); Gate B passed (polymer AEMs/hydroxide exchange membranes).
+BB-0282 (Dongming Xie): SOUND — Gate A passed (Professor); Gate B passed (enzymatic degradation of PET plastics).
+BB-0334 (Allen Jonathan Román): SOUND — Gate A passed (Assistant Professor); Gate B passed (polymer and composite material behavior).
+BB-0603 (Robin McCarley): SOUND — Gate A passed (Professor); Gate B passed (stimuli-responsive polymers).
+BB-0026 (Joel Galos): SOUND — Gate A passed (Assistant Professor); Gate B passed (polymer composites stated in research interests).
+BB-0345 (L. Catherine Brinson): SOUND — Gate A passed (Distinguished Professor); Gate B passed (multiphase polymer systems and bioplastics).
+BB-0392 (Mukund Sibi): SOUND — Gate A passed (University Distinguished Professor); Gate B passed (synthesis of conducting polymers).
+BB-0227 (Hamid Dalir): SOUND — Gate A passed (Professor); Gate B passed (sustainable polymers, polymer processing and characterization).
+BB-0085 (Mu-Ping Nieh): SOUND — Gate A passed (Center Director with Professor title); Gate B passed (structural characterization of polymers).
+BB-0098 (Christian W. Pester): SOUND — Gate A passed (Associate Professor); Gate B passed (surface-grafted polymer brushes).
+BB-0113 (Alison C. Dunn): SOUND — Gate A passed (Associate Professor); Gate B passed (polymer physics and testing of hydrogels).
+BB-0202 (Heyi Liang): SOUND — Gate A passed (Assistant Professor); Gate B passed (computational modeling of sustainable polymers).
+BB-0273 (Vincent Rotello): SOUND — Gate A passed (Distinguished Professor); Gate B passed (polymers explicitly stated among research areas).
+BB-0585 (Michael Czabaj): SOUND — Gate A passed (Associate Professor); Gate B passed (crack migration in polymer matrix composites).
+BB-0622 (Samuel H. Gellman): SOUND — Gate A passed (Professor); Gate B passed (ring-opening polymerization and nylon-3 polymers).
+
+**Counts:** SOUND: 54 | WRONG: 2 | DOUBT: 2
+exit 0

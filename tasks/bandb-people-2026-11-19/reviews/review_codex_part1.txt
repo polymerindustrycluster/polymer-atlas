@@ -1,0 +1,64 @@
+council-ask: codex effort=deep -> model=gpt-6-astra reasoning=max
+Polymer research need not dominate a lab under these rules. I found no demonstrated gate failure, but three records need clarification before publication.
+
+- BB-0022 Agapie — SOUND: Olefin-polymerization catalyst research directly satisfies B.
+- BB-0259 Shao-Horn — SOUND: Synthesis and characterization of polymer electrolytes constitute polymer research.
+- BB-0357 Brown — DOUBT: Both gates appear satisfied, but her [primary profile](https://brownlab.web.unc.edu/lab-members/pi-ashley-carson-brown-phd/) now says “Lampe Distinguished Professor”; confirm the proposed associate rank.
+- BB-0537 Hartgerink — SOUND: Designing peptide hydrogels satisfies the expressly permitted hydrogel category.
+- BB-0079 Laurencin — SOUND: Eligible professorship; “Polymeric Materials Science” explicitly appears under Current Research.
+- BB-0107 Sullivan — SOUND: Department leadership preserves her professorship; polymer self-assembly explicitly satisfies B.
+- BB-0212 Krogstad — SOUND: Illinois explicitly lists Associate Research Professor, 2025–present, and polymer research; “Former” is superseded.
+- BB-0279 Ghezzi — SOUND: Current header supports associate rank; natural-polymer research is explicit.
+- BB-0605 Bryers — SOUND: Primary Bioengineering professorship qualifies; development of polymer/hydrogel delivery materials satisfies B.
+- BB-0149 Gerhardt — SOUND: Making and characterizing polymer composites directly satisfies B.
+- BB-0160 Youjiang Wang — SOUND: His personal Research Areas explicitly include Polymers; prose-only evidence is not required.
+- BB-0379 Ghosh — SOUND: His own publication list identifies conjugated-polymer doping research; the stated schema does not exclude publications.
+- BB-0507 Zhou — SOUND: Eligible assistant professorship; Hydrogels is an explicit personal research interest.
+- BB-0556 Hsiao — SOUND: Polymer additive manufacturing and polymer physics directly satisfy B.
+- BB-0045 Engler — SOUND: Engineering named polymer materials and their stiffness constitutes polymer-material development.
+- BB-0068 Bruns — SOUND: Elastomer and slide-ring-gel development qualifies; the departmental listing difference is immaterial.
+- BB-0109 Kloxin — SOUND: Eligible professorship and explicitly polymer-based research; the stray name prefix is clerical.
+- BB-0123 Phelps — SOUND: His profile describes engineering functionalized PEG-hydrogel microenvironments.
+- BB-0270 Al Hariri — SOUND: Senior Lecturer II is permitted; her personal research statement explicitly identifies polymers and coatings.
+- BB-0527 Hussey — SOUND: Eligible assistant-professor title; developing natural-biopolymer materials directly satisfies B.
+- BB-0582 Montazerian — SOUND: His university-hosted lab explicitly studies tough hydrogels and bioadhesives.
+- BB-0138 Collard — SOUND: Administrative duties preserve his professorship; polymer self-assembly is explicit.
+- BB-0150 Lively — SOUND: Engineering high-performance polymers directly satisfies B.
+- BB-0161 Hu — SOUND: Surrounding research text connects the gel definition to her group’s polymer-network mechanics research.
+- BB-0491 Allcock — SOUND: Current profile presents an eligible professorship and explicit polymer synthesis; no exclusion is established.
+- BB-0508 Rao — DOUBT: Appointment is at Penn State Behrend; confirm ORG-002775 includes Behrend rather than exclusively University Park.
+- BB-0058 Chmelka — SOUND: Studying structure and dynamics of ordered polymers directly satisfies B.
+- BB-0400 Muir — SOUND: Supplied assistant-professor evidence qualifies; her personal faculty page explicitly identifies hydrogel design.
+- BB-0124 Fan Zhang — SOUND: Developing a polymer-based therapeutic platform qualifies as polymer-material development.
+- BB-0312 Smela — SOUND: Polymer MEMS and polymer microactuator development are polymer-specific research.
+- BB-0271 Kroo — SOUND: Current faculty listing confirms Assistant Professor; her individual entry specifies macromolecular hydrodynamics.
+- BB-0333 Massari — SOUND: Conducting-polymer dynamics is explicit personal research evidence.
+- BB-0602 Pitchumani — SOUND: Polymer processing explicitly qualifies, regardless of additional energy research.
+- BB-0012 Holloway — SOUND: Polymers is an explicit personal research interest; no minimum research-share threshold exists.
+- BB-0440 Protasiewicz — SOUND: His own research-interest list explicitly includes Polymers.
+- BB-0417 Yadong Wang — SOUND: Surrounding text establishes original polymer design and biodegradable-elastomer scaffold development.
+- BB-0246 Vlassak — SOUND: His lab explicitly studies hydrogel mechanical behavior.
+- BB-0172 Robert Brown — SOUND: Plastic-waste conversion and upcycling constitute plastics-processing research.
+- BB-0381 Narayan — SOUND: His attributed project studies printed-polymer stability and properties; primary NC State professorship is documented.
+- BB-0191 Farha — SOUND: Porous organic polymers are expressly studied research subjects.
+- BB-0492 Oh — SOUND: Eligible assistant professorship; polymer-membrane research is explicit.
+- BB-0070 Heinz — SOUND: Polymer-nanocomposite structure–property relationships directly satisfy B.
+- BB-0097 Davis — SOUND: Investigating polymer attachment and separation mechanisms is polymer-specific research.
+- BB-0112 Yan — SOUND: Polymer exchange-membrane development satisfies B.
+- BB-0282 Xie — SOUND: PET degradation and plastics bioconversion directly concern polymers.
+- BB-0334 Román — SOUND: Eligible assistant professorship; polymer-material behavior is an explicit research focus.
+- BB-0603 McCarley — SOUND: Stimuli-responsive polymer materials are explicitly listed research interests; directorship does not invalidate professorship.
+- BB-0026 Galos — SOUND: His individually attributed faculty entry states polymer-composite design and characterization.
+- BB-0345 Brinson — SOUND: Eligible distinguished professorship; multiphase polymers and bioplastics explicitly satisfy B.
+- BB-0392 Sibi — SOUND: Conducting-polymer synthesis is explicitly an ongoing project; its relative prominence is irrelevant.
+- BB-0227 Dalir — DOUBT: [Profile](https://engineering.purdue.edu/ME/People/ptProfile?resource_id=294590) specifies Indianapolis, “by courtesy in West Lafayette”; confirm ORG-004662’s campus coverage before assigning institutional eligibility.
+- BB-0085 Nieh — SOUND: Explicit professorship satisfies A; structural characterization of polymers satisfies B.
+- BB-0098 Pester — SOUND: Eligible associate professorship; surface-grafted polymer-brush research is explicit.
+- BB-0113 Dunn — SOUND: Eligible associate professorship; experimental hydrogel mechanics satisfies B.
+- BB-0202 Liang — SOUND: Eligible assistant professorship; computational modeling of sustainable polymers satisfies B.
+- BB-0273 Rotello — SOUND: His biography expressly attributes polymers to his research program.
+- BB-0585 Czabaj — SOUND: His own lab biography additionally specifies damage and failure research in polymeric composites.
+- BB-0622 Gellman — SOUND: Eligible professorship; ring-opening polymerization and nylon-3 polymer design directly satisfy B.
+
+**SOUND: 55 / WRONG: 0 / DOUBT: 3.**
+exit 0
