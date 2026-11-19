@@ -151,7 +151,11 @@ def main():
     pages = load_pages(witness)
     man_rows = read_csv(open(HERE / "manifest.csv", encoding="utf-8").read())
     pairs = {(m["url"], m["sha256"]) for m in man_rows}
-    pairs_persist = {(m["url"], m["sha256"]) for m in csv.DictReader(open(PERSIST + "manifest.csv"))}
+    # the committed manifest was scrubbed forward on 2026-11-19 (tasks/identifier-url-scrub-2026-11-19, owner rulings
+    # 2026-11-18b item 3); the private persist copy keeps the fetched URLs, so compare after the same redaction
+    redact = lambda u: re.sub(r"([?&](?:u|unid)=|/~)[A-Za-z0-9][\w.%-]*", lambda m: m.group(1) + ("<acct>" if m.group(1) == "/~" else "<id>"),
+                              re.sub(r"(?i)(researchdirectory\.uc\.edu\.?/p/)[A-Za-z0-9][\w.%-]*", r"\1<shortname>", u))
+    pairs_persist = {(redact(m["url"]), m["sha256"]) for m in csv.DictReader(open(PERSIST + "manifest.csv"))}
     if not pairs <= pairs_persist: fails.append("committed manifest.csv has entries the persist manifest lacks")
     for n in sorted(build.BLANK):
         pid = "PERSON-%06d" % n
