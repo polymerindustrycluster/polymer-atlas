@@ -14,7 +14,7 @@ coordinator for human ruling. Do not treat them as settled.
    acquired Foster Corp. as a standalone acquirer). John ruled: GEON gets its OWN parent record with
    `ultimate_parent_name = SK Capital Partners` (ORG-000010, added
    2026-10-28). SCHEMA §5.2 has been corrected accordingly.
-2. **Geography definition conflict.** SCHEMA §4.4 uses a 19-county
+2. **Geography definition conflict — RESOLVED 2026-11-03 by owner ruling: PIC-18 is the cluster reporting region** (AGENTS.md §8; PIC-12 is kept for reports dated before then). (Was:) SCHEMA §4.4 uses a 19-county
    "PIC/GAC working definition" for NE Ohio; PIC's Evidence Room and
    cluster intel use **PIC-12** (Ashtabula, Cuyahoga, Geauga, Lake,
    Lorain, Mahoning, Medina, Portage, Stark, Summit, Trumbull, Wayne).
@@ -30,7 +30,7 @@ coordinator for human ruling. Do not treat them as settled.
    into docs/ once the coordinator's synthesis is accepted: headline
    findings — Summit pilot found ~99 candidates from 4 source types;
    coverage and overlap stats to be summarized here after review.
-5. **CI workflow file missing from the GitHub repo (2026-10-28).** The
+5. **CI workflow file missing from the GitHub repo — RESOLVED 2026-11-02:** `validate` and `pages` run from `.github/workflows/` (c485cfad). Since 2026-11-14 the ruleset "main: require validate" requires `validate` (docs/ci/README.md). (Was, 2026-10-28:) The
    scaffold's `.github/workflows/validate.yml` exists locally but the
    Muse GitHub App has no Workflows permission, so it cannot create
    workflow files (403). Add it by web upload (repo → Add file → Create

@@ -12,7 +12,7 @@ Layout of the output:
     .nojekyll           serve files as-is (no Jekyll processing)
 
 Every page is generated from the canonical CSVs in data/ and writes public fields
-only (AGENTS.md section 6). The GitHub Actions workflow in docs/ci/pages.yml runs
+only (AGENTS.md section 6). The GitHub Actions workflow .github/workflows/pages.yml runs
 this script on each push to main and deploys build/pages/. Stdlib only.
 """
 import argparse
