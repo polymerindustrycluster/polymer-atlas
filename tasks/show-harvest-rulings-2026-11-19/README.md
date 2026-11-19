@@ -63,13 +63,22 @@ Both confirmed that the SCHEMA additions express rulings 1 and 2, and found no p
 - `check.py` now also enforces:
   - the combined-list exclusion, and the controller drop lists;
   - the SAMPE list bound to its own event;
-  - no duplicate (event, org, year, role) anywhere in the table;
+  - no row of this pass repeating an (event, org, year, role) already in the table;
   - an empty `role_detail` on attendee rows, and no personal pattern in any `role_detail`.
 - Holds bind their name at the event in every role.
 - A None-safe `role_detail`.
 - SCHEMA wording: "or prospectus" dropped (the ruling says brochure), the earlier blanket sentence now reads "lines
   that name only some companies", and the row-note requirement is stated.
 - "800 organization names" corrected to 800 extracted entries.
+
+**Confirmation round (2026-11-19):**
+- agy CONFIRMED the fixes.
+- Codex confirmed them too, with three points:
+  - **Fixed:** a `title` on a `<script>` or `<style>` tag no longer counts as page text.
+  - **Fixed:** this check's duplicate test covers this pass's rows, and its wording now says so.
+  - **Not a defect:** the participation IDs were renumbered after the holds. No ID of this pass has reached main,
+    and the 2026-11-19 ruling E1 (`tasks/owner-rulings-2026-11-19/README.md`) allocates a PR's new IDs from main's
+    maximum at its final merge. The build re-allocates at that merge in the same way.
 
 **Recorded for the integrator, not this PR:**
 - TA Instruments (a Waters division) and Collins Aerospace (an RTX business) are business-unit records.

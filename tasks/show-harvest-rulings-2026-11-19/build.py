@@ -82,7 +82,7 @@ class _Text(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         self.skip += tag in ("script", "style")
-        if self.alt:
+        if self.alt and not self.skip:  # a script or style tag's own title is not page text either
             self.parts += [f" {v} " for k, v in attrs if k in ("alt", "title") and v]
         self.parts.append(" ")
 

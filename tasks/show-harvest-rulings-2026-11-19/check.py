@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check this pass without the staging harvest, against every build.py rule that repo data can show:
-- the appended rows are in the table unchanged, and no (event, org, year, role) appears twice in the whole table;
+- the appended rows are in the table unchanged, and no row of this pass repeats an (event, org, year, role) already
+  in the table (duplicates among other passes' rows are the validator's business, not this check's);
 - `sources` cites the row's evidence_source_url; the notes name a staging show that is a series of the row's event
   (the AMI umbrella mapping applied), and that show and role are not a combined-list exclusion (COMBINED);
 - the listed name's key is held by exactly the row's organization and is its LEGAL name; the name is not on a

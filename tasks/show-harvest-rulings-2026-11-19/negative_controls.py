@@ -63,5 +63,13 @@ plant("attendee row with a role_detail (agy)", "attendee row with a role_detail"
 plant("personal pattern in role_detail (agy)", "personal pattern in role_detail", role="sponsor",
       role_detail="Dr. Jane Doe", notes=base["notes"] + alt)
 plant("newly held bare group name (Sun Chemical)", "held name", org_id="ORG-001489", listed="Sun Chemical")
+# confirmation round (codex): a script/style tag's title attribute is not page text (build.py's reader, tested directly)
+sys.path.insert(0, str(T))
+import build as B  # noqa: E402
+page = '<style title="Bostik">.sponsor{display:none}</style><img alt="Sika" src="x.png"><a title="Mapei">x</a>'
+got = B.text(page, alt=True)
+good = "bostik" not in got and "sika" in got and "mapei" in got
+print(("PASS " if good else "MISS ") + "script/style title is not alt text | read:", got)
+ok.append(good)
 print(f"{sum(ok)} of {len(ok)} negative controls fail check.py with the expected message")
 sys.exit(0 if all(ok) else 1)
