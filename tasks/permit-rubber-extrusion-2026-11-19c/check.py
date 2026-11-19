@@ -1,4 +1,4 @@
-"""Named check for the Permit re-score for owner ruling 2026-11-19b item 1 (rubber_extrusion -> extrusion): python3 tasks/permit-rubber-extrusion-2026-11-19b/check.py
+"""Named check for the Permit re-score for owner ruling 2026-11-19c item 1 (rubber_extrusion -> extrusion): python3 tasks/permit-rubber-extrusion-2026-11-19c/check.py
 
 Recomputes every published count from the stored permits, the Atlas rows and the canary screen; audits every proposal and every data change;
 then proves the audit fails on every injected defect. Missing caches fail the run (a skipped check is not a pass).

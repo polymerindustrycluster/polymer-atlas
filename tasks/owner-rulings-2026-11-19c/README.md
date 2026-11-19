@@ -1,4 +1,4 @@
-# Owner rulings, 2026-11-19b (follow-ups from PR #402)
+# Owner rulings, 2026-11-19c (follow-ups from PR #402)
 
 The repo owner ruled two items in session on 2026-11-19, as multiple choice. This file records each item. The ruling
 text is separate from how each is applied. Counts are at main c96d4699 unless stated.
@@ -23,7 +23,7 @@ destination, because §3.6's `extrusion` rollup listed only the plastics subtype
 
 1. **SCHEMA** (dated revision): §3.6's `extrusion` ROLLUP row adds `rubber_extrusion`, with this date and file.
    `scripts/export_vocab.py --check` stays current because no term is added.
-2. **Data** (`tasks/permit-rubber-extrusion-2026-11-19b/`): the permit packet's capability map gains
+2. **Data** (`tasks/permit-rubber-extrusion-2026-11-19c/`): the permit packet's capability map gains
    `rubber_extrusion -> extrusion` and the 33-site frame is re-scored with no other rule changed. One new
    `data/site_capabilities.csv` row results: SITE-000264 `extrusion` at `supports_C`.
 3. **Item 2** changes no data: SITE-000936 stays unbound, and the packet's check fails if it is ever bound.

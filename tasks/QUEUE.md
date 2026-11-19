@@ -573,7 +573,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [ ] `open` **widen.net links:** 2 organization rows and 2 site rows in `data/` cite widen.net PDF links whose `u` value is unnecessary (the same PDF bytes without it). Drop the value; the evidence rows stay as they are. Source: PR #378.
 - [ ] `open` **Free-text process values:** 30 off-vocabulary values (V-55 debt) appear as entries in the public process filter on the prospects page. Source: live re-grade, 2026-11-18.
 - [ ] `open` **Permit sites still not bound:** 16 of the 33 permit sites; 8 of them have a blank Atlas street, and a blank street does not bind. Filling a verified street lets the permit lane re-score those 8. Source: PR #402.
-- [x] `done 2026-11-19` **Owner battery candidates (from PR #402):** ruled 2026-11-19b (`tasks/owner-rulings-2026-11-19b/`): `rubber_extrusion` rolls into the §3.6 `extrusion` capability rollup (SCHEMA v1.16.2; SITE-000264 gets one `extrusion` capability row), and a direction word missing from a printed street breaks binding (SITE-000936 stays held). PR #410.
+- [x] `done 2026-11-19` **Owner battery candidates (from PR #402):** ruled 2026-11-19c (`tasks/owner-rulings-2026-11-19c/`): `rubber_extrusion` rolls into the §3.6 `extrusion` capability rollup (SCHEMA v1.16.3; SITE-000264 gets one `extrusion` capability row), and a direction word missing from a printed street breaks binding (SITE-000936 stays held). PR #410.
 
 ### Follow-ups surfaced in W16 (not commitments)
 
