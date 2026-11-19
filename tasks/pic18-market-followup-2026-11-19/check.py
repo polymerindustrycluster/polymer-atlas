@@ -26,9 +26,9 @@ WORDS = {
     'aerospace_defense': r'aerospace|aviation|defen[cs]e|military|aircraft|armed forces', 'automotive_unspecified': r'automotive', 'automotive_oem': r'\boem\b|tier ?[1i]\b|original equipment', 'automotive_aftermarket': r'after ?market',
     'electronics_electrical': r'electronic|electrical', 'medical_healthcare_general': r'medical|health ?care|doctors', 'medical_device': r'medical device|implant|stent|thrombectomy|fda[- ]approved|physicians during procedures',
     'pharmaceutical_biotech': r'pharmaceutical', 'construction_building_products': r'construction|building', 'energy_oil_gas': r'oil and gas|petroleum',
-    'marine': r'marine|boat', 'chemical_mining_metals_processing': r'chemical|mining|metal ?forming|metal forging', 'water_wastewater': r'wastewater', 'industrial_machinery': r'manufacturing machinery|machine manufacturers|production equipment', 'rail_transportation': r'\brail\b|locomotive', 'agriculture': r'agricult|farm',
+    'marine': r'marine|boat', 'chemical_mining_metals_processing': r'chemical|mining|\bsteel\b|metal ?forming|metal forging', 'water_wastewater': r'wastewater', 'industrial_machinery': r'manufacturing machinery|machine manufacturers|production equipment', 'rail_transportation': r'\brail\b|locomotive', 'agriculture': r'agricult|farm',
     'general_industrial': r'industrial', 'food_processing_foodservice': r'food processing|food ?service|catering', 'plastics_rubber_processors': r'plastic|rubber|rotomold|molders',
-    'telecom_datacom': r'telecom', 'dental': r'dentist|dental|denture', 'toys_sporting_goods': r'toys|sporting|sports', 'lawn_garden_recreation': r'\blawn\b', 'tire_rubber_goods': r'\btire', 'appliances': r'appliance', 'consumer_goods_housewares': r'housewares|household', 'energy_renewables_battery': r'batter(y|ies)', 'rv_powersports_trailers': r'\brv\b'
+    'telecom_datacom': r'telecom', 'dental': r'dentist|dental|denture', 'packaging_consumer': r'retail packaging', 'toys_sporting_goods': r'toys|sporting|sports', 'lawn_garden_recreation': r'\blawn\b', 'tire_rubber_goods': r'\btire', 'appliances': r'appliance', 'consumer_goods_housewares': r'housewares|household', 'energy_renewables_battery': r'batter(y|ies)', 'rv_powersports_trailers': r'\brv\b'
 }
 HOLD_CLASSES = {'no_market_claim', 'scope_owner_ruling', 'no_vocab_market', 'off_vocabulary_or_ambiguous_market', 'menu_or_nav_only', 'group_or_redirect_attribution', 'list_item_only'}
 READ_BASES = {'page_read', 'text_screened'}
@@ -63,7 +63,26 @@ def verify_frame(frame):
     assert not set(F.OUT_OF_SCOPE) & set(frame), 'an out-of-scope organization is in the frame'
 
 
-def verify(inputs, verdicts, frame=None, subjects=None):
+def subject_check(inputs, subjects, frame, enforce=True):
+    """Owner ruling M1: every applied record of the M1 frame (all but the M2 record) needs a subject entry, and its quote (mode quote) names the subsidiary, its brand
+    or its plant, or (mode page) the witness is that subsidiary's dedicated page (its title names it and its URL carries the slug). Required whether or not the record
+    has a usable parent ID. With enforce=False the check is off (used to show the probe passes without it)."""
+    if not enforce:
+        return
+    for r in inputs:
+        if r['org_id'] in OWNER_M2 or r['org_id'] not in frame:
+            continue
+        s = subjects.get(r['org_id'])
+        assert s, ('no subject entry for an applied M1 record', r['org_id'])
+        if s['mode'] == 'page':
+            raw, _, _ = locate(r['org_id'], r['source_kind'], r['source_url'])
+            title = re.search(r'<title[^>]*>(.*?)</title>', raw.read_text(errors='replace'), re.S | re.I)
+            assert title and any(n.lower() in title.group(1).lower() for n in s['names']) and s['slug'] and s['slug'] in r['source_url'], ('the page is not the subsidiary\'s dedicated page', r['org_id'])
+        else:
+            assert any(found(r['quote'], n) for n in s['names']), ('the quote does not name the subsidiary, its brand or its plant (group-wide claim)', r['org_id'])
+
+
+def verify(inputs, verdicts, frame=None, subjects=None, enforce_subjects=True):
     frame, subjects = frame or FRAME, SUBJECTS if subjects is None else subjects
     verify_frame(frame)
     base = base_orgs()
@@ -106,10 +125,9 @@ def verify(inputs, verdicts, frame=None, subjects=None):
         parent = base.get(org['parent_org_id'])
         # M1: a group page counts only where it names the record, its brand or its plant as the subject of the claim (the subject names are in subjects.csv with their basis)
         assert not (parent and domain(parent['website']) == domain(r['source_url'])) or r['org_id'] in subjects, 'group domain witness'
-        if r['org_id'] in subjects:
-            assert any(found(r['quote'], n) for n in subjects[r['org_id']]), ('the quote does not name the subsidiary, its brand or its plant (group-wide claim)', r['org_id'])
         assert registrable(r['source_url']) == registrable(org['website']), ('source domain differs from the record website', r['org_id'])
         assert r['tier_effect'] == ('supports_U' if org['verification_tier'] == 'U' else 'supports_A'), 'strength'
+    subject_check(inputs, subjects, frame, enforce_subjects)
     applied = {r['org_id'] for r in inputs}
     for v in verdicts:
         assert v['read_basis'] in READ_BASES, 'read basis missing'
@@ -142,6 +160,14 @@ def cell_writes(before, after, values):
     return changed
 
 
+def journal_date(oid, kind, url):
+    """Observation date straight from the journals (independent of build.py): the corpus manifest for a stored page, the fetch journal for a live page."""
+    journal = [r for r in read(SNAPSHOT) if r['status'] == 'ok' and r['text_file']] if kind == 'stored' else [r for r in read(HERE / 'fetches.csv') if r['status'] == 'ok' and r['retained'] == 'yes']
+    dates = {r['fetched_at'][:10] for r in journal if r['org_id'] == oid and r['url'] == url}
+    assert len(dates) == 1, ('no single journal date for the witness', oid, url)
+    return dates.pop()
+
+
 def derived_evidence(inputs, tiers):
     """Every applied evidence row, rebuilt from inputs.csv and the stored page bytes (sha256 recomputed here), never from the editable evidence packet."""
     out = []
@@ -149,7 +175,7 @@ def derived_evidence(inputs, tiers):
         raw, _, _ = locate(r['org_id'], r['source_kind'], r['source_url'])
         out.append(dict(evidence_id=r['evidence_id'], record_table='organizations', record_id=r['org_id'], claim_type='activity',
                         claim_detail=f'markets_served {r["value"]}: "{r["quote"]}"', source_class='own_site', source_ref=r['source_url'],
-                        observed_date='2026-11-18', tier_effect='supports_U' if tiers[r['org_id']] == 'U' else 'supports_A',
+                        observed_date=journal_date(r['org_id'], r['source_kind'], r['source_url']), tier_effect='supports_U' if tiers[r['org_id']] == 'U' else 'supports_A',
                         created_by='claude atlas-w19-mktfollow', notes='Own-company source; field witness retained, SHA256 ' + sha(raw)))
     return out
 
@@ -274,8 +300,7 @@ def builder_tests(inputs, evidence):
             old_key = "key=lambda p: (not p.name.startswith('evidence_'), p.name)"
             assert src.count(old_key) == 1, 'write-order line not found'
             eo, oo = sorted(n for n in names if n.startswith('evidence_')), sorted(n for n in names if n.startswith('organizations_'))
-            assert len(eo) >= 2, 'the unsafe-order injection needs two shards'
-            unsafe = [eo[0], oo[-1]] + eo[1:] + oo[:-1]
+            unsafe = oo[-1:] + eo + oo[:-1]  # an organization shard published before any evidence shard (works for one shard pair or several)
             original_apply = B.apply
             try:
                 exec(src.replace(old_key, 'key=lambda p: ' + repr(unsafe) + '.index(p.name)'), B.__dict__)
@@ -467,14 +492,37 @@ def main():
             print('REFUSED:', name)
         else:
             raise AssertionError('silent pass: ' + name)
-    group_row = next(r for r in inputs if r['org_id'] in SUBJECTS)
+    group_row = next(r for r in inputs if r['org_id'] in SUBJECTS and SUBJECTS[r['org_id']]['mode'] == 'quote')
     try:  # M1 injection: a group-wide claim attributed to a subsidiary (the quote does not name the subsidiary, its brand or its plant)
-        verify(inputs, verdicts, subjects={**SUBJECTS, group_row['org_id']: ['Unrelated Group Name']})
+        verify(inputs, verdicts, subjects={**SUBJECTS, group_row['org_id']: dict(SUBJECTS[group_row['org_id']], names=['Unrelated Group Name'])})
     except AssertionError as e:
         assert 'does not name the subsidiary' in str(e), str(e)
         print('REFUSED: a group-wide claim attributed to a subsidiary (the page does not name the subsidiary, its brand or its plant)')
     else:
         raise AssertionError('silent pass: group-wide claim attributed to a subsidiary')
+    # Codex round 1 probe: a parent-only claim with no subject entry for the record (the record has no usable parent ID, so the group-domain check cannot catch it)
+    parent_only = copy.deepcopy(inputs)
+    row = next(r for r in parent_only if r['org_id'] == group_row['org_id'])
+    row['quote'] = 'the Poling Group name to informally unify his companies supporting the tire and rubber industry'  # a group-wide sentence that names no subsidiary
+    no_entry = {k: v for k, v in SUBJECTS.items() if k != row['org_id']}
+    subject_check(parent_only, no_entry, FRAME, enforce=False)  # with the subject rule disabled the parent-only claim is accepted
+    for subs, expect in ((no_entry, 'no subject entry'), (SUBJECTS, 'does not name the subsidiary')):
+        try:
+            subject_check(parent_only, subs, FRAME)
+        except AssertionError as e:
+            assert expect in str(e), str(e)
+        else:
+            raise AssertionError('silent pass: parent-only claim with ' + expect)
+    print('REFUSED: a parent-only claim with no subject entry (accepted when the subject rule is disabled, refused with it enabled)')
+    page_row = next((r for r in inputs if r['org_id'] in SUBJECTS and SUBJECTS[r['org_id']]['mode'] == 'page'), None)
+    if page_row:
+        try:
+            subject_check([page_row], {page_row['org_id']: dict(SUBJECTS[page_row['org_id']], slug='no-such-slug')}, FRAME)
+        except AssertionError as e:
+            assert 'dedicated page' in str(e), str(e)
+            print("REFUSED: a page-mode subject whose URL does not carry the subsidiary's slug")
+        else:
+            raise AssertionError('silent pass: page-mode slug')
     base = base_orgs()
     attribution = [  # records patched in memory: a parent on the source domain (a record with no named subject); a different record website; do-not-promote; carbon; the Myrava tier
         ('group domain witness without a named subject', 'group domain witness', lambda b, o: b[o].update(parent_org_id='ORG-PARENT') or b.update({'ORG-PARENT': dict(b[o], website=b[o]['website'])}), F.MYRAVA),

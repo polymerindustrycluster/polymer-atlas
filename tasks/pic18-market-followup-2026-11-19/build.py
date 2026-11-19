@@ -26,7 +26,8 @@ import frame as F  # the frame is recomputed from the merged batches' verdicts (
 FRAME = F.frame()
 assert len(FRAME) == F.EXPECTED, ('frame count changed', len(FRAME))
 OWNER_M2 = {F.MYRAVA}  # owner ruling M2: the do-not-promote note caps the tier only
-SUBJECTS = {r['org_id']: [n.strip() for n in r['names'].split(';')] for r in csv.DictReader((HERE / 'subjects.csv').open())} if (HERE / 'subjects.csv').exists() else {}
+SUBJECTS = {r['org_id']: dict(names=[n.strip() for n in r['names'].split(';')], mode=r.get('mode') or 'quote', slug=r.get('url_slug') or '')
+            for r in csv.DictReader((HERE / 'subjects.csv').open())} if (HERE / 'subjects.csv').exists() else {}
 sys.path.insert(0, str(ROOT / 'scripts'))
 sys.path.insert(0, str(MKT3))  # witness_class is reused from MKT3, not copied
 from shard_io import append_sorted
@@ -58,6 +59,15 @@ def locate(oid, kind, url):
     assert kind == 'live', kind
     r = next(r for r in read(HERE / 'fetches.csv') if r['org_id'] == oid and r['url'] == url and r['status'] == 'ok' and r['retained'] == 'yes')
     return LIVE / r['raw_file'], LIVE / r['text_file'], r['sha256']
+
+
+def witness_date(oid, kind, url):
+    """The observation date of a witness, from its journal: the pinned corpus manifest's fetched_at for a stored page, the fetch journal's fetched_at for a live page (SCHEMA 4.13)."""
+    if kind == 'stored':
+        r = next(r for r in read(SNAPSHOT) if r['org_id'] == oid and r['url'] == url and r['status'] == 'ok' and r['text_file'])
+    else:
+        r = next(r for r in read(HERE / 'fetches.csv') if r['org_id'] == oid and r['url'] == url and r['status'] == 'ok' and r['retained'] == 'yes')
+    return r['fetched_at'][:10]
 
 
 def proposals(tiers):
@@ -213,7 +223,7 @@ def main():
     inputs = proposals(tiers)
     evidence = [dict(evidence_id=r['evidence_id'], record_table='organizations', record_id=r['org_id'], claim_type='activity',
                      claim_detail=f'markets_served {r["value"]}: "{r["quote"]}"', source_class='own_site', source_ref=r['source_url'],
-                     observed_date='2026-11-18', tier_effect=r['tier_effect'], created_by='claude atlas-w19-mktfollow',
+                     observed_date=witness_date(r['org_id'], r['source_kind'], r['source_url']), tier_effect=r['tier_effect'], created_by='claude atlas-w19-mktfollow',
                      notes='Own-company source; field witness retained, SHA256 ' + r['raw_sha256']) for r in inputs]
     if '--packet-only' not in sys.argv:  # packet-only builds the CSVs without touching data/ (used until the size lane's PR has merged)
         apply(inputs, evidence)
