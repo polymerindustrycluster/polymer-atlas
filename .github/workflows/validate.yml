@@ -1,5 +1,5 @@
 # Validate the canonical CSVs, vocabulary export and tests on every PR and push to main.
-# Source of truth for edits: this file (docs/ci/validate.yml keeps the reviewed copy).
+# Edit this file directly; docs/ci/README.md describes both workflows.
 name: validate
 
 on:
