@@ -2,7 +2,7 @@
 
 | Ref | proc_unknown | share of 794 |
 |---|---|---|
-| merge-base ec7e19be (origin/main, PR #400 merged) | **324** | 40.8% |
-| HEAD of this branch | **323** | 40.7% |
+| merge-base 55ab601a (origin/main, PRs #400 and #401 merged) | **324** | 40.8% |
+| HEAD of this branch | **322** | 40.6% |
 
-`proc_unknown` falls by **1**, exactly the **1** organization whose first process lands in a `processes` cell (SITE-000814, ORG-000752; its only PIC-18 site). **3** sites got only a capability row (SITE-000264, SITE-000601, SITE-001530): 5 capability rows in all, which do not move `proc_unknown`. `mkt_unknown` (319) and `band_unknown` (443) are unchanged.
+`proc_unknown` falls by **2**, exactly the **2** organizations whose first process lands in a `processes` cell (SITE-000814, ORG-000752; SITE-001137; each is the organization's only PIC-18 site). **3** sites got only a capability row (SITE-000264, SITE-000601, SITE-001530): 5 capability rows in all, which do not move `proc_unknown`. `mkt_unknown` (319) and `band_unknown` (443) are unchanged.
