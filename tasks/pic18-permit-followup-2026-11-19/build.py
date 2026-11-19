@@ -82,15 +82,15 @@ def position(text, quote):
     q = cb.words(quote); n = len(q); w = [t for t, _ in toks]; lines = text.split("\n"); found = ""
     for i in range(len(w) - n + 1):
         if w[i:i + n] != q: continue
-        ln = toks[i][1]
+        ln = toks[i][1]; ln_last = toks[i + n - 1][1]   # first and last token lines: the WHOLE quote must lie inside a field
         if "....." in lines[ln]: continue
         found = "other"
         if re.match(r"\s*\d+\.\s+([A-Z]\d{3}\b|Emissions Unit Group)", lines[ln]): return "unit_heading"
         for k in range(ln, max(-1, ln - 60), -1):
             L = lines[k]
             if re.match(r"\s*[a-z]\)\s", L): break   # a lettered term opens the terms and conditions: not a unit description
-            if re.search(r"Permit Description:", L): cls = "permit_description" if ln - k < 6 and not next_field(lines, k, ln) else ""
-            elif re.search(r"Facility Description:", L): cls = "facility_description" if ln - k < 3 and not next_field(lines, k, ln) else ""
+            if re.search(r"Permit Description:", L): cls = "permit_description" if ln_last - k < 6 and not next_field(lines, k, ln_last) else ""
+            elif re.search(r"Facility Description:", L): cls = "facility_description" if ln_last - k < 3 and not next_field(lines, k, ln_last) else ""
             elif re.search(r"Operations,?\s+Propert\S*\s+and/or\s+Equipment\s+Description:\s*$", L): cls = "unit_paragraph" if ln - k < 8 else ""
             elif re.match(r"\s*EU\s*ID\b", L): cls = "unit_table_row"
             else: continue
@@ -401,7 +401,7 @@ Per quote: `proposals.csv` (document, permit number, issue and expiry dates, bin
 2. **SITE-000601's `coating_applying`** (coaters in the 2020 permit, past its printed expiry 2025-04-01; permit description "coating lines") stays held: no capability term.
 3. **SITE-001137 gets `coating_applying` from unit R005 only** (tier C, `supports_C`). R005 "Vinyl Coatings Makor Flatline": "Conveyorized spray coatings of vinyl products with a 0.64 MMBtu/hr natural gas-fired drying oven"; the unit's own terms call it "the vinyl coating line". By the lane predicate (a coating line, not a booth) it is the holder's own process, and it is an equipment phrase, so `supports_C`. The Q-One spray booth and the drive-thru booth are finishing booths (ancillary), R006 coats wood, and the woodworking unit is not a polymer process: none is carried.
 4. **SITE-002113 stays held** although it now binds: "spray booth for lay-up of polyester resin mixes" does not say spray-up or hand lay-up, and no composites `_unspecified` term exists.
-5. **{pd_n} writes rest on a Permit Description alone** ({pd_list}); {pd_p} of them is a `processes` write (SITE-000814, tier C). The unit text of each names no process in the words the term needs. All are `supports_C` (P3), and the tier A/B ones are capability rows only.
+5. **{pd_n} writes use the Permit Description as their sole qualifying witness under the packet's rules** ({pd_list}); {pd_p} of them is a `processes` write (SITE-000814, tier C). No unit heading or unit equipment description (bound, not ancillary) states the term for these sites. All are `supports_C` (P3), and the tier A/B ones are capability rows only. SITE-001530's P024 miscellaneous-requirements section (the permit's own heading, lower-cased here) does describe adhesive mixing (document 1638095: the unit "repurposed for solvent coatings and adhesive mixing"; document 2540958: "declared De Minimis ... for solvent coatings and adhesive mixing in 2014"); that is a requirements passage, not a unit heading, equipment description or Permit Description field, so under the ruling's witness list it is not used.
 
 ## Self-refute (contract rule 15)
 

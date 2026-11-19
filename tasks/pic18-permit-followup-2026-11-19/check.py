@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent)); import build as B
 HERE, ROOT = B.HERE, B.ROOT
 WRITE = ("processes", "capability")
 PAIR_RULE = not os.environ.get("CHECK_DISABLE_PAIR_RULE")   # the env var exists only to show the pair injections go green without the rule
-EXPECTED_DEFECTS = 26   # README reads this number
+EXPECTED_DEFECTS = 27   # README reads this number
 
 def base_ref(): return B.git("merge-base", "HEAD", "origin/main").strip()
 def rd(text): return list(csv.DictReader(io.StringIO(text, newline="")))
@@ -254,8 +254,9 @@ def main():
         r_ = next(x for x in model["sites"] if x["site_id"] == s_); assert (r_["bind"] == "BOUND") == fmt_ok, f"{s_}: bind {r_['bind']}, expected bound={fmt_ok}"
     assert city_bound("Newbury Twp.", "Newbury") and city_bound("Newbury", "Newbury Twp."), "a trailing township suffix must bind in both directions"
     assert not city_bound("Twp. Newbury", "Newbury"), "a leading township marker must not bind"
-    inp3 = copy.deepcopy(inp); next(q for q in inp3["V"]["sites"]["SITE-000814"]["quotes"])["quote"] = "Permit Type: Renewal"
-    assert not [p for p in B.compute(inp3)["props"] if p["site_id"] == "SITE-000814" and p["route"] in WRITE], "build.compute wrote a proposal whose witness is a different labelled field"
+    for bad_quote in ("Permit Type: Renewal", "facility. Permit Type: Renewal Issue Date: 09/01/2023"):
+        inp3 = copy.deepcopy(inp); next(q for q in inp3["V"]["sites"]["SITE-000814"]["quotes"])["quote"] = bad_quote
+        assert not [p for p in B.compute(inp3)["props"] if p["site_id"] == "SITE-000814" and p["route"] in WRITE], "build.compute wrote a proposal whose witness is not wholly inside the Permit Description field"
     pos = copy.deepcopy([p for p in props if p["site_id"] == "SITE-000346"]); pos[0]["quote"] += ", blowdown tanks"
     assert not [g for g in audit(pos, sites, orgs) if g[0] == "ANCILLARY"], "a polymerization witness is rejected for one keyword in its equipment list"
     # ------------------------------------------------------------------------------------------------------------ injected defects
@@ -317,6 +318,7 @@ def main():
         assert duplicate_verdict(), "the verdict-level duplicate probe is inert: it is not written even with the pair check disabled"
     done += [one("BIND", lambda P, S2: S2["SITE-000264"].update(city="Twp. Seville")),   # a LEADING township marker on a written row must not bind
              one("WITNESS", lambda P, S2: row(P, site_id="SITE-000814").update(quote="Permit Type: Renewal")),
+             one("WITNESS", lambda P, S2: row(P, site_id="SITE-000814").update(quote="facility. Permit Type: Renewal Issue Date: 09/01/2023")),   # Codex: starts inside the field, ends in the next one
              one("OWNER_HOLD", duplicate_row), one("OWNER_HOLD", held_in_applied, "complete"),
              one("OWNER_HOLD", lambda P, S2: row(P, site_id="SITE-000248", term="coating_applying").update(route="processes")),
              one("COMPLETE", restore_base, "complete"), one("WRITTEN", fake_note, "written"), one("MANIFEST", fake_manifest, "manifest"),
