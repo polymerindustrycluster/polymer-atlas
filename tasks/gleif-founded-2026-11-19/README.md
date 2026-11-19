@@ -1,6 +1,6 @@
 # year_founded from GLEIF for LEI-linked organizations (2026-11-19)
 
-**+27 `year_founded` values on 27 organizations, +27 evidence rows (EVD-399000 to 399026).** The source is GLEIF's
+**+18 `year_founded` values on 18 organizations, +18 evidence rows (EVD-399000 to 399017).** The source is GLEIF's
 LEI record, `entity.creationDate`, which is the legal entity's formation date. That matches the SCHEMA definition of
 `year_founded`: "Legal-entity formation year where a source states it". GLEIF data is CC0. The raw records, fetched
 2026-11-19 from api.gleif.org, are in `raw/`.
@@ -11,16 +11,16 @@ A value is written only when every gate in `build.py` passes:
 - its legal or headquarters address names the organization's HQ city and state;
 - the record has a creation date.
 
-**Not filled (unit: LEI links; 132 in all, 27 filled):**
+**Not filled (unit: LEI links; 132 in all, 18 filled):**
 
 | Reason | Links |
 |-|-|
 | REGISTRY_CEILING | 41 |
 | LEI address | 28 |
+| HELD | 10 |
 | LEI entity registered outside the US | 9 |
 | no entity.creationDate in the LEI record | 7 |
 | LEI entity status INACTIVE | 1 |
-| HELD | 1 |
 | year_founded already set, or organization not active | 18 |
 
 The REGISTRY_CEILING links belong to tier A organizations. A registry source caps at `supports_B`, which validator V-25
@@ -41,3 +41,12 @@ different founding year, the schema's multi-inception rule applies: the conflict
   LLC, and the 10-K dates the corporation to 2009, succeeding a 2003 LLC. Its creation date may be a predecessor's, so
   Kraton is HELD. Codex's general point: name, address and status checks do not prove historical continuity
   through renames. A renamed LEI therefore needs the GLEIF field-modification history before its date is used.
+- **grok (deep), the 27 remaining:** 18 SOUND, 1 WRONG, 8 DOUBT; verdict UNSOUND.
+  - **WRONG:** Hexion's 1899 date is the Borden Company's New Jersey charter.
+  - **DOUBT, rename or conversion dates:** Vibrantz, Struktol, Flow Polymers and Flow Dry.
+  - **DOUBT, charter dates later than the business:** Nordson, Molded Fiber Glass, H.B. Fuller and Lear.
+
+  **Only rows both families judged SOUND are applied: 18.** The 9 others are HELD in `build.py` with their
+  reasons. A charter or name-history source settles each one. Grok's general point stands: a GLEIF creation date
+  can be an ancestor's charter or a conversion date. A further GLEIF pass should check the field-modification
+  history and the predecessor links before using a date.

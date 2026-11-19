@@ -37,7 +37,17 @@ def write(p, head, rows, eol):
 norm = lambda s: re.sub(r"[^a-z]", "", (s or "").lower())
 # Integrator holds after review: a renamed or reorganized LEI may carry a predecessor entity's formation date.
 HOLD = {"ORG-000925": "Kraton: the LEI was renamed from Kraton Polymers LLC to Kraton Corporation (2023); the 10-K says the "
-                      "corporation was incorporated in 2009, succeeding a 2003 LLC (codex refute 2026-11-19)"}
+                      "corporation was incorporated in 2009, succeeding a 2003 LLC (codex refute 2026-11-19)",
+        # grok refute 2026-11-19: only rows BOTH families judged SOUND are applied
+        "ORG-000880": "Hexion: 1899-04-24 is the Borden Company New Jersey charter, an ancestor of the 2005 Hexion combination (grok: WRONG)",
+        "ORG-000007": "Vibrantz: a 2022 rebrand of a Prince/Chromaflo/Ferro combination; 2011 may be a prior vehicle; name history unchecked (grok: DOUBT)",
+        "ORG-000008": "Struktol: 2009-01-01 has the January-1 conversion pattern; name history unchecked (grok: DOUBT)",
+        "ORG-000142": "Nordson: 1935 is neither the 1909 predecessor nor the 1954 reorganization; needs a charter source (grok: DOUBT)",
+        "ORG-000451": "Molded Fiber Glass: 1946 against a usually stated 1948 start; needs a charter source (grok: DOUBT)",
+        "ORG-000844": "Flow Dry: 2006 Inc. date may be a wrapper over an older business; needs a charter source (grok: DOUBT)",
+        "ORG-000870": "H.B. Fuller: 1915 is a later charter date for an 1887 firm; needs a charter source (grok: DOUBT)",
+        "ORG-000931": "Lear: 1987 is the LBO-era Lear Seating vehicle; the record describes a plant while the LEI is the parent (grok: DOUBT)",
+        "ORG-001453": "Flow Polymers: 2010 is an ownership LLC date for an older business now under Arclin (grok: DOUBT)"}
 
 
 def gate(org, ent):

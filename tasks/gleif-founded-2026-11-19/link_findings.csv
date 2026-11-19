@@ -1,9 +1,12 @@
 org_id,legal_name,lei,lei_legal_name,failed_gate
+ORG-000007,Vibrantz Technologies Inc.,549300GYZ1T3S8OPH343,VIBRANTZ TECHNOLOGIES INC.,HELD: Vibrantz: a 2022 rebrand of a Prince/Chromaflo/Ferro combination; 2011 may be a prior vehicle; name history unchecked (grok: DOUBT)
+ORG-000008,Struktol Company of America LLC,5493006LKGW40SX2IX80,"STRUKTOL COMPANY OF AMERICA, LLC",HELD: Struktol: 2009-01-01 has the January-1 conversion pattern; name history unchecked (grok: DOUBT)
 ORG-000030,"Piedmont Plastics, Inc.",549300NVGY7UYWAVG334,Piedmont Plastics Inc.,LEI entity status INACTIVE
 ORG-000054,"Americhem, Inc.",549300DP3DMYKBI32E81,"AMERICHEM, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
 ORG-000088,"PPG Industries, Inc.",549300BKPEP01R3V6C59,"PPG INDUSTRIES, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
 ORG-000102,Alpha Technologies,549300LXV4YNDF67JD48,ALPHA TECHNOLOGIES,"LEI entity registered outside the US (BE, jurisdiction BE)"
 ORG-000133,Oatey Co.,549300PN80VSLE8B1404,Oatey Co.,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000142,Nordson Corporation,14OS6Q5N55N95WM84M53,NORDSON CORPORATION,HELD: Nordson: 1935 is neither the 1909 predecessor nor the 1954 reorganization; needs a charter source (grok: DOUBT)
 ORG-000153,Moen Incorporated,549300QH0VXON201H732,MOEN INCORPORATED,"LEI address (WILMINGTON, US-DE; HQ WILMINGTON, US-DE) does not match the organization's HQ (North Olmsted, OH)"
 ORG-000174,"Vertex, Inc.",549300QMYW171MP1PL50,"VERTEX, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
 ORG-000185,"anyseals, Inc.",967600GTAQSKJKN93612,ANYSEALS,"LEI entity registered outside the US (BE, jurisdiction BE)"
@@ -24,6 +27,7 @@ ORG-000428,The Malish Corporation,54930062SPBLBV8VNN12,THE MALISH CORPORATION,RE
 ORG-000430,Mar-Bal Inc.,549300X205S154UQZ886,"MAR-BAL, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
 ORG-000431,"Mercury Plastics, Inc.",549300DULJ6D3LLRLA89,"MERCURY PLASTICS, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
 ORG-000445,Miller Weldmaster Corporation,549300D1C5JIFF71VK94,MILLER WELDMASTER CORPORATION,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000451,Molded Fiber Glass Companies,549300PE6TWPN7PZTD95,MOLDED FIBER GLASS COMPANIES,HELD: Molded Fiber Glass: 1946 against a usually stated 1948 start; needs a charter source (grok: DOUBT)
 ORG-000457,National Polymer,335800VZEGFVO2G1KD35,NATIONAL POLYMER,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
 ORG-000480,"Palmer Holland, Inc",5493001TZNDE1K4AWS12,"PALMER HOLLAND, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
 ORG-000531,Q-Lab Corporation,JVMWMO6NGGVFIZT8IK35,Q-LAB CORPORATION,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
@@ -46,12 +50,16 @@ ORG-000769,Creative Foam Corporation,549300567XGXTX27T062,Creative Foam Corporat
 ORG-000777,"CTL Aerospace, Inc.",254900ZDFA99KHDVWS11,"CTL-Aerospace, Inc.",no entity.creationDate in the LEI record
 ORG-000780,"Custom Molded Products, LLC",549300PFONU4YY4GYS55,"Custom Molded Products, LLC","LEI address (Wilmington, US-DE; HQ Newnan, US-GA) does not match the organization's HQ (Wilmington, OH)"
 ORG-000793,Dimex LLC,549300S6KMFILE0Q7U23,DIMEX LLC,no entity.creationDate in the LEI record
+ORG-000844,"Flow Dry Technology, Inc.",5493004D0BF1CPF0BX88,"Flow Dry Technology, Inc.",HELD: Flow Dry: 2006 Inc. date may be a wrapper over an older business; needs a charter source (grok: DOUBT)
 ORG-000853,"FXI, Inc.",549300YQV7UTT2LYDU93,"FXI, Inc.","LEI address (Wilmington, US-DE; HQ Media, US-PA) does not match the organization's HQ (Spencerville, OH)"
+ORG-000870,H.B. Fuller Company,JSMX3Z5FOYM8V0Q52357,H.B. FULLER COMPANY,HELD: H.B. Fuller: 1915 is a later charter date for an 1887 firm; needs a charter source (grok: DOUBT)
 ORG-000878,"HBD Industries, Inc.",549300MX21RN38T36K23,"HBD INDUSTRIES, INC.",REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
+ORG-000880,Hexion Inc.,54930030FZF8HYAEHM46,HEXION INC.,"HELD: Hexion: 1899-04-24 is the Borden Company New Jersey charter, an ancestor of the 2005 Hexion combination (grok: WRONG)"
 ORG-000881,HFI LLC,R2WNDPIXVURVZR5I8G46,"HFI, LLC","LEI address (Wilmington, US-DE; HQ Wilmington, US-DE) does not match the organization's HQ (Canal Winchester, OH)"
 ORG-000897,Integris Composites,9695001Y23K8YUM4OP45,INTEGRIS COMPOSITES,"LEI entity registered outside the US (FR, jurisdiction FR)"
 ORG-000911,Johns Manville,549300VUEYP59S5CFZ81,Johns Manville,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
 ORG-000925,Kraton Corporation,549300UKP7HNTB21X136,KRATON CORPORATION,"HELD: Kraton: the LEI was renamed from Kraton Polymers LLC to Kraton Corporation (2023); the 10-K says the corporation was incorporated in 2009, succeeding a 2003 LLC (codex refute 2026-11-19)"
+ORG-000931,Lear Corporation,549300UPNBTXA1SYTQ33,LEAR CORPORATION,HELD: Lear: 1987 is the LBO-era Lear Seating vehicle; the record describes a plant while the LEI is the parent (grok: DOUBT)
 ORG-000939,Magnum Magnetics Corporation,549300F2BLLRKFC4JO21,MAGNUM MAGNETICS CORPORATION,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
 ORG-000949,Maverick Corporation,2549009SAOCHWB45PX78,Maverick Corporation,"LEI entity registered outside the US (KY, jurisdiction KY)"
 ORG-000961,Milacron LLC,E7W7YO04IPLYNSFL9C88,MILACRON LLC,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
@@ -81,6 +89,7 @@ ORG-001422,Elster Perfection Corporation,5493008KYEMVZUEO4X96,ELSTER PERFECTION 
 ORG-001423,ABC Technologies Inc.,5493001F3JRVFSNAPG47,ABC TECHNOLOGIES INC.,"LEI entity registered outside the US (CA, jurisdiction CA-ON)"
 ORG-001425,Cooper Tire & Rubber Company,DE46ECQ8KH195MRIQN56,COOPER TIRE & RUBBER COMPANY,no entity.creationDate in the LEI record
 ORG-001429,"Nexeo Plastics, LLC",549300OIY52G9INE2T98,"NEXEO PLASTICS, LLC","LEI address (WILMINGTON, US-DE; HQ SPRING, US-TX) does not match the organization's HQ (The Woodlands, TX)"
+ORG-001453,Flow Polymers LLC,549300AG0Q17R7HALR25,"Flow Polymers, LLC",HELD: Flow Polymers: 2010 is an ownership LLC date for an older business now under Arclin (grok: DOUBT)
 ORG-001459,RFD Beaufort Inc.,5493000P874LB4Z5K384,RFD Beaufort Inc.,"LEI address (Wilmington, US-DE; HQ Wilmington, US-DE) does not match the organization's HQ (Sharon Center, OH)"
 ORG-001466,Henkel Corporation,549300H8L0V8O2825A57,HENKEL CORPORATION,REGISTRY_CEILING: tier A organization (registry evidence caps at supports_B)
 ORG-001471,MSI Express Inc,254900HX50E22OG6NT36,"MSI EXPRESS, INC.","LEI address (NEWCOMERSTOWN, US-OH; HQ PORTAGE, US-IN) does not match the organization's HQ (Groveport, OH)"
