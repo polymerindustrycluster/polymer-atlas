@@ -53,12 +53,13 @@ CAND = {
 }
 # rows Muse called PASS that fail the lane rule: raw-checked for the report, never admitted
 OWNER = {
-    "BB-0037": "Healy: Gate B quote lists lab members' projects (hydrogels), not his own research statement",
-    "BB-0046": "Aguado: Gate B is a department REU program page (his mentor project, his own voice), not his profile or lab page",
-    "BB-0181": "Szleifer: Gate B is a research-center page listing his topics, not his profile or lab page",
-    "BB-0218": "Gabrielson: Gate B is a 2011-12 postdoc alumni entry in another faculty member's lab",
-    "BB-0220": "Zimmerman: Gate A conflict on Illinois's own pages (Research Professor vs Professor Emeritus)",
-    "BB-0491": "Allcock: Gate A conflict on Penn State's own pages (Atherton Professor vs Professor Emeritus)",
+    "BB-0037": "Gate B page: the hydrogel quote lists lab members' projects, not his own research statement",
+    "BB-0046": "Gate B page: a department REU program page (his mentor project, his own voice), not his profile or lab page",
+    "BB-0181": "Gate B page: a research-center page listing his topics, not his profile or lab page",
+    "BB-0218": "Gate B currency: a 2011-12 postdoc alumni entry in another faculty member's lab",
+    "BB-0406": "Gate B domain: his lab's own site (correa-lab.com, listed on his Columbia-hosted CV) is off the university domain",
+    "BB-0220": "Gate A conflict: Illinois's own pages style him Research Professor and Professor Emeritus",
+    "BB-0491": "Gate A conflict: Penn State's own pages style him Atherton Professor and Professor Emeritus (Muse: NOT FOUND)",
 }
 out = []
 for lid, (rep, note) in CAND.items():

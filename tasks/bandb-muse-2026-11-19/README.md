@@ -1,7 +1,9 @@
 # Band-B faculty: leads settled by a second source (2026-11-19)
 
-**+3 people, tier A** (PERSON-002498 to 002500), **+9 evidence rows** (EVD-399385 to 399393, own_site, supports_A). Six
-candidates passed the raw check. Both families judged three SOUND, and only those are admitted (`outcomes.csv`).
+**+2 people, tier A** (PERSON-002498 and 002499), **+6 evidence rows** (EVD-399385 to 399390, own_site, supports_A).
+- Six candidates passed the raw check, and both families judged three SOUND.
+- After the review, one of those three is held by the integrator: Han's Gate B page turned out to be stale.
+- The other two are admitted (`outcomes.csv`).
 
 **Stacked on #407.** This branch starts from #407 (`agent/claude-code/bandb-people`, +95 people). Its ids sit above #407's:
 PERSON-002498 up and EVD-399385 up. The same-name check sees #407's 95. Merge #407 first.
@@ -25,18 +27,29 @@ leads only:
 | lead | name | what Muse settled | outcome |
 |-|-|-|-|
 | BB-0212 | Daniel Vincent Krogstad | Gate A is current: Associate Research Professor, 2025-present (the lead carried a "Former" label) | admitted, PERSON-002498 |
-| BB-0308 | Bongtae Han | Gate B: his CALCE bio lists "Characterization of advanced polymers" first among his research interests | admitted, PERSON-002499 |
-| BB-0233 | Kelly M. Schultz | Gate B: her ChE profile lists "Polymers and Materials" among her research interests | admitted, PERSON-002500 |
+| BB-0233 | Kelly M. Schultz | Gate B: her ChE profile lists "Polymers and Materials" among her research interests | admitted, PERSON-002499 |
+| BB-0308 | Bongtae Han | Gate B: a CALCE bio lists "Characterization of advanced polymers" first among his research interests | held by the integrator: the page is stale (below) |
 | BB-0380 | Renzo Shamey | Gate B: his profile's research interests include dyeing polyolefins | held: Antigravity WRONG |
 | BB-0241 | Vilas Pol | both gates: his ChE profile now renders; polymer/garnet electrolytes in his battery research | held: Antigravity WRONG |
 | BB-0617 | Michael Scott Arnold | Gate B: his group's current materials focus includes "Semiconducting molecules and polymers" | held: Antigravity DOUBT |
 
-**Not admitted: Muse said PASS, but the page fails our rule** (`owner_rows.csv`; each quote did re-read):
-- Healy (BB-0037): the hydrogel quote describes lab members' projects, not his own research statement.
-- Aguado (BB-0046): the hydrogel quote is on a department REU program page.
-- Szleifer (BB-0181): the polymer quote is on a research-center page.
-- Gabrielson (BB-0218): the hydrogel quote is a 2011–12 postdoc entry in another faculty member's lab.
-- Zimmerman (BB-0220) and Allcock (BB-0491): the university's own pages conflict on emeritus status.
+**Han is held after the review.** His Gate B quote re-reads, but `calce.umd.edu/our-team-ii` is a legacy team page: it
+says a colleague "currently serves" at ARPA-E and lists a 2014 assistant professor. CALCE's current team page
+(`calce.umd.edu/our-team`) gives his area as "Reliability Assessment of Packaging Materials, Components and Assemblies".
+His ME profile lists project titles but states no research. Neither reviewer was told the page's age.
+
+**Not admitted: owner questions** (`owner_rows.csv`, re-read in `owner_rawcheck.csv`):
+- **Muse said PASS on both gates, but the Gate B page fails our rule.** Every quote below re-reads.
+  - Healy (BB-0037): the hydrogel quote describes lab members' projects, not his own research.
+  - Aguado (BB-0046): the hydrogel quote is on a department REU program page.
+  - Szleifer (BB-0181): the polymer quote is on a research-center page.
+  - Gabrielson (BB-0218): the hydrogel quote is a 2011–12 postdoc entry in another faculty member's lab.
+  - Correa (BB-0406): the polymer quote is on his lab's own site, which is off the university domain. His Columbia profile
+    did not load at the raw check.
+- **Gate A conflicts.** These are not Gate B questions.
+  - Zimmerman (BB-0220): Illinois's own pages style him both Research Professor and Professor Emeritus.
+  - Allcock (BB-0491): Penn State's own pages style him both Atherton Professor and Professor Emeritus. Muse answered
+    NOT FOUND.
 
 Every other Muse answer was FAIL or NOT FOUND on a gate; those leads stay held.
 
@@ -52,4 +65,4 @@ Antigravity stood in.
   - **Arnold, DOUBT.** Gate A rests on his group's About page. His university directory profile did not load on any route
     at the raw check or on a retry; it would settle the doubt.
 
-The three it did not judge SOUND are held (`review_holds.csv`).
+The three it did not judge SOUND are held (`review_holds.csv`). Han, whom both judged SOUND, is held in `build.py` (above).

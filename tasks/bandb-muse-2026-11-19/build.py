@@ -24,6 +24,11 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from people_url import has_account_identifier  # noqa: E402  (the same parser validate.py V-62 uses)
 DATE, BY = "2026-11-19", "claude-code bandb-muse-2026-11-19"
 PID0, EVD0 = 2498, 399385  # above main and every open PR on 2026-11-19 (#407 ends at PERSON-002497 and EVD-399384)
+# Integrator holds after review (facts re-read 2026-11-19): a quote that re-reads can still sit on a stale page.
+HOLD = {"BB-0308": "Han: the Gate B page (calce.umd.edu/our-team-ii) is a legacy team page (it says a colleague 'currently "
+                   "serves' at ARPA-E and lists a 2014 assistant professor); CALCE's current team page gives his area as "
+                   "'Reliability Assessment of Packaging Materials, Components and Assemblies', and his ME profile states no "
+                   "research, only project titles"}
 ROLES = {"professor", "associate_professor", "assistant_professor", "research_professor", "center_director_professor",
          "senior_lecturer"}
 
@@ -109,7 +114,8 @@ def main():
         x = rc.get(lid, {})
         idoms = own_domains(r["institution_org_id"])
         why = None
-        if lid in rh: why = "review hold: " + rh[lid]
+        if lid in HOLD: why = "integrator hold: " + HOLD[lid]
+        elif lid in rh: why = "review hold: " + rh[lid]
         elif lid not in rv or any(rv[lid][f] != r[g] for f, g in PACKET.items()):
             why = "row not reviewed, or changed since the two-family review"
         elif x.get("gate_a") != "yes" or x.get("gate_b") != "yes": why = f"raw check gate_a={x.get('gate_a')} gate_b={x.get('gate_b')}"
