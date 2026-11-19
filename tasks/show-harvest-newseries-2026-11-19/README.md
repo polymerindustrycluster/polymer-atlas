@@ -63,8 +63,9 @@ attended in 2025".
 - **Not all companies:** three cells name no organization: one personal name, "Retired" and "University of Michigan
   Student". Four more are organizations but not companies: Bowling Green State University, University of Akron,
   Chicago Paint & Coatings Association and Zinc Association. None of these seven matches an Atlas organization, so
-  none mints.
-- **Not a delegate list:** the other 171 cells are company names, and no cell gives a person's title or employer.
+  none mints. The rest are organization names, mostly companies, with some acronyms (for example "ACA", the American
+  Coatings Association); they were not classified one by one.
+- **Not a delegate list:** each cell is a single name, and no cell gives a person's title or employer.
 
 **Undated list (`UNDATED_LISTS`).** The Coatings Trends sponsor block on the organizer's home page names no year,
 and the page announces the 2027 edition. One logo's alt text also names the wrong company ("BYK" on Elinor's logo).
