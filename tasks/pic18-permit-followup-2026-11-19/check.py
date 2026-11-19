@@ -8,8 +8,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent)); import build as B
 HERE, ROOT = B.HERE, B.ROOT
 WRITE = ("processes", "capability")
+SECTION_HEADING = "Permits for the following Emissions Unit(s) or groups of Emissions Units are in this document as indicated below:"
 PAIR_RULE = not os.environ.get("CHECK_DISABLE_PAIR_RULE")   # the env var exists only to show the pair injections go green without the rule
-EXPECTED_DEFECTS = 27   # README reads this number
+EXPECTED_DEFECTS = 28   # README reads this number
 
 def base_ref(): return B.git("merge-base", "HEAD", "origin/main").strip()
 def rd(text): return list(csv.DictReader(io.StringIO(text, newline="")))
@@ -254,9 +255,11 @@ def main():
         r_ = next(x for x in model["sites"] if x["site_id"] == s_); assert (r_["bind"] == "BOUND") == fmt_ok, f"{s_}: bind {r_['bind']}, expected bound={fmt_ok}"
     assert city_bound("Newbury Twp.", "Newbury") and city_bound("Newbury", "Newbury Twp."), "a trailing township suffix must bind in both directions"
     assert not city_bound("Twp. Newbury", "Newbury"), "a leading township marker must not bind"
-    for bad_quote in ("Permit Type: Renewal", "facility. Permit Type: Renewal Issue Date: 09/01/2023"):
-        inp3 = copy.deepcopy(inp); next(q for q in inp3["V"]["sites"]["SITE-000814"]["quotes"])["quote"] = bad_quote
-        assert not [p for p in B.compute(inp3)["props"] if p["site_id"] == "SITE-000814" and p["route"] in WRITE], "build.compute wrote a proposal whose witness is not wholly inside the Permit Description field"
+    for site_, term_, bad_quote in (("SITE-000814", "coating_formulation", "Permit Type: Renewal"), ("SITE-000814", "coating_formulation", "facility. Permit Type: Renewal Issue Date: 09/01/2023"),
+                                    ("SITE-001530", "adhesive_sealant_formulation", SECTION_HEADING)):
+        inp3 = copy.deepcopy(inp); next(q for q in inp3["V"]["sites"][site_]["quotes"] if term_ in q["terms"])["quote"] = bad_quote
+        assert not [p for p in B.compute(inp3)["props"] if p["site_id"] == site_ and p["term"] == term_ and p["route"] in WRITE], "build.compute wrote a proposal whose witness is not wholly inside the Permit Description field"
+    assert B.position(B.doc_text("1638095"), "FEPTIO renewal for blending vessels with powder dryers for the production of coatings and adhesives. Each emissions unit is vented to a dust collector for control of particulate emissions.") == "permit_description", "the committed multi-line description must still be a Permit Description"
     pos = copy.deepcopy([p for p in props if p["site_id"] == "SITE-000346"]); pos[0]["quote"] += ", blowdown tanks"
     assert not [g for g in audit(pos, sites, orgs) if g[0] == "ANCILLARY"], "a polymerization witness is rejected for one keyword in its equipment list"
     # ------------------------------------------------------------------------------------------------------------ injected defects
@@ -318,6 +321,7 @@ def main():
         assert duplicate_verdict(), "the verdict-level duplicate probe is inert: it is not written even with the pair check disabled"
     done += [one("BIND", lambda P, S2: S2["SITE-000264"].update(city="Twp. Seville")),   # a LEADING township marker on a written row must not bind
              one("WITNESS", lambda P, S2: row(P, site_id="SITE-000814").update(quote="Permit Type: Renewal")),
+             one("WITNESS", lambda P, S2: row(P, site_id="SITE-001530", term="adhesive_sealant_formulation").update(route="capability", capability_term="adhesive_sealant_formulation", strength="supports_C", quote=SECTION_HEADING)),   # Codex round 3: the heading that introduces the unit list
              one("WITNESS", lambda P, S2: row(P, site_id="SITE-000814").update(quote="facility. Permit Type: Renewal Issue Date: 09/01/2023")),   # Codex: starts inside the field, ends in the next one
              one("OWNER_HOLD", duplicate_row), one("OWNER_HOLD", held_in_applied, "complete"),
              one("OWNER_HOLD", lambda P, S2: row(P, site_id="SITE-000248", term="coating_applying").update(route="processes")),
