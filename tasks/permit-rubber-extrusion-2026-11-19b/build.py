@@ -33,7 +33,7 @@ CAP_MAP.update({"rubber_calendering": "calendering", "compounding_extrusion": "c
                 **{t: "injection_molding" for t in ("injection_molding_micro", "injection_molding_lsr_silicone", "insert_overmolding", "two_shot_molding")},
                 "additive_manufacturing_polymer_production": "additive_manufacturing_polymer", "regrind_pelletizing": "recycling_mechanical"})
 CAP_MAP.pop("composites_pultrusion", None); CAP_MAP["composites_pultrusion"] = "composites_pultrusion"
-CAP_MAP.update({"rubber_extrusion": "extrusion"})   # owner ruling 2026-11-19b item 1: rubber_extrusion rolls into the §3.6 extrusion rollup (SCHEMA v1.16.1)
+CAP_MAP.update({"rubber_extrusion": "extrusion"})   # owner ruling 2026-11-19b item 1: rubber_extrusion rolls into the §3.6 extrusion rollup (SCHEMA v1.16.2)
 CAP_MAP.update({"compounding_unspecified": "compounding", "extrusion_unspecified": "extrusion"})   # owner ruling 2026-11-19 P4: their §3.6 parents; coating_applying and foam_molding_bead stay unmapped
 ANCILLARY = re.compile(r"\b(boilers?|generators?|tanks?|baghouses?|dust collectors?|paint(?:ing)?\s+(?:spray\s+)?booths?|spray\s+paint\s+booths?|hand\s+spray|clean(?:ing|up)|degreas\w*)\b", re.I)
 NEAR = {"pkwy": "parkway", "rte": "route"}   # the only format variants the near-bound report tries; none is accepted as a bind
@@ -134,6 +134,9 @@ def held_pairs(props):
     return {(p["site_id"], p["term"]) for p in props if p["hold_reason"] == HELD}
 
 EXPECTED_WRITES = [("SITE-000264", "rubber_extrusion", "extrusion", "capability")]   # the brief: exactly one new row; any other change stops the lane
+# the authorized re-score is pinned to the reviewed witness of PR #402 (an independent copy is held in check.py): this document and this exact quote, nothing else
+AUTHORIZED_DOC = "1315096"
+AUTHORIZED_QUOTE = "Renewal PTIO for banbury mixers, mills, calenders, mixing tanks, extruder, and rotocure used to fabricated rubber membrane products for liners and tanks."
 
 def compute(inp):
     """Everything derived. Returns dict(frame, sites, props, viol). `viol` lists build-time inconsistencies between verdicts.json and the permits."""
@@ -196,6 +199,8 @@ def compute(inp):
                            newest_expiry=expiry(inp["text"](newest))[0] or "none printed", verdict=v["verdict"], hold_reason=v["hold_reason"] or "", note=v["note"]))
     writes = sorted((p["site_id"], p["term"], p["capability_term"], p["route"]) for p in P_rows if p["route"] in ("processes", "capability"))
     if writes != EXPECTED_WRITES: viol.append(f"the re-score must yield exactly {EXPECTED_WRITES}, got {writes}")
+    for p in P_rows:
+        if p["route"] == "capability" and p["term"] == "rubber_extrusion" and (p["docid"], p["quote"]) != (AUTHORIZED_DOC, AUTHORIZED_QUOTE): viol.append("the rubber_extrusion write is not the reviewed witness (document 1315096, PR #402's quote)")
     hp = held_pairs(P_rows)
     for p in P_rows:   # enforce the hold on the (site, term) pair across every proposal, whichever quote supplies it
         if (p["site_id"], p["term"]) in hp and p["route"] != "hold": p["route"], p["hold_reason"], p["capability_term"] = "hold", HELD, ""
@@ -233,6 +238,13 @@ def max_id(prefix, shards, col, mine=False):
             if mine or r["created_by"] != WHO: m = max(m, int(r[col][len(prefix):]))
     return m
 
+def bind_basis(docid, site_id, sites):
+    """What is true about the match: the printed street/city against the Atlas row, and how it binds (strict, or P2)."""
+    _, orgs = atlas(); st = sites[site_id]; h = header(doc_text(docid)); strict, near = bind_near(h, st, orgs[st["org_id"]], h["facility_id"])
+    if not strict: return "Printed Facility ID, holder, street and city equal the Atlas site row."
+    assert near, f"{site_id}/{docid} does not bind"
+    return (f"Printed Facility ID and holder equal the Atlas record; street printed '{h['holder_street']}' vs Atlas '{st['street_address']}', city printed '{h['holder_city']}' vs Atlas '{st['city']}': "
+            f"strict NOT_BOUND, bound under owner ruling 2026-11-19 P2 (a USPS abbreviation or Twp. suffix only).")
 def evidence_rows(props, hashes, sites, first_id):
     rows, i = [], first_id
     for p in props:
@@ -240,7 +252,7 @@ def evidence_rows(props, hashes, sites, first_id):
         h = hashes[p["docid"]]
         note = (f"government_filing: Ohio EPA air permit {p['permit_number']}, issued {p['issue_date']}, expiry {p['expiry']}"
                 + (f"; past its printed expiry on {AS_OF}, capped at supports_C" if p["expired"] == "Y" else "")
-                + f"; Facility ID {header(doc_text(p['docid']))['facility_id']}; printed Facility ID, holder, street and city equal the Atlas site row; witness: {p['position'].replace('_', ' ')} "
+                + f"; Facility ID {header(doc_text(p['docid']))['facility_id']}; {bind_basis(p['docid'], p['site_id'], sites)} witness: {p['position'].replace('_', ' ')} "
                   f"({'a sentence stating the operation' if p['strength'] == 'supports_A' else 'the permit description field, a permit-level summary: supports_C only, owner ruling 2026-11-19 P3' if p['position'] == 'permit_description' else 'a label, heading, table row or equipment list: a list item'}); "
                   f"PDF sha256 {h['pdf_sha256']}; retrieved 2026-11-18 by the canary (Ohio EPA eDocument search by the printed Facility ID), stored text re-read; term unioned into processes "
                   "(owner ruling 2026-11-18b item 1, B-PERMIT option b; follow-up rulings 2026-11-19 P2-P4); a permit is a statement as of its issue date, not a status finding.")
@@ -257,7 +269,7 @@ def capability_rows(props, hashes, sites, first_id):
                          source_ref=URL + p["docid"], observed_date=p["issue_date"], withdrawn_date="", created_by=WHO,
                          notes=(f"Quote: {p['quote']}. Basis: {p['position'].replace('_', ' ')} of Ohio EPA air permit {p['permit_number']} (issued {p['issue_date']}, expiry {p['expiry']}"
                                 + (f"; past its printed expiry on {AS_OF}" if p["expired"] == "Y" else "") + f"). supports_C on a tier {p['tier']} site: capability row only (owner ruling 2026-11-14); "
-                                f"§3.1 term {p['term']} -> §3.6 `{p['capability_term']}`. Printed Facility ID, holder, street and city equal the Atlas site row. PDF sha256 {h['pdf_sha256']}; retrieved 2026-11-18."))); i += 1
+                                f"§3.1 term {p['term']} -> §3.6 `{p['capability_term']}`. {bind_basis(p['docid'], p['site_id'], sites)} PDF sha256 {h['pdf_sha256']}; retrieved 2026-11-18."))); i += 1
     return rows
 
 def stage_shard(live, rows, fields, key=None, new=()):
@@ -325,7 +337,7 @@ def metrics(model):
             "verified_sites": sum(r["verdict"] == "VERIFIED" for r in Sr), "still_uncertain_sites": sum(r["verdict"] == "STILL_UNCERTAIN" for r in Sr), "reject_sites": sum(r["verdict"] == "REJECT" for r in Sr),
             "sites_with_process_written": len(proc_sites), "process_sites": proc_sites, "process_terms_written": wr["processes"], "capability_rows": wr["capability"], "already_held_rows": wr["already_held"], "capability_only_sites": sorted(set(cap_sites) - set(proc_sites)),
             "held_sites_by_reason": dict(Counter(r["hold_reason"] for r in Sr if r["verdict"] == "STILL_UNCERTAIN")),
-            "proposal_holds_by_reason": dict(Counter(p["hold_reason"] for p in P if p["route"] == "hold")), "strength_of_writes": dict(Counter(p["strength"] for p in P if p["route"] == "processes"))}
+            "proposal_holds_by_reason": dict(Counter(p["hold_reason"] for p in P if p["route"] == "hold")), "strength_of_writes": dict(Counter(p["strength"] for p in P if p["route"] in ("processes", "capability")))}   # both write routes
 
 
 def readme(model, m):
@@ -341,7 +353,7 @@ First user: the Atlas integrator, who merges this at the next wave review. Non-u
 
 ## What was done
 
-The packet of PR #402 (`tasks/pic18-permit-followup-2026-11-19/`) is reused unchanged except for one line: `rubber_extrusion -> extrusion` in the capability map. The same 33-site frame (unit: PIC-18 sites with exactly one active PIC-18 site, organization process unknown, an FRS link, final Ohio EPA permit retrievable by the canary's Facility-ID route; recomputed from the canary's caches and asserted at 33) is re-scored over the same stored permits (sha256 against the canary's journal; no fetch). Rows already written by #400 and #402 are recognized from their evidence and capability rows and are not written again.
+The packet of PR #402 (`tasks/pic18-permit-followup-2026-11-19/`) is reused unchanged except for one line: `rubber_extrusion -> extrusion` in the capability map. The authorized re-score is pinned to the reviewed witness (SITE-000264, document 1315096, #402's exact quote), held in `build.py` and, as an independent copy, in `check.py`; any other quote for this row fails the build. The same 33-site frame (unit: PIC-18 sites with exactly one active PIC-18 site, organization process unknown, an FRS link, final Ohio EPA permit retrievable by the canary's Facility-ID route; recomputed from the canary's caches and asserted at 33) is re-scored over the same stored permits (sha256 against the canary's journal; no fetch). Rows already written by #400 and #402 are recognized from their evidence and capability rows and are not written again.
 
 **Result: exactly one new row** (`build.py` stops with a violation if the re-score yields anything else):
 

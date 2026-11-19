@@ -8,9 +8,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent)); import build as B
 HERE, ROOT = B.HERE, B.ROOT
 WRITE = ("processes", "capability")
+# independent reference for the one authorized write: PR #402's reviewed witness (a second copy; build.py holds its own)
+REF_WRITE = ("SITE-000264", "1315096", "Renewal PTIO for banbury mixers, mills, calenders, mixing tanks, extruder, and rotocure used to fabricated rubber membrane products for liners and tanks.")
 SECTION_HEADING = "Permits for the following Emissions Unit(s) or groups of Emissions Units are in this document as indicated below:"
 PAIR_RULE = not os.environ.get("CHECK_DISABLE_PAIR_RULE")   # the env var exists only to show the pair injections go green without the rule
-EXPECTED_DEFECTS = 34   # README reads this number
+EXPECTED_DEFECTS = 35   # README reads this number
 
 def base_ref(): return B.git("merge-base", "HEAD", "origin/main").strip()
 def rd(text): return list(csv.DictReader(io.StringIO(text, newline="")))
@@ -42,6 +44,8 @@ def audit(props, sites, orgs, text=B.doc_text):
     if PAIR_RULE:   # the hold binds the (site, term) pair across every proposal, not only the row that carries the flag
         hp = B.held_pairs(props)
         v += [("OWNER_HOLD", f"{p['site_id']}/{p['term']}: a pair held for an owner ruling has a proposal routed to a write") for p in props if (p["site_id"], p["term"]) in hp and p["route"] != "hold"]
+    v += [("PINNED", f"{p['site_id']}: the rubber_extrusion write is not the reviewed witness") for p in props
+          if p["term"] == "rubber_extrusion" and p["route"] in WRITE and (p["site_id"], p["docid"], p["quote"]) != REF_WRITE]
     return v
 
 def audit_data(base_files, now_files, props):
@@ -237,6 +241,9 @@ def main():
     full = B.compute(dict(inp, caps=set(), ev_keys=set()))["props"]   # the plan as if no earlier PR had written anything: the injections below need write routes
     assert not audit(full, sites, orgs), audit(full, sites, orgs)
     assert [(p["site_id"], p["term"], p["capability_term"], p["route"]) for p in props if p["route"] in WRITE] == B.EXPECTED_WRITES, "the re-score must yield exactly one new row"
+    assert [(p["site_id"], p["docid"], p["quote"]) for p in props if p["route"] in WRITE] == [REF_WRITE], "the one write is not the reviewed witness (independent reference)"
+    inp4 = copy.deepcopy(inp); next(q for q in inp4["V"]["sites"]["SITE-000264"]["quotes"] if "rubber_extrusion" in q["terms"])["quote"] = "mills, calenders"
+    assert B.compute(inp4)["viol"], "build.compute accepts a substituted quote for the authorized write"
     assert not audit_manifest(hashes, B.doc_text, inp["scr"]), audit_manifest(hashes, B.doc_text, inp["scr"])
     base = base_ref(); bf, nf = data_diff(base)
     ev_files = [f for f in B.git("ls-tree", "-r", "--name-only", base, "data/").split("\n") if re.match(r"data/evidence_.*\.csv", f)]
@@ -341,6 +348,7 @@ def main():
              one("OWNER_HOLD", duplicate_row), one("OWNER_HOLD", held_in_applied, "complete"),
              one("OWNER_HOLD", lambda P, S2: row(P, site_id="SITE-000248", term="coating_applying").update(route="processes")),
              one("COMPLETE", restore_base, "complete"), one("WRITTEN", fake_digest, "written"), one("MANIFEST", fake_manifest, "manifest"),
+             one("PINNED", lambda P, S2: row(P, site_id="SITE-000264", term="rubber_extrusion").update(quote="mills, calenders")),   # Codex round 1: a real but wrong witness
              one("CAP", other_term), one("BIND", site_936_bound), one("COMPLETE", second_row, "complete"), one("ROWS", other_table, "data"), one("FILE", other_file, "data"),
              one("ID", lambda: ([cap_base_max], cap_base_max, "capability"), "ids"),
              one("PRIVACY", lambda: {"README.md": "signed by " + sorted(sig)[0]}, "privacy"),

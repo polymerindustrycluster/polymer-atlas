@@ -88,7 +88,7 @@
       "rubber_extrusion"
      ],
      "grade": "list",
-     "note": "permit description (P3, supports_C): rubber membrane products made with banbury mixers and calenders; rubber_extrusion has no \u00a73.6 mapping and is held"
+     "note": "permit description (P3, supports_C): rubber membrane products made with banbury mixers and calenders. Disposition history: PR #402 (2026-11-19) held rubber_extrusion because \u00a73.6 had no mapping; owner ruling 2026-11-19b item 1 (SCHEMA v1.16.2) maps it to the extrusion capability rollup, so it is written here as a capability row"
     }
    ],
    "note": "bound under P2 ('Pkwy' vs 'Parkway': same Facility ID, holder, street number and street name)"

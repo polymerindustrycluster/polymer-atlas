@@ -23,5 +23,7 @@
   "owner_ruled_not_carried": 1,
   "no_capability_destination": 4
  },
- "strength_of_writes": {}
+ "strength_of_writes": {
+  "supports_C": 1
+ }
 }
