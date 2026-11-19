@@ -14,6 +14,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent; ROOT = HERE.parents[1]; sys.path.insert(0, str(ROOT / "scripts"))
 S = Path("/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas")
 CAN = S / "persist/pic18-permit-canary-2026-11-18"; LANE = S / "persist/pic18-permit-lane-2026-11-18"; CANARY = ROOT / "tasks/pic18-permit-canary-2026-11-18"
+EVD_FLOOR = 397386   # controller 2026-11-19: EVD-397386 is a retired #403 id; the id minted is the next above max(this, every other evidence row)
 AS_OF = "2026-11-19"; WHO = "claude-code atlas-w18-permit-followup"; N_FRAME = 33
 URL = "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid="
 
@@ -278,7 +279,7 @@ def apply(model, hashes, root=ROOT, base=None):
     cur = {p: read_csv(p) for p in (SH, EV, CP)}; fields = {p: list(cur[p][0]) for p in cur}
     sites_now = {r["site_id"]: r for r in cur[SH]}
     keep = {p: [r for r in cur[p] if r["created_by"] != WHO] for p in (EV, CP)}   # re-allocation: this lane's own rows go, then return above every other id
-    ev = evidence_rows(model["props"], hashes, sites_now, max_id("EVD-", ev_all, "evidence_id") + 1)
+    ev = evidence_rows(model["props"], hashes, sites_now, max(max_id("EVD-", ev_all, "evidence_id"), EVD_FLOOR) + 1)
     cp = capability_rows(model["props"], hashes, sites_now, max_id("CAP-", [CP], "capability_id") + 1)
     unions = {}
     for p in model["props"]:
