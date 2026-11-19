@@ -1,5 +1,5 @@
 """run_tests.py exits as serial `python -m unittest discover -s scripts` does, on the fixtures Codex used to refute it
-(PR #417 r1 to r3): load_tests hooks that configure instances, wrap the suite or change between discoveries; output
+(PR #417 r1 to r4): load_tests hooks that configure instances, wrap the suite or change between discoveries; output
 that looks like a summary, or is not UTF-8; a setUpClass skip; a module fixture; the caller's working directory and
 import path. Each case runs in a fresh throwaway tree per arm. The one intended difference: a test that calls
 os._exit(0) ends serial discovery with exit 0, and fails the runner (no result file)."""
@@ -89,6 +89,14 @@ CASES = {
         from .helpers import expected
         class C(unittest.TestCase):
             def test_value(self): self.assertEqual(expected, 7)"""},
+    # Codex r4: a package hook that adds its children to its own suite runs once (an exclusive fixture would fail twice)
+    "package_hook_once": {"checks/__init__": """
+        class PackageCheck(unittest.TestCase):
+            def test_manifest(self): pass
+        def load_tests(loader, tests, pattern):
+            Path("fixture.lock").touch(exist_ok=False)
+            tests.addTests(loader.discover(str(Path(__file__).parent), pattern=pattern))
+            return tests""", "checks/test_rows": "class Child(unittest.TestCase):\n    def test_row(self): pass"},
     "no_generated_tests": {"test_rows": "def load_tests(loader, suite, pattern): return unittest.TestSuite()"},
     "binary_log": {"test_a": """
         class C(unittest.TestCase):

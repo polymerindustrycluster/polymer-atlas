@@ -80,9 +80,13 @@ def worker(start, unit_file, out_file):
 
     def case(module, qualname, method):  # as loadTestsFromTestCase builds it (loadTestsFromName would call a staticmethod)
         return functools.reduce(getattr, qualname.split("."), importlib.import_module(module))(method)
-    suite = unittest.TestSuite(
-        [loader.loadTestsFromModule(importlib.import_module(m), pattern=PATTERN) for m in unit["modules"]]
-        + [case(*c[:3]) for c in unit["cases"]])
+    def hooked(m):  # as discovery loads it: a package is marked loading, so its hook's own discover() skips the package
+        loader._loading_packages.add(m)
+        try:
+            return loader.loadTestsFromModule(importlib.import_module(m), pattern=PATTERN)
+        finally:
+            loader._loading_packages.discard(m)
+    suite = unittest.TestSuite([hooked(m) for m in unit["modules"]] + [case(*c[:3]) for c in unit["cases"]])
     r = unittest.TextTestRunner(resultclass=Result, verbosity=2).run(suite)
     ran = Counter(r.started)
 
