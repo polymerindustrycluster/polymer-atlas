@@ -2,7 +2,7 @@
 """Check this pass's rows without the staging harvest:
 - the appended rows are in the table unchanged; none repeats an (event, org, year, role) in the table;
 - every row is an EVT-000077 2026 attendee row from the one admitted list, cites it in `sources`, carries the ruling's
-  note and the list's staging key, and has an empty role_detail and no out-of-US edition_state;
+  note and the list's staging key, is tier A, and has an empty role_detail and empty edition fields;
 - the listed name's key is held by exactly the row's organization and is its LEGAL name; the name is not on a
   controller drop list, not held by the wave 2-3 review, by #411's CONTROLLER_HOLDS, or by this pass's HOLDS.
 Limit: without the staging harvest this cannot prove a name is on the page; build.py, which reads the banked page and
@@ -40,8 +40,10 @@ for r in packet:
         bad.append((pid, "notes lack the ruling's note or the list's staging key"))
     if r["role_detail"]:
         bad.append((pid, "attendee row with a role_detail"))
-    if r["edition_state"] not in B.w23.USPS | {""}:
-        bad.append((pid, "edition_state is not a US state"))
+    if r["edition_dates"] or r["edition_city"] or r["edition_state"]:
+        bad.append((pid, "edition fields set, but the conferences repo had no 2026 edition at build time"))
+    if r["verification_tier"] != "A":
+        bad.append((pid, "verification_tier is not A (the organizer's own list)"))
     cited = re.fullmatch(r'(\S+) \(read [0-9-]+; listed as "(.*)"\)', r["sources"])
     if not cited or cited.group(1) != P.URL:
         bad.append((pid, "sources does not cite the list")); continue

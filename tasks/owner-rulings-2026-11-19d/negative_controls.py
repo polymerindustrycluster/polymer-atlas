@@ -40,15 +40,19 @@ plant("a duplicate of a real row", "duplicate (event, org, year, role) in the ta
 plant("the ruling's note dropped", "notes lack the ruling's note", **FREE,
       notes=base["notes"].replace("owner ruling 2026-11-19d", "owner ruling"))
 plant("a role_detail on an attendee row", "attendee row with a role_detail", **FREE, role_detail="Booth 12")
-plant("an out-of-US edition_state", "edition_state is not a US state", **FREE, edition_state="Germany")
+plant("an edition_state the conferences repo did not give", "edition fields set", **FREE, edition_state="Germany")
+plant("edition dates the conferences repo did not give", "edition fields set", **FREE,
+      edition_dates="2026-09-15 to 2026-09-17")
+plant("a tier other than A", "verification_tier is not A", **FREE, verification_tier="B")
 # not strict: a URL that is not the list also fails the first check
 plant("sources citing another URL", "sources does not cite the list", strict=False, org_id=FREE["org_id"],
       sources='https://www.pcimag.com/coatings-conference (read 2026-11-06; listed as "Hexcel Corporation")')
 plant("a trade-name hit (Nouryon)", "listed name is not the org's legal name", **dict(FREE, listed="Nouryon",
                                                                                       org_id=ORG["Nouryon Chemicals LLC"]))
-# not strict: a person's name is no organization's legal name either
-plant("a controller-dropped name (a person's name in the company slot)", "controller drop", strict=False,
-      **dict(FREE, listed="Michael Praw"))
+# not strict: a page label is no organization's legal name either. (The list's other drop, a person's name, is never
+# written here: the drop lists store hashes so that no name of a person enters this public repo.)
+plant("a controller-dropped name (the page label \"More Videos\")", "controller drop", strict=False,
+      **dict(FREE, listed="More Videos"))
 plant("a bare group name held by #411 (Sun Chemical)", "name held (CONTROLLER_HOLDS or HOLDS)",
       **dict(FREE, listed="Sun Chemical", org_id=ORG["Sun Chemical Corporation"]))
 plant("the bare Arkema this pass holds", "name held (CONTROLLER_HOLDS or HOLDS)",

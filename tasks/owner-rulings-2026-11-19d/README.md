@@ -17,8 +17,10 @@ published", so #411 held the list for a ruling.
 
 ## 2. Past editions in the conferences repo
 
-The conferences repo holds no 2024 or 2025 edition of any series. Atlas participation rows for a past edition take
-their dates, city and state from it, so today those fields stay empty.
+The conferences repo holds no 2024 or 2025 edition of any series, and few past editions of the 27 new series (none for
+Coatings Trends 2026). SCHEMA §4.12.2 notes that "the linked conferences repo holds edition dates and place", and the
+harvest builds (#384, #411 and this one) fill a row's edition dates, city and state from that repo's edition. Without
+the edition, those fields stay empty.
 
 - **Ruled:** add a past edition to the conferences repo only when an Atlas participation row cites it. Each edition's
   quote is re-checked on the organizer's page.
@@ -51,14 +53,20 @@ admitted the same site's "Companies Attending" page as 2025 because the site men
 
 `python3 tasks/owner-rulings-2026-11-19d/build.py --data-dir data --harvest <staging> [--apply --i-am-the-integrator]`
 
-**+45 rows** in `data/event_participation.csv` (1,526 → 1,571; EVP-001534 to EVP-001578): 45 organizations as
+**+44 rows** in `data/event_participation.csv` (1,526 → 1,570; EVP-001534 to EVP-001577): 44 organizations as
 attendees of the 2026 edition (EVT-000077), all tier A, organization grain only. No other row or file under `data/`
 changes.
 
 **The list.** The build reads it from the same banked staging JSON #411 used (read 2026-11-06) and asserts the page's
 "final list" heading. The page source still carries the earlier version, commented out: "the list of registered
 companies ... as of 9/9/26". The visible text names it final, so no row carries a pre-show note.
-- **Completeness:** the controller split the banked list into 224 entries, and the harvest holds all 224.
+- **Completeness:** the build parses the page's list itself, one entry per printed line: 224 lines. The harvest's 224
+  names are not the same 224: it omits "E2C", which matches no Atlas organization, and adds the page label
+  "More Videos", a controller drop. The build asserts exactly this difference, so any other gap fails it.
+- **A name split across two lines:** the page prints "Lintech International" on one line and "LP" on the next. The
+  build reads them as one name, "Lintech International LP", which matches no Atlas organization; the shortened form
+  would have matched Lintech International LLC. A line that holds only a legal suffix is joined to the line above,
+  and the build asserts this is the only such line.
 - **Edition fields:** the conferences repo has no 2026 edition of this series yet (item 2 adds it), so
   `edition_dates`, `edition_city` and `edition_state` stay empty, as on #411's nine Coatings Trends 2026 speaker
   rows.
@@ -83,12 +91,13 @@ these names is held at EVT-000077. Several listed suffixes differ from the Atlas
 (MFG Chemical Inc.). As in #411, each is kept because its name key, which drops legal suffixes, matches exactly one
 organization's legal name.
 
-**Every entry accounted for:**
+**Every harvested name accounted for:**
 
-| Outcome | Entries |
+| Outcome | Names |
 |-|-|
-| row minted | 45 |
-| no Atlas organization | 164 |
+| row minted | 44 |
+| no Atlas organization (including the fragment "LP") | 164 |
+| printed name continues on the next line ("Lintech International" + "LP") | 1 |
 | trade-name hit, held | 7 |
 | held by #411's `CONTROLLER_HOLDS` | 4 |
 | held by `HOLDS` (Arkema) | 1 |
@@ -106,11 +115,27 @@ The "no Atlas organization" entries include universities and associations ("AUBU
 - `python3 tasks/owner-rulings-2026-11-19d/check.py` re-checks every row without the staging harvest:
   - event, year, role and list;
   - the ruling's note and the staging key;
-  - an empty `role_detail`;
+  - tier A, an empty `role_detail` and empty edition fields;
   - a unique legal-name match;
   - no drop or hold;
   - no duplicate in the table.
-- `python3 tasks/owner-rulings-2026-11-19d/negative_controls.py`: 12 of 12 planted defects fail `check.py` with the
-  expected message.
+- `python3 tasks/owner-rulings-2026-11-19d/negative_controls.py`: 14 of 14 planted defects fail `check.py` with the
+  expected message. No control writes a person's name: the drop lists store hashes so that none enters this public
+  repo.
 - #411's `check.py` and its 25 negative controls still pass with these rows in the table.
 - **Limit:** `check.py` cannot prove a name is on the page. `build.py`, which reads the banked page, is the guarantee.
+
+## Review (PR #414)
+
+The first round, on `49761cfd`, had 45 rows. Codex (deep) and agy (Gemini 4 Hydrogen, XHigh) each returned
+SHIP-WITH-FIXES, and both found the rule (i) screening clean. Applied:
+- **Lintech International (codex, agy):** the page splits "Lintech International LP" across two lines, and the harvest
+  kept only the first. The row is gone (45 → 44), and the build now joins a suffix-only line to the line above.
+- **Completeness claim (agy, then the controller's exact comparison):** the README said the harvest holds all 224
+  entries. It does not: it omits "E2C" and adds "More Videos". The claim was wrong; it is corrected above, not
+  silently, and the build asserts the difference.
+- **A person's name in a negative control (codex):** the control for a dropped name wrote that person's name into the
+  repo. It now uses the page label "More Videos".
+- **Edition fields (agy):** item 2 now says what the builds do and quotes SCHEMA §4.12.2's own wording.
+- **More asserts (agy):** the build asserts the page's list block and its earlier dated version, and `check.py`
+  checks tier A and empty edition fields.

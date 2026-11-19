@@ -10,7 +10,7 @@ gates as #411 (tasks/show-harvest-newseries-2026-11-19/build.py), which it impor
 - no (event, org, year, role) the table already holds. role_detail stays empty, as for every attendee row.
     python3 tasks/owner-rulings-2026-11-19d/build.py --data-dir data --harvest <staging> [--apply --i-am-the-integrator]
 """
-import argparse, csv, hashlib, importlib.util, json, sys
+import argparse, csv, hashlib, html, importlib.util, json, re, sys
 from collections import Counter
 from pathlib import Path
 
@@ -28,6 +28,19 @@ HEADING = "Below is the final list of registered companies for Coatings Trends &
 NOTE = ("Attendee: the organizer's \"final list of registered companies for Coatings Trends & Tecnologies Summit 2026\" "
         "(sic); the page adds that the list \"does not denote the total number of registered attendees\". A final "
         "registration list counts as attendance under owner ruling 2026-11-19d.")
+SUFFIX_ONLY = re.compile(r"(?i)(LP|LLC|L\.L\.C\.|Inc\.?|Ltd\.?|Co\.?|Corp\.?|GmbH|S\.?A\.?|B\.?V\.?)")
+
+
+def page_entries(raw):
+    """The list as the page prints it: one entry per <br>-separated line of the #cols4 block, comments and the
+    letter headings removed."""
+    body = re.sub(r"<!--.*?-->", "", raw, flags=re.S)
+    block = body[body.index('id="cols4"'):]
+    block = re.sub(r"<h4>.*?</h4>", "", block[block.index(">") + 1:block.index("</div>")], flags=re.S)
+    lines = (" ".join(html.unescape(re.sub(r"<[^>]+>", "", x)).split()) for x in re.split(r"<br\s*/?>|</p>", block))
+    return [x for x in lines if x]
+
+
 HOLDS = {  # rule (i), as #411's CONTROLLER_HOLDS: a bare group name whose Atlas record is the group's US entity
     (EVENT, A.name_key("Arkema")): B.US_ARM + " (Arkema Inc.; the group is French; held at SAMPE in #404 too)",
 }
@@ -55,13 +68,28 @@ def main():
     assert L["role"] == "attendee" and str(L["list_edition_year"]) == YEAR and L["complete"], L["role"]
     raw = (hv / L["raw_file"]).read_text(encoding="utf-8", errors="replace")
     assert HEADING in raw, "the banked page no longer carries the 'final list' heading"
+    assert 'id="past-attendees"' in raw and "as of 9/9/26" in raw, "the page's list block or its earlier dated version moved"
     page = B.text(raw, True)
+    entries = page_entries(raw)
+    # The page prints one entry per line. A line holding only a legal suffix ("LP") continues the line above:
+    # "Lintech International<br>LP" is one company, "Lintech International LP", not "Lintech International".
+    split = {entries[i - 1]: f"{entries[i - 1]} {e}" for i, e in enumerate(entries) if i and SUFFIX_ONLY.fullmatch(e)}
+    assert split == {"Lintech International": "Lintech International LP"}, f"split names changed: {split}"
+    # Yield against an independent parse of the page: the harvest omits one entry and adds one page label.
+    names = [" ".join(c["name"].split()) for c in L["companies"]]
+    assert (sorted(set(entries) - set(names)), sorted(set(names) - set(entries))) == (["E2C"], ["More Videos"]), \
+        "the harvest's list no longer matches the page parse; re-check the yield before building"
+    assert A.name_key("E2C") not in by_key, "the entry the harvest omitted now matches an Atlas organization"
 
     rows, holds, skip, hit = [], [], Counter(), set()
     for c in L["companies"]:
         name = c["name"].strip()
         if B.norm(name) not in page:
             skip["name not on the page"] += 1; continue
+        if name in split:
+            name = split[name]  # the printed name; it no longer matches the shortened form's organization
+            skip["printed name continues on the next line (no Atlas organization for the whole name)"] += 1
+            assert A.name_key(name) not in by_key; continue
         if (SHOW_KEY, "attendee", hashlib.sha256(name.encode("utf-8")).hexdigest()[:16]) in drops:
             skip["controller drop"] += 1; continue
         nk = A.name_key(name)
