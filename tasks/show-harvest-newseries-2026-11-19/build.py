@@ -127,7 +127,7 @@ def main():
     by_key, orgs = org_index(data)
     held = {(e, nk) for e, _role, nk in decisions.held_names(
         decisions.load(W23 / "review_decisions.csv", events, orgs, shows=set(shows)))}
-    hit = set()
+    hit, supplemented = set(), set()
     part = read(data / "event_participation.csv")
     have = {(p["event_id"], p["org_id"], p["edition_year"], p["role"]) for p in part}
     nxt = max(int(p["participation_id"][4:]) for p in part) + 1
@@ -166,6 +166,8 @@ def main():
                 ed = {k: v for k, v in ed.items() if k in ("start", "end", "city")}  # no country/region to trust
             page = text((hv / L["raw_file"]).read_text(encoding="utf-8", errors="replace"), True)
             extra = [{"name": n, "supplement": True} for n in SUPPLEMENT.get((key, role), [])]
+            if extra:
+                supplemented.add((key, role))
             assert not {A.name_key(x["name"]) for x in extra} & {A.name_key(c["name"]) for c in L["companies"]}, \
                 f"SUPPLEMENT repeats a harvested name on {key} {role}"
             for c in L["companies"] + extra:
@@ -233,6 +235,7 @@ def main():
 
     unused = set(CONTROLLER_HOLDS) - hit
     assert not unused, f"CONTROLLER_HOLDS that matched no listing: {sorted(unused)}"
+    assert set(SUPPLEMENT) == supplemented, f"SUPPLEMENT lists never read: {sorted(set(SUPPLEMENT) - supplemented)}"
     fields = list(part[0].keys())
     for fname, rs, cols in (("participation_append.csv", rows, fields),
                             ("trade_name_holds.csv", holds, list(holds[0]) if holds else ["show_key"])):

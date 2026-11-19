@@ -90,7 +90,8 @@ for r in packet:
     if B.MEDIA_PARTNERS.search(url) or url in B.NOT_EVENT_LISTS:
         bad.append((pid, "excluded list"))
     said = re.search(r"Edition abroad: the list gives the company's country \((.+?)\), which matches", r["notes"])
-    if events[ev]["home_region"] == "international" or said or r["edition_state"] not in USPS | {""}:
+    if (events[ev]["home_region"] == "international" or "Edition abroad" in r["notes"]
+            or r["edition_state"] not in USPS | {""}):
         if not said or not B.iso(said.group(1)) or B.iso(said.group(1)) != B.iso(o["hq_country"]):
             bad.append((pid, "abroad row without a listed country equal to the org's HQ country"))
         if r["edition_state"] in USPS:

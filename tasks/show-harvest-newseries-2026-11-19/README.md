@@ -60,9 +60,11 @@ and of `tasks/show-harvest-rulings-2026-11-19/`:
 Lakes Coatings Conference page titled "Companies Attending". The organizer's site menu links it as "Companies
 attended in 2025".
 - **Completeness:** the page's table has 178 cells, and the harvest holds all 178.
-- **Not all companies:** three cells are not companies: one personal name, "Retired" and "University of Michigan
-  Student". None of them matches an organization, so none mints.
-- **Not a delegate list:** every other cell is a company name.
+- **Not all companies:** three cells name no organization: one personal name, "Retired" and "University of Michigan
+  Student". Four more are organizations but not companies: Bowling Green State University, University of Akron,
+  Chicago Paint & Coatings Association and Zinc Association. None of these seven matches an Atlas organization, so
+  none mints.
+- **Not a delegate list:** the other 171 cells are company names, and no cell gives a person's title or employer.
 
 **Undated list (`UNDATED_LISTS`).** The Coatings Trends sponsor block on the organizer's home page names no year,
 and the page announces the 2027 edition. One logo's alt text also names the wrong company ("BYK" on Elinor's logo).
@@ -70,7 +72,8 @@ It cannot support a row for any one edition, so its 20 names mint nothing.
 
 **Names the harvest omitted (`SUPPLEMENT`).** Two lists came back short of their banked pages:
 - **Carbon Fiber exhibitors:** "All Carbon Fiber 2026 Exhibiting Companies" has 29 names, and the harvest kept 16;
-- **Coatings Trends speakers:** "2026 Speakers" has 58 speaker cards, and the harvest omitted 11 of the employers.
+- **Coatings Trends speakers:** "2026 Speakers" has 57 live speaker cards (a 58th is commented out in the page
+  source), and the harvest omitted 11 of the employers.
 
 The controller copied the omitted names verbatim from each banked page. They pass every gate like harvested names,
 and their rows say so in `notes`.
@@ -107,8 +110,9 @@ form of the name at its event, in every role and year. There are two kinds:
 
 The build fails if a hold matches no listing, so a mistyped hold cannot silently do nothing.
 
-**Not held, and why.** At Coatings Trends, the only form of Evonik on a dated list is "Evonik Corporation" (a 2026
-speaker's employer). The bare "Evonik" was on the undated sponsor block, so Evonik is not held there. Every kept row
+**Not held, and why.** At Coatings Trends, the bare "Evonik" occurs only on the undated sponsor block. The dated
+speaker list names "Evonik Corporation", which mints, and "Evonik Industries", which matches no Atlas organization.
+So Evonik is not held there. Every kept row
 whose listed name has no legal or geographic suffix falls into one of two groups:
 - a US-parented group listed by its own name: Cargill, Chemours, Hexcel, Ingevity, Lubrizol, Michelman,
   Sherwin-Williams, Stepan and others;
