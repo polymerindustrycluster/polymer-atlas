@@ -1,0 +1,4 @@
+table,key,reason
+registry_links,ORG-000174|LEI|549300QMYW171MP1PL50|,"wrong LEI: same-name Vertex, Inc. of King of Prussia, PA (tax software); ours is the Mogadore, OH seal maker (README; codex and Antigravity SOUND 2026-11-19)"
+registry_links,ORG-000780|LEI|549300PFONU4YY4GYS55|,"wrong LEI: same-name Custom Molded Products, LLC of Newnan, GA (pool and spa parts); ours is the Wilmington, OH molder (README; codex and Antigravity SOUND 2026-11-19)"
+registry_links,ORG-001383|LEI|5493008QN54WVMZHGF61|,"wrong LEI: Delco LLC, a New Jersey entity at a Willingboro, NJ real estate office; ours is the Akron, OH machining and mold shop (README; codex and Antigravity SOUND 2026-11-19)"
