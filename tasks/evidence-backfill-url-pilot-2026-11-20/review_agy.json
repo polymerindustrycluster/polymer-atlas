@@ -1,0 +1,304 @@
+{
+ "verdicts": [
+  {
+   "claim_type": "existence",
+   "reason": "The quote confirms the entity's exact legal name 'Taylor Industries, Inc.' in the site copyright notice as the operating entity.",
+   "record_id": "ORG-002666",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The quote confirms a current 2026 copyright year for Taylor Industries, Inc. on its live website at the 2026-11-20 observation date.",
+   "record_id": "ORG-002666",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The page indicates Biocoat was acquired or absorbed as a brand under 'Integer Medical Coatings' and uses Integer's email domain 'contact-integer@integer.net'.",
+   "record_id": "ORG-002409",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted address is associated with acquirer Integer branding and email 'contact-integer@integer.net', and the page does not state it is the organization's HQ.",
+   "record_id": "ORG-002409",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The page shows the entity was acquired or absorbed into Integer Medical Coatings rather than operating as an independent entity under its own copyright.",
+   "record_id": "ORG-002409",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The quote identifies the entity by its exact legal name 'Rezkem Chemicals' on its own website.",
+   "record_id": "ORG-001883",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The page explicitly states that Rezkem Chemicals is 'headquartered in Hudson, OH', and the quote provides the organization's office plaza address in Hudson, Ohio.",
+   "record_id": "ORG-001883",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The quote demonstrates a current 2026 copyright year for Rezkem Chemicals on its live website at the 2026-11-20 observation date.",
+   "record_id": "ORG-001883",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The page and quote identify the operating entity as an incorporated corporation, 'Anchor Industries, Inc.', rather than the record entity American Consolidated Industries Inc, which is never mentioned.",
+   "record_id": "ORG-001777",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The quote only contains 'United Laminations' without the corporate legal suffix 'Inc.', making it a partial name match that does not support the claimed legal name.",
+   "record_id": "ORG-002503",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted address is merely a contact location and the page does not state that Mayfield, PA is the organization's HQ.",
+   "record_id": "ORG-002503",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The quote only provides 'True Indicating' without the legal entity suffix 'LLC', failing to support the claimed legal name.",
+   "record_id": "ORG-001560",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The page describes the Toledo location as manufacturing infrastructure and does not state that Toledo, OH is the organization's HQ.",
+   "record_id": "ORG-001560",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The quote establishes a live own site with a current 2026 copyright year for True Indicating at the 2026-11-20 observation date.",
+   "record_id": "ORG-001560",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The quote and page use the name 'C&J Industries', which does not match the record's legal name 'C & J Ind'.",
+   "record_id": "ORG-002508",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted address is labeled only as a location and the page does not state that Meadville, PA is the organization's HQ.",
+   "record_id": "ORG-002508",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The quote and page only mention 'A-Z Recycling' without the corporate legal suffix 'Inc', which does not appear anywhere on the page.",
+   "record_id": "ORG-001765",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The page explicitly states that A-Z Recycling is 'headquartered in Columbus, Ohio', witnessing the organization's HQ city and state.",
+   "record_id": "ORG-001765",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The quote and page only use 'Industrial Pattern & Mfg.', omitting the corporate suffix 'Co.' which does not appear on the page.",
+   "record_id": "ORG-001743",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted street address is not stated anywhere on the page to be the organization's HQ.",
+   "record_id": "ORG-001743",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The quote contains the exact legal name 'Steve Shannon Tire' identifying the operating organization of the website.",
+   "record_id": "ORG-002230",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The quote and page only display 'Freedom Mold Machine', omitting the ampersand and legal suffix 'LLC' from the record's legal name 'Freedom Mold & Machine LLC'.",
+   "record_id": "ORG-001814",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The quote displays a copyright year of 2025, which is not current for the observed date of 2026-11-20.",
+   "record_id": "ORG-001814",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The page text explicitly identifies the company by its legal name, \"Engineering Mechanics Corporation of Columbus\", as the entity operating the website.",
+   "record_id": "ORG-002074",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted text provides a contact form address in Columbus, OH but does not state that it is the organization's headquarters.",
+   "record_id": "ORG-002074",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The quote confirms the organization's own site was live with a current 2026 copyright notice for \"Engineering Mechanics Corporation of Columbus\".",
+   "record_id": "ORG-002074",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The page text explicitly identifies the operating company by its legal name, \"VinylOne\".",
+   "record_id": "ORG-001914",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted text lists \"Cleveland, OH\" in the page header but does not state that Cleveland is the organization's headquarters.",
+   "record_id": "ORG-001914",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The copyright notice shows the year 2025 (\"\u00a9 2025 VinylOne\"), which is not the current copyright year for the observation date of 2026-11-20.",
+   "record_id": "ORG-001914",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The page text establishes the entity operating the business under its trade name, \"Slome Belting & Supply\".",
+   "record_id": "ORG-001896",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted text identifies the company as a \"Distributor in Solon, Ohio\", which does not state or qualify as the organization's headquarters.",
+   "record_id": "ORG-001896",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The page text establishes the operating entity under its trade name, \"North Coast Conduit\", as the company itself.",
+   "record_id": "ORG-002311",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted page header mentions \"Erie, PA\" but does not state that Erie is the organization's headquarters.",
+   "record_id": "ORG-002311",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The cited page is the website of the German parent company PVS-Kunststofftechnik GmbH & Co. KG, where PVS Plastics Technology Corp. is merely mentioned in a news snippet.",
+   "record_id": "ORG-001874",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The copyright notice belongs to the German parent company (\"PVS-Kunststofftechnik GmbH & Co. KG\") rather than the record's entity, PVS Plastics Technology Corp.",
+   "record_id": "ORG-001874",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The page text explicitly identifies the company by its legal name, \"BriskHeat Corporation\", as the operating entity.",
+   "record_id": "ORG-001451",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted text explicitly identifies 4800 Hilton Corporate Drive in Columbus, OH as the company's \"Worldwide Corporate Headquarters\".",
+   "record_id": "ORG-001451",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The quote confirms the organization's own site was live with a current 2026 copyright notice for \"BriskHeat\".",
+   "record_id": "ORG-001451",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The page text explicitly identifies the entity by its trade name, \"React Health\", matching the dba name in the record.",
+   "record_id": "ORG-001535",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted text mentions \"Dublin, Ohio\u2013\" only as a press release dateline and does not state that Dublin is the organization's headquarters.",
+   "record_id": "ORG-001535",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The cited page is for The Sherwin-Williams Company, which is only a partial or coincidental name match to the record's site name, \"Sherman-Williams Manufacturing Company\".",
+   "record_id": "SITE-002779",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted address belongs to The Sherwin-Williams Company rather than the record's entity, Sherman-Williams Manufacturing Company.",
+   "record_id": "SITE-002779",
+   "verdict": "UNSOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The operator's own locations page explicitly lists a sales, manufacturing, and R&D establishment at 2075 Detwiler Road in Kulpsville, PA.",
+   "record_id": "SITE-002418",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted text prints the site's street address and city as \"2075 Detwiler Road ... Kulpsville, PA 19443\".",
+   "record_id": "SITE-002418",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The quote confirms the operator's own site was live with a current 2026 copyright notice for \"Greene Tweed\".",
+   "record_id": "SITE-002418",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The operator's own page lists a plant location at \"6355 Farm Bureau Road Allentown, PA 18106\".",
+   "record_id": "SITE-002150",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted text prints the site's street address and city as \"6355 Farm Bureau Road Allentown, PA 18106\".",
+   "record_id": "SITE-002150",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "existence",
+   "reason": "The operator's own page shows it operates a manufacturing facility at \"201 Witmer Road Horsham, PA 19044\".",
+   "record_id": "SITE-002387",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "address",
+   "reason": "The quoted text prints the site's street address and city as \"201 Witmer Road Horsham, PA 19044\".",
+   "record_id": "SITE-002387",
+   "verdict": "SOUND"
+  },
+  {
+   "claim_type": "liveness",
+   "reason": "The quote confirms the operator's own site was live with a current 2026 copyright notice for \"American Additive Manufacturing LLC\".",
+   "record_id": "SITE-002387",
+   "verdict": "SOUND"
+  }
+ ]
+}

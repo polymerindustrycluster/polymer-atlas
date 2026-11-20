@@ -1,0 +1,45 @@
+{
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "verdicts"
+ ],
+ "properties": {
+  "verdicts": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "record_id",
+     "claim_type",
+     "verdict",
+     "reason"
+    ],
+    "properties": {
+     "record_id": {
+      "type": "string"
+     },
+     "claim_type": {
+      "type": "string",
+      "enum": [
+       "existence",
+       "address",
+       "liveness"
+      ]
+     },
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "SOUND",
+       "UNSOUND"
+      ]
+     },
+     "reason": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+}
