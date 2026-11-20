@@ -14,6 +14,10 @@ each. No record field, tier or status changed.
 - **Archive links (`archive.py`, `archive_rows.csv`):** each admitted capture was made 2026-11-20, replays with HTTP 200,
   and contains at least 80% of the row's quote words.
   - Defect injection: all 25 quotes checked against a different page's capture were rejected.
+- **V-65 baseline shrink (`prune_v65_baseline.py`):** 15 of the pilot's records were in v1.17's "no naked tier-A/B"
+  baseline and now carry a supporting row at their own strength. Their IDs leave the list (2,747 → 2,732), per the
+  file's shrink-only doctrine.
+  - The file's `amended` note is untouched, to avoid a merge conflict with PR #430, which edits that line.
 
 **Coverage:** 15 of the 50 sampled records (30%; Wilson 95% interval 19–44%) gained a row.
 - At that rate the 662-record frame yields about 199 records (126–290), which is about 6% of the 3,455-record gap.
