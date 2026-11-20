@@ -1,0 +1,5 @@
+ORG-000664: SOUND — GLEIF creation date 2001-03-14 is corroborated by the company page quote stating established in McDonough in 2001, with tie quotes confirming both Lima, OH and McDonough, GA.
+ORG-000965: DOUBT — Company page quote states it extended business to the US in December 1991, conflicting with and failing to corroborate the proposed 1990-11-01 GLEIF creation date.
+ORG-001128: SOUND — GLEIF creation date 1978-02-08 is corroborated by the company fact sheet stating 1978 start of US business activities, with tie quote confirming Cincinnati, OH.
+OVERALL: UNSOUND
+exit 0

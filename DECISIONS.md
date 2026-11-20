@@ -80,3 +80,22 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   were already public. Since 2026-11-17 such branches land by squash (entry above), which keeps the case from recurring.
 - **Decided by:** the repo owner, in session, 2026-11-18, as multiple choice ("Leave it"). Detail:
   `tasks/owner-rulings-2026-11-18c/README.md` item 3.
+
+## 2026-11-20: owner rulings 2026-11-19e on the Muse follow-ups
+
+- **Decision:** four rulings on the questions Muse's answers left open (detail and evidence:
+  `tasks/owner-rulings-2026-11-19e/README.md`).
+  1. **Gate B for people stays strict.** Polymer research must be stated on the person's own profile or lab page, on the
+     university's domain. A department, center or program page, a lab page describing members' projects, and an
+     off-domain lab site do not count. Aguado, Szleifer, Healy and Correa stay held; Gabrielson stays held on currency.
+  2. **Emeritus conflicts are held.** Zimmerman (Illinois) and Allcock (Penn State) stay leads until one current
+     university page settles the conflict.
+  3. **Sterilite's LEI stays.** ORG-001384 is the parent company, Sterilite Corporation, so the link is the record's own.
+     Its HQ field (Massillon, OH) is wrong and moves in a later pass. The owner first chose "remove" when the question
+     framed the record as an Ohio plant. That framing was wrong, and the ruling was reversed on the corrected facts in
+     the same session.
+  4. **year_founded may use a second source in place of the address gate.** Where GLEIF's address does not name the
+     organization's HQ, a second source's SAME verdict plus a re-read quote from the company's own page may stand in.
+     Plastipak is excluded because its only quote is third-party. Applied only where the company's own sources do not
+     state a conflicting year and both review families judged the row SOUND.
+- **Decided by:** the repo owner, in session, 2026-11-19/20, as multiple choice.
