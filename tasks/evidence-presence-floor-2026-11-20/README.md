@@ -27,6 +27,10 @@ own strength, and grandfathers 2,747 records.
 
 - **Scope:** every tier-C/U record in `organizations_*.csv`, `sites_*.csv`, `ecosystem.csv`, `programs.csv` and
   `people.csv`, tombstones included.
+  - Technically V-68 covers every record whose tier is not A or B, so a blank or invalid tier also falls in.
+  - Ecosystem rows have no tier-enum check, and without this such a record would escape both V-65 and V-68 (Codex,
+    round 5).
+  - No record has such a tier today, so the baseline is unchanged.
 - **What counts:** a row in a `data/evidence_*.csv` shard whose `record_table` and `record_id` name the record, at any
   strength. Archive links (§4.22) and registry links (§4.8) don't count.
 - **Baseline:** the existing debt mechanism (`scripts/validate_debt_baseline.json`), shrink-only.
@@ -83,11 +87,10 @@ own strength, and grandfathers 2,747 records.
 | 2 | Fixes for round 1 | UNSOUND: in-place repurposing removes no row | not re-run |
 | 3 | Name fingerprint | UNSOUND: same-name different entity | SOUND |
 | 4 | Identity fingerprint | UNSOUND: changes to non-identity fields aren't caught | SOUND (nits) |
+| 5 | V-68 reconciliation (tier C/U, beside main's V-65) | UNSOUND: a blank or invalid ecosystem tier escapes both floors. Fixed: V-68 covers "not A/B", with test `test_v68_new_ecosystem_record_with_blank_tier_fails` | SOUND |
 
 **Owner ruling on round 4 (2026-11-20, multiple choice): "Merge as is."** The rule ships as the floor for creates plus
 identity changes. Widening it to every non-derived field change is a surfaced follow-up (QUEUE), not part of this PR.
-
-The V-68 reconciliation (renumbering plus the tier-C/U scope) postdates round 4; its review is recorded in the PR.
 
 ## Reproduce
 

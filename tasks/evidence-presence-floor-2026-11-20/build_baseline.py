@@ -14,7 +14,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA, BASELINE = ROOT / "data", ROOT / "scripts" / "validate_debt_baseline.json"
-TIERS = ("C", "U")
 # must stay identical to scripts/validate.py V68_TABLES / v68_key (validate.py proves it: 0 new V-68 errors after a write)
 TABLES = {"organizations": ("organizations_*.csv", "org_id", ("legal_name", "hq_city", "hq_state")),
           "sites": ("sites_*.csv", "site_id", ("org_id", "site_name", "street_address", "city", "state")),
@@ -36,7 +35,7 @@ def rows(pattern):
 
 with_rows = {(r["record_table"].strip(), r["record_id"].strip()) for r in rows("evidence_*.csv")}
 keys = sorted(v68_key(t, r[col].strip(), [r.get(c) for c in ident]) for t, (pat, col, ident) in TABLES.items()
-              for r in rows(pat) if (r.get("verification_tier") or "").strip() in TIERS and (t, r[col].strip()) not in with_rows)
+              for r in rows(pat) if (r.get("verification_tier") or "").strip() not in ("A", "B") and (t, r[col].strip()) not in with_rows)
 assert len(keys) == len(set(keys)), "duplicate record key"
 by_table = Counter(k.split(":", 1)[0] for k in keys)
 
@@ -46,7 +45,7 @@ audit = json.loads(subprocess.run([sys.executable, str(ROOT / "scripts" / "audit
                                   capture_output=True, text=True, encoding="utf-8", check=True, cwd=ROOT).stdout)
 audit_by_table = Counter()
 for s in audit["summary"]:
-    if s["tier"] in TIERS:
+    if s["tier"] not in ("A", "B"):  # same predicate as validate.py V-68 (blank or invalid tiers fall in)
         audit_by_table[s["table"]] += s["no_rows_history_unknown"]
 print("baseline:", len(keys), dict(sorted(by_table.items())))
 print("audit   :", sum(audit_by_table.values()), dict(sorted(audit_by_table.items())))

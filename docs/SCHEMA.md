@@ -1829,7 +1829,9 @@ created at tier **U or C** (AGENTS.md §3 step 6), so on its own it does
 not stop a create that skipped its evidence rows. From this revision
 (owner ruling 2026-11-20, "Close the zero-row leak"), every tier-C/U
 record in the five §4.13 tables carries at least one row in the
-`data/evidence_*.csv` shards, at any strength. Archive links (§4.22) and
+`data/evidence_*.csv` shards, at any strength. The validator applies it
+to every record whose tier is not A or B, so a blank or invalid tier
+(ecosystem rows have no tier-enum check) cannot escape both floors. Archive links (§4.22) and
 registry links (§4.8) do not count: only evidence rows do. The floor
 does not replace the lane-brief contract, which still requires rows for
 every must-have claim and is still enforced by the integrator. Tier-C/U

@@ -803,6 +803,15 @@ class ValidatorMutationTests(unittest.TestCase):
         self.append_row("organizations_OH.csv", dict(self._rows("organizations_OH.csv")[-1], org_id=new_id, verification_tier="C"))
         self.assert_fails_with(self.V68_MSG.format(t="organizations", rid=new_id, tier="C"))
 
+    def test_v68_new_ecosystem_record_with_blank_tier_fails(self):
+        # review 2026-11-20 (Codex, round 5): ecosystem has no tier-enum check, so a blank tier must not slip past both
+        # V-65 (A/B) and V-68; V-68 covers every tier that is not A or B.
+        shards = [p.name for p in self.data.glob("organizations_*.csv")] + ["ecosystem.csv"]
+        top = max(int(r["org_id"][4:]) for name in shards for r in self._rows(name))
+        new_id = f"ORG-{top + 1:06d}"
+        self.append_row("ecosystem.csv", dict(self._rows("ecosystem.csv")[-1], org_id=new_id, verification_tier=""))
+        self.assert_fails_with(self.V68_MSG.format(t="ecosystem", rid=new_id, tier="(blank)"))
+
     def test_v68_baselined_record_gaining_a_row_only_warns(self):
         has_rows = self._evidence_index()
         tiers = {r["person_id"]: r["verification_tier"] for r in self._rows("people.csv")}

@@ -694,10 +694,11 @@ def v68_key(table, rid, values):
 _with_rows = {(r["record_table"].strip(), r["record_id"].strip()) for r in evidence}
 for _table, _rows, _idcol, _identcols in V68_TABLES:
     for r in _rows:
-        rid = r[_idcol].strip()
-        if (r.get("verification_tier") or "").strip() in ("C", "U") and (_table, rid) not in _with_rows:
+        rid, tier = r[_idcol].strip(), (r.get("verification_tier") or "").strip()
+        # "not A/B", not "in C/U": a blank or invalid tier (ecosystem has no tier-enum check) must not escape both floors
+        if tier not in ("A", "B") and (_table, rid) not in _with_rows:
             debt("V-68", v68_key(_table, rid, [r.get(c) for c in _identcols]),
-                 f"{_table} {rid} is tier {r['verification_tier'].strip()} with no evidence row in data/evidence_*.csv (SCHEMA §4.13 presence floor, V-68)")
+                 f"{_table} {rid} is tier {tier or '(blank)'} with no evidence row in data/evidence_*.csv (SCHEMA §4.13 presence floor, V-68)")
 
 DEBT_DETAILS = "--debt-details" in sys.argv
 for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):
