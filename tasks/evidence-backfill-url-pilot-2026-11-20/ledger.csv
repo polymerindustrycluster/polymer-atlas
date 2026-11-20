@@ -1,0 +1,51 @@
+record_table,record_id,tier,url,verdict,reason,claims
+organizations,ORG-002541,A,https://mnwovens.com/news/,HOLD,"ownership-change phrase near the name: nability Careers Doing Business With Monadnock Contact Precision Products Group Acquires Monadnock Non-Wovens Oct 9, 2026 CINCINNATI, Oct. 9, 2026 — Precision Products",
+organizations,ORG-002746,A,http://www.fennerdrives.com/,NO_FETCH,thin_200|jina_error:HTTPError,
+organizations,ORG-002666,A,https://tere-stone.com/,WITNESS,,existence;liveness
+organizations,ORG-002409,A,https://biocoat.com,WITNESS,,existence;address;liveness
+organizations,ORG-002208,A,https://www.greengardeninc.com/,HOLD,redirected off cited host to https://www.legacymobileautospa.com/,
+organizations,ORG-001883,A,https://rezkemchemicals.com,WITNESS,,existence;address;liveness
+organizations,ORG-001777,A,https://anchor-online.com,WITNESS,,existence
+organizations,ORG-002503,A,https://unitedlaminations.com/site/,WITNESS,,existence;address
+organizations,ORG-001560,A,https://trueindicating.com/,WITNESS,,existence;address;liveness
+organizations,ORG-002508,A,https://cjindustries.com/,WITNESS,,existence;address
+organizations,ORG-001765,A,https://a-zrecyclinginc.com,WITNESS,,existence;address
+organizations,ORG-001743,A,https://www.industrialpattern.com/,WITNESS,,existence;address
+organizations,ORG-002230,A,https://www.steveshannon.com/ShannonRETREADCO/,WITNESS,,existence
+organizations,ORG-001814,B,https://freedommoldmachine.com,WITNESS,,existence;liveness
+organizations,ORG-002074,B,https://www.emc-sq.com,WITNESS,,existence;address;liveness
+organizations,ORG-001914,B,https://vinyl-one.com,WITNESS,,existence;address;liveness
+organizations,ORG-001896,B,https://slomebelting.com,WITNESS,,existence;address
+organizations,ORG-001732,B,https://www.thermofisher.com,NO_WITNESS,no record or operator name on the page,
+organizations,ORG-002413,B,https://frpfab.com,NO_FETCH,fetch_error:URLError|jina_error:HTTPError,
+organizations,ORG-002639,B,https://custommoldsplastics.com/,NO_FETCH,fetch_error:URLError|jina_error:HTTPError,
+organizations,ORG-002311,B,http://www.northcoastconduit.com/,WITNESS,,existence;address
+organizations,ORG-001874,B,https://pvs-plastics.net,WITNESS,,existence;liveness
+organizations,ORG-001509,B,https://filterqueen.com/,NO_WITNESS,no record or operator name on the page,
+organizations,ORG-001451,B,https://www.briskheat.com/,WITNESS,,existence;address;liveness
+organizations,ORG-001535,B,https://reacthealth.com/,WITNESS,,existence;address
+sites,SITE-002779,A,https://industrial.sherwin-williams.com/na/us/en/packaging/find-location/location-detail.undefined.en_US-10371492-PCG_Manufacturing_CCB.html,WITNESS,,existence;address
+sites,SITE-002114,A,http://custompultrusions.com,NO_FETCH,fetch_error:URLError|jina_error:HTTPError,
+sites,SITE-002418,A,https://www.gtweed.com/locations/,WITNESS,,existence;address;liveness
+sites,SITE-002826,A,https://www.thegriffnetwork.com/,NO_WITNESS,no record or operator name on the page,
+sites,SITE-002193,A,https://chasecorp.com/HumiSeal/contact-us/distributors/pg/5/,NO_WITNESS,operator page does not print this site's street address,
+sites,SITE-002150,A,https://specialtypowders.com/,WITNESS,,existence;address
+sites,SITE-002043,A,https://sietins.com,NO_FETCH,thin_200|jina_error:HTTPError,
+sites,SITE-002171,A,https://www.greengardeninc.com/,HOLD,redirected off cited host to https://www.legacymobileautospa.com/,
+sites,SITE-002701,A,https://spadonemachine.com/,NO_WITNESS,operator page does not print this site's street address,
+sites,SITE-002858,A,https://mail.uslco.com/careers.php,NO_FETCH,fetch_error:URLError|jina_error:HTTPError,
+sites,SITE-003375,A,https://www.michelinman.com/,NO_WITNESS,operator page does not print this site's street address,
+sites,SITE-000014,A,https://daextrusion.com/,NO_WITNESS,operator page does not print this site's street address,
+sites,SITE-002387,A,https://americanadditive.com/about-us,WITNESS,,existence;address;liveness
+sites,SITE-001461,B,https://freshproducts.com/,HOLD,"ownership-change phrase near the name: ducts has established itself as a leading innovator in odor control through the acquisition of numerous patents, including that for the Wave 3D design. Find your solution Odo",
+sites,SITE-002188,B,https://www.sttc.com/locations/pennsylvania/york/,NO_WITNESS,no record or operator name on the page,
+sites,SITE-001440,B,https://polykinetix.com,NO_WITNESS,operator page does not print this site's street address,
+sites,SITE-002849,B,https://www.westpharma.com/,NO_WITNESS,operator page does not print this site's street address,
+sites,SITE-003843,B,https://harcofittings.com/DocumentLibrary/PVC/C900/harco_fittings_llc_certification_c900_non-pressure.pdf,NO_FETCH,thin_200|jina_error:HTTPError,
+sites,SITE-003315,B,https://www.ngr-world.com/,NO_WITNESS,no record or operator name on the page,
+sites,SITE-002732,B,https://altiumpkg.com/,NO_WITNESS,operator page does not print this site's street address,
+sites,SITE-002313,B,https://unitedplasticsmachine.com,NO_FETCH,fetch_error:URLError|jina_error:HTTPError,
+sites,SITE-004311,B,https://www.corelitecomposites.com/files/CoreLite%20PVC%20F%20Data%20Sheet.pdf,NO_FETCH,thin_200|jina_error:HTTPError,
+sites,SITE-002080,B,https://www.basf.com,NO_WITNESS,no record or operator name on the page,
+sites,SITE-004251,B,https://www.omgitaly.com/agenti-e-distributori,NO_WITNESS,no record or operator name on the page,
+sites,SITE-003397,B,https://www.triconenergy.com/media/o4jbdqjf/tricolene-lmdpe-rds-english-2022-07-11.pdf,NO_FETCH,thin_200|jina_error:HTTPError,
