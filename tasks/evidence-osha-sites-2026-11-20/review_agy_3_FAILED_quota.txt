@@ -1,0 +1,4 @@
+council-ask: gemini effort=deep -> model=Gemini 3.8 Flash (High)
+agy-headless: invalid, incomplete, or denied stream-json result — failing closed.
+agy-headless: agy error: Individual quota reached. Please upgrade your subscription to increase your limits. Resets in 97h13m50s. (response may be truncated) — failing closed.
+council-ask: gemini — call failed (rc=3)

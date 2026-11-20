@@ -1,0 +1,814 @@
+{
+ "verdicts": [
+  {
+   "record_id": "SITE-003895",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Direct Pack Inc. Azusa' of 'Direct Pack Inc.' matches operator 'Direct Pack, Inc.' at recorded street."
+  },
+  {
+   "record_id": "SITE-003895",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 1025 W 8th St matches the site's recorded street address range 1025-1055 W 8th St."
+  },
+  {
+   "record_id": "SITE-003895",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 70 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003915",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Fresno Sinclair Systems INTL' matches operator 'Sinclair Systems International, LLC'."
+  },
+  {
+   "record_id": "SITE-003915",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 3115 S WILLOW AVE matches recorded 3115 S Willow Ave."
+  },
+  {
+   "record_id": "SITE-003915",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing reports employees for calendar 2025."
+  },
+  {
+   "record_id": "SITE-003965",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'CCL Tube Inc' matches operator 'CCL Tube Inc.' at recorded street."
+  },
+  {
+   "record_id": "SITE-003965",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 2250 East 220th Street matches recorded 2250 E 220th St."
+  },
+  {
+   "record_id": "SITE-003965",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 96 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004160",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Axiom Materials, Inc' matches operator 'Axiom Materials, Inc.' at recorded street."
+  },
+  {
+   "record_id": "SITE-004160",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 2320 Pullman St matches recorded street address."
+  },
+  {
+   "record_id": "SITE-004160",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 141 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004294",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Ascent Aerospace, LLC.' of 'Ascent Aerospace' matches operator 'Ascent Aerospace'."
+  },
+  {
+   "record_id": "SITE-004294",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 1395 S. Lyon St. matches recorded street address."
+  },
+  {
+   "record_id": "SITE-004294",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 111 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003714",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Viega - Broomfield' of 'Viega LLC' matches operator 'Viega LLC'."
+  },
+  {
+   "record_id": "SITE-003714",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 585 Interlocken Blvd matches recorded street address."
+  },
+  {
+   "record_id": "SITE-003714",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 450 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004338",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Pretred, Inc.' matches operator 'Pretred, Inc.' at recorded street."
+  },
+  {
+   "record_id": "SITE-004338",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 3700 N. Salida St., Unit 20 matches recorded 3700 Salida Street."
+  },
+  {
+   "record_id": "SITE-004338",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 28 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003353",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Clinton Instrument Company' matches operator 'Clinton Instrument Company'."
+  },
+  {
+   "record_id": "SITE-003353",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 295 East Main Street matches recorded 295 E. Main St."
+  },
+  {
+   "record_id": "SITE-003353",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 19 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003459",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Westminster Tool Inc' matches operator 'Westminster Tool, Inc.'."
+  },
+  {
+   "record_id": "SITE-003459",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 5 EAST PARKWAY matches recorded 5 East Parkway."
+  },
+  {
+   "record_id": "SITE-003459",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 40 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003298",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'TA Instruments- New Castle' explicitly matches operator 'TA Instruments' under parent Waters Corporation."
+  },
+  {
+   "record_id": "SITE-003298",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 159 Lukens Drive matches recorded street address."
+  },
+  {
+   "record_id": "SITE-003298",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 317 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004289",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'American Tool and Mold' matches operator 'American Tool & Mold, Inc.'."
+  },
+  {
+   "record_id": "SITE-004289",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 1700 Sunshine Dr matches recorded street address."
+  },
+  {
+   "record_id": "SITE-004289",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 110 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003267",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Nexus Circular LLC' matches operator 'Nexus Circular LLC'."
+  },
+  {
+   "record_id": "SITE-003267",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 500 Waterfront Dr. SW matches recorded 500 Waterfront Drive SW."
+  },
+  {
+   "record_id": "SITE-003267",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 87 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003486",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'ATLANTA' of 'Printpack Inc' matches operator 'Printpack Inc.' as a plant name under operator company name."
+  },
+  {
+   "record_id": "SITE-003486",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 2800 OVERLOOK PKWY matches recorded 2800 Overlook Pkwy."
+  },
+  {
+   "record_id": "SITE-003486",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 167 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003735",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Cimbar Resources Inc' matches operator 'Cimbar Resources, Inc.'."
+  },
+  {
+   "record_id": "SITE-003735",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 49-0 Jackson Lake Rd matches recorded street address."
+  },
+  {
+   "record_id": "SITE-003735",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 28 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003967",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Challenger Turf' matches operator 'Challenger Turf, Inc.'."
+  },
+  {
+   "record_id": "SITE-003967",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 743 Hill Road matches recorded 743 Hill Rd."
+  },
+  {
+   "record_id": "SITE-003967",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 150 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003335",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Manufacturing Specialties, Inc.' matches operator 'Manufacturing Specialties Inc.'."
+  },
+  {
+   "record_id": "SITE-003335",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 12300 6th St SW matches recorded street address."
+  },
+  {
+   "record_id": "SITE-003335",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 48 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003594",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Ritchie Industries Inc.' matches operator 'Ritchie Industries, Inc.'."
+  },
+  {
+   "record_id": "SITE-003594",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 120 S Main St. matches recorded 120 South Main Street."
+  },
+  {
+   "record_id": "SITE-003594",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 69 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004296",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'ATC Manufacturing' of 'Advanced Thermoplastic Composites, LLC' matches operator 'Advanced Thermoplastic Composites, Inc.'."
+  },
+  {
+   "record_id": "SITE-004296",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 1224 N Lean st matches recorded 1224 N Lean St."
+  },
+  {
+   "record_id": "SITE-004296",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 73 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003223",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Cabot Corporation' matches operator 'Cabot Corporation'."
+  },
+  {
+   "record_id": "SITE-003223",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 700 East US HWY 36 matches recorded 700 East US Highway 36."
+  },
+  {
+   "record_id": "SITE-003223",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 95 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003490",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Bales Metal Surface Solutions' matches operator 'Bales Metal Surface Solutions'."
+  },
+  {
+   "record_id": "SITE-003490",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 2824 Hitchcock Ave matches recorded 2824 Hitchcock Avenue."
+  },
+  {
+   "record_id": "SITE-003490",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 31 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003541",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Matsui America HQ' of 'Matsui America, Inc.' matches operator 'Matsui America, Inc.'."
+  },
+  {
+   "record_id": "SITE-003541",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 5825 Turnberry Drive matches recorded 5825 Turnberry Dr."
+  },
+  {
+   "record_id": "SITE-003541",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 33 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003937",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Budnick Converting, Inc.' matches operator 'Budnick Converting, Inc.'."
+  },
+  {
+   "record_id": "SITE-003937",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 340 Parkway Drive matches recorded street address."
+  },
+  {
+   "record_id": "SITE-003937",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 121 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004323",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Ingersoll Machine Tools Inc.' matches operator 'Ingersoll Machine Tools, Inc.'."
+  },
+  {
+   "record_id": "SITE-004323",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 707 Fulton Ave matches recorded street address."
+  },
+  {
+   "record_id": "SITE-004323",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 140 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003274",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Wabash Metal Products, Inc dba Wabash MPI' of 'Wabash MPI Carver' matches operator 'Wabash MPI / Carver, Inc.'."
+  },
+  {
+   "record_id": "SITE-003274",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 1569 Morris Street matches recorded street address."
+  },
+  {
+   "record_id": "SITE-003274",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 63 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003590",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Elkhart Plastics' of 'Myers Industries/Elkhart Plastics' matches operator 'Elkhart Plastics LLC'."
+  },
+  {
+   "record_id": "SITE-003590",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 3300 N. Kenmore Street matches recorded 3300 North Kenmore Street."
+  },
+  {
+   "record_id": "SITE-003590",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 89 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003921",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Brightmark Plastics Ashley OpCo LLC' matches operator 'Brightmark Plastics Ashley OpCo LLC'."
+  },
+  {
+   "record_id": "SITE-003921",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 401 N McEntarfer Dr matches recorded 401 McEntarfer Dr with direction prefix."
+  },
+  {
+   "record_id": "SITE-003921",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 101 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003627",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Park Aerospace Corp.' matches operator 'Park Aerospace Corp.'."
+  },
+  {
+   "record_id": "SITE-003627",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 486 North Oliver Rd. matches recorded 486 North Oliver Road, Building Z."
+  },
+  {
+   "record_id": "SITE-003627",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 122 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003828",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Bunting Magnetics Co' matches operator 'Bunting Magnetics Co.'."
+  },
+  {
+   "record_id": "SITE-003828",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 500 S. Spencer Rd matches recorded 500 S. Spencer Road."
+  },
+  {
+   "record_id": "SITE-003828",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 141 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004261",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Reiloy USA Corporation' matches operator 'Reiloy USA'."
+  },
+  {
+   "record_id": "SITE-004261",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 12260 W. 53rd Street North matches recorded 12260 West 53rd St N."
+  },
+  {
+   "record_id": "SITE-004261",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 66 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003225",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Carrollton Manufacturing Facility' of 'Cabot Corporation' matches operator 'Cabot Corporation' as a plant name under operator company name."
+  },
+  {
+   "record_id": "SITE-003225",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 5414 US Highway 42 East matches recorded 5414 Us-42."
+  },
+  {
+   "record_id": "SITE-003225",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 33 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003623",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'ECKART America - Louisville' of 'ECKART America' matches operator 'Eckart America Corporation'."
+  },
+  {
+   "record_id": "SITE-003623",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 4101 Camp Ground Rd. matches recorded 4101 Camp Ground Road."
+  },
+  {
+   "record_id": "SITE-003623",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 72 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004140",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'PSC Industries - Corporate' of 'PSC Industries' matches operator 'PSC Industries Inc.'."
+  },
+  {
+   "record_id": "SITE-004140",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 1100 W. Market Street matches recorded 1100 West Market St."
+  },
+  {
+   "record_id": "SITE-004140",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 17 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004141",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'PSC Industries - Kentucky Street Office' of 'PSC Industries, Inc.' matches operator 'PSC Industries Inc.'."
+  },
+  {
+   "record_id": "SITE-004141",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 3001 W. Kentucky Street matches recorded 3001 W Kentucky St."
+  },
+  {
+   "record_id": "SITE-004141",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 15 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003228",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Absolute Haitian Corporation' matches operator 'Absolute Haitian Corporation'."
+  },
+  {
+   "record_id": "SITE-003228",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 33 Southgate Street matches recorded 33 Southgate St."
+  },
+  {
+   "record_id": "SITE-003228",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 93 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003440",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Erema North America' matches operator 'EREMA North America, Inc.'."
+  },
+  {
+   "record_id": "SITE-003440",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 23 Old right Rd Unit #2 matches recorded 23 Old Right Road - Unit 2."
+  },
+  {
+   "record_id": "SITE-003440",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 31 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003224",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Midland Manufacturing Facility' of 'Cabot Corporation' matches operator 'Cabot Corporation' as a plant name under operator company name."
+  },
+  {
+   "record_id": "SITE-003224",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 3603 S Saginaw Road matches recorded 3603 S Saginaw Rd."
+  },
+  {
+   "record_id": "SITE-003224",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 31 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003846",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "Establishment 'Brown LLC' does not match operator 'BMG LLC'; filer appears to be a different entity."
+  },
+  {
+   "record_id": "SITE-003846",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "Unsound because existence is unsound; filing is not for this operator's site."
+  },
+  {
+   "record_id": "SITE-003846",
+   "claim_type": "liveness",
+   "verdict": "UNSOUND",
+   "reason": "Unsound because existence is unsound."
+  },
+  {
+   "record_id": "SITE-003869",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "Establishment 'American Rheinmetall Plymouth' of 'American Rheinmetall' does not match operator 'Loc Performance Products, Inc.'."
+  },
+  {
+   "record_id": "SITE-003869",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "Unsound because existence is unsound; filing is not for this operator's site."
+  },
+  {
+   "record_id": "SITE-003869",
+   "claim_type": "liveness",
+   "verdict": "UNSOUND",
+   "reason": "Unsound because existence is unsound."
+  },
+  {
+   "record_id": "SITE-003936",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Argent International' matches operator 'Argent International, Inc.'."
+  },
+  {
+   "record_id": "SITE-003936",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 41016 Concept Drive matches recorded street address."
+  },
+  {
+   "record_id": "SITE-003936",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 140 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004008",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Reed City Group, LLC' matches operator 'Reed City Group'."
+  },
+  {
+   "record_id": "SITE-004008",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 603 East church Street matches recorded 603 E. Church St."
+  },
+  {
+   "record_id": "SITE-004008",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 166 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004032",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "Filer 'Alro Steel' and establishment 'JC' do not match operator 'Alro Plastics'; filing is for a different entity at the address."
+  },
+  {
+   "record_id": "SITE-004032",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "Unsound because existence is unsound; filing belongs to Alro Steel, not Alro Plastics."
+  },
+  {
+   "record_id": "SITE-004032",
+   "claim_type": "liveness",
+   "verdict": "UNSOUND",
+   "reason": "Unsound because existence is unsound."
+  },
+  {
+   "record_id": "SITE-004161",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Bekum America Corporation' matches operator 'Bekum America Corporation'."
+  },
+  {
+   "record_id": "SITE-004161",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 1140 W Grand River Ave matches recorded 1140 West Grand River."
+  },
+  {
+   "record_id": "SITE-004161",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 112 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-004297",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Atomic Industries, Inc.' matches operator 'Atomic Industries'."
+  },
+  {
+   "record_id": "SITE-004297",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 13780 E 11 Mile Road matches recorded 13780 E 11 Mile Rd."
+  },
+  {
+   "record_id": "SITE-004297",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 41 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003417",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Plymouth' of 'NatureWorks LLC' matches operator 'NatureWorks LLC' as a plant name under operator company name."
+  },
+  {
+   "record_id": "SITE-003417",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 17400 Medina Road, Suite 800 matches recorded 17400 Medina Rd Ste 800."
+  },
+  {
+   "record_id": "SITE-003417",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 41 employees reported witnesses calendar 2025 operation."
+  },
+  {
+   "record_id": "SITE-003499",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "OSHA establishment 'Mondi' of 'Mondi Jackson, LLC' matches operator 'Mondi Jackson LLC'."
+  },
+  {
+   "record_id": "SITE-003499",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "OSHA street address 14591 State Hwy 177 matches recorded 14591 State Highway 177."
+  },
+  {
+   "record_id": "SITE-003499",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "2025 Form 300A filing with 414 employees reported witnesses calendar 2025 operation."
+  }
+ ]
+}

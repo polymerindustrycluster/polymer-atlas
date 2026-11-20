@@ -1,0 +1,814 @@
+{
+ "verdicts": [
+  {
+   "record_id": "SITE-003895",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Direct Pack's own establishment is identified at 1025 W 8th St, within the Atlas address range."
+  },
+  {
+   "record_id": "SITE-003895",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "The filing establishes 1025 W 8th St only; it does not substantiate the full 1025-1055 street-number range."
+  },
+  {
+   "record_id": "SITE-003895",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 70 employees for 2025, whose covered period ended within 24 months."
+  },
+  {
+   "record_id": "SITE-003915",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Sinclair Systems INTL matches Sinclair Systems International; abbreviation and omitted legal suffix do not change identity."
+  },
+  {
+   "record_id": "SITE-003915",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "The street number and street match exactly apart from capitalization."
+  },
+  {
+   "record_id": "SITE-003915",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The 2025 filing reports employees; the anomalous 179759 count does not defeat the stated liveness rule."
+  },
+  {
+   "record_id": "SITE-003965",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify CCL Tube Inc. at the matching address."
+  },
+  {
+   "record_id": "SITE-003965",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2250 East 220th Street matches 2250 E 220th St."
+  },
+  {
+   "record_id": "SITE-003965",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 96 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004160",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment name directly identifies Axiom Materials, Inc.; the blank company field does not defeat that match."
+  },
+  {
+   "record_id": "SITE-004160",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 2320 Pullman St in Santa Ana."
+  },
+  {
+   "record_id": "SITE-004160",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 141 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004294",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The company name matches Ascent Aerospace, and the establishment's LLC suffix does not refute identity."
+  },
+  {
+   "record_id": "SITE-004294",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records identify 1395 S. Lyon St; punctuation differs only."
+  },
+  {
+   "record_id": "SITE-004294",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 111 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003714",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Viega LLC identifies its Broomfield establishment at the matching address; the office classification is compatible with site existence."
+  },
+  {
+   "record_id": "SITE-003714",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 585 Interlocken Blvd in Broomfield."
+  },
+  {
+   "record_id": "SITE-003714",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 450 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004338",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify Pretred, Inc. at the matching street address."
+  },
+  {
+   "record_id": "SITE-004338",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "3700 Salida Street matches 3700 N. Salida St., Unit 20 under the permitted direction and unit differences."
+  },
+  {
+   "record_id": "SITE-004338",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 28 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003353",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify Clinton Instrument Company at the matching address."
+  },
+  {
+   "record_id": "SITE-003353",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "295 East Main Street matches 295 E. Main St."
+  },
+  {
+   "record_id": "SITE-003353",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 19 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003459",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Westminster Tool Inc matches the operator apart from punctuation."
+  },
+  {
+   "record_id": "SITE-003459",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 5 East Parkway in Plainfield."
+  },
+  {
+   "record_id": "SITE-003459",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 40 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003298",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment explicitly bears the operator's TA Instruments name at the exact address, despite the Waters Corporation company entry."
+  },
+  {
+   "record_id": "SITE-003298",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "The identified TA Instruments establishment and Atlas both give 159 Lukens Drive."
+  },
+  {
+   "record_id": "SITE-003298",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified TA Instruments establishment reports 317 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004289",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "American Tool and Mold matches American Tool & Mold, Inc.; conjunction spelling and omitted suffix do not refute identity."
+  },
+  {
+   "record_id": "SITE-004289",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 1700 Sunshine Dr in Clearwater."
+  },
+  {
+   "record_id": "SITE-004289",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 110 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003267",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields exactly identify Nexus Circular LLC at the matching address."
+  },
+  {
+   "record_id": "SITE-003267",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "500 Waterfront Dr. SW matches 500 Waterfront Drive SW."
+  },
+  {
+   "record_id": "SITE-003267",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 87 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003486",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Although the establishment is named ATLANTA, its company field explicitly identifies Printpack Inc. at the matching address."
+  },
+  {
+   "record_id": "SITE-003486",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records identify 2800 Overlook Pkwy; capitalization and spacing differ only."
+  },
+  {
+   "record_id": "SITE-003486",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Printpack's identified establishment reports 167 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003735",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify Cimbar Resources Inc at the exact recorded address."
+  },
+  {
+   "record_id": "SITE-003735",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give the same unusual street number, 49-0, on Jackson Lake Rd."
+  },
+  {
+   "record_id": "SITE-003735",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 28 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003967",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Challenger Turf directly matches the operator; the blank company field and omitted Inc. suffix do not refute identity."
+  },
+  {
+   "record_id": "SITE-003967",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "743 Hill Road matches 743 Hill Rd."
+  },
+  {
+   "record_id": "SITE-003967",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 150 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003335",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify the recorded operator, Manufacturing Specialties Inc., at the exact address."
+  },
+  {
+   "record_id": "SITE-003335",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 12300 6th St SW in Cedar Rapids."
+  },
+  {
+   "record_id": "SITE-003335",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 48 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003594",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify Ritchie Industries Inc. at the matching address."
+  },
+  {
+   "record_id": "SITE-003594",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "120 S Main St. matches 120 South Main Street."
+  },
+  {
+   "record_id": "SITE-003594",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 69 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004296",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Advanced Thermoplastic Composites matches the operator; LLC versus Inc. alone cannot refute identity under the owner ruling."
+  },
+  {
+   "record_id": "SITE-004296",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 1224 N Lean St in Post Falls."
+  },
+  {
+   "record_id": "SITE-004296",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 73 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003223",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify Cabot Corporation at the matching Tuscola address."
+  },
+  {
+   "record_id": "SITE-003223",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "700 East US HWY 36 matches 700 East US Highway 36."
+  },
+  {
+   "record_id": "SITE-003223",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 95 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003490",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields exactly identify Bales Metal Surface Solutions at the matching address."
+  },
+  {
+   "record_id": "SITE-003490",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2824 Hitchcock Ave matches 2824 Hitchcock Avenue."
+  },
+  {
+   "record_id": "SITE-003490",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 31 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003541",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment and company names identify Matsui America's headquarters at the matching address."
+  },
+  {
+   "record_id": "SITE-003541",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "5825 Turnberry Drive matches 5825 Turnberry Dr."
+  },
+  {
+   "record_id": "SITE-003541",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 33 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003937",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields exactly identify Budnick Converting, Inc. at the exact address."
+  },
+  {
+   "record_id": "SITE-003937",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 340 Parkway Drive in Columbia."
+  },
+  {
+   "record_id": "SITE-003937",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 121 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004323",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify Ingersoll Machine Tools Inc. at the exact address."
+  },
+  {
+   "record_id": "SITE-004323",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 707 Fulton Ave in Rockford."
+  },
+  {
+   "record_id": "SITE-004323",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 140 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003274",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The filing explicitly supplies the Wabash MPI trade name and matching Wabash MPI Carver company name at the exact address."
+  },
+  {
+   "record_id": "SITE-003274",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 1569 Morris Street in Wabash."
+  },
+  {
+   "record_id": "SITE-003274",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 63 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003590",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Elkhart Plastics appears in both OSHA name fields at the matching address; the additional Myers Industries name does not defeat identification."
+  },
+  {
+   "record_id": "SITE-003590",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "3300 N. Kenmore Street matches 3300 North Kenmore Street."
+  },
+  {
+   "record_id": "SITE-003590",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified Elkhart Plastics establishment reports 89 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003921",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields exactly identify Brightmark Plastics Ashley OpCo LLC at the matching street address."
+  },
+  {
+   "record_id": "SITE-003921",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "401 N McEntarfer Dr matches 401 McEntarfer Dr under the permitted direction-word difference."
+  },
+  {
+   "record_id": "SITE-003921",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 101 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003627",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify Park Aerospace Corp. at the matching street address."
+  },
+  {
+   "record_id": "SITE-003627",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "486 North Oliver Rd. matches the Atlas street address; omission of Building Z is expressly permitted."
+  },
+  {
+   "record_id": "SITE-003627",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 122 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003828",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify Bunting Magnetics Co. at the matching address."
+  },
+  {
+   "record_id": "SITE-003828",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "500 S. Spencer Rd matches 500 S. Spencer Road."
+  },
+  {
+   "record_id": "SITE-003828",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 141 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004261",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Reiloy USA Corporation directly matches Reiloy USA; the blank company field and added legal suffix do not refute identity."
+  },
+  {
+   "record_id": "SITE-004261",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "12260 W. 53rd Street North matches 12260 West 53rd St N."
+  },
+  {
+   "record_id": "SITE-004261",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 66 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003225",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Carrollton Manufacturing Facility is explicitly filed under Cabot Corporation at the matching address."
+  },
+  {
+   "record_id": "SITE-003225",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "5414 US Highway 42 East matches 5414 Us-42; route notation and the added direction word are permissible differences."
+  },
+  {
+   "record_id": "SITE-003225",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Cabot's identified establishment reports 33 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003623",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "ECKART America identifies the operator's Louisville establishment; capitalization and omitted Corporation suffix do not refute identity."
+  },
+  {
+   "record_id": "SITE-003623",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "4101 Camp Ground Rd. matches 4101 Camp Ground Road."
+  },
+  {
+   "record_id": "SITE-003623",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 72 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004140",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "PSC Industries identifies its corporate establishment at the matching address; office classification supports site existence without establishing manufacturing."
+  },
+  {
+   "record_id": "SITE-004140",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1100 W. Market Street matches 1100 West Market St."
+  },
+  {
+   "record_id": "SITE-004140",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The operator's office establishment reports 17 employees for 2025, satisfying the site's liveness rule."
+  },
+  {
+   "record_id": "SITE-004141",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "PSC Industries explicitly identifies its establishment at this address; the office label does not refute the site's operator identity."
+  },
+  {
+   "record_id": "SITE-004141",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "3001 W. Kentucky Street matches 3001 W Kentucky St."
+  },
+  {
+   "record_id": "SITE-004141",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The operator's office establishment reports 15 employees for 2025, satisfying site liveness without proving fabrication activity."
+  },
+  {
+   "record_id": "SITE-003228",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields exactly identify Absolute Haitian Corporation at the matching address."
+  },
+  {
+   "record_id": "SITE-003228",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "33 Southgate Street matches 33 Southgate St."
+  },
+  {
+   "record_id": "SITE-003228",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 93 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003440",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Erema North America matches the operator; capitalization and omitted Inc. suffix do not refute identity."
+  },
+  {
+   "record_id": "SITE-003440",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records identify 23 Old Right Road, Unit 2; abbreviation and formatting differ only."
+  },
+  {
+   "record_id": "SITE-003440",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 31 employees for 2025; the July 2026 submission does not change the qualifying covered period."
+  },
+  {
+   "record_id": "SITE-003224",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Midland Manufacturing Facility is explicitly filed under Cabot Corporation at the matching address."
+  },
+  {
+   "record_id": "SITE-003224",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "3603 S Saginaw Road matches 3603 S Saginaw Rd."
+  },
+  {
+   "record_id": "SITE-003224",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Cabot's identified establishment reports 31 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003846",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "The filing identifies Brown LLC, with no supplied evidence connecting that identity to operator BMG LLC."
+  },
+  {
+   "record_id": "SITE-003846",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "The direction-word difference is permitted, but Brown LLC's filing cannot establish BMG's site address because existence is unsound."
+  },
+  {
+   "record_id": "SITE-003846",
+   "claim_type": "liveness",
+   "verdict": "UNSOUND",
+   "reason": "The 155 employees reported for Brown LLC cannot witness BMG's site liveness without an established operator identity match."
+  },
+  {
+   "record_id": "SITE-003869",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "The filing names American Rheinmetall, and the supplied data do not establish its identity with Loc Performance Products, Inc."
+  },
+  {
+   "record_id": "SITE-003869",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "The street address matches, but the filing is not established as belonging to the Atlas operator."
+  },
+  {
+   "record_id": "SITE-003869",
+   "claim_type": "liveness",
+   "verdict": "UNSOUND",
+   "reason": "American Rheinmetall's 2025 employee report cannot witness the Atlas site's liveness because operator identity is unestablished."
+  },
+  {
+   "record_id": "SITE-003936",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields identify Argent International; the omitted Inc. suffix does not refute identity."
+  },
+  {
+   "record_id": "SITE-003936",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 41016 Concept Drive in Plymouth."
+  },
+  {
+   "record_id": "SITE-003936",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 140 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004008",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Reed City Group, LLC matches Reed City Group; the added legal suffix does not refute identity."
+  },
+  {
+   "record_id": "SITE-004008",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "603 East Church Street matches 603 E. Church St."
+  },
+  {
+   "record_id": "SITE-004008",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 166 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004032",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "The filing identifies Alro Steel's JC establishment; the shared headquarters label does not establish operator identity with Alro Plastics."
+  },
+  {
+   "record_id": "SITE-004032",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "The street matches, but Alro Steel's filing is not established as belonging to the Alro Plastics operator."
+  },
+  {
+   "record_id": "SITE-004032",
+   "claim_type": "liveness",
+   "verdict": "UNSOUND",
+   "reason": "Alro Steel's 224 reported employees cannot establish this operator's site liveness because existence is unsound."
+  },
+  {
+   "record_id": "SITE-004161",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA name fields exactly identify Bekum America Corporation at the matching street address."
+  },
+  {
+   "record_id": "SITE-004161",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both identify 1140 West Grand River; OSHA expands the incomplete street notation with Ave and abbreviates West."
+  },
+  {
+   "record_id": "SITE-004161",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 112 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-004297",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Atomic Industries, Inc. directly matches the operator; the blank company field and added legal suffix do not refute identity."
+  },
+  {
+   "record_id": "SITE-004297",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "13780 E 11 Mile Road matches 13780 E 11 Mile Rd."
+  },
+  {
+   "record_id": "SITE-004297",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 41 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003417",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Although the establishment is named Plymouth, the company field explicitly identifies NatureWorks LLC at the matching address."
+  },
+  {
+   "record_id": "SITE-003417",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "17400 Medina Road, Suite 800 matches 17400 Medina Rd Ste 800."
+  },
+  {
+   "record_id": "SITE-003417",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "NatureWorks' identified establishment reports 41 employees for 2025, within the covered-period recency window."
+  },
+  {
+   "record_id": "SITE-003499",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Mondi establishment is explicitly filed under the matching operator, Mondi Jackson, LLC, at the matching address."
+  },
+  {
+   "record_id": "SITE-003499",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "14591 State Hwy 177 matches 14591 State Highway 177."
+  },
+  {
+   "record_id": "SITE-003499",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The establishment reports 414 employees for 2025, within the covered-period recency window."
+  }
+ ]
+}

@@ -1,0 +1,778 @@
+{
+ "verdicts": [
+  {
+   "record_id": "SITE-002778",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment is filed under the exact operator company name at the matching address."
+  },
+  {
+   "record_id": "SITE-002778",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1 PPG Place matches the Atlas street address."
+  },
+  {
+   "record_id": "SITE-002778",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 100 employees for 2025, whose covered period ended within 24 months."
+  },
+  {
+   "record_id": "SITE-002780",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "The operator matches, but 150 Columbia Street differs from 150 Columbia Avenue; existence at the Atlas address is unsupported."
+  },
+  {
+   "record_id": "SITE-002780",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "Street and Avenue are different street designations, not equivalent abbreviations; existence is also UNSOUND."
+  },
+  {
+   "record_id": "SITE-002780",
+   "claim_type": "liveness",
+   "verdict": "UNSOUND",
+   "reason": "The 127 employees concern the Columbia Street establishment; existence at the Atlas address is UNSOUND."
+  },
+  {
+   "record_id": "SITE-002791",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The filing identifies Washington Penn as the establishment at the exact address and links that distinctive operating name to Audia."
+  },
+  {
+   "record_id": "SITE-002791",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "450 Racetrack Rd matches the address of the named Washington Penn establishment."
+  },
+  {
+   "record_id": "SITE-002791",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified Washington Penn establishment reports 139 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-002795",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "CCL Tube matches the operator; the company name adds the matching Wilkes-Barre location qualifier."
+  },
+  {
+   "record_id": "SITE-002795",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1 Lasley Avenue matches 1 Lasley Ave."
+  },
+  {
+   "record_id": "SITE-002795",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 163 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-002797",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The York establishment is filed under Graham Packaging Company at the matching address; the L.P. suffix does not refute identity."
+  },
+  {
+   "record_id": "SITE-002797",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "500 Windsor Street matches 500 Windsor St."
+  },
+  {
+   "record_id": "SITE-002797",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 247 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-002826",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment exactly matches the operator's operating name at the address, with Griff & Associates LP named in the same filing."
+  },
+  {
+   "record_id": "SITE-002826",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "275 Lower Morrisville Rd matches exactly."
+  },
+  {
+   "record_id": "SITE-002826",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 62 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-002836",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both the establishment and company identify NewAge Industries at the matching Southampton address."
+  },
+  {
+   "record_id": "SITE-002836",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "145 James Way matches exactly."
+  },
+  {
+   "record_id": "SITE-002836",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 228 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-002856",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The distinctive Ammeraal Beltech name, Jefferson designation and exact address support identity despite omission of Modular and the different legal suffix."
+  },
+  {
+   "record_id": "SITE-002856",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "112 Nardis Dr matches the identified Jefferson establishment's address, differing only in punctuation."
+  },
+  {
+   "record_id": "SITE-002856",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified Ammeraal Beltech establishment reports 54 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003458",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The expanded Tinius Olsen Testing Machine Company name preserves the distinctive operator identity at the exact address."
+  },
+  {
+   "record_id": "SITE-003458",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1065 Easton Road matches exactly."
+  },
+  {
+   "record_id": "SITE-003458",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 121 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-004308",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment and company names exactly identify the operator at the matching address."
+  },
+  {
+   "record_id": "SITE-004308",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2139 High Tech Rd matches 2139 High Tech Road."
+  },
+  {
+   "record_id": "SITE-004308",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 112 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003321",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Tri-Mack Plastics Manufacturing matches the operator at the exact address; omission of Corporation does not refute identity."
+  },
+  {
+   "record_id": "SITE-003321",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "55 Broadcommon Road, Unit 1 matches exactly."
+  },
+  {
+   "record_id": "SITE-003321",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 144 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003347",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment and company identify Yushin America at the matching address."
+  },
+  {
+   "record_id": "SITE-003347",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "35 Kenney Dr matches 35 Kenney Drive; the appended city, state and ZIP do not change the street address."
+  },
+  {
+   "record_id": "SITE-003347",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 86 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-004357",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name matches, with Corporation expanded from Corp., at the matching address."
+  },
+  {
+   "record_id": "SITE-004357",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "23 New England Way matches; the appended locality and country do not change the street address."
+  },
+  {
+   "record_id": "SITE-004357",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 90 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003336",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA names match the Atlas operator Manufacturing Specialties Inc. at the address."
+  },
+  {
+   "record_id": "SITE-003336",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "110 Park Place Ct matches apart from punctuation."
+  },
+  {
+   "record_id": "SITE-003336",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 24 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003375",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment explicitly names Michelin North America, Inc. and its corporate site, despite the shorter company name Michelin."
+  },
+  {
+   "record_id": "SITE-003375",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1 Parkway South matches 1 Parkway S."
+  },
+  {
+   "record_id": "SITE-003375",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 1774 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003384",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment name exactly identifies the operator at the address, despite the abbreviated company name Continental Tire NA."
+  },
+  {
+   "record_id": "SITE-003384",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1794 MacMillan Park Dr matches exactly."
+  },
+  {
+   "record_id": "SITE-003384",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 582 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003448",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both OSHA names identify Milliken & Company and its corporate headquarters at the matching address."
+  },
+  {
+   "record_id": "SITE-003448",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "920 Milliken Road matches, with capitalization differences only."
+  },
+  {
+   "record_id": "SITE-003448",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 908 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003939",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment and company names exactly identify the operator at the matching address."
+  },
+  {
+   "record_id": "SITE-003939",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1230 Galleria Blvd matches 1230 Galleria Boulevard."
+  },
+  {
+   "record_id": "SITE-003939",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 200 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-004166",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The New Pond Road establishment and company identify Chomarat North America; omission of LLC does not refute identity."
+  },
+  {
+   "record_id": "SITE-004166",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2901 New Pond Rd matches exactly."
+  },
+  {
+   "record_id": "SITE-004166",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 61 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-004167",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Alliance establishment and company identify Chomarat North America; omission of LLC does not refute identity."
+  },
+  {
+   "record_id": "SITE-004167",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "160 Alliance Blvd matches exactly."
+  },
+  {
+   "record_id": "SITE-004167",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 20 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003482",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Nashville establishment is filed under the exact operator company name at the matching street address."
+  },
+  {
+   "record_id": "SITE-003482",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "26 Century Blvd matches; omission of Suite 205 is permitted."
+  },
+  {
+   "record_id": "SITE-003482",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 436 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003996",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Nashville Record Pressing matches the operator at the address; omission of LLC does not refute identity."
+  },
+  {
+   "record_id": "SITE-003996",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "520 Brick Church Park Dr matches apart from punctuation."
+  },
+  {
+   "record_id": "SITE-003996",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 172 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-004107",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Jackson Kayak matches the operator at the address; capitalization and omission of Inc. do not refute identity."
+  },
+  {
+   "record_id": "SITE-004107",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "3300 McMinnville Highway matches 3300 McMinnville Hwy; appended locality information does not change the address."
+  },
+  {
+   "record_id": "SITE-004107",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 132 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003245",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The company exactly matches the operator, and the establishment adds only a Texas location qualifier."
+  },
+  {
+   "record_id": "SITE-003245",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "355 Schumann Rd matches exactly."
+  },
+  {
+   "record_id": "SITE-003245",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 236 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003373",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "The filing identifies Westlake Royal Roofing and its Home Locations, without establishing that this is Westlake Corporation's headquarters establishment."
+  },
+  {
+   "record_id": "SITE-003373",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "The street address matches, but the filing is not attributable to the Atlas operator, so existence is UNSOUND."
+  },
+  {
+   "record_id": "SITE-003373",
+   "claim_type": "liveness",
+   "verdict": "UNSOUND",
+   "reason": "The 129 employees are reported for Westlake Royal Roofing; they do not establish liveness of the Atlas operator's site."
+  },
+  {
+   "record_id": "SITE-003546",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The San Antonio establishment is filed under the exact Nissei America operator name at the address."
+  },
+  {
+   "record_id": "SITE-003546",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "3730 Global Way matches exactly."
+  },
+  {
+   "record_id": "SITE-003546",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 25 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003721",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment and company identify WL Plastics at the matching Fort Worth address."
+  },
+  {
+   "record_id": "SITE-003721",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "3575 Lone Star Circle matches 3575 Lone Star Cir; omission of Suite 300 is permitted."
+  },
+  {
+   "record_id": "SITE-003721",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 47 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003734",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Champion Fiberglass identifies the operator at the matching street number and street name; omission of Inc. does not refute identity."
+  },
+  {
+   "record_id": "SITE-003734",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "6400 Spring Stuebner retains the exact street number and distinctive street name; Road is omitted without a conflicting designation."
+  },
+  {
+   "record_id": "SITE-003734",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 199 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003738",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The filing explicitly gives Cooling Tower Resources, Inc. as the DBA operating name of CT Distribution LLC at the address."
+  },
+  {
+   "record_id": "SITE-003738",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "7400 Thompson Rd matches 7400 Thompson Road."
+  },
+  {
+   "record_id": "SITE-003738",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 40 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003897",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Handgards Hawkins and Handgards LLC identify Handgards at the address; the Inc./LLC difference alone does not refute identity."
+  },
+  {
+   "record_id": "SITE-003897",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "901 Hawkins Blvd matches apart from punctuation."
+  },
+  {
+   "record_id": "SITE-003897",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 247 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-004039",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment explicitly names Corr Tech, Inc. at the exact address, linking that operating identity to FCG Acquisitions in the filing."
+  },
+  {
+   "record_id": "SITE-004039",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "3575 W 12th St matches 3575 W. 12th St."
+  },
+  {
+   "record_id": "SITE-004039",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified Corr Tech establishment reports 10 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-004321",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "GracoRoberts is the operator's explicitly stated DBA, and the establishment matches the Arlington headquarters at the exact address."
+  },
+  {
+   "record_id": "SITE-004321",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "3200 Avenue E East matches exactly."
+  },
+  {
+   "record_id": "SITE-004321",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 79 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-004332",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The company exactly matches Packwell, and the establishment identifies Packwell at the matching address."
+  },
+  {
+   "record_id": "SITE-004332",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "10016 Porter Rd matches 10016 Porter Road."
+  },
+  {
+   "record_id": "SITE-004332",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 9 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003276",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment and company names exactly identify Anton Paar USA, Inc. at the address."
+  },
+  {
+   "record_id": "SITE-003276",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "10215 Timber Ridge Drive matches exactly."
+  },
+  {
+   "record_id": "SITE-003276",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 315 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003431",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "American GFM matches the operator at the address; omission of Corporation does not refute identity."
+  },
+  {
+   "record_id": "SITE-003431",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1200 Cavalier Blvd matches, with capitalization and punctuation differences only."
+  },
+  {
+   "record_id": "SITE-003431",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 146 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-004148",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment and company identify TemperPack Technologies Inc. at the matching address."
+  },
+  {
+   "record_id": "SITE-004148",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "4447 Carolina Avenue matches 4447 Carolina Ave."
+  },
+  {
+   "record_id": "SITE-004148",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 294 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003280",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "The filing identifies Sterling, Inc. under ACS Group and does not identify Cumberland as the establishment's operator or operating name."
+  },
+  {
+   "record_id": "SITE-003280",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "The street address matches, but the Sterling/ACS filing does not establish the Cumberland site, so existence is UNSOUND."
+  },
+  {
+   "record_id": "SITE-003280",
+   "claim_type": "liveness",
+   "verdict": "UNSOUND",
+   "reason": "The 208 employees are reported for Sterling/ACS; the filing does not establish liveness of a Cumberland-operated site."
+  },
+  {
+   "record_id": "SITE-003400",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Sterling establishment is expressly filed under the Atlas operator ACS Group at the matching address."
+  },
+  {
+   "record_id": "SITE-003400",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2900 S 160th Street matches 2900 S 160th St."
+  },
+  {
+   "record_id": "SITE-003400",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified ACS Group establishment reports 208 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003815",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The WIS Oven establishment is filed under the exact operator Wisconsin Oven Corporation at the address."
+  },
+  {
+   "record_id": "SITE-003815",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2675 Main St. matches 2675 Main Street."
+  },
+  {
+   "record_id": "SITE-003815",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 110 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003819",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The company identifies Seda North America at the exact address; the added Inc. suffix does not refute identity."
+  },
+  {
+   "record_id": "SITE-003819",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "12501 Globe Drive matches exactly."
+  },
+  {
+   "record_id": "SITE-003819",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 213 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003838",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment and company identify Vincent Tool Technologies Corp. at the matching address."
+  },
+  {
+   "record_id": "SITE-003838",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "4197 123rd St matches 4197 123rd Street."
+  },
+  {
+   "record_id": "SITE-003838",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 41 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-003957",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The establishment explicitly names American Packaging Corporation and Columbus at the exact address; a blank company field does not negate that identification."
+  },
+  {
+   "record_id": "SITE-003957",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "100 APC Way matches exactly."
+  },
+  {
+   "record_id": "SITE-003957",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 309 employees for 2025, within the permitted coverage window."
+  },
+  {
+   "record_id": "SITE-004109",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "T3 Manufacturing matches the operator at the address; omission of Inc. does not refute identity."
+  },
+  {
+   "record_id": "SITE-004109",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "333 Beichl Avenue matches 333 Beichl Ave."
+  },
+  {
+   "record_id": "SITE-004109",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "The identified establishment reports 18 employees for 2025, within the permitted coverage window."
+  }
+ ]
+}
