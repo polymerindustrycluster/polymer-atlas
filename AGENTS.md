@@ -37,7 +37,7 @@ produced in a local staging or workshop area; only changes under
 
 1. **Claim before you build.** Pick (or add) a task in `tasks/QUEUE.md`,
    mark it `claimed:<your-id> <date>`. One task = one branch = one PR —
-   except in campaign mode (rule 2), where one task = one integration pass.
+   except in campaign mode (rule 2, retired), where one task = one integration pass.
 2. **Campaign mode — RETIRED 2026-11-03 (owner battery B-CAMP).** Since
    2026-11-02 the `validate` workflow runs on every PR and push, so the
    reason for direct pushes is gone. **No harness, the campaign
@@ -61,7 +61,7 @@ produced in a local staging or workshop area; only changes under
    Campaign mode exists because the GitHub App has no Workflows
    permission: `.github/workflows/validate.yml` is not on the remote, so a
    PR would run **no** automated validation, while a campaign push is
-   gated by b–d. If Workflows permission is ever granted and the workflow
+   gated by b–d. (The workflow landed on the remote 2026-11-02.) If Workflows permission is ever granted and the workflow
    lands on the remote, this rule is revisited by dated revision — it is
    not self-expiring and it is not self-extending.
 3. **Never push to `main`.** Branch name:

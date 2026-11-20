@@ -1,5 +1,8 @@
 # PIC-12 Coverage Report — Atlas establishments vs. official denominators
 
+> **Reporting frame (2026-11-20):** PIC-18 is the current cluster reporting region (owner ruling 2026-11-03,
+> AGENTS.md §8). This report is retained on the PIC-12 frame it was computed on; quote it as a PIC-12 document.
+
 > **Final F5 reconciliation, 2026-10-31:** [Completed count/accounting report](reviews/F5_FINAL_RECONCILIATION_2026-10-31.md) reproduces PIC-12 326 = 367 and resolves all seven link cases as six documented freeze holds plus one corrected applied link—not missing facilities. The 3252/3259 values 52/62 are incomplete published-cell sums. Earlier blocker statements below are historical.
 
 > **2026-10-31 source update:** [Reconciliation results](reviews/F5_SOURCE_RECONCILIATION_2026-10-31.md) now reproduce PA/OH state benchmarks, the 1,797-facility ledger and all 2,199 creation-map rows. PIC-12 aggregate cells and seven ledger link-outcome discrepancies remain open. Earlier missing-source statements below are historical.
@@ -279,11 +282,11 @@ context, not denominators.
 ## 6. How to quote this
 
 - ✅ "The Atlas's verified PIC-12 file (sites, operating status
-  active/unknown, tiers A–C) covers 412 of the 367 plastics and rubber
+  active/unknown, tiers A–C) covers 415 of the 367 plastics and rubber
   manufacturing establishments QCEW counted in the 12 counties in 2023 —
-  112.3%, a frame effect whose decomposition is stated wherever the
+  113.1%, a frame effect whose decomposition is stated wherever the
   figure is quoted; counting every recorded candidate including unverified Tier U
-  rows, 428 (116.6%)."
+  rows, 429 (116.9%)."
 - ✅ "Rubber (3262) is the best-covered PIC-12 segment at verified tiers:
   95 of 84 (113.1%). Custom compounding (325991) has 32 verified PIC-12
   sites; no official denominator exists for that code."

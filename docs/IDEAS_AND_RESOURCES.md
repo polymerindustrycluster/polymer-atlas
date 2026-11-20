@@ -31,6 +31,11 @@ gaps by count are CA (1,267), TX (869), FL (775), MI (772), IL (755), GA, IN, WI
 NY, NC. Figures and caveats are in `docs/denominators/README.md`. A count ratio is
 not matched coverage.
 
+*2026-11-20 note: the counts in this section (and in B-04) are the 2026-11-01
+FIELD_FILL_PROFILE snapshot, superseded by the 2026-11-19 census — PIC-18 live
+street fill 75.7%, corpus-wide street fill 81.6%. Current inventory counts are
+in README.md.*
+
 | ID | Idea | Why | Status |
 |---|---|---|---|
 | A-01 | **OSHA Injury Tracking Application (ITA) establishment files.** Annual CSV per establishment: name, street address, NAICS, annual average employees, total hours. https://www.osha.gov/Establishment-Specific-Injury-and-Illness-Data | It covers establishments with 20+ employees in manufacturing, the small and mid-size processors TRI misses. It also gives a **site employee count**, so it fixes the employee-band gap (1.8% filled). Unlike TRI, it's a size source. The page returns 403 to plain curl, so download it by hand or through a browser route. Check how SCHEMA's banding rule treats a stated count. | idea |
@@ -56,14 +61,14 @@ All counts are site rows or organization rows, all tiers and statuses, from
 | B-01 | **`markets_served` pass** from each company's own "industries we serve" page. Own-site class, supports A. | 7 of 5,773 sites; 24 of 4,180 orgs | idea |
 | B-02 | **Employee bands** via A-01 (OSHA ITA), Form 5500 participant counts (**OWNER**: is a plan participant count admissible as a size band input?), and own-site statements. | 105 sites / 251 orgs informative | idea |
 | B-03 | **Ohio capabilities backfill.** Ohio site rows have `processes` at 21% and `materials` at 8%, versus about 74% and 72% elsewhere. The home turf is the thinnest. | 2,009 Ohio sites | idea |
-| B-04 | **Ohio street addresses.** 144 of 2,009 Ohio sites (7.2%) have `street_address`, versus about 90% elsewhere. That blocks address-first dedupe (AGENTS.md §3 step 3) in the state that matters most. | 1,865 Ohio sites | idea |
+| B-04 | **Ohio street addresses.** 144 of 2,009 Ohio sites (7.2%) have `street_address`, versus about 90% elsewhere. That blocks address-first dedupe (AGENTS.md §3 step 3) in the state that matters most. (2026-11-01 snapshot figure; superseded by the 2026-11-19 census — street fill now 75.7% of live PIC-18 sites, 81.6% corpus-wide.) | 1,865 Ohio sites | idea |
 | B-05 | **Evidence backfill for pre-v1.6 records.** Tier A first, because 79.6% of Tier A orgs have no evidence row. | 2,381 orgs, 3,491 sites | idea |
 | B-06 | **`entity_type` / `ownership_type`** from Secretary of State filings and own-site "about" pages. A private-equity ownership layer is a major industry story. | Ohio-HQ orgs 2.2% / 0.7% | idea |
 | B-07 | **Certifications** via A-09 and own-site quality pages. ISO 13485 marks medical, IATF 16949 marks automotive, AS9100 marks aerospace. That's the supplier-matching core. | 0 rows | idea |
 | B-08 | **Machinery and capacity facts** (press count / tonnage range, extrusion lines, cleanroom class, sq ft). SCHEMA §4.5 lists them as "Nice … collect systematically in v2". **OWNER**: schedule v2 columns. | no columns yet | idea |
 | B-09 | **Validator debt** (V-45..V-48, 890 grandfathered rows): see `tasks/validator-debt-2026-11-01/`. | 175 site_type, 383 ring, 312 NAICS provenance, 20 bands | queued → QUEUE "Validator debt" |
 | B-10 | **`hq_country` normalization** (`US` 4,037, `USA` 53, `United States` 45, plus spelled-out country names) and a validator rule for ISO alpha-2. | 98+ org rows | idea |
-| B-11 | **OWNER — `members.member_since` year-only.** AGENTS.md §4 bans year-only dates, but `validate.py` *requires* a 4-digit year for `member_since`. The two rules contradict, so one needs a ruling. | 1 row | idea |
+| B-11 | **OWNER — `members.member_since` year-only.** AGENTS.md §4 bans year-only dates, but `validate.py` *requires* a 4-digit year for `member_since`. The two rules contradict, so one needs a ruling. **Resolved 2026-11-01 (SCHEMA v1.7.6):** AGENTS.md §4 now excepts `members.member_since` as a year field by design. | 1 row | done → owner ruling 2026-11-01 (SCHEMA v1.7.6) |
 | B-12 | **Registry crosswalk expansion:** EIN (from the Form 5500 hits already worked), SAM UEI, EPA FRS registry ID, OSHA establishment ID, SEC CIK for every public parent. Stable joins are the Atlas's lasting value. | LEI 132, SEC 15, Wikidata 19 | idea |
 
 ## C. Freshness and liveness
@@ -72,7 +77,7 @@ All counts are site rows or organization rows, all tiers and statuses, from
 |---|---|---|---|
 | C-01 | **Staggered re-verification rotation.** Every `last_verified` falls in 2026-10, so the whole Atlas ages at once. Rotate about 1/12 of records per month, oldest and Tier A first. | Prevents a cliff | idea |
 | C-02 | **Automated liveness sweep** (packet lane): website resolves, SOS status, newest Form 5500 year, newest TRI year. A hit queues re-verification and never changes status (AGENTS.md §3). | Only 5 orgs are closed out of 4,180. Small manufacturers close at several percent a year, so dead records are almost certainly present. | idea |
-| C-03 | **OWNER — activate the news / WARN monitor** (built and dry-run validated, per QUEUE "Weekly signals sweep"). | Turns the Atlas from a snapshot into a living record | idea |
+| C-03 | **OWNER — activate the news / WARN monitor** (built and dry-run validated, per QUEUE "Weekly signals sweep"). **Ruled 2026-11-05:** activation in dry-run-to-PR mode (owner battery 2026-11-04 B-NEWS (a)); the monitor is switched on by the harness that holds its code. | Turns the Atlas from a snapshot into a living record | done → ruled 2026-11-05 (dry-run-to-PR) |
 | C-04 | **Change feed:** a generated `CHANGELOG`/RSS of record creations and status changes per pass, built from git diffs of `data/`. | Lets PIC staff and EDOs follow changes without git | idea |
 | C-05 | **Per-edition event roster snapshots** (already queued). Extend to state EDO announcement pages and tax-credit minutes as a dated investment-signal stream. | Expansion and closure timeline | idea |
 
@@ -96,13 +101,13 @@ All counts are site rows or organization rows, all tiers and statuses, from
 
 | ID | Idea | Notes | Status |
 |---|---|---|---|
-| E-01 | **Cut releases** (`scripts/export_release.py`, `docs/RELEASE_HOWTO.md`). No GitHub Release exists yet, though the README says SQLite is attached to releases. | Owner pushes the button | scoped |
+| E-01 | **Cut releases** (`scripts/export_release.py`, `docs/RELEASE_HOWTO.md`). First release **v2026.11.14** was cut 2026-11-14 (published 2026-11-15), so the README's release route is live. | Owner pushes the button | done → release v2026.11.14 |
 | E-02 | **Public explorer:** Datasette (or datasette-lite on GitHub Pages / Netlify) over the release DB, with saved queries such as "Ring 1 sites in PIC-12 by county" and "processors with ISO 13485 within 50 mi". | Static, no server to maintain | idea |
 | E-03 | **Map:** sites by ring and county with a filter panel. 72% of site rows have coordinates. | Coordinates are reference data, never evidence (AGENTS.md §1) | idea |
 | E-04 | **County one-pagers** (PIC-12 first): establishments by ring, top employers (where bands are known), programs, a QCEW benchmark, generated from the DB. | The artifact a chamber actually hands out | idea |
 | E-05 | **Supplier / partner finder:** process × material × certification × geography query, plus the program-capability matcher. | Depends on B-01/B-03/B-07 | idea |
 | E-06 | **Member-recruitment view for PIC:** in-scope NE Ohio establishments without the public member flag. Only 35 orgs carry it. | Internal use. The publish line is §5.1. | idea |
-| E-07 | **"Claim / correct my record" GitHub issue forms** for companies, plus a **removal request** form for people records (836 people rows). | It's a privacy obligation, and corrections from companies are the cheapest way to keep records fresh | idea |
+| E-07 | **"Claim / correct my record" GitHub issue forms** for companies, plus a **removal request** form for people records (1,614 people rows, 2026-11-20 census). | It's a privacy obligation, and corrections from companies are the cheapest way to keep records fresh | idea |
 | E-08 | **Citable dataset:** Zenodo DOI via the GitHub integration; mirror on Hugging Face Datasets. | **OWNER** | idea |
 | E-09 | **Annual "State of the Polymer Cluster" report** generated from the DB plus QCEW (counts always with unit + filter). | | idea |
 | E-10 | **Semantic search** over `description_1line` and capability text (embeddings in the release, not in canonical data). | Helps both agents and humans | idea |
@@ -118,7 +123,7 @@ All counts are site rows or organization rows, all tiers and statuses, from
 | F-03 | **Rules as tools:** `scripts/atlas.py` (`next-id`, `dedupe-check`, `show`, `shard-of`). | | done → this PR |
 | F-04 | **Read-only MCP server** (`scripts/atlas_mcp_server.py`) so any harness can query the Atlas. | | done → this PR |
 | F-05 | **CI:** done 2026-11-02 (c485cfad): `validate` and `pages` run from `.github/workflows/`; since 2026-11-14 the ruleset "main: require validate" requires `validate`. Campaign mode was retired 2026-11-03 (owner battery B-CAMP). | | done |
-| F-06 | **One file per task** (`tasks/open/T-####.md`, claimed by PR) instead of one 52 KB `QUEUE.md` that every harness edits. Archive done items. | Removes the biggest merge-conflict hotspot. **OWNER** process change. | idea |
+| F-06 | **One file per task** (`tasks/open/T-####.md`, claimed by PR) instead of one ~181 KB `QUEUE.md` (2026-11-20) that every harness edits. Archive done items. | Removes the biggest merge-conflict hotspot. **OWNER** process change. | idea |
 | F-07 | **SCHEMA v2 consolidation:** fold dated rulings into the rules, move history to `docs/SCHEMA_CHANGELOG.md`, target under 60 KB. | Agents currently read precedent soup | idea |
 | F-08 | **Packet JSON schema + `atlas lint-packet`**, so lane packets from any harness are machine-checkable before the integrator reads them. | | idea |
 | F-09 | **Harness scorecard:** blind-audit agreement and field-error rates per `created_by` harness, published per pass. | Shows which harness to trust for which lane. Audit 6 measured 12/37 field errors. | idea |
@@ -131,7 +136,7 @@ All counts are site rows or organization rows, all tiers and statuses, from
 
 | ID | Idea | Notes | Status |
 |---|---|---|---|
-| G-01 | **LICENSE file.** The README states CC BY 4.0 (data) + MIT (scripts), but the repo has no LICENSE file. Root files are outside the "only data/docs/scripts/tasks travel" rule, so the owner adds it. | **OWNER** | idea |
+| G-01 | **LICENSE file.** The README states CC BY 4.0 (data) + MIT (scripts), but the repo has no LICENSE file. Root files are outside the "only data/docs/scripts/tasks travel" rule, so the owner adds it. **Done:** LICENSE landed in PR #246 (CC BY 4.0, data/ only); the scripts-MIT point remains open as the QUEUE first-release residue line. | **OWNER** | done → PR #246 |
 | G-02 | **Delegate for rulings:** a named deputy who can rule on routine battery items when the owner is unavailable. Scope, ring and vocab rulings currently queue on one person. | **OWNER** | idea |
 | G-03 | **Data-sharing MOUs** (JobsOhio / Shale Crescent 616-company list, Team NEO, MEPs). The JobsOhio email draft is already written and awaiting send approval. | **OWNER** | idea |
 | G-04 | **Sustainability plan:** who maintains the Atlas after the campaign, what cadence, what budget. | | idea |
