@@ -84,13 +84,20 @@ date is the end of the period.
 - Some are multi-tenant buildings.
 - Each is a lead for operator re-verification, never a change by itself.
 
-## Pending: part 3 (43 sites, 129 rows)
+## Part 3: applied on Codex alone, under the owner's waiver of 2026-11-20
 
-Codex has judged them; a second family has not.
-- **Next:** when Antigravity's quota resets, or a Grok key is renewed, run part 3
-  (`_atlas-corpus/evd-osha-2026-11-20/brief_part3.md`) and apply the both-SOUND rows in a follow-up from the next free
-  ID.
-- **Alternative:** the owner may name another second family.
+**Why.** No second family was available. Antigravity was out of quota, both Grok routes had expired keys, and the
+Gemini CLI hung on login. The owner ruled (2026-11-20, multiple choice) **"Codex-only for now"**: Codex alone gates the
+evidence lanes until a second family returns.
+
+**Result** (`apply_part3.py`, `applied_part3.csv`, merged in a follow-up PR):
+- Of the 43 held sites (129 rows), the rows Codex judged SOUND apply: **120 rows, EVD-410357..410476, on 40 sites**.
+- Three sites whose existence row Codex rejected lose all their rows.
+- Each part-3 row's notes say it was reviewed by Codex only, under the waiver.
+- V-65 2,582 → 2,549 and V-68 844 → 837.
+- `check.py` covers both rounds.
+
+**Across both rounds:** 371 rows on 124 sites.
 
 ## Reproduce
 
