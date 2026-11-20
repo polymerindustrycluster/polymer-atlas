@@ -48,6 +48,9 @@ plant("an attendee row from a Muse-lead list (not strict: its role is not the li
 plant("a registration-list attendee row without the ruling's note", "not an admitted registration-list attendee",
       base=REG, strict=False, org_id=ORG["Hexcel Corporation"], listed="Hexcel Corporation",
       notes=REG["notes"].replace(" (owner ruling 2026-11-20)", ""))
+# not strict: the planted org (under no hold) also makes the ruling's note disagree with its hold
+plant("a registration-list row whose evidence_date is not its read date", "not an admitted registration-list attendee",
+      base=REG, strict=False, org_id=ORG["Hexcel Corporation"], listed="Hexcel Corporation", evidence_date="2026-09-09")
 plant("sources citing another URL", "sources does not cite evidence_source_url", org_id=FREE["org_id"],
       sources='https://ace.ampp.org/ (read 2026-11-19; listed as "Hexcel Corporation")')
 plant("a trade-name hit (Nouryon)", "listed name is not the org's legal name",
