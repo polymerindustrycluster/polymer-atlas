@@ -62,6 +62,19 @@ for f in glob.glob(str(ROOT / "data" / "evidence_*.csv")):
     for r in rd(f):
         tree[r["evidence_id"]] += 1
         rows[r["evidence_id"]] = (Path(f).name, r)
+# archive at capture (SCHEMA §4.22, V-66): rows with no fresh Wayback capture were withdrawn from data/ before merge
+withdrawn = {w["evidence_id"] for w in rd(T / "withdrawn_v66.csv")} if (T / "withdrawn_v66.csv").exists() else set()
+for eid in withdrawn:
+    if tree[eid]:
+        fail.append(f"{eid} was withdrawn (no fresh Wayback capture) but is still in data/")
+applied = [a for a in applied if a["evidence_id"] not in withdrawn]
+archived = Counter(r["evidence_id"] for r in rd(ROOT / "data" / "archive_links.csv"))
+admitted = {r["evidence_id"] for r in rd(T / "archive_rows.csv")}
+if admitted != {a["evidence_id"] for a in applied}:
+    fail.append(f"archive_rows.csv covers {len(admitted)} rows, not the {len(applied)} applied rows left after withdrawals")
+for a in applied:
+    if archived[a["evidence_id"]] != 1:
+        fail.append(f"{a['evidence_id']} has {archived[a['evidence_id']]} archive_links rows, not 1 (V-66)")
 for a in applied:
     if tree[a["evidence_id"]] != 1:
         fail.append(f"{a['evidence_id']} appears {tree[a['evidence_id']]} times tree-wide")
@@ -71,6 +84,6 @@ for a in applied:
         fail.append(f"{a['evidence_id']} is in {fname}, not its home shard")
     if any(r[c] != a[c] for c in r):
         fail.append(f"{a['evidence_id']} differs from applied.csv")
-print("\n".join(fail) or f"OK: {len(applied)} applied rows ({len(applied2)} in round 2), {len(withheld) - len(applied2)} withheld, "
-      f"{len(ledger)} sampled records reconcile")
+print("\n".join(fail) or f"OK: {len(applied)} applied rows, each with one archive link ({len(applied2)} applied in round 2, "
+      f"{len(withdrawn)} withdrawn for V-66), {len(withheld) - len(applied2)} withheld, {len(ledger)} sampled records reconcile")
 sys.exit(1 if fail else 0)

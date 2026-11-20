@@ -1,12 +1,22 @@
 # Evidence backfill, URL-lead pilot (2026-11-20)
 
-**Result:** 25 evidence rows (EVD-410001 to EVD-410025: 16 existence, 9 address) on 16 records that had none (13
-organizations, 3 sites). The rows are appended to three evidence shards only. No record field, tier or status changed.
+**Result:** 23 evidence rows (EVD-410001 to EVD-410025 except 410016–410017: 15 existence, 8 address) on 15 records
+that had none (13 organizations, 2 sites). The rows are appended to three evidence shards, with one Wayback archive link
+each. No record field, tier or status changed.
 - **Round 1:** 17 rows, judged under the original brief.
 - **Round 2:** 8 rows, judged under the owner's rulings of 2026-11-20 below.
+- **Withdrawn for V-66 (archive at capture), 2 rows:** EVD-410016 and EVD-410017 (SITE-002387, American Additive
+  Manufacturing).
+  - SCHEMA v1.17 (merged during review) requires each new URL-citing row to carry its Wayback capture in the same PR.
+  - That page returned HTTP 429 and Save Page Now returned 520, so no fresh capture exists.
+  - Both rows were removed from `data/` before merge (`withdrawn_v66.csv`). They can be re-minted under new IDs once a
+    capture succeeds; 410016–410017 stay unused.
+- **Archive links (`archive.py`, `archive_rows.csv`):** each admitted capture was made 2026-11-20, replays with HTTP 200,
+  and contains at least 80% of the row's quote words.
+  - Defect injection: all 25 quotes checked against a different page's capture were rejected.
 
-**Coverage:** 16 of the 50 sampled records (32%; Wilson 95% interval 21–46%) gained a row.
-- At that rate the 662-record frame yields about 212 records (137–303), which is about 6% of the 3,455-record gap.
+**Coverage:** 15 of the 50 sampled records (30%; Wilson 95% interval 19–44%) gained a row.
+- At that rate the 662-record frame yields about 199 records (126–290), which is about 6% of the 3,455-record gap.
 - The frame covers only records citing their **own domain**. The other ~1,560 URL-lead records cite government,
   registry, directory or trade-press hosts, which this pilot did not test. The owner's split ("this lane takes the
   2,222 URL-lead records") may need re-ruling once those classes are measured.
@@ -83,6 +93,7 @@ rows (`scripts/audit_evidence_coverage.py`).
 | Witnessed | 18 | 4 | 22 |
 | Gained a row in round 1 | 9 | 3 | 12 |
 | Gained a row by the end of round 2 | 13 | 3 | 16 |
+| Kept a row after the V-66 withdrawal | 13 | 2 | 15 |
 
 Proposed rows: 50. In round 1, Codex judged 34 SOUND and Antigravity 25; both judged 25 SOUND. 17 were applied and 33
 withheld (`withheld.csv`, `held` column). Round 2 applied 8 of the withheld rows, leaving 25 withheld. The round-1
@@ -149,5 +160,7 @@ python tasks/evidence-backfill-url-pilot-2026-11-20/apply.py . <corpus> --start 
     review_codex.json review_agy.json rereview_codex.json rereview_agy.json
 python tasks/evidence-backfill-url-pilot-2026-11-20/rereview2_bundle.py . <corpus>     # round 2 bundle
 python tasks/evidence-backfill-url-pilot-2026-11-20/apply_round2.py .
+python tasks/evidence-backfill-url-pilot-2026-11-20/archive.py capture <corpus>   # live: Wayback availability, Save Page Now, replay
+python tasks/evidence-backfill-url-pilot-2026-11-20/archive.py apply .
 python tasks/evidence-backfill-url-pilot-2026-11-20/check.py
 ```
