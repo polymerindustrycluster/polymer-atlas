@@ -35,6 +35,8 @@ by_key, orgs = N.org_index(ROOT / "data")
 held = {(e, nk) for e, _role, nk in N.decisions.held_names(N.decisions.load(N.W23 / "review_decisions.csv", events, orgs))}
 holds = P.rule_i_holds()
 USPS = N.w23.USPS
+# #414's rows from the same registration list carry its one read date; the rows this pass admits from it must too
+(REG_DATE,) = {r["evidence_date"] for r in whole if r["created_by"] == D.BY and r["evidence_source_url"] == D.URL}
 bad = []
 for r in packet:
     pid, ev = r["participation_id"], r["event_id"]
@@ -57,8 +59,8 @@ for r in packet:
                 bad.append((pid, "edition_name is not the name this list's edition ran under"))
     elif not (r["role"] == "attendee" and (ev, r["edition_year"]) == (D.EVENT, D.YEAR)
               and r["evidence_source_url"] == D.URL and D.NOTE in r["notes"] and P.RULING in r["notes"]
-              and r["edition_name"] == ""  # and, as the list prints no as-of date, evidence_date is the read date
-              and f"(read {r['evidence_date']};" in r["sources"]):
+              and r["edition_name"] == ""  # and, as the list prints no as-of date, evidence_date is #414's read date
+              and r["evidence_date"] == REG_DATE and f"(read {REG_DATE};" in r["sources"]):
         bad.append((pid, "row names no list, and is not an admitted registration-list attendee row"))
     if r["role"] == "attendee" and key:
         bad.append((pid, "attendee row from a Muse-lead list"))

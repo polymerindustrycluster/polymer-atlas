@@ -51,6 +51,13 @@ plant("a registration-list attendee row without the ruling's note", "not an admi
 # not strict: the planted org (under no hold) also makes the ruling's note disagree with its hold
 plant("a registration-list row whose evidence_date is not its read date", "not an admitted registration-list attendee",
       base=REG, strict=False, org_id=ORG["Hexcel Corporation"], listed="Hexcel Corporation", evidence_date="2026-09-09")
+plant("a registration-list row with a consistent but wrong date in evidence_date and sources (not strict, as above)",
+      "not an admitted registration-list attendee", base=REG, strict=False, org_id=ORG["Hexcel Corporation"],
+      evidence_date="2026-09-09",
+      sources=f'{REG["evidence_source_url"]} (read 2026-09-09; listed as "Hexcel Corporation")')
+plant("a registration-list row with an edition_name (not strict, as above)", "not an admitted registration-list attendee",
+      base=REG, strict=False, org_id=ORG["Hexcel Corporation"], listed="Hexcel Corporation",
+      edition_name="Coatings Trends 2026")
 plant("sources citing another URL", "sources does not cite evidence_source_url", org_id=FREE["org_id"],
       sources='https://ace.ampp.org/ (read 2026-11-19; listed as "Hexcel Corporation")')
 plant("a trade-name hit (Nouryon)", "listed name is not the org's legal name",
