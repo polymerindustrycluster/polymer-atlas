@@ -38,6 +38,21 @@ for a in applied:
         fail.append(f"{a['evidence_id']} applied without SOUND from every review")
     if not sound((k[0], "existence")):
         fail.append(f"{a['evidence_id']} applied on a record whose existence row was not SOUND in every review")
+# round 2 (owner rulings 2026-11-20): withheld rows both families judged SOUND under the amended brief
+applied2 = rd(T / "applied_round2.csv") if (T / "applied_round2.csv").exists() else []
+r2 = [verdicts("rereview2_codex.json"), verdicts("rereview2_agy.json")] if applied2 else []
+held = {(w["record_id"], w["claim_type"]) for w in withheld}
+ok_exist = {a["record_id"] for a in applied if a["claim_type"] == "existence"} | \
+           {k[0] for k in held if k[1] == "existence" and r2 and all(v.get(k) == "SOUND" for v in r2)}
+for a in applied2:
+    k = (a["record_id"], a["claim_type"])
+    if k not in held or a["claim_type"] == "liveness":
+        fail.append(f"{a['evidence_id']} round-2 row was not a withheld existence/address row")
+    if not all(v.get(k) == "SOUND" for v in r2):
+        fail.append(f"{a['evidence_id']} round-2 row lacks SOUND from both families")
+    if k[0] not in ok_exist:
+        fail.append(f"{a['evidence_id']} round-2 row on a record with no SOUND existence row")
+applied = applied + applied2
 ids = [a["evidence_id"] for a in applied]
 if ids != [f"EVD-{n:06d}" for n in range(410001, 410001 + len(ids))]:
     fail.append("applied IDs are not EVD-410001.. contiguous")
@@ -56,5 +71,6 @@ for a in applied:
         fail.append(f"{a['evidence_id']} is in {fname}, not its home shard")
     if any(r[c] != a[c] for c in r):
         fail.append(f"{a['evidence_id']} differs from applied.csv")
-print("\n".join(fail) or f"OK: {len(applied)} applied rows, {len(withheld)} withheld, {len(ledger)} sampled records reconcile")
+print("\n".join(fail) or f"OK: {len(applied)} applied rows ({len(applied2)} in round 2), {len(withheld) - len(applied2)} withheld, "
+      f"{len(ledger)} sampled records reconcile")
 sys.exit(1 if fail else 0)

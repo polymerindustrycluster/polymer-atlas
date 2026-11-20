@@ -1,10 +1,12 @@
 # Evidence backfill, URL-lead pilot (2026-11-20)
 
-**Result:** 17 evidence rows (EVD-410001 to EVD-410017: 12 existence, 5 address) on 12 records that had none. The
-rows are appended to three evidence shards only. No record field, tier or status changed.
+**Result:** 25 evidence rows (EVD-410001 to EVD-410025: 16 existence, 9 address) on 16 records that had none (13
+organizations, 3 sites). The rows are appended to three evidence shards only. No record field, tier or status changed.
+- **Round 1:** 17 rows, judged under the original brief.
+- **Round 2:** 8 rows, judged under the owner's rulings of 2026-11-20 below.
 
-**Coverage:** 12 of the 50 sampled records (24%; Wilson 95% interval 14–37%) gained a row.
-- At that rate the 662-record frame yields about 159 records (95–248), which is about 5% of the 3,455-record gap.
+**Coverage:** 16 of the 50 sampled records (32%; Wilson 95% interval 21–46%) gained a row.
+- At that rate the 662-record frame yields about 212 records (137–303), which is about 6% of the 3,455-record gap.
 - The frame covers only records citing their **own domain**. The other ~1,560 URL-lead records cite government,
   registry, directory or trade-press hosts, which this pilot did not test. The owner's split ("this lane takes the
   2,222 URL-lead records") may need re-ruling once those classes are measured.
@@ -54,10 +56,16 @@ rows (`scripts/audit_evidence_coverage.py`).
    - Three applied candidates (ORG-001451 address; SITE-002150 existence and address) quote text past character
      6,000. Both families re-judged them with a 1,500-character window around the quote
      (`rereview_brief.md`, `rereview_*.json`), and all three were SOUND both times.
-6. **Apply** (`applied.csv`, `withheld.csv`):
+6. **Apply, round 1** (`applied.csv`, `withheld.csv`):
    - Only rows that every review judged SOUND are applied.
    - A record whose existence row any review rejected loses every row.
-   - Liveness rows are held whole (owner question 3).
+   - Liveness rows are held whole (owner ruling 3, below).
+7. **Round 2** (`rereview2_bundle.py`, `rereview2_brief.md`, `rereview2_*.json`, `apply_round2.py`,
+   `applied_round2.csv`): after the owner ruled, both families re-judged the 19 withheld existence and address rows.
+   - Each record carried a window around every quote and its Atlas site count. Prior verdicts were not shown.
+   - Biocoat and PVS were not resent, because both families had rejected them as the wrong entity, which no ruling
+     covers.
+   - Rows SOUND from both families on a record with a SOUND existence row are appended from EVD-410018.
 
 **Defect injections, all caught:**
 - Three records scored against another record's page produced 0 rows (`build.py match --plant`).
@@ -73,10 +81,12 @@ rows (`scripts/audit_evidence_coverage.py`).
 | Held (redirect or ownership/closure phrase) | 2 | 2 | 4 |
 | No witness on the page | 2 | 12 | 14 |
 | Witnessed | 18 | 4 | 22 |
-| Gained at least one applied row | 9 | 3 | 12 |
+| Gained a row in round 1 | 9 | 3 | 12 |
+| Gained a row by the end of round 2 | 13 | 3 | 16 |
 
-Proposed rows: 50. Codex judged 34 SOUND and Antigravity 25; both judged 25 SOUND. 17 were applied and 33 withheld
-(`withheld.csv`, `held` column).
+Proposed rows: 50. In round 1, Codex judged 34 SOUND and Antigravity 25; both judged 25 SOUND. 17 were applied and 33
+withheld (`withheld.csv`, `held` column). Round 2 applied 8 of the withheld rows, leaving 25 withheld. The round-1
+breakdown of the 33:
 - **Held for owner question 3:** all 11 liveness rows.
 - **Not SOUND in every review:** 15.
   - Organization address rows on contact pages that never say "headquarters": both families rejected these.
@@ -87,26 +97,25 @@ Proposed rows: 50. Codex judged 34 SOUND and Antigravity 25; both judged 25 SOUN
 **Site yield is the weak point.** Most site URLs are the operator's homepage, which does not print the plant's street
 address.
 
-## Owner questions
+## Owner rulings, 2026-11-20 (second set; John ruled all three as recommended)
 
-The target is records with at least one row. Questions 2 and 3 can add records; question 1 mostly adds rows to records
-that already gain an existence row.
+1. **Contact-page address.** For a company that shows a single address on its own site, that address on its contact
+   or footer block witnesses the HQ city and state without a "headquarters" label. A multi-location company still
+   needs an explicit HQ label.
+   - Existing rows on main already accepted this, for example the Enduro Rubber contact-page row.
+2. **Short name.** Existence is identity, not legal form. The company's own page styling itself by its trade name, or
+   its legal name without the suffix, witnesses existence. This does not cover a different legal entity, a parent, an
+   acquirer, or a coincidental name.
+3. **Liveness.** A copyright year alone is not a witness. A `liveness` row needs a dated operating event on the
+   company's own site within 12 months, such as a dated news post, product release or job posting.
+   - All 11 proposed liveness rows rest on a copyright year, so all stay withheld.
+   - The builder needs a dated-event rule before the next run.
 
-1. **Contact-page address.** Does a single address on a company's own contact page, with no "headquarters" label,
-   witness the organization's HQ city? Existing rows on main already accept this (for example, the Enduro Rubber
-   contact-page address row from the PIC-18 health lane). Both families rejected such rows under this pilot's stricter
-   brief.
-   - Recommendation: yes for a single-address company.
-2. **Short name.** Does existence hold when the page uses the trade or short name without the legal suffix ("C&J
-   Industries" for `C & J Ind`)? Codex said yes and Antigravity said no on 8 rows across 8 records.
-   - Recommendation: yes, because the claim is identity, not the legal form.
-3. **Liveness witness.** Is a current copyright year on the company's own site enough for a `liveness` row, and at
-   what effect?
-   - The pilot proposed `supports_A`. The live-page liveness rows already on main carry `supports_B` or `supports_C`,
-     and a footer year is often generated automatically.
-   - A `supports_B` liveness row on a tier-A record fails V-25.
-   - Recommendation: a copyright year alone is not a witness. Use a dated own-site operating event (a dated news post,
-     product release or job posting within 12 months) instead.
+**Round 2 under these rulings:** 8 rows on 5 records.
+- Withheld again by Antigravity: C&J Industries ("C&J Industries" against "C & J Ind"), Freedom Mold Machine (name read
+  as partial), Anchor (a separate entity), SITE-002779 (a site-name mismatch) and A-Z Recycling's address (the page lists
+  a second location).
+- Rejected by both families: four page-title or press-dateline "addresses".
 
 ## Record-health leads (no writes; for triage)
 
@@ -122,12 +131,13 @@ that already gain an existence row.
 
 ## Before scaling
 
-- **Records, not rows:** the levers that add records are question 2, a working fetch route, and site locations pages.
+- **Records, not rows:** the remaining levers that add records are a working fetch route and site locations pages.
 - **Fetch route:** restore one, the NAS Firecrawl or Jina credit. 10 of the 50 sampled pages (20%) did not load
   directly; a working fallback makes them fetchable, not necessarily witnessed.
 - **Sites:** take the street-address witness from the operator's locations page rather than the cited homepage.
 - **Reviewer view:** show reviewers a window around every quote, not the head of the page.
-- **Liveness:** if question 3 keeps copyright years, require the year to equal the observation year.
+- **Liveness:** implement ruling 3, a dated own-site event within 12 months, before proposing any liveness row.
+- **Brief:** build rulings 1 and 2 into the first-round brief, so a single review round suffices.
 
 ## Reproduce
 
@@ -137,5 +147,7 @@ python tasks/evidence-backfill-url-pilot-2026-11-20/build.py fetch <corpus>     
 python tasks/evidence-backfill-url-pilot-2026-11-20/build.py match . <corpus>
 python tasks/evidence-backfill-url-pilot-2026-11-20/apply.py . <corpus> --start EVD-410001 --hold-claims liveness \
     review_codex.json review_agy.json rereview_codex.json rereview_agy.json
+python tasks/evidence-backfill-url-pilot-2026-11-20/rereview2_bundle.py . <corpus>     # round 2 bundle
+python tasks/evidence-backfill-url-pilot-2026-11-20/apply_round2.py .
 python tasks/evidence-backfill-url-pilot-2026-11-20/check.py
 ```
