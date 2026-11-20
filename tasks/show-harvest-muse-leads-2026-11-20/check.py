@@ -57,7 +57,8 @@ for r in packet:
                 bad.append((pid, "edition_name is not the name this list's edition ran under"))
     elif not (r["role"] == "attendee" and (ev, r["edition_year"]) == (D.EVENT, D.YEAR)
               and r["evidence_source_url"] == D.URL and D.NOTE in r["notes"] and P.RULING in r["notes"]
-              and r["edition_name"] == "" and r["evidence_date"] in r["sources"]):  # the list prints no as-of date
+              and r["edition_name"] == ""  # and, as the list prints no as-of date, evidence_date is the read date
+              and f"(read {r['evidence_date']};" in r["sources"]):
         bad.append((pid, "row names no list, and is not an admitted registration-list attendee row"))
     if r["role"] == "attendee" and key:
         bad.append((pid, "attendee row from a Muse-lead list"))
