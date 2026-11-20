@@ -585,6 +585,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [x] `done 2026-11-19` Record the owner rulings of 2026-11-19 (W18 close-out battery): 7 items, 0 data rows — `tasks/owner-rulings-2026-11-19/` (PR #401, 55ab601a).
 - [x] `done 2026-11-19` PIC-18 market follow-up under owner rulings 2026-11-19 M1-M2: 3 of 14 organizations' `markets_served` filled (6 values), 11 held (PR #403, d75f8a7c). PIC-18 organization rows with market unknown: 319 -> 316 of 794.
 - [x] `done 2026-11-19` `scripts/integrate/`: `mergepr.sh` says why when the fetched pull ref is not the validated head, and `mergepr.sh`, `premerge.sh` and `sync_pr.sh` resolve that ref by its full name (PR #405, 86657a6b).
+- [ ] `claimed:claude-code 2026-11-20` **Evidence presence floor (V-65), owner ruling 2026-11-20 "Close the zero-row leak":** a validator rule that fails any organizations, sites, ecosystem, programs or people record with no `data/evidence_*.csv` row. The 3,455 records with none on main `280e6a8f` are baselined (`tasks/evidence-presence-floor-2026-11-20/`). Branch `agent/claude-code/evidence-on-create`; no data rows change.
 
 ### Follow-ups surfaced in W18 (not commitments)
 

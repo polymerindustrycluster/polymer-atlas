@@ -27,6 +27,8 @@ Checks (v1 gate + schema v1.1/v1.2 additions, per AGENTS.md / docs/SCHEMA.md):
   MUST_HAVE extended; data/evidence_people.csv joins the evidence union
 - [v1.10] people_identifiers.csv (§4.21): person FK, identifier-type enum,
   ORCID shape, one row per identifier value (V-54)
+- [v1.16.5] V-65 presence floor (§4.13): every organizations/sites/ecosystem/
+  programs/people record has >=1 evidence row; adoption-day gaps are baselined
 """
 import csv, json, os, re, sys
 from datetime import datetime
@@ -598,6 +600,29 @@ LICENSED_SOURCE = re.compile(r"plasticsnews\.com|rubbernews\.com|dnb\.com|zoomin
 for r in evidence:
     if LICENSED_SOURCE.search(r.get("source_ref") or ""):
         debt("V-60", r["evidence_id"], f"{r['evidence_id']} cites a licensed publication ({r['source_ref'][:60]}); AGENTS.md §5 allows it as a lead only")
+# V-65 [v1.16.5, owner ruling 2026-11-20]: the §4.13 presence floor. Every record in the five evidence classes has at least
+# one data/evidence_*.csv row (archive_links and registry_links do not count). Records with none at adoption are baselined;
+# a record outside the baseline with no row is an error. Keys are "<record_table>:<record_id>:<identity fingerprint>": the
+# table because ecosystem rows share the ORG- id space with organizations; the fingerprint (first 8 hex of sha1 over the
+# record's identity fields, each lowercased to letters and digits) so a baselined id renamed, moved or repurposed for a
+# different entity without a witness drops out of the baseline and errors (the lane-brief contract: a changed record
+# carries rows too). Identity fields follow AGENTS.md §3's dedupe tests: name + place, or name + operator/institution.
+import hashlib
+V65_TABLES = (("organizations", orgs, "org_id", ("legal_name", "hq_city", "hq_state")),
+              ("sites", sites, "site_id", ("org_id", "site_name", "street_address", "city", "state")),
+              ("ecosystem", eco, "org_id", ("legal_name", "city", "state")),
+              ("programs", programs, "program_id", ("institution_org_id", "program_name")),
+              ("people", people, "person_id", ("full_name", "institution_org_id")))
+def v65_key(table, rid, values):
+    ident = "|".join(re.sub(r"[^a-z0-9]+", "", (v or "").lower()) for v in values)
+    return f"{table}:{rid}:{hashlib.sha1(ident.encode()).hexdigest()[:8]}"
+_with_rows = {(r["record_table"].strip(), r["record_id"].strip()) for r in evidence}
+for _table, _rows, _idcol, _identcols in V65_TABLES:
+    for r in _rows:
+        rid = r[_idcol].strip()
+        if (_table, rid) not in _with_rows:
+            debt("V-65", v65_key(_table, rid, [r.get(c) for c in _identcols]),
+                 f"{_table} {rid} has no evidence row in data/evidence_*.csv (SCHEMA §4.13 presence floor)")
 
 DEBT_DETAILS = "--debt-details" in sys.argv
 for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):

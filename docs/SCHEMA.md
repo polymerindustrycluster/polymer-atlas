@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.16.4 — 2026-11-19 (§4.12.2: the organizer's final list of registered companies for a named past edition counts as an attendee list — owner ruling 2026-11-19d item 1, `tasks/owner-rulings-2026-11-19d/README.md`).
+**Version:** v1.16.5 — 2026-11-20 (§4.13 presence floor: every organizations, sites, ecosystem, programs and people record carries at least one evidence row; validator V-65, with the 3,455 records that had none at adoption baselined — owner ruling 2026-11-20, `tasks/evidence-presence-floor-2026-11-20/README.md`).
+Previous: v1.16.4 — 2026-11-19 (§4.12.2: the organizer's final list of registered companies for a named past edition counts as an attendee list — owner ruling 2026-11-19d item 1, `tasks/owner-rulings-2026-11-19d/README.md`).
 Previous: v1.16.3 — 2026-11-19 (§3.6 `extrusion` capability rollup adds `rubber_extrusion` — owner ruling 2026-11-19c item 1, `tasks/owner-rulings-2026-11-19c/README.md`).
 Previous: v1.16.2 — 2026-11-19 (§4.12.1 worked seams 4–7: a branded plastics sector show, tire and aftermarket trade shows, corrosion-and-coatings shows, composites-centered shows and UV/EB curing of coatings, inks, adhesives and composites qualify; the Geosynthetics Conference does not — owner rulings 2026-11-19, `tasks/owner-rulings-2026-11-19b/README.md`).
 Previous: v1.16.1 — 2026-11-19 (§4.12.2: an organizer's complete attendee-company list for a named edition counts even when printed in its own sponsorship brochure, and a name the organizer wrote as a logo's alt or title text counts as on the list — owner rulings 2026-11-18c, `tasks/owner-rulings-2026-11-18c/README.md`).
@@ -1736,6 +1737,42 @@ companion `evidence_rows.csv` fragment; `evidence_id` values are
 allocated by the integrator at application, never by the lane
 (the standing allocation rule, §4.12's grammar applied here).
 
+#### The presence floor **[v1.16.5]** (owner ruling 2026-11-20; validator V-65)
+
+Every record in the five evidence classes (organizations, sites,
+ecosystem, programs, people) carries at least one row in the
+`data/evidence_*.csv` shards. Archive links (§4.22) and registry links
+(§4.8) do not count: only evidence rows do. The floor does not replace
+the lane-brief contract above, which still requires rows for every
+must-have claim and is still enforced by the integrator. It catches the
+case no other rule saw: a record with no rows at all, which V-25 never
+inspects because it restates tiers only where rows exist.
+
+The 3,455 records that had no row when the rule was adopted
+(organizations 1,340, sites 1,840, ecosystem 133, people 132, programs
+10, counted on main at `280e6a8f` and reconciled against
+`scripts/audit_evidence_coverage.py`) are baselined in
+`scripts/validate_debt_baseline.json` under `V-65`, keyed
+`<record_table>:<record_id>:<identity fingerprint>`. The fingerprint is
+the first 8 hex characters of the SHA-1 over the record's identity
+fields, each lowercased to letters and digits. The fields follow
+AGENTS.md §3's dedupe tests:
+- organizations: `legal_name`, `hq_city`, `hq_state`;
+- ecosystem: `legal_name`, `city`, `state`;
+- sites: `org_id`, `site_name`, `street_address`, `city`, `state`;
+- programs: `institution_org_id`, `program_name`;
+- people: `full_name`, `institution_org_id`.
+
+Baselined records warn, and the list shrinks as backfill lanes add rows.
+Any other record with no row is an error, which in practice means a
+create that skipped its evidence rows. Because the identity fields are
+part of the key, a baselined record that is renamed, moved, re-pointed,
+or overwritten with a different entity under the same id, without a new
+row, also drops out of the baseline and errors, as the lane-brief
+contract requires of a changed record. An id overwritten with an entity
+that matches on every identity field is, by §3's own tests, the same
+entity.
+
 #### Tier restatement — §4.1 applied mechanically, where rows exist **[v1.6]**
 
 §4.1's rule — *a record's tier is the tier of its weakest must-have
@@ -3191,4 +3228,5 @@ unchanged.
 - **v1.16.2 — 2026-11-19 (owner rulings 2026-11-19; `tasks/owner-rulings-2026-11-19b/README.md`).** §4.12.1 gains worked seams 4–7 (binding precedent): a separately branded plastics sector show inside a multi-sector event is its own series (EXPOPLAST at ADM Montréal; seam 3 unchanged); tire and aftermarket trade shows qualify (tires are rubber products); a corrosion-and-coatings show that names coatings co-primary qualifies; composites-centered shows (Carbon Fiber, SAMPE Japan) and UV and EB curing of coatings, inks, adhesives and composites (RadTech) qualify; the Geosynthetics Conference does not (its subject is the civil-engineering uses of geosynthetics). No field, vocabulary or validator change. Applied in `tasks/new-series-2026-11-19/` (27 series rows, EVT-000072 to EVT-000098).
 - **v1.16.3 — 2026-11-19 (owner ruling 2026-11-19c item 1; `tasks/owner-rulings-2026-11-19c/README.md`).** §3.6's `capability_type = process` `extrusion` ROLLUP row adds §3.1 `rubber_extrusion`, as `calendering` already covers `rubber_calendering`. No term is added to §3.1 or §3.6, so `scripts/validate.py` and `docs/schema/vocab.json` are unchanged. Applied in the same PR (`tasks/permit-rubber-extrusion-2026-11-19c/`): one `site_capabilities` row, SITE-000264 `extrusion` at `supports_C`. Item 2 of the same ruling (a direction word missing from a printed street breaks binding) changes no data.
 - **v1.16.4 — 2026-11-19 (owner rulings 2026-11-19d; `tasks/owner-rulings-2026-11-19d/README.md`).** §4.12.2 wording only, no field or vocabulary change. The `attendee` role notes: the organizer's final list of registered companies for a named past edition is a list of attending companies, and each row from it quotes the list's heading (the Coatings Trends & Technologies Summit 2026 list, which #411 held for this ruling). No validator change (the list is adjudicated at harvest). Applied in the same PR: 44 `event_participation` rows. Items 2–4 of the same ruling (past editions in the conferences repo, EXPOPLAST continuing as ADM Plastiques, undated Great Lakes speaker pages) change no data here.
+- **v1.16.5 — 2026-11-20 (owner ruling 2026-11-20, "Close the zero-row leak"; `tasks/evidence-presence-floor-2026-11-20/README.md`).** §4.13 gains the presence floor and the validator gains V-65: every organizations, sites, ecosystem, programs and people record carries at least one `data/evidence_*.csv` row. The 3,455 records with none at adoption (organizations 1,340, sites 1,840, ecosystem 133, people 132, programs 10; main `280e6a8f`, reconciled table by table against `scripts/audit_evidence_coverage.py`) are baselined under `V-65` in `scripts/validate_debt_baseline.json`, keyed `<record_table>:<record_id>:<identity fingerprint>` (a hash of the record's identity fields per AGENTS.md §3). Any other record with no row is an error, including a baselined record renamed, moved, re-pointed or repurposed without a new row. No data row is changed by this revision.
 

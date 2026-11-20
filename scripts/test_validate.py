@@ -673,6 +673,83 @@ class ValidatorMutationTests(unittest.TestCase):
         self.assertNotIn("V-64", out)
         self.assertEqual(code, 0, out[-2000:])
 
+    # -- V-65 [v1.16.5, owner ruling 2026-11-20]: §4.13 presence floor -------------------------------
+    def _evidence_index(self):
+        """(record_table, record_id) -> [(shard path, evidence_id)] over the copy's evidence shards."""
+        idx = {}
+        for path in sorted(self.data.glob("evidence_*.csv")):
+            with open(path, newline="", encoding="utf-8") as f:
+                for r in csv.DictReader(f):
+                    idx.setdefault((r["record_table"], r["record_id"].strip()), []).append((path, r["evidence_id"]))
+        return idx
+
+    @staticmethod
+    def _v65_ids(table):
+        """Record ids baselined under V-65 for one table (keys are <table>:<id>:<identity fingerprint>)."""
+        return [k.split(":")[1] for k in sorted(BASELINE.get("V-65", [])) if k.startswith(f"{table}:")]
+
+    def test_v65_unbaselined_record_losing_its_only_row_fails(self):
+        base = set(self._v65_ids("organizations"))
+        with open(self.data / "archive_links.csv", newline="", encoding="utf-8") as f:
+            archived = {r["evidence_id"] for r in csv.DictReader(f)}
+        (table, rid), [(path, eid)] = next(
+            (k, v) for k, v in sorted(self._evidence_index().items())
+            if k[0] == "organizations" and len(v) == 1 and k[1] not in base and v[0][1] not in archived)
+        with open(path, newline="", encoding="utf-8") as f:
+            rdr = csv.DictReader(f)
+            fields, rows = rdr.fieldnames, [r for r in rdr if r["evidence_id"] != eid]
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
+            w.writeheader()
+            w.writerows(rows)
+        self.assert_fails_with(f"organizations {rid} has no evidence row in data/evidence_*.csv (SCHEMA §4.13 presence floor) — new violation (V-65")
+
+    def _rows(self, fname):
+        with open(self.data / fname, newline="", encoding="utf-8") as f:
+            return list(csv.DictReader(f))
+
+    def test_v65_new_record_without_evidence_fails(self):
+        shards = [p.name for p in self.data.glob("organizations_*.csv")] + ["ecosystem.csv"]
+        top = max(int(r["org_id"][4:]) for name in shards for r in self._rows(name))  # one ORG- id space
+        new_id = f"ORG-{top + 1:06d}"
+        self.append_row("organizations_OH.csv", dict(self._rows("organizations_OH.csv")[-1], org_id=new_id))
+        self.assert_fails_with(f"organizations {new_id} has no evidence row")
+
+    def test_v65_baselined_record_gaining_a_row_only_warns(self):
+        has_rows = self._evidence_index()
+        tiers = {r["person_id"]: r["verification_tier"] for r in self._rows("people.csv")}
+        rowless = [p for p in self._v65_ids("people") if ("people", p) not in has_rows]
+        person, other = rowless[0], rowless[1]  # `other` stays row-less: proves V-65 still runs (not vacuous)
+        # match the effect to the record's tier so V-25 restatement cannot fail for reasons unrelated to V-65
+        self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, record_id=person,
+                                                    tier_effect=f"supports_{tiers[person]}"))
+        code, out = run_validator(self.data, "--debt-details")
+        self.assertEqual(code, 0, out[-2000:])
+        self.assertRegex(out, r"V-65: \d+ baselined rows now pass")
+        self.assertNotIn(f"people {person} has no evidence row", out)
+        self.assertIn(f"people {other} has no evidence row", out)
+
+    def test_v65_baselined_record_repurposed_in_place_fails(self):
+        # review 2026-11-20 (Codex): keep a row-less baselined id but overwrite it with a different entity. No row is
+        # removed, so check_row_loss.py is silent; the name fingerprint in the key must take it out of the baseline.
+        has_rows = self._evidence_index()
+        rid = next(o for o in self._v65_ids("organizations") if ("organizations", o) not in has_rows)
+        shard = next(p.name for p in sorted(self.data.glob("organizations_*.csv"))
+                     if any(r["org_id"] == rid for r in self._rows(p.name)))
+        self.edit_rows(shard, lambda r: r["org_id"] == rid, lambda r: r.update(legal_name="Entirely Different Company LLC"))
+        self.assert_fails_with(f"organizations {rid} has no evidence row")
+
+    def test_v65_baselined_person_same_name_other_institution_fails(self):
+        # review 2026-11-20 (Codex, round 3): a different person with the same full_name under the same person_id.
+        # The identity fingerprint covers institution_org_id, so the move drops the record out of the baseline.
+        has_rows = self._evidence_index()
+        people = self._rows("people.csv")
+        pid = next(p for p in self._v65_ids("people") if ("people", p) not in has_rows)
+        mine = next(r["institution_org_id"] for r in people if r["person_id"] == pid)
+        other_inst = next(r["institution_org_id"] for r in people if r["institution_org_id"] not in ("", mine))
+        self.edit_rows("people.csv", lambda r: r["person_id"] == pid, lambda r: r.update(institution_org_id=other_inst))
+        self.assert_fails_with(f"people {pid} has no evidence row")
+
 
 if __name__ == "__main__":
     unittest.main()
