@@ -1,0 +1,490 @@
+{
+ "verdicts": [
+  {
+   "record_id": "ORG-000002",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name identifies Lubrizol using its listed trade name and an abbreviated corporate suffix."
+  },
+  {
+   "record_id": "ORG-000003",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches the Atlas legal name, with Company abbreviated."
+  },
+  {
+   "record_id": "ORG-000035",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Saint-Gobain Performance Plastics apart from hyphenation."
+  },
+  {
+   "record_id": "ORG-000038",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "The shared name does not establish that Panolam's Auburn, Maine facility is the Akron organization; no independent identity connection is supplied."
+  },
+  {
+   "record_id": "ORG-000154",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Lincoln Electric Co identifies Lincoln Electric; the article and company suffix do not change the identity."
+  },
+  {
+   "record_id": "ORG-000155",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Eaton Corporation with an abbreviated suffix."
+  },
+  {
+   "record_id": "ORG-000271",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches the Atlas legal name apart from punctuation."
+  },
+  {
+   "record_id": "ORG-000302",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The reported parent is DermaMed Coatings Co LLC, matching the Atlas organization itself."
+  },
+  {
+   "record_id": "ORG-000319",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches E.L. Stone Co., Inc. apart from punctuation and spacing."
+  },
+  {
+   "record_id": "ORG-000419",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The TRI record's standardized parent-company field names LG Chem America Inc., exactly the Atlas entity."
+  },
+  {
+   "record_id": "ORG-000438",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches the Atlas legal name."
+  },
+  {
+   "record_id": "ORG-000521",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Premier OEM; the match does not depend on its Polaris parent."
+  },
+  {
+   "record_id": "ORG-000635",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Wooster Brush Co matches the Atlas name with the article omitted and Company abbreviated."
+  },
+  {
+   "record_id": "ORG-000637",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Xaloy LLC exactly."
+  },
+  {
+   "record_id": "ORG-000638",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility names the complete Atlas entity, Yokohama Industries Americas Ohio Inc."
+  },
+  {
+   "record_id": "ORG-000655",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Removing the Van Wert plant qualifier leaves Danfoss Power Solutions, the Atlas name."
+  },
+  {
+   "record_id": "ORG-000720",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Capital Resin Corporation with an abbreviated suffix."
+  },
+  {
+   "record_id": "ORG-000752",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches the Atlas legal name apart from punctuation."
+  },
+  {
+   "record_id": "ORG-000756",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility uses the Atlas legal name without its suffix, and the parent field supplies the full name."
+  },
+  {
+   "record_id": "ORG-000757",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The standardized parent names Cornerstone Building Brands, the Atlas legal name; the Walbridge location qualifier does not identify a separate entity."
+  },
+  {
+   "record_id": "ORG-000785",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility matches the complete Atlas legal name, including US 5 LLC."
+  },
+  {
+   "record_id": "ORG-000788",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Deltech Polymers Corp is explicitly listed as an Atlas trade name, providing the identity match despite the different legal-name wording."
+  },
+  {
+   "record_id": "ORG-000805",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility names DuPont's Circleville plant, preserving the plant identity in the Atlas name despite its malformed parenthesis."
+  },
+  {
+   "record_id": "ORG-000806",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names DuPont Electronic Polymers."
+  },
+  {
+   "record_id": "ORG-000846",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Formica Corporation with an abbreviated suffix."
+  },
+  {
+   "record_id": "ORG-000877",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches ALTIVIA Petrochemicals, LLC."
+  },
+  {
+   "record_id": "ORG-000903",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "IPL Dayton is explicitly listed among this Atlas organization's trade names and matches the facility name."
+  },
+  {
+   "record_id": "ORG-000907",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names ITW Evercoat."
+  },
+  {
+   "record_id": "ORG-001043",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names the claimed legal entity Epsilyte LLC; the supplied data does not establish that the Piqua reference denotes a different entity."
+  },
+  {
+   "record_id": "ORG-001077",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Revere Plastics Systems with LLC added."
+  },
+  {
+   "record_id": "ORG-001080",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Ridge Corporation with an abbreviated suffix."
+  },
+  {
+   "record_id": "ORG-001090",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The standardized parent-company field names Rowmark LLC, exactly the Atlas organization."
+  },
+  {
+   "record_id": "ORG-001175",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches United Security Seals with Inc. added."
+  },
+  {
+   "record_id": "ORG-001346",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Rotex Global with LLC added."
+  },
+  {
+   "record_id": "ORG-001387",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Etched Metal with a company suffix added."
+  },
+  {
+   "record_id": "ORG-001415",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Fresh Products matches in the same city; Inc. versus LLC alone does not refute identity under the owner ruling."
+  },
+  {
+   "record_id": "ORG-001420",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility uses the explicitly listed trade name Scottdel Cushion with a corporate suffix."
+  },
+  {
+   "record_id": "ORG-001441",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Tempcraft Corporation with an abbreviated suffix."
+  },
+  {
+   "record_id": "ORG-001444",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Archem America, Inc."
+  },
+  {
+   "record_id": "ORG-001445",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Arclin USA LLC."
+  },
+  {
+   "record_id": "ORG-001457",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The standardized parent-company field names Pacific Industries USA Inc., exactly the Atlas entity."
+  },
+  {
+   "record_id": "ORG-001520",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Meridian Bioscience, Inc."
+  },
+  {
+   "record_id": "ORG-001610",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Removing the Allentown plant qualifier leaves Behr Process; Corporation versus LLC alone does not refute identity."
+  },
+  {
+   "record_id": "ORG-001716",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Firestone Polymers, LLC."
+  },
+  {
+   "record_id": "ORG-001724",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Republic Powdered Metals Inc."
+  },
+  {
+   "record_id": "ORG-001729",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both facility and parent names match ICU Medical, Inc.; the different plant location does not defeat the existence claim."
+  },
+  {
+   "record_id": "ORG-001732",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility matches the complete Atlas legal name, including the distinguishing Asheville qualifier."
+  },
+  {
+   "record_id": "ORG-001833",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The standardized parent-company field names JAIN Americas Inc., exactly the Atlas entity."
+  },
+  {
+   "record_id": "ORG-001921",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility matches the explicitly listed trade name Potters Industries, with LLC added."
+  },
+  {
+   "record_id": "ORG-002065",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Ohio-operator parenthetical describes Ashland's sites; removing it leaves Ashland, and Inc. versus LLC alone does not refute identity."
+  },
+  {
+   "record_id": "ORG-002157",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Custom Pultrusions, Inc."
+  },
+  {
+   "record_id": "ORG-002181",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility uses Inhance Technologies without its suffix, and the parent field matches the full Atlas legal name."
+  },
+  {
+   "record_id": "ORG-002192",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Creative Pultrusions Inc."
+  },
+  {
+   "record_id": "ORG-002227",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Removing the Pittsburgh plant qualifier leaves Chase Corp, matching Chase Corporation and the reported parent."
+  },
+  {
+   "record_id": "ORG-002239",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Altuglas LLC."
+  },
+  {
+   "record_id": "ORG-002245",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches the Atlas name exactly apart from capitalization."
+  },
+  {
+   "record_id": "ORG-002271",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "J-LOK CO matches J Lok after normalizing hyphenation and the company suffix."
+  },
+  {
+   "record_id": "ORG-002275",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Sylvin Technologies Inc."
+  },
+  {
+   "record_id": "ORG-002302",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Snap-Tite Hose is the explicit DBA in the Atlas name; the parent field also identifies AAH Acquisition LLC dba Snap-Tite Hose in full."
+  },
+  {
+   "record_id": "ORG-002324",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Esstech, Inc."
+  },
+  {
+   "record_id": "ORG-002326",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Arbco Industries Inc.; the existence match is independent of the differing parent fields."
+  },
+  {
+   "record_id": "ORG-002333",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Trinseo LLC, separately from its named holding-company parent."
+  },
+  {
+   "record_id": "ORG-002348",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Both facility and parent names match Carpenter Co."
+  },
+  {
+   "record_id": "ORG-002438",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches East Penn Manufacturing Co., Inc."
+  },
+  {
+   "record_id": "ORG-002441",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The reported parent is Dart Container Corp, matching the Atlas entity itself."
+  },
+  {
+   "record_id": "ORG-002443",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The reported parent directly names Euramax International Inc., the Atlas organization."
+  },
+  {
+   "record_id": "ORG-002450",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Stryten Lampeter LLC."
+  },
+  {
+   "record_id": "ORG-002474",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility names Dart Container Corp. of Pennsylvania itself, preserving the distinguishing subsidiary qualifier."
+  },
+  {
+   "record_id": "ORG-002491",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Loparex."
+  },
+  {
+   "record_id": "ORG-002530",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Chemcoat Inc."
+  },
+  {
+   "record_id": "ORG-002545",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "I2M is explicitly identified as Crestwood Membranes' DBA in the Atlas name; the facility uses that name with Inc. added."
+  },
+  {
+   "record_id": "ORG-002583",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Abbey Color Inc."
+  },
+  {
+   "record_id": "ORG-002591",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility matches the complete Atlas legal name, INEOS Composites US LLC."
+  },
+  {
+   "record_id": "ORG-002633",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches IFS Industries Inc."
+  },
+  {
+   "record_id": "ORG-002698",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Delaware Valley Custom Marble Inc."
+  },
+  {
+   "record_id": "ORG-002700",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Liberty Pultrusions."
+  },
+  {
+   "record_id": "ORG-002711",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility directly names Bryn Hill Industries."
+  },
+  {
+   "record_id": "ORG-002717",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Removing the York plant qualifier leaves Protech Powder Coating Inc., exactly the Atlas legal name."
+  },
+  {
+   "record_id": "ORG-002730",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Rohm and Haas Chemicals LLC, using an ampersand for and."
+  },
+  {
+   "record_id": "ORG-002757",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches National Polymers with Inc. added."
+  },
+  {
+   "record_id": "ORG-002770",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The facility name matches Superior Tire & Rubber Corp apart from punctuation."
+  }
+ ]
+}

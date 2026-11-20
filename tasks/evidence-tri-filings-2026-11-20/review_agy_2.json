@@ -1,0 +1,250 @@
+{
+ "verdicts": [
+  {
+   "record_id": "ORG-001457",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Standardized parent company matches legal name Pacific Industries USA Inc."
+  },
+  {
+   "record_id": "ORG-001520",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-001610",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches legal name after stripping plant qualifier '- ALLENTOWN'; LLC vs Corporation does not refute."
+  },
+  {
+   "record_id": "ORG-001716",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-001724",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-001729",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches legal name."
+  },
+  {
+   "record_id": "ORG-001732",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-001833",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Standardized parent company matches legal name JAIN Americas Inc."
+  },
+  {
+   "record_id": "ORG-001921",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches listed trade name 'Potters Industries' without corporate suffix; LLC vs Inc does not refute."
+  },
+  {
+   "record_id": "ORG-002065",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Parent company 'ASHLAND LLC' matches legal name after stripping parenthetical site operator qualifier; LLC vs Inc does not refute."
+  },
+  {
+   "record_id": "ORG-002157",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002181",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches legal name without corporate suffix."
+  },
+  {
+   "record_id": "ORG-002192",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002227",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches legal name after stripping plant qualifier '- PITTSBURGH'."
+  },
+  {
+   "record_id": "ORG-002239",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002245",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002271",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches legal name without corporate suffix 'CO'."
+  },
+  {
+   "record_id": "ORG-002275",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002302",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches trade name 'Snap-Tite Hose' after stripping plant qualifier '/ UNION CITY'; parent company also confirms legal name."
+  },
+  {
+   "record_id": "ORG-002324",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002326",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002333",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002348",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002438",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002441",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Parent company 'DART CONTAINER CORP' matches legal name Dart Container Corporation."
+  },
+  {
+   "record_id": "ORG-002443",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Parent company 'EURAMAX INTERNATIONAL INC' matches legal name Euramax International Inc."
+  },
+  {
+   "record_id": "ORG-002450",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002474",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002491",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002530",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002545",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches trade name 'I2M' after stripping 'Dba' qualifier; Inc suffix does not refute."
+  },
+  {
+   "record_id": "ORG-002583",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002591",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002633",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002698",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002700",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002711",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  },
+  {
+   "record_id": "ORG-002717",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches legal name after stripping plant qualifier '/YORK'."
+  },
+  {
+   "record_id": "ORG-002730",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches legal name with standard ampersand substitution."
+  },
+  {
+   "record_id": "ORG-002757",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name matches legal name without corporate suffix 'INC.'."
+  },
+  {
+   "record_id": "ORG-002770",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name."
+  }
+ ]
+}
