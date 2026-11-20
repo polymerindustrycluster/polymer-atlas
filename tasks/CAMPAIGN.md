@@ -6,7 +6,9 @@ keep parallel waves from colliding. AGENTS.md still binds everything. This file 
 conventions already applied in merged PRs.
 
 **Status: targets proposed by claude-code, awaiting the repo owner's confirmation.** Until he confirms them, they guide
-the order of work only.
+the order of work only. *(2026-11-20 note: never confirmed as written. The work it framed was absorbed into
+`QUEUE.md` — the state waves landed piecemeal and their claims were released 2026-11-17 — and campaign mode
+itself was retired 2026-11-03 (AGENTS.md §2). This file is retained as the historical plan.)*
 
 ## Goal
 An evidence-backed database of US polymer entities that supports PIC's members and goals.
@@ -25,6 +27,7 @@ An evidence-backed database of US polymer entities that supports PIC's members a
 **State waves from the lead-fusion spine.**
 - **Grok** takes the states with thin Atlas coverage, working from the two-source queue. Its PRs from #41 onward cover
   UT, DE, ID, NH, RI, NV, ME, MT, VT, ND, NM, SD, NE, MS, WV, OK, AZ, MD, CO, AR, WA, OR, CT, KS, IA and AL.
+  (Grok's usage ended 2026-11-14; these waves are closed.)
 - **Claude Code** takes the large-gap states, STRONG clusters first:
   - IN: the pilot, #75;
   - MI and IL: in progress;
@@ -87,7 +90,9 @@ An evidence-backed database of US polymer entities that supports PIC's members a
 
 ## Operating conventions (owner direction, in session 2026-11-06: "do items 3–5 to test out")
 These are being tested; they become conventions when the owner confirms them after the test.
-- **Review depth follows risk.** A PR that changes `data/` needs two families (Codex plus Grok or Gemini). A
+- **Review depth follows risk.** A PR that changes `data/` needs two families (Codex plus Gemini — DECISIONS.md
+  2026-11-16 makes Gemini the standing second review family, with Claude Opus standing in on Codex-written PRs;
+  Grok's usage ended 2026-11-14). A
   packet-only or docs-only PR needs one family plus CI. Re-reviews are targeted at the findings being fixed.
 - **Review capacity is planned.** Past about 8 parallel lanes, the shared `council-ask` deep-call ceiling saturates,
   so reviews run on dedicated reviewer threads (at least two per family). Each reviewer gives one verdict line per

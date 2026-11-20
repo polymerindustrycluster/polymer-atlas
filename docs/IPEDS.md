@@ -23,6 +23,33 @@ refuses any table that differs from a fresh derivation. To join a program to an 
 | 40.1001 | Materials Science | 112 | 79 | 7,791 |
 | 40.1002 | Materials Chemistry | 9 | 6 | 309 |
 
+## Award levels: `award_level`, `award` and `level`
+
+`ipeds_programs.csv` carries three views of one fact. `award_level` is the NCES AWLEVEL code (as served by the
+Urban Institute mirror and the NCES complete files), canonicalised by the build; `award` is the build's text
+label for that code; `level` is the coarse degree level. The mapping lives in `scripts/ipeds_build.py`
+(`CERT_CANON`, `CANON_AWARD`, `DEGREE_LEVEL`); the stored values are:
+
+| `award_level` | `award` | `level` |
+|---|---|---|
+| 31 | Cert under 1yr (codes 1, 30, 31) | certificate |
+| 32 | Cert 1-2yr (codes 2, 3, 32) | certificate |
+| 33 | Cert 1-4yr (codes 5, 6, 33) | certificate |
+| 4 | Associate | associate |
+| 7 | Bachelor | bachelor |
+| 8 | Post-bacc/post-master cert | postgrad certificate |
+| 9 | Master | master |
+| 20 | Doctorate (pre-2008) | doctorate |
+| 22 | Doctorate (research) | doctorate |
+| -1 | Unreported award level | unknown |
+
+Certificate levels were re-coded in 2020: the pre-2020 codes 1, 2, 3, 5 and 6 (and the transitional 30) are
+merged onto the canonical 31 / 32 / 33, so one certificate stays one program (trap 5, below). Code **20 is the
+legacy pre-2008 doctorate**; the current research doctorate is 22. The build also maps 21, 23 and 24 to
+`doctorate` — the remaining doctorate flavours in the NCES vocabulary, not observed under the six CIPs here. A
+missing award level is stored as -1: the completions are real, the level is `unknown`. Read `award_level` only
+through this table — the raw codes are not the Atlas's own `degree_levels` vocabulary (§4.11).
+
 ## What the polymer series shows, and how to quote it
 
 Completions under the three polymer codes (14.3201, 40.0507 and 15.0607), labelled by the fall of the academic year:
