@@ -141,7 +141,7 @@ def main(write=True):
         with open(HERE / "witness.csv", "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=["evidence_id", "person_id", "url", "sha256", "segments"], lineterminator="\n")
             w.writeheader(); w.writerows(witness)
-        (HERE / "manifest.csv").write_bytes(open(PERSIST + "manifest.csv", "rb").read().replace(b"\r\n", b"\n"))
+        (HERE / "manifest.csv").write_bytes(redact(open(PERSIST + "manifest.csv", encoding="utf-8").read()).replace("\r\n", "\n").encode())
         have = {e["evidence_id"]: e for e in ev}
         for e in new_ev:
             if e["evidence_id"] in have and have[e["evidence_id"]] != e: sys.exit(f"{e['evidence_id']} exists with different content")
