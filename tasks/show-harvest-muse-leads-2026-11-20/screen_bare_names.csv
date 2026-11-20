@@ -1,0 +1,7 @@
+participation_id,event_id,role,listed_name,org_id,legal_name,hq_country,ultimate_parent_name
+EVP-001587,EVT-000072,exhibitor,Sherwin-Williams,ORG-000132,The Sherwin-Williams Company,US,The Sherwin-Williams Co.
+EVP-001589,EVT-000072,sponsor,Sherwin-Williams,ORG-000132,The Sherwin-Williams Company,US,The Sherwin-Williams Co.
+EVP-001602,EVT-000074,speaker,Teijin Carbon America,ORG-003005,"Teijin Carbon America, Inc.",US,Teijin Limited
+EVP-001604,EVT-000077,speaker,PPG Industries,ORG-000088,"PPG Industries, Inc.",US,PPG Industries Inc.
+EVP-001611,EVT-000092,exhibitor,BYK USA,ORG-003050,BYK USA LLC,US,ALTANA AG
+EVP-001627,EVT-000081,exhibitor,Absolute Robot,ORG-003370,Absolute Robot Incorporated,US,The Absolute Group of Companies
