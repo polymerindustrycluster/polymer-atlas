@@ -94,6 +94,8 @@ record (for example its website) without adding a row. V-65 only warns.
   one evidence row".
 - Covering every non-derived field needs a list of derived and reference fields to exempt (tier1, county, ZIP,
   geocodes and others). It's a larger rule, so it's an owner decision, not settled in this PR (AGENTS.md §2 rule 9).
+- **Owner ruling, 2026-11-20 (multiple choice): "Merge as is."** V-65 ships as the floor for creates plus identity
+  changes. Widening it to every non-derived field change is a possible follow-up, not part of this PR.
 
 Codex's round-4 nit (the drift report counted obsolete keys as repaired) is fixed: the dry run now separates
 "repaired" (the record has a row) from "obsolete" (identity changed, still row-less).
