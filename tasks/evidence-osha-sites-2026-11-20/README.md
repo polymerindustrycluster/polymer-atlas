@@ -109,6 +109,21 @@ evidence lanes until a second family returns.
 
 **Across both rounds:** 371 rows on 124 sites.
 
+## Correction: liveness dates (2026-11-20, in the part-3 PR)
+
+**Rule.** SCHEMA §4.13 says that for a filing, `observed_date` is "the filing's own as-of / period date where the row's
+force depends on it, with the retrieval date in `notes`". Owner ruling 8 makes a liveness row's witnessed date the end
+of the covered period.
+
+**Correction.** The 124 liveness rows (84 from #434, 40 from part 3) were first written with the retrieval date,
+2026-11-20.
+- `fix_liveness_dates.py` changes only their `observed_date`, to 2025-12-31, the end of calendar 2025. It edits the
+  date field of the listed IDs and asserts the count.
+- The notes keep the retrieval date.
+- `build.py` now writes the period end for liveness.
+
+**Unchanged.** Existence and address rows keep the retrieval date, as earlier OSHA ITA lanes did.
+
 ## Reproduce
 
 ```
