@@ -67,5 +67,14 @@ plant("an abroad row whose listed country is not the org's HQ country", "abroad 
 plant("a national row with a foreign edition_state", "abroad row without a listed country", **FREE,
       edition_state="Germany")
 plant("a tier other than A", "verification_tier is not A", **FREE, verification_tier="B")
+plant("evidence_date set to the read date on a list that prints its as-of date",
+      "evidence_date is not the list's as-of date", **FREE, evidence_date="2026-11-19")
+plant("an EXPOPLAST row without its edition name", "edition_name is not the name", base=first("EVT-000081", "exhibitor"),
+      org_id=ORG["Hexcel Corporation"], listed="Hexcel Corporation", edition_name="", strict=False)
+plant("a pre-show list's row without the pre-show note", "pre-show note and the list's as-of date disagree", **FREE,
+      notes=AMPP["notes"].replace(" Pre-show list: the organizer's list predates the edition.", ""))
+plant("a pre-show note on a list read after its edition (Carbon Fiber agenda)", "pre-show note and the list's as-of",
+      base=first("EVT-000074", "speaker"), org_id=ORG["Arkema Inc."], listed="Arkema Inc.",
+      notes=first("EVT-000074", "speaker")["notes"] + " Pre-show list: the organizer's list predates the edition.")
 print(f"{sum(ok)} of {len(ok)} controls failed check.py as required")
 sys.exit(0 if all(ok) else 1)

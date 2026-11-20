@@ -45,6 +45,16 @@ for r in packet:
         spec = P.LISTS.get(key.group(1))
         if not spec or (spec[0], spec[1], spec[2]) != (ev, r["edition_year"], r["role"]) or spec[5] not in r["notes"]:
             bad.append((pid, "row does not match its list's event, year, role or note"))
+        else:  # a list that predates its edition says so; one with an as-of date and no edition dates says that
+            as_of, start = spec[3], r["edition_dates"].split(" to ")[0]
+            if (bool(as_of and start and as_of < start) != ("Pre-show list" in r["notes"])
+                    or bool(as_of and not start) != ("dates are not on record" in r["notes"])):
+                bad.append((pid, "pre-show note and the list's as-of date disagree"))
+            read = re.search(r"\(read ([0-9-]+);", r["sources"])
+            if r["evidence_date"] != (as_of or (read.group(1) if read else "")):
+                bad.append((pid, "evidence_date is not the list's as-of date (or, with none printed, the read date)"))
+            if r["edition_name"] != P.EDITION_NAME.get(key.group(1), ""):
+                bad.append((pid, "edition_name is not the name this list's edition ran under"))
     elif not (r["role"] == "attendee" and (ev, r["edition_year"]) == (D.EVENT, D.YEAR)
               and r["evidence_source_url"] == D.URL and D.NOTE in r["notes"] and P.RULING in r["notes"]):
         bad.append((pid, "row names no list, and is not an admitted registration-list attendee row"))

@@ -27,7 +27,8 @@ Not chosen:
 ## How it is applied (method, not ruling)
 
 - **"Names the US entity itself"** is read strictly. The listed name must equal the held organization's Atlas legal
-  name, legal suffix included, ignoring case and punctuation. It must also carry more than the bare name key.
+  name, ignoring case and punctuation, and must include a legal-form word ("Inc", "Corporation", "LLC" and so on). An
+  abbreviated suffix ("Corp." for "Corporation") or a geographic marker ("Hempel USA") under a hold stays held.
   - So "BASF Corporation" pins BASF Corporation.
   - "BASF SE" or "BASF" would not.
   - "Orion Engineered Carbons" at Great Lakes 2025 does not either: the Atlas legal name has no suffix, so the

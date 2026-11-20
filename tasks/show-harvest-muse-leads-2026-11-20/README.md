@@ -30,9 +30,17 @@ A Muse research pass (2026-11-19) proposed organizer lists for these shows. **Mu
   - the ECS 2025 list, which the controller found while checking edition dates;
   - the `_us` lists, which are the Atlas-matching subset of Muse's US-exhibitor lists.
 
-The build re-reads the banked source for every name. A name must be in the source's text: the PDF text layer, or a
-page's visible text and real alt/title attributes. Each list's entry count is asserted. For the ECS list this is the
-list's own 1,213 entries; the organizer's review page says 1,215 exhibitors.
+The build re-reads the banked source for every name. A name must be in its own source's text: the PDF text layer, or
+a page's visible text and real alt/title attributes. Each `_us` entry is read on its own exhibitor page, and the build
+also asserts other facts on the source:
+- **`_us` lists:** the exhibitor page prints the country the row relies on. At ADM Montréal it also prints the pavilion
+  "ADM Plastiques 2026", and the banked organizer release says EXPOPLAST was folded into ADM Montréal.
+- **AMPP sponsor rows:** each comes from a PDF line that prints the "S" flag before the name and booth.
+- **Registration-list rows:** each name is a whole entry on #414's banked page.
+
+The entry count of each full list is asserted. It is the controller's own count of the source, equal to Muse's
+transcription. For the ECS list this is the list's own 1,213 entries; the organizer's review page says 1,215
+exhibitors. A `_us` list's asserted count is the size of its Atlas-matching subset.
 
 | List (staging key) | Source | Entries | Atlas matches | Rows |
 |-|-|-|-|-|
@@ -76,30 +84,46 @@ The build imports #411's build and applies its gates:
 - **Existing rows:** no (event, org, year, role) the table already holds.
 
 **Holds (owner ruling 2026-11-20).** The rule (i)/(ii) holds of #404, #411, #414 and this pass bind at their event.
-A rule (i) hold binds a bare group name only. A listing that prints the organization's full legal name, suffix
-included, names the US entity and mints, and its row carries the ruling's note. Four rows do:
+A rule (i) hold binds a bare group name only. A listing that prints the organization's full legal name, with a
+legal-form word ("Inc", "Corporation", "LLC" and so on), names the US entity and mints, and its row carries the
+ruling's note.
+- The reading is strict: an abbreviated suffix ("Corp." for "Corporation") or a geographic marker ("Hempel USA") under
+  a hold stays held.
+- No such case arises in this pass.
+
+Four rows carry the ruling's note:
 - "Alberdingk Boley, Inc" at RadTech 2025, where #411 holds the bare "Alberdingk Boley";
 - the three registration-list names at Coatings Trends 2026.
 
-`held_listings.csv` lists the 10 bare names held here: Armacell at AMPP 2025 and 2026; Evonik (twice), Covestro, Omya,
-Sun Chemical and BASF on the Coatings Trends agenda; Evonik on its sponsor list; Arkema at RadTech 2025.
+`held_listings.csv` lists the 10 bare names held on this pass's lists:
+- Armacell at AMPP 2025 and 2026;
+- Evonik (twice), Covestro, Omya, Sun Chemical and BASF on the Coatings Trends agenda;
+- Evonik on the Coatings Trends sponsor list;
+- Arkema at RadTech 2025.
+
+On #414's registration list, the bare "Sun Chemical" and "Arkema" stay held.
 
 **One new hold (`HOLDS`).** The dated Coatings Trends sponsor list prints a bare "Evonik", and the Atlas record is
 Evonik Corporation. This is rule (i), as at SAMPE (#404) and the Waterborne Symposium (#411).
 
-**The bare-name screen (`screen_bare_names.csv`).** The build lists every kept row whose listed name carries no legal
-suffix while its organization has a parent on record. The controller read each one:
+**The bare-name screen (`screen_bare_names.csv`).** The build lists every kept row whose listed name carries no
+legal-form word, whether or not Atlas records a parent: 20 rows, 16 names. The controller read each one. None is a bare
+foreign-group name, so none is held:
+- **A US group or company listed by its own name:** Sherwin-Williams, PPG Industries, Hexcel, APV Engineered Coatings,
+  Applied Material Solutions, Elinor Coatings, Penn Color, R.E. Carroll, National Polymer, SOLUTION TOOLS MOLD & DIE.
+- **A company listed by its own name, not a parent's:**
+  - FlexSteel Pipeline Technologies;
+  - Absolute Robot and Absolute Haitian, two Worcester MA companies, each listed by its own name.
+- **A name that names the US entity:** Teijin Carbon America ("America"), Hempel USA, BYK USA ("USA").
 
-| Listed name | Organization | Kept because |
-|-|-|-|
-| Sherwin-Williams (AMPP 2025, exhibitor and sponsor) | The Sherwin-Williams Company | a US group listed by its own name |
-| Teijin Carbon America (Carbon Fiber) | Teijin Carbon America, Inc. | the name is the US company's own ("America") |
-| PPG Industries (Coatings Trends) | PPG Industries, Inc. | a US group listed by its own name |
-| BYK USA (RadTech) | BYK USA LLC | the name names the US entity ("USA") |
-| Absolute Robot (EXPOPLAST) | Absolute Robot Incorporated | the company's own name, not a parent's |
+**`evidence_date` and the edition name.**
+- **`evidence_date`** is the list's own as-of date where printed, else the read date, as SCHEMA §4.12.2 sets it. The
+  ECS "As of March 2025" is not a full date, so ECS keeps the read date.
+- **`edition_name`:** the EXPOPLAST rows carry "ADM Plastiques 2026", the name the edition ran under.
 
-**Pre-show lists.** A list that predates its edition says so in each row (29 rows). The build compares the list's own
-as-of date with the edition's start:
+**Pre-show lists.** A list that predates its edition says so in each row (29 rows). SCHEMA §4.12.2 admits such rosters
+with that note, and #411 minted 2027 rows the same way. The build compares the list's own as-of date with the edition's
+start:
 - the AMPP 2025 list is "as of March 20, 2025", and the show opened April 6;
 - the AMPP 2026 list is "as of September 15, 2025", and the show opened March 15, 2026;
 - the Coatings Trends sponsor post is dated 2026-08-17, and the show opened September 15;
@@ -137,9 +161,32 @@ organization's HQ country.
   - the wave 2–3 holds;
   - the rule (i)/(ii) holds and the ruling's note;
   - the abroad rule;
+  - the pre-show note;
+  - `evidence_date` and `edition_name`;
   - tier A.
-- `python3 tasks/show-harvest-muse-leads-2026-11-20/negative_controls.py`: 15 of 15 planted defects fail `check.py`
+- `python3 tasks/show-harvest-muse-leads-2026-11-20/negative_controls.py`: 19 of 19 planted defects fail `check.py`
   with the expected message. No control writes a person's name.
 - The `check.py` of #411 and #414 still pass with these rows in the table.
 - **Limit:** `check.py` cannot prove a name is in its source. `build.py`, which reads the banked sources, is the
-  guarantee.
+  guarantee for the facts it asserts there (above). Each list's extraction from its source is the controller's,
+  checked against Muse's transcription.
+
+## Review (PR #425)
+
+The first round, on `c8125d0f`, had 54 rows. Codex (deep) returned SHIP-WITH-FIXES and agy (Gemini 4 Hydrogen, XHigh)
+returned REFUTE. Neither found a wrong attribution: both checked the four ruling rows and found no kept US-arm error.
+Applied:
+- **`evidence_date` (codex):** 26 rows carried the read date where the list prints its own as-of date. They now carry
+  the as-of date, and `check.py` checks it.
+- **EXPOPLAST `edition_name` (codex):** set to "ADM Plastiques 2026".
+- **"Names the US entity itself" (codex):** the test compared two normalizers, so "Solution Tools Mold & Die" passed it
+  with no suffix at all. It now requires a legal-form word. No hold applied to that row, so no row changed.
+- **Bare-name screen (agy):** it skipped names whose organization has no parent on record. It now reads all 20
+  suffixless rows; none is held.
+- **Source bindings (agy, codex):** each `_us` entry's name, country and pavilion are checked on its own page. The ADM
+  Montréal release is asserted, AMPP sponsor flags are checked on the PDF lines, and registration-list names are
+  re-read on #414's banked page. The rows are unchanged by these checks.
+- **#414 block (agy):** it now uses every hold at EVT-000077 and the wave 2–3 holds.
+- **Pre-show (agy):** `check.py` now checks the pre-show note against each list's as-of date. agy also questioned the
+  Meximold 2027 rows. They stand, as pre-show rows under SCHEMA §4.12.2, as #411 minted its 2027 rows.
+- **README:** the count assertions and the source guarantee are now stated as they are.

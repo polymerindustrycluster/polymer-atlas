@@ -80,13 +80,21 @@ HOLDS = {  # this pass's rule (i)/(ii) holds, keyed (event, name_key) as #411's,
 }
 
 
+LEGAL_WORDS = {"inc", "incorporated", "llc", "lp", "ltd", "limited", "corp", "corporation", "co", "company", "gmbh",
+               "ag", "sa", "plc", "bv"}
+
+
 def canon(s):
     return re.sub(r"[^a-z0-9]+", " ", html.unescape(s).lower()).strip()
 
 
 def names_us_entity(listed, legal):
-    """The listing prints the organization's full legal name, suffix included, not just the bare group name."""
-    return canon(listed) == canon(legal) and canon(listed) != A.name_key(listed)
+    """The listing prints the organization's full legal name, a legal-form word included ("BASF Corporation"), not
+    just the bare group name. An abbreviated suffix ("Corp." for "Corporation") does not count: the reading is strict."""
+    return canon(listed) == canon(legal) and bool(set(canon(listed).split()) & LEGAL_WORDS)
+
+
+EDITION_NAME = {"expoplast_2026_exhibitor_us": "ADM Plastiques 2026"}  # SCHEMA 4.12.2: the name the edition ran under
 
 
 def rule_i_holds():
@@ -98,18 +106,28 @@ def rule_i_holds():
     return out
 
 
-def source_text(st, L):
-    """The banked source's text, normalized like #411's page check."""
-    files = [L["source_file"]] if L.get("source_file") else sorted({e["detail_file"] for e in L["entries"]})
-    parts = []
-    for f in files:
-        p = st / "raw" / f
-        if p.suffix == ".pdf":
-            parts.append(subprocess.run(["pdftotext", "-enc", "UTF-8", "-raw", str(p), "-"], capture_output=True,
-                                        text=True, encoding="utf-8", check=True).stdout)
-        else:
-            parts.append(N.text(p.read_text(encoding="utf-8", errors="replace"), True))
-    return N.norm(" ".join(parts))
+def raw_text(st, f):
+    """A banked file's text: the PDF text layer (-raw keeps each list line whole), or a page's visible text plus real
+    alt/title attributes, normalized like #411's page check."""
+    p = st / "raw" / f
+    if p.suffix == ".pdf":
+        return subprocess.run(["pdftotext", "-enc", "UTF-8", "-raw", str(p), "-"], capture_output=True, text=True,
+                              encoding="utf-8", check=True).stdout
+    return N.text(p.read_text(encoding="utf-8", errors="replace"), True)
+
+
+def flagged(pdf_text, name, booth):
+    """The AMPP lists print a sponsor's flags before its name on the name's own line: "C S Sherwin-Williams.....1545".
+    A long name may wrap onto the next line ("C S Advance Products and" / "Systems.....1726"), and a name's own final
+    period runs into the dot leader ("S EIU Inc. .....619", extracted as "EIU Inc")."""
+    words = r"\s+".join(re.escape(w) for w in name.split())
+    pat = re.compile(r"^(?:C )?S " + words + r"\.?\s*\.{2,}\s*" + re.escape(booth) + r"\b", re.M)
+    return bool(pat.search(pdf_text))
+
+
+# The ADM Montréal release of 15 September 2026 (owner ruling 2026-11-19d item 3), in #411's normalized page text.
+RELEASE = ("admmontreal-2026-release-globenewswire.html",
+           "co-locate of legacy brands atx, d&m, expoplast, pbs, and packex, is now streamlined as solely adm montréal")
 
 
 def main():
@@ -132,7 +150,8 @@ def main():
 
     rows, tholds, screen, skip, hit, held_rows, per = [], [], [], Counter(), set(), [], Counter()
 
-    def mint(ev, yr, role, org, listed, url, retrieved, detail, notes):
+    def mint(ev, yr, role, org, listed, url, retrieved, detail, notes, as_of=None, edition_name=""):
+        """evidence_date is the list's own as-of date where printed, else the retrieval date (SCHEMA 4.12.2)."""
         nonlocal nxt
         ed = N.edition(a.conferences, events[ev]["pic_events_slug"].split(";")[0].strip(), yr)
         abroad = events[ev]["home_region"] == "international" or (ed.get("country") or "US") != "US"
@@ -140,11 +159,11 @@ def main():
             ed = {k: v for k, v in ed.items() if k in ("start", "end", "city")}
         rows.append({
             "participation_id": f"EVP-{nxt:06d}", "event_id": ev, "org_id": org, "edition_year": yr,
-            "edition_name": "", "role": role, "role_detail": detail,
+            "edition_name": edition_name, "role": role, "role_detail": detail,
             "edition_dates": f"{ed['start']} to {ed['end']}" if ed.get("start") and ed.get("end") else "",
             "edition_city": ed.get("city", ""), "edition_state": N.state(ed),
             "evidence_source_name": f"{events[ev]['name']} {yr} {role} list (organizer-published)",
-            "evidence_source_url": url, "evidence_date": retrieved,
+            "evidence_source_url": url, "evidence_date": as_of or retrieved,
             "sources": f"{url} (read {retrieved}; listed as \"{listed}\")",
             "verification_tier": "A", "last_verified": retrieved, "created_by": BY, "notes": notes})
         nxt += 1
@@ -152,16 +171,27 @@ def main():
 
     for lf, (ev, yr, role, as_of, expect, note) in LISTS.items():
         L = json.loads((st / "lists" / f"{lf}.json").read_text(encoding="utf-8"))
-        # a *_us list holds only the US-printed exhibitors that match Atlas names (each checked on its detail page);
-        # its entries_on_page is the whole directory's count
+        # A full list's entry count is the controller's own count of its source, equal to Muse's transcription. A *_us
+        # list is only the US-printed exhibitors that match Atlas names (Muse leads); its count is that subset's size,
+        # and its entries_on_page is the whole directory's, as read. Each _us entry is checked on its own page below.
         assert len(L["entries"]) == expect and (lf.endswith("_us") or L["entries_on_page"] == expect), f"{lf}: yield"
-        page = source_text(st, L)
+        texts = {}
+        if lf.startswith("expoplast"):
+            assert RELEASE[1] in N.norm(raw_text(st, RELEASE[0])), "the release no longer folds EXPOPLAST in"
         ed = N.edition(a.conferences, events[ev]["pic_events_slug"].split(";")[0].strip(), yr)
         abroad = events[ev]["home_region"] == "international" or (ed.get("country") or "US") != "US"
         for c in L["entries"]:
             listed = c["name"].strip()
+            f = c.get("detail_file") or L["source_file"]  # a _us entry is read on its own exhibitor page
+            raw = texts.setdefault(f, raw_text(st, f))
+            page = N.norm(raw)
             if N.norm(listed) not in page:
                 skip[f"{lf}: name not in the banked source"] += 1; continue
+            if c.get("detail_file"):  # the exhibitor's own page prints the country (and, at ADM Montréal, the pavilion)
+                assert N.norm(c["country"]) in page, f"{lf}: {listed}: country not on its page"
+                assert not lf.startswith("expoplast") or "adm plastiques 2026" in page, f"{listed}: pavilion not on page"
+            if lf.startswith("ampp") and role == "sponsor":
+                assert flagged(raw, listed, c["booth"]), f"{lf}: no 'S' flag line for {listed}"
             nk = A.name_key(listed)
             if (ev, nk) in held:
                 skip["held by the wave 2-3 review"] += 1; continue
@@ -200,27 +230,30 @@ def main():
                      + (f" Edition abroad: the list gives the company's country ({c['country']}), which matches the "
                         f"organization's HQ country." if abroad else ""))
             detail = (c.get("booth") if role == "exhibitor" else c.get("sponsor_level") or "") or ""
-            mint(ev, yr, role, org, listed, url, retrieved, detail.strip(), notes)
+            mint(ev, yr, role, org, listed, url, retrieved, detail.strip(), notes, as_of, EDITION_NAME.get(lf, ""))
             o = orgs[org]
-            if listed.strip() and canon(listed) == A.name_key(listed) and (o.get("ultimate_parent_name") or o.get(
-                    "parent_org_id")):
+            if not set(canon(listed).split()) & LEGAL_WORDS:  # no legal-form word printed: read by the controller (README)
                 screen.append({"participation_id": rows[-1]["participation_id"], "event_id": ev, "role": role,
                                "listed_name": listed, "org_id": org, "legal_name": o["legal_name"],
                                "hq_country": o["hq_country"], "ultimate_parent_name": o.get("ultimate_parent_name", "")})
 
-    # Owner ruling 2026-11-20 applied to #414's list: names #414 held under a #411 bare-name hold that print the US
-    # entity itself.
+    # Owner ruling 2026-11-20 applied to #414's list: names #414 held under a rule (i) hold (#411's or #414's, at
+    # EVT-000077) that print the US entity itself. #414's other gates already passed every other name on this list.
     d = json.loads((Path(a.harvest).resolve() / "out" / "coatings-trends-and-technologies-summit_2027.json").read_text(
         encoding="utf-8"))
     (L,) = [x for x in d["lists"] if x["source_url"] == D.URL]
+    reg_raw = (Path(a.harvest).resolve() / L["raw_file"]).read_text(encoding="utf-8", errors="replace")
+    assert D.HEADING in reg_raw, "the banked registration page no longer carries its 'final list' heading"
+    reg_entries = set(D.page_entries(reg_raw))  # #414's parse of the page: one entry per printed line
     for c in L["companies"]:
         listed = c["name"].strip()
         nk = A.name_key(listed)
-        if (D.EVENT, nk) not in N.CONTROLLER_HOLDS:
+        if (D.EVENT, nk) not in holds or (D.EVENT, nk) in held:
             continue
+        assert " ".join(listed.split()) in reg_entries, f"{listed}: not a whole entry on the banked registration page"
         hits = by_key.get(nk, {})
-        org = next(iter(hits)) if len(hits) == 1 else None
-        if not (org and holds[(D.EVENT, nk)] and names_us_entity(listed, orgs[org]["legal_name"])):
+        org, kind = next(iter(hits.items())) if len(hits) == 1 else (None, None)
+        if not (org and kind == "legal" and holds[(D.EVENT, nk)] and names_us_entity(listed, orgs[org]["legal_name"])):
             skip["registration list: still held (bare name)"] += 1; continue
         if (D.EVENT, org, D.YEAR, "attendee") in have:
             skip["already a row"] += 1; continue
