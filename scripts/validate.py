@@ -27,6 +27,10 @@ Checks (v1 gate + schema v1.1/v1.2 additions, per AGENTS.md / docs/SCHEMA.md):
   MUST_HAVE extended; data/evidence_people.csv joins the evidence union
 - [v1.10] people_identifiers.csv (§4.21): person FK, identifier-type enum,
   ORCID shape, one row per identifier value (V-54)
+- [v1.17] no naked tier-A/B (§4.13 floor rule, V-65; the adoption census is
+  grandfathered in the debt baseline, shrink-only), archive at capture
+  (§4.22, V-66), and no staging pointer in a published citation field
+  (§4.12.2, V-67; legacy pointers grandfathered the same way)
 """
 import csv, json, os, re, sys
 from datetime import datetime
@@ -598,6 +602,74 @@ LICENSED_SOURCE = re.compile(r"plasticsnews\.com|rubbernews\.com|dnb\.com|zoomin
 for r in evidence:
     if LICENSED_SOURCE.search(r.get("source_ref") or ""):
         debt("V-60", r["evidence_id"], f"{r['evidence_id']} cites a licensed publication ({r['source_ref'][:60]}); AGENTS.md §5 allows it as a lead only")
+
+# V-65 [v1.17, owner ruling 2026-11-20] No naked tier-A/B (SCHEMA §4.13 floor rule): a live
+# tier-A record must carry at least one supporting (non-contradicts) evidence row at
+# supports_A, a tier-B record at supports_B or stronger, on any claim. V-25 restates the
+# must-have claims of records that have rows; V-65 is the floor beneath it — a record whose
+# rows all sit below its own strength, or which has no rows at all, is naked. Tombstones are
+# out of scope (organizations/ecosystem status=merged, programs status=tombstoned; sites and
+# people carry no tombstone status and are wholly in scope). The 2,747 records naked at
+# adoption (organizations 1,214; sites 1,324; ecosystem 78; programs 9; people 122) are
+# grandfathered in scripts/validate_debt_baseline.json — shrink-only, per the file's doctrine.
+_EFF_RANK_V65 = {"supports_U": 0, "supports_C": 1, "supports_B": 2, "supports_A": 3}
+_best_support = {}
+for r in evidence:
+    _v = _EFF_RANK_V65.get(r["tier_effect"], -1)
+    if r["tier_effect"] != "contradicts" and _v >= 0:
+        _k = (r["record_table"], r["record_id"])
+        if _v > _best_support.get(_k, -1):
+            _best_support[_k] = _v
+def _naked_check(table, rows, idc, stc, excl):
+    for r in rows:
+        tier = (r.get("verification_tier") or "").strip()
+        if tier not in ("A", "B") or (r.get(stc) or "").strip() in excl:
+            continue
+        rid = (r[idc] or "").strip()
+        if _best_support.get((table, rid), -1) < (3 if tier == "A" else 2):
+            debt("V-65", rid, f"{table} {rid} is tier {tier} with no supporting evidence row at its own strength (SCHEMA §4.13 floor rule, v1.17)")
+_naked_check("organizations", orgs, "org_id", "status", {"merged"})
+_naked_check("sites", sites, "site_id", "operating_status", set())
+_naked_check("ecosystem", eco, "org_id", "status", {"merged"})
+_naked_check("programs", programs, "program_id", "status", {"tombstoned"})
+_naked_check("people", people, "person_id", "status", set())
+
+# V-66 [v1.17, owner ruling 2026-11-20] Archive at capture (SCHEMA §4.22): an evidence row
+# allocated above EVD-400501 (the tree-wide maximum when v1.17 was adopted) whose source_ref
+# is an http(s) URL must carry its archive_links row in the same state of the tree — the
+# capture is minted with the row, not chased later. Named-source citations (a registry
+# record, a filing) have no page to capture and are exempt. No baseline: no row above the
+# threshold exists at adoption, so any violation is new and errors.
+_ARCHIVED_IDS = {r["evidence_id"] for r in archive_links}
+for r in evidence:
+    eid = r["evidence_id"]
+    if re.fullmatch(r"EVD-\d{6}", eid or "") and int(eid[4:]) > 400501 \
+            and re.match(r"https?://", (r["source_ref"] or "").strip()) and eid not in _ARCHIVED_IDS:
+        debt("V-66", eid, f"{eid} cites a URL with no archive_links row — archive at capture (SCHEMA §4.22, v1.17)")
+
+# V-67 [v1.17, owner ruling 2026-11-20] No staging pointer in a published citation field
+# (SCHEMA §4.12.2): the citation a stranger follows is the source's own URL or its §4.22-form
+# archive ref, never a path into the staging area. Checked on the dedicated citation columns
+# (event_participation.evidence_source_url; source_ref on evidence, code_assignments,
+# relationships, site_capabilities, equipment, people_engagement). The pointer shape is a
+# value-initial or delimiter-led `staging` path segment, so third-party URLs that merely
+# contain the word (a DepStaging API path, a staging subdomain) do not trip it. 185 legacy
+# rows are grandfathered in the baseline — shrink-only; the participation repairs are a
+# separate data pass. (An evidence source_ref keeps its §4.13 grep-rule exception for the
+# one named-raw-extract case, whose admitted form is a raw/ path, not a staging pointer.)
+STAGING_PTR = re.compile(r"(?:^|[\s;,(])staging[/\s]")
+for r in participation:
+    if STAGING_PTR.search(r.get("evidence_source_url") or ""):
+        debt("V-67", r["participation_id"], f"event_participation {r['participation_id']} evidence_source_url is a staging pointer — cite the organizer URL or its archive ref (SCHEMA §4.12.2, v1.17)")
+for _rows, _idc, _tbl in ((code_assignments, "assignment_id", "code_assignments"),
+                          (relationships, "relationship_id", "relationships"),
+                          (capabilities, "capability_id", "site_capabilities"),
+                          (equipment, "equipment_id", "equipment"),
+                          (engagement, "engagement_id", "people_engagement"),
+                          (evidence, "evidence_id", "evidence")):
+    for r in _rows:
+        if STAGING_PTR.search(r.get("source_ref") or ""):
+            debt("V-67", r[_idc], f"{_tbl} {r[_idc]} source_ref is a staging pointer — cite the source itself, not the staging path (SCHEMA §4.12.2, v1.17)")
 
 DEBT_DETAILS = "--debt-details" in sys.argv
 for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):
