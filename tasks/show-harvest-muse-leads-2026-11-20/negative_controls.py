@@ -48,16 +48,20 @@ plant("an attendee row from a Muse-lead list (not strict: its role is not the li
 plant("a registration-list attendee row without the ruling's note", "not an admitted registration-list attendee",
       base=REG, strict=False, org_id=ORG["Hexcel Corporation"], listed="Hexcel Corporation",
       notes=REG["notes"].replace(" (owner ruling 2026-11-20)", ""))
-# not strict: the planted org (under no hold) also makes the ruling's note disagree with its hold
+# Registration-list controls: each changes ONE field of an otherwise admissible registration row. The citation keeps
+# the list's real read date (REG's), since plant()'s `listed=` would write another date and trip the date check.
+# Not strict: the planted org (under no hold) also makes the ruling's note disagree with its hold.
+REG_CITE = dict(base=REG, strict=False, org_id=ORG["Hexcel Corporation"],
+                sources=REG["sources"].rsplit("listed as", 1)[0] + 'listed as "Hexcel Corporation")')
 plant("a registration-list row whose evidence_date is not its read date", "not an admitted registration-list attendee",
-      base=REG, strict=False, org_id=ORG["Hexcel Corporation"], listed="Hexcel Corporation", evidence_date="2026-09-09")
-plant("a registration-list row with a consistent but wrong date in evidence_date and sources (not strict, as above)",
-      "not an admitted registration-list attendee", base=REG, strict=False, org_id=ORG["Hexcel Corporation"],
-      evidence_date="2026-09-09",
-      sources=f'{REG["evidence_source_url"]} (read 2026-09-09; listed as "Hexcel Corporation")')
-plant("a registration-list row with an edition_name (not strict, as above)", "not an admitted registration-list attendee",
-      base=REG, strict=False, org_id=ORG["Hexcel Corporation"], listed="Hexcel Corporation",
+      **REG_CITE, evidence_date="2026-09-09")
+plant("a registration-list row with a consistent but wrong date in evidence_date and sources",
+      "not an admitted registration-list attendee", **dict(REG_CITE, evidence_date="2026-09-09",
+                                                             sources=REG_CITE["sources"].replace(REG["evidence_date"], "2026-09-09")))
+plant("a registration-list row with an edition_name", "not an admitted registration-list attendee", **REG_CITE,
       edition_name="Coatings Trends 2026")
+plant("a registration-list row whose citation gives another read date", "not an admitted registration-list attendee",
+      **dict(REG_CITE, sources=REG_CITE["sources"].replace(REG["evidence_date"], "2026-09-09")))
 plant("sources citing another URL", "sources does not cite evidence_source_url", org_id=FREE["org_id"],
       sources='https://ace.ampp.org/ (read 2026-11-19; listed as "Hexcel Corporation")')
 plant("a trade-name hit (Nouryon)", "listed name is not the org's legal name",
