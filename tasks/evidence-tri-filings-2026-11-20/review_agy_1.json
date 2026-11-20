@@ -1,0 +1,244 @@
+{
+ "verdicts": [
+  {
+   "record_id": "ORG-000002",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'LUBRIZOL CORP' directly identifies The Lubrizol Corporation operating under parent Berkshire Hathaway."
+  },
+  {
+   "record_id": "ORG-000003",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches the legal name of The Goodyear Tire & Rubber Company."
+  },
+  {
+   "record_id": "ORG-000035",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches the legal name Saint-Gobain Performance Plastics."
+  },
+  {
+   "record_id": "ORG-000038",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "The Auburn, ME facility is Panolam's Pionite plant, a coincidental same-name firm in another state with no tie to the Akron, OH record."
+  },
+  {
+   "record_id": "ORG-000154",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'THE LINCOLN ELECTRIC CO' matches legal name without standard corporate suffix at the Euclid, OH headquarters."
+  },
+  {
+   "record_id": "ORG-000155",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'EATON CORP' directly matches Eaton Corporation."
+  },
+  {
+   "record_id": "ORG-000271",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches legal name Chem Technologies, Ltd. at the same Middlefield, OH address."
+  },
+  {
+   "record_id": "ORG-000302",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Parent-company name 'DERMAMED COATINGS CO LLC' directly witnesses the existence of the Atlas parent organization."
+  },
+  {
+   "record_id": "ORG-000319",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches legal name E.L. Stone Co., Inc. at the Norton, OH address."
+  },
+  {
+   "record_id": "ORG-000419",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The standardized parent company 'LG CHEM AMERICA INC' witnesses the existence of this exact Atlas organization."
+  },
+  {
+   "record_id": "ORG-000438",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches legal name Mexichem Specialty Resins Inc. at the Avon Lake, OH location."
+  },
+  {
+   "record_id": "ORG-000521",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'PREMIER OEM' directly matches the legal name at the Cuyahoga Falls, OH location."
+  },
+  {
+   "record_id": "ORG-000635",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'WOOSTER BRUSH CO' matches The Wooster Brush Company at the Wooster, OH address."
+  },
+  {
+   "record_id": "ORG-000637",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'XALOY LLC' directly matches the legal name in the Youngstown/Austintown area."
+  },
+  {
+   "record_id": "ORG-000638",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name exactly matches legal name Yokohama Industries Americas Ohio Inc. in Painesville, OH."
+  },
+  {
+   "record_id": "ORG-000655",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Stripping the plant qualifier '- VAN WERT' leaves 'DANFOSS POWER SOLUTIONS', matching the legal name and tied to trade name Aeroquip."
+  },
+  {
+   "record_id": "ORG-000720",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'CAPITAL RESIN CORP' directly matches Capital Resin Corporation in Columbus, OH."
+  },
+  {
+   "record_id": "ORG-000752",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches legal name Polynt Composites USA, Inc. in Sandusky, OH."
+  },
+  {
+   "record_id": "ORG-000756",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches legal name Core Molding Technologies, Inc. without corporate suffix in Columbus, OH."
+  },
+  {
+   "record_id": "ORG-000757",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The standardized parent company 'CORNERSTONE BUILDING BRANDS' directly witnesses the Atlas parent company."
+  },
+  {
+   "record_id": "ORG-000785",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches legal name DDP Specialty Electronic Materials US 5, LLC in West Alexandria, OH."
+  },
+  {
+   "record_id": "ORG-000788",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'DELTECH POLYMERS CORP' matches the Atlas recorded trade name at the same Troy, OH address."
+  },
+  {
+   "record_id": "ORG-000805",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'DUPONT CIRCLEVILLE PLANT' directly identifies this specific Circleville plant organization record."
+  },
+  {
+   "record_id": "ORG-000806",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches legal name DuPont Electronic Polymers in Dayton, OH."
+  },
+  {
+   "record_id": "ORG-000846",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'FORMICA CORP' directly matches Formica Corporation at the Cincinnati/Evendale facility."
+  },
+  {
+   "record_id": "ORG-000877",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches legal name ALTIVIA Petrochemicals, LLC in Haverhill, OH."
+  },
+  {
+   "record_id": "ORG-000903",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'IPL DAYTON' matches the Atlas trade name and identifies the Urbana, OH plant of IPL Inc."
+  },
+  {
+   "record_id": "ORG-000907",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'ITW EVERCOAT' directly matches the organization name in the Cincinnati/Blue Ash area."
+  },
+  {
+   "record_id": "ORG-001043",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'EPSILYTE LLC' directly matches the legal name of the entity operating this EPS manufacturing plant."
+  },
+  {
+   "record_id": "ORG-001077",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'REVERE PLASTICS SYSTEMS LLC' matches the organization name in Clyde, OH."
+  },
+  {
+   "record_id": "ORG-001080",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'RIDGE CORP' directly matches Ridge Corporation at its Frazeysburg, OH operating plant."
+  },
+  {
+   "record_id": "ORG-001090",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Parent-company name 'ROWMARK LLC' witnesses the existence of this exact Atlas organization."
+  },
+  {
+   "record_id": "ORG-001175",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'UNITED SECURITY SEALS INC.' matches the legal name in Columbus, OH without suffix distinction."
+  },
+  {
+   "record_id": "ORG-001346",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'ROTEX GLOBAL LLC' directly matches Rotex Global in Cincinnati, OH."
+  },
+  {
+   "record_id": "ORG-001387",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'ETCHED METAL CO' matches Etched Metal at the Solon, OH address."
+  },
+  {
+   "record_id": "ORG-001415",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "'LLC' vs 'Inc.' variation alone does not refute identity for Fresh Products at the Perrysburg, OH address."
+  },
+  {
+   "record_id": "ORG-001420",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'SCOTTDEL CUSHION INC' matches Atlas trade name 'Scottdel Cushion' at the Swanton, OH address."
+  },
+  {
+   "record_id": "ORG-001441",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name 'TEMPCRAFT CORP' directly matches Tempcraft Corporation in Cleveland, OH."
+  },
+  {
+   "record_id": "ORG-001444",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches legal name Archem America, Inc. in Upper Sandusky, OH."
+  },
+  {
+   "record_id": "ORG-001445",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Facility name directly matches legal name Arclin USA LLC in Toledo, OH."
+  }
+ ]
+}

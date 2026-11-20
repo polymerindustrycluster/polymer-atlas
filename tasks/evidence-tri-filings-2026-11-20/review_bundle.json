@@ -1,0 +1,1784 @@
+[
+ {
+  "record_id": "ORG-000002",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "The Lubrizol Corporation",
+   "trade_names": "Lubrizol",
+   "hq_city": "Wickliffe",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "08067THBFGUSROU",
+   "facility_name": "LUBRIZOL CORP",
+   "parent_co_name": "BERKSHIRE HATHAWAY INC",
+   "standardized_parent_company": "BERKSHIRE HATHAWAY INC",
+   "street_address": "76 PORCUPINE RD",
+   "city_name": "PEDRICKTOWN",
+   "state_abbr": "NJ",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 08067THBFGUSROU names facility 'LUBRIZOL CORP' with parent company 'BERKSHIRE HATHAWAY INC' at 76 PORCUPINE RD, PEDRICKTOWN, NJ; matches the record's legal/trade name 'The Lubrizol Corporation' on the facility name"
+ },
+ {
+  "record_id": "ORG-000003",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "The Goodyear Tire & Rubber Company",
+   "trade_names": "Goodyear; Goodyear Tires",
+   "hq_city": "Akron",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "24541THGDY1435G",
+   "facility_name": "THE GOODYEAR TIRE & RUBBER CO.",
+   "parent_co_name": "THE GOODYEAR TIRE & RUBBER CO",
+   "standardized_parent_company": "THE GOODYEAR TIRE & RUBBER CO",
+   "street_address": "1901 GOODYEAR BLVD",
+   "city_name": "DANVILLE",
+   "state_abbr": "VA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 24541THGDY1435G names facility 'THE GOODYEAR TIRE & RUBBER CO.' with parent company 'THE GOODYEAR TIRE & RUBBER CO' at 1901 GOODYEAR BLVD, DANVILLE, VA; matches the record's legal/trade name 'The Goodyear Tire & Rubber Company' on the facility name"
+ },
+ {
+  "record_id": "ORG-000035",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Saint-Gobain Performance Plastics",
+   "trade_names": "",
+   "hq_city": "Malvern",
+   "hq_state": "PA",
+   "tier": "U"
+  },
+  "tri": {
+   "tri_facility_id": "01605CSTMC717PL",
+   "facility_name": "SAINT GOBAIN PERFORMANCE PLASTICS",
+   "parent_co_name": "SAINT-GOBAIN CORP",
+   "standardized_parent_company": "SAINT-GOBAIN CORP",
+   "street_address": "717 PLANTATION ST",
+   "city_name": "WORCESTER",
+   "state_abbr": "MA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 01605CSTMC717PL names facility 'SAINT GOBAIN PERFORMANCE PLASTICS' with parent company 'SAINT-GOBAIN CORP' at 717 PLANTATION ST, WORCESTER, MA; matches the record's legal/trade name 'Saint-Gobain Performance Plastics' on the facility name"
+ },
+ {
+  "record_id": "ORG-000038",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Pioneer Plastics Corp.",
+   "trade_names": "",
+   "hq_city": "Akron",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "04210STRLNPIONI",
+   "facility_name": "PIONEER PLASTICS CORP",
+   "parent_co_name": "PANOLAM INDUSTRIES INTERNATIONAL INC",
+   "standardized_parent_company": "PANOLAM INDUSTRIES INTERNATIONAL INC",
+   "street_address": "1 PIONITE RD",
+   "city_name": "AUBURN",
+   "state_abbr": "ME",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 04210STRLNPIONI names facility 'PIONEER PLASTICS CORP' with parent company 'PANOLAM INDUSTRIES INTERNATIONAL INC' at 1 PIONITE RD, AUBURN, ME; matches the record's legal/trade name 'Pioneer Plastics Corp.' on the facility name"
+ },
+ {
+  "record_id": "ORG-000154",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Lincoln Electric",
+   "trade_names": "",
+   "hq_city": "Euclid",
+   "hq_state": "OH",
+   "tier": "C"
+  },
+  "tri": {
+   "tri_facility_id": "44117LNCLN22801",
+   "facility_name": "THE LINCOLN ELECTRIC CO",
+   "parent_co_name": "THE LINCOLN ELECTRIC CO",
+   "standardized_parent_company": "THE LINCOLN ELECTRIC CO",
+   "street_address": "22801 ST CLAIR AVE",
+   "city_name": "EUCLID",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44117LNCLN22801 names facility 'THE LINCOLN ELECTRIC CO' with parent company 'THE LINCOLN ELECTRIC CO' at 22801 ST CLAIR AVE, EUCLID, OH; matches the record's legal/trade name 'Lincoln Electric' on the facility name"
+ },
+ {
+  "record_id": "ORG-000155",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Eaton Corporation",
+   "trade_names": "",
+   "hq_city": "Beachwood",
+   "hq_state": "OH",
+   "tier": "C"
+  },
+  "tri": {
+   "tri_facility_id": "44117RGTCH23555",
+   "facility_name": "EATON CORP",
+   "parent_co_name": "EATON CORP",
+   "standardized_parent_company": "EATON CORP",
+   "street_address": "23555 EUCLID AVE",
+   "city_name": "CLEVELAND",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44117RGTCH23555 names facility 'EATON CORP' with parent company 'EATON CORP' at 23555 EUCLID AVE, CLEVELAND, OH; matches the record's legal/trade name 'Eaton Corporation' on the facility name"
+ },
+ {
+  "record_id": "ORG-000271",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Chem Technologies, Ltd.",
+   "trade_names": "CHEM TECH PLANT 2; Chem Tech",
+   "hq_city": "Middlefield",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "44062CHMTC14875",
+   "facility_name": "CHEM TECHNOLOGIES LTD.",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "14875 BONNER DR",
+   "city_name": "MIDDLEFIELD",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44062CHMTC14875 names facility 'CHEM TECHNOLOGIES LTD.' at 14875 BONNER DR, MIDDLEFIELD, OH; matches the record's legal/trade name 'Chem Technologies, Ltd.' on the facility name"
+ },
+ {
+  "record_id": "ORG-000302",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "DermaMed Coatings Company, LLC",
+   "trade_names": "",
+   "hq_city": "Kent",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "4424WDRMMD271PR",
+   "facility_name": "DERMAMED COATING CO-PLANT 2",
+   "parent_co_name": "DERMAMED COATINGS CO LLC",
+   "standardized_parent_company": "DERMAMED COATINGS CO LLC",
+   "street_address": "271 PROGRESS BLVD",
+   "city_name": "TALLMADGE",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 4424WDRMMD271PR names facility 'DERMAMED COATING CO-PLANT 2' with parent company 'DERMAMED COATINGS CO LLC' at 271 PROGRESS BLVD, TALLMADGE, OH; matches the record's legal/trade name 'DermaMed Coatings Company, LLC' on the parent-company name"
+ },
+ {
+  "record_id": "ORG-000319",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "E.L. Stone Co., Inc.",
+   "trade_names": "",
+   "hq_city": "Norton",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "44203LSTNC2998E",
+   "facility_name": "E L STONE CO INC",
+   "parent_co_name": "NA",
+   "standardized_parent_company": null,
+   "street_address": "2998 EASTERN RD",
+   "city_name": "NORTON",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44203LSTNC2998E names facility 'E L STONE CO INC' at 2998 EASTERN RD, NORTON, OH; matches the record's legal/trade name 'E.L. Stone Co., Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-000419",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "LG Chem America Inc.",
+   "trade_names": "LG Chem Ohio Petrochemical",
+   "hq_city": "Ravenna",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "47710NSLNC1014U",
+   "facility_name": "UNISEAL INC",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "LG CHEM AMERICA INC",
+   "street_address": "1014 UHLHORN ST",
+   "city_name": "EVANSVILLE",
+   "state_abbr": "IN",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 47710NSLNC1014U names facility 'UNISEAL INC' with parent company 'LG CHEM AMERICA INC' at 1014 UHLHORN ST, EVANSVILLE, IN; matches the record's legal/trade name 'LG Chem America Inc.' on the parent-company name"
+ },
+ {
+  "record_id": "ORG-000438",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Mexichem Specialty Resins Inc.",
+   "trade_names": "",
+   "hq_city": "Avon Lake",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "4401WMXCHM33653",
+   "facility_name": "MEXICHEM SPECIALTY RESINS INC",
+   "parent_co_name": "MEXICHEM SPECIALTY RESINS INC",
+   "standardized_parent_company": "MEXICHEM SPECIALTY RESINS INC",
+   "street_address": "33653 WALKER RD",
+   "city_name": "AVON LAKE",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 4401WMXCHM33653 names facility 'MEXICHEM SPECIALTY RESINS INC' with parent company 'MEXICHEM SPECIALTY RESINS INC' at 33653 WALKER RD, AVON LAKE, OH; matches the record's legal/trade name 'Mexichem Specialty Resins Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-000521",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Premier OEM",
+   "trade_names": "Polaris Industries (Premier OEM)",
+   "hq_city": "Cuyahoga Falls",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "4422WPRMRM3479S",
+   "facility_name": "PREMIER OEM",
+   "parent_co_name": "POLARIS INDUSTRIES INC",
+   "standardized_parent_company": "POLARIS INDUSTRIES INC",
+   "street_address": "3479 STATE RD",
+   "city_name": "CUYAHOGA FALLS",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 4422WPRMRM3479S names facility 'PREMIER OEM' with parent company 'POLARIS INDUSTRIES INC' at 3479 STATE RD, CUYAHOGA FALLS, OH; matches the record's legal/trade name 'Premier OEM' on the facility name"
+ },
+ {
+  "record_id": "ORG-000635",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "The Wooster Brush Company",
+   "trade_names": "",
+   "hq_city": "Wooster",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "44691WSTRB604MA",
+   "facility_name": "WOOSTER BRUSH CO",
+   "parent_co_name": "NA",
+   "standardized_parent_company": null,
+   "street_address": "604 MADISON AVE",
+   "city_name": "WOOSTER",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44691WSTRB604MA names facility 'WOOSTER BRUSH CO' at 604 MADISON AVE, WOOSTER, OH; matches the record's legal/trade name 'The Wooster Brush Company' on the facility name"
+ },
+ {
+  "record_id": "ORG-000637",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Xaloy LLC",
+   "trade_names": "",
+   "hq_city": "Austintown",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "4451WNRDSN375VI",
+   "facility_name": "XALOY LLC",
+   "parent_co_name": "XALOY LLC",
+   "standardized_parent_company": "XALOY LLC",
+   "street_address": "375 VICTORIA RD",
+   "city_name": "YOUNGSTOWN",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 4451WNRDSN375VI names facility 'XALOY LLC' with parent company 'XALOY LLC' at 375 VICTORIA RD, YOUNGSTOWN, OH; matches the record's legal/trade name 'Xaloy LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-000638",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Yokohama Industries Americas Ohio Inc.",
+   "trade_names": "SAS Industrial Products; SAS Rubber Co.",
+   "hq_city": "Painesville",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "44077SSRBB474NE",
+   "facility_name": "YOKOHAMA INDUSTRIES AMERICAS OHIO INC",
+   "parent_co_name": "YOKOHAMA CORP OF N.A.",
+   "standardized_parent_company": "YOKOHAMA CORP OF NORTH AMERICA",
+   "street_address": "474 NEWELL ST",
+   "city_name": "PAINESVILLE",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44077SSRBB474NE names facility 'YOKOHAMA INDUSTRIES AMERICAS OHIO INC' with parent company 'YOKOHAMA CORP OF NORTH AMERICA' at 474 NEWELL ST, PAINESVILLE, OH; matches the record's legal/trade name 'Yokohama Industries Americas Ohio Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-000655",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Danfoss Power Solutions",
+   "trade_names": "AEROQUIP CORPORATION",
+   "hq_city": "Jackson",
+   "hq_state": "MI",
+   "tier": "U"
+  },
+  "tri": {
+   "tri_facility_id": "45891RQPCR1225W",
+   "facility_name": "DANFOSS  POWER SOLUTIONS - VAN WERT",
+   "parent_co_name": "DANFOSS POWER SOLUTIONS (US) CO",
+   "standardized_parent_company": "DANFOSS POWER SOLUTIONS (US) CO",
+   "street_address": "1225 W MAIN ST",
+   "city_name": "VAN WERT",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 45891RQPCR1225W names facility 'DANFOSS  POWER SOLUTIONS - VAN WERT' with parent company 'DANFOSS POWER SOLUTIONS (US) CO' at 1225 W MAIN ST, VAN WERT, OH; matches the record's legal/trade name 'Danfoss Power Solutions' on the facility name"
+ },
+ {
+  "record_id": "ORG-000720",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Capital Resin Corporation",
+   "trade_names": "Capital Resin Corporation (CRC)",
+   "hq_city": "Columbus",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "43207CPTLR324DE",
+   "facility_name": "CAPITAL RESIN CORP",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "CAPITAL RESIN CORP",
+   "street_address": "324 DERING AVE",
+   "city_name": "COLUMBUS",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 43207CPTLR324DE names facility 'CAPITAL RESIN CORP' with parent company 'CAPITAL RESIN CORP' at 324 DERING AVE, COLUMBUS, OH; matches the record's legal/trade name 'Capital Resin Corporation' on the facility name"
+ },
+ {
+  "record_id": "ORG-000752",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Polynt Composites USA, Inc.",
+   "trade_names": "Polynt Composites Usa; POLYNT COMPOSITES USA, INC; Cook Composites & Polymers Co",
+   "hq_city": "Sandusky",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "44870MRCNC1321F",
+   "facility_name": "POLYNT COMPOSITES USA INC.",
+   "parent_co_name": "POLYNT COMPOSITES USA INC",
+   "standardized_parent_company": "POLYNT COMPOSITES USA INC",
+   "street_address": "1321 FIRST ST",
+   "city_name": "SANDUSKY",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44870MRCNC1321F names facility 'POLYNT COMPOSITES USA INC.' with parent company 'POLYNT COMPOSITES USA INC' at 1321 FIRST ST, SANDUSKY, OH; matches the record's legal/trade name 'Polynt Composites USA, Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-000756",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Core Molding Technologies, Inc.",
+   "trade_names": "CORE MATERIALS CORP",
+   "hq_city": "Columbus",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "43228NVSTR800MA",
+   "facility_name": "CORE MOLDING TECHNOLOGIES",
+   "parent_co_name": "CORE MOLDING TECHNOLOGIES INC",
+   "standardized_parent_company": "CORE MOLDING TECHNOLOGIES INC",
+   "street_address": "800 MANOR PARK DR",
+   "city_name": "COLUMBUS",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 43228NVSTR800MA names facility 'CORE MOLDING TECHNOLOGIES' with parent company 'CORE MOLDING TECHNOLOGIES INC' at 800 MANOR PARK DR, COLUMBUS, OH; matches the record's legal/trade name 'Core Molding Technologies, Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-000757",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Cornerstone Building Brands",
+   "trade_names": "Cornerstone Building Brands - Walbridge Ohio",
+   "hq_city": "Walbridge",
+   "hq_state": "OH",
+   "tier": "C"
+  },
+  "tri": {
+   "tri_facility_id": "08902SLVRL1SILV",
+   "facility_name": "SILVER LINE BUILDING PRODUCTS LLC",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "CORNERSTONE BUILDING BRANDS",
+   "street_address": "1 SILVER LINE DR US HWY 1N",
+   "city_name": "NORTH BRUNSWICK",
+   "state_abbr": "NJ",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 08902SLVRL1SILV names facility 'SILVER LINE BUILDING PRODUCTS LLC' with parent company 'CORNERSTONE BUILDING BRANDS' at 1 SILVER LINE DR US HWY 1N, NORTH BRUNSWICK, NJ; matches the record's legal/trade name 'Cornerstone Building Brands' on the parent-company name"
+ },
+ {
+  "record_id": "ORG-000785",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "DDP Specialty Electronic Materials US 5, LLC",
+   "trade_names": "",
+   "hq_city": "West Alexandria",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "45381WHTTK10ELE",
+   "facility_name": "DDP SPECIALTY ELECTRONIC MATERIALS US 5 LLC",
+   "parent_co_name": "DUPONT DE NEMOURS INC",
+   "standardized_parent_company": "DUPONT DE NEMOURS INC",
+   "street_address": "10 S ELECTRIC ST",
+   "city_name": "WEST ALEXANDRIA",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 45381WHTTK10ELE names facility 'DDP SPECIALTY ELECTRONIC MATERIALS US 5 LLC' with parent company 'DUPONT DE NEMOURS INC' at 10 S ELECTRIC ST, WEST ALEXANDRIA, OH; matches the record's legal/trade name 'DDP Specialty Electronic Materials US 5, LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-000788",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Deltech Polymers OpCo, LLC",
+   "trade_names": "Deltech Polymers Corp.",
+   "hq_city": "Troy",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "45373GDSNP1250S",
+   "facility_name": "DELTECH POLYMERS CORP",
+   "parent_co_name": "DELTECH HOLDINGS INC",
+   "standardized_parent_company": "DELTECH HOLDINGS INC",
+   "street_address": "1250 S UNION ST",
+   "city_name": "TROY",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 45373GDSNP1250S names facility 'DELTECH POLYMERS CORP' with parent company 'DELTECH HOLDINGS INC' at 1250 S UNION ST, TROY, OH; matches the record's legal/trade name 'Deltech Polymers OpCo, LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-000805",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "DuPont (Circleville plant",
+   "trade_names": "DuPont",
+   "hq_city": "Wilmington",
+   "hq_state": "DE",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "43113DPNTCUSRT2",
+   "facility_name": "DUPONT CIRCLEVILLE PLANT",
+   "parent_co_name": "DUPONT DE NEMOURS INC",
+   "standardized_parent_company": "DUPONT DE NEMOURS INC",
+   "street_address": "800 DUPONT RD",
+   "city_name": "CIRCLEVILLE",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 43113DPNTCUSRT2 names facility 'DUPONT CIRCLEVILLE PLANT' with parent company 'DUPONT DE NEMOURS INC' at 800 DUPONT RD, CIRCLEVILLE, OH; matches the record's legal/trade name 'DuPont (Circleville plant' on the facility name"
+ },
+ {
+  "record_id": "ORG-000806",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "DuPont Electronic Polymers",
+   "trade_names": "",
+   "hq_city": "Dayton",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "45418MNSNT1515N",
+   "facility_name": "DUPONT ELECTRONIC POLYMERS",
+   "parent_co_name": "DUPONT DE NEMOURS INC",
+   "standardized_parent_company": "DUPONT DE NEMOURS INC",
+   "street_address": "1515 NICHOLAS RD",
+   "city_name": "DAYTON",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 45418MNSNT1515N names facility 'DUPONT ELECTRONIC POLYMERS' with parent company 'DUPONT DE NEMOURS INC' at 1515 NICHOLAS RD, DAYTON, OH; matches the record's legal/trade name 'DuPont Electronic Polymers' on the facility name"
+ },
+ {
+  "record_id": "ORG-000846",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Formica Corporation",
+   "trade_names": "",
+   "hq_city": "Evendale",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "45241FRMCC10155",
+   "facility_name": "FORMICA CORP",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "FORMICA CORP",
+   "street_address": "10155 READING RD",
+   "city_name": "CINCINNATI",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 45241FRMCC10155 names facility 'FORMICA CORP' with parent company 'FORMICA CORP' at 10155 READING RD, CINCINNATI, OH; matches the record's legal/trade name 'Formica Corporation' on the facility name"
+ },
+ {
+  "record_id": "ORG-000877",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "ALTIVIA Petrochemicals, LLC",
+   "trade_names": "HAVERHILL CHEMICALS LLC",
+   "hq_city": "Haverhill",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "45636RSTCHRT52A",
+   "facility_name": "ALTIVIA PETROCHEMICALS, LLC",
+   "parent_co_name": "ALTIVIA CORP",
+   "standardized_parent_company": "ALTIVIA CORP",
+   "street_address": "1019 HAVERHILL-OHIO FURNACE RD",
+   "city_name": "HAVERHILL",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 45636RSTCHRT52A names facility 'ALTIVIA PETROCHEMICALS, LLC' with parent company 'ALTIVIA CORP' at 1019 HAVERHILL-OHIO FURNACE RD, HAVERHILL, OH; matches the record's legal/trade name 'ALTIVIA Petrochemicals, LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-000903",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "IPL Inc.",
+   "trade_names": "Ipl Dayton; IPL Dayton; IPL DAYTON INC-IPL DAYTON, INC.",
+   "hq_city": "Urbana",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "4307WPLDYT1765W",
+   "facility_name": "IPL DAYTON",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "IPL SCHOELLER",
+   "street_address": "1765 W COUNTY LINE RD",
+   "city_name": "URBANA",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 4307WPLDYT1765W names facility 'IPL DAYTON' with parent company 'IPL SCHOELLER' at 1765 W COUNTY LINE RD, URBANA, OH; matches the record's legal/trade name 'IPL Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-000907",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "ITW Evercoat",
+   "trade_names": "",
+   "hq_city": "Blue Ash",
+   "hq_state": "OH",
+   "tier": "U"
+  },
+  "tri": {
+   "tri_facility_id": "45242FBRGL6600C",
+   "facility_name": "ITW EVERCOAT",
+   "parent_co_name": "ILLINOIS TOOL WORKS INC",
+   "standardized_parent_company": "ILLINOIS TOOL WORKS INC",
+   "street_address": "6600 CORNELL RD",
+   "city_name": "CINCINNATI",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 45242FBRGL6600C names facility 'ITW EVERCOAT' with parent company 'ILLINOIS TOOL WORKS INC' at 6600 CORNELL RD, CINCINNATI, OH; matches the record's legal/trade name 'ITW Evercoat' on the facility name"
+ },
+ {
+  "record_id": "ORG-001043",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Epsilyte LLC",
+   "trade_names": "Polysource LLC dba Epsilyte",
+   "hq_city": "Piqua",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "61354HNTSM501BR",
+   "facility_name": "EPSILYTE LLC",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "501 BRUNNER ST",
+   "city_name": "PERU",
+   "state_abbr": "IL",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 61354HNTSM501BR names facility 'EPSILYTE LLC' at 501 BRUNNER ST, PERU, IL; matches the record's legal/trade name 'Epsilyte LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-001077",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Revere Plastics Systems",
+   "trade_names": "Revere Plastics Systems - Clyde",
+   "hq_city": "Clyde",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "43410WLLNP401EE",
+   "facility_name": "REVERE PLASTICS SYSTEMS LLC",
+   "parent_co_name": "REVERE INDUSTRIES LLC",
+   "standardized_parent_company": "REVERE INDUSTRIES LLC",
+   "street_address": "401 E ELM STREET",
+   "city_name": "CLYDE",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 43410WLLNP401EE names facility 'REVERE PLASTICS SYSTEMS LLC' with parent company 'REVERE INDUSTRIES LLC' at 401 E ELM STREET, CLYDE, OH; matches the record's legal/trade name 'Revere Plastics Systems' on the facility name"
+ },
+ {
+  "record_id": "ORG-001080",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Ridge Corporation",
+   "trade_names": "Ridge Corporation (Zeus); Ridge Corporation (Apollo); Ridge Corporation (Artemis); TECHNA COMPOSITES INCORPORATED",
+   "hq_city": "Pataskala",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "4382WRDGCR5777R",
+   "facility_name": "RIDGE CORP",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "5777 RAIDERS RD",
+   "city_name": "FRAZEYSBURG",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 4382WRDGCR5777R names facility 'RIDGE CORP' at 5777 RAIDERS RD, FRAZEYSBURG, OH; matches the record's legal/trade name 'Ridge Corporation' on the facility name"
+ },
+ {
+  "record_id": "ORG-001090",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Rowmark LLC",
+   "trade_names": "",
+   "hq_city": "Findlay",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "2858WTRYND182IN",
+   "facility_name": "ROWMARK CUSTOM LAMINATIONS",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "ROWMARK LLC",
+   "street_address": "182 INDUSTRIAL PARK DR",
+   "city_name": "TRENTON",
+   "state_abbr": "NC",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 2858WTRYND182IN names facility 'ROWMARK CUSTOM LAMINATIONS' with parent company 'ROWMARK LLC' at 182 INDUSTRIAL PARK DR, TRENTON, NC; matches the record's legal/trade name 'Rowmark LLC' on the parent-company name"
+ },
+ {
+  "record_id": "ORG-001175",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "United Security Seals",
+   "trade_names": "",
+   "hq_city": "Columbus",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "43207NTDSL2FAIR",
+   "facility_name": "UNITED SECURITY SEALS INC.",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "2000 FAIRWOOD AVE",
+   "city_name": "COLUMBUS",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 43207NTDSL2FAIR names facility 'UNITED SECURITY SEALS INC.' at 2000 FAIRWOOD AVE, COLUMBUS, OH; matches the record's legal/trade name 'United Security Seals' on the facility name"
+ },
+ {
+  "record_id": "ORG-001346",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Rotex Global",
+   "trade_names": "",
+   "hq_city": "Cincinnati",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "45223RTXNC1230K",
+   "facility_name": "ROTEX GLOBAL LLC",
+   "parent_co_name": "HILLENBRAND INC",
+   "standardized_parent_company": "HILLENBRAND INC",
+   "street_address": "1230 KNOWLTON ST",
+   "city_name": "CINCINNATI",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 45223RTXNC1230K names facility 'ROTEX GLOBAL LLC' with parent company 'HILLENBRAND INC' at 1230 KNOWLTON ST, CINCINNATI, OH; matches the record's legal/trade name 'Rotex Global' on the facility name"
+ },
+ {
+  "record_id": "ORG-001387",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Etched Metal",
+   "trade_names": "",
+   "hq_city": "Solon",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "44139TCHDM30200",
+   "facility_name": "ETCHED METAL CO",
+   "parent_co_name": "NA",
+   "standardized_parent_company": null,
+   "street_address": "30200 SOLON INDUSTRIAL PKWY",
+   "city_name": "SOLON",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44139TCHDM30200 names facility 'ETCHED METAL CO' at 30200 SOLON INDUSTRIAL PKWY, SOLON, OH; matches the record's legal/trade name 'Etched Metal' on the facility name"
+ },
+ {
+  "record_id": "ORG-001415",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Fresh Products, Inc.",
+   "trade_names": "",
+   "hq_city": "Perrysburg",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "4355WFRSHP36REG",
+   "facility_name": "FRESH PRODUCTS LLC",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "30600 OREGON RD",
+   "city_name": "PERRYSBURG",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 4355WFRSHP36REG names facility 'FRESH PRODUCTS LLC' at 30600 OREGON RD, PERRYSBURG, OH; matches the record's legal/trade name 'Fresh Products, Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-001420",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Scottdel",
+   "trade_names": "Scottdel Cushion",
+   "hq_city": "Swanton",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "43558SCTTD400CH",
+   "facility_name": "SCOTTDEL CUSHION INC",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "SCOTTDEL CUSHION LLC",
+   "street_address": "400 CHURCH ST",
+   "city_name": "SWANTON",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 43558SCTTD400CH names facility 'SCOTTDEL CUSHION INC' with parent company 'SCOTTDEL CUSHION LLC' at 400 CHURCH ST, SWANTON, OH; matches the record's legal/trade name 'Scottdel' on the facility name"
+ },
+ {
+  "record_id": "ORG-001441",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Tempcraft Corporation",
+   "trade_names": "Howmet Aerospace Tooling Business Center",
+   "hq_city": "Cleveland",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "44114TMPCR3960S",
+   "facility_name": "TEMPCRAFT CORP",
+   "parent_co_name": "HOWMET AEROSPACE INC",
+   "standardized_parent_company": "HOWMET AEROSPACE INC",
+   "street_address": "3960 S MARGINAL RD",
+   "city_name": "CLEVELAND",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44114TMPCR3960S names facility 'TEMPCRAFT CORP' with parent company 'HOWMET AEROSPACE INC' at 3960 S MARGINAL RD, CLEVELAND, OH; matches the record's legal/trade name 'Tempcraft Corporation' on the facility name"
+ },
+ {
+  "record_id": "ORG-001444",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Archem America, Inc.",
+   "trade_names": "",
+   "hq_city": "Upper Sandusky",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "43351BRDGS245CO",
+   "facility_name": "ARCHEM AMERICA INC.",
+   "parent_co_name": "ARCHEM INC.",
+   "standardized_parent_company": "ARCHEM INC",
+   "street_address": "245 COMMERCE WAY",
+   "city_name": "UPPER SANDUSKY",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 43351BRDGS245CO names facility 'ARCHEM AMERICA INC.' with parent company 'ARCHEM INC' at 245 COMMERCE WAY, UPPER SANDUSKY, OH; matches the record's legal/trade name 'Archem America, Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-001445",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Arclin USA LLC",
+   "trade_names": "",
+   "hq_city": "Toledo",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "43612CHMBN6175A",
+   "facility_name": "ARCLIN USA LLC",
+   "parent_co_name": "ARCLIN INC",
+   "standardized_parent_company": "ARCLIN INC",
+   "street_address": "6175 AMERICAN RD",
+   "city_name": "TOLEDO",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 43612CHMBN6175A names facility 'ARCLIN USA LLC' with parent company 'ARCLIN INC' at 6175 AMERICAN RD, TOLEDO, OH; matches the record's legal/trade name 'Arclin USA LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-001457",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Pacific Industries USA Inc.",
+   "trade_names": "",
+   "hq_city": "Fairfield",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "45011PCFCM8955S",
+   "facility_name": "PACIFIC MANUFACTURING",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "PACIFIC INDUSTRIES USA INC",
+   "street_address": "8955 SEWARD RD",
+   "city_name": "FAIRFIELD",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 45011PCFCM8955S names facility 'PACIFIC MANUFACTURING' with parent company 'PACIFIC INDUSTRIES USA INC' at 8955 SEWARD RD, FAIRFIELD, OH; matches the record's legal/trade name 'Pacific Industries USA Inc.' on the parent-company name"
+ },
+ {
+  "record_id": "ORG-001520",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Meridian Bioscience, Inc.",
+   "trade_names": "",
+   "hq_city": "Cincinnati",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "4524WMRDNB3471R",
+   "facility_name": "MERIDIAN BIOSCIENCE INC.",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "3471 RIVER HILLS DRIVE",
+   "city_name": "CINCINNATI",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 4524WMRDNB3471R names facility 'MERIDIAN BIOSCIENCE INC.' at 3471 RIVER HILLS DRIVE, CINCINNATI, OH; matches the record's legal/trade name 'Meridian Bioscience, Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-001610",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Behr Process Corporation",
+   "trade_names": "",
+   "hq_city": "Heath",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "18106BHRPR7529M",
+   "facility_name": "BEHR PROCESS LLC - ALLENTOWN",
+   "parent_co_name": "MASCO CORP",
+   "standardized_parent_company": "MASCO CORP",
+   "street_address": "7529 MORRIS CT BLDG 500 W PARK BUSINESS CENTER",
+   "city_name": "ALLENTOWN",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 18106BHRPR7529M names facility 'BEHR PROCESS LLC - ALLENTOWN' with parent company 'MASCO CORP' at 7529 MORRIS CT BLDG 500 W PARK BUSINESS CENTER, ALLENTOWN, PA; matches the record's legal/trade name 'Behr Process Corporation' on the facility name"
+ },
+ {
+  "record_id": "ORG-001716",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Firestone Polymers, LLC",
+   "trade_names": "",
+   "hq_city": "Akron",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "44319FRSTN381WE",
+   "facility_name": "FIRESTONE POLYMERS LLC",
+   "parent_co_name": "BRIDGESTONE AMERICAS INC",
+   "standardized_parent_company": "BRIDGESTONE AMERICAS INC",
+   "street_address": "381 W WILBETH RD",
+   "city_name": "AKRON",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44319FRSTN381WE names facility 'FIRESTONE POLYMERS LLC' with parent company 'BRIDGESTONE AMERICAS INC' at 381 W WILBETH RD, AKRON, OH; matches the record's legal/trade name 'Firestone Polymers, LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-001724",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Republic Powdered Metals Inc",
+   "trade_names": "",
+   "hq_city": "Medina",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "44258RPBLC2628P",
+   "facility_name": "REPUBLIC POWDERED METALS INC",
+   "parent_co_name": "RPM INTERNATIONAL INC",
+   "standardized_parent_company": "RPM INTERNATIONAL INC",
+   "street_address": "2628 PEARL RD",
+   "city_name": "MEDINA",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44258RPBLC2628P names facility 'REPUBLIC POWDERED METALS INC' with parent company 'RPM INTERNATIONAL INC' at 2628 PEARL RD, MEDINA, OH; matches the record's legal/trade name 'Republic Powdered Metals Inc' on the facility name"
+ },
+ {
+  "record_id": "ORG-001729",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "ICU Medical, Inc.",
+   "trade_names": "",
+   "hq_city": "Dublin",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "78664BBTTL2820O",
+   "facility_name": "ICU MEDICAL INC",
+   "parent_co_name": "ICU MEDICAL INC.",
+   "standardized_parent_company": "ICU MEDICAL INC",
+   "street_address": "4020 N. MAYS STREET",
+   "city_name": "ROUND ROCK",
+   "state_abbr": "TX",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 78664BBTTL2820O names facility 'ICU MEDICAL INC' with parent company 'ICU MEDICAL INC' at 4020 N. MAYS STREET, ROUND ROCK, TX; matches the record's legal/trade name 'ICU Medical, Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-001732",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Thermo Fisher Scientific (Asheville) LLC",
+   "trade_names": "",
+   "hq_city": "Marietta",
+   "hq_state": "OH",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "45750FRMSCMILLC",
+   "facility_name": "THERMO FISHER SCIENTIFIC (ASHEVILLE) LLC",
+   "parent_co_name": "THERMO FISHER SCIENTIFIC INC",
+   "standardized_parent_company": "THERMO FISHER SCIENTIFIC INC",
+   "street_address": "401 MILL CREEK RD",
+   "city_name": "MARIETTA",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 45750FRMSCMILLC names facility 'THERMO FISHER SCIENTIFIC (ASHEVILLE) LLC' with parent company 'THERMO FISHER SCIENTIFIC INC' at 401 MILL CREEK RD, MARIETTA, OH; matches the record's legal/trade name 'Thermo Fisher Scientific (Asheville) LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-001833",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "JAIN Americas Inc.",
+   "trade_names": "",
+   "hq_city": "Columbus",
+   "hq_state": "OH",
+   "tier": "U"
+  },
+  "tri": {
+   "tri_facility_id": "01022SNCPR1000S",
+   "facility_name": "JAIN AMERICAS - NUCEDAR MILLS",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "JAIN AMERICAS INC",
+   "street_address": "1000 SHERIDAN ST",
+   "city_name": "CHICOPEE",
+   "state_abbr": "MA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 01022SNCPR1000S names facility 'JAIN AMERICAS - NUCEDAR MILLS' with parent company 'JAIN AMERICAS INC' at 1000 SHERIDAN ST, CHICOPEE, MA; matches the record's legal/trade name 'JAIN Americas Inc.' on the parent-company name"
+ },
+ {
+  "record_id": "ORG-001921",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Potter's Inc",
+   "trade_names": "Potters Industries",
+   "hq_city": "Cleveland",
+   "hq_state": "OH",
+   "tier": "C"
+  },
+  "tri": {
+   "tri_facility_id": "44113PTTRS238W3",
+   "facility_name": "POTTERS INDUSTRIES LLC",
+   "parent_co_name": "POTTERS INTERMEDIATE HOLDINGS LP",
+   "standardized_parent_company": "POTTERS INTERMEDIATE HOLDINGS LP",
+   "street_address": "2380 W 3RD ST",
+   "city_name": "CLEVELAND",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44113PTTRS238W3 names facility 'POTTERS INDUSTRIES LLC' with parent company 'POTTERS INTERMEDIATE HOLDINGS LP' at 2380 W 3RD ST, CLEVELAND, OH; matches the record's legal/trade name 'Potter's Inc' on the facility name"
+ },
+ {
+  "record_id": "ORG-002065",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Ashland Inc. (Ohio site operators: ISP Chemicals LLC - Columbus; ISP Lima LLC - Lima)",
+   "trade_names": "",
+   "hq_city": "Wilmington",
+   "hq_state": "DE",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "02702PLRDC238SO",
+   "facility_name": "ISP FREETOWN FINE CHEMICALS INC",
+   "parent_co_name": "ASHLAND LLC",
+   "standardized_parent_company": "ASHLAND LLC",
+   "street_address": "238 S MAIN ST",
+   "city_name": "ASSONET",
+   "state_abbr": "MA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 02702PLRDC238SO names facility 'ISP FREETOWN FINE CHEMICALS INC' with parent company 'ASHLAND LLC' at 238 S MAIN ST, ASSONET, MA; matches the record's legal/trade name 'Ashland Inc. (Ohio site operators: ISP Chemicals LLC - Columbus; ISP Lima LLC - Lima)' on the parent-company name"
+ },
+ {
+  "record_id": "ORG-002157",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Custom Pultrusions, Inc.",
+   "trade_names": "",
+   "hq_city": "Aurora",
+   "hq_state": "OH",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "44202PLTRS1331S",
+   "facility_name": "CUSTOM PULTRUSIONS INC.",
+   "parent_co_name": "ANDERSEN CORP",
+   "standardized_parent_company": "ANDERSEN CORP",
+   "street_address": "1331 S CHILLICOTHE RD",
+   "city_name": "AURORA",
+   "state_abbr": "OH",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 44202PLTRS1331S names facility 'CUSTOM PULTRUSIONS INC.' with parent company 'ANDERSEN CORP' at 1331 S CHILLICOTHE RD, AURORA, OH; matches the record's legal/trade name 'Custom Pultrusions, Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002181",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Inhance Technologies LLC",
+   "trade_names": "",
+   "hq_city": "Allentown",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "6018WNHNCX1733D",
+   "facility_name": "INHANCE TECHNOLOGIES",
+   "parent_co_name": "INHANCE TECHNOLOGIES LLC",
+   "standardized_parent_company": "INHANCE TECHNOLOGIES LLC",
+   "street_address": "1733 DOWNS DR",
+   "city_name": "WEST CHICAGO",
+   "state_abbr": "IL",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 6018WNHNCX1733D names facility 'INHANCE TECHNOLOGIES' with parent company 'INHANCE TECHNOLOGIES LLC' at 1733 DOWNS DR, WEST CHICAGO, IL; matches the record's legal/trade name 'Inhance Technologies LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-002192",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Creative Pultrusions Inc.",
+   "trade_names": "",
+   "hq_city": "Alum Bank",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "15521CRTVPPLEAS",
+   "facility_name": "CREATIVE PULTRUSIONS INC",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "CREATIVE PULTRUSIONS INC",
+   "street_address": "214 IND US TRIAL LN",
+   "city_name": "ALUM BANK",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 15521CRTVPPLEAS names facility 'CREATIVE PULTRUSIONS INC' with parent company 'CREATIVE PULTRUSIONS INC' at 214 IND US TRIAL LN, ALUM BANK, PA; matches the record's legal/trade name 'Creative Pultrusions Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002227",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Chase Corporation",
+   "trade_names": "",
+   "hq_city": "Blawnox",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "1523WCHSCR21ZET",
+   "facility_name": "CHASE CORP - PITTSBURGH",
+   "parent_co_name": "CHASE CORP",
+   "standardized_parent_company": "CHASE CORP",
+   "street_address": "201 ZETA DRIVE",
+   "city_name": "PITTSBURGH",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 1523WCHSCR21ZET names facility 'CHASE CORP - PITTSBURGH' with parent company 'CHASE CORP' at 201 ZETA DRIVE, PITTSBURGH, PA; matches the record's legal/trade name 'Chase Corporation' on the facility name"
+ },
+ {
+  "record_id": "ORG-002239",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Altuglas LLC",
+   "trade_names": "",
+   "hq_city": "Bristol",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "19020LFTCH100PA",
+   "facility_name": "ALTUGLAS LLC",
+   "parent_co_name": "TRINSEO US HOLDING INC",
+   "standardized_parent_company": "TRINSEO US HOLDING INC",
+   "street_address": "100 PA RT 413",
+   "city_name": "BRISTOL",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 19020LFTCH100PA names facility 'ALTUGLAS LLC' with parent company 'TRINSEO US HOLDING INC' at 100 PA RT 413, BRISTOL, PA; matches the record's legal/trade name 'Altuglas LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-002245",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Jsp Intl MFG",
+   "trade_names": "",
+   "hq_city": "Butler",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "1600WJSPNT15EBR",
+   "facility_name": "JSP INTL MFG",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "150 EAST BROOK LN",
+   "city_name": "BUTLER",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 1600WJSPNT15EBR names facility 'JSP INTL MFG' at 150 EAST BROOK LN, BUTLER, PA; matches the record's legal/trade name 'Jsp Intl MFG' on the facility name"
+ },
+ {
+  "record_id": "ORG-002271",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "J Lok",
+   "trade_names": "",
+   "hq_city": "Cresson",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "16630JLKCXRTE53",
+   "facility_name": "J-LOK CO",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "JENNMAR HOLDINGS LLC",
+   "street_address": "626 GALLITZIN RD",
+   "city_name": "CRESSON",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 16630JLKCXRTE53 names facility 'J-LOK CO' with parent company 'JENNMAR HOLDINGS LLC' at 626 GALLITZIN RD, CRESSON, PA; matches the record's legal/trade name 'J Lok' on the facility name"
+ },
+ {
+  "record_id": "ORG-002275",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Sylvin Technologies Inc.",
+   "trade_names": "",
+   "hq_city": "Denver",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "17517SYLVNDENVE",
+   "facility_name": "SYLVIN TECHNOLOGIES INC.",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "84 DENVER RD",
+   "city_name": "DENVER",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 17517SYLVNDENVE names facility 'SYLVIN TECHNOLOGIES INC.' at 84 DENVER RD, DENVER, PA; matches the record's legal/trade name 'Sylvin Technologies Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002302",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "AAH Acquisition LLC dba Snap-Tite Hose",
+   "trade_names": "",
+   "hq_city": "Erie",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "1643WLLMRC217TI",
+   "facility_name": "SNAP-TITE HOSE/ UNION CITY",
+   "parent_co_name": "AAH ACQUISITION LLC DBA SNAP-TITE HOSE",
+   "standardized_parent_company": "AAH ACQUISITION LLC DBA SNAP-TITE HOSE",
+   "street_address": "217 TITUSVILLE ROAD",
+   "city_name": "UNION CITY",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 1643WLLMRC217TI names facility 'SNAP-TITE HOSE/ UNION CITY' with parent company 'AAH ACQUISITION LLC DBA SNAP-TITE HOSE' at 217 TITUSVILLE ROAD, UNION CITY, PA; matches the record's legal/trade name 'AAH Acquisition LLC dba Snap-Tite Hose' on the facility name"
+ },
+ {
+  "record_id": "ORG-002324",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Esstech, Inc.",
+   "trade_names": "",
+   "hq_city": "Essington",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "19029SSCHM48POW",
+   "facility_name": "ESSTECH INC.",
+   "parent_co_name": "JUSTI GROUP INC",
+   "standardized_parent_company": "JUSTI GROUP INC",
+   "street_address": "48 POWHATTAN AVE",
+   "city_name": "ESSINGTON",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 19029SSCHM48POW names facility 'ESSTECH INC.' with parent company 'JUSTI GROUP INC' at 48 POWHATTAN AVE, ESSINGTON, PA; matches the record's legal/trade name 'Esstech, Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002326",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Arbco Industries Inc.",
+   "trade_names": "",
+   "hq_city": "Export",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "15632RBCNDBORLA",
+   "facility_name": "ARBCO INDUSTRIES INC",
+   "parent_co_name": "COLSON GROUP",
+   "standardized_parent_company": "BLUE WOLF CAPITAL",
+   "street_address": "BORLAND RD",
+   "city_name": "EXPORT",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 15632RBCNDBORLA names facility 'ARBCO INDUSTRIES INC' with parent company 'BLUE WOLF CAPITAL' at BORLAND RD, EXPORT, PA; matches the record's legal/trade name 'Arbco Industries Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002333",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Trinseo LLC.",
+   "trade_names": "",
+   "hq_city": "Exton",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "3072WSTYRN1468P",
+   "facility_name": "TRINSEO LLC",
+   "parent_co_name": "TRINSEO US HOLDING INC",
+   "standardized_parent_company": "TRINSEO US HOLDING INC",
+   "street_address": "1468 PROSSER DR SE",
+   "city_name": "DALTON",
+   "state_abbr": "GA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 3072WSTYRN1468P names facility 'TRINSEO LLC' with parent company 'TRINSEO US HOLDING INC' at 1468 PROSSER DR SE, DALTON, GA; matches the record's legal/trade name 'Trinseo LLC.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002348",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Carpenter Co.",
+   "trade_names": "",
+   "hq_city": "Richmond",
+   "hq_state": "VA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "18051CRPNTSNOWD",
+   "facility_name": "CARPENTER CO",
+   "parent_co_name": "CARPENTER CO",
+   "standardized_parent_company": "CARPENTER CO",
+   "street_address": "57A OLIN WAY",
+   "city_name": "FOGELSVILLE",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 18051CRPNTSNOWD names facility 'CARPENTER CO' with parent company 'CARPENTER CO' at 57A OLIN WAY, FOGELSVILLE, PA; matches the record's legal/trade name 'Carpenter Co.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002438",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "East Penn Manufacturing Co., Inc.",
+   "trade_names": "",
+   "hq_city": "Lancaster",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "19536STPNNDEKAR",
+   "facility_name": "EAST PENN MANUFACTURING CO INC",
+   "parent_co_name": "EAST PENN MANUFACTURING CO INC",
+   "standardized_parent_company": "EAST PENN MANUFACTURING CO INC",
+   "street_address": "DEKA RD",
+   "city_name": "LYON STATION",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 19536STPNNDEKAR names facility 'EAST PENN MANUFACTURING CO INC' with parent company 'EAST PENN MANUFACTURING CO INC' at DEKA RD, LYON STATION, PA; matches the record's legal/trade name 'East Penn Manufacturing Co., Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002441",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Dart Container Corporation",
+   "trade_names": "",
+   "hq_city": "Lancaster",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "42301DRTPL2400H",
+   "facility_name": "DART POLYMERS INC",
+   "parent_co_name": "DART CONTAINER CORP",
+   "standardized_parent_company": "DART CONTAINER CORP",
+   "street_address": "2400 HARBOR RD",
+   "city_name": "OWENSBORO",
+   "state_abbr": "KY",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 42301DRTPL2400H names facility 'DART POLYMERS INC' with parent company 'DART CONTAINER CORP' at 2400 HARBOR RD, OWENSBORO, KY; matches the record's legal/trade name 'Dart Container Corporation' on the parent-company name"
+ },
+ {
+  "record_id": "ORG-002443",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Euramax International Inc.",
+   "trade_names": "",
+   "hq_city": "Lancaster",
+   "hq_state": "PA",
+   "tier": "C"
+  },
+  "tri": {
+   "tri_facility_id": "17603LMXLM450RI",
+   "facility_name": "OMNIMAX INTERNATIONAL LLC",
+   "parent_co_name": "EURAMAX INTERNATIONAL INC",
+   "standardized_parent_company": "EURAMAX INTERNATIONAL INC",
+   "street_address": "450 RICHARDSON DR",
+   "city_name": "LANCASTER",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 17603LMXLM450RI names facility 'OMNIMAX INTERNATIONAL LLC' with parent company 'EURAMAX INTERNATIONAL INC' at 450 RICHARDSON DR, LANCASTER, PA; matches the record's legal/trade name 'Euramax International Inc.' on the parent-company name"
+ },
+ {
+  "record_id": "ORG-002450",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Stryten Lampeter LLC",
+   "trade_names": "",
+   "hq_city": "Lancaster",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "17537XDCRP829PA",
+   "facility_name": "STRYTEN LAMPETER LLC",
+   "parent_co_name": "EDISON GROUP COS LLC",
+   "standardized_parent_company": "EDISON GROUP COS LLC",
+   "street_address": "829 PARAMOUNT AVE",
+   "city_name": "LANCASTER",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 17537XDCRP829PA names facility 'STRYTEN LAMPETER LLC' with parent company 'EDISON GROUP COS LLC' at 829 PARAMOUNT AVE, LANCASTER, PA; matches the record's legal/trade name 'Stryten Lampeter LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-002474",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Dart Container Corp. Of Pennsylvania",
+   "trade_names": "",
+   "hq_city": "Leola",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "17540DRTCN60EAS",
+   "facility_name": "DART CONTAINER CORP OF PENNSYLVANIA",
+   "parent_co_name": "DART CONTAINER CORP",
+   "standardized_parent_company": "DART CONTAINER CORP",
+   "street_address": "60 E MAIN ST",
+   "city_name": "LEOLA",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 17540DRTCN60EAS names facility 'DART CONTAINER CORP OF PENNSYLVANIA' with parent company 'DART CONTAINER CORP' at 60 E MAIN ST, LEOLA, PA; matches the record's legal/trade name 'Dart Container Corp. Of Pennsylvania' on the facility name"
+ },
+ {
+  "record_id": "ORG-002491",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Loparex",
+   "trade_names": "",
+   "hq_city": "Malvern",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "1935WLPRXX24CNT",
+   "facility_name": "LOPAREX",
+   "parent_co_name": "LOPAREX LLC",
+   "standardized_parent_company": "LOPAREX LLC",
+   "street_address": "2400 CONTINENTAL BOULEVARD",
+   "city_name": "MALVERN",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 1935WLPRXX24CNT names facility 'LOPAREX' with parent company 'LOPAREX LLC' at 2400 CONTINENTAL BOULEVARD, MALVERN, PA; matches the record's legal/trade name 'Loparex' on the facility name"
+ },
+ {
+  "record_id": "ORG-002530",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Chemcoat Inc.",
+   "trade_names": "",
+   "hq_city": "Montoursville",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "17754CHMCTRD3BO",
+   "facility_name": "CHEMCOAT INC",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "2790 CANFIELDS LN",
+   "city_name": "MONTOURSVILLE",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 17754CHMCTRD3BO names facility 'CHEMCOAT INC' at 2790 CANFIELDS LN, MONTOURSVILLE, PA; matches the record's legal/trade name 'Chemcoat Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002545",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Crestwood Membranes Inc. Dba I2M",
+   "trade_names": "",
+   "hq_city": "Mountain Top",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "18707DYNMTCREST",
+   "facility_name": "I2M INC.",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "755 OAKHILL RD CRESTWOOD INDUSTRIAL PARK",
+   "city_name": "MOUNTAIN TOP",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 18707DYNMTCREST names facility 'I2M INC.' at 755 OAKHILL RD CRESTWOOD INDUSTRIAL PARK, MOUNTAIN TOP, PA; matches the record's legal/trade name 'Crestwood Membranes Inc. Dba I2M' on the facility name"
+ },
+ {
+  "record_id": "ORG-002583",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Abbey Color Inc.",
+   "trade_names": "",
+   "hq_city": "Philadelphia",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "19134BBYCL400ET",
+   "facility_name": "ABBEY COLOR INC",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "400 E TIOGA ST",
+   "city_name": "PHILADELPHIA",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 19134BBYCL400ET names facility 'ABBEY COLOR INC' at 400 E TIOGA ST, PHILADELPHIA, PA; matches the record's legal/trade name 'Abbey Color Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002591",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "INEOS Composites US LLC",
+   "trade_names": "",
+   "hq_city": "Philadelphia",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "15225SHLND2650N",
+   "facility_name": "INEOS COMPOSITES US LLC",
+   "parent_co_name": "INEOS ENTERPRISES US HOLDCO LLC",
+   "standardized_parent_company": "INEOS ENTERPRISES US HOLDCO LLC",
+   "street_address": "2650 NEVILLE RD",
+   "city_name": "PITTSBURGH",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 15225SHLND2650N names facility 'INEOS COMPOSITES US LLC' with parent company 'INEOS ENTERPRISES US HOLDCO LLC' at 2650 NEVILLE RD, PITTSBURGH, PA; matches the record's legal/trade name 'INEOS Composites US LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-002633",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Ifs Industries Inc.",
+   "trade_names": "",
+   "hq_city": "Reading",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "19603NTRNTPOBOX",
+   "facility_name": "IFS INDUSTRIES INC",
+   "parent_co_name": "ONA CORP",
+   "standardized_parent_company": "ONA CORP",
+   "street_address": "400 ORRTON AVE",
+   "city_name": "READING",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 19603NTRNTPOBOX names facility 'IFS INDUSTRIES INC' with parent company 'ONA CORP' at 400 ORRTON AVE, READING, PA; matches the record's legal/trade name 'Ifs Industries Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002698",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Delaware Valley Custom Marble Inc.",
+   "trade_names": "",
+   "hq_city": "West Grove",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "19390DLWRV4BRIA",
+   "facility_name": "DELAWARE VALLEY CUSTOM MARBLE INC",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "4 BRIAR DR",
+   "city_name": "WEST GROVE",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 19390DLWRV4BRIA names facility 'DELAWARE VALLEY CUSTOM MARBLE INC' at 4 BRIAR DR, WEST GROVE, PA; matches the record's legal/trade name 'Delaware Valley Custom Marble Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002700",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Liberty Pultrusions",
+   "trade_names": "",
+   "hq_city": "West Mifflin",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "15122LBRTY1575L",
+   "facility_name": "LIBERTY PULTRUSIONS",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "1575 LEBANON SCHOOL RD",
+   "city_name": "WEST MIFFLIN",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 15122LBRTY1575L names facility 'LIBERTY PULTRUSIONS' at 1575 LEBANON SCHOOL RD, WEST MIFFLIN, PA; matches the record's legal/trade name 'Liberty Pultrusions' on the facility name"
+ },
+ {
+  "record_id": "ORG-002711",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Bryn Hill Industries",
+   "trade_names": "",
+   "hq_city": "Yeadon",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "19050BRYNH47IND",
+   "facility_name": "BRYN HILL INDUSTRIES",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "407 INDUSTRIAL PARK DR",
+   "city_name": "YEADON",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 19050BRYNH47IND names facility 'BRYN HILL INDUSTRIES' at 407 INDUSTRIAL PARK DR, YEADON, PA; matches the record's legal/trade name 'Bryn Hill Industries' on the facility name"
+ },
+ {
+  "record_id": "ORG-002717",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Protech Powder Coating Inc.",
+   "trade_names": "",
+   "hq_city": "York",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "1740WPRTCH939MN",
+   "facility_name": "PROTECH POWDER COATING INC/YORK",
+   "parent_co_name": "PROTECH US HOLDINGS INC",
+   "standardized_parent_company": "PROTECH US HOLDINGS INC",
+   "street_address": "939 MONOCACY ROAD",
+   "city_name": "YORK",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 1740WPRTCH939MN names facility 'PROTECH POWDER COATING INC/YORK' with parent company 'PROTECH US HOLDINGS INC' at 939 MONOCACY ROAD, YORK, PA; matches the record's legal/trade name 'Protech Powder Coating Inc.' on the facility name"
+ },
+ {
+  "record_id": "ORG-002730",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Rohm and Haas Chemicals LLC",
+   "trade_names": "",
+   "hq_city": "Bristol",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "19007RHMNDOLDRT",
+   "facility_name": "ROHM & HAAS CHEMICALS LLC",
+   "parent_co_name": "DOW INC.",
+   "standardized_parent_company": "DOW INC",
+   "street_address": "200 RT 413",
+   "city_name": "BRISTOL",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 19007RHMNDOLDRT names facility 'ROHM & HAAS CHEMICALS LLC' with parent company 'DOW INC' at 200 RT 413, BRISTOL, PA; matches the record's legal/trade name 'Rohm and Haas Chemicals LLC' on the facility name"
+ },
+ {
+  "record_id": "ORG-002757",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "National Polymers",
+   "trade_names": "",
+   "hq_city": "Charleroi",
+   "hq_state": "PA",
+   "tier": "A"
+  },
+  "tri": {
+   "tri_facility_id": "15022NTNLP9GUTT",
+   "facility_name": "NATIONAL POLYMERS INC.",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "9 GUTTMAN AVE",
+   "city_name": "CHARLEROI",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 15022NTNLP9GUTT names facility 'NATIONAL POLYMERS INC.' at 9 GUTTMAN AVE, CHARLEROI, PA; matches the record's legal/trade name 'National Polymers' on the facility name"
+ },
+ {
+  "record_id": "ORG-002770",
+  "claim_type": "existence",
+  "atlas": {
+   "legal_name": "Superior Tire & Rubber Corp",
+   "trade_names": "",
+   "hq_city": "Warren",
+   "hq_state": "PA",
+   "tier": "B"
+  },
+  "tri": {
+   "tri_facility_id": "16365SPRRT1818P",
+   "facility_name": "SUPERIOR TIRE & RUBBER CORP.",
+   "parent_co_name": "NA",
+   "standardized_parent_company": "NA",
+   "street_address": "1818 PENNSYLVANIA AVE W",
+   "city_name": "WARREN",
+   "state_abbr": "PA",
+   "fac_closed_ind": "0"
+  },
+  "proposed_claim_detail": "EPA TRI facility record TRIFID 16365SPRRT1818P names facility 'SUPERIOR TIRE & RUBBER CORP.' at 1818 PENNSYLVANIA AVE W, WARREN, PA; matches the record's legal/trade name 'Superior Tire & Rubber Corp' on the facility name"
+ }
+]

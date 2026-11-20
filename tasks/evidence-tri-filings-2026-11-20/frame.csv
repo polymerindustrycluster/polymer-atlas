@@ -1,0 +1,110 @@
+org_id,legal_name,trade_names,hq_city,hq_state,tier,shard,trifids,match_bases
+ORG-000002,The Lubrizol Corporation,Lubrizol,Wickliffe,OH,B,OH,01887NVNNC27LWE;08067THBFGUSROU;28054WLSHC207TE;40211BFGDR4100B;42029NVNNC2468I;44012BFGDRMOORE;44077LBRZL155FR;77507LBRZL12801;77536LBRZL41TID,tri_frs_id_exact;tri_reverse_yield_verified_site
+ORG-000003,The Goodyear Tire & Rubber Company,Goodyear; Goodyear Tires,Akron,OH,B,OH,24541THGDY1435G;28311KLLYS6650R;30279LTMRBONEUL;66618THGDY2000N;73505GDYRT1GOOD;77262GDYRT2000G;77507GDYRB13441;77720THGDYINTER,tri_frs_id_exact
+ORG-000035,Saint-Gobain Performance Plastics,,Malvern,PA,U,PA,01605CSTMC717PL;02809DXNND386ME;08056BNNLL210HA;12832NRTNCONESE;92123DPSTN4540V,tri_reverse_yield_verified_site
+ORG-000038,Pioneer Plastics Corp.,,Akron,OH,B,OH,04210STRLNPIONI;37816STRLN325DE,tri_reverse_yield_verified_site
+ORG-000154,Lincoln Electric,,Euclid,OH,C,OH,44117LNCLN22801,tri_frs_id_exact
+ORG-000155,Eaton Corporation,,Beachwood,OH,C,OH,44117RGTCH23555,tri_name_city_fuzzy_match
+ORG-000207,A.R.E. Accessories,"A R E, INC",Massillon,OH,A,OH,44646RNCXX400NA;44659RNCXX17494,tri_frs_id_exact;tri_name_city_fuzzy_match
+ORG-000271,"Chem Technologies, Ltd.",CHEM TECH PLANT 2; Chem Tech,Middlefield,OH,A,OH,44062CHMTC14875,tri_name_city_fuzzy_match
+ORG-000286,Container Compliance Corp.,,Cleveland,OH,A,OH,44101THMCR5151D,echo_exporter_street_city_zip_name:SITE-000305
+ORG-000302,"DermaMed Coatings Company, LLC",,Kent,OH,A,OH,4424WDRMMD271PR,echo_exporter_street_city_zip_name:SITE-000321
+ORG-000319,"E.L. Stone Co., Inc.",,Norton,OH,A,OH,44203LSTNC2998E,echo_exporter_street_city_zip_name:SITE-000340
+ORG-000419,LG Chem America Inc.,LG Chem Ohio Petrochemical,Ravenna,OH,A,OH,47710NSLNC1014U,tri_reverse_yield_verified_site
+ORG-000438,Mexichem Specialty Resins Inc.,,Avon Lake,OH,B,OH,4401WMXCHM33653;61537THGNCRURAL,tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-000521,Premier OEM,Polaris Industries (Premier OEM),Cuyahoga Falls,OH,A,OH,4422WPRMRM3479S,tri_name_city_fuzzy_match
+ORG-000635,The Wooster Brush Company,,Wooster,OH,B,OH,44691WSTRB604MA,echo_exporter_street_city_zip_name:SITE-000676
+ORG-000637,Xaloy LLC,,Austintown,OH,A,OH,4451WNRDSN375VI,tri_name_city_fuzzy_match
+ORG-000638,Yokohama Industries Americas Ohio Inc.,SAS Industrial Products; SAS Rubber Co.,Painesville,OH,A,OH,44077SSRBB474NE,echo_exporter_street_city_zip_name:SITE-000680
+ORG-000655,Danfoss Power Solutions,AEROQUIP CORPORATION,Jackson,MI,U,MI,28043RQPCRROUTE;38059BSTNNHWY77;45891RQPCR1225W;72653RQPCRRT2BO,tri_frs_id_exact;tri_reverse_yield_verified_site
+ORG-000720,Capital Resin Corporation,Capital Resin Corporation (CRC),Columbus,OH,A,OH,43207CPTLR324DE;48212DLTRS17350,tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-000752,"Polynt Composites USA, Inc.","Polynt Composites Usa; POLYNT COMPOSITES USA, INC; Cook Composites & Polymers Co",Sandusky,OH,B,OH,24531FRMNRPITTS;30050CRGLL71BAR;32236RCHHLWESTB;32501RCHHL407SO;32824MRCNC685RO;44870MRCNC1321F;60110MCWHR400EA;60450RCHHLCOLLI;63088NLCHM3RDST;75120CRGLLPOBOX;75670FRMNRSCOTT;77051FRMNC2434H;91702RCHHL237SO,tri_frs_id_exact;tri_reverse_yield_verified_site
+ORG-000756,"Core Molding Technologies, Inc.",CORE MATERIALS CORP,Columbus,OH,A,OH,29340CRMTR24COM;43228NVSTR800MA,tri_frs_id_exact;tri_name_city_fuzzy_match
+ORG-000757,Cornerstone Building Brands,Cornerstone Building Brands - Walbridge Ohio,Walbridge,OH,C,OH,08902SLVRL1SILV;2415WLNLTC35STA;24477LCBLDRTE90;25401VRFRM1403C;2729WMWMNF3WELC;29340CLLWD100CE;37347VRFRM1134I;64060VRFRM303WM;68467KRYBL521W2,tri_reverse_yield_verified_site
+ORG-000785,"DDP Specialty Electronic Materials US 5, LLC",,West Alexandria,OH,A,OH,08110CLTXC1500J;30720DWCHM1468P;45381WHTTK10ELE;60410DWCHMI55AR;60481DWCHM91EKA;63070DWCHMDOWIN;8331WDDPSP171WA,tri_frs_id_exact;tri_reverse_yield_verified_site
+ORG-000788,"Deltech Polymers OpCo, LLC",Deltech Polymers Corp.,Troy,OH,B,OH,45373GDSNP1250S,tri_name_city_fuzzy_match
+ORG-000793,Dimex LLC,Diamex,Marietta,OH,B,OH,4575WDMXCR2835S,tri_frs_id_exact
+ORG-000805,DuPont (Circleville plant,DuPont,Wilmington,DE,B,DE,08859DPNTPCHEES;14207DPNTYSHERI;2814WDPNTS1335B;43113DPNTCUSRT2;49242SSXSP190UR;55435FLMTC7200O;77507DPNTD9701B,tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-000806,DuPont Electronic Polymers,,Dayton,OH,B,OH,45418MNSNT1515N,tri_frs_id_exact
+ORG-000846,Formica Corporation,,Evendale,OH,A,OH,45241FRMCC10155,tri_name_city_fuzzy_match
+ORG-000877,"ALTIVIA Petrochemicals, LLC",HAVERHILL CHEMICALS LLC,Haverhill,OH,A,OH,45636RSTCHRT52A,tri_frs_id_exact
+ORG-000903,IPL Inc.,"Ipl Dayton; IPL Dayton; IPL DAYTON INC-IPL DAYTON, INC.",Urbana,OH,B,OH,4307WPLDYT1765W;6408WPLPLS41SET,tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-000907,ITW Evercoat,,Blue Ash,OH,U,OH,45242FBRGL6600C,tri_name_city_fuzzy_match
+ORG-001043,Epsilyte LLC,Polysource LLC dba Epsilyte,Piqua,OH,B,OH,4535WPLYSR555ES;61354HNTSM501BR,tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-001075,Retterbush Fiberglass Corp.,"Retterbush Fiberglass Corp. - A division of Arrowhead Plastic Engineering, Inc.",Piqua,OH,A,OH,47302RRWHD2909S,tri_reverse_yield_verified_site
+ORG-001077,Revere Plastics Systems,Revere Plastics Systems - Clyde,Clyde,OH,B,OH,43410WLLNP401EE,echo_exporter_street_city_zip_name:SITE-001163
+ORG-001080,Ridge Corporation,Ridge Corporation (Zeus); Ridge Corporation (Apollo); Ridge Corporation (Artemis); TECHNA COMPOSITES INCORPORATED,Pataskala,OH,B,OH,4382WRDGCR5777R,tri_name_city_fuzzy_match
+ORG-001090,Rowmark LLC,,Findlay,OH,B,OH,2858WTRYND182IN,tri_reverse_yield_verified_site
+ORG-001175,United Security Seals,,Columbus,OH,B,OH,43207NTDSL2FAIR,tri_frs_id_exact
+ORG-001206,Yanfeng US Automotive Interior Systems II LLC,Yanfeng Global Automotive Interior Systems Co,Bryan,OH,B,OH,43506BRYNC918SU,tri_name_city_fuzzy_match
+ORG-001346,Rotex Global,,Cincinnati,OH,B,OH,45223RTXNC1230K,tri_name_city_fuzzy_match
+ORG-001387,Etched Metal,,Solon,OH,A,OH,44139TCHDM30200,echo_exporter_street_city_zip_name:SITE-001426
+ORG-001415,"Fresh Products, Inc.",,Perrysburg,OH,B,OH,4355WFRSHP36REG,tri_frs_id_exact
+ORG-001420,Scottdel,Scottdel Cushion,Swanton,OH,A,OH,43558SCTTD400CH,tri_name_city_fuzzy_match
+ORG-001425,Cooper Tire & Rubber Company,Master Tire & Rubber Corporation,Findlay,OH,B,OH,38614CPRTR2205F;38802CPRTR1689S;75502CPRTRRT12P,tri_frs_id_exact
+ORG-001426,Techniplas US LLC,NEXXTA; Jay Plastics (former name),Mansfield,OH,B,OH,44905JYPLS150EL;53058DCKTNN44W3,tri_frs_id_exact;tri_reverse_yield_verified_site
+ORG-001428,"Da-Lite Screen Company, Inc.",Legrand AV,Blue Ash,OH,B,OH,45241DLTSC11500,tri_frs_id_exact
+ORG-001441,Tempcraft Corporation,Howmet Aerospace Tooling Business Center,Cleveland,OH,B,OH,44114TMPCR3960S,tri_frs_id_exact
+ORG-001444,"Archem America, Inc.",,Upper Sandusky,OH,B,OH,1413WBRDGS635IN;37055BRDGS14REL;43351BRDGS245CO,tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-001445,Arclin USA LLC,,Toledo,OH,B,OH,27559CHMBNSTATE;30125HNKLC701WI;36476CHMBNHIGHW;43612CHMBN6175A;71483CHMBNHIGHW;97477CHMBN475NO,tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-001457,Pacific Industries USA Inc.,,Fairfield,OH,B,OH,45011PCFCM8955S,tri_name_city_fuzzy_match
+ORG-001520,"Meridian Bioscience, Inc.",,Cincinnati,OH,B,OH,4524WMRDNB3471R,tri_name_city_fuzzy_match
+ORG-001610,Behr Process Corporation,,Heath,OH,B,OH,18106BHRPR7529M,tri_address_exact_name_match
+ORG-001716,"Firestone Polymers, LLC",,Akron,OH,B,OH,44319FRSTN381WE;70602FRSTNLA108,tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-001724,Republic Powdered Metals Inc,,Medina,OH,B,OH,44258RPBLC2628P,tri_name_city_fuzzy_match
+ORG-001729,"ICU Medical, Inc.",,Dublin,OH,B,OH,78664BBTTL2820O,tri_reverse_yield_verified_site
+ORG-001732,Thermo Fisher Scientific (Asheville) LLC,,Marietta,OH,B,OH,45750FRMSCMILLC,tri_name_city_fuzzy_match
+ORG-001833,JAIN Americas Inc.,,Columbus,OH,U,OH,01022SNCPR1000S,tri_reverse_yield_verified_site
+ORG-001921,Potter's Inc,Potters Industries,Cleveland,OH,C,OH,44113PTTRS238W3,tri_name_city_fuzzy_match
+ORG-002065,Ashland Inc. (Ohio site operators: ISP Chemicals LLC - Columbus; ISP Lima LLC - Lima),,Wilmington,DE,A,DE,02702PLRDC238SO;23860QLNCM1111H;42029GFCHMHIGHW;43228RSYNX1979A;45804SPLML122SM,tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-002079,TDM LLC,,Ashtabula,OH,U,OH,44004TNNDS4001B,"tri_name_city_fuzzy_match — name+city cross-establishment artifact (pass-16 name_city leg): this TRIFID is Iten Plant 1's, held under ORG-000386; see SITE-000413 (liveness determination 2026-10-30, ruling A2)"
+ORG-002080,Mitsubishi Chemical Performance Polymers Inc,,Bellevue,OH,B,OH,44811SCHLM350NB,tri_address_exact_name_match
+ORG-002157,"Custom Pultrusions, Inc.",,Aurora,OH,A,OH,44202PLTRS1331S,tri_address_exact_name_match
+ORG-002181,Inhance Technologies LLC,,Allentown,PA,A,PA,6018WNHNCX1733D,tri_reverse_yield_verified_site
+ORG-002192,Creative Pultrusions Inc.,,Alum Bank,PA,A,PA,04330KNWYC681RI;15521CRTVPPLEAS,tri_address_exact_name_match;tri_reverse_yield_verified_site
+ORG-002199,Surteco North Amer Inc.,,Auburn,PA,B,PA,15644GNCRPCHAMB,tri_address_exact_name_match
+ORG-002216,L & P Berwick Div Leggett & Platt,,Berwick,PA,B,PA,18603DRBNDRD1RO;2107WLTCMF19CLA;28144RYNLDPEELE;28613HCKRYHIGHW;28677RDLLF180YF;30264JMSRV76SPR;31709HCKRYSOUTH;3880WLTCMF212CD;38851MPNCX400TH;60450SPNGC902AR;60504LCTTC969CO;63701RCTCL450NA;7290WLTCMF4921S;7291WPTRSN399AY;76102MPNCX1301C;76106PRMMP27FRA;90023HCKRY4542E;91761LGGTT1050S;95376LGGTT215NM,tri_address_exact_name_match;tri_reverse_yield_verified_site
+ORG-002227,Chase Corporation,,Blawnox,PA,A,PA,15238CHSCR128FI;1523WCHSCR21ZET;28645NPTCNHIGHW,tri_address_exact_name_match;tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-002239,Altuglas LLC,,Bristol,PA,B,PA,19020LFTCH100PA,tri_address_exact_name_match
+ORG-002241,Dunmore Corp.,,Bristol,PA,A,PA,10509CMVCNROUTE;19007DNMRC145WH,tri_address_exact_name_match;tri_reverse_yield_verified_site
+ORG-002245,Jsp Intl MFG,,Butler,PA,B,PA,1600WJSPNT15EBR,tri_name_city_fuzzy_match
+ORG-002271,J Lok,,Cresson,PA,A,PA,16630JLKCXRTE53,tri_address_exact_name_match
+ORG-002275,Sylvin Technologies Inc.,,Denver,PA,A,PA,17517SYLVNDENVE,tri_address_exact_name_match
+ORG-002279,Agc Chem Amer Inc.,,Downingtown,PA,A,PA,19372LNPNGSBAIL,tri_address_exact_name_match
+ORG-002302,AAH Acquisition LLC dba Snap-Tite Hose,,Erie,PA,B,PA,1643WLLMRC217TI,tri_address_exact_name_match
+ORG-002307,General Partitions,,Erie,PA,B,PA,16505GNRLP1702P,tri_address_exact_name_match
+ORG-002324,"Esstech, Inc.",,Essington,PA,A,PA,19029SSCHM48POW;19061SSCHM4000C,tri_address_exact_name_match
+ORG-002326,Arbco Industries Inc.,,Export,PA,B,PA,15632RBCNDBORLA,tri_name_city_fuzzy_match
+ORG-002330,Dsm Biomedical Inc. - Sierra Drive,,Exton,PA,A,PA,1934WDSMBM735PE,tri_name_city_fuzzy_match
+ORG-002333,Trinseo LLC.,,Exton,PA,B,PA,3072WSTYRN1468P;40216LFTCH4350C;41042RSTCH7350E;4866WSTYRN164BU,tri_frs_id_exact
+ORG-002335,Hunter Panels LLC,,Fairchance,PA,B,PA,15478HNTRP2SUMM,tri_address_exact_name_match
+ORG-002348,Carpenter Co.,,Richmond,VA,B,VA,18051CRPNTSNOWD;23234RCRPN2400J;2703WCRPNTPBX15;28613RCRPNBOX87;33815CRPNT5150F;38879RCRPNLEEIN;42276RCRPNFORRE;46516RCRPN195CO;76501RCRPN2611N;77507CRPNT11002;92504RCRPN7809L,tri_name_city_fuzzy_match;tri_reverse_yield_verified_site
+ORG-002421,Jamestown Paint Co.,,Jamestown,PA,B,PA,16134JMSTW108MA,tri_address_exact_name_match
+ORG-002438,"East Penn Manufacturing Co., Inc.",,Lancaster,PA,A,PA,19530STPNN191WI;19536STPNNDEKAR,tri_address_exact_name_match;tri_name_city_fuzzy_match
+ORG-002441,Dart Container Corporation,,Lancaster,PA,B,PA,42301DRTPL2400H;48854DRTCN432HO,tri_reverse_yield_verified_site
+ORG-002443,Euramax International Inc.,,Lancaster,PA,C,PA,17603LMXLM450RI,tri_address_exact_name_match
+ORG-002450,Stryten Lampeter LLC,,Lancaster,PA,B,PA,17537XDCRP829PA,tri_address_exact_name_match
+ORG-002474,Dart Container Corp. Of Pennsylvania,,Leola,PA,B,PA,17540DRTCN60EAS,tri_address_exact_name_match
+ORG-002491,Loparex,,Malvern,PA,B,PA,1935WLPRXX24CNT,tri_address_exact_name_match
+ORG-002496,Bedford Materials Co.,,Manns Choice,PA,B,PA,15522WSTNGRTS30,tri_address_exact_name_match
+ORG-002500,Braskem Amer Inc.,,Marcus Hook,PA,B,PA,19061PSLNPBLUEB;25530RSTCHOLDBI;7754WBRSKM55EHW;77571RSTCH8811S,tri_address_exact_name_match;tri_reverse_yield_verified_site
+ORG-002530,Chemcoat Inc.,,Montoursville,PA,A,PA,17754CHMCTRD3BO,tri_address_exact_name_match
+ORG-002543,Fiber Glass Sys Inc.,,Mount Union,PA,B,PA,17066WNSCRUSROU;36541RSHGS125IN;72209SMTHF2700W;74063FBRCS25SOU;76354MRNFB1004A;76513BLCMN2303E;79714LVRNCHIGHW;98642TTBRN1721N,tri_address_exact_name_match;tri_reverse_yield_verified_site
+ORG-002545,Crestwood Membranes Inc. Dba I2M,,Mountain Top,PA,B,PA,18707DYNMTCREST,tri_name_city_fuzzy_match
+ORG-002546,Tempur Production USA LLC Dba Mountain Top Foam,,Mountain Top,PA,B,PA,18707SLYCM25ELM,tri_name_city_fuzzy_match
+ORG-002581,Taylor Ind Inc.,,Parker Ford,PA,B,PA,19457TYLRNANDER,tri_address_exact_name_match
+ORG-002583,Abbey Color Inc.,,Philadelphia,PA,B,PA,19134BBYCL400ET,tri_address_exact_name_match
+ORG-002591,INEOS Composites US LLC,,Philadelphia,PA,B,PA,15225SHLND2650N,tri_address_exact_name_match
+ORG-002592,Purolite LLC An Ecolab Co.,,Philadelphia,PA,A,PA,19134PRLTC3620G,tri_address_exact_name_match
+ORG-002633,Ifs Industries Inc.,,Reading,PA,A,PA,19603NTRNTPOBOX,tri_address_exact_name_match
+ORG-002659,Crosstex Intl Inc.,,Sharon,PA,B,PA,1614WCRSST534VI,tri_address_exact_name_match
+ORG-002662,Palmer Intl Inc.,,Skippack,PA,B,PA,19474PLMRNLUCON,tri_address_exact_name_match
+ORG-002675,Checkers Safety Group,,Titusville,PA,B,PA,8002WRMSTR64CMP,tri_reverse_yield_verified_site
+ORG-002688,"Osram Sylvania Products Inc. - Warren, PA",,Warren,PA,B,PA,16365GTPRD816LE,tri_name_city_fuzzy_match
+ORG-002698,Delaware Valley Custom Marble Inc.,,West Grove,PA,B,PA,19390DLWRV4BRIA,tri_address_exact_name_match
+ORG-002700,Liberty Pultrusions,,West Mifflin,PA,A,PA,15122LBRTY1575L,tri_address_exact_name_match
+ORG-002711,Bryn Hill Industries,,Yeadon,PA,B,PA,19050BRYNH47IND,tri_address_exact_name_match
+ORG-002717,Protech Powder Coating Inc.,,York,PA,A,PA,1740WPRTCH939MN,tri_address_exact_name_match
+ORG-002730,Rohm and Haas Chemicals LLC,,Bristol,PA,A,PA,19007RHMNDOLDRT;60901NCLCH1400H;94545RHMND25500,tri_address_exact_name_match;tri_reverse_yield_verified_site
+ORG-002757,National Polymers,,Charleroi,PA,A,PA,15022NTNLP9GUTT,tri_name_city_fuzzy_match
+ORG-002770,Superior Tire & Rubber Corp,,Warren,PA,B,PA,16365SPRRT1818P,tri_name_city_fuzzy_match
