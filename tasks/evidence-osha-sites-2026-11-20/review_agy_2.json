@@ -1,0 +1,814 @@
+{
+ "verdicts": [
+  {
+   "record_id": "SITE-003727",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment 'MW' is a plant abbreviation/name filed under operator company Altec Industries."
+  },
+  {
+   "record_id": "SITE-003727",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2106 S. Riverside Rd. is the same street address with standard abbreviations."
+  },
+  {
+   "record_id": "SITE-003727",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 2,227 employees reported."
+  },
+  {
+   "record_id": "SITE-003952",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment name matches the operator's own name."
+  },
+  {
+   "record_id": "SITE-003952",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "4725 Green Park Road is the same street address."
+  },
+  {
+   "record_id": "SITE-003952",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 152 employees reported."
+  },
+  {
+   "record_id": "SITE-004005",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment and company match operator Polytainers, Inc."
+  },
+  {
+   "record_id": "SITE-004005",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1400 N.E. Douglas Street is the same street address with standard abbreviations."
+  },
+  {
+   "record_id": "SITE-004005",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 317 employees reported."
+  },
+  {
+   "record_id": "SITE-004011",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Exact match to operator Silgan Plastic Food Containers."
+  },
+  {
+   "record_id": "SITE-004011",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "710 West Park Road matches 710 West Park Rd."
+  },
+  {
+   "record_id": "SITE-004011",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 199 employees reported."
+  },
+  {
+   "record_id": "SITE-003865",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'Ergon, Inc. - Mirror Lake' matches operator Ergon, Inc."
+  },
+  {
+   "record_id": "SITE-003865",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2829 Lakeland Drive, Suite 2000 matches 2829 Lakeland Drive with permissible suite variation."
+  },
+  {
+   "record_id": "SITE-003865",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 402 employees reported."
+  },
+  {
+   "record_id": "SITE-003514",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator UPM Raflatac Inc."
+  },
+  {
+   "record_id": "SITE-003514",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Exact match to 400 Broadpointe Drive."
+  },
+  {
+   "record_id": "SITE-003514",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 158 employees reported."
+  },
+  {
+   "record_id": "SITE-003896",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'Genpak Westlake' filed under operator Genpak LLC."
+  },
+  {
+   "record_id": "SITE-003896",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "10601 Westlake Dr matches 10601 Westlake Drive."
+  },
+  {
+   "record_id": "SITE-003896",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 175 employees reported."
+  },
+  {
+   "record_id": "SITE-004117",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment 'Sawmills NC' is a plant location name filed under operator Automated Solutions, LLC."
+  },
+  {
+   "record_id": "SITE-004117",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: 4101 US Hwy 321-A is the same street address as 4101 US 321-A Alt with minor route naming variation."
+  },
+  {
+   "record_id": "SITE-004117",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 67 employees reported."
+  },
+  {
+   "record_id": "SITE-004151",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment and company match operator Tenowo Inc."
+  },
+  {
+   "record_id": "SITE-004151",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1968 Kawai Road matches 1968 Kawai Rd."
+  },
+  {
+   "record_id": "SITE-004151",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 92 employees reported."
+  },
+  {
+   "record_id": "SITE-004164",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'C.R. Onsrud Main' filed under operator C.R. Onsrud Inc."
+  },
+  {
+   "record_id": "SITE-004164",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "120 Technology Dr matches 120 Technology Drive."
+  },
+  {
+   "record_id": "SITE-004164",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 202 employees reported."
+  },
+  {
+   "record_id": "SITE-003620",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Daikin America, Inc."
+  },
+  {
+   "record_id": "SITE-003620",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Exact match to 20 Olympic Drive."
+  },
+  {
+   "record_id": "SITE-003620",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 50 employees reported."
+  },
+  {
+   "record_id": "SITE-000253",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'Avery Dennison Medical' filed under operator Avery Dennison."
+  },
+  {
+   "record_id": "SITE-000253",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "7100 Lindsay Dr. (Bldg. 14) matches 7100 Lindsay Dr with permissible building name addition."
+  },
+  {
+   "record_id": "SITE-000253",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 40 employees reported."
+  },
+  {
+   "record_id": "SITE-000515",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment name includes operator trade name '(Paramount Tube AC)' filed under parent company Precision Products Group, Inc."
+  },
+  {
+   "record_id": "SITE-000515",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "339 Mill Street matches 339 Mill St."
+  },
+  {
+   "record_id": "SITE-000515",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 62 employees reported."
+  },
+  {
+   "record_id": "SITE-002114",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment is under operator's own name 'Custom Pultrusions, Inc.', filed under parent company Andersen Windows and Doors."
+  },
+  {
+   "record_id": "SITE-002114",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1331 S. Chillicothe Road matches 1331 S Chillicothe Rd."
+  },
+  {
+   "record_id": "SITE-002114",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 80 employees reported."
+  },
+  {
+   "record_id": "SITE-002142",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'Niagara Bottling, LLC - Allentown' matches operator Niagara Bottling LLC."
+  },
+  {
+   "record_id": "SITE-002142",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "7561 Industrial Blvd matches 7561 Industrial Blvd."
+  },
+  {
+   "record_id": "SITE-002142",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 225 employees reported."
+  },
+  {
+   "record_id": "SITE-002143",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'Niagara Bottling, LLC - Hamburg' matches operator Niagara Bottling LLC."
+  },
+  {
+   "record_id": "SITE-002143",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "316 South Front St matches 316 S Front St."
+  },
+  {
+   "record_id": "SITE-002143",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 98 employees reported."
+  },
+  {
+   "record_id": "SITE-002145",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'Niagara Bottling, LLC - Pittsburgh' matches operator Niagara Bottling LLC."
+  },
+  {
+   "record_id": "SITE-002145",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "201 Solar Drive matches 201 Solar Dr."
+  },
+  {
+   "record_id": "SITE-002145",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 74 employees reported."
+  },
+  {
+   "record_id": "SITE-002179",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment 'Transpo Industries' is a division/plant name filed under operator company Castek, Inc."
+  },
+  {
+   "record_id": "SITE-002179",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "23 River Road matches 23 River Rd."
+  },
+  {
+   "record_id": "SITE-002179",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 24 employees reported."
+  },
+  {
+   "record_id": "SITE-002185",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment 'LVIP' is a plant abbreviation/name filed under operator Crayola LLC."
+  },
+  {
+   "record_id": "SITE-002185",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2475 Brodhead Road matches 2475 Brodhead Rd."
+  },
+  {
+   "record_id": "SITE-002185",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 173 employees reported."
+  },
+  {
+   "record_id": "SITE-002243",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Vision Profile Extrusions USA Ltd."
+  },
+  {
+   "record_id": "SITE-002243",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1 Contact Place matches 1 Contact Pl."
+  },
+  {
+   "record_id": "SITE-002243",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 164 employees reported."
+  },
+  {
+   "record_id": "SITE-002244",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment 'Plant 1' is a facility name filed under operator company Sylvin Technologies."
+  },
+  {
+   "record_id": "SITE-002244",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Exact match to 84 Denver Rd."
+  },
+  {
+   "record_id": "SITE-002244",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 42 employees reported."
+  },
+  {
+   "record_id": "SITE-002245",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Weaver Industries."
+  },
+  {
+   "record_id": "SITE-002245",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "425 SOUTH 4TH STREET matches 425 South 4th St."
+  },
+  {
+   "record_id": "SITE-002245",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 70 employees reported."
+  },
+  {
+   "record_id": "SITE-002280",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator General Partitions (legal suffix diff permitted)."
+  },
+  {
+   "record_id": "SITE-002280",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1702 Peninsula Drive matches 1702 Peninsula Dr."
+  },
+  {
+   "record_id": "SITE-002280",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 58 employees reported."
+  },
+  {
+   "record_id": "SITE-002281",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Haysite Reinforced Plastics LLC."
+  },
+  {
+   "record_id": "SITE-002281",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Exact match to 5599 New Perry Highway."
+  },
+  {
+   "record_id": "SITE-002281",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 100 employees reported."
+  },
+  {
+   "record_id": "SITE-002288",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment 'Corporate Administration' filed under operator company Plastek Industries Inc."
+  },
+  {
+   "record_id": "SITE-002288",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2425 West 23rd St matches 2425 West 23rd St."
+  },
+  {
+   "record_id": "SITE-002288",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 82 employees reported."
+  },
+  {
+   "record_id": "SITE-002293",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Plastikos Medical LLC."
+  },
+  {
+   "record_id": "SITE-002293",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "8121 Hawthorne Drive matches 8121 Hawthorne Dr."
+  },
+  {
+   "record_id": "SITE-002293",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 20 employees reported."
+  },
+  {
+   "record_id": "SITE-002312",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'Trinseo Exton Global Innovation Center' filed under operator Trinseo LLC."
+  },
+  {
+   "record_id": "SITE-002312",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "435 Creamery Way matches 435 Creamery Way Suite 400 with permissible suite variation."
+  },
+  {
+   "record_id": "SITE-002312",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 19 employees reported."
+  },
+  {
+   "record_id": "SITE-002362",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Martech Medical Products."
+  },
+  {
+   "record_id": "SITE-002362",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "1500 Delp Drive matches 1500 Delp Dr."
+  },
+  {
+   "record_id": "SITE-002362",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 79 employees reported."
+  },
+  {
+   "record_id": "SITE-002371",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'The Rodon Group - Sterling' matches operator The Rodon Group."
+  },
+  {
+   "record_id": "SITE-002371",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2800 Sterling Drive matches 2800 Sterling Dr."
+  },
+  {
+   "record_id": "SITE-002371",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 105 employees reported."
+  },
+  {
+   "record_id": "SITE-002460",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'Dart Container Leola Bead' matches operator Dart Container."
+  },
+  {
+   "record_id": "SITE-002460",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "60 E Main St matches 60 E Main St."
+  },
+  {
+   "record_id": "SITE-002460",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 53 employees reported."
+  },
+  {
+   "record_id": "SITE-002474",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment 'Liverpool Location' is a facility name filed under operator Mahantango Enterprises, Inc."
+  },
+  {
+   "record_id": "SITE-002474",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2100 Old Trail Road matches 2100 Old Trail Rd."
+  },
+  {
+   "record_id": "SITE-002474",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 33 employees reported."
+  },
+  {
+   "record_id": "SITE-002485",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment 'Plant' is a facility name filed under operator The Murus Company Inc."
+  },
+  {
+   "record_id": "SITE-002485",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Exact match to 3234 Route 549."
+  },
+  {
+   "record_id": "SITE-002485",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 29 employees reported."
+  },
+  {
+   "record_id": "SITE-002589",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Solar Innovations."
+  },
+  {
+   "record_id": "SITE-002589",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Exact match to 31 Roberts Rd."
+  },
+  {
+   "record_id": "SITE-002589",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 143 employees reported."
+  },
+  {
+   "record_id": "SITE-002616",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: operator combines McAdoo & Allen and Quaker Color; OSHA company is McAdoo & Allen, Inc and establishment is Quaker Color Inc."
+  },
+  {
+   "record_id": "SITE-002616",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "201 S Hellertown Ave matches 201 South Hellertown Ave."
+  },
+  {
+   "record_id": "SITE-002616",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 46 employees reported."
+  },
+  {
+   "record_id": "SITE-002618",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Ammeraal Beltech Modular (LLC vs Incorporated permitted)."
+  },
+  {
+   "record_id": "SITE-002618",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "500 Brentwood Dr matches 500 Brentwood Dr."
+  },
+  {
+   "record_id": "SITE-002618",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 120 employees reported."
+  },
+  {
+   "record_id": "SITE-002620",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Custom Processing Services Inc."
+  },
+  {
+   "record_id": "SITE-002620",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: 2 Birchmont Drive matches 2 Birchmont Rd. with street suffix variation (Rd. vs Drive)."
+  },
+  {
+   "record_id": "SITE-002620",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 145 employees reported."
+  },
+  {
+   "record_id": "SITE-002655",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Guy Chemical Company Inc. (LLC vs Inc permitted)."
+  },
+  {
+   "record_id": "SITE-002655",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: 150 South Dominion Drive matches 150 Dominion Dr. with permissible direction word 'South' added."
+  },
+  {
+   "record_id": "SITE-002655",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 131 employees reported."
+  },
+  {
+   "record_id": "SITE-002661",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Knf Flexpak Corporation."
+  },
+  {
+   "record_id": "SITE-002661",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "734 W Penn Pike matches 734 West Penn Pike Suite #1 with permissible suite variation."
+  },
+  {
+   "record_id": "SITE-002661",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 65 employees reported."
+  },
+  {
+   "record_id": "SITE-002683",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment 'Whirley Industries - Bakery Building' matches operator Whirley Industries Inc."
+  },
+  {
+   "record_id": "SITE-002683",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "618 4th Ave matches 618 4th Ave."
+  },
+  {
+   "record_id": "SITE-002683",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 109 employees reported."
+  },
+  {
+   "record_id": "SITE-002684",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator Magee Plastics Company."
+  },
+  {
+   "record_id": "SITE-002684",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "303 Brush Creek Road matches 303 Brush Creek Rd."
+  },
+  {
+   "record_id": "SITE-002684",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 97 employees reported."
+  },
+  {
+   "record_id": "SITE-002698",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: operator 'Plastic Dev' is an abbreviated form of 'Plastic Development Company'."
+  },
+  {
+   "record_id": "SITE-002698",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: 75 PALMER INDUSTRIAL ROAD matches 75 Palmer Industrial Dr. with street suffix variation and PO Box addition."
+  },
+  {
+   "record_id": "SITE-002698",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 59 employees reported."
+  },
+  {
+   "record_id": "SITE-002734",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "Filer is LORD Corporation, a different company from operator Parker-Hannifin Corporation, with no link established in the data."
+  },
+  {
+   "record_id": "SITE-002734",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "Filing is not for this site because existence is UNSOUND."
+  },
+  {
+   "record_id": "SITE-002734",
+   "claim_type": "liveness",
+   "verdict": "UNSOUND",
+   "reason": "Liveness requires existence to be SOUND."
+  },
+  {
+   "record_id": "SITE-002740",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment 'Washington Penn - PPD' matches operator Washington Penn and site Performance Products Division under company Audia."
+  },
+  {
+   "record_id": "SITE-002740",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: 1604 State Rd Rt 136 matches 1604 State Rt. 136 with minor route designation variation."
+  },
+  {
+   "record_id": "SITE-002740",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 61 employees reported."
+  },
+  {
+   "record_id": "SITE-002766",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Establishment matches operator BVPV Styrenics LLC."
+  },
+  {
+   "record_id": "SITE-002766",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "400 Frankfort Road matches 400 Frankfort Rd."
+  },
+  {
+   "record_id": "SITE-002766",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 44 employees reported."
+  },
+  {
+   "record_id": "SITE-002772",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: establishment 'Muncy' is a plant location name filed under operator Advanced Drainage Systems."
+  },
+  {
+   "record_id": "SITE-002772",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Borderline SOUND: 173 Industrial Parkway North matches 173 Industrial Pkwy with direction word 'North' added."
+  },
+  {
+   "record_id": "SITE-002772",
+   "claim_type": "liveness",
+   "verdict": "SOUND",
+   "reason": "Existence is SOUND and filing covers 2025 with 138 employees reported."
+  }
+ ]
+}

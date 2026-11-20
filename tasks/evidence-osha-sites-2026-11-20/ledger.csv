@@ -1,0 +1,916 @@
+site_id,tier,verdict,operator,site_name,atlas_street,city,state,osha_establishment_id,osha_establishment,osha_company,osha_street
+SITE-003726,B,NONE,"Altec Industries, Inc.",Altec Industries Headquarters,210 Inverness Center Drive,Birmingham,AL,,,,
+SITE-003812,B,NONE,Vectorply Corporation,Vectorply HQ and plant,3400 South Railroad Street,Phenix City,AL,,,,
+SITE-003902,B,NONE,Max Packaging Company,Max Packaging Company,109 6th Avenue NW,Attalla,AL,,,,
+SITE-003904,B,NONE,"NantBioRenewables AL, LLC",NantBioRenewables Gadsden Plant,145 Thomas Dr,Gadsden,AL,,,,
+SITE-003970,B,NONE,Colormasters LLC,Colormasters Headquarters and Plant,703 Railroad Ave,Albertville,AL,,,,
+SITE-004292,B,NONE,"Argosy Advanced Materials, LLC",Argosy Composite Advanced Materials - Huntsville,254 Johns Road NW,Huntsville,AL,,,,
+SITE-004096,B,NONE,"River Bend Molding, Inc.",River Bend Molding — Ozark plant,1661 Airport Rd,Ozark,AR,,,,
+SITE-004312,B,NONE,"Davis Rubber Company, Inc.",Davis Rubber - Little Rock,1888 E 14th St,Little Rock,AR,,,,
+SITE-004360,B,NONE,"3D Barrier Bags, Inc.",3D Barrier Bags - Chandler plant,"1950 E. Queen Creek Road, Suite 300",Chandler,AZ,,,,
+SITE-003371,C,NONE,"THINKY U.S.A., INC.",THINKY U.S.A. HQ,"23151 Verdugo Drive, Suite 112",Laguna Hills,CA,,,,
+SITE-003388,A,ADDR_ONLY,Yokohama Tire Corporation,Yokohama Tire Corporation Headquarters — Santa Ana,"1 MacArthur Place, Suite 900",Santa Ana,CA,1305025,Yokohama Corporate Headquarters,Corporate Office,1 MacArthur Place Suite 900
+SITE-003540,B,NONE,"Mantle 3D Systems, LLC",Mantle HQ,1950 Cesar Chavez St,San Francisco,CA,,,,
+SITE-003743,B,ADDR_ONLY,Ebert Composites Corporation,Ebert Composites Corporation,651 Anita St,Chula Vista,CA,1106821,Cabinetry Design,CABINETRY DESIGN,651 ANITA ST SUITE B2
+SITE-003797,B,NONE,"S. Bravo Systems, Inc.",S. Bravo Systems HQ,2929 Vail Ave,Commerce,CA,,,,
+SITE-003806,B,NONE,TR Industries,TR Industries HQ,11022 Vulcan Street,South Gate,CA,,,,
+SITE-003878,B,NONE,3E Biotech Inc.,3E Biotech Headquarters,"120 Newport Center Dr, Suite 270",Newport Beach,CA,,,,
+SITE-003885,B,NONE,"beyondGREEN biotech, Inc.",beyondGREEN biotech Headquarters and Plant,1202 E Wakeham Ave,Santa Ana,CA,,,,
+SITE-003895,B,ADDR+NAME,"Direct Pack, Inc.",Direct Pack Headquarters,1025-1055 W 8th St,Azusa,CA,1086012,Direct Pack Inc. Azusa,Direct Pack Inc.,1025 W 8th St
+SITE-003898,C,NONE,IMEX Vision LLC,IMEX Vision Headquarters,9201 Jeronimo Rd,Irvine,CA,,,,
+SITE-003915,B,ADDR+NAME,"Sinclair Systems International, LLC",Sinclair Systems International Fresno,3115 S Willow Ave,Fresno,CA,936585,Fresno Sinclair Systems INTL,Sinclair Systems INTL,3115 S WILLOW AVE
+SITE-003917,C,NONE,TLC Packaging Inc.,TLC Packaging Inc.,1841 East Acacia Street,Ontario,CA,,,,
+SITE-003919,B,ADDR_ONLY,YMYH Inc.,YMYH Inc. DBA CornNext,18003 Sky Park Circle Suite G,Irvine,CA,1274591,"West Coast DME & Supplies, LLC - Irvine","West Coast DME & Supplies, LLC",18003 Sky Park Circle Suite H
+SITE-003924,C,ADDR_ONLY,"LOTTE Chemical California, Inc.",LOTTE Chemical California La Palma Office,6 Centerpointe Drive,La Palma,CA,1552438,77141598 - 6 CENTERPOINTE  SUITE 100 SAM,ABM Industries Incorporated,6 CENTERPOINTE DRDAVIS
+SITE-003945,B,NONE,Halco USA,Halco USA Hayward Facility,20269 Mack Street,Hayward,CA,,,,
+SITE-003965,B,ADDR+NAME,CCL Tube Inc.,CCL Tube Carson Plant,2250 E 220th St,Carson,CA,1286043,CCL Tube Inc,CCL Tube Inc,2250 East 220th Street
+SITE-004012,C,NONE,"SK Chemicals America, Inc.",SK Chemicals America Headquarters,2 Park Plaza Suite 1250,Irvine,CA,,,,
+SITE-004022,B,NONE,M.R. Mold & Engineering Corporation,M.R. Mold & Engineering HQ,1150 Beacon St,Brea,CA,,,,
+SITE-004098,B,NONE,Roto Dynamics Inc.,Roto Dynamics — Orange plant,1925 N Lime St,Orange,CA,,,,
+SITE-004113,B,NONE,"TrafFix Devices, Inc.",TrafFix Devices — San Clemente HQ,160 Avenida La Pata,San Clemente,CA,,,,
+SITE-004160,B,ADDR+NAME,"Axiom Materials, Inc.",Axiom Materials Santa Ana Plant,2320 Pullman St,Santa Ana,CA,1471780,"Axiom Materials, Inc",,2320 Pullman St
+SITE-004201,B,NONE,"Plasmatreat USA, Inc.",Plasmatreat USA Headquarters and Lab,30695 Huntwood Ave,Hayward,CA,,,,
+SITE-004270,C,NONE,Talco Plastics Inc.,Talco Plastics - Corona plant,1000 W Rincon St,Corona,CA,,,,
+SITE-004286,B,NONE,"Airtech International, Inc.",Airtech International Headquarters and Plant,5700 Skylab Road,Huntington Beach,CA,,,,
+SITE-004293,B,NONE,ASC Process Systems,ASC Process Systems - Valencia,28402 Livingston Ave,Valencia,CA,,,,
+SITE-004294,B,ADDR+NAME,Ascent Aerospace,Ascent Aerospace - Santa Ana,1395 S. Lyon St,Santa Ana,CA,667954,"Ascent Aerospace, LLC.",Ascent Aerospace,1395 S. Lyon St.
+SITE-004304,B,NONE,Brightmark LLC,Brightmark - San Francisco HQ,1725 Montgomery Street,San Francisco,CA,,,,
+SITE-004318,B,NONE,"FimmTech, Inc.",FimmTech - Carlsbad tech center,"5900 Sea Lion Place, Suite 140",Carlsbad,CA,,,,
+SITE-004343,B,NONE,"Rauwendaal Extrusion Engineering, Inc.",Rauwendaal Extrusion Engineering Headquarters,10556 Combie Road #6677,Auburn,CA,,,,
+SITE-003323,B,NONE,X2F,X2F - Loveland,"985 N. Wilson Avenue, Suite 100",Loveland,CO,,,,
+SITE-003714,B,ADDR+NAME,Viega LLC,Viega LLC Headquarters,585 Interlocken Blvd,Broomfield,CO,1497875,Viega - Broomfield,Viega LLC,585 Interlocken Blvd
+SITE-004036,B,NONE,Colorado Plastic Products,Colorado Plastic Products HQ,"500 S. Arthur Ave., Suite 600",Louisville,CO,,,,
+SITE-004338,B,ADDR+NAME,"Pretred, Inc.",Pretred Headquarters and Plant,3700 Salida Street,Aurora,CO,1563084,"Pretred, Inc.","Pretred, Inc.","3700 N. Salida St., Unit 20"
+SITE-003242,B,NONE,"Paulson Training Programs, Inc.",Paulson Training HQ,3 Inspiration Lane,Chester,CT,,,,
+SITE-003253,B,NONE,"Vanderbilt Chemicals, LLC",Vanderbilt Chemicals HQ,30 Winfield Street,Norwalk,CT,,,,
+SITE-003349,A,NONE,BYK USA LLC,BYK USA Wallingford,524 S. Cherry Street,Wallingford,CT,,,,
+SITE-003350,A,ADDR_ONLY,BYK USA LLC,BYK USA North Haven,33 Stiles Avenue,North Haven,CT,278414,"Millwood, Inc. North Haven","Millwood, Inc.",33 Stiles Lane
+SITE-003353,B,ADDR+NAME,Clinton Instrument Company,Clinton Instrument Company HQ & Plant,295 E. Main St.,Clinton,CT,1457657,Clinton Instrument Company,Clinton Instrument Company,295 East Main Street
+SITE-003459,B,ADDR+NAME,"Westminster Tool, Inc.",Westminster Tool Headquarters and Plant,5 East Parkway,Plainfield,CT,298558,Westminster Tool Inc,Westminster Tool Inc,5 EAST PARKWAY
+SITE-003524,B,NONE,"Dri-Air Industries, Inc.",Dri-Air Industries HQ Plant,16 Thompson Rd,East Windsor,CT,,,,
+SITE-003816,B,NONE,"Xamax Industries, Inc.",Xamax Industries HQ,63 Silvermine Road,Seymour,CT,,,,
+SITE-004219,B,NONE,"ADG Solutions, Inc.",ADG Solutions Headquarters,3022 Burr Street,Fairfield,CT,,,,
+SITE-004309,C,NONE,cieTrade Systems Inc.,cieTrade Systems - Norwalk HQ,15 North Water Street,Norwalk,CT,,,,
+SITE-003298,B,ADDR+NAME,TA Instruments,TA Instruments - New Castle HQ Plant,159 Lukens Drive,New Castle,DE,857303,TA Instruments- New Castle,Waters Corporation,159 Lukens Drive
+SITE-003555,B,ADDR_ONLY,"DELRIN USA, LLC",Delrin Headquarters,974 Centre Road,Wilmington,DE,1542464,104237.1 - MRA REALTY-CHESTNUT RUN INNOV_C_11956585_5015_00555_MND000_66178001.JAN-MRA REALTY-CHESTN,ABM Industries Incorporated,974 CENTRE ROAD
+SITE-003248,B,NONE,"Structural Composites, Inc.",Structural Composites HQ plant,360 East Dr,Melbourne,FL,,,,
+SITE-003354,B,ADDR_ONLY,"Entec Polymers, LLC",Entec Polymers HQ,"1900 Summit Tower Blvd, Suite 900",Orlando,FL,1152929,FedEx 1900 SUMMIT TOWER BLVD,FEDERAL EXPRESS CORPORATION,1900 SUMMIT TOWER BLVD
+SITE-003460,B,NONE,"Zeppelin Systems USA, Inc.",Zeppelin Systems USA Headquarters,13330 Byrd Drive,Odessa,FL,,,,
+SITE-003519,B,NONE,"COAST Systems, LLC",COAST Systems HQ,308 S Broad St,Brooksville,FL,,,,
+SITE-003529,B,NONE,"Genox USA, LLC",Genox USA HQ,"740 4th St N, #156",St. Petersburg,FL,,,,
+SITE-003530,B,NONE,Globeius,Globeius HQ,7752 NW 74th Ave,Miami,FL,,,,
+SITE-003538,B,NONE,"Kruse Analysis, Inc.",Kruse HQ,"1415 Panther Lane, Suite 367",Naples,FL,,,,
+SITE-003733,B,NONE,BlueWind Technology LLC,BlueWind Technology,7502 Sears Boulevard,Pensacola,FL,,,,
+SITE-003848,B,ADDR_ONLY,"Extreme Coatings, Inc.",Extreme Coatings Headquarters,2895 46th Avenue North,St. Petersburg,FL,1372476,"Surface Engineering & Alloy Company, Inc.","Surface Engineering & Alloy Company, Inc.",2895 46th Ave N
+SITE-003886,B,NONE,"BioBag Americas, Inc.",BioBag Americas Headquarters,"1059 Broadway St., Suite F",Dunedin,FL,,,,
+SITE-004230,B,NONE,"Commercial Plastics Recycling, Inc.",Commercial Plastics Recycling Headquarters & Plant,1920 Tampa East Blvd.,Tampa,FL,,,,
+SITE-004275,C,NONE,Tradepro Inc.,Tradepro Inc. Headquarters,1810 N.E. 144th Street,North Miami,FL,,,,
+SITE-004283,B,NONE,"Teckrez, LLC","Teckrez, LLC Headquarters","4345 Southpoint Blvd, Suite 120",Jacksonville,FL,,,,
+SITE-004289,B,ADDR+NAME,"American Tool & Mold, Inc.",American Tool & Mold - Clearwater,1700 Sunshine Dr,Clearwater,FL,1306014,American Tool and Mold,American Tool and Mold,1700 Sunshine Dr
+SITE-004301,B,ADDR_ONLY,Bamberger Amco Polymers,Bamberger Amco Polymers - Orlando HQ,"1900 Summit Tower Blvd, Suite 900",Orlando,FL,1152929,FedEx 1900 SUMMIT TOWER BLVD,FEDERAL EXPRESS CORPORATION,1900 SUMMIT TOWER BLVD
+SITE-004310,B,NONE,"CM Shredders, LLC",CM Shredders - Sarasota,1920 Whitfield Avenue,Sarasota,FL,,,,
+SITE-004311,B,NONE,"CoreLite, Inc.",CoreLite - Miami (North America),1060 E. 30 St,Miami,FL,,,,
+SITE-004355,B,NONE,Virtus Equipment,Virtus Equipment - Fort Myers,"9120 Centerlinks Commerce Dr, Unit 4",Fort Myers,FL,,,,
+SITE-004359,B,ADDR_ONLY,"3D Barrier Bags, Inc.",3D Barrier Bags - Orlando HQ plant,"1031 Crews Commerce Drive, Suite 120",Orlando,FL,1440426,Orlando FL S3101,Utz Quality Foods LLC,1031 Crews CommerceCenter
+SITE-003259,C,NONE,Cutmetall North America LP,Cutmetall North America - Tyrone Office,1555 Senoia Rd,Tyrone,GA,,,,
+SITE-003267,B,ADDR+NAME,Nexus Circular LLC,Nexus Circular - Atlanta HQ & Plant,500 Waterfront Drive SW,Atlanta,GA,1500948,Nexus Circular LLC,Nexus Circular LLC,500 Waterfront Dr. SW
+SITE-003273,C,NONE,"TSM Control Systems, Inc.",TSM Control Systems Inc. - Marietta US Office,1505 Johnson Ferry Road,Marietta,GA,,,,
+SITE-003278,B,NONE,"Birla Carbon U.S.A., Inc.",Birla Carbon USA - Marietta HQ and Technology Center,1800 West Oak Commons Court,Marietta,GA,,,,
+SITE-003282,C,NONE,"Extrusion Control & Supply, LLC",Extrusion Control & Supply - Oxford HQ Warehouse,91130 East Metro Parkway,Oxford,GA,,,,
+SITE-003315,B,ADDR_ONLY,"Next Generation Recycling Machines, Inc.",NGR Inc. US Customer Care Center / test center - Atlanta,"73 Southwoods Parkway, Suite 150",Atlanta,GA,1446110,"Atlanta, GA",,73 Southwoods Parkway Suite 100
+SITE-003324,B,NONE,Allnex USA Inc.,Allnex USA Inc. - Alpharetta (Americas HQ),9005 Westside Parkway,Alpharetta,GA,,,,
+SITE-003396,B,ADDR_ONLY,"Avalon Vision Solutions, LLC",Avalon Vision Solutions - Headquarters,422 Thornton Rd,Lithia Springs,GA,1493343,026P   ATLANTA WEST GA FAS,CINTAS,422 THORNTON RD
+SITE-003411,B,NONE,Huber Engineered Materials,Huber Engineered Materials Headquarters,3100 Cumberland Blvd SE,Atlanta,GA,,,,
+SITE-003457,B,ADDR_ONLY,SIKORA International Corporation,SIKORA International Headquarters,150 Huddleston Road #1300,Peachtree City,GA,1509613,CBX Solutions 302,The Cook and Boardman Group LLC,150 Huddleston Rd Suite 400
+SITE-003486,B,ADDR+NAME,Printpack Inc.,Printpack HQ,2800 Overlook Pkwy,Atlanta,GA,208231,ATLANTA,Printpack Inc,2800 OVERLOOK  PKWY
+SITE-003539,B,ADDR_ONLY,LS IMM USA LLC,LS IMM USA HQ,2150 Boggs Rd,Duluth,GA,1119443,Duluth,Covetrus,2150 Boggs Road Northwest
+SITE-003735,C,ADDR+NAME,"Cimbar Resources, Inc.",Cimbar Resources Corporate Office,49-0 Jackson Lake Rd,Chatsworth,GA,1091390,Cimbar Resources Inc,Cimbar Resources Inc,49-0 Jackson Lake Rd
+SITE-003931,B,NONE,Winpak Films Inc.,Winpak Films Senoia Plant,219 Andrews Parkway,Senoia,GA,,,,
+SITE-003943,B,NONE,"Follmann, Inc.","Follmann, Inc. Cordele Facility","3002 Frontage Rd, Suite T",Cordele,GA,,,,
+SITE-003948,B,ADDR_ONLY,Robatech USA Inc.,Robatech USA Headquarters,1005 Alderman Drive,Alpharetta,GA,1510647,Alpharetta,XS International LLC,1005 Alderman Drive
+SITE-003953,B,NONE,"Advanced Polymer Recycling, LLC",Advanced Polymer Recycling Headquarters,138 Peachtree Ct,Peachtree City,GA,,,,
+SITE-003964,B,NONE,"British American Rubber Company, LLC",BARCO Tallapoosa Plant,280 Pequanic Dr,Tallapoosa,GA,,,,
+SITE-003967,B,ADDR+NAME,"Challenger Turf, Inc.",Challenger Turf Headquarters and Plant,743 Hill Rd,Dalton,GA,1369147,Challenger Turf,,743 Hill Road
+SITE-004019,B,NONE,Starrett-Bytewise,Starrett-Bytewise Columbus,1150 Brookstone Centre Pkwy,Columbus,GA,,,,
+SITE-004062,C,NONE,Redwood Plastics and Rubber,Redwood Plastics and Rubber - Stockbridge,165 Andrew Drive,Stockbridge,GA,,,,
+SITE-004121,B,NONE,"Demand Products, Inc.",Demand Products Headquarters,1055 Nine North Drive,Alpharetta,GA,,,,
+SITE-004183,B,NONE,GUHDO USA Inc.,GDP Tooling - Marietta HQ,1135 JVL Ct,Marietta,GA,,,,
+SITE-004218,B,NONE,ZwickRoell LP,ZwickRoell North America Headquarters,1009 Market Center Dr NW,Kennesaw,GA,,,,
+SITE-004229,B,NONE,Cimbar Performance Minerals,Cimbar Performance Minerals Headquarters,104 North 3rd Avenue,Chatsworth,GA,,,,
+SITE-004240,B,NONE,Kal-Polymers,Kal-Polymers Americas Plant,4350 Avery Dr,Flowery Branch,GA,,,,
+SITE-004281,B,NONE,Mayzo Inc.,Mayzo Inc. Headquarters,3935 Lakefield Court,Suwanee,GA,,,,
+SITE-004366,B,NONE,"CyCan Industries, Inc.",CyCan - Woodstock HQ plant,313 Bell Park Drive,Woodstock,GA,,,,
+SITE-004378,B,NONE,LAS Adhesives Inc.,LAS Adhesives - Tucker HQ warehouse,5126 South Royal Atlanta Drive,Tucker,GA,,,,
+SITE-003335,B,ADDR+NAME,Manufacturing Specialties Inc.,MSI Mold Builders - Cedar Rapids (HQ),12300 6th St SW,Cedar Rapids,IA,1045196,"Manufacturing Specialties, Inc.","Manufacturing Specialties, Inc.",12300 6th St SW
+SITE-003364,B,NONE,Norplex-Micarta,Norplex-Micarta HQ & Plant,665 Lybrand Street,Postville,IA,,,,
+SITE-003594,B,ADDR+NAME,"Ritchie Industries, Inc.",Ritchie Industries - Conrad Plant,120 South Main Street,Conrad,IA,1304795,Ritchie Industries Inc.,Ritchie Industries Inc.,120 S Main St.
+SITE-003827,B,NONE,Blue Wave Ultrasonics Inc,Blue Wave Ultrasonics HQ and plant,209 W 76th Street,Davenport,IA,,,,
+SITE-004070,C,NONE,Seelye-Eiler Plastics,Seelye-Eiler Plastics - Cedar Rapids,"4900 Bowling Street SW, Suite 400",Cedar Rapids,IA,,,,
+SITE-004193,B,NONE,"Lomont Molding, LLC",Lomont - Mount Pleasant plant,1516 E. Maple Leaf Dr,Mount Pleasant,IA,,,,
+SITE-004205,B,NONE,SACMI USA Ltd,SACMI USA Headquarters and Plant,3434 106th Circle,Urbandale,IA,,,,
+SITE-003749,A,NONE,"Fiber Care Baths, Inc.",Fiber Care Baths — Jerome,446 East Frontage Road North,Jerome,ID,,,,
+SITE-003804,B,NONE,"Spunstrand, Inc.",Spunstrand HQ and plant,620 North Post Street,Post Falls,ID,,,,
+SITE-004296,B,ADDR+NAME,"Advanced Thermoplastic Composites, Inc.",ATC Manufacturing - Post Falls,1224 N Lean St,Post Falls,ID,1246783,ATC Manufacturing,"Advanced Thermoplastic Composites, LLC",1224 N Lean st
+SITE-003223,B,ADDR+NAME,Cabot Corporation,Cabot Corporation - Tuscola,700 East US Highway 36,Tuscola,IL,1270237,Cabot Corporation,Cabot Corporation,700 East US HWY 36
+SITE-003243,B,NONE,Pregis LLC,Pregis HQ,"1650 Lake Cook Road, Suite 400",Deerfield,IL,,,,
+SITE-003263,B,NONE,"iD Additives, Inc.",iD Additives - La Grange HQ,915 W Hillgrove Ave,La Grange,IL,,,,
+SITE-003268,B,NONE,Progressive Components International Corp.,Progressive Components - Wauconda HQ,235 Industrial Dr,Wauconda,IL,,,,
+SITE-003286,C,NONE,Intouch Monitoring Ltd,Intouch Monitoring - Rosemont US Office,"5600 North River Road, Suite 800",Rosemont,IL,,,,
+SITE-003332,B,ADDR_ONLY,"Japan Steel Works America, Inc.",JSW America - Chicago Technical Center (IMM HQ),"201 Hansen Ct, Ste 121",Wood Dale,IL,1358920,Wood Dale - KCI,3M Company,201 HANSEN CT
+SITE-003423,B,ADDR_ONLY,"Quantum Polymers, Inc.",Quantum Polymers Headquarters,1900 Spring Road Suite 430,Oak Brook,IL,1553374,77146326 - 1900 SPRING ROAD,ABM Industries Incorporated,1900 SPRING ROAD
+SITE-003441,B,NONE,"FISA North America, Inc.",FISA North America Headquarters,260 Stanley St,Elk Grove Village,IL,,,,
+SITE-003442,B,NONE,The Hallstar Company,Hallstar Headquarters,120 South Riverside Plaza Suite 1620,Chicago,IL,,,,
+SITE-003443,B,NONE,The Hallstar Company,Hallstar Bedford Park Plant,5851 West 73rd Street,Chicago,IL,,,,
+SITE-003450,B,ADDR_ONLY,Nouryon Chemicals LLC,Nouryon Chemicals LLC Chicago Office,525 West Van Buren Street Suite 1600,Chicago,IL,1182962,"RLICORP-Chicago, IL",RLI Corp,"525 West Van Buren St. Congress Center, Suite 350"
+SITE-003454,B,NONE,"Processing Technologies International, LLC",PTi Headquarters and Plant,2655 White Oak Circle,Aurora,IL,,,,
+SITE-003490,B,ADDR+NAME,Bales Metal Surface Solutions,Bales Metal Surface Solutions HQ Plant,2824 Hitchcock Avenue,Downers Grove,IL,1276358,Bales Metal Surface Solutions,Bales Metal Surface Solutions,2824 Hitchcock Ave
+SITE-003498,B,NONE,INEOS Styrolution America LLC,INEOS Styrolution America HQ,"4245 Meridian Parkway, Suite 151",Aurora,IL,,,,
+SITE-003520,B,ADDR_ONLY,Cresswood Shredding Machinery,Cresswood Shredding Machinery HQ Plant,55 W Lincoln Hwy,Cortland,IL,1026443,Dun-Rite Tool & Machine Co,Dun-Rite Tool & Machine Co.,55 W Lincoln Hwy
+SITE-003527,B,NONE,"Spark Industries, LLC",Fast Heat by Spark Mokena Site,"9951 W 190th St, Suite M",Mokena,IL,,,,
+SITE-003532,C,NONE,Hoto Instruments,Hoto Instruments HQ,"3100 Dundee Rd, Suite 707",Northbrook,IL,,,,
+SITE-003537,B,NONE,Kongskilde Industries USA Inc.,Kongskilde Industries USA HQ,1802 Industrial Park Dr,Normal,IL,,,,
+SITE-003541,B,ADDR+NAME,"Matsui America, Inc.",Matsui America HQ,5825 Turnberry Dr,Hanover Park,IL,923141,Matsui America HQ,"Matsui America, Inc.",5825 Turnberry Drive
+SITE-003544,B,NONE,National Tool & Manufacturing Co.,National Tool & Manufacturing HQ Plant,563 Rock Rd Dr,East Dundee,IL,,,,
+SITE-003553,B,ADDR_ONLY,"Lawter, Inc.","Lawter, Inc. Global Headquarters",200 North LaSalle Street Suite 2600,Chicago,IL,1549273,120338.1 - ONNI PROPERTIES CHICAGO INC - 5052- JANITORIAL SERVICES.JAN - CHICAGO IL - CLEANING,ABM Industries Incorporated,200 N. LASALLE STREET -SUITE 750
+SITE-003823,B,ADDR_ONLY,Alliance Specialties and Laser Sales,Alliance Specialties HQ,275 Industrial Dr,Wauconda,IL,577027,"Duro-Chrome Industries, Inc.","Duro-Chrome Industries, Inc.",275 Industrial Drive
+SITE-003829,B,NONE,CAE Services Corp.,CAE Services HQ,280 Belleview Lane,Batavia,IL,,,,
+SITE-003833,B,NONE,"Shibaura Machine Company, America","Shibaura Machine Company, America Headquarters",755 Greenleaf Avenue,Elk Grove Village,IL,,,,
+SITE-003834,B,ADDR_ONLY,"SIGMA Plastic Services, Inc.",SIGMA Plastic Services Headquarters,"10 N. Martingale Road, Suite 620",Schaumburg,IL,308791,CGO,"Hitachi High-Tech America, Inc.","10 N. Martingale Road, Suite 500"
+SITE-003835,B,NONE,Plustech Inc.,Plustech Inc. North America Headquarters,111 NW Point Blvd,Elk Grove Village,IL,,,,
+SITE-003858,B,NONE,"Altman Manufacturing Co., Inc.",Altman Manufacturing Headquarters,1990 W. Ohio St,Lisle,IL,,,,
+SITE-003932,B,NONE,A1 Tool Corporation,A1 Tool Corporation Headquarters,1425 Armitage Avenue,Melrose Park,IL,,,,
+SITE-003937,B,ADDR+NAME,"Budnick Converting, Inc.",Budnick Converting Columbia Headquarters,340 Parkway Drive,Columbia,IL,1317221,"Budnick Converting, Inc.","Budnick Converting, Inc.",340 Parkway Drive
+SITE-003938,B,NONE,Channeled Resources Group,Channeled Resources Group Chicago Headquarters,"240 North Ashland Avenue, Suite 130",Chicago,IL,,,,
+SITE-003949,B,NONE,"Tantec EST, Inc.",Tantec EST Headquarters,160 North Brandon Drive,Glendale Heights,IL,,,,
+SITE-003994,B,NONE,Morris Packaging LLC,Morris Packaging Headquarters,"211 N. Williamsburg Dr, Ste. A",Bloomington,IL,,,,
+SITE-004017,B,NONE,"Winpak Portion Packaging, Inc.",Winpak Portion Packaging - South Chicago Heights Plant,3345 Butler Ave,South Chicago Heights,IL,,,,
+SITE-004021,B,NONE,"Frigel North America, Inc.",Frigel North America HQ,"150 Prairie Lake Rd., Suite A",East Dundee,IL,,,,
+SITE-004029,B,NONE,Adams Plastics,Adams Plastics HQ,4070 Ryan Rd.,Gurnee,IL,,,,
+SITE-004038,B,NONE,"Cope Plastics, Inc.",Cope Plastics Processing Center,5033 Humbert Road,Alton,IL,,,,
+SITE-004073,C,ADDR_ONLY,Seelye-Eiler Plastics,Seelye-Eiler Plastics - Roxana,"9 Gemini Industrial Drive, Suite 200",Roxana,IL,110857,ILALT,Fastenal Company,9 Gemini Industrial Dr
+SITE-004120,C,NONE,Concentrol USA Corp,Concentrol USA Corporate Office,6160 N Cicero Ave,Chicago,IL,,,,
+SITE-004143,B,NONE,RUNI Recycling Machinery Inc,RUNI Recycling Machinery US Office,351 Country Club Dr,Bensenville,IL,,,,
+SITE-004163,B,ADDR_ONLY,Broetje-Automation USA,Broetje-Automation USA Headquarters and Plant,150 Innovation Dr,Elk Grove Village,IL,1273546,"Screen North America Holdings, INC.","Screen North America Holdings, INC.","150 Innovation Drive, Suite A"
+SITE-004202,B,NONE,"Plasmatreat USA, Inc.",Plasmatreat Elgin Technology Center,2511 Technology Dr Ste 113 & 114,Elgin,IL,,,,
+SITE-004206,C,ADDR_ONLY,"Senoplast USA, Inc.",Senoplast USA Headquarters (Sales Office),"75 Executive Drive, Suite 129",Aurora,IL,1446186,Aftermath Services LLC,Aftermath Services LLC,"75 Executive Drive, Suite 200"
+SITE-004217,C,NONE,YG-1 Tool USA,YG-1 Tool USA Headquarters,730 Corporate Woods Parkway,Vernon Hills,IL,,,,
+SITE-004279,B,ADDR_ONLY,Arakawa Chemical (USA) Inc.,Arakawa Chemical (USA) Headquarters,"625 North Michigan Avenue, Suite 1700",Chicago,IL,279539,GPS 625,"GARRETT BRANDS, LLC",625 N. MICHIGAN AVENUE
+SITE-004295,B,NONE,Asphalt Plus LLC,Asphalt Plus - Barrington HQ,18 E. Dundee Rd,Barrington,IL,,,,
+SITE-004323,B,ADDR+NAME,"Ingersoll Machine Tools, Inc.",Ingersoll Machine Tools - Rockford,707 Fulton Ave,Rockford,IL,1456985,Ingersoll Machine Tools Inc.,Ingersoll Machine Tools Inc.,707 Fulton Ave
+SITE-004325,B,NONE,"K&S Tire Recycling, Inc.",K&S Tire Recycling - Chicago Heights,303 State St,Chicago Heights,IL,,,,
+SITE-004361,B,NONE,AGT Products Inc.,AGT Products - Addison HQ plant,10 W Laura Drive,Addison,IL,,,,
+SITE-003274,B,ADDR+NAME,"Wabash MPI / Carver, Inc.",Wabash MPI / Carver - Wabash HQ & Plant,1569 Morris Street,Wabash,IN,1247512,"Wabash Metal Products, Inc dba Wabash MPI",Wabash MPI Carver,1569 Morris Street
+SITE-003333,B,NONE,KUHNE North America Corp.,KUHNE North America - South Bend,"1251 North Eddy Street, Suite 200",South Bend,IN,,,,
+SITE-003344,B,NONE,Thermwood Corporation,Thermwood - Dale (HQ),904 Buffaloville Rd,Dale,IN,,,,
+SITE-003422,B,NONE,Press-Seal Corporation,Press-Seal Headquarters and Plant,2424 W State Blvd,Fort Wayne,IN,,,,
+SITE-003523,A,NONE,"Decatur Mold Tool & Engineering, Inc.",Decatur Mold HQ Plant,3300 N State Rd 7,North Vernon,IN,,,,
+SITE-003590,B,ADDR+NAME,Elkhart Plastics LLC,Elkhart Plastics - South Bend HQ,3300 North Kenmore Street,South Bend,IN,1373371,Elkhart Plastics,Myers Industries/Elkhart Plastics,3300 N. Kenmore Street
+SITE-003822,B,NONE,"Advantage Engineering, Inc.",Advantage Engineering HQ,525 East Stop 18 Road,Greenwood,IN,,,,
+SITE-003844,B,ADDR_ONLY,"Kruis Mold & Engineering, LLC",Kruis Mold & Engineering Headquarters,2221 Industrial Pkwy,Elkhart,IN,479145,Thunderbird Molding Elkhart,"Indiana Plastics, Inc.",2221 Industrial Parkway
+SITE-003873,B,NONE,MonTech USA,MonTech USA,1280 S. Williams Dr,Columbia City,IN,,,,
+SITE-003880,B,NONE,AirWave Packaging,AirWave Packaging US Office,5332 W 78th St,Indianapolis,IN,,,,
+SITE-003921,B,ADDR+NAME,Brightmark Plastics Ashley OpCo LLC,Brightmark Ashley Circularity Center,401 McEntarfer Dr,Ashley,IN,1442142,Brightmark Plastics Ashley OpCo LLC,Brightmark Plastics Ashley OpCo LLC,401 N McEntarfer Dr
+SITE-003969,B,NONE,"Chase Plastic Services, Inc.",Chase Plastics Central Distribution Center,5245 Dylan Drive,South Bend,IN,,,,
+SITE-004001,B,NONE,Plastic Recycling Inc,Plastic Recycling Inc Headquarters and Plant,7601 Rockville Road,Indianapolis,IN,,,,
+SITE-004033,B,NONE,"Auburn Plastics & Machining, Inc.",Auburn Plastics & Machining HQ,2432 Shadeland Avenue,Indianapolis,IN,,,,
+SITE-004050,C,NONE,"Meyer Plastics, Inc.",Meyer Plastics - Fort Wayne,3410 Congressional Pkwy,Fort Wayne,IN,,,,
+SITE-004124,B,NONE,Gaska Tape Inc.,Gaska Tape Plant,1810 W. Lusher Ave,Elkhart,IN,,,,
+SITE-004133,B,NONE,Marbach America Inc.,Marbach America Michigan City Plant,6101 Cleveland Ave Suite A&B,Michigan City,IN,,,,
+SITE-004147,B,ADDR_ONLY,SmartFoam Machinery LLC,SmartFoam Machinery Headquarters,5101 Decatur Blvd Ste L,Indianapolis,IN,750499,Arcamed,Arcamed LLC,5101 Decatur Blvd Ste A
+SITE-004197,B,ADDR_ONLY,Mytex Polymers US Corp,Mytex Polymers Headquarters and Plant,1403 Port Rd,Jeffersonville,IN,734263,"Chemtrusion, Inc","Chemtrusion, Inc",1403 Port Rd
+SITE-004352,C,NONE,US Silicones LLC,U.S. Silicones - Fort Wayne Plant,3508 Independence Dr,Fort Wayne,IN,,,,
+SITE-003535,B,NONE,In-Mold Decorating Association,IMDA HQ,"2150 SW Westport Dr, Ste 101",Topeka,KS,,,,
+SITE-003627,B,ADDR+NAME,Park Aerospace Corp.,Park Aerospace - Newton HQ Plant,"486 North Oliver Road, Building Z",Newton,KS,1032870,Park Aerospace Corp.,Park Aerospace Corp.,486 North Oliver Rd.
+SITE-003828,B,ADDR+NAME,Bunting Magnetics Co.,Bunting HQ and plant,500 S. Spencer Road,Newton,KS,1414420,Bunting Magnetics Co,Bunting Magnetics Co.,500 S. Spencer Rd
+SITE-004065,B,NONE,Regal Plastic Supply Company,Regal Plastic Supply - Wichita,329 N. Indiana,Wichita,KS,,,,
+SITE-004177,B,NONE,"Fiber Dynamics, Inc.",Fiber Dynamics - Wichita plant,3730 Midco St,Wichita,KS,,,,
+SITE-004261,B,ADDR+NAME,Reiloy USA,Reiloy USA - Maize plant,12260 West 53rd St N,Maize,KS,220019,Reiloy USA Corporation,,12260 W. 53rd Street North
+SITE-003225,B,ADDR+NAME,Cabot Corporation,Cabot Corporation - Carrollton,5414 Us-42,Carrollton,KY,1437453,Carrollton Manufacturing Facility,Cabot Corporation,5414 US Highway 42 East
+SITE-003238,B,NONE,"Kenmold North America, LLC",Kenmold North America HQ,"2413 Nashville Rd, Ste 120",Bowling Green,KY,,,,
+SITE-003255,B,NONE,Wickert Hydraulic Presses USA,Wickert Hydraulic Presses USA (DESMA USA facility),2195 Arbor Tech Dr,Hebron,KY,,,,
+SITE-003287,B,ADDR_ONLY,KraussMaffei Corporation,KraussMaffei Corporation - Florence HQ Plant,7095 Industrial Road,Florence,KY,1077402,Krauss Maffei,,7095 Industrial Rd
+SITE-003536,B,NONE,"International Mold Steel, Inc.",International Mold Steel HQ,1155 Victory Place,Hebron,KY,,,,
+SITE-003623,B,ADDR+NAME,Eckart America Corporation,Eckart America - Louisville Plant,4101 Camp Ground Road,Louisville,KY,626945,ECKART America - Louisville,ECKART America,4101 Camp Ground Rd.
+SITE-003748,B,NONE,Exel Composites USA,Exel Composites — Erlanger,800 Chase Ave,Erlanger,KY,,,,
+SITE-004140,B,ADDR+NAME,PSC Industries Inc.,PSC Industries Headquarters and Plant,1100 West Market St,Louisville,KY,460659,PSC Industries - Corporate,PSC Industries,1100 W. Market Street
+SITE-004141,B,ADDR+NAME,PSC Industries Inc.,PSC Fabricating Plant,3001 W Kentucky St,Louisville,KY,460665,PSC Industries - Kentucky Street Office,"PSC Industries, Inc.",3001 W. Kentucky Street
+SITE-004155,B,NONE,Zotefoams Inc,Zotefoams Walton Plant,55 Precision Dr,Walton,KY,,,,
+SITE-003739,C,NONE,"Cooling Tower Resources, Inc.",Cooling Tower Resources — Krotz Springs,8545 LA-105,Krotz Springs,LA,,,,
+SITE-003918,B,NONE,Unistar Plastics LLC,Unistar Plastics Headquarters and Plant,5821 Citrus Blvd,New Orleans,LA,,,,
+SITE-004273,C,NONE,"TenCate Turf Recycling Solutions, LLC",TenCate Turf Recycling Solutions - Baton Rouge Plant,14801 Scenic Hwy,Baton Rouge,LA,,,,
+SITE-003228,B,ADDR+NAME,Absolute Haitian Corporation,Absolute Haitian Corporation HQ,33 Southgate St,Worcester,MA,1059304,Absolute Haitian Corporation,Absolute Haitian Corporation,33 Southgate Street
+SITE-003258,B,ADDR_ONLY,"CJ Biomaterials, Inc.",CJ Biomaterials - Woburn HQ,19 Presidential Way,Woburn,MA,1010899,Ultragenyx - Woburn,Ultragenyx Pharmaceutical Inc.,19 Presidential Way
+SITE-003291,B,NONE,"NETZSCH Instruments North America, LLC",NETZSCH Instruments North America - Burlington HQ Lab,129 Middlesex Turnpike,Burlington,MA,,,,
+SITE-003440,B,ADDR+NAME,"EREMA North America, Inc.",EREMA North America Headquarters and Customer Center,23 Old Right Road - Unit 2,Ipswich,MA,1237152,Erema North America,Erema North America,23 Old right Rd Unit #2
+SITE-003549,B,NONE,"Plastixs, LLC",Plastixs HQ,"151 Memorial Drive, Suite H",Shrewsbury,MA,,,,
+SITE-003716,B,NONE,"Watts Water Technologies, Inc.",Watts Water Technologies Headquarters,815 Chestnut St,North Andover,MA,,,,
+SITE-003820,B,ADDR_ONLY,Absolute Robot Incorporated,Absolute Robot HQ,33 Southgate St,Worcester,MA,1059304,Absolute Haitian Corporation,Absolute Haitian Corporation,33 Southgate Street
+SITE-003830,B,NONE,"Ranger Automation Systems, Inc.",Ranger Automation Systems Headquarters,9 Railroad Ave,Millbury,MA,,,,
+SITE-003853,B,NONE,"LexMar Global, Inc.",LexMar Global Headquarters,22 Parkridge Road,Haverhill,MA,,,,
+SITE-003876,B,NONE,"UTPVision USA, Inc.",UTPVision USA Headquarters,"32 Papile Ln, Ste 4",Quincy,MA,,,,
+SITE-004213,C,NONE,TriStar AI,TriStar AI Headquarters,"1 Broadway, 14th Floor",Cambridge,MA,,,,
+SITE-004216,B,NONE,"W. Müller USA, Inc.",W. Müller USA Headquarters,1163 Suffield Street,Agawam,MA,,,,
+SITE-004288,C,ADDR_ONLY,Aligned Vision,Aligned Vision Headquarters,27 Industrial Ave #4,Chelmsford,MA,795533,MEC Electrical & Technologies Inc,"MEC Electrical & Technologies, Inc",27 Industrial Ave Unit 2
+SITE-004303,B,NONE,"Blueshift Materials, Inc.",Blueshift Materials - Spencer,5 South Spencer Road,Spencer,MA,,,,
+SITE-004371,B,ADDR_ONLY,ICP Construction Inc.,ICP Construction - Andover HQ,150 Dascomb Road,Andover,MA,925177,ICP Andover,ICP Building Solutions Group,150 Dascomb Road
+SITE-004386,B,NONE,RH Adhesives,RH Adhesives factory,308 Old High Street,Acton,MA,,,,
+SITE-003552,B,ADDR_ONLY,W. R. Grace & Co.,W. R. Grace & Co. Headquarters,7500 Grace Drive,Columbia,MD,1445154,Cafe Services Inc WR Grace,Cafe Services Inc,7500 Grace Drive
+SITE-004247,C,NONE,Matium Inc,Matium - Millersville HQ,741 Generals Hwy Ste 105A,Millersville,MD,,,,
+SITE-004316,B,NONE,"Emanuel Tire, LLC",Emanuel Tire - Baltimore recycling plant,1300 Moreland Ave,Baltimore,MD,,,,
+SITE-004347,B,NONE,Middle River Aerostructure Systems,MRAS - Middle River Plant,103 Chesapeake Park Plaza,Baltimore,MD,,,,
+SITE-003269,B,NONE,"ReForm Composites, Inc.",ReForm Composites - Hampden Plant,43 Carey Cir,Hampden,ME,,,,
+SITE-003224,B,ADDR+NAME,Cabot Corporation,Cabot Corporation - Midland Plant,3603 S Saginaw Rd,Midland,MI,1437439,Midland Manufacturing Facility,Cabot Corporation,3603 S Saginaw Road
+SITE-003236,C,NONE,Hauschild SpeedMixer Inc.,Hauschild SpeedMixer Inc US office,"37735 Enterprise Ct, Suite 300",Farmington Hills,MI,,,,
+SITE-003270,B,ADDR_ONLY,"RJG, Inc.",RJG - Traverse City HQ,3111 Park Dr,Traverse City,MI,554318,"RJG, Inc. - Corporate","RJG, Inc.",3111 Park Drive
+SITE-003277,B,NONE,B&P Littleford LLC,B&P Littleford - Saginaw HQ and Technical Center,1000 Hess Avenue,Saginaw,MI,,,,
+SITE-003296,B,NONE,"R&B Plastics Machinery, LLC",R&B Plastics Machinery - Saline HQ Plant,1605 East Woodland Drive,Saline,MI,,,,
+SITE-003314,B,NONE,"Motan, Inc.","Motan, Inc. - Plainwell",320 North Acorn Street,Plainwell,MI,,,,
+SITE-003330,B,NONE,"Ensign Equipment, Inc.",Ensign Equipment - Holland,12523 Superior Court,Holland,MI,,,,
+SITE-003365,B,NONE,"Parson Adhesives, Inc.",Parson Adhesives HQ,"3345 Auburn Road, Suite 107",Rochester Hills,MI,,,,
+SITE-003407,B,NONE,Edge-Sweets Company,Edge-Sweets Headquarters and Plant,2887 3 Mile Rd NW,Grand Rapids,MI,,,,
+SITE-003412,B,NONE,"Inteva Products, LLC",Inteva Products World Headquarters and Technical Center,1401 Crooks Road,Troy,MI,,,,
+SITE-003421,B,ADDR_ONLY,PCS Company,PCS Company Headquarters and Plant,34500 Doreka Dr,Fraser,MI,1412030,PCS Company,PCS Company,34500 Doreka Drive
+SITE-003521,B,NONE,Cumsa USA LLC,Cumsa USA Troy Office,950 Stephenson Hwy,Troy,MI,,,,
+SITE-003525,B,NONE,Evosys North America Corporation,Evosys North America HQ,"1659 West Hamlin Road, Unit G",Rochester Hills,MI,,,,
+SITE-003528,B,NONE,Franchino Mold & Engineering Company,Franchino Mold & Engineering HQ Plant,5599 W Grand River Ave,Lansing,MI,,,,
+SITE-003542,B,NONE,Maximum Mold Group,Maximum Mold Group HQ Plant,1440 Territorial Rd,Benton Harbor,MI,,,,
+SITE-003545,B,NONE,Next Chapter Manufacturing,Next Chapter Manufacturing HQ Plant,3650 Broadmoor Ave SE,Grand Rapids,MI,,,,
+SITE-003548,B,NONE,Oerlikon HRSflow,Oerlikon HRSflow North America HQ Plant,920 74th St SW,Byron Center,MI,,,,
+SITE-003550,B,NONE,Precision Industries Inc.,Precision Industries HQ Plant,3002 E Court St,Flint,MI,,,,
+SITE-003736,C,ADDR_ONLY,Compeng Composite Solutions LLC,Compeng Composite Solutions LLC (US office),"41000 Woodward Avenue, Regus Suite 350 East",Bloomfield Hills,MI,1187240,7 Degrees Logistics LLC,7 Degrees Logistics LLC,"41000 Woodward Avenue, Suite 350 East"
+SITE-003744,C,ADDR_ONLY,"EJ Group, Inc.",EJ Headquarters,301 Spring St,East Jordan,MI,1263697,East Jordan Pattern Shop,"EJ USA, Inc.",301 Spring Street
+SITE-003832,B,NONE,"SelfLube, Inc.",SelfLube Headquarters,526 OMalley,Coopersville,MI,,,,
+SITE-003846,B,ADDR+NAME,BMG LLC,BMG Corporate Headquarters,330 N. Ross Street,Beaverton,MI,983797,Brown LLC,,330 Ross Street
+SITE-003869,B,ADDR+NAME,"Loc Performance Products, Inc.",Loc Performance Headquarters,13505 N Haggerty Rd,Plymouth,MI,1517233,American Rheinmetall Plymouth,American Rheinmetall,13505 N Haggerty Rd
+SITE-003872,B,NONE,"Moldex3D Northern America, Inc.",Moldex3D Northern America Headquarters,"27725 Stansbury Blvd, Suite 190",Farmington Hills,MI,,,,
+SITE-003936,B,ADDR+NAME,"Argent International, Inc.",Argent International Plymouth Plant,41016 Concept Drive,Plymouth,MI,1207113,Argent International,Argent International,41016 Concept Drive
+SITE-003941,B,NONE,"Emabond Solutions, LLC",Emabond Solutions Global Headquarters & Innovation Center,1797 Atlantic Blvd,Auburn Hills,MI,,,,
+SITE-003980,B,NONE,FloraCraft Corporation,FloraCraft Headquarters and Plant,1 Longfellow St,Ludington,MI,,,,
+SITE-004004,B,NONE,"Polyplastics USA, Inc.",Polyplastics USA Headquarters,"27240 Haggerty Road, Suite E-20",Farmington Hills,MI,,,,
+SITE-004008,B,ADDR+NAME,Reed City Group,Reed City Group Headquarters and Plant,603 E. Church St,Reed City,MI,280805,"Reed City Group, LLC","Reed City Group, LLC",603 East church Street
+SITE-004032,B,ADDR+NAME,Alro Plastics,Alro Plastics HQ (Alro Steel Corp HQ),3100 E. High St.,Jackson,MI,190658,JC,Alro Steel,3100 E High Street
+SITE-004111,B,NONE,Three 60 Corp.,Three60 Roto — Howell plant,741 Victory Dr,Howell,MI,,,,
+SITE-004123,B,NONE,FRIMO Inc.,FRIMO North America Headquarters and TechCenter,50685 Century Court,Wixom,MI,,,,
+SITE-004127,B,NONE,"INOAC USA, Inc.",INOAC USA Headquarters,1515 Equity Dr Ste 200,Troy,MI,,,,
+SITE-004130,B,NONE,Kent Manufacturing Company,Kent Manufacturing Plant,2200 Oak Industrial Dr NE,Grand Rapids,MI,,,,
+SITE-004134,B,NONE,Mix Head Repair Inc.,MHR Headquarters and Plant,78 Veterans Drive,Holland,MI,,,,
+SITE-004142,B,NONE,RCO Engineering,RCO Engineering Roseville Plant,29200 Calahan Road,Roseville,MI,,,,
+SITE-004153,B,NONE,"Troy Polymers, Inc.",Troy Polymers Laboratory,900 E Mandoline Ave,Madison Heights,MI,,,,
+SITE-004161,B,ADDR+NAME,Bekum America Corporation,Bekum America Williamston Plant,1140 West Grand River,Williamston,MI,803302,Bekum America Corporation,Bekum America Corporation,1140 W Grand River Ave
+SITE-004170,B,NONE,"CMS North America, Inc.",CMS North America - Caledonia HQ,4095 Karona Ct,Caledonia,MI,,,,
+SITE-004179,B,NONE,Glycon Corp.,Glycon - Tecumseh plant,912 Industrial Dr,Tecumseh,MI,,,,
+SITE-004187,C,NONE,Idemitsu Chemicals USA Corporation,Idemitsu Chemicals USA - Novi office,39500 High Pointe Blvd #340,Novi,MI,,,,
+SITE-004195,B,NONE,"Mid-America Machining, Inc.",Mid-America Machining Headquarters and Plant,11530 Brooklyn Rd,Brooklyn,MI,,,,
+SITE-004196,B,NONE,Monroe Mold LLC,Monroe Mold Headquarters and Plant,1402 W 7th St,Monroe,MI,,,,
+SITE-004199,B,NONE,Paragon D&E,Paragon D&E Headquarters and Plant,5225 33rd Street SE,Grand Rapids,MI,,,,
+SITE-004227,B,NONE,"C.A. Picard, Inc.","C.A. Picard, Inc. Plant",305 Hill Brady Rd.,Battle Creek,MI,,,,
+SITE-004233,B,NONE,ECON Inc.,ECON Inc. North America,4662 S. Custer Road,Monroe,MI,,,,
+SITE-004297,B,ADDR+NAME,Atomic Industries,Atomic Industries - Warren tooling facility,13780 E 11 Mile Rd,Warren,MI,1416451,"Atomic Industries, Inc.",,13780 E 11 Mile Road
+SITE-004298,B,NONE,Atomic Industries,Atomic Industries - Shelby Township molding plant,50479 Birch Dr,Shelby Township,MI,,,,
+SITE-004327,B,NONE,Legacy Precision Molds Inc.,Legacy Precision Molds - Grandville,4668 Spartan Industrial Dr SW,Grandville,MI,,,,
+SITE-003417,B,ADDR+NAME,NatureWorks LLC,NatureWorks Headquarters,17400 Medina Rd Ste 800,Plymouth,MN,315880,Plymouth,NatureWorks LLC,"17400 Medina Road, Suite 800"
+SITE-003805,B,NONE,"GEOTEK, Inc.",GEOTEK HQ and plant,1421 Second Ave NW,Stewartville,MN,,,,
+SITE-003821,C,NONE,AdvancedTek,AdvancedTek HQ,255 East Roselawn Avenue Suite 45,Saint Paul,MN,,,,
+SITE-003849,B,NONE,Forward Technology LLC,Forward Technology Headquarters,220 Millard Ave SW,Cokato,MN,,,,
+SITE-003877,B,NONE,Wynca USA,Wynca USA Headquarters,"3050 Metro Drive, Suite 113",Bloomington,MN,,,,
+SITE-003890,B,NONE,"Conwed, LLC",Conwed Headquarters and Plant,2810 Weeks Ave SE,Minneapolis,MN,,,,
+SITE-003907,C,NONE,Northstar Maintenance Management Inc.,Northstar Maintenance Management / CompostitALL Warehouse,300 5th Avenue NW,New Brighton,MN,,,,
+SITE-003914,B,NONE,"SelfEco, LLC",SelfEco / VistaTek Stillwater Plant,1850 Greeley Street South Suite 300,Stillwater,MN,,,,
+SITE-004069,C,NONE,Seelye-Eiler Plastics,Seelye-Eiler Plastics - Duluth,1230 Port Terminal Drive,Duluth,MN,,,,
+SITE-004094,B,ADDR_ONLY,Revolv Manufacturing,Revolv Manufacturing — Baxter HQ/plant,7756 College Road,Baxter,MN,1138081,Allegiant Utility Services,Allegiant Utility Services,7756 College Rd
+SITE-003401,B,NONE,Anchor Packaging LLC,Anchor Packaging Headquarters,13515 Barrett Parkway Dr #100,Ballwin,MO,,,,
+SITE-003499,A,ADDR+NAME,Mondi Jackson LLC,Mondi Jackson HQ Plant (Indian Creek),14591 State Highway 177,Jackson,MO,300135,Mondi,"Mondi Jackson, LLC",14591 State Hwy 177
+SITE-003500,A,NONE,Mondi Jackson LLC,Mondi Jackson Hubble Creek Plant,3151 North High Street,Jackson,MO,,,,
+SITE-003595,B,ADDR_ONLY,White River Marine Group,White River Marine Group - Springfield HQ,2500 East Kearney Street,Springfield,MO,817297,Bass Pro DC Springfield,Bass Pro,2500 E. Kearney St.
+SITE-003596,B,NONE,White River Marine Group,White River Marine Group - Lebanon Plant,651 East Highway 32,Lebanon,MO,,,,
+SITE-003727,B,ADDR+NAME,"Altec Industries, Inc.",Altec St. Joseph Operations (fiberglass plant),2106 South Riverside Road,St. Joseph,MO,325590,MW,Altec Industries,2106 S. Riverside Rd.
+SITE-003889,B,ADDR_ONLY,Columbia Packaging Group,Columbia Packaging Group Headquarters and Plant,1475 Walnut St,Kansas City,MO,1506763,Main YYCO,YATES AND YATES LLC,1475 WALNUT STREET
+SITE-003952,B,ADDR+NAME,Wilson Manufacturing Company,Wilson Manufacturing Headquarters and Plant,4725 Green Park Rd,St. Louis,MO,343089,Wilson Manufacturing Company,,4725 Green Park Road
+SITE-004005,B,ADDR+NAME,"Polytainers, Inc.",Polytainers - Lee's Summit Plant,1400 NE Douglas St,Lee's Summit,MO,839839,Polytainers Inc.,Polytainers Inc.,1400 N.E. Douglas Street
+SITE-004011,A,ADDR+NAME,Silgan Plastic Food Containers,Silgan Plastic Food Containers - Union Plant,710 West Park Rd,Union,MO,44828,Silgan Plastic Food Containers,Silgan Plastic Food Containers,710 West Park Road
+SITE-004028,B,NONE,"ACI Plastics, Inc.",ACI Plastics HQ,3001 Spruce St.,St. Louis,MO,,,,
+SITE-004064,B,NONE,Regal Plastic Supply Company,Regal Plastic Supply - Joplin,601 E. 9th St.,Joplin,MO,,,,
+SITE-004066,B,NONE,Regal Plastic Supply Company,Regal Plastic Supply - Earth City,4150 Galley Ct,Earth City,MO,,,,
+SITE-004090,B,NONE,PlayPower Inc.,PlayPower — Monett plant,878 E US Hwy 60,Monett,MO,,,,
+SITE-004174,B,NONE,"Creative Blow Mold Tooling, Inc.",Creative Blow Mold Tooling - Lees Summit plant,2350 N.E. Independence Ave,Lees Summit,MO,,,,
+SITE-004282,B,NONE,ProSys Fill LLC,ProSys Fill LLC Headquarters,426 E. Fountain Rd.,Webb City,MO,,,,
+SITE-003491,B,NONE,Helmitin Inc.,Helmitin Olive Branch Plant,11110 Airport Road,Olive Branch,MS,,,,
+SITE-003516,A,ADDR_ONLY,Resinall Corp,Resinall HQ,2829 Lakeland Dr,Flowood,MS,895818,"Ergon, Inc. - Mirror Lake","Ergon, Inc.","2829 Lakeland Drive, Suite 2000"
+SITE-003865,B,ADDR+NAME,"Ergon, Inc.",Ergon Headquarters,2829 Lakeland Drive,Flowood,MS,895818,"Ergon, Inc. - Mirror Lake","Ergon, Inc.","2829 Lakeland Drive, Suite 2000"
+SITE-003866,B,NONE,"Ergon, Inc.",Ergon Refining - Vicksburg,2125 Haining Road,Vicksburg,MS,,,,
+SITE-003984,B,NONE,Hood Packaging Corporation,Hood Packaging Corporation Headquarters,25 Woodgreen Pl,Madison,MS,,,,
+SITE-004231,B,NONE,"Commercial Plastics Recycling, Inc.",Commercial Plastics Recycling Bay Saint Louis Plant 1,3025 Port & Harbor Drive,Bay Saint Louis,MS,,,,
+SITE-004232,B,NONE,"Commercial Plastics Recycling, Inc.",Commercial Plastics Recycling Bay Saint Louis Plant 2,3045 Port & Harbor Drive,Bay Saint Louis,MS,,,,
+SITE-003414,C,NONE,"Magris Talc USA, Inc.",Magris Talc Three Forks Mill,2150 Bench Road,Three Forks,MT,,,,
+SITE-003247,B,NONE,"Silicones, Inc.",Silicones Inc HQ plant,205 Woodbine St,High Point,NC,,,,
+SITE-003288,B,NONE,Leesona Corp.,Leesona - Burlington HQ Plant,2050-B Willow Springs Lane,Burlington,NC,,,,
+SITE-003289,B,NONE,Mahr Metering Systems Corporation,Mahr Metering Systems - Charlotte HQ,1415-A Cross Beam Drive,Charlotte,NC,,,,
+SITE-003293,B,NONE,"Performance Additives, LLC",Performance Additives - Pinehurst HQ,"100 Magnolia Street, Suites 2208-2213",Pinehurst,NC,,,,
+SITE-003310,B,NONE,Gneuss Inc.,Gneuss Inc. - Matthews,10820-G Independence Pointe Parkway,Matthews,NC,,,,
+SITE-003357,B,NONE,K-FLEX USA,K-FLEX USA HQ & Plant,100 K-Flex Way,Youngsville,NC,,,,
+SITE-003367,B,NONE,"PSI - Polymer Systems, Inc.",PSI-Polymer Systems HQ & Plant,1703 Pineview Street SE,Conover,NC,,,,
+SITE-003430,B,NONE,"Vecoplan, LLC",Vecoplan LLC Headquarters,501 Gallimore Dairy Road,Greensboro,NC,,,,
+SITE-003456,B,NONE,"SAERTEX USA, LLC",SAERTEX USA Headquarters and Plant,12200 Mount Holly-Huntersville Road,Huntersville,NC,,,,
+SITE-003514,B,ADDR+NAME,UPM Raflatac Inc.,UPM Raflatac Americas HQ / Mills River Factory,400 Broadpointe Drive,Mills River,NC,1286749,"UPM Raflatac, Inc",,400 Broadpointe Drive
+SITE-003531,B,NONE,"HASCO America, Inc.",HASCO America HQ,270 Rutledge Rd,Fletcher,NC,,,,
+SITE-003718,B,NONE,"Wilmington Machinery, LLC",Wilmington Machinery,4628 Northchase Parkway NE,Wilmington,NC,,,,
+SITE-003798,C,ADDR_ONLY,SGL Carbon LLC,SGL Carbon North American HQ,10715 David Taylor Drive Suite 460,Charlotte,NC,1080379,Charlotte IRS Mail Center (207),ServiceSource Inc,10715 David Taylor Drive
+SITE-003874,B,ADDR_ONLY,Nordmann US Inc.,Nordmann US Headquarters,"301 McCullough Drive, Suite 400",Charlotte,NC,1081934,"SPATCO Energy Solutions, LLC - Corporate Office",SPATCO Energy Solutions LLC,301 McCullough Dr. Suite 500
+SITE-003896,B,ADDR+NAME,Genpak LLC,Genpak Headquarters,10601 Westlake Drive,Charlotte,NC,1305935,Genpak Westlake,Genpak LLC,10601 Westlake Dr
+SITE-003909,B,NONE,PlantSwitch Inc.,PlantSwitch Sanford Plant,908 J R Industrial Dr,Sanford,NC,,,,
+SITE-003930,B,NONE,Wellmark Plastics,Wellmark Plastics Asheboro Plant,355 Waketa Dr,Asheboro,NC,,,,
+SITE-003935,C,NONE,"3F North America, Inc.",3F North America Charlotte Facility,12301 Moores Chapel Rd,Charlotte,NC,,,,
+SITE-003946,C,NONE,"Kleiberit Adhesives USA, Inc.",Kleiberit Adhesives USA Waxhaw Office,"109 Howie Mine Rd, Ste B",Waxhaw,NC,,,,
+SITE-004020,B,NONE,"Diversified Printing Techniques, Inc.",Diversified Printing Techniques HQ,13336 S. Ridge Dr.,Charlotte,NC,,,,
+SITE-004112,B,NONE,"Toter, LLC",Toter — Statesville HQ plant,1735 Weinig St,Statesville,NC,,,,
+SITE-004116,B,NONE,Aplix Inc.,Aplix Inc. — Charlotte plant,12300 Steele Creek Rd,Charlotte,NC,,,,
+SITE-004117,B,ADDR+NAME,"Automated Solutions, LLC",Automated Solutions Headquarters and Plant,4101 US 321-A Alt,Sawmills,NC,1336623,Sawmills NC,"Automated Solutions, LLC",4101 US Hwy 321-A
+SITE-004132,B,NONE,Marbach America Inc.,Marbach America Headquarters and Plant,100-B Forsyth Hall Drive,Charlotte,NC,,,,
+SITE-004151,B,ADDR+NAME,Tenowo Inc.,Tenowo Lincolnton Plant,1968 Kawai Rd,Lincolnton,NC,1329428,"Tenowo, Inc","Tenowo, Inc.",1968 Kawai Road
+SITE-004158,C,NONE,American DORNIER Machinery Corporation,American DORNIER Charlotte Office,4101 Performance Rd,Charlotte,NC,,,,
+SITE-004164,C,ADDR+NAME,C.R. Onsrud Inc.,C.R. Onsrud Troutman Plant,120 Technology Drive,Troutman,NC,1138969,C.R. Onsrud Main,C.R. Onsrud inc.,120 Technology Dr
+SITE-004212,B,NONE,TRIA America Inc.,TRIA America Headquarters,632 Eagleton Downs Dr,Pineville,NC,,,,
+SITE-004246,B,NONE,Lindner Recyclingtech America,Lindner Recyclingtech America - Statesville HQ,152 Walker Rd,Statesville,NC,,,,
+SITE-004253,B,NONE,Orbetron LLC,Orbetron - Gastonia manufacturing/engineering office,317 Willow St,Gastonia,NC,,,,
+SITE-004254,B,NONE,Pellenc ST America,Pellenc ST America - Pineville HQ/test center,632 Eagleton Downs Dr Suite D,Pineville,NC,,,,
+SITE-004260,C,NONE,Recycling Equipment Inc,Recycling Equipment Inc - Newton HQ,2052 Industrial Dr,Newton,NC,,,,
+SITE-004274,B,NONE,"TOMRA Sorting, Inc.","TOMRA Sorting, Inc. - North America Recycling HQ",3101 Yorkmont Road Suite 400,Charlotte,NC,,,,
+SITE-004072,C,NONE,Seelye-Eiler Plastics,Seelye-Eiler Plastics - Fargo,"4201 38th Street SW, Suite A-C",Fargo,ND,,,,
+SITE-004071,C,NONE,Seelye-Eiler Plastics,Seelye-Eiler Plastics - Omaha,4985 F Street,Omaha,NE,,,,
+SITE-003340,B,NONE,"Routsis Training, LLC",Routsis Training - Nashua,"379 Amherst Street, PMB 233",Nashua,NH,,,,
+SITE-003345,C,NONE,"UNTHA Shredding Technology America, Inc.",UNTHA America - Hampton (North America HQ),"1 Lafayette Road, Building 4",Hampton,NH,,,,
+SITE-004207,B,NONE,Spaulding Composites Inc.,Spaulding Composites Headquarters and Plant,55 Nadeau Drive,Rochester,NH,,,,
+SITE-004287,B,ADDR_ONLY,"Albany Engineered Composites, Inc.",Albany Engineered Composites Headquarters and R&T Center,216 Airport Drive,Rochester,NH,1436392,Albany International Corp ROC Campus,Albany International Corp,216 Airport Dr
+SITE-003234,C,NONE,Evonik Corporation,Evonik Piscataway site,2 Turner Pl,Piscataway,NJ,,,,
+SITE-003235,B,NONE,"Foremost Machine Builders, Inc.",Foremost Machine Builders HQ plant,23 Spielman Road,Fairfield,NJ,,,,
+SITE-003299,C,NONE,Trademark Plastics Corporation,Trademark Plastics - Newark HQ,494 Broad Street,Newark,NJ,,,,
+SITE-003312,B,NONE,American Leistritz Extruder Corp. (Leistritz Extrusion),Leistritz Extrusion - Somerville,175 Meister Avenue,Somerville,NJ,,,,
+SITE-003355,B,NONE,"H.M. Royal, Inc.",H.M. Royal Head Office,689 Pennington Avenue,Trenton,NJ,,,,
+SITE-003363,C,ADDR_ONLY,MIKI SANGYO (USA) INC.,Miki Sangyo (USA) Headquarters,400 Interpace Parkway,Parsippany,NJ,663099,Teva Pharmaceuticals US (Parsippany Offices),Teva Pharmaceuticals,400 Interpace Parkway
+SITE-003366,B,NONE,"PMC Group, Inc.",PMC Group Global Headquarters,"1288 Route 73, Suite 401",Mount Laurel,NJ,,,,
+SITE-003369,B,NONE,Royce Associates LP,Royce Global HQ & Plant,35 Carlton Ave,East Rutherford,NJ,,,,
+SITE-003408,B,NONE,"Formosa Plastics Corporation, U.S.A.",Formosa Plastics Headquarters,9 Peach Tree Hill Road,Livingston,NJ,,,,
+SITE-003452,C,NONE,Patcham USA LLC,Patcham USA Office,10 Commerce Road,Fairfield,NJ,,,,
+SITE-003603,B,NONE,AmFine Chemical Corporation,AmFine Chemical - Hasbrouck Heights HQ,777 Terrace Avenue,Hasbrouck Heights,NJ,,,,
+SITE-003861,C,NONE,CB Chemical Company LLC,CB Chemical Company Headquarters,"125 Half Mile Road, Suite 200",Red Bank,NJ,,,,
+SITE-003875,B,NONE,"Swan Chemical, Inc.",Swan Chemical Headquarters,"136 Ridge Rd, Unit 2A",Lyndhurst,NJ,,,,
+SITE-003955,B,NONE,"Albea Americas, Inc.",Albea Americas Washington Plant,191 NJ-31,Washington,NJ,,,,
+SITE-004146,B,NONE,sitola Corp.,sitola Corp. US Office,345 Route 17 South,Upper Saddle River,NJ,,,,
+SITE-004203,B,NONE,Redex USA Inc.,Redex USA Headquarters,1705 Valley Road,Ocean Township,NJ,,,,
+SITE-004226,B,NONE,"Bergen International, LLC",Bergen International Headquarters,196 Paterson Ave. 2nd Floor,East Rutherford,NJ,,,,
+SITE-004245,B,NONE,L&S Plastics Inc,L&S Plastics Inc - Bayonne facility,97 E 2nd St Unit C,Bayonne,NJ,,,,
+SITE-004278,B,NONE,Albion Engineering Company,Albion Engineering Company Headquarters,1250 N. Church St.,Moorestown,NJ,,,,
+SITE-004319,B,NONE,"GDB International, Inc.",GDB International - New Brunswick PCR plant,1 Home News Row,New Brunswick,NJ,,,,
+SITE-004342,B,NONE,"Randcastle Extrusion Systems, Inc.",Randcastle Extrusion Systems Headquarters and Plant,220 Little Falls Road,Cedar Grove,NJ,,,,
+SITE-004381,B,NONE,"Munzing North America, LP",Munzing North America HQ,"1455 Broad Street, Suite 3",Bloomfield,NJ,,,,
+SITE-003801,B,NONE,Southwest Composite Works Inc,Southwest Composite Works HQ and plant,509 General Chennault St SE,Albuquerque,NM,,,,
+SITE-003839,B,ADDR_ONLY,"Westfall Technik, Inc.",Westfall Technik Corporate Headquarters,"3883 Howard Hughes Parkway, Suite 590",Las Vegas,NV,1240551,Prologis - Las Vegas Office,"Prologis, L.P.","3883 Howard Hughes Parkway, Suite 850"
+SITE-003232,B,NONE,Eastman Machine Company,Eastman Machine Company HQ,779 Washington St,Buffalo,NY,,,,
+SITE-003240,B,NONE,"Mitsui Chemicals America, Inc.",Mitsui Chemicals America HQ,800 Westchester Ave,Rye Brook,NY,,,,
+SITE-003295,B,NONE,"Prism Worldwide, LLC",Prism Worldwide - Sodus Production Facility,300 Alling Drive,Sodus,NY,,,,
+SITE-003351,A,NONE,BYK USA LLC,BYK USA Chester,48 Leone Lane,Chester,NY,,,,
+SITE-003485,B,NONE,American Packaging Corporation,American Packaging Churchville Plant,100 APC Dr,Churchville,NY,,,,
+SITE-003551,B,NONE,Precision Laser Technology,Precision Laser Technology HQ,1001 Lexington Ave,Rochester,NY,,,,
+SITE-003620,B,ADDR+NAME,"Daikin America, Inc.",Daikin America - Orangeburg HQ,20 Olympic Drive,Orangeburg,NY,1561877,Daikin America Inc.,Daikin America Inc.,20 Olympic Drive
+SITE-003808,A,NONE,Unicell Body Company Inc.,Unicell Body Company HQ and plant,571 Howard St,Buffalo,NY,,,,
+SITE-003854,C,NONE,Pali Global LLC,Pali Global Headquarters,100 Knickerbocker Ave,Bohemia,NY,,,,
+SITE-003859,B,NONE,"ARP Materials, Inc.",ARP Materials Headquarters,200 Creekside Drive,Amherst,NY,,,,
+SITE-003905,C,ADDR_ONLY,Naturabiomat Inc.,Naturabiomat Inc. New York Office,1 Penn Plaza STE 4440,New York,NY,936676,LOCATION 42022,Automatic Data Processing INC,1 PENN PLAZA
+SITE-003923,B,NONE,Lombardi Design & Manufacturing,Lombardi Design & Manufacturing Freeport Plant,100 Doxsee Dr,Freeport,NY,,,,
+SITE-004154,B,NONE,"Ttarp Industries, Inc.",Ttarp Buffalo Plant,338 Scajaquada Street,Buffalo,NY,,,,
+SITE-004190,B,NONE,"Technical Fibre Products, Inc.",Technical Fibre Products - Rotterdam NY plant,679 Mariaville Rd,Rotterdam,NY,,,,
+SITE-004291,B,ADDR_ONLY,"Argosy Advanced Materials, LLC",Argosy International - New York HQ,"225 West 34th St, Suite 800",New York,NY,119335,New York Office (3232),Kforce Inc.,"225 W. 34th St., Ste. 1615"
+SITE-004363,B,NONE,"Beacon Adhesives Co., Inc.",Beacon Adhesives - Mount Vernon HQ plant,125 S MacQuesten Parkway,Mount Vernon,NY,,,,
+SITE-000215,B,NONE,Hankook Tire America Corp.,Hankook Tire & Technology - Green (America Technical Center),3535 Forest Lake Dr,Green,OH,,,,
+SITE-000253,B,ADDR+NAME,Avery Dennison,Avery Dennison — Mentor,7100 Lindsay Dr,Mentor,OH,925383,Avery Dennison Medical,Avery Dennison,7100 Lindsay Dr. (Bldg. 14)
+SITE-000515,B,ADDR+NAME,Paramount Tube,Paramount Tube — Apple Creek,339 Mill St,Apple Creek,OH,1567835,"Precision Products Group, Inc. (Paramount Tube AC)","Precision Products Group, Inc",339 Mill Street
+SITE-002077,B,NONE,Vector ElectroMagnetics LLC,Vector ElectroMagnetics LLC,1245 Airport Road,Wilmington,OH,,,,
+SITE-002098,B,NONE,TRIFECTA TOOL AND ENGINEERING LLC,TRIFECTA TOOL AND ENGINEERING LLC,4648 Gateway Circle,Kettering,OH,,,,
+SITE-002099,B,NONE,OH 4 INDUSTRIES LLC,OH 4 INDUSTRIES LLC,1248 Summerwood Dr,Lebanon,OH,,,,
+SITE-002101,B,NONE,UES INC,UES INC,4401 Dayton-Xenia Rd,Dayton,OH,,,,
+SITE-002102,B,NONE,All Coatings Corp.,All Coatings Corp.,1301 N Meridian Rd,Youngstown,OH,,,,
+SITE-002103,A,ADDR_ONLY,"Altor Solutions, Inc.","Altor Solutions - Gnadenhutten, OH",1 Southern Gateway Dr,Gnadenhutten,OH,362395,Progressive Foam Technologies Inc.,Progressive Foam Technologies,1 Southern Gateway Dr.
+SITE-002105,B,NONE,THE ARTHUR CORPORATION,THE ARTHUR CORPORATION,1305 Huron Avery Rd,Huron,OH,,,,
+SITE-002106,A,NONE,Berry Global,"Berry Global - Streetsboro, OH",1275 Ethan Ave,Streetsboro,OH,,,,
+SITE-002107,B,NONE,Biena Tech Llc,Biena Tech Llc,526 S Main St Ste 821,Akron,OH,,,,
+SITE-002108,B,NONE,Black Bounce Rubber & Tire LLC,Black Bounce Rubber & Tire LLC,7419 TR 668,Millersburg,OH,,,,
+SITE-002109,A,NONE,BLAKO INDUSTRIES INC.,BLAKO INDUSTRIES INC.,10850 Middleton Pike,Bowling Green,OH,,,,
+SITE-002111,B,NONE,Composite Engineering,Composite Engineering,3204 Marshall Drive,Amelia,OH,,,,
+SITE-002112,B,NONE,Cottage Play Systems LLC,Cottage Play Systems LLC,4070 State Route 39,Millersburg,OH,,,,
+SITE-002113,B,NONE,Creative Mold & Machine,Creative Mold & Machine,10385 Kinsman Rd,Newbury,OH,,,,
+SITE-002114,A,ADDR+NAME,"Custom Pultrusions, Inc.","Custom Pultrusions, Inc.",1331 S Chillicothe Rd,Aurora,OH,1079717,"Custom Pultrusions, Inc.",Andersen Windows and Doors,1331 S. Chillicothe Road
+SITE-002116,B,NONE,"ENCORE INDUSTRIES, INC.","ENCORE INDUSTRIES, INC.",319 Howard Dr,Sandusky,OH,,,,
+SITE-002117,A,NONE,FELICITY PLANT,FELICITY PLANT,892 Neville Penn Schoolhouse Rd,Felicity,OH,,,,
+SITE-002118,B,NONE,EG INDUSTRIES,EG INDUSTRIES,30627 Orr Rd,Circleville,OH,,,,
+SITE-002119,B,NONE,Gerich Fiberglass,Gerich Fiberglass,7004 US Hwy 42,Mount Gilead,OH,,,,
+SITE-002120,B,NONE,"K & K Services, Inc.","K & K Services, Inc.",241 Hollybrier Dr,Wadsworth,OH,,,,
+SITE-002122,B,NONE,MEDAL Components,MEDAL Components,503 Joe E Brown Ave,Holgate,OH,,,,
+SITE-002124,B,NONE,"PLYMOUTH FOAM, LLC","PLYMOUTH FOAM, LLC",600 Enterprise Drive,Newcomerstown,OH,,,,
+SITE-002125,B,NONE,Revlis Corporation,Revlis Corporation,255 Huntington Ave,Akron,OH,,,,
+SITE-002129,B,NONE,Wright Materials Research Co.,Wright Materials Research Co.,1187 Richfield Center,Beavercreek,OH,,,,
+SITE-003229,B,NONE,Absolute Haitian Corporation,Absolute Haitian Ohio Technical Center,12900 Plaza Drive,Parma,OH,,,,
+SITE-003316,B,NONE,"Omya, Inc.","Omya, Inc. headquarters - Cincinnati","9987 Carver Road, Suite 300",Cincinnati,OH,,,,
+SITE-003327,B,NONE,"Budenheim USA, Inc.",Budenheim USA - Mansfield,889 West Longview Avenue,Mansfield,OH,,,,
+SITE-003406,B,ADDR_ONLY,Covia Holdings LLC,Covia Headquarters,3 Summit Park Drive Suite 700,Independence,OH,1245735,Cleveland Operations,Prolink Staffing Services LLC,3 Summit Park Dr. Suite 325
+SITE-003463,B,NONE,"CW Ohio, Inc.",CW Ohio — Conneaut (HQ plant),1209 Maple Ave,Conneaut,OH,,,,
+SITE-003466,B,NONE,"International Automotive Components Group North America, Inc.",IAC — Wauseon,555 W Linfoot St,Wauseon,OH,,,,
+SITE-003884,A,NONE,"API Industries, Inc.",Aluf Plastics Columbus Plant,2450 Marilyn Lane,Columbus,OH,,,,
+SITE-003899,B,NONE,"Inno-Pak, LLC",Inno-Pak Headquarters and Manufacturing Facility,100 Founders Court,Delaware,OH,,,,
+SITE-003912,B,NONE,Responsible Products Limited,Responsible Products Milford,1181 US-50,Milford,OH,,,,
+SITE-003951,B,NONE,Valco Melton,Valco Melton World Headquarters,497 Circle Freeway Drive,Cincinnati,OH,,,,
+SITE-004018,B,ADDR_ONLY,"Micro-Poise Measurement Systems, LLC",Micro-Poise Measurement Systems HQ,555 Mondial Pkwy,Streetsboro,OH,1116769,OH10 MICROPOISE,"Ametek, Inc MICROPOISE",555 MONDIAL PARKWAY
+SITE-004208,B,NONE,ST BlowMoulding USA LLC,ST BlowMoulding USA Headquarters,204 Republic Street,Norwalk,OH,,,,
+SITE-004225,B,NONE,Benvic USA,Benvic Trinity Plant,600 Oak St,West Unity,OH,,,,
+SITE-004365,B,ADDR_ONLY,"The ChemQuest Group, Inc.",ChemQuest - Cincinnati HQ,"9435 Waterstone Blvd, Suite 270",Cincinnati,OH,1433351,Cincinnati (OH),G & J Pepsi- Cola,9435 Waterstone Blvd
+SITE-003265,B,NONE,"McElroy Manufacturing, Inc.",McElroy Manufacturing - Tulsa HQ,833 N Fulton Ave,Tulsa,OK,,,,
+SITE-003588,B,NONE,Century Products LLC,Century Products - Ponca City Plant,1405 North Waverly Street,Ponca City,OK,,,,
+SITE-004030,B,ADDR_ONLY,"Advanced Plastics, Inc.",Advanced Plastics HQ,11212 E. 112th St N.,Owasso,OK,1418529,ADVANCED Machining and fabricating,ADVANCED Machining and fabricating,11212 E 112th St N
+SITE-004100,B,NONE,RotoMoldUSA,RotoMoldUSA — Claremore plant,24012 Amah Pkwy,Claremore,OK,,,,
+SITE-004385,B,NONE,"Red Devil, Inc.",Red Devil Pryor plant,4175 Webb Street,Pryor,OK,,,,
+SITE-004367,B,ADDR_ONLY,Eclectic Products Inc.,Eclectic Products - Eugene HQ,990 Owen Loop N,Eugene,OR,968830,"The Willamette Valley Company - OWL (Pre-Tec, Performance Products, and Administrative Offices)",The Willamette Valley Company,990 Owen Loop North
+SITE-002135,B,NONE,Berkley Prods Co.,Berkley Prods Co.,405 S 7th St.,Akron,PA,,,,
+SITE-002138,B,NONE,Filmtech Corp.,Filmtech Corp. - Williams Twp,1150 Center St.,Easton,PA,,,,
+SITE-002140,A,NONE,Inhance Technologies LLC,Inhance Technologies LLC - Allentown,202 Cascade Dr.,Allentown,PA,,,,
+SITE-002142,B,ADDR+NAME,Niagara Bottling LLC,Niagara Bottling LLC,7561 Industrial Blvd.,Allentown,PA,404803,"Niagara Bottling, LLC - Allentown","Niagara Bottling, LLC",7561 Industrial Blvd
+SITE-002143,C,ADDR+NAME,Niagara Bottling LLC,Niagara Bottling LLC,316 S Front St.,Hamburg,PA,404915,"Niagara Bottling, LLC - Hamburg","Niagara Bottling, LLC",316 South Front St
+SITE-002144,B,NONE,Niagara Bottling LLC,Niagara Bottling LLC,217 Aquapenn Dr.,Howard,PA,,,,
+SITE-002145,B,ADDR+NAME,Niagara Bottling LLC,Niagara Bottling LLC,201 Solar Dr.,Imperial,PA,566986,"Niagara Bottling, LLC - Pittsburgh","Niagara Bottling, LLC",201 Solar Drive
+SITE-002148,C,NONE,Polymer Dynamics Inc.,Polymer Dynamics Inc.,2200 S 12th St.,Allentown,PA,,,,
+SITE-002149,B,NONE,"Royal Industries International, Inc.","Royal Industries International, Inc.",1135 Plymouth St,Allentown,PA,,,,
+SITE-002153,C,NONE,New Pig Burns Ave,New Pig Burns Ave,649 Burns Ave.,Altoona,PA,,,,
+SITE-002154,A,NONE,Creative Pultrusions Inc.,Creative Pultrusions Inc.,214 Ind US Trial Ln.,Alum Bank,PA,,,,
+SITE-002156,C,NONE,Superior Transparent Noise Barriers LLC,Superior Transparent Noise Barriers LLC,220 Golfview Rd.,Ardmore,PA,,,,
+SITE-002159,B,NONE,Performax Global,Performax Global - Aston Twp,5 Crozerville Rd.,Aston,PA,,,,
+SITE-002160,C,ADDR_ONLY,Rebus Inc.,Rebus Inc.,205 W Bridgewater Rd.,Aston,PA,288880,I & I Sling PA,"I & I Sling, Inc.",205 Bridgewater rd
+SITE-002162,B,ADDR_ONLY,Anholt Tech,Anholt Tech,440 Church Rd.,Avondale,PA,1072218,Anholt dba CQ Medical,CQ Medical,440 Church Rd
+SITE-002164,B,NONE,Edlon Inc.,Edlon Inc.,117 State Rd.,Avondale,PA,,,,
+SITE-002165,B,NONE,Hpe Extrusion Solutions,Hpe Extrusion Solutions,20 North Front St.,Bally,PA,,,,
+SITE-002167,C,ADDR_ONLY,Lehigh Gasket Inc.,Lehigh Gasket Inc.,7709 Beth Bath Pike,Bath,PA,1502014,Staver Hydraulics - Bath,Staver Hydraulics Company Inc.,7709 Beth-Bath Pike
+SITE-002169,B,ADDR_ONLY,Kenson Plastics,Kenson Plastics,920 Brush Creek Rd.,Warrendale,PA,1362762,"Underground Solutions, Inc-Warrendale, PA",Underground Solutions,920 Brush Creek Rd
+SITE-002171,A,NONE,Green Garden Products Company LLC,Green Garden Products Company LLC,1108 Greengarden Ln.,Bedford,PA,,,,
+SITE-002172,B,NONE,"F Group Nano, LLC","F Group Nano, LLC",270 Rolling Ridge Dr. Suite 100,Bellefonte,PA,,,,
+SITE-002173,B,NONE,"Analytic Plastics, Inc.","Analytic Plastics, Inc.",1756 Winchester Rd.,Bensalem,PA,,,,
+SITE-002174,B,ADDR_ONLY,Laminated Materials Corp.,Laminated Materials Corp.,625 Winks Ln.,Bensalem,PA,1265855,LMC Plasticsource,Plastics Family Holdings Inc,625 Winks Lane
+SITE-002175,B,ADDR_ONLY,Nytef Plastics,Nytef Plastics - Bensalem,633 Dunksferry Rd.,Bensalem,PA,1285312,Reboot Contractors LLC,Reboot Contractors LLC,633 Dunksferry Rd. Unit A/STE C
+SITE-002176,B,ADDR_ONLY,Pelmor Lab,Pelmor Lab - Bensalem,3161 State Rd.,Bensalem,PA,665831,Telamon Corporation - Bensalem,Telamon Corporation,"3161 State Road, Unit L"
+SITE-002179,B,ADDR+NAME,Castek Inc,Castek Inc.,23 River Rd.,Berwick,PA,193182,Transpo Industries,"Castek, Inc.",23 River Road
+SITE-002183,B,NONE,Alpha Packaging,Alpha Packaging,1995 Highland Ave.,Bethlehem,PA,,,,
+SITE-002184,B,NONE,B Braun Med Bethlehem Plt,B Braun Med Bethlehem Plt,824 12th Ave.,Bethlehem,PA,,,,
+SITE-002185,C,ADDR+NAME,Crayola LLC,Crayola LLC - Bethlehem Plt,2475 Brodhead Rd.,Bethlehem,PA,286409,LVIP,Crayola LLC,2475 Brodhead Road
+SITE-002187,B,NONE,Svc Tire Truck Ctr Inc.,Svc Tire Truck Ctr Inc. - Bethlehem,2255 Ave. A,Bethlehem,PA,,,,
+SITE-002188,B,NONE,Svc Tire Truck Ctr Inc.,Svc Tire Truck Ctr Inc. - York 2800 Concord Rd,2800 Concord Rd.,York,PA,,,,
+SITE-002190,B,NONE,Arkema Inc.,Arkema Inc.,100 Route 413,Bristol,PA,,,,
+SITE-002191,B,NONE,Icp Industrial - Birdsboro,Icp Industrial - Birdsboro,200 H North Furnace St.,Birdsboro,PA,,,,
+SITE-002193,A,NONE,Chase Corporation,Chase Corporation - Blawnox,128 1st St.,Blawnox,PA,,,,
+SITE-002195,B,NONE,Foam Fabricators Inc.,Foam Fabricators Inc. - Bloomsburg Plt,17 Industrial Dr.,Bloomsburg,PA,,,,
+SITE-002198,A,NONE,Steve Shannon Tire,Steve Shannon Tire,925 Millville Rd.,"Bloomsburg, Town Of",PA,,,,
+SITE-002200,B,NONE,"Luicana Industries, Inc.","Luicana Industries, Inc.",230 East Philadelphia Ave,Boyertown,PA,,,,
+SITE-002201,B,NONE,C&G Arms LLC,C&G Arms LLC,855 6th Avenue 2nd Floor,Brackenridge,PA,,,,
+SITE-002202,C,NONE,Pandalai Coating Company,Pandalai Coating Company,837 6th Ave.,Brackenridge,PA,,,,
+SITE-002203,A,NONE,Luminite Prod,Luminite Prod,148 Commerce Dr.,Bradford,PA,,,,
+SITE-002204,B,NONE,"Reichhold Chemicals, Inc. (Polynt-Reichhold group)",Koppers Co. Incorporated - Bridgeville Plant,262 Miller Run Rd.,Bridgeville,PA,,,,
+SITE-002205,C,ADDR_ONLY,Mathews Marble MFG Inc.,Mathews Marble MFG Inc.,580 Mayer St. Bldg. #7,Bridgeville,PA,1072549,"Newterra Corporation, INC Bridgeville","Newterra Corporation, Inc",580 Mayer Street
+SITE-002210,B,NONE,Huntington Foam LLC,Huntington Foam LLC - Brockway,222 Industrial Park Dr.,Brockway,PA,,,,
+SITE-002211,C,NONE,"Ishman Plastic And Wood Cutting, Inc.","Ishman Plastic And Wood Cutting, Inc.",1081 Route 28,Brookville,PA,,,,
+SITE-002215,B,NONE,Bhb Plastic Molding,Bhb Plastic Molding,116 Railroad St.,Cambridge Springs,PA,,,,
+SITE-002216,B,NONE,Atlas Roofing Corporation,Atlas Roofing Corporation,817 Spangler Rd.,Camp Hill,PA,,,,
+SITE-002217,B,NONE,National Rubber Corporation,National Rubber Corporation,367 Morganza Rd,Canonsburg,PA,,,,
+SITE-002218,B,NONE,Trident Rubber Inc.,Trident Rubber Inc.,585 Plum Run Rd.,Canonsburg,PA,,,,
+SITE-002221,B,NONE,Lane Enterprises Inc.,Lane Enterprises Inc. - Carlisle,1244 Claremont Rd.,Carlisle,PA,,,,
+SITE-002222,B,NONE,John Wall Inc.,John Wall Inc.,440 West Greene Street,Carmichaels,PA,,,,
+SITE-002223,B,ADDR_ONLY,Valley Tire Co.,Valley Tire Co. - Charleroi,1002 Arentzen Blvd.,Charleroi,PA,1084961,Charleroi Plant,Valley Retreading Inc,1002 Arentzen Blvd
+SITE-002225,B,ADDR_ONLY,Tmp Acuisitions New,Tmp Acuisitions New,1395 Industrial Park Rd.,Clearfield,PA,1289711,TMP Manufacturing,TMP Manufacturing,1395 Industrial Park Rd
+SITE-002228,C,NONE,Comor Inc.,Comor Inc.,23697 U.S. Highway 322,Cochranton,PA,,,,
+SITE-002230,A,NONE,"Jm Manufacturing Company, Inc.","Jm Manufacturing Company, Inc.",15661 Delano Rd.,Cochranton,PA,,,,
+SITE-002231,A,NONE,Poux Plastics Inc.,Poux Plastics Inc.,5605 State Highway 173,Cochranton,PA,,,,
+SITE-002234,C,ADDR_ONLY,Mondo USA Inc.,Mondo USA Inc.,1100 East Hector Street Suite 160,Conshohocken,PA,1107394,Caring Friends LLC,HouseWorks LLC,1100 E. Hector St Suite 205
+SITE-002242,B,NONE,Poly Plastic Products Inc.,Poly Plastic Products Inc.,21 Schultz Lane,Delano,PA,,,,
+SITE-002243,B,ADDR+NAME,Vision Profile Extrusions USA Ltd,Vision Profile Extrusions USA Ltd,1 Contact Pl.,Delmont,PA,925882,Vision Profile Extrusions- Delmont Division,Vision Profile Extrusions USA Limited,1 Contact Place
+SITE-002244,A,ADDR+NAME,Sylvin Technologies Inc.,Sylvin Technologies Inc.,84 Denver Rd.,Denver,PA,1563234,Plant 1,Sylvin Technologies,84 Denver Rd.
+SITE-002245,B,ADDR+NAME,Weaver Industries,Weaver Industries,425 South 4th St.,Denver,PA,146974,"WEAVER INDUSTRIES, INC.","WEAVER INDUSTRIES, INC",425 SOUTH 4TH STREET
+SITE-002246,B,NONE,Eastern Machine & Conveyors Inc.,Eastern Machine & Conveyors Inc.,482 Galiffa Dr,Donora,PA,,,,
+SITE-002247,B,NONE,Proto-Cast LLC,Proto-Cast LLC,1460 Ben Franklin Hwy E,Douglassville,PA,,,,
+SITE-002250,A,NONE,Penn Color Inc.,Penn Color Inc.,400 Old Dublin Pike,Doylestown,PA,,,,
+SITE-002252,C,NONE,Powder Solutions Inc.,Powder Solutions Inc.,98 Spring Lake Dr.,Doylestown,PA,,,,
+SITE-002253,B,NONE,New Pig Corporation - Duncansville Site,New Pig Corporation - Duncansville Site,102 Pig Service Lane,Duncansville,PA,,,,
+SITE-002254,B,NONE,Reilly Foam Corporation,Reilly Foam Corp. - Lower Providence Twp,2525 Monroe Blvd. Ste. B,Eagleville,PA,,,,
+SITE-002256,B,NONE,"Color Rite Distributing East, Inc.","Color Rite Distributing East, Inc.",123 Blaine St.,East Bangor,PA,,,,
+SITE-002259,B,NONE,Crayola LLC - Kresslersville Rd Plant,Crayola LLC - Kresslersville Rd Plant,4800 Kresslersville Rd.,Easton,PA,,,,
+SITE-002261,A,NONE,Fluortek Inc,Fluortek Inc,12 Mcfadden Rd.,Easton,PA,,,,
+SITE-002262,A,NONE,Georg Fischer LLC (GF Harvel),Georg Fischer LLC (GF Harvel),300 Kuebler Rd.,Easton,PA,,,,
+SITE-002263,C,NONE,Molded Acoustical Products of Easton Inc,Molded Acoustical Products of Easton Inc,3 Danforth Dr.,Easton,PA,,,,
+SITE-002267,C,NONE,U-POL US Corp,U-POL US Corp,108 Commerce Way,Easton,PA,,,,
+SITE-002268,B,NONE,Plastrac Inc.,Plastrac Inc.,3924 Miller Road,Edgemont,PA,,,,
+SITE-002270,A,NONE,Wolverine Plastics Inc.,Wolverine Plastics Inc.,516 Mecklem Ln,Ellwood City,PA,,,,
+SITE-002272,B,ADDR_ONLY,Electro Chemical Engineering & Manufacturing Co,Electro Chemical Engineering & Manufacturing Co,750 Broad St.,Emmaus,PA,1455446,Electro Chemical Manufacturing,Knight Material Technologies,750 Broad Street
+SITE-002273,B,ADDR_ONLY,AAH Acquisition LLC dba Snap-Tite Hose,All American Hose LLC  -  Oil & Gas Division,2424 W 23rd St.,Erie,PA,887269,Amazon.com Services LLC - WEE1,Amazon.com Services LLC,2424 West 23rd Street
+SITE-002277,C,ADDR_ONLY,Engineered Plastics LLC,Engineered Plastics LLC,1241 Camphausen Ave.,Erie,PA,1361568,Plastic Injection Molding Svcs-Assembly,Plastic Injection Molding Services LLC,1241 Camphausen
+SITE-002279,B,NONE,"Erie Mill & Press Co., Inc.","Erie Mill & Press Co., Inc.",953 E 12th St,Erie,PA,,,,
+SITE-002280,B,ADDR+NAME,General Partitions,General Partitions,1702 Peninsula Dr.,Erie,PA,569198,General Partitions Mfg Corp,General Partitions Mfg Corp,1702 Peninsula Drive
+SITE-002281,A,ADDR+NAME,Haysite Reinforced Plastics LLC,Haysite Reinforced Plastics LLC  -  Erie,5599 New Perry Highway,Erie,PA,1262322,Haysite Reinforced Plastics,Haysite Reinforced Plastics,5599 New Perry Highway
+SITE-002282,B,NONE,Insul Board,Insul Board  -  Erie,2120 Colonial Ave.,Erie,PA,,,,
+SITE-002283,A,NONE,"Lake Erie Rubber Works, Inc.","Lake Erie Rubber Works, Inc.",6410 West Ridge Rd.,Erie,PA,,,,
+SITE-002285,B,NONE,"North Coast Plastics, Inc.","North Coast Plastics, Inc.",2114 Loveland Ave.,Erie,PA,,,,
+SITE-002286,B,NONE,Havpak International,"Omega Plastics, LLC",1507 Wayne St.,Erie,PA,,,,
+SITE-002288,A,ADDR+NAME,"Plastek Industries, Inc.",Plastek Industries Inc - Spectrum Molding & Decoration,2425 West 23rd St.,Erie,PA,1143759,Corporate Administration,"Plastek Industries Inc., dba Plastek Group",2425 West 23rd St
+SITE-002293,A,ADDR+NAME,Plastikos Medical LLC,Plastikos Medical LLC,8121 Hawthorne Dr.,Erie,PA,1198851,Plastikos Medical LLC.,Plastikos Medical LLC.,8121 Hawthorne Drive
+SITE-002295,A,NONE,"Precision Polymers, Inc.",Precision Polymers Inc.,1425 Selinger Ave,Erie,PA,,,,
+SITE-002296,B,NONE,Rehrig Pacific,Rehrig Pacific,1738 W 20th St.,Erie,PA,,,,
+SITE-002297,B,NONE,Rehrig Pacific Bldg 2,Rehrig Pacific Bldg 2,1739 W 20th St.,Erie,PA,,,,
+SITE-002298,B,ADDR_ONLY,Seaway Manufacturing Corp,Seaway Manufacturing Corp,2250 E 33rd St.,Erie,PA,370857,Seaway Mfg,Seaway Mfg,2250 East 33rd St
+SITE-002299,C,NONE,Thermoclad - Iroquois Ave,Thermoclad - Iroquois Ave,4690 Iroquois Ave.,Erie,PA,,,,
+SITE-002309,A,ADDR_ONLY,Dsm Biomedical Inc. - Sierra Drive,Dsm Biomedical Inc. - Sierra Drive,260 Sierra Dr.,Exton,PA,554413,Lungpacer Medical USA Inc,Lungpacer Medical USA Inc.,260 Sierra Drive Suite 116
+SITE-002311,B,NONE,"Packaging Technology, Inc.","Packaging Technology, Inc.",118 Pickering Way,Exton,PA,,,,
+SITE-002312,B,ADDR+NAME,Trinseo LLC.,Trinseo LLC.,435 Creamery Way Suite 400,Exton,PA,1458828,Trinseo Exton Global Innovation Center,Trinseo LLC,435 Creamery Way
+SITE-002313,B,NONE,United Plastics Machinery LLC,United Plastics Machinery LLC,131 S Whitford Rd.,Exton,PA,,,,
+SITE-002315,B,NONE,Ultra Pak Inc.,Ultra Pak Inc.,49 Newbold Rd.,Fairless Hills,PA,,,,
+SITE-002323,B,NONE,"Novares Us, LLC - Felton Plant","Novares Us, LLC - Felton Plant",12367 Mount Olivet Rd.,Felton,PA,,,,
+SITE-002325,C,NONE,Iris Ltd. Inc.,Iris Ltd. Inc.,901 Park Rd,Fleetwood,PA,,,,
+SITE-002331,A,ADDR_ONLY,Am Stabilizers Corporation,Am Stabilizers Corporation,240 Two Mile Run Rd. North,Franklin,PA,937432,Borchers Americas Inc. Franklin Plant,Borchers Americas Inc.,240 Two Mile Run Road
+SITE-002332,C,NONE,Freeport Terminals,Freeport Terminals,700 Riverside Dr.,Freeport,PA,,,,
+SITE-002333,C,NONE,Asap Hydraulics Inc.,Asap Hydraulics Inc.,5351 Lincoln Highway Ste 5,Gap,PA,,,,
+SITE-002334,B,NONE,Herbert Cooper Co.,Herbert Cooper Co. - Genesee,121 Main St.,Genesee,PA,,,,
+SITE-002335,B,NONE,C & E Plastics Inc.,C & E Plastics Inc.,2500 Rt. 168,Georgetown,PA,,,,
+SITE-002337,C,NONE,Pannier Graphic Div.,Pannier Graphic Div.,1239 Oak Rd.,Gibsonia,PA,,,,
+SITE-002338,B,NONE,Anderson Plastics Inc.,Anderson Plastics Inc.,227 Hathaway St E,Girard,PA,,,,
+SITE-002340,B,NONE,Jamestown Powder Coatings,Jamestown Powder Coatings,710 Beaver Rd.,Girard,PA,,,,
+SITE-002341,C,NONE,Cott MFG,Cott MFG,43 Allegheny Sq,Glassport,PA,,,,
+SITE-002342,B,NONE,La France Corp.,La France Corp.,1 La France Way,Glen Mills,PA,,,,
+SITE-002344,B,NONE,Addev Walco Inc.,Addev Walco Inc.,1651 E Sutter Rd,Glenshaw,PA,,,,
+SITE-002347,B,NONE,Stretchpak Inc.,Stretchpak Inc.,1575 Woodward Dr. Ext.,Greensburg,PA,,,,
+SITE-002348,A,ADDR_ONLY,Tiger Door LLC,Tiger Door LLC - Hempfield,1181 Garden St.,Greensburg,PA,543675,General Carbide Corporation,General Carbide Corporation,1181 Garden Street
+SITE-002349,B,NONE,Wabtec Rubber Products,Wabtec Rubber Products,269 Donohue Rd.,Greensburg,PA,,,,
+SITE-002350,A,NONE,Forta Corporation,Forta Corporation,100 Forta Dr.,Grove City,PA,,,,
+SITE-002353,B,ADDR_ONLY,Kore Mart Limited,Kore Mart Limited,7 Hill Dr.,Hamburg,PA,944144,Thermotec - Hamburg,Thermotec,7 Hill Drive
+SITE-002354,C,NONE,Colonial Fiberglass Industries,Colonial Fiberglass Industries,262 Church St.,Hanover,PA,,,,
+SITE-002357,B,NONE,McClarin Plastics LLC,McClarin Plastics LLC,100 N Blettner Ave.,Hanover,PA,,,,
+SITE-002362,A,ADDR+NAME,Martech Medical Products-Warehouse,Martech Medical Products-Warehouse,1500 Delp Dr.,Harleysville,PA,407970,"Martech Medical Products, Inc.",,1500 Delp Drive
+SITE-002365,B,ADDR_ONLY,American Made LLC Dba Us Liner Company,American Made LLC Dba Us Liner Company,200 Utah St.,Harmony,PA,1442262,Transtex Composites,Transtex Composites,200 Utah Street
+SITE-002367,B,ADDR_ONLY,Jet Plastica Ind Inc.,Jet Plastica Ind Inc. - Hatfield,1100 Schwab Rd.,Hatfield,PA,1419237,Fox  Bindery Inc,Fox Bindery Inc.,1100 Schwab Road
+SITE-002369,C,NONE,Surco Inc.,Surco Inc.,271 W Broad St.,Hatfield,PA,,,,
+SITE-002370,B,ADDR_ONLY,Technetics Group,Technetics Group - Hatfield,1600 Industry Rd.,Hatfield,PA,1090262,"Altamira Material Solutions, LP (Hatfield)","Altamira Material Solutions, LP",1600 Industry Rd.
+SITE-002371,A,ADDR+NAME,The Rodon Group,The Rodon Group - Hatfield,2800 Sterling Dr.,Hatfield,PA,1308161,The Rodon Group - Sterling,Rodon Limited Partnership,2800 Sterling Drive
+SITE-002372,A,NONE,Warren Polymer Solutions International LLC,Warren Polymer Solutions International LLC,925-2 Schwab Road,Hatfield,PA,,,,
+SITE-002374,A,NONE,Eam-Mosca Corp.,Eam-Mosca Corp.,675 Jaycee Drivevalmont Industrial Park,Hazleton,PA,,,,
+SITE-002376,C,NONE,Jml Industries Inc.,Jml Industries Inc.,400 Jaycee Dr.,Hazleton,PA,,,,
+SITE-002377,B,NONE,Polyglass USA,Polyglass USA,555 Oak Ridge Rd.,Hazleton,PA,,,,
+SITE-002378,B,NONE,"Schoolhouse Plastics, Inc.","Schoolhouse Plastics, Inc.",270 South Pine Street,Hazleton,PA,,,,
+SITE-002379,C,ADDR_ONLY,Simona America Incorporated,Simona America Incorporated,64 N Conahan Dr.,Hazleton,PA,472132,Highwood USA LLC - North,Highwood USA LLC,64 N. Conahan Drive
+SITE-002380,B,NONE,"Thoren Caging Systems, Inc.","Thoren Caging Systems, Inc.",815 West Seventh St.,Hazleton,PA,,,,
+SITE-002383,B,NONE,Penn Turf Inc.,Penn Turf Inc.,521 Tel Power Rd.,Hollidaysburg,PA,,,,
+SITE-002384,C,NONE,"Gellner Industrial, LLC","Gellner Industrial, LLC",105 Tide Rd.,Hometown,PA,,,,
+SITE-002386,C,ADDR_ONLY,Hartman Plastics Inc.,Hartman Plastics Inc.,373 Poplar Rd.,Honey Brook,PA,82879,Genesis,Genesis Packaging Technologies,373 Poplar Road
+SITE-002387,A,NONE,American Additive Manufacturing LLC,American Additive Manufacturing LLC,201 Witmer Rd,Horsham,PA,,,,
+SITE-002388,B,NONE,Benjamin Obdyke Inc.,Benjamin Obdyke Inc.,400 Babylon Road SUITE A,Horsham,PA,,,,
+SITE-002391,C,NONE,Chartiers Packaging Inc. Dba Chartiers Industries,Chartiers Packaging Inc. Dba Chartiers Industries,108 Country Barn Rd W N/A,Houston,PA,,,,
+SITE-002392,B,NONE,"Venture Precision Tool, Inc.","Venture Precision Tool, Inc.",241 E 2nd Street Rear,Hummelstown,PA,,,,
+SITE-002393,B,NONE,FRP Fabricators Inc.,FRP Fabricators Inc.,10168 FRP Road,Huntingdon,PA,,,,
+SITE-002394,B,NONE,"Ajr Polytron, Inc.","Ajr Polytron, Inc.",465 Pike Rd. Ste. 115,Huntingdon Valley,PA,,,,
+SITE-002395,B,NONE,Fielco Industries,Fielco Industries,1957 B Pioneer Rd.,Huntingdon Valley,PA,,,,
+SITE-002406,B,NONE,Industrial Floor Corporation,Industrial Floor Corporation,261 OLD YORK RD Suite 612,Jenkintown,PA,,,,
+SITE-002407,B,NONE,Norcen Inds Inc.,Norcen Inds Inc.,527 N Pioneer Dr. Rr 1,Jersey Shore,PA,,,,
+SITE-002408,B,ADDR_ONLY,West Pharm Serv Js SW,West Pharm Serv Js SW,347 Oliver St.,Jersey Shore,PA,1104521,West Pharmaceutical Services Inc. - Jersey Shore,West Pharmaceutical Services Inc.,347 Oliver Street
+SITE-002409,B,NONE,Quality Dispersions Inc.,Quality Dispersions Inc.,1413 Million Dollar Hwy.,Kersey,PA,,,,
+SITE-002410,B,NONE,Atofina Chem Inc.,Atofina Chem Inc. - King Of Prussia,900 First Ave.,King Of Prussia,PA,,,,
+SITE-002411,B,ADDR_ONLY,Purolite Corporation,Purolite Corporation,2201 Renaissance Blvd.,King Of Prussia,PA,1512926,Recovery Centers of America - ESC,Recovery Centers of America Management Company,2201 Renaissance Blvd
+SITE-002413,B,ADDR_ONLY,Shawnee Chemical Company Inc.,Shawnee Chemical Company Inc.,630 Freedom Business Ctr Dr # 3,King Of Prussia,PA,926703,CI&T Inc-King of Prussia,CI&T Inc,630 Freedom Business Center Drive 3rd Floor 181
+SITE-002415,B,NONE,Bergad Incorporated,Bergad Incorporated,11858 State Route 85,Kittanning,PA,,,,
+SITE-002416,B,NONE,Dielectric Solutions LLC,Dielectric Solutions LLC,1655 Orr Ave.,Kittanning,PA,,,,
+SITE-002419,B,ADDR_ONLY,"East Penn Manufacturing Co., Inc.",East Penn Kutztown Battery Plt,191 Willow St.,Kutztown,PA,440997,WIRE AND CABLE,EAST PENN MFG. CO. INC.,191 WILLOW STREET
+SITE-002421,C,NONE,"East Penn Manufacturing Co., Inc.",East Penn MFG Co. Inc. - Battery Assembly,102 Deka Rd.,Lyons,PA,,,,
+SITE-002423,B,ADDR_ONLY,"Armstrong World Industries, Inc.","Armstrong World Industries, Inc.",1067 Dillerville Roadp.O. Box 3001,Lancaster,PA,1271477,AHF Products Lancaster Floor Plant,AHF Products,1067 Dillerville Road
+SITE-002426,C,NONE,Euramax International Inc.,Euramax International Inc.,450 Richardson Dr.,Lancaster,PA,,,,
+SITE-002428,B,NONE,Interface Solutions Centerville Plt,Interface Solutions Centerville Plt,216 Wohlsen Way,Lancaster,PA,,,,
+SITE-002430,B,NONE,Maugus Manufacturing Incorporated,Maugus Manufacturing Incorporated,239 North Ann St.,Lancaster,PA,,,,
+SITE-002431,B,NONE,Mxl Ind Inc.,Mxl Ind Inc.,1764 Rohrerstown Rd.,Lancaster,PA,,,,
+SITE-002432,B,NONE,Opsec Security,Opsec Security - Lancaster,1857 Colonial Village Ln.,Lancaster,PA,,,,
+SITE-002434,B,ADDR_ONLY,True Precision Plastics,True Precision Plastics,310 Running Pump Rd.,Lancaster,PA,1283754,Lydall Performance Materials,Alkegen,310 - 320 Running Pump Rd. and 215 Wohlsen Way Lancaster PA
+SITE-002439,B,NONE,Carclo Technical Plastics,Carclo Ind,550 Depot St.,Latrobe,PA,,,,
+SITE-002440,B,NONE,Chestnut Ridge Foam Inc.,Chestnut Ridge Foam Inc.,443 Wareho US E Dr.,Latrobe,PA,,,,
+SITE-002441,B,NONE,Classic Industries Corporation,Classic Industries Corporation,149 Devereaux Dr.,Latrobe,PA,,,,
+SITE-002442,B,ADDR_ONLY,Ctp Carrera Inc.,Ctp Carrera Inc.,600 Depot St.,Latrobe,PA,1464910,Carclo Latrobe,Carclo,600 Depot Street
+SITE-002443,B,NONE,Import Export Tire Company Inc.,Import Export Tire Company Inc.,400 Unity Streetsuite 100,Latrobe,PA,,,,
+SITE-002444,B,NONE,Opco Inc.,Opco Inc. - Latrobe,205 W Harrison Ave.,Latrobe,PA,,,,
+SITE-002447,B,NONE,Sp Acquisition Company LLC Dba Reitech Corporation,Sp Acquisition Company LLC Dba Reitech Corporation,3146 Marion St.,Laureldale,PA,,,,
+SITE-002451,B,NONE,Vs Rubber,Vs Rubber,313 Keystone Dr.,Lebanon,PA,,,,
+SITE-002452,B,NONE,"Entrance, Inc.","Entrance, Inc.",2651 Leisczs Bridge Rd.,Leesport,PA,,,,
+SITE-002453,B,ADDR_ONLY,Flex Membrane International Corp.,Flex Membrane International Corp.,2670 Leiscz's Bridge Road Suite 400,Leesport,PA,1467032,Habasit America Leesport,Habasit America,2670 Leiscz Bridge Road
+SITE-002460,B,ADDR+NAME,Dart Container Corp. Of Pennsylvania,Dart Container Corp. Of Pennsylvania,60 E Main St.,Leola,PA,965572,Dart Container Leola Bead,Dart Container,60 E Main St
+SITE-002461,B,NONE,G & T Industries Of Pennsylvania Inc. Lancaster Div,G & T Industries Of Pennsylvania Inc. Lancaster Div,52 Hess Rd.,Leola,PA,,,,
+SITE-002462,B,NONE,Marbleon Inc.,Marbleon Inc. - Leola,121 Ashmore Dr.,Leola,PA,,,,
+SITE-002463,B,ADDR_ONLY,North Amer Pipe Corp.,North Amer Pipe Corp. - Leola,88 Newport Rd.,Leola,PA,1456459,Leola,Westlake Pipe & Fittings,88 Newport Road
+SITE-002467,A,NONE,"Culver Tool & Die, Inc.","Culver Tool & Die, Inc.",688 Yorktown Roadsuite E,Lewisberry,PA,,,,
+SITE-002468,A,NONE,Lighthouse Man LLC,Lighthouse Man LLC,340 Hoffa Mill Road,Lewisburg,PA,,,,
+SITE-002469,B,NONE,Trinity Plastics,Trinity Plastics,600 Roundhouse Rd.,Lewistown,PA,,,,
+SITE-002471,B,NONE,Carpenter Co.,Carpenter Co. Incorporated,400 Arrowhead Dr.,Lititz,PA,,,,
+SITE-002472,B,NONE,"Central Distribution Company, Inc.","Central Distribution Company, Inc.",662 Jake Landis Rd.,Lititz,PA,,,,
+SITE-002473,B,NONE,Tily Manufacturing Inc.,Tily Manufacturing Inc.,335 Roberts Rd.,Littlestown,PA,,,,
+SITE-002474,B,ADDR+NAME,Mahantango Enterprises Inc.,Mahantango Enterprises Inc.,2100 Old Trail Rd,Liverpool,PA,143325,Liverpool Location,"Mahantango Enterprises, Inc.",2100 Old Trail Road
+SITE-002476,B,NONE,Luicana Ind Inc.,Luicana Ind Inc. - MacUngie Fac,111 Lehigh St.,Macungie,PA,,,,
+SITE-002478,B,NONE,Loparex,Loparex - Malvern,2400 Continental Blvd.,Malvern,PA,,,,
+SITE-002479,B,NONE,Peace Products Company,Peace Products Company,143 Pennsylvania Ave.,Malvern,PA,,,,
+SITE-002480,B,NONE,Stat-Mats LLC,Stat-Mats LLC,200 Applebrook Dr,Malvern,PA,,,,
+SITE-002481,B,NONE,"The Resin Enterprise, Inc.","The Resin Enterprise, Inc.",607 W Swedesford Road,Malvern,PA,,,,
+SITE-002484,B,NONE,Bedford Materials Co.,Bedford Materials Co. - Bedford,7676 Allegheny Rd.,Manns Choice,PA,,,,
+SITE-002485,A,ADDR+NAME,The Murus Company,The Murus Company,3234 Route 549,Mansfield,PA,1455324,Plant,The Murus Company Inc.,3234 Route 549
+SITE-002487,A,NONE,Clarion Bathware,Clarion Bathware,16273 Rt. 208,Marble,PA,,,,
+SITE-002488,B,NONE,Braskem Amer Inc.,Braskem Amer Inc. - Marcus Hook,750 W 10th St.,Marcus Hook,PA,,,,
+SITE-002489,C,NONE,Advanced Plastic Systems Inc.,Advanced Plastic Systems Inc.,302 Cambridge Dr.,Mars,PA,,,,
+SITE-002500,B,NONE,Micro Plastics Inc.,Micro Plastics Inc.,13561 Broadway Ste A,Meadville,PA,,,,
+SITE-002501,B,NONE,Moldex Tool & Design Corporation,Moldex Tool & Design Corporation,823 Bessemer St,Meadville,PA,,,,
+SITE-002503,B,NONE,"Qtd Plastics, Inc.","Qtd Plastics, Inc.",21398 Blooming Valley Rd.,Meadville,PA,,,,
+SITE-002507,B,NONE,Acrymax Tech Inc.,Acrymax Tech Inc. - Media,221 Brooke St.,Media,PA,,,,
+SITE-002510,A,NONE,Mi Profiles LLC - Millersburg,Mi Profiles LLC - Millersburg,1519 Us-209,Millersburg,PA,,,,
+SITE-002513,B,NONE,Truck Accessories Npdes Stormwater,Truck Accessories Npdes Stormwater,200 Housel Run Rd.,Milton,PA,,,,
+SITE-002514,B,NONE,Concretevoids LLC,Concretevoids LLC,5081 Sweitzer Rd,Mohnton,PA,,,,
+SITE-002516,B,ADDR_ONLY,Tegrant Diversified Brands Inc.,Tegrant Diversified Brands Inc.,161 Corporate Dr.,Montgomeryville,PA,1528144,"Montgomeryville, PA - A366",Sonoco,161 Corporate Drive
+SITE-002528,B,NONE,Matamatic Inc.,Matamatic Inc.,181 Westec Dr.,Mount Pleasant,PA,,,,
+SITE-002531,B,ADDR_ONLY,Fiber Glass Sys Inc.,Fiber Glass Sys Inc. - Mt Union Plt,14489 Croghan Pike,Mount Union,PA,1463545,"NOV Fiberglass Systems Mount Union, PA",NOV,14489 Croghan Pike
+SITE-002534,B,NONE,Tempur Production USA LLC Dba Mountain Top Foam,Tempur Production USA LLC Dba Mountain Top Foam - Wright Twp,25 Elmwood Ave.,Mountain Top,PA,,,,
+SITE-002535,B,NONE,"Patrick Industries, Inc.",Patrick Industries - Adorn,20 & 32 Eby Chiques Rd.,Mt Joy,PA,,,,
+SITE-002537,B,NONE,Charlotte Pipe & Foundry,Charlotte Pipe & Foundry - Muncy Plt,100 Industrial Park Rd.,Muncy,PA,,,,
+SITE-002539,C,NONE,Tarp America Inc.,Tarp America Inc.,588 State Route 380,Murrysville,PA,,,,
+SITE-002545,B,NONE,Compositek LLC,Compositek LLC,732 Blockhouse Run Rd N/A,New Brighton,PA,,,,
+SITE-002546,B,NONE,Velocity Equipment Solutions LLC,Velocity Equipment Solutions LLC,1902 New Butler Rd.,New Castle,PA,,,,
+SITE-002547,C,NONE,Pillings FRP,Pillings FRP - White Deer Plt,2525 Old Rte. 15,New Columbia,PA,,,,
+SITE-002548,B,NONE,S & J Recycling Inc.,S & J Recycling Inc.,3576 Old Route 15,New Columbia,PA,,,,
+SITE-002549,B,NONE,"Key-Link Fencing & Railing, Inc.","Key-Link Fencing & Railing, Inc.",100 Orlan Rd,New Holland,PA,,,,
+SITE-002553,B,ADDR_ONLY,Trigon Plastics LLC,Trigon Plastics LLC,12 S. Fort Zellers Rd,Newmanstown,PA,1424513,N.E.W. Plastics Corp - PA Renew,N.E.W. Plastics Corp,12 S Fort Zeller Rd
+SITE-002554,B,NONE,Nushield Inc.,Nushield Inc.,1 Parkview Ct.,Newtown,PA,,,,
+SITE-002557,C,NONE,Lite Tech Inc.,Lite Tech Inc.,975 Madison Ave.,Norristown,PA,,,,
+SITE-002559,B,NONE,Optinova Plymouth Meeting Facility,Optinova Plymouth Meeting Facility,416 School Lane,Norristown,PA,,,,
+SITE-002560,B,NONE,Epc Powder Manufacturing Inc.,Epc Powder Manufacturing Inc.,101 Loomis St.,North East,PA,,,,
+SITE-002561,A,NONE,"Nzk Plastics, LLC","Nzk Plastics, LLC",3431 5th Ave.,North Versailles,PA,,,,
+SITE-002563,B,NONE,Normandy Industries Inc.,Normandy Industries Inc.,324 Delaware Ave. Po Box 446,Oakmont,PA,,,,
+SITE-002565,B,NONE,Insta-Mold Products Inc.,Insta-Mold Products Inc.,640 Hollow Rd.,Oaks,PA,,,,
+SITE-002567,B,NONE,Kettle Creek Corporation,Kettle Creek Corporation,33 Sunset Dr,Ottsville,PA,,,,
+SITE-002570,C,NONE,General Plastics Inc.,General Plastics Inc.,701 Kingston St. 31,Phila,PA,,,,
+SITE-002571,B,NONE,Abbey Color Inc.,Abbey Color Inc.,400 E Tioga St.,Philadelphia,PA,,,,
+SITE-002572,B,NONE,C-Lec Plastics Inc.,C-Lec Plastics Inc.,6800 State Rd.,Philadelphia,PA,,,,
+SITE-002574,C,NONE,Duralife USA LLC,Duralife USA LLC,1300 Adams Ave Bldg D,Philadelphia,PA,,,,
+SITE-002575,B,NONE,Epc Inc.,Epc Inc.,2180 Bennett Rd 2180 Bennett Rd,Philadelphia,PA,,,,
+SITE-002577,C,NONE,Fun-Time International Inc.,Fun-Time International Inc.,413 N 4th St,Philadelphia,PA,,,,
+SITE-002579,B,NONE,INEOS Composites US LLC,Ineos Composites Us - Phila,2801 S Columbus Blvd.,Philadelphia,PA,,,,
+SITE-002580,B,NONE,INEOS Composites US LLC,"Ashland Specialty Chemical Co.- Neville Island, PA",2650 Neville Rd.,Pittsburgh,PA,,,,
+SITE-002581,A,NONE,Purolite LLC An Ecolab Co.,Purolite LLC An Ecolab Co.,3620 G St.,Philadelphia,PA,,,,
+SITE-002582,B,NONE,Quint Co.,Quint Co.,3725 Castor Ave.,Philadelphia,PA,,,,
+SITE-002583,C,NONE,Recycledelphia Inc.,Recycledelphia Inc.,5400 Grays Ave,Philadelphia,PA,,,,
+SITE-002584,C,ADDR_ONLY,Schutz Na LLC,Schutz Na LLC,8701 Torresdale Ave.,Philadelphia,PA,1562626,SupplyOne - Provident,SupplyOne - Provident,8701 Torresdale Avenue (rear)
+SITE-002585,C,NONE,"Siltco Industries, Inc.","Siltco Industries, Inc.",707 W. Grange Avenue,Philadelphia,PA,,,,
+SITE-002587,C,NONE,Surf Technologies,Surf Technologies,115 Kuebler Rd.,Philadelphia,PA,,,,
+SITE-002589,C,ADDR+NAME,Solar Innovations,Solar Innovations,31 Roberts Rd.,Pine Grove,PA,913869,"Solar Innovations, Inc.","Solar Innovations, Inc.",31 Roberts Rd.
+SITE-002590,B,NONE,"Crosslink International, Inc.","Crosslink International, Inc.",6140 Kit Rd.,Pipersville,PA,,,,
+SITE-002591,B,NONE,American Made Systems Inc.,American Made Systems Inc.,2600 Neville Rd 2600 Neville Rd,Pittsburgh,PA,,,,
+SITE-002592,C,NONE,Arieca,Arieca,6024 Broad St. Floor 2R,Pittsburgh,PA,,,,
+SITE-002594,B,NONE,Gateway Paint & Chemical,Gateway Paint & Chemical,2929 Smallman St.,Pittsburgh,PA,,,,
+SITE-002596,B,NONE,Marvel Marking Products Inc. Garage,Marvel Marking Products Inc. Garage,3000 Jane St,Pittsburgh,PA,,,,
+SITE-002600,B,NONE,"Tmi, LLC","Tmi, LLC",5350 Campbells Run Rd.,Pittsburgh,PA,,,,
+SITE-002602,C,NONE,Independent Refining Co. LLC,Independent Refining Co. LLC - Exeter,99 Stevens Ln.,Pittston,PA,,,,
+SITE-002604,B,NONE,Plastic Dip Moldings Inc.,Plastic Dip Moldings Inc.,37 Appletree Ln.,Plumsteadville,PA,,,,
+SITE-002605,A,NONE,Optinova Valley Forge,Optinova Valley Forge - Plymouth Meeting,435 School Ln.,Plymouth Meeting,PA,,,,
+SITE-002608,B,NONE,Adams Manufacturing Corporation,Adams Manufacturing Corporation,109 West Park Rd.,Portersville,PA,,,,
+SITE-002610,A,NONE,"J & K Foam Fabricating, Inc.","J & K Foam Fabricating, Inc.",313 Circle Of Progress Dr. Ste. 200,Pottstown,PA,,,,
+SITE-002616,B,ADDR+NAME,McAdoo & Allen  Div Quaker Color Div McAdoo & Allen  Div,McAdoo & Allen  Div Quaker Color Div McAdoo & Allen  Div,201 South Hellertown Ave.,Quakertown,PA,78557,Quaker Color Inc,"McAdoo & Allen, Inc",201 S Hellertown Ave
+SITE-002618,A,ADDR+NAME,"Ammeraal Beltech Modular, Incorporated","Ammeraal Beltech Modular, Incorporated",500 Brentwood Dr.,Reading,PA,1263786,Ammeraal Beltech Modular LLC,,500 Brentwood Dr
+SITE-002620,C,ADDR+NAME,Custom Processing Services Inc.,Custom Processing Services Inc.,2 Birchmont Rd.,Reading,PA,805295,"Custom Processing Services, Inc.","Custom Processing Services, Inc.",2 Birchmont Drive
+SITE-002627,B,NONE,Tray-Pak Corporation,Tray-Pak Corporation,4201 Reading Crest Ave.,Reading,PA,,,,
+SITE-002628,B,NONE,Apex Urethane Millwork Red Lion,Apex Urethane Millwork Red Lion,105 Church Ln.,Red Lion,PA,,,,
+SITE-002629,B,NONE,Custom Molds,Custom Molds - Plastics Inc.,210 Martin St,Red Lion,PA,,,,
+SITE-002631,B,NONE,Unipar Inc.,Unipar Inc.,130 Royal St,Reedsville,PA,,,,
+SITE-002632,B,NONE,"Schweitzer-Mauduit International, Inc.","Schweitzer-Mauduit International, Inc.",308 Poplar St.,Richland,PA,,,,
+SITE-002637,B,NONE,"Plastic Supply Of Pennsylvania, Inc.","Plastic Supply Of Pennsylvania, Inc.",21 S Limerick Rd.,Royersford,PA,,,,
+SITE-002641,B,NONE,Cardinal Systems Inc.,Cardinal Systems Inc.,250 Rt. 61 S,Schuylkill Haven,PA,,,,
+SITE-002643,C,NONE,Laminations Inc.,Laminations Inc.,1350 Von Storch,Scranton,PA,,,,
+SITE-002644,B,NONE,"Northeastern Plastics, Inc.","Northeastern Plastics, Inc.",1100 Penn Ave.,Scranton,PA,,,,
+SITE-002647,B,NONE,Selmax Corp.,Selmax Corp.,599 S High St.,Selinsgrove,PA,,,,
+SITE-002648,B,NONE,"Bergeys, Inc.","Bergeys, Inc.",1419 Bethlehem Pike (Old Route 309),Sellersville,PA,,,,
+SITE-002649,B,ADDR_ONLY,Crosstex Intl Inc.,Crosstex Intl Inc. - Mercer,534 Vine Ave.,Sharon,PA,874758,Sharon,,534 Vine Ave
+SITE-002650,C,NONE,Advanced Fiberglass Svc Inc.,Advanced Fiberglass Svc Inc. - Sharpsville,80 Canal St.,Sharpsville,PA,,,,
+SITE-002651,C,NONE,Craigg MFG LLC,Craigg MFG LLC - Sinking Spring,700 Henry Cir.,Sinking Spring,PA,,,,
+SITE-002655,B,ADDR+NAME,Guy Chemical Company Inc.,Guy Chemical Co. Inc.,150 Dominion Dr.,Somerset,PA,809741,"Guy Chemical Company, LLC",,150 South Dominion Drive
+SITE-002656,A,NONE,M & C Specialties Southampton Fac,M & C Specialties Southampton Fac,90 Jamesway,Southampton,PA,,,,
+SITE-002661,B,ADDR+NAME,Knf Flexpak Corporation,Knf Flexpak Corporation,734 West Penn Pike Suite #1,Tamaqua,PA,355556,KNF Flexpak Corporation,KNF Flexpak Corporation,734 W Penn Pike
+SITE-002662,B,ADDR_ONLY,Transwestern Polymer,Transwestern Polymer,31 Progress Ave.,Tamaqua,PA,59128,"Hefty Business Unit - Tamaqua, Pennsylvania",Reynolds Consumer Products,31 Progress Avenue
+SITE-002664,B,NONE,New Pig Corp.,New Pig Corp.,168 Holiday Pkwy,Tipton,PA,,,,
+SITE-002666,B,ADDR_ONLY,Checkers Safety Group,Checkers Safety Group,701 East Spring St.,Titusville,PA,940876,Grand Valley Manufacturing - Plant 1 Titusville,Grand Valley Manufacturing,701 E Spring St
+SITE-002667,B,NONE,"Timi Plastics, Inc.","Timi Plastics, Inc.",4 S River St.,Towanda,PA,,,,
+SITE-002669,B,NONE,Plasticoncentrates Inc.,Plasticoncentrates Inc.,3905 W 9th St Bldg G,Trainer,PA,,,,
+SITE-002673,C,NONE,Durr Marketing,Durr Marketing,1300 Lower Rodi Rd.,Turtle Creek,PA,,,,
+SITE-002674,B,ADDR_ONLY,Snap Tite Inc.  Union City Site,Snap Tite Inc.  Union City Site,201-217 Titusville Rd.,Union City,PA,1306232,Fluid Connectors Union City TITUS,"Parker Hannifin - Quick Coupling (Titus), Union City, PA",201 Titusville Road
+SITE-002675,B,NONE,Craft Tire Inc.,Craft Tire Inc.,141 Development Dr.,Uniontown,PA,,,,
+SITE-002676,A,NONE,Double H Plastics MFG,Double H Plastics MFG,50 West St. Rd.,Warminster,PA,,,,
+SITE-002677,B,NONE,Finish Tech Corp.,Finish Tech Corp.,90 Industrial Dr 184 Railroad Dr Warminster Pa 18974,Warminster,PA,,,,
+SITE-002680,B,ADDR_ONLY,"Osram Sylvania Products Inc. - Warren, PA","Osram Sylvania Products Inc. - Warren, PA",816-827 Lexington Ave.,Warren,PA,1074017,ams-OSRAM Warren,ams-OSRAM,816 Lexington Avenue
+SITE-002681,B,NONE,Whirley Ind Inc.,Whirley Ind Inc. - Harmar St,6 Harmar St.,Warren,PA,,,,
+SITE-002682,B,NONE,Whirley Industries Harmar Street,Whirley Industries Harmar Street,140 West Hamar St.,Warren,PA,,,,
+SITE-002683,A,ADDR+NAME,Whirley Industries Inc.,Whirley Industries Inc.,618 4th Ave.,Warren,PA,1079324,Whirley Industries - Bakery Building,Whirley Industires,618 4th Ave
+SITE-002684,A,ADDR+NAME,Magee Plastics Company,Magee Plastics Company,303 Brush Creek Rd.,Warrendale,PA,925468,Magee Plastics Company,MAGEE PLASTICS COMPANY,303 Brush Creek Road
+SITE-002687,C,NONE,Ross Mould LLC,Ross Mould LLC - Washington City,259 South College St.,Washington,PA,,,,
+SITE-002691,B,NONE,Delaware Valley Custom Marble Inc.,Delaware Valley Custom Marble Inc. - Glenmar MFG,4 Briar Dr.,West Grove,PA,,,,
+SITE-002694,B,NONE,Colorcon Inc.,Colorcon Inc. - Upper Gwynedd,415 Moyer Blvd.,West Point,PA,,,,
+SITE-002695,B,NONE,"J Meyer & Sons, Inc.","J Meyer & Sons, Inc.",615 Jones Ave. & Chestnut Street,West Point,PA,,,,
+SITE-002696,A,NONE,General Foam Co.,General Foam Co.,526-32 Main St.,Wilkes-Barre,PA,,,,
+SITE-002697,B,NONE,Cromaglass Corp.,Cromaglass Corp. - Williamsport Plt,2902 North Reach Rd.,Williamsport,PA,,,,
+SITE-002698,B,ADDR+NAME,Plastic Dev,Plastic Dev,75 Palmer Industrial Dr.,Williamsport,PA,836014,Plastic Development Company,Plastic Development Company,"75 PALMER INDUSTRIAL ROAD, PO BOX 3354"
+SITE-002700,B,NONE,West Pharm Serv Wmpt SW,West Pharm Serv Wmpt SW,2921 West Reach Rd.,Williamsport,PA,,,,
+SITE-002701,A,NONE,"Spadone, LLC","Spadone, LLC",601 Davisville Road Suite 250,Willow Grove,PA,,,,
+SITE-002702,B,NONE,Finzer Roller Inc. Willow Street,Finzer Roller Inc. Willow Street,2 Brooks Ave.,Willow Street,PA,,,,
+SITE-002703,B,NONE,"Brd Noise And Vibration Control, Inc.","Brd Noise And Vibration Control, Inc.",112 Fairview Ave PO Box 127,Wind Gap,PA,,,,
+SITE-002704,B,NONE,Bryn Hill Industries,Bryn Hill Industries,407 Industrial Park Dr.,Yeadon,PA,,,,
+SITE-002706,B,NONE,W.B Wagner Tire Inc.,W.B Wagner Tire Inc.,25 S Main St,Yeagertown,PA,,,,
+SITE-002708,B,NONE,Keltrol Enterprises Inc.,Keltrol Enterprises Inc.,140 Rose Ct,York,PA,,,,
+SITE-002709,B,NONE,New Concept MFG,New Concept MFG,2315 S Queen St.,York,PA,,,,
+SITE-002712,B,NONE,Proxie Models Inc.,Proxie Models Inc.,611 Sinking Springs Ln,York,PA,,,,
+SITE-002713,B,NONE,Quaker Plastic Corporation Thermoforming Div.,Quaker Plastic Corporation Thermoforming Div.,3490 Board Rd.,York,PA,,,,
+SITE-002714,C,ADDR_ONLY,Spx Cooling Technologies,Spx Cooling Technologies,1670 Toronita St.,York,PA,1079166,Atos North America,Atos North America,1670 Toronita St.
+SITE-002720,B,NONE,Our Remedy LLC Dba Better Bungee,Our Remedy LLC Dba Better Bungee,7626 Kings Hwy S,Zionsville,PA,,,,
+SITE-002725,B,ADDR_ONLY,"PPG Industries, Inc.",Ppg - Research & Development Facility,4325 Rosanna Dr.,Allison Park,PA,1543807,106361.1 - PPG PENN 1_C_11870867_4985_00500_MND000_68507479.JAN-PPG ALLISON PARK,ABM Industries Incorporated,4325 ROSANNA DR
+SITE-002727,C,ADDR_ONLY,"FXI, Inc.","Fxi, Inc.",120 Concord Rd.,Aston,PA,704465,"FXI, Inc. - Aston","FXI, Inc.",120 Concord Road
+SITE-002729,B,NONE,PAC Worldwide,Pac Worldwide,4863 Hanoverville Rd. Suite B,Bethlehem,PA,,,,
+SITE-002732,B,NONE,Altium Packaging,Consolidated Container Breinigsveille,405 Nestles Way,Breinigsville,PA,,,,
+SITE-002734,B,ADDR+NAME,Parker-Hannifin Corporation,Lord Corp. Industrial Products,124 Grant St.,Cambridge Springs,PA,47633,LORD Corporation - Cambridge Springs,LORD Corporation,124 Grant Street
+SITE-002738,B,NONE,Mitsubishi Chemical Advanced Materials,Mitsubishi Chem Advanced Materials Inc. - Delmont 4,200 Industrial Dr.,Delmont,PA,,,,
+SITE-002740,B,ADDR+NAME,"Washington Penn Plastic Co., Inc.",Performance Products Division,1604 State Rt. 136,Eighty Four,PA,1107514,Washington Penn - PPD,Audia,1604 State Rd Rt 136
+SITE-002742,A,NONE,"Washington Penn Plastic Co., Inc.",Washington Penn Plastics Performance Prod Div,136 Mitchell Rd.,Eighty Four,PA,,,,
+SITE-002745,B,NONE,Parker-Hannifin Corporation,Lord Corp.,2455 Robinso Rd. W,Erie,PA,,,,
+SITE-002746,B,ADDR_ONLY,Intertape Polymer Group,Taratap - Rjm,250 Canal Rd.,Fairless Hills,PA,1188792,Fairless Hills PA - 250 Canal Rd,JB Hunt,250 Canal Road
+SITE-002749,B,ADDR_ONLY,Huntsman Advanced Materials Americas LLC,"Huntsman Advance Materials, LLC",408 Manor Harrison City Rd.,Harrison City,PA,1255404,RQ Resins LLC,RQ Resins LLC,408 MANOR HARRISON CITY RD
+SITE-002752,B,NONE,Graham Packaging Company,Graham Pkg Plastic Prod Inc. Plt 390,12 Maplewood Dr.,Hazleton,PA,,,,
+SITE-002754,B,NONE,Johns Manville,Johns Manville,600 Jaycee Dr. Valmont Industrial Park,Hazleton,PA,,,,
+SITE-002757,B,NONE,Royal Building Products (Westlake Royal Building Products),Westlake Royal Bldg Products Kutztown Fac,9741 Commerce Cir.,Kutztown,PA,,,,
+SITE-002762,B,NONE,Molded Fiber Glass Companies,Molded Fiber Glass Tray Co.,6175 U.S. Hwy. 6,Linesville,PA,,,,
+SITE-002766,B,ADDR+NAME,BVPV Styrenics LLC,Bvpv Styrenics LLC - Beaver Cnty,400 Frankfort Rd.,Monaca,PA,1433800,BVPV Styrenics LLC - Beaver Valley Site,BVPV Styrenics (Styropek),400 Frankfort Road
+SITE-002770,B,NONE,Hexion Inc.,Momentive Specialty Chemicals Inc. Mt Jewett Facility,253 Borden Dr.,Mount Jewett,PA,,,,
+SITE-002772,B,ADDR+NAME,"Advanced Drainage Systems, Inc.",Advanced Drainage Systems,173 Industrial Pkwy,Muncy,PA,1000459,Muncy,Advanced Drainage Systems,173 Industrial Parkway North
+SITE-002773,B,NONE,Prime Conduit Inc.,Prime Conduit Inc. - Upper Nazareth Twp,635 East Lawn Rd.,Nazareth,PA,,,,
+SITE-002778,C,ADDR+NAME,"PPG Industries, Inc.",Ppg Industries Inc.,1 Ppg Place,Pittsburgh,PA,1000652,"PMC US, Others","PPG Industries, Inc.",1 PPG Place
+SITE-002779,A,NONE,The Sherwin-Williams Company,Sherman-Williams Manufacturing Company,2000 Westhall St.,Pittsburgh,PA,,,,
+SITE-002780,A,ADDR+NAME,AkzoNobel Coatings Inc.,Akzo Nobel Coatings Inc. - Reading,150 Columbia Ave.,Reading,PA,101638,Akzo Nobel Coatings Inc.,Akzo Nobel Coatings Inc.,150 Columbia Street
+SITE-002791,B,ADDR+NAME,"Washington Penn Plastic Co., Inc.",Washington Penn Plas - Arden,450 Racetrack Rd.,Washington,PA,1107506,Washington Penn - Corporate Headquarters,Audia,450 Racetrack Rd
+SITE-002795,B,ADDR+NAME,CCL Tube Inc.,Ccl Tube,1 Lasley Ave.,Wilkes Barre,PA,93030,CCL Tube,"CCL Tube (Wilkes-Barre), Inc.",1 Lasley Avenue
+SITE-002797,B,ADDR+NAME,Graham Packaging Company,Graham Packaging Company Lp,500 Windsor St.,York,PA,362978,York,"Graham Packaging Company, L.P.",500 Windsor Street
+SITE-002798,B,NONE,Graham Packaging Company,Graham Pkg Co. Lp - Farmbrook,3280 Farmtrail Rd.,York,PA,,,,
+SITE-002800,B,NONE,The Sherwin-Williams Company,Valspar Corporation,1977 Tracy St.,Pittsburgh,PA,,,,
+SITE-002805,A,ADDR_ONLY,Rohm and Haas Chemicals LLC,Rohm and Haas - Bristol Plant,200 Rt. 413,Bristol,PA,1546131,110794.2 - DOW CHEMICAL DELAWARE_C_11425864_5011_00555_MND000_68507268.JAN-DOW - BRISTOL PA,ABM Industries Incorporated,200 RT 413
+SITE-002810,A,NONE,Beaumont Advanced Processing,Beaumont Advanced Processing - Erie,6100 W Ridge Rd,Erie,PA,,,,
+SITE-002813,B,ADDR_ONLY,CertainTeed LLC,CertainTeed LLC - Malvern,20 Moores Rd,Malvern,PA,862866,SODEXO AT SAINT GOBAIN CAFE,Sodexo Inc.,20 Moores Rd
+SITE-002815,A,ADDR_ONLY,Conair Group Inc,Conair Group Inc - Cranberry Township,200 West Kensinger Dr,Cranberry Township,PA,627403,PGNA - Cranberry,"PGNA, Inc.",200 W. Kensinger Drive
+SITE-002816,A,NONE,Covington Plastic Molding Inc.,Covington Plastic Molding Inc. - New Oxford,10 S Bolton St,New Oxford,PA,,,,
+SITE-002826,A,ADDR+NAME,Griff Paper And Film,Griff Paper And Film - Fallsington,275 Lower Morrisville Rd,Fallsington,PA,1443925,Griff Paper and Film,Griff & Associates LP,275 Lower Morrisville Rd
+SITE-002827,A,ADDR_ONLY,Knf Corp.,Knf Corp. - Tamaqua,734 West Penn Pike,Tamaqua,PA,355556,KNF Flexpak Corporation,KNF Flexpak Corporation,734 W Penn Pike
+SITE-002832,A,NONE,Moldgenix LLC,Moldgenix LLC - Trumbauersville,354 East Broad Street,Trumbauersville,PA,,,,
+SITE-002836,B,ADDR+NAME,Newage Industries Inc.,Newage Industries Inc. - Southampton,145 James Way,Southampton,PA,923654,NewAge Industries Inc - Southampton,NewAge Industries Inc,145 James Way
+SITE-002839,B,NONE,Penn Compression Moulding Inc,Penn Compression Moulding Inc - Irwin,540 Pacific Street,Irwin,PA,,,,
+SITE-002849,B,NONE,West Pharmaceutical Services Inc.,West Pharmaceutical Services Inc. - Exton,530 Herman O. West Drive,Exton,PA,,,,
+SITE-002856,A,ADDR+NAME,"Ammeraal Beltech Modular, Incorporated","Ammeraal Beltech Modular, Incorporated - Jefferson",112 Nardis Dr,Jefferson,PA,171767,"Ammeraal Beltech, LLC - Jefferson","Ammeraal Beltech, LLC",112 Nardis Dr.
+SITE-002858,A,NONE,American Made LLC Dba Us Liner Company,American Made LLC Dba Us Liner Company - Pittsburgh (Neville Island),2600 Neville Rd,Pittsburgh,PA,,,,
+SITE-003237,C,NONE,"INOUE MFG. USA, Inc.",INOUE MFG. USA office,"110 Stewart Huston Dr, Bldg 600, Ste 103",Sadsbury Township,PA,,,,
+SITE-003290,B,NONE,Moretto USA Corporation,Moretto USA - Jackson Center HQ,300 Moretto Drive,Jackson Center,PA,,,,
+SITE-003300,C,NONE,"Venango Machine Co., Inc.",Venango Machine - Wattsburg HQ Plant,14118 Route 8,Wattsburg,PA,,,,
+SITE-003307,B,NONE,ENGEL Machinery Inc.,ENGEL Machinery Inc. headquarters and assembly plant - York,3740 Board Road,York,PA,,,,
+SITE-003368,C,NONE,Renkert Oil LLC,Renkert Oil HQ,3817 Main Street,Morgantown,PA,,,,
+SITE-003425,A,NONE,"Superior Huntingdon Composites, LLC",Superior Huntingdon Composites Headquarters and Plant,1200 Susquehanna Avenue,Huntingdon,PA,,,,
+SITE-003458,C,ADDR+NAME,"Tinius Olsen, Inc.",Tinius Olsen Headquarters and Plant,1065 Easton Road,Horsham,PA,1567872,Tinius Olsen Testing Machine Company,Tinius Olsen Testing Machine Company,1065 Easton Road
+SITE-003481,B,NONE,"Gelest, Inc.",Gelest — Morrisville HQ Plant,11 East Steel Rd,Morrisville,PA,,,,
+SITE-003522,B,NONE,"Custom Etch, Inc.",Custom Etch HQ Plant,1813 State St,New Castle,PA,,,,
+SITE-003628,B,NONE,Stoner Inc.,Stoner - Quarryville HQ Plant,1070 Robert Fulton Highway,Quarryville,PA,,,,
+SITE-003824,B,NONE,"Athena Controls, Inc.",Athena Controls HQ,5145 Campus Drive,Plymouth Meeting,PA,,,,
+SITE-003860,B,NONE,"Brenntag Specialties, Inc.",Brenntag Specialties North America Headquarters,5083 Pottsville Pike,Reading,PA,,,,
+SITE-003871,B,NONE,"McGee Industries, Inc.",McGee Industries (McLube) Headquarters & Plant,9 Crozerville Road,Aston,PA,,,,
+SITE-004023,B,NONE,"Maguire Products, Inc.",Maguire Products HQ,11 Crozerville Rd.,Aston,PA,,,,
+SITE-004026,B,NONE,"Riverdale Global, LLC",Riverdale Global HQ,5001 Birney Highway,Aston,PA,,,,
+SITE-004238,B,NONE,HammerTek Corporation,HammerTek Corporation Headquarters,2400 Emrick Boulevard,Bethlehem,PA,,,,
+SITE-004244,B,NONE,L&S Plastics Inc,L&S Plastics Inc - Mountain Top HQ plant,1120 Oak Hill Rd,Mountain Top,PA,,,,
+SITE-004266,C,NONE,Delta Ducon LLC,Delta Ducon - Malvern HQ,11 General Warren Blvd,Malvern,PA,,,,
+SITE-004308,C,ADDR+NAME,Cannon Instrument Company,Cannon Instrument Company - State College,2139 High Tech Road,State College,PA,1433404,Cannon Instrument Company,Cannon Instrument Company,2139 High Tech Rd
+SITE-004322,B,NONE,"HGI Lab, LLC",HGI Lab - Butler,154 East Brook Lane,Butler,PA,,,,
+SITE-003321,B,ADDR+NAME,Tri-Mack Plastics Manufacturing Corporation,Tri-Mack headquarters and plant - Bristol,"55 Broadcommon Road, Unit 1",Bristol,RI,1312522,Tri-Mack Plastics Manufacturing,Tri-Mack Plastics Manufacturing,"55 Broadcommon Road, Unit 1"
+SITE-003347,B,ADDR+NAME,"Yushin America, Inc.",Yushin America - Cranston (HQ),35 Kenney Drive,Cranston,RI,1443552,Yushin America Inc,Yushin America Inc.,"35 Kenney Dr Cranston, RI 02920"
+SITE-003807,B,ADDR_ONLY,TxV Aero Composites,TxV Aero Composites HQ and plant,55 Broadcommon Road,Bristol,RI,1312522,Tri-Mack Plastics Manufacturing,Tri-Mack Plastics Manufacturing,"55 Broadcommon Road, Unit 1"
+SITE-004336,B,ADDR_ONLY,The Plastics Group of America,The Plastics Group of America - Woonsocket plant,1112 River St,Woonsocket,RI,496190,1112 River Street,Ralco Industries,1112 River Street
+SITE-004357,B,ADDR+NAME,Windmoeller & Hoelscher Corp.,Windmoeller & Hoelscher Corp. - North American HQ,23 New England Way,Lincoln,RI,1563822,Windmoeller & Hoelscher Corporation,Windmoeller & Hoelscher Corporation,"23 New England Way, Lincoln, RI, USA"
+SITE-003319,A,NONE,"Teijin Carbon America, Inc.",Teijin Carbon America - Greenwood plant,1122 Hwy 246 S,Greenwood,SC,,,,
+SITE-003334,B,NONE,"Lindau Chemicals, Inc.",Lindau Chemicals - Columbia plant,750 Granby Ln,Columbia,SC,,,,
+SITE-003336,B,ADDR+NAME,Manufacturing Specialties Inc.,MSI Mold Builders SE - Greenville,110 Park Place Ct,Greenville,SC,1045204,"Manufacturing Specialties, Inc","Manufacturing Specialties, Inc",110 Park Place Ct.
+SITE-003338,B,NONE,"Oxco, Inc.",OXCO - Fort Mill,547 Kings Ridge Dr,Fort Mill,SC,,,,
+SITE-003346,B,NONE,"WEIMA America, Inc.",WEIMA America - Fort Mill (North America HQ),3678 Centre Circle,Fort Mill,SC,,,,
+SITE-003375,A,ADDR+NAME,"Michelin North America, Inc.",Michelin North America Headquarters — Greenville,1 Parkway S,Greenville,SC,683353,"Michelin North America, Inc. - Corporate Site",Michelin,1 Parkway South
+SITE-003384,A,ADDR+NAME,"Continental Tire the Americas, LLC",Continental Tire the Americas Headquarters — Fort Mill,1794 MacMillan Park Dr,Fort Mill,SC,1096121,"Continental Tire the Americas, LLC",Continental Tire NA,1794 MacMillan Park Dr
+SITE-003420,B,NONE,"NUPI Americas, Inc.",NUPI Americas Early Branch Plant,314 Commerce Parkway,Early Branch,SC,,,,
+SITE-003448,B,ADDR+NAME,Milliken & Company,Milliken Global Headquarters,920 Milliken Road,Spartanburg,SC,900870,Milliken & Company- RMC (Corporate Headquarters),Milliken & Company- RMC (Corporate Headquarters),920 MILLIKEN ROAD
+SITE-003495,B,NONE,Coatex Inc.,Coatex Chester Plant,547 Ecology Lane,Chester,SC,,,,
+SITE-003725,C,NONE,"AKPA Chemicals U.S., Inc.",AKPA Chemicals U.S.,122 Innovation Drive,Fairfax,SC,,,,
+SITE-003810,B,ADDR_ONLY,Valmont Composite Structures,Valmont Composite Structures Newberry plant,19845 US 76 Highway,Newberry,SC,626556,Newberry SC,Valmont Industries,19845 US Hwy 76
+SITE-003837,B,ADDR_ONLY,Stäubli Corporation,Stäubli Corporation North American Headquarters,201 Parkway West,Duncan,SC,1504751,Staubli Corporation,,201 Parkway W.
+SITE-003939,B,ADDR+NAME,Coroplast Tape Corporation,Coroplast Tape Corporation Rock Hill Plant,1230 Galleria Boulevard,Rock Hill,SC,864751,Coroplast Tape Corporation,Coroplast Tape Corporation,1230 GALLERIA BLVD
+SITE-004040,B,NONE,"Dixie Rubber & Plastics, Inc.",Dixie Rubber & Plastics HQ,100 B Industrial Drive,Greenville,SC,,,,
+SITE-004166,B,ADDR+NAME,Chomarat North America LLC,Chomarat North America - Anderson HQ,2901 New Pond Rd,Anderson,SC,950087,Chomarat North America - New Pond Rd Site,Chomarat North America,2901 New Pond Rd
+SITE-004167,B,ADDR+NAME,Chomarat North America LLC,Chomarat North America - Williamston plant,160 Alliance Blvd,Williamston,SC,950289,Chomarat North America - Alliance Site,Chomarat North America,160 Alliance Blvd
+SITE-004209,B,NONE,Star Composites Corporation,Star Composites Headquarters and Plant,200 National Ave,Spartanburg,SC,,,,
+SITE-004237,B,NONE,GOETTFERT Inc.,GOETTFERT Inc. Headquarters,488 Lakeshore Parkway,Rock Hill,SC,,,,
+SITE-004239,B,ADDR_ONLY,"Innovative Recycling Solutions, LLC",Innovative Recycling Solutions Headquarters,59 Concourse Way Building E,Greer,SC,752650,Jones Construction Curbing LLC,Jones Construction Curbing LLC,59 Concourse Way
+SITE-004249,B,NONE,MIXACO USA LLC,MIXACO USA - Greer HQ,1784 Poplar Drive Ext,Greer,SC,,,,
+SITE-004277,B,NONE,Zimmer America Recycling Solutions,Zimmer America Recycling Solutions Headquarters,165 Zimmer Dr,Cowpens,SC,,,,
+SITE-004390,B,NONE,Sonoco Products Company,Sonoco Global Headquarters,1 North Second Street,Hartsville,SC,,,,
+SITE-003331,B,NONE,"FB Balzanelli USA, Inc.",FB Balzanelli USA - Johnson City,"3201 Kimberly Ct, Ste 300-B-1",Johnson City,TN,,,,
+SITE-003392,B,ADDR_ONLY,"Nokian Tyres, Inc.",Nokian Tyres North American Headquarters — Nashville,501 Union Street,Nashville,TN,1053064,MWR Nashville,"ISEC, Inc.",501 Union Street
+SITE-003482,C,ADDR+NAME,Amrize Building Envelope LLC,Amrize Building Envelope — Nashville HQ,26 Century Blvd Ste 205,Nashville,TN,995998,Nashville,Amrize Building Envelope LLC,26 Century Blvd
+SITE-003729,B,NONE,AOC LLC,AOC Headquarters and Technology Center,950 Highway 57 East,Collierville,TN,,,,
+SITE-003813,B,NONE,"Ventilation Solutions, Inc.",Ventilation Solutions HQ,104 Meco Lane,Oak Ridge,TN,,,,
+SITE-003926,B,NONE,Memphis Record Pressing LLC,Memphis Record Pressing Bartlett Plant,3015 Brother Blvd,Bartlett,TN,,,,
+SITE-003989,B,NONE,ISOFlex Packaging,ISOFlex Packaging Headquarters,1105 Visco Drive,Nashville,TN,,,,
+SITE-003996,A,ADDR+NAME,"Nashville Record Pressing, LLC",Nashville Record Pressing Headquarters and Plant,520 Brick Church Park Dr,Nashville,TN,1424614,Nashville Record Pressing,Nashville Record Pressing,520 Brick Church Park Dr.
+SITE-004088,B,NONE,"PlayCore, Inc.",PlayCore — Chattanooga HQ,544 Chestnut Street,Chattanooga,TN,,,,
+SITE-004107,C,ADDR+NAME,"Jackson Kayak, Inc.",Jackson Kayak — Sparta plant,3300 McMinnville Hwy,Sparta,TN,799360,Jackson kayak,Jackson kayak,"3300 McMinnville Highway, Sparta, TN, USA"
+SITE-004165,B,NONE,"Carbon Fiber Recycling, LLC",Carbon Fiber Recycling Tazewell Plant,161 Giles Industrial Drive,Tazewell,TN,,,,
+SITE-004222,B,NONE,"AZO, Inc.","AZO, Inc. Headquarters",4445 Malone Rd.,Memphis,TN,,,,
+SITE-004250,B,NONE,"MSS, Inc.",MSS - Nashville HQ plant,1101 Menzler Road,Nashville,TN,,,,
+SITE-004329,B,NONE,"Magnum Venus Products, Inc.",Magnum Venus Products - Oak Ridge HQ,777 Emory Valley Rd,Oak Ridge,TN,,,,
+SITE-004330,B,ADDR_ONLY,"Magnum Venus Products, Inc.",Magnum Venus Products - Lenoir City Manufacturing Center,"14542 El Camino Ln, Ste B",Lenoir City,TN,1449833,TGS Precision,TGS Precision,14542 El Camino Lane
+SITE-003244,B,NONE,Uni-Bell PVC Pipe Association,Uni-Bell PVC Pipe Association HQ,"201 E John Carpenter Freeway, Suite 750",Irving,TX,,,,
+SITE-003245,B,ADDR+NAME,"Republic Plastics, Ltd.",Republic Plastics McQueeney plant,355 Schumann Rd,McQueeney,TX,71421,"Republic Plastics, Ltd. (TX)","Republic Plastics, Ltd.",355 Schumann Rd
+SITE-003249,A,NONE,Tokai Carbon CB Ltd.,Tokai Carbon CB HQ,"301 Commerce Street, Suite 500",Fort Worth,TX,,,,
+SITE-003250,A,NONE,Tokai Carbon CB Ltd.,Tokai Carbon CB Borger Plant,9455 Farm to Market 1559,Borger,TX,,,,
+SITE-003284,B,NONE,Hultec,Hultec - Spring Worldwide HQ,2170 Buckthorne Place,Spring,TX,,,,
+SITE-003292,B,NONE,"Okayasu Rubber America, Inc.",Okayasu Rubber America - San Antonio Plant,12762 O'Connor Road,San Antonio,TX,,,,
+SITE-003358,A,ADDR_ONLY,"Kuraray America, Inc.",Kuraray America HQ,"2625 Bay Area Blvd., Suite 600",Houston,TX,690264,LBC Houston Regional Office,"LBC Houston, L.P.",2625 Bay Area Boulevard Ste 200
+SITE-003373,A,ADDR+NAME,Westlake Corporation,Westlake Corporation HQ,"2801 Post Oak Boulevard, Suite 600",Houston,TX,1558257,Westlake Royal Roofing- Home Locations,Westlake Royal Roofing,2801 Post Oak Blvd
+SITE-003397,B,NONE,"Tricon Energy, Ltd.",Tricon Energy - Headquarters,"777 Post Oak Blvd, Suite 550",Houston,TX,,,,
+SITE-003419,B,NONE,"NUPI Americas, Inc.",NUPI Americas Headquarters,1511 Superior Way,Houston,TX,,,,
+SITE-003436,B,NONE,Cloeren Incorporated,Cloeren Headquarters and Plant,401 N 16th St,Orange,TX,,,,
+SITE-003505,B,NONE,"Sekisui Specialty Chemicals America, LLC",Sekisui Specialty Chemicals America HQ,1603 West LBJ Freeway,Dallas,TX,,,,
+SITE-003534,C,NONE,Impac Systems Engineering,Impac Systems Engineering HQ,319 S 1st St,Temple,TX,,,,
+SITE-003546,B,ADDR+NAME,"Nissei America, Inc.",Nissei America HQ Factory,3730 Global Way,San Antonio,TX,1469559,"San Antonio, TX","Nissei America, Inc.",3730 Global Way
+SITE-003608,A,ADDR_ONLY,Shintech Inc.,Shintech - Houston HQ,"3 Greenway Plaza, Suite 700",Houston,TX,1464699,70294-Three Greenway Plaza,Lincoln Property Company Commercial,3 Greenway Plaza
+SITE-003619,A,NONE,"REXtac, LLC",REXtac - Odessa Pearl Street Site,2525 East Pearl Street,Odessa,TX,,,,
+SITE-003721,B,ADDR+NAME,WL Plastics,WL Plastics Headquarters,3575 Lone Star Cir Ste 300,Fort Worth,TX,1068167,WL Plastics - Fort Worth,WL Plastics,3575 Lone Star Circle
+SITE-003722,B,NONE,"Zurn PEX, Inc.",Zurn PEX Commerce plant,116 Maple Street,Commerce,TX,,,,
+SITE-003730,B,NONE,Armortex,Armortex,5926 Corridor Pkwy,Schertz,TX,,,,
+SITE-003734,B,ADDR+NAME,"Champion Fiberglass, Inc.",Champion Fiberglass,6400 Spring Stuebner Road,Spring,TX,649028,Champion Fiberglass,Champion Fiberglass,6400 Spring Stuebner
+SITE-003737,B,NONE,Composite Access Products,Composite Access Products,5216 N 26th St,McAllen,TX,,,,
+SITE-003738,C,ADDR+NAME,"Cooling Tower Resources, Inc.",Cooling Tower Resources — Baytown,7400 Thompson Road,Baytown,TX,638686,"CT Distribution LLC dba CTR Cooling Tower Resources, Inc.","CT Distribution LLC dba CTR Cooling Tower Resources, Inc.",7400 Thompson Rd
+SITE-003752,B,NONE,"Fibergrate Composite Structures, Inc.",Fibergrate Composite Structures Headquarters,1234 Johnson Rd,Allen,TX,,,,
+SITE-003836,B,NONE,Solution Tools Mold & Die,Solution Tools Mold & Die Headquarters,6989 Commerce Ave,El Paso,TX,,,,
+SITE-003856,B,NONE,TD Polymers LLC,TD Polymers Headquarters and Laboratory,17444 Farm to Market 2920,Tomball,TX,,,,
+SITE-003879,B,NONE,AFC Ecoplastics LLC,AFC Ecoplastics Headquarters,10701 Corporate Drive,Stafford,TX,,,,
+SITE-003897,B,ADDR+NAME,"Handgards, Inc.",Handgards Corporate Offices and Manufacturing,901 Hawkins Blvd,El Paso,TX,727458,Handgards Hawkins,Handgards LLC,901 Hawkins Blvd.
+SITE-004003,C,NONE,PolyMelt Manufacturing Inc.,PolyMelt Manufacturing - Missouri City Plant,12515 Citypark Dr,Missouri City,TX,,,,
+SITE-004014,B,NONE,StarPak Ltd,StarPak Headquarters and Plant,9333 Baythorne Dr,Houston,TX,,,,
+SITE-004027,B,NONE,"A&C Plastics, Inc.",A&C Plastics HQ,6135 Northdale,Houston,TX,,,,
+SITE-004031,B,NONE,"Allied Plastic Supply, Inc.",Allied Plastic Supply HQ,10828 Shady Trail,Dallas,TX,,,,
+SITE-004039,B,ADDR+NAME,"Corr Tech, Inc.",Corr Tech HQ,3575 W. 12th St,Houston,TX,1465325,"Corr Tech, Inc.","FCG Acquisitions, Inc.",3575 W 12th St
+SITE-004092,B,NONE,"Portacool, LLC",Portacool — Center plant,721 FM2468,Center,TX,,,,
+SITE-004103,B,NONE,Scribner Plastics,Scribner Plastics — Victoria plant,4089 US Hwy 77 S,Victoria,TX,,,,
+SITE-004145,B,NONE,"Sekisui Products, LLC",Sekisui Products Headquarters,1501 Lyndon B Johnson Fwy #530,Farmers Branch,TX,,,,
+SITE-004214,B,ADDR_ONLY,TSRC Specialty Materials LLC,TSRC Specialty Materials Headquarters,"12012 Wickchester Ln, Suite 280",Houston,TX,1508832,"Shared Service Group, Inc - Houston","Shared Service Group, Inc",12012 Wickchester Ln
+SITE-004248,B,NONE,"Mettle Filtration Products, LLC",Mettle Filtration Products - Houston HQ plant,8722 Daffodil Street,Houston,TX,,,,
+SITE-004251,B,NONE,OMG Thermoforming Inc.,OMG Thermoforming - Arlington facility,3407 Avenue D,Arlington,TX,,,,
+SITE-004285,B,ADDR_ONLY,"Vinmar Polymers America, LLC",Vinmar Polymers America Headquarters,"16825 Northchase Drive, Suite 1400",Houston,TX,557628,Northchase,"Hunting Energy Services, LLC.",16825 Northchase Drive Suite 600
+SITE-004321,B,ADDR+NAME,Graco Supply Company dba GracoRoberts,GracoRoberts - Arlington HQ,3200 Avenue E East,Arlington,TX,1143949,GracoRoberts - Arlington HQ,GracoRoberts,3200 Avenue E East
+SITE-004324,B,NONE,Integrated Control Technologies,Integrated Control Technologies - Coppell,"440 Wrangler Drive, Suite 100",Coppell,TX,,,,
+SITE-004332,B,ADDR+NAME,Packwell,Packwell - La Porte (Porter),10016 Porter Road,La Porte,TX,930643,Packwell INC,Packwell,10016 Porter Rd
+SITE-004333,B,NONE,Packwell,Packwell - Polypack Baytown,7601 Sutton Road,Baytown,TX,,,,
+SITE-004334,B,NONE,Packwell,Packwell - FSR Pasadena,12554 Port Road,Pasadena,TX,,,,
+SITE-004369,C,NONE,"Global Chemsource, Inc.",Global Chemsource - Fort Worth HQ,2586 E Long Ave,Fort Worth,TX,,,,
+SITE-004376,B,ADDR_ONLY,J B Weld Company LLC,J-B Weld - Sulphur Springs HQ plant,1130 Como Street,Sulphur Springs,TX,1251472,EG4 Electronics,,1130 Como Street
+SITE-004380,B,ADDR_ONLY,Meridian Adhesives Group LLC,Meridian Adhesives Group - Houston HQ,"820 Gessner Road, Suite 1145",Houston,TX,1072450,Houston Levare US Inc,Levare US Inc,"820 Gessner Rd., Suite 1075"
+SITE-004395,C,NONE,Technical Adhesives Limited,Technical Adhesives Bastrop facility,1600 Business Park Dr,Bastrop,TX,,,,
+SITE-004397,B,NONE,Trecora Resources,Trecora Headquarters,"1330 Lake Robbins Drive, Suite 200",The Woodlands,TX,,,,
+SITE-003276,B,ADDR+NAME,"Anton Paar USA, Inc.",Anton Paar USA - Ashland HQ,10215 Timber Ridge Drive,Ashland,VA,55013,"Anton Paar USA, Inc.","Anton Paar USA, Inc.",10215 Timber Ridge Drive
+SITE-003339,B,NONE,"Universal Dynamics, Inc.",Piovan UnaDyn - Fredericksburg,11700 Shannon Dr,Fredericksburg,VA,,,,
+SITE-003431,B,ADDR+NAME,American GFM Corporation,American GFM Headquarters and Plant,1200 Cavalier Blvd,Chesapeake,VA,668154,American GFM,American GFM,1200 Cavalier blvd.
+SITE-003862,B,NONE,CFI Carbon Products,CFI Carbon Products Plant,271 St. Clairs Crossing,Bluefield,VA,,,,
+SITE-003959,B,NONE,"Arrow Specialties USA, LLC",Arrow Specialties Richmond (North Chesterfield) Plant,5401 U.S. Route 1,North Chesterfield,VA,,,,
+SITE-004148,B,ADDR+NAME,"TemperPack Technologies, Inc.",TemperPack Richmond Headquarters and Plant,4447 Carolina Ave,Richmond,VA,1032589,TemperPack Technologies Inc.,TemperPack Technologies Inc,4447 Carolina Avenue
+SITE-004176,B,NONE,Euro-Composites Corporation,Euro-Composites - Elkwood plant,13213 Air Park Drive,Elkwood,VA,,,,
+SITE-004383,B,NONE,Nucleus Incorporated,Nucleus Incorporated HQ,13901 Willard Road,Chantilly,VA,,,,
+SITE-003533,B,NONE,Husky Injection Molding Systems Ltd.,Husky Milton Plant,288 N Rd,Milton,VT,,,,
+SITE-003740,C,NONE,Coriolis Composites USA Inc,Coriolis Composites USA,6100 219th St SW Ste 480,Mountlake Terrace,WA,,,,
+SITE-003741,A,NONE,Corrosion Companies Inc.,Corrosion Companies Inc.,3725 Grant St,Washougal,WA,,,,
+SITE-003818,B,ADDR_ONLY,Eagle Beverage & Accessory Products,Eagle Beverage Kent plant,19220 64th Ave S,Kent,WA,1027312,EAGLE BEVERAGE AND ACCESORIES,CALSON INDUSTRIES,19220 64TH AVE S
+SITE-004061,C,NONE,Redwood Plastics and Rubber,Redwood Plastics and Rubber - Spokane Valley,"11303 E Montgomery, Suite 1",Spokane Valley,WA,,,,
+SITE-004178,C,NONE,"Fiberlay, Inc.",Fiberlay - Kent HQ and warehouse,7925 S 196th St,Kent,WA,,,,
+SITE-004184,C,ADDR_ONLY,"Gunnar USA, Inc.",Gunnar USA - Arlington HQ,3810 166th Place NE Suite 102,Arlington,WA,641659,Smokey Point Electric Inc.,Smokey Point Electric Inc.,"3810 166th Place NE, Suite 203"
+SITE-004315,B,NONE,"Electroimpact, Inc.",Electroimpact - Mukilteo,4413 Chennault Beach Road,Mukilteo,WA,,,,
+SITE-003280,B,ADDR+NAME,Cumberland,Cumberland at ACS Group - New Berlin HQ,2900 South 160th Street,New Berlin,WI,1294707,"Sterling, Inc.",ACS Group,2900 S 160th Street
+SITE-003400,B,ADDR+NAME,ACS Group,ACS Group Headquarters and Plant,2900 S 160th St,New Berlin,WI,1294707,"Sterling, Inc.",ACS Group,2900 S 160th Street
+SITE-003547,C,NONE,"Nota3D Solutions, Inc.",Nota3D HQ,"13205 Globe Dr, Ste 213",Mount Pleasant,WI,,,,
+SITE-003815,B,ADDR+NAME,Wisconsin Oven Corporation,Wisconsin Oven HQ and plant,2675 Main Street,East Troy,WI,986743,WIS Oven,Wisconsin Oven Corporation,2675 Main St.
+SITE-003819,B,ADDR+NAME,Seda North America,Seda North America Mount Pleasant plant,12501 Globe Drive,Mount Pleasant,WI,1286524,Seda International Packaging Group Inc. - North America,Seda North America Inc.,12501 Globe Drive
+SITE-003838,B,ADDR+NAME,Vincent Tool Technologies Corp.,Vincent Tool Technologies Headquarters,4197 123rd Street,Chippewa Falls,WI,280466,Vincent Tool Technologies Corp,Vincent Tool Technologies Corp,4197 123rd St
+SITE-003863,B,NONE,"ChemCeed, LLC",ChemCeed Headquarters,1720 Prosperity Ct,Chippewa Falls,WI,,,,
+SITE-003947,B,NONE,"Re Mixers, Inc.",Re Mixers Headquarters and Plant,1858 Wright St,Madison,WI,,,,
+SITE-003957,B,ADDR+NAME,American Packaging Corporation,American Packaging Corporation Headquarters - Columbus COE,100 APC Way,Columbus,WI,996058,American Packaging Corporation - Columbus,,100 APC Way
+SITE-004024,B,NONE,"Mastip, Inc.",Mastip Inc US HQ,240 Info Highway,Slinger,WI,,,,
+SITE-004087,C,NONE,Plasticraft Corporation,Plasticraft Corporation — Darien plant,110 Badger Pkwy,Darien,WI,,,,
+SITE-004093,C,ADDR_ONLY,Redline Plastics,Redline Plastics — Manitowoc plant,1434 S 59th St,Manitowoc,WI,1472038,Red Line Plastics LLC,Red Line Plastics LLC,1434 S 59th Street
+SITE-004101,B,NONE,"Royal Basket Trucks, Inc.",Royal Basket Trucks — Darien plant,201 Badger Pkwy,Darien,WI,,,,
+SITE-004109,C,ADDR+NAME,"T3 Manufacturing, Inc.",T3 Manufacturing — Beaver Dam plant,333 Beichl Ave,Beaver Dam,WI,1431504,T3 Manufacturing,T3 Manufacturing,333 Beichl Avenue
+SITE-004136,B,NONE,"Midwest Foam Corp, LLC",Midwest Foam Plant,5519 W. Woolworth Ave,Milwaukee,WI,,,,
+SITE-004258,C,NONE,"Polymer Recovery Systems, Inc.",Polymer Recovery Systems - Eau Claire HQ,945 Short Street,Eau Claire,WI,,,,
+SITE-004328,B,NONE,The Madison Group,The Madison Group - Madison HQ,2615 Research Park Dr,Madison,WI,,,,
+SITE-004345,B,NONE,Sheridan Mold & Engineering Inc,Sheridan Mold & Engineering - St. Francis,4140 S Nevada Ave,St. Francis,WI,,,,
+SITE-003343,B,NONE,"Star Plastics, LLC",Star Plastics - Ravenswood,1 Plastics Avenue,Ravenswood,WV,,,,
+SITE-003940,B,NONE,"Dyna-Tech Adhesives, Inc.",Dyna-Tech Adhesives Grafton Plant,2071 Country Club Road,Grafton,WV,,,,
+SITE-003978,B,NONE,"Empire Green Generation, LLC",Empire Green Generation Follansbee Plant,801 Koppers Road,Follansbee,WV,,,,
+SITE-004189,B,NONE,"IMSENT Composites, Inc.",IMSENT Composites - Sheridan HQ,30 N Gould St Suite R,Sheridan,WY,,,,

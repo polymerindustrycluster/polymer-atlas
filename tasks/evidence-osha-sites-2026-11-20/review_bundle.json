@@ -1,0 +1,3992 @@
+[
+ {
+  "record_id": "SITE-003895",
+  "atlas": {
+   "site_name": "Direct Pack Headquarters",
+   "operator": "Direct Pack, Inc.",
+   "street": "1025-1055 W 8th St",
+   "city": "Azusa",
+   "state": "CA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1086012",
+   "establishment_name": "Direct Pack Inc. Azusa",
+   "company_name": "Direct Pack Inc.",
+   "street_address": "1025 W 8th St",
+   "city": "Azusa",
+   "state": "CA",
+   "zip_code": "91702",
+   "naics_code": "326112",
+   "industry_description": "Film, plastics, packaging, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/27/2026",
+   "annual_average_employees": "70"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Direct Pack Inc. Azusa' of 'Direct Pack Inc.' at 1025 W 8th St, Azusa, CA 91702; matches the site's operator 'Direct Pack, Inc.' at its recorded street",
+   "address": "street_address 1025-1055 W 8th St, Azusa, CA: the 2025 OSHA Form 300A summary gives 1025 W 8th St, Azusa, CA 91702",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/27/2026 reports 70 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003915",
+  "atlas": {
+   "site_name": "Sinclair Systems International Fresno",
+   "operator": "Sinclair Systems International, LLC",
+   "street": "3115 S Willow Ave",
+   "city": "Fresno",
+   "state": "CA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "936585",
+   "establishment_name": "Fresno Sinclair Systems INTL",
+   "company_name": "Sinclair Systems INTL",
+   "street_address": "3115 S WILLOW AVE",
+   "city": "Fresno",
+   "state": "CA",
+   "zip_code": "93725",
+   "naics_code": "323111",
+   "industry_description": "Printing, flexographic (except books, grey goods)",
+   "year_filing_for": "2025",
+   "date_submitted": "1/9/2026",
+   "annual_average_employees": "179759"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Fresno Sinclair Systems INTL' of 'Sinclair Systems INTL' at 3115 S WILLOW AVE, Fresno, CA 93725; matches the site's operator 'Sinclair Systems International, LLC' at its recorded street",
+   "address": "street_address 3115 S Willow Ave, Fresno, CA: the 2025 OSHA Form 300A summary gives 3115 S WILLOW AVE, Fresno, CA 93725",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/9/2026 reports 179759 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003965",
+  "atlas": {
+   "site_name": "CCL Tube Carson Plant",
+   "operator": "CCL Tube Inc.",
+   "street": "2250 E 220th St",
+   "city": "Carson",
+   "state": "CA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1286043",
+   "establishment_name": "CCL Tube Inc",
+   "company_name": "CCL Tube Inc",
+   "street_address": "2250 East 220th Street",
+   "city": "Carson",
+   "state": "CA",
+   "zip_code": "90810",
+   "naics_code": "326199",
+   "industry_description": "Packaging, plastics (e.g., blister, bubble), manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/3/2026",
+   "annual_average_employees": "96"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'CCL Tube Inc' of 'CCL Tube Inc' at 2250 East 220th Street, Carson, CA 90810; matches the site's operator 'CCL Tube Inc.' at its recorded street",
+   "address": "street_address 2250 E 220th St, Carson, CA: the 2025 OSHA Form 300A summary gives 2250 East 220th Street, Carson, CA 90810",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/3/2026 reports 96 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004160",
+  "atlas": {
+   "site_name": "Axiom Materials Santa Ana Plant",
+   "operator": "Axiom Materials, Inc.",
+   "street": "2320 Pullman St",
+   "city": "Santa Ana",
+   "state": "CA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1471780",
+   "establishment_name": "Axiom Materials, Inc",
+   "company_name": "",
+   "street_address": "2320 Pullman St",
+   "city": "Santa Ana",
+   "state": "CA",
+   "zip_code": "92705",
+   "naics_code": "313320",
+   "industry_description": "Vinyl coated fabrics manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/13/2026",
+   "annual_average_employees": "141"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Axiom Materials, Inc' at 2320 Pullman St, Santa Ana, CA 92705; matches the site's operator 'Axiom Materials, Inc.' at its recorded street",
+   "address": "street_address 2320 Pullman St, Santa Ana, CA: the 2025 OSHA Form 300A summary gives 2320 Pullman St, Santa Ana, CA 92705",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/13/2026 reports 141 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004294",
+  "atlas": {
+   "site_name": "Ascent Aerospace - Santa Ana",
+   "operator": "Ascent Aerospace",
+   "street": "1395 S. Lyon St",
+   "city": "Santa Ana",
+   "state": "CA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "667954",
+   "establishment_name": "Ascent Aerospace, LLC.",
+   "company_name": "Ascent Aerospace",
+   "street_address": "1395 S. Lyon St.",
+   "city": "Santa Ana",
+   "state": "CA",
+   "zip_code": "92705",
+   "naics_code": "333514",
+   "industry_description": "Cutting dies, metalworking, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/25/2026",
+   "annual_average_employees": "111"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Ascent Aerospace, LLC.' of 'Ascent Aerospace' at 1395 S. Lyon St., Santa Ana, CA 92705; matches the site's operator 'Ascent Aerospace' at its recorded street",
+   "address": "street_address 1395 S. Lyon St, Santa Ana, CA: the 2025 OSHA Form 300A summary gives 1395 S. Lyon St., Santa Ana, CA 92705",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/25/2026 reports 111 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003714",
+  "atlas": {
+   "site_name": "Viega LLC Headquarters",
+   "operator": "Viega LLC",
+   "street": "585 Interlocken Blvd",
+   "city": "Broomfield",
+   "state": "CO",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1497875",
+   "establishment_name": "Viega - Broomfield",
+   "company_name": "Viega LLC",
+   "street_address": "585 Interlocken Blvd",
+   "city": "Broomfield",
+   "state": "CO",
+   "zip_code": "80021",
+   "naics_code": "561110",
+   "industry_description": "Office administration services",
+   "year_filing_for": "2025",
+   "date_submitted": "2/23/2026",
+   "annual_average_employees": "450"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Viega - Broomfield' of 'Viega LLC' at 585 Interlocken Blvd, Broomfield, CO 80021; matches the site's operator 'Viega LLC' at its recorded street",
+   "address": "street_address 585 Interlocken Blvd, Broomfield, CO: the 2025 OSHA Form 300A summary gives 585 Interlocken Blvd, Broomfield, CO 80021",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/23/2026 reports 450 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004338",
+  "atlas": {
+   "site_name": "Pretred Headquarters and Plant",
+   "operator": "Pretred, Inc.",
+   "street": "3700 Salida Street",
+   "city": "Aurora",
+   "state": "CO",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1563084",
+   "establishment_name": "Pretred, Inc.",
+   "company_name": "Pretred, Inc.",
+   "street_address": "3700 N. Salida St., Unit 20",
+   "city": "Aurora",
+   "state": "CO",
+   "zip_code": "80011",
+   "naics_code": "326291",
+   "industry_description": "Rubber goods, mechanical (i.e.,  extruded, lathe-cut, molded), manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "4/6/2026",
+   "annual_average_employees": "28"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Pretred, Inc.' of 'Pretred, Inc.' at 3700 N. Salida St., Unit 20, Aurora, CO 80011; matches the site's operator 'Pretred, Inc.' at its recorded street",
+   "address": "street_address 3700 Salida Street, Aurora, CO: the 2025 OSHA Form 300A summary gives 3700 N. Salida St., Unit 20, Aurora, CO 80011",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 4/6/2026 reports 28 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003353",
+  "atlas": {
+   "site_name": "Clinton Instrument Company HQ & Plant",
+   "operator": "Clinton Instrument Company",
+   "street": "295 E. Main St.",
+   "city": "Clinton",
+   "state": "CT",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1457657",
+   "establishment_name": "Clinton Instrument Company",
+   "company_name": "Clinton Instrument Company",
+   "street_address": "295 East Main Street",
+   "city": "Clinton",
+   "state": "CT",
+   "zip_code": "06413",
+   "naics_code": "334513",
+   "industry_description": "Manometers, industrial process-type, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/4/2026",
+   "annual_average_employees": "19"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Clinton Instrument Company' of 'Clinton Instrument Company' at 295 East Main Street, Clinton, CT 06413; matches the site's operator 'Clinton Instrument Company' at its recorded street",
+   "address": "street_address 295 E. Main St., Clinton, CT: the 2025 OSHA Form 300A summary gives 295 East Main Street, Clinton, CT 06413",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/4/2026 reports 19 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003459",
+  "atlas": {
+   "site_name": "Westminster Tool Headquarters and Plant",
+   "operator": "Westminster Tool, Inc.",
+   "street": "5 East Parkway",
+   "city": "Plainfield",
+   "state": "CT",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "298558",
+   "establishment_name": "Westminster Tool Inc",
+   "company_name": "Westminster Tool Inc",
+   "street_address": "5 EAST PARKWAY",
+   "city": "PLAINFIELD",
+   "state": "CT",
+   "zip_code": "06374",
+   "naics_code": "332710",
+   "industry_description": "Machine shops",
+   "year_filing_for": "2025",
+   "date_submitted": "1/8/2026",
+   "annual_average_employees": "40"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Westminster Tool Inc' of 'Westminster Tool Inc' at 5 EAST PARKWAY, PLAINFIELD, CT 06374; matches the site's operator 'Westminster Tool, Inc.' at its recorded street",
+   "address": "street_address 5 East Parkway, Plainfield, CT: the 2025 OSHA Form 300A summary gives 5 EAST PARKWAY, PLAINFIELD, CT 06374",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/8/2026 reports 40 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003298",
+  "atlas": {
+   "site_name": "TA Instruments - New Castle HQ Plant",
+   "operator": "TA Instruments",
+   "street": "159 Lukens Drive",
+   "city": "New Castle",
+   "state": "DE",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "857303",
+   "establishment_name": "TA Instruments- New Castle",
+   "company_name": "Waters Corporation",
+   "street_address": "159 Lukens Drive",
+   "city": "New Castle",
+   "state": "DE",
+   "zip_code": "19720",
+   "naics_code": "334516",
+   "industry_description": "Chromatographic instruments, laboratory-type, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/20/2026",
+   "annual_average_employees": "317"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'TA Instruments- New Castle' of 'Waters Corporation' at 159 Lukens Drive, New Castle, DE 19720; matches the site's operator 'TA Instruments' at its recorded street",
+   "address": "street_address 159 Lukens Drive, New Castle, DE: the 2025 OSHA Form 300A summary gives 159 Lukens Drive, New Castle, DE 19720",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/20/2026 reports 317 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004289",
+  "atlas": {
+   "site_name": "American Tool & Mold - Clearwater",
+   "operator": "American Tool & Mold, Inc.",
+   "street": "1700 Sunshine Dr",
+   "city": "Clearwater",
+   "state": "FL",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1306014",
+   "establishment_name": "American Tool and Mold",
+   "company_name": "American Tool and Mold",
+   "street_address": "1700 Sunshine Dr",
+   "city": "Clearwater",
+   "state": "FL",
+   "zip_code": "33765",
+   "naics_code": "333511",
+   "industry_description": "Molds (except steel ingot), industrial, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/26/2026",
+   "annual_average_employees": "110"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'American Tool and Mold' of 'American Tool and Mold' at 1700 Sunshine Dr, Clearwater, FL 33765; matches the site's operator 'American Tool & Mold, Inc.' at its recorded street",
+   "address": "street_address 1700 Sunshine Dr, Clearwater, FL: the 2025 OSHA Form 300A summary gives 1700 Sunshine Dr, Clearwater, FL 33765",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/26/2026 reports 110 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003267",
+  "atlas": {
+   "site_name": "Nexus Circular - Atlanta HQ & Plant",
+   "operator": "Nexus Circular LLC",
+   "street": "500 Waterfront Drive SW",
+   "city": "Atlanta",
+   "state": "GA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1500948",
+   "establishment_name": "Nexus Circular LLC",
+   "company_name": "Nexus Circular LLC",
+   "street_address": "500 Waterfront Dr. SW",
+   "city": "Atlanta",
+   "state": "GA",
+   "zip_code": "30336",
+   "naics_code": "324199",
+   "industry_description": "Petroleum waxes made from refined petroleum",
+   "year_filing_for": "2025",
+   "date_submitted": "3/2/2026",
+   "annual_average_employees": "87"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Nexus Circular LLC' of 'Nexus Circular LLC' at 500 Waterfront Dr. SW, Atlanta, GA 30336; matches the site's operator 'Nexus Circular LLC' at its recorded street",
+   "address": "street_address 500 Waterfront Drive SW, Atlanta, GA: the 2025 OSHA Form 300A summary gives 500 Waterfront Dr. SW, Atlanta, GA 30336",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/2/2026 reports 87 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003486",
+  "atlas": {
+   "site_name": "Printpack HQ",
+   "operator": "Printpack Inc.",
+   "street": "2800 Overlook Pkwy",
+   "city": "Atlanta",
+   "state": "GA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "208231",
+   "establishment_name": "ATLANTA",
+   "company_name": "Printpack Inc",
+   "street_address": "2800 OVERLOOK  PKWY",
+   "city": "Atlanta",
+   "state": "GA",
+   "zip_code": "30339",
+   "naics_code": "322211",
+   "industry_description": "Boxes, corrugated and solid fiber, made from purchased paper or paperboard",
+   "year_filing_for": "2025",
+   "date_submitted": "2/17/2026",
+   "annual_average_employees": "167"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'ATLANTA' of 'Printpack Inc' at 2800 OVERLOOK  PKWY, Atlanta, GA 30339; matches the site's operator 'Printpack Inc.' at its recorded street",
+   "address": "street_address 2800 Overlook Pkwy, Atlanta, GA: the 2025 OSHA Form 300A summary gives 2800 OVERLOOK  PKWY, Atlanta, GA 30339",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/17/2026 reports 167 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003735",
+  "atlas": {
+   "site_name": "Cimbar Resources Corporate Office",
+   "operator": "Cimbar Resources, Inc.",
+   "street": "49-0 Jackson Lake Rd",
+   "city": "Chatsworth",
+   "state": "GA",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "1091390",
+   "establishment_name": "Cimbar Resources Inc",
+   "company_name": "Cimbar Resources Inc",
+   "street_address": "49-0 Jackson Lake Rd",
+   "city": "Chatsworth",
+   "state": "GA",
+   "zip_code": "30705",
+   "naics_code": "327992",
+   "industry_description": "Barite processing beyond beneficiation",
+   "year_filing_for": "2025",
+   "date_submitted": "1/13/2026",
+   "annual_average_employees": "28"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Cimbar Resources Inc' of 'Cimbar Resources Inc' at 49-0 Jackson Lake Rd, Chatsworth, GA 30705; matches the site's operator 'Cimbar Resources, Inc.' at its recorded street",
+   "address": "street_address 49-0 Jackson Lake Rd, Chatsworth, GA: the 2025 OSHA Form 300A summary gives 49-0 Jackson Lake Rd, Chatsworth, GA 30705",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/13/2026 reports 28 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003967",
+  "atlas": {
+   "site_name": "Challenger Turf Headquarters and Plant",
+   "operator": "Challenger Turf, Inc.",
+   "street": "743 Hill Rd",
+   "city": "Dalton",
+   "state": "GA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1369147",
+   "establishment_name": "Challenger Turf",
+   "company_name": "",
+   "street_address": "743 Hill Road",
+   "city": "Dalton",
+   "state": "GA",
+   "zip_code": "30721",
+   "naics_code": "314110",
+   "industry_description": "Weaving rugs, carpets, and mats",
+   "year_filing_for": "2025",
+   "date_submitted": "2/26/2026",
+   "annual_average_employees": "150"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Challenger Turf' at 743 Hill Road, Dalton, GA 30721; matches the site's operator 'Challenger Turf, Inc.' at its recorded street",
+   "address": "street_address 743 Hill Rd, Dalton, GA: the 2025 OSHA Form 300A summary gives 743 Hill Road, Dalton, GA 30721",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/26/2026 reports 150 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003335",
+  "atlas": {
+   "site_name": "MSI Mold Builders - Cedar Rapids (HQ)",
+   "operator": "Manufacturing Specialties Inc.",
+   "street": "12300 6th St SW",
+   "city": "Cedar Rapids",
+   "state": "IA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1045196",
+   "establishment_name": "Manufacturing Specialties, Inc.",
+   "company_name": "Manufacturing Specialties, Inc.",
+   "street_address": "12300 6th St SW",
+   "city": "Cedar Rapids",
+   "state": "IA",
+   "zip_code": "52404",
+   "naics_code": "333511",
+   "industry_description": "Molds (except steel ingot), industrial, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/12/2026",
+   "annual_average_employees": "48"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Manufacturing Specialties, Inc.' of 'Manufacturing Specialties, Inc.' at 12300 6th St SW, Cedar Rapids, IA 52404; matches the site's operator 'Manufacturing Specialties Inc.' at its recorded street",
+   "address": "street_address 12300 6th St SW, Cedar Rapids, IA: the 2025 OSHA Form 300A summary gives 12300 6th St SW, Cedar Rapids, IA 52404",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/12/2026 reports 48 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003594",
+  "atlas": {
+   "site_name": "Ritchie Industries - Conrad Plant",
+   "operator": "Ritchie Industries, Inc.",
+   "street": "120 South Main Street",
+   "city": "Conrad",
+   "state": "IA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1304795",
+   "establishment_name": "Ritchie Industries Inc.",
+   "company_name": "Ritchie Industries Inc.",
+   "street_address": "120 S Main St.",
+   "city": "Conrad",
+   "state": "IA",
+   "zip_code": "50621",
+   "naics_code": "333111",
+   "industry_description": "Cattle feeding and watering equipment manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/26/2026",
+   "annual_average_employees": "69"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Ritchie Industries Inc.' of 'Ritchie Industries Inc.' at 120 S Main St., Conrad, IA 50621; matches the site's operator 'Ritchie Industries, Inc.' at its recorded street",
+   "address": "street_address 120 South Main Street, Conrad, IA: the 2025 OSHA Form 300A summary gives 120 S Main St., Conrad, IA 50621",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/26/2026 reports 69 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004296",
+  "atlas": {
+   "site_name": "ATC Manufacturing - Post Falls",
+   "operator": "Advanced Thermoplastic Composites, Inc.",
+   "street": "1224 N Lean St",
+   "city": "Post Falls",
+   "state": "ID",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1246783",
+   "establishment_name": "ATC Manufacturing",
+   "company_name": "Advanced Thermoplastic Composites, LLC",
+   "street_address": "1224 N Lean st",
+   "city": "Post Falls",
+   "state": "ID",
+   "zip_code": "83854",
+   "naics_code": "326130",
+   "industry_description": "Laminated plastics plate, rod, and sheet, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/17/2026",
+   "annual_average_employees": "73"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'ATC Manufacturing' of 'Advanced Thermoplastic Composites, LLC' at 1224 N Lean st, Post Falls, ID 83854; matches the site's operator 'Advanced Thermoplastic Composites, Inc.' at its recorded street",
+   "address": "street_address 1224 N Lean St, Post Falls, ID: the 2025 OSHA Form 300A summary gives 1224 N Lean st, Post Falls, ID 83854",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/17/2026 reports 73 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003223",
+  "atlas": {
+   "site_name": "Cabot Corporation - Tuscola",
+   "operator": "Cabot Corporation",
+   "street": "700 East US Highway 36",
+   "city": "Tuscola",
+   "state": "IL",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1270237",
+   "establishment_name": "Cabot Corporation",
+   "company_name": "Cabot Corporation",
+   "street_address": "700 East US HWY 36",
+   "city": "Tuscola",
+   "state": "IL",
+   "zip_code": "61953",
+   "naics_code": "325180",
+   "industry_description": "Silica, amorphous, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/29/2026",
+   "annual_average_employees": "95"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Cabot Corporation' of 'Cabot Corporation' at 700 East US HWY 36, Tuscola, IL 61953; matches the site's operator 'Cabot Corporation' at its recorded street",
+   "address": "street_address 700 East US Highway 36, Tuscola, IL: the 2025 OSHA Form 300A summary gives 700 East US HWY 36, Tuscola, IL 61953",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/29/2026 reports 95 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003490",
+  "atlas": {
+   "site_name": "Bales Metal Surface Solutions HQ Plant",
+   "operator": "Bales Metal Surface Solutions",
+   "street": "2824 Hitchcock Avenue",
+   "city": "Downers Grove",
+   "state": "IL",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1276358",
+   "establishment_name": "Bales Metal Surface Solutions",
+   "company_name": "Bales Metal Surface Solutions",
+   "street_address": "2824 Hitchcock Ave",
+   "city": "Downers Grove",
+   "state": "IL",
+   "zip_code": "60515",
+   "naics_code": "332813",
+   "industry_description": "Anodizing metals and metal products for the trade",
+   "year_filing_for": "2025",
+   "date_submitted": "1/21/2026",
+   "annual_average_employees": "31"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Bales Metal Surface Solutions' of 'Bales Metal Surface Solutions' at 2824 Hitchcock Ave, Downers Grove, IL 60515; matches the site's operator 'Bales Metal Surface Solutions' at its recorded street",
+   "address": "street_address 2824 Hitchcock Avenue, Downers Grove, IL: the 2025 OSHA Form 300A summary gives 2824 Hitchcock Ave, Downers Grove, IL 60515",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/21/2026 reports 31 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003541",
+  "atlas": {
+   "site_name": "Matsui America HQ",
+   "operator": "Matsui America, Inc.",
+   "street": "5825 Turnberry Dr",
+   "city": "Hanover Park",
+   "state": "IL",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "923141",
+   "establishment_name": "Matsui America HQ",
+   "company_name": "Matsui America, Inc.",
+   "street_address": "5825 Turnberry Drive",
+   "city": "Hanover Park",
+   "state": "IL",
+   "zip_code": "60133",
+   "naics_code": "423830",
+   "industry_description": "Industrial machinery and equipment (except electrical) merchant wholesalers",
+   "year_filing_for": "2025",
+   "date_submitted": "1/13/2026",
+   "annual_average_employees": "33"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Matsui America HQ' of 'Matsui America, Inc.' at 5825 Turnberry Drive, Hanover Park, IL 60133; matches the site's operator 'Matsui America, Inc.' at its recorded street",
+   "address": "street_address 5825 Turnberry Dr, Hanover Park, IL: the 2025 OSHA Form 300A summary gives 5825 Turnberry Drive, Hanover Park, IL 60133",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/13/2026 reports 33 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003937",
+  "atlas": {
+   "site_name": "Budnick Converting Columbia Headquarters",
+   "operator": "Budnick Converting, Inc.",
+   "street": "340 Parkway Drive",
+   "city": "Columbia",
+   "state": "IL",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1317221",
+   "establishment_name": "Budnick Converting, Inc.",
+   "company_name": "Budnick Converting, Inc.",
+   "street_address": "340 Parkway Drive",
+   "city": "Columbia",
+   "state": "IL",
+   "zip_code": "62236",
+   "naics_code": "322220",
+   "industry_description": "Gummed paper products (e.g., labels, sheets, tapes) made from purchased paper",
+   "year_filing_for": "2025",
+   "date_submitted": "1/30/2026",
+   "annual_average_employees": "121"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Budnick Converting, Inc.' of 'Budnick Converting, Inc.' at 340 Parkway Drive, Columbia, IL 62236; matches the site's operator 'Budnick Converting, Inc.' at its recorded street",
+   "address": "street_address 340 Parkway Drive, Columbia, IL: the 2025 OSHA Form 300A summary gives 340 Parkway Drive, Columbia, IL 62236",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/30/2026 reports 121 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004323",
+  "atlas": {
+   "site_name": "Ingersoll Machine Tools - Rockford",
+   "operator": "Ingersoll Machine Tools, Inc.",
+   "street": "707 Fulton Ave",
+   "city": "Rockford",
+   "state": "IL",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1456985",
+   "establishment_name": "Ingersoll Machine Tools Inc.",
+   "company_name": "Ingersoll Machine Tools Inc.",
+   "street_address": "707 Fulton Ave",
+   "city": "Rockford",
+   "state": "IL",
+   "zip_code": "61103",
+   "naics_code": "333517",
+   "industry_description": "Metal cutting machine tools manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/23/2026",
+   "annual_average_employees": "140"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Ingersoll Machine Tools Inc.' of 'Ingersoll Machine Tools Inc.' at 707 Fulton Ave, Rockford, IL 61103; matches the site's operator 'Ingersoll Machine Tools, Inc.' at its recorded street",
+   "address": "street_address 707 Fulton Ave, Rockford, IL: the 2025 OSHA Form 300A summary gives 707 Fulton Ave, Rockford, IL 61103",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/23/2026 reports 140 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003274",
+  "atlas": {
+   "site_name": "Wabash MPI / Carver - Wabash HQ & Plant",
+   "operator": "Wabash MPI / Carver, Inc.",
+   "street": "1569 Morris Street",
+   "city": "Wabash",
+   "state": "IN",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1247512",
+   "establishment_name": "Wabash Metal Products, Inc dba Wabash MPI",
+   "company_name": "Wabash MPI Carver",
+   "street_address": "1569 Morris Street",
+   "city": "Wabash",
+   "state": "IN",
+   "zip_code": "46992",
+   "naics_code": "333249",
+   "industry_description": "Metal casting machinery and equipment manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/16/2026",
+   "annual_average_employees": "63"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Wabash Metal Products, Inc dba Wabash MPI' of 'Wabash MPI Carver' at 1569 Morris Street, Wabash, IN 46992; matches the site's operator 'Wabash MPI / Carver, Inc.' at its recorded street",
+   "address": "street_address 1569 Morris Street, Wabash, IN: the 2025 OSHA Form 300A summary gives 1569 Morris Street, Wabash, IN 46992",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/16/2026 reports 63 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003590",
+  "atlas": {
+   "site_name": "Elkhart Plastics - South Bend HQ",
+   "operator": "Elkhart Plastics LLC",
+   "street": "3300 North Kenmore Street",
+   "city": "South Bend",
+   "state": "IN",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1373371",
+   "establishment_name": "Elkhart Plastics",
+   "company_name": "Myers Industries/Elkhart Plastics",
+   "street_address": "3300 N. Kenmore Street",
+   "city": "South Bend",
+   "state": "IN",
+   "zip_code": "46628",
+   "naics_code": "326199",
+   "industry_description": "Septic tanks, plastics or fiberglass, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/5/2026",
+   "annual_average_employees": "89"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Elkhart Plastics' of 'Myers Industries/Elkhart Plastics' at 3300 N. Kenmore Street, South Bend, IN 46628; matches the site's operator 'Elkhart Plastics LLC' at its recorded street",
+   "address": "street_address 3300 North Kenmore Street, South Bend, IN: the 2025 OSHA Form 300A summary gives 3300 N. Kenmore Street, South Bend, IN 46628",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/5/2026 reports 89 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003921",
+  "atlas": {
+   "site_name": "Brightmark Ashley Circularity Center",
+   "operator": "Brightmark Plastics Ashley OpCo LLC",
+   "street": "401 McEntarfer Dr",
+   "city": "Ashley",
+   "state": "IN",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1442142",
+   "establishment_name": "Brightmark Plastics Ashley OpCo LLC",
+   "company_name": "Brightmark Plastics Ashley OpCo LLC",
+   "street_address": "401 N McEntarfer Dr",
+   "city": "Ashley",
+   "state": "IN",
+   "zip_code": "46705",
+   "naics_code": "324199",
+   "industry_description": "Waxes, petroleum, made from refined petroleum",
+   "year_filing_for": "2025",
+   "date_submitted": "1/27/2026",
+   "annual_average_employees": "101"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Brightmark Plastics Ashley OpCo LLC' of 'Brightmark Plastics Ashley OpCo LLC' at 401 N McEntarfer Dr, Ashley, IN 46705; matches the site's operator 'Brightmark Plastics Ashley OpCo LLC' at its recorded street",
+   "address": "street_address 401 McEntarfer Dr, Ashley, IN: the 2025 OSHA Form 300A summary gives 401 N McEntarfer Dr, Ashley, IN 46705",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/27/2026 reports 101 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003627",
+  "atlas": {
+   "site_name": "Park Aerospace - Newton HQ Plant",
+   "operator": "Park Aerospace Corp.",
+   "street": "486 North Oliver Road, Building Z",
+   "city": "Newton",
+   "state": "KS",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1032870",
+   "establishment_name": "Park Aerospace Corp.",
+   "company_name": "Park Aerospace Corp.",
+   "street_address": "486 North Oliver Rd.",
+   "city": "Newton",
+   "state": "KS",
+   "zip_code": "67114",
+   "naics_code": "336413",
+   "industry_description": "Aircraft assemblies, subassemblies, and parts (except engines) manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/20/2026",
+   "annual_average_employees": "122"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Park Aerospace Corp.' of 'Park Aerospace Corp.' at 486 North Oliver Rd., Newton, KS 67114; matches the site's operator 'Park Aerospace Corp.' at its recorded street",
+   "address": "street_address 486 North Oliver Road, Building Z, Newton, KS: the 2025 OSHA Form 300A summary gives 486 North Oliver Rd., Newton, KS 67114",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/20/2026 reports 122 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003828",
+  "atlas": {
+   "site_name": "Bunting HQ and plant",
+   "operator": "Bunting Magnetics Co.",
+   "street": "500 S. Spencer Road",
+   "city": "Newton",
+   "state": "KS",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1414420",
+   "establishment_name": "Bunting Magnetics Co",
+   "company_name": "Bunting Magnetics Co.",
+   "street_address": "500 S. Spencer Rd",
+   "city": "Newton",
+   "state": "KS",
+   "zip_code": "67114",
+   "naics_code": "332919",
+   "industry_description": "Unions, pipe, metal (except made from purchased pipe), manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/7/2026",
+   "annual_average_employees": "141"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Bunting Magnetics Co' of 'Bunting Magnetics Co.' at 500 S. Spencer Rd, Newton, KS 67114; matches the site's operator 'Bunting Magnetics Co.' at its recorded street",
+   "address": "street_address 500 S. Spencer Road, Newton, KS: the 2025 OSHA Form 300A summary gives 500 S. Spencer Rd, Newton, KS 67114",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/7/2026 reports 141 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004261",
+  "atlas": {
+   "site_name": "Reiloy USA - Maize plant",
+   "operator": "Reiloy USA",
+   "street": "12260 West 53rd St N",
+   "city": "Maize",
+   "state": "KS",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "220019",
+   "establishment_name": "Reiloy USA Corporation",
+   "company_name": "",
+   "street_address": "12260 W. 53rd Street North",
+   "city": "Maize",
+   "state": "KS",
+   "zip_code": "67101",
+   "naics_code": "423120",
+   "industry_description": "Handtools, motor vehicle mechanics', merchant wholesalers",
+   "year_filing_for": "2025",
+   "date_submitted": "3/2/2026",
+   "annual_average_employees": "66"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Reiloy USA Corporation' at 12260 W. 53rd Street North, Maize, KS 67101; matches the site's operator 'Reiloy USA' at its recorded street",
+   "address": "street_address 12260 West 53rd St N, Maize, KS: the 2025 OSHA Form 300A summary gives 12260 W. 53rd Street North, Maize, KS 67101",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/2/2026 reports 66 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003225",
+  "atlas": {
+   "site_name": "Cabot Corporation - Carrollton",
+   "operator": "Cabot Corporation",
+   "street": "5414 Us-42",
+   "city": "Carrollton",
+   "state": "KY",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1437453",
+   "establishment_name": "Carrollton Manufacturing Facility",
+   "company_name": "Cabot Corporation",
+   "street_address": "5414 US Highway 42 East",
+   "city": "Carrollton",
+   "state": "KY",
+   "zip_code": "41008",
+   "naics_code": "325180",
+   "industry_description": "Silica, amorphous, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/23/2026",
+   "annual_average_employees": "33"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Carrollton Manufacturing Facility' of 'Cabot Corporation' at 5414 US Highway 42 East, Carrollton, KY 41008; matches the site's operator 'Cabot Corporation' at its recorded street",
+   "address": "street_address 5414 Us-42, Carrollton, KY: the 2025 OSHA Form 300A summary gives 5414 US Highway 42 East, Carrollton, KY 41008",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/23/2026 reports 33 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003623",
+  "atlas": {
+   "site_name": "Eckart America - Louisville Plant",
+   "operator": "Eckart America Corporation",
+   "street": "4101 Camp Ground Road",
+   "city": "Louisville",
+   "state": "KY",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "626945",
+   "establishment_name": "ECKART America - Louisville",
+   "company_name": "ECKART America",
+   "street_address": "4101 Camp Ground Rd.",
+   "city": "Louisville",
+   "state": "KY",
+   "zip_code": "40211",
+   "naics_code": "331314",
+   "industry_description": "Powder made from purchased aluminum",
+   "year_filing_for": "2025",
+   "date_submitted": "2/23/2026",
+   "annual_average_employees": "72"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'ECKART America - Louisville' of 'ECKART America' at 4101 Camp Ground Rd., Louisville, KY 40211; matches the site's operator 'Eckart America Corporation' at its recorded street",
+   "address": "street_address 4101 Camp Ground Road, Louisville, KY: the 2025 OSHA Form 300A summary gives 4101 Camp Ground Rd., Louisville, KY 40211",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/23/2026 reports 72 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004140",
+  "atlas": {
+   "site_name": "PSC Industries Headquarters and Plant",
+   "operator": "PSC Industries Inc.",
+   "street": "1100 West Market St",
+   "city": "Louisville",
+   "state": "KY",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "460659",
+   "establishment_name": "PSC Industries - Corporate",
+   "company_name": "PSC Industries",
+   "street_address": "1100 W. Market Street",
+   "city": "Louisville",
+   "state": "KY",
+   "zip_code": "40203",
+   "naics_code": "551114",
+   "industry_description": "Centralized administrative offices",
+   "year_filing_for": "2025",
+   "date_submitted": "1/27/2026",
+   "annual_average_employees": "17"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'PSC Industries - Corporate' of 'PSC Industries' at 1100 W. Market Street, Louisville, KY 40203; matches the site's operator 'PSC Industries Inc.' at its recorded street",
+   "address": "street_address 1100 West Market St, Louisville, KY: the 2025 OSHA Form 300A summary gives 1100 W. Market Street, Louisville, KY 40203",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/27/2026 reports 17 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004141",
+  "atlas": {
+   "site_name": "PSC Fabricating Plant",
+   "operator": "PSC Industries Inc.",
+   "street": "3001 W Kentucky St",
+   "city": "Louisville",
+   "state": "KY",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "460665",
+   "establishment_name": "PSC Industries - Kentucky Street Office",
+   "company_name": "PSC Industries, Inc.",
+   "street_address": "3001 W. Kentucky Street",
+   "city": "Louisville",
+   "state": "KY",
+   "zip_code": "40211",
+   "naics_code": "551114",
+   "industry_description": "Centralized administrative offices",
+   "year_filing_for": "2025",
+   "date_submitted": "1/27/2026",
+   "annual_average_employees": "15"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'PSC Industries - Kentucky Street Office' of 'PSC Industries, Inc.' at 3001 W. Kentucky Street, Louisville, KY 40211; matches the site's operator 'PSC Industries Inc.' at its recorded street",
+   "address": "street_address 3001 W Kentucky St, Louisville, KY: the 2025 OSHA Form 300A summary gives 3001 W. Kentucky Street, Louisville, KY 40211",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/27/2026 reports 15 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003228",
+  "atlas": {
+   "site_name": "Absolute Haitian Corporation HQ",
+   "operator": "Absolute Haitian Corporation",
+   "street": "33 Southgate St",
+   "city": "Worcester",
+   "state": "MA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1059304",
+   "establishment_name": "Absolute Haitian Corporation",
+   "company_name": "Absolute Haitian Corporation",
+   "street_address": "33 Southgate Street",
+   "city": "Worcester",
+   "state": "MA",
+   "zip_code": "01610",
+   "naics_code": "423830",
+   "industry_description": "Industrial machinery and equipment (except electrical) merchant wholesalers",
+   "year_filing_for": "2025",
+   "date_submitted": "4/27/2026",
+   "annual_average_employees": "93"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Absolute Haitian Corporation' of 'Absolute Haitian Corporation' at 33 Southgate Street, Worcester, MA 01610; matches the site's operator 'Absolute Haitian Corporation' at its recorded street",
+   "address": "street_address 33 Southgate St, Worcester, MA: the 2025 OSHA Form 300A summary gives 33 Southgate Street, Worcester, MA 01610",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 4/27/2026 reports 93 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003440",
+  "atlas": {
+   "site_name": "EREMA North America Headquarters and Customer Center",
+   "operator": "EREMA North America, Inc.",
+   "street": "23 Old Right Road - Unit 2",
+   "city": "Ipswich",
+   "state": "MA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1237152",
+   "establishment_name": "Erema North America",
+   "company_name": "Erema North America",
+   "street_address": "23 Old right Rd Unit #2",
+   "city": "Ipswich",
+   "state": "MA",
+   "zip_code": "01938",
+   "naics_code": "423830",
+   "industry_description": "Manufacturing Wholesale",
+   "year_filing_for": "2025",
+   "date_submitted": "7/22/2026",
+   "annual_average_employees": "31"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Erema North America' of 'Erema North America' at 23 Old right Rd Unit #2, Ipswich, MA 01938; matches the site's operator 'EREMA North America, Inc.' at its recorded street",
+   "address": "street_address 23 Old Right Road - Unit 2, Ipswich, MA: the 2025 OSHA Form 300A summary gives 23 Old right Rd Unit #2, Ipswich, MA 01938",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 7/22/2026 reports 31 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003224",
+  "atlas": {
+   "site_name": "Cabot Corporation - Midland Plant",
+   "operator": "Cabot Corporation",
+   "street": "3603 S Saginaw Rd",
+   "city": "Midland",
+   "state": "MI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1437439",
+   "establishment_name": "Midland Manufacturing Facility",
+   "company_name": "Cabot Corporation",
+   "street_address": "3603 S Saginaw Road",
+   "city": "Midland",
+   "state": "MI",
+   "zip_code": "48640",
+   "naics_code": "325180",
+   "industry_description": "Silica, amorphous, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/23/2026",
+   "annual_average_employees": "31"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Midland Manufacturing Facility' of 'Cabot Corporation' at 3603 S Saginaw Road, Midland, MI 48640; matches the site's operator 'Cabot Corporation' at its recorded street",
+   "address": "street_address 3603 S Saginaw Rd, Midland, MI: the 2025 OSHA Form 300A summary gives 3603 S Saginaw Road, Midland, MI 48640",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/23/2026 reports 31 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003846",
+  "atlas": {
+   "site_name": "BMG Corporate Headquarters",
+   "operator": "BMG LLC",
+   "street": "330 N. Ross Street",
+   "city": "Beaverton",
+   "state": "MI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "983797",
+   "establishment_name": "Brown LLC",
+   "company_name": "",
+   "street_address": "330 Ross Street",
+   "city": "Beaverton",
+   "state": "MI",
+   "zip_code": "48612",
+   "naics_code": "333111",
+   "industry_description": "Cabs for agricultural machinery manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/21/2026",
+   "annual_average_employees": "155"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Brown LLC' at 330 Ross Street, Beaverton, MI 48612; matches the site's operator 'BMG LLC' at its recorded street",
+   "address": "street_address 330 N. Ross Street, Beaverton, MI: the 2025 OSHA Form 300A summary gives 330 Ross Street, Beaverton, MI 48612",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/21/2026 reports 155 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003869",
+  "atlas": {
+   "site_name": "Loc Performance Headquarters",
+   "operator": "Loc Performance Products, Inc.",
+   "street": "13505 N Haggerty Rd",
+   "city": "Plymouth",
+   "state": "MI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1517233",
+   "establishment_name": "American Rheinmetall Plymouth",
+   "company_name": "American Rheinmetall",
+   "street_address": "13505 N Haggerty Rd",
+   "city": "Plymouth",
+   "state": "MI",
+   "zip_code": "48170",
+   "naics_code": "332710",
+   "industry_description": "Machine shops",
+   "year_filing_for": "2025",
+   "date_submitted": "2/27/2026",
+   "annual_average_employees": "277"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'American Rheinmetall Plymouth' of 'American Rheinmetall' at 13505 N Haggerty Rd, Plymouth, MI 48170; matches the site's operator 'Loc Performance Products, Inc.' at its recorded street",
+   "address": "street_address 13505 N Haggerty Rd, Plymouth, MI: the 2025 OSHA Form 300A summary gives 13505 N Haggerty Rd, Plymouth, MI 48170",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/27/2026 reports 277 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003936",
+  "atlas": {
+   "site_name": "Argent International Plymouth Plant",
+   "operator": "Argent International, Inc.",
+   "street": "41016 Concept Drive",
+   "city": "Plymouth",
+   "state": "MI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1207113",
+   "establishment_name": "Argent International",
+   "company_name": "Argent International",
+   "street_address": "41016 Concept Drive",
+   "city": "Plymouth",
+   "state": "MI",
+   "zip_code": "48170",
+   "naics_code": "322220",
+   "industry_description": "Adhesive tape (except medical) made from purchased materials",
+   "year_filing_for": "2025",
+   "date_submitted": "1/7/2026",
+   "annual_average_employees": "140"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Argent International' of 'Argent International' at 41016 Concept Drive, Plymouth, MI 48170; matches the site's operator 'Argent International, Inc.' at its recorded street",
+   "address": "street_address 41016 Concept Drive, Plymouth, MI: the 2025 OSHA Form 300A summary gives 41016 Concept Drive, Plymouth, MI 48170",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/7/2026 reports 140 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004008",
+  "atlas": {
+   "site_name": "Reed City Group Headquarters and Plant",
+   "operator": "Reed City Group",
+   "street": "603 E. Church St",
+   "city": "Reed City",
+   "state": "MI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "280805",
+   "establishment_name": "Reed City Group, LLC",
+   "company_name": "Reed City Group, LLC",
+   "street_address": "603 East church Street",
+   "city": "Reed City",
+   "state": "MI",
+   "zip_code": "49677",
+   "naics_code": "333517",
+   "industry_description": "Machine tools, metal cutting, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/24/2026",
+   "annual_average_employees": "166"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Reed City Group, LLC' of 'Reed City Group, LLC' at 603 East church Street, Reed City, MI 49677; matches the site's operator 'Reed City Group' at its recorded street",
+   "address": "street_address 603 E. Church St, Reed City, MI: the 2025 OSHA Form 300A summary gives 603 East church Street, Reed City, MI 49677",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/24/2026 reports 166 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004032",
+  "atlas": {
+   "site_name": "Alro Plastics HQ (Alro Steel Corp HQ)",
+   "operator": "Alro Plastics",
+   "street": "3100 E. High St.",
+   "city": "Jackson",
+   "state": "MI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "190658",
+   "establishment_name": "JC",
+   "company_name": "Alro Steel",
+   "street_address": "3100 E High Street",
+   "city": "Jackson",
+   "state": "MI",
+   "zip_code": "49204",
+   "naics_code": "423510",
+   "industry_description": "",
+   "year_filing_for": "2025",
+   "date_submitted": "1/9/2026",
+   "annual_average_employees": "224"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'JC' of 'Alro Steel' at 3100 E High Street, Jackson, MI 49204; matches the site's operator 'Alro Plastics' at its recorded street",
+   "address": "street_address 3100 E. High St., Jackson, MI: the 2025 OSHA Form 300A summary gives 3100 E High Street, Jackson, MI 49204",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/9/2026 reports 224 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004161",
+  "atlas": {
+   "site_name": "Bekum America Williamston Plant",
+   "operator": "Bekum America Corporation",
+   "street": "1140 West Grand River",
+   "city": "Williamston",
+   "state": "MI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "803302",
+   "establishment_name": "Bekum America Corporation",
+   "company_name": "Bekum America Corporation",
+   "street_address": "1140 W Grand River Ave",
+   "city": "Williamston",
+   "state": "MI",
+   "zip_code": "48895",
+   "naics_code": "333249",
+   "industry_description": "Blow molding machinery for plastics manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/9/2026",
+   "annual_average_employees": "112"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Bekum America Corporation' of 'Bekum America Corporation' at 1140 W Grand River Ave, Williamston, MI 48895; matches the site's operator 'Bekum America Corporation' at its recorded street",
+   "address": "street_address 1140 West Grand River, Williamston, MI: the 2025 OSHA Form 300A summary gives 1140 W Grand River Ave, Williamston, MI 48895",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/9/2026 reports 112 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004297",
+  "atlas": {
+   "site_name": "Atomic Industries - Warren tooling facility",
+   "operator": "Atomic Industries",
+   "street": "13780 E 11 Mile Rd",
+   "city": "Warren",
+   "state": "MI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1416451",
+   "establishment_name": "Atomic Industries, Inc.",
+   "company_name": "",
+   "street_address": "13780 E 11 Mile Road",
+   "city": "Warren",
+   "state": "MI",
+   "zip_code": "48089",
+   "naics_code": "333511",
+   "industry_description": "Molds (except steel ingot), industrial, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/11/2026",
+   "annual_average_employees": "41"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Atomic Industries, Inc.' at 13780 E 11 Mile Road, Warren, MI 48089; matches the site's operator 'Atomic Industries' at its recorded street",
+   "address": "street_address 13780 E 11 Mile Rd, Warren, MI: the 2025 OSHA Form 300A summary gives 13780 E 11 Mile Road, Warren, MI 48089",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/11/2026 reports 41 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003417",
+  "atlas": {
+   "site_name": "NatureWorks Headquarters",
+   "operator": "NatureWorks LLC",
+   "street": "17400 Medina Rd Ste 800",
+   "city": "Plymouth",
+   "state": "MN",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "315880",
+   "establishment_name": "Plymouth",
+   "company_name": "NatureWorks LLC",
+   "street_address": "17400 Medina Road, Suite 800",
+   "city": "Plymouth",
+   "state": "MN",
+   "zip_code": "55447",
+   "naics_code": "541712",
+   "industry_description": "Physical science research and development laboratories or services (except biotechnology research and development)",
+   "year_filing_for": "2025",
+   "date_submitted": "1/23/2026",
+   "annual_average_employees": "41"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Plymouth' of 'NatureWorks LLC' at 17400 Medina Road, Suite 800, Plymouth, MN 55447; matches the site's operator 'NatureWorks LLC' at its recorded street",
+   "address": "street_address 17400 Medina Rd Ste 800, Plymouth, MN: the 2025 OSHA Form 300A summary gives 17400 Medina Road, Suite 800, Plymouth, MN 55447",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/23/2026 reports 41 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003499",
+  "atlas": {
+   "site_name": "Mondi Jackson HQ Plant (Indian Creek)",
+   "operator": "Mondi Jackson LLC",
+   "street": "14591 State Highway 177",
+   "city": "Jackson",
+   "state": "MO",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "300135",
+   "establishment_name": "Mondi",
+   "company_name": "Mondi Jackson, LLC",
+   "street_address": "14591 State Hwy 177",
+   "city": "Jackson",
+   "state": "MO",
+   "zip_code": "63755",
+   "naics_code": "326112",
+   "industry_description": "Flexible packaging, plastics film, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/12/2026",
+   "annual_average_employees": "414"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Mondi' of 'Mondi Jackson, LLC' at 14591 State Hwy 177, Jackson, MO 63755; matches the site's operator 'Mondi Jackson LLC' at its recorded street",
+   "address": "street_address 14591 State Highway 177, Jackson, MO: the 2025 OSHA Form 300A summary gives 14591 State Hwy 177, Jackson, MO 63755",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/12/2026 reports 414 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003727",
+  "atlas": {
+   "site_name": "Altec St. Joseph Operations (fiberglass plant)",
+   "operator": "Altec Industries, Inc.",
+   "street": "2106 South Riverside Road",
+   "city": "St. Joseph",
+   "state": "MO",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "325590",
+   "establishment_name": "MW",
+   "company_name": "Altec Industries",
+   "street_address": "2106 S. Riverside Rd.",
+   "city": "St. Joseph",
+   "state": "MO",
+   "zip_code": "64507",
+   "naics_code": "333120",
+   "industry_description": "Manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/4/2026",
+   "annual_average_employees": "2227"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'MW' of 'Altec Industries' at 2106 S. Riverside Rd., St. Joseph, MO 64507; matches the site's operator 'Altec Industries, Inc.' at its recorded street",
+   "address": "street_address 2106 South Riverside Road, St. Joseph, MO: the 2025 OSHA Form 300A summary gives 2106 S. Riverside Rd., St. Joseph, MO 64507",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/4/2026 reports 2227 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003952",
+  "atlas": {
+   "site_name": "Wilson Manufacturing Headquarters and Plant",
+   "operator": "Wilson Manufacturing Company",
+   "street": "4725 Green Park Rd",
+   "city": "St. Louis",
+   "state": "MO",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "343089",
+   "establishment_name": "Wilson Manufacturing Company",
+   "company_name": "",
+   "street_address": "4725 Green Park Road",
+   "city": "St. Louis",
+   "state": "MO",
+   "zip_code": "63123",
+   "naics_code": "333514",
+   "industry_description": "Cutting dies, metalworking, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/4/2026",
+   "annual_average_employees": "152"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Wilson Manufacturing Company' at 4725 Green Park Road, St. Louis, MO 63123; matches the site's operator 'Wilson Manufacturing Company' at its recorded street",
+   "address": "street_address 4725 Green Park Rd, St. Louis, MO: the 2025 OSHA Form 300A summary gives 4725 Green Park Road, St. Louis, MO 63123",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/4/2026 reports 152 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004005",
+  "atlas": {
+   "site_name": "Polytainers - Lee's Summit Plant",
+   "operator": "Polytainers, Inc.",
+   "street": "1400 NE Douglas St",
+   "city": "Lee's Summit",
+   "state": "MO",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "839839",
+   "establishment_name": "Polytainers Inc.",
+   "company_name": "Polytainers Inc.",
+   "street_address": "1400 N.E. Douglas Street",
+   "city": "Lee's Summit",
+   "state": "MO",
+   "zip_code": "64086",
+   "naics_code": "326199",
+   "industry_description": "Cups, plastics (except foam), manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/27/2026",
+   "annual_average_employees": "317"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Polytainers Inc.' of 'Polytainers Inc.' at 1400 N.E. Douglas Street, Lee's Summit, MO 64086; matches the site's operator 'Polytainers, Inc.' at its recorded street",
+   "address": "street_address 1400 NE Douglas St, Lee's Summit, MO: the 2025 OSHA Form 300A summary gives 1400 N.E. Douglas Street, Lee's Summit, MO 64086",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/27/2026 reports 317 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004011",
+  "atlas": {
+   "site_name": "Silgan Plastic Food Containers - Union Plant",
+   "operator": "Silgan Plastic Food Containers",
+   "street": "710 West Park Rd",
+   "city": "Union",
+   "state": "MO",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "44828",
+   "establishment_name": "Silgan Plastic Food Containers",
+   "company_name": "Silgan Plastic Food Containers",
+   "street_address": "710 West Park Road",
+   "city": "Union",
+   "state": "MO",
+   "zip_code": "63084",
+   "naics_code": "326199",
+   "industry_description": "Bowls and bowl covers, plastics, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/19/2026",
+   "annual_average_employees": "199"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Silgan Plastic Food Containers' of 'Silgan Plastic Food Containers' at 710 West Park Road, Union, MO 63084; matches the site's operator 'Silgan Plastic Food Containers' at its recorded street",
+   "address": "street_address 710 West Park Rd, Union, MO: the 2025 OSHA Form 300A summary gives 710 West Park Road, Union, MO 63084",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/19/2026 reports 199 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003865",
+  "atlas": {
+   "site_name": "Ergon Headquarters",
+   "operator": "Ergon, Inc.",
+   "street": "2829 Lakeland Drive",
+   "city": "Flowood",
+   "state": "MS",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "895818",
+   "establishment_name": "Ergon, Inc. - Mirror Lake",
+   "company_name": "Ergon, Inc.",
+   "street_address": "2829 Lakeland Drive, Suite 2000",
+   "city": "Flowood",
+   "state": "MS",
+   "zip_code": "39232",
+   "naics_code": "551114",
+   "industry_description": "Corporate offices",
+   "year_filing_for": "2025",
+   "date_submitted": "1/28/2026",
+   "annual_average_employees": "402"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Ergon, Inc. - Mirror Lake' of 'Ergon, Inc.' at 2829 Lakeland Drive, Suite 2000, Flowood, MS 39232; matches the site's operator 'Ergon, Inc.' at its recorded street",
+   "address": "street_address 2829 Lakeland Drive, Flowood, MS: the 2025 OSHA Form 300A summary gives 2829 Lakeland Drive, Suite 2000, Flowood, MS 39232",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/28/2026 reports 402 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003514",
+  "atlas": {
+   "site_name": "UPM Raflatac Americas HQ / Mills River Factory",
+   "operator": "UPM Raflatac Inc.",
+   "street": "400 Broadpointe Drive",
+   "city": "Mills River",
+   "state": "NC",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1286749",
+   "establishment_name": "UPM Raflatac, Inc",
+   "company_name": "",
+   "street_address": "400 Broadpointe Drive",
+   "city": "Mills River",
+   "state": "NC",
+   "zip_code": "28759",
+   "naics_code": "322220",
+   "industry_description": "Laminating purchased papers for nonpackaging applications",
+   "year_filing_for": "2025",
+   "date_submitted": "2/19/2026",
+   "annual_average_employees": "158"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'UPM Raflatac, Inc' at 400 Broadpointe Drive, Mills River, NC 28759; matches the site's operator 'UPM Raflatac Inc.' at its recorded street",
+   "address": "street_address 400 Broadpointe Drive, Mills River, NC: the 2025 OSHA Form 300A summary gives 400 Broadpointe Drive, Mills River, NC 28759",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/19/2026 reports 158 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003896",
+  "atlas": {
+   "site_name": "Genpak Headquarters",
+   "operator": "Genpak LLC",
+   "street": "10601 Westlake Drive",
+   "city": "Charlotte",
+   "state": "NC",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1305935",
+   "establishment_name": "Genpak Westlake",
+   "company_name": "Genpak LLC",
+   "street_address": "10601 Westlake Dr",
+   "city": "Charlotte",
+   "state": "NC",
+   "zip_code": "28273",
+   "naics_code": "326140",
+   "industry_description": "Polystyrene foam packaging manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/18/2026",
+   "annual_average_employees": "175"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Genpak Westlake' of 'Genpak LLC' at 10601 Westlake Dr, Charlotte, NC 28273; matches the site's operator 'Genpak LLC' at its recorded street",
+   "address": "street_address 10601 Westlake Drive, Charlotte, NC: the 2025 OSHA Form 300A summary gives 10601 Westlake Dr, Charlotte, NC 28273",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/18/2026 reports 175 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004117",
+  "atlas": {
+   "site_name": "Automated Solutions Headquarters and Plant",
+   "operator": "Automated Solutions, LLC",
+   "street": "4101 US 321-A Alt",
+   "city": "Sawmills",
+   "state": "NC",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1336623",
+   "establishment_name": "Sawmills NC",
+   "company_name": "Automated Solutions, LLC",
+   "street_address": "4101 US Hwy 321-A",
+   "city": "Sawmills",
+   "state": "NC",
+   "zip_code": "28630",
+   "naics_code": "326112",
+   "industry_description": "Film, plastics, packaging, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/17/2026",
+   "annual_average_employees": "67"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Sawmills NC' of 'Automated Solutions, LLC' at 4101 US Hwy 321-A, Sawmills, NC 28630; matches the site's operator 'Automated Solutions, LLC' at its recorded street",
+   "address": "street_address 4101 US 321-A Alt, Sawmills, NC: the 2025 OSHA Form 300A summary gives 4101 US Hwy 321-A, Sawmills, NC 28630",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/17/2026 reports 67 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004151",
+  "atlas": {
+   "site_name": "Tenowo Lincolnton Plant",
+   "operator": "Tenowo Inc.",
+   "street": "1968 Kawai Rd",
+   "city": "Lincolnton",
+   "state": "NC",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1329428",
+   "establishment_name": "Tenowo, Inc",
+   "company_name": "Tenowo, Inc.",
+   "street_address": "1968 Kawai Road",
+   "city": "Lincolnton",
+   "state": "NC",
+   "zip_code": "28092",
+   "naics_code": "313230",
+   "industry_description": "Nonwoven fabrics manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/22/2026",
+   "annual_average_employees": "92"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Tenowo, Inc' of 'Tenowo, Inc.' at 1968 Kawai Road, Lincolnton, NC 28092; matches the site's operator 'Tenowo Inc.' at its recorded street",
+   "address": "street_address 1968 Kawai Rd, Lincolnton, NC: the 2025 OSHA Form 300A summary gives 1968 Kawai Road, Lincolnton, NC 28092",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/22/2026 reports 92 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004164",
+  "atlas": {
+   "site_name": "C.R. Onsrud Troutman Plant",
+   "operator": "C.R. Onsrud Inc.",
+   "street": "120 Technology Drive",
+   "city": "Troutman",
+   "state": "NC",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "1138969",
+   "establishment_name": "C.R. Onsrud Main",
+   "company_name": "C.R. Onsrud inc.",
+   "street_address": "120 Technology Dr",
+   "city": "Troutman",
+   "state": "NC",
+   "zip_code": "28166",
+   "naics_code": "333517",
+   "industry_description": "Milling machines, metalworking, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/21/2026",
+   "annual_average_employees": "202"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'C.R. Onsrud Main' of 'C.R. Onsrud inc.' at 120 Technology Dr, Troutman, NC 28166; matches the site's operator 'C.R. Onsrud Inc.' at its recorded street",
+   "address": "street_address 120 Technology Drive, Troutman, NC: the 2025 OSHA Form 300A summary gives 120 Technology Dr, Troutman, NC 28166",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/21/2026 reports 202 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003620",
+  "atlas": {
+   "site_name": "Daikin America - Orangeburg HQ",
+   "operator": "Daikin America, Inc.",
+   "street": "20 Olympic Drive",
+   "city": "Orangeburg",
+   "state": "NY",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1561877",
+   "establishment_name": "Daikin America Inc.",
+   "company_name": "Daikin America Inc.",
+   "street_address": "20 Olympic Drive",
+   "city": "Orangeburg",
+   "state": "NY",
+   "zip_code": "10962",
+   "naics_code": "551114",
+   "industry_description": "Centralized administrative offices",
+   "year_filing_for": "2025",
+   "date_submitted": "3/24/2026",
+   "annual_average_employees": "50"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Daikin America Inc.' of 'Daikin America Inc.' at 20 Olympic Drive, Orangeburg, NY 10962; matches the site's operator 'Daikin America, Inc.' at its recorded street",
+   "address": "street_address 20 Olympic Drive, Orangeburg, NY: the 2025 OSHA Form 300A summary gives 20 Olympic Drive, Orangeburg, NY 10962",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/24/2026 reports 50 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-000253",
+  "atlas": {
+   "site_name": "Avery Dennison — Mentor",
+   "operator": "Avery Dennison",
+   "street": "7100 Lindsay Dr",
+   "city": "Mentor",
+   "state": "OH",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "925383",
+   "establishment_name": "Avery Dennison Medical",
+   "company_name": "Avery Dennison",
+   "street_address": "7100 Lindsay Dr. (Bldg. 14)",
+   "city": "Mentor",
+   "state": "OH",
+   "zip_code": "44060",
+   "naics_code": "339113",
+   "industry_description": "Tapes, medical adhesive, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/26/2026",
+   "annual_average_employees": "40"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Avery Dennison Medical' of 'Avery Dennison' at 7100 Lindsay Dr. (Bldg. 14), Mentor, OH 44060; matches the site's operator 'Avery Dennison' at its recorded street",
+   "address": "street_address 7100 Lindsay Dr, Mentor, OH: the 2025 OSHA Form 300A summary gives 7100 Lindsay Dr. (Bldg. 14), Mentor, OH 44060",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/26/2026 reports 40 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-000515",
+  "atlas": {
+   "site_name": "Paramount Tube — Apple Creek",
+   "operator": "Paramount Tube",
+   "street": "339 Mill St",
+   "city": "Apple Creek",
+   "state": "OH",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1567835",
+   "establishment_name": "Precision Products Group, Inc. (Paramount Tube AC)",
+   "company_name": "Precision Products Group, Inc",
+   "street_address": "339 Mill Street",
+   "city": "Apple Creek",
+   "state": "OH",
+   "zip_code": "44606",
+   "naics_code": "322219",
+   "industry_description": "Fiber tubes made from purchased paperboard",
+   "year_filing_for": "2025",
+   "date_submitted": "7/24/2026",
+   "annual_average_employees": "62"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Precision Products Group, Inc. (Paramount Tube AC)' of 'Precision Products Group, Inc' at 339 Mill Street, Apple Creek, OH 44606; matches the site's operator 'Paramount Tube' at its recorded street",
+   "address": "street_address 339 Mill St, Apple Creek, OH: the 2025 OSHA Form 300A summary gives 339 Mill Street, Apple Creek, OH 44606",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 7/24/2026 reports 62 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002114",
+  "atlas": {
+   "site_name": "Custom Pultrusions, Inc.",
+   "operator": "Custom Pultrusions, Inc.",
+   "street": "1331 S Chillicothe Rd",
+   "city": "Aurora",
+   "state": "OH",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1079717",
+   "establishment_name": "Custom Pultrusions, Inc.",
+   "company_name": "Andersen Windows and Doors",
+   "street_address": "1331 S. Chillicothe Road",
+   "city": "Aurora",
+   "state": "OH",
+   "zip_code": "44202",
+   "naics_code": "326199",
+   "industry_description": "Awnings, rigid plastics or fiberglass, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/12/2026",
+   "annual_average_employees": "80"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Custom Pultrusions, Inc.' of 'Andersen Windows and Doors' at 1331 S. Chillicothe Road, Aurora, OH 44202; matches the site's operator 'Custom Pultrusions, Inc.' at its recorded street",
+   "address": "street_address 1331 S Chillicothe Rd, Aurora, OH: the 2025 OSHA Form 300A summary gives 1331 S. Chillicothe Road, Aurora, OH 44202",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/12/2026 reports 80 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002142",
+  "atlas": {
+   "site_name": "Niagara Bottling LLC",
+   "operator": "Niagara Bottling LLC",
+   "street": "7561 Industrial Blvd.",
+   "city": "Allentown",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "404803",
+   "establishment_name": "Niagara Bottling, LLC - Allentown",
+   "company_name": "Niagara Bottling, LLC",
+   "street_address": "7561 Industrial Blvd",
+   "city": "Allentown",
+   "state": "PA",
+   "zip_code": "18106",
+   "naics_code": "312112",
+   "industry_description": "Beverages, naturally carbonated bottled water, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/13/2026",
+   "annual_average_employees": "225"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Niagara Bottling, LLC - Allentown' of 'Niagara Bottling, LLC' at 7561 Industrial Blvd, Allentown, PA 18106; matches the site's operator 'Niagara Bottling LLC' at its recorded street",
+   "address": "street_address 7561 Industrial Blvd., Allentown, PA: the 2025 OSHA Form 300A summary gives 7561 Industrial Blvd, Allentown, PA 18106",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/13/2026 reports 225 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002143",
+  "atlas": {
+   "site_name": "Niagara Bottling LLC",
+   "operator": "Niagara Bottling LLC",
+   "street": "316 S Front St.",
+   "city": "Hamburg",
+   "state": "PA",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "404915",
+   "establishment_name": "Niagara Bottling, LLC - Hamburg",
+   "company_name": "Niagara Bottling, LLC",
+   "street_address": "316 South Front St",
+   "city": "Hamburg",
+   "state": "PA",
+   "zip_code": "19526",
+   "naics_code": "312112",
+   "industry_description": "Beverages, naturally carbonated bottled water, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/9/2026",
+   "annual_average_employees": "98"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Niagara Bottling, LLC - Hamburg' of 'Niagara Bottling, LLC' at 316 South Front St, Hamburg, PA 19526; matches the site's operator 'Niagara Bottling LLC' at its recorded street",
+   "address": "street_address 316 S Front St., Hamburg, PA: the 2025 OSHA Form 300A summary gives 316 South Front St, Hamburg, PA 19526",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/9/2026 reports 98 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002145",
+  "atlas": {
+   "site_name": "Niagara Bottling LLC",
+   "operator": "Niagara Bottling LLC",
+   "street": "201 Solar Dr.",
+   "city": "Imperial",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "566986",
+   "establishment_name": "Niagara Bottling, LLC - Pittsburgh",
+   "company_name": "Niagara Bottling, LLC",
+   "street_address": "201 Solar Drive",
+   "city": "Imperial",
+   "state": "PA",
+   "zip_code": "15126",
+   "naics_code": "312112",
+   "industry_description": "Beverages, naturally carbonated bottled water, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/9/2026",
+   "annual_average_employees": "74"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Niagara Bottling, LLC - Pittsburgh' of 'Niagara Bottling, LLC' at 201 Solar Drive, Imperial, PA 15126; matches the site's operator 'Niagara Bottling LLC' at its recorded street",
+   "address": "street_address 201 Solar Dr., Imperial, PA: the 2025 OSHA Form 300A summary gives 201 Solar Drive, Imperial, PA 15126",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/9/2026 reports 74 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002179",
+  "atlas": {
+   "site_name": "Castek Inc.",
+   "operator": "Castek Inc",
+   "street": "23 River Rd.",
+   "city": "Berwick",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "193182",
+   "establishment_name": "Transpo Industries",
+   "company_name": "Castek, Inc.",
+   "street_address": "23 River Road",
+   "city": "Berwick",
+   "state": "PA",
+   "zip_code": "18603",
+   "naics_code": "327390",
+   "industry_description": "Ties, concrete, railroad, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/3/2026",
+   "annual_average_employees": "24"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Transpo Industries' of 'Castek, Inc.' at 23 River Road, Berwick, PA 18603; matches the site's operator 'Castek Inc' at its recorded street",
+   "address": "street_address 23 River Rd., Berwick, PA: the 2025 OSHA Form 300A summary gives 23 River Road, Berwick, PA 18603",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/3/2026 reports 24 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002185",
+  "atlas": {
+   "site_name": "Crayola LLC - Bethlehem Plt",
+   "operator": "Crayola LLC",
+   "street": "2475 Brodhead Rd.",
+   "city": "Bethlehem",
+   "state": "PA",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "286409",
+   "establishment_name": "LVIP",
+   "company_name": "Crayola LLC",
+   "street_address": "2475 Brodhead Road",
+   "city": "Bethlehem",
+   "state": "PA",
+   "zip_code": "18107",
+   "naics_code": "339940",
+   "industry_description": "Artist's supplies (except paper) manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/15/2026",
+   "annual_average_employees": "173"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'LVIP' of 'Crayola LLC' at 2475 Brodhead Road, Bethlehem, PA 18107; matches the site's operator 'Crayola LLC' at its recorded street",
+   "address": "street_address 2475 Brodhead Rd., Bethlehem, PA: the 2025 OSHA Form 300A summary gives 2475 Brodhead Road, Bethlehem, PA 18107",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/15/2026 reports 173 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002243",
+  "atlas": {
+   "site_name": "Vision Profile Extrusions USA Ltd",
+   "operator": "Vision Profile Extrusions USA Ltd",
+   "street": "1 Contact Pl.",
+   "city": "Delmont",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "925882",
+   "establishment_name": "Vision Profile Extrusions- Delmont Division",
+   "company_name": "Vision Profile Extrusions USA Limited",
+   "street_address": "1 Contact Place",
+   "city": "Delmont",
+   "state": "PA",
+   "zip_code": "15626",
+   "naics_code": "326199",
+   "industry_description": "Awnings, rigid plastics or fiberglass, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "5/4/2026",
+   "annual_average_employees": "164"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Vision Profile Extrusions- Delmont Division' of 'Vision Profile Extrusions USA Limited' at 1 Contact Place, Delmont, PA 15626; matches the site's operator 'Vision Profile Extrusions USA Ltd' at its recorded street",
+   "address": "street_address 1 Contact Pl., Delmont, PA: the 2025 OSHA Form 300A summary gives 1 Contact Place, Delmont, PA 15626",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 5/4/2026 reports 164 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002244",
+  "atlas": {
+   "site_name": "Sylvin Technologies Inc.",
+   "operator": "Sylvin Technologies Inc.",
+   "street": "84 Denver Rd.",
+   "city": "Denver",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1563234",
+   "establishment_name": "Plant 1",
+   "company_name": "Sylvin Technologies",
+   "street_address": "84 Denver Rd.",
+   "city": "Denver",
+   "state": "PA",
+   "zip_code": "17517",
+   "naics_code": "326199",
+   "industry_description": "Manufacturer of plastics",
+   "year_filing_for": "2025",
+   "date_submitted": "4/8/2026",
+   "annual_average_employees": "42"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Plant 1' of 'Sylvin Technologies' at 84 Denver Rd., Denver, PA 17517; matches the site's operator 'Sylvin Technologies Inc.' at its recorded street",
+   "address": "street_address 84 Denver Rd., Denver, PA: the 2025 OSHA Form 300A summary gives 84 Denver Rd., Denver, PA 17517",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 4/8/2026 reports 42 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002245",
+  "atlas": {
+   "site_name": "Weaver Industries",
+   "operator": "Weaver Industries",
+   "street": "425 South 4th St.",
+   "city": "Denver",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "146974",
+   "establishment_name": "WEAVER INDUSTRIES, INC.",
+   "company_name": "WEAVER INDUSTRIES, INC",
+   "street_address": "425 SOUTH 4TH STREET",
+   "city": "DENVER",
+   "state": "PA",
+   "zip_code": "17517",
+   "naics_code": "332710",
+   "industry_description": "Machine shops",
+   "year_filing_for": "2025",
+   "date_submitted": "1/23/2026",
+   "annual_average_employees": "70"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'WEAVER INDUSTRIES, INC.' of 'WEAVER INDUSTRIES, INC' at 425 SOUTH 4TH STREET, DENVER, PA 17517; matches the site's operator 'Weaver Industries' at its recorded street",
+   "address": "street_address 425 South 4th St., Denver, PA: the 2025 OSHA Form 300A summary gives 425 SOUTH 4TH STREET, DENVER, PA 17517",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/23/2026 reports 70 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002280",
+  "atlas": {
+   "site_name": "General Partitions",
+   "operator": "General Partitions",
+   "street": "1702 Peninsula Dr.",
+   "city": "Erie",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "569198",
+   "establishment_name": "General Partitions Mfg Corp",
+   "company_name": "General Partitions Mfg Corp",
+   "street_address": "1702 Peninsula Drive",
+   "city": "Erie",
+   "state": "PA",
+   "zip_code": "16505",
+   "naics_code": "337215",
+   "industry_description": "Partitions, freestanding, prefabricated, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/2/2026",
+   "annual_average_employees": "58"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'General Partitions Mfg Corp' of 'General Partitions Mfg Corp' at 1702 Peninsula Drive, Erie, PA 16505; matches the site's operator 'General Partitions' at its recorded street",
+   "address": "street_address 1702 Peninsula Dr., Erie, PA: the 2025 OSHA Form 300A summary gives 1702 Peninsula Drive, Erie, PA 16505",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/2/2026 reports 58 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002281",
+  "atlas": {
+   "site_name": "Haysite Reinforced Plastics LLC  -  Erie",
+   "operator": "Haysite Reinforced Plastics LLC",
+   "street": "5599 New Perry Highway",
+   "city": "Erie",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1262322",
+   "establishment_name": "Haysite Reinforced Plastics",
+   "company_name": "Haysite Reinforced Plastics",
+   "street_address": "5599 New Perry Highway",
+   "city": "Erie",
+   "state": "PA",
+   "zip_code": "16509",
+   "naics_code": "326130",
+   "industry_description": "Laminated plastics plate, rod, and sheet, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/20/2026",
+   "annual_average_employees": "100"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Haysite Reinforced Plastics' of 'Haysite Reinforced Plastics' at 5599 New Perry Highway, Erie, PA 16509; matches the site's operator 'Haysite Reinforced Plastics LLC' at its recorded street",
+   "address": "street_address 5599 New Perry Highway, Erie, PA: the 2025 OSHA Form 300A summary gives 5599 New Perry Highway, Erie, PA 16509",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/20/2026 reports 100 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002288",
+  "atlas": {
+   "site_name": "Plastek Industries Inc - Spectrum Molding & Decoration",
+   "operator": "Plastek Industries, Inc.",
+   "street": "2425 West 23rd St.",
+   "city": "Erie",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1143759",
+   "establishment_name": "Corporate Administration",
+   "company_name": "Plastek Industries Inc., dba Plastek Group",
+   "street_address": "2425 West 23rd St",
+   "city": "Erie",
+   "state": "PA",
+   "zip_code": "16506",
+   "naics_code": "326199",
+   "industry_description": "Jars, plastics, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/24/2026",
+   "annual_average_employees": "82"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Corporate Administration' of 'Plastek Industries Inc., dba Plastek Group' at 2425 West 23rd St, Erie, PA 16506; matches the site's operator 'Plastek Industries, Inc.' at its recorded street",
+   "address": "street_address 2425 West 23rd St., Erie, PA: the 2025 OSHA Form 300A summary gives 2425 West 23rd St, Erie, PA 16506",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/24/2026 reports 82 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002293",
+  "atlas": {
+   "site_name": "Plastikos Medical LLC",
+   "operator": "Plastikos Medical LLC",
+   "street": "8121 Hawthorne Dr.",
+   "city": "Erie",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1198851",
+   "establishment_name": "Plastikos Medical LLC.",
+   "company_name": "Plastikos Medical LLC.",
+   "street_address": "8121 Hawthorne Drive",
+   "city": "Erie",
+   "state": "PA",
+   "zip_code": "16509",
+   "naics_code": "333249",
+   "industry_description": "Injection molding machinery for plastics manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/4/2026",
+   "annual_average_employees": "20"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Plastikos Medical LLC.' of 'Plastikos Medical LLC.' at 8121 Hawthorne Drive, Erie, PA 16509; matches the site's operator 'Plastikos Medical LLC' at its recorded street",
+   "address": "street_address 8121 Hawthorne Dr., Erie, PA: the 2025 OSHA Form 300A summary gives 8121 Hawthorne Drive, Erie, PA 16509",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/4/2026 reports 20 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002312",
+  "atlas": {
+   "site_name": "Trinseo LLC.",
+   "operator": "Trinseo LLC.",
+   "street": "435 Creamery Way Suite 400",
+   "city": "Exton",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1458828",
+   "establishment_name": "Trinseo Exton Global Innovation Center",
+   "company_name": "Trinseo LLC",
+   "street_address": "435 Creamery Way",
+   "city": "EXTON",
+   "state": "PA",
+   "zip_code": "19341",
+   "naics_code": "325211",
+   "industry_description": "Polyethylene resins manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/16/2026",
+   "annual_average_employees": "19"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Trinseo Exton Global Innovation Center' of 'Trinseo LLC' at 435 Creamery Way, EXTON, PA 19341; matches the site's operator 'Trinseo LLC.' at its recorded street",
+   "address": "street_address 435 Creamery Way Suite 400, Exton, PA: the 2025 OSHA Form 300A summary gives 435 Creamery Way, EXTON, PA 19341",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/16/2026 reports 19 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002362",
+  "atlas": {
+   "site_name": "Martech Medical Products-Warehouse",
+   "operator": "Martech Medical Products-Warehouse",
+   "street": "1500 Delp Dr.",
+   "city": "Harleysville",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "407970",
+   "establishment_name": "Martech Medical Products, Inc.",
+   "company_name": "",
+   "street_address": "1500 Delp Drive",
+   "city": "Harleysville",
+   "state": "PA",
+   "zip_code": "19438",
+   "naics_code": "339112",
+   "industry_description": "Catheters manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/9/2026",
+   "annual_average_employees": "79"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Martech Medical Products, Inc.' at 1500 Delp Drive, Harleysville, PA 19438; matches the site's operator 'Martech Medical Products-Warehouse' at its recorded street",
+   "address": "street_address 1500 Delp Dr., Harleysville, PA: the 2025 OSHA Form 300A summary gives 1500 Delp Drive, Harleysville, PA 19438",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/9/2026 reports 79 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002371",
+  "atlas": {
+   "site_name": "The Rodon Group - Hatfield",
+   "operator": "The Rodon Group",
+   "street": "2800 Sterling Dr.",
+   "city": "Hatfield",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1308161",
+   "establishment_name": "The Rodon Group - Sterling",
+   "company_name": "Rodon Limited Partnership",
+   "street_address": "2800 Sterling Drive",
+   "city": "Hatfield",
+   "state": "PA",
+   "zip_code": "19440",
+   "naics_code": "326191",
+   "industry_description": "Chemical toilets, plastics, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/4/2026",
+   "annual_average_employees": "105"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'The Rodon Group - Sterling' of 'Rodon Limited Partnership' at 2800 Sterling Drive, Hatfield, PA 19440; matches the site's operator 'The Rodon Group' at its recorded street",
+   "address": "street_address 2800 Sterling Dr., Hatfield, PA: the 2025 OSHA Form 300A summary gives 2800 Sterling Drive, Hatfield, PA 19440",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/4/2026 reports 105 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002460",
+  "atlas": {
+   "site_name": "Dart Container Corp. Of Pennsylvania",
+   "operator": "Dart Container Corp. Of Pennsylvania",
+   "street": "60 E Main St.",
+   "city": "Leola",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "965572",
+   "establishment_name": "Dart Container Leola Bead",
+   "company_name": "Dart Container",
+   "street_address": "60 E Main St",
+   "city": "Leola",
+   "state": "PA",
+   "zip_code": "17540",
+   "naics_code": "325211",
+   "industry_description": "Resins, plastics (except custom compounding purchased resins), manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "8/21/2026",
+   "annual_average_employees": "53"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Dart Container Leola Bead' of 'Dart Container' at 60 E Main St, Leola, PA 17540; matches the site's operator 'Dart Container Corp. Of Pennsylvania' at its recorded street",
+   "address": "street_address 60 E Main St., Leola, PA: the 2025 OSHA Form 300A summary gives 60 E Main St, Leola, PA 17540",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 8/21/2026 reports 53 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002474",
+  "atlas": {
+   "site_name": "Mahantango Enterprises Inc.",
+   "operator": "Mahantango Enterprises Inc.",
+   "street": "2100 Old Trail Rd",
+   "city": "Liverpool",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "143325",
+   "establishment_name": "Liverpool Location",
+   "company_name": "Mahantango Enterprises, Inc.",
+   "street_address": "2100 Old Trail Road",
+   "city": "Liverpool",
+   "state": "PA",
+   "zip_code": "17045",
+   "naics_code": "423930",
+   "industry_description": "Tires, scrap, merchant wholesalers",
+   "year_filing_for": "2025",
+   "date_submitted": "1/20/2026",
+   "annual_average_employees": "33"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Liverpool Location' of 'Mahantango Enterprises, Inc.' at 2100 Old Trail Road, Liverpool, PA 17045; matches the site's operator 'Mahantango Enterprises Inc.' at its recorded street",
+   "address": "street_address 2100 Old Trail Rd, Liverpool, PA: the 2025 OSHA Form 300A summary gives 2100 Old Trail Road, Liverpool, PA 17045",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/20/2026 reports 33 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002485",
+  "atlas": {
+   "site_name": "The Murus Company",
+   "operator": "The Murus Company",
+   "street": "3234 Route 549",
+   "city": "Mansfield",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1455324",
+   "establishment_name": "Plant",
+   "company_name": "The Murus Company Inc.",
+   "street_address": "3234 Route 549",
+   "city": "Mansfield",
+   "state": "PA",
+   "zip_code": "16933",
+   "naics_code": "321992",
+   "industry_description": "Panels, prefabricated wood building, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/3/2026",
+   "annual_average_employees": "29"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Plant' of 'The Murus Company Inc.' at 3234 Route 549, Mansfield, PA 16933; matches the site's operator 'The Murus Company' at its recorded street",
+   "address": "street_address 3234 Route 549, Mansfield, PA: the 2025 OSHA Form 300A summary gives 3234 Route 549, Mansfield, PA 16933",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/3/2026 reports 29 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002589",
+  "atlas": {
+   "site_name": "Solar Innovations",
+   "operator": "Solar Innovations",
+   "street": "31 Roberts Rd.",
+   "city": "Pine Grove",
+   "state": "PA",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "913869",
+   "establishment_name": "Solar Innovations, Inc.",
+   "company_name": "Solar Innovations, Inc.",
+   "street_address": "31 Roberts Rd.",
+   "city": "Pine Grove",
+   "state": "PA",
+   "zip_code": "17963",
+   "naics_code": "332321",
+   "industry_description": "Frames, door and window, metal, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/22/2026",
+   "annual_average_employees": "143"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Solar Innovations, Inc.' of 'Solar Innovations, Inc.' at 31 Roberts Rd., Pine Grove, PA 17963; matches the site's operator 'Solar Innovations' at its recorded street",
+   "address": "street_address 31 Roberts Rd., Pine Grove, PA: the 2025 OSHA Form 300A summary gives 31 Roberts Rd., Pine Grove, PA 17963",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/22/2026 reports 143 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002616",
+  "atlas": {
+   "site_name": "McAdoo & Allen  Div Quaker Color Div McAdoo & Allen  Div",
+   "operator": "McAdoo & Allen  Div Quaker Color Div McAdoo & Allen  Div",
+   "street": "201 South Hellertown Ave.",
+   "city": "Quakertown",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "78557",
+   "establishment_name": "Quaker Color Inc",
+   "company_name": "McAdoo & Allen, Inc",
+   "street_address": "201 S Hellertown Ave",
+   "city": "Quakertown",
+   "state": "PA",
+   "zip_code": "18951",
+   "naics_code": "325211",
+   "industry_description": "Polyurethane resins manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/28/2026",
+   "annual_average_employees": "46"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Quaker Color Inc' of 'McAdoo & Allen, Inc' at 201 S Hellertown Ave, Quakertown, PA 18951; matches the site's operator 'McAdoo & Allen  Div Quaker Color Div McAdoo & Allen  Div' at its recorded street",
+   "address": "street_address 201 South Hellertown Ave., Quakertown, PA: the 2025 OSHA Form 300A summary gives 201 S Hellertown Ave, Quakertown, PA 18951",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/28/2026 reports 46 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002618",
+  "atlas": {
+   "site_name": "Ammeraal Beltech Modular, Incorporated",
+   "operator": "Ammeraal Beltech Modular, Incorporated",
+   "street": "500 Brentwood Dr.",
+   "city": "Reading",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1263786",
+   "establishment_name": "Ammeraal Beltech Modular LLC",
+   "company_name": "",
+   "street_address": "500 Brentwood Dr",
+   "city": "Reading",
+   "state": "PA",
+   "zip_code": "19611",
+   "naics_code": "333922",
+   "industry_description": "Belt conveyor systems manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/13/2026",
+   "annual_average_employees": "120"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Ammeraal Beltech Modular LLC' at 500 Brentwood Dr, Reading, PA 19611; matches the site's operator 'Ammeraal Beltech Modular, Incorporated' at its recorded street",
+   "address": "street_address 500 Brentwood Dr., Reading, PA: the 2025 OSHA Form 300A summary gives 500 Brentwood Dr, Reading, PA 19611",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/13/2026 reports 120 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002620",
+  "atlas": {
+   "site_name": "Custom Processing Services Inc.",
+   "operator": "Custom Processing Services Inc.",
+   "street": "2 Birchmont Rd.",
+   "city": "Reading",
+   "state": "PA",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "805295",
+   "establishment_name": "Custom Processing Services, Inc.",
+   "company_name": "Custom Processing Services, Inc.",
+   "street_address": "2 Birchmont Drive",
+   "city": "Reading",
+   "state": "PA",
+   "zip_code": "19606",
+   "naics_code": "325998",
+   "industry_description": "Inks, writing, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/13/2026",
+   "annual_average_employees": "145"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Custom Processing Services, Inc.' of 'Custom Processing Services, Inc.' at 2 Birchmont Drive, Reading, PA 19606; matches the site's operator 'Custom Processing Services Inc.' at its recorded street",
+   "address": "street_address 2 Birchmont Rd., Reading, PA: the 2025 OSHA Form 300A summary gives 2 Birchmont Drive, Reading, PA 19606",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/13/2026 reports 145 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002655",
+  "atlas": {
+   "site_name": "Guy Chemical Co. Inc.",
+   "operator": "Guy Chemical Company Inc.",
+   "street": "150 Dominion Dr.",
+   "city": "Somerset",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "809741",
+   "establishment_name": "Guy Chemical Company, LLC",
+   "company_name": "",
+   "street_address": "150 South Dominion Drive",
+   "city": "Somerset",
+   "state": "PA",
+   "zip_code": "15501",
+   "naics_code": "325212",
+   "industry_description": "Silicone rubber manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/29/2026",
+   "annual_average_employees": "131"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Guy Chemical Company, LLC' at 150 South Dominion Drive, Somerset, PA 15501; matches the site's operator 'Guy Chemical Company Inc.' at its recorded street",
+   "address": "street_address 150 Dominion Dr., Somerset, PA: the 2025 OSHA Form 300A summary gives 150 South Dominion Drive, Somerset, PA 15501",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/29/2026 reports 131 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002661",
+  "atlas": {
+   "site_name": "Knf Flexpak Corporation",
+   "operator": "Knf Flexpak Corporation",
+   "street": "734 West Penn Pike Suite #1",
+   "city": "Tamaqua",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "355556",
+   "establishment_name": "KNF Flexpak Corporation",
+   "company_name": "KNF Flexpak Corporation",
+   "street_address": "734 W Penn Pike",
+   "city": "Tamaqua",
+   "state": "PA",
+   "zip_code": "18252",
+   "naics_code": "326111",
+   "industry_description": "Food storage bags, plastics film, single wall or multiwall, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/23/2026",
+   "annual_average_employees": "65"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'KNF Flexpak Corporation' of 'KNF Flexpak Corporation' at 734 W Penn Pike, Tamaqua, PA 18252; matches the site's operator 'Knf Flexpak Corporation' at its recorded street",
+   "address": "street_address 734 West Penn Pike Suite #1, Tamaqua, PA: the 2025 OSHA Form 300A summary gives 734 W Penn Pike, Tamaqua, PA 18252",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/23/2026 reports 65 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002683",
+  "atlas": {
+   "site_name": "Whirley Industries Inc.",
+   "operator": "Whirley Industries Inc.",
+   "street": "618 4th Ave.",
+   "city": "Warren",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1079324",
+   "establishment_name": "Whirley Industries - Bakery Building",
+   "company_name": "Whirley Industires",
+   "street_address": "618 4th Ave",
+   "city": "Warren",
+   "state": "PA",
+   "zip_code": "16365",
+   "naics_code": "326199",
+   "industry_description": "Badges, plastics, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/22/2026",
+   "annual_average_employees": "109"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Whirley Industries - Bakery Building' of 'Whirley Industires' at 618 4th Ave, Warren, PA 16365; matches the site's operator 'Whirley Industries Inc.' at its recorded street",
+   "address": "street_address 618 4th Ave., Warren, PA: the 2025 OSHA Form 300A summary gives 618 4th Ave, Warren, PA 16365",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/22/2026 reports 109 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002684",
+  "atlas": {
+   "site_name": "Magee Plastics Company",
+   "operator": "Magee Plastics Company",
+   "street": "303 Brush Creek Rd.",
+   "city": "Warrendale",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "925468",
+   "establishment_name": "Magee Plastics Company",
+   "company_name": "MAGEE PLASTICS COMPANY",
+   "street_address": "303 Brush Creek Road",
+   "city": "Warrendale",
+   "state": "PA",
+   "zip_code": "15086",
+   "naics_code": "326199",
+   "industry_description": "326199 All Other Plastics Product Manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/20/2026",
+   "annual_average_employees": "97"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Magee Plastics Company' of 'MAGEE PLASTICS COMPANY' at 303 Brush Creek Road, Warrendale, PA 15086; matches the site's operator 'Magee Plastics Company' at its recorded street",
+   "address": "street_address 303 Brush Creek Rd., Warrendale, PA: the 2025 OSHA Form 300A summary gives 303 Brush Creek Road, Warrendale, PA 15086",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/20/2026 reports 97 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002698",
+  "atlas": {
+   "site_name": "Plastic Dev",
+   "operator": "Plastic Dev",
+   "street": "75 Palmer Industrial Dr.",
+   "city": "Williamsport",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "836014",
+   "establishment_name": "Plastic Development Company",
+   "company_name": "Plastic Development Company",
+   "street_address": "75 PALMER INDUSTRIAL ROAD, PO BOX 3354",
+   "city": "Williamsport",
+   "state": "PA",
+   "zip_code": "17701",
+   "naics_code": "326191",
+   "industry_description": "Bathtubs, plastics, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/11/2026",
+   "annual_average_employees": "59"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Plastic Development Company' of 'Plastic Development Company' at 75 PALMER INDUSTRIAL ROAD, PO BOX 3354, Williamsport, PA 17701; matches the site's operator 'Plastic Dev' at its recorded street",
+   "address": "street_address 75 Palmer Industrial Dr., Williamsport, PA: the 2025 OSHA Form 300A summary gives 75 PALMER INDUSTRIAL ROAD, PO BOX 3354, Williamsport, PA 17701",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/11/2026 reports 59 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002734",
+  "atlas": {
+   "site_name": "Lord Corp. Industrial Products",
+   "operator": "Parker-Hannifin Corporation",
+   "street": "124 Grant St.",
+   "city": "Cambridge Springs",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "47633",
+   "establishment_name": "LORD Corporation - Cambridge Springs",
+   "company_name": "LORD Corporation",
+   "street_address": "124 Grant Street",
+   "city": "Cambridge Springs",
+   "state": "PA",
+   "zip_code": "16403",
+   "naics_code": "326299",
+   "industry_description": "Manufacturer of rubber mounts and dampeners",
+   "year_filing_for": "2025",
+   "date_submitted": "2/24/2026",
+   "annual_average_employees": "84"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'LORD Corporation - Cambridge Springs' of 'LORD Corporation' at 124 Grant Street, Cambridge Springs, PA 16403; matches the site's operator 'Parker-Hannifin Corporation' at its recorded street",
+   "address": "street_address 124 Grant St., Cambridge Springs, PA: the 2025 OSHA Form 300A summary gives 124 Grant Street, Cambridge Springs, PA 16403",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/24/2026 reports 84 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002740",
+  "atlas": {
+   "site_name": "Performance Products Division",
+   "operator": "Washington Penn Plastic Co., Inc.",
+   "street": "1604 State Rt. 136",
+   "city": "Eighty Four",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1107514",
+   "establishment_name": "Washington Penn - PPD",
+   "company_name": "Audia",
+   "street_address": "1604 State Rd Rt 136",
+   "city": "Eighty Four",
+   "state": "PA",
+   "zip_code": "15330",
+   "naics_code": "325991",
+   "industry_description": "Custom compounding (i.e., blending and mixing) of purchased plastics resins",
+   "year_filing_for": "2025",
+   "date_submitted": "2/16/2026",
+   "annual_average_employees": "61"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Washington Penn - PPD' of 'Audia' at 1604 State Rd Rt 136, Eighty Four, PA 15330; matches the site's operator 'Washington Penn Plastic Co., Inc.' at its recorded street",
+   "address": "street_address 1604 State Rt. 136, Eighty Four, PA: the 2025 OSHA Form 300A summary gives 1604 State Rd Rt 136, Eighty Four, PA 15330",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/16/2026 reports 61 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002766",
+  "atlas": {
+   "site_name": "Bvpv Styrenics LLC - Beaver Cnty",
+   "operator": "BVPV Styrenics LLC",
+   "street": "400 Frankfort Rd.",
+   "city": "Monaca",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1433800",
+   "establishment_name": "BVPV Styrenics LLC - Beaver Valley Site",
+   "company_name": "BVPV Styrenics (Styropek)",
+   "street_address": "400 Frankfort Road",
+   "city": "Monaca",
+   "state": "PA",
+   "zip_code": "15061",
+   "naics_code": "325211",
+   "industry_description": "Polystyrene resins manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/20/2026",
+   "annual_average_employees": "44"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'BVPV Styrenics LLC - Beaver Valley Site' of 'BVPV Styrenics (Styropek)' at 400 Frankfort Road, Monaca, PA 15061; matches the site's operator 'BVPV Styrenics LLC' at its recorded street",
+   "address": "street_address 400 Frankfort Rd., Monaca, PA: the 2025 OSHA Form 300A summary gives 400 Frankfort Road, Monaca, PA 15061",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/20/2026 reports 44 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002772",
+  "atlas": {
+   "site_name": "Advanced Drainage Systems",
+   "operator": "Advanced Drainage Systems, Inc.",
+   "street": "173 Industrial Pkwy",
+   "city": "Muncy",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1000459",
+   "establishment_name": "Muncy",
+   "company_name": "Advanced Drainage Systems",
+   "street_address": "173 Industrial Parkway North",
+   "city": "Muncy",
+   "state": "PA",
+   "zip_code": "17756",
+   "naics_code": "326122",
+   "industry_description": "Plastic Pipe Manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/19/2026",
+   "annual_average_employees": "138"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Muncy' of 'Advanced Drainage Systems' at 173 Industrial Parkway North, Muncy, PA 17756; matches the site's operator 'Advanced Drainage Systems, Inc.' at its recorded street",
+   "address": "street_address 173 Industrial Pkwy, Muncy, PA: the 2025 OSHA Form 300A summary gives 173 Industrial Parkway North, Muncy, PA 17756",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/19/2026 reports 138 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002778",
+  "atlas": {
+   "site_name": "Ppg Industries Inc.",
+   "operator": "PPG Industries, Inc.",
+   "street": "1 Ppg Place",
+   "city": "Pittsburgh",
+   "state": "PA",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "1000652",
+   "establishment_name": "PMC US, Others",
+   "company_name": "PPG Industries, Inc.",
+   "street_address": "1 PPG Place",
+   "city": "Pittsburgh",
+   "state": "PA",
+   "zip_code": "15272",
+   "naics_code": "424950",
+   "industry_description": "Paint, Varnish, and Supplies Merchant Wholesalers",
+   "year_filing_for": "2025",
+   "date_submitted": "3/18/2026",
+   "annual_average_employees": "100"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'PMC US, Others' of 'PPG Industries, Inc.' at 1 PPG Place, Pittsburgh, PA 15272; matches the site's operator 'PPG Industries, Inc.' at its recorded street",
+   "address": "street_address 1 Ppg Place, Pittsburgh, PA: the 2025 OSHA Form 300A summary gives 1 PPG Place, Pittsburgh, PA 15272",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/18/2026 reports 100 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002780",
+  "atlas": {
+   "site_name": "Akzo Nobel Coatings Inc. - Reading",
+   "operator": "AkzoNobel Coatings Inc.",
+   "street": "150 Columbia Ave.",
+   "city": "Reading",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "101638",
+   "establishment_name": "Akzo Nobel Coatings Inc.",
+   "company_name": "Akzo Nobel Coatings Inc.",
+   "street_address": "150 Columbia Street",
+   "city": "Reading",
+   "state": "PA",
+   "zip_code": "19601",
+   "naics_code": "325510",
+   "industry_description": "Powder coatings manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/26/2026",
+   "annual_average_employees": "127"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Akzo Nobel Coatings Inc.' of 'Akzo Nobel Coatings Inc.' at 150 Columbia Street, Reading, PA 19601; matches the site's operator 'AkzoNobel Coatings Inc.' at its recorded street",
+   "address": "street_address 150 Columbia Ave., Reading, PA: the 2025 OSHA Form 300A summary gives 150 Columbia Street, Reading, PA 19601",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/26/2026 reports 127 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002791",
+  "atlas": {
+   "site_name": "Washington Penn Plas - Arden",
+   "operator": "Washington Penn Plastic Co., Inc.",
+   "street": "450 Racetrack Rd.",
+   "city": "Washington",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1107506",
+   "establishment_name": "Washington Penn - Corporate Headquarters",
+   "company_name": "Audia",
+   "street_address": "450 Racetrack Rd",
+   "city": "Washington",
+   "state": "PA",
+   "zip_code": "15301",
+   "naics_code": "561110",
+   "industry_description": "Administrative management services",
+   "year_filing_for": "2025",
+   "date_submitted": "2/16/2026",
+   "annual_average_employees": "139"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Washington Penn - Corporate Headquarters' of 'Audia' at 450 Racetrack Rd, Washington, PA 15301; matches the site's operator 'Washington Penn Plastic Co., Inc.' at its recorded street",
+   "address": "street_address 450 Racetrack Rd., Washington, PA: the 2025 OSHA Form 300A summary gives 450 Racetrack Rd, Washington, PA 15301",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/16/2026 reports 139 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002795",
+  "atlas": {
+   "site_name": "Ccl Tube",
+   "operator": "CCL Tube Inc.",
+   "street": "1 Lasley Ave.",
+   "city": "Wilkes Barre",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "93030",
+   "establishment_name": "CCL Tube",
+   "company_name": "CCL Tube (Wilkes-Barre), Inc.",
+   "street_address": "1 Lasley Avenue",
+   "city": "Wilkes Barre",
+   "state": "PA",
+   "zip_code": "18706",
+   "naics_code": "561910",
+   "industry_description": "Labeling services",
+   "year_filing_for": "2025",
+   "date_submitted": "2/4/2026",
+   "annual_average_employees": "163"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'CCL Tube' of 'CCL Tube (Wilkes-Barre), Inc.' at 1 Lasley Avenue, Wilkes Barre, PA 18706; matches the site's operator 'CCL Tube Inc.' at its recorded street",
+   "address": "street_address 1 Lasley Ave., Wilkes Barre, PA: the 2025 OSHA Form 300A summary gives 1 Lasley Avenue, Wilkes Barre, PA 18706",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/4/2026 reports 163 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002797",
+  "atlas": {
+   "site_name": "Graham Packaging Company Lp",
+   "operator": "Graham Packaging Company",
+   "street": "500 Windsor St.",
+   "city": "York",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "362978",
+   "establishment_name": "York",
+   "company_name": "Graham Packaging Company, L.P.",
+   "street_address": "500 Windsor Street",
+   "city": "York",
+   "state": "PA",
+   "zip_code": "17403",
+   "naics_code": "326160",
+   "industry_description": "Bottles, plastics, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "3/26/2026",
+   "annual_average_employees": "247"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'York' of 'Graham Packaging Company, L.P.' at 500 Windsor Street, York, PA 17403; matches the site's operator 'Graham Packaging Company' at its recorded street",
+   "address": "street_address 500 Windsor St., York, PA: the 2025 OSHA Form 300A summary gives 500 Windsor Street, York, PA 17403",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/26/2026 reports 247 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002826",
+  "atlas": {
+   "site_name": "Griff Paper And Film - Fallsington",
+   "operator": "Griff Paper And Film",
+   "street": "275 Lower Morrisville Rd",
+   "city": "Fallsington",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1443925",
+   "establishment_name": "Griff Paper and Film",
+   "company_name": "Griff & Associates LP",
+   "street_address": "275 Lower Morrisville Rd",
+   "city": "Fallsington",
+   "state": "PA",
+   "zip_code": "19054",
+   "naics_code": "325992",
+   "industry_description": "Paper, photographic sensitized, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/28/2026",
+   "annual_average_employees": "62"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Griff Paper and Film' of 'Griff & Associates LP' at 275 Lower Morrisville Rd, Fallsington, PA 19054; matches the site's operator 'Griff Paper And Film' at its recorded street",
+   "address": "street_address 275 Lower Morrisville Rd, Fallsington, PA: the 2025 OSHA Form 300A summary gives 275 Lower Morrisville Rd, Fallsington, PA 19054",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/28/2026 reports 62 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002836",
+  "atlas": {
+   "site_name": "Newage Industries Inc. - Southampton",
+   "operator": "Newage Industries Inc.",
+   "street": "145 James Way",
+   "city": "Southampton",
+   "state": "PA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "923654",
+   "establishment_name": "NewAge Industries Inc - Southampton",
+   "company_name": "NewAge Industries Inc",
+   "street_address": "145 James Way",
+   "city": "Southampton",
+   "state": "PA",
+   "zip_code": "18966",
+   "naics_code": "326220",
+   "industry_description": "Rubber and plastics belts and hoses (without fittings) manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/29/2026",
+   "annual_average_employees": "228"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'NewAge Industries Inc - Southampton' of 'NewAge Industries Inc' at 145 James Way, Southampton, PA 18966; matches the site's operator 'Newage Industries Inc.' at its recorded street",
+   "address": "street_address 145 James Way, Southampton, PA: the 2025 OSHA Form 300A summary gives 145 James Way, Southampton, PA 18966",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/29/2026 reports 228 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-002856",
+  "atlas": {
+   "site_name": "Ammeraal Beltech Modular, Incorporated - Jefferson",
+   "operator": "Ammeraal Beltech Modular, Incorporated",
+   "street": "112 Nardis Dr",
+   "city": "Jefferson",
+   "state": "PA",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "171767",
+   "establishment_name": "Ammeraal Beltech, LLC - Jefferson",
+   "company_name": "Ammeraal Beltech, LLC",
+   "street_address": "112 Nardis Dr.",
+   "city": "Jefferson",
+   "state": "PA",
+   "zip_code": "15344",
+   "naics_code": "333922",
+   "industry_description": "Belt conveyor systems manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/7/2026",
+   "annual_average_employees": "54"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Ammeraal Beltech, LLC - Jefferson' of 'Ammeraal Beltech, LLC' at 112 Nardis Dr., Jefferson, PA 15344; matches the site's operator 'Ammeraal Beltech Modular, Incorporated' at its recorded street",
+   "address": "street_address 112 Nardis Dr, Jefferson, PA: the 2025 OSHA Form 300A summary gives 112 Nardis Dr., Jefferson, PA 15344",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/7/2026 reports 54 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003458",
+  "atlas": {
+   "site_name": "Tinius Olsen Headquarters and Plant",
+   "operator": "Tinius Olsen, Inc.",
+   "street": "1065 Easton Road",
+   "city": "Horsham",
+   "state": "PA",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "1567872",
+   "establishment_name": "Tinius Olsen Testing Machine Company",
+   "company_name": "Tinius Olsen Testing Machine Company",
+   "street_address": "1065 Easton Road",
+   "city": "Horsham",
+   "state": "PA",
+   "zip_code": "19044",
+   "naics_code": "334519",
+   "industry_description": "Other Measuring and Controlling Device Manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "7/27/2026",
+   "annual_average_employees": "121"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Tinius Olsen Testing Machine Company' of 'Tinius Olsen Testing Machine Company' at 1065 Easton Road, Horsham, PA 19044; matches the site's operator 'Tinius Olsen, Inc.' at its recorded street",
+   "address": "street_address 1065 Easton Road, Horsham, PA: the 2025 OSHA Form 300A summary gives 1065 Easton Road, Horsham, PA 19044",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 7/27/2026 reports 121 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004308",
+  "atlas": {
+   "site_name": "Cannon Instrument Company - State College",
+   "operator": "Cannon Instrument Company",
+   "street": "2139 High Tech Road",
+   "city": "State College",
+   "state": "PA",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "1433404",
+   "establishment_name": "Cannon Instrument Company",
+   "company_name": "Cannon Instrument Company",
+   "street_address": "2139 High Tech Rd",
+   "city": "State College",
+   "state": "PA",
+   "zip_code": "16803",
+   "naics_code": "334516",
+   "industry_description": "Manufacturing of Scientific Instrumentation",
+   "year_filing_for": "2025",
+   "date_submitted": "1/20/2026",
+   "annual_average_employees": "112"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Cannon Instrument Company' of 'Cannon Instrument Company' at 2139 High Tech Rd, State College, PA 16803; matches the site's operator 'Cannon Instrument Company' at its recorded street",
+   "address": "street_address 2139 High Tech Road, State College, PA: the 2025 OSHA Form 300A summary gives 2139 High Tech Rd, State College, PA 16803",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/20/2026 reports 112 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003321",
+  "atlas": {
+   "site_name": "Tri-Mack headquarters and plant - Bristol",
+   "operator": "Tri-Mack Plastics Manufacturing Corporation",
+   "street": "55 Broadcommon Road, Unit 1",
+   "city": "Bristol",
+   "state": "RI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1312522",
+   "establishment_name": "Tri-Mack Plastics Manufacturing",
+   "company_name": "Tri-Mack Plastics Manufacturing",
+   "street_address": "55 Broadcommon Road, Unit 1",
+   "city": "Bristol",
+   "state": "RI",
+   "zip_code": "02809",
+   "naics_code": "325211",
+   "industry_description": "Thermoplastic resins and plastics materials manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "3/2/2026",
+   "annual_average_employees": "144"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Tri-Mack Plastics Manufacturing' of 'Tri-Mack Plastics Manufacturing' at 55 Broadcommon Road, Unit 1, Bristol, RI 02809; matches the site's operator 'Tri-Mack Plastics Manufacturing Corporation' at its recorded street",
+   "address": "street_address 55 Broadcommon Road, Unit 1, Bristol, RI: the 2025 OSHA Form 300A summary gives 55 Broadcommon Road, Unit 1, Bristol, RI 02809",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/2/2026 reports 144 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003347",
+  "atlas": {
+   "site_name": "Yushin America - Cranston (HQ)",
+   "operator": "Yushin America, Inc.",
+   "street": "35 Kenney Drive",
+   "city": "Cranston",
+   "state": "RI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1443552",
+   "establishment_name": "Yushin America Inc",
+   "company_name": "Yushin America Inc.",
+   "street_address": "35 Kenney Dr Cranston, RI 02920",
+   "city": "Cranston",
+   "state": "RI",
+   "zip_code": "02920",
+   "naics_code": "333249",
+   "industry_description": "Plastics working machinery manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/27/2026",
+   "annual_average_employees": "86"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Yushin America Inc' of 'Yushin America Inc.' at 35 Kenney Dr Cranston, RI 02920, Cranston, RI 02920; matches the site's operator 'Yushin America, Inc.' at its recorded street",
+   "address": "street_address 35 Kenney Drive, Cranston, RI: the 2025 OSHA Form 300A summary gives 35 Kenney Dr Cranston, RI 02920, Cranston, RI 02920",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/27/2026 reports 86 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004357",
+  "atlas": {
+   "site_name": "Windmoeller & Hoelscher Corp. - North American HQ",
+   "operator": "Windmoeller & Hoelscher Corp.",
+   "street": "23 New England Way",
+   "city": "Lincoln",
+   "state": "RI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1563822",
+   "establishment_name": "Windmoeller & Hoelscher Corporation",
+   "company_name": "Windmoeller & Hoelscher Corporation",
+   "street_address": "23 New England Way, Lincoln, RI, USA",
+   "city": "Lincoln",
+   "state": "RI",
+   "zip_code": "02865",
+   "naics_code": "423830",
+   "industry_description": "Sawmill machinery, equipment, and supplies merchant wholesalers",
+   "year_filing_for": "2025",
+   "date_submitted": "4/17/2026",
+   "annual_average_employees": "90"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Windmoeller & Hoelscher Corporation' of 'Windmoeller & Hoelscher Corporation' at 23 New England Way, Lincoln, RI, USA, Lincoln, RI 02865; matches the site's operator 'Windmoeller & Hoelscher Corp.' at its recorded street",
+   "address": "street_address 23 New England Way, Lincoln, RI: the 2025 OSHA Form 300A summary gives 23 New England Way, Lincoln, RI, USA, Lincoln, RI 02865",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 4/17/2026 reports 90 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003336",
+  "atlas": {
+   "site_name": "MSI Mold Builders SE - Greenville",
+   "operator": "Manufacturing Specialties Inc.",
+   "street": "110 Park Place Ct",
+   "city": "Greenville",
+   "state": "SC",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1045204",
+   "establishment_name": "Manufacturing Specialties, Inc",
+   "company_name": "Manufacturing Specialties, Inc",
+   "street_address": "110 Park Place Ct.",
+   "city": "Greenville",
+   "state": "SC",
+   "zip_code": "29607",
+   "naics_code": "333511",
+   "industry_description": "Industrial molds (except steel ingot) manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/12/2026",
+   "annual_average_employees": "24"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Manufacturing Specialties, Inc' of 'Manufacturing Specialties, Inc' at 110 Park Place Ct., Greenville, SC 29607; matches the site's operator 'Manufacturing Specialties Inc.' at its recorded street",
+   "address": "street_address 110 Park Place Ct, Greenville, SC: the 2025 OSHA Form 300A summary gives 110 Park Place Ct., Greenville, SC 29607",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/12/2026 reports 24 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003375",
+  "atlas": {
+   "site_name": "Michelin North America Headquarters — Greenville",
+   "operator": "Michelin North America, Inc.",
+   "street": "1 Parkway S",
+   "city": "Greenville",
+   "state": "SC",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "683353",
+   "establishment_name": "Michelin North America, Inc. - Corporate Site",
+   "company_name": "Michelin",
+   "street_address": "1 Parkway South",
+   "city": "Greenville",
+   "state": "SC",
+   "zip_code": "29615",
+   "naics_code": "551114",
+   "industry_description": "Corporate offices",
+   "year_filing_for": "2025",
+   "date_submitted": "1/12/2026",
+   "annual_average_employees": "1774"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Michelin North America, Inc. - Corporate Site' of 'Michelin' at 1 Parkway South, Greenville, SC 29615; matches the site's operator 'Michelin North America, Inc.' at its recorded street",
+   "address": "street_address 1 Parkway S, Greenville, SC: the 2025 OSHA Form 300A summary gives 1 Parkway South, Greenville, SC 29615",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/12/2026 reports 1774 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003384",
+  "atlas": {
+   "site_name": "Continental Tire the Americas Headquarters — Fort Mill",
+   "operator": "Continental Tire the Americas, LLC",
+   "street": "1794 MacMillan Park Dr",
+   "city": "Fort Mill",
+   "state": "SC",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1096121",
+   "establishment_name": "Continental Tire the Americas, LLC",
+   "company_name": "Continental Tire NA",
+   "street_address": "1794 MacMillan Park Dr",
+   "city": "Fort Mill",
+   "state": "SC",
+   "zip_code": "29707",
+   "naics_code": "921110",
+   "industry_description": "Headquarters Buildings",
+   "year_filing_for": "2025",
+   "date_submitted": "1/26/2026",
+   "annual_average_employees": "582"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Continental Tire the Americas, LLC' of 'Continental Tire NA' at 1794 MacMillan Park Dr, Fort Mill, SC 29707; matches the site's operator 'Continental Tire the Americas, LLC' at its recorded street",
+   "address": "street_address 1794 MacMillan Park Dr, Fort Mill, SC: the 2025 OSHA Form 300A summary gives 1794 MacMillan Park Dr, Fort Mill, SC 29707",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/26/2026 reports 582 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003448",
+  "atlas": {
+   "site_name": "Milliken Global Headquarters",
+   "operator": "Milliken & Company",
+   "street": "920 Milliken Road",
+   "city": "Spartanburg",
+   "state": "SC",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "900870",
+   "establishment_name": "Milliken & Company- RMC (Corporate Headquarters)",
+   "company_name": "Milliken & Company- RMC (Corporate Headquarters)",
+   "street_address": "920 MILLIKEN ROAD",
+   "city": "SPARTANBURG",
+   "state": "SC",
+   "zip_code": "29303",
+   "naics_code": "541714",
+   "industry_description": "Biotechnology research and development laboratories or services in chemical sciences (except nanobiotechnology research and development)",
+   "year_filing_for": "2025",
+   "date_submitted": "1/23/2026",
+   "annual_average_employees": "908"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Milliken & Company- RMC (Corporate Headquarters)' of 'Milliken & Company- RMC (Corporate Headquarters)' at 920 MILLIKEN ROAD, SPARTANBURG, SC 29303; matches the site's operator 'Milliken & Company' at its recorded street",
+   "address": "street_address 920 Milliken Road, Spartanburg, SC: the 2025 OSHA Form 300A summary gives 920 MILLIKEN ROAD, SPARTANBURG, SC 29303",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/23/2026 reports 908 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003939",
+  "atlas": {
+   "site_name": "Coroplast Tape Corporation Rock Hill Plant",
+   "operator": "Coroplast Tape Corporation",
+   "street": "1230 Galleria Boulevard",
+   "city": "Rock Hill",
+   "state": "SC",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "864751",
+   "establishment_name": "Coroplast Tape Corporation",
+   "company_name": "Coroplast Tape Corporation",
+   "street_address": "1230 GALLERIA BLVD",
+   "city": "Rock Hill",
+   "state": "SC",
+   "zip_code": "29730",
+   "naics_code": "322220",
+   "industry_description": "Pressure sensitive paper and tape (except medical) made from purchased materials",
+   "year_filing_for": "2025",
+   "date_submitted": "1/27/2026",
+   "annual_average_employees": "200"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Coroplast Tape Corporation' of 'Coroplast Tape Corporation' at 1230 GALLERIA BLVD, Rock Hill, SC 29730; matches the site's operator 'Coroplast Tape Corporation' at its recorded street",
+   "address": "street_address 1230 Galleria Boulevard, Rock Hill, SC: the 2025 OSHA Form 300A summary gives 1230 GALLERIA BLVD, Rock Hill, SC 29730",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/27/2026 reports 200 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004166",
+  "atlas": {
+   "site_name": "Chomarat North America - Anderson HQ",
+   "operator": "Chomarat North America LLC",
+   "street": "2901 New Pond Rd",
+   "city": "Anderson",
+   "state": "SC",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "950087",
+   "establishment_name": "Chomarat North America - New Pond Rd Site",
+   "company_name": "Chomarat North America",
+   "street_address": "2901 New Pond Rd",
+   "city": "Anderson",
+   "state": "SC",
+   "zip_code": "29624",
+   "naics_code": "313230",
+   "industry_description": "Fabrics, nonwoven, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/15/2026",
+   "annual_average_employees": "61"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Chomarat North America - New Pond Rd Site' of 'Chomarat North America' at 2901 New Pond Rd, Anderson, SC 29624; matches the site's operator 'Chomarat North America LLC' at its recorded street",
+   "address": "street_address 2901 New Pond Rd, Anderson, SC: the 2025 OSHA Form 300A summary gives 2901 New Pond Rd, Anderson, SC 29624",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/15/2026 reports 61 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004167",
+  "atlas": {
+   "site_name": "Chomarat North America - Williamston plant",
+   "operator": "Chomarat North America LLC",
+   "street": "160 Alliance Blvd",
+   "city": "Williamston",
+   "state": "SC",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "950289",
+   "establishment_name": "Chomarat North America - Alliance Site",
+   "company_name": "Chomarat North America",
+   "street_address": "160 Alliance Blvd",
+   "city": "Williamston",
+   "state": "SC",
+   "zip_code": "29697",
+   "naics_code": "313230",
+   "industry_description": "Nonwoven fabrics manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/15/2026",
+   "annual_average_employees": "20"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Chomarat North America - Alliance Site' of 'Chomarat North America' at 160 Alliance Blvd, Williamston, SC 29697; matches the site's operator 'Chomarat North America LLC' at its recorded street",
+   "address": "street_address 160 Alliance Blvd, Williamston, SC: the 2025 OSHA Form 300A summary gives 160 Alliance Blvd, Williamston, SC 29697",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/15/2026 reports 20 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003482",
+  "atlas": {
+   "site_name": "Amrize Building Envelope — Nashville HQ",
+   "operator": "Amrize Building Envelope LLC",
+   "street": "26 Century Blvd Ste 205",
+   "city": "Nashville",
+   "state": "TN",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "995998",
+   "establishment_name": "Nashville",
+   "company_name": "Amrize Building Envelope LLC",
+   "street_address": "26 Century Blvd",
+   "city": "Nashville",
+   "state": "TN",
+   "zip_code": "37214",
+   "naics_code": "551114",
+   "industry_description": "Corporate offices",
+   "year_filing_for": "2025",
+   "date_submitted": "1/29/2026",
+   "annual_average_employees": "436"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Nashville' of 'Amrize Building Envelope LLC' at 26 Century Blvd, Nashville, TN 37214; matches the site's operator 'Amrize Building Envelope LLC' at its recorded street",
+   "address": "street_address 26 Century Blvd Ste 205, Nashville, TN: the 2025 OSHA Form 300A summary gives 26 Century Blvd, Nashville, TN 37214",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/29/2026 reports 436 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003996",
+  "atlas": {
+   "site_name": "Nashville Record Pressing Headquarters and Plant",
+   "operator": "Nashville Record Pressing, LLC",
+   "street": "520 Brick Church Park Dr",
+   "city": "Nashville",
+   "state": "TN",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1424614",
+   "establishment_name": "Nashville Record Pressing",
+   "company_name": "Nashville Record Pressing",
+   "street_address": "520 Brick Church Park Dr.",
+   "city": "Nashville",
+   "state": "TN",
+   "zip_code": "37207",
+   "naics_code": "512250",
+   "industry_description": "Vinyl Record Manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/7/2026",
+   "annual_average_employees": "172"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Nashville Record Pressing' of 'Nashville Record Pressing' at 520 Brick Church Park Dr., Nashville, TN 37207; matches the site's operator 'Nashville Record Pressing, LLC' at its recorded street",
+   "address": "street_address 520 Brick Church Park Dr, Nashville, TN: the 2025 OSHA Form 300A summary gives 520 Brick Church Park Dr., Nashville, TN 37207",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/7/2026 reports 172 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004107",
+  "atlas": {
+   "site_name": "Jackson Kayak — Sparta plant",
+   "operator": "Jackson Kayak, Inc.",
+   "street": "3300 McMinnville Hwy",
+   "city": "Sparta",
+   "state": "TN",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "799360",
+   "establishment_name": "Jackson kayak",
+   "company_name": "Jackson kayak",
+   "street_address": "3300 McMinnville Highway, Sparta, TN, USA",
+   "city": "Sparta",
+   "state": "TN",
+   "zip_code": "38583",
+   "naics_code": "336612",
+   "industry_description": "Boats (i.e., suitable or intended for personal use) manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "3/4/2026",
+   "annual_average_employees": "132"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Jackson kayak' of 'Jackson kayak' at 3300 McMinnville Highway, Sparta, TN, USA, Sparta, TN 38583; matches the site's operator 'Jackson Kayak, Inc.' at its recorded street",
+   "address": "street_address 3300 McMinnville Hwy, Sparta, TN: the 2025 OSHA Form 300A summary gives 3300 McMinnville Highway, Sparta, TN, USA, Sparta, TN 38583",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/4/2026 reports 132 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003245",
+  "atlas": {
+   "site_name": "Republic Plastics McQueeney plant",
+   "operator": "Republic Plastics, Ltd.",
+   "street": "355 Schumann Rd",
+   "city": "McQueeney",
+   "state": "TX",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "71421",
+   "establishment_name": "Republic Plastics, Ltd. (TX)",
+   "company_name": "Republic Plastics, Ltd.",
+   "street_address": "355 Schumann Rd",
+   "city": "McQueeney",
+   "state": "TX",
+   "zip_code": "78123",
+   "naics_code": "326140",
+   "industry_description": "Dinnerware, polystyrene foam, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/11/2026",
+   "annual_average_employees": "236"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Republic Plastics, Ltd. (TX)' of 'Republic Plastics, Ltd.' at 355 Schumann Rd, McQueeney, TX 78123; matches the site's operator 'Republic Plastics, Ltd.' at its recorded street",
+   "address": "street_address 355 Schumann Rd, McQueeney, TX: the 2025 OSHA Form 300A summary gives 355 Schumann Rd, McQueeney, TX 78123",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/11/2026 reports 236 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003373",
+  "atlas": {
+   "site_name": "Westlake Corporation HQ",
+   "operator": "Westlake Corporation",
+   "street": "2801 Post Oak Boulevard, Suite 600",
+   "city": "Houston",
+   "state": "TX",
+   "tier": "A"
+  },
+  "osha": {
+   "establishment_ID": "1558257",
+   "establishment_name": "Westlake Royal Roofing- Home Locations",
+   "company_name": "Westlake Royal Roofing",
+   "street_address": "2801 Post Oak Blvd",
+   "city": "Houston",
+   "state": "TX",
+   "zip_code": "77056",
+   "naics_code": "551114",
+   "industry_description": "Corporate offices",
+   "year_filing_for": "2025",
+   "date_submitted": "3/11/2026",
+   "annual_average_employees": "129"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Westlake Royal Roofing- Home Locations' of 'Westlake Royal Roofing' at 2801 Post Oak Blvd, Houston, TX 77056; matches the site's operator 'Westlake Corporation' at its recorded street",
+   "address": "street_address 2801 Post Oak Boulevard, Suite 600, Houston, TX: the 2025 OSHA Form 300A summary gives 2801 Post Oak Blvd, Houston, TX 77056",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/11/2026 reports 129 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003546",
+  "atlas": {
+   "site_name": "Nissei America HQ Factory",
+   "operator": "Nissei America, Inc.",
+   "street": "3730 Global Way",
+   "city": "San Antonio",
+   "state": "TX",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1469559",
+   "establishment_name": "San Antonio, TX",
+   "company_name": "Nissei America, Inc.",
+   "street_address": "3730 Global Way",
+   "city": "SAN ANTONIO",
+   "state": "TX",
+   "zip_code": "78235",
+   "naics_code": "423830",
+   "industry_description": "Plastics industries machinery, equipment, and supplies merchant wholesalers",
+   "year_filing_for": "2025",
+   "date_submitted": "2/12/2026",
+   "annual_average_employees": "25"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'San Antonio, TX' of 'Nissei America, Inc.' at 3730 Global Way, SAN ANTONIO, TX 78235; matches the site's operator 'Nissei America, Inc.' at its recorded street",
+   "address": "street_address 3730 Global Way, San Antonio, TX: the 2025 OSHA Form 300A summary gives 3730 Global Way, SAN ANTONIO, TX 78235",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/12/2026 reports 25 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003721",
+  "atlas": {
+   "site_name": "WL Plastics Headquarters",
+   "operator": "WL Plastics",
+   "street": "3575 Lone Star Cir Ste 300",
+   "city": "Fort Worth",
+   "state": "TX",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1068167",
+   "establishment_name": "WL Plastics - Fort Worth",
+   "company_name": "WL Plastics",
+   "street_address": "3575 Lone Star Circle",
+   "city": "Fort Worth",
+   "state": "TX",
+   "zip_code": "76177",
+   "naics_code": "326122",
+   "industry_description": "Fittings and unions, rigid plastics pipe, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/22/2026",
+   "annual_average_employees": "47"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'WL Plastics - Fort Worth' of 'WL Plastics' at 3575 Lone Star Circle, Fort Worth, TX 76177; matches the site's operator 'WL Plastics' at its recorded street",
+   "address": "street_address 3575 Lone Star Cir Ste 300, Fort Worth, TX: the 2025 OSHA Form 300A summary gives 3575 Lone Star Circle, Fort Worth, TX 76177",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/22/2026 reports 47 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003734",
+  "atlas": {
+   "site_name": "Champion Fiberglass",
+   "operator": "Champion Fiberglass, Inc.",
+   "street": "6400 Spring Stuebner Road",
+   "city": "Spring",
+   "state": "TX",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "649028",
+   "establishment_name": "Champion Fiberglass",
+   "company_name": "Champion Fiberglass",
+   "street_address": "6400 Spring Stuebner",
+   "city": "SPRING",
+   "state": "TX",
+   "zip_code": "77389",
+   "naics_code": "326122",
+   "industry_description": "Fittings, rigid plastics pipe, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/27/2026",
+   "annual_average_employees": "199"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Champion Fiberglass' of 'Champion Fiberglass' at 6400 Spring Stuebner, SPRING, TX 77389; matches the site's operator 'Champion Fiberglass, Inc.' at its recorded street",
+   "address": "street_address 6400 Spring Stuebner Road, Spring, TX: the 2025 OSHA Form 300A summary gives 6400 Spring Stuebner, SPRING, TX 77389",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/27/2026 reports 199 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003738",
+  "atlas": {
+   "site_name": "Cooling Tower Resources — Baytown",
+   "operator": "Cooling Tower Resources, Inc.",
+   "street": "7400 Thompson Road",
+   "city": "Baytown",
+   "state": "TX",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "638686",
+   "establishment_name": "CT Distribution LLC dba CTR Cooling Tower Resources, Inc.",
+   "company_name": "CT Distribution LLC dba CTR Cooling Tower Resources, Inc.",
+   "street_address": "7400 Thompson Rd",
+   "city": "Baytown",
+   "state": "TX",
+   "zip_code": "77521",
+   "naics_code": "238220",
+   "industry_description": "Cooling tower installation",
+   "year_filing_for": "2025",
+   "date_submitted": "2/24/2026",
+   "annual_average_employees": "40"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'CT Distribution LLC dba CTR Cooling Tower Resources, Inc.' of 'CT Distribution LLC dba CTR Cooling Tower Resources, Inc.' at 7400 Thompson Rd, Baytown, TX 77521; matches the site's operator 'Cooling Tower Resources, Inc.' at its recorded street",
+   "address": "street_address 7400 Thompson Road, Baytown, TX: the 2025 OSHA Form 300A summary gives 7400 Thompson Rd, Baytown, TX 77521",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/24/2026 reports 40 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003897",
+  "atlas": {
+   "site_name": "Handgards Corporate Offices and Manufacturing",
+   "operator": "Handgards, Inc.",
+   "street": "901 Hawkins Blvd",
+   "city": "El Paso",
+   "state": "TX",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "727458",
+   "establishment_name": "Handgards Hawkins",
+   "company_name": "Handgards LLC",
+   "street_address": "901 Hawkins Blvd.",
+   "city": "El Paso",
+   "state": "TX",
+   "zip_code": "79915",
+   "naics_code": "326199",
+   "industry_description": "Gloves, plastics, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "3/13/2026",
+   "annual_average_employees": "247"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Handgards Hawkins' of 'Handgards LLC' at 901 Hawkins Blvd., El Paso, TX 79915; matches the site's operator 'Handgards, Inc.' at its recorded street",
+   "address": "street_address 901 Hawkins Blvd, El Paso, TX: the 2025 OSHA Form 300A summary gives 901 Hawkins Blvd., El Paso, TX 79915",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/13/2026 reports 247 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004039",
+  "atlas": {
+   "site_name": "Corr Tech HQ",
+   "operator": "Corr Tech, Inc.",
+   "street": "3575 W. 12th St",
+   "city": "Houston",
+   "state": "TX",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1465325",
+   "establishment_name": "Corr Tech, Inc.",
+   "company_name": "FCG Acquisitions, Inc.",
+   "street_address": "3575 W 12th St",
+   "city": "Houston",
+   "state": "TX",
+   "zip_code": "77008",
+   "naics_code": "333911",
+   "industry_description": "Pumps, industrial and commercial-type, general purpose, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/10/2026",
+   "annual_average_employees": "10"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Corr Tech, Inc.' of 'FCG Acquisitions, Inc.' at 3575 W 12th St, Houston, TX 77008; matches the site's operator 'Corr Tech, Inc.' at its recorded street",
+   "address": "street_address 3575 W. 12th St, Houston, TX: the 2025 OSHA Form 300A summary gives 3575 W 12th St, Houston, TX 77008",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/10/2026 reports 10 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004321",
+  "atlas": {
+   "site_name": "GracoRoberts - Arlington HQ",
+   "operator": "Graco Supply Company dba GracoRoberts",
+   "street": "3200 Avenue E East",
+   "city": "Arlington",
+   "state": "TX",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1143949",
+   "establishment_name": "GracoRoberts - Arlington HQ",
+   "company_name": "GracoRoberts",
+   "street_address": "3200 Avenue E East",
+   "city": "Arlington",
+   "state": "TX",
+   "zip_code": "76011",
+   "naics_code": "423860",
+   "industry_description": "Transportation equipment and supplies (except marine pleasure craft, motor vehicles) merchant wholesalers",
+   "year_filing_for": "2025",
+   "date_submitted": "3/2/2026",
+   "annual_average_employees": "79"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'GracoRoberts - Arlington HQ' of 'GracoRoberts' at 3200 Avenue E East, Arlington, TX 76011; matches the site's operator 'Graco Supply Company dba GracoRoberts' at its recorded street",
+   "address": "street_address 3200 Avenue E East, Arlington, TX: the 2025 OSHA Form 300A summary gives 3200 Avenue E East, Arlington, TX 76011",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/2/2026 reports 79 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004332",
+  "atlas": {
+   "site_name": "Packwell - La Porte (Porter)",
+   "operator": "Packwell",
+   "street": "10016 Porter Road",
+   "city": "La Porte",
+   "state": "TX",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "930643",
+   "establishment_name": "Packwell INC",
+   "company_name": "Packwell",
+   "street_address": "10016 Porter Rd",
+   "city": "La Porte",
+   "state": "TX",
+   "zip_code": "77571",
+   "naics_code": "561910",
+   "industry_description": "Packaging services (except packing and crating for transportation)",
+   "year_filing_for": "2025",
+   "date_submitted": "1/19/2026",
+   "annual_average_employees": "9"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Packwell INC' of 'Packwell' at 10016 Porter Rd, La Porte, TX 77571; matches the site's operator 'Packwell' at its recorded street",
+   "address": "street_address 10016 Porter Road, La Porte, TX: the 2025 OSHA Form 300A summary gives 10016 Porter Rd, La Porte, TX 77571",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/19/2026 reports 9 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003276",
+  "atlas": {
+   "site_name": "Anton Paar USA - Ashland HQ",
+   "operator": "Anton Paar USA, Inc.",
+   "street": "10215 Timber Ridge Drive",
+   "city": "Ashland",
+   "state": "VA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "55013",
+   "establishment_name": "Anton Paar USA, Inc.",
+   "company_name": "Anton Paar USA, Inc.",
+   "street_address": "10215 Timber Ridge Drive",
+   "city": "Ashland",
+   "state": "VA",
+   "zip_code": "23005",
+   "naics_code": "423490",
+   "industry_description": "Scientific laboratory equipment merchant wholesalers",
+   "year_filing_for": "2025",
+   "date_submitted": "1/9/2026",
+   "annual_average_employees": "315"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Anton Paar USA, Inc.' of 'Anton Paar USA, Inc.' at 10215 Timber Ridge Drive, Ashland, VA 23005; matches the site's operator 'Anton Paar USA, Inc.' at its recorded street",
+   "address": "street_address 10215 Timber Ridge Drive, Ashland, VA: the 2025 OSHA Form 300A summary gives 10215 Timber Ridge Drive, Ashland, VA 23005",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/9/2026 reports 315 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003431",
+  "atlas": {
+   "site_name": "American GFM Headquarters and Plant",
+   "operator": "American GFM Corporation",
+   "street": "1200 Cavalier Blvd",
+   "city": "Chesapeake",
+   "state": "VA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "668154",
+   "establishment_name": "American GFM",
+   "company_name": "American GFM",
+   "street_address": "1200 Cavalier blvd.",
+   "city": "Chesapeake",
+   "state": "VA",
+   "zip_code": "23323",
+   "naics_code": "333517",
+   "industry_description": "Forging machinery and hammers manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/13/2026",
+   "annual_average_employees": "146"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'American GFM' of 'American GFM' at 1200 Cavalier blvd., Chesapeake, VA 23323; matches the site's operator 'American GFM Corporation' at its recorded street",
+   "address": "street_address 1200 Cavalier Blvd, Chesapeake, VA: the 2025 OSHA Form 300A summary gives 1200 Cavalier blvd., Chesapeake, VA 23323",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/13/2026 reports 146 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004148",
+  "atlas": {
+   "site_name": "TemperPack Richmond Headquarters and Plant",
+   "operator": "TemperPack Technologies, Inc.",
+   "street": "4447 Carolina Ave",
+   "city": "Richmond",
+   "state": "VA",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1032589",
+   "establishment_name": "TemperPack Technologies Inc.",
+   "company_name": "TemperPack Technologies Inc",
+   "street_address": "4447 Carolina Avenue",
+   "city": "Richmond",
+   "state": "VA",
+   "zip_code": "23222",
+   "naics_code": "322220",
+   "industry_description": "Coating purchased papers for packaging applications",
+   "year_filing_for": "2025",
+   "date_submitted": "2/11/2026",
+   "annual_average_employees": "294"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'TemperPack Technologies Inc.' of 'TemperPack Technologies Inc' at 4447 Carolina Avenue, Richmond, VA 23222; matches the site's operator 'TemperPack Technologies, Inc.' at its recorded street",
+   "address": "street_address 4447 Carolina Ave, Richmond, VA: the 2025 OSHA Form 300A summary gives 4447 Carolina Avenue, Richmond, VA 23222",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/11/2026 reports 294 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003280",
+  "atlas": {
+   "site_name": "Cumberland at ACS Group - New Berlin HQ",
+   "operator": "Cumberland",
+   "street": "2900 South 160th Street",
+   "city": "New Berlin",
+   "state": "WI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1294707",
+   "establishment_name": "Sterling, Inc.",
+   "company_name": "ACS Group",
+   "street_address": "2900 S 160th Street",
+   "city": "New Berlin",
+   "state": "WI",
+   "zip_code": "53151",
+   "naics_code": "333248",
+   "industry_description": "durable good manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/16/2026",
+   "annual_average_employees": "208"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Sterling, Inc.' of 'ACS Group' at 2900 S 160th Street, New Berlin, WI 53151; matches the site's operator 'Cumberland' at its recorded street",
+   "address": "street_address 2900 South 160th Street, New Berlin, WI: the 2025 OSHA Form 300A summary gives 2900 S 160th Street, New Berlin, WI 53151",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/16/2026 reports 208 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003400",
+  "atlas": {
+   "site_name": "ACS Group Headquarters and Plant",
+   "operator": "ACS Group",
+   "street": "2900 S 160th St",
+   "city": "New Berlin",
+   "state": "WI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1294707",
+   "establishment_name": "Sterling, Inc.",
+   "company_name": "ACS Group",
+   "street_address": "2900 S 160th Street",
+   "city": "New Berlin",
+   "state": "WI",
+   "zip_code": "53151",
+   "naics_code": "333248",
+   "industry_description": "durable good manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "2/16/2026",
+   "annual_average_employees": "208"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Sterling, Inc.' of 'ACS Group' at 2900 S 160th Street, New Berlin, WI 53151; matches the site's operator 'ACS Group' at its recorded street",
+   "address": "street_address 2900 S 160th St, New Berlin, WI: the 2025 OSHA Form 300A summary gives 2900 S 160th Street, New Berlin, WI 53151",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/16/2026 reports 208 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003815",
+  "atlas": {
+   "site_name": "Wisconsin Oven HQ and plant",
+   "operator": "Wisconsin Oven Corporation",
+   "street": "2675 Main Street",
+   "city": "East Troy",
+   "state": "WI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "986743",
+   "establishment_name": "WIS Oven",
+   "company_name": "Wisconsin Oven Corporation",
+   "street_address": "2675 Main St.",
+   "city": "East Troy",
+   "state": "WI",
+   "zip_code": "53120",
+   "naics_code": "333994",
+   "industry_description": "Furnaces, industrial and laboratory-type (except dental), manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "3/10/2026",
+   "annual_average_employees": "110"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'WIS Oven' of 'Wisconsin Oven Corporation' at 2675 Main St., East Troy, WI 53120; matches the site's operator 'Wisconsin Oven Corporation' at its recorded street",
+   "address": "street_address 2675 Main Street, East Troy, WI: the 2025 OSHA Form 300A summary gives 2675 Main St., East Troy, WI 53120",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 3/10/2026 reports 110 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003819",
+  "atlas": {
+   "site_name": "Seda North America Mount Pleasant plant",
+   "operator": "Seda North America",
+   "street": "12501 Globe Drive",
+   "city": "Mount Pleasant",
+   "state": "WI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "1286524",
+   "establishment_name": "Seda International Packaging Group Inc. - North America",
+   "company_name": "Seda North America Inc.",
+   "street_address": "12501 Globe Drive",
+   "city": "Mount Pleasant",
+   "state": "WI",
+   "zip_code": "53177",
+   "naics_code": "322219",
+   "industry_description": "Paper dishes (e.g., cups, plates) made from purchased paper or paperboard",
+   "year_filing_for": "2025",
+   "date_submitted": "2/2/2026",
+   "annual_average_employees": "213"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Seda International Packaging Group Inc. - North America' of 'Seda North America Inc.' at 12501 Globe Drive, Mount Pleasant, WI 53177; matches the site's operator 'Seda North America' at its recorded street",
+   "address": "street_address 12501 Globe Drive, Mount Pleasant, WI: the 2025 OSHA Form 300A summary gives 12501 Globe Drive, Mount Pleasant, WI 53177",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/2/2026 reports 213 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003838",
+  "atlas": {
+   "site_name": "Vincent Tool Technologies Headquarters",
+   "operator": "Vincent Tool Technologies Corp.",
+   "street": "4197 123rd Street",
+   "city": "Chippewa Falls",
+   "state": "WI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "280466",
+   "establishment_name": "Vincent Tool Technologies Corp",
+   "company_name": "Vincent Tool Technologies Corp",
+   "street_address": "4197 123rd St",
+   "city": "Chippewa Falls",
+   "state": "WI",
+   "zip_code": "54729",
+   "naics_code": "333511",
+   "industry_description": "Die-casting dies manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/28/2026",
+   "annual_average_employees": "41"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'Vincent Tool Technologies Corp' of 'Vincent Tool Technologies Corp' at 4197 123rd St, Chippewa Falls, WI 54729; matches the site's operator 'Vincent Tool Technologies Corp.' at its recorded street",
+   "address": "street_address 4197 123rd Street, Chippewa Falls, WI: the 2025 OSHA Form 300A summary gives 4197 123rd St, Chippewa Falls, WI 54729",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/28/2026 reports 41 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-003957",
+  "atlas": {
+   "site_name": "American Packaging Corporation Headquarters - Columbus COE",
+   "operator": "American Packaging Corporation",
+   "street": "100 APC Way",
+   "city": "Columbus",
+   "state": "WI",
+   "tier": "B"
+  },
+  "osha": {
+   "establishment_ID": "996058",
+   "establishment_name": "American Packaging Corporation - Columbus",
+   "company_name": "",
+   "street_address": "100 APC Way",
+   "city": "Columbus",
+   "state": "WI",
+   "zip_code": "53925",
+   "naics_code": "323111",
+   "industry_description": "Print shops, gravure (except printing books)",
+   "year_filing_for": "2025",
+   "date_submitted": "2/26/2026",
+   "annual_average_employees": "309"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'American Packaging Corporation - Columbus' at 100 APC Way, Columbus, WI 53925; matches the site's operator 'American Packaging Corporation' at its recorded street",
+   "address": "street_address 100 APC Way, Columbus, WI: the 2025 OSHA Form 300A summary gives 100 APC Way, Columbus, WI 53925",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 2/26/2026 reports 309 annual average employees"
+  }
+ },
+ {
+  "record_id": "SITE-004109",
+  "atlas": {
+   "site_name": "T3 Manufacturing — Beaver Dam plant",
+   "operator": "T3 Manufacturing, Inc.",
+   "street": "333 Beichl Ave",
+   "city": "Beaver Dam",
+   "state": "WI",
+   "tier": "C"
+  },
+  "osha": {
+   "establishment_ID": "1431504",
+   "establishment_name": "T3 Manufacturing",
+   "company_name": "T3 Manufacturing",
+   "street_address": "333 Beichl Avenue",
+   "city": "Beaver Dam",
+   "state": "WI",
+   "zip_code": "53916",
+   "naics_code": "326199",
+   "industry_description": "Septic tanks, plastics or fiberglass, manufacturing",
+   "year_filing_for": "2025",
+   "date_submitted": "1/19/2026",
+   "annual_average_employees": "18"
+  },
+  "proposed": {
+   "existence": "OSHA Form 300A summary for 2025 names establishment 'T3 Manufacturing' of 'T3 Manufacturing' at 333 Beichl Avenue, Beaver Dam, WI 53916; matches the site's operator 'T3 Manufacturing, Inc.' at its recorded street",
+   "address": "street_address 333 Beichl Ave, Beaver Dam, WI: the 2025 OSHA Form 300A summary gives 333 Beichl Avenue, Beaver Dam, WI 53916",
+   "liveness": "operating in calendar 2025: OSHA Form 300A summary submitted 1/19/2026 reports 18 annual average employees"
+  }
+ }
+]
