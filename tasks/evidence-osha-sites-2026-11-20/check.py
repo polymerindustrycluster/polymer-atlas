@@ -82,6 +82,8 @@ done = {x["record_id"] for x in applied}
 left = sorted(done & set(base["V-65"])) + sorted(k for k in base["V-68"] if k.startswith("sites:") and k.split(":")[1] in done)
 if left:
     fail.append(f"evidenced sites still baselined: {', '.join(left[:10])}")
-print("\n".join(fail) or f"OK: {len(applied)} applied rows on {len(done)} sites, {len(withheld)} withheld; "
-      f"packet {len(packet)} rows on {len(witnessed)} sites")
+if len(applied) + len(withheld) - len(part3) != len(packet):
+    fail.append("applied (both rounds) + still-withheld != packet")
+print("\n".join(fail) or f"OK: {len(applied)} applied rows on {len(done)} sites ({len(part3)} in part 3), "
+      f"{len(withheld) - len(part3)} still withheld; packet {len(packet)} rows on {len(witnessed)} sites")
 sys.exit(1 if fail else 0)

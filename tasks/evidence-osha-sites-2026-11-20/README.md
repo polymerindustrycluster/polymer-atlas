@@ -7,9 +7,11 @@
 - **Scope of change:** rows are appended to the site evidence shards only. No record field, tier or status changed.
 - **Baseline shrink:** the evidenced sites leave the shrink-only baselines. V-65 (tier A/B) goes 2,661 → 2,582 and V-68
   (tier C/U) goes 849 → 844. The `amended` note is untouched.
-- **Held for a second family:** 43 more address-and-name matches (129 rows). Codex has reviewed them, but Antigravity
-  ran out of quota mid-review (`review_agy_3_FAILED_quota.txt`, resets in about 4 days) and both Grok routes have
-  expired keys. They are held, never applied, until a second family judges them (see "Pending").
+- **Part 3, Codex only:** 43 more address-and-name matches (129 rows) waited for a second family. Antigravity ran out
+  of quota mid-review (`review_agy_3_FAILED_quota.txt`), and both Grok routes had expired keys.
+  - The owner's waiver of 2026-11-20 let Codex alone gate them.
+  - 120 rows on 40 sites applied in a follow-up PR (see "Part 3" below).
+  - Across both rounds: 371 rows on 124 sites; 28 rows withheld.
 
 ## Why
 
@@ -92,8 +94,16 @@ evidence lanes until a second family returns.
 
 **Result** (`apply_part3.py`, `applied_part3.csv`, merged in a follow-up PR):
 - Of the 43 held sites (129 rows), the rows Codex judged SOUND apply: **120 rows, EVD-410357..410476, on 40 sites**.
-- Three sites whose existence row Codex rejected lose all their rows.
+- Three sites whose existence row Codex rejected lose all their rows:
+  - SITE-002780: 150 Columbia Street vs Avenue;
+  - SITE-003280: the filer is Sterling, Inc. (ACS Group), not Cumberland;
+  - SITE-003373: a Westlake Royal Roofing filing does not establish Westlake's headquarters establishment.
 - Each part-3 row's notes say it was reviewed by Codex only, under the waiver.
+- **What the waiver gives up, measured on parts 1–2:** Antigravity rejected 0 of the 251 rows Codex judged SOUND. All
+  12 of Antigravity's rejections were rows Codex also rejected, and Codex rejected 7 more that Antigravity passed. So,
+  on this lane, Codex alone was at least as strict as the pair.
+- Defect injections on the part-3 block: altering EVD-410357 in its shard, and flipping its site's Codex verdict, each
+  make `check.py` fail; both pass once restored.
 - V-65 2,582 → 2,549 and V-68 844 → 837.
 - `check.py` covers both rounds.
 
@@ -106,5 +116,6 @@ python3 tasks/evidence-osha-sites-2026-11-20/build.py selftest
 python3 tasks/evidence-osha-sites-2026-11-20/build.py match . <osha.csv> <corpus>
 python3 tasks/evidence-osha-sites-2026-11-20/build.py plant . <osha.csv>     # expect 0
 python3 tasks/evidence-osha-sites-2026-11-20/apply.py . --start EVD-410106 --codex review_codex_1.json review_codex_2.json review_codex_3.json --agy review_agy_1.json review_agy_2.json
+python3 tasks/evidence-osha-sites-2026-11-20/apply_part3.py . --start EVD-410357     # part 3, Codex only (waiver)
 python3 tasks/evidence-osha-sites-2026-11-20/check.py
 ```
