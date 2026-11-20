@@ -78,13 +78,15 @@ python3 -m unittest discover -s scripts -p 'test_*.py'   # all tests (~12 s)
 ```
 
 - **Grandfathered debt.** The validator warns about rows listed in
-  `scripts/validate_debt_baseline.json` (V-45..V-51, V-55, V-60, V-65). Any *new* violation is an
+  `scripts/validate_debt_baseline.json` (V-45..V-51, V-55, V-60, V-65, V-67, V-68). Any *new* violation is an
   error. Never add IDs to the baseline to get past it. Fixing a baselined row
   shrinks the list. See `tasks/validator-debt-2026-11-01/`.
-- **Every new record needs an evidence row (V-65).** A create with no row in
-  `data/evidence_*.csv` fails the validator. The 3,455 records that had none on
-  2026-11-20 are baselined; adding a row to one only warns you to drop it from
-  the baseline. See `tasks/evidence-presence-floor-2026-11-20/`.
+- **Every new record needs an evidence row.**
+  - V-65: a tier-A/B record needs a row at its own strength.
+  - V-68: a tier-C/U record needs at least one row.
+  - A create with no row in `data/evidence_*.csv` fails the validator. Records that had none on 2026-11-20 are
+    baselined; adding a row to one only warns you to drop it from the baseline. See
+    `tasks/evidence-presence-floor-2026-11-20/`.
 - **PR description:** state the task claimed, sources used, rows added or
   changed, the count at each tier, the dedupe searches you ran, and any
   `inclusion_log.csv` entries (AGENTS.md §2 rule 6).

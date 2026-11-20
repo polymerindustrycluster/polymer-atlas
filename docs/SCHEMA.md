@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.16.5 — 2026-11-20 (§4.13 presence floor: every organizations, sites, ecosystem, programs and people record carries at least one evidence row; validator V-65, with the 3,455 records that had none at adoption baselined — owner ruling 2026-11-20, `tasks/evidence-presence-floor-2026-11-20/README.md`).
+**Version:** v1.17.1 — 2026-11-20 (§4.13 presence floor for tier C/U: every tier-C/U record carries at least one evidence row, the complement of V-65's tier-A/B floor; validator V-68, with the 858 records that had none at adoption baselined — owner ruling 2026-11-20, `tasks/evidence-presence-floor-2026-11-20/README.md`).
+Previous: v1.17 — 2026-11-20 (evidence-integrity increment, owner-approved 2026-11-20: §4.13 floor rule — no naked tier-A/B records (validator V-65; the adoption census is grandfathered shrink-only in `scripts/validate_debt_baseline.json`); §4.22 archive at capture (validator V-66); §4.6/§4.11 `scale_band` completions conversion; §4.12.2 participation citations cite in-row — staging pointers prohibited in published citation fields (validator V-67)).
 Previous: v1.16.4 — 2026-11-19 (§4.12.2: the organizer's final list of registered companies for a named past edition counts as an attendee list — owner ruling 2026-11-19d item 1, `tasks/owner-rulings-2026-11-19d/README.md`).
 Previous: v1.16.3 — 2026-11-19 (§3.6 `extrusion` capability rollup adds `rubber_extrusion` — owner ruling 2026-11-19c item 1, `tasks/owner-rulings-2026-11-19c/README.md`).
 Previous: v1.16.2 — 2026-11-19 (§4.12.1 worked seams 4–7: a branded plastics sector show, tire and aftermarket trade shows, corrosion-and-coatings shows, composites-centered shows and UV/EB curing of coatings, inks, adhesives and composites qualify; the Geosynthetics Conference does not — owner rulings 2026-11-19, `tasks/owner-rulings-2026-11-19b/README.md`).
@@ -1113,7 +1114,7 @@ apprenticeship; the program, not the university, is the unit an introduction tar
 | `employer_custom_training` | boolean | training types | Institution states it will run a cohort for one employer |
 | `admissions_status` | enum | training/program types | `admitting` \| `not_admitting` \| `unknown` — Phase A calibration rider: a link's liveness ≠ a program's liveness; training records require an admissions-status check at verification |
 | `facilities_note` | free text, sourced | Nice | Publicly stated labs/equipment |
-| `scale_band` | enum (band precedent) | Nice | Only where the institution itself publishes it; banded, never a precise headcount. Conversion (owner ruling 2026-11-12 S3): a published program enrollment converts small <30, medium 30–120, large >120 students; a qualitative size self-characterization converts directly; dollars, faculty counts, credit hours, ratios, and alumni counts never convert |
+| `scale_band` | enum (band precedent) | Nice | Only where the institution itself publishes it; banded, never a precise headcount. Conversion (owner ruling 2026-11-12 S3): a published program enrollment converts small <30, medium 30–120, large >120 students; a qualitative size self-characterization converts directly; dollars, faculty counts, credit hours, ratios, and alumni counts never convert. **[v1.17] Completions conversion (owner ruling 2026-11-20):** where no enrollment figure is published, the band may instead be derived from published completions — the count of awards conferred in a stated year, taken from the §4.23 IPEDS layer (keyed on the institution's UNITID × the program's CIP) or from an institution-published completions / degrees-conferred figure — on the same thresholds (small <30, medium 30–120, large >120 completions in the year). The basis is required in-row: an evidence row for the program states it in `claim_detail` — source, year, and count (the `code` row where the figure is IPEDS-keyed on the program's CIP, otherwise a `scope` row; where the program row's own `latest_completions` / `completions_year` fields (§4.11) carry the figure, the `claim_detail` cites them). Enrollment remains the preferred basis; a completions-derived band measures a flow, not a stock, and is named as completions-based wherever the band is reported. Dollars, faculty counts, credit hours, ratios, and alumni counts still never convert |
 | `public_door_url` | URL | **MUST** | The program's public contact/admissions/partnership **page** — never a person's email (§6) |
 
 **Office records** (`record_grain=office`) — a university's tech-transfer / licensing
@@ -1315,7 +1316,7 @@ office-grain rows (§4.6); institutions remain ecosystem institution rows
 | `employer_custom_training` | boolean | training types | Institution states it will run a cohort for one employer |
 | `admissions_status` | enum | program types | `admitting` \| `not_admitting` \| `unknown` — a link's liveness ≠ a program's liveness; training/program records require an admissions-status check at verification |
 | `facilities_note` | free text, sourced | Nice | Publicly stated labs/equipment |
-| `scale_band` | enum (band precedent) | Nice | Only where the institution itself publishes it; banded, never a precise headcount. Conversion per the §4.6 note (owner ruling 2026-11-12 S3) |
+| `scale_band` | enum (band precedent) | Nice | Only where the institution itself publishes it; banded, never a precise headcount. Conversion per the §4.6 note (owner ruling 2026-11-12 S3; completions conversion added **[v1.17]**, owner ruling 2026-11-20 — the basis is stated in the program's evidence-row `claim_detail`) |
 | `geography_served` | §4.6 vocab | **MUST** | Workforce programs are place-bound; research programs are not |
 | `city` / `state` / `county` | string | **MUST** | The campus locality as published; Ohio rows follow the physical-address county rule. Defaults to the institution's values; multi-campus systems carry per-campus values |
 | backbone (`status`, `sources[]`, `verification_tier`, `last_verified`, `pic_relevance`, `created_by`, `notes`) | §4.2/§4.6 | **MUST** | Tier grammar at this grain: the institution's own program page = A-equivalent; state registry / accreditor / association directory = B; lone aggregator = C |
@@ -1500,7 +1501,7 @@ both are seeded, each noting the other. When in doubt, don't merge.
 | `edition_dates` | string | as harvested | The edition's dates **as printed by the harvest** ("September 21–24, 2026"). Within the Atlas, per-edition facts live here — there is no edition table and no speculative calendar. **[v1.12]** The linked conferences repo holds edition dates and place |
 | `edition_city` / `edition_state` | string | as harvested | Where **this** edition ran. `edition_state` is a USPS code, or the full country name for international editions. The series' `home_*` fields are never copied down as a substitute: an edition's city comes from the harvest or stays empty |
 | `evidence_source_name` | string | **MUST** | The harvest's identity: publication + publisher ("IEC 2024 Official Conference Guide — Rubber Division, ACS"; "NPE2027 exhibitor roster — MapYourShow / PLASTICS") |
-| `evidence_source_url` | URL | **MUST** | The list's published location — or the staging manifest pointer when the live location has decayed. Decay is expected; the banked snapshot is the record |
+| `evidence_source_url` | URL | **MUST** | The list's published location: the organizer's URL — or, where the live location has decayed, the §4.22-form Wayback archive ref of that URL. **[v1.17] A staging pointer is never a published citation** (owner ruling 2026-11-20): the staging manifest and the banked snapshot remain the harvest's working record and are named in `sources` / `notes` as before, but the citation a stranger can follow is the organizer URL or its capture. The 122 rows minted with a staging pointer in this field are grandfathered in the validator baseline (V-67) and are repaired by a separate data pass; no new row may mint one |
 | `evidence_date` | date | **MUST** | The list's own as-of date where printed ("As of Aug. 16, 2024"), else the retrieval date. A pre-show roster's `evidence_date` is its listing date, and the row's `notes` state the roster was still filling |
 | backbone (`sources[]`, `verification_tier`, `last_verified`, `created_by`, `notes`) | §4.1 | **MUST** | Tier grammar at this grain: the organizer's own published roster/guide/directory is **A-equivalent for the fact of participation** — it is the primary source for who exhibited; a trade-press republication = B; an aggregator scrape = C. A row below B is not minted: participation is a factual claim, not a candidate |
 
@@ -1522,7 +1523,9 @@ both are seeded, each noting the other. When in doubt, don't merge.
    empty out after the edition passes and guides go inaccessible. Each
    current edition of a seeded expo is snapshotted into staging
    promptly, with a manifest entry, **before** any minting pass reads
-   it. Minting reads the banked snapshot, never the live site.
+   it. Minting reads the banked snapshot, never the live site. The
+   minted row cites the organizer's published location (or its
+   archive capture), never the snapshot's staging path **[v1.17]**.
 3. **Refresh-diff.** A re-snapshot of the same edition diffs against
    the prior snapshot; only new or changed names mint or amend rows. A
    name disappearing from a still-filling pre-show roster does **not**
@@ -1737,42 +1740,6 @@ companion `evidence_rows.csv` fragment; `evidence_id` values are
 allocated by the integrator at application, never by the lane
 (the standing allocation rule, §4.12's grammar applied here).
 
-#### The presence floor **[v1.16.5]** (owner ruling 2026-11-20; validator V-65)
-
-Every record in the five evidence classes (organizations, sites,
-ecosystem, programs, people) carries at least one row in the
-`data/evidence_*.csv` shards. Archive links (§4.22) and registry links
-(§4.8) do not count: only evidence rows do. The floor does not replace
-the lane-brief contract above, which still requires rows for every
-must-have claim and is still enforced by the integrator. It catches the
-case no other rule saw: a record with no rows at all, which V-25 never
-inspects because it restates tiers only where rows exist.
-
-The 3,455 records that had no row when the rule was adopted
-(organizations 1,340, sites 1,840, ecosystem 133, people 132, programs
-10, counted on main at `280e6a8f` and reconciled against
-`scripts/audit_evidence_coverage.py`) are baselined in
-`scripts/validate_debt_baseline.json` under `V-65`, keyed
-`<record_table>:<record_id>:<identity fingerprint>`. The fingerprint is
-the first 8 hex characters of the SHA-1 over the record's identity
-fields, each lowercased to letters and digits. The fields follow
-AGENTS.md §3's dedupe tests:
-- organizations: `legal_name`, `hq_city`, `hq_state`;
-- ecosystem: `legal_name`, `city`, `state`;
-- sites: `org_id`, `site_name`, `street_address`, `city`, `state`;
-- programs: `institution_org_id`, `program_name`;
-- people: `full_name`, `institution_org_id`.
-
-Baselined records warn, and the list shrinks as backfill lanes add rows.
-Any other record with no row is an error, which in practice means a
-create that skipped its evidence rows. Because the identity fields are
-part of the key, a baselined record that is renamed, moved, re-pointed,
-or overwritten with a different entity under the same id, without a new
-row, also drops out of the baseline and errors, as the lane-brief
-contract requires of a changed record. An id overwritten with an entity
-that matches on every identity field is, by §3's own tests, the same
-entity.
-
 #### Tier restatement — §4.1 applied mechanically, where rows exist **[v1.6]**
 
 §4.1's rule — *a record's tier is the tier of its weakest must-have
@@ -1815,6 +1782,85 @@ For a record with evidence rows, consider each must-have claim
 
 Validator V-25 (below) enforces clauses 2 and 3 mechanically on the
 rows that exist. It asserts nothing about records without rows.
+
+#### The floor rule — no naked tier-A/B records **[v1.17]**
+
+The restatement above governs records that have evidence rows; until
+this revision a record with **no** rows — or none at its own
+strength — kept its tier on the legacy `sources[]` string alone,
+however high the tier. The 2026-11-19 state audit measured the
+result (its finding F3): thousands of tier-A/B records carried no
+row-grain support at all. From this revision (owner ruling
+2026-11-20):
+
+- A live record at tier **A** must carry at least one supporting
+  (non-`contradicts`) evidence row at `supports_A`; a live record at
+  tier **B** must carry at least one at `supports_B` or stronger —
+  on any claim. V-25 continues to restate the must-have claims of
+  evidenced records; this rule is the floor beneath it, not a
+  replacement.
+- **Scope.** All five §4.13 tables. Tombstones are out of scope:
+  organizations and ecosystem rows with `status=merged` and program
+  rows with `status=tombstoned` are exempt; sites and people carry
+  no tombstone status and are wholly in scope.
+- **Grandfathering.** The stock naked at adoption is baselined, not
+  blessed. The census at adoption (2026-11-20, on the post-PR-#423
+  tree) counted **2,747** naked records of 10,161 live tier-A/B
+  records — organizations 1,214 (480 A / 734 B), sites 1,324
+  (276 A / 1,048 B), ecosystem 78 (63 A / 15 B), programs 9
+  (8 A / 1 B), people 122 (12 A / 110 B); 2,573 of them carry no
+  evidence rows at all. Their IDs sit in
+  `scripts/validate_debt_baseline.json` under V-65, under that
+  file's standing doctrine: the list may only shrink — an ID leaves
+  it when a lane evidences the record, and adding an ID to make a
+  new violation pass is a protocol violation. The census is the
+  re-verification queue the floor rule creates: new tier-A/B
+  records mint with their evidence (the lane-brief contract already
+  required it), and the baseline is worked down as lanes touch the
+  records.
+- Validator V-65 enforces the rule mechanically through the debt
+  mechanism: a baselined record warns; any other naked tier-A/B
+  record is an error.
+
+#### The presence floor for tier C/U **[v1.17.1]** (owner ruling 2026-11-20; validator V-68)
+
+The floor rule above covers live tier-A/B records. New records are
+created at tier **U or C** (AGENTS.md §3 step 6), so on its own it does
+not stop a create that skipped its evidence rows. From this revision
+(owner ruling 2026-11-20, "Close the zero-row leak"), every tier-C/U
+record in the five §4.13 tables carries at least one row in the
+`data/evidence_*.csv` shards, at any strength. Archive links (§4.22) and
+registry links (§4.8) do not count: only evidence rows do. The floor
+does not replace the lane-brief contract, which still requires rows for
+every must-have claim and is still enforced by the integrator. Tier-C/U
+tombstones are in scope (they are legacy records, baselined like the
+rest).
+
+- **Grandfathering.** The **858** tier-C/U records with no row at
+  adoption (organizations 182, sites 613, ecosystem 52, people 10,
+  programs 1; main at `d984d73e`, reconciled table by table against
+  `scripts/audit_evidence_coverage.py`) sit in
+  `scripts/validate_debt_baseline.json` under V-68, under the same
+  shrink-only doctrine as V-65.
+- **Keys.** Entries are keyed
+  `<record_table>:<record_id>:<identity fingerprint>`. The fingerprint
+  is the first 8 hex characters of the SHA-1 over the record's identity
+  fields, each lowercased to letters and digits. The fields follow
+  AGENTS.md §3's dedupe tests:
+  - organizations: `legal_name`, `hq_city`, `hq_state`;
+  - ecosystem: `legal_name`, `city`, `state`;
+  - sites: `org_id`, `site_name`, `street_address`, `city`, `state`;
+  - programs: `institution_org_id`, `program_name`;
+  - people: `full_name`, `institution_org_id`.
+
+  A baselined record that is renamed, moved, re-pointed, or overwritten
+  with a different entity under the same id, without a new row, drops
+  out of the baseline and errors, as the lane-brief contract requires of
+  a changed record. An id overwritten with an entity that matches on
+  every identity field is, by §3's own tests, the same entity.
+- Validator V-68 enforces the rule through the debt mechanism: a
+  baselined record warns; any other tier-C/U record with no row is an
+  error. Together, V-65 and V-68 cover every live record at every tier.
 
 #### The grep rule — a registry citation must resolve **[v1.6]**
 
@@ -2466,6 +2512,16 @@ A provenance aid only: an archive link never changes the evidence row's source c
 missing link asserts nothing. Append-only, like §4.13. Validator V-59 enforces the field set, the FK, the archive URL
 shape, that the capture is of the page the evidence row cites (`source_ref`, ignoring scheme, `www.` and a trailing
 slash), the date and one row per evidence id.
+
+**Archive at capture [v1.17] (owner ruling 2026-11-20).** The table was born a provenance aid — a missing link
+asserted nothing — and the archive top-up passes have been chasing captures for rows minted long before. From this
+revision the capture is part of the minting act: an evidence row allocated an ID **above EVD-400501** (the tree-wide
+maximum when this revision was adopted; every later row is post-rule by construction) whose `source_ref` is an
+http(s) URL must carry its `archive_links` row in the same PR that mints it. A named-source citation (a registry
+record keyed by an identifier, a filing) has no page to capture and is exempt. Validator V-66 enforces presence
+(V-59 continues to enforce that the capture is of the cited page); there is no baseline — no row above the threshold
+exists at adoption, so any violation is new. For rows at or below the threshold the old posture stands: a missing
+link asserts nothing, and the top-up passes continue as backlog work.
 
 ### 4.23 IPEDS completions reference layer **[v1.14]** (`data/ipeds_*.csv`)
 
@@ -3228,5 +3284,6 @@ unchanged.
 - **v1.16.2 — 2026-11-19 (owner rulings 2026-11-19; `tasks/owner-rulings-2026-11-19b/README.md`).** §4.12.1 gains worked seams 4–7 (binding precedent): a separately branded plastics sector show inside a multi-sector event is its own series (EXPOPLAST at ADM Montréal; seam 3 unchanged); tire and aftermarket trade shows qualify (tires are rubber products); a corrosion-and-coatings show that names coatings co-primary qualifies; composites-centered shows (Carbon Fiber, SAMPE Japan) and UV and EB curing of coatings, inks, adhesives and composites (RadTech) qualify; the Geosynthetics Conference does not (its subject is the civil-engineering uses of geosynthetics). No field, vocabulary or validator change. Applied in `tasks/new-series-2026-11-19/` (27 series rows, EVT-000072 to EVT-000098).
 - **v1.16.3 — 2026-11-19 (owner ruling 2026-11-19c item 1; `tasks/owner-rulings-2026-11-19c/README.md`).** §3.6's `capability_type = process` `extrusion` ROLLUP row adds §3.1 `rubber_extrusion`, as `calendering` already covers `rubber_calendering`. No term is added to §3.1 or §3.6, so `scripts/validate.py` and `docs/schema/vocab.json` are unchanged. Applied in the same PR (`tasks/permit-rubber-extrusion-2026-11-19c/`): one `site_capabilities` row, SITE-000264 `extrusion` at `supports_C`. Item 2 of the same ruling (a direction word missing from a printed street breaks binding) changes no data.
 - **v1.16.4 — 2026-11-19 (owner rulings 2026-11-19d; `tasks/owner-rulings-2026-11-19d/README.md`).** §4.12.2 wording only, no field or vocabulary change. The `attendee` role notes: the organizer's final list of registered companies for a named past edition is a list of attending companies, and each row from it quotes the list's heading (the Coatings Trends & Technologies Summit 2026 list, which #411 held for this ruling). No validator change (the list is adjudicated at harvest). Applied in the same PR: 44 `event_participation` rows. Items 2–4 of the same ruling (past editions in the conferences repo, EXPOPLAST continuing as ADM Plastiques, undated Great Lakes speaker pages) change no data here.
-- **v1.16.5 — 2026-11-20 (owner ruling 2026-11-20, "Close the zero-row leak"; `tasks/evidence-presence-floor-2026-11-20/README.md`).** §4.13 gains the presence floor and the validator gains V-65: every organizations, sites, ecosystem, programs and people record carries at least one `data/evidence_*.csv` row. The 3,455 records with none at adoption (organizations 1,340, sites 1,840, ecosystem 133, people 132, programs 10; main `280e6a8f`, reconciled table by table against `scripts/audit_evidence_coverage.py`) are baselined under `V-65` in `scripts/validate_debt_baseline.json`, keyed `<record_table>:<record_id>:<identity fingerprint>` (a hash of the record's identity fields per AGENTS.md §3). Any other record with no row is an error, including a baselined record renamed, moved, re-pointed or repurposed without a new row. No data row is changed by this revision.
+- **v1.17 — 2026-11-20 (owner-approved 2026-11-20, all three items; applied in this PR).** Evidence-integrity increment; no data row changes. (1) **No naked tier-A/B + archive at capture.** §4.13 gains the floor rule: a live tier-A (tier-B) record must carry ≥1 supporting evidence row at `supports_A` (`supports_B` or stronger) on any claim; tombstone statuses (`merged` / `tombstoned`) are out of scope. Validator V-65 enforces it through the debt mechanism with the adoption census grandfathered shrink-only in `scripts/validate_debt_baseline.json`: 2,747 naked of 10,161 live tier-A/B records (organizations 1,214; sites 1,324; ecosystem 78; programs 9; people 122 — 2,573 of them with no evidence rows at all) — the census is the re-verification queue, not a pardon. §4.22 gains archive at capture: an evidence row allocated above EVD-400501 (the adoption-day tree maximum) whose `source_ref` is an http(s) URL must carry its `archive_links` row in the same PR; named-source citations are exempt; validator V-66 enforces presence, with no baseline. (2) **scale_band completions conversion.** §4.6's conversion note (S3) extends: where no enrollment is published, a band may be derived from published completions (the §4.23 IPEDS layer keyed on UNITID × CIP, or an institution-published completions figure) on the same thresholds, with the basis — source, year, count — required in the program's evidence-row `claim_detail`; enrollment stays preferred, and a completions-derived band is named as such wherever reported. §4.11's `scale_band` row points at the amended note. (3) **Participation citations.** §4.12.2: `evidence_source_url` is the organizer URL or its §4.22-form archive ref; a staging pointer is never a published citation. Validator V-67 bars staging pointers from the published citation fields (`event_participation.evidence_source_url`; `source_ref` on evidence, code_assignments, relationships, site_capabilities, equipment, people_engagement) with the 185 legacy pointers grandfathered shrink-only (122 participation, 61 code_assignments, 2 evidence); the participation repairs are a separate data pass, not this revision. Validators V-65–V-67 are the first rules added since V-64.
+- **v1.17.1 — 2026-11-20 (owner ruling 2026-11-20, "Close the zero-row leak"; `tasks/evidence-presence-floor-2026-11-20/README.md`).** §4.13 gains the presence floor for tier C/U and the validator gains V-68: every tier-C/U organizations, sites, ecosystem, programs and people record carries at least one `data/evidence_*.csv` row. It complements v1.17's V-65 (live tier-A/B at their own strength): new records are created at tier U or C (AGENTS.md §3), so V-68 is the rule that stops a create with no evidence row. The 858 tier-C/U records with none at adoption (organizations 182, sites 613, ecosystem 52, people 10, programs 1; main `d984d73e`, reconciled table by table against `scripts/audit_evidence_coverage.py`) are baselined under `V-68` in `scripts/validate_debt_baseline.json`, keyed `<record_table>:<record_id>:<identity fingerprint>` (a hash of the record's identity fields per AGENTS.md §3). Any other tier-C/U record with no row is an error, including a baselined record renamed, moved, re-pointed or repurposed without a new row. No data row is changed by this revision.
 
