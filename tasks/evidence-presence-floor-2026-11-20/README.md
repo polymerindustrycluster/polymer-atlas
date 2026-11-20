@@ -88,6 +88,7 @@ own strength, and grandfathers 2,747 records.
 | 3 | Name fingerprint | UNSOUND: same-name different entity | SOUND |
 | 4 | Identity fingerprint | UNSOUND: changes to non-identity fields aren't caught | SOUND (nits) |
 | 5 | V-68 reconciliation (tier C/U, beside main's V-65) | UNSOUND: a blank or invalid ecosystem tier escapes both floors. Fixed: V-68 covers "not A/B", with test `test_v68_new_ecosystem_record_with_blank_tier_fails` | SOUND |
+| 6 | Confirmation of the round-5 fix | **SOUND**: "V-68 now catches row-less records with blank or invalid tiers" | (round 5 SOUND) |
 
 **Owner ruling on round 4 (2026-11-20, multiple choice): "Merge as is."** The rule ships as the floor for creates plus
 identity changes. Widening it to every non-derived field change is a surfaced follow-up (QUEUE), not part of this PR.
