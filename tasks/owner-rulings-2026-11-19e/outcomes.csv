@@ -1,0 +1,8 @@
+org_id,legal_name,lei,gleif_creation,outcome,reason
+ORG-000566,Sealed Air Corporation,Q0M0CZB4YN6JZ65WXI09,1996-01-29,held,"HELD: Sealed Air's own 10-K says it 'was incorporated in Delaware in 1960'; GLEIF dates Delaware file 2586601 to 1996-01-29. A possible successor or reorganization, which the formation-year ruling does not cover"
+ORG-000664,ALPLA Inc.,549300GL8XWPNYKSXX74,2001-03-14,filled,
+ORG-000965,Molten North America Corporation,549300RM25BXTF73R043,1990-11-01,held,"HELD: Antigravity DOUBT (codex SOUND): Molten's own page says it 'extended its business to ... the United States, in December 1991', which the reviewer read as failing to corroborate GLEIF's 1990-11-01"
+ORG-001033,"Plastipak Packaging, Inc.",549300Y39ISK7CP7EO21,1982-05-24,held,HELD: owner ruling 2026-11-19e: Plastipak's only web quote is a third-party page (ndt.org)
+ORG-001080,Ridge Corporation,549300FTOLN3EVCFSS85,1994-02-14,held,"HELD: Ridge's own site says it 'was incorporated in 2004'; GLEIF gives 1994-02-14 under the former name Techna Composites Incorporated (Ohio charter 864734). Ohio SOS was in maintenance on 2026-11-20, so the charter could not be read"
+ORG-001128,"Storopack, Inc.",549300UCYIXHJ7CBMB49,1978-02-08,filled,
+ORG-001471,MSI Express Inc,254900HX50E22OG6NT36,1998-12-31,held,HELD: MSI Express's FAQ says it was 'formed through the merger of Express Packaging (founded in 1988) and Manufacturing Solutions International (founded in 2008)'; GLEIF's 1998-12-31 is a year-end date (the Struktol placeholder pattern) and Ohio SOS (charter 1054053) was unreachable

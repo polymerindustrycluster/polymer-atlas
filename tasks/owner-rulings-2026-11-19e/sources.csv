@@ -1,0 +1,11 @@
+org_id,role,url,quote,read
+ORG-000664,tie,https://www.alpla.com/en/company/global-presence?country=United%20States%20of%20America,ALPLA INC. Regional HQ | 289 Highway 155 South 30253 MC Donough GA,2026-11-20 tinyfish fetch
+ORG-000664,tie,https://www.alpla.com/en/company/global-presence?country=United%20States%20of%20America,ALPLA INC. Base Plant | 3320 Fort Shawnee Industrial Drive 45806 Lima Ohio,2026-11-20 tinyfish fetch (Muse quote; re-read 2026-11-19 by check_part2.py)
+ORG-000664,year,https://www.alpla.com/en/north-america,ALPLA North America was established and headquartered in McDonough Georgia in 2001.,2026-11-20 tinyfish fetch
+ORG-000965,tie,https://www.molten.co.jp/english/autoparts/plant/index.html,"Molten (North America) Corporation | | 1) | Company Outline ... 2) | Location | | | (1) | Findlay, Ohio, U.S.A.",2026-11-20 tinyfish fetch (Muse quote; re-read 2026-11-19 by check_part2.py)
+ORG-000965,year,https://www.molten.co.jp/english/autoparts/plant/index.html,"Molten (North America) Corporation extended its business to the largest automobile market in the world, the United States, in December 1991.",2026-11-20 tinyfish fetch
+ORG-001128,tie,https://www.storopack.us/imprint/,Storopack Inc. 4758 Devitt Drive Cincinnati,2026-11-20 tinyfish fetch (Muse quote; re-read 2026-11-19 by check_part2.py)
+ORG-001128,year,https://www.storopack.com/fileadmin/user_upload/DI_EN-US_Fact_Sheet_web.pdf,1978 Start of business activities in the USA.,2026-11-20 curl + pdftotext
+ORG-000566,conflict,https://www.sec.gov/Archives/edgar/data/1012100/000162828021003329/see-20201231.htm,Sealed Air Corporation (“Sealed Air” or the “Company” ...) was incorporated in Delaware in 1960.,2026-11-20 tinyfish fetch (FY2020 10-K)
+ORG-001080,conflict,https://ridgecorp.com/ridge-corporation-selects-arc-inc-to-develop-aerodynamic-services,"Ridge Corporation was incorporated in 2004 by Gary Grandominico, Ray McDonald and Dominic Grandominico",2026-11-20 tinyfish fetch
+ORG-001471,conflict,https://msiexpress.com/faq,The company was formed through the merger of Express Packaging (founded in 1988) and Manufacturing Solutions International (founded in 2008),2026-11-20 tinyfish fetch

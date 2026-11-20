@@ -1,0 +1,5 @@
+ORG-000664: SOUND — Company quotes tie ALPLA INC. to both locations; the HQ-field error does not refute GLEIF’s 2001 creation year, consistent with company history.
+ORG-000965: SOUND — The company’s entity/location quote satisfies the address exception; December 1991 market entry does not contradict November 1990 legal formation.
+ORG-001128: SOUND — The company’s entity/location quote satisfies the address exception; its 1978 business-start statement is consistent with GLEIF’s creation year.
+OVERALL: SOUND
+exit 0
