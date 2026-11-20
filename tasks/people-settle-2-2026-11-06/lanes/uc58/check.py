@@ -70,7 +70,7 @@ for suffix,title in [('thiels','Professor - Educator'),('elgafya','Professor - E
  assert found(raw,title)
 assert found(rows[0]['gate_b_quote'],'Polyvinyl Chloride')
 assert found(rows[1]['gate_b_quote'],'biodegradable polymer')
-u='https://researchdirectory.uc.edu/p/jiangjb'
+u='https://researchdirectory.uc.edu/p/<shortname>'
 t=json.loads((CACHE/(hashlib.sha256(u.encode()).hexdigest()+'.json')).read_text())['text']
 i=t.index('Grant: #CHE-2347912');project=t[i:i+350]
 assert all(s in project for s in ['Investigators:Jiang, Jianbing','05-01-2024','04-30-2027','Role:PI','Active'])

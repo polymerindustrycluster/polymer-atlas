@@ -23,6 +23,8 @@ jobs:
           python-version: "3.12"
       - name: Validate canonical CSVs (AGENTS.md §2 rule 5)
         run: python3 scripts/validate.py
+      - name: Guard — no personal-account URL in tasks/ or docs/ (owner rulings 2026-11-18 and 2026-11-18b; owner choice 2026-11-19)
+        run: python3 scripts/check_account_urls.py
       - name: Guard — no keyed data row removed without a REMOVALS.csv entry (805528a, 2026-11-04)
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then

@@ -4,6 +4,7 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
 
 - **`validate.yml`** runs on every pull request and every push to `main`:
   - `scripts/validate.py`;
+  - the personal-account URL guard on `tasks/` and `docs/` (`scripts/check_account_urls.py`, since 2026-11-19);
   - the row-loss guard;
   - the vocabulary export check;
   - the unit and mutation tests;

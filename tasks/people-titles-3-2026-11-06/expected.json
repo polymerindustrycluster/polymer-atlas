@@ -964,10 +964,10 @@
     "institution_org_id": "ORG-004694",
     "role": "associate_professor",
     "role_as_published": "Associate Professor",
-    "sources": "https://www.bme.utah.edu/profile/?unid=u0160456;https://www.bme.utah.edu/2023/08/30/2023-david-y-gin-young-investigator-award/",
+    "sources": "https://www.bme.utah.edu/profile/?unid=<id>;https://www.bme.utah.edu/2023/08/30/2023-david-y-gin-young-investigator-award/",
     "last_verified": "2026-11-02",
     "verification_tier": "A",
-    "public_profile_url": "https://www.bme.utah.edu/profile/?unid=u0160456",
+    "public_profile_url": "https://www.bme.utah.edu/profile/?unid=<id>",
     "research_specialties": "",
     "program_org_id": ""
   },

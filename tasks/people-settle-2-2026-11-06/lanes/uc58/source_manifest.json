@@ -1,15 +1,15 @@
 [
   {
-    "url": "https://researchdirectory.uc.edu/p/jiangjb",
-    "route": "https://researchdirectory.uc.edu/p/jiangjb",
+    "url": "https://researchdirectory.uc.edu/p/<shortname>",
+    "route": "https://researchdirectory.uc.edu/p/<shortname>",
     "status": "ok",
     "sha256": "91fca38a95d55391ec6797f8e4a278e1315f97288d8b23b41c9ef9caf466ddc0",
     "raw_response_status": "refetched",
     "raw_response_sha256": "0605e38de29e700fa7d92caf2a62cd99532cf61883e157a6935448afe5b9c999"
   },
   {
-    "url": "https://researchdirectory.uc.edu/p/parkye",
-    "route": "https://researchdirectory.uc.edu/p/parkye",
+    "url": "https://researchdirectory.uc.edu/p/<shortname>",
+    "route": "https://researchdirectory.uc.edu/p/<shortname>",
     "status": "ok",
     "sha256": "113f66b21eca00cdb1b100c21060df4e9dc10908bad543c40f019b911f579d94",
     "raw_response_status": "refetched",

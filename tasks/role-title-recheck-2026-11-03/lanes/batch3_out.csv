@@ -22,7 +22,7 @@ PERSON-000936,,,CANNOT_CONFIRM,"RPI 2014 news page gives no title line; no profi
 PERSON-000938,Associate Professor,https://www.isu.edu/chem/faculty/staffdirectoryentries/,CONFIRMED,"ISU chemistry directory; record role associate_professor matches"
 PERSON-000939,Professor,https://bowden.lab.uiowa.edu/node/46,CONFIRMED,"Lab page prints bare 'Professor'; record role professor matches"
 PERSON-000940,,,CANNOT_CONFIRM,"Syracuse multiscale page returned HTTP 403; no second source"
-PERSON-000941,Associate Professor,https://www.bme.utah.edu/profile/?unid=u0160456,CONFIRMED,"Utah BME profile; record role associate_professor matches"
+PERSON-000941,Associate Professor,https://www.bme.utah.edu/profile/?unid=<id>,CONFIRMED,"Utah BME profile; record role associate_professor matches"
 PERSON-000942,Associate Professor of Chemical Engineering,https://www.hajim.rochester.edu/che/people/faculty/tenhaeff_wyatt/index.html,CONFIRMED,"Page says Associate Professor of Chemical Engineering; record says professor"
 PERSON-000946,,,CANNOT_CONFIRM,"LSU CV host (vcredsearch.lsu.edu) does not resolve from this session; needs to be allowed in network settings"
 PERSON-000957,,,CANNOT_CONFIRM,"UVA faculty page and UVA news page both returned HTTP 503"

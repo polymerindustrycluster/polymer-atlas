@@ -149,10 +149,10 @@ def main():
     if raw != len(bf): fails.append(f"frame yield {len(bf)} differs from independent raw-line count {raw}")
     if now_idev != base_idev: fails.append("identifier-bearing evidence row count changed")
     pages = load_pages(witness)
-    man_rows = read_csv(open(HERE / "manifest.csv", encoding="utf-8").read())
-    pairs = {(m["url"], m["sha256"]) for m in man_rows}
-    pairs_persist = {(m["url"], m["sha256"]) for m in csv.DictReader(open(PERSIST + "manifest.csv"))}
-    if not pairs <= pairs_persist: fails.append("committed manifest.csv has entries the persist manifest lacks")
+    # committed manifest.csv == common.redact(persist manifest), byte for byte: every row and column (build.py writes exactly that)
+    want = redact(open(PERSIST + "manifest.csv", encoding="utf-8").read()).replace("\r\n", "\n").encode()
+    if (HERE / "manifest.csv").read_bytes() != want: fails.append("committed manifest.csv differs from the redacted persist manifest")
+    pairs = {(m["url"], m["sha256"]) for m in read_csv(want.decode())}
     for n in sorted(build.BLANK):
         pid = "PERSON-%06d" % n
         old = [e for e in base_ev if e["record_id"] == pid]
