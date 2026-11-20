@@ -72,9 +72,9 @@ python3 scripts/validate.py            # run before every PR
 ## Contributing — especially for agents
 
 Read `AGENTS.md` first. It is the binding protocol for every contributor,
-human or AI: branch + PR for outside contributions (campaign integration
-passes land on `main` only under AGENTS.md §2 campaign mode, with per-push
-owner approval), claim a task in `tasks/QUEUE.md`, dedupe before creating,
+human or AI: branch + PR for outside contributions (every change lands
+through a PR — campaign mode was retired 2026-11-03, AGENTS.md §2),
+claim a task in `tasks/QUEUE.md`, dedupe before creating,
 provenance on every record, no licensed-dataset copying, no personal
 contact data, tombstone — never delete.
 
@@ -89,14 +89,14 @@ contact data, tombstone — never delete.
 
 ## Status
 
-**Inventory — 2026-11-17:** recomputed from the canonical CSVs at head
-`0ab7916ad10087d99b1104ce18b30cd9d5f47b0e` (validator PASS, 0 errors).
+**Inventory — 2026-11-20:** recomputed from the canonical CSVs at head
+`d984d73e03b5198dca461e810efb1f3b00a41cbb` (validator PASS, 0 errors).
 The canonical CSVs contain **5,026 organization rows, 7,196 site rows,
-408 ecosystem rows, 1,517 people rows and 216 program rows**, all statuses and
+408 ecosystem rows, 1,614 people rows and 221 program rows**, all statuses and
 all verification tiers, including candidates and tombstones. These are not
-counts of active companies or unique ultimate parents. There are also 6,025
-registry-link rows and 42,557 evidence rows. Headline cut (operating status
-active, tiers A–C): 6,482 site rows — 1,488 in Ohio, 881 in the PIC-18 counties.
+counts of active companies or unique ultimate parents. There are also 6,021
+registry-link rows and 44,046 evidence rows. Headline cut (operating status
+active, tiers A–C): 6,481 site rows — 1,488 in Ohio, 881 in the PIC-18 counties.
 
 See the [public-count audit](docs/reviews/F5_PUBLIC_COUNTS_2026-10-30.md) for
 current state/county cuts, TRI accounting, evidence/matching refreshes, input

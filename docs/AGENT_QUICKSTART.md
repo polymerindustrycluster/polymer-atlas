@@ -26,7 +26,7 @@ python3 scripts/atlas.py next-id --all   # every ID namespace and its next free 
 
 1. **Claim first.** Mark a task in `tasks/QUEUE.md` (`claimed:<your-id> <date>`) on
    your branch. One task = one branch = one PR. **Never push to `main`.** Campaign
-   mode belongs only to the orchestrator, with per-push owner approval.
+   mode was retired 2026-11-03 (AGENTS.md §2 rules 2–3); no harness pushes to `main`.
 2. **Lanes produce packets; one integrator writes `data/`.** Wave-scale research
    arrives as packet files (CSV + report under `tasks/…`), never as edits to
    `data/`. Small single-purpose data PRs are the only exception.
@@ -37,7 +37,7 @@ python3 scripts/atlas.py next-id --all   # every ID namespace and its next free 
    Organization and ecosystem rows share the `ORG-` namespace. Only the integrator
    allocates IDs. Packets leave them blank.
 5. **No naked facts.** Every record has ≥1 source, a tier and `last_verified`. A
-   create integrates only with evidence rows (`data/evidence.csv`, SCHEMA §4.13)
+   create integrates only with evidence rows (the `data/evidence_*.csv` shards, SCHEMA §4.13)
    for its existence and scope claims.
 6. **NAICS is never a company fact by default.** It always carries
    `naics_primary_source_type` (company_disclosed | government_filing |
@@ -74,13 +74,19 @@ python3 scripts/atlas.py next-id --all   # every ID namespace and its next free 
 python3 scripts/validate.py                       # must print "OK — validation passed."
 python3 scripts/check_row_loss.py --base origin/main  # no keyed row may vanish; declare intended removals in REMOVALS.csv
 python3 scripts/export_vocab.py --check           # if you touched validator vocabularies
-python3 -m unittest discover -s scripts -p 'test_*.py'   # all tests (~12 s)
+python3 scripts/run_tests.py                       # all tests (parallel runner, as in CI since PR #417)
 ```
 
 - **Grandfathered debt.** The validator warns about rows listed in
-  `scripts/validate_debt_baseline.json` (V-45..V-51). Any *new* violation is an
+  `scripts/validate_debt_baseline.json` (V-45..V-51, V-55, V-60, V-65, V-67, V-68). Any *new* violation is an
   error. Never add IDs to the baseline to get past it. Fixing a baselined row
   shrinks the list. See `tasks/validator-debt-2026-11-01/`.
+- **Every new record needs an evidence row.**
+  - V-65: a tier-A/B record needs a row at its own strength.
+  - V-68: a tier-C/U record needs at least one row.
+  - A create with no row in `data/evidence_*.csv` fails the validator. Records that had none on 2026-11-20 are
+    baselined; adding a row to one only warns you to drop it from the baseline. See
+    `tasks/evidence-presence-floor-2026-11-20/`.
 - **PR description:** state the task claimed, sources used, rows added or
   changed, the count at each tier, the dedupe searches you ran, and any
   `inclusion_log.csv` entries (AGENTS.md §2 rule 6).

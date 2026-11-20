@@ -756,6 +756,101 @@ class ValidatorMutationTests(unittest.TestCase):
         self.append_row("event_participation.csv", new)
         self.assert_fails_with("evidence_source_url is a staging pointer — cite the organizer URL or its archive ref (SCHEMA §4.12.2, v1.17)")
 
+    # -- V-68 [v1.17.1, owner ruling 2026-11-20 "Close the zero-row leak"]: §4.13 presence floor, tier C/U ------------
+    V68_MSG = "{t} {rid} is tier {tier} with no evidence row in data/evidence_*.csv (SCHEMA §4.13 presence floor, V-68)"
+
+    def _evidence_index(self):
+        """(record_table, record_id) -> [(shard path, evidence_id)] over the copy's evidence shards."""
+        idx = {}
+        for path in sorted(self.data.glob("evidence_*.csv")):
+            with open(path, newline="", encoding="utf-8") as f:
+                for r in csv.DictReader(f):
+                    idx.setdefault((r["record_table"], r["record_id"].strip()), []).append((path, r["evidence_id"]))
+        return idx
+
+    def _rows(self, fname):
+        with open(self.data / fname, newline="", encoding="utf-8") as f:
+            return list(csv.DictReader(f))
+
+    def _org_tiers(self):
+        return {r["org_id"]: r["verification_tier"] for p in self.data.glob("organizations_*.csv") for r in self._rows(p.name)}
+
+    @staticmethod
+    def _v68_ids(table):
+        """Record ids baselined under V-68 for one table (keys are <table>:<id>:<identity fingerprint>)."""
+        return [k.split(":")[1] for k in sorted(BASELINE.get("V-68", [])) if k.startswith(f"{table}:")]
+
+    def test_v68_unbaselined_record_losing_its_only_row_fails(self):
+        tiers = self._org_tiers()
+        with open(self.data / "archive_links.csv", newline="", encoding="utf-8") as f:
+            archived = {r["evidence_id"] for r in csv.DictReader(f)}
+        (table, rid), [(path, eid)] = next(
+            (k, v) for k, v in sorted(self._evidence_index().items())
+            if k[0] == "organizations" and len(v) == 1 and tiers.get(k[1]) in ("C", "U") and v[0][1] not in archived)
+        with open(path, newline="", encoding="utf-8") as f:
+            rdr = csv.DictReader(f)
+            fields, rows = rdr.fieldnames, [r for r in rdr if r["evidence_id"] != eid]
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
+            w.writeheader()
+            w.writerows(rows)
+        self.assert_fails_with(self.V68_MSG.format(t="organizations", rid=rid, tier=tiers[rid]) + " — new violation (V-68")
+
+    def test_v68_new_record_without_evidence_fails(self):
+        shards = [p.name for p in self.data.glob("organizations_*.csv")] + ["ecosystem.csv"]
+        top = max(int(r["org_id"][4:]) for name in shards for r in self._rows(name))  # one ORG- id space
+        new_id = f"ORG-{top + 1:06d}"  # created at tier C, as AGENTS.md §3 step 6 creates records
+        self.append_row("organizations_OH.csv", dict(self._rows("organizations_OH.csv")[-1], org_id=new_id, verification_tier="C"))
+        self.assert_fails_with(self.V68_MSG.format(t="organizations", rid=new_id, tier="C"))
+
+    def test_v68_new_ecosystem_record_with_blank_tier_fails(self):
+        # review 2026-11-20 (Codex, round 5): ecosystem has no tier-enum check, so a blank tier must not slip past both
+        # V-65 (A/B) and V-68; V-68 covers every tier that is not A or B.
+        shards = [p.name for p in self.data.glob("organizations_*.csv")] + ["ecosystem.csv"]
+        top = max(int(r["org_id"][4:]) for name in shards for r in self._rows(name))
+        new_id = f"ORG-{top + 1:06d}"
+        self.append_row("ecosystem.csv", dict(self._rows("ecosystem.csv")[-1], org_id=new_id, verification_tier=""))
+        self.assert_fails_with(self.V68_MSG.format(t="ecosystem", rid=new_id, tier="(blank)"))
+
+    def test_v68_baselined_record_gaining_a_row_only_warns(self):
+        has_rows = self._evidence_index()
+        tiers = {r["person_id"]: r["verification_tier"] for r in self._rows("people.csv")}
+        rowless = [p for p in self._v68_ids("people") if ("people", p) not in has_rows]
+        person, other = rowless[0], rowless[1]  # `other` stays row-less: proves V-68 still runs (not vacuous)
+        # the effect matches the record's tier so V-25 restatement cannot fail for reasons unrelated to V-68
+        self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, record_id=person,
+                                                    tier_effect=f"supports_{tiers[person]}"))
+        self.append_row("archive_links.csv",  # EVD-999999 is above the V-66 threshold: archive at capture
+                        {"evidence_id": "EVD-999999",
+                         "archive_ref": "https://web.archive.org/web/20261104000000/https://www.bgsu.edu/example",
+                         "captured_at": "2026-11-04", "created_by": "test"})
+        code, out = run_validator(self.data, "--debt-details")
+        self.assertEqual(code, 0, out[-2000:])
+        self.assertRegex(out, r"V-68: \d+ baselined rows now pass")
+        self.assertNotIn(self.V68_MSG.format(t="people", rid=person, tier=tiers[person]), out)
+        self.assertIn(self.V68_MSG.format(t="people", rid=other, tier=tiers[other]), out)
+
+    def test_v68_baselined_record_repurposed_in_place_fails(self):
+        # review 2026-11-20 (Codex): keep a row-less baselined id but overwrite it with a different entity. No row is
+        # removed, so check_row_loss.py is silent; the identity fingerprint in the key must take it out of the baseline.
+        has_rows, tiers = self._evidence_index(), self._org_tiers()
+        rid = next(o for o in self._v68_ids("organizations") if ("organizations", o) not in has_rows)
+        shard = next(p.name for p in sorted(self.data.glob("organizations_*.csv"))
+                     if any(r["org_id"] == rid for r in self._rows(p.name)))
+        self.edit_rows(shard, lambda r: r["org_id"] == rid, lambda r: r.update(legal_name="Entirely Different Company LLC"))
+        self.assert_fails_with(self.V68_MSG.format(t="organizations", rid=rid, tier=tiers[rid]))
+
+    def test_v68_baselined_person_same_name_other_institution_fails(self):
+        # review 2026-11-20 (Codex, round 3): a different person with the same full_name under the same person_id.
+        # The identity fingerprint covers institution_org_id, so the move drops the record out of the baseline.
+        has_rows = self._evidence_index()
+        people = self._rows("people.csv")
+        pid = next(p for p in self._v68_ids("people") if ("people", p) not in has_rows)
+        me = next(r for r in people if r["person_id"] == pid)
+        other_inst = next(r["institution_org_id"] for r in people if r["institution_org_id"] not in ("", me["institution_org_id"]))
+        self.edit_rows("people.csv", lambda r: r["person_id"] == pid, lambda r: r.update(institution_org_id=other_inst))
+        self.assert_fails_with(self.V68_MSG.format(t="people", rid=pid, tier=me["verification_tier"]))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Validate the Polymer Atlas CSVs. Stdlib only. Exit 1 on any error.
 
-Checks (v1 gate + schema v1.1/v1.2 additions, per AGENTS.md / docs/SCHEMA.md):
+Checks (v1 gate + schema additions through v1.17, per AGENTS.md / docs/SCHEMA.md):
 - org_id / site_id format and uniqueness
 - ring_primary in 1..5; verification_tier in A/B/C/U
 - every record has >=1 source; tier A/B records must have last_verified
 - NAICS, when present, must carry source_type + confidence
 - Ohio sites must have a county (owner-ruling 2026-10-29 parcel-queue exception)
-- sites.org_id must exist in organizations.csv or ecosystem.csv
+- sites.org_id must exist in the organizations_*.csv shards or ecosystem.csv
 - [v1.2] pic_relationship_stage must NOT be present (retired at v1.2)
 - [v1.1] organizations/sites new-column presence + shape checks
 - [v1.2] membership citation rule: pic_member=true requires a
@@ -23,14 +23,36 @@ Checks (v1 gate + schema v1.1/v1.2 additions, per AGENTS.md / docs/SCHEMA.md):
 - [v1.3] programs.csv discipline (PROG ids, FK, type/credential/level/CIP/
   completions) and institution rollups recomputed and compared; program
   grain in ecosystem.csv is an error; people.program_org_id → programs.csv
+- [v1.5] events layer (§4.12): events.csv + event_participation.csv
+  discipline (V-17..V-21)
+- [v1.6] evidence contract (§4.13), relationships parity, liveness,
+  tier-1 qualifier, capabilities and site fields (V-22..V-33); state-shard
+  layout (Appendix C, V-34..V-38)
+- [v1.7] code dimension (§2.4, §4.16-§4.18, V-39..V-44); grandfathered
+  debt mechanism for pre-existing MUST violations (V-45..V-51), incl.
+  [v1.7.6] the CRM-source bar (V-50) and the people-URL guard (V-51)
+- [v1.8] evidence partitioned into data/evidence_*.csv shards mirroring
+  the record shards — the union the evidence checks read
+- [v1.9] equipment (§4.19, V-52) and people engagement (§4.20, V-53)
 - [v1.10] evidence record_table gains people (§4.13): TABLE_IDS/TABLE_TIER/
   MUST_HAVE extended; data/evidence_people.csv joins the evidence union
 - [v1.10] people_identifiers.csv (§4.21): person FK, identifier-type enum,
   ORCID shape, one row per identifier value (V-54)
+- [v1.11] newsroom / LinkedIn columns (§4.4, V-58) and evidence archive
+  links (§4.22, V-59); an evidence row never cites a licensed publication
+  (AGENTS.md §5, V-60)
+- [v1.12] events cross-repo identity: pic_events_slug (V-61)
+- [v1.13.4, widened v1.15] no personal-account identifier URL in a
+  people row (§1 P2b, V-62)
+- [v1.14] IPEDS completions layer (§4.23): the three generated tables
+  must equal a fresh derivation from the raw file (V-63)
+- [v1.15] people status / status_date (§4.9, V-64)
 - [v1.17] no naked tier-A/B (§4.13 floor rule, V-65; the adoption census is
   grandfathered in the debt baseline, shrink-only), archive at capture
   (§4.22, V-66), and no staging pointer in a published citation field
   (§4.12.2, V-67; legacy pointers grandfathered the same way)
+- [v1.17.1] V-68 presence floor for tier C/U (§4.13): every tier-C/U record has
+  >=1 evidence row (V-65 covers tier A/B); adoption-day gaps are baselined
 """
 import csv, json, os, re, sys
 from datetime import datetime
@@ -670,6 +692,33 @@ for _rows, _idc, _tbl in ((code_assignments, "assignment_id", "code_assignments"
     for r in _rows:
         if STAGING_PTR.search(r.get("source_ref") or ""):
             debt("V-67", r[_idc], f"{_tbl} {r[_idc]} source_ref is a staging pointer — cite the source itself, not the staging path (SCHEMA §4.12.2, v1.17)")
+
+# V-68 [v1.17.1, owner ruling 2026-11-20 "Close the zero-row leak"]: the §4.13 presence floor for tier C/U. V-65 covers
+# live tier-A/B records; new records are created at tier U or C (AGENTS.md §3 step 6), so V-68 is the rule that stops a
+# create with no evidence row. Every tier-C/U record carries at least one data/evidence_*.csv row (archive_links and
+# registry_links do not count). Records with none at adoption are baselined. Keys are
+# "<record_table>:<record_id>:<identity fingerprint>": the table because ecosystem rows share the ORG- id space with
+# organizations; the fingerprint (first 8 hex of sha1 over the record's identity fields, each lowercased to letters and
+# digits) so a baselined id renamed, moved or repurposed for a different entity without a witness drops out of the
+# baseline and errors (the lane-brief contract: a changed record carries rows too). Identity fields follow AGENTS.md §3's
+# dedupe tests: name + place, or name + operator/institution.
+import hashlib
+V68_TABLES = (("organizations", orgs, "org_id", ("legal_name", "hq_city", "hq_state")),
+              ("sites", sites, "site_id", ("org_id", "site_name", "street_address", "city", "state")),
+              ("ecosystem", eco, "org_id", ("legal_name", "city", "state")),
+              ("programs", programs, "program_id", ("institution_org_id", "program_name")),
+              ("people", people, "person_id", ("full_name", "institution_org_id")))
+def v68_key(table, rid, values):
+    ident = "|".join(re.sub(r"[^a-z0-9]+", "", (v or "").lower()) for v in values)
+    return f"{table}:{rid}:{hashlib.sha1(ident.encode()).hexdigest()[:8]}"
+_with_rows = {(r["record_table"].strip(), r["record_id"].strip()) for r in evidence}
+for _table, _rows, _idcol, _identcols in V68_TABLES:
+    for r in _rows:
+        rid, tier = r[_idcol].strip(), (r.get("verification_tier") or "").strip()
+        # "not A/B", not "in C/U": a blank or invalid tier (ecosystem has no tier-enum check) must not escape both floors
+        if tier not in ("A", "B") and (_table, rid) not in _with_rows:
+            debt("V-68", v68_key(_table, rid, [r.get(c) for c in _identcols]),
+                 f"{_table} {rid} is tier {tier or '(blank)'} with no evidence row in data/evidence_*.csv (SCHEMA §4.13 presence floor, V-68)")
 
 DEBT_DETAILS = "--debt-details" in sys.argv
 for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):
