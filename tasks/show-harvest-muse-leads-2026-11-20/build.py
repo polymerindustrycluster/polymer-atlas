@@ -237,8 +237,8 @@ def main():
                                "listed_name": listed, "org_id": org, "legal_name": o["legal_name"],
                                "hq_country": o["hq_country"], "ultimate_parent_name": o.get("ultimate_parent_name", "")})
 
-    # Owner ruling 2026-11-20 applied to #414's list: names #414 held under a rule (i) hold (#411's or #414's, at
-    # EVT-000077) that print the US entity itself. #414's other gates already passed every other name on this list.
+    # Owner ruling 2026-11-20 applied to #414's list: names held under any rule (i) hold at EVT-000077 (#411's, #414's
+    # or this pass's) that print the US entity itself. #414's other gates already passed every other name on this list.
     d = json.loads((Path(a.harvest).resolve() / "out" / "coatings-trends-and-technologies-summit_2027.json").read_text(
         encoding="utf-8"))
     (L,) = [x for x in d["lists"] if x["source_url"] == D.URL]
