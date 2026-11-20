@@ -615,7 +615,12 @@ class ValidatorMutationTests(unittest.TestCase):
         return e["record_id"], e["observed_date"]
 
     def _death_row(self, pid, observed, **over):
-        row = {"evidence_id": "EVD-399990", "record_table": "people", "record_id": pid, "claim_type": "liveness",
+        # allocate above the tree max: a fixed id collided with real data once main grew past it (#422, EVD-399990)
+        top = 0
+        for p in self.data.glob("evidence*.csv"):
+            with open(p, newline="", encoding="utf-8") as f:
+                top = max([top] + [int(r["evidence_id"][4:]) for r in csv.DictReader(f)])
+        row = {"evidence_id": f"EVD-{top + 1:06d}", "record_table": "people", "record_id": pid, "claim_type": "liveness",
                "claim_detail": "status=deceased; date of death as the notice states it", "source_class": "press",
                "source_ref": "https://example.org/notice", "observed_date": observed, "tier_effect": "supports_B",
                "created_by": "test", "notes": "synthetic"}

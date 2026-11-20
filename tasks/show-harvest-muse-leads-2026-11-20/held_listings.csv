@@ -1,0 +1,11 @@
+list,event_id,listed_name,org_id,legal_name
+ampp_2025_exhibitor,EVT-000072,Armacell,ORG-003179,Armacell LLC
+ampp_2026_exhibitor,EVT-000072,Armacell,ORG-003179,Armacell LLC
+ctt_2026_speaker,EVT-000077,Evonik,ORG-002926,Evonik Corporation
+ctt_2026_speaker,EVT-000077,Covestro,ORG-000761,Covestro LLC
+ctt_2026_speaker,EVT-000077,Omya,ORG-003002,"Omya, Inc."
+ctt_2026_speaker,EVT-000077,Sun Chemical,ORG-001489,Sun Chemical Corporation
+ctt_2026_speaker,EVT-000077,Evonik,ORG-002926,Evonik Corporation
+ctt_2026_speaker,EVT-000077,BASF,ORG-000698,BASF Corporation
+ctt_2026_sponsor,EVT-000077,Evonik,ORG-002926,Evonik Corporation
+radtech_2025_exhibitor,EVT-000092,Arkema,ORG-002224,Arkema Inc.
