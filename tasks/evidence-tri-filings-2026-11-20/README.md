@@ -5,9 +5,11 @@
 - **Witness:** each row is witnessed by the organization's EPA TRI facility record, a `government_filing`.
 - **Scope of change:** rows are appended to the organization evidence shards only. No record field, tier or status
   changed.
-- **V-65 shrink:** the 71 tier-A/B records now carry a supports_A row, so their IDs leave the v1.17 "no naked tier-A/B"
-  baseline (2,747 → 2,676), per the file's shrink-only doctrine. Its `amended` note is untouched, to avoid conflicts
-  with other open PRs.
+- **Baseline shrink:** per the file's shrink-only doctrine, `prune_baselines.py` drops the entries this lane now
+  satisfies. Its `amended` note is untouched, to avoid conflicts.
+  - V-65 ("no naked tier-A/B"): the 71 tier-A/B records now carry a supports_A row and leave it, 2,732 → 2,661 on main
+    after PR #427.
+  - V-68 (tier C/U presence floor, PR #430): the 9 tier-C/U records leave it, 858 → 849.
 
 **Yield:** 80 of the 109 framed organizations (73%) gained a row.
 
@@ -74,12 +76,13 @@ The owner's targets (2026-11-20) were at least one evidence row per zero-row rec
 - **Liveness rows:** a TRI reporting year as operating evidence has no owner ruling yet.
 - **NAICS `code` rows.**
 
-## Merge order with PR #427
+## Merge with PR #427 and PR #430
 
-Both PRs append rows to some of the same organization shards.
-- Whichever merges second will conflict at the end of those files.
-- Resolve by keeping both sides in ascending evidence-ID order: #427's EVD-410001..410025 before this lane's
-  410026..410105.
+Both merged to main first. Merging main into this branch conflicted in four files.
+- **The OH and PA organization shards:** resolved as main's rows plus this lane's, in ascending evidence-ID order. Every
+  row from both sides is present (OH 3,656 + 46; PA 852 + 30).
+- **`tasks/QUEUE.md`:** both lines kept; V-68 marked done.
+- **`validate_debt_baseline.json`:** main's file, re-shrunk with `prune_baselines.py`.
 
 ## Reproduce
 

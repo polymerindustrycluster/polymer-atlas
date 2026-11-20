@@ -51,6 +51,8 @@ Checks (v1 gate + schema additions through v1.17, per AGENTS.md / docs/SCHEMA.md
   grandfathered in the debt baseline, shrink-only), archive at capture
   (§4.22, V-66), and no staging pointer in a published citation field
   (§4.12.2, V-67; legacy pointers grandfathered the same way)
+- [v1.17.1] V-68 presence floor for tier C/U (§4.13): every tier-C/U record has
+  >=1 evidence row (V-65 covers tier A/B); adoption-day gaps are baselined
 """
 import csv, json, os, re, sys
 from datetime import datetime
@@ -690,6 +692,33 @@ for _rows, _idc, _tbl in ((code_assignments, "assignment_id", "code_assignments"
     for r in _rows:
         if STAGING_PTR.search(r.get("source_ref") or ""):
             debt("V-67", r[_idc], f"{_tbl} {r[_idc]} source_ref is a staging pointer — cite the source itself, not the staging path (SCHEMA §4.12.2, v1.17)")
+
+# V-68 [v1.17.1, owner ruling 2026-11-20 "Close the zero-row leak"]: the §4.13 presence floor for tier C/U. V-65 covers
+# live tier-A/B records; new records are created at tier U or C (AGENTS.md §3 step 6), so V-68 is the rule that stops a
+# create with no evidence row. Every tier-C/U record carries at least one data/evidence_*.csv row (archive_links and
+# registry_links do not count). Records with none at adoption are baselined. Keys are
+# "<record_table>:<record_id>:<identity fingerprint>": the table because ecosystem rows share the ORG- id space with
+# organizations; the fingerprint (first 8 hex of sha1 over the record's identity fields, each lowercased to letters and
+# digits) so a baselined id renamed, moved or repurposed for a different entity without a witness drops out of the
+# baseline and errors (the lane-brief contract: a changed record carries rows too). Identity fields follow AGENTS.md §3's
+# dedupe tests: name + place, or name + operator/institution.
+import hashlib
+V68_TABLES = (("organizations", orgs, "org_id", ("legal_name", "hq_city", "hq_state")),
+              ("sites", sites, "site_id", ("org_id", "site_name", "street_address", "city", "state")),
+              ("ecosystem", eco, "org_id", ("legal_name", "city", "state")),
+              ("programs", programs, "program_id", ("institution_org_id", "program_name")),
+              ("people", people, "person_id", ("full_name", "institution_org_id")))
+def v68_key(table, rid, values):
+    ident = "|".join(re.sub(r"[^a-z0-9]+", "", (v or "").lower()) for v in values)
+    return f"{table}:{rid}:{hashlib.sha1(ident.encode()).hexdigest()[:8]}"
+_with_rows = {(r["record_table"].strip(), r["record_id"].strip()) for r in evidence}
+for _table, _rows, _idcol, _identcols in V68_TABLES:
+    for r in _rows:
+        rid, tier = r[_idcol].strip(), (r.get("verification_tier") or "").strip()
+        # "not A/B", not "in C/U": a blank or invalid tier (ecosystem has no tier-enum check) must not escape both floors
+        if tier not in ("A", "B") and (_table, rid) not in _with_rows:
+            debt("V-68", v68_key(_table, rid, [r.get(c) for c in _identcols]),
+                 f"{_table} {rid} is tier {tier or '(blank)'} with no evidence row in data/evidence_*.csv (SCHEMA §4.13 presence floor, V-68)")
 
 DEBT_DETAILS = "--debt-details" in sys.argv
 for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):

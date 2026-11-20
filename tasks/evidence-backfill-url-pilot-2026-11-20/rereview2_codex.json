@@ -1,0 +1,118 @@
+{
+  "verdicts": [
+    {
+      "record_id": "ORG-001777",
+      "claim_type": "existence",
+      "verdict": "SOUND",
+      "reason": "“Anchor Industries, Inc.” identifies the company itself using the record’s listed trade name, Anchor Industries."
+    },
+    {
+      "record_id": "ORG-002503",
+      "claim_type": "existence",
+      "verdict": "SOUND",
+      "reason": "“United Laminations” identifies the company itself, with omission of “Inc.” permitted by the short-name ruling."
+    },
+    {
+      "record_id": "ORG-002503",
+      "claim_type": "address",
+      "verdict": "SOUND",
+      "reason": "The sole contact address shown, “1311 Lackawanna Avenue Mayfield, PA 18433,” supports the HQ claim under the single-address ruling."
+    },
+    {
+      "record_id": "ORG-001560",
+      "claim_type": "existence",
+      "verdict": "SOUND",
+      "reason": "The page presents “True Indicating” as the business and explicitly identifies “True Indicating, LLC” in its footer."
+    },
+    {
+      "record_id": "ORG-001560",
+      "claim_type": "address",
+      "verdict": "SOUND",
+      "reason": "The “True Indicating, LLC” footer gives the sole address shown as “946 Kane St, Suite A / Toledo Ohio 43612,” satisfying the single-address ruling."
+    },
+    {
+      "record_id": "ORG-002508",
+      "claim_type": "existence",
+      "verdict": "SOUND",
+      "reason": "“C&J Industries” presents the company itself and matches the record’s abbreviated name “C & J Ind.”"
+    },
+    {
+      "record_id": "ORG-002508",
+      "claim_type": "address",
+      "verdict": "SOUND",
+      "reason": "“Contact Details” lists the sole address shown as “760 Water Street / Meadville, PA 16335, USA,” satisfying the single-address ruling."
+    },
+    {
+      "record_id": "ORG-001765",
+      "claim_type": "existence",
+      "verdict": "SOUND",
+      "reason": "“A-Z Recycling is an international recycling company” identifies the business itself, with omission of “Inc” permitted."
+    },
+    {
+      "record_id": "ORG-001765",
+      "claim_type": "address",
+      "verdict": "SOUND",
+      "reason": "Despite the additional DMS Recycling address, the page explicitly states that A-Z Recycling is “headquartered in Columbus, Ohio.”"
+    },
+    {
+      "record_id": "ORG-001743",
+      "claim_type": "existence",
+      "verdict": "SOUND",
+      "reason": "“Industrial Pattern & Mfg. Specializes in Pattern, Mold and Model Manufacturing” identifies the company itself with only the permitted “Co.” suffix omitted."
+    },
+    {
+      "record_id": "ORG-001743",
+      "claim_type": "address",
+      "verdict": "SOUND",
+      "reason": "The company footer gives its sole listed address as “899 N. 20th St. / Columbus, OH 43219,” satisfying the single-address ruling."
+    },
+    {
+      "record_id": "ORG-001814",
+      "claim_type": "existence",
+      "verdict": "SOUND",
+      "reason": "“Freedom Mold Machine” is the company’s own branding, matching the record’s name with the ampersand and LLC suffix omitted."
+    },
+    {
+      "record_id": "ORG-002074",
+      "claim_type": "address",
+      "verdict": "SOUND",
+      "reason": "The “Get in touch” block gives the sole address shown as “3518 Riverside Drive Suite 202 - Columbus OH 43221-1735,” satisfying the single-address ruling."
+    },
+    {
+      "record_id": "ORG-001914",
+      "claim_type": "address",
+      "verdict": "UNSOUND",
+      "reason": "“VinylOne Cleveland, OH” is a page title, and neither it nor “Cleveland, Ohio’s answer” identifies headquarters or supplies a qualifying contact address."
+    },
+    {
+      "record_id": "ORG-001896",
+      "claim_type": "address",
+      "verdict": "UNSOUND",
+      "reason": "“Hose and Belt Distributor in Solon, Ohio” establishes a business location but provides neither an HQ designation nor a qualifying contact address."
+    },
+    {
+      "record_id": "ORG-002311",
+      "claim_type": "address",
+      "verdict": "UNSOUND",
+      "reason": "“North Coast Conduit | Erie, PA” is a page title without an HQ designation or qualifying contact address."
+    },
+    {
+      "record_id": "ORG-001535",
+      "claim_type": "address",
+      "verdict": "UNSOUND",
+      "reason": "“Dublin, Ohio– React Health is proud to announce” is a news dateline, and the separate “BOTHELL, WA” dateline further prevents treating announcement locations as HQ evidence."
+    },
+    {
+      "record_id": "SITE-002779",
+      "claim_type": "existence",
+      "verdict": "SOUND",
+      "reason": "The Sherwin-Williams location page identifies a “Manufacturing Site - Coil & Extrusion” at “2000 Westhall Street” in Pittsburgh, establishing the operator’s facility at the recorded address."
+    },
+    {
+      "record_id": "SITE-002779",
+      "claim_type": "address",
+      "verdict": "SOUND",
+      "reason": "“2000 Westhall Street” and “Pittsburgh, PA, 15233” match the recorded street address and city, with “St.” merely abbreviating “Street.”"
+    }
+  ]
+}
