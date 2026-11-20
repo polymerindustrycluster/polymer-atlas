@@ -1,0 +1,508 @@
+{
+ "verdicts": [
+  {
+   "record_id": "SITE-002441",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002444",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Latrobe plant at the matching street address."
+  },
+  {
+   "record_id": "SITE-002463",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Leola plant at the matching street address."
+  },
+  {
+   "record_id": "SITE-002476",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Macungie facility at the matching street address."
+  },
+  {
+   "record_id": "SITE-002478",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Loparex's Malvern facility at the matching street address."
+  },
+  {
+   "record_id": "SITE-002479",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002484",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The plant name carries the operator's name, and the Manns Choice street address matches."
+  },
+  {
+   "record_id": "SITE-002488",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Marcus Hook facility at the matching street address."
+  },
+  {
+   "record_id": "SITE-002516",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002531",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Mount Union plant at the matching street address."
+  },
+  {
+   "record_id": "SITE-002534",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator, explicit DBA name and street address match."
+  },
+  {
+   "record_id": "SITE-002535",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Adorn plant name carries Patrick Industries' name, and the full street address matches."
+  },
+  {
+   "record_id": "SITE-002547",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Pillings FRP's White Deer plant at the matching street address."
+  },
+  {
+   "record_id": "SITE-002547",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2525 Old Rte. 15 matches the FRS street address."
+  },
+  {
+   "record_id": "SITE-002557",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002557",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "975 Madison Avenue matches the FRS street address."
+  },
+  {
+   "record_id": "SITE-002559",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The full facility name and Norristown street address match."
+  },
+  {
+   "record_id": "SITE-002571",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002579",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names INEOS Composites US at the matching street; omission of LLC does not change the identity."
+  },
+  {
+   "record_id": "SITE-002580",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS names Ashland Specialty Chemical Co., while the Atlas operator is INEOS Composites US LLC; the matching site label does not resolve that company mismatch."
+  },
+  {
+   "record_id": "SITE-002602",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS carries the operator's name and matches the Pittston street address."
+  },
+  {
+   "record_id": "SITE-002602",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "99 Stevens Lane matches the FRS street address."
+  },
+  {
+   "record_id": "SITE-002608",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002620",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002620",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "2 Birchmont Road matches the FRS street address."
+  },
+  {
+   "record_id": "SITE-002628",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002640",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The full operator name and N. Thomas Avenue match; both records use the same unnumbered street location."
+  },
+  {
+   "record_id": "SITE-002649",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS carries the operator's name and matches 534 Vine Avenue in Sharon."
+  },
+  {
+   "record_id": "SITE-002650",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Sharpsville facility at the matching street address."
+  },
+  {
+   "record_id": "SITE-002650",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "80 Canal Street matches the FRS street address."
+  },
+  {
+   "record_id": "SITE-002651",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Sinking Spring facility at the matching street address."
+  },
+  {
+   "record_id": "SITE-002651",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "700 Henry Circle matches the FRS street address."
+  },
+  {
+   "record_id": "SITE-002662",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002664",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002666",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002674",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The full operator/site name and street-number range match."
+  },
+  {
+   "record_id": "SITE-002680",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The full operator/site name and street-number range match."
+  },
+  {
+   "record_id": "SITE-002681",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Harmar Street facility at the matching address."
+  },
+  {
+   "record_id": "SITE-002687",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Washington facility at the matching street address."
+  },
+  {
+   "record_id": "SITE-002687",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "259 South College Street matches the FRS street address."
+  },
+  {
+   "record_id": "SITE-002691",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Glenmar plant name explicitly carries Delaware Valley Custom Marble's name at the matching address."
+  },
+  {
+   "record_id": "SITE-002694",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS carries Colorcon's name and matches the West Point street address."
+  },
+  {
+   "record_id": "SITE-002697",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Williamsport plant at the matching street address."
+  },
+  {
+   "record_id": "SITE-002698",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The complete operator name and street address match, rather than merely a shared generic word."
+  },
+  {
+   "record_id": "SITE-002700",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The full operator/site name and street address match."
+  },
+  {
+   "record_id": "SITE-002702",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The full operator/site name and street address match."
+  },
+  {
+   "record_id": "SITE-002704",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-002725",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The research facility carries the distinctive PPG name and matches the Atlas street address."
+  },
+  {
+   "record_id": "SITE-002729",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name, street address and Suite B match."
+  },
+  {
+   "record_id": "SITE-002734",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS identifies Lord Corp. Industrial Products, while the Atlas operator is Parker-Hannifin Corporation; the matching Lord site label does not establish Parker's identity."
+  },
+  {
+   "record_id": "SITE-002738",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Chem abbreviates Chemical, and the Delmont plant name carries the operator's name at the matching address."
+  },
+  {
+   "record_id": "SITE-002745",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS identifies Lord Corp., while the Atlas operator is Parker-Hannifin Corporation; the exact street match does not resolve the company mismatch."
+  },
+  {
+   "record_id": "SITE-002749",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS names Huntsman Advance Materials LLC, whereas Atlas specifies Huntsman Advanced Materials Americas LLC; the packet does not establish equivalence for the substantive Americas qualifier."
+  },
+  {
+   "record_id": "SITE-002754",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and full street/industrial-park address match."
+  },
+  {
+   "record_id": "SITE-002757",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS matches the operator's explicitly supplied Westlake Royal Building Products alias at the same address."
+  },
+  {
+   "record_id": "SITE-002762",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS names Molded Fiber Glass Tray Co., whereas Atlas specifies Molded Fiber Glass Companies; the matching site label does not establish that these are the same operator."
+  },
+  {
+   "record_id": "SITE-002784",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator and Laurel Line plant name match the same Scranton street; the differing ZIP does not override that specific identity match."
+  },
+  {
+   "record_id": "SITE-003234",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS names Evonik Degussa Corp, whereas Atlas specifies Evonik Corporation; the substantive Degussa company-name difference has no identity bridge in the packet."
+  },
+  {
+   "record_id": "SITE-003234",
+   "claim_type": "address",
+   "verdict": "UNSOUND",
+   "reason": "Although 2 Turner Place matches, the address claim fails because the operator's existence match is UNSOUND."
+  },
+  {
+   "record_id": "SITE-003324",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-003343",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Star Plastics' Ravenswood facility at the matching street address."
+  },
+  {
+   "record_id": "SITE-003422",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The building-addition record carries Press-Seal's name at the exact headquarters/plant address."
+  },
+  {
+   "record_id": "SITE-003463",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "CW Ohio and the street address match; the parenthetical internal ID does not change the name."
+  },
+  {
+   "record_id": "SITE-003491",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-003495",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Coatex and the street address match; LLC versus Inc. is only a legal-suffix difference."
+  },
+  {
+   "record_id": "SITE-003533",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Husky Injection Molding Systems and the street match; Inc. versus Ltd. is only a legal-suffix difference."
+  },
+  {
+   "record_id": "SITE-003548",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS carries the full Oerlikon HRSflow trade name at the exact address, with a USA geographic qualifier and LLC suffix."
+  },
+  {
+   "record_id": "SITE-003552",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS names W. R. Grace & Co. Conn, whereas Atlas specifies W. R. Grace & Co.; the packet does not establish equivalence for the Conn entity qualifier."
+  },
+  {
+   "record_id": "SITE-003628",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-003797",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-003871",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-003885",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-003930",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The distinctive Wellmark name, exact street and plastics NAICS 326199 support the Wellmark Plastics trade-name match."
+  },
+  {
+   "record_id": "SITE-003931",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-004003",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "PolyMelt Manufacturing and the base street address match; omitted Inc. and added Suite 300 do not refute identity."
+  },
+  {
+   "record_id": "SITE-004003",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "12515 Citypark Drive matches; FRS's additional Suite 300 is an allowed suite difference."
+  },
+  {
+   "record_id": "SITE-004017",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name, street, city and state match; the missing Atlas ZIP creates no conflict."
+  },
+  {
+   "record_id": "SITE-004124",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-004193",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Lomont Molding and the street address match; Incorporated versus LLC is only a legal-suffix difference."
+  },
+  {
+   "record_id": "SITE-004195",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-004207",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Spaulding Composites and the street address match; omission of Inc. does not refute identity."
+  },
+  {
+   "record_id": "SITE-004286",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match."
+  },
+  {
+   "record_id": "SITE-004303",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and street address match, with S abbreviating South."
+  },
+  {
+   "record_id": "SITE-004366",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "CyCan Industries and the street address match; LLC versus Inc. is only a legal-suffix difference."
+  }
+ ]
+}
