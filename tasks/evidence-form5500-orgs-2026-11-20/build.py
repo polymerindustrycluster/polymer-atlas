@@ -127,9 +127,13 @@ def classify(o, oeins, by_name, by_ein, spine_owner):
         else:
             st = [f for n in o["_names"] for f in by_name.get(n, []) if o["hq_state"].strip().upper() in (f["loc"][1], f["mail"][1])]
             return ("NAME_STATE_ONLY" if st else "NONE"), st
-    owner = spine_owner.get(fs[0]["ein"])
-    if owner and owner != o["org_id"]:
+    # the 2026-11-01 spine, both ways: no EIN here belongs to another org, and if the spine gave this org EINs, one is here
+    fs_eins = {f["ein"] for f in fs}
+    if any(spine_owner.get(e, o["org_id"]) != o["org_id"] for e in fs_eins):
         return "SPINE_CONFLICT", fs
+    mine = {e for e, oid in spine_owner.items() if oid == o["org_id"]}
+    if mine and not mine & fs_eins:
+        return "SPINE_OTHER_EIN", fs
     return verdict, fs
 
 
@@ -209,6 +213,8 @@ def match(repo, fdir):
     wr(HERE / "ledger.csv", ledger, list(ledger[0]))
     wr(HERE / "packet_rows.csv", packet, list(packet[0]))
     (HERE / "review_bundle.json").write_text(json.dumps(bundle, indent=1, ensure_ascii=False), encoding="utf-8")
+    agree = sum(1 for b in bundle if spine_owner.get(b["filing"]["ein"]) == b["record_id"])
+    print(f"spine (polymer-coded sponsors only) independently gives the cited EIN to the same org for {agree} of {len(bundle)}")
     print(f"frame {len(orgs)} active zero-evidence organizations ({sum(1 for v in eins.values() if v)} with an EIN link); "
           f"verdicts {dict(Counter(l['verdict'] for l in ledger))}; packet {len(packet)} rows on {len(bundle)} orgs "
           f"({dict(Counter(p['claim_type'] for p in packet))}); tiers {dict(Counter(b['atlas']['verification_tier'] for b in bundle))}")
@@ -250,6 +256,8 @@ def selftest():
     assert classify(o, (), by_name, {}, {})[0] == "MULTI_EIN"
     assert classify(o, (), {name_key("ACME POLYMERS INC"): [f()]}, {}, {})[0] == "NAME+CITY"
     assert classify(o, (), {name_key("ACME POLYMERS INC"): [f()]}, {}, {"111111111": "ORG-2"})[0] == "SPINE_CONFLICT"
+    assert classify(o, (), {name_key("ACME POLYMERS INC"): [f()]}, {}, {"999999999": "ORG-1"})[0] == "SPINE_OTHER_EIN"
+    assert classify(o, (), {name_key("ACME POLYMERS INC"): [f()]}, {}, {"111111111": "ORG-1"})[0] == "NAME+CITY"
     assert classify(o, ("333333333",), {}, {"333333333": [f(ein="333333333", name="OTHER CO", keys={"other"})]}, {})[0] == "EIN_NAME_DIFF"
     oo = dict(o, org_id="ORG-1", legal_name="Acme Polymers, Inc.", verification_tier="B", _shard="OH")
     kinds = lambda **k: [r["claim_type"] for r in rows_for(oo, "NAME+CITY", f(**k))]

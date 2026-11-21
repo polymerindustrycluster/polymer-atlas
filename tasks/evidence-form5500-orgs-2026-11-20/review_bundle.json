@@ -534,55 +534,6 @@
   }
  },
  {
-  "record_id": "ORG-000204",
-  "verdict": "NAME+CITY",
-  "atlas": {
-   "legal_name": "Hankook Tire America Corp.",
-   "trade_names": "America Technical Center (ATC); Hankook Tire America",
-   "hq_city": "Nashville",
-   "hq_state": "TN",
-   "verification_tier": "B",
-   "website": "https://www.hankooktire.com",
-   "linked_eins": []
-  },
-  "filing": {
-   "form": "5500",
-   "ack_id": "20261014061218NAL0005843762001",
-   "sponsor": "HANKOOK TIRE AMERICA CORP.",
-   "dba": "",
-   "ein": "133090091",
-   "plan_year_end": "2025-12-31",
-   "active_participants_eoy": 1336,
-   "final_filing": "0",
-   "location_city_state": [
-    "",
-    ""
-   ],
-   "mailing_city_state": [
-    "NASHVILLE",
-    "TN"
-   ]
-  },
-  "other_eins_under_name": [],
-  "proposed": {
-   "existence": {
-    "tier_effect": "supports_A",
-    "observed_date": "2026-11-20",
-    "claim_detail": "DOL Form 5500 for the plan year ending 2025-12-31 names plan sponsor 'HANKOOK TIRE AMERICA CORP.', EIN 133090091, in Nashville, TN; the name matches the organization's legal name 'Hankook Tire America Corp.'"
-   },
-   "address": {
-    "tier_effect": "supports_A",
-    "observed_date": "2026-11-20",
-    "claim_detail": "HQ Nashville TN: the sponsor's mailing address in the Form 5500 for the plan year ending 2025-12-31 is in NASHVILLE, TN"
-   },
-   "liveness": {
-    "tier_effect": "supports_A",
-    "observed_date": "2025-12-31",
-    "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 1336 active participants at year end"
-   }
-  }
- },
- {
   "record_id": "ORG-000217",
   "verdict": "NAME+CITY",
   "atlas": {
