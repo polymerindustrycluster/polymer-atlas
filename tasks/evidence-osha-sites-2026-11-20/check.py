@@ -60,11 +60,30 @@ for x in applied:
         fail.append(f"{x['evidence_id']} is in {fname}, not its home shard")
     if any(r[c] != x[c] for c in r):
         fail.append(f"{x['evidence_id']} differs from applied.csv")
+# Part 3 (owner waiver 2026-11-20, "Codex-only for now"): rows withheld as awaiting a second family, applied on Codex alone.
+part3 = rd(T / "applied_part3.csv") if (T / "applied_part3.csv").exists() else []
+waiting = {(w["record_id"], w["claim_type"]) for w in withheld if w["held"].startswith("awaiting review")}
+bad3 = {s for s, c in waiting if c == "existence" and codex.get((s, c)) != "SOUND"}
+ids3 = [x["evidence_id"] for x in part3]
+if part3 and ids3 != [f"EVD-{n:06d}" for n in range(410357, 410357 + len(ids3))]:
+    fail.append("part-3 IDs are not EVD-410357.. contiguous")
+for x in part3:
+    k = (x["record_id"], x["claim_type"])
+    if k not in waiting or codex.get(k) != "SOUND" or x["record_id"] in bad3:
+        fail.append(f"{x['evidence_id']} part-3 row was not a Codex-SOUND row awaiting review on a SOUND-existence site")
+    if tree[x["evidence_id"]] != 1:
+        fail.append(f"{x['evidence_id']} appears {tree[x['evidence_id']]} times tree-wide"); continue
+    fname, r = rows[x["evidence_id"]]
+    if fname != f"evidence_sites_{x['_shard']}.csv" or any(r[c] != x[c] for c in r):
+        fail.append(f"{x['evidence_id']} is not in its home shard or differs from applied_part3.csv")
+applied = applied + part3
 base = json.loads((ROOT / "scripts" / "validate_debt_baseline.json").read_text(encoding="utf-8"))["rules"]
 done = {x["record_id"] for x in applied}
 left = sorted(done & set(base["V-65"])) + sorted(k for k in base["V-68"] if k.startswith("sites:") and k.split(":")[1] in done)
 if left:
     fail.append(f"evidenced sites still baselined: {', '.join(left[:10])}")
-print("\n".join(fail) or f"OK: {len(applied)} applied rows on {len(done)} sites, {len(withheld)} withheld; "
-      f"packet {len(packet)} rows on {len(witnessed)} sites")
+if len(applied) + len(withheld) - len(part3) != len(packet):
+    fail.append("applied (both rounds) + still-withheld != packet")
+print("\n".join(fail) or f"OK: {len(applied)} applied rows on {len(done)} sites ({len(part3)} in part 3), "
+      f"{len(withheld) - len(part3)} still withheld; packet {len(packet)} rows on {len(witnessed)} sites")
 sys.exit(1 if fail else 0)

@@ -112,8 +112,9 @@ def match(repo, osha_csv, corpus):
             dict(base, claim_type="address", notes=note + " County is not in the filing.", claim_detail=(
                 f"street_address {s['street_address']}, {s['city']}, {s['state']}: the {r['year_filing_for']} OSHA Form 300A "
                 f"summary gives {where}")),
-            dict(base, claim_type="liveness", notes=note + " Liveness under owner ruling 2026-11-20 (government filing; covered "
-                 "period ended within 24 months).", claim_detail=(
+            # SCHEMA §4.13 observed_date: a filing's own period date where the row's force depends on it (ruling 8: period end)
+            dict(base, claim_type="liveness", observed_date=f"{r['year_filing_for']}-12-31", notes=note + " Liveness under owner "
+                 "ruling 2026-11-20 (government filing; covered period ended within 24 months).", claim_detail=(
                 f"operating in calendar {r['year_filing_for']}: OSHA Form 300A summary submitted "
                 f"{r['date_submitted'][:10]} reports {r['annual_average_employees']} annual average employees")),
         ]
