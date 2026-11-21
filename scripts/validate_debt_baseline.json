@@ -3512,7 +3512,6 @@
    "ORG-001493",
    "ORG-001498",
    "ORG-001499",
-   "ORG-001502",
    "ORG-001503",
    "ORG-001507",
    "ORG-001510",
@@ -4836,9 +4835,6 @@
    "SITE-004170",
    "SITE-004174",
    "SITE-004179",
-   "SITE-004180",
-   "SITE-004181",
-   "SITE-004182",
    "SITE-004190",
    "SITE-004191",
    "SITE-004194",
@@ -4990,8 +4986,6 @@
    "EVD-007182"
   ],
   "V-68": [
-   "ecosystem:ORG-000089:1085f657",
-   "ecosystem:ORG-000090:4ad4a058",
    "ecosystem:ORG-000091:6b245fd5",
    "ecosystem:ORG-000093:20909b52",
    "ecosystem:ORG-000094:43f4af2c",
@@ -5059,12 +5053,9 @@
    "organizations:ORG-000096:f8875051",
    "organizations:ORG-000104:b312ef44",
    "organizations:ORG-000107:923a60f7",
-   "organizations:ORG-000109:c188ba9d",
    "organizations:ORG-000111:0b0fbad2",
-   "organizations:ORG-000114:5ab333b5",
    "organizations:ORG-000121:b7224ac1",
    "organizations:ORG-000125:6286f3e8",
-   "organizations:ORG-000127:5b18515b",
    "organizations:ORG-000143:95abb38b",
    "organizations:ORG-000144:f3c90e62",
    "organizations:ORG-000147:14df71f8",
@@ -5079,14 +5070,12 @@
    "organizations:ORG-000192:98683328",
    "organizations:ORG-000198:f4da295a",
    "organizations:ORG-000200:a3593af1",
-   "organizations:ORG-000203:19ebfb53",
    "organizations:ORG-000977:a77fef91",
    "organizations:ORG-001157:0ac572ad",
    "organizations:ORG-001172:ad498459",
    "organizations:ORG-001391:c027e628",
    "organizations:ORG-001417:c796aac8",
    "organizations:ORG-001431:52a56693",
-   "organizations:ORG-001434:1cfee893",
    "organizations:ORG-001479:d218ae07",
    "organizations:ORG-001482:57aec76e",
    "organizations:ORG-001488:2e20c414",
@@ -5228,7 +5217,6 @@
    "sites:SITE-000120:8154287b",
    "sites:SITE-000122:ecc0b32d",
    "sites:SITE-000124:6b8d5ed3",
-   "sites:SITE-000126:748adfeb",
    "sites:SITE-000127:7fdef96d",
    "sites:SITE-000137:9fe8fb40",
    "sites:SITE-000141:3a4a50e4",
@@ -5457,7 +5445,6 @@
    "sites:SITE-001391:98dd6eaf",
    "sites:SITE-001392:b97f3731",
    "sites:SITE-001398:1f9a29df",
-   "sites:SITE-001482:873db0f5",
    "sites:SITE-001517:23de0b73",
    "sites:SITE-001520:4887526a",
    "sites:SITE-001545:ab0246e7",
@@ -5622,5 +5609,5 @@
    "sites:SITE-004402:fd49193d"
   ]
  },
- "amended": "2026-11-01: V-50/V-51 added under owner ruling 2026-11-01 (battery P1/P2); existing violators grandfathered for the integrator's cleanup pass. 2026-11-02: V-45 shrunk by 139 (synonym site_type fixes) and V-47 by 290 (ruled NAICS provenance proposals), per tasks/validator-debt-apply-2026-11-02/ (owner battery 2026-11-01 R1/R4). 2026-11-02: V-49 shrunk by 2 (ORG-001484, ORG-001488: 'automotive' -> automotive_unspecified, tasks/vocab-normalize-2026-11-02/). 2026-11-04: V-55 added (processes/materials vocabulary on sites+organizations; 2,885 legacy records grandfathered at adoption \u2014 the free-text cleanup is a separate campaign). 2026-11-09: V-60 (evidence must not cite a licensed publication, AGENTS.md \u00a75) adopted with its 36 existing violators grandfathered; each is answered by a public-source row in tasks/licensed-source-cleanup-2026-11-09/. 2026-11-19: V-55 shrunk by 1 (ORG-001470 now passes; validate.py reported it as a stale entry). 2026-11-20: V-65 (no naked tier-A/B, SCHEMA v1.17 \u00a74.13 floor rule) adopted with its 2,747 existing violators grandfathered (organizations 1,214; sites 1,324; ecosystem 78; programs 9; people 122 \u2014 live tier-A/B records with no supporting evidence row at their own strength; tombstone statuses merged/tombstoned out of scope); the census is a re-verification queue, worked down as lanes evidence the records. V-67 (no staging pointer in a published citation field, SCHEMA v1.17 \u00a74.12.2) adopted with its 185 existing violators grandfathered (122 event_participation evidence_source_url, 61 code_assignments source_ref, 2 evidence source_ref); the participation repairs are a separate data pass. V-66 (archive-at-capture, \u00a74.22) has no baseline: no evidence row above the EVD-400365 threshold exists at adoption. 2026-11-20: V-68 (SCHEMA \u00a74.13 presence floor for tier C/U: every tier-C/U record has at least one evidence row; V-65 covers tier A/B) adopted under owner ruling 2026-11-20 with 858 records grandfathered (ecosystem 52, organizations 182, people 10, programs 1, sites 613); keys are <record_table>:<record_id>:<identity fingerprint>; tasks/evidence-presence-floor-2026-11-20/. 2026-11-20: V-67 shrunk by 122 (the event_participation evidence_source_url repairs of the events-citation-repair pass: organizer URL or \u00a74.22-form archive ref in-row per SCHEMA \u00a74.12.2; branch agent/spaghetti/events-citation-repair-2026-11-20); 63 V-67 entries remain (61 code_assignments source_ref, 2 evidence source_ref). 2026-11-21: V-65 shrunk by 241 (the evidence-backfill wave-2 burn-down batch 1: own_site supports_A existence/address evidence rows, each with its \u00a74.22 archive link, minted for 241 baselined tier-A organizations/sites from the wave-2 research packets; branch agent/spaghetti/backfill-w2-batch1-2026-11-21; record in staging working/burndown-batch1-w2-2026-11-21/). 2026-11-21: V-65 shrunk by 456 and V-68 shrunk by 167 (the evidence-backfill wave-3 burn-down batch 2: existence/address evidence rows at the \u00a74.13 class ceiling for each record's tier, each URL-sourced row with its \u00a74.22 archive link, minted for 623 baselined tier-B/C/U organizations/sites from the wave-3 research packets via staging tools/packet_integrate.py; branch agent/spaghetti/backfill-w3-batch2-2026-11-21; record in staging working/burndown-batch2-w3-2026-11-21/). 2026-11-21: V-65 shrunk by 22 (the drift re-witness mint: own_site supports_A existence/address evidence rows, each with its \u00a74.22 archive link, minted for 22 baselined tier-A organizations/sites from the batch-1 held-capture DRIFT class re-witness packet; branch agent/spaghetti/drift-rewitness-2026-11-21; record in staging working/burndown-drift-rewitness-2026-11-21/)."
+ "amended": "2026-11-01: V-50/V-51 added under owner ruling 2026-11-01 (battery P1/P2); existing violators grandfathered for the integrator's cleanup pass. 2026-11-02: V-45 shrunk by 139 (synonym site_type fixes) and V-47 by 290 (ruled NAICS provenance proposals), per tasks/validator-debt-apply-2026-11-02/ (owner battery 2026-11-01 R1/R4). 2026-11-02: V-49 shrunk by 2 (ORG-001484, ORG-001488: 'automotive' -> automotive_unspecified, tasks/vocab-normalize-2026-11-02/). 2026-11-04: V-55 added (processes/materials vocabulary on sites+organizations; 2,885 legacy records grandfathered at adoption \u2014 the free-text cleanup is a separate campaign). 2026-11-09: V-60 (evidence must not cite a licensed publication, AGENTS.md \u00a75) adopted with its 36 existing violators grandfathered; each is answered by a public-source row in tasks/licensed-source-cleanup-2026-11-09/. 2026-11-19: V-55 shrunk by 1 (ORG-001470 now passes; validate.py reported it as a stale entry). 2026-11-20: V-65 (no naked tier-A/B, SCHEMA v1.17 \u00a74.13 floor rule) adopted with its 2,747 existing violators grandfathered (organizations 1,214; sites 1,324; ecosystem 78; programs 9; people 122 \u2014 live tier-A/B records with no supporting evidence row at their own strength; tombstone statuses merged/tombstoned out of scope); the census is a re-verification queue, worked down as lanes evidence the records. V-67 (no staging pointer in a published citation field, SCHEMA v1.17 \u00a74.12.2) adopted with its 185 existing violators grandfathered (122 event_participation evidence_source_url, 61 code_assignments source_ref, 2 evidence source_ref); the participation repairs are a separate data pass. V-66 (archive-at-capture, \u00a74.22) has no baseline: no evidence row above the EVD-400365 threshold exists at adoption. 2026-11-20: V-68 (SCHEMA \u00a74.13 presence floor for tier C/U: every tier-C/U record has at least one evidence row; V-65 covers tier A/B) adopted under owner ruling 2026-11-20 with 858 records grandfathered (ecosystem 52, organizations 182, people 10, programs 1, sites 613); keys are <record_table>:<record_id>:<identity fingerprint>; tasks/evidence-presence-floor-2026-11-20/. 2026-11-20: V-67 shrunk by 122 (the event_participation evidence_source_url repairs of the events-citation-repair pass: organizer URL or \u00a74.22-form archive ref in-row per SCHEMA \u00a74.12.2; branch agent/spaghetti/events-citation-repair-2026-11-20); 63 V-67 entries remain (61 code_assignments source_ref, 2 evidence source_ref). 2026-11-21: V-65 shrunk by 241 (the evidence-backfill wave-2 burn-down batch 1: own_site supports_A existence/address evidence rows, each with its \u00a74.22 archive link, minted for 241 baselined tier-A organizations/sites from the wave-2 research packets; branch agent/spaghetti/backfill-w2-batch1-2026-11-21; record in staging working/burndown-batch1-w2-2026-11-21/). 2026-11-21: V-65 shrunk by 456 and V-68 shrunk by 167 (the evidence-backfill wave-3 burn-down batch 2: existence/address evidence rows at the \u00a74.13 class ceiling for each record's tier, each URL-sourced row with its \u00a74.22 archive link, minted for 623 baselined tier-B/C/U organizations/sites from the wave-3 research packets via staging tools/packet_integrate.py; branch agent/spaghetti/backfill-w3-batch2-2026-11-21; record in staging working/burndown-batch2-w3-2026-11-21/). 2026-11-21: V-65 shrunk by 22 (the drift re-witness mint: own_site supports_A existence/address evidence rows, each with its \u00a74.22 archive link, minted for 22 baselined tier-A organizations/sites from the batch-1 held-capture DRIFT class re-witness packet; branch agent/spaghetti/drift-rewitness-2026-11-21; record in staging working/burndown-drift-rewitness-2026-11-21/). 2026-11-21: V-65 shrunk by 4 and V-68 shrunk by 9 (the no-URL cleared set: two-family-reviewed existence/address evidence rows, each with its §4.22 archive link, minted for 13 baselined records from the evidence-backfill no-URL lane's cleared set; branch agent/spaghetti/nourl-cleared-2026-11-21; record in staging working/evidence-backfill-nourl-2026-11-20/)."
 }
