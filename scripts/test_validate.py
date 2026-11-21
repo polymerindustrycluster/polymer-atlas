@@ -750,7 +750,7 @@ class ValidatorMutationTests(unittest.TestCase):
     def test_v67_new_staging_pointer_fails(self):
         with open(self.data / "event_participation.csv", newline="", encoding="utf-8") as f:
             rows = list(csv.DictReader(f))
-        src = next(r for r in rows if "staging" in r["evidence_source_url"])
+        src = dict(rows[0], evidence_source_url="staging raw/tradeshows/MANIFEST.md")
         new = dict(src, participation_id=f"EVP-{max(int(r['participation_id'][4:]) for r in rows) + 1:06d}",
                    org_id="ORG-000008")
         self.append_row("event_participation.csv", new)
