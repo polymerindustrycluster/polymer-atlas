@@ -1,0 +1,496 @@
+{
+ "verdicts": [
+  {
+   "record_id": "SITE-000251",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the Automated Packaging Systems Garfield establishment expressly identified in the operator; the city and prior street-exact linkage support identity despite the ZIP discrepancy."
+  },
+  {
+   "record_id": "SITE-000754",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Operator, city and ZIP match, with prior street-exact linkage; the additional LLC suffix does not change identity."
+  },
+  {
+   "record_id": "SITE-000756",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Although the FRS name is company-wide, the supplied prior ECHO street-exact match anchors this registry ID to the site; operator, city and ZIP agree."
+  },
+  {
+   "record_id": "SITE-000827",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS identifies Crane Performance Siding, whereas the operator is Royal Building Products; the repeated site label and proposed trade-name assertion do not establish operator identity."
+  },
+  {
+   "record_id": "SITE-000840",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS identifies Teijin Automotive Technologies, whereas the operator is CSP; no supplied evidence establishes their identity, independently of the proposed trade-name assertion."
+  },
+  {
+   "record_id": "SITE-000857",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Dimex's operator name, city and ZIP match, supported by the prior street-exact linkage."
+  },
+  {
+   "record_id": "SITE-000867",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS identifies Drew Foam Holdings, whereas the operator is Alleguard; the repeated site label does not establish that Drew Foam is Alleguard's operating identity."
+  },
+  {
+   "record_id": "SITE-000872",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The specific DuPont Electronic Polymers name, city and ZIP match, supported by prior street-exact linkage."
+  },
+  {
+   "record_id": "SITE-000892",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Entrotech's operator name, city and ZIP match, supported by prior street-exact linkage."
+  },
+  {
+   "record_id": "SITE-000903",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name, city and ZIP match; punctuation differences do not change identity."
+  },
+  {
+   "record_id": "SITE-001005",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Liqui Box and Liquibox are spelling and spacing variants; city, ZIP and prior street-exact linkage support the establishment match."
+  },
+  {
+   "record_id": "SITE-001041",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The full Molten North America name and location match; parentheses and Corp versus Corporation do not change identity."
+  },
+  {
+   "record_id": "SITE-001057",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Operator, city and base ZIP match, supported by prior street-exact linkage; the additional Inc suffix is immaterial."
+  },
+  {
+   "record_id": "SITE-001145",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS identifies Queen City Foam, whereas the operator is Queen City Polymers; the shared geographic phrase and repeated site label do not establish operator identity."
+  },
+  {
+   "record_id": "SITE-001200",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Shelter Works, city and ZIP match; the parenthetical internal ID does not change the name."
+  },
+  {
+   "record_id": "SITE-001271",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name, city and ZIP match, supported by prior street-exact linkage."
+  },
+  {
+   "record_id": "SITE-001274",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The full operator name, city and base ZIP match; the additional Inc suffix is immaterial."
+  },
+  {
+   "record_id": "SITE-001346",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator matches, and the FRS address on Dinsmore Street specifically corresponds to the Atlas Dinsmore Street campus label."
+  },
+  {
+   "record_id": "SITE-001452",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator and ZIP 45246 match, satisfying the permitted ZIP alternative despite different city labels; prior street-exact linkage further supports identity."
+  },
+  {
+   "record_id": "SITE-001474",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS identifies Koneta Inc, whereas the operator is KN Rubber LLC; the supplied facts do not establish the proposed trade-name equivalence."
+  },
+  {
+   "record_id": "SITE-001493",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The FRS facility name carries the complete operator name with an Ohio qualifier, and city and ZIP match."
+  },
+  {
+   "record_id": "SITE-001494",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Archem America's operator name, city and ZIP match; the parenthetical internal ID does not change identity."
+  },
+  {
+   "record_id": "SITE-001504",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Flow Polymers, city and base ZIP match with prior street-exact linkage; Inc versus LLC and the trailing asterisk do not establish a different operator."
+  },
+  {
+   "record_id": "SITE-001515",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS specifically names the Goodyear Development Center, matching the Atlas establishment label, city and ZIP."
+  },
+  {
+   "record_id": "SITE-001676",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS explicitly names A.R.E. Accessories' Mount Eaton facility; the legal suffix and internal ID do not change identity."
+  },
+  {
+   "record_id": "SITE-001677",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Bridgestone APM itself in Upper Sandusky, supported by prior street-exact linkage; omission of Company is immaterial."
+  },
+  {
+   "record_id": "SITE-001868",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The full operator name and city match, supported by prior street-exact linkage; Inc and Incorporated are equivalent."
+  },
+  {
+   "record_id": "SITE-001877",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Tire versus Tires is a minor name variation; the matching city and prior street-exact linkage support identity despite the ZIP discrepancy."
+  },
+  {
+   "record_id": "SITE-001979",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The complete operator name, city and ZIP match, supported by prior street-exact linkage."
+  },
+  {
+   "record_id": "SITE-002080",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names BASF's Coatings Division in Whitehouse, and the supplied prior street-exact ECHO match anchors this registry ID to the site."
+  },
+  {
+   "record_id": "SITE-002111",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 3204 Marshall Drive match; the additional LLC suffix and internal ID are immaterial."
+  },
+  {
+   "record_id": "SITE-002113",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 10385 Kinsman Road match; the legal suffix and internal ID do not change identity."
+  },
+  {
+   "record_id": "SITE-002119",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator matches; 7004 US Hwy 42 and 7004 US-42 denote the same address, and Mt abbreviates Mount."
+  },
+  {
+   "record_id": "SITE-002124",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 600 Enterprise Drive match exactly."
+  },
+  {
+   "record_id": "SITE-002135",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 405 South 7th Street in Akron, Pennsylvania match."
+  },
+  {
+   "record_id": "SITE-002153",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator and establishment name match at 649 Burns Avenue."
+  },
+  {
+   "record_id": "SITE-002153",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 649 Burns Avenue in Altoona, Pennsylvania."
+  },
+  {
+   "record_id": "SITE-002159",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Performax Global's Aston establishment at the matching 5 Crozerville Road address."
+  },
+  {
+   "record_id": "SITE-002172",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name, 270 Rolling Ridge Drive and Suite 100 all match."
+  },
+  {
+   "record_id": "SITE-002176",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Pelmor Lab's Bensalem establishment at the matching 3161 State Road address."
+  },
+  {
+   "record_id": "SITE-002183",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 1995 Highland Avenue match."
+  },
+  {
+   "record_id": "SITE-002184",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The complete establishment name and 824 12th Avenue match."
+  },
+  {
+   "record_id": "SITE-002187",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names the operator's Bethlehem establishment at the matching 2255 Avenue A address."
+  },
+  {
+   "record_id": "SITE-002188",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator, York establishment label and 2800 Concord Road address all match."
+  },
+  {
+   "record_id": "SITE-002190",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Arkema's operator name and 100 Route 413 address match."
+  },
+  {
+   "record_id": "SITE-002205",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 580 Mayer Street, Building 7 match."
+  },
+  {
+   "record_id": "SITE-002205",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 580 Mayer Street, Building 7; only punctuation differs."
+  },
+  {
+   "record_id": "SITE-002216",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The complete operator name and 817 Spangler Road match."
+  },
+  {
+   "record_id": "SITE-002223",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Valley Tire's Charleroi establishment at the matching 1002 Arentzen Boulevard address."
+  },
+  {
+   "record_id": "SITE-002242",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The complete operator name and 21 Schultz Lane match."
+  },
+  {
+   "record_id": "SITE-002263",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Prod abbreviates Products in the otherwise matching operator name; the Easton location and 3 Danforth Drive match."
+  },
+  {
+   "record_id": "SITE-002263",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 3 Danforth Drive in Easton, Pennsylvania."
+  },
+  {
+   "record_id": "SITE-002272",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Chem, Eng and Mfg abbreviate the operator's name; the Emmaus establishment and 750 Broad Street match."
+  },
+  {
+   "record_id": "SITE-002282",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Insul Board's Erie establishment at the matching 2120 Colonial Avenue address."
+  },
+  {
+   "record_id": "SITE-002296",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Rehrig Pacific's name and 1738 West 20th Street match."
+  },
+  {
+   "record_id": "SITE-002297",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The Rehrig Pacific name and exact 1739 West 20th Street address identify the Building 2 site separately from the 1738 record."
+  },
+  {
+   "record_id": "SITE-002298",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "Mfg abbreviates Manufacturing; the operator's Erie establishment and 2250 East 33rd Street match."
+  },
+  {
+   "record_id": "SITE-002313",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 131 South Whitford Road match."
+  },
+  {
+   "record_id": "SITE-002323",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The complete Novares Felton plant name and 12367 Mount Olivet Road match."
+  },
+  {
+   "record_id": "SITE-002332",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 700 Riverside Drive match."
+  },
+  {
+   "record_id": "SITE-002332",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 700 Riverside Drive in Freeport, Pennsylvania."
+  },
+  {
+   "record_id": "SITE-002334",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Herbert Cooper's Genesee establishment at the matching 121 Main Street address."
+  },
+  {
+   "record_id": "SITE-002340",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 710 Beaver Road in Girard match."
+  },
+  {
+   "record_id": "SITE-002349",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 269 Donohue Road match."
+  },
+  {
+   "record_id": "SITE-002353",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The complete operator name and 7 Hill Drive match."
+  },
+  {
+   "record_id": "SITE-002354",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 262 Church Street match."
+  },
+  {
+   "record_id": "SITE-002354",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 262 Church Street in Hanover, Pennsylvania."
+  },
+  {
+   "record_id": "SITE-002357",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 100 North Blettner Avenue match."
+  },
+  {
+   "record_id": "SITE-002367",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Jet Plastica's Hatfield establishment at the matching 1100 Schwab Road address."
+  },
+  {
+   "record_id": "SITE-002370",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Technetics Group's Hatfield establishment at the matching 1600 Industry Road address."
+  },
+  {
+   "record_id": "SITE-002377",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 555 Oak Ridge Road match."
+  },
+  {
+   "record_id": "SITE-002396",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 474C Pike Road match, including the street-number letter."
+  },
+  {
+   "record_id": "SITE-002396",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 474C Pike Road in Huntingdon Valley, Pennsylvania."
+  },
+  {
+   "record_id": "SITE-002407",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 527 North Pioneer Drive, RR 1 match."
+  },
+  {
+   "record_id": "SITE-002408",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The complete establishment name and 347 Oliver Street match."
+  },
+  {
+   "record_id": "SITE-002409",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 1413 Million Dollar Highway match."
+  },
+  {
+   "record_id": "SITE-002416",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 1655 Orr Avenue match."
+  },
+  {
+   "record_id": "SITE-002421",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS explicitly names East Penn Manufacturing's Battery Assembly establishment at the matching 102 Deka Road address."
+  },
+  {
+   "record_id": "SITE-002421",
+   "claim_type": "address",
+   "verdict": "SOUND",
+   "reason": "Both records give 102 Deka Road in Lyons, Pennsylvania."
+  },
+  {
+   "record_id": "SITE-002431",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "The operator name and 1764 Rohrerstown Road match."
+  },
+  {
+   "record_id": "SITE-002437",
+   "claim_type": "existence",
+   "verdict": "SOUND",
+   "reason": "FRS names Handelok Bag's Lansdale establishment at the matching 701A West 5th Street address."
+  },
+  {
+   "record_id": "SITE-002439",
+   "claim_type": "existence",
+   "verdict": "UNSOUND",
+   "reason": "FRS names Carclo Ind, whereas the operator is Carclo Technical Plastics; the shared brand, copied site label and matching street do not establish the same operating organization."
+  }
+ ]
+}
