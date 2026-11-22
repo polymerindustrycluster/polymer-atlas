@@ -1,0 +1,1126 @@
+site_id,was_last_activity_date,was_last_activity_source,reason,site_street_address,tier_a_street_as_printed
+SITE-000001,2025-01-02,osha_inspection,different_street,554 Moore Rd,33587 WALKER ROAD | 552 Moore Road
+SITE-000002,2024-12-31,osha_ita,blank_street,,29400 LAKELAND BLVD. | 29400 Lakeland Blvd
+SITE-000007,2019-12-31,osha_ita,blank_street,,201 E. Steels Corners Rd.
+SITE-000008,2025-12-31,osha_ita,blank_street,,1293 South Main Street
+SITE-000010,2026-09-23,osha_inspection,different_street,10 E Firestone Blvd,1670 FIRESTONE PKWY
+SITE-000014,2023-12-31,osha_ita,blank_street,,96 E Miller Ave
+SITE-000025,2021-03-05,osha_inspection,number_only,1070 Evans Ave,1070 EVANS ROAD
+SITE-000026,2016-03-01,osha_inspection,blank_street,,1245 HOME AVE
+SITE-000031,2025-12-31,osha_ita,different_street,2719 CORY AVENUE,2739 CORY AVE. | 2739 Cory Avenue
+SITE-000033,2019-11-07,osha_inspection,blank_street,,790 EAST TALLMADGE AVENUE
+SITE-000054,2021-06-02,osha_inspection,blank_street,,155 EAST STEELS CORNERS ROAD
+SITE-000061,2025-12-31,osha_ita,blank_street,,"1000 ARLINGTON CIR. | 1000 Arlington Circle, Akron, OH 44360"
+SITE-000070,2025-12-31,osha_ita,number_only,775 Highland Rd,775 E. Highland Rd. | 775 EAST HIGHLAND RD.
+SITE-000106,2019-02-15,osha_inspection,blank_street,,1249 W. 78TH STREET
+SITE-000108,2022-12-31,osha_ita,different_street,3746 Prospect Ave E,3705 CARNEGIE AVE. | 3705 Carnegie Ave
+SITE-000112,2025-12-31,osha_ita,blank_street,,1274 E 55TH ST
+SITE-000115,2018-12-31,osha_ita,blank_street,,27600 Lakeland Blvd
+SITE-000117,2019-01-11,osha_inspection,number_only,15242 Foltz Industrial Pkwy,15242 FOLTZ PARKWAY
+SITE-000121,2023-12-31,osha_ita,blank_street,,29001 Solon Rd
+SITE-000133,2023-07-31,osha_inspection,different_street,4565 Industrial Parkway,4700 W. 160TH STREET
+SITE-000135,2024-12-31,osha_ita,blank_street,,7500 East Pleasant Valley Road
+SITE-000142,2024-12-31,osha_ita,number_only,28601 Clemens Road,28601
+SITE-000156,2026-02-02,osha_inspection,different_street,6050 Cochran Rd,31400 AURORA RD
+SITE-000168,2024-12-31,osha_ita,different_street,19218 Redwood Rd,19215 REDWOOD ROAD
+SITE-000177,2019-04-29,osha_inspection,blank_street,,255 WOOSTER RD N
+SITE-000195,2024-02-12,osha_inspection,number_only,15730 S MADISON RD,15730 MADISON ROAD
+SITE-000203,2023-12-31,osha_ita,number_only,300 First Street,300 1st Street
+SITE-000207,2021-12-31,osha_ita,blank_street,,1205 E. BOWMAN ST. | 1205 E. Bowman Street
+SITE-000210,2023-12-31,osha_ita,blank_street,,1380 Techway Dr.
+SITE-000212,2021-12-31,osha_ita,blank_street,,14330 Kinsman Road
+SITE-000214,2016-03-09,osha_inspection,blank_street,,30240 LAKELAND BLVD.
+SITE-000216,2026-09-23,osha_inspection,blank_street,,1670 FIRESTONE PKWY
+SITE-000217,2023-12-31,osha_ita,different_street,2990 Gilchrist Rd,1380 Techway Dr.
+SITE-000218,2023-12-31,osha_ita,number_only,1380 Tech Way Drive,1380 Techway Dr.
+SITE-000220,2017-10-04,osha_inspection,blank_street,,400 NAVE ROAD SE
+SITE-000224,2025-12-31,osha_ita,number_only,990 Evans Ave,990 Evans Road
+SITE-000225,2024-12-31,osha_ita,blank_street,,3100 HAMILTON AVENUE
+SITE-000253,2023-12-31,osha_ita,different_street,7100 Lindsay Dr,"8080 Norton Parkway, Building #22"
+SITE-000264,2025-12-31,osha_ita,number_only,5020 Enterprise Parkway,5020 Enterprises pkwy
+SITE-000273,2024-12-31,osha_ita,different_street,786 Hardy Road,768 Hardy Road
+SITE-000281,2024-12-31,osha_ita,number_only,4300 Hamann Parkway,4300 HAMMON PKWY | 4366 Hamann Parkway
+SITE-000282,2024-12-31,osha_ita,blank_street,,4300 HAMMON PKWY | 4429 Hamann Pkwy
+SITE-000288,2025-12-31,osha_ita,number_only,8333 Navarre Road SE,8333 Navarre Rd SW
+SITE-000297,2025-12-31,osha_ita,blank_street,,1244 E. HIGHLAND ROAD | 1244 E. Highland Rd
+SITE-000326,2024-12-31,osha_ita,blank_street,,19800 Miles Road
+SITE-000355,2025-12-31,osha_ita,blank_street,,1016 9th street SW
+SITE-000359,2025-07-23,osha_inspection,blank_street,,1636 WAYSIDE ROAD | 1636 Wayside Road
+SITE-000368,2019-12-04,osha_inspection,different_street,299 Cloud Street,401 MAGYAR STREET
+SITE-000374,2025-12-31,osha_ita,blank_street,,3800 E 91st St | 3800 EAST 91ST STREET
+SITE-000387,2026-08-31,osha_inspection,different_street,512 W. Gorgas Street,2000 W. Main St | 2000 WEST MAIN ST.
+SITE-000391,2026-06-29,osha_inspection,blank_street,,15150 MADISON RD | 15150 Madison Rd
+SITE-000408,2018-12-31,osha_ita,blank_street,,1055 WOOSTER ROAD NORTH | 1055 Wooster Road N.
+SITE-000409,2018-03-22,osha_inspection,blank_street,,9107 PLEASANTWOOD AVE NW
+SITE-000410,2025-12-31,osha_ita,blank_street,,2026 Commerce Park
+SITE-000414,2025-12-31,osha_ita,blank_street,,3500 N Ridge Rd W | 4602 BENEFIT AVENUE
+SITE-000422,2024-12-31,osha_ita,blank_street,,7887 bliss parkway
+SITE-000433,2023-12-31,osha_ita,blank_street,,23750 ST. CLAIR AVE | 23750 Saint Clair Avenue
+SITE-000434,2018-04-02,osha_inspection,blank_street,,14700 COMMERCE ST. NE | 14700 Commerce St NE
+SITE-000436,2024-12-31,osha_ita,number_only,2700 Atlantic Blvd,2700 Atlantic Blvd NE
+SITE-000442,2015-03-13,osha_inspection,number_only,5385 Orchard View Dr. SE,"5385 ORCHARD VIEW DRIVE, S.E."
+SITE-000459,2024-12-31,osha_ita,blank_street,,525 W LIBERTY ST
+SITE-000460,2015-01-28,osha_inspection,different_street,10095 Queens Way,16930 MUNN RD.
+SITE-000463,2024-12-31,osha_ita,number_only,4300 Hamann Parkway,4300 HAMMON PKWY | 4366 Hamann Parkway
+SITE-000472,2017-12-31,osha_ita,different_street,82 Church St,89 East Marion Street  PO Box 35
+SITE-000480,2025-12-31,osha_ita,blank_street,,4485 Crystal Parkway Ste 100
+SITE-000482,2025-12-31,osha_ita,blank_street,,2925 MFG PLACE | 2925 MFG Place
+SITE-000483,2025-12-31,osha_ita,blank_street,,1315 West 47th street | 2925 MFG PLACE
+SITE-000485,2025-12-31,osha_ita,number_only,1225 Munroe Falls Avenue,"1225 Munroe Falls Ave. Cuyahoga Falls, OH 44221"
+SITE-000495,2018-04-12,osha_inspection,blank_street,,577 OBERLIN ROAD
+SITE-000510,2022-12-31,osha_ita,blank_street,,7720 Tim Ave NW
+SITE-000517,2025-12-31,osha_ita,different_street,200 INDUSTRIAL PARKWAY,220 PARK DR. | 220 Park Drive
+SITE-000519,2025-12-31,osha_ita,blank_street,,611 LOWELL STREET | 611 Lowell St
+SITE-000520,2025-12-31,osha_ita,blank_street,,611 LOWELL STREET | 611 Lowell St
+SITE-000522,2025-12-31,osha_ita,number_only,201 Vista Ave SE,201 Vista Avenue S.E.
+SITE-000532,2018-10-30,osha_inspection,number_only,850 W Smith Rd,850 W. SMITH ST.
+SITE-000543,2025-07-23,osha_inspection,blank_street,,1636 WAYSIDE ROAD | 1636 Wayside Road
+SITE-000563,2025-12-31,osha_ita,number_only,6753 Chestnut Ridge Rd.,6753 CHESTNUT RIDGE RD NW | 6753 Chestnut Ridge Rd. NW
+SITE-000567,2019-07-19,osha_inspection,number_only,800 Canterbury Road,800 CENTERBURY ROAD
+SITE-000581,2015-09-01,osha_inspection,blank_street,,14970 BERKSHIRE INDUSTRAIL PARKWAY
+SITE-000582,2015-09-01,osha_inspection,blank_street,,14970 BERKSHIRE INDUSTRAIL PARKWAY
+SITE-000589,2025-12-31,osha_ita,blank_street,,4321 Glenridge Road
+SITE-000590,2025-12-31,osha_ita,number_only,532 S MAIN ST,532 so main st
+SITE-000599,2025-12-31,osha_ita,blank_street,,474 Newell St
+SITE-000603,2017-12-31,osha_ita,number_only,7180 Rte 43,7180 St. Rt. 43N
+SITE-000608,2025-12-31,osha_ita,different_street,1150 Damar Drive,1030 EVANS AVENUE | 1130 Tower Drive
+SITE-000618,2022-12-31,osha_ita,different_street,861 Norton Avenue,3717 Clark Mill Rd
+SITE-000620,2025-12-31,osha_ita,number_only,1700A Old Mansfield Road,1700 Old Mansfield Rd | 1700A OLD MANSFIELD RD
+SITE-000637,2026-03-16,osha_inspection,number_only,17000 SAINT CLAIR AVE BLDG 1,17000 ST. CLAIR AVENUE SUITE #1 | 17000 St. Clair Ave
+SITE-000638,2024-12-31,osha_ita,blank_street,,1355 Chester Industrial Parkway | 38600 CHESTER RD.
+SITE-000650,2025-08-08,osha_inspection,blank_street,,2101 9TH STREET SW | 2101 9th St SW
+SITE-000669,2020-01-10,osha_inspection,blank_street,,2215 INTERNATIONAL PARKWAY
+SITE-000677,2025-12-31,osha_ita,different_street,6250 Camp Industrial Pkwy,6075 COCHRAN ROAD | 6200 Cochran Rd.
+SITE-000678,2025-12-31,osha_ita,blank_street,,6075 COCHRAN ROAD | 6250 Camp Industrial Rd.
+SITE-000686,2018-12-13,osha_inspection,blank_street,,14620 SELWYN DRIVE
+SITE-000687,2025-12-31,osha_ita,blank_street,,100 Enterprise Drive
+SITE-000690,2025-12-31,osha_ita,blank_street,,4595 East Tech Drive | 4599 E TECH DR.
+SITE-000694,2024-12-11,osha_inspection,blank_street,,1062 FOURTH AVE. | 1062 S. 4th Ave
+SITE-000700,2023-12-31,osha_ita,blank_street,,990 Gahanna Parkway
+SITE-000706,2025-12-31,osha_ita,blank_street,,2109 COMMERCE STREET | 2109 Commerce Street
+SITE-000708,2025-12-31,osha_ita,blank_street,,222 N. Union Street
+SITE-000709,2025-12-31,osha_ita,blank_street,,222 N. Union Street
+SITE-000712,2017-06-08,osha_inspection,blank_street,,3320 FORT SHAWNEE INDUSTRIAL DR.
+SITE-000714,2021-12-31,osha_ita,blank_street,,975 W Main St.
+SITE-000715,2025-12-31,osha_ita,blank_street,,12993 State Route 110
+SITE-000716,2025-12-31,osha_ita,blank_street,,8865 Smith's Mill Road N
+SITE-000719,2025-12-31,osha_ita,blank_street,,180 CLEVELAND RD. | 180 Cleveland Road
+SITE-000720,2025-12-31,osha_ita,blank_street,,1115 S Wayne St
+SITE-000722,2025-12-31,osha_ita,blank_street,,12025 Tricon Road
+SITE-000723,2025-12-31,osha_ita,blank_street,,1855 James Parkway
+SITE-000726,2025-12-31,osha_ita,blank_street,,6615 Taylor Road P.O. Box 639
+SITE-000740,2025-12-31,osha_ita,blank_street,,10293 Burlington Road
+SITE-000741,2025-12-31,osha_ita,blank_street,,9005 SMITHS MILL ROAD NORTH | 9005 Smith's Mill Rd North
+SITE-000742,2025-12-31,osha_ita,blank_street,,8886 Innovation Campus Way W | 9005 SMITHS MILL ROAD NORTH
+SITE-000743,2025-12-31,osha_ita,blank_street,,8982 Innovation Campus Way West | 9005 SMITHS MILL ROAD NORTH
+SITE-000744,2025-12-31,osha_ita,blank_street,,8900 Smiths Mill Rd. N | 9005 SMITHS MILL ROAD NORTH
+SITE-000745,2025-12-31,osha_ita,blank_street,,8640 Innovation Campus Way | 9005 SMITHS MILL ROAD NORTH
+SITE-000746,2026-04-13,osha_inspection,number_only,894 Prairie Rd,2835 OLD STATE ROUTE 73 | 894 Prairie Ave
+SITE-000751,2025-12-31,osha_ita,blank_street,,1250 OTTAWA AVENUE | 1250 Ottawa Ave
+SITE-000755,2025-12-31,osha_ita,different_street,2040 Cellar Drive,1860 BANEY RD. | One Hedstrom Drive
+SITE-000757,2025-12-31,osha_ita,blank_street,,4338 South Ave
+SITE-000759,2024-12-31,osha_ita,blank_street,,950 CLAYCRAFT RD | 950 CLAYCRAFT ROAD
+SITE-000760,2024-12-31,osha_ita,blank_street,,5029 TR 359 | 5029 Township Road 359
+SITE-000766,2025-12-31,osha_ita,blank_street,,105 DINSMORE STREET | 105 Dinsmore St
+SITE-000768,2025-12-31,osha_ita,blank_street,,637 N. Jackson St. | 637 NORTH JACKSON STREET
+SITE-000771,2025-12-31,osha_ita,blank_street,,637 N. Jackson St. | 637 NORTH JACKSON STREET
+SITE-000776,2022-12-31,osha_ita,blank_street,,414 Littell Ave.
+SITE-000778,2025-12-31,osha_ita,blank_street,,324 DERING AVE. | 324 Dering Ave
+SITE-000783,2025-12-31,osha_ita,blank_street,,814 WEST LIMA STREET | 814 West Lima Street
+SITE-000784,2017-12-31,osha_ita,blank_street,,5331 state route 7
+SITE-000787,2025-12-31,osha_ita,blank_street,,1188 S HOUK RD
+SITE-000800,2019-12-31,osha_ita,blank_street,,455 WARDS CORNER ROAD | 455 Wards Corner Rd
+SITE-000804,2024-12-31,osha_ita,blank_street,,5500 Enterprise Blvd
+SITE-000805,2024-08-01,osha_inspection,blank_street,,401 N. Keowee St. | 401 NORTH KEOWEE STREET
+SITE-000806,2025-12-31,osha_ita,blank_street,,"5080 Tuttle Crossing Blvd, Suite 310/330"
+SITE-000807,2024-12-31,osha_ita,blank_street,,470 Northland Blvd
+SITE-000809,2025-12-31,osha_ita,blank_street,,2915 COUNTY HIGHWAY 96 | 2915 County Hwy 96
+SITE-000811,2025-12-31,osha_ita,blank_street,,927 SOUTH UNION ST. | 927 South Union Street
+SITE-000816,2025-12-31,osha_ita,blank_street,,232 J STREET | 232 J Street
+SITE-000818,2025-12-31,osha_ita,blank_street,,2228 REISER AVE SE | 2228 Reiser Ave SE
+SITE-000820,2025-12-31,osha_ita,blank_street,,30499 Tracy Rd.
+SITE-000824,2025-12-31,osha_ita,blank_street,,1111 O'Neill Drive SE
+SITE-000825,2025-12-31,osha_ita,blank_street,,750 Rosedale Dr.
+SITE-000827,2022-12-31,osha_ita,blank_street,,1441 Universal Road
+SITE-000829,2024-10-03,osha_inspection,blank_street,,1747 COMMERCE DR. | 1747 Commerce Drive
+SITE-000832,2025-12-31,osha_ita,blank_street,,3337 N. Dixie Dr.
+SITE-000835,2024-12-31,osha_ita,blank_street,,18163 Snider Rd.
+SITE-000839,2025-12-31,osha_ita,blank_street,,100 North St
+SITE-000840,2025-12-31,osha_ita,blank_street,,100 S. Poe Rd. | 100 SOUTH POE ROAD
+SITE-000841,2025-12-31,osha_ita,blank_street,,5616 Spellmire Drive
+SITE-000845,2025-12-31,osha_ita,blank_street,,7800 Walton Parkway
+SITE-000846,2025-12-31,osha_ita,blank_street,,300 EAST CHERRY STREET | 300 East Cherry Street
+SITE-000848,2025-12-31,osha_ita,blank_street,,2901 East 4th Avenue
+SITE-000852,2024-12-31,osha_ita,blank_street,,1250 S. Union Street | 1250 UNION STREET
+SITE-000857,2025-12-31,osha_ita,blank_street,,28305 STATE ROUTE 7 | 28305 state route 7
+SITE-000858,2025-12-03,osha_inspection,blank_street,,900 DIMCO WAY | 900 Dimco Way
+SITE-000861,2017-10-31,osha_inspection,blank_street,,2118 COMMERCE STREET
+SITE-000862,2023-02-01,osha_inspection,blank_street,,350 PITTSBURGH AVENUE
+SITE-000863,2025-12-31,osha_ita,number_only,3676 Davis Road NW,3676 DAVIS ROAD | 3676 Davis Road N.W.
+SITE-000865,2022-09-06,osha_inspection,blank_street,,1440 HOLLOWAY ROAD
+SITE-000867,2025-12-31,osha_ita,blank_street,,2109 COMMERCE STREET | 2109 Commerce Street
+SITE-000868,2018-12-31,osha_ita,blank_street,,1067 Hamilton Dr.
+SITE-000869,2024-12-31,osha_ita,blank_street,,9391 Seward Road
+SITE-000871,2025-12-31,osha_ita,different_street,800 DUPONT RD,810 DuPont Road
+SITE-000872,2022-12-31,osha_ita,blank_street,,1515 NICHOLAS RD. | 1515 Nicholas Rd
+SITE-000875,2025-12-31,osha_ita,blank_street,,13717 US HWY. 68 S | 13717 US Highway 68 S
+SITE-000876,2026-08-06,osha_inspection,blank_street,,30627 ORR ROAD
+SITE-000883,2024-12-31,osha_ita,blank_street,,756 Old State Route 74 Suite C
+SITE-000885,2025-12-31,osha_ita,blank_street,,119 MAIN ST. | 119 W. Main St PO Box 38
+SITE-000888,2025-12-31,osha_ita,blank_street,,801 W Pike St
+SITE-000892,2022-12-31,osha_ita,blank_street,,1245 Kinnear Rd
+SITE-000895,2025-12-31,osha_ita,blank_street,,4226 Grissom Dr.
+SITE-000901,2018-10-11,osha_inspection,blank_street,,146 S. WESTWOOD AVENUE
+SITE-000902,2025-12-31,osha_ita,blank_street,,2351 KENSKILL AVE. | 2351 Kenskill Ave.
+SITE-000903,2025-12-31,osha_ita,blank_street,,2351 KENSKILL AVE. | 2351 Kenskill Ave.
+SITE-000904,2025-12-31,osha_ita,blank_street,,385 CARR DRIVE | 385 Carr Drive
+SITE-000919,2025-12-31,osha_ita,blank_street,,11617 State Route 13
+SITE-000921,2025-12-31,osha_ita,blank_street,,200 E North Street
+SITE-000926,2023-12-31,osha_ita,blank_street,,2700 NEEDMORE ROAD | 2700 Needmore
+SITE-000931,2021-12-31,osha_ita,blank_street,,1600 M.A.D.E. Industrial Dr. | 1600 MADE INDUSTRIAL DR.
+SITE-000932,2021-12-31,osha_ita,blank_street,,30499 Tracy Rd
+SITE-000933,2019-10-09,osha_inspection,blank_street,,55 ROBERT WRIGHT DR.
+SITE-000935,2022-12-31,osha_ita,blank_street,,5755 STATE ROUTE 571 EAST | 5755 St Rt 571 E
+SITE-000936,2020-12-31,osha_ita,number_only,302 S. Conwell Ave,302 S Conwell
+SITE-000938,2019-09-11,osha_inspection,different_street,4440 Malsbary Rd,4450 MALSBARY ROAD
+SITE-000939,2016-07-07,osha_inspection,blank_street,,5400 STATE ROUTE 93
+SITE-000942,2024-12-31,osha_ita,blank_street,,1711 Commerce Drive
+SITE-000949,2025-12-31,osha_ita,blank_street,,59 GENDER RD
+SITE-000950,2019-08-19,osha_inspection,blank_street,,885 SCHOLZ DR.
+SITE-000951,2016-12-31,osha_ita,blank_street,,725 Reynoldsburg New Albany Road
+SITE-000958,2018-05-01,osha_inspection,blank_street,,521 KISER ST | 521 Kiser Street
+SITE-000961,2024-12-31,osha_ita,blank_street,,500 W. STATLER ROAD | 500 W. Statler Rd.
+SITE-000964,2020-07-07,osha_inspection,blank_street,,10451 DOG LEG ROAD
+SITE-000968,2025-03-04,osha_inspection,blank_street,,2101 CEDAR STREET
+SITE-000974,2024-12-31,osha_ita,blank_street,,58301 Marietta Road
+SITE-000977,2023-12-31,osha_ita,blank_street,,6600 Cornell Road
+SITE-000978,2025-12-31,osha_ita,blank_street,,456 S. Stolle
+SITE-000982,2025-12-31,osha_ita,blank_street,,5409 Hamlet Drive
+SITE-000983,2025-12-31,osha_ita,blank_street,,37844 SR 518 | 37844 STATE RT. 518
+SITE-000985,2025-12-31,osha_ita,blank_street,,9360 National Road
+SITE-000986,2022-11-02,osha_inspection,different_street,1001 E. Jackson St.,1000 OAK STREET
+SITE-000989,2025-12-31,osha_ita,blank_street,,4050 CLOUGH WOODS DRIVE | 4050 Clough Woods Dr
+SITE-000995,2025-12-31,osha_ita,blank_street,,2419 STATE ROUTE 618 | 2419 St. Rt. 618
+SITE-001000,2023-12-31,osha_ita,blank_street,,777 Zapata Dr
+SITE-001001,2025-12-31,osha_ita,blank_street,,180 N HIGH ST | 180 North High Street
+SITE-001003,2019-01-31,osha_inspection,blank_street,,3041 JACKSON PIKE
+SITE-001006,2025-12-31,osha_ita,blank_street,,571 Commerce Parkway
+SITE-001008,2025-12-31,osha_ita,blank_street,,2100 Commerce Dr.
+SITE-001009,2023-12-31,osha_ita,blank_street,,1111 N. WARPOLE STREET | 1111 North Warpole St
+SITE-001023,2018-10-26,osha_inspection,blank_street,,11359 GROOMS ROAD
+SITE-001024,2025-12-31,osha_ita,blank_street,,3400 JEEP PARKWAY | 3400 Jeep Parkway
+SITE-001026,2025-12-31,osha_ita,blank_street,,802 N 4TH STREET | 802 N 4th Street
+SITE-001031,2024-12-31,osha_ita,different_street,9080 Shell Road,3023 East Kemper Road #3
+SITE-001032,2025-12-31,osha_ita,blank_street,,700 INDUSTRIAL DRIVE | 700 Industrial Drive
+SITE-001038,2025-12-31,osha_ita,blank_street,,900 Falls Creek Dr.
+SITE-001041,2019-12-31,osha_ita,blank_street,,1835 Industrial Drive
+SITE-001042,2025-12-31,osha_ita,blank_street,,27620 State Rt. 7 / P.O. Box 250
+SITE-001043,2025-12-31,osha_ita,blank_street,,27620 State Rt. 7 / P.O. Box 250
+SITE-001045,2026-06-29,osha_inspection,different_street,326 Pearl St NE,340 PEARL AVENUE NORTHEAST
+SITE-001047,2024-12-31,osha_ita,blank_street,,3370 Obco Ct
+SITE-001052,2024-12-31,osha_ita,blank_street,,7770 North Central Drive
+SITE-001057,2024-12-31,osha_ita,blank_street,,975 SOUTH FRANKLIN STREET | 975 South Franklin Street
+SITE-001062,2024-11-13,osha_inspection,blank_street,,150 FOURTH AVENUE
+SITE-001063,2022-01-13,osha_inspection,blank_street,,2084 JAMES E. SAULS SR. DRIVE
+SITE-001067,2023-12-31,osha_ita,blank_street,,350 East High Street
+SITE-001068,2025-12-31,osha_ita,blank_street,,725 Enterprise Aveue
+SITE-001082,2024-12-31,osha_ita,blank_street,,1920 Leonard Ave
+SITE-001084,2015-06-19,osha_inspection,number_only,11135 State Route 7,11135 ST. RT. 7
+SITE-001085,2025-12-31,osha_ita,blank_street,,100 Colomet Drive
+SITE-001086,2025-12-31,osha_ita,blank_street,,2575 FERRIS ROAD | 2575 Ferris Road
+SITE-001088,2025-04-01,osha_inspection,blank_street,,3131 CINCINNATI DAYTON RD. | 3131 Cincinnati Dayton rd.
+SITE-001091,2024-12-31,osha_ita,blank_street,,4590 CR 35 N
+SITE-001092,2025-12-31,osha_ita,blank_street,,1501 EXPERIMENT FARM RD
+SITE-001093,2015-02-03,osha_inspection,blank_street,,2711 LANCE DR.
+SITE-001096,2015-05-07,osha_inspection,blank_street,,611 MARION ROAD
+SITE-001103,2023-12-31,osha_ita,blank_street,,39 Standen Drive
+SITE-001105,2025-12-31,osha_ita,blank_street,,1770 JOYCE AVENUE
+SITE-001106,2025-12-31,osha_ita,blank_street,,1175 5 B'S DRIVE
+SITE-001108,2022-02-16,osha_inspection,blank_street,,1125 UTICA WAY
+SITE-001109,2025-12-31,osha_ita,number_only,963 Commercial Ave. S.E,963 COMMERCIAL AVE SE | 963 Commerical Ave SE
+SITE-001111,2021-12-07,osha_inspection,blank_street,,4041 ROBERTS ROAD
+SITE-001112,2025-12-31,osha_ita,blank_street,,9054 NORTH COUNTY ROAD 25A | 9054 North County Road 25-A
+SITE-001113,2025-12-31,osha_ita,blank_street,,7600 State Route 127 North
+SITE-001116,2023-10-11,osha_inspection,blank_street,,18015 ST. RT. 65
+SITE-001121,2024-12-31,osha_ita,blank_street,,960 N. VANDEMARK RD. | 960 N. Vandemark Rd
+SITE-001122,2020-02-25,osha_inspection,blank_street,,3430 STATE ROUTE 93
+SITE-001127,2022-03-22,osha_inspection,blank_street,,401 SOUTH MAIN STREET
+SITE-001129,2025-12-31,osha_ita,blank_street,,2040 Industrial Drive
+SITE-001130,2025-08-06,osha_inspection,number_only,150 S. Werner Street,150 S. WERNER
+SITE-001131,2025-03-11,osha_inspection,number_only,10810 INDUSTRIAL PARKWAY NW,10810 INDUSTRIAL PARKWAY
+SITE-001134,2025-12-31,osha_ita,blank_street,,10345 Medallion Dr
+SITE-001137,2025-12-31,osha_ita,number_only,10190 State Route 21,10190 OHIO 21 | 10190 State Route 21 NW
+SITE-001149,2025-12-31,osha_ita,blank_street,,9355 Le Saint Drive
+SITE-001152,2017-12-31,osha_ita,blank_street,,2151 Industrial Dr
+SITE-001155,2025-12-31,osha_ita,blank_street,,333 Progress Road
+SITE-001156,2025-12-31,osha_ita,blank_street,,4425 Appleton St.
+SITE-001157,2025-12-31,osha_ita,blank_street,,3363 S. Tech Blvd.
+SITE-001158,2023-12-31,osha_ita,blank_street,,11 Mount Vernon Avenue
+SITE-001161,2023-12-31,osha_ita,blank_street,,719 Long Dr.
+SITE-001162,2026-04-13,osha_inspection,blank_street,,2835 OLD STATE ROUTE 73
+SITE-001165,2017-12-31,osha_ita,number_only,2384 Brightwood Road S.E.,2384 Brightwood Rd SE
+SITE-001167,2025-12-31,osha_ita,blank_street,,5777 Eco Parkway | 5777 RAIDERS RD
+SITE-001168,2025-12-31,osha_ita,blank_street,,5564 Eco Parkway | 5777 RAIDERS RD
+SITE-001170,2025-12-31,osha_ita,blank_street,,603 Oak Avenue
+SITE-001174,2025-12-31,osha_ita,blank_street,,7227 OHIO 515 | 7227 State Route 515 PO Box 188
+SITE-001176,2025-12-31,osha_ita,blank_street,,7227 OHIO 515 | 7227 State Route 515 PO Box 188
+SITE-001177,2025-12-31,osha_ita,blank_street,,1602 N. Union Street
+SITE-001179,2021-02-18,osha_inspection,blank_street,,1401 JACOBSON AVE
+SITE-001180,2025-12-31,osha_ita,blank_street,,5409 Hamlet Drive
+SITE-001184,2025-12-31,osha_ita,blank_street,,1125 Gahanna Parkway
+SITE-001187,2026-06-29,osha_inspection,blank_street,,3709 GROVE CITY ROAD | 3709 Grove City Road
+SITE-001201,2025-12-31,osha_ita,blank_street,,4539 Dues Drive
+SITE-001203,2025-12-31,osha_ita,blank_street,,111 Winchester Ave
+SITE-001205,2018-06-20,osha_inspection,number_only,1682 MARION-WILLIAMSPORT RD,1682 MARION WILLIAMSPORT ROAD E
+SITE-001210,2025-12-31,osha_ita,blank_street,,1050 Landsdowne Ave
+SITE-001211,2025-12-31,osha_ita,blank_street,,6010 Jaysville ST. Johns rd
+SITE-001218,2025-12-31,osha_ita,blank_street,,2 Step2 Drive
+SITE-001220,2024-12-31,osha_ita,different_street,4758 Devitt Dr.,4663 DUES DRIVE | 4663 Dues Drive
+SITE-001227,2025-12-31,osha_ita,different_street,330 Third Street NW,100 Innovation Plaza
+SITE-001229,2024-12-31,osha_ita,blank_street,,8175 BUSINESS WAY | 8175 Business Way
+SITE-001230,2020-11-24,osha_inspection,blank_street,,5225 PROSPERITY DRIVE
+SITE-001231,2020-12-31,osha_ita,blank_street,,6156 Wesselman Rd
+SITE-001237,2016-07-26,osha_inspection,blank_street,,301 INDUSTRIAL DR.
+SITE-001241,2025-12-31,osha_ita,blank_street,,1276 INDUSTRIAL DRIVE | 1276 Industrial Drive
+SITE-001242,2025-12-31,osha_ita,blank_street,,1445 Timberwolf Drive
+SITE-001243,2025-12-31,osha_ita,blank_street,,7134 RAILROAD ST. | 7134 Railroad Street
+SITE-001248,2024-12-31,osha_ita,blank_street,,680 Tyber Rd
+SITE-001250,2020-05-05,osha_inspection,blank_street,,3550 SILICA ROAD
+SITE-001258,2025-12-31,osha_ita,blank_street,,515 E GYPSY LANE RD | 515 EAST GYPSY LANE ROAD
+SITE-001259,2025-03-24,osha_inspection,blank_street,,1441 N. MAULE RD. | 1441 North Maule Road
+SITE-001260,2025-12-31,osha_ita,blank_street,,500 Smith Drive
+SITE-001265,2025-12-31,osha_ita,blank_street,,200 Pittsburgh Rd
+SITE-001269,2025-12-31,osha_ita,blank_street,,"9855 SALEM ROAD | PO BOX 317, 9855 Salem Road"
+SITE-001271,2025-12-31,osha_ita,blank_street,,215 N. Stone St.
+SITE-001272,2023-12-31,osha_ita,blank_street,,2145 AIRPARK DR. | 2145 Airpark Drive
+SITE-001278,2022-07-18,osha_inspection,blank_street,,6615 CORPORATE DRIVE
+SITE-001286,2023-12-31,osha_ita,blank_street,,8407 Monroe ave
+SITE-001287,2025-12-31,osha_ita,blank_street,,"5795 GREEN POINT DRIVE, SOUTH | 5795 Green Pointe Dr S"
+SITE-001288,2025-12-31,osha_ita,blank_street,,7856 Hill Ave.
+SITE-001291,2018-12-31,osha_ita,blank_street,,214 S. Defiance St.
+SITE-001296,2017-11-01,osha_inspection,blank_street,,635 SOUTHWEST ST.
+SITE-001301,2025-12-31,osha_ita,blank_street,,827 GRAHAM DRIVE | 827 Graham Drive
+SITE-001302,2025-12-03,osha_inspection,blank_street,,11268 WILLIAMSON ROAD
+SITE-001305,2016-12-31,osha_ita,blank_street,,918 South Union Street
+SITE-001306,2024-12-31,osha_ita,blank_street,,3424 State Route 309
+SITE-001307,2025-12-31,osha_ita,blank_street,,3580 Lightner Road
+SITE-001316,2025-12-31,osha_ita,different_street,963 Evans Ave,1030 EVANS AVENUE | 1130 Tower Drive
+SITE-001329,2018-12-31,osha_ita,blank_street,,5150 Big Chief Dr
+SITE-001331,2025-12-31,osha_ita,blank_street,,1035 W GREENE ST | 1035 W. Greene St
+SITE-001337,2024-12-31,osha_ita,blank_street,,1230 KNOWLTON STREET | 1230 Knowlton Street
+SITE-001340,2024-12-11,osha_inspection,blank_street,,1062 FOURTH AVE. | 1062 S. 4th Ave
+SITE-001341,2024-12-11,osha_inspection,blank_street,,1062 FOURTH AVE. | 1062 S. 4th Ave
+SITE-001342,2024-12-11,osha_inspection,blank_street,,1062 FOURTH AVE. | 1062 S. 4th Ave
+SITE-001343,2025-12-31,osha_ita,blank_street,,9005 SMITHS MILL ROAD NORTH | 9005 Smith's Mill Rd North
+SITE-001344,2025-12-31,osha_ita,blank_street,,9005 SMITHS MILL ROAD NORTH | 9005 Smith's Mill Rd North
+SITE-001345,2025-12-31,osha_ita,blank_street,,9005 SMITHS MILL ROAD NORTH | 9005 Smith's Mill Rd North
+SITE-001346,2025-12-31,osha_ita,blank_street,,105 DINSMORE STREET | 105 Dinsmore St
+SITE-001388,2022-01-11,osha_inspection,blank_street,,2485 MAYSVILLE PIKE
+SITE-001389,2025-12-31,osha_ita,blank_street,,132425 Worthington Rd
+SITE-001417,2025-12-31,osha_ita,blank_street,,285 COMMERCE STREET | 285 Commerce St
+SITE-001418,2025-12-31,osha_ita,blank_street,,285 COMMERCE STREET | 285 Commerce St
+SITE-001425,2024-12-31,osha_ita,number_only,7395 Industrial Pkwy,7395 Industrial Parkway Drive
+SITE-001432,2018-12-31,osha_ita,blank_street,,9911 Brecksville Rd
+SITE-001438,2022-03-03,osha_inspection,different_street,2023 Martin Road,3175 GILCHRIST ROAD | 3175 Gilchrist Road
+SITE-001442,2025-12-31,osha_ita,blank_street,,1147 N Washington St
+SITE-001445,2017-12-31,osha_ita,blank_street,,12121 Champion Way
+SITE-001446,2022-10-25,osha_inspection,blank_street,,725 INDUSTRIAL DRIVE
+SITE-001447,2017-12-31,osha_ita,blank_street,,170 Stanford Parkway
+SITE-001448,2018-09-11,osha_inspection,blank_street,,1225 CASTLE DRIVE
+SITE-001453,2023-11-02,osha_inspection,blank_street,,485 2ND STREET
+SITE-001454,2025-12-31,osha_ita,blank_street,,1917 JOYCE AVENUE | 1917 Joyce Avenue
+SITE-001456,2025-12-31,osha_ita,blank_street,,1780 South CR 1
+SITE-001458,2025-09-17,osha_inspection,blank_street,,3154 EXON AVENUE
+SITE-001460,2023-12-31,osha_ita,blank_street,,107 Industry Road
+SITE-001461,2024-12-31,osha_ita,blank_street,,30600 OREGON RD. | 30600 Oregon Road
+SITE-001462,2025-12-31,osha_ita,blank_street,,4255 Thunderbird Ln
+SITE-001465,2023-12-31,osha_ita,blank_street,,3 KEXON DR. P.O. BOX 463 | 3 Kexon Drive
+SITE-001466,2023-12-31,osha_ita,blank_street,,400 Church Street | 413 ZEITER RD
+SITE-001470,2024-12-31,osha_ita,blank_street,,122 Hirt dr
+SITE-001471,2021-12-31,osha_ita,blank_street,,13128 SR 226
+SITE-001476,2019-12-31,osha_ita,blank_street,,6000 Parkwood Place
+SITE-001477,2024-12-31,osha_ita,blank_street,,3250 Southwest Boulevard
+SITE-001478,2016-06-22,osha_inspection,blank_street,,17005 STATE ROUTE 7
+SITE-001480,2019-12-31,osha_ita,blank_street,,6935 RIDGE RD. | 6935 Ridge Road
+SITE-001486,2024-12-31,osha_ita,blank_street,,1600 Commerce Road
+SITE-001488,2025-12-31,osha_ita,blank_street,,2501 Shotwell Drive
+SITE-001489,2021-12-31,osha_ita,blank_street,,27800 Lemoyne Rd Suite J
+SITE-001493,2016-03-11,osha_inspection,blank_street,,143 COMMERCE BLVD
+SITE-001494,2023-03-02,osha_inspection,blank_street,,245 COMMERCE WAY
+SITE-001495,2026-07-09,osha_inspection,blank_street,,6175 AMERICAN ROAD | 6175 American Rd
+SITE-001496,2025-12-31,osha_ita,blank_street,,8281 COUNTY ROAD 245 | 8281 County Road 245
+SITE-001497,2025-12-31,osha_ita,blank_street,,400 South Stone Street
+SITE-001502,2024-12-31,osha_ita,blank_street,,4800 Hilton Corporate Dr
+SITE-001503,2023-12-31,osha_ita,blank_street,,"23110 LEO AVE., SW | 2422 Leo Ave SW"
+SITE-001504,2025-10-03,osha_inspection,blank_street,,12819 coit rd | 17000 ST. CLAIR ROAD
+SITE-001507,2025-02-18,osha_inspection,blank_street,,845 KADERLY DRIVE | 845 Kaderly Drive
+SITE-001515,2024-12-31,osha_ita,blank_street,,94 Integrity Dr.
+SITE-001520,2023-10-11,osha_inspection,blank_street,,18015 ST. RT. 65
+SITE-001523,2017-12-20,osha_inspection,blank_street,,1166-C STEELWOOD ROAD
+SITE-001524,2021-04-23,osha_inspection,blank_street,,11525 MADISON AVENUE | 11525 Madison Avenue
+SITE-001525,2020-12-31,osha_ita,blank_street,,18371 CRANWOOD PKWY | 18731 Cranwood Parkway
+SITE-001530,2026-04-29,osha_inspection,different_street,4475 E 175Th St,17602 MILES AVENUE | 3361 East 80th st
+SITE-001535,2025-12-31,osha_ita,blank_street,,1450 West Main Street
+SITE-001536,2016-06-23,osha_inspection,blank_street,,875 NORTH 3RD ST.
+SITE-001542,2019-04-29,osha_inspection,different_street,24 W. Huston Street,255 WOOSTER RD N
+SITE-001548,2025-12-31,osha_ita,blank_street,,1150 S. Vandemark Rd | 420 STOLLE AVENUE
+SITE-001550,2026-10-09,osha_inspection,blank_street,,405 S. PIONEER BLVD.
+SITE-001551,2025-12-31,osha_ita,blank_street,,700 Watkins Glen Road
+SITE-001552,2025-12-31,osha_ita,blank_street,,201 EXPLORATION DRIVE | 201 Exploration Dr
+SITE-001553,2025-04-30,osha_inspection,blank_street,,1500 KINGSVIEW DR.
+SITE-001554,2026-06-18,osha_inspection,blank_street,,3922 BACH BUXTON RD | 3922 Bach Buxton Rd
+SITE-001555,2024-07-19,osha_inspection,blank_street,,12049 Centron Place | 4526 CHICKERING AVENUE
+SITE-001556,2024-07-19,osha_inspection,blank_street,,12049 Centron Place | 4526 CHICKERING AVENUE
+SITE-001560,2016-12-31,osha_ita,different_street,120 Deeds Drive,485 WEST THIRD STREET
+SITE-001566,2024-12-31,osha_ita,blank_street,,5690 Webster St.
+SITE-001581,2025-12-31,osha_ita,blank_street,,3107 SPRING GROVE AVE | 3107 Spring Grove Avenue
+SITE-001582,2025-12-31,osha_ita,blank_street,,2863 E Sharon Road
+SITE-001584,2021-12-31,osha_ita,blank_street,,2111 East Galbraith Road
+SITE-001585,2025-12-31,osha_ita,blank_street,,3616 Church Street
+SITE-001586,2025-12-31,osha_ita,blank_street,,10310 Spartan Dr.
+SITE-001587,2019-12-31,osha_ita,blank_street,,450 East Town Street
+SITE-001594,2022-12-31,osha_ita,blank_street,,3345 Stop 8 Road
+SITE-001595,2025-12-31,osha_ita,blank_street,,4011 RIVERSIDE DRIVE | 4011 Riverside Drive
+SITE-001597,2025-12-31,osha_ita,blank_street,,2122 Winners Circle
+SITE-001602,2026-11-06,osha_inspection,blank_street,,3500 SOUTHWEST BLVD | 3500 Southwest Blvd
+SITE-001607,2026-10-19,osha_inspection,blank_street,,8400 GREEN MEADOWS DRIVE | 8400 Green Meadows Dr N
+SITE-001610,2019-01-28,osha_inspection,blank_street,,7555 INNOVATION WAY
+SITE-001612,2025-12-31,osha_ita,blank_street,,1670 INDIAN WOOD CIRCLE
+SITE-001614,2023-08-08,osha_inspection,blank_street,,6100 Heisley Rd | 9260 PROGRESS PKWY
+SITE-001615,2023-08-08,osha_inspection,blank_street,,6100 Heisley Rd | 9260 PROGRESS PKWY
+SITE-001620,2025-12-31,osha_ita,blank_street,,15441 Scioto-Darby Road PO Box 130
+SITE-001625,2022-02-07,osha_inspection,blank_street,,1311 SOUTH 2ND STREET
+SITE-001636,2025-12-31,osha_ita,blank_street,,13840 US Route 68S
+SITE-001642,2023-12-31,osha_ita,blank_street,,4201 Little York Rd
+SITE-001643,2025-12-31,osha_ita,number_only,1675 Navarre Rd SE,1675 NAVARRE ROAD. SW | 1675 Navarre Rd SW
+SITE-001651,2020-12-31,osha_ita,different_street,3751 Jennings Road,1010 Denison Ave. | 3571 JENNINGS ROAD
+SITE-001653,2025-12-31,osha_ita,blank_street,,150 FISHER AVE. | 150 Fisher Avenue
+SITE-001669,2023-01-03,osha_inspection,number_only,852 Anne Street,852 ANN ST. | 852 Ann Avenue
+SITE-001677,2018-10-17,osha_inspection,blank_street,,245 COMMERCE WAY
+SITE-001679,2025-12-31,osha_ita,blank_street,,320 SYCAMORE STREET | 320 Sycamore St.
+SITE-001684,2020-09-22,osha_inspection,blank_street,,2150 INDUSTRIAL DRIVE | 2150 Industrial Drive
+SITE-001687,2025-12-31,osha_ita,blank_street,,525 ORANGE STREET | 525 orange street
+SITE-001689,2025-01-02,osha_inspection,different_street,800 Cochran Ave,804 BYESVILLE ROAD
+SITE-001690,2019-12-31,osha_ita,number_only,310 Quadral Drive,310A Quadral Dr.
+SITE-001696,2021-03-12,osha_inspection,blank_street,,501 BASINGER RD.
+SITE-001706,2025-12-31,osha_ita,blank_street,,3600 Hebron Rd
+SITE-001713,2024-05-21,osha_inspection,blank_street,,408 PERRY ST.
+SITE-001734,2025-12-31,osha_ita,blank_street,,9325 OHIO 201 | 9325 State Route 201
+SITE-001736,2020-01-06,osha_inspection,blank_street,,4140 STATE ROUTE 40E
+SITE-001738,2025-12-31,osha_ita,blank_street,,1225 C State Route 62
+SITE-001761,2019-12-31,osha_ita,blank_street,,10 Eagle Court
+SITE-001782,2025-12-31,osha_ita,blank_street,,410 S. EWING STREET | 410 South Ewing
+SITE-001786,2025-12-31,osha_ita,blank_street,,1480 INDUSTRIAL PKWY
+SITE-001790,2025-12-31,osha_ita,number_only,520 Pine Avenue S.E.,520 PINE AVE | 520 Pine Ave SE
+SITE-001800,2025-12-31,osha_ita,blank_street,,2628 Pearl Rd.
+SITE-001805,2025-12-31,osha_ita,blank_street,,6250 SHIER RINGS ROAD | 6250 Shier Rings Road
+SITE-001814,2021-10-27,osha_inspection,blank_street,,399 PHILLIPS AVE
+SITE-001835,2025-12-31,osha_ita,blank_street,,4930 State Rd.
+SITE-001837,2019-02-05,osha_inspection,different_street,919 Marvin Street,245 SOUTH STREET SUITE 201
+SITE-001838,2017-03-23,osha_inspection,number_only,1540 St Clair Ave,1540 ST CLAIR AVE KENT
+SITE-001866,2025-12-31,osha_ita,blank_street,,2100 Commerce Dr.
+SITE-001872,2017-12-31,osha_ita,blank_street,,12432 Mehring Way
+SITE-001881,2021-03-05,osha_inspection,blank_street,,1840 PROGRESS AVE.
+SITE-001884,2024-12-31,osha_ita,blank_street,,1329 Harrison Ave SW
+SITE-001901,2025-12-31,osha_ita,blank_street,,1110 Disher Drive Waterville OH 43566
+SITE-001916,2025-12-31,osha_ita,blank_street,,1860 BANEY RD. | One Hedstrom Drive
+SITE-001938,2015-11-23,osha_inspection,blank_street,,"6196 DRESSLER RD, NW."
+SITE-001945,2024-12-31,osha_ita,number_only,527 Ternes Ln,527 TERNES AVE | 527 TERNES AVE.
+SITE-001953,2023-12-31,osha_ita,blank_street,,2200 Massillon Road
+SITE-001965,2016-12-31,osha_ita,blank_street,,7595 Innovation Way
+SITE-001970,2025-12-31,osha_ita,blank_street,,2350 Arbor Blvd.
+SITE-001973,2022-12-31,osha_ita,blank_street,,401 MILFORD PKWY | 401 Milford Parkway
+SITE-001977,2024-03-12,osha_inspection,blank_street,,20 STRAITS LANE
+SITE-001983,2020-12-02,osha_inspection,blank_street,,700 KENT ROAD
+SITE-001984,2024-02-14,osha_inspection,blank_street,,712 ASH STREET
+SITE-001985,2023-12-31,osha_ita,blank_street,,2010 South Defiance Street
+SITE-001987,2020-12-31,osha_ita,blank_street,,3765 St Johns Rd
+SITE-001988,2023-12-31,osha_ita,blank_street,,10420 NORTH STATE STREET
+SITE-001996,2019-12-31,osha_ita,blank_street,,1510 Mogadore Rd.
+SITE-002014,2023-06-21,osha_inspection,blank_street,,4510 LINT AVENUE
+SITE-002023,2025-12-31,osha_ita,blank_street,,2302 Kenskill Ave
+SITE-002036,2025-02-11,osha_inspection,blank_street,,4243 SOUTH AVENUE
+SITE-002050,2025-12-31,osha_ita,blank_street,,700 3RD STREET S.E. | 700 3rd St. SE
+SITE-002057,2025-12-31,osha_ita,blank_street,,1500 INDUSTRIAL PARKWAY | 1500 Industrial Parkway
+SITE-002066,2025-12-31,osha_ita,blank_street,,10740 Paddy's Run Road
+SITE-002071,2025-12-31,osha_ita,blank_street,,120 HARVEST DR. | 120 Harvest Dr.
+SITE-002080,2024-12-31,osha_ita,blank_street,,6125 Industrial Parkway
+SITE-002086,2025-12-31,osha_ita,blank_street,,1385 BLATT BLVD | 1385 Blatt Blvd.
+SITE-002088,2024-03-19,osha_inspection,blank_street,,17153 INDUSTRIAL HIGHWAY | 17153 Industrial Highway
+SITE-002110,2025-12-31,osha_ita,blank_street,,1510 - 4th ST SE
+SITE-002128,2022-12-20,osha_inspection,blank_street,,1430 N. Main St. | 1430 NORTH MAIN
+SITE-002132,2022-02-14,osha_inspection,different_street,1098 Fairview Avenue,1198 Fairview Ave | 501 E POE RD
+SITE-002143,2024-02-09,osha_inspection,number_only,316 S Front St.,316 FRONT STREET
+SITE-002154,2025-12-31,osha_ita,number_only,214 Ind US Trial Ln.,214 INDUSTRIAL LANE | 214 Industrial Lane
+SITE-002164,2025-12-31,osha_ita,different_street,117 State Rd.,150 Pomeroy Ave
+SITE-002171,2017-12-31,osha_ita,number_only,1108 Greengarden Ln.,1108 Green Garden Lane
+SITE-002182,2018-08-08,osha_inspection,no_house_number,"BIDA Complex Building 350, 3rd and Oak St.",BIDA COMPLEX #350 3RD & OAK STREET
+SITE-002190,2017-12-31,osha_ita,number_only,100 Route 413,100 PA Route 413
+SITE-002197,2026-05-22,osha_inspection,different_street,4411 Old Berwick Rd.,6685 LOW ST. | 6685 Low Street
+SITE-002207,2025-12-31,osha_ita,number_only,100 Pa Rt. 413,100 PA Route 413 | 100 PENNSYLVANIA 413
+SITE-002219,2026-01-06,osha_inspection,different_street,1295 Ritner Hwy.,1275 RITNER HIGHWAY
+SITE-002220,2026-01-06,osha_inspection,different_street,1285 Ritner Highway,1275 RITNER HIGHWAY
+SITE-002224,2025-02-14,osha_inspection,no_house_number,Ivy Industrial Park,987 GRIFFIN POND ROAD | 987 Griffin Pond Road
+SITE-002229,2017-08-23,osha_inspection,no_house_number,Franklin Plant,15661 DELANO ROAD
+SITE-002246,2016-05-03,osha_inspection,number_only,482 Galiffa Dr,482 GALIFFA DRIVE P.O. BOX 742
+SITE-002274,2021-12-31,osha_ita,different_street,6424 W Ridge Rd.,6420 West Ridge Road
+SITE-002282,2017-09-08,osha_inspection,number_only,2120 Colonial Ave.,2120 COLONIAL AVENUE P.O. BOX 8103
+SITE-002284,2025-12-31,osha_ita,different_street,3200 W 22nd St.,2930 W 22ND ST
+SITE-002288,2023-10-30,osha_inspection,different_street,2425 West 23rd St.,2200 YODER DR
+SITE-002289,2023-10-30,osha_inspection,different_street,2310 Pittsburgh Ave.,2200 YODER DR
+SITE-002290,2023-10-30,osha_inspection,different_street,3001 W 15th St.,2200 YODER DR
+SITE-002291,2023-10-30,osha_inspection,different_street,3230 W 22nd St.,2200 YODER DR
+SITE-002292,2023-10-30,osha_inspection,different_street,2315 W 23rd St.,2200 YODER DR
+SITE-002301,2025-12-31,osha_ita,number_only,48 Powhatten Ave.,48 POWHATTAN AVENUE | 48 Powhattan ave
+SITE-002305,2022-12-31,osha_ita,number_only,2040 Borland Rd.,"2040 BORLAND FARM ROAD | 2040 Borland Farm Road, PO Box O"
+SITE-002335,2025-12-31,osha_ita,number_only,2500 Rt. 168,2500 PENNSYLVANIA ROUTE 168 | 2500 State Route 168
+SITE-002339,2026-08-27,osha_inspection,different_street,617 Church St.,306 SHENANGO ST | 306 Shenango Street
+SITE-002349,2025-12-31,osha_ita,number_only,269 Donohue Rd.,269 Donohoe Road
+SITE-002356,2025-01-29,osha_inspection,different_street,60 Filbert St.,15 INDUSTRIAL DRIVE | 15 Industrial Drive
+SITE-002357,2025-01-29,osha_inspection,different_street,100 N Blettner Ave.,15 INDUSTRIAL DRIVE
+SITE-002361,2021-03-31,osha_inspection,different_street,777 San Souci Highway,767 SAN SOUCI HIGHWAY | 767 Sans Souci Parkway
+SITE-002371,2020-12-31,osha_ita,different_street,2800 Sterling Dr.,2990 Bergey Road
+SITE-002374,2022-09-26,osha_inspection,number_only,675 Jaycee Drivevalmont Industrial Park,675 JAYCEE DRIVE VALMONT INDUSTRIAL PARK
+SITE-002380,2025-02-04,osha_inspection,different_street,815 West Seventh St.,325 WEST SEVENTH STREET
+SITE-002418,2017-03-16,osha_inspection,number_only,2075 Detwiler Rd.,2075 DETWILLER RD.
+SITE-002422,2025-12-31,osha_ita,different_street,9735 Commerce Circle,9729 Commerce Circle
+SITE-002423,2015-03-19,osha_inspection,number_only,1067 Dillerville Roadp.O. Box 3001,1067 DILLERVILLE ROAD P.O. BOX 3001
+SITE-002427,2025-07-17,osha_inspection,different_street,1596 Manheim Pike,1421 ARCADIA ROAD
+SITE-002430,2026-01-29,osha_inspection,different_street,239 North Ann St.,505 EAST FULTON STREET
+SITE-002437,2017-12-05,osha_inspection,number_only,701A W 5th St.,701 W. 5TH ST.
+SITE-002439,2024-01-25,osha_inspection,different_street,550 Depot St.,600 DEPOT STREET
+SITE-002440,2025-12-31,osha_ita,number_only,443 Wareho US E Dr.,443 WAREHOUSE DRIVE | 443 Warehouse Drive
+SITE-002441,2025-12-31,osha_ita,number_only,149 Devereaux Dr.,149 Devereux Drive
+SITE-002443,2017-03-20,osha_inspection,number_only,400 Unity Streetsuite 100,400 UNITY STREET SUITE 100
+SITE-002455,2026-08-20,osha_inspection,no_house_number,Building 3 Ave. A,"3 Avenue A | BUILDING 3, AVENUE A"
+SITE-002466,2023-08-31,osha_inspection,number_only,30 Runway Dr.,30A RUNWAY RD.
+SITE-002469,2025-12-31,osha_ita,different_street,600 Roundhouse Rd.,13 Industrial Park Rd.
+SITE-002470,2025-12-31,osha_ita,number_only,13 Ind Park Rd.,13 Industrial Park Rd.
+SITE-002500,2026-09-10,osha_inspection,number_only,13561 Broadway Ste A,13561 BROADWAY DRIVE
+SITE-002502,2025-12-31,osha_ita,number_only,150 Baldwin St. Ext.,150 BALDWIN STREET EXTENSION | 150 Baldwin St
+SITE-002518,2025-12-31,osha_ita,different_street,2790 Canfields Ln.,"Chemcoat, 2790 Canfields lane"
+SITE-002526,2022-11-21,osha_inspection,different_street,1024 Locust Gap Hwy.,2000 LOCUST GAP HIGHWAY
+SITE-002530,2023-12-31,osha_ita,number_only,436 North Industrial Drive,436 No Industrial Drive
+SITE-002549,2024-12-31,osha_ita,different_street,100 Orlan Rd,110 PETERS ROAD | 110 Peters Rd
+SITE-002556,2023-05-19,osha_inspection,different_street,710 E Main St.,700 E. Main Street | 700 EAST MAIN STREET
+SITE-002566,2023-11-01,osha_inspection,number_only,580 Industrial Dr.,580 INDUSTRIAL AVENUE
+SITE-002575,2024-04-23,osha_inspection,number_only,2180 Bennett Rd 2180 Bennett Rd,2180 BENNETT ROAD
+SITE-002608,2019-01-29,osha_inspection,different_street,109 West Park Rd.,2040 NEW CASTLE ROAD
+SITE-002620,2025-12-31,osha_ita,number_only,2 Birchmont Rd.,2 BIRCHMONT DRIVE | 2 Birchmont Drive
+SITE-002621,2025-12-31,osha_ita,different_street,1157D Arnold Rd.,1025 Epler way
+SITE-002625,2018-01-31,osha_inspection,number_only,94A Dries Rd.,94A DRIES ROAD
+SITE-002626,2024-12-31,osha_ita,number_only,208 Chestnut,208 chestnut St.
+SITE-002627,2018-12-31,osha_ita,different_street,4201 Reading Crest Ave.,4216 Reading Crest Ave.
+SITE-002640,2025-04-03,osha_inspection,no_house_number,N Thomas Ave.,297 DOMINIC PACE INDUSTRIAL PARKWAY
+SITE-002641,2025-12-31,osha_ita,number_only,250 Rt. 61 S,250 ROUTE 61 SOUTH | 250 Route 61 South
+SITE-002642,2016-08-17,osha_inspection,no_house_number,P.O. Box 1803 Earl St.,P.O. BOX 180 3 EARL STREET
+SITE-002646,2025-12-31,osha_ita,no_house_number,Rte. 522,2254 ROUTE 522 | 2254 Route 522
+SITE-002655,2025-12-31,osha_ita,number_only,150 Dominion Dr.,150 SOUTH DOMINION DRIVE | 150 South Dominion Drive
+SITE-002664,2025-12-31,osha_ita,different_street,168 Holiday Pkwy,1 Pork Ave | ONE PORK AVENUE
+SITE-002683,2022-04-28,osha_inspection,number_only,618 4th Ave.,618 FOURTH AVENUE
+SITE-002694,2024-12-31,osha_ita,different_street,415 Moyer Blvd.,420 Moyer Blvd
+SITE-002703,2020-12-31,osha_ita,number_only,112 Fairview Ave PO Box 127,112 Fairview Ave
+SITE-002732,2023-11-17,osha_inspection,number_only,405 Nestles Way,405 NESTLE WAY
+SITE-002738,2025-12-31,osha_ita,different_street,200 Industrial Dr.,201 Industrial Drive
+SITE-002745,2015-04-10,osha_inspection,number_only,2455 Robinso Rd. W,2455 ROBISON ROAD
+SITE-002751,2026-01-29,osha_inspection,different_street,360 Maplewood Dr.,75 JAYCEE DRIVE | 75 Jaycee Drive
+SITE-002752,2026-01-29,osha_inspection,different_street,12 Maplewood Dr.,75 JAYCEE DRIVE | 75 Jaycee Drive
+SITE-002754,2024-12-04,osha_inspection,number_only,600 Jaycee Dr. Valmont Industrial Park,600 JAYCEE DRIVE
+SITE-002756,2024-12-31,osha_ita,number_only,2200 State Hwy. 837,2200 State Route 837
+SITE-002762,2025-12-31,osha_ita,number_only,6175 U.S. Hwy. 6,6175 US 6 | 6175 US ROUTE 6
+SITE-002780,2025-12-31,osha_ita,number_only,150 Columbia Ave.,150 Columbia Street | 3 COMMERCE DRIVE
+SITE-002793,2025-12-31,osha_ita,no_house_number,Valmont Industrial Park,20 JAYCEE DRIVE | 20 Jaycee Drive
+SITE-002798,2023-02-23,osha_inspection,different_street,3280 Farmtrail Rd.,500 WINDSOR STREET | 500 Windsor Street
+SITE-002799,2023-02-23,osha_inspection,different_street,505 Windsor St.,500 WINDSOR STREET | 500 Windsor Street
+SITE-002802,2019-12-31,osha_ita,different_street,2614 McClelland Ave,3123 Station Rd.
+SITE-002807,2025-12-31,osha_ita,blank_street,,4601 N SUSQUEHANNA TRAIL | 4601 N. Susquehanna Trail
+SITE-002822,2023-12-31,osha_ita,blank_street,,2727 W 16TH STREET | 2727 West 16th Street
+SITE-002829,2025-12-31,osha_ita,blank_street,,"3 EARL STREET | 3 Earl Street, PO Box 180"
+SITE-002831,2025-12-31,osha_ita,blank_street,,21 LEBANON VALLEY PARKWAY | 21 Lebanon Valley Parkway
+SITE-002837,2021-12-31,osha_ita,different_street,1330 Loop Rd,Novelty Manufacturing Company
+SITE-002838,2025-12-31,osha_ita,blank_street,,45619 STATE ROUTE 27 | 45619 State Highway 27
+SITE-002845,2022-12-31,osha_ita,blank_street,,55 S Washington Street
+SITE-002847,2026-02-05,osha_inspection,different_street,40 Scientific Rd,1818 PENNSYLVANIA AVE. WEST | 1818 Pennsylvania Ave. W
+SITE-002848,2025-12-31,osha_ita,blank_street,,1 Viking Street
+SITE-002854,2023-12-31,osha_ita,blank_street,,1302 Irwin Drive
+SITE-002864,2026-03-31,osha_inspection,no_house_number,One Wingfoot Way,1 WINGFOOT WAY | 1 Wingfoot Way
+SITE-002865,2025-12-31,osha_ita,number_only,2000 NW US Hwy 24,2000 NW HIGHWAY 24 | 2000 NW Hwy 24
+SITE-002873,2022-02-22,osha_inspection,number_only,3500 Washington Rd,3500 EAST WASHINGTON RD
+SITE-002884,2024-12-31,osha_ita,blank_street,,7601 N Glen Harbor Bvd
+SITE-002885,2025-12-31,osha_ita,blank_street,,19 Francis J. Clarke Cir
+SITE-002886,2026-07-01,osha_inspection,blank_street,,8375 HIGHFIELD PARKWAY | 8375 Highfield Parkway
+SITE-002888,2022-12-31,osha_ita,blank_street,,15 Corporate Drive
+SITE-002889,2025-12-31,osha_ita,blank_street,,833 RIDGEVIEW DR. | 833 Ridgeview Drive
+SITE-002891,2023-12-31,osha_ita,blank_street,,707 Boyd Blvd
+SITE-002893,2025-12-31,osha_ita,blank_street,,110 Galewski Dr
+SITE-002895,2025-12-31,osha_ita,blank_street,,280 Performance Drive SE
+SITE-002896,2025-12-31,osha_ita,blank_street,,2700 Papin Street
+SITE-002900,2023-12-31,osha_ita,blank_street,,1700 wilke drive
+SITE-002903,2024-09-18,osha_inspection,blank_street,,2727 N. PARTNERSHIP BOULEVARD
+SITE-002907,2023-12-31,osha_ita,blank_street,,3300 North Kenmore
+SITE-002910,2024-12-31,osha_ita,blank_street,,6111 South 6th way
+SITE-002916,2016-01-20,osha_inspection,number_only,1719 Hwy 72 E,1719 US HWY 72 EAST
+SITE-002922,2019-12-31,osha_ita,different_street,1825 E National Ave,2831 East Industrial Park Drive
+SITE-002924,2024-04-18,osha_inspection,different_street,6022 Corporate Way,952 N DELAWARE ST
+SITE-002926,2020-12-31,osha_ita,number_only,686 S Adams St,686 Adams St
+SITE-002942,2022-12-31,osha_ita,number_only,2291 Plunkett Rd Nw,2291 Plunkett Road
+SITE-002944,2018-08-16,osha_inspection,different_street,615 Buckbee St,405 18TH AVE
+SITE-002958,2019-05-22,osha_inspection,different_street,1 E 11Th St,55 E. 6th Street | ONE EAST 11TH STREET
+SITE-002967,2024-12-11,osha_inspection,number_only,875 N Third St,875 N 3RD STREET
+SITE-002988,2025-12-31,osha_ita,number_only,1604 Building,1604 Building Barth Street
+SITE-003002,2024-04-19,osha_inspection,different_street,9411 Corsair Rd,9405 & 9411 CORSAIR ROAD
+SITE-003013,2017-12-31,osha_ita,number_only,863 S Main St,863 SE Main Street
+SITE-003015,2022-12-31,osha_ita,number_only,10 Old Sherman Turnpike,10 Ols shermak TPKE.
+SITE-003024,2025-12-31,osha_ita,no_house_number,Corner of Lupine & Ontario Streets,2966 Lupine Ave
+SITE-003047,2016-12-31,osha_ita,different_street,888 N Keyser Ave,710 Warner Street | 801 EAST COREY STREET
+SITE-003048,2022-12-31,osha_ita,number_only,960 Veterans Blvd,960 West Veterans Blvd
+SITE-003050,2019-12-31,osha_ita,number_only,250 Ny-303,250 North Route 303
+SITE-003060,2022-06-01,osha_inspection,different_street,544 Ute Valley Trail,1610 GARDEN OF THE GODS RD
+SITE-003061,2020-12-31,osha_ita,number_only,9 Crosby Dr,9 Crosby Rd
+SITE-003063,2025-12-31,osha_ita,different_street,117 Jonathan Boulevard North,101 Peavey Road
+SITE-003067,2024-05-22,osha_inspection,different_street,6555 W Good Hope Rd,2230 W. FLORIST AVE
+SITE-003070,2019-01-24,osha_inspection,different_street,1409 Winchester Hwy,1405 WINCHESTER HWY
+SITE-003074,2024-03-01,osha_inspection,number_only,40119 County Rd 54 E,40119 CR 54 EAST
+SITE-003075,2022-12-31,osha_ita,number_only,5121 San Fernando Rd W,5121 W. San Fernando Rd
+SITE-003093,2022-03-18,osha_inspection,number_only,1201 Scott St,1201 N. SCOTT ST.
+SITE-003098,2026-03-03,osha_inspection,number_only,501 S Emerald Ave,1600 WEST B AVE | 501 South Emerald Road
+SITE-003104,2023-12-31,osha_ita,different_street,5750 Heisley Rd,"8080 Norton Parkway, Building #22"
+SITE-003105,2023-12-31,osha_ita,different_street,7070 Spinach Dr,"8080 Norton Parkway, Building #22"
+SITE-003106,2025-12-31,osha_ita,different_street,205 Chester St,250 CHESTER STREET | 250 Chester St Building #5
+SITE-003107,2025-12-31,osha_ita,different_street,215 Chester St,250 CHESTER STREET | 250 Chester St Building #5
+SITE-003108,2025-12-31,osha_ita,different_street,670 Hardy Rd,250 CHESTER STREET | 250 Chester St Building #5
+SITE-003111,2023-12-31,osha_ita,number_only,2222 W Bella Vista St,2222 West Bella Vista
+SITE-003119,2017-03-08,osha_inspection,number_only,3700 N Interstate Hwy 35E,3700 NORTH INTERSTATE HIGHWAY 35 EAST
+SITE-003127,2025-12-31,osha_ita,different_street,1550 Hwy 371 S,2270 HIGHWAY 79 S | 2270 HWY 79 South
+SITE-003132,2022-12-31,osha_ita,number_only,3000 Pegasus Rd,3000 PEGASUS DRIVE
+SITE-003143,2025-12-31,osha_ita,number_only,1513 Parkside Dr,1513 Parkside
+SITE-003150,2025-12-31,osha_ita,different_street,8430 County Road 3,11561 US HWY 60
+SITE-003174,2023-05-11,osha_inspection,number_only,9500 I-10 East,9500 E FREEWAY
+SITE-003175,2023-01-19,osha_inspection,no_house_number,Spur 119 East,SPUR 119 E
+SITE-003182,2025-12-31,osha_ita,number_only,4770 US Hwy 42,4770 HWY 42 East
+SITE-003184,2023-02-06,osha_inspection,number_only,355 LA Hwy 3142 (Gate 1),355 HWY 3142
+SITE-003185,2026-01-08,osha_inspection,different_street,21255 LA Hwy 1 S,LOUISIANA OPERATIONS 21255 LOUISIANA HIGHWAY 1 SOUTH
+SITE-003187,2020-12-31,osha_ita,number_only,1790 Building,"1790 Building, Washington St. | 3901 S SAGINAW RD"
+SITE-003188,2022-10-31,osha_inspection,different_street,2301 N Brazosport Blvd,565 MIDWAY RD
+SITE-003189,2024-01-05,osha_inspection,different_street,550 Independence Pkwy S,11110 HIGHWAY 225
+SITE-003191,2024-07-19,osha_inspection,no_house_number,Farm Rd 1006,2735 FARM TO MARKET ROAD 1006
+SITE-003196,2025-12-31,osha_ita,number_only,437 MacCorkle Ave SW,437 McCorkle Ave. SW
+SITE-003213,2025-12-31,osha_ita,number_only,11675 Scotland Ave,11675 Scotland Zachary Hwy | 4999 SCENIC HIGHWAY
+SITE-003214,2018-12-31,osha_ita,different_street,12480 Scenic Hwy,4999 SCENIC HIGHWAY | 4999 Scenic Highway 
+SITE-003215,2018-12-31,osha_ita,different_street,12875 Scenic Hwy,4999 SCENIC HIGHWAY | 4999 Scenic Highway 
+SITE-003217,2019-10-17,osha_inspection,different_street,13330 Hatcherville Rd,5000 BAYWAY DRIVE
+SITE-003219,2025-12-31,osha_ita,number_only,11440 Hwy 90,11440 US-90 | 2775 Gulf States Road
+SITE-003221,2022-10-05,osha_inspection,number_only,4589 Fm 2986,4589 FARM TO MARKET 2986
+SITE-003225,2024-12-31,osha_ita,number_only,5414 Us-42,5414 US Highway 42 East
+SITE-003250,2024-09-04,osha_inspection,number_only,9455 Farm to Market 1559,9455 FARM TO MARKET ROAD 1559
+SITE-003252,2025-12-31,osha_ita,blank_street,,5221 SID RICHARDSON ROAD | 5221 Sid Richardson Road
+SITE-003254,2017-12-31,osha_ita,blank_street,,396 PELLA WAY | 396 Pella Way
+SITE-003261,2023-12-04,osha_inspection,no_house_number,One Farrel Boulevard,1 FARREL BOULEVARD
+SITE-003264,2024-03-04,osha_inspection,number_only,16369 US-131,16369 US-13
+SITE-003274,2019-12-31,osha_ita,number_only,1569 Morris Street,"1569 Morris St. Wabash ,IN"
+SITE-003275,2025-12-31,osha_ita,no_house_number,W5649 County Road 342,W5649 COUNTY ROAD 342 | W5649 County Road 342
+SITE-003300,2025-12-31,osha_ita,number_only,14118 Route 8,14118 State HWY 8
+SITE-003303,2024-05-16,osha_inspection,number_only,4647 FM 1006,4647 FM RD 1006
+SITE-003304,2024-12-31,osha_ita,blank_street,,805 WOLFE AVE | 805 Wolfe Avenue
+SITE-003311,2024-12-31,osha_ita,number_only,"10A Bloomfield Avenue, Suite 8",10 Bloomfield Ave STE 8
+SITE-003320,2018-12-31,osha_ita,blank_street,,121 Cardiff Valley Road
+SITE-003324,2025-12-31,osha_ita,different_street,9005 Westside Parkway,Allnex USA Inc/9005 Westside Parkway
+SITE-003327,2021-12-31,osha_ita,number_only,889 West Longview Avenue,889 W. Longview
+SITE-003334,2025-12-31,osha_ita,different_street,750 Granby Ln,731 Rosewood Dr.
+SITE-003338,2025-12-31,osha_ita,number_only,547 Kings Ridge Dr,547-H Kings Ridge Dr.
+SITE-003350,2022-09-29,osha_inspection,number_only,33 Stiles Avenue,33 STILES LANE
+SITE-003378,2019-12-31,osha_ita,blank_street,,6301 Highway 76 
+SITE-003385,2025-12-31,osha_ita,blank_street,,11525 North IL Highway 142
+SITE-003386,2025-12-31,osha_ita,blank_street,,1805 Highway 521 South
+SITE-003387,2025-12-31,osha_ita,blank_street,,3000 Continental Parkway
+SITE-003402,2023-05-23,osha_inspection,blank_street,,2211 N 12 AVE
+SITE-003415,2025-12-31,osha_ita,blank_street,,78 MARGUERITE AVE. | 78 Marguerite Ave
+SITE-003418,2026-06-30,osha_inspection,blank_street,,"650 INDUSTRIAL PARK DRIVE QA LAB, CD700 | 650 Industrial Park Drive"
+SITE-003424,2025-12-31,osha_ita,blank_street,,2915 DR. MARTIN LUTHER KING JR. BOULEVARD | 2915 Dr Martin Luther King Jr BLVD
+SITE-003428,2025-12-31,osha_ita,blank_street,,2030 ALABAMA HIGHWAY 20 | 2030 Hwy 20
+SITE-003436,2024-12-31,osha_ita,different_street,401 N 16th St,5625 Hwy 90
+SITE-003439,2018-12-31,osha_ita,no_house_number,W133 N5180 Campbell Drive,W133N5180 CAMPBELL DR
+SITE-003443,2024-12-31,osha_ita,different_street,5851 West 73rd Street,120 S Riverside Plaza
+SITE-003456,2025-12-31,osha_ita,number_only,12200 Mount Holly-Huntersville Road,12200-A Mt. Holly-Huntersville Rd. Hutnersville
+SITE-003466,2021-03-04,osha_inspection,number_only,555 W Linfoot St,555 W. Linfoot | 555 WEST LINFOOT
+SITE-003487,2024-08-20,osha_inspection,different_street,1000 Printpack Drive,297 ANDREW WAY
+SITE-003492,2025-12-31,osha_ita,different_street,5608 Uwharrie Rd,6058 Lois Lane
+SITE-003500,2023-12-31,osha_ita,different_street,3151 North High Street,14591 STATE HIGHWAY 177 | 14591 State Highway 177
+SITE-003501,2025-12-31,osha_ita,blank_street,,14382 Astronautics Ln.
+SITE-003503,2025-12-31,osha_ita,no_house_number,One Pinnacle Ave,1 Pinnacle Avenue
+SITE-003505,2025-12-31,osha_ita,different_street,1603 West LBJ Freeway,1501 Lyndon B Johnson Fwy Ste 530
+SITE-003506,2015-07-28,osha_inspection,blank_street,,408 NORTH MAIN
+SITE-003507,2025-12-31,osha_ita,blank_street,,1423 Pasadena Freeway 77505
+SITE-003512,2021-12-31,osha_ita,blank_street,,1818 Battleground Rd.
+SITE-003515,2025-12-31,osha_ita,blank_street,,280 Cane Creek Road
+SITE-003522,2016-12-29,osha_inspection,number_only,1813 State St,1813 WEST STATE ST
+SITE-003523,2025-12-31,osha_ita,different_street,3300 N State Rd 7,3330 N St Hwy 7 | 3330 STATE HIGHWAY 7
+SITE-003556,2025-12-31,osha_ita,number_only,39605 W Independence Avenue,39605 Independence
+SITE-003559,2024-01-23,osha_inspection,number_only,310 South Wabash Street,310 SOUTH WABASH
+SITE-003566,2025-12-31,osha_ita,different_street,3621 Industrial Park Drive,2911 INDUSTRIAL PARK DRIVE | 2911 Industrial Park Drive
+SITE-003580,2025-12-31,osha_ita,number_only,51675 Industrial Drive,51675 Industrial Dr N
+SITE-003587,2024-12-31,osha_ita,different_street,1919 Jim Neu Drive,2055 Pidco Drive
+SITE-003588,2021-12-31,osha_ita,different_street,1405 North Waverly Street,2401 Doyle Keirn Dr.
+SITE-003596,2026-03-26,osha_inspection,different_street,651 East Highway 32,1500 MAPLE LANE
+SITE-003612,2022-01-19,osha_inspection,different_street,279 Pike County Lake Road,1 Sanders Road | 110 HENDERSON HWY
+SITE-003613,2025-05-23,osha_inspection,blank_street,,1914 HADEN RD
+SITE-003619,2025-12-31,osha_ita,different_street,2525 East Pearl Street,2501 S. GRANDVIEW | 2501 South Grandview Avenue
+SITE-003622,2025-12-31,osha_ita,number_only,830 East Erie Street,830 East Erie
+SITE-003626,2025-12-31,osha_ita,different_street,1545 South Olive Street,1525 S Olive
+SITE-003639,2017-12-31,osha_ita,number_only,823 S. By-Pass,823 South Bypass
+SITE-003644,2023-12-31,osha_ita,different_street,5150 Treasure Valley Way,5098 Treasure Valley Way
+SITE-003648,2023-12-31,osha_ita,number_only,852 W Dr Martin L King Jr Blvd,852 Autry Hwy
+SITE-003673,2024-10-07,osha_inspection,number_only,5500 Second Avenue,5500 2ND AVENUE
+SITE-003674,2023-08-24,osha_inspection,blank_street,,7734 HWY 1
+SITE-003681,2025-05-06,osha_inspection,number_only,3005A Pasadena Freeway,3005B PASADENA FREEWAY
+SITE-003692,2022-11-22,osha_inspection,blank_street,,1453 FM 2264
+SITE-003693,2023-02-14,osha_inspection,blank_street,,2903 COMMERCE DRIVE
+SITE-003694,2022-03-01,osha_inspection,blank_street,,10805 US HIGHWAY 212
+SITE-003707,2023-12-31,osha_ita,number_only,101 Sierra Drive,101 Seirra dr
+SITE-003726,2023-09-21,osha_inspection,different_street,210 Inverness Center Drive,1730 VANDERBILT ROAD
+SITE-003727,2023-12-31,osha_ita,different_street,2106 South Riverside Road,5610 Corporate Dr.
+SITE-003745,2025-12-31,osha_ita,blank_street,,1355 W. Sherman Blvd.
+SITE-003753,2025-12-31,osha_ita,blank_street,,900 FM 205
+SITE-003761,2018-12-31,osha_ita,different_street,580 Goddard Avenue,17988 Edison Ave
+SITE-003762,2025-12-31,osha_ita,different_street,1225 Willow Lake Boulevard,1219 Willow Lake Blvd
+SITE-003780,2018-05-22,osha_inspection,number_only,3206 #6 Road,3206 #6 RD
+SITE-003801,2016-01-11,osha_inspection,different_street,509 General Chennault St SE,200 MOON ST. SE
+SITE-003803,2025-12-31,osha_ita,blank_street,,3801 Oliver St | 3801 S. OLIVER
+SITE-003805,2025-12-31,osha_ita,number_only,1421 Second Ave NW,1421 2nd Ave NW
+SITE-003812,2019-12-31,osha_ita,different_street,3400 South Railroad Street,3402 South Railroad Street
+SITE-003843,2025-12-31,osha_ita,blank_street,,3721 Cohen Place
+SITE-003846,2025-12-31,osha_ita,number_only,330 N. Ross Street,330 Ross Street
+SITE-003849,2025-12-31,osha_ita,different_street,220 Millard Ave SW,260 JENKS AVE SW
+SITE-003850,2018-12-31,osha_ita,blank_street,,975 Lombardi Avenue
+SITE-003894,2024-12-31,osha_ita,blank_street,,777 Mark St.
+SITE-003895,2021-12-31,osha_ita,different_street,1025-1055 W 8th St,1055 W. 8th Street | 360 S GLENDORA AVE.
+SITE-003918,2024-12-31,osha_ita,different_street,5821 Citrus Blvd,1420 SAMS AVENUE
+SITE-003921,2025-12-31,osha_ita,number_only,401 McEntarfer Dr,401 N McEntarfer Dr
+SITE-003922,2025-12-31,osha_ita,blank_street,,629 SMITH ROAD | 629 Smith Rd
+SITE-003926,2023-07-14,osha_inspection,number_only,3015 Brother Blvd,3015 BROTHER AVENUE
+SITE-003931,2026-04-28,osha_inspection,different_street,219 Andrews Parkway,100 WIHURI PKWY | 100 Wihuri Parkway
+SITE-003951,2025-12-31,osha_ita,different_street,497 Circle Freeway Drive,411 Circle Freeway Drive
+SITE-003955,2024-12-31,osha_ita,number_only,191 NJ-31,191 N 31 NORTH | 191 Route 31 South
+SITE-003956,2025-12-31,osha_ita,no_house_number,Finley Island Road,1301 Finley Island Road
+SITE-003964,2024-12-31,osha_ita,number_only,280 Pequanic Dr,280 PEQUANOC DRIVE | 280 Pequanoc Drive
+SITE-003970,2022-09-23,osha_inspection,different_street,703 Railroad Ave,491 MEDLOCK ROAD | 632 Smith Rd.
+SITE-003971,2025-12-31,osha_ita,blank_street,,16850 Park Row Dr
+SITE-003972,2026-11-17,osha_inspection,blank_street,,1500 STATE DOCKS ROAD
+SITE-003973,2024-08-23,osha_inspection,blank_street,,1006 E. OAKLAND AVE | 1006 E. Oakland Ave
+SITE-003980,2024-06-28,osha_inspection,number_only,1 Longfellow St,1 LONGFELLOW PLACE
+SITE-003981,2025-12-31,osha_ita,blank_street,,2000 Goodyear Drive
+SITE-003998,2025-12-31,osha_ita,blank_street,,"4631 Old Highway 146, Suite A"
+SITE-003999,2025-12-31,osha_ita,number_only,61A Carthage Point Road,61 A CARTHAGE POINT DR | 61 Carthage Point Rd
+SITE-004005,2025-12-31,osha_ita,number_only,1400 NE Douglas St,1400 N.E. Douglas Street
+SITE-004014,2024-12-31,osha_ita,different_street,9333 Baythorne Dr,9690 W. WINGFOOT RD. | 9690 Wingfoot Rd
+SITE-004016,2025-12-31,osha_ita,blank_street,,220 Industrial Ave
+SITE-004017,2017-11-21,osha_inspection,number_only,3345 Butler Ave,3345 BULTER AVE.
+SITE-004032,2018-01-18,osha_inspection,different_street,3100 E. High St.,2218 ENTERPRISE ST
+SITE-004040,2025-12-31,osha_ita,number_only,100 B Industrial Drive,"100  Industrial Drive, Suite B"
+SITE-004086,2025-12-31,osha_ita,blank_street,,23215 EARLY AVE | 23215 Early Ave
+SITE-004087,2026-06-26,osha_inspection,number_only,110 Badger Pkwy,110 BADGER PARKWAY BDG 5 | N2900 Foundry Rd.
+SITE-004089,2021-12-31,osha_ita,blank_street,,"11515 VanStory Drive, Suite 1"
+SITE-004092,2024-12-31,osha_ita,different_street,721 FM2468,711 FM 2468 | [REDACTED: email address in the street field]
+SITE-004114,2025-12-31,osha_ita,blank_street,,5625 West Clinton Avenue
+SITE-004117,2020-12-31,osha_ita,number_only,4101 US 321-A Alt,4101 US Hwy 321-A
+SITE-004125,2025-03-19,osha_inspection,blank_street,,8700 MANCHESTER HIGHWAY
+SITE-004128,2020-12-31,osha_ita,blank_street,,70 East Industry Dr
+SITE-004135,2022-12-31,osha_ita,no_house_number,Edson Street,120 Edison St.
+SITE-004138,2024-12-31,osha_ita,number_only,7966 NC 56 Hwy,7966 NC-56
+SITE-004141,2021-12-31,osha_ita,different_street,3001 W Kentucky St,1100 W. Market Street
+SITE-004161,2025-12-31,osha_ita,number_only,1140 West Grand River,1140 W GRAND RIVER AVE | 1140 W Grand River Ave
+SITE-004174,2015-04-30,osha_inspection,number_only,2350 N.E. Independence Ave,2350 NE INDEPENDENCE AVE. STE. C
+SITE-004176,2026-11-05,osha_inspection,number_only,13213 Air Park Drive,13213 AIRPARK DRIVE | 13213 Airpark Dr.
+SITE-004177,2023-12-31,osha_ita,number_only,3730 Midco St,3730 S Midco
+SITE-004193,2025-12-31,osha_ita,number_only,1516 E. Maple Leaf Dr,1516 EAST MAPLELEAF DR
+SITE-004215,2025-12-31,osha_ita,number_only,21255 LA-1,21255 LA Hwy 1
+SITE-004228,2025-01-08,osha_inspection,blank_street,,140 THOMAS DRIVE | 140 thomas drive
+SITE-004234,2025-12-02,osha_inspection,blank_street,,1358 EXCELSIOR D.
+SITE-004242,2026-05-06,osha_inspection,blank_street,,47440 MICHIGAN AVE SUITE 100 | 47440 Michigan Ave Suite 100
+SITE-004248,2020-12-31,osha_ita,different_street,8722 Daffodil Street,PO BOX 630145
+SITE-004271,2015-02-09,osha_inspection,blank_street,,3270 EAST 70TH ST
+SITE-004272,2025-12-31,osha_ita,blank_street,,892 Blakeslee Blvd Dr. West
+SITE-004273,2025-12-31,osha_ita,different_street,14801 Scenic Hwy,4801 Scenic Hwy
+SITE-004282,2023-12-31,osha_ita,different_street,426 E. Fountain Rd.,422 E. Fountain Road
+SITE-004287,2026-10-09,osha_inspection,different_street,216 Airport Drive,85 INNOVATION DRIVE
+SITE-004302,2025-12-31,osha_ita,blank_street,,1010 W Hannah Ave | 1010 WEST HANNA AVENUE
+SITE-004313,2025-12-31,osha_ita,number_only,18811 NE San Rafael St,18811 NE SAN RAFAEL
+SITE-004338,2026-07-01,osha_inspection,number_only,3700 Salida Street,"3700 N. Salida St., Unit 20 | 3700 NORTH SALIDA STREET, SUITE 20"
+SITE-004351,2021-12-31,osha_ita,blank_street,,1818 Battleground Rd.
+SITE-004354,2023-12-31,osha_ita,blank_street,,1944 Tellepsen St
+SITE-004356,2023-12-31,osha_ita,blank_street,,293 Boston Post Road West Suite 510
+SITE-004363,2021-08-19,osha_inspection,number_only,125 S MacQuesten Parkway,125 MACQUESTEN PARKWAY SOUTH
+SITE-004376,2026-05-27,osha_inspection,different_street,1130 Como Street,400 CMH ROAD | 400 CMH Rd
+SITE-004396,2019-03-22,osha_inspection,different_street,1400 Tiarco Drive SW,1727 KIMBERLY PARK DR. | 198 Nexus Dr
+SITE-004401,2015-02-13,osha_inspection,different_street,1977 Weaver Court,1917 ROCKDALE INDUSTRIAL BLVD.
+SITE-004403,2022-06-13,osha_inspection,no_house_number,One Centro Way,ONE CENTRO WAY
+SITE-004411,2023-12-31,osha_ita,number_only,201 Mills St,201 Mills Street / PO Box 265
+SITE-004426,2024-12-31,osha_ita,different_street,15180 Josh Wilson Rd,151880 Josh Wilson RD
+SITE-004431,2025-12-31,osha_ita,no_house_number,One Innovation Drive,One Innovation Dr
+SITE-004458,2023-12-31,osha_ita,number_only,1455 J A Cochran By-Pass,1455 J A Cochran Bypass
+SITE-004468,2025-12-31,osha_ita,number_only,100 Cellwood Drive,100 Cellwood Place
+SITE-004514,2023-12-31,osha_ita,different_street,520 Madison Ave,"50 West 23rd Street, Suite 1400"
+SITE-004517,2026-02-09,osha_inspection,blank_street,,2066 GOODYEAR DRIVE | 4620 Southerland Road
+SITE-004524,2019-12-31,osha_ita,no_house_number,W129N10825 Washington Drive,W129 N10825 Washington Drive
+SITE-004525,2017-02-23,osha_inspection,different_street,3110 44th Ave N,4242 31ST STREET NORTH
+SITE-004526,2017-02-23,osha_inspection,different_street,4301 34th St N Ste B,4242 31ST STREET NORTH
+SITE-004540,2015-05-04,osha_inspection,different_street,299 Pacific St,FOOT OF PACIFIC ST.
+SITE-004554,2024-12-31,osha_ita,number_only,1701 N Topeka Blvd,1701 NW TOPEKA BLVD | 1701 NW topeka blvd
+SITE-004560,2026-06-09,osha_inspection,blank_street,,99 NEWBOLD ROAD | 99 Newbold Road
+SITE-004566,2022-12-31,osha_ita,different_street,14020 Highway 57 North,1800 W. Maryland St.
+SITE-004578,2023-12-31,osha_ita,number_only,401 W.E. Baab Industrial Rd,401 W.E. BAAB Industrial Drive
+SITE-004584,2020-12-31,osha_ita,number_only,4200 KNIGHTHR US T RD,4200 Knighthurst Road
+SITE-004610,2023-12-31,osha_ita,different_street,3599 Highway 44,3628 Hwy 44
+SITE-004620,2025-09-15,osha_inspection,no_house_number,N44 W33341 Watertown Plank Rd,N44 W33341 WATERTOWN PLANK ROAD
+SITE-004637,2024-12-31,osha_ita,different_street,201 POLITO AVE,875 VALLEY BROOK AVE | 875 Valley Brook Avenue
+SITE-004646,2024-10-25,osha_inspection,different_street,2210 PARVIEW RD,8430 MURPHY DR.
+SITE-004651,2025-12-31,osha_ita,number_only,520 S PAYTON AVE,520 S Payton | 520 S. PAYTON ST.
+SITE-004656,2016-12-31,osha_ita,number_only,1525 S TENTH ST,1525 S 10th Street | 1525 SOUTH 10TH STREET
+SITE-004665,2022-09-14,osha_inspection,number_only,4101 LA HWY 108,4101 HIGHWAY 108 S
+SITE-004698,2022-06-15,osha_inspection,number_only,22614 RT 84 N,22614 ROUTE 84 N
+SITE-004704,2025-12-31,osha_ita,different_street,210 E MEATS AVE,"138 E. Meats Avenue Orange, CA 92865"
+SITE-004706,2017-12-31,osha_ita,different_street,1703 CROSSPOINT AVE,11750 Katy Freeway
+SITE-004707,2019-12-31,osha_ita,number_only,106 S MAIN,106 Main Street
+SITE-004709,2023-12-31,osha_ita,number_only,4403 LAPORTE HWY 225,4403 LaPorte Freeway | 4403 PASADENA FREEWAY FRONTAGE RD
+SITE-004711,2023-09-06,osha_inspection,no_house_number,NE OF INTERSECTION OF HWY 73 & HWY 366,HWY 366 GATE 99
+SITE-004713,2020-06-11,osha_inspection,different_street,1124 N 2ND ST,976 HIGHWAY 45
+SITE-004718,2019-12-31,osha_ita,number_only,18801 OLD STATESVILLE RD,18801 Old Statesville Hwy
+SITE-004724,2021-09-02,osha_inspection,number_only,501 IND US TRIAL BLVD,501 INDUSTRIAL BOULEVARD
+SITE-004725,2018-05-18,osha_inspection,different_street,154 LIPFORD RD,134 LIPFORD DR.
+SITE-004726,2025-12-31,osha_ita,number_only,1750 W DOWNS DR,1750 Downs Drive
+SITE-004732,2025-12-31,osha_ita,number_only,210 IND US TRIAL DR N,210 Industrial Drive North
+SITE-004738,2023-01-04,osha_inspection,different_street,3525 CITIES SERVICE HWY,900 HWY 108
+SITE-004739,2025-12-31,osha_ita,number_only,36045 HWY 30,36045 Hwy 30 or PO Box 228
+SITE-004741,2025-12-31,osha_ita,different_street,1600 VCM PLANT RD,2200 Old Spanish Trail
+SITE-004742,2025-12-31,osha_ita,different_street,1300 PPG DR,2200 Old Spanish Trail
+SITE-004764,2025-12-31,osha_ita,number_only,1546 COUNTY RD 1450N,1546 COUNTY ROAD 1450 NORTH | 1546 County Road 1450 North
+SITE-004767,2025-12-31,osha_ita,no_house_number,ONE PREMDOR DR,"One Premdor Drive Dickson, TN 37055"
+SITE-004783,2022-04-26,osha_inspection,number_only,1100 INDUSTRIAL PARK RD HALIFAX INDUSTRIAL PARK,1100 INDUSTRIAL PARK ROAD
+SITE-004787,2025-12-31,osha_ita,number_only,801 NORTHERN PACIFIC RD,801 Northern pacific Rd SE
+SITE-004793,2025-12-31,osha_ita,number_only,1625 JAMES P. RODGERS RD,1625 James P Rodgers Drive
+SITE-004833,2016-05-12,osha_inspection,number_only,"1230 INDEPENDENCE PARKWAY, SOUTH",1230 INDEPENDENCE PARKWAY SOUTH NEW UNIT CONSTRUCTION
+SITE-004835,2022-12-31,osha_ita,different_street,1700 LYNCH RD,5001 O'Hara Drive
+SITE-004836,2022-12-31,osha_ita,different_street,15000 US HWY 41 N,5001 O'Hara Drive
+SITE-004844,2022-12-31,osha_ita,number_only,3769 RT 20 E,3769 Rte. 20 East
+SITE-004850,2017-11-06,osha_inspection,number_only,1761 RT 12,1761 ROUTE 12
+SITE-004896,2025-12-31,osha_ita,different_street,4400 VANDALIA RD,"Spartech 4400 vandalia Rd pleasant Hill, IA"
+SITE-004900,2023-09-21,osha_inspection,different_street,3550 MOSER ST,2450 BADGER AVENUE
+SITE-004902,2025-12-31,osha_ita,number_only,901 MORRISON DR,901 N Morrison
+SITE-004903,2023-09-21,osha_inspection,different_street,2251/2450/2451 BADGER AVE,2450 BADGER AVENUE
+SITE-004911,2022-01-05,osha_inspection,number_only,26755 US-371,26755 HWY 371 | 26755 Highway 371
+SITE-004912,2021-12-31,osha_ita,number_only,6701 STATESVILLE BLVD,6701 Satesville Blvd
+SITE-004917,2025-12-31,osha_ita,number_only,3110 W ST RD 28,3110 W State Road 28
+SITE-004922,2024-05-01,osha_inspection,number_only,5510 W 12TH ST,5510 12TH W. ST.
+SITE-004932,2022-02-14,osha_inspection,number_only,3333 N I-35 BLDG 5,3333 N.INTERSTATE 35
+SITE-004937,2024-05-08,osha_inspection,number_only,5400 23RD AVE,5400 AVENUE OF THE CITIES
+SITE-004938,2026-07-21,osha_inspection,number_only,630 E 13TH,630 E. 13TH ST.
+SITE-004939,2025-12-31,osha_ita,number_only,701 SHILOH RD,2802 W Miller road | 701 SOUTH SHILOH ROAD
+SITE-004949,2023-12-31,osha_ita,number_only,2399 S STONE MTN-LITHONIA RD,2399 S. Stone Mountain Lithonia Rd.
+SITE-004960,2024-12-31,osha_ita,no_house_number,CHEESEQUAKE RD,250 Cheesequake Rd
+SITE-004970,2024-12-31,osha_ita,number_only,2810 GULF STATE RD,2810 Gulf States Road
+SITE-004971,2018-11-08,osha_inspection,number_only,3901 SUGAR HOUSE RD,3901 SUGARHOUSE RD.
+SITE-004987,2020-01-15,osha_inspection,number_only,12170 LOCHRIDGE BLVD,12170 LOCKRIDGE BLVD.
+SITE-004990,2024-12-31,osha_ita,number_only,105 E MAPLE ST,105 E. Maple | 105 EAST MAPLE AVENUE
+SITE-004992,2025-06-30,osha_inspection,different_street,9300 NEEDLEPOINT RD,10328 INTERSTATE 10 SERVICE ROAD
+SITE-004994,2026-08-28,osha_inspection,different_street,7601 CLAY AVE,5801 SKYLAB RD. | 5801 Skylab Rd.
+SITE-005010,2022-03-23,osha_inspection,different_street,5675 KRAFT AVE,4260 AIRLINE DR. SE
+SITE-005036,2026-11-13,osha_inspection,different_street,145 STANDRIDGE DR,1196 EAST HIGHTOWER TRAIL | 1196 East Hightower Trail
+SITE-005040,2025-05-07,osha_inspection,number_only,1990 RUTGERS UNIVERSITY BLVD,1990 RUTGERS BLVD
+SITE-005041,2025-12-31,osha_ita,number_only,521 INDUSTRIAL STREET,521 E INDUSTRIAL ST | 521 E Industrial St
+SITE-005047,2025-12-31,osha_ita,different_street,2552 INDUSTRIAL DR,"AOC, 2552 Industrial Drive"
+SITE-005048,2025-07-01,osha_inspection,different_street,811 MARINE DRIVE,197 ROYAL DR
+SITE-005049,2025-07-01,osha_inspection,different_street,417 S RIVER ST,197 ROYAL DR
+SITE-005051,2025-12-31,osha_ita,different_street,100 LOCUST AVE,190 Mustang Way
+SITE-005056,2021-10-29,osha_inspection,different_street,432 HOGSBACK RD,500 HOGSBACK ROAD
+SITE-005060,2025-12-31,osha_ita,different_street,1 ROCHESTER MEDICAL DR NW,1421 2nd Ave NW
+SITE-005077,2025-12-31,osha_ita,number_only,26270 HWY 405,26270  LOUISIANA HWY 1 SOUTH | 28915 LA 1 South
+SITE-005078,2024-04-23,osha_inspection,number_only,123 MANUFACTURERS DR,123 MANUFACTUREERS DR
+SITE-005088,2022-12-31,osha_ita,number_only,4501 E HWY 31,2200 SOUTH BUSINESS 45 | 4501 E. State Hwy 31
+SITE-005093,2021-12-14,osha_inspection,no_house_number,ONE PLASTICS DR,1 PLASTICS DRIVE
+SITE-005097,2025-12-31,osha_ita,different_street,4241 SAVANNAH AVE,(7 RESERVOIR AREA) 2555 SAVANNAH AVENUE | 2555 Savannah Avenue
+SITE-005106,2024-12-31,osha_ita,different_street,100 FABRITE RD,306 Jefferson Street
+SITE-005119,2023-12-31,osha_ita,number_only,2015 NE BROADWAY ST,2015 Broadway Street Northeast
+SITE-005129,2021-04-21,osha_inspection,number_only,420 SO 6TH AVE,420 S. 6TH AVE
+SITE-005131,2021-09-10,osha_inspection,number_only,4545 N JACKSON,4545 NORTH JACKSON STREET
+SITE-005142,2023-06-14,osha_inspection,different_street,350 STATE ST,250 State Street | 433 N MAIN STREET
+SITE-005144,2017-12-31,osha_ita,number_only,1 SILVER LINE DR US HWY 1N,1 Silver Line Drive
+SITE-005161,2025-12-31,osha_ita,number_only,1036 INDUSTRIAL PARK DR,1036 Industrial Park
+SITE-005169,2025-12-31,osha_ita,different_street,28391 ESSENTIAL RD,N73 W28391 Essential Road
+SITE-005197,2024-12-31,osha_ita,number_only,313 S HANCOCK,313 S Hancock St.
+SITE-005204,2024-12-31,osha_ita,different_street,1220 S STATE ST,1200 S STATE ST | 1609 CR 1900
+SITE-005213,2016-08-09,osha_inspection,number_only,374 CORINTH RD,374 CORINTH DRIVE
+SITE-005227,2026-02-09,osha_inspection,different_street,8600 PARK PL BLVD,2066 GOODYEAR DRIVE
+SITE-005230,2025-12-31,osha_ita,number_only,420 HWY 25 N,420 N. State Road 25
+SITE-005238,2025-12-31,osha_ita,different_street,26 12TH ST SE,52 12th Street SE
+SITE-005243,2025-12-31,osha_ita,different_street,280 W 5TH ST,208 W 5TH ST
+SITE-005246,2022-05-04,osha_inspection,number_only,603 W 7TH ST,603 7TH ST
+SITE-005251,2025-12-31,osha_ita,different_street,1102 AVIATION BLVD,1010 Petersburg Rd
+SITE-005253,2025-08-12,osha_inspection,different_street,8041 HAYWOOD TAYLOR BLVD,420 HAYWOOD TAYLOR BLVD.
+SITE-005259,2018-12-31,osha_ita,different_street,1600 HOLMAN ST,1200 8TH AVE | 1200 8th Avenue
+SITE-005262,2023-12-31,osha_ita,number_only,100 INDUSTRIAL ST,100 W INDUSTRIAL | 100 W. Industrial
+SITE-005263,2017-12-31,osha_ita,number_only,3250 HIGHWAY 70 BUSINESS WEST,"3250 US-70 BUS, Smithfield, NC 27577"
+SITE-005266,2025-12-31,osha_ita,different_street,5 WICKERS DR,Five Wickers Drive
+SITE-005267,2022-02-23,osha_inspection,different_street,1002 MAIN ST,301 INDUSTRIAL DRIVE
+SITE-005270,2025-12-31,osha_ita,no_house_number,W194 N11340 MCCORMICK DR,W194N11340 MCCORMICK DRIVE | W194N11340 McCormick Dr
+SITE-005283,2025-12-31,osha_ita,different_street,250 CHEESEQUAKE RD,"Inside DuPont Parlin Site, 250 Cheesequake Road"
+SITE-005285,2025-12-31,osha_ita,different_street,2732 N 15TH ST,3518 LAKESHORE ROAD PO BOX 758 | 3518 Lakeshore Rd
+SITE-005291,2025-12-31,osha_ita,number_only,1701 W VINE ST,1701 W. Vine
+SITE-005295,2025-12-31,osha_ita,number_only,2200 BAYOU D'INDE,2200 Bayou D'Inde Pass
+SITE-005304,2024-01-08,osha_inspection,different_street,28546 HOLIDAY DR,28564 HOLIDAY PL | 28564 Holidy Place
+SITE-005324,2016-09-19,osha_inspection,number_only,1801 E LA Hwy 108,1801 HIGHWAY 108 EAST
+SITE-005330,2022-02-09,osha_inspection,no_house_number,I-75 at Industrial Blvd,1015 INDUSTRIAL BLVD
+SITE-005331,2025-12-31,osha_ita,no_house_number,Union Ave Extension,155 UNION AVENUE EXTENSION | 161 Union Avenue Extension
+SITE-005335,2025-07-17,osha_inspection,number_only,201 Industrial Drive,201 INDUSTRIAL PARK DRIVE
+SITE-005336,2025-09-04,osha_inspection,different_street,1400 13Th Ave,1450 13TH AVENUE
+SITE-005339,2025-12-31,osha_ita,no_house_number,Chemical Plant Rd,1 CHEMICAL PLANT ROAD | 1 Chemical Plant Rd
+SITE-005341,2023-12-31,osha_ita,no_house_number,Country Club Rd,1879 COUNTRY CLUB ROAD | 1879 Country Club Road
+SITE-005342,2024-08-08,osha_inspection,different_street,705 S Lyons St,701 S. LYONS AVENUE
+SITE-005343,2023-03-22,osha_inspection,different_street,5761 Underwood Rd,3503 PASADENA FRWY
+SITE-005344,2023-03-22,osha_inspection,number_only,3503 Pasadena Fwy,3503 PASADENA FRWY
+SITE-005345,2018-12-31,osha_ita,different_street,2709 Patterson St,2004 Patterson St.
+SITE-005346,2018-12-31,osha_ita,number_only,2004 Patterson,2004 Patterson St.
+SITE-005360,2026-05-22,osha_inspection,different_street,61 River Dr,65 RIVER DRIVE | 65 River Drive
+SITE-005367,2019-11-21,osha_inspection,different_street,1500 E MAIN ST,102 INDUSTRIAL AVE
+SITE-005386,2023-06-16,osha_inspection,different_street,5900 HWY 225 EAST,SHELL - DEER PARK REFINERY 5900 HWY 225
+SITE-005388,2023-04-06,osha_inspection,different_street,2100 RELIANCE PKWY,2051 RELIANCE PKWY
+SITE-005389,2019-02-25,osha_inspection,different_street,13827 CARMENITA RD STE 200,14722 SPRING AVE
+SITE-005393,2025-12-31,osha_ita,different_street,904 MARKLEY DR,1400 Pidco Drive
+SITE-005394,2025-12-31,osha_ita,different_street,2900 GARY DR,1400 Pidco Drive
+SITE-005405,2021-12-31,osha_ita,different_street,6225 HWY 75,6325 Hwy 75
+SITE-005408,2025-12-31,osha_ita,no_house_number,TEXAS HWY 185,13050 Texas Highway 185
+SITE-005409,2019-06-26,osha_inspection,different_street,2 MILES S OF INTERSECTION FM2004 & FM2917,FM 2917/FM 2004
+SITE-005411,2024-11-25,osha_inspection,different_street,16 INDUSTRIAL PARKWAY,65 HARRISON ST
+SITE-005438,2025-12-31,osha_ita,number_only,520 JD YARNELL PKWY,520 JD YARNELL INDUSTRIAL BLVD | 520 Jd Yarnell Industrial Pkwy
+SITE-005441,2019-07-24,osha_inspection,different_street,13100 BAY AREA BLVD,11500 BAY AREA BLVD
+SITE-005442,2019-07-24,osha_inspection,different_street,11414 CHOATE RD,11500 BAY AREA BLVD
+SITE-005450,2025-12-31,osha_ita,number_only,4520 N STATE RD 37,4520 No State Rd 37
+SITE-005466,2024-12-31,osha_ita,number_only,908 OLD LENOIR RD,908 Lenoir road
+SITE-005493,2015-03-18,osha_inspection,different_street,2681 W HIGHWAY 290,5528 HWY 290 EAST
+SITE-005495,2015-03-18,osha_inspection,number_only,5528 E HWY 290,5528 HWY 290 EAST
+SITE-005506,2025-12-31,osha_ita,number_only,7839 COSTABELLA RD,7839 COSTABELLA AVENUE | 7839 Costabella Ave
+SITE-005507,2025-12-30,osha_inspection,no_house_number,COUNTY LINE RD 337,265 County Hwy 346 | 265 HIGHWAY 346
+SITE-005520,2023-12-31,osha_ita,number_only,2625 NW INDUSTRIAL AVE,2625 NW INDUSTRIAL
+SITE-005528,2020-12-31,osha_ita,different_street,1000 INDEPENDENCE DR,338 RAMSEY STREET P.O. BOX 279 | 338 Ramsey Dr.
+SITE-005529,2020-12-31,osha_ita,number_only,338 RAMSEY ST,338 RAMSEY STREET P.O. BOX 279 | 338 Ramsey Dr.
+SITE-005544,2026-09-30,osha_inspection,different_street,3229 SHAWNEE DRIVE,351 APPLE VALLEY RD. MAILING ADDRESS  C/O  BELINDA RUBY  2500 TREX WAY
+SITE-005545,2025-12-31,osha_ita,number_only,1201 5TH AVE,1201 FIFTH AVENUE | 1201 Fifth Ave
+SITE-005546,2022-05-12,osha_inspection,number_only,106 BLAIR BEND DR,106 BLAIR BEND ROAD
+SITE-005547,2015-07-31,osha_inspection,different_street,101 LOVETT DRIVE,301 AIRPORT ROAD
+SITE-005548,2020-07-15,osha_inspection,number_only,501 MITCHELL RD,501 S. MITCHELL AVE.
+SITE-005554,2015-07-31,osha_inspection,different_street,501 VIEVES WAY,301 AIRPORT ROAD
+SITE-005555,2025-12-31,osha_ita,different_street,1413 W EDWARDS ST,1411 Edwards Street
+SITE-005556,2025-12-31,osha_ita,different_street,660 THIRD AVE,1411 Edwards Street
+SITE-005559,2021-01-29,osha_inspection,number_only,411 MANUFACTURER'S RD,411 MANUFACTURERS ROAD | 411 Manufacturers Road
+SITE-005566,2020-12-31,osha_ita,number_only,140 EXECUTIVE DR SE,140 Executive Dr
+SITE-005574,2023-12-31,osha_ita,different_street,1200 NUCLEAR DR,1400 Nuclear Drive
+SITE-005576,2025-02-18,osha_inspection,different_street,10531 BUSCH DR N,6061 GOODRICH BOULEVARD
+SITE-005577,2025-12-31,osha_ita,number_only,225 MARC US BLVD,225 Marcus Blvd.
+SITE-005579,2020-03-17,osha_inspection,no_house_number,S SPENCER RD,1 SOUTH SPENCER RD.
+SITE-005580,2025-07-29,osha_inspection,number_only,2021 E 23RD ST,2021 23 STREET E
+SITE-005583,2024-02-28,osha_inspection,number_only,171 RT 85,171 EXETER ROAD #169 | 171 Exeter Road
+SITE-005584,2025-12-31,osha_ita,number_only,1150 S THIRD ST,1150 South 3Rd Street | ATTENTION:  [REDACTED NAME] 1150 SOUTH 3RD STREET
+SITE-005596,2024-01-25,osha_inspection,number_only,2405 NORCROSS DR,2405 NORCROSS
+SITE-005604,2025-12-31,osha_ita,different_street,4387 N RIDER TRAIL,13389 Lakefront Dr
+SITE-005605,2025-12-31,osha_ita,different_street,4375 RIDER TRL N,13389 Lakefront Dr
+SITE-005606,2025-12-31,osha_ita,number_only,1111 GRATTAN ST,"1111 Grattan Street Chicopee, MA 01013"
+SITE-005618,2025-12-31,osha_ita,different_street,460 CALLE SAN PABLO UNIT B,1150 Calle Suerte
+SITE-005621,2021-08-24,osha_inspection,different_street,14635 CHRISMAN RD,1144 BUSCHONG ST.
+SITE-005624,2021-08-24,osha_inspection,number_only,1144 B US CHONG RD,1144 BUSCHONG ST.
+SITE-005630,2025-01-29,osha_inspection,number_only,3900 DAYTON ST,3900 WEST DAYTON STREET
+SITE-005632,2023-01-18,osha_inspection,number_only,7015 W PUEBLO,7015 W. PUEBLO DRIVE
+SITE-005635,2019-03-22,osha_inspection,different_street,1727 KIMBERLY PARK DR,105 EAST TYLER STREET
+SITE-005636,2024-12-31,osha_ita,different_street,909 GATES ST NW,"""909 Gates Street"""
+SITE-005647,2023-12-31,osha_ita,number_only,2400 MILLER CUTOFF RD,2400 Miller Cut off Rd
+SITE-005656,2017-04-10,osha_inspection,number_only,3393 M-40 - BUILDING 10,3393 LINCOLN RD
+SITE-005682,2025-12-31,osha_ita,number_only,733 W. MAIN ST,733 Main Street
+SITE-005685,2025-12-31,osha_ita,different_street,320 S UNION,309 S. Union St. | 309 SOUTH UNION STREET
+SITE-005689,2025-12-31,osha_ita,different_street,2555 BAY RD,899 Broadway
+SITE-005695,2019-01-18,osha_inspection,number_only,4380 Belgium Blvd,4380 N. BELGIUM AVENUE
+SITE-005707,2024-12-18,osha_inspection,different_street,1665 DOGWOOD DRIVE SW,1512 OLD COVINGTON HWY
+SITE-005719,2025-12-31,osha_ita,number_only,821 W ALGONQUIN ST,711 WEST ALGONQUIN STREET | 821 Algonquin St
+SITE-005721,2024-12-31,osha_ita,number_only,621 W ST JOHN,621 W. St. John St
+SITE-005733,2025-12-31,osha_ita,different_street,3966 MORRISON DR,3908 Morrison Drive
+SITE-005737,2023-12-31,osha_ita,number_only,2788 REMICO SW,2788 Remico St. SW
+SITE-005748,2025-12-31,osha_ita,different_street,1005 PALISADE DR,336360
+SITE-005751,2025-12-31,osha_ita,no_house_number,S81 W18901 APOLLO DRIVE,S80 W18766 APOLLO DRIVE | S80 W18766 Apollo Drive
+SITE-005757,2016-02-17,osha_inspection,number_only,2201 TAYLORS VALLEY RD,2201 TAYLOR VALLEY RD
+SITE-005773,2026-02-18,osha_inspection,no_house_number,N117W19125 FULTON DR,W188 N11707 MAPLE ROAD
+SITE-005776,2025-12-31,osha_ita,number_only,3525 RANGELINE RD,3525 RANGE LINE RD | 3525 Range Line Road
+SITE-005787,2015-10-06,osha_inspection,different_street,1050 E ARCHER ST,7018 N. LAKEWOOD AVE.
+SITE-005790,2025-12-31,osha_ita,different_street,202 ANDERSON AVE,105 BROADWAY STREET | 105 Broadway St
+SITE-005796,2024-05-31,osha_inspection,different_street,103 INDUSTRIAL PARK DR,307 TENNESSEE STREET
+SITE-005798,2025-12-31,osha_ita,number_only,5525 HWY 2830,"5525 KY-2830, Owensboro, KY, 42303"
+SITE-005805,2026-08-19,osha_inspection,number_only,74000 VAN DYKE AVE,74000 VAN DYKE RD | 74000 Van Dyke
+SITE-005809,2022-11-08,osha_inspection,different_street,6500 W CALUMET RD,7201 W BRADLEY RD. | 7201 W. Bradley Road
+SITE-005811,2024-12-31,osha_ita,number_only,1501 S 74TH ST,1501 74th Street
+SITE-005820,2021-12-31,osha_ita,number_only,1803 SEMINOLE ST,1803 NW Seminole ave.
+SITE-005823,2025-12-03,osha_inspection,number_only,1740 JP HENNESSY DR,1740 J.P. HENNESSY DRIVE | 1749 JP Hennessey Dr
+SITE-005824,2023-12-31,osha_ita,no_house_number,ONE BURT DR,1 Burt Drive
+SITE-005829,2015-01-23,osha_inspection,number_only,1565 FENPARK DR,1565 FENPARK
+SITE-005832,2026-09-09,osha_inspection,number_only,1161 W SEPULVEDA BLVD,1161 SEPULVEDA BOULEVARD
+SITE-005837,2024-12-31,osha_ita,different_street,945 S LINDSAY ST,2025 N Wabash Ave
+SITE-005847,2016-03-30,osha_inspection,number_only,316 N CLIFF DR,316 CLIFF DRIVE NORTH
+SITE-005852,2024-02-20,osha_inspection,different_street,110 PIKE ST,1015 BRUNDIDGE BLVD.
+SITE-005854,2020-11-05,osha_inspection,number_only,199 THREET INDUSTRIAL BOULEVARD,199 THREET INDUSTRIAL
+SITE-005870,2025-12-31,osha_ita,different_street,807 NORTH MAIN ST,804 North Main Street
+SITE-005872,2026-08-19,osha_inspection,different_street,100 FABPRO WAY,701 E. A AVE. | 701 East Ave A
+SITE-005884,2025-12-31,osha_ita,number_only,5401A ROUTE 1,5401 Route 1
+SITE-005885,2024-12-31,osha_ita,number_only,22301 MOUNT EPHRAIM RD,22301 Mt. Ephraim Rd.
+SITE-005889,2017-12-31,osha_ita,number_only,2999 JOHN STEVENS WAY,2999 John Stevnes Way
+SITE-005893,2024-07-26,osha_inspection,number_only,1001 WEST BROOKLYN STREET,1001 Brooklyn Street | 925A POLYWOOD WAY
+SITE-005894,2025-12-31,osha_ita,number_only,730B WORCESTER ST,730 B Worcester St
+SITE-005898,2023-09-21,osha_inspection,number_only,405 PARK TOWER DR,405 PARK TOWER ROAD
+SITE-005903,2025-12-31,osha_ita,number_only,207 BROOKHOLLOW RD,207 BROOKHOLLOW INDUSTRIAL BLVD. | 207 Brookhollow Ind Blvd SE
+SITE-005911,2025-12-31,osha_ita,different_street,111 S. PRICE RD.,100 N Price Rd
+SITE-005920,2025-12-31,osha_ita,number_only,2851 WALDEN ST,2851 N Walden St.
+SITE-005921,2018-05-08,osha_inspection,different_street,1669 LAKE AVE,200 RIDGE ROAD WEST
+SITE-005924,2019-12-31,osha_ita,no_house_number,N109 W13300 ELLSWORTH DRIVE,W129 N10825 Washington Drive
+SITE-005934,2024-12-31,osha_ita,different_street,1200 N AMERICA DR,"Kemper System America, Inc."
+SITE-005935,2025-12-31,osha_ita,number_only,17 SHEPARD ST LAWRENCE INDUSTRIAL PARK,17 Shepard Street
+SITE-005963,2025-12-31,osha_ita,different_street,2001 Union Carbide Drive,437 McCorkle Ave. SW
+SITE-005976,2022-02-03,osha_inspection,no_house_number,Freeport Center Bldg Z-13,"FREEPORT CENTER BLDG Z13, PO | FREEPORT CENTER BUILDING Z-13"
+SITE-005996,2025-12-31,osha_ita,number_only,50 Pine Rd,50 PINE ST. | 50 Pine Rd Brentwood NH 03833
+SITE-006008,2025-12-31,osha_ita,number_only,13695 Mt Anderson St,13695 MOUNT ANDERSON STREET | 13695 Mount Anderson Str.
+SITE-006026,2023-04-04,osha_inspection,number_only,2617 VT Route 7A,2617 VT RT. 7A
+SITE-006032,2024-05-02,osha_inspection,number_only,4955 10th Ave S,4955 S 10th Ave | 4955 TENTH AVENUE SOUTH
+SITE-006033,2025-12-31,osha_ita,different_street,2520 Madison St NE,2512 Madison St NE
+SITE-006039,2025-12-31,osha_ita,different_street,3200 9th Ave SE,"401 PHEASANT RIDGE DRIVE | 401 Pheasant Ridge Dr, Watertown"
+SITE-006046,2025-12-31,osha_ita,different_street,9409 N 45th St,4930 Battlefield Drive
+SITE-006050,2023-12-31,osha_ita,different_street,5150 NW 40th St,5117 NORTHWEST 40TH STREET | 5117 NW 40th Street
+SITE-006056,2024-02-29,osha_inspection,different_street,4334 S 67th St,4434 S 67TH ST
+SITE-006065,2025-12-31,osha_ita,number_only,62 County Road 520,62 CR520
+SITE-006068,2017-12-31,osha_ita,different_street,4575 Dix Dr,269 Main Street
+SITE-006072,2019-08-02,osha_inspection,number_only,55 W L Runnels Industrial Dr,55 W.LL. RUNNELS INDUSTRIAL DR.
+SITE-006073,2025-12-31,osha_ita,number_only,"278 CDF Blvd, Bldg 2",278 CDF Blvd Bld 2
+SITE-006090,2025-12-31,osha_ita,number_only,1801 W. Sheridan,1801 W Sheridan Ave
+SITE-006103,2016-12-31,osha_ita,number_only,4045 E Bonanza Dr,4045 BONANZA DR | 4045 Bonanza Dr
+SITE-006105,2021-12-31,osha_ita,different_street,470 W Vaughn St,340 S Rockford Dr
+SITE-006109,2025-12-31,osha_ita,different_street,539 S Drew St,"540 S Drew St,"
+SITE-006124,2015-07-31,osha_inspection,different_street,2401 Singerly Road,301 AIRPORT ROAD
+SITE-006127,2015-07-31,osha_inspection,different_street,"100 Airport Road, Building 2",301 AIRPORT ROAD
+SITE-006134,2025-10-27,osha_inspection,number_only,"249 High Street, West",249 WEST HIGH STREET | 249 West High Steet
+SITE-006143,2025-12-31,osha_ita,different_street,1742 E. Platteville Blvd.,7142 E. Platteville Boulevard
+SITE-006145,2025-12-31,osha_ita,number_only,765 2nd St,765 N. 2nd Street
+SITE-006166,2025-12-31,osha_ita,number_only,1900 E Central,1900 EAST CENTRAL AVE | 1900 East Centeral
+SITE-006167,2026-01-21,osha_inspection,number_only,1700 S Lincoln,1700  S LINCOLN STREET
+SITE-006169,2025-12-31,osha_ita,different_street,1603 North 35th Street,535 DYKE ROAD | 535 W Dyke Road
+SITE-006176,2018-12-31,osha_ita,different_street,300 S. Oklahoma St,415 S OKLAHOMA ST
+SITE-006186,2022-03-17,osha_inspection,number_only,1093 U S Hwy 278 E,1093 HIGHWAY 278 E | 1093 Hwy 278 East
+SITE-006187,2024-06-10,osha_inspection,number_only,1301 E. Eighth Street,1301 E 8TH STREET
+SITE-006188,2020-05-01,osha_inspection,number_only,3104 South Main,3104 SOUTH MAIN ST
+SITE-006200,2020-12-31,osha_ita,different_street,1560 Down River Dr,660 MITCHELL AVE 
+SITE-006222,2025-12-31,osha_ita,number_only,1011 Mckinley St,1011 McKinley
+SITE-006223,2025-12-31,osha_ita,different_street,4650 Mckennon Rd,4950 McKennon Road
+SITE-006225,2025-12-31,osha_ita,number_only,2631 W 5th,2631 W. 5TH AVE
+SITE-006232,2019-12-31,osha_ita,different_street,1265 Stryker Rd,596 Hoffman Rd
+SITE-006258,2025-12-31,osha_ita,number_only,318 Industrial La,318 Industrial Lane
+SITE-006262,2025-12-31,osha_ita,number_only,400 Christian La,400 CHRISTIAN LANE | 400 Christian Lane
+SITE-006264,2025-12-31,osha_ita,number_only,171 Mattatuck Heights,171 Mattatuck heights Road
+SITE-006285,2025-12-31,osha_ita,no_house_number,Twin Rivers Industrial Park,1206 WORLEY DRIVE | 1206 Worley Drive
+SITE-006286,2025-12-31,osha_ita,number_only,801 E. Hwy 56,801 E OLD 56 HIGHWAY | 801 EAST OLD 56 HIGHWAY
+SITE-006287,2025-12-31,osha_ita,number_only,2727 N Ohio St,2727 N OHIO | 2727 North Ohio
+SITE-006289,2025-12-31,osha_ita,number_only,1400 Atkinson Ave.,1400 E ATKINSON AVE | 1400 East Atkinson Ave.
+SITE-006296,2023-04-13,osha_inspection,different_street,841 Overlander,1601 EAST SOUTH AVENUE
+SITE-006301,2025-09-02,osha_inspection,number_only,330 Cain,330 CAIN DRIVE
+SITE-006302,2026-02-06,osha_inspection,different_street,126 S Griffith,378 SW PURITY SPRINGS RD | 378 SW Purity Springs RD
+SITE-006312,2025-12-31,osha_ita,number_only,1400 E Oneal St,1400 E. O'Neal
+SITE-006314,2025-12-31,osha_ita,different_street,301 1st St NW,303 1ST ST NW | 303 1st St. NW
+SITE-006325,2019-07-23,osha_inspection,different_street,129 Southeast 18th Street,3535 SW 56TH ST
+SITE-006332,2023-12-31,osha_ita,number_only,100 Formad Industries Drive,100 FORMAD INDUSTRIAL DR. | 100 Formad Industiral Drive
+SITE-006334,2020-09-22,osha_inspection,number_only,118 Alexander,118 ALEXANDER AVENUE
+SITE-006348,2023-07-17,osha_inspection,number_only,1400 State Docks Road,1400 STATE DOCKS ROAD NORTHWEST
+SITE-006349,2025-12-31,osha_ita,number_only,217 Thweatt Industrial Blvd,217 Thweatt Indusstrial Blvd | 568 THWEATT INDUSTRIAL BLVD.
+SITE-006356,2025-12-31,osha_ita,different_street,150 Buster Road,3899 HIGHWAY 31 NORTH | 3899 Highway 31 SW
+SITE-006368,2021-12-31,osha_ita,different_street,101 Development Drive,100 Sonata Dr
+SITE-006369,2025-12-31,osha_ita,number_only,2802 Avalon Avenue,2802 East Avalon Avenue
+SITE-006372,2025-12-31,osha_ita,number_only,7150 Jefferson Metropolitan Parkway,7150 Jefferson Metro Pkwy
+SITE-006373,2025-12-31,osha_ita,number_only,600 Al-186 Building 100,600 SR 186 Building100
+SITE-006376,2025-12-31,osha_ita,number_only,1568 1st Street North,1568 First Street North
+SITE-006381,2018-09-25,osha_inspection,number_only,3425 Stanwood Blvd,3425 STANDWOOD BLVD
+SITE-006423,2025-08-01,osha_inspection,number_only,4100 S Niles Rd,4100 NILES ROAD
+SITE-006429,2024-07-26,osha_inspection,different_street,1000 Polywood Way,1001 Brooklyn Street | 925A POLYWOOD WAY
+SITE-006430,2024-12-31,osha_ita,different_street,3245 Kansas Road,101 OAKLEY ST | 101 Oakley St
+SITE-006431,2025-11-25,osha_inspection,different_street,1500 Louis Sullivan Dr.,1701 COUNTY LINE ROAD
+SITE-006436,2023-12-08,osha_inspection,number_only,10000 S Carlisle St,10000 S CARLISLE
+SITE-008159,2024-11-06,osha_inspection,number_only,1100 N Harvester Rd,1100 HARVESTER ROAD
+SITE-008180,2025-12-31,osha_ita,different_street,14420 N. Van Dyke Rd.,143rd St.
+SITE-008189,2025-12-31,osha_ita,different_street,955 S 3800 W,2300 S 2300 W  STE B | 2300 South 2300 West
+SITE-008199,2017-02-09,osha_inspection,different_street,2390 Rostron Circle,642 GRANGE LANE
+SITE-008220,2023-02-07,osha_inspection,number_only,1 Chestnut Strear,1 CHESTNUT STREET | 1 Chestnut Street
+SITE-008260,2025-07-25,osha_inspection,different_street,15 Airpark Vista Blvd,10 WEST AIRPARK VISTA BLVD.
+SITE-008301,2026-07-17,osha_inspection,different_street,2041 South 5070 West,1530 S WEST TEMPLE | 2320 W Indiana Ave
+SITE-008309,2025-12-31,osha_ita,number_only,222W 33Rd St,222W 33RD st
+SITE-010015,2025-12-17,osha_inspection,number_only,201 Condensery,201 CONDENSERY RD
+SITE-010067,2026-01-30,osha_inspection,number_only,3236 Wilson drive suite B,3236 WILSON DR NW STE B
+SITE-010072,2025-06-03,osha_inspection,different_street,300 N. Alloy Drive,1139 S. Fenway Circle | 555 NORTH FENWAY DRIVE
+SITE-010081,2022-12-31,osha_ita,number_only,5375 International Parkway,5375 International Pkwy SE
+SITE-010085,2026-10-12,osha_inspection,different_street,2905 Corporate Grove Drive,3712 QUINCY ST
+SITE-010153,2025-12-31,osha_ita,no_house_number,N65 W24770 Main St,N65 W24770 MAIN STREET | N65 W24770 Main St
+SITE-010157,2025-12-31,osha_ita,no_house_number,N7660 Industrial Rd,N7660 Industrial Rd
+SITE-010158,2026-02-18,osha_inspection,different_street,1165 S Airport Rd,1156 S. AIRPORT RD.
+SITE-010179,2024-04-16,osha_inspection,different_street,715 Lynn Ave Ste 100,801 LYNN AVENUE | 801 Lynn Ave.
+SITE-010183,2023-09-21,osha_inspection,different_street,2451 Badger Avenue,2450 BADGER AVENUE
+SITE-010184,2026-02-18,osha_inspection,no_house_number,W188 N11707 Maple Road,W188 N11707 MAPLE ROAD
+SITE-010304,2022-12-31,osha_ita,number_only,9930 FM2920,9930 FM 2920
+SITE-010316,2025-06-12,osha_inspection,number_only,800 West Stephens,800 W STEPHENS ST.
+SITE-010325,2022-01-11,osha_inspection,number_only,301 West Plant Road,301 PLANT ROAD
+SITE-010330,2023-01-05,osha_inspection,number_only,2933 AW Grimes BLVD,2933 A.W. GRIMES BLVD.
+SITE-010332,2024-09-05,osha_inspection,number_only,4395 Pasadena Fwy,4395 PASADENA FREEWAY
+SITE-010490,2020-01-02,osha_inspection,number_only,44 O'Neil Street,44 O'NEILL STREET
+SITE-010626,2025-12-31,osha_ita,different_street,1337 Braden Court,750 N Main Street | 750 N. MAIN ST.
+SITE-010638,2025-12-31,osha_ita,number_only,8685 Bowers Ave.,8685 BOWER AVENUE
+SITE-010645,2020-12-31,osha_ita,number_only,11591 S. Etiwanda Ave.,11591 ETIWANDA AVE | 11591 Etiwanda Ave.
+SITE-010755,2026-06-11,osha_inspection,different_street,650 Highway 74 S,305 NAECO WAY
+SITE-010764,2022-10-13,osha_inspection,different_street,2017 Hwy. 411 N.,3752 SMYRNA CHURCH RD
+SITE-010767,2021-12-31,osha_ita,number_only,1618 Lukken Industrial Drive W,1618 Lukken Industrial Drive
+SITE-010909,2023-02-21,osha_inspection,different_street,4370 112th Terrace North,5180 113TH AVENUE NORTH
+SITE-011009,2025-12-31,osha_ita,number_only,6 Spruce St NW,6 SPRUCE ST | PO Box 230  6 Spruce St. NW
+SITE-011030,2015-06-22,osha_inspection,different_street,8365 Sunset Road NE,"8333 SUNSET RD., N.E."
+SITE-011036,2025-12-31,osha_ita,number_only,180 Industrial Blvd,180 Industrial Road
+SITE-011174,2021-02-17,osha_inspection,number_only,275 River Street,275 RIVER ROAD
+SITE-011305,2019-12-13,osha_inspection,number_only,1969 Rutgers University Boulevard,1969 RUGERS UNIVERSITY BLVD.
+SITE-011314,2017-12-31,osha_ita,different_street,1301 Park Ave S.,1401 Park Ave
+SITE-011319,2024-03-08,osha_inspection,number_only,879 Main Street,2288 Main Street Extension | 879-899 MAIN STREET
+SITE-011463,2025-12-31,osha_ita,number_only,198A Bosch Blvd,198A Bosch Blvd
+SITE-011466,2020-12-31,osha_ita,different_street,1025 Howard Street,113 Stage Coach Trail
+SITE-011467,2022-12-31,osha_ita,number_only,3055 Sweetencreek Rd.,3055 Sweeten Creek
+SITE-011601,2025-12-31,osha_ita,different_street,232 Industrial Park Road,282 INDUSTRIAL PARK ROAD | 282 Industrial Park Road
+SITE-011614,2024-05-22,osha_inspection,number_only,1209 New Tullahoma Hwy,1209 MADISON ST | 1209 Madison Street
+SITE-011754,2025-12-31,osha_ita,number_only,40 Wburg Plastics Road,40 Keller Rd
+SITE-011915,2020-12-31,osha_ita,different_street,5401 Jefferson Davis Highway,Dupont Site Road
+SITE-011916,2025-12-31,osha_ita,number_only,1150 Greens Folly Road,1150 GREEN'S FOLLY ROAD | 1150 Greens Folly Road
+SITE-012219,2015-07-13,osha_inspection,number_only,1939 Charlottes Road,1939 CHARLOTTE ROAD
+SITE-012226,2025-12-31,osha_ita,different_street,200 ARROWHEAD CT,609 Worley Road
+SITE-012668,2015-09-10,osha_inspection,number_only,610 County Road 18 So.,610 COUNTY ROAD 18 SOUTH
+SITE-014015,2025-03-10,osha_inspection,different_street,14849 SALT LAKE AVE.,14825 SALT LAKE AVE. | 14825 Salt Lake Avenue
+SITE-015016,2023-12-31,osha_ita,number_only,400 Commerce Blvd,3327 PIPELINE RD. | 400 S Commerce
+SITE-015215,2021-12-31,osha_ita,number_only,2625 E. Beltline,2625 BELT LINE ROAD | 2625 E Beltline Rd
+SITE-015403,2020-02-20,osha_inspection,number_only,1200 Trinity Street,1200 TRINITY DR.
+SITE-015407,2026-10-07,osha_inspection,number_only,222 Kerry Street,222 KERRY RD
+SITE-015408,2019-12-12,osha_inspection,number_only,801 Hickey Street,801 HICKEY ROAD
+SITE-015416,2020-09-01,osha_inspection,number_only,1400 Henry Brennan Drive,1400 HENRY BRENNAN
+SITE-016000,2017-02-01,osha_inspection,number_only,"500 N Ellis Rd, Suite A",500-A NORTH ELLIS RD
+SITE-016001,2026-05-04,osha_inspection,different_street,2150 W Sandlake Rd,2814 SILVER STAR ROAD
+SITE-016018,2018-07-12,osha_inspection,different_street,333 W. Michigan St,7500 S. ORANGE AVE.
+SITE-016102,2022-12-31,osha_ita,number_only,1501 Rockdale Industrial Blvd,1501 Rockdale Industrial Blvd NW
+SITE-016110,2025-02-20,osha_inspection,number_only,805 Satellite Blvd NW,805 SATELLITE BLVD. | 805 Satellite Blvd
+SITE-016111,2026-10-27,osha_inspection,number_only,13129 Harland Drive,13129 HARLAND DIVE N.E.
+SITE-016112,2024-10-23,osha_inspection,different_street,300 Fisk Drive,6195 PURDUE DR. SW
+SITE-016117,2024-10-23,osha_inspection,number_only,6195 Purdue Drive,6195 PURDUE DR. SW
+SITE-016120,2025-07-01,osha_inspection,number_only,197 Royal Drive SE,197 ROYAL DR
+SITE-016303,2023-12-31,osha_ita,number_only,3240 N. Ohenry Blvd.,3240N. O'Henry Blvd
+SITE-016402,2025-09-24,osha_inspection,different_street,8200 North Faulkner Road,6937 WEST MILL ROAD
+SITE-016404,2025-12-31,osha_ita,different_street,751 N Vickerman Road,1264 E HIGH ST
+SITE-016407,2024-04-04,osha_inspection,different_street,426 Hitchcock Street,1060 TEEL COURT | 500 Industrial Court
+SITE-016517,2022-09-19,osha_inspection,no_house_number,"Five Bottle Drive, SR 352",5 BOTTLE DR
+SITE-018002,2022-03-23,osha_inspection,different_street,3505 Kraft Ave SE,4260 AIRLINE DR. SE
+SITE-018005,2024-12-31,osha_ita,number_only,180 East Elmwood St,180 E Elmwood
+SITE-018009,2022-03-23,osha_inspection,different_street,4251 Brockton Ct. SE,4260 AIRLINE DR. SE
+SITE-018015,2022-03-23,osha_inspection,different_street,5801 Kraft Ave SE,4260 AIRLINE DR. SE
+SITE-018016,2021-02-03,osha_inspection,number_only,4800 Marlette Road,4800 MARLETT RD
+SITE-019000,2023-05-17,osha_inspection,different_street,7200 S Mason Ave,7207 S. MASON
+SITE-019002,2018-07-20,osha_inspection,number_only,1050 Sycamore Road,1050 SYCAMORE STREET
+SITE-019009,2025-12-31,osha_ita,number_only,320 Craig Place,320 Craig Road
+SITE-019011,2025-03-17,osha_inspection,different_street,2226 E. Morton Avenue,500 E SUPERIOR AVE
+SITE-019012,2020-04-14,osha_inspection,number_only,12900 S. Pulaski Avenue,12900 S Crawford | 12900 S. PULASKI RD.
+SITE-019022,2024-01-23,osha_inspection,number_only,21901 Central Avenue,21901 S CENTRAL AVE
