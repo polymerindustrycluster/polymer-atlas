@@ -1,0 +1,25 @@
+site_id,org_id,reason,detail
+SITE-002067,ORG-002067,no_candidate,"no held-name row in this city in OSHA ITA, OSHA inspection or EPA ECHO"
+SITE-000148,ORG-000148,no_candidate,"no held-name row in this city in OSHA ITA, OSHA inspection or EPA ECHO"
+SITE-001483,ORG-001435,parent_name_only,only a named parent's name matches a filing in this city
+SITE-001795,ORG-001719,stale_only,held-name filings in this city are all dated before 2021-11-22 (leads)
+SITE-002035,ORG-002041,no_candidate,"no held-name row in this city in OSHA ITA, OSHA inspection or EPA ECHO"
+SITE-000158,ORG-000158,stale_only,held-name filings in this city are all dated before 2021-11-22 (leads)
+SITE-000008,ORG-000009,one_source_lead,only osha names a street (1293 s main st); a second independent family is needed
+SITE-000123,ORG-000124,no_candidate,"no held-name row in this city in OSHA ITA, OSHA inspection or EPA ECHO"
+SITE-000562,ORG-000526,stale_only,held-name filings in this city are all dated before 2021-11-22 (leads)
+SITE-002100,ORG-002143,no_candidate,"no held-name row in this city in OSHA ITA, OSHA inspection or EPA ECHO"
+SITE-001575,ORG-001511,no_candidate,"no held-name row in this city in OSHA ITA, OSHA inspection or EPA ECHO"
+SITE-000524,ORG-000490,one_source_lead,only osha names a street (330 gilchrist rd); a second independent family is needed
+SITE-001572,ORG-001508,no_candidate,"no held-name row in this city in OSHA ITA, OSHA inspection or EPA ECHO"
+SITE-001868,ORG-001794,stale_only,held-name filings in this city are all dated before 2021-11-22 (leads)
+SITE-001150,ORG-001065,stale_only,held-name filings in this city are all dated before 2021-11-22 (leads)
+SITE-000292,ORG-000273,undated_only,only an undated FRS row names it; FRS cannot support a proposal
+SITE-001665,ORG-001593,stale_only,held-name filings in this city are all dated before 2021-11-22 (leads)
+SITE-002063,ORG-002064,no_candidate,"no held-name row in this city in OSHA ITA, OSHA inspection or EPA ECHO"
+SITE-000456,ORG-000426,no_candidate,"no held-name row in this city in OSHA ITA, OSHA inspection or EPA ECHO"
+SITE-001818,ORG-001742,undated_only,only an undated FRS row names it; FRS cannot support a proposal
+SITE-003983,ORG-003545,SOURCES_DISAGREE,osha: 1484 e archwood ave; epa: 1485 e archwood ave
+SITE-000106,ORG-000107,stale_only,held-name filings in this city are all dated before 2021-11-22 (leads)
+SITE-000297,ORG-000278,one_source_lead,only osha names a street (1244 e highland rd); a second independent family is needed
+SITE-000056,ORG-000056,no_candidate,"no held-name row in this city in OSHA ITA, OSHA inspection or EPA ECHO"
