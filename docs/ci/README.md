@@ -6,19 +6,35 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
   - `scripts/validate.py`;
   - the personal-account URL guard on `tasks/` and `docs/` (`scripts/check_account_urls.py`, since 2026-11-19);
   - the row-loss guard;
-  - on pull requests, the evidence binding gate (`scripts/check_evidence_binding.py --new-since`, since 2026-11-22):
-    - **What it checks:** the evidence rows the PR adds or re-points.
-    - **FAIL rows:** any one fails the PR, and there is no waiver. A row FAILs when:
-      - the quoted operator is not a name the record holds;
-      - the site street is not equal under `street_key`;
-      - a headquarters address comes from a source other than an entity-address source;
-      - a web quote is off the record's own domain, or lacks the site's street.
-    - **UNINSPECTABLE rows:** admitted only row by row, through a proof line in `tasks/<folder>/BINDING_PROOF.csv`. Each
-      line gives the capture, its sha256, and the quote's offset and length. A capture stored in the repo is verified;
-      an archive capture must match `data/archive_links.csv`. `--sample N --seed S` is an audit and admits nothing.
-    - **Rows already on `main`:** reported by `--all`, not failed;
-  - on pull requests, the evidence provenance check (`--provenance-since`, since 2026-11-22): each `created_by` label of
-    an added evidence row must name, by one of its words, a `tasks/<folder>/` holding a `check.py`;
+  - on pull requests, three evidence binding steps (`scripts/check_evidence_binding.py`, since 2026-11-22). **These
+    steps are early feedback, not authoritative:** `validate` runs the PR's own copy of the checker, so a PR that edits
+    the checker or the workflow changes the result. The authoritative run is a `pull_request_target` workflow that runs
+    `main`'s checker with `--tree <PR checkout>` (owned by the working-rules lane, PR #466).
+    - **`--new-since`** gates every evidence row the PR adds, and every row whose content changed in any column.
+      - **PASS** (structured sources only): the quoted operator is a held name, compared whole and never split on
+        commas. For a site, `scripts/matching.py` `same_street()` holds; this is the same street test the
+        last-activity derivation uses. For a headquarters address, an entity-address source states the record's
+        city and state.
+      - **FAIL**: any FAIL fails the PR, and there is no waiver. A web quote can FAIL, for example when it is off the
+        record's own site, when the civic number is not directly followed by the record's street word, or when it gives
+        a different suite.
+      - **READ_REQUIRED and UNINSPECTABLE**: a web quote is never PASS. These rows are admitted only one at a time,
+        each by its own line in `tasks/<folder its created_by names>/BINDING_PROOF.csv`. Each line holds:
+        - the capture: the row's `data/archive_links.csv` ref, or a repo file when the row has no archive line;
+        - the sha256 of the capture's bytes;
+        - the offset and length of the quote in the capture's text;
+        - a reading: the verdict VERIFIED, the reader's model family and model (a different family from the folder
+          README's "Built by:"), and one sentence on what ties the quote to this record.
+
+        The reading is recorded, not verified.
+    - **`--verify-proofs`** fetches each archived capture a proof cites, checks the digest, and finds the quote at its
+      offset. A failed fetch exits 2: re-run the job, because a fetch failure is never a pass. A PR carries at most
+      1,000 evidence rows (rule 5), which bounds the fetches.
+    - **`--provenance-since`**: each `created_by` label must name exactly one `tasks/<folder>/`. That folder must hold a
+      non-empty `check.py`, and a new label adds its own folder. The checker runs that `check.py` and it must exit 0.
+      It runs last, on a copy of the tree, with no token in its environment. It has no network only where `unshare -rn` works,
+      and the log prints which isolation the run actually got. Whether the hosted runner allows it is unverified.
+    - `--sample N --seed S` is an audit and admits nothing. Rows already on `main` are reported by `--all`, not failed;
   - the vocabulary export check;
   - the unit and mutation tests;
   - the SQLite build;

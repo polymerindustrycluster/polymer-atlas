@@ -6,56 +6,65 @@ batches (about 34,000 rows) passed every check while a first-cut test found 28% 
 operator, another street, or claimed a headquarters from a plant permit (tasks/evidence-binding-gate-2026-11-22/).
 
 Every evidence row gets exactly one verdict:
-  PASS            the quoted operator is a name the record holds (exact name_key, scripts/atlas.py); for a site row the
-                  quoted street equals the site's street_address under street_key; for an organization `address` row
-                  the source states the entity's own address and the quoted city and state are the record's HQ.
-                  A web (free-text) quote passes when it is bound by its source: an own_site URL on the record's own
-                  website domain, or a directory/press quote that contains a held name; a site address/existence
-                  row also needs the street's civic number and first street word in the quote, and an organization
-                  address row its HQ city and state. Any other site row stays UNINSPECTABLE.
-  FAIL            with reasons: name_not_held, street_differs, unit_differs (both state a suite or unit and they
-                  differ; street_key drops units), record_no_street, quote_no_street, hq_city_state_differs,
-                  hq_from_facility_or_permit, hq_from_s5_identity_source (FMCSA filed address or a state filing,
-                  SCHEMA §4.8 S-5); web quotes: not_own_site (own_site URL off the record's website domain),
-                  street_absent_from_quote.
-  UNINSPECTABLE   with a reason: no_quote, other_table, record_not_found, unknown_source_family, parse_failed,
-                  operator_not_a_name (shifted columns such as "permittee: 3"), no_civic_number (equal street keys with
-                  no civic number, such as a bare road or park name); web quotes: no_record_website,
-                  name_absent_from_quote, web_record_no_street, record_street_no_civic_number, web_class_untested
-                  (registry, government_filing), web_site_row_no_street_claim, hq_absent_from_quote. Never a pass.
+  PASS            structured sources only. The quoted operator is a name the record holds (exact name_key of the whole
+                  field, never a comma part); for a site row matching.same_street(site street, quoted street) holds
+                  (the repo's one street test, shared with derive_last_activity.py) and a quoted state equals the
+                  site's; for an organization `address` row the source states the entity's own address and the quoted
+                  city and state are the record's HQ. A web (free-text) quote is never PASS.
+  FAIL            name_not_held, street_differs, unit_differs, record_no_street, quote_no_street, state_differs,
+                  hq_city_state_differs, hq_from_facility_or_permit, hq_from_s5_identity_source (SCHEMA §4.8 S-5);
+                  web quotes: street_absent_from_quote (no civic number directly followed by the record's street
+                  word), unit_differs (every occurrence states another suite), not_own_site (an own_site URL off the
+                  record's website; on a platform host, host and path must both match).
+  READ_REQUIRED   a web quote the mechanics did not fail. Admitted only by its own proof line with a reading.
+  UNINSPECTABLE   no_quote, other_table, record_not_found, unknown_source_family, parse_failed, operator_not_a_name,
+                  no_civic_number. Admitted only by its own proof line, as READ_REQUIRED.
 
 Strict reading (owner questions, measured in the name_alt column, never passing): a parent's name, a name found only
-in the record's notes, a permit's facility label, a quoted name that merely starts with a held name.
+in the record's notes, a permit's facility label, a quoted name that merely starts with a held name, one comma part
+of an operator field.
 
 Usage:
-  python3 scripts/check_evidence_binding.py --all [--head REF] [--out verdicts.csv]
-  python3 scripts/check_evidence_binding.py --new-since origin/main      # PR gate: rows added or re-pointed since
-  python3 scripts/check_evidence_binding.py --provenance-since origin/main  # tasks/<created_by>/check.py required
+  python3 scripts/check_evidence_binding.py --all [--head REF | --tree DIR] [--out verdicts.csv]
+  python3 scripts/check_evidence_binding.py --new-since origin/main [--tree DIR]   # PR gate: rows added or changed
+  python3 scripts/check_evidence_binding.py --verify-proofs origin/main [--tree DIR]  # and fetch archive captures
+  python3 scripts/check_evidence_binding.py --provenance-since origin/main [--tree DIR]  # run tasks/<folder>/check.py
   python3 scripts/check_evidence_binding.py --sample 20 --seed 7 [--since origin/main]  # audit only, admits nothing
---new-since exits 1 on any FAIL row (no waiver exists: fix the row or make it a lead), and on any UNINSPECTABLE row
-without a per-row proof line in tasks/<folder named by a created_by word>/BINDING_PROOF.csv
-(evidence_id,capture,capture_sha256,quote_offset,quote_length; see check_proofs). Exit 2 = could not check.
+--new-since exits 1 on any FAIL row (no waiver exists) and on any READ_REQUIRED or UNINSPECTABLE row without a valid
+line in tasks/<the folder its created_by names>/BINDING_PROOF.csv (columns: PROOF_COLS; see check_proofs). Exit 2 =
+could not check (including a capture --verify-proofs could not fetch).
+
+--tree DIR reads data/ and tasks/ from DIR, an untrusted checkout of the PR; the rules and this code come from the
+trusted checkout that runs it. Nothing from DIR is executed except tasks/<folder>/check.py under --provenance-since,
+which runs on a copy, with a stripped environment (no token), and without network only where `unshare` exists.
 """
 import argparse
 import csv
 import hashlib
 import io
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
+import time
+import urllib.error
+import urllib.request
 from collections import Counter, defaultdict
+from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+TREE = ROOT  # where data/ and tasks/ are read when no git ref is given; --tree moves it, ROOT stays the trusted code
 sys.path.insert(0, str(ROOT / "scripts"))
-from atlas import (LOCALITY_SEP_RE, SUFFIX, UNIT_ONLY_RE, UNIT_RE, domain_key, name_key,  # noqa: E402
-                   org_name_fields, site_name_key, squash, street_key)
+from atlas import (LOCALITY_SEP_RE, PLATFORM_HOSTS, SUFFIX, UNIT_ONLY_RE, name_key, org_name_fields,  # noqa: E402
+                   site_name_key, squash, street_key)
 from build_echo_spine import STATE_NAMES  # noqa: E402
+from matching import has_civic_number, same_street, units  # noqa: E402  (the repo's one street test, PR #463)
 
 csv.field_size_limit(10**9)
-BINDING_FIELDS = ("record_table", "record_id", "claim_type", "claim_detail", "source_ref")
-PROOF_COLS = ("evidence_id", "capture", "capture_sha256", "quote_offset", "quote_length")
-ARCHIVE_RE = re.compile(r"https://web\.archive\.org/web/\d{14}/\S+$")
+PROOF_COLS = ("evidence_id", "capture", "capture_sha256", "quote_offset", "quote_length", "verdict", "reader_family",
+              "reader_model", "tie")
 DIRECTIONS = {"n", "s", "e", "w", "ne", "nw", "se", "sw"}
 
 # Source families whose quote format is known. Deny by default: any other non-URL source is unknown_source_family.
@@ -78,7 +87,6 @@ PAREN_RE = re.compile(r"\([^()]*\)")
 STATE_KEYS = {v.lower(): squash(k) for k, v in STATE_NAMES.items()}
 NUMBER_WORDS = dict(zip("one two three four five six seven eight nine ten".split(), map(str, range(1, 11))))
 NUMBER_WORDS.update(zip("first second third fourth fifth sixth seventh eighth ninth tenth".split(), map(str, range(1, 11))))
-UNIT_ID_RE = re.compile(r"(?:suite|ste|unit|apt|apartment|bldg|building|floor|fl|room|rm|dept|department|#)\W*([a-z0-9-]+)")
 
 
 # ---------------------------------------------------------------- loading
@@ -90,7 +98,7 @@ def git(*args):
 def data_files(ref, pattern):
     """[(path, text)] for data/<pattern> at a git ref, or the working tree when ref is None. Merged exports skipped."""
     if ref is None:
-        paths = sorted((ROOT / "data").glob(pattern))
+        paths = sorted(p for p in (TREE / "data").glob(pattern) if not p.is_symlink())
         return [(f"data/{p.name}", p.read_text(encoding="utf-8")) for p in paths if not p.name.endswith("_all.csv")]
     names = [n for n in git("ls-tree", "--name-only", f"{ref}:data/").split()
              if Path(n).match(pattern) and not n.endswith("_all.csv")]
@@ -215,49 +223,40 @@ def parse_quote(q, fam):
             "addr": present(d.get(addr_field))}
 
 
-def quote_street(addr):
-    """street_key of the first comma part of a quoted "STREET, CITY, ST ZIP" (leading unit-only parts skipped)."""
+def street_part(addr):
+    """The street comma-part of a quoted "STREET, CITY, ST ZIP" with any unit-only parts beside it ("Suite 5, 1 Elm St"
+    or "1 Elm St, Suite 5"): what matching.same_street compares, so the gate and the derivation agree."""
     parts = (addr or "").split(",")
+    lead = []
     while len(parts) > 1 and UNIT_ONLY_RE.match(parts[0].lower()):
-        parts = parts[1:]
-    return street_key(parts[0])
-
-
-def has_civic_number(key):
-    """A token holding a digit ("198a", "n44") or a leading number word ("one innovation dr")."""
-    t = key.split()
-    return bool(t) and (any(re.search(r"\d", x) for x in t) or t[0] in NUMBER_WORDS)
-
-
-def unit_ids(s):
-    """Suite/unit identifiers a street string states ("100" from "191 American Blvd, Suite 100"); street_key drops them."""
-    found, street_seen = [], False
-    for part in (s or "").lower().split(","):
-        if UNIT_ONLY_RE.match(part):
-            found.append(part)
-            continue
-        if street_seen:
+        lead.append(parts.pop(0))
+    trail = []
+    for x in parts[1:]:
+        if not UNIT_ONLY_RE.match(x.lower()):
             break
-        street_seen = True
-        m = UNIT_RE.search(part)
-        if m:
-            found.append(m.group(0))
-    return {m.group(1) for m in (UNIT_ID_RE.search(x) for x in found) if m}
+        trail.append(x)
+    return ",".join(lead + parts[:1] + trail)
+
+
+def quote_street(addr):
+    """street_key of the quoted street line (leading unit-only parts skipped)."""
+    return street_key(street_part(addr))
 
 
 def street_reason(rec_street, addr):
-    """"" when the quoted street binds to the record's street, else a FAIL or UNINSPECTABLE reason."""
+    """"" exactly when matching.same_street holds; otherwise why not (a FAIL reason, or no_civic_number)."""
+    if same_street(rec_street, street_part(addr)):
+        return ""
     rk, qk = street_key(rec_street), quote_street(addr)
     if not rk:
         return "record_no_street"
-    if not qk or re.match(r"p ?o box\b", qk) or (rk != qk and not has_civic_number(qk)):
+    if not qk or not has_civic_number(qk) and rk != qk:
         return "quote_no_street"
     if rk != qk:
         return "street_differs"
-    if not has_civic_number(qk):
-        return "no_civic_number"  # equal keys with no civic number cannot tell two places apart: UNINSPECTABLE
-    ru, qu = unit_ids(rec_street), unit_ids(addr)
-    return "unit_differs" if ru and qu and not ru & qu else ""
+    if not has_civic_number(qk) or len(qk.split()) < 2:
+        return "no_civic_number"  # equal keys but a bare number, a PO box or no civic number: cannot tell places apart
+    return "unit_differs"
 
 
 def hq_in_quote(addr, org):
@@ -269,9 +268,14 @@ def hq_in_quote(addr, org):
 # ---------------------------------------------------------------- verdict
 
 def name_keys(names):
-    """name_keys of each quoted name and of each comma part ("ACME, ACME CO" is establishment, company in OSHA ITA)."""
-    cands = [n for name in names for n in [name] + name.split(",")]
-    return {k for n in cands for k in (name_key(n), name_key(PAREN_RE.sub(" ", n))) if k}
+    """name_keys of each quoted name as a whole: an operator field is one name, never split on commas."""
+    return {k for n in names for k in (name_key(n), name_key(PAREN_RE.sub(" ", n))) if k}
+
+
+def comma_part_keys(names):
+    """Measured only (owner question): the comma parts of a quoted name ("ACME, ACME CO" in OSHA ITA)."""
+    return {k for n in names for part in n.split(",")[1:] + n.split(",")[:1] if "," in n
+            for k in (name_key(part),) if k}
 
 
 def name_alternatives(idx, table, rid, qkeys, alt_keys, held):
@@ -340,15 +344,20 @@ def judge(ev, idx):
     reasons, info = [], {}
     if not qkeys & held:
         reasons.append("name_not_held")
-        info["name_alt"] = ";".join(name_alternatives(idx, table, rid, qkeys, alt_keys, held))
-    else:  # measured: which quoted form and which held name matched (audits the false-PASS side)
-        whole = {k for n in p["names"] for k in (name_key(n), name_key(PAREN_RE.sub(" ", n))) if k}
+        alts = name_alternatives(idx, table, rid, qkeys, alt_keys, held)
+        if comma_part_keys(p["names"]) & held:
+            alts.append("comma_part")  # "ACME, ACME CO": one comma part is a held name (an owner question, never PASS)
+        info["name_alt"] = ";".join(alts)
+    else:  # measured: which held name matched (audits the false-PASS side)
         org = idx.org_keys(rec.get("org_id") if table == "sites" else rid)
         lead = name_key(LOCALITY_SEP_RE.split(PAREN_RE.sub(" ", rec.get("site_name") or ""))[0])
-        info["name_basis"] = ("whole" if whole & held else "comma_part") + "/" + (
-            "org" if qkeys & org else "site_name_lead" if lead in qkeys else "site_name_other")
+        info["name_basis"] = "org" if qkeys & org else "site_name_lead" if lead in qkeys else "site_name_other"
     if table == "sites":
         why = street_reason(rec.get("street_address"), p["addr"])
+        st = re.search(r",\s*([A-Za-z][A-Za-z ]*?)\s*,?\s+\d[\dE-]{3,9}\s*$", p["addr"] or "")
+        q_st = st and (st[1].upper() if len(st[1]) == 2 else STATE_NAMES.get(st[1].title(), ""))
+        if q_st in STATE_NAMES.values() and rec.get("state") and q_st != rec["state"].strip().upper():
+            reasons.append("state_differs")  # an explicit other state is contrary evidence (Codex review, PR #467)
         if why == "no_civic_number" and not reasons:
             return "UNINSPECTABLE", why, info
         if why and why != "no_civic_number":
@@ -356,10 +365,6 @@ def judge(ev, idx):
         city = squash(rec.get("city"))
         if not why and city and f" {city} " not in f" {squash(p['addr'])} ":
             info["city_not_in_quote"] = "1"  # measured only: the gate binds the street, not the city
-        st = re.search(r",\s*([A-Za-z][A-Za-z ]*?)\s*,?\s+\d[\dE-]{3,9}\s*$", p["addr"] or "")
-        q_st = st and (st[1].upper() if len(st[1]) == 2 else STATE_NAMES.get(st[1].title(), "?"))
-        if not why and q_st and q_st != (rec.get("state") or "").upper():
-            info["state_differs"] = q_st  # measured only
         if why == "street_differs":
             info["street_limit"] = street_limit(street_key(rec.get("street_address")), quote_street(p["addr"]))
     elif ev["claim_type"] == "address":
@@ -374,11 +379,36 @@ def judge(ev, idx):
     return ("FAIL", "+".join(reasons), info) if reasons else ("PASS", "", info)
 
 
+# Shared hosting where one host carries many unrelated tenants: the record's own site there is its host AND path.
+# shortcut: a fixed list can never be complete; an unlisted shared host is compared by registrable domain, and every
+# web row is READ_REQUIRED anyway, so a miss here costs a FAIL, never a PASS.
+PLATFORMS = set(PLATFORM_HOSTS) | {
+    "pages.dev", "netlify.app", "vercel.app", "herokuapp.com", "blogspot.com", "myshopify.com", "webflow.io",
+    "carrd.co", "wix.com", "editorx.io", "azurewebsites.net", "cloudfront.net", "amazonaws.com", "firebaseapp.com",
+    "web.app", "glitch.me", "000webhostapp.com", "jimdosite.com", "site123.me", "strikingly.com", "mystrikingly.com",
+    "tumblr.com", "medium.com", "substack.com", "hs-sites.com", "ueniweb.com", "wpengine.com", "wpcomstaging.com"}
+SUFFIXES = set(SUFFIX.values())
+WEB_UNIT_RE = re.compile(r"^(?:suite|ste|unit|apt|apartment|room|rm)$")
+
+
+def host_path(url):
+    """(host, path) of a URL or bare domain: lowercase, no scheme, port, www., query or trailing slash."""
+    s = re.sub(r"^[a-z][a-z0-9+.-]*://", "", (url or "").strip().lower())
+    host, _, path = s.partition("/")
+    host = re.sub(r":\d+$", "", host.rsplit("@", 1)[-1]).rstrip(".")
+    host = host[4:] if host.startswith("www.") else host
+    return host, path.split("?")[0].split("#")[0].strip("/")
+
+
+def on_platform(host):
+    return any(host == h or host.endswith("." + h) for h in PLATFORMS)
+
+
 def record_websites(idx, table, rec):
-    """domain_keys of the record's own website: a site's organization website, else the organization's own."""
+    """(host, path) of the record's own website: a site's organization website, else the organization's own."""
     o = idx.orgs.get(rec.get("org_id")) if table == "sites" else rec
-    keys = (domain_key(w) for w in re.split(r"[;,\s]+", (o or {}).get("website") or ""))
-    return [k for k in keys if re.match(r"[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}(/|$)", k)]  # notes in the field are not hosts
+    hps = (host_path(w) for w in re.split(r"[;,\s]+", (o or {}).get("website") or ""))
+    return [hp for hp in hps if re.fullmatch(r"[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}", hp[0])]  # notes are not hosts
 
 
 SECOND_LEVEL = {"co", "com", "ac", "gov", "org", "net", "edu", "ne", "or"}  # "acme.co.uk", "acme.com.au"
@@ -392,12 +422,14 @@ def registrable(host):
 
 
 def own_domain(src, site):
-    """Does the source URL (domain_key) sit on the record's website (domain_key)? Registrable domain, www-insensitive;
-    on a shared platform host (atlas.PLATFORM_HOSTS: wixsite, LinkedIn ...) the same host and a path under the site's."""
-    (sh, _, sp), (wh, _, wp) = src.partition("/"), site.partition("/")
-    if "/" in site:
-        return sh == wh and (sp + "/").startswith(wp.rstrip("/") + "/" if wp.strip("/") else "")
-    return "/" not in src and registrable(sh) == registrable(wh)
+    """Is the source URL on the record's own website? Registrable domain, www-insensitive; on a shared platform host
+    the same host, and a path under the website's path (a bare platform root such as sites.google.com never matches)."""
+    (sh, sp), (wh, wp) = src, site
+    if on_platform(sh) or on_platform(wh):
+        if sh != wh or (wh in PLATFORMS and not wp):
+            return False
+        return not wp or sp == wp or sp.startswith(wp + "/")
+    return registrable(sh) == registrable(wh)
 
 
 def street_tokens(s):
@@ -416,23 +448,38 @@ def web_street_parts(rec_street):
     words = [w for w in t[1:] if w not in DIRECTIONS]
     if len(words) > 2 and len(words[0]) == 1:
         words = words[1:]  # "2210 C Larkspur Rd": the letter belongs to the civic number
-    return t[0], words[0] if words else ""
+    if not words:
+        return "record_street_no_civic_number"
+    return t[0], words
 
 
 def web_street_reason(rec_street, quote):
-    """A free-text quote must show the record street's civic number and first street word (ruling 2026-11-22)."""
+    """FAIL unless the quote prints the record's civic number immediately before its first street word (a direction or
+    one letter may sit between) and no other street suffix ("321 Oak Avenue" for "321 Oak Street"), and FAIL when every such occurrence states a suite or unit the record contradicts."""
     parts = web_street_parts(rec_street)
     if isinstance(parts, str):
         return parts
-    q = set(street_tokens(quote))
-    return "" if parts[0] in q and (not parts[1] or parts[1] in q) else "street_absent_from_quote"
-
-
-def street_gap(rec_street, quote):
-    """Measured on PASS rows: the civic number and first street word are not within two tokens of each other."""
-    num, word = web_street_parts(rec_street)
+    num, words = parts
     q = street_tokens(quote)
-    return bool(word) and not any(x == num and word in q[i + 1:i + 3] for i, x in enumerate(q))
+    k = next((k for k, w in enumerate(words) if k and w in SUFFIXES), None)  # "321 oak st": the suffix sits at 1
+
+    def street_at(j):  # the record's first street word at j, and no other suffix where the record's suffix sits
+        return q[j:j + 1] == words[:1] and not (k and q[j + k:j + k + 1] and q[j + k] in SUFFIXES
+                                                 and q[j + k] != words[k])
+    hits = [i for i, x in enumerate(q) if x == num and (street_at(i + 1) or (
+        q[i + 1:i + 2] and (q[i + 1] in DIRECTIONS or len(q[i + 1]) == 1) and street_at(i + 2)))]
+    if not hits:
+        return "street_absent_from_quote"
+    rec_units = units(rec_street)
+    if not rec_units:
+        return ""
+
+    def conflicts(i):
+        window = q[i + 2:i + 12]
+        stated = {window[k + 1] for k in range(len(window) - 1)
+                  if WEB_UNIT_RE.match(window[k]) and re.fullmatch(r"\d+[a-z]?|[a-z]", window[k + 1])}
+        return bool(stated) and not stated & rec_units
+    return "unit_differs" if all(conflicts(i) for i in hits) else ""
 
 
 def web_street_alt(rec_street, quote):
@@ -443,47 +490,38 @@ def web_street_alt(rec_street, quote):
 
 
 def judge_web(ev, rec, idx, quote):
-    """A web quote is free text: bind it by the source domain, the quoted street and the quoted name."""
+    """A web quote is free text. Code can show it is NOT about the record (FAIL) but never that it is: a quote with
+    the right street and name can still describe a sibling plant, a former operator or a satellite office. So a web row
+    is FAIL or READ_REQUIRED, never PASS (controller ruling 2026-11-22 after the Codex review of PR #467)."""
     table, cls, ct = ev["record_table"], ev["source_class"], ev["claim_type"]
-    fails, unins, info = [], "", {}
-    site_street = table == "sites" and ct in ("address", "existence")
-    if site_street:
-        why = web_street_reason(rec.get("street_address"), quote)
-        if why == "street_absent_from_quote":
-            fails.append(why)
-            if web_street_alt(rec.get("street_address"), quote):
+    fails, why, info = [], "", {}
+    if table == "sites" and ct in ("address", "existence"):
+        w = web_street_reason(rec.get("street_address"), quote)
+        if w in ("street_absent_from_quote", "unit_differs"):
+            fails.append(w)
+            if w == "street_absent_from_quote" and web_street_alt(rec.get("street_address"), quote):
                 info["street_limit"] = "spacing"
-        elif why:
-            unins = why
+        elif w:
+            why = w
     if cls == "own_site":
         sites = record_websites(idx, table, rec)
-        src = domain_key(ev["source_ref"])
+        src = host_path(ev["source_ref"])
         if not sites:
-            unins = unins or "no_record_website"
+            why = why or "no_record_website"
         elif not any(own_domain(src, w) for w in sites):
             fails.append("not_own_site")
-            host = re.sub(r"[^a-z0-9]", "", src.split("/")[0])
+            host = re.sub(r"[^a-z0-9]", "", src[0])
             if any(len(k.split()[0]) >= 4 and k.split()[0] in host for k in idx.held_keys(table, ev["record_id"])):
                 info["name_alt"] = "name_in_host"  # measured: a sister or regional domain carrying a held name
     elif cls in ("directory", "press"):
         q = f" {name_key(quote)} "
-        hits = [k for k in idx.held_keys(table, ev["record_id"]) if f" {k} " in q]
-        if not hits:
-            unins = unins or "name_absent_from_quote"
-        info["web_bound"] = f"name_{min(len(k.split()) for k in hits)}w" if hits else ""
+        if not any(f" {k} " in q for k in idx.held_keys(table, ev["record_id"])):
+            why = why or "name_absent_from_quote"
     else:
-        unins = unins or "web_class_untested"  # registry, government_filing: no mechanical test in the ruling
+        why = why or "web_class_untested"  # registry, government_filing: no mechanical test in the ruling
     if fails:
         return "FAIL", "+".join(fails), info
-    if unins:
-        return "UNINSPECTABLE", unins, info
-    if table == "sites" and not site_street:
-        return "UNINSPECTABLE", "web_site_row_no_street_claim", info  # own domain or name binds the company, not the plant
-    if table != "sites" and ct == "address" and not hq_in_quote(quote, rec):
-        return "UNINSPECTABLE", "hq_absent_from_quote", info
-    info["web_bound"] = (info.get("web_bound") or "domain") + (
-        "+street_gap" if site_street and street_gap(rec.get("street_address"), quote) else "")
-    return "PASS", "", info
+    return "READ_REQUIRED", why or "mechanics_clear", info
 
 
 # ---------------------------------------------------------------- modes
@@ -495,17 +533,20 @@ def source_family(src):
     return fam[0].strip() if fam else "other:" + re.split(r"[(,:;]", src)[0].strip()[:30]
 
 
+VERDICTS = ("PASS", "FAIL", "READ_REQUIRED", "UNINSPECTABLE")
+
+
 def judge_all(evs, idx):
     out = []
     for ev in evs:
         v, reason, info = judge(ev, idx)
+        assert v in VERDICTS, v
         out.append({"evidence_id": ev["evidence_id"], "at": ev["_at"], "record_table": ev["record_table"],
                     "record_id": ev["record_id"], "claim_type": ev["claim_type"], "created_by": ev["created_by"],
                     "source_family": source_family(ev["source_ref"]), "verdict": v, "reason": reason,
                     "name_alt": info.get("name_alt", ""), "street_limit": info.get("street_limit", ""),
                     "hq_basis": info.get("hq_basis", ""), "if_facility_operator": info.get("if_facility_operator", ""),
-                    "city_not_in_quote": info.get("city_not_in_quote", ""), "state_differs": info.get("state_differs", ""),
-                    "name_basis": info.get("name_basis", ""), "web_bound": info.get("web_bound", "")})
+                    "city_not_in_quote": info.get("city_not_in_quote", ""), "name_basis": info.get("name_basis", "")})
     return out
 
 
@@ -515,20 +556,19 @@ def raw_evidence_count(ref):
 
 
 def report(results, total):
-    assert len(results) == total, f"judged {len(results)} of {total} rows"
     by_v = Counter(r["verdict"] for r in results)
-    print(f"evidence rows read: {total}; judged: {len(results)}; " + ", ".join(f"{k}={by_v[k]}" for k in
-                                                                              ("PASS", "FAIL", "UNINSPECTABLE")))
+    assert len(results) == total == sum(by_v[v] for v in VERDICTS), f"judged {len(results)} of {total} rows"
+    print(f"evidence rows read: {total}; judged: {len(results)}; " + ", ".join(f"{k}={by_v[k]}" for k in VERDICTS))
     print("\nby verdict and reason:")
     for (v, why), n in sorted(Counter((r["verdict"], r["reason"]) for r in results).items(), key=lambda kv: -kv[1]):
         print(f"  {n:7d}  {v:13s} {why}")
     for col in ("created_by", "source_family"):
-        print(f"\nby {col} (rows: PASS / FAIL / UNINSPECTABLE):")
+        print(f"\nby {col} (rows: " + " / ".join(VERDICTS) + "):")
         tab = defaultdict(Counter)
         for r in results:
             tab[r[col]][r["verdict"]] += 1
         for k, c in sorted(tab.items(), key=lambda kv: -sum(kv[1].values())):
-            print(f"  {sum(c.values()):7d}  {c['PASS']:6d} / {c['FAIL']:6d} / {c['UNINSPECTABLE']:6d}  {k}")
+            print(f"  {sum(c.values()):7d}  " + " / ".join(f"{c[v]:6d}" for v in VERDICTS) + f"  {k}")
 
 
 def write_csv(results, path):
@@ -539,99 +579,309 @@ def write_csv(results, path):
 
 
 def changed_rows(base_evs, head_evs):
-    """Head rows that are new, or whose binding fields differ from the base row with the same id (a re-pointed row)."""
-    base = {e["evidence_id"]: tuple(e[f] for f in BINDING_FIELDS) for e in base_evs}
-    return [e for e in head_evs if base.get(e["evidence_id"]) != tuple(e[f] for f in BINDING_FIELDS)]
+    """Head rows that are new, or differ from the base row with the same id in ANY column: every edit re-gates the row
+    (Codex review of PR #467: an edit to source_class or created_by changes the verdict or the proof it needs).
+    A column absent on one side counts as empty, so a migration that adds an empty column edits no row."""
+    def strip(e):
+        return {k: v for k, v in e.items() if k != "_at" and v}
+    base = {e["evidence_id"]: strip(e) for e in base_evs}
+    return [e for e in head_evs if base.get(e["evidence_id"]) != strip(e)]
+
+
+# ---------------------------------------------------------------- tree, labels, folders
+
+def inside_tree(path):
+    """TREE/path when it is a regular file inside TREE (no symlink on the way, no escape), else None."""
+    f = TREE / path
+    try:
+        if ".." in Path(path).parts or any(q.is_symlink() for q in [f, *f.parents] if TREE in q.parents or q == f):
+            return None
+        return f if f.is_file() and f.resolve().is_relative_to(TREE.resolve()) else None
+    except OSError:
+        return None
 
 
 def tasks_file(ref, path):
-    """Bytes of a repository file at ref (None = working tree), or None when it does not exist."""
+    """Bytes of a repository file at ref (None = the tree being gated), or None when absent or unsafe."""
     if ref is None:
-        f = ROOT / path
-        return f.read_bytes() if f.is_file() else None
+        f = inside_tree(path)
+        return f.read_bytes() if f else None
     r = subprocess.run(["git", "-C", str(ROOT), "show", f"{ref}:{path}"], capture_output=True)
     return r.stdout if r.returncode == 0 else None
 
 
-def label_tokens(label):
-    """Folder names a created_by label may use: the whole label, then each whitespace word."""
-    label = label.strip()
-    return [t for t in [label] + label.split() if t and ".." not in t and not t.startswith("/")]
+def label_folder(label):
+    """The one tasks/ folder a created_by label names, or "" (controller ruling 2026-11-22, provenance E):
+    a one-word label names the folder of that exact name; a two-word label names the folder of its exact second word
+    (the first word is the harness: "claude-code lane-a" -> lane-a). Three or more words name no folder. No prefix,
+    no other word, no date variant: the name must match the folder exactly."""
+    t = label.split()
+    f = t[0] if len(t) == 1 else t[1] if len(t) == 2 else ""
+    return f if re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", f) and ".." not in f else ""
+
+
+MODEL_FAMILIES = {  # family -> words that name it (product, company or model line)
+    "anthropic": {"anthropic", "claude", "opus", "sonnet", "haiku", "fable"},
+    "openai": {"openai", "gpt", "codex", "chatgpt"},
+    "google": {"google", "gemini", "antigravity", "agy", "deepmind"},
+    "xai": {"xai", "grok"},
+}
+
+
+def family_of_text(text):
+    """The one model family a text names, or "" when it names none or several."""
+    words = set(re.findall(r"[a-z]+", (text or "").lower()))
+    fams = {f for f, keys in MODEL_FAMILIES.items() if words & keys}
+    return fams.pop() if len(fams) == 1 else ""
+
+
+def builder_family(readme):
+    """The family on the folder README's "Built by:" line, or ""."""
+    m = re.search(r"^\W*Built by:\s*(.+)$", (readme or b"").decode("utf-8", "replace"), re.M | re.I)
+    return family_of_text(m[1]) if m else ""
+
+
+# ---------------------------------------------------------------- per-row proof
+
+class _Text(HTMLParser):
+    SKIP = {"script", "style", "noscript", "template"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts, self.skip = [], 0
+
+    def handle_starttag(self, tag, attrs):
+        self.skip += tag in self.SKIP
+
+    def handle_endtag(self, tag):
+        self.skip -= tag in self.SKIP and self.skip > 0
+
+    def handle_data(self, data):
+        if not self.skip:
+            self.parts.append(data)
+
+
+def norm_space(s):
+    return re.sub(r"\s+", " ", s or "").strip()
+
+
+def capture_text(data):
+    """The text proof offsets index: an HTML capture's visible text (stdlib html.parser, entities decoded), any other
+    capture decoded as UTF-8; whitespace collapsed to single spaces. Lanes import this so offsets agree."""
+    s = data.decode("utf-8", errors="replace")
+    if re.search(r"<(?:html|body|head|p|div|span|table|br)\b", s[:4096], re.I):
+        t = _Text()
+        t.feed(s)
+        t.close()
+        s = " ".join(t.parts)
+    return norm_space(s)
 
 
 def quote_of(ev):
-    return ev["claim_detail"].partition("quote:")[2].strip()
+    return norm_space(ev["claim_detail"].partition("quote:")[2])
 
 
-def check_proofs(results, evs, archive, read):
-    """Problems with the per-row proof of UNINSPECTABLE rows, one line each (controller ruling 2026-11-22).
+def raw_capture_url(archive_ref):
+    """The Wayback URL that serves the capture's original bytes (the id_ form); the proof digest covers those bytes."""
+    return re.sub(r"(/web/\d{14})/", r"\1id_/", archive_ref, count=1)
 
-    Every UNINSPECTABLE row needs a line in tasks/<folder named by a created_by word>/BINDING_PROOF.csv: the capture it
-    was read from (a Wayback archive_ref, which must equal the row's data/archive_links.csv ref where one exists, or a
-    repo path to a stored capture), the capture's sha256, and the quote's character offset and length in the capture.
-    A repo capture is verified here: its hash, and the row's quote at that offset. An archive capture is not fetched.
-    evs: {evidence_id: row}; archive: {evidence_id: archive_ref}; read(path) -> bytes or None.
-    """
+
+def fetch_url(url, tries=3):
+    req = urllib.request.Request(url, headers={"User-Agent": "polymer-atlas-binding-gate/1"})
+    for k in range(tries):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return r.read()
+        except (urllib.error.URLError, TimeoutError, OSError):
+            if k == tries - 1:
+                raise
+            time.sleep(5 * 3 ** k)
+
+
+def load_proof_file(path, data):
+    """{evidence_id: (path:line, row)} and problems with the file's shape (header, widths, duplicate ids)."""
+    out, problems = {}, []
+    reader = csv.reader(io.StringIO(data.decode("utf-8", errors="replace")))
+    header = next(reader, [])
+    if tuple(header) != PROOF_COLS:
+        return out, [f"{path}: header must be {','.join(PROOF_COLS)}"]
+    for row in reader:
+        at = f"{path}:{reader.line_num}"
+        if len(row) != len(PROOF_COLS):
+            problems.append(f"{at}: {len(row)} cells, the header has {len(PROOF_COLS)}")
+            continue
+        r = dict(zip(PROOF_COLS, (c.strip() for c in row)))
+        if r["evidence_id"] in out:
+            problems.append(f"{at}: second proof line for {r['evidence_id']}")
+        out[r["evidence_id"]] = (at, r)
+    return out, problems
+
+
+def proof_problem(r, ev, archive_ref, read, builder, fetch=None):
+    """"" when the proof line admits the row, else why not. With fetch, an archive capture is fetched and checked;
+    a fetch failure returns a line starting "could not inspect"."""
+    quote = quote_of(ev)
+    if not quote:
+        return "the row has no quote, so there is nothing to prove: it is a lead"
+    if r["verdict"] != "VERIFIED":
+        return f"verdict {r['verdict']!r}: only VERIFIED admits a row"
+    rf = family_of_text(r["reader_family"])
+    if not rf:
+        return f"reader_family {r['reader_family']!r} names no known model family"
+    if family_of_text(r["reader_model"]) != rf:
+        return f"reader_model {r['reader_model']!r} is not a {rf} model"
+    if rf == builder:
+        return f"the reader ({rf}) is the builder's family; a different family must read the row"
+    if len(r["tie"].split()) < 6:
+        return "tie must be a sentence saying what in the capture ties the quote to this record"
+    sha, off, n = r["capture_sha256"], r["quote_offset"], r["quote_length"]
+    if not re.fullmatch(r"[0-9a-f]{64}", sha) or len(set(sha)) == 1:
+        return "capture_sha256 must be 64 lowercase hex digits, not one repeated digit"
+    if not (off.isdigit() and n.isdigit()):
+        return "quote_offset and quote_length must be whole numbers"
+    off, n = int(off), int(n)
+    if n != len(quote):
+        return f"quote_length {n} is not the quote's length ({len(quote)} characters, whitespace collapsed)"
+    cap = r["capture"]
+    if cap.startswith("http"):
+        if not archive_ref:
+            return "no data/archive_links.csv line for this row: an archive capture is admitted only through its index line"
+        if cap != archive_ref:
+            return "capture differs from the row's data/archive_links.csv archive_ref"
+        if fetch is None:
+            return ""  # form only: --verify-proofs fetches the capture and checks the digest and the quote
+        try:
+            data = fetch(raw_capture_url(cap))
+        except Exception as e:  # noqa: BLE001 - any failure to read the capture is an inspection failure
+            return f"could not inspect {cap}: {e}"
+    else:
+        if archive_ref:
+            return "the row has a data/archive_links.csv capture: prove it from that capture"
+        if not cap.startswith("tasks/"):
+            return "capture must be the row's archive ref or a repo path under tasks/"
+        data = read(cap)
+        if data is None:
+            return f"capture file {cap} is not a regular file in the tree"
+    if hashlib.sha256(data).hexdigest() != sha:
+        return "capture_sha256 does not match the capture's bytes"
+    if capture_text(data)[off:off + n] != quote:
+        return "the row's quote is not at that offset in the capture's text"
+    return ""
+
+
+def check_proofs(results, evs, archive, read, fetch=None):
+    """Problems with the per-row proof of every row the gate cannot decide (READ_REQUIRED or UNINSPECTABLE), one line
+    each. A row is admitted only by its line in tasks/<the folder its created_by names>/BINDING_PROOF.csv; a proof file
+    serves only its own folder's rows. evs: {evidence_id: row}; archive: {evidence_id: archive_ref};
+    read(path) -> bytes or None; fetch(url) -> bytes, given only by --verify-proofs."""
     need = defaultdict(list)
     for r in results:
-        if r["verdict"] == "UNINSPECTABLE":
-            need[r["created_by"].strip()].append(r["evidence_id"])
-    proofs, problems, files = {}, [], {}
-    for label, ids in sorted(need.items()):
-        path = next((f"tasks/{t}/BINDING_PROOF.csv" for t in label_tokens(label)
-                     if read(f"tasks/{t}/BINDING_PROOF.csv") is not None), None)
-        if path is None:
-            problems.append(f"created_by '{label}': {len(ids)} UNINSPECTABLE rows and no tasks/<folder>/BINDING_PROOF.csv;"
-                            f" each needs a proof line, or is a lead until proved")
+        if r["verdict"] not in ("PASS", "FAIL"):  # deny by default: anything undecided needs its proof
+            need[label_folder(r["created_by"])].append(r["evidence_id"])
+    problems, cache = [], {}
+
+    def cached_fetch(url):
+        if url not in cache:
+            try:
+                cache[url] = fetch(url)
+            except Exception as e:  # noqa: BLE001
+                cache[url] = e
+        if isinstance(cache[url], Exception):
+            raise cache[url]
+        return cache[url]
+
+    for folder, ids in sorted(need.items()):
+        if not folder:
+            problems.append(f"{len(ids)} rows whose created_by names no folder (one word, or harness + one word): "
+                            f"they cannot be proved, e.g. {ids[0]}")
             continue
-        if path not in files:
-            reader = csv.DictReader(io.StringIO(read(path).decode("utf-8")))
-            files[path] = []
-            if tuple(reader.fieldnames or ()) != PROOF_COLS:
-                problems.append(f"{path}: header must be {','.join(PROOF_COLS)}")
-            else:
-                for row in reader:
-                    eid = (row["evidence_id"] or "").strip()
-                    if eid in proofs:
-                        problems.append(f"{path}:{reader.line_num}: second proof line for {eid}")
-                    proofs[eid] = (f"{path}:{reader.line_num}", row)
+        path = f"tasks/{folder}/BINDING_PROOF.csv"
+        data = read(path)
+        if data is None:
+            problems.append(f"{len(ids)} rows need a proof line and {path} is absent: each is a lead until proved, "
+                            f"e.g. {ids[0]}")
+            continue
+        proofs, shape = load_proof_file(path, data)
+        problems += shape
+        builder = builder_family(read(f"tasks/{folder}/README.md"))
+        if not builder:
+            problems.append(f"tasks/{folder}/README.md has no 'Built by:' line naming one model family")
         for eid in ids:
             if eid not in proofs:
-                problems.append(f"{eid} ({label}): no proof line in {path}")
+                problems.append(f"{eid}: no proof line in {path}")
                 continue
             at, row = proofs[eid]
-            why = proof_problem(row, evs[eid], archive.get(eid), read)
+            why = proof_problem(row, evs[eid], archive.get(eid), read, builder, fetch and cached_fetch)
             if why:
                 problems.append(f"{at}: {eid}: {why}")
     return problems
 
 
-def proof_problem(row, ev, archive_ref, read):
-    cap, sha, off, n = (row[c].strip() for c in PROOF_COLS[1:])
-    if not re.fullmatch(r"[0-9a-f]{64}", sha):
-        return "capture_sha256 is not 64 lowercase hex digits"
-    if not (off.isdigit() and n.isdigit() and int(n) > 0):
-        return "quote_offset and quote_length must be whole numbers, the length above zero"
-    if cap.startswith("http"):
-        if not ARCHIVE_RE.match(cap):
-            return "an http capture must be a Wayback archive ref (https://web.archive.org/web/<14 digits>/<url>)"
-        if archive_ref and cap != archive_ref:
-            return "capture differs from the row's data/archive_links.csv archive_ref"
-        return ""  # shortcut: CI does not fetch the web; the lane's check.py replays the capture, its reviewer re-runs it
-    if not cap.startswith("tasks/") or ".." in cap:
-        return "capture must be an archive ref or a repo path under tasks/"
-    data = read(cap)
-    if data is None:
-        return f"capture file {cap} is not in the tree"
-    if hashlib.sha256(data).hexdigest() != sha:
-        return "capture_sha256 does not match the capture file"
-    text, off, n = data.decode("utf-8", errors="replace"), int(off), int(n)
-    if off + n > len(text):
-        return "quote span runs past the end of the capture"
-    quote = quote_of(ev)
-    if quote and text[off:off + n] != quote:
-        return "the row's quote is not at that offset in the capture"
-    return ""
+# ---------------------------------------------------------------- provenance
+
+def isolation_prefix():
+    """A no-network wrapper when this host has one; else [] (the caller says so)."""
+    try:
+        if subprocess.run(["unshare", "-rn", "true"], capture_output=True).returncode == 0:
+            return ["unshare", "-rn"]
+    except OSError:
+        pass
+    return []
+
+
+def run_folder_checks(folders, head, timeout=900):
+    """Run tasks/<folder>/check.py for each folder on a COPY of the gated tree, last, with a minimal environment (no
+    token) and no network where the host allows it; {folder: (exit code, last output line)}. This is the only code
+    the gate executes from the tree it gates."""
+    out = {}
+    if not folders:
+        return out, ""
+    with tempfile.TemporaryDirectory() as tmp:
+        copy = Path(tmp) / "tree"
+        if head is None:
+            shutil.copytree(TREE, copy, symlinks=True, ignore=shutil.ignore_patterns(".git"))
+        else:
+            copy.mkdir()
+            arch = subprocess.run(["git", "-C", str(ROOT), "archive", head], capture_output=True, check=True).stdout
+            subprocess.run(["tar", "-x", "-C", str(copy)], input=arch, check=True)
+        wrap = isolation_prefix()
+        env = {"PATH": f"{Path(sys.executable).parent}:/usr/bin:/bin", "HOME": tmp, "LANG": "C.UTF-8",
+               "PYTHONDONTWRITEBYTECODE": "1"}
+        for f in sorted(folders):
+            try:
+                r = subprocess.run(wrap + [sys.executable, f"tasks/{f}/check.py"], cwd=copy, env=env,
+                                   capture_output=True, text=True, timeout=timeout)
+                lines = (r.stdout + r.stderr).strip().splitlines()
+                out[f] = (r.returncode, lines[-1] if lines else "")
+            except subprocess.TimeoutExpired:
+                out[f] = (124, f"timed out after {timeout} s")
+    return out, "no network (unshare -rn)" if wrap else "network NOT isolated on this host: environment stripped only"
+
+
+def provenance_problems(new_evs, base_labels, base_has_folder, head_check_bytes, run=run_folder_checks, head=None):
+    """Problems with the provenance of the rows a PR adds or changes, one line per created_by label (ruling E):
+    the label names exactly one folder; that folder holds a non-empty check.py; a label new to the base adds its folder
+    in this PR; and every folder whose label adds rows has its check.py executed, which must exit 0."""
+    labels = Counter(e["created_by"].strip() for e in new_evs)
+    problems, to_run = [], {}
+    for label, n in sorted(labels.items()):
+        folder = label_folder(label)
+        if not folder:
+            problems.append(f"created_by '{label}' ({n} rows) names no folder: use one word, or a harness word and "
+                            f"one folder word")
+        elif not head_check_bytes(folder):
+            problems.append(f"MISSING tasks/{folder}/check.py for created_by '{label}' ({n} rows): it must exist "
+                            f"and not be empty")
+        elif label not in base_labels and base_has_folder(folder):
+            problems.append(f"created_by '{label}' is new, but tasks/{folder}/ already exists on the base: a new "
+                            f"label adds its own folder in this PR")
+        else:
+            to_run[folder] = label
+    results, isolation = run(set(to_run), head) if to_run else ({}, "")
+    for folder, (code, last) in sorted(results.items()):
+        if code != 0:
+            problems.append(f"tasks/{folder}/check.py exited {code} for created_by '{to_run[folder]}': {last}")
+    return problems, isolation
 
 
 def audit_sample(results, n, seed):
@@ -645,37 +895,38 @@ def audit_sample(results, n, seed):
             for k, v in sorted(by_label.items())}
 
 
-def provenance_missing(new_evs, has_check):
-    """{created_by: row count} for labels none of whose whitespace tokens names a tasks/<token>/check.py."""
-    missing = Counter()
-    for e in new_evs:
-        if not any(has_check(t) for t in label_tokens(e["created_by"])):
-            missing[e["created_by"].strip()] += 1
-    return missing
-
-
 def resolve_base(ref, head):
+    if TREE != ROOT:  # a plain directory has no history: compare with REF itself (check out the PR merge ref)
+        return git("rev-parse", ref).strip()
     return git("merge-base", ref, head or "HEAD").strip()
 
 
 def main(argv=None):
+    global TREE
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--all", action="store_true", help="report every evidence row by verdict, created_by and source")
-    g.add_argument("--new-since", metavar="REF", help="gate rows added or re-pointed since the merge-base with REF")
-    g.add_argument("--provenance-since", metavar="REF", help="require tasks/<created_by>/check.py for new rows")
+    g.add_argument("--new-since", metavar="REF", help="gate rows added or changed since the merge-base with REF")
+    g.add_argument("--verify-proofs", metavar="REF", help="as --new-since, and fetch every archive capture a proof cites")
+    g.add_argument("--provenance-since", metavar="REF", help="require and run tasks/<folder>/check.py for new rows")
     g.add_argument("--sample", metavar="N", type=int, help="audit only: list N PASS rows per created_by label to read")
     ap.add_argument("--seed", default="1", help="--sample seed")
-    ap.add_argument("--since", metavar="REF", help="--sample: only rows added or re-pointed since REF")
-    ap.add_argument("--head", help="git ref to read instead of the working tree")
+    ap.add_argument("--since", metavar="REF", help="--sample: only rows added or changed since REF")
+    src = ap.add_mutually_exclusive_group()
+    src.add_argument("--head", help="git ref to read instead of the working tree")
+    src.add_argument("--tree", metavar="DIR", help="read data/ and tasks/ from DIR (an authoritative run: this "
+                                                   "script and its rules come from the trusted checkout)")
     ap.add_argument("--out", help="write per-row verdicts to this CSV")
     a = ap.parse_args(argv)
+    TREE = Path(a.tree).resolve() if a.tree else ROOT
+    gate = a.new_since or a.verify_proofs
     try:
         head_evs = rows(a.head, "evidence_*.csv")
-        since = a.new_since or a.provenance_since or (a.since if a.sample else None)
+        since = gate or a.provenance_since or (a.since if a.sample else None)
         base = resolve_base(since, a.head) if since else None
+        base_evs = rows(base, "evidence_*.csv") if base else []
     except subprocess.CalledProcessError as e:
-        print(f"binding gate: cannot read git state ({e.stderr.strip()}); failing closed")
+        print(f"binding gate: cannot read git state ({(e.stderr or '').strip()}); failing closed")
         return 2
     if not head_evs:
         print("binding gate: zero evidence rows read; failing closed")
@@ -683,22 +934,22 @@ def main(argv=None):
     if len({e["evidence_id"] for e in head_evs}) != len(head_evs):
         print("binding gate: duplicate evidence_id on the head tree; failing closed")
         return 2
-    evs = head_evs if base is None else changed_rows(rows(base, "evidence_*.csv"), head_evs)
+    evs = head_evs if base is None else changed_rows(base_evs, head_evs)
 
     if a.provenance_since:
-        if a.head is None:
-            def has_check(t): return (ROOT / "tasks" / t / "check.py").is_file()
-        else:
-            paths = set(git("ls-tree", "-r", "--name-only", a.head, "tasks/").split())
-            def has_check(t): return f"tasks/{t}/check.py" in paths
-        missing = provenance_missing(evs, has_check)
-        labels = Counter(e["created_by"].strip() for e in evs)
-        print(f"provenance: {len(evs)} evidence rows added or re-pointed since {base[:10]} under {len(labels)} "
-              f"created_by label(s)")
-        for label, n in sorted(missing.items()):
-            print(f"  MISSING tasks/<folder>/check.py for created_by '{label}' ({n} rows): name the folder by one "
-                  f"word of created_by")
-        return 1 if missing else 0
+        base_paths = set(git("ls-tree", "-r", "--name-only", base, "tasks/").split())
+
+        def head_check(f):
+            return bool((tasks_file(a.head, f"tasks/{f}/check.py") or b"").strip())
+        problems, isolation = provenance_problems(
+            evs, {e["created_by"].strip() for e in base_evs},
+            lambda f: any(x.startswith(f"tasks/{f}/") for x in base_paths), head_check, head=a.head)
+        print(f"provenance: {len(evs)} evidence rows added or changed since {base[:10]} under "
+              f"{len({e['created_by'].strip() for e in evs})} created_by label(s)" +
+              (f"; folder checks ran with {isolation}" if isolation else ""))
+        for line in problems:
+            print("  " + line)
+        return 1 if problems else 0
 
     idx = Index.load(a.head)
     results = judge_all(evs, idx)
@@ -721,12 +972,15 @@ def main(argv=None):
         return 0
     report(results, len(evs)) if results else None
     fails = [r for r in results if r["verdict"] == "FAIL"]
-    n_unins = sum(r["verdict"] == "UNINSPECTABLE" for r in results)
+    n_open = sum(r["verdict"] not in ("PASS", "FAIL") for r in results)
     archive = {r["evidence_id"]: r["archive_ref"] for r in rows(a.head, "archive_links.csv")}
-    problems = check_proofs(results, {e["evidence_id"]: e for e in evs}, archive, lambda path: tasks_file(a.head, path))
-    print(f"\nbinding gate: {len(results)} rows added or re-pointed since {base[:10]}; "
-          f"{len(results) - len(fails) - n_unins} PASS, {len(fails)} FAIL (blocking), {n_unins} UNINSPECTABLE "
-          f"(admitted only by a per-row proof line)")
+    problems = check_proofs(results, {e["evidence_id"]: e for e in evs}, archive,
+                            lambda path: tasks_file(a.head, path), fetch_url if a.verify_proofs else None)
+    uninspected = [x for x in problems if "could not inspect" in x]
+    print(f"\nbinding gate: {len(results)} rows added or changed since {base[:10]}; "
+          f"{len(results) - len(fails) - n_open} PASS, {len(fails)} FAIL (blocking, no waiver), {n_open} "
+          f"READ_REQUIRED or UNINSPECTABLE (each admitted only by its own proof line)" +
+          ("" if a.verify_proofs else "; archive captures checked for form only (--verify-proofs fetches them)"))
     for r in fails[:200]:
         print(f"  FAIL {r['reason']:40s} {r['evidence_id']} {r['at']}")
     if len(fails) > 200:
@@ -737,7 +991,11 @@ def main(argv=None):
         print("  PROOF " + line)
     if len(problems) > 200:
         print(f"  ... and {len(problems) - 200} more proof problems")
+    if uninspected:
+        print(f"{len(uninspected)} captures could not be fetched: an inspection failure, never a pass; re-run")
+        return 2
     return 1 if fails or problems else 0
+
 
 if __name__ == "__main__":
     sys.exit(main())
