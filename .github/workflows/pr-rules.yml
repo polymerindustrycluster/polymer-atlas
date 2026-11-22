@@ -1,0 +1,49 @@
+# The working rules of 2026-11-22 that a script can check (AGENTS.md section 2a): review record, builder != reviewer,
+# size cap, audit before the next batch, INPUTS.sha256. Separate from validate.yml on purpose; docs/ci/README.md.
+# The required status check is the job named `pr-rules`. A `**Review record**` comment does not re-trigger a
+# pull_request workflow, so the second job re-runs the latest pr-rules run for that head; the script reads the PR body
+# and comments live from the API, so the re-run sees the new comment.
+name: pr-rules
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+  issue_comment:
+    types: [created, edited, deleted]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  pr-rules:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # the check reads the merge-base and the PR head
+      - name: Check the PR against the working rules
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/check_pr_rules.py --pr "${{ github.event.pull_request.number }}" --base "origin/${{ github.base_ref }}"
+
+  rerun-on-comment:
+    if: github.event_name == 'issue_comment' && github.event.issue.pull_request && contains(github.event.comment.body, 'Review record')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      actions: write
+      pull-requests: read
+    steps:
+      - name: Re-run pr-rules for this PR's head
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.issue.number }}
+        run: |
+          sha=$(gh pr view "$PR" --repo "$GITHUB_REPOSITORY" --json headRefOid -q .headRefOid)
+          id=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow pr-rules.yml --event pull_request --commit "$sha" --limit 1 --json databaseId -q '.[0].databaseId')
+          if [ -z "$id" ]; then echo "no pr-rules run found for $sha"; exit 1; fi
+          gh run watch "$id" --repo "$GITHUB_REPOSITORY" >/dev/null || true   # a run in progress cannot be re-run
+          gh run rerun "$id" --repo "$GITHUB_REPOSITORY"

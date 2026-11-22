@@ -15,6 +15,14 @@ them and never commit a hand-modified one. Never commit anything
 produced in a local staging or workshop area; only changes under
 `data/`, `docs/`, `scripts/`, and `tasks/` travel.
 
+**Where things live** (owner ruling 2026-11-22; this is a pointer, not an
+enforced rule, and no script checks it): `tasks/QUEUE.md` is the claim
+ledger, the line you mark `claimed:` before you build. The board is the
+tracker: commitments live in Kaneo, PIC workspace, project ATLAS (the repo's
+declared tracker from 2026-11-22). Decisions live in `DECISIONS.md`.
+Chat (the crosswalk `polymeratlas`) is for messages only: a decision or a
+commitment that exists only in chat does not exist.
+
 ## 1. Where truth lives
 
 - The CSVs in `data/` are canonical. Organizations and sites are
@@ -137,6 +145,70 @@ micro-pass were pushed directly to `main` — 19 logged pushes, each with
 per-push owner approval, local validation, and read-back verification.
 The branch/PR rule is unchanged for outside harnesses and non-campaign
 contributions. No other section is amended by this revision.*
+
+## 2a. Working rules — owner adoption 2026-11-22
+
+On 2026-11-21/22 one harness built, verified and merged about 34,000
+evidence rows in a day; 28% did not bind to their record, and every check
+was green. The owner adopted these seven rules on 2026-11-22 ("Adopt all
+seven"). A rule without a check gets one or is not called a rule: each rule
+below names its check. Where the check is another lane's, it is marked
+"lands with" its branch and the rule is not mechanically enforced until
+that branch merges. What each check cannot catch is in
+`tasks/working-rules-2026-11-22/README.md`.
+
+1. **The agent that builds a batch never merges it.**
+   Enforced by: `scripts/check_pr_rules.py` (workflow `pr-rules`) requires
+   the PR body to carry `Built by: <harness>, <model family>` and at least
+   one approving review record from a different family. **Gap, stated
+   plainly:** every harness uses one shared GitHub account, so who pressed
+   merge cannot be verified mechanically. The check proves a different
+   family approved; it cannot prove the builder did not merge.
+2. **No evidence row or registry link merges without its packet and a
+   replay check in the repo.**
+   Enforced by: `scripts/check_evidence_binding.py` and its
+   provenance-folder check. Lands with PR branch
+   `agent/claude-code/evidence-binding-gate-2026-11-22`.
+3. **A binding gate in CI: the quoted operator is a name the record holds
+   and the quoted street equals the record's street, or the row is a
+   lead.**
+   Enforced by: `scripts/check_evidence_binding.py`. Lands with PR branch
+   `agent/claude-code/evidence-binding-gate-2026-11-22`.
+4. **Two model families review every data PR, recorded on the PR.**
+   Enforced by: `scripts/check_pr_rules.py` (workflow `pr-rules`). A PR
+   that touches `data/` or `scripts/` needs two PR comments that start with
+   `**Review record**`, naming two different model families, each with
+   `- **Verifier:** <family>, <model>...` and
+   ``- **Verdict:** APPROVE at `<full head SHA>` ``. A record at an older
+   head SHA does not count. A PR that touches neither needs one record.
+5. **A batch is audited before the next one builds on it, with a size cap
+   per PR.**
+   Enforced by: `scripts/check_pr_rules.py`. A PR may add at most 1,000
+   evidence rows and 1,000 registry links unless it adds a line to
+   `DECISIONS.md` naming its branch and the words "size waiver". A PR that
+   touches `data/` fails while any `created_by` label on `main` lacks an
+   audit record: a file `tasks/<folder>/AUDIT.md` on `main` naming the
+   label. The labels on `main` on 2026-11-22 are grandfathered in
+   `tasks/working-rules-2026-11-22/audit_baseline.txt`.
+6. **Raw inputs live in the shared store by checksum.**
+   Enforced by: `scripts/check_pr_rules.py` checks that a PR adding evidence
+   rows or registry links adds `tasks/<folder>/INPUTS.sha256` (lines of
+   `<sha256>  <path>`), format only. The hashes themselves are checked by a
+   reviewer against the store; the check says so in its output.
+7. **Decisions in `DECISIONS.md`, commitments on the board, chat for
+   messages only.**
+   Enforced by: nothing. This is a statement of where things live, stated
+   under "Start here", and no script can tell a decision from a message.
+
+A PR with a `**Review record**` comment is re-checked when the comment
+arrives. A change to these rules or to their checks is an owner ruling
+(section 2 rule 9).
+
+*Revision note — 2026-11-22 (owner adoption, working rules): §2a added with
+the seven working rules and their checks; "Start here" gains the
+where-things-live paragraph and states that `tasks/QUEUE.md` is the claim
+ledger and the board is the tracker. Rules 2 and 3 are enforced by another
+lane's checks and say so. No data file is changed by this revision.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 
