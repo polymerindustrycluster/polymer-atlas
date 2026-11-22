@@ -1,9 +1,9 @@
 # PIC-18 site size bands from OSHA ITA, 2026-11-22 (lane atlas-w22-size-ita)
 
-Owner pick 2026-11-22, "PIC-18 unknowns pilot". Fill blank `employee_band_site` from OSHA ITA Form 300A CY2025 annual average employees (SCHEMA §1 R13, source 1) on a fixed frame of 23 site/establishment pairs (`frame.csv`, copied from the controller's brief, byte-identical). Claim: `tasks/QUEUE.md` (`claimed:claude-code 2026-11-22`, EVD-470000..470099). First user: the Atlas owner, for prospecting by size; non-use is a finding if no prospecting list uses the band by 2026-12-20.
+Owner pick 2026-11-22, "PIC-18 unknowns pilot". Fill blank `employee_band_site` from OSHA ITA Form 300A CY2025 annual average employees (SCHEMA §1 R13, source 1) on a fixed frame of 23 site/establishment pairs (`frame.csv`, copied from the controller's brief, byte-identical). Claim: `tasks/QUEUE.md` (`claimed:claude-code 2026-11-22`, EVD-480000..480099). First user: the Atlas owner, for prospecting by size; non-use is a finding if no prospecting list uses the band by 2026-12-20.
 
 ## Result (unit: site records in the 23-pair frame; organizations counted as PIC-18 organization rows)
-- **Applied: 12 site records** (blank-only; band only), across **11 organizations** (ORG-000035 owns two). Bands: 10-49 x5, 100-249 x4, 50-99 x1, 250-499 x1, 500-999 x1. Evidence: 12 `size_band` rows, `government_filing` / `supports_B`, EVD-470000..470011. Site tiers are unchanged (A/B/C as before; a size band is not a tier input).
+- **Applied: 12 site records** (blank-only; band only), across **11 organizations** (ORG-000035 owns two). Bands: 10-49 x5, 100-249 x4, 50-99 x1, 250-499 x1, 500-999 x1. Evidence: 12 `size_band` rows, `government_filing` / `supports_B`, EVD-480000..480011. Site tiers are unchanged (A/B/C as before; a size band is not a tier input).
 - **Held: 11 site records**, all STILL_UNCERTAIN with the settling fact (table below).
 - **Outcome** (`python3 S/harness/pic18_unknown.py "$PWD" <ref>`; unit: PIC-18 organization rows = 794; S = controller storage): `origin/main` 17834918 **band_unknown = 443 (55.8%)**; this branch's HEAD **band_unknown = 432 (54.4%)**: a fall of exactly 11 = the organizations whose first band this lane writes (12 fills, ORG-000035 counted once). proc_unknown 322 and mkt_unknown 316 unchanged.
 - **Controller disposition vs mine:** I disagree on 4 rows, all toward hold. SITE-000250 and SITE-002114: R13, the OSHA inspection `nr_in_estab` band is 1000-4999 and 5000+ against ITA 10-49 and 50-99 (more than one band; the 2026-11-02 `band_updates.csv` already statused both REVIEW, `inspection_differs_by_5_bands`). SITE-000639: a second ITA establishment ("Technoform TGI", id 1458057, 30 average employees) files at the same suite, so the site's band could be 100-249 if the record covers both. SITE-002965: establishment 1450510 is also bound to closed SITE-001800 (same organization, blank street): a dedupe lead. The four "judgment" rows (000264, 000383, 000620, 001109) are applied; see Judgment calls.
@@ -13,25 +13,25 @@ Owner pick 2026-11-22, "PIC-18 unknowns pilot". Fill blank `employee_band_site` 
 
 | site | ITA establishment_id | disposition | band | evidence | street/name | held: settling fact |
 |---|---|---|---|---|---|---|
-| SITE-000035 | 656015 | applied | 100-249 | EVD-470000 | key_equal/key_equal | - |
-| SITE-000043 | 1500985 | applied | 10-49 | EVD-470001 | key_equal/key_equal | - |
-| SITE-000062 | 941625 | applied | 10-49 | EVD-470002 | key_equal/key_equal | - |
+| SITE-000035 | 656015 | applied | 100-249 | EVD-480000 | key_equal/key_equal | - |
+| SITE-000043 | 1500985 | applied | 10-49 | EVD-480001 | key_equal/key_equal | - |
+| SITE-000062 | 941625 | applied | 10-49 | EVD-480002 | key_equal/key_equal | - |
 | SITE-000138 | 1454209 | held | - | - | key_equal/key_equal | ITA reliability='review', size_code_vs_avg='inconsistent' (settles: an amended filing or a second source for the count) |
 | SITE-000250 | 1433741 | held | - | - | key_equal/key_equal | R13: OSHA inspection nr_in_estab bands ['1000-4999'] are more than one band from ITA 10-49 (settles: review of which count is the establishment's) |
-| SITE-000264 | 1477377 | applied | 50-99 | EVD-470003 | judged/key_equal | - |
+| SITE-000264 | 1477377 | applied | 50-99 | EVD-480003 | judged/key_equal | - |
 | SITE-000297 | 920442 | held | - | - | no/key_equal | no recorded street_address (settles: an address pass that records the street, then re-test) ; ITA reliability='review', size_code_vs_avg='inconsistent' (settles: an amended filing or a second source for the count) |
-| SITE-000383 | 902411 | applied | 10-49 | EVD-470004 | key_equal/judged | - |
-| SITE-000450 | 1403938 | applied | 250-499 | EVD-470005 | key_equal/key_equal | - |
+| SITE-000383 | 902411 | applied | 10-49 | EVD-480004 | key_equal/judged | - |
+| SITE-000450 | 1403938 | applied | 250-499 | EVD-480005 | key_equal/key_equal | - |
 | SITE-000517 | 1401244 | held | - | - | no/key_equal | different street: record '200 INDUSTRIAL PARKWAY', ITA '220 Park Drive' (settles: which address is the establishment's) |
 | SITE-000519 | 1448582 | held | - | - | no/key_equal | no recorded street_address (settles: an address pass that records the street, then re-test) ; ITA reliability='review', size_code_vs_avg='inconsistent' (settles: an amended filing or a second source for the count) ; establishment bound to 2 site records ['SITE-000519', 'SITE-000520']: dedupe lead, never merged here (settles: an integrator dedupe ruling) |
-| SITE-000522 | 69522 | applied | 10-49 | EVD-470006 | key_equal/key_equal | - |
-| SITE-000620 | 1067222 | applied | 100-249 | EVD-470007 | judged/key_equal | - |
+| SITE-000522 | 69522 | applied | 10-49 | EVD-480006 | key_equal/key_equal | - |
+| SITE-000620 | 1067222 | applied | 100-249 | EVD-480007 | judged/key_equal | - |
 | SITE-000639 | 1451043 | held | - | - | key_equal/key_equal | more than one ITA establishment at the address |
 | SITE-000683 | 922771 | held | - | - | key_equal/key_equal | ITA reliability='review', size_code_vs_avg='inconsistent' (settles: an amended filing or a second source for the count) ; establishment bound to 2 site records ['SITE-000683', 'SITE-001725']: dedupe lead, never merged here (settles: an integrator dedupe ruling) |
-| SITE-000863 | 260187 | applied | 100-249 | EVD-470008 | key_equal/key_equal | - |
-| SITE-001109 | 1154717 | applied | 10-49 | EVD-470009 | judged/key_equal | - |
-| SITE-001137 | 281495 | applied | 500-999 | EVD-470010 | key_equal/key_equal | - |
-| SITE-001397 | 1113070 | applied | 100-249 | EVD-470011 | key_equal/key_equal | - |
+| SITE-000863 | 260187 | applied | 100-249 | EVD-480008 | key_equal/key_equal | - |
+| SITE-001109 | 1154717 | applied | 10-49 | EVD-480009 | judged/key_equal | - |
+| SITE-001137 | 281495 | applied | 500-999 | EVD-480010 | key_equal/key_equal | - |
+| SITE-001397 | 1113070 | applied | 100-249 | EVD-480011 | key_equal/key_equal | - |
 | SITE-001725 | 922771 | held | - | - | key_equal/key_equal | ITA reliability='review', size_code_vs_avg='inconsistent' (settles: an amended filing or a second source for the count) ; establishment bound to 2 site records ['SITE-000683', 'SITE-001725']: dedupe lead, never merged here (settles: an integrator dedupe ruling) |
 | SITE-002110 | 498112 | held | - | - | no/key_equal | no recorded street_address (settles: an address pass that records the street, then re-test) |
 | SITE-002114 | 1079717 | held | - | - | key_equal/key_equal | R13: OSHA inspection nr_in_estab bands ['5000+'] are more than one band from ITA 50-99 (settles: review of which count is the establishment's) |

@@ -16,7 +16,7 @@ csv.field_size_limit(10 ** 9)
 
 CREATED_BY = "claude-code pic18-size-ita-2026-11-22"
 OBSERVED = "2026-11-01"  # date the CY2025 file was extracted into the repo; nothing was re-read from the source today
-EVD_FIRST, EVD_LAST = 470000, 470099  # reserved for this lane
+EVD_FIRST, EVD_LAST = 480000, 480099  # reserved for this lane
 BANDS = ["1-9", "10-49", "50-99", "100-249", "250-499", "500-999", "1000-4999", "5000+"]
 ITA = ROOT / "tasks/osha-ita-2026-11-01/establishments.csv"
 SPINE = ROOT / "tasks/osha-spine-2026-11-01/band_proposals.csv"

@@ -77,7 +77,7 @@ def check_state(frame, sites, orgs, ita, spine, ev, verdicts, base_sites, base_o
     assert set(vd) == {f["site_id"] for f in frame}, "verdicts do not cover the frame exactly"
     mine = [e for e in ev if e["created_by"] == BY]
     mid = [e["evidence_id"] for e in mine]
-    assert len(set(mid)) == len(mid) and all(470000 <= int(i[4:]) <= 470099 and int(i[4:]) > base_max for i in mid), "evidence ID outside EVD-470000..470099 or not above the base maximum"
+    assert len(set(mid)) == len(mid) and all(480000 <= int(i[4:]) <= 480099 and int(i[4:]) > base_max for i in mid), "evidence ID outside EVD-480000..480099 or not above the base maximum"
     all_ids = [e["evidence_id"] for e in ev]
     assert len(all_ids) == len(set(all_ids)), "duplicate evidence_id tree-wide"
     n_applied = n_held = 0
@@ -145,7 +145,7 @@ def planted(frame, sites, orgs, ita, spine, ev, verdicts, bsites, borgs, bmax):
     run("band on one of the two sites sharing an establishment (SITE-002965)", lambda s, e, v: s["SITE-002965"].update(employee_band_site="10-49"))
     run("applied site loses its evidence row", lambda s, e, v: e.remove(next(x for x in e if x["created_by"] == BY)))
     run("headcount written into an evidence claim_detail", lambda s, e, v: next(x for x in e if x["created_by"] == BY).update(claim_detail="employee_band_site=100-249: OSHA ITA 300A CY2025, establishment_ID 656015: annual average employees 129 (band only)"))
-    run("evidence ID outside the reserved block", lambda s, e, v: next(x for x in e if x["created_by"] == BY).update(evidence_id="EVD-470100"))
+    run("evidence ID outside the reserved block", lambda s, e, v: next(x for x in e if x["created_by"] == BY).update(evidence_id="EVD-480100"))
     run("held verdict flipped to applied", lambda s, e, v: next(x for x in v if x["site_id"] == "SITE-000639").update(disposition="applied", verdict="VERIFIED"))
 
 
