@@ -42,6 +42,11 @@ def problems(r):
         m = ARCH.fullmatch(r['archive_url'])
         if not m or norm_url(m.group(1)) != norm_url(r['source_url']): p.append('archive_url does not cite source_url in 4.22 form')
     else: p.append('no archive_url: a row without its archive capture is held (archive_unavailable)')
+    if r['source_route'] not in ('live', 'archived_copy', 'rendered', 'official_page'): p.append('source_route not allowed for a VERIFIED row (image_text is never VERIFIED)')
+    if r['source_route'] == 'archived_copy':
+        m = ARCH.fullmatch(r['archive_url'])
+        if r['observed_date'] < '2024-11-22': p.append('archived copy older than 2024-11-22')
+        if not m or r['archive_url'].split('/web/')[1][:8] != r['observed_date'].replace('-', ''): p.append('capture timestamp is not the observed date')
     return p
 
 def main():
@@ -71,7 +76,7 @@ def main():
         plants.append(('paraphrased quote', {**base, 'quote': base['quote'].replace(w0, 'Zzzz', 1)}))
         plants.append(('shifted offset', {**base, 'offset': str(int(base['offset']) + 3)}))
         plants.append(('bad capture sha', {**base, 'capture_sha256': '0' * 63 + '1'}))
-        plants.append(('phone number in quote', {**base, 'quote': base['quote'] + ' 321-609-9036', 'length': str(len(base['quote']) + 13)}))
+        plants.append(('phone number in quote', {**base, 'quote': base['quote'] + ' 555-010-0199', 'length': str(len(base['quote']) + 13)}))
         plants.append(('off-domain source', {**base, 'source_url': 'https://example.org/contact'}))
         n_other = 0
         for r in packet:  # a real street from ANOTHER city on a stored page, filed on the site whose page it is
@@ -88,7 +93,13 @@ def main():
     for r in packet:
         if r['capture_sha256'] not in cited: pass
     fshas = {r['sha256'] for r in fetches}
+    homes = {}
+    for x in fetches:
+        if x['kind'] == 'home': homes[x['org_id']] = x['status']
     for r in packet:
+        if r['source_route'] == 'archived_copy' and homes.get(r['org_id']) == 'ok': bad.append(f"{r['site_id']}: archived copy used although the live home page was readable (live page governs)")
+        if r['source_route'] == 'live' and r['live_sha256'] not in fshas: bad.append(f"{r['site_id']}: live capture not in fetches.csv")
+    for r in []:
         if r['live_sha256'] not in fshas: bad.append(f"{r['site_id']}: live capture not in fetches.csv")
     print(f'frame={len(frame)} (independent recount {len(indep)}) attempted={len(attempted)} packet={len(packet)} holds={len(holds)} fetch rows={len(fetches)}; planted defects caught {caught}/{len(plants)}')
     for b in bad: print('FAIL', b)

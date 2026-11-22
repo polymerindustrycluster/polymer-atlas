@@ -1,0 +1,9 @@
+site_id,result,detail
+SITE-000056,no_filing_at_street,
+SITE-000562,name_not_held,[insp] ['SHELLS INC.'] (not_held); [insp] ['SHELLS INC.'] (not_held); [insp] ['SHELLS INC.'] (not_held); [f5500] ['SAN-SEW DESIGNS LLC'] (not_held); [f5500] ['S
+SITE-001150,stale_over_5_years,filing(s) at this street under a held name are all dated before 2021-11-22; a lead only (owner ruling 2026-11-22 A)
+SITE-000297,stale_over_5_years,"filing(s) at this street under a held name are all dated before 2021-11-22; a lead only (owner ruling 2026-11-22 A) || [ita] name held, street '1244 E. Highland"
+SITE-001665,name_not_held,[insp] ['TRIAD METAL PRODUCTS CO'] (not_held); [insp] ['TRIAD METAL PRODUCTS'] (not_held); [insp] ['TRIAD METAL PRODUCTS'] (not_held)
+SITE-001806,name_not_held,"[f5500] ['OXFORD RESTRUCTUREING ADVISORS'] (not_held); [f5500] ['PSYCHOLOGICAL INSTITUTE & ANALYTICS, LLC'] (not_held); [f5500] ['OXFORD RESTRUCTUREING ADVISORS"
+SITE-001774,stale_over_5_years,filing(s) at this street under a held name are all dated before 2021-11-22; a lead only (owner ruling 2026-11-22 A)
+SITE-002073,no_filing_at_street,

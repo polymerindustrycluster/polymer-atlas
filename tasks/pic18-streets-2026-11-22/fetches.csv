@@ -477,3 +477,5 @@ ORG-002060,SITE-002059,robots,https://canfieldplastics.com/robots.txt,,0,robots_
 ORG-002060,SITE-002059,home,https://canfieldplastics.com,https://canfieldplastics.com,0,ROBOTS_UNREADABLE,,2026-11-22T23:10:56+00:00,robots.txt could not be read (availability fact); page not fetched
 ORG-002073,SITE-002073,robots,https://energyene.com/robots.txt,,0,robots_0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,2026-11-22T23:10:58+00:00,robots http 0 exit 60
 ORG-002073,SITE-002073,home,https://energyene.com,https://energyene.com,0,ROBOTS_UNREADABLE,,2026-11-22T23:10:58+00:00,robots.txt could not be read (availability fact); page not fetched
+ORG-001794,SITE-001868,robots,https://dallittle.com/robots.txt,,404,robots_404,63c52aa99ca361b59a27e7f51fe5fadffef99e671f8b4f9560fab204219e0666,2026-11-22T23:25:54+00:00,robots http 404 exit 0
+ORG-001794,SITE-001868,image,https://dallittle.com/gfx/footer.gif,https://dallittle.com/gfx/footer.gif,200,ok,12fb3d2946ea411c199c31b47b9f83963026c7f8080c3c61758b2929589f63dd,2026-11-22T23:25:55+00:00,"address image on the record domain, found via the rendered page (route 3)"

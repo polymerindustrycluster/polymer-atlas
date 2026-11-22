@@ -102,11 +102,12 @@ for v in ver:
                        capture_basis=basis, capture_sha256=shx, archive_served_sha256=a['archive_served_sha256'], org_sites_all_shards=len(org_sites), org_sites_same_city=len(sib) + 1, offset=off, length=len(q), live_sha256=live[v['page_url']]['sha256'] if v['page_url'] in live else '', source_route=route, observed_date=a['captured_at'], tie=v['tie'], archive_status=''))
 write('packet.csv', packet, ['site_id', 'org_id', 'proposed_street', 'city', 'zip', 'county', 'county_basis', 'quote', 'source_url', 'archive_url', 'archive_captured_at', 'capture_basis', 'capture_sha256', 'archive_served_sha256', 'offset', 'length', 'live_sha256', 'source_route', 'observed_date', 'org_sites_all_shards', 'org_sites_same_city', 'tie', 'archive_status'])
 write('holds.csv', holds, ['site_id', 'org_id', 'verdict', 'reason', 'detail', 'website', 'pages_fetched', 'fetch_statuses'])
-write('record_health_leads.csv', health_leads, ['site_id', 'org_id', 'website', 'what_happened', 'date'])
-write('dedupe_leads.csv', leads, ['site_id', 'street', 'other_site_id', 'other_org_id', 'other_city', 'where', 'other_street', 'blocking'])
 ids = {}
 for r in frame.values():
     if r['site_id'] in {v['site_id'] for v in ver}: ids.setdefault(r['org_id'], []).append(r['site_id'])
+write('archived_fetches.csv', [dict(org_id=j['org_id'], site_ids=';'.join(ids.get(j['org_id'], [])), kind=j['kind'], url=j['url'], capture_ts=j['archive_ts'], http=j['http'], sha256=j['sha256'], bytes=j['bytes'], fetched_at=j['fetched_at']) for j in afx if j['org_id'] in ids], ['org_id', 'site_ids', 'kind', 'url', 'capture_ts', 'http', 'sha256', 'bytes', 'fetched_at'])
+write('record_health_leads.csv', health_leads, ['site_id', 'org_id', 'website', 'what_happened', 'date'])
+write('dedupe_leads.csv', leads, ['site_id', 'street', 'other_site_id', 'other_org_id', 'other_city', 'where', 'other_street', 'blocking'])
 frows = [dict(org_id=j['org_id'], site_ids=';'.join(ids[j['org_id']]), kind=j['kind'], url=j['url'], final_url=j.get('final_url', ''), http=j['http'], status=j.get('status', 'ok' if j['kind'] == 'robots' and j['http'] == 200 else 'robots_' + str(j['http'])), sha256=j.get('sha256', ''), fetched_at=j['fetched_at'], note=j.get('note', '')) for j in fx if j['org_id'] in ids]
 write('fetches.csv', frows, ['org_id', 'site_ids', 'kind', 'url', 'final_url', 'http', 'status', 'sha256', 'fetched_at', 'note'])
 print(f'verified {len(packet)}  holds {len(holds)}  dedupe lead rows {len(leads)}  fetch rows {len(frows)} (pages {sum(r["kind"] != "robots" for r in frows)})')
