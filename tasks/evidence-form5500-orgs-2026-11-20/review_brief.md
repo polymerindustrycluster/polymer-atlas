@@ -12,11 +12,11 @@ edit anything; answer only from the data given.
 
 ## The 2026-11-22 cut
 
-Items are the cut packet: 76 organizations with `existence` (and some `address`/`liveness`) proposed, and 176 organizations
+Items are the cut packet: 75 organizations with `existence` (and some `address`/`liveness`) proposed, and 176 organizations
 evidenced elsewhere with `liveness` only. A liveness-only item has no `existence` row; judge its `liveness` row SOUND only
 if the sponsor is also the organization (identity). Each `address` item now also states a street match
 (`filing.location_street` / `mailing_street` against `atlas_hq_site_streets`); judge it UNSOUND if they are not the same
-street. Return verdicts for the proposed rows only.
+street. Every item also carries `street_check` (informational for liveness). Return verdicts for the proposed rows only.
 
 ## What each claim means (Atlas schema, §4.13)
 
