@@ -254,6 +254,11 @@ is an internal reconciliation item, not a publishable fact.
 No personal data. No individual emails, direct-dial phones, or home
 addresses — ever. Public business switchboard numbers and generic
 contact pages only, and only where a schema field exists for them.
+A verbatim evidence quote may carry a company's public switchboard
+phone or fax number and a role address (info@, sales@) as the quoted
+page shows them; it never carries an individual's email, a direct
+line, an extension, or a mobile number — cut the quote before it
+(owner ruling 2026-11-22).
 Ownership demographics (woman/minority/veteran-owned) only when
 self-disclosed by a primary or authoritative source; never inferred.
 
@@ -345,3 +350,9 @@ step 5, a site-name search, after the 2026-11-06 IFS Coatings case
 (PR #243), where a site named for its operator sat under another
 organization because no step searched site names. The tool support
 landed in PR #244. No data file is changed by this revision.*
+
+*Revision note — 2026-11-22 (owner ruling in session): §6 gains the
+evidence-quote sentence. A company switchboard number or role address
+may stand in a verbatim evidence quote; an individual's contact detail
+may not. Recorded in `DECISIONS.md`. No data file is changed by this
+revision.*
