@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate the Polymer Atlas CSVs. Stdlib only. Exit 1 on any error.
 
-Checks (v1 gate + schema additions through v1.17, per AGENTS.md / docs/SCHEMA.md):
+Checks (v1 gate + schema additions through v1.19, per AGENTS.md / docs/SCHEMA.md):
 - org_id / site_id format and uniqueness
 - ring_primary in 1..5; verification_tier in A/B/C/U
 - every record has >=1 source; tier A/B records must have last_verified
@@ -13,6 +13,7 @@ Checks (v1 gate + schema additions through v1.17, per AGENTS.md / docs/SCHEMA.md
 - [v1.2] membership citation rule: pic_member=true requires a
   polymerindustrycluster.org membership_source_url; no orphan citations
 - [v1.1] registry_links.csv: FK, registry enum, ID formats, uniqueness
+- [v1.18] registry_links EIN dedupe alarm: one EIN value on at most one org (§4.8)
 - [v1.2] members.csv: MBR ids, record_class/FK discipline, flag cross-check
 - [v1.2] ecosystem record_grain + program/office grain checks
 - [v1.2] people.csv: exact header, no contact fields, CRM-source tripwire
@@ -53,6 +54,11 @@ Checks (v1 gate + schema additions through v1.17, per AGENTS.md / docs/SCHEMA.md
   (§4.12.2, V-67; legacy pointers grandfathered the same way)
 - [v1.17.1] V-68 presence floor for tier C/U (§4.13): every tier-C/U record has
   >=1 evidence row (V-65 covers tier A/B); adoption-day gaps are baselined
+- [v1.19] §4.8 registry enum gains RCRA_EPA_ID / NPDES_PERMIT_ID /
+  STATE_ENTITY_ID / USDOT (V-6: facility grain extended to the two EPA
+  permit-grain types, ID shapes for USDOT / RCRA / NPDES); evidence
+  address_role vocabulary (V-22; empty = unspecified); sites derived
+  last_activity_date / last_activity_source discipline (V-5)
 """
 import csv, json, os, re, sys
 from datetime import datetime
@@ -108,7 +114,10 @@ CERTS = {"iso_9001", "iso_14001", "iatf_16949", "iso_13485", "as9100", "fda_regi
 GEO_PRECISION = {"rooftop", "parcel", "address_interpolated", "zip_centroid", "city_centroid"}
 REGISTRIES = {"LEI", "OHIO_SOS_CHARTER", "WIKIDATA", "SEC_CIK", "SEC_CIK_PARENT_FILER",
               "FRS", "TRI_TRIFID", "FDA_FEI", "EIN_NONPROFIT", "UEI",
-              "EIN", "IPEDS_UNITID"}  # EIN at v1.7.7 (R11); IPEDS_UNITID at v1.8.1, owner ruling 2026-11-02
+              "EIN", "IPEDS_UNITID",
+              "RCRA_EPA_ID", "NPDES_PERMIT_ID", "STATE_ENTITY_ID", "USDOT"}
+              # EIN at v1.7.7 (R11); IPEDS_UNITID at v1.8.1, owner ruling 2026-11-02;
+              # RCRA_EPA_ID / NPDES_PERMIT_ID / STATE_ENTITY_ID / USDOT at v1.19 (owner ruling 2026-11-22)
 CREDENTIALS = {"phd", "ms", "bs", "aas_associate", "certificate", "registered_apprenticeship",
                "incumbent_worker_training", "noncredit_workforce", "minor"}  # minor added at v1.7.3 (owner ruling R3)
 ENGAGEMENT = {"research_collaboration", "student_projects_capstone", "internships_coops",
@@ -462,6 +471,11 @@ for i, r in enumerate(eco, 2):
 for col in ("processes_other_note", "materials_other_note"):
     if col not in site_fields:
         errors.append(f"sites.csv: missing v1.9.1 column {col}")
+# V-5 [v1.19]: derived last-activity columns (SCHEMA §4.5)
+for col in ("last_activity_date", "last_activity_source"):
+    if col not in site_fields:
+        errors.append(f"sites.csv: missing v1.19 column {col}")
+LAST_ACTIVITY_SOURCES = {"osha_ita", "osha_inspection", "echo", "fmcsa_mcs150"}  # [v1.19] SCHEMA §4.5
 for col in ("street_address", "latitude", "longitude", "geocode_precision"):
     if col not in site_fields:
         errors.append(f"sites.csv: missing v1.1 column {col}")
@@ -508,6 +522,20 @@ for i, r in enumerate(sites, 2):
         errors.append(f"sites.csv:{i} {sid} geocode_precision {prec!r} not in enum")
     if (lat or lon) and not prec:
         errors.append(f"sites.csv:{i} {sid} coordinates without geocode_precision")
+    # [v1.19] last_activity_*: a derived pair (scripts/derive_last_activity.py)
+    # — set together or not at all, ISO date, source in the §4.5 vocabulary.
+    # Both empty is the honest default: no dated witness in hand (§4.5).
+    lad = (r.get("last_activity_date") or "").strip()
+    las = (r.get("last_activity_source") or "").strip()
+    if bool(lad) != bool(las):
+        errors.append(f"sites.csv:{i} {sid} last_activity_date and last_activity_source must be set together (V-5, v1.19)")
+    if lad:
+        try:
+            datetime.strptime(lad, "%Y-%m-%d")
+        except ValueError:
+            errors.append(f"sites.csv:{i} {sid} last_activity_date {lad!r} is not an ISO date (V-5, v1.19)")
+    if las and las not in LAST_ACTIVITY_SOURCES:
+        errors.append(f"sites.csv:{i} {sid} last_activity_source {las!r} not in §4.5 vocabulary (V-5, v1.19)")
 
 # V-45..V-51 [2026-11-01] Enforcement of existing SCHEMA MUSTs that no rule
 # checked before. V-55 [2026-11-04] extends the same debt mechanism to
@@ -739,11 +767,12 @@ for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):
 
 # V-6: registry links
 # [v1.7.7, owner ruling 2026-11-01 R10] registry_links may carry an optional
-# site_id column for facility-grain IDs (FRS, TRI_TRIFID, FDA_FEI). When the
+# site_id column for facility-grain IDs (FRS, TRI_TRIFID, FDA_FEI; RCRA_EPA_ID
+# and NPDES_PERMIT_ID added at v1.19). When the
 # column is present and a row fills it, the site must exist and belong to the
 # row's org_id. Several IDs per site are allowed.
 _SITE_ORG_V6 = {s["site_id"].strip(): s["org_id"].strip() for s in sites}
-FACILITY_GRAIN = {"FRS", "TRI_TRIFID", "FDA_FEI"}
+FACILITY_GRAIN = {"FRS", "TRI_TRIFID", "FDA_FEI", "RCRA_EPA_ID", "NPDES_PERMIT_ID"}  # last two at v1.19
 seen_links = set()
 for i, r in enumerate(links, 2):
     _sid = (r.get("site_id") or "").strip()
@@ -771,6 +800,12 @@ for i, r in enumerate(links, 2):
         errors.append(f"registry_links.csv:{i} EIN {rid!r} is not 9 digits (NN-NNNNNNN)")
     if reg == "IPEDS_UNITID" and not re.fullmatch(r"\d{6}", rid):
         errors.append(f"registry_links.csv:{i} IPEDS_UNITID {rid!r} is not a 6-digit UNITID")
+    if reg == "USDOT" and not re.fullmatch(r"\d{1,8}", rid):
+        errors.append(f"registry_links.csv:{i} USDOT {rid!r} is not a numeric USDOT number (V-6, v1.19)")
+    if reg == "RCRA_EPA_ID" and not re.fullmatch(r"[A-Z0-9]{12}", rid):
+        errors.append(f"registry_links.csv:{i} RCRA_EPA_ID {rid!r} is not a 12-character EPA handler ID (V-6, v1.19)")
+    if reg == "NPDES_PERMIT_ID" and not re.fullmatch(r"[A-Z0-9]{7,12}", rid):
+        errors.append(f"registry_links.csv:{i} NPDES_PERMIT_ID {rid!r} is not a 7-12 character permit ID (V-6, v1.19)")
     if reg == "WIKIDATA" and not re.fullmatch(r"Q\d+", rid):
         errors.append(f"registry_links.csv:{i} Wikidata id {rid!r} is not a QID")
     if not (r.get("match_basis") or "").strip():
@@ -783,6 +818,20 @@ for i, r in enumerate(links, 2):
     if key in seen_links:
         errors.append(f"registry_links.csv:{i} duplicate link triple {key}")
     seen_links.add(key)
+
+
+# [v1.18, owner ruling 2026-11-21] One EIN identifies one legal entity: the
+# same EIN value (EIN, or the grandfathered EIN_NONPROFIT) on two different
+# orgs is a dedupe alarm, never a second link row (SCHEMA section 4.8).
+_ein_owner = {}
+for i, r in enumerate(links, 2):
+    if (r.get("registry") or "").strip() in {"EIN", "EIN_NONPROFIT"}:
+        _v = (r.get("registry_id") or "").strip()
+        _o = (r.get("org_id") or "").strip()
+        if _v in _ein_owner and _ein_owner[_v] != _o:
+            errors.append(f"registry_links.csv:{i} EIN {_v} also linked to {_ein_owner[_v]} (V-6, v1.18 dedupe alarm)")
+        else:
+            _ein_owner[_v] = _o
 
 # V-7: members + flag cross-check
 member_ids, member_org_links, member_eco_links = set(), set(), set()
@@ -1133,7 +1182,8 @@ for i, r in enumerate(participation, 2):
 # V-22..V-33 [v1.6]: evidence, relationships, liveness, tier-1, capabilities, site fields
 EVD_FIELDS = ["evidence_id", "record_table", "record_id", "claim_type", "claim_detail",
               "source_class", "source_ref", "observed_date", "tier_effect",
-              "created_by", "notes"]
+              "created_by", "notes", "address_role"]  # address_role appended at v1.19 (SCHEMA §4.13)
+ADDRESS_ROLES = {"physical", "mailing", "agent", "registered_office"}  # [v1.19] SCHEMA §4.13; empty = unspecified
 REL_FIELDS = ["relationship_id", "from_org_id", "relationship_type", "to_org_id",
               "effective_from", "effective_to", "basis", "source_ref", "created_by",
               "notes"]
@@ -1257,6 +1307,14 @@ if evidence or True:
             errors.append(f"evidence.csv:{i} {eid} record_id does not resolve in {rt} (V-22)")
         if r["claim_type"] not in CLAIM_TYPES:
             errors.append(f"evidence.csv:{i} {eid} bad claim_type (V-22)")
+        # [v1.19] §4.13 address_role: a role is meaningful only on an address
+        # claim; empty = unspecified (the value on every pre-v1.19 row).
+        arole = (r.get("address_role") or "").strip()
+        if arole:
+            if arole not in ADDRESS_ROLES:
+                errors.append(f"evidence.csv:{i} {eid} address_role {arole!r} not in §4.13 vocabulary (V-22)")
+            elif r["claim_type"] != "address":
+                warnings.append(f"evidence.csv:{i} {eid} address_role set on a {r['claim_type']} claim — roles attach to address claims (V-22, v1.19)")
         sc = r["source_class"]
         if sc not in SOURCE_CLASSES:
             errors.append(f"evidence.csv:{i} {eid} bad source_class (V-22)")

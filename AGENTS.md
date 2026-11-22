@@ -252,8 +252,20 @@ is an internal reconciliation item, not a publishable fact.
 ## 6. Privacy
 
 No personal data. No individual emails, direct-dial phones, or home
-addresses — ever. Public business switchboard numbers and generic
+addresses — ever. In record fields: public business switchboard numbers and generic
 contact pages only, and only where a schema field exists for them.
+Evidence quotes are the one exception, and it is narrow (owner ruling
+2026-11-22): where a verbatim quote that witnesses another claim
+incidentally shows a company's public switchboard phone or fax number
+or a role address (info@, sales@), the quote may keep it. A quote is
+never a place to record contact data, and every narrower bar stands:
+exhibitor contact blocks are never transcribed (SCHEMA §4.12), an
+ecosystem office carries its generic contact page and never an office
+phone number (§4.6), and equipment records carry no contact data
+(§4.19).
+A quote never carries an individual's email, a direct line, an
+extension, a mobile number, or a home address — cut the quote before
+it.
 Ownership demographics (woman/minority/veteran-owned) only when
 self-disclosed by a primary or authoritative source; never inferred.
 
@@ -345,3 +357,11 @@ step 5, a site-name search, after the 2026-11-06 IFS Coatings case
 (PR #243), where a site named for its operator sat under another
 organization because no step searched site names. The tool support
 landed in PR #244. No data file is changed by this revision.*
+
+*Revision note — 2026-11-22 (owner ruling in session): §6 gains the
+evidence-quote exception and scopes the existing sentence to record
+fields. A company switchboard number or role address that a verbatim
+evidence quote incidentally shows may stay; an individual's contact
+detail may not, and the narrower bars of SCHEMA §4.6, §4.12 and §4.19
+stand. Recorded in `DECISIONS.md`. No data file is changed by this
+revision.*
