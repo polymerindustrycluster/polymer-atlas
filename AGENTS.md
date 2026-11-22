@@ -259,8 +259,10 @@ Evidence quotes are the one exception, and it is narrow (owner ruling
 incidentally shows a company's public switchboard phone or fax number
 or a role address (info@, sales@), the quote may keep it. A quote is
 never a place to record contact data, and every narrower bar stands:
-exhibitor contact blocks are never transcribed (SCHEMA §4.12), and
-ecosystem and equipment records carry no contact data (§4.6, §4.19).
+exhibitor contact blocks are never transcribed (SCHEMA §4.12), an
+ecosystem office carries its generic contact page and never an office
+phone number (§4.6), and equipment records carry no contact data
+(§4.19).
 A quote never carries an individual's email, a direct line, an
 extension, a mobile number, or a home address — cut the quote before
 it.
