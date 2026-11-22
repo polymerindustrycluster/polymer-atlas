@@ -1,0 +1,396 @@
+site_id,site_street_address,looser_class,looser_pass_street_as_printed
+SITE-000025,1070 Evans Ave,number+name,1070 EVANS ROAD
+SITE-000070,775 Highland Rd,number+name,775 E. Highland Rd.
+SITE-000070,775 Highland Rd,number+name,775 EAST HIGHLAND RD.
+SITE-000117,15242 Foltz Industrial Pkwy,number+name,15242 FOLTZ PARKWAY
+SITE-000195,15730 S MADISON RD,number+name,15730 MADISON ROAD
+SITE-000203,300 First Street,exact,300 1st Street
+SITE-000218,1380 Tech Way Drive,exact,1380 Techway Dr.
+SITE-000224,990 Evans Ave,number+name,990 Evans Road
+SITE-000264,5020 Enterprise Parkway,number+name,5020 Enterprises pkwy
+SITE-000281,4300 Hamann Parkway,number+name,4300 HAMMON PKWY
+SITE-000288,8333 Navarre Road SE,number+name,8333 Navarre Rd SW
+SITE-000436,2700 Atlantic Blvd,exact,2700 Atlantic Blvd NE
+SITE-000442,5385 Orchard View Dr. SE,exact,"5385 ORCHARD VIEW DRIVE, S.E."
+SITE-000463,4300 Hamann Parkway,number+name,4300 HAMMON PKWY
+SITE-000485,1225 Munroe Falls Avenue,exact,"1225 Munroe Falls Ave. Cuyahoga Falls, OH 44221"
+SITE-000514,"191 American Blvd, Suite 100",number+name,191 American Blvd Suite 300
+SITE-000522,201 Vista Ave SE,exact,201 Vista Avenue S.E.
+SITE-000532,850 W Smith Rd,number+name,850 W. SMITH ST.
+SITE-000563,6753 Chestnut Ridge Rd.,exact,6753 CHESTNUT RIDGE RD NW
+SITE-000563,6753 Chestnut Ridge Rd.,exact,6753 Chestnut Ridge Rd. NW
+SITE-000590,532 S MAIN ST,number+name,532 so main st
+SITE-000603,7180 Rte 43,number+name,7180 St. Rt. 43N
+SITE-000637,17000 SAINT CLAIR AVE BLDG 1,number+name,17000 ST. CLAIR AVENUE SUITE #1
+SITE-000637,17000 SAINT CLAIR AVE BLDG 1,number+name,17000 St. Clair Ave
+SITE-000746,894 Prairie Rd,number+name,894 Prairie Ave
+SITE-000863,3676 Davis Road NW,number+name,3676 DAVIS ROAD
+SITE-000863,3676 Davis Road NW,exact,3676 Davis Road N.W.
+SITE-000936,302 S. Conwell Ave,number+name,302 S Conwell
+SITE-001109,963 Commercial Ave. S.E,exact,963 COMMERCIAL AVE SE
+SITE-001109,963 Commercial Ave. S.E,number+name,963 Commerical Ave SE
+SITE-001130,150 S. Werner Street,number+name,150 S. WERNER
+SITE-001131,10810 INDUSTRIAL PARKWAY NW,number+name,10810 INDUSTRIAL PARKWAY
+SITE-001137,10190 State Route 21,exact,10190 State Route 21 NW
+SITE-001165,2384 Brightwood Road S.E.,exact,2384 Brightwood Rd SE
+SITE-001205,1682 MARION-WILLIAMSPORT RD,exact,1682 MARION WILLIAMSPORT ROAD E
+SITE-001425,7395 Industrial Pkwy,exact,7395 Industrial Parkway Drive
+SITE-001643,1675 Navarre Rd SE,number+name,1675 NAVARRE ROAD. SW
+SITE-001643,1675 Navarre Rd SE,number+name,1675 Navarre Rd SW
+SITE-001790,520 Pine Avenue S.E.,number+name,520 PINE AVE
+SITE-001790,520 Pine Avenue S.E.,exact,520 Pine Ave SE
+SITE-001838,1540 St Clair Ave,exact,1540 ST CLAIR AVE KENT
+SITE-001945,527 Ternes Ln,number+name,527 TERNES AVE
+SITE-001945,527 Ternes Ln,number+name,527 TERNES AVE.
+SITE-002143,316 S Front St.,number+name,316 FRONT STREET
+SITE-002154,214 Ind US Trial Ln.,number+name,214 INDUSTRIAL LANE
+SITE-002154,214 Ind US Trial Ln.,number+name,214 Industrial Lane
+SITE-002171,1108 Greengarden Ln.,exact,1108 Green Garden Lane
+SITE-002190,100 Route 413,number+name,100 PA Route 413
+SITE-002207,100 Pa Rt. 413,exact,100 PA Route 413
+SITE-002207,100 Pa Rt. 413,number+name,100 PENNSYLVANIA 413
+SITE-002246,482 Galiffa Dr,exact,482 GALIFFA DRIVE P.O. BOX 742
+SITE-002282,2120 Colonial Ave.,exact,2120 COLONIAL AVENUE P.O. BOX 8103
+SITE-002301,48 Powhatten Ave.,number+name,48 POWHATTAN AVENUE
+SITE-002301,48 Powhatten Ave.,number+name,48 Powhattan ave
+SITE-002305,2040 Borland Rd.,number+name,2040 BORLAND FARM ROAD
+SITE-002305,2040 Borland Rd.,number+name,"2040 Borland Farm Road, PO Box O"
+SITE-002335,2500 Rt. 168,number+name,2500 PENNSYLVANIA ROUTE 168
+SITE-002335,2500 Rt. 168,number+name,2500 State Route 168
+SITE-002374,675 Jaycee Drivevalmont Industrial Park,number+name,675 JAYCEE DRIVE VALMONT INDUSTRIAL PARK
+SITE-002423,1067 Dillerville Roadp.O. Box 3001,number+name,1067 DILLERVILLE ROAD P.O. BOX 3001
+SITE-002437,701A W 5th St.,number+name,701 W. 5TH ST.
+SITE-002440,443 Wareho US E Dr.,exact,443 WAREHOUSE DRIVE
+SITE-002440,443 Wareho US E Dr.,exact,443 Warehouse Drive
+SITE-002443,400 Unity Streetsuite 100,number+name,400 UNITY STREET SUITE 100
+SITE-002455,Building 3 Ave. A,exact,"BUILDING 3, AVENUE A"
+SITE-002470,13 Ind Park Rd.,exact,13 Industrial Park Rd.
+SITE-002500,13561 Broadway Ste A,number+name,13561 BROADWAY DRIVE
+SITE-002502,150 Baldwin St. Ext.,exact,150 BALDWIN STREET EXTENSION
+SITE-002502,150 Baldwin St. Ext.,number+name,150 Baldwin St
+SITE-002518,2790 Canfields Ln.,exact,"Chemcoat, 2790 Canfields lane"
+SITE-002530,436 North Industrial Drive,number+name,436 No Industrial Drive
+SITE-002566,580 Industrial Dr.,number+name,580 INDUSTRIAL AVENUE
+SITE-002575,2180 Bennett Rd 2180 Bennett Rd,number+name,2180 BENNETT ROAD
+SITE-002620,2 Birchmont Rd.,number+name,2 BIRCHMONT DRIVE
+SITE-002620,2 Birchmont Rd.,number+name,2 Birchmont Drive
+SITE-002626,208 Chestnut,exact,208 chestnut St.
+SITE-002641,250 Rt. 61 S,exact,250 ROUTE 61 SOUTH
+SITE-002641,250 Rt. 61 S,exact,250 Route 61 South
+SITE-002642,P.O. Box 1803 Earl St.,exact,P.O. BOX 180 3 EARL STREET
+SITE-002646,Rte. 522,exact,2254 ROUTE 522
+SITE-002646,Rte. 522,exact,2254 Route 522
+SITE-002655,150 Dominion Dr.,number+name,150 SOUTH DOMINION DRIVE
+SITE-002655,150 Dominion Dr.,number+name,150 South Dominion Drive
+SITE-002683,618 4th Ave.,exact,618 FOURTH AVENUE
+SITE-002703,112 Fairview Ave PO Box 127,number+name,112 Fairview Ave
+SITE-002732,405 Nestles Way,number+name,405 NESTLE WAY
+SITE-002754,600 Jaycee Dr. Valmont Industrial Park,number+name,600 JAYCEE DRIVE
+SITE-002756,2200 State Hwy. 837,number+name,2200 State Route 837
+SITE-002780,150 Columbia Ave.,number+name,150 Columbia Street
+SITE-002864,One Wingfoot Way,exact,1 WINGFOOT WAY
+SITE-002864,One Wingfoot Way,exact,1 Wingfoot Way
+SITE-002865,2000 NW US Hwy 24,number+name,2000 NW HIGHWAY 24
+SITE-002865,2000 NW US Hwy 24,number+name,2000 NW Hwy 24
+SITE-002873,3500 Washington Rd,number+name,3500 EAST WASHINGTON RD
+SITE-002916,1719 Hwy 72 E,number+name,1719 US HWY 72 EAST
+SITE-002926,686 S Adams St,number+name,686 Adams St
+SITE-002942,2291 Plunkett Rd Nw,number+name,2291 Plunkett Road
+SITE-002958,1 E 11Th St,exact,ONE EAST 11TH STREET
+SITE-002967,875 N Third St,exact,875 N 3RD STREET
+SITE-002988,1604 Building,exact,1604 Building Barth Street
+SITE-003002,9411 Corsair Rd,exact,9405 & 9411 CORSAIR ROAD
+SITE-003013,863 S Main St,number+name,863 SE Main Street
+SITE-003048,960 Veterans Blvd,number+name,960 West Veterans Blvd
+SITE-003050,250 Ny-303,number+name,250 North Route 303
+SITE-003061,9 Crosby Dr,number+name,9 Crosby Rd
+SITE-003075,5121 San Fernando Rd W,number+name,5121 W. San Fernando Rd
+SITE-003093,1201 Scott St,number+name,1201 N. SCOTT ST.
+SITE-003098,501 S Emerald Ave,number+name,501 South Emerald Road
+SITE-003111,2222 W Bella Vista St,number+name,2222 West Bella Vista
+SITE-003119,3700 N Interstate Hwy 35E,exact,3700 NORTH INTERSTATE HIGHWAY 35 EAST
+SITE-003132,3000 Pegasus Rd,number+name,3000 PEGASUS DRIVE
+SITE-003143,1513 Parkside Dr,number+name,1513 Parkside
+SITE-003174,9500 I-10 East,number+name,9500 E FREEWAY
+SITE-003182,4770 US Hwy 42,number+name,4770 HWY 42 East
+SITE-003184,355 LA Hwy 3142 (Gate 1),number+name,355 HWY 3142
+SITE-003185,21255 LA Hwy 1 S,number+name,LOUISIANA OPERATIONS 21255 LOUISIANA HIGHWAY 1 SOUTH
+SITE-003187,1790 Building,exact,"1790 Building, Washington St."
+SITE-003196,437 MacCorkle Ave SW,number+name,437 McCorkle Ave. SW
+SITE-003213,11675 Scotland Ave,number+name,11675 Scotland Zachary Hwy
+SITE-003221,4589 Fm 2986,number+name,4589 FARM TO MARKET 2986
+SITE-003225,5414 Us-42,number+name,5414 US Highway 42 East
+SITE-003250,9455 Farm to Market 1559,number+name,9455 FARM TO MARKET ROAD 1559
+SITE-003261,One Farrel Boulevard,exact,1 FARREL BOULEVARD
+SITE-003264,16369 US-131,number+name,16369 US-13
+SITE-003274,1569 Morris Street,exact,"1569 Morris St. Wabash ,IN"
+SITE-003300,14118 Route 8,number+name,14118 State HWY 8
+SITE-003303,4647 FM 1006,number+name,4647 FM RD 1006
+SITE-003311,"10A Bloomfield Avenue, Suite 8",number+name,10 Bloomfield Ave STE 8
+SITE-003324,9005 Westside Parkway,exact,Allnex USA Inc/9005 Westside Parkway
+SITE-003327,889 West Longview Avenue,number+name,889 W. Longview
+SITE-003338,547 Kings Ridge Dr,number+name,547-H Kings Ridge Dr.
+SITE-003350,33 Stiles Avenue,number+name,33 STILES LANE
+SITE-003439,W133 N5180 Campbell Drive,exact,W133N5180 CAMPBELL DR
+SITE-003456,12200 Mount Holly-Huntersville Road,number+name,12200-A Mt. Holly-Huntersville Rd. Hutnersville
+SITE-003466,555 W Linfoot St,number+name,555 W. Linfoot
+SITE-003466,555 W Linfoot St,number+name,555 WEST LINFOOT
+SITE-003503,One Pinnacle Ave,exact,1 Pinnacle Avenue
+SITE-003522,1813 State St,number+name,1813 WEST STATE ST
+SITE-003556,39605 W Independence Avenue,number+name,39605 Independence
+SITE-003559,310 South Wabash Street,number+name,310 SOUTH WABASH
+SITE-003580,51675 Industrial Drive,exact,51675 Industrial Dr N
+SITE-003622,830 East Erie Street,number+name,830 East Erie
+SITE-003639,823 S. By-Pass,exact,823 South Bypass
+SITE-003673,5500 Second Avenue,exact,5500 2ND AVENUE
+SITE-003780,3206 #6 Road,exact,3206 #6 RD
+SITE-003805,1421 Second Ave NW,exact,1421 2nd Ave NW
+SITE-003846,330 N. Ross Street,number+name,330 Ross Street
+SITE-003921,401 McEntarfer Dr,number+name,401 N McEntarfer Dr
+SITE-003926,3015 Brother Blvd,number+name,3015 BROTHER AVENUE
+SITE-003955,191 NJ-31,number+name,191 N 31 NORTH
+SITE-003955,191 NJ-31,number+name,191 Route 31 South
+SITE-003956,Finley Island Road,exact,1301 Finley Island Road
+SITE-003980,1 Longfellow St,number+name,1 LONGFELLOW PLACE
+SITE-003999,61A Carthage Point Road,number+name,61 A CARTHAGE POINT DR
+SITE-003999,61A Carthage Point Road,number+name,61 Carthage Point Rd
+SITE-004005,1400 NE Douglas St,exact,1400 N.E. Douglas Street
+SITE-004017,3345 Butler Ave,number+name,3345 BULTER AVE.
+SITE-004040,100 B Industrial Drive,number+name,"100  Industrial Drive, Suite B"
+SITE-004087,110 Badger Pkwy,exact,110 BADGER PARKWAY BDG 5
+SITE-004161,1140 West Grand River,exact,1140 W GRAND RIVER AVE
+SITE-004161,1140 West Grand River,exact,1140 W Grand River Ave
+SITE-004174,2350 N.E. Independence Ave,exact,2350 NE INDEPENDENCE AVE. STE. C
+SITE-004176,13213 Air Park Drive,exact,13213 AIRPARK DRIVE
+SITE-004176,13213 Air Park Drive,exact,13213 Airpark Dr.
+SITE-004177,3730 Midco St,number+name,3730 S Midco
+SITE-004193,1516 E. Maple Leaf Dr,exact,1516 EAST MAPLELEAF DR
+SITE-004215,21255 LA-1,number+name,21255 LA Hwy 1
+SITE-004313,18811 NE San Rafael St,number+name,18811 NE SAN RAFAEL
+SITE-004338,3700 Salida Street,number+name,"3700 N. Salida St., Unit 20"
+SITE-004338,3700 Salida Street,number+name,"3700 NORTH SALIDA STREET, SUITE 20"
+SITE-004363,125 S MacQuesten Parkway,number+name,125 MACQUESTEN PARKWAY SOUTH
+SITE-004411,201 Mills St,exact,201 Mills Street / PO Box 265
+SITE-004458,1455 J A Cochran By-Pass,exact,1455 J A Cochran Bypass
+SITE-004468,100 Cellwood Drive,number+name,100 Cellwood Place
+SITE-004524,W129N10825 Washington Drive,exact,W129 N10825 Washington Drive
+SITE-004554,1701 N Topeka Blvd,number+name,1701 NW TOPEKA BLVD
+SITE-004554,1701 N Topeka Blvd,number+name,1701 NW topeka blvd
+SITE-004578,401 W.E. Baab Industrial Rd,number+name,401 W.E. BAAB Industrial Drive
+SITE-004651,520 S PAYTON AVE,number+name,520 S Payton
+SITE-004651,520 S PAYTON AVE,number+name,520 S. PAYTON ST.
+SITE-004665,4101 LA HWY 108,number+name,4101 HIGHWAY 108 S
+SITE-004698,22614 RT 84 N,exact,22614 ROUTE 84 N
+SITE-004707,106 S MAIN,number+name,106 Main Street
+SITE-004709,4403 LAPORTE HWY 225,number+name,4403 LaPorte Freeway
+SITE-004718,18801 OLD STATESVILLE RD,number+name,18801 Old Statesville Hwy
+SITE-004724,501 IND US TRIAL BLVD,number+name,501 INDUSTRIAL BOULEVARD
+SITE-004726,1750 W DOWNS DR,number+name,1750 Downs Drive
+SITE-004732,210 IND US TRIAL DR N,number+name,210 Industrial Drive North
+SITE-004739,36045 HWY 30,exact,36045 Hwy 30 or PO Box 228
+SITE-004764,1546 COUNTY RD 1450N,exact,1546 COUNTY ROAD 1450 NORTH
+SITE-004764,1546 COUNTY RD 1450N,exact,1546 County Road 1450 North
+SITE-004767,ONE PREMDOR DR,exact,"One Premdor Drive Dickson, TN 37055"
+SITE-004783,1100 INDUSTRIAL PARK RD HALIFAX INDUSTRIAL PARK,number+name,1100 INDUSTRIAL PARK ROAD
+SITE-004787,801 NORTHERN PACIFIC RD,exact,801 Northern pacific Rd SE
+SITE-004793,1625 JAMES P. RODGERS RD,number+name,1625 James P Rodgers Drive
+SITE-004833,"1230 INDEPENDENCE PARKWAY, SOUTH",exact,1230 INDEPENDENCE PARKWAY SOUTH NEW UNIT CONSTRUCTION
+SITE-004844,3769 RT 20 E,exact,3769 Rte. 20 East
+SITE-004850,1761 RT 12,exact,1761 ROUTE 12
+SITE-004896,4400 VANDALIA RD,exact,"Spartech 4400 vandalia Rd pleasant Hill, IA"
+SITE-004902,901 MORRISON DR,number+name,901 N Morrison
+SITE-004911,26755 US-371,number+name,26755 HWY 371
+SITE-004911,26755 US-371,number+name,26755 Highway 371
+SITE-004912,6701 STATESVILLE BLVD,number+name,6701 Satesville Blvd
+SITE-004917,3110 W ST RD 28,number+name,3110 W State Road 28
+SITE-004922,5510 W 12TH ST,number+name,5510 12TH W. ST.
+SITE-004937,5400 23RD AVE,number+name,5400 AVENUE OF THE CITIES
+SITE-004938,630 E 13TH,exact,630 E. 13TH ST.
+SITE-004939,701 SHILOH RD,number+name,701 SOUTH SHILOH ROAD
+SITE-004949,2399 S STONE MTN-LITHONIA RD,number+name,2399 S. Stone Mountain Lithonia Rd.
+SITE-004960,CHEESEQUAKE RD,exact,250 Cheesequake Rd
+SITE-004970,2810 GULF STATE RD,number+name,2810 Gulf States Road
+SITE-004971,3901 SUGAR HOUSE RD,exact,3901 SUGARHOUSE RD.
+SITE-004987,12170 LOCHRIDGE BLVD,number+name,12170 LOCKRIDGE BLVD.
+SITE-004990,105 E MAPLE ST,number+name,105 E. Maple
+SITE-004990,105 E MAPLE ST,number+name,105 EAST MAPLE AVENUE
+SITE-005040,1990 RUTGERS UNIVERSITY BLVD,number+name,1990 RUTGERS BLVD
+SITE-005041,521 INDUSTRIAL STREET,number+name,521 E INDUSTRIAL ST
+SITE-005041,521 INDUSTRIAL STREET,number+name,521 E Industrial St
+SITE-005047,2552 INDUSTRIAL DR,exact,"AOC, 2552 Industrial Drive"
+SITE-005077,26270 HWY 405,number+name,26270  LOUISIANA HWY 1 SOUTH
+SITE-005088,4501 E HWY 31,number+name,4501 E. State Hwy 31
+SITE-005093,ONE PLASTICS DR,exact,1 PLASTICS DRIVE
+SITE-005119,2015 NE BROADWAY ST,number+name,2015 Broadway Street Northeast
+SITE-005129,420 SO 6TH AVE,number+name,420 S. 6TH AVE
+SITE-005131,4545 N JACKSON,exact,4545 NORTH JACKSON STREET
+SITE-005144,1 SILVER LINE DR US HWY 1N,number+name,1 Silver Line Drive
+SITE-005161,1036 INDUSTRIAL PARK DR,number+name,1036 Industrial Park
+SITE-005169,28391 ESSENTIAL RD,exact,N73 W28391 Essential Road
+SITE-005197,313 S HANCOCK,exact,313 S Hancock St.
+SITE-005213,374 CORINTH RD,number+name,374 CORINTH DRIVE
+SITE-005246,603 W 7TH ST,number+name,603 7TH ST
+SITE-005262,100 INDUSTRIAL ST,number+name,100 W INDUSTRIAL
+SITE-005262,100 INDUSTRIAL ST,number+name,100 W. Industrial
+SITE-005270,W194 N11340 MCCORMICK DR,exact,W194N11340 MCCORMICK DRIVE
+SITE-005270,W194 N11340 MCCORMICK DR,exact,W194N11340 McCormick Dr
+SITE-005283,250 CHEESEQUAKE RD,exact,"Inside DuPont Parlin Site, 250 Cheesequake Road"
+SITE-005291,1701 W VINE ST,number+name,1701 W. Vine
+SITE-005295,2200 BAYOU D'INDE,exact,2200 Bayou D'Inde Pass
+SITE-005324,1801 E LA Hwy 108,number+name,1801 HIGHWAY 108 EAST
+SITE-005331,Union Ave Extension,exact,155 UNION AVENUE EXTENSION
+SITE-005331,Union Ave Extension,exact,161 Union Avenue Extension
+SITE-005335,201 Industrial Drive,number+name,201 INDUSTRIAL PARK DRIVE
+SITE-005339,Chemical Plant Rd,exact,1 CHEMICAL PLANT ROAD
+SITE-005339,Chemical Plant Rd,exact,1 Chemical Plant Rd
+SITE-005341,Country Club Rd,exact,1879 COUNTRY CLUB ROAD
+SITE-005341,Country Club Rd,exact,1879 Country Club Road
+SITE-005344,3503 Pasadena Fwy,number+name,3503 PASADENA FRWY
+SITE-005346,2004 Patterson,exact,2004 Patterson St.
+SITE-005386,5900 HWY 225 EAST,number+name,SHELL - DEER PARK REFINERY 5900 HWY 225
+SITE-005408,TEXAS HWY 185,exact,13050 Texas Highway 185
+SITE-005438,520 JD YARNELL PKWY,number+name,520 JD YARNELL INDUSTRIAL BLVD
+SITE-005438,520 JD YARNELL PKWY,number+name,520 Jd Yarnell Industrial Pkwy
+SITE-005450,4520 N STATE RD 37,number+name,4520 No State Rd 37
+SITE-005466,908 OLD LENOIR RD,number+name,908 Lenoir road
+SITE-005495,5528 E HWY 290,number+name,5528 HWY 290 EAST
+SITE-005506,7839 COSTABELLA RD,number+name,7839 COSTABELLA AVENUE
+SITE-005506,7839 COSTABELLA RD,number+name,7839 Costabella Ave
+SITE-005520,2625 NW INDUSTRIAL AVE,number+name,2625 NW INDUSTRIAL
+SITE-005529,338 RAMSEY ST,exact,338 RAMSEY STREET P.O. BOX 279
+SITE-005529,338 RAMSEY ST,number+name,338 Ramsey Dr.
+SITE-005545,1201 5TH AVE,exact,1201 FIFTH AVENUE
+SITE-005545,1201 5TH AVE,exact,1201 Fifth Ave
+SITE-005546,106 BLAIR BEND DR,number+name,106 BLAIR BEND ROAD
+SITE-005548,501 MITCHELL RD,number+name,501 S. MITCHELL AVE.
+SITE-005559,411 MANUFACTURER'S RD,exact,411 MANUFACTURERS ROAD
+SITE-005559,411 MANUFACTURER'S RD,exact,411 Manufacturers Road
+SITE-005566,140 EXECUTIVE DR SE,number+name,140 Executive Dr
+SITE-005577,225 MARC US BLVD,exact,225 Marcus Blvd.
+SITE-005579,S SPENCER RD,exact,1 SOUTH SPENCER RD.
+SITE-005583,171 RT 85,number+name,171 EXETER ROAD #169
+SITE-005583,171 RT 85,number+name,171 Exeter Road
+SITE-005584,1150 S THIRD ST,exact,1150 South 3Rd Street
+SITE-005584,1150 S THIRD ST,exact,ATTENTION:  [REDACTED NAME] 1150 SOUTH 3RD STREET
+SITE-005596,2405 NORCROSS DR,number+name,2405 NORCROSS
+SITE-005606,1111 GRATTAN ST,exact,"1111 Grattan Street Chicopee, MA 01013"
+SITE-005630,3900 DAYTON ST,number+name,3900 WEST DAYTON STREET
+SITE-005632,7015 W PUEBLO,exact,7015 W. PUEBLO DRIVE
+SITE-005636,909 GATES ST NW,number+name,"""909 Gates Street"""
+SITE-005647,2400 MILLER CUTOFF RD,exact,2400 Miller Cut off Rd
+SITE-005682,733 W. MAIN ST,number+name,733 Main Street
+SITE-005695,4380 Belgium Blvd,number+name,4380 N. BELGIUM AVENUE
+SITE-005719,821 W ALGONQUIN ST,number+name,821 Algonquin St
+SITE-005721,621 W ST JOHN,exact,621 W. St. John St
+SITE-005737,2788 REMICO SW,number+name,2788 Remico St. SW
+SITE-005757,2201 TAYLORS VALLEY RD,number+name,2201 TAYLOR VALLEY RD
+SITE-005776,3525 RANGELINE RD,exact,3525 RANGE LINE RD
+SITE-005776,3525 RANGELINE RD,exact,3525 Range Line Road
+SITE-005805,74000 VAN DYKE AVE,number+name,74000 VAN DYKE RD
+SITE-005805,74000 VAN DYKE AVE,number+name,74000 Van Dyke
+SITE-005811,1501 S 74TH ST,number+name,1501 74th Street
+SITE-005820,1803 SEMINOLE ST,number+name,1803 NW Seminole ave.
+SITE-005823,1740 JP HENNESSY DR,exact,1740 J.P. HENNESSY DRIVE
+SITE-005824,ONE BURT DR,exact,1 Burt Drive
+SITE-005829,1565 FENPARK DR,number+name,1565 FENPARK
+SITE-005832,1161 W SEPULVEDA BLVD,number+name,1161 SEPULVEDA BOULEVARD
+SITE-005847,316 N CLIFF DR,number+name,316 CLIFF DRIVE NORTH
+SITE-005854,199 THREET INDUSTRIAL BOULEVARD,number+name,199 THREET INDUSTRIAL
+SITE-005884,5401A ROUTE 1,number+name,5401 Route 1
+SITE-005885,22301 MOUNT EPHRAIM RD,number+name,22301 Mt. Ephraim Rd.
+SITE-005889,2999 JOHN STEVENS WAY,number+name,2999 John Stevnes Way
+SITE-005893,1001 WEST BROOKLYN STREET,number+name,1001 Brooklyn Street
+SITE-005894,730B WORCESTER ST,exact,730 B Worcester St
+SITE-005898,405 PARK TOWER DR,number+name,405 PARK TOWER ROAD
+SITE-005903,207 BROOKHOLLOW RD,number+name,207 BROOKHOLLOW INDUSTRIAL BLVD.
+SITE-005903,207 BROOKHOLLOW RD,number+name,207 Brookhollow Ind Blvd SE
+SITE-005920,2851 WALDEN ST,number+name,2851 N Walden St.
+SITE-005935,17 SHEPARD ST LAWRENCE INDUSTRIAL PARK,number+name,17 Shepard Street
+SITE-005976,Freeport Center Bldg Z-13,exact,"FREEPORT CENTER BLDG Z13, PO"
+SITE-005996,50 Pine Rd,number+name,50 PINE ST.
+SITE-005996,50 Pine Rd,exact,50 Pine Rd Brentwood NH 03833
+SITE-006008,13695 Mt Anderson St,number+name,13695 MOUNT ANDERSON STREET
+SITE-006008,13695 Mt Anderson St,number+name,13695 Mount Anderson Str.
+SITE-006026,2617 VT Route 7A,exact,2617 VT RT. 7A
+SITE-006032,4955 10th Ave S,number+name,4955 S 10th Ave
+SITE-006032,4955 10th Ave S,number+name,4955 TENTH AVENUE SOUTH
+SITE-006072,55 W L Runnels Industrial Dr,number+name,55 W.LL. RUNNELS INDUSTRIAL DR.
+SITE-006073,"278 CDF Blvd, Bldg 2",number+name,278 CDF Blvd Bld 2
+SITE-006090,1801 W. Sheridan,exact,1801 W Sheridan Ave
+SITE-006103,4045 E Bonanza Dr,number+name,4045 BONANZA DR
+SITE-006103,4045 E Bonanza Dr,number+name,4045 Bonanza Dr
+SITE-006134,"249 High Street, West",number+name,249 WEST HIGH STREET
+SITE-006134,"249 High Street, West",number+name,249 West High Steet
+SITE-006145,765 2nd St,number+name,765 N. 2nd Street
+SITE-006166,1900 E Central,exact,1900 EAST CENTRAL AVE
+SITE-006167,1700 S Lincoln,exact,1700  S LINCOLN STREET
+SITE-006186,1093 U S Hwy 278 E,number+name,1093 HIGHWAY 278 E
+SITE-006186,1093 U S Hwy 278 E,number+name,1093 Hwy 278 East
+SITE-006188,3104 South Main,exact,3104 SOUTH MAIN ST
+SITE-006222,1011 Mckinley St,number+name,1011 McKinley
+SITE-006225,2631 W 5th,exact,2631 W. 5TH AVE
+SITE-006258,318 Industrial La,number+name,318 Industrial Lane
+SITE-006262,400 Christian La,number+name,400 CHRISTIAN LANE
+SITE-006262,400 Christian La,number+name,400 Christian Lane
+SITE-006264,171 Mattatuck Heights,exact,171 Mattatuck heights Road
+SITE-006286,801 E. Hwy 56,number+name,801 E OLD 56 HIGHWAY
+SITE-006286,801 E. Hwy 56,number+name,801 EAST OLD 56 HIGHWAY
+SITE-006287,2727 N Ohio St,number+name,2727 N OHIO
+SITE-006287,2727 N Ohio St,number+name,2727 North Ohio
+SITE-006289,1400 Atkinson Ave.,number+name,1400 E ATKINSON AVE
+SITE-006289,1400 Atkinson Ave.,number+name,1400 East Atkinson Ave.
+SITE-006301,330 Cain,exact,330 CAIN DRIVE
+SITE-006332,100 Formad Industries Drive,number+name,100 FORMAD INDUSTRIAL DR.
+SITE-006332,100 Formad Industries Drive,number+name,100 Formad Industiral Drive
+SITE-006334,118 Alexander,exact,118 ALEXANDER AVENUE
+SITE-006348,1400 State Docks Road,exact,1400 STATE DOCKS ROAD NORTHWEST
+SITE-006349,217 Thweatt Industrial Blvd,number+name,217 Thweatt Indusstrial Blvd
+SITE-006369,2802 Avalon Avenue,number+name,2802 East Avalon Avenue
+SITE-006372,7150 Jefferson Metropolitan Parkway,number+name,7150 Jefferson Metro Pkwy
+SITE-006376,1568 1st Street North,exact,1568 First Street North
+SITE-006381,3425 Stanwood Blvd,number+name,3425 STANDWOOD BLVD
+SITE-006423,4100 S Niles Rd,number+name,4100 NILES ROAD
+SITE-006436,10000 S Carlisle St,number+name,10000 S CARLISLE
+SITE-008159,1100 N Harvester Rd,number+name,1100 HARVESTER ROAD
+SITE-008220,1 Chestnut Strear,number+name,1 CHESTNUT STREET
+SITE-008220,1 Chestnut Strear,number+name,1 Chestnut Street
+SITE-010015,201 Condensery,exact,201 CONDENSERY RD
+SITE-010067,3236 Wilson drive suite B,number+name,3236 WILSON DR NW STE B
+SITE-010081,5375 International Parkway,exact,5375 International Pkwy SE
+SITE-010304,9930 FM2920,exact,9930 FM 2920
+SITE-010316,800 West Stephens,exact,800 W STEPHENS ST.
+SITE-010325,301 West Plant Road,number+name,301 PLANT ROAD
+SITE-010330,2933 AW Grimes BLVD,exact,2933 A.W. GRIMES BLVD.
+SITE-010332,4395 Pasadena Fwy,number+name,4395 PASADENA FREEWAY
+SITE-010638,8685 Bowers Ave.,number+name,8685 BOWER AVENUE
+SITE-010645,11591 S. Etiwanda Ave.,number+name,11591 ETIWANDA AVE
+SITE-010645,11591 S. Etiwanda Ave.,number+name,11591 Etiwanda Ave.
+SITE-010767,1618 Lukken Industrial Drive W,number+name,1618 Lukken Industrial Drive
+SITE-011009,6 Spruce St NW,number+name,6 SPRUCE ST
+SITE-011009,6 Spruce St NW,exact,PO Box 230  6 Spruce St. NW
+SITE-011036,180 Industrial Blvd,number+name,180 Industrial Road
+SITE-011174,275 River Street,number+name,275 RIVER ROAD
+SITE-011305,1969 Rutgers University Boulevard,number+name,1969 RUGERS UNIVERSITY BLVD.
+SITE-011319,879 Main Street,number+name,879-899 MAIN STREET
+SITE-011916,1150 Greens Folly Road,exact,1150 GREEN'S FOLLY ROAD
+SITE-011916,1150 Greens Folly Road,exact,1150 Greens Folly Road
+SITE-012668,610 County Road 18 So.,number+name,610 COUNTY ROAD 18 SOUTH
+SITE-015016,400 Commerce Blvd,number+name,400 S Commerce
+SITE-015215,2625 E. Beltline,exact,2625 E Beltline Rd
+SITE-015403,1200 Trinity Street,number+name,1200 TRINITY DR.
+SITE-015407,222 Kerry Street,number+name,222 KERRY RD
+SITE-015408,801 Hickey Street,number+name,801 HICKEY ROAD
+SITE-015416,1400 Henry Brennan Drive,number+name,1400 HENRY BRENNAN
+SITE-016000,"500 N Ellis Rd, Suite A",number+name,500-A NORTH ELLIS RD
+SITE-016102,1501 Rockdale Industrial Blvd,exact,1501 Rockdale Industrial Blvd NW
+SITE-016110,805 Satellite Blvd NW,number+name,805 SATELLITE BLVD.
+SITE-016110,805 Satellite Blvd NW,number+name,805 Satellite Blvd
+SITE-016111,13129 Harland Drive,number+name,13129 HARLAND DIVE N.E.
+SITE-016117,6195 Purdue Drive,exact,6195 PURDUE DR. SW
+SITE-016120,197 Royal Drive SE,number+name,197 ROYAL DR
+SITE-016303,3240 N. Ohenry Blvd.,exact,3240N. O'Henry Blvd
+SITE-018005,180 East Elmwood St,number+name,180 E Elmwood
+SITE-019002,1050 Sycamore Road,number+name,1050 SYCAMORE STREET
+SITE-019009,320 Craig Place,number+name,320 Craig Road
+SITE-019012,12900 S. Pulaski Avenue,number+name,12900 S. PULASKI RD.
+SITE-019022,21901 Central Avenue,number+name,21901 S CENTRAL AVE
