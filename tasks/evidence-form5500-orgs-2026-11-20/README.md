@@ -7,50 +7,49 @@
 - **Original packet** (`packet_rows_2026-11-20.csv`, kept as the record): 780 rows on 270 organizations: 270
   `existence`, 266 HQ `address`, 244 `liveness`.
 
-## The cut (computed on this branch after merging origin/main `8f30ce0f`; the data files equal main's)
+## The cut (recomputed on this branch after merging origin/main `3ce1cc73`, the batch 5/6 revert; the data files equal main's)
 
 `build.py cut` recomputes this at build time from every `data/evidence_*.csv` row (any `record_table`) that is not this
-lane's own.
-- **Organizations with no evidence row at all: 76** of the 270 (194 have one); the same 76 whether the filter is
-  `evidence_organizations_*.csv` alone or every evidence table. Active organizations, unit: organization records. The
-  controller's count on main `17834918` was also 76.
-- **Kept: 319 rows** (unit: packet rows): 75 `existence`, 1 `address`, 243 `liveness`. The 75 existence rows are on 75 of the
-  76 organizations (65 NAME+CITY, 10 EIN+NAME; tiers 34 A, 33 B, 7 C, 1 U). The 243 liveness rows are on 243 organizations:
-  67 of the 76 and 176 evidenced elsewhere. Kept rows sit on 251 organizations.
-- **Dropped: 386 rows** (194 `existence`, 192 `address`) on the 194 evidenced organizations, each in `dropped_rows.csv`
-  with the reason "organization evidenced since 2026-11-20". Liveness rows are never dropped.
-- **Held: 75 rows** in `held_rows.csv`, each with its settling fact:
-  - `NO_HQ_STREET` 66 (address): the Atlas has no usable HQ street, so the filing's street cannot be compared. Breakdown of
-    the organizations: 30 have only a non-HQ site in the HQ city, 28 have sites only elsewhere, 5 have no site record,
-    3 have an active HQ-type site with no street. Whether a plant street in the HQ city counts as the HQ street is an owner
-    question (below).
-  - `PO_BOX_OR_NO_NUMBER` 5 (address): the filing's street line is a PO box or has no street number (not quoted).
-  - `DIFFERENT` 1 (address): ORG-001333, filing '1525 CORPORATE WOODS PARKWAY' vs Atlas '1525 Corporate Wood Parkway, Suite
-    500'. Probably a typo on the Atlas side; settling fact: the correct street, a record correction, not this lane's.
-  - `SHARED_FILING` 3 (existence, address, liveness on **ORG-001440**, Spectra Group Ltd., Inc.): its ACK_ID is the same one
-    cited for **ORG-001552** (Formlabs Ohio, Inc.), the exact legal-name match. ORG-001440 matches only through the Atlas trade
-    name 'Formlabs Ohio, Inc.'. A sponsor that is a different legal entity (an acquirer) is the UNSOUND class in the brief.
-    Settling fact: whether 'Formlabs Ohio, Inc.' is a trade name of this legal entity or of its acquirer. ORG-001552's rows stay.
-- **Balance:** 319 + 386 + 75 = 780 (`check.py` asserts every original row exactly once, and that no ACK_ID is cited for two kept
+lane's own. **It supersedes the first cut of 2026-11-22** (76 organizations, 319 rows kept, computed on `8f30ce0f`): the revert
+removed evidence rows, so 44 more organizations have no evidence again.
+- **Organizations with no evidence row at all: 120** of the 270 lane organizations (150 have one). Active organizations, unit:
+  organization records.
+- **Kept: 365 rows** (unit: packet rows): 119 `existence`, 3 `address`, 243 `liveness`. The 119 existence rows are on 119 of the
+  120 organizations (105 NAME+CITY, 14 EIN+NAME; tiers 52 A, 53 B, 11 C, 3 U). The 243 liveness rows are on 243 organizations:
+  107 of the 120 and 136 evidenced elsewhere. Kept rows sit on 255 organizations.
+- **Dropped: 298 rows** (150 `existence`, 148 `address`) on the 150 evidenced organizations, each in `dropped_rows.csv` with the
+  reason "organization evidenced since 2026-11-20". Liveness rows are never dropped.
+- **Held: 117 rows** in `held_rows.csv`, each with its settling fact:
+  - `NO_HQ_STREET` 103 (address): the Atlas has no usable HQ street, so the filing's street cannot be compared. Breakdown of
+    the organizations: 48 have only a non-HQ site in the HQ city, 42 have sites only elsewhere, 7 have no site record, 5 have an
+    active HQ-type site with no street, 1 has an HQ-type site that is inactive or outside the HQ city.
+  - `PO_BOX_OR_NO_NUMBER` 9 (address): the filing's street line is a PO box or has no street number (not quoted).
+  - `DIFFERENT` 2 (address): ORG-001333, filing '1525 CORPORATE WOODS PARKWAY' vs Atlas '1525 Corporate Wood Parkway, Suite 500' (probable
+    Atlas typo); ORG-002691, filing '618 FOURTH AVENUE' vs Atlas '618 4th Ave.' (the same street; a normalizer limit). Settling fact:
+    the street is the same or the Atlas street is corrected, a record matter, not this lane's.
+  - `SHARED_FILING` 3 (existence, address, liveness on **ORG-001440**, Spectra Group Ltd., Inc.): its ACK_ID is the same one cited
+    for **ORG-001552** (Formlabs Ohio, Inc.), the exact legal-name match. ORG-001440 matches only through the Atlas trade name
+    'Formlabs Ohio, Inc.'; a sponsor that is a different legal entity (an acquirer) is the UNSOUND class in the brief. Settling
+    fact: whether that name is a trade name of this legal entity or of its acquirer. ORG-001552's rows stay.
+- **Balance:** 365 + 298 + 117 = 780 (`check.py` asserts every original row exactly once, and that no ACK_ID is cited for two kept
   organizations).
-- **Street test over all 251 kept organizations** (informational for liveness rows, which it does not gate; recorded per item in
-  the bundle as `street_check`): 6 SAME, 4 DIFFERENT, 14 PO_BOX_OR_NO_NUMBER, 4 NOT_IN_HQ_CITY, 223 NO_HQ_STREET. The 4 DIFFERENT:
-  ORG-001333 (typo above); ORG-000445 ('4220 ALABAMA AVENUE SW' vs '4220 Alabama Ave', a direction suffix); ORG-002691 ('618
-  FOURTH AVENUE' vs '618 4th Ave.', the same street); ORG-002315 ('2425 WEST 23RD STREET' vs '2315 W 23rd St.', a different
-  number). Three are normalizer or typo limits; ORG-002315 may be a real difference. Whether a different street defeats a
-  liveness row is an owner question; the reviewers see the result.
-- **Provenance of the cut:** the four EFAST2 zips were **re-fetched 2026-11-22** (the owner's brief expected the files to be at
-  hand; they were not on this machine) from `askebsa.dol.gov`, by the URL pattern in `scripts/build_form5500_spine.py`, into
-  `/Users/johnswanson/f5500_raw_2026-11-22`, outside the repo. Their sha256 prefixes equal those in every row's notes, so the
-  files are byte-identical to the 2026-11-20 ones and the rows' notes stay true. All 269 distinct cited ACK_IDs (270 organizations,
-  one shared pair) were found with sponsor, EIN, plan-year end, active count and final flag unchanged (a change would hold the row).
+- **The 3 kept address rows** (street equals an Atlas HQ site street): ORG-001454, ORG-001880, ORG-002597.
+- **Street test over all 255 kept organizations** (informational for liveness rows, which it does not gate; recorded per item in
+  the bundle as `street_check`): 6 SAME, 4 DIFFERENT, 15 PO_BOX_OR_NO_NUMBER, 4 NOT_IN_HQ_CITY, 226 NO_HQ_STREET. The 4 DIFFERENT:
+  ORG-001333 (typo above); ORG-000445 ('4220 ALABAMA AVENUE SW' vs '4220 Alabama Ave', a direction suffix); ORG-002691 ('618 FOURTH
+  AVENUE' vs '618 4th Ave.', the same street); ORG-002315 ('2425 WEST 23RD STREET' vs '2315 W 23rd St.', a different number). Three are
+  normalizer or typo limits; ORG-002315 may be a real difference. Whether a different street defeats a liveness row is an owner
+  question; the reviewers see the result.
+- **Provenance of the cut:** the four EFAST2 zips were **re-fetched 2026-11-22** (they were not on this machine) from
+  `askebsa.dol.gov`, by the URL pattern in `scripts/build_form5500_spine.py`, into `/Users/johnswanson/f5500_raw_2026-11-22`, outside
+  the repo. Their sha256 prefixes equal those in every row's notes, so the files are byte-identical to the 2026-11-20 ones and the
+  rows' notes stay true. All 269 distinct cited ACK_IDs (270 organizations, one shared pair) were found with sponsor, EIN, plan-year
+  end, active count and final flag unchanged (a change would hold the row).
 - **Status guard:** a row on an organization the Atlas no longer calls `active` is dropped (no evidence) or held; none is kept.
-  ORG-002569 (status `acquired`) was evidenced and is among the dropped.
-- **Street text:** only the street lines of business filings appear, and only when clean: any line with `@`, `c/o`, `attn`, `care
-  of`, a leading `%` or no digit is blanked in the bundle and not quoted in a reason; `check.py` scans the bundle, reasons and
-  kept text for those markers.
-- **No rows are applied in this PR.** It is packet-only: review comes first. Evidence IDs are asserted by `apply.py`, not
-  allocated, and `scripts/validate_debt_baseline.json` is unchanged.
+- **Street text:** only the street lines of business filings appear, and only when clean: any line with `@`, `c/o`, `attn`, `care of`,
+  a leading `%` or no digit is blanked in the bundle and not quoted in a reason; `check.py` scans the bundle, reasons and kept text.
+- **No rows are applied in this PR.** It is packet-only: review comes first, and no evidence PR merges before the binding gate
+  (PR #467) has. Evidence IDs are asserted by `apply.py`, not allocated, and `scripts/validate_debt_baseline.json` is unchanged.
 
 ## Exact match this lane requires (`build.py` at the lines shown)
 
@@ -73,15 +72,13 @@ Name, street and EIN, stated as the code does them (line numbers are in `build.p
 - **One filing, one organization (`cut()` l.322).** If the same ACK_ID is cited for two lane organizations, the one that matches
   only through a trade name is held.
 
-## The 75 held rows, by reason (`held_rows.csv` carries each settling fact)
+## The 117 held rows, by reason (`held_rows.csv` carries each settling fact)
 
-- **`NO_HQ_STREET`, address, 66 rows, one per organization.** Settling fact: an HQ street on the record, or an address witness.
-  ORG-000020, ORG-000076, ORG-000079, ORG-000111, ORG-000122, ORG-000147, ORG-000305, ORG-000383, ORG-000385, ORG-000482, ORG-000498, ORG-000592, ORG-000701, ORG-000896, ORG-000898, ORG-000923, ORG-000992, ORG-001031, ORG-001101, ORG-001141, ORG-001152, ORG-001164, ORG-001168, ORG-001188, ORG-001338, ORG-001433, ORG-001499, ORG-001510, ORG-001518, ORG-001525, ORG-001530, ORG-001552, ORG-001554, ORG-001569, ORG-001584, ORG-001696, ORG-001710, ORG-001773, ORG-001797, ORG-001800, ORG-001802, ORG-001803, ORG-001815, ORG-001954, ORG-002005, ORG-002046, ORG-002051, ORG-002163, ORG-002190, ORG-002246, ORG-002268, ORG-002290, ORG-002305, ORG-002331, ORG-002334, ORG-002439, ORG-002454, ORG-002494, ORG-002506, ORG-002538, ORG-002568, ORG-002632, ORG-002692, ORG-002695, ORG-002752, ORG-002754
-- **`PO_BOX_OR_NO_NUMBER`, address, 5.** Settling fact: a street address in the filing or another witness. ORG-000249, ORG-001208, ORG-002231, ORG-002510, ORG-002761
-- **`DIFFERENT`, address, 1.** ORG-001333, filing '1525 CORPORATE WOODS PARKWAY' vs Atlas '1525 Corporate Wood Parkway, Suite 500'. Settling
-  fact: the correct street (a record correction).
-- **`SHARED_FILING`, 3 rows (existence, address, liveness), ORG-001440.** Same ACK_ID as ORG-001552. Settling fact: whether 'Formlabs
-  Ohio, Inc.' is a trade name of this legal entity or its acquirer.
+- **`NO_HQ_STREET`, address, 103 rows, one per organization.** Settling fact: an HQ street on the record, or an address witness.
+  ORG-000020, ORG-000076, ORG-000079, ORG-000111, ORG-000122, ORG-000147, ORG-000305, ORG-000383, ORG-000385, ORG-000482, ORG-000498, ORG-000592, ORG-000639, ORG-000701, ORG-000709, ORG-000739, ORG-000896, ORG-000898, ORG-000923, ORG-000992, ORG-001031, ORG-001070, ORG-001101, ORG-001141, ORG-001152, ORG-001164, ORG-001168, ORG-001170, ORG-001188, ORG-001338, ORG-001391, ORG-001417, ORG-001429, ORG-001433, ORG-001499, ORG-001510, ORG-001518, ORG-001525, ORG-001530, ORG-001533, ORG-001547, ORG-001552, ORG-001554, ORG-001568, ORG-001569, ORG-001584, ORG-001685, ORG-001696, ORG-001710, ORG-001741, ORG-001754, ORG-001773, ORG-001797, ORG-001799, ORG-001800, ORG-001802, ORG-001803, ORG-001815, ORG-001818, ORG-001841, ORG-001888, ORG-001936, ORG-001954, ORG-001966, ORG-001967, ORG-002005, ORG-002020, ORG-002046, ORG-002051, ORG-002069, ORG-002163, ORG-002190, ORG-002211, ORG-002232, ORG-002243, ORG-002246, ORG-002253, ORG-002268, ORG-002290, ORG-002305, ORG-002309, ORG-002320, ORG-002331, ORG-002334, ORG-002337, ORG-002347, ORG-002357, ORG-002409, ORG-002425, ORG-002439, ORG-002454, ORG-002494, ORG-002506, ORG-002538, ORG-002568, ORG-002632, ORG-002692, ORG-002695, ORG-002699, ORG-002712, ORG-002739, ORG-002752, ORG-002754
+- **`PO_BOX_OR_NO_NUMBER`, address, 9.** Settling fact: a street address in the filing or another witness. ORG-000249, ORG-001208, ORG-002231, ORG-002400, ORG-002412, ORG-002510, ORG-002552, ORG-002673, ORG-002761
+- **`DIFFERENT`, address, 2.** ORG-001333, ORG-002691 (details above).
+- **`SHARED_FILING`, 3 rows (existence, address, liveness), ORG-001440.** Same ACK_ID as ORG-001552.
 
 ## What this lane's match requires (shown from `build.py`)
 
@@ -93,9 +90,9 @@ Name, street and EIN, stated as the code does them (line numbers are in `build.p
 
 - **Where the Atlas HQ street comes from:** organization records carry no street field, so the HQ street is the
   `street_address` of an active site whose `site_type` names HQ or headquarters, in the HQ city and state.
-- **A gap on the existence rows, stated plainly:** the 75 kept existence rows rest on name plus EIN link or HQ
-  city, with no street. Of the 74 zero-evidence filings with an in-HQ-city address, the street test could compare 2 (1 same, 1
-  different); 66 had no HQ street on the Atlas side, 5 a PO box, and 1 was the shared-filing hold. This is the same shape as the defect found in another lane on
+- **A gap on the existence rows, stated plainly:** the 119 kept existence rows rest on name plus EIN link or HQ
+  city, with no street. Of the 117 zero-evidence address rows the street test ran on (the shared-filing row aside), it could compare
+  5 (3 same, 2 different); 103 had no HQ street on the Atlas side and 9 a PO box. This is the same shape as the defect found in another lane on
   2026-11-22 (name and city, no street), but it bears on an `existence` claim, where one EIN behind an exact name in one
   city is the evidence, not on an address claim. **Owner question, not settled here:** is name plus HQ city (one EIN)
   enough for `existence` when the street cannot be compared?
@@ -167,14 +164,14 @@ now"), and `cut` reads its output as the record.
 - **`build.py selftest`:** name keys, location-over-mailing, future period ends, the non-final preference, multi-EIN
   and spine-conflict holds, and the ruling-8 liveness gates.
 - **Apply rehearsal (2026-11-22, throwaway worktree, not committed):** with every kept row marked SOUND, `apply.py`
-  wrote 319 rows `EVD-480100..EVD-480418` in the 12-column header (it first wrote 11 and broke on the v1.19
-  `address_role` column; fixed), `check.py` passed, `validate.py` passed, and `prune_baselines.py` shrank V-65 912 -> 845 and
-  V-68 346 -> 338 (the 75 organizations).
+  wrote 365 rows `EVD-480100..EVD-480464` in the 12-column header (it first wrote 11 and broke on the v1.19
+  `address_role` column; fixed), `check.py` passed, `validate.py` passed, and `prune_baselines.py` shrank V-65 1398 -> 1293 and
+  V-68 519 -> 505 (the 119 organizations); on the tree after the revert.
 
 ## Evidence IDs and baselines
 
 - **IDs:** `EVD-480100..480999` is this lane's reserved range (`EVD-480000..480099` belong to another lane; Muse's open
-  PR #459 holds everything up to `EVD-475722`). The tree maximum on this branch is `EVD-459524`. `apply.py` asserts the
+  PR #459 holds everything up to `EVD-475722`). The tree maximum on this branch (merged with `3ce1cc73`) is `EVD-425436`; removed IDs stay reserved, so `atlas.py next-id EVD` returns `EVD-459525`, and this lane keeps to its reserved range. `apply.py` asserts the
   start is in range and above the tree maximum, that the packet fits, and that no non-liveness row's organization has
   gained other evidence since the cut.
 - **Baselines:** this PR applies no rows, so `scripts/validate_debt_baseline.json` is unchanged. `apply.py` shrinks V-65 and
@@ -182,7 +179,7 @@ now"), and `cut` reads its output as the record.
 
 ## Next
 
-1. Split `review_bundle.json` (251 organizations; 75 with an existence item, 176 liveness-only) into briefs under
+1. Split `review_bundle.json` (255 organizations; 119 with an existence item, 136 liveness-only) into briefs under
    `review_brief.md`; 7 parts if Antigravity is used (64 KB cap).
 2. Run `council-ask codex --effort deep` on each brief. Have Codex also review `build.py`, `apply.py` and `check.py`;
    the code has had no review outside its author.
@@ -193,13 +190,13 @@ now"), and `cut` reads its output as the record.
 
 ## Owner questions (listed, not settled)
 
-1. Is name plus HQ city with one EIN enough for `existence` when no HQ street is on the Atlas record (66 of the 74 comparable
-   filings)?
-2. Does the street of a non-HQ site in the HQ city (30 organizations) count as the HQ street, so those address rows could be
+1. Is name plus HQ city with one EIN enough for `existence` when no HQ street is on the Atlas record (103 of the 117 tested address
+   rows)?
+2. Does the street of a non-HQ site in the HQ city (48 organizations) count as the HQ street, so those address rows could be
    street-tested? This lane does not count it.
-3. Should the 66 `NO_HQ_STREET` and 5 PO-box filings' addresses be recorded as `mailing`-role address rows without a street
+3. Should the 103 `NO_HQ_STREET` and 9 PO-box filings' addresses be recorded as `mailing`-role address rows without a street
    test? This lane holds them.
-4. Does a DIFFERENT street defeat a liveness row (4 organizations, one a real number difference)? This lane does not gate on it.
+4. Does a DIFFERENT street defeat a liveness row (4 kept organizations, one a real number difference)? This lane does not gate on it.
 
 ## Reproduce
 
