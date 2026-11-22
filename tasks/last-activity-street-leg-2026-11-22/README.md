@@ -112,9 +112,9 @@ personal address text is removed (AGENTS §6). Redactions, by path:line in the c
 - `inputs/witness_extract_sites_inspection.csv` line 314 (SITE-005449): street cell held residential-address text; **blanked** (review round 1).
 - The earlier "ATTENTION: <person>" redaction on an inspection row was reviewed and is superseded by the same treatment; it is `[REDACTED NAME]` in place.
 
-Every other byte is unchanged apart from the line endings. The derivation on the committed copies is **not** identical to the originals: the two blanked rows no
-longer match their sites, so those sites carry no date from that row (the re-derived counts above include this). `CLEARED_SITES.csv` line 905 (the same SITE-005544 row)
-now carries a blank printed street. Scan of every CSV in this folder (`check.py`): **0 email addresses, 0 phone-number patterns** (formatted 3-3-4 or ten consecutive digits).
+Every other byte is unchanged apart from the line endings. **Redaction changes no derived date:** the derivation run over the controller's originals and over the
+committed copies gives the same 2,632 dated sites with identical winning date and source on every site (checked); both blanked inspection rows already failed the street test before
+they were blanked, so the redactions only protect the published copy. `CLEARED_SITES.csv` carries a blank printed-street cell for SITE-005544. Scan of every CSV in this folder (`check.py`): **0 email addresses, 0 phone-number patterns** (formatted 3-3-4 or ten consecutive digits).
 Checksums of the committed copies are in `inputs/SHA256SUMS`.
 
 ## Check
@@ -126,7 +126,7 @@ planted site** that keeps a date with a different street (planted SITE-000001 ca
 
 ## Not checked
 
-- No sample of the 1,125 cleared sites was read against the live OSHA record: a cleared site means "no extract row at this street by `street_key`", not "no activity".
+- No sample of the 1,114 cleared sites was read against the live OSHA record: a cleared site means "no extract row at this street by `street_key`", not "no activity".
   Some are true same-street filings the key misses (see follow-ups), so the cleared list overstates absence; absence asserts nothing (§4.5).
 - Muse's own join fix (which uses `street_key` for OSHA matches) is not in this tree; this PR does not depend on it.
 - ECHO and FMCSA sources named in the §4.5 vocabulary (`echo`, `fmcsa_mcs150`) are not wired into this script and are untouched.

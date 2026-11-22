@@ -52,6 +52,8 @@ DIFFERENT = [  # true mismatches: the date must not move to this site
 ]
 NEVER = [  # blank and number-less streets are never equal, even to themselves
     ("", "1 Main St"), ("", ""), ("1 Main St", ""), ("P.O. Box 5", "P.O. BOX 5"),
+    ("PO Box 123", "PO BOX 123"), ("P.O. Box 123", "P.O. Box 123"), ("P O Box 123", "P O BOX 123"), ("Post Office Box 123", "POST OFFICE BOX 123"),
+    ("POB 123", "POB 123"), ("P.O.B. 123", "P.O.B. 123"), ("PO Box 123, Akron", "PO Box 123 Akron"),   # every PO box spelling, even when equal
     ("Chemical Plant Rd", "Chemical Plant Road"), ("1604 Building", "1604 Building Barth Street"),
     ("BIDA Complex Building 350, 3rd and Oak St.", "BIDA COMPLEX #350 3RD & OAK STREET"),  # equal key, no civic number (SITE-002182)
     ("Freeport Center Bldg Z-13", "FREEPORT CENTER BUILDING Z-13"),                        # building name (SITE-005976)
