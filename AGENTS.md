@@ -162,8 +162,10 @@ that branch merges. What each check cannot catch is in
    the PR body to carry `Built by: <harness>, <model family>` and at least
    one approving review record from a different family. **Gap, stated
    plainly:** every harness uses one shared GitHub account, so who pressed
-   merge cannot be verified mechanically. The check proves a different
-   family approved; it cannot prove the builder did not merge.
+   merge cannot be verified mechanically. A review record is a self-reported
+   comment, not an authenticated identity: the check reads what the record
+   says, and it cannot establish that the family named wrote it or that the
+   builder did not merge.
 2. **No evidence row or registry link merges without its packet and a
    replay check in the repo.**
    Enforced by: `scripts/check_evidence_binding.py` and its
@@ -172,15 +174,27 @@ that branch merges. What each check cannot catch is in
 3. **A binding gate in CI: the quoted operator is a name the record holds
    and the quoted street equals the record's street, or the row is a
    lead.**
+   Scope, as the gate enforces it: a site evidence row needs the operator
+   name and the street. An organization row needs the name, and an
+   `address` row its HQ city and state from a source that states an
+   entity's own address. People and program rows are witnessed as SCHEMA
+   §4.13 says and fall under the gate's sampled review; the street test does
+   not apply to them.
    Enforced by: `scripts/check_evidence_binding.py`. Lands with PR branch
    `agent/claude-code/evidence-binding-gate-2026-11-22`.
 4. **Two model families review every data PR, recorded on the PR.**
    Enforced by: `scripts/check_pr_rules.py` (workflow `pr-rules`). A PR
-   that touches `data/` or `scripts/` needs two PR comments that start with
-   `**Review record**`, naming two different model families, each with
-   `- **Verifier:** <family>, <model>...` and
-   ``- **Verdict:** APPROVE at `<full head SHA>` ``. A record at an older
-   head SHA does not count. A PR that touches neither needs one record.
+   that touches `data/`, `scripts/` or `.github/` needs two PR comments that
+   start with `**Review record**`, from two different model families; any
+   other PR needs one. A record counts only with all of: a
+   `- **Verifier:** <harness>, <model>, ...` line (the family is derived from
+   the model by a fixed map: GPT or Codex is OpenAI; Claude is Anthropic;
+   Gemini is Google; Grok is xAI; Muse is Meta; an unknown model does not
+   count, and two models of one family are one family), a
+   ``- **Verdict:** APPROVE at `<full 40-character head SHA>` `` line, and a
+   `- **What it checked:**` line. The latest record per verifier governs: a
+   later REFUTE at the current head withdraws that family's approval, and a
+   record at an older head SHA does not count.
 5. **A batch is audited before the next one builds on it, with a size cap
    per PR.**
    Enforced by: `scripts/check_pr_rules.py`. A PR may add at most 1,000
@@ -200,8 +214,12 @@ that branch merges. What each check cannot catch is in
    Enforced by: nothing. This is a statement of where things live, stated
    under "Start here", and no script can tell a decision from a message.
 
-A PR with a `**Review record**` comment is re-checked when the comment
-arrives. A change to these rules or to their checks is an owner ruling
+The `pr-rules` check is evaluated by the checker and workflow on `main`, never
+by the PR's own copy (`pull_request_target`). The consequence: a PR that
+changes `scripts/check_pr_rules.py` or `.github/workflows/pr-rules.yml` is
+judged by the version already on `main`, and needs two families like a data
+PR. The check is re-evaluated when a PR comment is created, edited or
+deleted. A change to these rules or to their checks is an owner ruling
 (section 2 rule 9).
 
 *Revision note — 2026-11-22 (owner adoption, working rules): §2a added with

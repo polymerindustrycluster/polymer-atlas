@@ -20,21 +20,29 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
   only; nothing generated is committed) and deploys it to GitHub Pages at
   https://polymerindustrycluster.github.io/polymer-atlas/. The Pages source is set to GitHub Actions.
 
-- **`pr-rules.yml`** (since 2026-11-22) runs `scripts/check_pr_rules.py` on every pull request and again when a PR
-  comment that contains "Review record" is added. It is a separate workflow from `validate.yml`. The check named
-  `pr-rules` covers working rules 1, 4, 5 and 6 (AGENTS.md section 2a):
-  - the PR body carries `Built by: <harness>, <model family>`; a PR that touches `data/` or `scripts/` carries two
-    `**Review record**` comments from two model families, each APPROVE at the current head SHA (one record for any
-    other PR), and at least one reviewer is not from the builder's family;
-  - a PR adds at most 1,000 evidence rows and 1,000 registry links without a "size waiver" line in `DECISIONS.md`
-    that names its branch; a PR that touches `data/` fails while any `created_by` label on `main` is neither in
-    `tasks/working-rules-2026-11-22/audit_baseline.txt` nor named in a `tasks/<folder>/AUDIT.md` on `main`;
-  - a PR that adds evidence rows or registry links adds `tasks/<folder>/INPUTS.sha256` in the `<sha256>  <path>` format
-    (format only; a reviewer checks the hashes against the shared store).
+- **`pr-rules.yml`** (since 2026-11-22) runs `scripts/check_pr_rules.py` on `pull_request_target` and on every PR
+  comment created, edited or deleted, and publishes the result as the check run `pr-rules` on the PR head. It checks
+  out the base branch only and never runs anything from the PR, so a PR that changes the checker or the workflow is
+  judged by the version on `main`. It is a separate workflow from `validate.yml`. The check covers working rules 1, 4,
+  5 and 6 (AGENTS.md section 2a):
+  - the PR body carries `Built by: <harness>, <model family>`; a PR that touches `data/`, `scripts/` or `.github/`
+    carries `**Review record**` comments from two model families (derived from the model named), each APPROVE at the
+    current full head SHA with a "What it checked" line, the latest record per verifier governing (one family for any
+    other PR), and at least one approving family is not the builder's;
+  - a PR adds at most 1,000 evidence rows and 1,000 registry links (new registry identities: org_id, registry,
+    registry_id, site_id) without a "size waiver" line added to `DECISIONS.md` that names its exact branch; a PR that
+    touches `data/` fails while any `created_by` label on `main` is neither in
+    `tasks/working-rules-2026-11-22/audit_baseline.txt` nor named by a valid `tasks/<folder>/AUDIT.md` on `main`
+    (lines `Label:`, `Result: PASS|FAIL`, `Sample:`, `Reviewers:`), or whose audit says FAIL;
+  - a PR that adds evidence rows or registry links adds `tasks/<folder>/INPUTS.sha256` (`<sha256>  <path>`, a relative
+    file path under `raw/`, `provenance/` or an existing repo file); format only, a reviewer checks the hashes against
+    the shared store.
 
-  Every check prints what it inspected and what it could not; whatever it could not inspect fails the run. Rules 2
-  and 3 are `scripts/check_evidence_binding.py`, documented with that script. The planted cases and the limits are in
-  `tasks/working-rules-2026-11-22/README.md`. Locally: `python3 scripts/check_pr_rules.py --pr <number>` (needs `gh`).
+  Every check prints what it inspected and what it could not; whatever it could not inspect, including a failed read of
+  a tracked git object, fails the run. Rules 2 and 3 are `scripts/check_evidence_binding.py`, documented with that
+  script. The planted cases and the limits are in `tasks/working-rules-2026-11-22/README.md`. Locally:
+  `python3 scripts/check_pr_rules.py --pr <number>` (needs `gh`). The ruleset requires `pr-rules` with strict mode on;
+  see the PR that added it.
 
 Preview the site locally with
 `python3 scripts/build_pages.py && python3 -m http.server -d build/pages 8000`, then open http://localhost:8000.
