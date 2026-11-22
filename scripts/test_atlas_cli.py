@@ -5,6 +5,7 @@ import csv
 import hashlib
 import importlib.util
 import io
+import shutil
 import json
 import os
 from pathlib import Path
@@ -83,10 +84,12 @@ def build_tree(d):
         {"org_id": "ORG-000001", "registry": "TRI_TRIFID", "registry_id": "44301ACME", "match_basis": "x", "as_of": "2026-10-01"}])
 
 
-def run(argv, data_dir):
+def run(argv, data_dir, tasks_dir=None):
     out, err = io.StringIO(), io.StringIO()
+    # never the system temp dir's sibling `tasks/`: fixtures name their own folder or skip the floor
+    floor = ["--tasks-dir", str(tasks_dir)] if tasks_dir else ["--no-reservation-floor"]
     with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
-        rc = atlas.main(["--data-dir", str(data_dir)] + argv)
+        rc = atlas.main(["--data-dir", str(data_dir)] + floor + argv)
     return rc, out.getvalue(), err.getvalue()
 
 
@@ -126,6 +129,41 @@ class NextIdTests(FixtureCase):
         self.assertEqual(r["next_id"], "ORG-000902")
         self.assertEqual(r["next_id_avoiding_refs"], "ORG-010000")
         self.assertTrue(any("exceed the primary-key max" in w for w in r["warnings"]))
+
+    def test_ids_retired_by_a_removals_manifest_are_never_offered(self):
+        # EVD max in the fixture is EVD-000007; a manifest retired EVD-000040 (a removed row) and PERSON-000009
+        tasks = Path(self.d) / "tasks-fixture"
+        (tasks / "some-task").mkdir(parents=True)
+        (tasks / "some-task" / "REMOVALS.csv").write_text(
+            "table,key,reason\nevidence,EVD-000040,removed\nevidence,EVD-000012,removed\npeople,PERSON-000009,merged\n"
+            "registry_links,ORG-000001|FRS|110000000001|,not an id key\n", encoding="utf-8")
+        rc, out, _ = run(["next-id", "EVD", "--json"], self.d, tasks_dir=tasks)
+        r = json.loads(out)["prefixes"][0]
+        self.assertEqual((r["max_id"], r["max_reserved_id"], r["next_id"]), ("EVD-000007", "EVD-000040", "EVD-000041"))
+        self.assertTrue(any("retired id" in w for w in r["warnings"]))
+        rc, out, _ = run(["next-id", "PERSON", "--json"], self.d, tasks_dir=tasks)      # a prefix only the manifest knows
+        self.assertEqual(json.loads(out)["prefixes"][0]["next_id"], "PERSON-000010")
+        rc, out, _ = run(["next-id", "ORG", "--json"], self.d, tasks_dir=tasks)         # composite keys reserve nothing
+        self.assertEqual(json.loads(out)["prefixes"][0]["next_id"], "ORG-000902")
+        rc, out, _ = run(["next-id", "EVD", "--json"], self.d)                          # no manifest: unchanged
+        self.assertEqual(json.loads(out)["prefixes"][0]["next_id"], "EVD-000008")
+
+    def test_a_data_only_copy_fails_closed(self):
+        # --data-dir <copy>/data with no sibling tasks/ and no --tasks-dir: the floor cannot be checked, so no id is offered
+        root = Path(self._tmp.name) / "copy"
+        shutil.copytree(self.d, root / "data", ignore=shutil.ignore_patterns("copy"))
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            rc = atlas.main(["--data-dir", str(root / "data"), "next-id", "EVD", "--json"])
+        self.assertEqual(rc, 3)
+        self.assertEqual(out.getvalue(), "")
+        self.assertIn("reservation floor", err.getvalue())
+        (root / "tasks").mkdir()                                   # a sibling tasks/ restores the check
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            rc = atlas.main(["--data-dir", str(root / "data"), "next-id", "EVD", "--json"])
+        self.assertEqual(rc, 0)
+        rc, out2, _ = run(["next-id", "EVD", "--json"], root / "data")             # the explicit skip
+        self.assertEqual((rc, json.loads(out2)["prefixes"][0]["next_id"]), (0, "EVD-000008"))
 
     def test_width_preserved_and_other_prefixes_discovered(self):
         self.assertEqual(self.rep("SITE")["next_id"], "SITE-000501")
