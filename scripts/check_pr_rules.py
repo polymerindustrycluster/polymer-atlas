@@ -30,7 +30,7 @@ REPO = Path(__file__).resolve().parent.parent
 MAX_EVIDENCE_ROWS = 1000  # rule 5: evidence rows one PR may add without a size waiver
 MAX_REGISTRY_LINKS = 1000  # rule 5: registry links one PR may add without a size waiver
 BASELINE = "tasks/working-rules-2026-11-22/audit_baseline.txt"
-TWO_FAMILY_PATHS = ("data/", "scripts/", ".github/")  # a PR touching these needs two families, not one
+TWO_FAMILY_PATHS = ("data/",)  # tier by risk (owner ruling 2026-11-22): data/ needs two families, every other PR one
 REGISTRY_IDENTITY = ("org_id", "registry", "registry_id", "site_id")  # SCHEMA 4.8 grain; match_basis, as_of are metadata
 MODEL_FAMILY = (  # fixed map, matched on whole words of the model name (and of "Built by" text); owner ruling 2026-11-22
     ("gpt", "openai"), ("codex", "openai"), ("openai", "openai"),
@@ -76,6 +76,8 @@ def review_votes(comments):
         else:
             key = re.sub(r"\s+", " ", parts[1].lower())
             checked = bool(CHECKED.search(body))
+            if d.group(1).upper() == "REFUTE" and not re.search(r"\bBLOCKING\b", body):
+                notes.append(f"comment {i}: REFUTE without a BLOCKING finding (does not follow the tier rule; still withdraws)")
             if not checked:
                 notes.append(f"comment {i}: no 'What it checked' line of substance (cannot count as an approval)")
             votes[key] = dict(fam=fam, verdict=d.group(1).upper(), sha=(d.group(2) or "").lower(), complete=checked, idx=i)
@@ -115,7 +117,7 @@ def check_review(f, out):
     need = 2 if two else 1
     counted, notes = counted_families(comments, pr["head_sha"])
     out.append(f"inspected: {len(files)} changed files; {len(comments)} PR comments; head {pr['head_sha'][:8]}")
-    out.append(f"  PR touches data/, scripts/ or .github/: {two} -> {need} family(ies) required")
+    out.append(f"  PR touches data/: {two} -> {need} family(ies) required")
     out.extend(f"  note: {n}" for n in notes)
     out.append(f"  counted (family: models): {counted or 'none'}")
     if len(counted) < need:

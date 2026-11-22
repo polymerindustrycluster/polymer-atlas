@@ -61,7 +61,7 @@ class TestCompliant(unittest.TestCase):
         self.assertIn("inspected:", out)
         self.assertIn("hashes themselves are NOT checked", out)
 
-    def test_non_code_pr_needs_one_record(self):
+    def test_non_data_pr_needs_one_record(self):
         self.assertEqual(run(docs_pr(comments=[record("GPT-6.2 Astra")]))[0], 0)
 
     def test_repo_path_in_inputs_passes_when_it_is_a_file(self):
@@ -85,8 +85,26 @@ class TestRules1And4(unittest.TestCase):
     def test_non_record_comment_ignored(self):
         self.assertEqual(run(mutated(comments=["LGTM, approve at " + HEAD, record("Gemini 4 Hydrogen")]))[0], 1)
 
-    def test_scripts_only_pr_needs_two(self):
-        self.assertEqual(run(docs_pr(changed_files=["scripts/x.py"], comments=[record("GPT-6.2 Astra")]))[0], 1)
+    # --- owner ruling 2026-11-22, tier by risk: only data/ needs two families
+    def test_scripts_ci_and_process_prs_need_one_independent_record(self):
+        for path in ("scripts/x.py", ".github/workflows/x.yml", "scripts/check_pr_rules.py", "tasks/x/README.md", "AGENTS.md"):
+            self.assertEqual(run(docs_pr(changed_files=[path], comments=[record("GPT-6.2 Astra")]))[0], 0, path)
+            self.assertEqual(run(docs_pr(changed_files=[path], comments=[]))[0], 1, path)
+            self.assertEqual(run(docs_pr(changed_files=[path], comments=[record("Opus 5.5")]))[0], 1, path)  # builder's own family
+
+    def test_any_data_file_makes_it_a_two_family_pr(self):
+        f = docs_pr(changed_files=["scripts/x.py", "data/organizations_OH.csv"], comments=[record("GPT-6.2 Astra")])
+        self.assertEqual(run(f)[0], 1)
+        f["comments"].append(record("Gemini 4 Hydrogen"))
+        self.assertEqual(run(f)[0], 0)
+
+    def test_refute_without_blocking_finding_is_noted_but_still_withdraws(self):
+        cs = [record("GPT-6.2 Astra"), record("Gemini 4 Hydrogen"), record("Gemini 4 Hydrogen", verdict="REFUTE")]
+        rc, out = run(mutated(comments=cs))
+        self.assertEqual(rc, 1)
+        self.assertIn("without a BLOCKING finding", out)
+        cs[2] += "\n- BLOCKING: a check passes on what it could not inspect\n"
+        self.assertNotIn("without a BLOCKING finding", run(mutated(comments=cs))[1])
 
     def test_missing_built_by_line_fails(self):
         rc, out = run(mutated(pr={"body": "no builder line"}))
@@ -97,15 +115,6 @@ class TestRules1And4(unittest.TestCase):
         rc, out = run(docs_pr(comments=[record("Opus 5.5")]))
         self.assertEqual(rc, 1)
         self.assertIn("other than the builder", out)
-
-    # --- Codex r1 finding 1: workflow and checker changes get the two-family bar
-    def test_workflow_only_change_needs_two_families(self):
-        self.assertEqual(run(docs_pr(changed_files=[".github/workflows/pr-rules.yml"], comments=[record("GPT-6.2 Astra")]))[0], 1)
-        self.assertEqual(run(docs_pr(changed_files=[".github/workflows/pr-rules.yml"],
-                                     comments=[record("GPT-6.2 Astra"), record("Gemini 4 Hydrogen")]))[0], 0)
-
-    def test_checker_change_needs_two_families(self):
-        self.assertEqual(run(docs_pr(changed_files=["scripts/check_pr_rules.py"], comments=[record("GPT-6.2 Astra")]))[0], 1)
 
     # --- finding 2: latest record per verifier governs; the SHA is read only from the verdict line
     def test_later_refute_at_head_withdraws_approval(self):

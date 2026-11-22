@@ -23,12 +23,12 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
 - **`pr-rules.yml`** (since 2026-11-22) runs `scripts/check_pr_rules.py` on `pull_request_target` and on every PR
   comment created, edited or deleted, and publishes the result as the check run `pr-rules` on the PR head. It checks
   out the base branch only and never runs anything from the PR, so a PR that changes the checker or the workflow is
-  judged by the version on `main`. It is a separate workflow from `validate.yml`. The check covers working rules 1, 4,
+  judged by the version on `main` (and needs one independent review record). It is a separate workflow from `validate.yml`. The check covers working rules 1, 4,
   5 and 6 (AGENTS.md section 2a):
-  - the PR body carries `Built by: <harness>, <model family>`; a PR that touches `data/`, `scripts/` or `.github/`
-    carries `**Review record**` comments from two model families (derived from the model named), each APPROVE at the
-    current full head SHA with a "What it checked" line, the latest record per verifier governing (one family for any
-    other PR), and at least one approving family is not the builder's;
+  - the PR body carries `Built by: <harness>, <model family>`; review is tiered by risk (owner ruling 2026-11-22): a
+    PR that changes any file under `data/` carries `**Review record**` comments from two model families (derived from
+    the model named), every other PR one record from a family other than the builder's; each is APPROVE at the current
+    full head SHA with a "What it checked" line, the latest record per verifier governing;
   - a PR adds at most 1,000 evidence rows and 1,000 registry links (new registry identities: org_id, registry,
     registry_id, site_id) without a "size waiver" line added to `DECISIONS.md` that names its exact branch; a PR that
     touches `data/` fails while any `created_by` label on `main` is neither in

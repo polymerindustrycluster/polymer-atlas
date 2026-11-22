@@ -13,16 +13,16 @@ case that must pass.
 `issue_comment`, checks out the base branch only, and runs the checker on `main` against facts fetched for the PR
 number. It never checks out or executes PR code. **Consequence, stated plainly:** a PR that changes
 `scripts/check_pr_rules.py` or `.github/workflows/pr-rules.yml` is judged by the version already on `main`, so such a PR
-cannot weaken its own gate; it needs two review families, like a data PR. The new version first judges the PR after
+cannot weaken its own gate; it needs one review record from a family other than the builder's, like any non-data PR (owner ruling "tier by risk", 2026-11-22, which superseded the earlier instruction that tooling PRs need two families). The new version first judges the PR after
 the one that merges it. This PR itself cannot be judged by the new workflow before it merges (the workflow does not
-exist on `main`); it is run through the checker locally and needs the two-family review as the record of its own gate.
+exist on `main`); it is run through the checker locally and needs one independent review record.
 
 | Rule | What the check catches | Planted case (test class.method) |
 |---|---|---|
 | 1. Builder never merges | PR body without `Built by: <harness>, <model family>`; no counted reviewer from a family other than the builder's | `TestRules1And4.test_missing_built_by_line_fails`, `.test_builder_is_only_reviewer_family_fails` |
 | 2. Packet and replay | not here: `scripts/check_evidence_binding.py`, lands with branch `agent/claude-code/evidence-binding-gate-2026-11-22` | built by atlas-w22-binding-gate |
 | 3. Binding gate | not here: same lane and branch | built by atlas-w22-binding-gate |
-| 4. Two families review a PR touching `data/`, `scripts/` or `.github/` | fewer than two families approving at the current head; a stale-SHA record; a REFUTE; a later REFUTE withdrawing an approval; an abbreviated SHA; two models of one family; the same model under two family labels; a record with no model, an unknown model, or no "What it checked" | `TestRules1And4.*` |
+| 4. Tiered review: two families for a PR touching `data/`, one independent record for every other PR | fewer than two families approving at the current head; a stale-SHA record; a REFUTE; a later REFUTE withdrawing an approval; an abbreviated SHA; two models of one family; the same model under two family labels; a record with no model, an unknown model, or no "What it checked" | `TestRules1And4.*`, in particular `.test_scripts_ci_and_process_prs_need_one_independent_record`, `.test_any_data_file_makes_it_a_two_family_pr` |
 | 5. Size cap | more than 1,000 evidence rows or 1,000 new registry identities without a "size waiver" line, added to DECISIONS.md by the PR, naming exactly the PR's branch | `TestRule5.test_over_cap_without_waiver_fails`, `.test_registry_links_over_cap_fails`, `.test_waiver_must_name_exactly_this_branch` |
 | 5. Audit before the next batch | a data PR while a `created_by` label on `main` is not in the baseline and not named by a valid `AUDIT.md` (`Label:`, `Result: PASS`, `Sample:`, `Reviewers:`); a FAIL audit; a pending audit | `TestRule5.test_unaudited_label_blocks_a_data_pr`, `.test_pending_audit_does_not_count`, `.test_fail_audit_blocks`, `.test_audit_missing_sample_or_reviewers_does_not_count` |
 | 6. Raw inputs by checksum | evidence rows or registry links added with no `tasks/<folder>/INPUTS.sha256`; a malformed or empty line; an absolute path of either style, `.`, `..`, a directory, a repo path that is not an existing file | `TestRule6.*` |
@@ -39,7 +39,7 @@ run live on PR #461 and PR #462 on 2026-11-22.
 
 | # | Finding | Fix |
 |---|---|---|
-| 1 | the PR's own checker judged the PR | `pull_request_target`, base checkout, `TestWorkflow`; `.github/` joins the two-family paths |
+| 1 | the PR's own checker judged the PR | `pull_request_target`, base checkout, `TestWorkflow` |
 | 2 | a later REFUTE or a stale abbreviated SHA still counted | latest record per verifier governs; the SHA is read only from the verdict line, 40 characters |
 | 3 | family labels and family-only records counted | family derived from the model by a fixed map; model, verdict with SHA and "What it checked" required |
 | 4 | a longer or prefixed branch name lifted the cap | exact branch, on a line the PR adds to DECISIONS.md |
@@ -75,6 +75,9 @@ so that its family appears in it (for example `Gemini 4 Hydrogen`, not `4 Hydrog
   lands a new label. The check is re-evaluated on PR events and comments, not when `main` moves. The controller sets
   the ruleset's strict policy (branch up to date with `main` before merge) when making `pr-rules` required, so a PR is
   re-judged after `main` moves. Without that setting this gap is open.
+- **The round cap, the re-review scope and the BLOCKING or FOLLOW-UP marking (rule 4).** Practice for the controller, not
+  checked. The checker only notes a REFUTE record that names no BLOCKING finding; it still withdraws that approval.
+- **The freeze on national evidence backfill (rule 5).** Owner policy, no check.
 - **A raw-store path that is a directory.** Paths under `raw/` and `provenance/` are in the shared store, not the
   repository, so the check cannot tell a file from a directory there; it rejects a trailing slash and `.`/`..`.
 - **Rule 5 audit content.** The check finds a file `AUDIT.md` naming the label; it does not judge the audit. Audit
@@ -97,7 +100,7 @@ Still open for the owner or controller:
    means a re-admission batch is not blocked for lack of an audit. Deleting the two lines
    `spaghetti-batch5-2026-11-22` and `spaghetti-batch6-2026-11-22` from the baseline would require an `AUDIT.md` first.
 2. **The 2026-11-20 "Codex-only for now" waiver** (QUEUE.md, evidence lanes) conflicts with rule 4. The check does not
-   honour it: two families are required.
+   honour it: a data PR needs two families.
 3. **Labels in tables other than evidence.** The label reader takes `created_by` from every `data/*.csv` that has the
    column, not only the evidence shards.
 4. **A FAIL audit is permanent until its file changes.** Any `AUDIT.md` with `Result: FAIL` blocks data PRs for that
