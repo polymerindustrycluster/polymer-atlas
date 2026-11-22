@@ -129,6 +129,7 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   2. **Muse pauses minting and integration.** Until the owner lifts this, Muse opens no data PR and mints nothing. It
      continues downloads and the archive copy, and may do read-only work: publishing its join code and match rules, and
      triaging its own flagged rows without editing them. Reason: batch 5's OSHA site matches required name, city and
-     state but no street, and batches 6 and 7 were built before any independent check of batch 5.
+     state but no street, and batches 6 and 7 were built before the address audit of 2026-11-22 identified the batch-5
+     mismatches.
   3. **Batch 7 (PR #459) stays in draft** until its joins are checked the way batch 5's were.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
