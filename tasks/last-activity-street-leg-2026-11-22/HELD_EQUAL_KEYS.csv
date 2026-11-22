@@ -1,0 +1,10 @@
+site_id,site_street_address,tier_a_street_as_printed,hold_reason,site_dated_after
+SITE-000514,"191 American Blvd, Suite 100",191 American Blvd Suite 300,unit_conflict,no
+SITE-002182,"BIDA Complex Building 350, 3rd and Oak St.",BIDA COMPLEX #350 3RD & OAK STREET,no_civic_number,no
+SITE-002988,1604 Building,1604 Building Barth Street,bare_number,no
+SITE-003187,1790 Building,"1790 Building, Washington St.",bare_number,no
+SITE-003780,3206 #6 Road,3206 #6 RD,bare_number,no
+SITE-004585,4285 RIDER TRL N - SUITE 150,"4285 Rider Trail N, Suite 200",unit_conflict,yes
+SITE-005976,Freeport Center Bldg Z-13,"FREEPORT CENTER BLDG Z13, PO",no_civic_number,no
+SITE-005976,Freeport Center Bldg Z-13,FREEPORT CENTER BUILDING Z-13,no_civic_number,no
+SITE-019015,2560 White Oak Circle Suite 140,2560 White Oak Circle Suite 120,unit_conflict,yes
