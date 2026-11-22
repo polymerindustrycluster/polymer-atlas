@@ -14,14 +14,13 @@ SITE-000436,2700 Atlantic Blvd,exact,2700 Atlantic Blvd NE
 SITE-000442,5385 Orchard View Dr. SE,exact,"5385 ORCHARD VIEW DRIVE, S.E."
 SITE-000463,4300 Hamann Parkway,number+name,4300 HAMMON PKWY
 SITE-000485,1225 Munroe Falls Avenue,exact,"1225 Munroe Falls Ave. Cuyahoga Falls, OH 44221"
+SITE-000514,"191 American Blvd, Suite 100",number+name,191 American Blvd Suite 300
 SITE-000522,201 Vista Ave SE,exact,201 Vista Avenue S.E.
 SITE-000532,850 W Smith Rd,number+name,850 W. SMITH ST.
 SITE-000563,6753 Chestnut Ridge Rd.,exact,6753 CHESTNUT RIDGE RD NW
 SITE-000563,6753 Chestnut Ridge Rd.,exact,6753 Chestnut Ridge Rd. NW
 SITE-000590,532 S MAIN ST,number+name,532 so main st
 SITE-000603,7180 Rte 43,number+name,7180 St. Rt. 43N
-SITE-000620,1700A Old Mansfield Road,number+name,1700 Old Mansfield Rd
-SITE-000620,1700A Old Mansfield Road,exact,1700A OLD MANSFIELD RD
 SITE-000637,17000 SAINT CLAIR AVE BLDG 1,number+name,17000 ST. CLAIR AVENUE SUITE #1
 SITE-000637,17000 SAINT CLAIR AVE BLDG 1,number+name,17000 St. Clair Ave
 SITE-000746,894 Prairie Rd,number+name,894 Prairie Ave
@@ -75,7 +74,6 @@ SITE-002566,580 Industrial Dr.,number+name,580 INDUSTRIAL AVENUE
 SITE-002575,2180 Bennett Rd 2180 Bennett Rd,number+name,2180 BENNETT ROAD
 SITE-002620,2 Birchmont Rd.,number+name,2 BIRCHMONT DRIVE
 SITE-002620,2 Birchmont Rd.,number+name,2 Birchmont Drive
-SITE-002625,94A Dries Rd.,exact,94A DRIES ROAD
 SITE-002626,208 Chestnut,exact,208 chestnut St.
 SITE-002641,250 Rt. 61 S,exact,250 ROUTE 61 SOUTH
 SITE-002641,250 Rt. 61 S,exact,250 Route 61 South
@@ -114,7 +112,6 @@ SITE-003119,3700 N Interstate Hwy 35E,exact,3700 NORTH INTERSTATE HIGHWAY 35 EAS
 SITE-003132,3000 Pegasus Rd,number+name,3000 PEGASUS DRIVE
 SITE-003143,1513 Parkside Dr,number+name,1513 Parkside
 SITE-003174,9500 I-10 East,number+name,9500 E FREEWAY
-SITE-003175,Spur 119 East,exact,SPUR 119 E
 SITE-003182,4770 US Hwy 42,number+name,4770 HWY 42 East
 SITE-003184,355 LA Hwy 3142 (Gate 1),number+name,355 HWY 3142
 SITE-003185,21255 LA Hwy 1 S,number+name,LOUISIANA OPERATIONS 21255 LOUISIANA HIGHWAY 1 SOUTH
@@ -127,8 +124,6 @@ SITE-003250,9455 Farm to Market 1559,number+name,9455 FARM TO MARKET ROAD 1559
 SITE-003261,One Farrel Boulevard,exact,1 FARREL BOULEVARD
 SITE-003264,16369 US-131,number+name,16369 US-13
 SITE-003274,1569 Morris Street,exact,"1569 Morris St. Wabash ,IN"
-SITE-003275,W5649 County Road 342,exact,W5649 COUNTY ROAD 342
-SITE-003275,W5649 County Road 342,exact,W5649 County Road 342
 SITE-003300,14118 Route 8,number+name,14118 State HWY 8
 SITE-003303,4647 FM 1006,number+name,4647 FM RD 1006
 SITE-003311,"10A Bloomfield Avenue, Suite 8",number+name,10 Bloomfield Ave STE 8
@@ -175,16 +170,13 @@ SITE-004313,18811 NE San Rafael St,number+name,18811 NE SAN RAFAEL
 SITE-004338,3700 Salida Street,number+name,"3700 N. Salida St., Unit 20"
 SITE-004338,3700 Salida Street,number+name,"3700 NORTH SALIDA STREET, SUITE 20"
 SITE-004363,125 S MacQuesten Parkway,number+name,125 MACQUESTEN PARKWAY SOUTH
-SITE-004403,One Centro Way,exact,ONE CENTRO WAY
 SITE-004411,201 Mills St,exact,201 Mills Street / PO Box 265
-SITE-004431,One Innovation Drive,exact,One Innovation Dr
 SITE-004458,1455 J A Cochran By-Pass,exact,1455 J A Cochran Bypass
 SITE-004468,100 Cellwood Drive,number+name,100 Cellwood Place
 SITE-004524,W129N10825 Washington Drive,exact,W129 N10825 Washington Drive
 SITE-004554,1701 N Topeka Blvd,number+name,1701 NW TOPEKA BLVD
 SITE-004554,1701 N Topeka Blvd,number+name,1701 NW topeka blvd
 SITE-004578,401 W.E. Baab Industrial Rd,number+name,401 W.E. BAAB Industrial Drive
-SITE-004620,N44 W33341 Watertown Plank Rd,exact,N44 W33341 WATERTOWN PLANK ROAD
 SITE-004651,520 S PAYTON AVE,number+name,520 S Payton
 SITE-004651,520 S PAYTON AVE,number+name,520 S. PAYTON ST.
 SITE-004665,4101 LA HWY 108,number+name,4101 HIGHWAY 108 S
@@ -362,14 +354,9 @@ SITE-006436,10000 S Carlisle St,number+name,10000 S CARLISLE
 SITE-008159,1100 N Harvester Rd,number+name,1100 HARVESTER ROAD
 SITE-008220,1 Chestnut Strear,number+name,1 CHESTNUT STREET
 SITE-008220,1 Chestnut Strear,number+name,1 Chestnut Street
-SITE-008309,222W 33Rd St,exact,222W 33RD st
 SITE-010015,201 Condensery,exact,201 CONDENSERY RD
 SITE-010067,3236 Wilson drive suite B,number+name,3236 WILSON DR NW STE B
 SITE-010081,5375 International Parkway,exact,5375 International Pkwy SE
-SITE-010153,N65 W24770 Main St,exact,N65 W24770 MAIN STREET
-SITE-010153,N65 W24770 Main St,exact,N65 W24770 Main St
-SITE-010157,N7660 Industrial Rd,exact,N7660 Industrial Rd
-SITE-010184,W188 N11707 Maple Road,exact,W188 N11707 MAPLE ROAD
 SITE-010304,9930 FM2920,exact,9930 FM 2920
 SITE-010316,800 West Stephens,exact,800 W STEPHENS ST.
 SITE-010325,301 West Plant Road,number+name,301 PLANT ROAD
@@ -385,7 +372,6 @@ SITE-011036,180 Industrial Blvd,number+name,180 Industrial Road
 SITE-011174,275 River Street,number+name,275 RIVER ROAD
 SITE-011305,1969 Rutgers University Boulevard,number+name,1969 RUGERS UNIVERSITY BLVD.
 SITE-011319,879 Main Street,number+name,879-899 MAIN STREET
-SITE-011463,198A Bosch Blvd,exact,198A Bosch Blvd
 SITE-011916,1150 Greens Folly Road,exact,1150 GREEN'S FOLLY ROAD
 SITE-011916,1150 Greens Folly Road,exact,1150 Greens Folly Road
 SITE-012668,610 County Road 18 So.,number+name,610 COUNTY ROAD 18 SOUTH

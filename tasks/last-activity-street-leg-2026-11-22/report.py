@@ -45,10 +45,23 @@ for path in EXT:
             if r["match_tier"] == "A":
                 tierA.setdefault(r["record_id"], []).append((r["street_as_printed"], d.same_street(streets[r["record_id"]], r["street_as_printed"])))
 
+def hold_reason(site, printed):
+    """Why an equal-key pair is not applied, or None when it is (or the keys differ)."""
+    key = d.street_key(site)
+    if not key or key != d.street_key(printed) or d.same_street(site, printed):
+        return None
+    if not d.has_civic_number(key):
+        return "no_civic_number"
+    return "bare_number" if len(key.split()) < 2 else "unit_conflict"
+
 def reason(sid):
     st = streets[sid]
     if not st.strip():
         return "blank_street"
+    holds = {hold_reason(st, p) for p, ok in tierA[sid] if not ok} - {None}
+    for h in ("unit_conflict", "no_civic_number", "bare_number"):
+        if h in holds:
+            return h
     if not lead(st):
         return "no_house_number"
     if any(lead(p) == lead(st) for p, ok in tierA[sid] if not ok):
@@ -70,6 +83,17 @@ with open(HERE / "CLEARED_SITES.csv", "w", newline="", encoding="utf-8") as f:
         assert "@" not in pr
         w.writerow([k, before[k]["last_activity_date"], before[k]["last_activity_source"], reason(k), streets[k], pr])
 
+with open(HERE / "HELD_EQUAL_KEYS.csv", "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f, lineterminator="\n")
+    w.writerow(["site_id", "site_street_address", "tier_a_street_as_printed", "hold_reason", "site_dated_after"])
+    nheld = Counter()
+    for sid in sorted(tierA):
+        for p, ok in sorted(set(tierA[sid])):
+            h = hold_reason(streets[sid], p)
+            if h:
+                nheld[h] += 1
+                w.writerow([sid, streets[sid], p, h, "yes" if sid in af else "no"])
+print("equal-key tier-A rows held, by reason:", dict(nheld))
 # looser comparison: derive again with the audit's pass set as the street test, diff against the street_key result
 key_test = d.same_street
 d.same_street = looser

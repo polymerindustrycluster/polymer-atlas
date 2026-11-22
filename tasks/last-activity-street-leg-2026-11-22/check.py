@@ -3,7 +3,7 @@
   python3 tasks/last-activity-street-leg-2026-11-22/check.py [--base origin/main]
 Asserts: (1) inputs/ match SHA256SUMS; (2) re-running the derivation from inputs/ reproduces the two data columns
 exactly; (3) no other column of any sites row changed, and no row was added or removed, against --base; (4) every
-dated site has a tier-A extract row at its own street, by an independent test (house number in the quote and a shared name word; not street_key); (5) the check itself fails on a planted site that keeps a date
+dated site has a tier-A extract row at its own street, by an independent test (house number in the quote and a shared name word; not street_key); (5) no email or phone pattern in any CSV of this folder; (6) the check itself fails on a planted site that keeps a date
 with a different street. Exit 0 = pass."""
 import argparse, csv, hashlib, io, shutil, subprocess, sys, tempfile
 from pathlib import Path
@@ -55,7 +55,14 @@ def check(data: Path, base: str, label="") -> list:
               "north", "south", "east", "west", "suite", "building", "route", "trail", "terrace", "square", "northeast",
               "northwest", "southeast", "southwest", "county", "hwy", "ave", "blvd", "pkwy", "pky", "ste", "trl", "cir", "ter", "tpke"}
     words = lambda x: {w for w in re.findall(r"[a-z]{3,}", (x or "").lower())} - SUFFIX
-    ok = lambda site, p: (m := re.match(r"\s*(\d+)", site)) and m.group(1) in re.findall(r"\d+", p or "") and (not words(site) or bool(words(site) & words(p)))
+    WORDS = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9", "ten": "10"}
+    def civic(site, p):                      # the site's first digit-bearing token (or leading number word) appears in the quote
+        toks = (site or "").lower().split()
+        if toks and toks[0] in WORDS:
+            return toks[0] in (p or "").lower().split() or WORDS[toks[0]] in re.findall(r"\d+", p or "")
+        t = next((t for t in toks if re.search(r"\d", t)), None)
+        return bool(t) and all(n in re.findall(r"\d+", p or "") for n in re.findall(r"\d+", t))
+    ok = lambda site, p: civic(site, p) and (not words(site) or bool(words(site) & words(p)))
     ext = {}
     for kind in ("inspection", "ita"):
         for r in rows(inp / f"witness_extract_sites_{kind}.csv"):
@@ -66,6 +73,13 @@ def check(data: Path, base: str, label="") -> list:
             continue
         if not r["street_address"].strip() or not any(ok(r["street_address"], x) for x in ext.get(sid, [])):
             errs.append(f"{sid}: dated, but no tier-A extract row at its street by the independent test (street {r['street_address']!r})")
+    # (6) no individual contact detail in the files this folder publishes
+    em = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+    ph = re.compile(r"(?<!\d)(?:\+?1[-. ]?)?\(?\d{3}\)?[-. ]\d{3}[-. ]\d{4}(?!\d)|(?<!\d)\d{10}(?!\d)")
+    for f in sorted(HERE.rglob("*.csv")):
+        for ln, line in enumerate(f.read_text(encoding="utf-8").split("\n"), 1):
+            if em.search(line) or ph.search(line):
+                errs.append(f"email or phone pattern at {f.relative_to(HERE)}:{ln}")
     return errs
 
 

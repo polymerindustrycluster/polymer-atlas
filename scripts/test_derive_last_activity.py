@@ -20,6 +20,11 @@ SAME = [  # equal atlas.street_key
     ("100 Main St Suite 4", "100 MAIN STREET"),                     # unit on one side
     ("1 Smith and Wesson Rd", "1 SMITH & WESSON ROAD"),             # & versus and (the key already collapses it)
     ("9 Elm Ave.", "9 elm avenue"),                                 # case, punctuation
+    ("198A Bosch Blvd", "198A Bosch Blvd"),                         # SITE-011463: house number with a letter
+    ("N44 W33341 Watertown Plank Rd", "N44 W33341 WATERTOWN PLANK ROAD"),  # SITE-004620: grid address
+    ("One Innovation Drive", "One Innovation Dr"),                  # SITE-004431: leading number word
+    ("191 American Blvd, Suite 100", "191 American Blvd Suite 100"),  # same suite on both sides
+    ("191 American Blvd, Suite 100", "191 American Blvd"),          # suite on one side only
 ]
 DIFFERENT = [  # true mismatches: the date must not move to this site
     ("217 Thweatt Blvd", "568 THWEATT BLVD."),                      # same street, other house number
@@ -33,10 +38,15 @@ DIFFERENT = [  # true mismatches: the date must not move to this site
     ("630 US HIGHWAY 150 E", "630 US Highway 130 East"),
     ("10955 Highway 138", "10955 COUNTY ROAD 138"),                 # highway versus county road
     ("1243 170th St", "1243 270TH ST."),
+    ("191 American Blvd, Suite 100", "191 American Blvd Suite 300"),            # SITE-000514: suites differ
+    ("2560 White Oak Circle Suite 140", "2560 White Oak Circle Suite 120"),   # SITE-019015: suites differ
+    ("4285 RIDER TRL N - SUITE 150", "4285 Rider Trail N, Suite 200"),
+    ("12 Oak St Unit B", "12 Oak Street Unit C"),
 ]
 NEVER = [  # blank and number-less streets are never equal, even to themselves
     ("", "1 Main St"), ("", ""), ("1 Main St", ""), ("P.O. Box 5", "P.O. BOX 5"),
     ("Chemical Plant Rd", "Chemical Plant Road"), ("1604 Building", "1604 Building Barth Street"),
+    ("BIDA Complex Building 350, 3rd and Oak St.", "BIDA COMPLEX #350 3RD & OAK STREET"),  # equal key, no civic number
 ]
 KNOWN_MISSES = [  # real variants atlas.street_key does not collapse; rejected on purpose, listed as follow-ups in the README
     ("ONE PLASTICS DR", "1 Plastics Drive"),                        # number word
@@ -95,12 +105,19 @@ class Derive(unittest.TestCase):
             ita = tmp / "ita.csv"
             with open(ita, "w", newline="") as f:
                 csv.writer(f).writerows([cols, ["SITE-2", "20 OAK AVE", "2023", "A"]])   # ITA: year precision
+            with open(tmp / "data/sites_OH.csv", "a", newline="") as f:
+                csv.writer(f).writerow(["SITE-5", "2560 White Oak Circle Suite 140", "", ""])
+            with open(ex, "a", newline="") as f:
+                csv.writer(f).writerow(["SITE-5", "2560 White Oak Circle Suite 140", "2022-05-13", "A"])   # same suite: applied
+            with open(ita, "a", newline="") as f:
+                csv.writer(f).writerow(["SITE-5", "2560 White Oak Circle Suite 120", "2023", "A"])        # other suite: rejected
             best, stats, rejected, _files, _streets = dl.derive(tmp / "data", ex, ita)
-            self.assertEqual(set(best), {"SITE-1", "SITE-2"})
+            self.assertEqual(set(best), {"SITE-1", "SITE-2", "SITE-5"})
+            self.assertEqual(best["SITE-5"][:2], (date(2022, 5, 13), "osha_inspection"))
             self.assertEqual(best["SITE-1"][0], date(2024, 5, 1))
             self.assertEqual(best["SITE-2"][:2], (date(2023, 12, 31), "osha_ita"))
             self.assertEqual(sorted(r[0] for r in rejected if r[1] == "inspection"), ["SITE-2", "SITE-3"])
-            self.assertEqual(stats["inspection"], (1, 1, 2))
+            self.assertEqual(stats["inspection"], (2, 1, 2))
 
 
 if __name__ == "__main__":
