@@ -21,7 +21,7 @@ def norm_url(u): p = urlsplit(u); return (p.netloc.lower().removeprefix('www.') 
 def problems(r):
     p, q = [], r['quote']; f = frame.get(r['site_id'])
     if not f: return ['site not in frame']
-    cap = STORE / ('archive' if r['capture_basis'] == 'archive_original' else 'raw') / (r['capture_sha256'] + ('.raw'))
+    cap = STORE / {'archive_original': 'archive', 'archived_copy': 'wb', 'live': 'raw'}[r['capture_basis']] / (r['capture_sha256'] + ('.raw'))
     if not cap.exists(): return ['capture missing']
     b = cap.read_bytes()
     if sha(b) != r['capture_sha256']: p.append('capture hash mismatch')
@@ -64,7 +64,7 @@ def main():
         for why in problems(r): bad.append(f"{r['site_id']}: {why}")
     # planted defects: each must be caught
     from atlas import NOTES_STREET_RE
-    caught = 0; plants = []; tx = lambda r: capture_text((STORE / ('archive' if r['capture_basis'] == 'archive_original' else 'raw') / (r['capture_sha256'] + '.raw')).read_bytes())
+    caught = 0; plants = []; tx = lambda r: capture_text((STORE / {'archive_original': 'archive', 'archived_copy': 'wb', 'live': 'raw'}[r['capture_basis']] / (r['capture_sha256'] + '.raw')).read_bytes())
     if not packet: bad.append('empty packet: nothing to plant defects into')
     else:
         base = packet[0]; w0 = base['quote'].split()[0]

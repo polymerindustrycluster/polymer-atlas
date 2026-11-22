@@ -22,6 +22,8 @@ for r in rd(T / 'pic18-street-notes-2026-11-17/verdicts.csv'):
 ver = rd(D / 'verdicts.csv'); arch = {r['page_url']: r for r in rd(D / 'archive.csv')} if (D / 'archive.csv').exists() else {}
 fx = [json.loads(l) for l in open(STORE / 'fetches.jsonl')]
 live = {j['final_url']: j for j in fx if j.get('status') == 'ok' and j['kind'] != 'robots'}
+afx = [json.loads(l) for l in open(STORE / 'archived_fetches.jsonl')] if (STORE / 'archived_fetches.jsonl').exists() else []
+awb = {j['url']: j for j in afx if j['http'] == 200 and j['bytes']}  # archived copies by original URL (route 1)
 sites = [s for f in sorted(glob.glob(str(R / 'data/sites_*.csv'))) for s in rd(f)]
 by_key = {}
 for s in sites:
@@ -58,11 +60,18 @@ for v in ver:
         holds.append(dict(site_id=v['site_id'], org_id=f['org_id'], verdict=v['verdict'], reason=v['reason'], detail=v['detail'], website=f['website'], pages_fetched=sum(j.get('status') == 'ok' for j in js), fetch_statuses=';'.join(sorted({j.get('status', '') for j in js}))))
         continue
     q = v['quote']; assert '\n' not in q and q == ' '.join(q.split()), 'quote must be whitespace-collapsed'
-    a = arch.get(v['page_url']); has_arch = bool(a and a['status'] == 'ok')
     hold = lambda reason, detail: holds.append(dict(site_id=v['site_id'], org_id=f['org_id'], verdict='STILL_UNCERTAIN', reason=reason, detail=detail, website=f['website'], pages_fetched='', fetch_statuses=''))
-    if not has_arch:  # controller ruling 2026-11-22: a page whose Wayback save fails (after one later retry) is held
-        hold('ARCHIVE_UNAVAILABLE', f"reading VERIFIED ({v['street']}, {v['page_url']}) but the Wayback save failed twice; no row without its archive capture (SCHEMA 4.22). Settling fact: a successful save of that page."); continue
-    raw, shx, basis = (STORE / 'archive' / (a['archive_sha256'] + '.raw')).read_bytes(), a['archive_sha256'], 'archive_original'
+    route = v.get('route') or 'live'
+    if route == 'archived_copy':  # owner ruling 2026-11-22 (1): a Wayback capture dated on or after 2024-11-22 of the company's own page, only when the live site cannot be read
+        j = awb.get(v['page_url']); assert j, f"{v['site_id']}: no archived capture of {v['page_url']}"
+        if j['archive_ts'][:8] < '20241122': hold('ARCHIVED_COPY_OVER_2_YEARS', f"capture {j['archive_ts'][:8]} is older than 2024-11-22: a lead only"); continue
+        a = dict(archive_ref=f"https://web.archive.org/web/{j['archive_ts']}/{v['page_url']}", captured_at=f"{j['archive_ts'][:4]}-{j['archive_ts'][4:6]}-{j['archive_ts'][6:8]}", archive_served_sha256='', archive_sha256=j['sha256'])
+        raw, shx, basis, has_arch = (STORE / 'wb' / (j['sha256'] + '.raw')).read_bytes(), j['sha256'], 'archived_copy', True
+    else:
+        a = arch.get(v['page_url']); has_arch = bool(a and a['status'] == 'ok')
+        if not has_arch:  # controller ruling 2026-11-22: a page whose Wayback save fails (after one later retry) is held
+            hold('ARCHIVE_UNAVAILABLE', f"reading VERIFIED ({v['street']}, {v['page_url']}) but the Wayback save failed twice; no row without its archive capture (SCHEMA 4.22). Settling fact: a successful save of that page."); continue
+        raw, shx, basis = (STORE / 'archive' / (a['archive_sha256'] + '.raw')).read_bytes(), a['archive_sha256'], 'archive_original'
     t = capture_text(raw); assert sha(raw) == shx
     if q not in t:
         hold('ADDRESS_OUTSIDE_MAIN_TEXT', f"reading found {v['street']} on {v['page_url']} but not in the page's main text (navigation, header and footer excluded), so no quotable line (controller ruling 2026-11-22). Settling fact: the address in main text on some page of the company's own site."); continue
@@ -90,8 +99,8 @@ for v in ver:
     packet.append(dict(site_id=v['site_id'], org_id=f['org_id'], proposed_street=v['street'], city=f['city'], zip=v['zip'], county=f['county'],
                        county_basis="the record's county, unchanged (earlier street lanes' rule); not derived from the page",
                        quote=q, source_url=v['page_url'], archive_url=a['archive_ref'], archive_captured_at=a['captured_at'],
-                       capture_basis=basis, capture_sha256=shx, archive_served_sha256=a['archive_served_sha256'], org_sites_all_shards=len(org_sites), org_sites_same_city=len(sib) + 1, offset=off, length=len(q), live_sha256=live[v['page_url']]['sha256'], tie=v['tie'], archive_status=''))
-write('packet.csv', packet, ['site_id', 'org_id', 'proposed_street', 'city', 'zip', 'county', 'county_basis', 'quote', 'source_url', 'archive_url', 'archive_captured_at', 'capture_basis', 'capture_sha256', 'archive_served_sha256', 'offset', 'length', 'live_sha256', 'org_sites_all_shards', 'org_sites_same_city', 'tie', 'archive_status'])
+                       capture_basis=basis, capture_sha256=shx, archive_served_sha256=a['archive_served_sha256'], org_sites_all_shards=len(org_sites), org_sites_same_city=len(sib) + 1, offset=off, length=len(q), live_sha256=live[v['page_url']]['sha256'] if v['page_url'] in live else '', source_route=route, observed_date=a['captured_at'], tie=v['tie'], archive_status=''))
+write('packet.csv', packet, ['site_id', 'org_id', 'proposed_street', 'city', 'zip', 'county', 'county_basis', 'quote', 'source_url', 'archive_url', 'archive_captured_at', 'capture_basis', 'capture_sha256', 'archive_served_sha256', 'offset', 'length', 'live_sha256', 'source_route', 'observed_date', 'org_sites_all_shards', 'org_sites_same_city', 'tie', 'archive_status'])
 write('holds.csv', holds, ['site_id', 'org_id', 'verdict', 'reason', 'detail', 'website', 'pages_fetched', 'fetch_statuses'])
 write('record_health_leads.csv', health_leads, ['site_id', 'org_id', 'website', 'what_happened', 'date'])
 write('dedupe_leads.csv', leads, ['site_id', 'street', 'other_site_id', 'other_org_id', 'other_city', 'where', 'other_street', 'blocking'])

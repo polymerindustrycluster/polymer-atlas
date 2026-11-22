@@ -15,7 +15,6 @@ SITE-001795,ORG-001719,STILL_UNCERTAIN,NO_DNS,"the domain does not resolve (curl
 SITE-002035,ORG-002041,STILL_UNCERTAIN,TLS_ERROR,"certificate does not match the host (curl exit 60); availability fact, not evidence the company closed",https://www.may-lin.com,0,ROBOTS_UNREADABLE
 SITE-001575,ORG-001511,STILL_UNCERTAIN,HQ_LABEL_ON_PLANT,"About page (main text) labels 4415 Euclid Avenue, Cleveland 44103 'CleveMed's Corporate Office'; the site is typed manufacturing_plant (site notes say Ste 400, from an FDA registration). Settling fact: a page tying plant operations to the street.",https://clevemed.com/,3,ROBOTS_UNREADABLE;ok
 SITE-000524,ORG-000490,STILL_UNCERTAIN,ADDRESS_ELSEWHERE,Contact page gives the North Brunswick corporate headquarters and an Aurora manufacturing center; no Mogadore street. Settling fact: a page naming the Mogadore street.,https://philpottsolutions.com/,6,ROBOTS_UNREADABLE;ok
-SITE-001665,ORG-001593,STILL_UNCERTAIN,CONNECTION_REFUSED,"connection refused (curl exit 7); availability fact, not evidence the company closed",https://clamshellusa.com/,0,ROBOTS_UNREADABLE
 SITE-000106,ORG-000107,STILL_UNCERTAIN,ROBOTS_HTTP_403,robots.txt request returned HTTP 403 (treated as closed; not fetched),http://www.tmplasticsusa.com,0,ROBOTS_UNREADABLE
 SITE-001868,ORG-001794,STILL_UNCERTAIN,THIN_PAGE,home page gave under 200 characters of text (script- or image-rendered),https://dallittle.com,0,THIN_OR_EMPTY
 SITE-002063,ORG-002064,STILL_UNCERTAIN,HOME_404,the record URL returned HTTP 404,https://polytechmolding.com (404 - not this firm's site),0,HTTP_404
@@ -47,7 +46,7 @@ SITE-000013,ORG-000014,STILL_UNCERTAIN,NO_WEBSITE_ON_RECORD,neither the site nor
 SITE-000026,ORG-000027,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,3 page(s) read (home and links found on it); none states a street for this site in main text,https://www.hygenic.com,3,ok
 SITE-000032,ORG-000032,STILL_UNCERTAIN,NO_WEBSITE_ON_RECORD,neither the site nor the organization carries a website; nothing to fetch under the no-guessing rule,none_found,0,
 SITE-000036,ORG-000036,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,2 page(s) read (home and links found on it); none states a street for this site in main text,https://extrudedplastics.com,2,ok
-SITE-000040,ORG-000040,STILL_UNCERTAIN,TLS_ERROR,"certificate does not match the host (curl exit 60); availability fact, not evidence the company closed",https://splastics.com,0,ROBOTS_UNREADABLE
+SITE-000040,ORG-000040,STILL_UNCERTAIN,CITY_DIFFERS,"Archived contact page (Wayback 2026-02-11; live site unreadable): 'Spectrum Plastics Corp. 99 East Ascot Lane Cuyahoga Falls, Ohio 44223'; the record's city is Akron. Settling fact: a page naming a street in Akron.",https://splastics.com,0,ROBOTS_UNREADABLE
 SITE-000042,ORG-000042,STILL_UNCERTAIN,HOME_404,the record URL returned HTTP 404,https://dupont.com/multibase-family.html,0,HTTP_404
 SITE-000066,ORG-000066,STILL_UNCERTAIN,NO_WEBSITE_ON_RECORD,neither the site nor the organization carries a website; nothing to fetch under the no-guessing rule,none_found,0,
 SITE-000078,ORG-000078,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,6 page(s) read (home and links found on it); none states a street for this site in main text,https://gi-de.com,6,ok
@@ -55,7 +54,7 @@ SITE-000092,ORG-000092,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,3 page(s) read (
 SITE-000115,ORG-000116,STILL_UNCERTAIN,TLS_ERROR,"certificate does not match the host (curl exit 60); availability fact, not evidence the company closed",https://www.amdplastics.com/,0,ROBOTS_UNREADABLE
 SITE-000136,ORG-000136,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,2 page(s) read (home and links found on it); none states a street for this site in main text,https://rotopolymers.com,2,THIN_OR_EMPTY;ok
 SITE-000155,ORG-000155,STILL_UNCERTAIN,TIMEOUT,"connection timed out (curl exit 28); availability fact, not evidence the company closed",https://www.eaton.com,0,ROBOTS_UNREADABLE
-SITE-000199,ORG-000192,STILL_UNCERTAIN,THIN_PAGE,home page gave under 200 characters of text (script- or image-rendered),http://trianglechem.com/,0,THIN_OR_EMPTY
+SITE-000199,ORG-000192,STILL_UNCERTAIN,ADDRESS_OUTSIDE_MAIN_TEXT,"Archived home page footer (Wayback 2026-06-12; outside main text): 'Peoples Commerce Park, 7027 Spinach Drive, Mentor, OH 44060' (the street the 2026-11-16 lane held). Settling fact: the address in main text or a ruling on footer addresses (owner question 8).",http://trianglechem.com/,0,THIN_OR_EMPTY
 SITE-000210,ORG-000050,STILL_UNCERTAIN,THIN_PAGE,home page gave under 200 characters of text (script- or image-rendered),https://synthomer.com,0,THIN_OR_EMPTY
 SITE-000220,ORG-000207,STILL_UNCERTAIN,HOME_HTTP_202,home page status HTTP_202,https://realtruck.com/,0,HTTP_202
 SITE-000243,ORG-000229,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,2 page(s) read (home and links found on it); none states a street for this site in main text,https://americanmoldedplastic.com/,2,ok
@@ -82,9 +81,8 @@ SITE-001652,ORG-001581,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,5 page(s) read (
 SITE-001670,ORG-001598,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,3 page(s) read (home and links found on it); none states a street for this site in main text,https://homesteadfinishingproducts.com/,3,ok
 SITE-001676,ORG-000207,STILL_UNCERTAIN,HOME_HTTP_202,home page status HTTP_202,https://realtruck.com/,0,HTTP_202
 SITE-001718,ORG-001644,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,2 page(s) read (home and links found on it); none states a street for this site in main text,https://www.rpmindinc.com/,2,THIN_OR_EMPTY;ok
-SITE-001774,ORG-001698,STILL_UNCERTAIN,TLS_ERROR,"certificate does not match the host (curl exit 60); availability fact, not evidence the company closed",https://www.prime-plastics.com/,0,ROBOTS_UNREADABLE
 SITE-001777,ORG-001701,STILL_UNCERTAIN,THIN_PAGE,home page gave under 200 characters of text (script- or image-rendered),https://www.continentalpaints.com/,0,THIN_OR_EMPTY
-SITE-001784,ORG-001708,STILL_UNCERTAIN,ROBOTS_HTTP_403,robots.txt request returned HTTP 403 (treated as closed; not fetched),ecmpmc.com,0,ROBOTS_UNREADABLE
+SITE-001784,ORG-001708,STILL_UNCERTAIN,ADDRESS_OUTSIDE_MAIN_TEXT,"Archived home page footer (Wayback 2025-12-11; live site unreadable, outside main text): 'ECM Performance Materials Corp. 345 N. State Rd. Medina, Ohio 44256'. Settling fact: the address in main text or a ruling on footer addresses (owner question 8).",ecmpmc.com,0,ROBOTS_UNREADABLE
 SITE-001786,ORG-001710,STILL_UNCERTAIN,NO_WEBSITE_ON_RECORD,neither the site nor the organization carries a website; nothing to fetch under the no-guessing rule,none found,0,
 SITE-001797,ORG-001721,STILL_UNCERTAIN,NO_WEBSITE_ON_RECORD,neither the site nor the organization carries a website; nothing to fetch under the no-guessing rule,,0,
 SITE-001821,ORG-001745,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,2 page(s) read (home and links found on it); none states a street for this site in main text,http://jgsalesweb.weebly.com/,2,ok
@@ -112,6 +110,5 @@ SITE-002047,ORG-002053,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,1 page(s) read (
 SITE-002056,ORG-002057,STILL_UNCERTAIN,TLS_ERROR,"certificate does not match the host (curl exit 60); availability fact, not evidence the company closed",https://qualityfiberglass.net,0,ROBOTS_UNREADABLE
 SITE-002059,ORG-002060,STILL_UNCERTAIN,TLS_ERROR,"certificate does not match the host (curl exit 60); availability fact, not evidence the company closed",https://canfieldplastics.com,0,ROBOTS_UNREADABLE
 SITE-002068,ORG-002068,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,3 page(s) read (home and links found on it); none states a street for this site in main text,https://www.chemstress.com,3,ok
-SITE-002073,ORG-002073,STILL_UNCERTAIN,TLS_ERROR,"certificate does not match the host (curl exit 60); availability fact, not evidence the company closed",https://energyene.com,0,ROBOTS_UNREADABLE
 SITE-002096,ORG-002139,STILL_UNCERTAIN,NO_WEBSITE_ON_RECORD,neither the site nor the organization carries a website; nothing to fetch under the no-guessing rule,,0,
 SITE-002110,ORG-002153,STILL_UNCERTAIN,NO_ADDRESS_ON_PAGES_READ,5 page(s) read (home and links found on it); none states a street for this site in main text,alphaworld.com,5,ok
