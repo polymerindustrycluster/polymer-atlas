@@ -36,6 +36,8 @@ EXPORT = {
     "GEO_PRECISION": ("sites.geocode_precision", "SCHEMA §4.5"),
     "COUNTY_SOURCES": ("sites.county_source", "SCHEMA §4.5 (v1.6)"),
     "REGISTRIES": ("registry_links.registry", "SCHEMA §4.8"),
+    "ADDRESS_ROLES": ("evidence.address_role", "SCHEMA §4.13 (v1.19)"),
+    "LAST_ACTIVITY_SOURCES": ("sites.last_activity_source", "SCHEMA §4.5 (v1.19)"),
     "PROCESSES": ("processes (multi, ';') on organizations/sites", "SCHEMA §3.1"),
     "MATERIALS": ("materials (multi, ';') on organizations/sites", "SCHEMA §3.2"),
     "RESEARCH_SUPPLEMENT": ("people/programs research areas (with PROCESSES|MATERIALS)", "SCHEMA §3.5"),
