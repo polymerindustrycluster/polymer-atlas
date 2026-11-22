@@ -1870,6 +1870,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'YOUNGSTOWN PLASTIC TOOLING & MACHINERY, INC.', EIN 341437860, in Youngstown, OH; the name matches the organization's legal name 'Youngstown Plastic Tooling & Machinery, Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -1882,7 +1887,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-000644",
@@ -2115,6 +2120,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'BORKE MOLD SPECIALISTS, INC.', EIN 311300225, in Hamilton, OH; the name matches the organization's legal name 'Borke Mold Specialists, Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -2127,7 +2137,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-000739",
@@ -2163,6 +2173,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2025-12-31 names plan sponsor 'COLD JET, LLC', EIN 200229498, in Loveland, OH; the name matches the organization's legal name 'Cold Jet'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -2175,7 +2190,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-000754",
@@ -3148,6 +3163,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'READY TECHNOLOGY, INC.', EIN 311419768, in Dayton, OH; the name matches the organization's legal name 'Ready Technology, Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -3160,7 +3180,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001098",
@@ -3509,6 +3529,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'UMD AUTOMATED SYSTEMS, INC.', EIN 341832279, in Fredericktown, OH; the name matches the organization's legal name 'UMD Automated Systems'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -3521,7 +3546,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001176",
@@ -4109,6 +4134,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2026-02-28 names plan sponsor 'KONG COMPANY, LLC', EIN 841559729, in Golden, CO; the name matches the organization's legal name 'KONG Company'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2026-02-28",
@@ -4121,7 +4151,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001417",
@@ -4157,6 +4187,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_U",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-08-31 names plan sponsor 'HERSH PACKING AND RUBBER COMPANY', EIN 310743184, in Canal Winchester, OH; the name matches the organization's legal name 'Hersh Packing & Rubber Company'"
+   },
    "liveness": {
     "tier_effect": "supports_U",
     "observed_date": "2025-08-31",
@@ -4169,7 +4204,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001426",
@@ -4260,6 +4295,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2025-12-31 names plan sponsor 'NEXEO PLASTICS, LLC', EIN 320581570, in The Woodlands, TX; the name matches the organization's legal name 'Nexeo Plastics, LLC'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -4272,7 +4312,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001433",
@@ -4361,6 +4401,16 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2025-06-30 names plan sponsor 'IMCD US, LLC', EIN 341263101, in Westlake, OH; the name matches the organization's legal name 'IMCD US'"
+   },
+   "address": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "HQ Westlake OH: the sponsor's mailing address in the Form 5500 for the plan year ending 2025-06-30 is in WESTLAKE, OH; the street matches the Atlas HQ site SITE-001505: '2 Equity Way Suite 210' (filing street '2 EQUITY WAY')"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-06-30",
@@ -4375,7 +4425,7 @@
   "atlas_hq_site_streets": {
    "SITE-001505": "2 Equity Way Suite 210"
   },
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001465",
@@ -5012,6 +5062,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'RAM PRECISION INDUSTRIES, INC.', EIN 311005280, in Centerville, OH; the name matches the organization's legal name 'RAM Precision Industries Inc'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -5024,7 +5079,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001534",
@@ -5108,6 +5163,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'BIONIX LLC', EIN 854091803, in Maumee, OH; the name matches the organization's legal name 'Bionix, LLC'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -5120,7 +5180,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001552",
@@ -5310,6 +5370,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'FINDLAY MACHINE & TOOL, LLC', EIN 871464094, in Findlay, OH; the name matches the organization's legal name 'Findlay Machine & Tool, LLC'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -5322,7 +5387,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001569",
@@ -5704,6 +5769,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'KITTYHAWK MOLDING CO., INC.', EIN 311295045, in Carlisle, OH; the name matches the organization's legal name 'Kittyhawk Molding Company Inc'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -5716,7 +5786,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001696",
@@ -5954,6 +6024,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'CHAMPION MANUFACTURING, INC.', EIN 311615275, in Marengo, OH; the name matches the organization's legal name 'Champion Manufacturing, Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -5966,7 +6041,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001754",
@@ -6002,6 +6077,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2024-12-31 names plan sponsor 'LICENSED SPECIALTY PRODUCTS OF OHIO', EIN 271482875, in Bradner, OH; the name matches the organization's legal name 'Licensed Specialty Products of Ohio, Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2024-12-31",
@@ -6014,7 +6094,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001772",
@@ -6295,6 +6375,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'DIVERSIPAK, INC.', EIN 311761458, in Cincinnati, OH; the name matches the organization's legal name 'Diversipak Inc'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -6307,7 +6392,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001800",
@@ -6598,6 +6683,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'GAPI USA, INC.', EIN 311222203, in Clayton, OH; the name matches the organization's legal name 'Gapi USA Inc'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -6610,7 +6700,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001827",
@@ -6694,6 +6784,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2026-06-30 names plan sponsor 'KOEHLKE COMPONENTS, INC.', EIN 310890033, in Franklin, OH; the name matches the organization's legal name 'Koehlke Components Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2026-06-30",
@@ -6706,7 +6801,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001843",
@@ -6946,6 +7041,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_U",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'SAFEGUARD TECHNOLOGY INC', EIN 341718496, in Streetsboro, OH; the name matches the organization's legal name 'Safeguard Technology Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_U",
     "observed_date": "2025-12-31",
@@ -6958,7 +7058,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001912",
@@ -7090,6 +7190,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'ROTOCAST TECHNOLOGIES, INC.', EIN 341819582, in Akron, OH; the name matches the organization's legal name 'Rotocast Technologies, Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -7102,7 +7207,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001954",
@@ -7153,6 +7258,54 @@
   "evidence_status": "none"
  },
  {
+  "record_id": "ORG-001966",
+  "verdict": "NAME+CITY",
+  "atlas": {
+   "legal_name": "Metcut Research Associates Inc",
+   "trade_names": "",
+   "hq_city": "Cincinnati",
+   "hq_state": "OH",
+   "verification_tier": "A",
+   "website": "metcut.com",
+   "linked_eins": []
+  },
+  "filing": {
+   "form": "5500",
+   "ack_id": "20261021075949NAL0000835473001",
+   "sponsor": "METCUT RESEARCH ASSOCIATES INC.",
+   "dba": "",
+   "ein": "310599320",
+   "plan_year_end": "2026-04-30",
+   "active_participants_eoy": 0,
+   "final_filing": "1",
+   "location_city_state": [
+    "",
+    ""
+   ],
+   "mailing_city_state": [
+    "CINCINNATI",
+    "OH"
+   ],
+   "location_street": "",
+   "mailing_street": "3980 ROSSLYN DRIVE"
+  },
+  "other_eins_under_name": [],
+  "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2026-04-30 names plan sponsor 'METCUT RESEARCH ASSOCIATES INC.', EIN 310599320, in Cincinnati, OH; the name matches the organization's legal name 'Metcut Research Associates Inc'"
+   }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
+  "atlas_hq_site_streets": {},
+  "evidence_status": "none"
+ },
+ {
   "record_id": "ORG-001967",
   "verdict": "NAME+CITY",
   "atlas": {
@@ -7186,6 +7339,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'MURRPLASTIK SYSTEMS, INC.', EIN 232927075, in Milford, OH; the name matches the organization's legal name 'Murrplastik Systems Inc'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -7198,7 +7356,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-001974",
@@ -7719,6 +7877,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'ELECTRO PRIME GROUP LLC', EIN 061748533, in Toledo, OH; the name matches the organization's legal name 'The Electro Prime Group LLC'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -7731,7 +7894,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002046",
@@ -7921,6 +8084,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'SUMMIT GLOVE, INC.', EIN 341867765, in Minerva, OH; the name matches the organization's legal name 'Summit Glove, Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -7933,7 +8101,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002156",
@@ -8138,6 +8306,56 @@
   "evidence_status": "none"
  },
  {
+  "record_id": "ORG-002211",
+  "verdict": "EIN+NAME",
+  "atlas": {
+   "legal_name": "Laminated Materials Corp.",
+   "trade_names": "",
+   "hq_city": "Bensalem",
+   "hq_state": "PA",
+   "verification_tier": "B",
+   "website": "",
+   "linked_eins": [
+    "232135078"
+   ]
+  },
+  "filing": {
+   "form": "5500-SF",
+   "ack_id": "20250909114605NAL0012853971001",
+   "sponsor": "LAMINATED MATERIALS CORPORATION",
+   "dba": "LMC PLASTICSOURCE",
+   "ein": "232135078",
+   "plan_year_end": "2024-12-31",
+   "active_participants_eoy": 0,
+   "final_filing": "0",
+   "location_city_state": [
+    "",
+    ""
+   ],
+   "mailing_city_state": [
+    "BENSALEM",
+    "PA"
+   ],
+   "location_street": "",
+   "mailing_street": "625 WINKS LN"
+  },
+  "other_eins_under_name": [],
+  "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2024-12-31 names plan sponsor 'LAMINATED MATERIALS CORPORATION' (DBA 'LMC PLASTICSOURCE'), EIN 232135078, an EIN the Atlas links to this organization; the name matches the organization's legal name 'Laminated Materials Corp.'"
+   }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
+  "atlas_hq_site_streets": {},
+  "evidence_status": "none"
+ },
+ {
   "record_id": "ORG-002226",
   "verdict": "NAME+CITY",
   "atlas": {
@@ -8272,6 +8490,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'LUICANA INDUSTRIES, INC.', EIN 232960613, in Boyertown, PA; the name matches the organization's legal name 'Luicana Industries, Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -8284,7 +8507,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002243",
@@ -8320,6 +8543,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'ISHMAN PLASTIC & WOOD CUTTING INC.', EIN 680537250, in Brookville, PA; the name matches the organization's legal name 'Ishman Plastic And Wood Cutting, Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -8332,7 +8560,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002246",
@@ -8421,6 +8649,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'JOHN WALL, INC.', EIN 251751546, in Carmichaels, PA; the name matches the organization's legal name 'John Wall Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -8433,7 +8666,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002257",
@@ -8920,6 +9153,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2025-12-31 names plan sponsor 'INSUL BOARD, INC.', EIN 251340993, in Erie, PA; the name matches the organization's legal name 'Insul Board'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -8932,7 +9170,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002315",
@@ -9071,6 +9309,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'SEAWAY MANUFACTURING CORPORATION', EIN 251069263, in Erie, PA; the name matches the organization's legal name 'Seaway Manufacturing Corp'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -9083,7 +9326,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002329",
@@ -9275,6 +9518,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'ULTRA-PAK, INC.', EIN 232650818, in Fairless Hills, PA; the name matches the organization's legal name 'Ultra Pak Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -9287,7 +9535,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002339",
@@ -9469,6 +9717,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2026-06-30 names plan sponsor 'IRIS, LTD., INC.', EIN 232174489, in Fleetwood, PA; the name matches the organization's legal name 'Iris Ltd. Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2026-06-30",
@@ -9481,7 +9734,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002357",
@@ -9517,6 +9770,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'C & E PLASTICS INC', EIN 251686222, in Georgetown, PA; the name matches the organization's legal name 'C & E Plastics Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -9529,7 +9787,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002400",
@@ -9565,6 +9823,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-06-30 names plan sponsor 'THOREN CAGING SYSTEMS, INC.', EIN 232113788, in Hazleton, PA; the name matches the organization's legal name 'Thoren Caging Systems, Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-06-30",
@@ -9577,7 +9840,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002409",
@@ -9613,6 +9876,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2025-12-31 names plan sponsor 'BIOCOAT INCORPORATED', EIN 232666477, in Horsham, PA; the name matches the organization's legal name 'Biocoat Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -9625,7 +9893,55 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
+ },
+ {
+  "record_id": "ORG-002412",
+  "verdict": "NAME+CITY",
+  "atlas": {
+   "legal_name": "Venture Precision Tool, Inc.",
+   "trade_names": "",
+   "hq_city": "Hummelstown",
+   "hq_state": "PA",
+   "verification_tier": "B",
+   "website": "",
+   "linked_eins": []
+  },
+  "filing": {
+   "form": "5500-SF",
+   "ack_id": "20260220083609NAL0010656208001",
+   "sponsor": "VENTURE PRECISION TOOL, INC.",
+   "dba": "",
+   "ein": "251661113",
+   "plan_year_end": "2026-02-19",
+   "active_participants_eoy": 0,
+   "final_filing": "1",
+   "location_city_state": [
+    "",
+    ""
+   ],
+   "mailing_city_state": [
+    "HUMMELSTOWN",
+    "PA"
+   ],
+   "location_street": "",
+   "mailing_street": "P.O. BOX 262"
+  },
+  "other_eins_under_name": [],
+  "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2026-02-19 names plan sponsor 'VENTURE PRECISION TOOL, INC.', EIN 251661113, in Hummelstown, PA; the name matches the organization's legal name 'Venture Precision Tool, Inc.'"
+   }
+  },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
+  "atlas_hq_site_streets": {},
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002417",
@@ -9866,6 +10182,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'INDUSTRIAL FLOOR CORPORATION', EIN 231717420, in Jenkintown, PA; the name matches the organization's legal name 'Industrial Floor Corporation'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -9878,7 +10199,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002437",
@@ -10774,6 +11095,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'METPLAS, INC.', EIN 251395638, in Natrona Heights, PA; the name matches the organization's legal name 'Metplas Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -10786,7 +11112,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002567",
@@ -11117,6 +11443,16 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2025-11-30 names plan sponsor 'SRC ELASTOMERICS, INC.', EIN 231127920, in Philadelphia, PA; the name matches the organization's legal name 'Src Elastomerics, Inc.'"
+   },
+   "address": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "HQ Philadelphia PA: the sponsor's mailing address in the Form 5500 for the plan year ending 2025-11-30 is in PHILADELPHIA, PA; the street matches the Atlas HQ site SITE-002586: '4749 Tolbut Street' (filing street '4749 TOLBUT STREET')"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-11-30",
@@ -11131,7 +11467,7 @@
   "atlas_hq_site_streets": {
    "SITE-002586": "4749 Tolbut Street"
   },
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002625",
@@ -11608,6 +11944,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2025-12-31 names plan sponsor 'NEW PIG CORPORATION', EIN 232363423, in Tipton, PA; the name matches the organization's legal name 'New Pig Corp.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -11622,7 +11963,7 @@
   "atlas_hq_site_streets": {
    "SITE-002664": "168 Holiday Pkwy"
   },
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002684",
@@ -11706,6 +12047,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2025-12-31 names plan sponsor 'WHIRLEY INDUSTRIES, INC.', EIN 251183490, in Warren, PA; the name matches the organization's legal name 'Whirley Industries Inc.'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -11720,7 +12066,7 @@
   "atlas_hq_site_streets": {
    "SITE-002683": "618 4th Ave."
   },
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002692",
@@ -11861,6 +12207,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'REGENEX CORPORATION', EIN 251680436, an EIN the Atlas links to this organization; the name matches the organization's legal name 'Regenex Corporation'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -11873,7 +12224,57 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
+ },
+ {
+  "record_id": "ORG-002712",
+  "verdict": "EIN+NAME",
+  "atlas": {
+   "legal_name": "Fay L Wagner Inc.",
+   "trade_names": "",
+   "hq_city": "Yeagertown",
+   "hq_state": "PA",
+   "verification_tier": "B",
+   "website": "faywagnertire.com",
+   "linked_eins": [
+    "251290948"
+   ]
+  },
+  "filing": {
+   "form": "5500-SF",
+   "ack_id": "20251219132524NAL0014442514001",
+   "sponsor": "FAY L. WAGNER, INC.",
+   "dba": "",
+   "ein": "251290948",
+   "plan_year_end": "2025-12-04",
+   "active_participants_eoy": 0,
+   "final_filing": "1",
+   "location_city_state": [
+    "",
+    ""
+   ],
+   "mailing_city_state": [
+    "YEAGERTOWN",
+    "PA"
+   ],
+   "location_street": "",
+   "mailing_street": "500 NORTH MAIN STREET"
+  },
+  "other_eins_under_name": [],
+  "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-04 names plan sponsor 'FAY L. WAGNER, INC.', EIN 251290948, an EIN the Atlas links to this organization; the name matches the organization's legal name 'Fay L Wagner Inc.'"
+   }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
+  "atlas_hq_site_streets": {},
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002732",
@@ -11959,6 +12360,11 @@
   },
   "other_eins_under_name": [],
   "proposed": {
+   "existence": {
+    "tier_effect": "supports_A",
+    "observed_date": "2026-11-20",
+    "claim_detail": "DOL Form 5500 for the plan year ending 2025-12-31 names plan sponsor 'CHELSEA BUILDING PRODUCTS INC', EIN 232869908, an EIN the Atlas links to this organization; the name matches the organization's legal name 'Chelsea Building Products'"
+   },
    "liveness": {
     "tier_effect": "supports_A",
     "observed_date": "2025-12-31",
@@ -11971,7 +12377,7 @@
    "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
-  "evidence_status": "evidenced elsewhere; liveness row only"
+  "evidence_status": "none"
  },
  {
   "record_id": "ORG-002748",
