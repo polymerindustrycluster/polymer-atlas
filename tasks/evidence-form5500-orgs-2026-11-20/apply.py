@@ -50,7 +50,7 @@ ev_rows = [r for f in (repo / "data").glob("evidence_*.csv") for r in rd(f)]
 used = {r["evidence_id"] for r in ev_rows}
 assert 480100 <= start <= 480999 and start > max(int(i[4:]) for i in used), f"start {start} is outside EVD-480100..480999 or not above the tree maximum"
 assert start + len(packet) - 1 <= 480999, "packet overruns the lane's reserved EVD range"
-other_ev = {r["record_id"] for r in ev_rows if r["record_table"] == "organizations" and r["created_by"] != "claude-code-evd-form5500-lane"}
+other_ev = {r["record_id"] for r in ev_rows if r["created_by"] != "claude-code-evd-form5500-lane"}  # any table, as build.py cut and check.py
 stale = sorted({r["record_id"] for r in packet if r["claim_type"] != "liveness" and r["record_id"] in other_ev})
 assert not stale, f"packet is stale: {len(stale)} organizations with non-liveness rows now have other evidence, e.g. {stale[:3]}"
 applied, withheld, n = [], [], start

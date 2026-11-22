@@ -39,6 +39,11 @@
     "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-04-30 names plan sponsor 'RAPID MOLD REPAIR AND MACHINE INC', EIN 341871234, in Akron, OH; the name matches the organization's legal name 'Rapid Mold Repair & Machine Co.'"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -82,6 +87,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 10 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -124,6 +134,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 46 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -173,6 +188,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 11 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -220,6 +240,11 @@
     "observed_date": "2025-08-31",
     "claim_detail": "operating in the plan year ending 2025-08-31: the Form 5500-SF reports 13 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -269,6 +294,11 @@
     "claim_detail": "operating in the plan year ending 2025-06-30: the Form 5500-SF reports 9 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -316,6 +346,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 5 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -365,6 +400,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 13 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -407,6 +447,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 540 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "SAME",
+   "fact": "SITE-000153: '25300 AL MOEN DR'",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {
    "SITE-000153": "25300 AL MOEN DR"
@@ -453,6 +498,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 188 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -496,6 +546,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 7 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -538,6 +593,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 306 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -587,6 +647,11 @@
     "claim_detail": "operating in the plan year ending 2025-08-31: the Form 5500-SF reports 5 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -629,6 +694,11 @@
     "observed_date": "2025-06-30",
     "claim_detail": "operating in the plan year ending 2025-06-30: the Form 5500-SF reports 33 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -673,6 +743,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 46 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -715,6 +790,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 10 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -764,6 +844,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 5 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -806,6 +891,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 90 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -850,6 +940,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 20 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -892,6 +987,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 4 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -936,6 +1036,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 13 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -978,6 +1083,11 @@
     "observed_date": "2026-11-20",
     "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-08-31 names plan sponsor 'IDEAS INC', EIN 311500203, in North Canton, OH; the name matches the organization's legal name 'IDEAS, Inc.'"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -1027,6 +1137,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 102 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -1069,6 +1184,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 12 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -1113,6 +1233,11 @@
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500-SF reports 25 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -1155,6 +1280,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 76 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "DIFFERENT",
+   "fact": "filing street '4220 ALABAMA AVENUE SW' vs Atlas HQ site street SITE-000476 '4220 Alabama Ave'",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {
    "SITE-000476": "4220 Alabama Ave"
@@ -1200,6 +1330,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 234 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -1249,6 +1384,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 2005 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -1291,6 +1431,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 13 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "SAME",
+   "fact": "SITE-000526: '16760 Park Circle Drive'",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {
    "SITE-000526": "16760 Park Circle Drive"
@@ -1342,6 +1487,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 5 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -1384,6 +1534,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 4 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -1428,6 +1583,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 105 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -1470,6 +1630,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 2 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -1514,6 +1679,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 6 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -1556,6 +1726,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 9 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -1605,6 +1780,11 @@
     "claim_detail": "operating in the plan year ending 2026-03-31: the Form 5500-SF reports 6 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -1647,6 +1827,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 8 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -1691,6 +1876,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 6 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -1734,6 +1924,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 7 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -1776,6 +1971,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 158 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -1825,6 +2025,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 85 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -1867,6 +2072,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 220 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -1911,6 +2121,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 17 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -1953,6 +2168,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 142 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -1997,6 +2217,11 @@
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500 reports 56 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -2039,6 +2264,11 @@
     "observed_date": "2025-03-31",
     "claim_detail": "operating in the plan year ending 2025-03-31: the Form 5500-SF reports 120 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -2083,6 +2313,11 @@
     "claim_detail": "operating in the plan year ending 2025-10-31: the Form 5500 reports 33 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -2125,6 +2360,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 13 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -2169,6 +2409,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 19 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -2211,6 +2456,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 54 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -2255,6 +2505,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 112 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -2298,6 +2553,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 13 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -2340,6 +2600,11 @@
     "observed_date": "2025-04-30",
     "claim_detail": "operating in the plan year ending 2025-04-30: the Form 5500-SF reports 6 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -2389,6 +2654,11 @@
     "claim_detail": "operating in the plan year ending 2025-06-30: the Form 5500 reports 112 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -2436,6 +2706,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 11 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -2485,6 +2760,11 @@
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500 reports 78 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -2527,6 +2807,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 39 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -2571,6 +2856,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 6 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -2613,6 +2903,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 8 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -2657,6 +2952,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 22 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -2699,6 +2999,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 52 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -2748,6 +3053,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 120 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -2796,6 +3106,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 2 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -2839,6 +3154,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 21 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -2881,6 +3201,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 7 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -2930,6 +3255,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 39 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -2977,6 +3307,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 15 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -3026,6 +3361,11 @@
     "claim_detail": "operating in the plan year ending 2025-03-31: the Form 5500-SF reports 68 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -3073,6 +3413,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 93 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -3122,6 +3467,11 @@
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500-SF reports 8 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -3164,6 +3514,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 63 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -3208,6 +3563,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 141 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -3250,6 +3610,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 17 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -3299,6 +3664,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 119 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -3341,6 +3711,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 270 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -3385,6 +3760,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 33 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -3427,6 +3807,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 20 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -3476,6 +3861,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 18 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -3523,6 +3913,11 @@
     "observed_date": "2024-12-31",
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500-SF reports 10 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "DIFFERENT",
+   "fact": "filing street '1525 CORPORATE WOODS PARKWAY' vs Atlas HQ site street SITE-001314 '1525 Corporate Wood Parkway, Suite 500'",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {
    "SITE-001314": "1525 Corporate Wood Parkway, Suite 500"
@@ -3574,6 +3969,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 116 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -3617,6 +4017,11 @@
     "claim_detail": "operating in the plan year ending 2025-11-30: the Form 5500-SF reports 64 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -3659,6 +4064,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 33 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "SAME",
+   "fact": "SITE-001419: '2540 Progress Drive'",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {
    "SITE-001419": "2540 Progress Drive"
@@ -3705,6 +4115,11 @@
     "claim_detail": "operating in the plan year ending 2026-02-28: the Form 5500 reports 214 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -3747,6 +4162,11 @@
     "observed_date": "2025-08-31",
     "claim_detail": "operating in the plan year ending 2025-08-31: the Form 5500-SF reports 17 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -3798,6 +4218,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 1161 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NOT_IN_HQ_CITY",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -3840,6 +4265,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 270 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -3889,53 +4319,10 @@
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500-SF reports 27 active participants at year end"
    }
   },
-  "atlas_hq_site_streets": {},
-  "evidence_status": "none"
- },
- {
-  "record_id": "ORG-001440",
-  "verdict": "NAME+CITY",
-  "atlas": {
-   "legal_name": "Spectra Group Ltd., Inc.",
-   "trade_names": "Spectra Photopolymers",
-   "hq_city": "Millbury",
-   "hq_state": "OH",
-   "verification_tier": "B",
-   "website": "",
-   "linked_eins": []
-  },
-  "filing": {
-   "form": "5500-SF",
-   "ack_id": "20260730205906NAL0023857713001",
-   "sponsor": "FORMLABS OHIO, INC.",
-   "dba": "SPECTRA PHOTOPOLYMERS",
-   "ein": "320536305",
-   "plan_year_end": "2025-12-31",
-   "active_participants_eoy": 58,
-   "final_filing": "0",
-   "location_city_state": [
-    "",
-    ""
-   ],
-   "mailing_city_state": [
-    "MILLBURY",
-    "OH"
-   ],
-   "location_street": "",
-   "mailing_street": "27800 LEMOYNE RD STE J"
-  },
-  "other_eins_under_name": [],
-  "proposed": {
-   "existence": {
-    "tier_effect": "supports_A",
-    "observed_date": "2026-11-20",
-    "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-12-31 names plan sponsor 'FORMLABS OHIO, INC.' (DBA 'SPECTRA PHOTOPOLYMERS'), EIN 320536305, in Millbury, OH; the name matches the organization's Atlas trade name 'Spectra Photopolymers' (legal name 'Spectra Group Ltd., Inc.')"
-   },
-   "liveness": {
-    "tier_effect": "supports_A",
-    "observed_date": "2025-12-31",
-    "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 58 active participants at year end"
-   }
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -3979,6 +4366,11 @@
     "observed_date": "2025-06-30",
     "claim_detail": "operating in the plan year ending 2025-06-30: the Form 5500 reports 373 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "SAME",
+   "fact": "SITE-001505: '2 Equity Way Suite 210'",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {
    "SITE-001505": "2 Equity Way Suite 210"
@@ -4025,6 +4417,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 14 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -4067,6 +4464,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 41 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -4116,6 +4518,11 @@
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500-SF reports 13 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -4158,6 +4565,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 262 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -4207,6 +4619,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 197 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -4249,6 +4666,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 266 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -4298,6 +4720,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 212 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -4340,6 +4767,11 @@
     "observed_date": "2025-09-30",
     "claim_detail": "operating in the plan year ending 2025-09-30: the Form 5500-SF reports 35 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -4389,6 +4821,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 290 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -4431,6 +4868,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 93 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -4480,6 +4922,11 @@
     "claim_detail": "operating in the plan year ending 2025-09-30: the Form 5500 reports 181 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -4522,6 +4969,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 1098 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -4566,6 +5018,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 78 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -4609,6 +5066,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 38 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -4651,6 +5113,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 59 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -4700,6 +5167,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 58 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -4748,6 +5220,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 185 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -4791,6 +5268,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 40 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -4833,6 +5315,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 442 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -4882,6 +5369,11 @@
     "claim_detail": "operating in the plan year ending 2025-09-30: the Form 5500-SF reports 39 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -4930,6 +5422,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 11 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -4972,6 +5469,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 12 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -5016,6 +5518,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 21 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -5058,6 +5565,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 268 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -5102,6 +5614,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 13 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -5145,6 +5662,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 13 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -5187,6 +5709,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 14 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -5236,6 +5763,11 @@
     "claim_detail": "operating in the plan year ending 2025-08-31: the Form 5500-SF reports 2 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -5278,6 +5810,11 @@
     "observed_date": "2024-12-31",
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500-SF reports 14 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -5327,6 +5864,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 33 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -5369,6 +5911,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 9 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -5413,6 +5960,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 3 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -5455,6 +6007,11 @@
     "observed_date": "2024-12-31",
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500-SF reports 21 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -5499,6 +6056,11 @@
     "claim_detail": "operating in the plan year ending 2025-06-30: the Form 5500-SF reports 14 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -5541,6 +6103,11 @@
     "observed_date": "2026-11-20",
     "claim_detail": "DOL Form 5500-SF for the plan year ending 2024-12-31 names plan sponsor 'AKRON SPECIAL MACHINERY', EIN 341255565, in Akron, OH; the name matches the organization's legal name 'Akron Special Machinery'"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -5585,6 +6152,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 34 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -5627,6 +6199,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 33 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -5676,6 +6253,11 @@
     "claim_detail": "operating in the plan year ending 2025-08-31: the Form 5500-SF reports 14 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -5718,6 +6300,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 5 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -5767,6 +6354,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 28 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -5809,6 +6401,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 43 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -5858,6 +6455,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 35 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -5900,6 +6502,11 @@
     "observed_date": "2026-11-20",
     "claim_detail": "DOL Form 5500-SF for the plan year ending 2026-01-31 names plan sponsor 'ECM BIOFILMS, INC.', EIN 341881827, in Painesville, OH; the name matches the organization's legal name 'ECM BioFilms Inc'"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -5949,6 +6556,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 69 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -5991,6 +6603,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 9 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -6035,6 +6652,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 109 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6077,6 +6699,11 @@
     "observed_date": "2026-06-30",
     "claim_detail": "operating in the plan year ending 2026-06-30: the Form 5500-SF reports 19 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -6121,6 +6748,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 17 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6163,6 +6795,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 78 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -6217,6 +6854,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 5 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "SAME",
+   "fact": "SITE-001897: '875 MOE DR, SUITE B22-24'",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {
    "SITE-001897": "875 MOE DR, SUITE B22-24"
   },
@@ -6262,6 +6904,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 9 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6304,6 +6951,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 35 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -6348,6 +7000,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 47 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6390,6 +7047,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 10 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -6434,6 +7096,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 18 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6476,6 +7143,11 @@
     "observed_date": "2026-11-20",
     "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-04-10 names plan sponsor 'CRUM MANUFACTURING, INC.', EIN 341752675, in Waterville, OH; the name matches the organization's legal name 'Crum Manufacturing Inc'"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -6520,6 +7192,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 23 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6562,6 +7239,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 6 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -6606,6 +7288,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 43 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6648,6 +7335,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 9 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -6692,6 +7384,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 5 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6734,6 +7431,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 51 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -6778,6 +7480,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 57 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6821,6 +7528,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 5 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6863,6 +7575,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 6 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -6912,6 +7629,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 64 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -6955,6 +7677,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 16 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -6997,6 +7724,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 37 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -7046,6 +7778,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 5 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -7088,6 +7825,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 5 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -7137,6 +7879,11 @@
     "claim_detail": "operating in the plan year ending 2025-04-30: the Form 5500-SF reports 2 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -7180,6 +7927,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 12 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -7222,6 +7974,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 30 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -7271,6 +8028,11 @@
     "claim_detail": "operating in the plan year ending 2025-08-31: the Form 5500-SF reports 3 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -7313,6 +8075,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 43 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -7362,6 +8129,11 @@
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500 reports 154 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -7405,6 +8177,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 39 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -7438,7 +8215,7 @@
     "PA"
    ],
    "location_street": "",
-   "mailing_street": "NAAMANS CREEK CENTER"
+   "mailing_street": ""
   },
   "other_eins_under_name": [],
   "proposed": {
@@ -7452,6 +8229,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 22 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -7496,6 +8278,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 18 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -7538,6 +8325,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 19 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -7587,6 +8379,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 22 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -7629,6 +8426,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 14 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -7675,6 +8477,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 56 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -7719,6 +8526,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 12 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -7765,6 +8577,11 @@
     "claim_detail": "DOL Form 5500-SF for the plan year ending 2024-12-30 names plan sponsor 'ALLEGHENY PLASTICS, INC.', EIN 250918127, an EIN the Atlas links to this organization; the name matches the organization's legal name 'Allegheny Plastics, Inc.'"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -7810,6 +8627,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 24 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -7853,6 +8675,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 7 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -7895,6 +8722,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 119 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -7941,6 +8773,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 181 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -7985,6 +8822,11 @@
     "observed_date": "2026-11-20",
     "claim_detail": "DOL Form 5500-SF for the plan year ending 2021-07-01 names plan sponsor 'FLUORTEK, INC.', EIN 222326986, an EIN the Atlas links to this organization; the name matches the organization's legal name 'Fluortek Inc'"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -8036,6 +8878,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 7 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -8078,6 +8925,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 7 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -8124,6 +8976,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 1047 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "DIFFERENT",
+   "fact": "filing street '2425 WEST 23RD STREET' vs Atlas HQ site street SITE-002292 '2315 W 23rd St.'",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {
    "SITE-002292": "2315 W 23rd St."
@@ -8172,6 +9029,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 52 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -8215,6 +9077,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 56 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -8257,6 +9124,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 22 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -8308,6 +9180,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 2 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -8356,6 +9233,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 11 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -8398,6 +9280,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 16 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -8444,6 +9331,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 33 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -8486,6 +9378,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 94 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -8530,6 +9427,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 45 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -8572,6 +9474,11 @@
     "observed_date": "2026-06-30",
     "claim_detail": "operating in the plan year ending 2026-06-30: the Form 5500-SF reports 19 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -8616,6 +9523,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 50 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -8659,6 +9571,11 @@
     "claim_detail": "operating in the plan year ending 2025-06-30: the Form 5500-SF reports 25 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -8701,6 +9618,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 63 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -8752,6 +9674,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 42 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NOT_IN_HQ_CITY",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -8796,6 +9723,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 10 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -8842,6 +9774,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 14 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NOT_IN_HQ_CITY",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -8887,6 +9824,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 89 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -8930,6 +9872,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 3 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -8972,6 +9919,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 420 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9023,6 +9975,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 189 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -9065,6 +10022,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 3018 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9110,6 +10072,11 @@
     "observed_date": "2025-09-30",
     "claim_detail": "operating in the plan year ending 2025-09-30: the Form 5500 reports 149 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NOT_IN_HQ_CITY",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9159,6 +10126,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 56 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -9201,6 +10173,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 86 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9245,6 +10222,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 14 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -9287,6 +10269,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 236 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9335,6 +10322,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 5 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -9386,6 +10378,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 32 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -9430,6 +10427,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 10 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9479,6 +10481,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 31 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -9523,6 +10530,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 20 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9569,6 +10581,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 81 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -9613,6 +10630,11 @@
     "observed_date": "2024-12-31",
     "claim_detail": "operating in the plan year ending 2024-12-31: the Form 5500-SF reports 26 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9662,6 +10684,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 47 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -9705,6 +10732,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 7 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -9738,7 +10770,7 @@
     "PA"
    ],
    "location_street": "",
-   "mailing_street": "THREE ACEE DRIVE"
+   "mailing_street": ""
   },
   "other_eins_under_name": [],
   "proposed": {
@@ -9747,6 +10779,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 55 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9790,6 +10827,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 12 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9839,6 +10881,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 73 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -9881,6 +10928,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 94 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -9925,6 +10977,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 16 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -9967,6 +11024,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 8 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -10013,6 +11075,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 3 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -10055,6 +11122,11 @@
     "observed_date": "2025-11-30",
     "claim_detail": "operating in the plan year ending 2025-11-30: the Form 5500 reports 80 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "SAME",
+   "fact": "SITE-002586: '4749 Tolbut Street'",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {
    "SITE-002586": "4749 Tolbut Street"
@@ -10100,6 +11172,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 32 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -10151,6 +11228,11 @@
     "claim_detail": "operating in the plan year ending 2025-04-30: the Form 5500-SF reports 23 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -10196,6 +11278,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 47 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -10238,6 +11325,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 69 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -10282,6 +11374,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 13 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -10324,6 +11421,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 25 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -10368,6 +11470,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 153 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -10410,6 +11517,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 34 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -10454,6 +11566,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 124 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -10487,7 +11604,7 @@
     "PA"
    ],
    "location_street": "",
-   "mailing_street": "ONE PORK AVENUE"
+   "mailing_street": ""
   },
   "other_eins_under_name": [],
   "proposed": {
@@ -10496,6 +11613,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 686 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {
    "SITE-002664": "168 Holiday Pkwy"
@@ -10542,6 +11664,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 49 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -10584,6 +11711,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 379 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "DIFFERENT",
+   "fact": "filing street '618 FOURTH AVENUE' vs Atlas HQ site street SITE-002683 '618 4th Ave.'",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {
    "SITE-002683": "618 4th Ave."
@@ -10631,6 +11763,11 @@
     "observed_date": "2026-11-20",
     "claim_detail": "DOL Form 5500-SF for the plan year ending 2025-06-30 names plan sponsor 'MAGEE PLASTICS COMPANY', EIN 251203969, an EIN the Atlas links to this organization; the name matches the organization's legal name 'Magee Plastics Company'"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
@@ -10680,6 +11817,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 3 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -10725,6 +11867,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 73 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -10767,6 +11914,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 78 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -10813,6 +11965,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 468 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -10855,6 +12012,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 39 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -10904,6 +12066,11 @@
     "claim_detail": "operating in the plan year ending 2025-10-31: the Form 5500 reports 119 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -10946,6 +12113,11 @@
     "observed_date": "2025-10-31",
     "claim_detail": "operating in the plan year ending 2025-10-31: the Form 5500 reports 126 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -10995,6 +12167,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 24 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -11037,6 +12214,11 @@
     "observed_date": "2025-09-30",
     "claim_detail": "operating in the plan year ending 2025-09-30: the Form 5500-SF reports 34 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -11086,6 +12268,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 91 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "PO_BOX_OR_NO_NUMBER",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "none"
  },
@@ -11131,6 +12318,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500 reports 286 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -11173,6 +12365,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 61 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
@@ -11219,6 +12416,11 @@
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 1 active participants at year end"
    }
   },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
+  },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"
  },
@@ -11263,6 +12465,11 @@
     "observed_date": "2025-12-31",
     "claim_detail": "operating in the plan year ending 2025-12-31: the Form 5500-SF reports 57 active participants at year end"
    }
+  },
+  "street_check": {
+   "verdict": "NO_HQ_STREET",
+   "fact": "",
+   "note": "informational for liveness; gates address only"
   },
   "atlas_hq_site_streets": {},
   "evidence_status": "evidenced elsewhere; liveness row only"

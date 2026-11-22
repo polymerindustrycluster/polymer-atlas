@@ -243,14 +243,38 @@ def hq_streets(repo, orgs):
     return out
 
 
+PERSONAL = re.compile(r"@|c/o|\battn\b|\bcare of\b|^\s*%", re.I)
+
+
+def clean_street(s):
+    """A filing street line safe to publish: '' when it carries a possible person (c/o, attn, care of, a leading %, '@') or has
+    no digit (a name, not a street). A business street is a public fact; a person in an address line is not (AGENTS §6)."""
+    return "" if not s or PERSONAL.search(s) or not re.search(r"\d", s) else s.strip()
+
+
+def gap_class(o, all_sites):
+    """Why an organization has no usable HQ street (the NO_HQ_STREET breakdown)."""
+    hq = (city_key(o["hq_city"]), o["hq_state"].strip().upper())
+    here = lambda s: (city_key(s["city"]), s["state"].strip().upper()) == hq
+    if not all_sites:
+        return "NO_SITE_RECORD"
+    if any(HQ_TYPE.search(s["site_type"]) and here(s) and s["operating_status"] == "active" for s in all_sites):
+        return "HQ_SITE_WITHOUT_STREET"
+    if any(HQ_TYPE.search(s["site_type"]) for s in all_sites):
+        return "HQ_SITE_NOT_ACTIVE_OR_OUTSIDE_HQ_CITY"
+    if any(here(s) and s["operating_status"] == "active" and s["street_address"].strip() for s in all_sites):
+        return "ONLY_NON_HQ_SITE_IN_HQ_CITY"
+    return "SITES_ELSEWHERE_ONLY"
+
+
 def street_test(f, where, sites):
     """('SAME'|'DIFFERENT'|'NO_HQ_STREET'|'NO_FILING_STREET'|'PO_BOX_OR_NO_NUMBER', settling fact). The filing's street (location if it
     governs, else mailing) must equal, under atlas.street_key, the street of an Atlas HQ site in the HQ city."""
     street = f["loc_street"] if where == "location" else f["mail_street"]
-    if not street or "@" in street:
-        return "NO_FILING_STREET", "the filing's street line is empty or not a street"
+    if not street or PERSONAL.search(street):
+        return "NO_FILING_STREET", "the filing's street line is empty or carries a care-of/attention/e-mail marker (not quoted)"
     if spine.pobox(street):
-        return "PO_BOX_OR_NO_NUMBER", f"the filing's street line is a post-office box or has no street number ('{street}')"
+        return "PO_BOX_OR_NO_NUMBER", "the filing's street line is a post-office box or has no street number (not quoted)"
     if not sites:
         return "NO_HQ_STREET", f"the Atlas holds no active HQ site with a street in the HQ city; the filing says '{street}'"
     for sid, st in sorted(sites.items()):
@@ -267,15 +291,24 @@ def cut(repo, fdir):
     orig = rd(ORIGINAL)
     led = {l["org_id"]: l for l in rd(HERE / "ledger.csv")}
     orgs = {o["org_id"]: o for f in sorted((repo / "data").glob("organizations_*.csv")) for o in rd(f)}
-    evidenced = {r["record_id"].strip() for f in (repo / "data").glob("evidence_organizations_*.csv") for r in rd(f)
+    evidenced = {r["record_id"].strip() for f in (repo / "data").glob("evidence_*.csv") for r in rd(f)  # any table, any record_table
                  if r["created_by"] != CREATED_BY}
     lane = sorted({r["record_id"] for r in orig})
     zero = {o for o in lane if o not in evidenced and orgs.get(o, {}).get("status") == "active"}
     sites = hq_streets(repo, {o: orgs[o] for o in lane})
     acks = {led[o]["ack_id"] for o in lane}
     fil = {f["ack"]: f for f in filings(fdir, set(), set(), acks)}
+    by_ack = defaultdict(set)
+    for o in lane:
+        by_ack[led[o]["ack_id"]].add(o)
+    shared = {o: sorted(by_ack[led[o]["ack_id"]] - {o}) for o in lane if len(by_ack[led[o]["ack_id"]]) > 1}
+    all_sites = defaultdict(list)
+    for f_ in sorted((repo / "data").glob("sites_*.csv")):
+        for s in rd(f_):
+            if s["org_id"] in orgs and s["org_id"] in set(lane):
+                all_sites[s["org_id"]].append(s)
     kept, dropped, held, bundle = [], [], [], []
-    stats = Counter()
+    stats, gaps, street_all = Counter(), Counter(), {}
     for r in orig:
         o, l = r["record_id"], led[r["record_id"]]
         f = fil.get(l["ack_id"])
@@ -285,6 +318,10 @@ def cut(repo, fdir):
             dropped.append(dict(r, reason=DROP_WHY if o in evidenced else "organization no longer active")); continue
         if orgs.get(o, {}).get("status") != "active":  # a liveness row never goes onto an organization the Atlas no longer calls active
             held.append(dict(r, reason=f"organization status is now '{orgs.get(o, {}).get('status')}'; a filing never changes a status (AGENTS 3)")); continue
+        if o in shared and name_key(orgs[o]["legal_name"]) not in f["keys"]:  # one filing cannot witness two organizations
+            held.append(dict(r, reason=f"SHARED_FILING: ACK_ID {l['ack_id']} is also cited for {', '.join(shared[o])}, whose legal name "
+                                       f"equals the sponsor; this organization matches only through an Atlas trade name. Settling fact: "
+                                       f"whether the sponsor is a trade name of this legal entity or a different one (an acquirer or affiliate)")); continue
         if not same:
             held.append(dict(r, reason=f"the filing ACK_ID {l['ack_id']} is absent or changed in the 2026-11-22 EFAST2 files; "
                                        "re-run the match before review")); continue
@@ -292,11 +329,13 @@ def cut(repo, fdir):
             where = in_hq(f, orgs[o])
             verdict, fact = street_test(f, where, sites.get(o, {}))
             stats[verdict] += 1
+            if verdict == "NO_HQ_STREET":
+                gaps[gap_class(orgs[o], all_sites.get(o, []))] += 1
             if verdict != "SAME":
                 held.append(dict(r, reason=f"{verdict}: {fact}")); continue
             r = dict(r, address_role="physical" if where == "location" else "mailing",  # SCHEMA §4.13 v1.19
                      claim_detail=r["claim_detail"] + f"; the street matches the Atlas HQ site {fact}"
-                     f" (filing street '{f['loc_street'] if where == 'location' else f['mail_street']}')")
+                     f" (filing street '{clean_street(f['loc_street'] if where == 'location' else f['mail_street'])}')")
         kept.append(r)
     assert len(kept) + len(dropped) + len(held) == len(orig), (len(kept), len(dropped), len(held), len(orig))
     flds = list(orig[0])
@@ -308,7 +347,11 @@ def cut(repo, fdir):
     for oid in sorted(kept_orgs):
         b, f = old[oid], fil[led[oid]["ack_id"]]
         mine = {r["claim_type"]: r for r in kept if r["record_id"] == oid}
-        bundle.append(dict(b, filing=dict(b["filing"], location_street=f["loc_street"], mailing_street=f["mail_street"]),
+        where = in_hq(f, orgs[oid])
+        sv, sfact = street_test(f, where, sites.get(oid, {})) if where else ("NOT_IN_HQ_CITY", "the sponsor's address is not in the HQ city")
+        street_all[oid] = sv
+        bundle.append(dict(b, filing=dict(b["filing"], location_street=clean_street(f["loc_street"]), mailing_street=clean_street(f["mail_street"])),
+                           street_check=dict(verdict=sv, fact=sfact if sv in ("SAME", "DIFFERENT") else "", note="informational for liveness; gates address only"),
                            atlas_hq_site_streets=sites.get(oid, {}), evidence_status="none" if oid in zero else "evidenced elsewhere; liveness row only",
                            proposed={k: {"tier_effect": v["tier_effect"], "observed_date": v["observed_date"], "claim_detail": v["claim_detail"]}
                                      for k, v in mine.items()}))
@@ -318,7 +361,8 @@ def cut(repo, fdir):
           f"(excluding this lane's own); original packet {len(orig)} rows -> kept {len(kept)} {dict(Counter(r['claim_type'] for r in kept))}, "
           f"dropped {len(dropped)} {dict(Counter(r['claim_type'] for r in dropped))}, held {len(held)} "
           f"{dict(Counter(h['reason'].split(':')[0] for h in held))}; address street test on zero-evidence orgs {dict(stats)}; "
-          f"kept rows on {len(kept_orgs)} orgs; filings found {len(fil)} of {len(acks)}")
+          f"kept rows on {len(kept_orgs)} orgs; filings found {len(fil)} of {len(acks)} for {len(lane)} orgs, shared ACK_IDs {shared}; "
+          f"NO_HQ_STREET breakdown {dict(gaps)}; street test over all {len(street_all)} kept orgs {dict(Counter(street_all.values()))}")
 
 
 def plant(repo, fdir):

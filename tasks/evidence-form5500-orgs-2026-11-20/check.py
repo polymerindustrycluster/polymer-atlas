@@ -2,7 +2,7 @@
 """Task check for the Form 5500 lane, 2026-11-22 cut (exit 1 on any failure). From the repo root:
 
     python3 tasks/evidence-form5500-orgs-2026-11-20/check.py            # packet checks (+ applied checks once applied)
-    python3 tasks/evidence-form5500-orgs-2026-11-20/check.py selftest   # plants three defects; each must be caught
+    python3 tasks/evidence-form5500-orgs-2026-11-20/check.py selftest   # plants five defects; each must be caught
 
 - ledger and bundle carry only whitelisted business fields (no signer, phone or care-of data);
 - the cut balances: kept + dropped + held = the 780 rows of packet_rows_2026-11-20.csv, each exactly once;
@@ -11,6 +11,7 @@
   and carries the reason; no liveness row was dropped;
 - every kept row cites the ledger's ACK_ID; liveness rows carry the plan-year end as observed_date, an end on or after
   2024-11-20, active participants > 0 and no final filing; at most one row per (organization, claim);
+- no ACK_ID is cited for two kept organizations; no street text, reason or detail carries a care-of/attention/e-mail marker;
 - every kept address row's filing street equals, under atlas.street_key, the street of an Atlas HQ site (bundle);
 - once applied: applied + withheld = kept; every applied row is SOUND in every family that reviewed (Codex always,
   Antigravity when present) and carries the waiver note iff Codex reviewed alone; rows are government_filing at supports_A
@@ -27,13 +28,14 @@ START, END, LIVE_FROM, LANE = 480100, 480999, "2024-11-20", "claude-code-evd-for
 rd = lambda p: list(csv.DictReader(open(p, encoding="utf-8", newline="")))
 _s = importlib.util.spec_from_file_location("atlas_cli", ROOT / "scripts" / "atlas.py")
 atlas = importlib.util.module_from_spec(_s); _s.loader.exec_module(atlas)
+PERSONAL = re.compile(r"@|c/o|\battn\b|\bcare of\b|^\s*%", re.I)
 LEDGER_COLS = ["org_id", "tier", "verdict", "legal_name", "hq_city", "hq_state", "atlas_eins", "filing_eins", "sponsor", "dba",
                "form", "plan_year_end", "active", "final", "loc_city", "loc_state", "mail_city", "mail_state", "ack_id"]
 
 
 def evidenced_orgs():
-    """Organizations with an evidence row of any other lane, read now from data/evidence_organizations_*.csv."""
-    return {r["record_id"].strip() for f in glob.glob(str(ROOT / "data" / "evidence_organizations_*.csv")) for r in rd(f) if r["created_by"] != LANE}
+    """Records with an evidence row of any other lane, read now from every data/evidence_*.csv (any record_table)."""
+    return {r["record_id"].strip() for f in glob.glob(str(ROOT / "data" / "evidence_*.csv")) for r in rd(f) if r["created_by"] != LANE}
 
 
 def cut_problems(ledger, original, kept, dropped, held, bundle, evidenced, bundle_text):
@@ -61,6 +63,21 @@ def cut_problems(ledger, original, kept, dropped, held, bundle, evidenced, bundl
     if any(not h["reason"] for h in held):
         fail.append("a held row carries no settling fact")
     b = {x["record_id"]: x for x in bundle}
+    acks = {}
+    for p in kept:
+        ack = led[p["record_id"]]["ack_id"]
+        if acks.setdefault(ack, p["record_id"]) != p["record_id"]:
+            fail.append(f"ACK_ID {ack} is cited for both {acks[ack]} and {p['record_id']}: one filing cannot witness two organizations")
+    # no person in a published street line (AGENTS §6): the bundle's street fields, every held/dropped reason, every kept text
+    texts = [h["reason"] for h in held + dropped] + [p["claim_detail"] + " " + p["notes"] for p in kept]
+    for x in bundle:
+        texts += [x["filing"].get("location_street", ""), x["filing"].get("mailing_street", ""), x.get("street_check", {}).get("fact", "")]
+        for s in (x["filing"].get("location_street", ""), x["filing"].get("mailing_street", "")):
+            if s and not re.search(r"\d", s):
+                fail.append(f"{x['record_id']} bundle street line has no digit: not a street")
+    for tx in texts:
+        if PERSONAL.search(tx):
+            fail.append(f"a published text carries a care-of/attention/e-mail marker: {tx[:60]!r}")
     for p in kept:
         l = led[p["record_id"]]
         if f"ACK_ID {l['ack_id']} " not in p["source_ref"] or re.match(r"https?://", p["source_ref"]) or "@" in p["claim_detail"] + p["notes"]:
@@ -91,7 +108,12 @@ def selftest():
     bad = json.loads(json.dumps(bundle))
     next(x for x in bad if x["record_id"] == kept[addr]["record_id"])["atlas_hq_site_streets"] = {"SITE-X": "1 Other Road"}
     assert any("does not equal an Atlas HQ site street" in f for f in run(bundle=bad)), "a different-street address row is not caught"
-    print("check selftest ok: planted evidenced-org row, lost row and different-street address row are each caught")
+    leak = json.loads(json.dumps(bundle)); leak[0]["filing"]["mailing_street"] = "C/O JANE DOE 1 MAIN ST"
+    assert any("care-of" in f for f in run(bundle=leak)), "a person in a street line is not caught"
+    o1, o2 = sorted({p["record_id"] for p in kept})[:2]
+    ledger2 = [dict(l, ack_id=next(x for x in ledger if x["org_id"] == o1)["ack_id"]) if l["org_id"] == o2 else l for l in ledger]
+    assert any("cannot witness two" in f for f in cut_problems(ledger2, orig, kept, dropped, held, bundle, ev, "")), "a shared ACK_ID is not caught"
+    print("check selftest ok: planted evidenced-org row, lost row, different-street address row, person in a street line and shared ACK_ID are each caught")
 
 
 if len(sys.argv) > 1 and sys.argv[1] == "selftest":
