@@ -133,3 +133,7 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
      mismatches.
   3. **Batch 7 (PR #459) stays in draft** until its joins are checked the way batch 5's were.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
+
+## 2026-11-22: owner ruling, batches 5 and 6 reverted
+- **Decision:** burn-down batches 5 (PR #457) and 6 (PR #458) are taken off `main` whole: 34,094 evidence rows (33,916 labelled batch 5 or 6 and 178 recapture rows those PRs carried under batch-1 and batch-2 labels), 6,837 registry links and 364 archive links. A binding test over their 33,916 evidence rows (is the quoted operator a name the record holds, and is the quoted street the record's street) passed 24,241 and failed or could not prove 9,469 on 2,590 records; batch 5's OSHA site match required name, city and state but no street. This is an exception to the append-only rule of SCHEMA 4.13, taken so that nothing unproven stays public while rows are re-checked. A removed row that later passes the binding gate and a replay against the raw source file returns under its original evidence ID in a new, reviewed PR; an ID is never given to a different row. Rows that fail are kept as leads under `tasks/revert-batches-5-6-2026-11-22/quarantine/`. This supersedes the same day's narrower ruling to remove 844 rows.
+- **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.

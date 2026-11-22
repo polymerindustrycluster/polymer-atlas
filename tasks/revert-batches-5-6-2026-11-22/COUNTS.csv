@@ -1,0 +1,10 @@
+unit,filter,value,rows
+evidence rows,created_by,spaghetti-batch5-2026-11-22,10352
+evidence rows,created_by,spaghetti-batch6-2026-11-22,23564
+evidence rows,created_by,spaghetti-burndown-batch1-2026-11-21,122
+evidence rows,created_by,spaghetti-burndown-batch2-2026-11-21,56
+registry_links rows,registry,FRS,1294
+registry_links rows,registry,NPDES_PERMIT_ID,2568
+registry_links rows,registry,RCRA_EPA_ID,2892
+registry_links rows,registry,UEI,83
+archive_links rows,all,,364

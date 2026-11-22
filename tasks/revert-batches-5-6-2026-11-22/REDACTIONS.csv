@@ -1,0 +1,16 @@
+quarantine_path,quarantine_line,original_path,original_line,evidence_id_or_key,column,kind
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_organizations.csv,1282,data/evidence_organizations_OH.csv,4492,EVD-420368,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_organizations.csv,1283,data/evidence_organizations_OH.csv,4493,EVD-420369,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_organizations.csv,1353,data/evidence_organizations_OH.csv,4563,EVD-435643,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_organizations.csv,1353,data/evidence_organizations_OH.csv,4563,EVD-435643,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_organizations.csv,1354,data/evidence_organizations_OH.csv,4564,EVD-435644,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_organizations.csv,1354,data/evidence_organizations_OH.csv,4564,EVD-435644,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_organizations.csv,2761,data/evidence_organizations_US.csv,1191,EVD-458668,claim_detail,attn-name
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_sites.csv,3610,data/evidence_sites_CT.csv,524,EVD-430581,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_sites.csv,3611,data/evidence_sites_CT.csv,525,EVD-430582,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_sites.csv,22680,data/evidence_sites_PA.csv,2847,EVD-435692,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_sites.csv,22681,data/evidence_sites_PA.csv,2848,EVD-435695,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_sites.csv,26945,data/evidence_sites_TX.csv,2456,EVD-434943,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_sites.csv,26946,data/evidence_sites_TX.csv,2457,EVD-434944,claim_detail,email
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_sites.csv,29399,data/evidence_sites_VA.csv,420,EVD-429809,claim_detail,attn-name
+tasks/revert-batches-5-6-2026-11-22/quarantine/evidence_sites.csv,29400,data/evidence_sites_VA.csv,421,EVD-429810,claim_detail,attn-name
