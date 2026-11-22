@@ -1,0 +1,24 @@
+site_id,establishment_id,controller_street_check,controller_disposition
+SITE-000035,656015,street_exact,eligible
+SITE-000043,1500985,street_exact,eligible
+SITE-000062,941625,street_exact,eligible
+SITE-000138,1454209,street_exact,review: ITA reliability=review
+SITE-000250,1433741,street_exact,eligible
+SITE-000264,1477377,format_variant (Enterprise Parkway / Enterprises pkwy),eligible if you judge it the same street
+SITE-000297,920442,record street blank; ITA name Silgan Dispensing vs site Cobra Plastics,hold: no recorded street; reliability=review
+SITE-000383,902411,street_exact; ITA name Graphic Arts Systems Inc vs site GRAFIX,"eligible only if the record itself ties the two names (trade_names, legal name)"
+SITE-000450,1403938,street_exact,eligible
+SITE-000517,1401244,"DIFFERENT street (record 200 Industrial Parkway, ITA 220 Park Drive)",hold: different address
+SITE-000519,1448582,record street blank,hold: no recorded street; reliability=review
+SITE-000522,69522,format_variant (Ave SE / Avenue S.E.),eligible
+SITE-000620,1067222,unit letter (1700A / 1700),eligible if you judge it the same premises
+SITE-000639,1451043,street_exact,eligible
+SITE-000683,922771,street_exact; same establishment also on SITE-001725,hold: one establishment on two site records (dedupe lead); reliability=review
+SITE-000863,260187,format_variant (Road NW / Road N.W.),eligible
+SITE-001109,1154717,"format_variant (Commercial / Commerical, typo in filing)",eligible if you judge it the same street
+SITE-001137,281495,format_variant (State Route 21 / State Route 21 NW),eligible
+SITE-001397,1113070,street_exact,eligible
+SITE-001725,922771,street_exact; same establishment also on SITE-000683,hold: one establishment on two site records (dedupe lead); reliability=review
+SITE-002110,498112,record street blank,hold: no recorded street
+SITE-002114,1079717,street_exact,eligible
+SITE-002965,1450510,street_exact,eligible

@@ -1,0 +1,16 @@
+{
+  "dispositions": {
+    "applied": 12,
+    "held": 11
+  },
+  "fills": 12,
+  "fills_by_band": {
+    "10-49": 5,
+    "100-249": 4,
+    "250-499": 1,
+    "50-99": 1,
+    "500-999": 1
+  },
+  "frame": 23,
+  "organizations_filled": 11
+}
