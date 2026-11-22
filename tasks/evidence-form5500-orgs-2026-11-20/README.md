@@ -52,6 +52,37 @@ lane's own.
 - **No rows are applied in this PR.** It is packet-only: review comes first. Evidence IDs are asserted by `apply.py`, not
   allocated, and `scripts/validate_debt_baseline.json` is unchanged.
 
+## Exact match this lane requires (`build.py` at the lines shown)
+
+Name, street and EIN, stated as the code does them (line numbers are in `build.py` on this branch):
+- **Name (every row).** `classify()` l.115: the sponsor name or DBA, under `name_key`, **equals** (no containment) the
+  organization's legal name or one trade name (names of at least 4 characters).
+- **EIN, branch 1 (`EIN+NAME`, `classify()` l.117).** An EIN the Atlas links to the organization (`registry_links.csv`) files
+  under a name that equals one of those names.
+- **City, branch 2 (`NAME+CITY`, `classify()` l.121-123 with `in_hq()` l.103).** No EIN link: the name equals, the sponsor's
+  address (location if given, else mailing) is in the HQ city and state, and exactly one EIN files under that name there
+  (more than one is held `MULTI_EIN`). **No street is compared for either branch.**
+- **Spine check (`classify()`, after the branches).** No cited EIN belongs, in `tasks/form5500-spine-2026-11-01`, to another
+  organization; if the spine gave this organization EINs, one of them is the cited EIN.
+- **Street (address rows only; `hq_streets()` l.233, `street_test()` l.270, compare at l.281, applied in `cut()` l.328).** The
+  filing's street (location if given, else mailing) equals, under `atlas.street_key`, the `street_address` of an **active** Atlas
+  site whose `site_type` names HQ or headquarters, in the HQ city and state. No such site, a PO box, a line with no street number or a
+  person marker (`clean_street()` l.249), or a different street: held.
+- **Liveness (`rows_for()` l.178).** Plan year ended on or after 2024-11-20, active participants above 0, not a final filing.
+  No street.
+- **One filing, one organization (`cut()` l.322).** If the same ACK_ID is cited for two lane organizations, the one that matches
+  only through a trade name is held.
+
+## The 75 held rows, by reason (`held_rows.csv` carries each settling fact)
+
+- **`NO_HQ_STREET`, address, 66 rows, one per organization.** Settling fact: an HQ street on the record, or an address witness.
+  ORG-000020, ORG-000076, ORG-000079, ORG-000111, ORG-000122, ORG-000147, ORG-000305, ORG-000383, ORG-000385, ORG-000482, ORG-000498, ORG-000592, ORG-000701, ORG-000896, ORG-000898, ORG-000923, ORG-000992, ORG-001031, ORG-001101, ORG-001141, ORG-001152, ORG-001164, ORG-001168, ORG-001188, ORG-001338, ORG-001433, ORG-001499, ORG-001510, ORG-001518, ORG-001525, ORG-001530, ORG-001552, ORG-001554, ORG-001569, ORG-001584, ORG-001696, ORG-001710, ORG-001773, ORG-001797, ORG-001800, ORG-001802, ORG-001803, ORG-001815, ORG-001954, ORG-002005, ORG-002046, ORG-002051, ORG-002163, ORG-002190, ORG-002246, ORG-002268, ORG-002290, ORG-002305, ORG-002331, ORG-002334, ORG-002439, ORG-002454, ORG-002494, ORG-002506, ORG-002538, ORG-002568, ORG-002632, ORG-002692, ORG-002695, ORG-002752, ORG-002754
+- **`PO_BOX_OR_NO_NUMBER`, address, 5.** Settling fact: a street address in the filing or another witness. ORG-000249, ORG-001208, ORG-002231, ORG-002510, ORG-002761
+- **`DIFFERENT`, address, 1.** ORG-001333, filing '1525 CORPORATE WOODS PARKWAY' vs Atlas '1525 Corporate Wood Parkway, Suite 500'. Settling
+  fact: the correct street (a record correction).
+- **`SHARED_FILING`, 3 rows (existence, address, liveness), ORG-001440.** Same ACK_ID as ORG-001552. Settling fact: whether 'Formlabs
+  Ohio, Inc.' is a trade name of this legal entity or its acquirer.
+
 ## What this lane's match requires (shown from `build.py`)
 
 | Claim | Requires | Code |
