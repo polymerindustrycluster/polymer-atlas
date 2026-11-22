@@ -1,0 +1,8 @@
+org_id,host,api_ok,capture_available,capture_timestamp,checked
+ORG-000256,buckeyerubber.com,True,True,20261106,2026-11-22
+ORG-001808,eurotechdirect.com,True,True,20261015,2026-11-22
+ORG-000186,www.skf.com,True,True,20220517,2026-11-22
+ORG-002157,custompultrusions.com,True,False,,2026-11-22
+ORG-002049,sietins.com,True,True,20260201,2026-11-22
+ORG-000207,realtruck.com,True,True,20261113,2026-11-22
+ORG-002011,solutionsinpc.com,True,True,20260720,2026-11-22

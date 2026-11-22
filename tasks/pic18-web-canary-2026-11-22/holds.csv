@@ -1,7 +1,7 @@
 org_id,field,reason,pages_read,settling_fact
 ORG-000025,processes,distributor_service_menu,5,"A sentence that Musson itself fabricates or assembles, naming the process (candidate fabrication_unspecified held)"
 ORG-000025,markets_served,no_market_claim,5,A sentence naming a customer industry (the pages list products and brands only)
-ORG-000256,processes,no_readable_page,0,"A readable copy of the home page (robots.txt request reset by the server, curl exit 92, after the one retry; an availability fact)"
+ORG-000256,processes,no_readable_page,0,A readable copy of the home page (empty reply (curl 52) over HTTP/1.1 as well as HTTP/2 after the retry; an availability fact)
 ORG-000256,markets_served,no_readable_page,0,Same
 ORG-000483,processes,no_polymer_process_named,6,A sentence naming a polymer process; the pages say pump parts are machined and cartridges made with recycled materials
 ORG-002068,processes,not_a_processor,3,Chemstress is an engineering and construction firm; no §3.1 process applies unless an owner ruling says otherwise
@@ -23,7 +23,7 @@ ORG-000135,markets_served,product_class_not_industry,6,"A sentence naming the ph
 ORG-000186,processes,no_readable_page,0,A readable copy of the home page (a script-rendered page returned HTTP 200 with no main text; an availability fact)
 ORG-000186,markets_served,no_readable_page,0,Same
 ORG-000048,processes,distributor_supplier_not_process,6,"A sentence that Akrochem itself compounds or blends (the pages describe supplying ""compounding materials"")"
-ORG-002157,processes,no_readable_page,0,"A readable copy of the home page (robots.txt request timed out after the one retry, curl exit 28; an availability fact)"
+ORG-002157,processes,no_readable_page,0,A readable copy of the home page (connection timed out on port 80 of the www host the site redirects to (curl 28) after the retry; an availability fact)
 ORG-002157,markets_served,no_readable_page,0,Same
 ORG-002049,processes,robots_blocked,0,"A page the site permits crawlers to read, or a permission from the site"
 ORG-002049,markets_served,robots_blocked,0,Same

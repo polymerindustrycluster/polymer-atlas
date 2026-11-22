@@ -20,6 +20,7 @@ VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'met
 BLOCK = {'p', 'div', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'td', 'th', 'tr', 'section', 'article', 'main', 'ul', 'ol', 'table', 'br', 'blockquote', 'dd', 'dt', 'figcaption', 'span_break'}
 # link text/path scoring: capabilities, processes, services, products, industries, markets (lower rank = better)
 PRIORITY = [r'capabilit', r'process', r'what we do|manufactur', r'service', r'industr|market|applications', r'product|solution', r'about|company|who we are']
+CLASS = {6: 'NO_DNS', 7: 'CONN_REFUSED', 28: 'TIMEOUT', 35: 'TLS_ERROR', 60: 'TLS_ERROR'}  # what remains after the HTTP/1.1 retry
 AVOID = re.compile(r'career|job|login|log in|cart|privacy|terms|cookie|contact|news|blog|press|event|sitemap|\.(pdf|jpe?g|png|gif|zip|docx?|xlsx?)(\?|$)|mailto:|tel:|javascript:', re.I)
 
 
@@ -70,13 +71,13 @@ class Fetcher:
         self.last, self.robots, self.n, self.log = {}, {}, 0, open(STORE / 'fetches.jsonl', 'a')
     def curl(self, target):
         r = self.curl1(target)
-        return self.curl1(target) if r['exit'] != 0 else r  # the one retry, transport failure only
-    def curl1(self, target):
+        return self.curl1(target, True) if r['exit'] != 0 else r  # the one retry, transport failure only, over HTTP/1.1 (curl 52/56/92 are HTTP/2 stream errors), same declared user-agent
+    def curl1(self, target, h1=False):
         host = urlsplit(target).hostname
         time.sleep(max(0, self.last.get(host, 0) + 1.2 - time.time()))
         with tempfile.TemporaryDirectory() as tmp:
             raw, hd = Path(tmp, 'raw'), Path(tmp, 'h')
-            p = subprocess.run(['curl', '-sS', '-A', UA, '--max-time', '25', '--max-filesize', '8000000', '-D', str(hd), '-o', str(raw), '-w', '%{http_code}', target], capture_output=True, text=True)
+            p = subprocess.run(['curl', '-sS', *(['--http1.1'] if h1 else []), '-A', UA, '--max-time', '25', '--max-filesize', '8000000', '-D', str(hd), '-o', str(raw), '-w', '%{http_code}', target], capture_output=True, text=True)
             self.last[host] = time.time(); self.n += 1
             h = hd.read_text(errors='replace') if hd.exists() else ''
             loc = re.findall(r'(?im)^location:\s*(.*?)\s*$', h); ct = re.findall(r'(?im)^content-type:\s*(.*?)\s*$', h)
@@ -93,9 +94,9 @@ class Fetcher:
             if r['code'] in (404, 410): rp.parse([])
             elif r['code'] == 200 and r['exit'] == 0: rp.parse(r['raw'].decode('utf-8', 'replace').splitlines())
             else: rp.parse(['User-agent: *', 'Disallow: /'])  # robots unreadable: treated as closed (not fetched), recorded as ROBOTS_UNREADABLE
-            self.robots[base] = (rp, r['code'])
+            self.robots[base] = (rp, r['code'], r['exit'])
             self.record(dict(kind='robots', url=ru, http=r['code'], sha256=sha(r['raw']), note='robots.txt read' if r['code'] == 200 else f'robots http {r["code"]} exit {r["exit"]}'))
-        rp, code = self.robots[base]
+        rp, code, _ = self.robots[base]
         return rp.can_fetch(AGENT, target) if code in (200, 404, 410) else None
     def record(self, row):
         row['fetched_at'] = datetime.now(timezone.utc).isoformat(timespec='seconds'); row.setdefault('org_id', getattr(self, 'org', ''))
@@ -106,12 +107,13 @@ class Fetcher:
         for _ in range(5):
             ok = self.allowed(cur)
             if not ok:
-                st = 'ROBOTS_BLOCKED' if ok is False else 'ROBOTS_UNREADABLE'
+                rx = self.robots[urlsplit(cur).scheme + '://' + urlsplit(cur).netloc][2]
+                st = 'ROBOTS_BLOCKED' if ok is False else CLASS.get(rx, f'CURL_{rx}') if rx else 'ROBOTS_UNREADABLE'  # transport reason beats a generic label
                 self.record(dict(kind=kind, url=target, final_url=cur, http=0, status=st, sha256='', note='robots.txt disallows' if ok is False else 'robots.txt could not be read (availability fact); page not fetched')); return st, cur, [], []
             r = self.curl(cur)
             if r['code'] in (301, 302, 303, 307, 308) and r['location']: cur = urljoin(cur, r['location']); continue
             break
-        status = 'ok' if r['exit'] == 0 and r['code'] == 200 else f'HTTP_{r["code"]}' if r['exit'] == 0 else f'CURL_{r["exit"]}'
+        status = 'ok' if r['exit'] == 0 and r['code'] == 200 else f'HTTP_{r["code"]}' if r['exit'] == 0 else CLASS.get(r['exit'], f'CURL_{r["exit"]}')
         row = dict(kind=kind, url=target, final_url=cur, http=r['code'], status=status, sha256=sha(r['raw']), bytes=len(r['raw']), ctype=r['ctype'], note=r['err'])
         lines, links = [], []
         if status == 'ok' and ('html' in r['ctype'].lower() or b'<html' in r['raw'][:2000].lower() or b'<!doctype' in r['raw'][:200].lower()):
