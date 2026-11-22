@@ -289,12 +289,13 @@ def cut(repo, fdir):
             stats[verdict] += 1
             if verdict != "SAME":
                 held.append(dict(r, reason=f"{verdict}: {fact}")); continue
-            r = dict(r, claim_detail=r["claim_detail"] + f"; the street matches the Atlas HQ site {fact}"
+            r = dict(r, address_role="physical" if where == "location" else "mailing",  # SCHEMA §4.13 v1.19
+                     claim_detail=r["claim_detail"] + f"; the street matches the Atlas HQ site {fact}"
                      f" (filing street '{f['loc_street'] if where == 'location' else f['mail_street']}')")
         kept.append(r)
     assert len(kept) + len(dropped) + len(held) == len(orig), (len(kept), len(dropped), len(held), len(orig))
     flds = list(orig[0])
-    wr(HERE / "packet_rows.csv", kept, flds)
+    wr(HERE / "packet_rows.csv", kept, flds + ["address_role"])
     wr(HERE / "dropped_rows.csv", dropped, flds + ["reason"])
     wr(HERE / "held_rows.csv", held, flds + ["reason"])
     kept_orgs = {r["record_id"] for r in kept}

@@ -16,7 +16,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 FIELDS = ["evidence_id", "record_table", "record_id", "claim_type", "claim_detail", "source_class", "source_ref",
-          "observed_date", "tier_effect", "created_by", "notes"]
+          "observed_date", "tier_effect", "created_by", "notes", "address_role"]  # same order as data/evidence_*.csv (v1.19)
 WAIVER = " Reviewed by Codex only, under the owner's waiver of 2026-11-20 (no second family available)."
 a = sys.argv[1:]
 repo, start = Path(a[0]), int(a[a.index("--start") + 1].split("-")[1])
@@ -67,7 +67,7 @@ for x in applied:
     path = repo / "data" / f"evidence_organizations_{x['_shard']}.csv"
     assert path.exists(), path
     with open(path, "a", encoding="utf-8", newline="") as fh:
-        csv.writer(fh, lineterminator="\n").writerow([x[f] for f in FIELDS])
+        csv.writer(fh, lineterminator="\n").writerow([x.get(f, "") for f in FIELDS])
 for name, rows, extra in (("applied.csv", applied, ["_shard"]), ("withheld.csv", withheld, ["_shard", "held"])):
     with open(HERE / name, "w", encoding="utf-8", newline="") as fh:
         d = csv.DictWriter(fh, fieldnames=FIELDS + extra, lineterminator="\n", extrasaction="ignore"); d.writeheader(); d.writerows(rows)
