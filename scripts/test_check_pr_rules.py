@@ -308,6 +308,90 @@ class TestWorkflow(unittest.TestCase):
         self.assertNotIn("gh run rerun", self.text)  # selects by PR number via the API, not by run or SHA
 
 
+class TestBindingGateJob(unittest.TestCase):
+    """The job that may run a PR-supplied check.py holds no token, keeps no credential and runs offline."""
+
+    text = TestWorkflow.text
+    job = text[text.index("\n  binding-gate:"):text.index("\n  publish-binding-gate:")]
+    publish = text[text.index("\n  publish-binding-gate:"):]
+
+    def test_gate_job_has_no_token_no_credential_and_no_network(self):
+        self.assertIn("permissions: {}", self.job)
+        self.assertIn("persist-credentials: false", self.job)
+        self.assertIn("unshare --net", self.job)
+        for bad in ("GH_TOKEN", "github.token", "secrets.", "GITHUB_TOKEN", "checks: write"):
+            self.assertNotIn(bad, self.job)
+
+    def test_gate_job_does_not_run_when_isolation_is_unproven(self):
+        # the isolation probe must come before the gate and must route a failure to `skipped`, never to a run
+        self.assertLess(self.job.index('isolated /usr/bin/python3 -c "$probe"'), self.job.index("check_evidence_binding.py --tree"))
+        self.assertIn("echo skipped", self.job)
+        self.assertIn("echo not_yet", self.job)
+
+    def test_only_the_publish_job_holds_a_token(self):
+        self.assertIn("checks: write", self.publish)
+        self.assertEqual(self.text.count("checks: write"), 2)  # evaluate (top level) and publish; never the gate job
+
+
+class TestExportTree(unittest.TestCase):
+    def test_exports_raw_blobs_ignoring_attributes_and_skips_symlinks(self):
+        with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as dest:
+            root = Path(t)
+            g = lambda *a: subprocess.run(["git", "-C", t, "-c", "user.name=t", "-c", "user.email=t@example.org", *a], check=True, capture_output=True)
+            g("init", "-q", "-b", "main")
+            (root / "data").mkdir()
+            (root / "tasks/f").mkdir(parents=True)
+            (root / ".gitattributes").write_text("data/hidden.csv export-ignore\n*.csv text eol=crlf\n")
+            (root / "data/hidden.csv").write_bytes(b"a,b\n1,2\n")
+            (root / "data/sp ace.csv").write_bytes(b"x\n")
+            (root / "tasks/f/check.py").write_text("print(1)\n")
+            (root / "tasks/f/link").symlink_to("/etc/passwd")
+            (root / "outside.txt").write_text("not exported\n")
+            g("add", "-A"); g("commit", "-qm", "c")
+            old, c.REPO = c.REPO, root
+            try:
+                n, skipped = c.export_tree("HEAD", dest)
+            finally:
+                c.REPO = old
+            self.assertEqual(n, 3)
+            self.assertEqual(skipped, ["tasks/f/link"])
+            self.assertEqual((Path(dest) / "data/hidden.csv").read_bytes(), b"a,b\n1,2\n")  # export-ignore and eol ignored
+            self.assertTrue((Path(dest) / "data/sp ace.csv").exists())
+            self.assertFalse((Path(dest) / "outside.txt").exists())
+            self.assertFalse((Path(dest) / "tasks/f/link").exists())
+
+
+class TestPublishGate(unittest.TestCase):
+    def publish(self, state, live=HEAD, head=HEAD):
+        with tempfile.TemporaryDirectory() as d:
+            Path(d, "head").write_text(head + "\n")
+            Path(d, "state").write_text(state + "\n")
+            Path(d, "log").write_text("gate log\n")
+            with mock.patch.object(c, "gh_json", return_value={"headRefOid": live}), \
+                    mock.patch.object(c, "post_check", return_value=True) as post:
+                rc = c.publish_gate(d, 5)
+            return rc, post
+
+    def test_states_map_to_conclusions(self):
+        for state, concl in (("passed", "success"), ("failed", "failure"), ("cannot_inspect", "failure"),
+                             ("not_yet", "neutral"), ("skipped", "neutral")):
+            rc, post = self.publish(state)
+            self.assertEqual(rc, 0)
+            self.assertEqual(post.call_args.args[-1], concl, state)
+            self.assertEqual(post.call_args.args[-2], "binding-gate")
+
+    def test_unknown_state_or_bad_head_posts_nothing(self):
+        rc, post = self.publish("whatever")
+        self.assertEqual(rc, 1)
+        post.assert_not_called()
+        self.assertEqual(self.publish("passed", head="abc")[0], 1)
+
+    def test_stale_head_is_not_posted(self):
+        rc, post = self.publish("passed", live=OLD)
+        self.assertEqual(rc, 0)
+        post.assert_not_called()
+
+
 class TestCollectors(unittest.TestCase):
     """The collectors against a real repository: identity counting, quoted multiline fields, failed reads."""
 

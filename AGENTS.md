@@ -169,7 +169,8 @@ that branch merges. What each check cannot catch is in
 2. **No evidence row or registry link merges without its packet and a
    replay check in the repo.**
    Enforced by: `scripts/check_evidence_binding.py` and its
-   provenance-folder check. Lands with PR branch
+   provenance-folder check, also run by the `binding-gate` job of workflow
+   `pr-rules` once the script is on `main`. Lands with PR branch
    `agent/claude-code/evidence-binding-gate-2026-11-22`.
 3. **A binding gate in CI: the quoted operator is a name the record holds
    and the quoted street equals the record's street, or the row is a
@@ -180,7 +181,9 @@ that branch merges. What each check cannot catch is in
    entity's own address. People and program rows are witnessed as SCHEMA
    §4.13 says and fall under the gate's sampled review; the street test does
    not apply to them.
-   Enforced by: `scripts/check_evidence_binding.py`. Lands with PR branch
+   Enforced by: `scripts/check_evidence_binding.py`, also run by the
+   `binding-gate` job of workflow `pr-rules` against the PR's tree once the
+   script is on `main`. Lands with PR branch
    `agent/claude-code/evidence-binding-gate-2026-11-22`.
 4. **Review is tiered by risk, recorded on the PR.** (Owner ruling
    2026-11-22, "tier by risk"; it replaces the flat wording "two model

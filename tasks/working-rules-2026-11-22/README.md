@@ -35,6 +35,28 @@ multiline fields, a metadata-only registry edit, a path absent at base, a failed
 workflow to `pull_request_target`, a base-only checkout, and comment created, edited and deleted. The check was also
 run live on PR #461 and PR #462 on 2026-11-22.
 
+## The binding-gate job (rules 2 and 3 on the PR tree)
+
+The workflow's second check run, `binding-gate`, runs main's `scripts/check_evidence_binding.py` against the PR's
+`data/` and `tasks/`, fetched as data into a plain directory (raw blob bytes: no checkout filter, `.gitattributes`
+rule, symlink or hook applies; `TestExportTree`). States: `passed` (success), `failed` and `cannot_inspect` (failure),
+`not_yet` ("gate not yet on main": neutral) and `skipped` (neutral). Neutral counts as passing for a required check, so a
+neutral result is a visible grey, not a green; the summary says why.
+
+The gate's provenance check executes one PR-supplied file, `tasks/<folder>/check.py`. The job that may do so has
+`permissions: {}` (the repository is public, so the fetch needs no token), `persist-credentials: false`, no secret, and
+runs the gate as user 65534 inside `unshare --net` with an empty environment. Before any PR file runs, the job proves
+the isolation (the command must start and fail to reach 1.1.1.1:53); if it cannot, the gate is **not executed on that
+runner** and the result is `skipped`, leaving the gate to the `validate` job. A separate job, which runs no PR code,
+holds the `checks: write` token and publishes the result. `TestBindingGateJob` pins these properties in the workflow
+text.
+
+**Not verified:** the isolation could not be exercised here (macOS; GitHub's runners need `sudo unshare --net` and
+`setpriv`, present on `ubuntu-latest` but untested by me), and the gate's `--tree` flag does not exist yet. The
+assumed interface is `--tree DIR --new-since SHA` and `--tree DIR --provenance-since SHA`. Residual risk: a PR-supplied
+`check.py` running as an unprivileged user with no network can still read the checkout and burn the job's time; it
+cannot reach a token (none is in the job), and the result files are written by the runner, not by that process.
+
 ## Counterexamples from Codex's round 1 on PR #466 (each is now a test)
 
 | # | Finding | Fix |
