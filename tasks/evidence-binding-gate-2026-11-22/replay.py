@@ -2,16 +2,15 @@
 """Replay the gate over the last 40 first-parent commits to main before the branch cut (8f30ce0f).
 
 For each commit that added or changed evidence rows: rows PASS / FAIL / READ_REQUIRED / UNINSPECTABLE; how many rows
-would have needed a per-row proof line (every READ_REQUIRED or UNINSPECTABLE row) and how many of those had a
-data/archive_links.csv capture at that commit; and whether the binding gate (--new-since) and the provenance rules
-(--provenance-since) would have passed. Provenance is replayed for its structure only (a label naming exactly one folder,
-a non-empty check.py, a new label adding its own folder): the historical check.py files are not executed here, so a
-"pass" in that column is an upper bound. Writes replay.csv beside itself. Takes about 5 minutes.
+were held (READ_REQUIRED or UNINSPECTABLE: this gate has no admission path for them) and how many of those had a
+data/archive_links.csv capture at that commit; and whether the binding gate (--new-since: fails on any FAIL or held row)
+and the provenance rules (--provenance-since) would have passed. Provenance is presence only, as in the gate (a label
+naming exactly one folder, a non-empty check.py, a new label adding its own folder); nothing is executed. Writes
+replay.csv beside itself. Takes about 5 minutes.
 
 Usage: python3 tasks/evidence-binding-gate-2026-11-22/replay.py
 """
 import csv
-import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -39,28 +38,23 @@ def main():
         paths = set(b.git("ls-tree", "-r", "--name-only", h, "tasks/").split())
         base_paths = set(b.git("ls-tree", "-r", "--name-only", h + "^1", "tasks/").split())
         base_labels = {e["created_by"].strip() for e in b.rows(h + "^1", "evidence_*.csv")}
-        prov, _ = b.provenance_problems(
+        prov = b.provenance_problems(
             new, base_labels, lambda f: any(x.startswith(f"tasks/{f}/") for x in base_paths),
-            lambda f: (b.tasks_file(h, f"tasks/{f}/check.py") or b"").strip() if f"tasks/{f}/check.py" in paths else b"",
-            run=lambda folders, head: ({}, ""))  # structure only: historical checks are not executed
-        proofs = b.check_proofs(res, {e["evidence_id"]: e for e in new}, archive,
-                                lambda p: b.tasks_file(h, p) if p in paths else None)
+            lambda f: (b.tasks_file(h, f"tasks/{f}/check.py") or b"").strip() if f"tasks/{f}/check.py" in paths else b"")
         out.append({"commit": h[:9], "subject": subj[:60], "rows": len(new), "PASS": v["PASS"], "FAIL": v["FAIL"],
                     "READ_REQUIRED": v["READ_REQUIRED"], "UNINSPECTABLE": v["UNINSPECTABLE"],
-                    "needs_proof_line": len(unins),
+                    "held": len(unins),
                     "of_which_archive_link": len(unins & set(archive)),
                     "labels": len({e["created_by"].strip() for e in new}), "provenance_problems": len(prov),
-                    "proof_file_present": "no" if any("is absent" in x for x in proofs) else
-                    ("n/a" if not unins else "yes"),
-                    "binding_gate": "fail" if v["FAIL"] or proofs else "pass",
-                    "provenance_structure": "fail" if prov else "pass"})
+                    "binding_gate": "fail" if v["FAIL"] or unins else "pass",
+                    "provenance": "fail" if prov else "pass"})
         print(" ".join(f"{k}={x}" for k, x in out[-1].items()), flush=True)
     with open(HERE / "replay.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(out[0]), lineterminator="\n")
         w.writeheader()
         w.writerows(out)
     print(f"{len(out)} of {N} commits added or changed evidence rows; binding gate would pass "
-          f"{sum(r['binding_gate'] == 'pass' for r in out)}, provenance structure {sum(r['provenance_structure'] == 'pass' for r in out)}")
+          f"{sum(r['binding_gate'] == 'pass' for r in out)}, provenance {sum(r['provenance'] == 'pass' for r in out)}")
 
 
 if __name__ == "__main__":

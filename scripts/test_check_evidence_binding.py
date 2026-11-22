@@ -5,9 +5,7 @@ text outside data/); the comment on each case names the real row it models. Plan
 must PASS; a web quote is never PASS (READ_REQUIRED at best); what cannot be inspected is UNINSPECTABLE. Each Codex
 finding on PR #467 has its counterexample here (the README maps finding -> test).
 """
-import os
 import contextlib
-import hashlib
 import io
 import subprocess
 import tempfile
@@ -43,7 +41,7 @@ ORGS = [
     {"org_id": "ORG-14", "legal_name": "Meridian Coatings Co.", "trade_names": "", "hq_city": "Longview", "hq_state": "TX",
      "notes": "Dated operator change: RY2024 operator Eastgate Polymers US Inc; Meridian completion July 2026."},
     {"org_id": "ORG-15", "legal_name": "Acme Polymer", "trade_names": "", "hq_city": "Center", "hq_state": "OH",
-     "website": "https://acmepolymer.example/"},
+     "website": "https://acmepolymer.example/", "ultimate_parent_name": "Acme Polymer Holdings"},
     {"org_id": "ORG-16", "legal_name": "Acme Molding", "trade_names": "", "hq_city": "Dover", "hq_state": "OH",
      "website": "https://acme.pages.dev/"},
 ]
@@ -122,6 +120,10 @@ SITES = [
      "street_address": "321 Oak Avenue, Suite 300"},
     {"site_id": "S-OAK3", "org_id": "ORG-15", "site_name": "Acme Polymer - Oak", "city": "Dover", "state": "OH",
      "street_address": "321 Oak Street"},
+    {"site_id": "S-OAK4", "org_id": "ORG-15", "site_name": "Acme Polymer - Oak Bldg", "city": "Dover", "state": "OH",
+     "street_address": "321 Oak Street, Building A"},
+    {"site_id": "S-PLANT2", "org_id": "ORG-15", "site_name": "Acme Polymer - Plant 2", "city": "Dover", "state": "OH",
+     "street_address": "77 Kiln Rd"},
     {"site_id": "S-ZIP", "org_id": "ORG-15", "site_name": "Acme Polymer - Zip", "city": "Dover", "state": "OH",
      "street_address": "43000 Oak Street"},
     {"site_id": "S-PAGES", "org_id": "ORG-16", "site_name": "Acme Molding - Plant", "city": "Dover", "state": "OH",
@@ -223,7 +225,7 @@ class Verdicts(unittest.TestCase):
                    "FAIL", "street_differs")
 
     def test_neighbouring_number(self):  # EVD-432662: 552 vs 554 on one road
-        self.check(ev("S-AVON", ITA, "Tamarack, 734 Hollis Road, Sheffield Lake, OH 44098"), "FAIL", "street_differs")
+        self.check(ev("S-AVON", ITA, "Tamarack Rubber, 734 Hollis Road, Sheffield Lake, OH 44098"), "FAIL", "street_differs")
 
     def test_same_number_other_road(self):  # EVD-426678: the first cut passed number + generic word
         info = self.check(ev("S-PLAQ", OSHA, "TAMARACK RUBBER CO, 31840 STATE HWY 9 SOUTH, PLAQUEMINE, LA 70799"),
@@ -288,9 +290,9 @@ class Verdicts(unittest.TestCase):
         self.assertIn("spacing", info["name_alt"])
 
     def test_street_key_limits_are_measured_not_passed(self):  # controller: report, do not widen street_key
-        self.assertEqual(self.check(ev("S-RANGE", ITA, "Tamarack, 2203 Elm St, Erie, PA 16599"), "FAIL",
+        self.assertEqual(self.check(ev("S-RANGE", ITA, "Tamarack Rubber, 2203 Elm St, Erie, PA 16599"), "FAIL",
                                     "street_differs")["street_limit"], "number_in_recorded_range")
-        self.assertEqual(self.check(ev("S-ORD", ITA, "Tamarack, 4417 1st Street, Wadsworth, OH 44299"), "FAIL",
+        self.assertEqual(self.check(ev("S-ORD", ITA, "Tamarack Rubber, 4417 1st Street, Wadsworth, OH 44299"), "FAIL",
                                     "street_differs")["street_limit"], "number_word")
 
     # ---- true matches: must PASS
@@ -329,6 +331,9 @@ class Verdicts(unittest.TestCase):
                    "name_not_held")  # a parent's name plus a form word: the base must be a held name
         info = self.check(ev("S-PIN", ITA, "Pinecrest Foam Holdings, 4471 Tanner Dr, Lancaster, PA 17699"), "PASS")
         self.assertEqual(info["name_basis"], "corporate_form")  # the rule as ruled: held "Pinecrest Foam" + Holdings
+        info = self.check(ev("S-OAK3", ITA, "Acme Polymer Holdings, 321 Oak St, Dover, OH 44699"), "FAIL",
+                          "name_not_held")  # Codex r2 finding 4: the recorded ultimate parent's own name
+        self.assertEqual(info["name_alt"], "parent;corporate_form")
 
     def test_permittee_is_one_name(self):  # Codex 5: "Other Operator, Acme Polymer" in a permittee field
         self.check(ev("S-OAK3", TCEQ, permit("Other Operator, Acme Polymer", "DOVER", "321 OAK ST, DOVER, OH 44699")),
@@ -339,18 +344,42 @@ class Verdicts(unittest.TestCase):
                    "UNINSPECTABLE", "no_civic_number")
 
     def test_shared_building_other_suite(self):  # Codex 3: building A with suite 100 vs suite 300
-        self.check(ev("S-BLDGA", ITA, "Tamarack, 10 Industrial Pkwy Bldg A Ste 300, Kent, OH 44299"), "FAIL",
+        self.check(ev("S-BLDGA", ITA, "Tamarack Rubber, 10 Industrial Pkwy Bldg A Ste 300, Kent, OH 44299"), "FAIL",
                    "unit_differs")
-        self.check(ev("S-BLDGA", ITA, "Tamarack, 10 Industrial Pkwy Building A Suite 100, Kent, OH 44299"), "PASS")
+        self.check(ev("S-BLDGA", ITA, "Tamarack Rubber, 10 Industrial Pkwy Building A Suite 100, Kent, OH 44299"), "PASS")
 
     def test_spelled_out_po_box_both_sides(self):  # Codex 3: a mailbox on both sides names no place
-        self.check(ev("S-POBOX", ITA, "Tamarack, Post Office Box 12, Lima, OH 45899"), "UNINSPECTABLE", "no_civic_number")
+        self.check(ev("S-POBOX", ITA, "Tamarack Rubber, Post Office Box 12, Lima, OH 45899"), "UNINSPECTABLE", "no_civic_number")
 
     def test_other_state_fails(self):  # Codex 3: an explicit other state is contrary evidence
-        self.check(ev("S-OHIO", ITA, "Tamarack, 88 Quarry Bend Rd, Marion, TX 75699"), "FAIL", "state_differs")
+        self.check(ev("S-OHIO", ITA, "Tamarack Rubber, 88 Quarry Bend Rd, Marion, TX 75699"), "FAIL", "state_differs")
         self.check(ev("S-OHIO", TCEQ, permit("Tamarack Rubber Company", "MARION", "88 QUARRY BEND RD, MARION, Texas 75699")),
                    "FAIL", "state_differs")
-        self.check(ev("S-OHIO", ITA, "Tamarack, 88 Quarry Bend Rd, Marion, OH 43399"), "PASS")
+        self.check(ev("S-OHIO", ITA, "Tamarack Rubber, 88 Quarry Bend Rd, Marion, OH 43399"), "PASS")
+
+    def test_designators_and_place_conflicts(self):  # owner split / Codex r2 finding 2: explicit contrary facts
+        self.check(ev("S-OAK1", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, STE. 300, DOVER, OH 44699")),
+                   "FAIL", "unit_differs")  # the dotted unit reaches the designator test
+        self.check(ev("S-OAK1", ITA, "Acme Polymer, 321 Oak St, Ste. 100, Dover, OH 44699"), "PASS")
+        self.check(ev("S-OAK4", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, BUILDING B, DOVER, OH 44699")),
+                   "FAIL", "unit_differs")
+        self.check(ev("S-OAK4", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, BLDG. A, DOVER, OH 44699")), "PASS")
+        self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, DAYTON, OH 45402")),
+                   "FAIL", "city_differs")
+        self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, DOVER, TX")), "FAIL", "state_differs")
+        self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, DOVER OHIO")), "PASS")
+        self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, DAYTON")), "FAIL", "city_differs")
+        self.check(ev("S-BLDG", OSHA, "TAMARACK RUBBER CO, 518 FENWICK GROVE RD BLDG 1, WEST FENWICK TWP, OH 44299"),
+                   "PASS")  # "Twp" and "Mt." are spellings, not other places
+
+    def test_bare_site_label_is_not_the_operator(self):  # owner split / Codex r2 finding 3
+        info = self.check(ev("S-PLANT2", TCEQ, permit("Plant 2", "X", "77 KILN RD, DOVER, OH 44699")),
+                          "FAIL", "name_not_held")
+        self.assertNotIn("site_name", info.get("name_basis", ""))
+        info = self.check(ev("S-PLANT2", TCEQ, permit("Acme Polymer Plant 2", "X", "77 KILN RD, DOVER, OH 44699")), "PASS")
+        self.assertEqual(info["name_basis"], "site_name_other")  # the label beside the operator's own name still binds
+        self.check(ev("S-AVON", ITA, "Tamarack, 736 Hollis Rd, Sheffield Lake, OH 44098"), "FAIL",
+                   "name_not_held")  # the ruling read literally: a short brand lacks the organization's other tokens
 
     def test_osha_four_digit_zip(self):  # EVD-430557: the ZIP lost its leading zero
         self.check(ev("S-CT", ITA, "Kestrel Molding LLC, 77 Marsh St Ext, East Haven, CT 6599"), "PASS")
@@ -367,7 +396,7 @@ class Verdicts(unittest.TestCase):
         self.check(ev("S-AND", OSHA, "TAMARACK RUBBER CO, 7TH AND ASHCROFT LANE, BERWICK, PA 18699"), "PASS")
 
     def test_same_suite_and_one_sided_unit(self):  # EVD-430253; a unit on one side only is not a conflict
-        self.check(ev("S-STE200", ITA, "Tamarack, 6120 S. Juniper Ln, Suite 200, Goodyear, AZ 85399"), "PASS")
+        self.check(ev("S-STE200", ITA, "Tamarack Rubber, 6120 S. Juniper Ln, Suite 200, Goodyear, AZ 85399"), "PASS")
         self.check(ev("S-BLDG", NPDES, "TAMARACK RUBBER CO; 518 FENWICK GROVE ROAD, WEST FENWICK TWP, NJ 08099"
                       + ECHO_TAIL), "PASS")
 
@@ -474,7 +503,7 @@ class Verdicts(unittest.TestCase):
                    "FAIL", "not_own_site")
         self.check(self.web("S-NC", "https://www.tamarackrubber.example/", "Our plant at 812 Cedar Mill Rd"),
                    "FAIL", "street_absent_from_quote")
-        self.check(self.web("S-NC", "https://hosedepot.example/", "Tamarack, Fayetteville NC"),
+        self.check(self.web("S-NC", "https://hosedepot.example/", "Tamarack Rubber, Fayetteville NC"),
                    "FAIL", "street_absent_from_quote+not_own_site")
         info = self.check(self.web("S-NC", "https://www.tamarackrubber.example/", "5530 Braggridge Street"),
                           "FAIL", "street_absent_from_quote")
@@ -507,146 +536,6 @@ class Verdicts(unittest.TestCase):
                             self.assertNotEqual(v, "PASS", (rid, url, q, cls, claim))
 
 
-README_BUILT = b"# lane\n\nBuilt by: Claude Code, Anthropic\n"
-
-
-def proof_line(eid, cap, sha, off, n, verdict="VERIFIED", fam="OpenAI", model="GPT-6.2 Astra",
-               tie="The capture's plant list prints this site's street and the operator's held name together."):
-    return f'{eid},{cap},{sha},{off},{n},{verdict},{fam},{model},"{tie}"'
-
-
-class Proofs(unittest.TestCase):
-    """Ruling C: a READ_REQUIRED or UNINSPECTABLE row is admitted only by its own proof line with a reading."""
-    parallel_safe = True
-    QUOTE = "Kestrel Molding runs its caps line at 41 Ferry Landing Rd"
-    CAPTURE = ("<html><head><script>var x = 1;</script><style>p{}</style></head><body><p>About &amp; us</p>\n<p>"
-               "Kestrel Molding runs its caps   line at\n41 Ferry Landing Rd</p></body></html>").encode()
-    CAP = "tasks/lane-a/captures/kestrel.html"
-    WB = "https://web.archive.org/web/20261101000000/https://kestrel.example/about"
-
-    def setUp(self):
-        self.sha = hashlib.sha256(self.CAPTURE).hexdigest()
-        self.off = b.capture_text(self.CAPTURE).index(self.QUOTE)
-        self.evs = {e: dict(ev("ORG-8", "https://kestrel.example/about", self.QUOTE, table="organizations", eid=e),
-                            created_by="claude-code lane-a") for e in ("EVD-1", "EVD-2")}
-        self.res = [{"evidence_id": e, "verdict": "READ_REQUIRED", "created_by": "claude-code lane-a"} for e in self.evs]
-        self.res.append({"evidence_id": "EVD-F", "verdict": "FAIL", "created_by": "lane-z"})  # FAIL is never proved in
-
-    def good(self):
-        n = len(self.QUOTE)
-        return [proof_line("EVD-1", self.CAP, self.sha, self.off, n), proof_line("EVD-2", self.WB, self.sha, self.off, n)]
-
-    def check(self, lines, archive=None, files=None, fetch=None, res=None, evs=None):
-        body = ",".join(b.PROOF_COLS) + "\n" + "".join(x + "\n" for x in lines)
-        store = {"tasks/lane-a/BINDING_PROOF.csv": body.encode(), "tasks/lane-a/README.md": README_BUILT,
-                 self.CAP: self.CAPTURE, **(files or {})}
-        return b.check_proofs(res or self.res, evs or self.evs, {"EVD-2": self.WB} if archive is None else archive,
-                              store.get, fetch)
-
-    def test_capture_text_drops_script_and_collapses_space(self):
-        t = b.capture_text(self.CAPTURE)
-        self.assertNotIn("var x", t)
-        self.assertIn("About & us " + self.QUOTE, t)
-
-    def test_good_proofs_admit(self):
-        self.assertEqual(self.check(self.good()), [])
-
-    def test_row_without_proof_line_is_a_lead(self):
-        self.assertIn("EVD-2: no proof line", self.check(self.good()[:1])[0])
-        self.assertIn("is absent", b.check_proofs(self.res, self.evs, {}, {}.get)[0])
-
-    def test_archive_ref_must_be_the_index_line(self):  # Codex 1
-        self.assertIn("no data/archive_links.csv line", self.check(self.good(), archive={})[0])
-        live = "https://kestrel.example/about"  # an index line the PR wrote itself, pointing at a live page
-        line = proof_line("EVD-2", live, self.sha, self.off, len(self.QUOTE))
-        self.assertIn("web.archive.org", self.check([self.good()[0], line], archive={"EVD-2": live})[0])
-        other = self.WB.replace("20261101", "20261001")
-        self.assertIn("differs from the row's", self.check(self.good(), archive={"EVD-2": other})[0])
-
-    def test_repo_capture_refused_when_an_archive_capture_exists(self):  # Codex 1: prove from the cited capture
-        line = proof_line("EVD-2", self.CAP, self.sha, self.off, len(self.QUOTE))
-        self.assertIn("prove it from that capture", self.check([self.good()[0], line])[0])
-
-    def test_digest_and_span_form(self):  # Codex 1: all-zero digest, offset 100,000, length 1
-        n = len(self.QUOTE)
-        for bad, why in ((proof_line("EVD-2", self.WB, "0" * 64, self.off, n), "not one repeated digit"),
-                         (proof_line("EVD-2", self.WB, "a" * 63, self.off, n), "64 lowercase hex"),
-                         (proof_line("EVD-2", self.WB, self.sha, 100000, 1), "is not the quote's length"),
-                         (proof_line("EVD-2", self.WB, self.sha, "x", n), "whole numbers")):
-            self.assertIn(why, self.check([self.good()[0], bad])[0])
-
-    def test_repo_capture_checks_bytes_and_quote(self):
-        n = len(self.QUOTE)
-        for line, files, why in (
-                (proof_line("EVD-1", self.CAP, self.sha, self.off + 1, n), None, "not at that offset"),
-                (proof_line("EVD-1", self.CAP, "b" + self.sha[1:], self.off, n), None, "capture_sha256 does not match the capture's bytes"),
-                (self.good()[0], {self.CAP: self.CAPTURE + b" "}, "capture_sha256 does not match the capture's bytes"),
-                (proof_line("EVD-1", "tasks/lane-a/captures/missing.html", self.sha, self.off, n), None,
-                 "not a regular file"),
-                (proof_line("EVD-1", "../data/x", self.sha, self.off, n), None, "repo path under tasks/")):
-            self.assertIn(why, self.check([line, self.good()[1]], files=files)[0], line)
-
-    def test_row_without_quote_is_refused(self):  # Codex 1: a proof for a row with no quote proves nothing
-        evs = dict(self.evs, **{"EVD-1": dict(self.evs["EVD-1"], claim_detail="existence (own site)")})
-        self.assertIn("has no quote", self.check(self.good(), evs=evs)[0])
-
-    def test_reading_is_required(self):  # ruling A: verdict, a different family, its model, a tie sentence
-        n = len(self.QUOTE)
-        for kw, why in (({"verdict": "STILL_UNCERTAIN"}, "only VERIFIED"),
-                        ({"fam": "Anthropic", "model": "Opus 5.5"}, "the builder's family"),
-                        ({"fam": "Acme AI", "model": "x-1"}, "names no known model family"),
-                        ({"fam": "OpenAI", "model": "Gemini 4 Hydrogen"}, "is not a openai model"),
-                        ({"tie": "looks fine"}, "tie must be a sentence")):
-            self.assertIn(why, self.check([proof_line("EVD-1", self.CAP, self.sha, self.off, n, **kw),
-                                           self.good()[1]])[0], kw)
-
-    def test_builder_must_be_named(self):
-        self.assertIn("no 'Built by:' line", self.check(self.good(), files={"tasks/lane-a/README.md": b"# x\n"})[0])
-
-    def test_proof_file_shape(self):  # Codex FOLLOW-UP 2: extra cell, duplicate line, wrong header
-        self.assertIn("10 cells", self.check([self.good()[0] + ",extra", self.good()[1]])[0])
-        self.assertIn("second proof line", self.check(self.good() + self.good()[:1])[0])
-        bad = {"tasks/lane-a/BINDING_PROOF.csv": b"evidence_id,capture\n"}
-        self.assertIn("header must be", self.check([], files=bad)[0])
-
-    def test_no_borrowing_across_folders(self):  # Codex 7: one label's proof file cannot serve another label
-        res = self.res + [{"evidence_id": "EVD-3", "verdict": "READ_REQUIRED", "created_by": "lane-b"}]
-        evs = dict(self.evs, **{"EVD-3": dict(self.evs["EVD-1"], evidence_id="EVD-3", created_by="lane-b")})
-        lines = self.good() + [proof_line("EVD-3", self.CAP, self.sha, self.off, len(self.QUOTE))]
-        out = self.check(lines, res=res, evs=evs,
-                         files={"tasks/lane-b/BINDING_PROOF.csv": ",".join(b.PROOF_COLS).encode() + b"\n",
-                                "tasks/lane-b/README.md": README_BUILT})
-        self.assertEqual(out, ["EVD-3: no proof line in tasks/lane-b/BINDING_PROOF.csv"])
-
-    def test_two_labels_one_folder(self):  # "claude-code lane-a" and "codex lane-a" both name lane-a
-        res = [dict(self.res[0]), dict(self.res[1], created_by="codex lane-a")]
-        self.assertEqual(self.check(self.good(), res=res), [])
-
-    def test_verify_proofs_fetches_once_and_checks(self):  # ruling C: --verify-proofs
-        calls = []
-
-        def fetch(url):
-            calls.append(url)
-            return self.CAPTURE
-        lines = self.good() + [proof_line("EVD-4", self.WB, self.sha, self.off, len(self.QUOTE))]
-        res = self.res + [{"evidence_id": "EVD-4", "verdict": "UNINSPECTABLE", "created_by": "claude-code lane-a"}]
-        evs = dict(self.evs, **{"EVD-4": dict(self.evs["EVD-2"], evidence_id="EVD-4")})
-        self.assertEqual(self.check(lines, archive={"EVD-2": self.WB, "EVD-4": self.WB}, fetch=fetch, res=res,
-                                    evs=evs), [])
-        self.assertEqual(calls, [self.WB.replace("000000/", "000000id_/")])  # the raw capture, fetched once
-
-    def test_verify_proofs_failures(self):
-        bad = proof_line("EVD-2", self.WB, "c" * 63 + "d", self.off, len(self.QUOTE))
-        self.assertIn("capture_sha256 does not match the capture's bytes", self.check([self.good()[0], bad], fetch=lambda u: self.CAPTURE)[0])
-        shifted = proof_line("EVD-2", self.WB, self.sha, 0, len(self.QUOTE))
-        self.assertIn("not at that offset", self.check([self.good()[0], shifted], fetch=lambda u: self.CAPTURE)[0])
-
-        def down(url):
-            raise OSError("503")
-        out = self.check(self.good(), fetch=down)
-        self.assertTrue(out and out[0].endswith(f"could not inspect {self.WB}: 503"), out)
-
-
 class GateMechanics(unittest.TestCase):
     parallel_safe = True
 
@@ -668,71 +557,39 @@ class GateMechanics(unittest.TestCase):
         for label in ("claude-code lane-a extra", "p2-apply (integrator)", "../x", "a b c", ""):
             self.assertEqual(b.label_folder(label), "", label)
 
-    def test_model_families(self):
-        self.assertEqual(b.family_of_text("Claude Code, Anthropic"), "anthropic")
-        self.assertEqual(b.family_of_text("Codex (GPT-6.2 Sol)"), "openai")
-        self.assertEqual(b.family_of_text("Claude and Codex"), "")  # two families: fail closed
-        self.assertEqual(b.builder_family(README_BUILT), "anthropic")
-
     def test_provenance_rules(self):  # ruling E / Codex 7
         checks = {"lane-a": b"print('ok')\n", "lane-b": b"  \n", "lane-old": b"print(1)\n", "lane-a-2026-11-22": b"x"}
         on_base = {"lane-old"}
-        ran = []
-
-        def run(folders, head):
-            ran.append(sorted(folders))
-            return {f: (3 if f == "lane-old" else 0, "last line") for f in folders}, "test isolation"
 
         def problems(labels, base_labels=()):
             rows = [dict(ev("S-PROS", ITA, "q"), created_by=c) for c in labels]
             return b.provenance_problems(rows, set(base_labels), lambda f: f in on_base,
-                                         lambda f: checks.get(f, b"").strip(), run)[0]
+                                         lambda f: checks.get(f, b"").strip())
         self.assertEqual(problems(["lane-a", "claude-code lane-a"]), [])
-        self.assertEqual(ran[-1], ["lane-a"])  # the check ran, once for its folder
         for label, why in (("lane-b", "MISSING tasks/lane-b/check.py"),  # whitespace-only check.py
                            ("claude-code lane-a extra", "names no folder"),  # extra token
                            ("lane", "MISSING tasks/lane/check.py"),  # a prefix of a folder is not that folder
                            ("lane-a-2026-11-21", "MISSING tasks/lane-a-2026-11-21/check.py"),  # different date
                            ("codex lane-old", "already exists on the base")):  # a new label borrowing a folder
             self.assertIn(why, problems([label])[0], label)
-        self.assertIn("exited 3", problems(["lane-old"], base_labels=["lane-old"])[0])  # check.py must exit 0
-
-    def test_folder_check_runs_on_a_copy_without_token(self):  # ruling F: stripped env, cwd = a copy of the tree
-        with tempfile.TemporaryDirectory() as d:
-            t = Path(d)
-            (t / "data").mkdir()
-            for f, body in (("ok", "import os, pathlib, sys\nsys.exit(0 if pathlib.Path('data').is_dir() else 4)\n"),
-                            ("tok", "import os, sys\nsys.exit(5 if 'GH_TOKEN' in os.environ else 0)\n"),
-                            ("bad", "open('data/w', 'w').write('x')\nraise SystemExit(3)\n")):
-                (t / "tasks" / f).mkdir(parents=True)
-                (t / "tasks" / f / "check.py").write_text(body)
-            old, b.TREE = b.TREE, t
-            os.environ["GH_TOKEN"] = "planted"
-            try:
-                out, isolation = b.run_folder_checks({"ok", "tok", "bad"}, None)
-            finally:
-                b.TREE = old
-                del os.environ["GH_TOKEN"]
-            self.assertEqual({f: c for f, (c, _) in out.items()}, {"ok": 0, "tok": 0, "bad": 3})
-            self.assertFalse((t / "data" / "w").exists())  # it ran on a copy
-            self.assertTrue(isolation)
+        self.assertEqual(problems(["lane-old"], base_labels=["lane-old"]), [])  # presence only: nothing is executed
 
     def test_tree_reads_refuse_symlinks_and_escapes(self):  # ruling F
         with tempfile.TemporaryDirectory() as d:
             t = Path(d) / "tree"
             (t / "tasks" / "lane-a").mkdir(parents=True)
             (Path(d) / "secret").write_text("x")
-            (t / "tasks" / "lane-a" / "BINDING_PROOF.csv").symlink_to(Path(d) / "secret")
+            (t / "tasks" / "lane-a" / "check.py").symlink_to(Path(d) / "secret")
             (t / "tasks" / "lane-a" / "README.md").write_text("ok")
             old, b.TREE = b.TREE, t
             try:
-                self.assertIsNone(b.tasks_file(None, "tasks/lane-a/BINDING_PROOF.csv"))
+                self.assertIsNone(b.tasks_file(None, "tasks/lane-a/check.py"))
                 self.assertIsNone(b.tasks_file(None, "tasks/../secret"))
                 self.assertEqual(b.tasks_file(None, "tasks/lane-a/README.md"), b"ok")
             finally:
                 b.TREE = old
 
-    def test_tree_fails_closed(self):  # ruling F: a symlinked shard, and --tree check.py runs without isolation
+    def test_tree_fails_closed(self):  # ruling F: a symlinked shard
         with tempfile.TemporaryDirectory() as d:
             t = Path(d) / "tree"
             (t / "data").mkdir(parents=True)
@@ -740,12 +597,26 @@ class GateMechanics(unittest.TestCase):
             (t / "data" / "evidence_x.csv").symlink_to(Path(d) / "outside.csv")
             with contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(b.main(["--all", "--tree", str(t)]), 2)
-            old, b.isolation_prefix = b.isolation_prefix, lambda: []
-            try:
-                with self.assertRaises(RuntimeError):
-                    b.run_folder_checks({"x"}, None, require_isolation=True)
-            finally:
-                b.isolation_prefix = old
+
+    def test_held_rows_fail_the_gate(self):  # owner split: no web admission in this PR
+        with tempfile.TemporaryDirectory() as d:
+            t = Path(d)
+            (t / "data").mkdir()
+            (t / "data" / "organizations_OH.csv").write_text(
+                "org_id,legal_name,trade_names,website,hq_city,hq_state\n"
+                "ORG-T1,Acme Polymer,,https://acmepolymer.example/,Dover,OH\n")
+            (t / "data" / "sites_OH.csv").write_text("site_id,org_id,site_name,city,state,street_address\n")
+            (t / "data" / "evidence_t.csv").write_text(
+                "evidence_id,record_table,record_id,claim_type,claim_detail,source_ref,source_class,created_by\n"
+                "EVD-T1,organizations,ORG-T1,existence,synthetic claim; quote: Acme Polymer makes parts.,"
+                "https://acmepolymer.example/about,own_site,lane-t\n")
+            head = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True).stdout
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                code = b.main(["--new-since", head.strip(), "--tree", str(t)])
+        self.assertEqual(code, 1, out.getvalue())
+        self.assertIn("READ_REQUIRED", out.getvalue())
+        self.assertIn("lands in the follow-up", out.getvalue())
 
     def test_report_counts_sum(self):
         res = [{"verdict": v, "reason": "", "created_by": "x", "source_family": "url"} for v in b.VERDICTS]
@@ -783,8 +654,7 @@ class KnownAnswer(unittest.TestCase):
         code, out = self.run_main("--new-since", "6a76e923", "--head", "17834918")
         self.assertEqual(code, 1)
         self.assertIn("23564 rows added or changed", out)
-        self.assertIn("PROOF 134 rows need a proof line and tasks/spaghetti-batch6-2026-11-22/BINDING_PROOF.csv is "
-                      "absent", out)
+        self.assertIn("READ_REQUIRED or UNINSPECTABLE row has no admission path in this gate", out)
 
     def test_batch6_has_no_provenance_folder(self):
         code, out = self.run_main("--provenance-since", "6a76e923", "--head", "17834918")

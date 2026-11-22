@@ -87,6 +87,13 @@ class SameStreet(unittest.TestCase):
             with self.subTest(site=site, printed=printed):
                 self.assertFalse(dl.same_street(site, printed))
 
+    def test_designators(self):  # owner split of PR #467, Codex r2 finding 2
+        self.assertEqual(dl.buildings("10 Elm St Bldg. 2, Building A"), {"2", "a"})
+        self.assertTrue(dl.designators_conflict("321 Oak St Building A", "321 Oak St Bldg B"))
+        self.assertTrue(dl.designators_conflict("321 Oak St Suite 100", "321 Oak St Ste. 300"))
+        self.assertFalse(dl.designators_conflict("321 Oak St Building A", "321 Oak St Bldg. A Ste 5"))
+        self.assertFalse(dl.designators_conflict("321 Oak St", "321 Oak St Building B"))  # one-sided: no conflict
+        self.assertFalse(dl.same_street("321 Oak St, Building A", "321 Oak St, Building B"))
 
 
 class CorporateForm(unittest.TestCase):

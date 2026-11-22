@@ -37,8 +37,24 @@ def same_street(site_street: str, printed: str) -> bool:
     key = street_key(site_street)
     if not key or key != street_key(printed) or not has_civic_number(key) or len(key.split()) < 2:
         return False
-    ua, ub = units(site_street), units(printed)
-    return not (ua and ub and ua != ub)
+    return not designators_conflict(site_street, printed)
+
+
+_BUILDING = re.compile(r"\b(?:bldg|building)\b\.?\s*#?\s*([a-z]?\d+[a-z]?|[a-z])\b", re.I)
+# A comma part that is only a designator ("Ste. 300", "Bldg B", "#12"): street-line parsers keep it with the street.
+DESIGNATOR_ONLY_RE = re.compile(r"^\s*(?:(?:suite|ste|unit|apt|apartment|bldg|building|floor|fl|room|rm|dept|department)"
+                                r"\b\.?|#)\s*#?\s*[\w-]*\s*$", re.I)
+
+
+def buildings(street: str) -> set:
+    """Building designators a street string states (`Building A`, `Bldg. 2`, `Bldg #3`)."""
+    return {g.lower() for g in _BUILDING.findall(street or "")}
+
+
+def designators_conflict(a: str, b: str) -> bool:
+    """Both strings state a suite/unit, or both state a building, and the two differ (owner split of PR #467,
+    Codex r2 finding 2: "Building A" vs "Building B" is a different place). One-sided designators never conflict."""
+    return any(x and y and x != y for x, y in ((units(a), units(b)), (buildings(a), buildings(b))))
 
 
 # Owner ruling 2026-11-22 (multiple choice, DECISIONS.md): on a structured row whose street already passes

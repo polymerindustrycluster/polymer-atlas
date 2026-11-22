@@ -36,15 +36,12 @@ jobs:
             echo "no base commit to compare against; skipping"; exit 0
           fi
           python3 scripts/check_row_loss.py --base "$base" $mode
-      # The three binding steps are early feedback, NOT authoritative: this job runs the PR's own copy of the gate.
+      # The two binding steps are early feedback, NOT authoritative: this job runs the PR's own copy of the gate.
       # The authoritative run is the pull_request_target workflow (main's checker, --tree on the PR checkout).
       - name: Guard — evidence rows a PR adds or changes bind to their record (binding gate; early feedback)
         if: github.event_name == 'pull_request'
         run: python3 scripts/check_evidence_binding.py --new-since "origin/${{ github.base_ref }}"
-      - name: Guard — every archive capture a binding proof cites is fetched and checked (fails closed; early feedback)
-        if: github.event_name == 'pull_request'
-        run: python3 scripts/check_evidence_binding.py --verify-proofs "origin/${{ github.base_ref }}"
-      - name: Guard — each created_by label names its tasks/<folder>/ and that check.py exits 0 (early feedback)
+      - name: Guard — each created_by label names its tasks/<folder>/ holding a non-empty check.py (early feedback)
         if: github.event_name == 'pull_request'
         run: python3 scripts/check_evidence_binding.py --provenance-since "origin/${{ github.base_ref }}"
       - name: Vocabulary export is current

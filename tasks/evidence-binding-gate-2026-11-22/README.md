@@ -10,9 +10,15 @@ On 2026-11-22, batches 5 and 6 (PRs #457 and #458) added about 34,000 evidence r
 
 `validate.py` checks a row's form, never whether its quote is about that record. The owner ruled both batches reverted (PR #465 did that), and ruled that a row returns only if it passes a hardened binding gate. This folder holds that gate's record.
 
-This is the second round. Codex refuted the first round with 8 blocking and 3 follow-up findings (`S/reviews/467-r1-review-codex.md`), and the controller's rulings A to G followed. The table at the end maps each finding to the test that now holds it.
+This is the third round. Codex refuted the first round with 8 blocking and 3 follow-up findings (`S/reviews/467-r1-review-codex.md`), and the controller's rulings A to G followed. Codex refuted the second round with 6 blocking findings (`S/reviews/467-r2-review-codex.md`). The two-round cap sent it to the owner, who ruled on 2026-11-22, as multiple choice, to **split** the PR:
 
-Every number below comes from `python3 tasks/evidence-binding-gate-2026-11-22/check.py`, except the replay table, which comes from `replay.py` beside it (written to [replay.csv](replay.csv)). `check.py` reads pinned commits and fails if any of its 112 numbers drifts. Rows are cited by `evidence_id` only.
+- **This PR is the gate for structured rows only.** It fixes Codex r2 findings 2, 3 and 4 (location conflicts, bare site labels, parent names).
+- **No web admission here.** A web row is FAIL or READ_REQUIRED, and a READ_REQUIRED or UNINSPECTABLE row fails the PR. Per-row proofs, readings, `--verify-proofs`, archive fetching and running a folder's `check.py` moved to branch `agent/claude-code/evidence-binding-web-proofs-2026-11-22` (no PR yet), with Codex r2 findings 1, 5 and 6 as its to-do list.
+- **Provenance is presence only.** Nothing from the gated tree is executed.
+
+The table at the end maps each finding to the test that now holds it.
+
+Every number below comes from `python3 tasks/evidence-binding-gate-2026-11-22/check.py`, except the replay table, which comes from `replay.py` beside it (written to [replay.csv](replay.csv)). `check.py` reads pinned commits and fails if any of its 118 numbers drifts. Rows are cited by `evidence_id` only.
 
 ## What the gate decides
 
@@ -20,36 +26,39 @@ Every number below comes from `python3 tasks/evidence-binding-gate-2026-11-22/ch
 
 | Verdict | Meaning | Reasons |
 | --- | --- | --- |
-| PASS | **Structured sources only.** The quoted operator is a name the record itself holds, by exact `name_key` of the whole field; on a site row whose street passes, also a held name followed only by corporate-form words (owner ruling 2026-11-22). For a site row, `scripts/matching.py` `same_street()` holds, and a quoted state equals the site's. For an organization `address` row, the source states the entity's own address (USAspending recipient, SBIR firm) and the quoted city and state are the record's headquarters. | — |
-| FAIL | The quote is about something else. No waiver exists. | `name_not_held`, `street_differs`, `unit_differs`, `state_differs`, `record_no_street`, `quote_no_street`, `hq_from_facility_or_permit`, `hq_from_s5_identity_source`, `hq_city_state_differs`; web: `not_own_site`, `street_absent_from_quote`, `unit_differs` (several may join with `+`) |
+| PASS | **Structured sources only.** The quoted operator is a name the record itself holds, by exact `name_key` of the whole field; a site-name part counts only when it holds the organization's own name tokens. On a site row whose street passes, a held name followed only by corporate-form words also binds, unless it is a recorded parent's name (owner ruling 2026-11-22). For a site row, `scripts/matching.py` `same_street()` holds, and a quoted city or state equals the site's. For an organization `address` row, the source states the entity's own address (USAspending recipient, SBIR firm) and the quoted city and state are the record's headquarters. | — |
+| FAIL | The quote is about something else. No waiver exists. | `name_not_held`, `street_differs`, `unit_differs`, `state_differs`, `city_differs`, `record_no_street`, `quote_no_street`, `hq_from_facility_or_permit`, `hq_from_s5_identity_source`, `hq_city_state_differs`; web: `not_own_site`, `street_absent_from_quote`, `unit_differs` (several may join with `+`) |
 | READ_REQUIRED | A web quote that the mechanical tests did not fail. A web quote is never PASS. | `mechanics_clear`, `no_record_website`, `name_absent_from_quote`, `web_record_no_street`, `record_street_no_civic_number`, `web_class_untested` |
 | UNINSPECTABLE | The gate cannot read the row. It is never a pass. | `no_quote`, `other_table`, `record_not_found`, `unknown_source_family`, `parse_failed`, `operator_not_a_name`, `no_civic_number` |
 
-A PR is admitted only when it has no FAIL row and every READ_REQUIRED or UNINSPECTABLE row has its own valid proof line (below). The gate is deny-by-default: any row that is not PASS and not FAIL needs a proof line.
+A PR is admitted only when every row it adds or changes is PASS. A FAIL, READ_REQUIRED or UNINSPECTABLE row fails it; the message says to take the row out and hold it as a lead, and that web admission lands in the follow-up.
 
 ### Structured rows: one street test for the whole repo (ruling B)
 
-- **Street.** The site street test is `scripts/matching.py` `same_street()`. It moved there from `derive_last_activity.py` (#463), and both scripts import it; its tests moved to `scripts/test_matching.py`. The gate's structured street PASS is exactly `same_street(site street, quoted street)`:
+- **Street.** The site street test is `scripts/matching.py` `same_street()`. It moved there from `derive_last_activity.py` (#463), and both scripts import it; its tests are in `scripts/test_matching.py`. The gate's structured street PASS is exactly `same_street(site street, quoted street)`:
   - the two `street_key` values are equal;
   - the key has a civic number and at least one more token;
-  - no stated suite or unit conflicts.
+  - no designator conflicts: when both sides state a suite or unit, they agree, and when both state a building, they agree (`matching.designators_conflict()`, new this round). A designator on one side only is not a conflict.
 
-  The gate only adds a reason on the failing side: `street_differs`, `unit_differs`, `quote_no_street`, `record_no_street`, or `no_civic_number` (UNINSPECTABLE) for equal keys that name no place. The #463 example EVD-431716 / SITE-002988 (a building number with no street) is UNINSPECTABLE, not PASS.
-- **State.** A quoted state other than the site's is a FAIL (`state_differs`), as a two-letter code or a full state name.
-- **Corporate-form words** (owner ruling 2026-11-22, `DECISIONS.md`). On a site row whose street already passes `same_street()`, a quoted name also binds when a held name is a leading run of it and every extra token is one of: Inc, Incorporated, LLC, L.L.C., Corp, Corporation, Co, Company, Ltd, Limited, LP, LLP, Holdings, Holding, Group, US, USA, U.S., North America, Americas. The rule is `matching.corporate_form_extension()`. It does not apply to web rows, to organization rows (they have no street test), or to parent, predecessor or notes-only names. "Acme Polymer Services" fails, and so does the fleet-services affiliate on EVD-455899. The name is still the record's own, so a parent called "<held name> Holdings" would pass; none of the 172 batch rows that pass this way is a parent's name.
+  The gate's street part keeps every designator-only comma part beside the street, in dotted and abbreviated forms ("Ste. 300", "Bldg. A", "Building B", "#12"), so the designator test sees it; the first two rounds dropped "Ste. 300" before the test (Codex r2 finding 2). The gate only adds a reason on the failing side: `street_differs`, `unit_differs`, `quote_no_street`, `record_no_street`, or `no_civic_number` (UNINSPECTABLE) for equal keys that name no place. The #463 example EVD-431716 / SITE-002988 (a building number with no street) is UNINSPECTABLE, not PASS.
+
+  The derivation uses the same `same_street()`, so the building rule reaches it too. Re-derived on the #463 extracts against the 393c3895 site shards, all 7,196 site pairs are unchanged (2,632 populated, 4,564 empty), and `tasks/last-activity-street-leg-2026-11-22/check.py` passes.
+- **City and state** (Codex r2 finding 2). The city and state printed after the street are read with or without a ZIP ("…, DOVER, OH 44101", "…, DOVER, TX", "…, DOVER OHIO", "…, DAYTON"). A quoted state other than the site's is FAIL `state_differs`, as a two-letter code or a full state name. A quoted city other than the site's is FAIL `city_differs`. City names are compared as spellings of one name, never as nearby places: Mt/St/Ft/Pk spelled out, "City of X" and a trailing Township/City/Town/Village/Borough dropped, spaces ignored ("MC COOK" is McCook), ECHO's "SPRINGFIELD, TOWNSHIP OF" read as Springfield, and either name of a record city written "Killingly (Dayville)". A quoted county is not a city and is not compared. A mailing city that differs from the record's city fails: the gate cannot tell a mailing city from another place.
 - **Operator.** A permittee, operator or establishment field is one name. It is never split on commas, so "Other Operator, Acme Polymer" does not match Acme Polymer. On a permit, the operator is the permittee, not the facility label.
+- **Site-name parts** (Codex r2 finding 3). A site name yields keys: the whole name, the name less its trailing locality, and each " - " part that is not the city. A key counts as the operator's name only when it holds every token of one of the organization's own names (legal or trade name, after `name_key`). So "Acme Polymer - Plant 2" holds "acme polymer plant 2" and "acme polymer", never "plant 2"; a permit naming only "Plant 2", "Main Plant", "Warehouse" or a locality fails `name_not_held`. Read literally, the rule also drops a site part that is a short brand or a division ("Tamarack" on a site of Tamarack Rubber Company, a division's name on its parent's site); see the owner questions for the count.
+- **Corporate-form words** (owner ruling 2026-11-22, `DECISIONS.md`). On a site row whose street already passes `same_street()`, a quoted name also binds when a held name is a leading run of it and every extra token is one of: Inc, Incorporated, LLC, L.L.C., Corp, Corporation, Co, Company, Ltd, Limited, LP, LLP, Holdings, Holding, Group, US, USA, U.S., North America, Americas. The rule is `matching.corporate_form_extension()`. It does not apply to web rows, to organization rows (they have no street test), or to predecessor or notes-only names. **A quoted name equal to a recorded parent's or ultimate parent's name never passes through it** (Codex r2 finding 4): "Acme Polymer Holdings" on a site of Acme Polymer whose ultimate parent is Acme Polymer Holdings is FAIL `name_not_held`, `name_alt` `parent;corporate_form`. "Acme Polymer Services" fails, and so does the fleet-services affiliate on EVD-455899.
 - **Other parsing.** Quote parsing uses an explicit table of source families (ECHO, OSHA, FMCSA, state entity files, USAspending, SBIR and nine state permit layers); any other source is `unknown_source_family`. A permittee field with no letters (`operator_not_a_name`) is the NC DEQ layer's shifted columns.
 
 ### Web quotes: FAIL or READ_REQUIRED, never PASS (ruling A)
 
-A web quote (`source_ref` starting with `http`) is free text. Code can show that it is not about the record. It cannot show that it is: a quote with the right street and name can still describe a sibling plant, a former operator or a satellite office. So the mechanical tests can only fail a row.
+A web quote (`source_ref` starting with `http`) is free text. Code can show that it is not about the record. It cannot show that it is: a quote with the right street and name can still describe a sibling plant, a former operator or a satellite office. So the mechanical tests can only fail a row, and in this PR a row they do not fail is held (READ_REQUIRED), which fails the PR.
 
 1. **Own site.** For an `own_site` row, the URL must be on the record's own website. That is the site's organization's `website`, or the organization's own.
    - Registrable domains are compared: the last two host labels, or three under a country second level such as `co.uk`. `www.` is ignored, and a sibling subdomain matches.
    - **Platform hosts.** On a shared platform host (atlas `PLATFORM_HOSTS` plus pages.dev, netlify.app, vercel.app, github.io, wixsite, sites.google and others), both the host and the path must match the record's website. A bare platform root never matches. So `other-molder.pages.dev` is not `acme.pages.dev`.
    - Off the record's website is FAIL `not_own_site`.
 2. **Street** (site `address` or `existence` rows, any web class). The record's civic number must be immediately followed by its first street word. A direction or a single letter may sit between. Tokens are normalised as `street_key` normalises a street line.
-   - The suffix is not compared: "321 Oak Avenue" for "321 Oak Street" is READ_REQUIRED, not FAIL. A suffix test was tried this round and dropped, because on `main` it failed real matches whose quote carried a direction word ("1920 Tampa E Blvd" style).
+   - The suffix is not compared: "321 Oak Avenue" for "321 Oak Street" is READ_REQUIRED, not FAIL. A suffix test was tried in round two and dropped, because on `main` it failed real matches whose quote carried a direction word ("1920 Tampa E Blvd" style).
    - A number that is a phone area code or a ZIP is not followed by the street word, so it does not count.
    - Absent is FAIL `street_absent_from_quote`.
    - If the record states a suite or unit, and every occurrence of the street in the quote states only other suites, the row is FAIL `unit_differs`.
@@ -62,47 +71,15 @@ When nothing fails, the row is READ_REQUIRED. Its reason says what the reader mu
 - `--all [--head REF | --tree DIR] [--out FILE]` reports every evidence row on a tree, by verdict and reason, by `created_by` and by source family. It asserts that the verdict counts sum to the rows read. It also checks the CSV row count against an independent count of lines that open with an evidence ID, and that the evidence IDs are unique.
 - `--new-since REF` is the pull-request gate.
   - **What it checks:** every row that is new since the merge-base with REF, and every row that differs from its base row in **any** column (ruling D). A column absent on one side counts as empty, so a migration that adds an empty column edits no row.
-  - **Exit 1:** any FAIL row, or any READ_REQUIRED or UNINSPECTABLE row without a valid proof line.
+  - **Exit 1:** any FAIL, READ_REQUIRED or UNINSPECTABLE row.
   - **Exit 2:** an unreadable base, zero rows or a duplicate ID. The gate fails closed.
-- `--verify-proofs REF` does everything `--new-since` does, and also fetches every archived capture a proof cites (below).
 - `--provenance-since REF` applies the provenance rules (below).
 - `--sample N --seed S [--since REF]` is an audit of the gate and admits nothing. It lists N PASS rows per `created_by` label, chosen by `sha256(seed:evidence_id)`, for a reviewer to read.
 - `--tree DIR` reads `data/` and `tasks/` from DIR instead of this checkout (see "Trust boundary").
 
 Rows already on `main` are not failed. `--all` reports them.
 
-## Per-row proof (ruling C)
-
-There is no waiver and no sample admission. A READ_REQUIRED or UNINSPECTABLE row is admitted only by its own line in `tasks/<folder>/BINDING_PROOF.csv`. The folder is the one the row's `created_by` label names (see "Provenance").
-
-The columns are `evidence_id,capture,capture_sha256,quote_offset,quote_length,verdict,reader_family,reader_model,tie`.
-
-- **The capture.**
-  - `capture` is the row's `data/archive_links.csv` `archive_ref`, exactly, and it must be a `https://web.archive.org/web/<14 digits>/` capture. A PR writes its own index line, so a live URL there is refused rather than fetched. A row with an index line is proved from that capture only.
-  - A row with no index line may cite a repo file under `tasks/`.
-  - `capture_sha256` is the sha256 of the capture's bytes. For an archive capture, these are the bytes Wayback serves at the raw `id_` form of the ref.
-  - `quote_offset` and `quote_length` give the quote's position in the capture's text. That text is the visible text from the standard library's HTML parser, without scripts or styles and with whitespace collapsed (`capture_text()`). The length must equal the quote's length.
-- **The reading** (ruling A).
-  - `verdict`: VERIFIED is the only verdict that admits a row.
-  - `reader_family`, `reader_model`: the reader's model family must differ from the builder's, named on the folder README's `Built by:` line. An unrecognised family, or a model that is not that family's, fails closed.
-  - `tie`: one sentence saying what in the capture ties the quote to this record.
-
-  **The reading is recorded, not verified.** The gate checks that it is present, well formed and from another family. It cannot check that anyone read the capture.
-- **What the gate verifies without the network:**
-  - each row has exactly one line;
-  - each line has exactly nine cells;
-  - the row has a quote;
-  - the digest is 64 lowercase hex digits and not one repeated digit;
-  - the length is consistent with the quote;
-  - an archive capture equals the row's index line;
-  - a repo capture's bytes match the digest, and the quote sits at the offset;
-  - a proof file serves only its own folder's rows.
-- **`--verify-proofs`** also fetches each cited archive capture once and checks the digest. It extracts the text with the standard library and finds the quote at the offset.
-  - A failed fetch is an inspection failure: the run exits 2, and the job is re-run. A flaky archive means a re-run, never a pass.
-  - A PR carries at most 1,000 evidence rows (rule 5, PR #466), so one run fetches at most 1,000 captures.
-  - CI runs this as its own step on pull requests.
-
-## Provenance (ruling E)
+## Provenance (ruling E, presence only)
 
 A `created_by` label names exactly one folder:
 
@@ -114,88 +91,85 @@ There is no prefix match, no extra token and no date variant. `--provenance-sinc
 
 - names no folder;
 - names a folder with no `check.py`, or an empty one;
-- is new to the base while its folder already exists there (a new label adds its own folder in this PR);
-- has a `check.py` that does not exit 0.
+- is new to the base while its folder already exists there (a new label adds its own folder in this PR).
 
-The gate runs each named folder's `check.py` in a subprocess, with a copy of the tree as its working directory. It runs them last, after every read is done. Their environment holds only `PATH`, `HOME` (a temporary directory), `LANG`, and read access to the checkout's git history (`GIT_DIR`, with a throwaway index), because existing checks compare against `origin/main`. No token is in the environment. The copy has no `.git` of its own.
-
-They run without network only where `unshare -rn` works. With `--tree` (the authoritative run) the gate refuses to run any `check.py` without that isolation and exits 2. Without `--tree` it runs them anyway and prints "network NOT isolated". This Mac has no `unshare`, so the checks here ran with the network available. Both real folder checks in this PR (this folder's and `last-activity-street-leg-2026-11-22`'s) ran this way: the last-activity one exits 0, and this one exits 0 once its numbers are current.
-
-`GIT_DIR` points at the checkout's git directory. If the workflow persisted a token in `.git/config`, a `check.py` could read it, so the authoritative workflow must check out with `persist-credentials: false`.
+**The gate checks presence only. It executes nothing from the PR tree.** The replay a folder's `check.py` performs is run by the lane that built the rows, and again by the reviewing family, and their results go in the PR. A present, non-empty `check.py` says nothing about whether it reproduces the rows.
 
 ## Trust boundary (ruling F)
 
-The `validate` job checks out the PR and runs the PR's own copy of this checker. A PR that edits the checker or the workflow changes the result. So the binding steps in `validate.yml` are early feedback, labelled "not authoritative" in `docs/ci/README.md`.
+The `validate` job checks out the PR and runs the PR's own copy of this checker. A PR that edits the checker or the workflow changes the result. So the two binding steps in `validate.yml` (`--new-since`, `--provenance-since`) are early feedback, labelled "not authoritative" in `docs/ci/README.md`.
 
 The authoritative run belongs to the rules lane (atlas-w22-rules, PR #466). It is a `pull_request_target` workflow that runs `main`'s checker against the PR's files with `--tree <PR checkout>`. With `--tree`:
 
 - `data/` and `tasks/` are read from that directory;
 - symlinks are refused, as are paths that resolve outside it; a symlinked evidence shard stops the run (exit 2);
-- git is never run inside it: its git directory is read from its `.git` entry;
-- nothing from it is executed except the provenance `check.py`, which runs as described above;
+- nothing from it is executed;
 - the base is the REF itself, because a plain directory has no history (the workflow checks out the PR merge ref).
 
 ## Verdict tables
 
 Counts below are evidence rows.
 
-**`main` today (393c3895, after #463):** 47,416 rows. 0 PASS, 207 FAIL, 2,776 READ_REQUIRED and 44,433 UNINSPECTABLE. Under ruling A no web row passes, and every PASS on `main` was a web row. 41,461 of the UNINSPECTABLE rows carry no quote. A PR that added all of `main` would owe 47,209 proof lines, and 6,744 of those rows have an archive capture.
+**`main` today (393c3895, after #463):** 47,416 rows. 0 PASS, 207 FAIL, 2,776 READ_REQUIRED and 44,433 UNINSPECTABLE. Under ruling A no web row passes, and every PASS on `main` was a web row. 41,461 of the UNINSPECTABLE rows carry no quote. A PR that added all of `main` would fail on all 47,416: 207 FAIL and 47,209 held. 6,744 of the held rows have an archive capture the follow-up's per-row proof could cite.
 
-**`main` at 8f30ce0f** (the branch cut, still holding batches 5 and 6): 81,510 rows. 20,749 PASS, 13,064 FAIL, 3,120 READ_REQUIRED and 44,577 UNINSPECTABLE.
+**`main` at 8f30ce0f** (the branch cut, still holding batches 5 and 6): 81,510 rows. 19,495 PASS, 14,324 FAIL, 3,120 READ_REQUIRED and 44,571 UNINSPECTABLE.
 
 **Quarantined batches** (rows PRs #457 and #458 added, 4ee02127 → 17834918):
 
 | `created_by` | Rows | PASS | FAIL | READ_REQUIRED | UNINSPECTABLE |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| spaghetti-batch5-2026-11-22 | 10,352 | 6,806 (65.7%) | 3,360 (32.5%) | 176 | 10 |
-| spaghetti-batch6-2026-11-22 | 23,564 | 13,943 (59.2%) | 9,487 (40.3%) | 0 | 134 |
+| spaghetti-batch5-2026-11-22 | 10,352 | 6,632 (64.1%) | 3,536 (34.2%) | 176 | 8 |
+| spaghetti-batch6-2026-11-22 | 23,564 | 12,863 (54.6%) | 10,571 (44.9%) | 0 | 130 |
 | spaghetti-burndown-batch1-2026-11-21 (re-added in #457) | 122 | 0 | 6 | 116 | 0 |
 | spaghetti-burndown-batch2-2026-11-21 (re-added in #457) | 56 | 0 | 4 | 52 | 0 |
-| **Both PRs** | **34,094** | **20,749 (60.9%)** | **12,857 (37.7%)** | **344** | **144** |
+| **Both PRs** | **34,094** | **19,495 (57.2%)** | **14,117 (41.4%)** | **344** | **138** |
 
-These rows would owe 488 proof lines. 344 of those rows have an archive capture at 17834918.
+482 rows are held (READ_REQUIRED or UNINSPECTABLE) and fail the gate. 344 of them have an archive capture at 17834918.
 
 FAIL, READ_REQUIRED and UNINSPECTABLE reasons in the batches, by row:
 
 | Reason | Rows |
 | --- | ---: |
-| `name_not_held` | 4,560 |
-| `street_differs` | 3,574 |
-| `record_no_street` | 2,724 |
+| `name_not_held` | 5,562 |
+| `street_differs` | 3,346 |
+| `record_no_street` | 2,672 |
+| `name_not_held+street_differs` | 678 |
 | `hq_from_s5_identity_source` | 627 |
-| `name_not_held+street_differs` | 490 |
-| `quote_no_street` | 434 |
-| `name_not_held+record_no_street` | 260 |
+| `quote_no_street` | 418 |
 | web READ_REQUIRED: `mechanics_clear` 166, `web_record_no_street` 139, `web_class_untested` 17, `no_record_website` 13, `name_absent_from_quote` 9 | 344 |
+| `name_not_held+record_no_street` | 296 |
+| `city_differs` (new this round) | 144 |
+| `name_not_held+city_differs` | 110 |
 | `operator_not_a_name` (UNINSPECTABLE) | 98 |
-| `name_not_held+quote_no_street` | 80 |
+| `name_not_held+quote_no_street` | 82 |
 | `hq_from_facility_or_permit` | 74 |
-| `no_civic_number` (UNINSPECTABLE) | 42 |
+| other `city_differs` combinations (with `street_differs` 28, `record_no_street` 10, three-way 30, `quote_no_street` 2) | 70 |
+| `no_civic_number` (UNINSPECTABLE) | 36 |
 | web FAIL: `not_own_site` 15, `street_absent_from_quote` 5 | 20 |
-| `unit_differs` | 10 |
+| `unit_differs` | 14 |
 | other (`parse_failed` 4, two `name_not_held+unit_differs`, two mixed HQ rows) | 8 |
 
-The first round failed 12,891 of these rows. Reading a name field whole now fails rows that matched only on one comma part. The corporate-form ruling passes 172 rows.
+Round two failed 12,857 of these rows; round three fails 14,117. The 1,260 more come from findings 2 and 3: 324 rows quote another city (`city_differs` in any combination), 4 more state another suite or building, and 1,098 rows that bound only through a site-name part without the organization's name tokens now fail `name_not_held` (some rows carry both). No batch row quotes another state, and no corporate-form name in the batches is a recorded parent's.
 
 By source family (PASS / FAIL / READ_REQUIRED / UNINSPECTABLE):
 
 | Source family | PASS | FAIL | READ_REQUIRED | UNINSPECTABLE |
 | --- | ---: | ---: | ---: | ---: |
-| EPA ECHO | 9,386 | 7,110 | 0 | 30 |
-| OSHA | 6,806 | 3,350 | 0 | 10 |
+| EPA ECHO | 8,392 | 8,108 | 0 | 26 |
+| OSHA | 6,632 | 3,526 | 0 | 8 |
 | FMCSA Company Census | 1,787 | 480 | 0 | 2 |
 | state-entity-files-bulk | 580 | 344 | 0 | 0 |
 | USAspending bulk | 667 | 4 | 0 | 0 |
-| TCEQ Central Registry | 209 | 431 | 0 | 0 |
-| PA DEP | 316 | 244 | 0 | 2 |
+| TCEQ Central Registry | 203 | 437 | 0 | 0 |
+| PA DEP | 294 | 266 | 0 | 2 |
 | Ohio EPA | 60 | 478 | 0 | 0 |
-| NC DEQ ArcGIS | 185 | 163 | 0 | 98 |
+| NC DEQ ArcGIS | 171 | 177 | 0 | 98 |
 | URL (web quote) | 0 | 20 | 344 | 0 |
-| CA DTSC | 314 | 48 | 0 | 0 |
-| CA SWRCB | 204 | 38 | 0 | 0 |
-| SBIR/STTR bulk | 93 | 79 | 0 | 2 |
-| IN IGMAP | 96 | 40 | 0 | 0 |
-| NJDEP | 46 | 16 | 0 | 0 |
+| CA DTSC | 284 | 78 | 0 | 0 |
+| CA SWRCB | 196 | 46 | 0 | 0 |
+| SBIR/STTR bulk | 91 | 81 | 0 | 2 |
+| IN IGMAP | 94 | 42 | 0 | 0 |
+| NJDEP | 44 | 18 | 0 | 0 |
 | GA EPD | 0 | 12 | 0 | 0 |
 
 ## Web quotes on `main` today
@@ -210,7 +184,7 @@ The 2,668 burn-down rows by reason:
 - READ_REQUIRED: `mechanics_clear` 1,550, `web_record_no_street` 638, `no_record_website` 181, `web_class_untested` 80, `name_absent_from_quote` 8, `record_street_no_civic_number` 8;
 - FAIL: `not_own_site` 101, `street_absent_from_quote` 95, `street_absent_from_quote+not_own_site` 5, `unit_differs+not_own_site` 2.
 
-**The 734 people rows** (`spaghetti evidence-backfill-w1-2026-11-19`, all `own_site` existence) carry no quote. They are UNINSPECTABLE (`other_table`). Measured against the website of the person's institution, 676 sit on the institution's domain, 23 off it, and 35 belong to an institution with no website. The gate does not apply that test. A PR adding these rows would owe 734 proof lines, and a proof line needs a quote.
+**The 734 people rows** (`spaghetti evidence-backfill-w1-2026-11-19`, all `own_site` existence) carry no quote. They are UNINSPECTABLE (`other_table`). Measured against the website of the person's institution, 676 sit on the institution's domain, 23 off it, and 35 belong to an institution with no website. The gate does not apply that test. A PR adding these rows would fail on all 734; the follow-up's proof line also needs a quote.
 
 ## Calibration against the hand-labelled spotcheck
 
@@ -224,7 +198,7 @@ These are the rows that `S/reviews/w1122-spotcheck.md` labelled by hand. Labels 
 | Appendix B (exact-street name checks, 40) | DEFECT (5: EVD-449620, EVD-450128, EVD-457493, EVD-455899, EVD-457589) | FAIL 5 |
 | | MATCH (35) | PASS 26, FAIL 9 |
 
-The 9 true matches that fail do so under the strict reading:
+The calibration is unchanged from round two. The 9 true matches that fail do so under the strict reading:
 
 - held name plus a plant word: EVD-448086, EVD-446818;
 - name variant: EVD-444906;
@@ -232,7 +206,7 @@ The 9 true matches that fail do so under the strict reading:
 - operator named only in notes: EVD-445324;
 - permittee is another legal string and only the facility label matches: EVD-457497, EVD-456891;
 - `street_key` limit (one route written two ways): EVD-438364;
-- the held name is one comma part of an OSHA establishment field: EVD-431182. This one is new this round: a name field is no longer split.
+- the held name is one comma part of an OSHA establishment field: EVD-431182 (since round two a name field is no longer split).
 
 Each is an owner question below.
 
@@ -242,25 +216,25 @@ The first cut is `S/audits/2026-11-22-binding-test/binding.py`, whose `verdicts.
 
 | First cut → this gate | Rows |
 | --- | ---: |
-| PASS → PASS | 20,607 |
-| FAIL → FAIL | 9,321 |
-| PASS → FAIL | 3,512 |
+| PASS → PASS | 19,367 |
+| FAIL → FAIL | 9,335 |
+| PASS → FAIL | 4,754 |
 | FREETEXT → READ_REQUIRED | 2,832 |
 | OTHER_TABLE / NO_QUOTE → UNINSPECTABLE | 1,441 (804 / 637) |
-| FREETEXT → FAIL (web tests) | 227 |
-| FAIL → PASS | 126 |
-| PASS → UNINSPECTABLE | 122 |
-| FAIL → UNINSPECTABLE | 22 |
-| FREETEXT → PASS (ECHO quotes the first cut did not parse) | 16 |
+| FREETEXT → FAIL (web tests) | 231 |
+| PASS → UNINSPECTABLE | 120 |
+| FAIL → PASS | 116 |
+| FAIL → UNINSPECTABLE | 18 |
+| FREETEXT → PASS (ECHO quotes the first cut did not parse) | 12 |
 
-The first cut's FAIL share on the batch rows reproduces at 9,469 / 34,094 = **27.8%**, the 28% the brief cites. On the same rows this gate fails 37.7%.
+The first cut's FAIL share on the batch rows reproduces at 9,469 / 34,094 = **27.8%**, the 28% the brief cites. On the same rows this gate fails 41.4%.
 
-- **Stricter (PASS → FAIL, 3,512).**
-  - The first cut accepted any token subset, which passed a held name inside another name and a parent's name two levels up. This gate requires exact `name_key` equality of the whole field with a name the record holds.
+- **Stricter (PASS → FAIL, 4,754).**
+  - The first cut accepted any token subset, which passed a held name inside another name and a parent's name two levels up. This gate requires exact `name_key` equality of the whole field with a name the record holds, and a site-name part only with the organization's name tokens.
   - The first cut passed facility-label matches.
-  - The first cut never checked the source of a headquarters claim against SCHEMA §4.8 S-5.
-- **Looser (FAIL → PASS, 126).** The first cut's OSHA parser misread a suite in its own comma part, a city printed twice and a 4-digit ZIP. Its ECHO test rejected number-word streets ("One … Drive").
-- **PASS → UNINSPECTABLE (122).** 98 are the NC DEQ shifted-column rows. The rest are equal street keys that name no place, such as a building number, and ECHO quotes the gate does not parse.
+  - The first cut never checked the city or the source of a headquarters claim against SCHEMA §4.8 S-5.
+- **Looser (FAIL → PASS, 116).** The first cut's OSHA parser misread a suite in its own comma part, a city printed twice and a 4-digit ZIP. Its ECHO test rejected number-word streets ("One … Drive").
+- **PASS → UNINSPECTABLE (120).** 98 are the NC DEQ shifted-column rows. The rest are equal street keys that name no place, such as a building number, and ECHO quotes the gate does not parse.
 
 ## The false-PASS side
 
@@ -268,10 +242,10 @@ The batch PASS rows, by which held name the whole quoted name matched:
 
 | Name basis | Rows |
 | --- | ---: |
-| A name of the operator organization | 18,259 |
-| The site name's leading part | 1,320 |
-| The full site name or another part of it | 998 |
-| A held name plus corporate-form words, street passing (owner ruling) | 172 |
+| A name of the operator organization | 18,121 |
+| The site name's leading part (holding the organization's name tokens) | 366 |
+| The full site name or another part of it (holding the organization's name tokens) | 880 |
+| A held name plus corporate-form words, street passing, not a parent's (owner ruling) | 128 |
 
 **PASS means that the quote binds to the record, not that the row is admissible.** Tier ceilings and address roles remain the validator's and the integrator's job.
 
@@ -279,13 +253,15 @@ The batch PASS rows, by which held name the whole quoted name matched:
 
 The gate implements the strict reading. Each alternative is measured on the batch rows; none of them passes in the gate. "Would pass" means the row's only defect is the one named.
 
-1. **A held name plus more words** (`leading_run`). **Ruled 2026-11-22 for corporate-form words only** (see "Structured rows"). Of the 1,829 rows this question counted in the first round, the ruling admits 150; 1,679 still fail. After the ruling, 1,797 rows still fail with a held name plus other words as their only defect, for example "ARMACOR LLC-CONOVER PLANT" against Armacor (modelled on EVD-445712). Plant words and other extensions stay open. The fleet-services affiliate on EVD-455899 still fails.
-2. **Permit facility label when the permittee differs:** 156 rows would pass. Examples: EVD-457497 and EVD-456891.
-3. **A parent's name** (parent chain or `ultimate_parent_name`): 44 rows would pass.
-4. **A predecessor or other name found only in the record's notes:** 880 `name_not_held` rows match, and 770 of them have no other defect. The list is [notes_name_rows.csv](notes_name_rows.csv) (evidence_id, path:line at 17834918, record_id; no notes text). Codex's read found EVD-437869 an apparent match of this kind.
-5. **Dotted initials** ("A.B.C." against "ABC"): 130 rows would pass. This is a `name_key` limit.
-6. **One comma part of a name field** (`comma_part`, new this round, ruling B): 120 rows would pass if a held name as one comma part counted, as in OSHA's "ESTABLISHMENT, COMPANY". The same reading would pass "Other Operator, Acme Polymer", which is why it does not.
-7. **Street-key limits** (reported, not widened), counted over the 3,574 `street_differs` rows:
+1. **Site-name parts that are a short brand or a division** (new, from the finding-3 rule). Read literally, the rule keeps a site-name part only when it holds every token of one of the organization's names. Of the round-two batch PASS rows, it fails 940 of the 1,306 that bound on the site name's leading part, 116 of the 996 that bound on the full site name or another part, and 42 of the 170 corporate-form rows whose held base was such a part: 1,098 rows. They are mostly a division or acquired brand named on its parent's site (a subsidiary plastics brand on its holding company's plant) and short brands ("Tamarack" for Tamarack Rubber Company). A narrower reading, dropping a part only when every token is a label word (plant, main, warehouse, facility, building, division, north, …), a number or the city, would keep 1,096 of the 1,098. **In the batches the bare-label case Codex built (finding 3) occurs at most 2 times; the literal rule's cost is the other 1,096.** Your ruling: literal (as implemented), or the label-vocabulary reading?
+2. **A held name plus more words** (`leading_run`). **Ruled 2026-11-22 for corporate-form words only** (see "Structured rows"). After the ruling and this round's rules, 1,543 rows still fail with a held name plus other words as their only defect, for example "ARMACOR LLC-CONOVER PLANT" against Armacor (modelled on EVD-445712). Plant words and other extensions stay open. The fleet-services affiliate on EVD-455899 still fails.
+3. **Permit facility label when the permittee differs:** 134 rows would pass. Examples: EVD-457497 and EVD-456891.
+4. **A parent's name** (parent chain or `ultimate_parent_name`): 58 rows would pass. Through the corporate-form rule a parent's name now fails (finding 4); no batch row was affected.
+5. **A predecessor or other name found only in the record's notes:** 1,818 `name_not_held` rows match, and 1,502 of them have no other defect (more than round two's 770, because many site-name parts that no longer count also appear in notes). The list is [notes_name_rows.csv](notes_name_rows.csv) (evidence_id, path:line at 17834918, record_id; no notes text). Codex's read found EVD-437869 an apparent match of this kind.
+6. **Dotted initials** ("A.B.C." against "ABC"): 136 rows would pass. This is a `name_key` limit.
+7. **One comma part of a name field** (`comma_part`): 108 rows would pass if a held name as one comma part counted, as in OSHA's "ESTABLISHMENT, COMPANY". The same reading would pass "Other Operator, Acme Polymer", which is why it does not.
+8. **A mailing city** (new, from the finding-2 rule). 324 batch rows quote a city other than the record's, after spelling normalisation. Many are a mailing or postal city for the physical one ("Los Angeles" for City of Commerce, "Covington" for Fort Wright, a county name excluded); the gate cannot tell a mailing city from another place, so they fail. Examples: EVD-441995, EVD-450131.
+9. **Street-key limits** (reported, not widened), counted over the 4,064 rows whose reason includes `street_differs`:
 
    | Class | Rows | Example IDs |
    | --- | ---: | --- |
@@ -297,29 +273,29 @@ The gate implements the strict reading. Each alternative is measured on the batc
    | `number_in_recorded_range` ("1201-1205 Main" against "1203 Main") | 14 | EVD-430273, EVD-439483 |
 
    Codex's read adds two classes the strict reading fails: a filing that lists several suites, one of them the record's (EVD-443124 / SITE-019015), and a record street split into words ("Ind US Trial", EVD-437185 and EVD-432164).
-8. **Not open: headquarters from identity-only sources.** SCHEMA §4.8 S-5 already rules on this. These 627 rows (343 state-entity, 284 FMCSA) fail under an existing owner ruling. The count is kept for the record.
-9. **USAspending and SBIR as headquarters sources** (332 rows pass). A UEI can be registered for a single plant, and an SBIR address dates from the award year. Whether USAspending counts as SAM under R-SAM (2026-11-16, lifted for the public SAM extract on 2026-11-22) is your ruling.
-10. **Shifted columns** (NC DEQ, 98 rows): 90 would pass if the facility label were read as the operator.
-11. **Web quotes.** No web row passes; these are measured on `main` today.
-    - 60 `not_own_site` rows sit on a host that carries a held name (a sister or regional domain).
+10. **Not open: headquarters from identity-only sources.** SCHEMA §4.8 S-5 already rules on this. These 627 rows (343 state-entity, 284 FMCSA) fail under an existing owner ruling. The count is kept for the record.
+11. **USAspending and SBIR as headquarters sources** (332 rows pass). A UEI can be registered for a single plant, and an SBIR address dates from the award year. Whether USAspending counts as SAM under R-SAM (2026-11-16, lifted for the public SAM extract on 2026-11-22) is your ruling.
+12. **Shifted columns** (NC DEQ, 98 rows): 74 would pass if the facility label were read as the operator.
+13. **Web quotes.** No web row passes; these are measured on `main` today.
+    - 58 `not_own_site` rows sit on a host that carries a held name (a sister or regional domain).
     - 14 `street_absent_from_quote` rows show the street once spacing is ignored ("Bragg Ridge" against "Braggridge").
     - `registry` and `government_filing` web rows have no test of their own (111 rows on `main`, `web_class_untested`).
-12. **Codex's 30-row read of the round-one FAIL rows** (follow-up 1). Codex drew 30 FAIL rows, one per reason stratum plus 15 allocated by stratum size, with `Random(20261122)`. It read them against the historical records:
+14. **Codex's 30-row read of the round-one FAIL rows** (follow-up 1). Codex drew 30 FAIL rows, one per reason stratum plus 15 allocated by stratum size, with `Random(20261122)`. It read them against the historical records:
     - 18 were justified rejections;
     - 9 were apparent same-record matches;
     - 3 were indeterminate.
 
-    Weighted back to the stratum sizes, the shares are 41.7%, 41.1% and 17.2%. Codex notes that this is a sample, not a population rate, and that several strata have one observation. Its apparent matches fall under questions 4, 5, 7 and the range class in 7. The question for you: does a FAIL rate with roughly two-fifths apparent matches change which readings you rule on first?
-13. **Codex follow-ups 2 and 3** are fixed in the code, not open. A proof line with an extra cell fails. The two fixture templates whose boilerplate occurred in withdrawn quotes are replaced.
+    Weighted back to the stratum sizes, the shares are 41.7%, 41.1% and 17.2%. Codex notes that this is a sample, not a population rate, and that several strata have one observation. Its apparent matches fall under questions 5, 6, 9 and the range class in 9. The question for you: does a FAIL rate with roughly two-fifths apparent matches change which readings you rule on first?
+15. **Codex round-one follow-up 3** is fixed: the two fixture templates whose boilerplate occurred in withdrawn quotes are replaced. Follow-up 2 (proof-file width) moved with the proof code to the follow-up branch.
 
 ## Replay: the last 40 commits under these rules
 
-The replay runs `replay.py` over the last 40 first-parent commits on `main` up to 8f30ce0f, judging each one against its parent. 24 of the 40 added or changed evidence rows. "Needs a proof line" counts every READ_REQUIRED or UNINSPECTABLE row. "With an archive link" counts those rows that had a `data/archive_links.csv` capture at that commit. No commit carried a proof file. Provenance is replayed for its structure only: the historical `check.py` files are not executed, so a "pass" there would be an upper bound.
+The replay runs `replay.py` over the last 40 first-parent commits on `main` up to 8f30ce0f, judging each one against its parent. 24 of the 40 added or changed evidence rows. "Held" counts every READ_REQUIRED or UNINSPECTABLE row, each of which fails the gate. "With an archive link" counts held rows that had a `data/archive_links.csv` capture at that commit: the rows the follow-up's per-row proof could cite. Provenance is presence only, as in the gate.
 
-| Commit | Subject | Rows | PASS | FAIL | READ_REQUIRED | UNINSPECTABLE | Needs a proof line | … with an archive link | Binding gate | Provenance structure |
+| Commit | Subject | Rows | PASS | FAIL | READ_REQUIRED | UNINSPECTABLE | Held | … with an archive link | Binding gate | Provenance |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 178349185 | Merge pull request #458 from polymerindustrycluster/agent/sp | 23,564 | 13,943 | 9,487 | 0 | 134 | 134 | 0 | fail | fail |
-| 6a76e923f | Merge pull request #457 from polymerindustrycluster/agent/sp | 10,530 | 6,806 | 3,370 | 344 | 10 | 354 | 344 | fail | fail |
+| 178349185 | Merge pull request #458 from polymerindustrycluster/agent/sp | 23,564 | 12,863 | 10,571 | 0 | 130 | 130 | 0 | fail | fail |
+| 6a76e923f | Merge pull request #457 from polymerindustrycluster/agent/sp | 10,530 | 6,632 | 3,546 | 344 | 8 | 352 | 344 | fail | fail |
 | 4924083cd | R2 re-capture recovery mint: 39 evidence rows + 39 archive l | 39 | 0 | 8 | 31 | 0 | 31 | 31 | fail | fail |
 | 4ea038848 | Phase C unit 3: 22 accuracy corrections (EVD-425415..425436  | 22 | 0 | 0 | 0 | 22 | 22 | 22 | fail | fail |
 | b99fd9e1e | Burn-down batch 4: R1 re-witness mint — 240 evidence rows +  | 240 | 0 | 24 | 216 | 0 | 216 | 216 | fail | fail |
@@ -342,57 +318,72 @@ The replay runs `replay.py` over the last 40 first-parent commits on `main` up t
 | 6c29fa6c4 | IPEDS CIP fills: 26 degree programs (EVD-400340..EVD-400365) | 26 | 0 | 0 | 0 | 26 | 26 | 0 | fail | fail |
 | 209be678e | Evidence backfill wave 1: 734 tier-A people existence witnes | 734 | 0 | 0 | 0 | 734 | 734 | 0 | fail | fail |
 | d48ce7e6a | Hygiene sweep (audit F11): Farathane duplicate merged, APT s | 5 | 0 | 0 | 0 | 5 | 5 | 0 | fail | fail |
-| **24 commits** | | **38,315** | **20,749** | **13,060** | **2,832** | **1,674** | **4,506** | **2,907** | 0 pass | 0 pass |
+| **24 commits** | | **38,315** | **19,495** | **14,320** | **2,832** | **1,668** | **4,500** | **2,907** | 0 pass | 0 pass |
 
-- **Proof lines.** Across the 24 commits, 4,506 rows would have needed a proof line, and 2,907 of them had an archive capture to cite.
-- **Binding gate.** None of the 24 commits would have passed. In the first round one did: PR #427 (5fa5ba937), whose 23 web rows all passed then. Under ruling A they are READ_REQUIRED and owe proof lines.
-- **Provenance.** No commit's labels meet the structural rules, so all 24 fail. This is the baseline the rule starts from, not a defect in the rule.
+- **Binding gate.** None of the 24 commits would have passed. 4,500 rows were held, and 2,907 of them had an archive capture.
+- **Provenance.** No commit's labels meet the folder rules, so all 24 fail. This is the baseline the rule starts from, not a defect in the rule.
 - **Migration commit.** SCHEMA v1.19 (4ee02127) added the empty `address_role` column to every evidence shard. Because an absent column counts as empty, it edits no row, and it does not appear in the table.
 
 ## Codex findings and the tests that hold them
 
 Tests are in `scripts/test_check_evidence_binding.py` unless noted. Each class was also loosened in a copy of the gate, and the mutation check in `check.py` confirms that the tests fail.
 
-| Codex finding | Fix | Tests | Mutants caught |
+**Round two** (`S/reviews/467-r2-review-codex.md`, six blocking; owner split 2026-11-22):
+
+| Codex r2 finding | Where | Fix | Tests | Mutants caught |
+| --- | --- | --- | --- | --- |
+| 1. A reading for one organization admits another's row | follow-up branch | Moved: bind the reading to evidence_id, record_id and a quote hash | — | — |
+| 2. "Ste. 300" vs Suite 100, Building A vs B, Dayton vs Dover, Dover TX with no ZIP all passed | this PR | Designator-only comma parts stay with the street; `matching.designators_conflict()` (suite/unit and building); city and state read with or without a ZIP; a city conflict is FAIL `city_differs` | `Verdicts.test_designators_and_place_conflicts`, `test_other_state_fails`, `test_shared_building_other_suite`; `test_matching.SameStreet.test_designators` | no_unit_test, no_building_test (in matching.py), designator_part_dropped, no_state_test, state_needs_zip, no_city_test |
+| 3. "Plant 2" passed as the operator of "Acme Polymer - Plant 2" | this PR | A site-name key counts only when it holds an organization name's tokens | `Verdicts.test_bare_site_label_is_not_the_operator` | bare_site_labels |
+| 4. "Acme Polymer Holdings", the recorded ultimate parent, passed through the corporate-form rule | this PR | A corporate-form name equal to a recorded parent's or ultimate parent's name is FAIL | `Verdicts.test_corporate_form_extension` | parent_corporate_form |
+| 5. A folder's `check.py` ran unconfined | follow-up branch | Removed here: provenance is presence only, nothing is executed | `GateMechanics.test_provenance_rules` (presence only) | provenance_borrowed_folder |
+| 6. The trusted path does not verify archive bytes | follow-up branch | Moved: the trusted workflow runs archive verification and fails closed, never a neutral skip | — | — |
+| Follow-up: gzip captures | follow-up branch | Moved: decode gzip on Wayback `id_` responses | — | — |
+
+READ_REQUIRED and UNINSPECTABLE rows now fail the PR, with a message naming the follow-up (`GateMechanics.test_held_rows_fail_the_gate`; `KnownAnswer.test_batch6_is_blocked`).
+
+The follow-up branch `agent/claude-code/evidence-binding-web-proofs-2026-11-22` carries the proof code as it stood at c6b6f83b and a to-do list: reading bound to evidence_id, record_id and a quote hash; a batch script never runs in the trusted job unless confined; the trusted workflow verifies archive bytes and fails closed; gzip decoding; "main text" excluding navigation and footers; duplicate `archive_links` IDs and invalid UTF-8 in proof files.
+
+**Round one** (`S/reviews/467-r1-review-codex.md`), as it stands in this PR:
+
+| Codex r1 finding | Fix | Tests | Mutants caught |
 | --- | --- | --- | --- |
-| 1. Unverified archive proof; proof for a row with no quote; repo capture beside an archive | Archive ref must equal its index line, and no line means no admission. Digest 64 hex and not uniform. Length equals the quote. A row with no quote is refused. A repo capture is refused when an index line exists. `--verify-proofs` fetches, checks the digest and finds the quote. | `Proofs.test_archive_ref_must_be_the_index_line`, `test_digest_and_span_form` (all-zero digest, offset 100,000), `test_row_without_quote_is_refused`, `test_repo_capture_refused_when_an_archive_capture_exists`, `test_repo_capture_checks_bytes_and_quote`, `test_verify_proofs_fetches_once_and_checks`, `test_verify_proofs_failures` | proof_quote_unchecked, proof_any_archive_ref, proof_any_url, proof_no_index_line, proof_no_quote_ok, proof_digest_form |
+| 1. Unverified archive proof | Moved to the follow-up with the proof code; here no row is admitted by proof | — | — |
 | 2. In-place edit of `source_class` reported zero rows | Any column edit re-gates the row (ruling D) | `GateMechanics.test_any_column_edit_regates` (source_class, created_by, notes; empty-column migration) | edit_some_columns |
-| 3. EVD-431716 / SITE-002988 passed; building A suite 100 vs 300; spelled-out PO box; OH vs TX | The gate's structured PASS is `matching.same_street()`; a quoted other state fails | `Verdicts.test_building_number_is_not_a_street`, `test_shared_building_other_suite`, `test_spelled_out_po_box_both_sides`, `test_other_state_fails`; `KnownAnswer.test_building_number_row_does_not_pass` (the real row); `test_matching.py` | number_only_streets, no_unit_test (in matching.py), no_state_test |
+| 3. EVD-431716 / SITE-002988 passed; building A suite 100 vs 300; spelled-out PO box; OH vs TX | The gate's structured PASS is `matching.same_street()`; a quoted other state fails | `Verdicts.test_building_number_is_not_a_street`, `test_shared_building_other_suite`, `test_spelled_out_po_box_both_sides`, `test_other_state_fails`; `KnownAnswer.test_building_number_row_does_not_pass` (the real row); `test_matching.py` | number_only_streets, no_unit_test, no_state_test |
 | 4. Sibling sites 321 Oak Street Suite 100 / Oak Avenue Suite 300; area code 321; ZIP 43000 | Web rows never PASS. The civic number must be followed by the street word. A suite conflict fails. | `Verdicts.test_web_sibling_sites_one_quote`, `test_web_area_code_and_zip_are_not_civic_numbers`, `test_no_url_row_is_ever_pass` | web_pass, web_civic_only, web_no_unit_test |
 | 5. "Acme Polymer Services"; former operator; "Other Operator, Acme Polymer"; other-molder.pages.dev | Web rows never PASS. A name field is one name. Platform hosts need host and path. | `Verdicts.test_web_other_operator_or_tenant_never_passes`, `test_osha_name_is_one_name`, `test_permittee_is_one_name`, `test_web_platform_host_and_path` | comma_split_names, web_platform_as_domain, web_any_domain |
-| 6. Satellite plant passed as headquarters | Web rows never PASS; an organization address quote is READ_REQUIRED | `Verdicts.test_web_satellite_plant_as_hq`, `test_no_url_row_is_ever_pass` | web_pass |
-| 7. Provenance by filename; extra token; empty check.py; proof borrowed across labels | Exact label → folder rule; non-empty check.py, executed, must exit 0; a new label adds its folder; proofs per folder | `GateMechanics.test_label_names_its_folder_exactly`, `test_provenance_rules` (extra token, prefix, other date, borrowed folder, exit 3), `test_folder_check_runs_on_a_copy_without_token`; `Proofs.test_no_borrowing_across_folders`, `test_two_labels_one_folder` | provenance_borrowed_folder, provenance_not_run |
-| 8. The required job runs the PR's own gate | `--tree` for a trusted run. validate.yml steps labelled not authoritative. The `pull_request_target` workflow is the rules lane's (PR #466). | `GateMechanics.test_tree_reads_refuse_symlinks_and_escapes` | — |
-| F-1. Genuine matches rejected | Not widened; measured as owner questions 1 to 12 | — | — |
-| F-2. Extra proof cell ignored | Width checked per line; duplicate lines fail | `Proofs.test_proof_file_shape` | proof_width |
+| 6. Satellite plant passed as headquarters | Web rows never PASS; an organization address quote is READ_REQUIRED, which fails the PR | `Verdicts.test_web_satellite_plant_as_hq`, `test_no_url_row_is_ever_pass` | web_pass |
+| 7. Provenance by filename; extra token; empty check.py | Exact label → folder rule; non-empty check.py present; a new label adds its folder | `GateMechanics.test_label_names_its_folder_exactly`, `test_provenance_rules` (extra token, prefix, other date, borrowed folder) | provenance_borrowed_folder |
+| 8. The required job runs the PR's own gate | `--tree` for a trusted run. validate.yml steps labelled not authoritative. The `pull_request_target` workflow is the rules lane's (PR #466). | `GateMechanics.test_tree_reads_refuse_symlinks_and_escapes`, `test_tree_fails_closed` | — |
+| F-1. Genuine matches rejected | Not widened; measured as owner questions | — | — |
+| F-2. Extra proof cell ignored | Moved to the follow-up with the proof code | — | — |
 | F-3. Fixture boilerplate in withdrawn quotes | Both templates replaced with synthetic labels | leak guard in `check.py` | — |
 
-Also tested: the owner's corporate-form rule (`Verdicts.test_corporate_form_extension`, `test_matching.CorporateForm`, `KnownAnswer.test_fleet_services_row_still_fails`; mutant corporate_form_any_word); the reader's family must differ from the builder's, and the model must agree with its family (`Proofs.test_reading_is_required`, `test_builder_must_be_named`; mutant proof_same_family).
+Also tested: the owner's corporate-form rule (`Verdicts.test_corporate_form_extension`, `test_matching.CorporateForm`, `KnownAnswer.test_fleet_services_row_still_fails`; mutant corporate_form_any_word).
 
 ## What this gate cannot see
 
 - **Truth.** The gate checks that a quote is about the record. It does not check that the quote is faithful to its source or that the source is current. An extract older than an operator change can still pass.
-- **The reading.** A proof line records who read the capture and what tied it to the record. The gate cannot check that the reading happened or that it is right.
-- **Without `--verify-proofs`.** `--new-since` checks an archive proof's form, not the capture. The fetching run is a separate CI step.
-- **The city and county.** For a site row the gate binds the street and the state, not the city. 242 of the site PASS rows in the batches quote another city (e.g. EVD-438149, EVD-448255). County is not checked.
+- **Web rows.** No web row can be admitted by this gate. Per-row proof is the follow-up.
+- **A mailing city.** The gate cannot tell a mailing city from another place: a filing printed with the postal city fails `city_differs` (owner question 8). County is not checked.
 - **Identity behind an equal name.** An unrelated namesake at the same street would pass. Organization existence rows from structured sources are judged on the name alone.
 - **The claim's own value.** The gate compares the quote with the record's current fields, not with the value `claim_detail` asserts.
 - **Tier ceilings.** The §4.13 `tier_effect` ceilings and `address_role` are not checked.
-- **Provenance scripts.** The gate runs a folder's `check.py` and requires exit 0. It cannot tell whether that script reproduces the rows. The script runs without a token. It runs without network only where `unshare -rn` works.
+- **Provenance scripts.** The gate checks that a folder's `check.py` is present and not empty. It executes nothing, so it cannot tell whether that script reproduces the rows: the lane runs it, and the reviewing family runs it again.
 - **Its own trust.** Inside the `validate` job the gate is the PR's own copy. Only `main`'s copy run with `--tree` is authoritative.
-- **Where a capture came from.** An archive capture is the row's own index line, but nothing ties the archived URL to the row's `source_ref`. A repo capture proves only that the quote is in that file, not that the file is what the source served.
 - **Quote text in this PR.** The leak guard compares every street-, ID- or name-like segment of the test strings (at least 10 characters, field boilerplate excluded) with every `claim_detail` at 17834918, including the withdrawn rows. It does not scan for shorter phrases, registry boilerplate or this README. Rows are cited by ID and path:line only.
 
 ## Checks
 
 | Check | Command | Result |
 | --- | --- | --- |
-| Gate unit tests | `cd scripts && python3 -m unittest test_check_evidence_binding` | 87 tests OK. They use synthetic strings shaped like real rows. They include the Codex counterexamples and a known-answer replay of batch 6: `--new-since` and `--provenance-since` both exit 1, and the real EVD-431716 row is not PASS. |
-| Street and corporate-form tests | `cd scripts && python3 -m unittest test_matching test_derive_last_activity` | OK |
-| This folder's check | `python3 tasks/evidence-binding-gate-2026-11-22/check.py` | 112 numbers OK |
-| Leak guard (inside `check.py`) | — | 0 of 254 segments occur in any `claim_detail` at 17834918. A planted real fragment is caught. |
-| Mutation check (inside `check.py`) | — | 24 loosenings, each caught by at least one failing test. Failing tests per loosening: token subset names 8, comma split names 2, corporate form any word 6, number only streets 2, no unit test 2, no state test 1, hq from any source 2, web pass 6, web any domain 3, web platform as domain 2, web civic only 3, web no unit test 1, web name unchecked 1, edit some columns 1, proof quote unchecked 2, proof any archive ref 1, proof any url 1, proof no index line 1, proof no quote ok 1, proof same family 1, proof digest form 1, proof width 1, provenance borrowed folder 1, provenance not run 1 |
+| Gate unit tests | `cd scripts && python3 -m unittest test_check_evidence_binding` | 73 tests OK. They use synthetic strings shaped like real rows. They include the Codex counterexamples and a known-answer replay of batch 6: `--new-since` and `--provenance-since` both exit 1, and the real EVD-431716 row is not PASS. |
+| Street and corporate-form tests | `cd scripts && python3 -m unittest test_matching test_derive_last_activity` | 7 tests OK |
+| Last-activity derivation | `python3 tasks/last-activity-street-leg-2026-11-22/check.py` | PASS; all 7,196 site pairs unchanged by the building rule (2,632 populated) |
+| This folder's check | `python3 tasks/evidence-binding-gate-2026-11-22/check.py` | 118 numbers OK |
+| Leak guard (inside `check.py`) | — | 0 of 229 segments occur in any `claim_detail` at 17834918. A planted real fragment is caught. |
+| Mutation check (inside `check.py`) | — | 21 loosenings, each caught by at least one failing test. Failing tests per loosening: token subset names 8, comma split names 2, corporate form any word 4, number only streets 2, no unit test 3, no building test 1, designator part dropped 1, no state test 2, no city test 1, state needs zip 1, bare site labels 1, parent corporate form 1, hq from any source 2, web pass 7, web any domain 3, web platform as domain 2, web civic only 3, web no unit test 1, web name unchecked 1, edit some columns 1, provenance borrowed folder 1 |
 | Replay | `python3 tasks/evidence-binding-gate-2026-11-22/replay.py` | Writes `replay.csv`, the table above |
-| Real captures (one-off, needs network) | `fetch_url(raw_capture_url(ref))`, then `capture_text()`, on 4 READ_REQUIRED rows on `main` that have an archive link, drawn with `Random(7)` | The quote was found verbatim in all 4 extracted texts (EVD-423238, EVD-423510, EVD-422100, EVD-420757). So the offsets a lane records can be checked against real Wayback captures. |
 
 The remaining repository checks are recorded in the PR.

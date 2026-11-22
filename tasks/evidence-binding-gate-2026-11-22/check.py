@@ -27,33 +27,33 @@ MAIN, CURRENT, BATCH_BASE, BATCH_HEAD = "8f30ce0f", "393c3895", "4ee02127", "178
 APPENDIX_A = {"EVD-431206": "CANNOT_TELL", "EVD-430188": "DIFFERENT_ADDRESS", "EVD-427648": "DIFFERENT_ADDRESS", "EVD-431826": "DIFFERENT_ADDRESS", "EVD-429348": "DIFFERENT_ADDRESS", "EVD-432372": "DIFFERENT_ADDRESS", "EVD-431544": "DIFFERENT_ADDRESS", "EVD-425964": "DIFFERENT_ADDRESS", "EVD-426070": "DIFFERENT_ADDRESS", "EVD-431900": "CANNOT_TELL", "EVD-429356": "DIFFERENT_ADDRESS", "EVD-434334": "DIFFERENT_ADDRESS", "EVD-425566": "DIFFERENT_ADDRESS", "EVD-426904": "DIFFERENT_ADDRESS", "EVD-429620": "DIFFERENT_ADDRESS", "EVD-430124": "DIFFERENT_ADDRESS", "EVD-432898": "DIFFERENT_ADDRESS", "EVD-430102": "DIFFERENT_ADDRESS", "EVD-427536": "DIFFERENT_ADDRESS", "EVD-431964": "DIFFERENT_ADDRESS", "EVD-429062": "DIFFERENT_ADDRESS", "EVD-428624": "SAME_PLACE", "EVD-429422": "DIFFERENT_ADDRESS", "EVD-430448": "DIFFERENT_ADDRESS", "EVD-427956": "DIFFERENT_ADDRESS", "EVD-432662": "DIFFERENT_ADDRESS", "EVD-432758": "DIFFERENT_ADDRESS", "EVD-434376": "DIFFERENT_ADDRESS", "EVD-430300": "DIFFERENT_ADDRESS", "EVD-429950": "DIFFERENT_ADDRESS", "EVD-435460": "DIFFERENT_ADDRESS", "EVD-428370": "DIFFERENT_ADDRESS", "EVD-428802": "DIFFERENT_ADDRESS", "EVD-426602": "CANNOT_TELL", "EVD-434936": "DIFFERENT_ADDRESS", "EVD-435244": "DIFFERENT_ADDRESS", "EVD-429388": "DIFFERENT_ADDRESS", "EVD-433872": "CANNOT_TELL", "EVD-430308": "DIFFERENT_ADDRESS", "EVD-429120": "DIFFERENT_ADDRESS", "EVD-431512": "DIFFERENT_ADDRESS", "EVD-431466": "DIFFERENT_ADDRESS", "EVD-427406": "DIFFERENT_ADDRESS", "EVD-434052": "DIFFERENT_ADDRESS", "EVD-431968": "DIFFERENT_ADDRESS", "EVD-431076": "CANNOT_TELL", "EVD-428318": "DIFFERENT_ADDRESS", "EVD-431352": "DIFFERENT_ADDRESS", "EVD-427348": "DIFFERENT_ADDRESS", "EVD-434836": "DIFFERENT_ADDRESS", "EVD-427280": "DIFFERENT_ADDRESS", "EVD-434024": "DIFFERENT_ADDRESS", "EVD-431524": "DIFFERENT_ADDRESS", "EVD-429428": "DIFFERENT_ADDRESS", "EVD-428032": "DIFFERENT_ADDRESS", "EVD-426068": "DIFFERENT_ADDRESS", "EVD-426334": "DIFFERENT_ADDRESS", "data/evidence_sites_VA.csv:417": "DIFFERENT_ADDRESS", "EVD-428870": "DIFFERENT_ADDRESS", "EVD-429916": "DIFFERENT_ADDRESS"}  # noqa: E501
 APPENDIX_B = {"EVD-443796": "MATCH", "EVD-442346": "MATCH", "EVD-439366": "MATCH", "EVD-449620": "DEFECT", "EVD-440898": "MATCH", "EVD-447490": "MATCH", "EVD-436578": "MATCH", "EVD-442068": "MATCH", "EVD-448086": "MATCH", "EVD-438364": "MATCH", "EVD-444906": "MATCH", "EVD-449054": "MATCH", "EVD-450226": "MATCH", "EVD-450128": "DEFECT", "EVD-445324": "MATCH", "EVD-450336": "MATCH", "EVD-447830": "MATCH", "EVD-446818": "MATCH", "EVD-448254": "MATCH", "EVD-449402": "MATCH", "EVD-446086": "MATCH", "EVD-454689": "MATCH", "EVD-454304": "MATCH", "EVD-454414": "MATCH", "EVD-453992": "MATCH", "EVD-454525": "MATCH", "EVD-454479": "MATCH", "EVD-457497": "MATCH", "EVD-456335": "MATCH", "EVD-457493": "DEFECT", "EVD-455899": "DEFECT", "EVD-457589": "DEFECT", "EVD-456891": "MATCH", "EVD-428884": "MATCH", "EVD-432074": "MATCH", "EVD-427874": "MATCH", "EVD-431182": "MATCH", "EVD-435496": "MATCH", "EVD-427788": "MATCH", "EVD-434612": "MATCH"}  # noqa: E501
 EXPECTED = {
-    'alt_would_pass.comma_part': 120,
-    'alt_would_pass.facility_label': 156,
-    'alt_would_pass.leading_run': 1797,
-    'alt_would_pass.notes': 770,
-    'alt_would_pass.parent': 44,
-    'alt_would_pass.spacing': 130,
-    'alt_would_pass.token_subset': 2355,
+    'alt_would_pass.comma_part': 108,
+    'alt_would_pass.facility_label': 134,
+    'alt_would_pass.leading_run': 1543,
+    'alt_would_pass.notes': 1502,
+    'alt_would_pass.parent': 58,
+    'alt_would_pass.spacing': 136,
+    'alt_would_pass.token_subset': 2165,
     'appendix_A.CANNOT_TELL->FAIL': 5,
     'appendix_A.DIFFERENT_ADDRESS->FAIL': 54,
     'appendix_A.SAME_PLACE->PASS': 1,
     'appendix_B.DEFECT->FAIL': 5,
     'appendix_B.MATCH->FAIL': 9,
     'appendix_B.MATCH->PASS': 26,
-    'batches.FAIL': 12857,
-    'batches.PASS': 20749,
+    'batches.FAIL': 14117,
+    'batches.PASS': 19495,
     'batches.READ_REQUIRED': 344,
-    'batches.UNINSPECTABLE': 144,
-    'batches.needs_proof_line': 488,
-    'batches.needs_proof_line_with_archive_link': 344,
+    'batches.UNINSPECTABLE': 138,
+    'batches.held': 482,
+    'batches.held_with_archive_link': 344,
     'batches.rows': 34094,
-    'batches.spaghetti-batch5-2026-11-22.FAIL': 3360,
-    'batches.spaghetti-batch5-2026-11-22.PASS': 6806,
+    'batches.spaghetti-batch5-2026-11-22.FAIL': 3536,
+    'batches.spaghetti-batch5-2026-11-22.PASS': 6632,
     'batches.spaghetti-batch5-2026-11-22.READ_REQUIRED': 176,
-    'batches.spaghetti-batch5-2026-11-22.UNINSPECTABLE': 10,
-    'batches.spaghetti-batch6-2026-11-22.FAIL': 9487,
-    'batches.spaghetti-batch6-2026-11-22.PASS': 13943,
-    'batches.spaghetti-batch6-2026-11-22.UNINSPECTABLE': 134,
+    'batches.spaghetti-batch5-2026-11-22.UNINSPECTABLE': 8,
+    'batches.spaghetti-batch6-2026-11-22.FAIL': 10571,
+    'batches.spaghetti-batch6-2026-11-22.PASS': 12863,
+    'batches.spaghetti-batch6-2026-11-22.UNINSPECTABLE': 130,
     'batches.spaghetti-burndown-batch1-2026-11-21.FAIL': 6,
     'batches.spaghetti-burndown-batch1-2026-11-21.READ_REQUIRED': 116,
     'batches.spaghetti-burndown-batch2-2026-11-21.FAIL': 4,
@@ -62,38 +62,45 @@ EXPECTED = {
     'current_main.FAIL': 207,
     'current_main.READ_REQUIRED': 2776,
     'current_main.UNINSPECTABLE': 44433,
-    'current_main.needs_proof_line': 47209,
-    'current_main.needs_proof_line_with_archive_link': 6744,
+    'current_main.held': 47209,
+    'current_main.held_with_archive_link': 6744,
     'current_main.rows': 47416,
+    'fail_city_differs': 324,
     'fail_state_differs': 0,
+    'finding3.corporate_form.label_vocab_would_keep': 42,
+    'finding3.corporate_form.now_fail': 42,
+    'finding3.corporate_form.pass_before': 170,
+    'finding3.site_name_lead.label_vocab_would_keep': 938,
+    'finding3.site_name_lead.now_fail': 940,
+    'finding3.site_name_lead.pass_before': 1306,
+    'finding3.site_name_other.label_vocab_would_keep': 116,
+    'finding3.site_name_other.now_fail': 116,
+    'finding3.site_name_other.pass_before': 996,
     'hq_s5_would_pass.FMCSA Company Census': 284,
     'hq_s5_would_pass.state-entity-files-bulk': 343,
-    'main_all.FAIL': 13064,
-    'main_all.PASS': 20749,
+    'main_all.FAIL': 14324,
+    'main_all.PASS': 19495,
     'main_all.READ_REQUIRED': 3120,
-    'main_all.UNINSPECTABLE': 44577,
+    'main_all.UNINSPECTABLE': 44571,
     'main_all.rows': 81510,
     'main_without_batches.FAIL': 207,
     'main_without_batches.READ_REQUIRED': 2776,
     'main_without_batches.UNINSPECTABLE': 44433,
     'main_without_batches.rows': 47416,
+    'mutant.bare_site_labels.caught': True,
     'mutant.comma_split_names.caught': True,
     'mutant.corporate_form_any_word.caught': True,
+    'mutant.designator_part_dropped.caught': True,
     'mutant.edit_some_columns.caught': True,
     'mutant.hq_from_any_source.caught': True,
+    'mutant.no_building_test.caught': True,
+    'mutant.no_city_test.caught': True,
     'mutant.no_state_test.caught': True,
     'mutant.no_unit_test.caught': True,
     'mutant.number_only_streets.caught': True,
-    'mutant.proof_any_archive_ref.caught': True,
-    'mutant.proof_any_url.caught': True,
-    'mutant.proof_digest_form.caught': True,
-    'mutant.proof_no_index_line.caught': True,
-    'mutant.proof_no_quote_ok.caught': True,
-    'mutant.proof_quote_unchecked.caught': True,
-    'mutant.proof_same_family.caught': True,
-    'mutant.proof_width.caught': True,
+    'mutant.parent_corporate_form.caught': True,
     'mutant.provenance_borrowed_folder.caught': True,
-    'mutant.provenance_not_run.caught': True,
+    'mutant.state_needs_zip.caught': True,
     'mutant.token_subset_names.caught': True,
     'mutant.web_any_domain.caught': True,
     'mutant.web_civic_only.caught': True,
@@ -101,17 +108,16 @@ EXPECTED = {
     'mutant.web_no_unit_test.caught': True,
     'mutant.web_pass.caught': True,
     'mutant.web_platform_as_domain.caught': True,
-    'notes_rows': 880,
-    'pass_basis.corporate_form': 172,
-    'pass_basis.org': 18259,
-    'pass_basis.site_name_lead': 1320,
-    'pass_basis.site_name_other': 998,
-    'pass_site_city_not_in_quote': 242,
+    'notes_rows': 1818,
+    'pass_basis.corporate_form': 128,
+    'pass_basis.org': 18121,
+    'pass_basis.site_name_lead': 366,
+    'pass_basis.site_name_other': 880,
     'people.no_quote/institution_has_no_website': 35,
     'people.no_quote/off_institution_domain': 23,
     'people.no_quote/on_institution_domain': 676,
-    'shifted_if_facility.FAIL name_not_held': 8,
-    'shifted_if_facility.PASS': 90,
+    'shifted_if_facility.FAIL name_not_held': 24,
+    'shifted_if_facility.PASS': 74,
     'street_limit.different_number': 924,
     'street_limit.number_in_recorded_range': 14,
     'street_limit.number_word': 92,
@@ -120,7 +126,7 @@ EXPECTED = {
     'street_limit.same_street_other_number': 236,
     'test_segments_leaked': 0,
     'web.PASS': 0,
-    'web.not_own_site.name_in_host': 60,
+    'web.not_own_site.name_in_host': 58,
     'web.street_absent.spacing': 14,
     'web_batch1_4.FAIL not_own_site': 101,
     'web_batch1_4.FAIL street_absent_from_quote': 95,
@@ -153,9 +159,16 @@ MUTANTS = {  # name: (file, original fragment, loosened replacement); each must 
     "corporate_form_any_word": ("m", "        if form is None:\n            return False", "        if form is None:\n            form = rest[:1]"),
     "number_only_streets": ("g", '    if rk != qk:\n        return "street_differs"',
                             '    if rk.split()[:1] != qk.split()[:1]:\n        return "street_differs"'),
-    "no_unit_test": ("m", "    return not (ua and ub and ua != ub)", "    return True"),
-    "no_state_test": ("g", '        if q_st in STATE_NAMES.values() and rec.get("state")',
-                      '        if False and rec.get("state")'),
+    "no_unit_test": ("m", "    return any(x and y and x != y for x, y in ((units(a), units(b)), (buildings(a), buildings(b))))",
+                     "    return False"),
+    "no_building_test": ("m", "(buildings(a), buildings(b))))", "(units(a), units(b))))"),
+    "designator_part_dropped": ("g", "        if not DESIGNATOR_ONLY_RE.match(x):\n            break", "        break"),
+    "no_state_test": ("g", '        if q_st and rec.get("state")', '        if False and rec.get("state")'),
+    "no_city_test": ("g", "        if qc and rc and not qc & rc:", "        if False:"),
+    "state_needs_zip": ("g", "    st = state_code(last)\n", "    st = state_code(last) if zipped else \"\"\n"),
+    "bare_site_labels": ("g", "        return {k for k in self.site_keys(rid) if any(set(o.split()) <= set(k.split()) for o in org)} | org",
+                         "        return self.site_keys(rid) | org"),
+    "parent_corporate_form": ("g", "        if qkeys & idx.parent_keys(table, rid):  # a recorded parent", "        if False:  #"),
     "hq_from_any_source": ("g", '        if basis == "facility":', '        if False:'),
     "web_pass": ("g", '    return "READ_REQUIRED", why or "mechanics_clear", info',
                  '    return ("READ_REQUIRED", why, info) if why else ("PASS", "", info)'),
@@ -167,16 +180,7 @@ MUTANTS = {  # name: (file, original fragment, loosened replacement); each must 
                            "        if False:"),
     "edit_some_columns": ("g", '        return {k: v for k, v in e.items() if k != "_at" and v}',
                           '        return {k: v for k, v in e.items() if k in ("record_id", "claim_detail") and v}'),
-    "proof_quote_unchecked": ("g", "    if capture_text(data)[off:off + n] != quote:", "    if False:"),
-    "proof_any_archive_ref": ("g", "        if cap != archive_ref:", "        if False:"),
-    "proof_any_url": ("g", "        if not ARCHIVE_RE.fullmatch(cap):", "        if False:"),
-    "proof_no_index_line": ("g", '        if not archive_ref:\n            return "no data', '        if False:\n            return "no data'),
-    "proof_no_quote_ok": ("g", "    if not quote:\n", "    if False:\n"),
-    "proof_same_family": ("g", "    if rf == builder:", "    if False:"),
-    "proof_digest_form": ("g", 'if not re.fullmatch(r"[0-9a-f]{64}", sha) or len(set(sha)) == 1:', "if False:"),
-    "proof_width": ("g", "        if len(row) != len(PROOF_COLS):", "        if False:"),
     "provenance_borrowed_folder": ("g", "        elif label not in base_labels and base_has_folder(folder):", "        elif False:"),
-    "provenance_not_run": ("g", "        if code != 0:", "        if False:"),
 }
 BATCH14 = re.compile(r"^spaghetti-(burndown-batch[1-4]|drift-rewitness|nourl-cleared)-")  # the 2,846 burn-down web rows
 PEOPLE_LABEL = "spaghetti evidence-backfill-w1-2026-11-19"
@@ -212,11 +216,51 @@ def run_mutants():
                     text = text.replace(old, new)
                 (Path(d) / f).write_text(text, encoding="utf-8")
             out = subprocess.run([sys.executable, "-m", "unittest", "test_check_evidence_binding.Verdicts",
-                                  "test_check_evidence_binding.Proofs", "test_check_evidence_binding.GateMechanics"],
+                                  "test_check_evidence_binding.GateMechanics"],
                                  cwd=d, capture_output=True, text=True).stderr
             assert re.search(r"^Ran \d+ tests", out, re.M), f"mutant {name}: the tests did not run\n{out[-2000:]}"
             caught[name] = len(re.findall(r"^(?:FAIL|ERROR): ", out, re.M))
     return caught
+
+
+LABEL_WORDS = {"plant", "main", "warehouse", "facility", "site", "building", "bldg", "division", "operations", "ops", "mill",
+               "works", "factory", "campus", "center", "ctr", "north", "south", "east", "west", "distribution", "dc",
+               "office", "headquarters", "hq", "no", "number", "unit", "line"}
+
+
+def finding3(q_evs, q_res, got):
+    """Codex r2 finding 3 on the batches: the PASS rows that bound only through a site-name key without the
+    organization's name tokens, by r2 name basis; and, as an owner question, how many a narrower reading would keep
+    (drop a key only when every token is a label word, a number or the city)."""
+    idx = b.Index.load(BATCH_HEAD)
+    ruled = b.Index.held_keys
+
+    def unfiltered(self, table, rid):
+        return ruled(self, table, rid) | (self.site_keys(rid) if table == "sites" else set())
+
+    def label_vocab(self, table, rid):
+        if table != "sites":
+            return ruled(self, table, rid)
+        city = set(b.squash(self.sites[rid].get("city")).split())
+        return ruled(self, table, rid) | {k for k in self.site_keys(rid) if not all(
+            t in LABEL_WORDS or t.isdigit() or t in city for t in k.split())}
+    now = {r["evidence_id"]: r for r in q_res}
+    out = {}
+    for name, fn in (("r2", unfiltered), ("label_vocab", label_vocab)):
+        b.Index.held_keys = fn
+        try:
+            out[name] = {r["evidence_id"]: r for r in b.judge_all(q_evs, idx)}
+        finally:
+            b.Index.held_keys = ruled
+    print("\nbatches: Codex r2 finding 3 (site-name keys must hold the organization's name tokens)")
+    for basis in ("site_name_other", "site_name_lead", "corporate_form"):
+        before = [e for e, r in out["r2"].items() if r["verdict"] == "PASS" and r["name_basis"] == basis]
+        lost = [e for e in before if now[e]["verdict"] != "PASS"]
+        kept = sum(out["label_vocab"][e]["verdict"] == "PASS" for e in lost)
+        got.update({f"finding3.{basis}.pass_before": len(before), f"finding3.{basis}.now_fail": len(lost),
+                    f"finding3.{basis}.label_vocab_would_keep": kept})
+        print(f"  {basis}: {len(lost)} of {len(before)} PASS rows now FAIL; a label-vocabulary reading would keep {kept} "
+              f"(e.g. {', '.join(lost[:3])})")
 
 
 def table(results, key="verdict"):
@@ -287,15 +331,16 @@ def main():
     for k, ids in sorted(lim.items(), key=lambda kv: -len(kv[1])):
         got[f"street_limit.{k}"] = len(ids)
         print(f"  {len(ids):6d}  {k:26s} {', '.join(ids[:4])}")
-    pass_sites = [r for r in q_res if r["verdict"] == "PASS" and r["record_table"] == "sites"]
-    cnq = [r["evidence_id"] for r in pass_sites if r["city_not_in_quote"]]
-    got["pass_site_city_not_in_quote"] = len(cnq)
-    print(f"\nbatches: site PASS rows whose quote does not print the record's city: {len(cnq)} of {len(pass_sites)} "
-          f"(e.g. {', '.join(cnq[:4])})")
+    cd = [r["evidence_id"] for r in q_res if "city_differs" in r["reason"].split("+")]
+    got["fail_city_differs"] = len(cd)
+    print(f"\nbatches: site rows failing on a quoted city other than the record's: {len(cd)} (e.g. {', '.join(cd[:4])})")
     sd = [r["evidence_id"] for r in q_res if "state_differs" in r["reason"].split("+")]
     got["fail_state_differs"] = len(sd)
     print(f"batches: site rows failing on a quoted state other than the record's: {len(sd)} (e.g. {', '.join(sd[:4])})")
-    got["corporate_form_parent"] = sum(r["name_basis"] == "corporate_form" and r["name_alt"] == "parent" for r in q_res)
+    got["corporate_form_parent"] = sum(r["name_alt"] == "parent;corporate_form" for r in q_res)
+    print(f"batches: corporate-form names that are a recorded parent's (FAIL, Codex r2 finding 4): "
+          f"{got['corporate_form_parent']}")
+    finding3(q_evs, q_res, got)
     basis = Counter(r["name_basis"] for r in q_res if r["verdict"] == "PASS")
     show("batches: PASS rows by name basis (quoted form / held name that matched)", basis)
     got.update({f"pass_basis.{k}": v for k, v in basis.items()})
@@ -310,14 +355,15 @@ def main():
     show("batches: shifted-column rows if the facility label were the operator", shifted)
     got.update({f"shifted_if_facility.{k}": v for k, v in shifted.items()})
 
-    # per-row proof a PR would owe: every READ_REQUIRED or UNINSPECTABLE row; how many have an archive_links capture
+    # held rows: READ_REQUIRED or UNINSPECTABLE fail this gate (no admission path here); how many the follow-up's
+    # per-row proof could admit from a data/archive_links.csv capture
     for name, res, ref in (("batches", q_res, BATCH_HEAD), ("current_main", cur_res, CURRENT)):
         archive = {r["evidence_id"] for r in b.rows(ref, "archive_links.csv")}
         un = [r["evidence_id"] for r in res if r["verdict"] not in ("PASS", "FAIL")]
-        got[f"{name}.needs_proof_line"] = len(un)
-        got[f"{name}.needs_proof_line_with_archive_link"] = sum(e in archive for e in un)
-        print(f"\n{name}: {len(un)} rows would need a proof line; {got[f'{name}.needs_proof_line_with_archive_link']} "
-              f"of them have a data/archive_links.csv capture")
+        got[f"{name}.held"] = len(un)
+        got[f"{name}.held_with_archive_link"] = sum(e in archive for e in un)
+        print(f"\n{name}: {len(un)} rows held (READ_REQUIRED or UNINSPECTABLE); "
+              f"{got[f'{name}.held_with_archive_link']} of them have a data/archive_links.csv capture")
 
     # web quotes on main (controller ruling 2026-11-22): the burn-down batch 1-4 family and everything else
     web = [r for r in cur_res if r["source_family"] == "url" and r["reason"] not in ("no_quote", "other_table")]
