@@ -53,8 +53,8 @@ def cut_problems(ledger, original, kept, dropped, held, bundle, evidenced, bundl
         if p["claim_type"] != "liveness" and p["record_id"] in evidenced:
             fail.append(f"{p['record_id']} {p['claim_type']} is kept on an organization that has other evidence")
     for p in dropped:
-        if p["claim_type"] == "liveness" or p["record_id"] not in evidenced and not p["reason"].endswith("no longer active") \
-                or not p["reason"].startswith("organization evidenced since 2026-11-20"):
+        ok = p["reason"] == "organization evidenced since 2026-11-20" and p["record_id"] in evidenced or p["reason"] == "organization no longer active"
+        if p["claim_type"] == "liveness" or not ok:
             fail.append(f"{p['record_id']} {p['claim_type']} is dropped without cause or reason")
     if sum(1 for r in original if r["claim_type"] == "liveness") != sum(1 for r in kept + held if r["claim_type"] == "liveness"):
         fail.append("a liveness row was dropped")

@@ -2,7 +2,8 @@
 """Form 5500 lane: existence, HQ-address and liveness witnesses for active zero-evidence Atlas organizations from DOL
 EBSA Form 5500 / 5500-SF filings (EFAST2 bulk 'Latest' datasets, plan years 2024 and 2025, fetched 2026-11-20).
 
-    python3 tasks/evidence-form5500-orgs-2026-11-20/build.py match . <form5500 dir>   # frame, ledger, packet, bundle
+    python3 tasks/evidence-form5500-orgs-2026-11-20/build.py match . <form5500 dir> <out dir>   # 2026-11-20 build (tree 01ef298e only)
+    python3 tasks/evidence-form5500-orgs-2026-11-20/build.py cut . <form5500 dir>     # 2026-11-22 owner cut: packet, dropped, held, bundle
     python3 tasks/evidence-form5500-orgs-2026-11-20/build.py plant . <form5500 dir>   # defect injections: expect 0 and 0
     python3 tasks/evidence-form5500-orgs-2026-11-20/build.py selftest
 
@@ -182,7 +183,10 @@ def rows_for(o, verdict, f):
     return out
 
 
-def match(repo, fdir):
+def match(repo, fdir, out):
+    """The 2026-11-20 build, valid only on the tree it ran on (01ef298e): the frame is the organizations with no evidence NOW,
+    so a re-run after the cut finds 76, not 270. Output goes to `out`, never over this directory's record files."""
+    out = Path(out)
     orgs, eins, by_name, by_ein, spine_owner = load(repo, fdir)
     ledger, packet, bundle = [], [], []
     for oid in sorted(orgs):
@@ -211,9 +215,9 @@ def match(repo, fdir):
                        "other_eins_under_name": sorted({x["ein"] for x in fs} - {f["ein"]}),
                        "proposed": {r["claim_type"]: {"tier_effect": r["tier_effect"], "observed_date": r["observed_date"],
                                                       "claim_detail": r["claim_detail"]} for r in rows}})
-    wr(HERE / "ledger.csv", ledger, list(ledger[0]))
-    wr(HERE / "packet_rows.csv", packet, list(packet[0]))
-    (HERE / "review_bundle.json").write_text(json.dumps(bundle, indent=1, ensure_ascii=False), encoding="utf-8")
+    wr(out / "ledger.csv", ledger, list(ledger[0]))
+    wr(out / "packet_rows.csv", packet, list(packet[0]))
+    (out / "review_bundle.json").write_text(json.dumps(bundle, indent=1, ensure_ascii=False), encoding="utf-8")
     agree = sum(1 for b in bundle if spine_owner.get(b["filing"]["ein"]) == b["record_id"])
     print(f"spine (polymer-coded sponsors only) independently gives the cited EIN to the same org for {agree} of {len(bundle)}")
     print(f"frame {len(orgs)} active zero-evidence organizations ({sum(1 for v in eins.values() if v)} with an EIN link); "
@@ -278,8 +282,9 @@ def cut(repo, fdir):
         same = f and (f["ein"], f["name"], f["end"], "" if f["active"] is None else str(f["active"]), f["final"]) == (
             l["filing_eins"], l["sponsor"], l["plan_year_end"], str(l["active"]), l["final"])
         if r["claim_type"] != "liveness" and o not in zero:
-            dropped.append(dict(r, reason=DROP_WHY if orgs.get(o, {}).get("status") == "active" else
-                                "organization evidenced since 2026-11-20 or no longer active")); continue
+            dropped.append(dict(r, reason=DROP_WHY if o in evidenced else "organization no longer active")); continue
+        if orgs.get(o, {}).get("status") != "active":  # a liveness row never goes onto an organization the Atlas no longer calls active
+            held.append(dict(r, reason=f"organization status is now '{orgs.get(o, {}).get('status')}'; a filing never changes a status (AGENTS 3)")); continue
         if not same:
             held.append(dict(r, reason=f"the filing ACK_ID {l['ack_id']} is absent or changed in the 2026-11-22 EFAST2 files; "
                                        "re-run the match before review")); continue
@@ -366,7 +371,7 @@ def selftest():
 if __name__ == "__main__":
     m = sys.argv[1]
     if m == "match":
-        match(sys.argv[2], sys.argv[3])
+        match(sys.argv[2], sys.argv[3], sys.argv[4])
     elif m == "cut":
         cut(sys.argv[2], sys.argv[3])
     elif m == "plant":
