@@ -11,6 +11,9 @@ filled = {(r['org_id'], r['field']) for r in cands if r['verdict'] == 'VERIFIED'
 NP = 'An own-page narrative sentence stating that the company itself performs a named section 3.1 process'
 NM = 'An own-page narrative sentence naming a section 3.3 industry as a customer of this company'
 H = {  # org: (process reason, process settling fact or None for default, market reason, market settling fact or None)
+
+ 'ORG-000033': ('owner_ruling_polymerization', 'Owner ruling 2 (README): whether "our proprietary technology produces polymers" is polymerization at organization grain; candidate row held', None, None),
+ 'ORG-000056': ('equipment_maker_vocab_ruling', 'Owner ruling 3 (README): whether dies and molds an equipment maker produces count as mold_tool_making; candidate row held', None, None),
  'ORG-000025': ('distributor_service_menu', None, 'no_market_claim', 'A sentence naming a customer industry (the pages list products and brands only)'),
  'ORG-000256': ('no_readable_page', 'A readable copy of the home page (robots.txt request reset by the server, curl exit 92, after the one retry; an availability fact)', 'no_readable_page', 'Same'),
  'ORG-000483': ('no_polymer_process_named', None, None, None),
@@ -22,7 +25,7 @@ H = {  # org: (process reason, process settling fact or None for default, market
  'ORG-001541': ('no_process_named', 'A sentence stating that AlphaMicron itself makes or coats liquid-crystal films or cells with a §3.1 process (none of the six pages read names one)', None, None),
  'ORG-001963': (None, None, 'no_market_claim', 'A sentence naming an industry the molds go to (the page says "clients and customers from many different sectors")'),
  'ORG-001742': ('waste_management_not_process', None, 'no_vocab_market', 'A §3.3 term for waste-management customers, or a sentence naming an industry served'),
- 'ORG-000135': ('no_vocab_process', 'A sentence naming a §3.1 process; the page says it operates "in the production of specialty chemical additives and precursors", which no §3.1 term names', None, None),
+ 'ORG-000135': ('no_vocab_process', 'A sentence naming a §3.1 process; the page says it operates "in the production of specialty chemical additives and precursors", which no §3.1 term names', 'product_class_not_industry', 'A sentence naming the pharmaceutical, personal-care or plastics industry as a customer (owner ruling 5); three candidate rows held'),
  'ORG-000186': ('no_readable_page', 'A readable copy of the home page (a script-rendered page returned HTTP 200 with no main text; an availability fact)', 'no_readable_page', 'Same'),
  'ORG-000048': ('distributor_supplier_not_process', 'A sentence that Akrochem itself compounds or blends (the pages describe supplying "compounding materials")', None, None),
  'ORG-002157': ('no_readable_page', 'A readable copy of the home page (robots.txt request timed out after the one retry, curl exit 28; an availability fact)', 'no_readable_page', 'Same'),
@@ -42,6 +45,7 @@ out = []
 for f in frame:
     o = f['org_id']
     if (o, 'processes') in filled and (o, 'markets_served') in filled: continue
+    if o not in H: continue
     pr, ps, mr, ms = H[o]
     for field, reason, fact in (('processes', pr, ps), ('markets_served', mr, ms)):
         if (o, field) in filled: continue

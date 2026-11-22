@@ -7,6 +7,7 @@ ORG-000483,processes,no_polymer_process_named,6,A sentence naming a polymer proc
 ORG-002068,processes,not_a_processor,3,Chemstress is an engineering and construction firm; no §3.1 process applies unless an owner ruling says otherwise
 ORG-001391,processes,no_process_named,3,A sentence naming molding (or another §3.1 process) for the rubber toys; the page says products are made at the Colorado headquarters
 ORG-001391,markets_served,no_vocab_market,3,"A §3.3 term for pet products, or an owner ruling adding one"
+ORG-000033,processes,owner_ruling_polymerization,6,"Owner ruling 2 (README): whether ""our proprietary technology produces polymers"" is polymerization at organization grain; candidate row held"
 ORG-000098,processes,parent_group_page,4,A page of Spazzolplastica North America LLC itself (the record website is the Italian parent site)
 ORG-000098,markets_served,parent_group_page,4,Same: a North America entity page; candidate agriculture quote held
 ORG-001183,processes,parent_group_page,1,"A Ventra page, or an owner ruling that the Flex-N-Gate group site speaks for the record; the home page names no process (only ""plastics, metals, lighting and mechanical assemblies experience"")"
@@ -18,6 +19,7 @@ ORG-001963,markets_served,no_market_claim,2,"A sentence naming an industry the m
 ORG-001742,processes,waste_management_not_process,4,"A sentence that the company itself sorts, bales, grinds or reprocesses material (candidate recycling_unspecified held)"
 ORG-001742,markets_served,no_vocab_market,4,"A §3.3 term for waste-management customers, or a sentence naming an industry served"
 ORG-000135,processes,no_vocab_process,6,"A sentence naming a §3.1 process; the page says it operates ""in the production of specialty chemical additives and precursors"", which no §3.1 term names"
+ORG-000135,markets_served,product_class_not_industry,6,"A sentence naming the pharmaceutical, personal-care or plastics industry as a customer (owner ruling 5); three candidate rows held"
 ORG-000186,processes,no_readable_page,0,A readable copy of the home page (a script-rendered page returned HTTP 200 with no main text; an availability fact)
 ORG-000186,markets_served,no_readable_page,0,Same
 ORG-000048,processes,distributor_supplier_not_process,6,"A sentence that Akrochem itself compounds or blends (the pages describe supplying ""compounding materials"")"
@@ -36,5 +38,6 @@ ORG-000635,markets_served,no_vocab_market,3,"A §3.3 term for painting tools (pr
 ORG-001730,processes,no_process_named,6,A sentence naming how the dental resin and cutting products are made
 ORG-000207,processes,no_readable_page,0,A readable copy of the home page (HTTP 202 with no body; an availability fact)
 ORG-000207,markets_served,no_readable_page,0,Same
+ORG-000056,processes,equipment_maker_vocab_ruling,6,Owner ruling 3 (README): whether dies and molds an equipment maker produces count as mold_tool_making; candidate row held
 ORG-002011,processes,no_readable_page,0,"A readable copy of the home page (TLS certificate failure, curl exit 60, no insecure retry; an availability fact)"
 ORG-002011,markets_served,no_readable_page,0,Same

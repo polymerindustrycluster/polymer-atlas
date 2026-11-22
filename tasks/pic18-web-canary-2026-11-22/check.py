@@ -35,6 +35,8 @@ def quote_problems(r, fetched):
     line = next((m for m in meta if m[0] <= off < m[1]), None)
     if not line or off + len(q) > line[1]: p.append('quote not inside one main-text line')
     if r['capture_sha256'] not in fetched: p.append('capture not listed in fetches.csv')
+    elif r['org_id'] not in fetched[r['capture_sha256']][0]: p.append('capture belongs to a different organization')
+    elif r['verdict'] == 'VERIFIED' and 'class-skip off' in fetched[r['capture_sha256']][1]: p.append('VERIFIED quote from a capture extracted without the menu-class filter (navigation text may be present)')
     return p
 
 
@@ -47,7 +49,11 @@ def main():
         if r['sha256'] and r['kind'] != 'robots' and r['status'] in ('ok', 'THIN_OR_EMPTY', 'NOT_HTML'):  # robots.txt bodies were hashed, not stored
             f = STORE / 'raw' / (r['sha256'] + '.raw')
             if not f.exists() or sha(f.read_bytes()) != r['sha256']: bad.append('raw capture missing or hash mismatch: ' + r['url'])
-    fetched = {r['text_sha256'] for r in fetches if r.get('text_sha256')}
+    fetched = {}  # text sha -> (orgs, notes)
+    for r in fetches:
+        if r.get('text_sha256'):
+            o, n = fetched.get(r['text_sha256'], (set(), ''))
+            fetched[r['text_sha256']] = (o | {r['org_id']}, n + r['note'])
     for r in cands:
         if r['org_id'] not in ids: bad.append('candidate outside frame: ' + r['org_id'])
         bad += [f"{r['org_id']} {r['term']}: {x}" for x in quote_problems(r, fetched)]
@@ -71,13 +77,14 @@ def main():
             'bad capture hash': dict(r, capture_sha256='0' * 64),
             'term outside vocabulary': dict(r, term='made_up_term'),
             'bad verdict': dict(r, verdict='MAYBE'),
+            'other organization': dict(r, org_id=next(o for o in ids if o != r['org_id'])),
         }
         for name, row in plants.items():
             if not quote_problems(row, fetched): miss.append(name)
     if bad or miss:
         print('FAIL', *bad, *[f'planted defect not caught: {m}' for m in miss], sep='\n  '); sys.exit(1)
     v = [r for r in cands if r['verdict'] == 'VERIFIED']
-    print(f'OK frame={len(frame)} fetch rows={len(fetches)} candidates={len(cands)} VERIFIED={len(v)}; {len(ok)} rows re-verified; planted defects caught: {6 if ok else 0}')
+    print(f'OK frame={len(frame)} fetch rows={len(fetches)} candidates={len(cands)} VERIFIED={len(v)}; {len(ok)} rows re-verified; planted defects caught: {7 if ok else 0}')
 
 
 if __name__ == '__main__': main()
