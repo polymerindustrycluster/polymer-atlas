@@ -12,7 +12,9 @@ batches 5 and 6 reverted"; supersedes the same day's narrower ruling to remove 8
 1. `git revert -m 1 17834918` (PR #458, batch 6), then `git revert -m 1 6a76e923` (PR #457, batch 5): two revert commits, no conflicts.
 2. `docs/sources_registry.csv` is restored to its `origin/main` content (batch 6's registry rows describe pulls that exist and stay). `tasks/QUEUE.md` is
    restored to `origin/main` (the reverts had undone same-line status edits, e.g. v1.19 "done"), then edited: batch 5 and 6 lines marked reverted, one claim line added.
-3. `scripts/atlas.py next-id` counts every id in a `tasks/**/REMOVALS.csv` toward its floor (review finding: it had offered `EVD-425437`, a removed id). New
+3. `scripts/atlas.py next-id` counts every id in a `tasks/**/REMOVALS.csv` toward its floor (review finding: it had offered `EVD-425437`, a removed id). Returning a
+   removed row under its original ID later is restoration of the same row, not reuse, so AGENTS.md §3 and SCHEMA Appendix C §6.1 ("never reused") hold: a removed ID is
+   reserved for its own row and never given to a different row. New
    option `--tasks-dir` (default `<data-dir>/../tasks`); its one other caller, `scripts/build_integration_sets.py`, passes the repo's `tasks/`. Unit test with a planted manifest
    in `scripts/test_atlas_cli.py`. On this head `next-id EVD` returns `EVD-459525`, above the highest retired id `EVD-459524`.
 4. Root `README.md` inventory paragraph recomputed for this head.
@@ -34,8 +36,9 @@ batches 5 and 6 reverted"; supersedes the same day's narrower ruling to remove 8
 | | **all registry links** | **6,837** |
 | archive_links rows (`data/archive_links.csv`) | all | **364** |
 
-34,094 is the 33,916 rows labelled batch 5 or 6 plus 178 rows labelled batch 1 or 2 that arrived in the same two PRs (batch 5's "QC-1 cured rows (178,
-carried EVDs)"): they are absent from the tree at 4ee02127, so the revert takes them off with the rest; their first-cut verdicts are all `FREETEXT_*`.
+34,094 is the 33,916 rows labelled batch 5 or 6 plus 178 QC-1 cured backfill rows labelled burn-down batch 1 (122) or 2 (56) that arrived in PR #457
+(batch 5's "QC-1 cured rows (178, carried EVDs)"). They are absent from the tree at 4ee02127, so the revert takes them off with the rest; their first-cut verdicts
+are all `FREETEXT_*`. The 39 recapture rows came in PR #455 and are not removed.
 PRs #457 and #458 added every row listed here, and the revert only removes rows: no row of these tables was added or changed by the revert
 (asserted by `gen.py` and `check.py`).
 
@@ -47,7 +50,7 @@ not the baseline. The validator debt baseline therefore holds exactly what it he
 
 ## quarantine/ — what is kept, and what is not
 
-- `evidence_leads.csv`: **one row per removed evidence id (34,094), no free text.** Columns: `evidence_id, record_table, record_id, claim_type, source_class,
+- `evidence_leads.csv`: **one row per removed evidence id (34,094), passing and failing verdicts alike, no free text.** It holds every removed row's ID, record keys, source key and verdict. Columns: `evidence_id, record_table, record_id, claim_type, source_class,
   source_ref, observed_date, tier_effect, created_by, address_role`, then the controller's first-cut binding-test verdict columns `source, verdict, name_class,
   street_class, path, line` (`path`/`line` point at the shard line on `main` before this revert). `claim_detail` and `notes` are **dropped entirely**. The first-cut
   verdicts are not rulings. Verdicts over the 34,094 rows: PASS 24,241 (batch 5: 6,730; batch 6: 17,511), FAIL_street 7,380, FAIL_name 1,699, FAIL_name+street 316,
