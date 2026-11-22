@@ -1,0 +1,324 @@
+establishment_id,filing_year,name,street,city,zip,annual_average_employees
+46783,2016,Gallagher Corporation,3908 Morrison Drive,Gurnee,60031,78
+46783,2017,Gallagher Corporation,3908 Morrison Drive,Gurnee,60031,91
+46783,2018,Gallagher Corporation,3908 Morrison Drive,Gurnee,60031,97
+46783,2019,Gallagher Corporation,3908 Morrison Drive,Gurnee,60031,109.00
+46783,2020,Gallagher Corporation,3908 Morrison Drive,Gurnee,60031,106
+46783,2021,Gallagher Corporation,3908 Morrison Drive,Gurnee,60031,129
+46783,2022,Gallagher Corporation,3908 Morrison Drive,Gurnee,60031,127
+46783,2023,Gallagher Corporation,3908 Morrison Drive,Gurnee,60031,112
+46783,2024,Gallagher Corporation,3908 Morrison Drive,Gurnee,60031,101
+46783,2025,Gallagher Corporation,3908 Morrison Drive,Gurnee,60031,98
+69522,2016,PFC-OH,201 Vista Avenue S.E.,Massillon,44646,24
+69522,2017,PFC-OH,201 Vista Avenue S.E.,Massillon,44646,26
+69522,2018,PFC-OH,201 Vista Avenue S.E.,Massillon,44646,29
+69522,2019,PFC-OH,201 Vista Avenue S.E.,Massillon,44646,30.00
+69522,2020,PFC-OH,201 Vista Avenue S.E.,Massillon,44646,28
+69522,2021,PFC-OH,201 Vista Avenue S.E.,Massillon,44646,33
+69522,2022,PFC-OH,201 Vista Avenue S.E.,Massillon,44646,42
+69522,2023,PFC-OH,201 Vista Avenue S.E.,Massillon,44646,38
+69522,2024,PFC-OH,201 Vista Avenue S.E.,Massillon,44646,37
+69522,2025,PFC-OH,201 Vista Avenue S.E.,Massillon,44646,38
+175910,2016,S. Slesnick Co.,700 3rd St. SE,Canton,44707,40
+175910,2017,S. Slesnick Co.,700 3rd St. SE,Canton,44707,62
+175910,2018,S. Slesnick Co.,700 3rd St. SE,Canton,44707,64
+175910,2019,S. Slesnick Co.,700 3rd St. SE,Canton,44707,64.00
+175910,2020,S. Slesnick Co.,700 3rd St. SE,Canton,44707,63
+175910,2021,S. Slesnick Co.,700 3rd St. SE,Canton,44707,66
+175910,2022,S. Slesnick Co.,700 3rd St. SE,Canton,44707,62
+175910,2023,S. Slesnick Co.,700 3rd St. SE,Canton,44707,76
+175910,2024,S. Slesnick Co.,700 3rd St. SE,Canton,44707,66
+175910,2025,S. Slesnick Co.,700 3rd St. SE,Canton,44707,46
+260187,2016,Dover Chemical Corporation,3676 Davis Road N.W.,Dover,44622,189
+260187,2018,Dover Chemical Corporation,3676 Davis Road N.W. ,Dover ,44622,191
+260187,2019,Dover Chemical Corporation,3676 Davis Road N.W. ,Dover ,44622,189.00
+260187,2020,Dover Chemical Corporation,3676 Davis Road N.W. ,Dover ,44622,174
+260187,2021,Dover Chemical Corporation,3676 Davis Road N.W.,Dover,44622,172
+260187,2022,Dover Chemical Corporation,3676 Davis Road N.W.,Dover,44622,168
+260187,2023,Dover Chemical Corporation,3676 Davis Road N.W.,Dover,44622,157
+260187,2024,Dover Chemical Corporation,3676 Davis Road N.W.,Dover,44622,158
+260187,2025,Dover Chemical Corporation,3676 Davis Road N.W.,Dover,44622,162
+260975,2016,Progressive Foam Technologies Beach City,6753 Chestnut Ridge Rd. NW,Beach City,44608,104
+260975,2017,Progressive Foam Technologies Beach City,6753 Chestnut Ridge Rd. NW,Beach City,44608,130
+260975,2019,Progressive Foam Technologies Beach City,6753 Chestnut Ridge Rd. NW,Beach City,44608,130.00
+260975,2022,Progressive Foam Technologies Beach City,6753 Chestnut Ridge Rd. NW,Beach City,44608,135
+260975,2023,Progressive Foam Technologies Beach City,6753 Chestnut Ridge Rd. NW,Beach City,44608,150
+260975,2024,Progressive Foam Technologies Beach City,6753 Chestnut Ridge Rd. NW,Beach City,44608,150
+260975,2025,Progressive Foam Technologies Beach City,6753 Chestnut Ridge Rd. NW,Beach City,44608,153
+281495,2020,ProVia Strasburg Facility ,10190 State Route 21 NW ,Strasburg ,44680,424
+281495,2021,ProVia Strasburg Facility,10190 State Route 21 NW,Strasburg,44680,506
+281495,2022,ProVia Strasburg Facility,10190 State Route 21 NW,Strasburg,44680,632
+281495,2023,ProVia Strasburg Facility,10190 State Route 21 NW,Strasburg,44680,758
+281495,2024,ProVia Strasburg Facility,10190 State Route 21 NW,Strasburg,44680,835
+281495,2025,ProVia Strasburg Facility,10190 State Route 21 NW,Strasburg,44680,971
+348516,2016,"Herbert USA, Inc.",1480 Industrial Parkway,Akron,44310,56
+348516,2017,HERBERT USA INC,1480 INDUSTRIAL PKWY,AKRON,44310,57
+348516,2018,HERBERT USA INC,1480 INDUSTRIAL PKWY,AKRON,44310,65
+348516,2019,HERBERT USA INC,1480 INDUSTRIAL PKWY,AKRON,44310,59.00
+348516,2022,HERBERT USA INC,1480 INDUSTRIAL PKWY,AKRON,44310,36
+348516,2023,HERBERT USA INC,1480 INDUSTRIAL PKWY,AKRON,44310,36
+348516,2024,HERBERT USA INC,1480 INDUSTRIAL PKWY,AKRON,44310,36
+348516,2025,HERBERT USA INC,1480 INDUSTRIAL PKWY,AKRON,44310,35
+350976,2017,"B&F PLASTICS, INC.",540 North 8th St,Richmond,47374,85
+350976,2021,"B&F PLASTICS, INC.",540 North 8th St,Richmond,47374,71
+350976,2022,"B&F PLASTICS, INC.",540 North 8th St,Richmond,47374,71
+350976,2023,"B&F PLASTICS, INC.",540 North 8th St,Richmond,47374,72
+350976,2024,"B&F PLASTICS, INC.",540 North 8th St,Richmond,47374,81
+350976,2025,"B&F PLASTICS, INC.",540 North 8th St,Richmond,47374,72
+434968,2018,NMC Metals Inc,310 N. Pleasant Ave,Niles,44446,55
+434968,2019,NMC Metals Inc,310 N. Pleasant Ave,Niles,44446,55.00
+434968,2020,NMC Metals Inc,310 N. Pleasant Ave,Niles,44446,42
+434968,2021,NMC Metals Inc,310 N. Pleasant Ave,Niles,44446,39
+434968,2022,NMC Metals Inc,310 N. Pleasant Ave,Niles,44446,38
+434968,2023,NMC Metals Inc,310 N. Pleasant Ave,Niles,44446,37
+434968,2024,NMC Metals Inc,310 N. Pleasant Ave,Niles,44446,37
+434968,2025,NMC Metals Inc,310 N. Pleasant Ave,Niles,44446,40
+473828,2018,Avery Dennison Performance Tapes ,250 Chester St Building #5,Painesville ,44077,211
+473828,2019,Avery Dennison Performance Tapes ,250 Chester St Building #5,Painesville ,44077,203.00
+473828,2020,Avery Dennison Performance Tapes ,250 Chester St Building #5,Painesville ,44077,204
+473828,2021,Avery Dennison Performance Tapes,250 Chester St Building #5,Painesville,44077,199
+473828,2022,Avery Dennison Performance Tapes,250 Chester St Building #5,Painesville,44077,211
+473828,2023,Avery Dennison Performance Tapes,250 Chester St Building #5,Painesville,44077,236
+473828,2024,Avery Dennison Performance Tapes,250 Chester St Building #5,Painesville,44077,250
+473828,2025,Avery Dennison Performance Tapes,250 Chester St Building #5,Painesville,44077,258
+498112,2018,Checkpoint Systems Inc.,1510 - 4th ST SE,Canton,44707,126
+498112,2019,Checkpoint Systems Inc.,1510 - 4th ST SE,Canton,44707,115.00
+498112,2020,Checkpoint Systems Inc.,1510 - 4th ST SE,Canton,44707,91
+498112,2021,Checkpoint Systems Inc.,1510 - 4th ST SE,Canton,44707,102
+498112,2022,Checkpoint Systems,1510 - 4th ST SE,Canton,44707,113
+498112,2023,Checkpoint Systems Inc.,1510 - 4th ST SE,Canton,44707,100
+498112,2024,Checkpoint Systems Inc.,1510 - 4th ST SE,Canton,44707,115
+498112,2025,Checkpoint Systems Inc.,1510 - 4th ST SE,Canton,44707,128
+550992,2017,GEORGEKO INDUSTRIES,4861 W 23RD STREET,ERIE,16506,40
+550992,2019,GeorgeKo Industries,4861 WEST 23RD STREET,ERIE,16506,47.00
+550992,2020,GeorgeKo Industries,4861 WEST 23RD STREET,ERIE,16506,42
+550992,2021,GeorgeKo Industries,4861 WEST 23RD STREET,ERIE,16506,58
+550992,2022,GeorgeKo Industries,4861 WEST 23RD STREET,ERIE,16506,33
+550992,2023,GeorgeKo Industries,4861 WEST 23RD STREET,ERIE,16506,28
+550992,2024,GeorgeKo Industries,4861 WEST 23RD STREET,ERIE,16506,27
+550992,2025,GeorgeKo Industries,4861 WEST 23RD STREET,ERIE,16506,30
+608800,2016,The Garland Company,3800 East 91st Street,Cleveland,44105,39
+608800,2017,The Garland Company,3800 East 91st Street,Cleveland,44105,30
+608800,2018,The Garland Company,3800 East 91st Street,Cleveland ,44105,31
+608800,2019,The Garland Company,3800 E 91st St,Cleveland,44105,145.00
+608800,2020,The Garland Company,3800 E 91st St,Cleveland,44105,394
+608800,2021,The Garland Company,3800 E 91st St,Cleveland,44105,360
+608800,2022,The Garland Company,3800 E 91st St,Cleveland,44105,341
+608800,2023,The Garland Company,3800 E 91st St,Cleveland,44105,366
+608800,2024,The Garland Company,3800 E 91st St,Cleveland,44105,393
+608800,2025,The Garland Company,3800 E 91st St,Cleveland,44105,429
+647974,2019,Container Compliance Corp.,5151 Denison Ave.,Cleveland,44102,30.00
+647974,2020,Container Compliance Corp.,5151 Denison Ave.,Cleveland,44102,32
+647974,2021,Container Compliance Corp.,5151 Denison Ave.,Cleveland,44102,47
+647974,2022,Container Compliance Corp.,5151 Denison Ave.,Cleveland,44102,48
+647974,2023,Container Compliance Corp.,5151 Denison Ave.,Cleveland,44102,46
+647974,2024,Container Compliance Corp.,5151 Denison Ave.,Cleveland,44102,48
+647974,2025,Container Compliance Corp.,5151 Denison Ave.,Cleveland,44102,46
+688016,2021,The Original Mattress Factory,4930 State Road,CLEVELAND,44134,34
+688016,2022,The Original Mattress Factory,4930 State Road,CLEVELAND,44134,42
+688016,2024,Original Mattress Factory,4930 State Rd.,Cleveland,44134,40
+688016,2025,Original Mattress Factory,4930 State Rd.,Cleveland,44134,61
+797664,2021,Applied Medical Technology,8000 Katherine Blvd,Brecksville,44141,25
+797664,2022,Applied Medical Technology,8000 Katherine Blvd,Brecksville,44141,50
+797664,2023,Applied Medical Technology,8000 Katherine Blvd,Brecksville,44141,57
+797664,2024,Applied Medical Technology,8000 Katherine Blvd,Brecksville,44141,60
+797664,2025,Applied Medical Technology,8000 Katherine Blvd,Brecksville,44141,56
+866728,2021,North Coast Conduit LLC,2930 W 22ND ST,ERIE,16506,30
+866728,2022,North Coast Conduit LLC,2930 W 22ND ST,ERIE,16506,27
+866728,2023,North Coast Conduit LLC,2930 W 22ND ST,ERIE,16506,22
+866728,2024,North Coast Conduit LLC,2930 W 22ND ST,ERIE,16506,20
+866728,2025,North Coast Conduit LLC,2930 W 22ND ST,ERIE,16506,21
+871635,2021,Custom Rubber Corp.,1274 E 55TH ST,CLEVELAND,441031029,140
+871635,2025,Custom Rubber Corp.,1274 E 55TH ST,CLEVELAND,44103,59
+917803,2022,Avient Corporation,1675 Navarre Rd SW,Massillon,44646,62
+917803,2023,Avient Corporation,1675 Navarre Rd SW,Massillon,44646,57
+917803,2024,Avient Corporation,1675 Navarre Rd SW,Massillon,44646,59
+917803,2025,Avient Corporation,1675 Navarre Rd SW,Massillon,44646,52
+920442,2022,Silgan Dispensing,1244 E. Highland Rd,Macedonia,44056,111
+920442,2023,Silgan Dispensing,1244 E. Highland Rd,Macedonia,44056,89
+920442,2024,Silgan Dispensing,1244 E. Highland Rd,Macedonia,44056,111
+920442,2025,Silgan Dispensing,1244 E. Highland Rd,Macedonia,44056,121
+935716,2016,Apple Rubber Products Inc.,310 Erie Street,Lancaster,14086,173
+935716,2018,Apple Rubber Products Inc.,310 Erie Street,Lancaster,14086,158
+935716,2019,Apple Rubber Products Inc.,310 Erie Street,Lancaster,14086,156.00
+935716,2020,Apple Rubber Products Inc.,310 Erie Street,Lancaster,14086,155
+935716,2021,Apple Rubber Products Inc.,310 Erie Street,Lancaster,14086,145
+935716,2022,Apple Rubber Products,310 Erie St,Lancaster,14086,154
+935716,2023,Apple Rubber Products,310 Erie St,Lancaster,14086,149
+935716,2024,Apple Rubber Products,310 Erie St,Lancaster,14086,153
+935716,2025,Apple Rubber Products,310 Erie St,Lancaster,14086,154
+939047,2016,"Akron Polymer Products, Inc.",571 Kennedy Road,Akron,44305,80
+939047,2017,"Akron Polymer Products, Inc.",571 Kennedy Road,Akron,44305,80
+939047,2018,"Akron Polymer Products, Inc.",571 Kennedy Road,Akron,44305,86
+939047,2019,Akron Polymer Products Inc.,571 Kennedy Rd.,Akron,44305,99.00
+939047,2020,"Akron Polymer Products, Inc.",1471 Exeter Road,Akron,44306,118
+939047,2022,Akron Polymer Products,1471 Exeter Road,Akron,443063856,105
+939047,2023,Akron Polymer Products,1471 Exeter Road,Akron,443E6,85
+939047,2024,Akron Polymer Products,1471 Exeter Road,Akron,44306,81
+939047,2025,Akron Polymer Products,1471 Exeter Road,Akron,44306,78
+941625,2016,Chemionics Corporation,390 Munroe Falls Rd,Tallmadge,44278,32
+941625,2017,Chemionics Corporation,390 Munroe Falls Rd ,Tallmadge,44278,32
+941625,2022,Chemionics,390 Munroe Falls Road,Tallmadge,44278,28
+941625,2023,Chemionics,390 Munroe Falls Road,Tallmadge,44278,26
+941625,2024,Chemionics,390 Munroe Falls Road,Tallmadge,44278,28
+941625,2025,Chemionics,390 Munroe Falls Road,Tallmadge,44278,28
+971539,2022,P&T Products,472 Industrial Parkway,Sandusky,44870,26
+971539,2025,P&T Products,472 Industrial Parkway,Sandusky,44870,49
+1012467,2017,"Ferry Industries, Inc.",4445 Allen Road,Stow,442241093,74
+1012467,2019,"Ferry Industries, Inc. ",4445 Allen Road ,Stow ,442241093,74.00
+1012467,2021,"Ferry Industries, Inc.",4445 Allen Road,Stow,442241058,72
+1012467,2022,"Ferry Industries, Inc.",4445 Allen Rd.,Stow,44224,77
+1012467,2023,"Ferry Industries, Inc.",4445 Allen Rd.,Stow,44224,68
+1012467,2024,"Ferry Industries, Inc.",4445 Allen Rd.,Stow,44224,60
+1012467,2025,"Ferry Industries, Inc.",4445 Allen Rd.,Stow,44224,55
+1025163,2022,Iten Industries Inc. (Plant 4),3500 N Ridge Rd W,Ashtabula,44004,37
+1025163,2023,Iten Industries Inc. (Plant 4),3500 N Ridge Rd W,Ashtabula,44004,49
+1025163,2024,Iten Industries Inc. (Plant 4),3500 N Ridge Rd W,Ashtabula,44004,38
+1025163,2025,Iten Industries Inc. (Plant 4),3500 N Ridge Rd W,Ashtabula,44004,35
+1048358,2016,"Everhard Products, Inc.",1016 Ninth Street SW,Canton,44707,78
+1048358,2018,"Everhard Products, Inc.",1016 Ninth Street SW,Canton,44707,83
+1048358,2019,"Everhard Products, Inc.",1016 Ninth Street SW,Canton,44707,80.00
+1048358,2020,"Everhard Products, Inc.",1016 Ninth Street SW,Canton,44707,81
+1048358,2021,"Everhard Products, Inc.",1016 Ninth Street SW,Canton,44707,85
+1048358,2022,"Everhard Products, Inc",1016 9th street SW,Canton,44707,88
+1048358,2023,"Everhard Products, Inc",1016 9th street SW,Canton,44707,82
+1048358,2024,"Everhard Products, Inc",1016 9th street SW,Canton,44707,75
+1048358,2025,"Everhard Products, Inc",1016 9th street SW,Canton,44707,81
+1051388,2016,PPD USA INC.,1810 NE 3rd Street,Madison,57042,72
+1051388,2017,PPD USA INC.,1810 NE 3rd Street,Madison,57042,83
+1051388,2018,"PPD USA, Inc",1810 NW 3rd St.,Madison,57042,85
+1051388,2019,"PPD USA, Inc",1810 NW 3rd St.,Madison,57042,95.00
+1051388,2022,PPD USA Inc,1810 NE 3rd St,Madison,57042,90
+1051388,2023,PPD USA Inc,1810 NE 3rd St,Madison,57042,94
+1051388,2024,PPD USA Inc,1810 NE 3rd St,Madison,57042,68
+1051388,2025,PPD USA Inc,1810 NE 3rd St,Madison,57042,43
+1067222,2020,Speed North America Inc,1700 A Old Mansfield Rd,Wooster,44691,115
+1067222,2021,Speed North America Inc,1700 A Old Mansfield Rd,Wooster,44691,107
+1067222,2023,Speed North America,1700 Old Mansfield Rd,Wooster,44691,114
+1067222,2024,Speed North America,1700 Old Mansfield Rd,Wooster,44691,133
+1067222,2025,Speed North America,1700 Old Mansfield Rd,Wooster,44691,135
+1069174,2023,Eckart America,830 East Erie,Painesville,44077,100
+1069174,2024,Eckart America,830 East Erie,Painesville,44077,77
+1069174,2025,Eckart America,830 East Erie,Painesville,44077,76
+1078241,2017,Lindau Chemicals Inc.,731 Rosewood Drive,Columbia,29201,50
+1078241,2018,Lindau Chemicals Inc.,731 Rosewood Drive,Columbia,29201,51
+1078241,2019,Lindau Chemicals Inc.,731 Rosewood Drive,Columbia,29201,51.00
+1078241,2023,"Lindau Chemicals, Inc.",731 Rosewood Dr.,Columbia,29201,53
+1078241,2024,"Lindau Chemicals, Inc.",731 Rosewood Dr.,Columbia,29201,53
+1078241,2025,"Lindau Chemicals, Inc.",731 Rosewood Dr.,Columbia,29201,55
+1080314,2023,Flexsys America LP,260 Springside Drive,AKRON,44333,60
+1080314,2024,Flexsys America LP,260 Springside Drive,AKRON,44333,66
+1080314,2025,Flexsys America LP,260 Springside Drive,AKRON,44333,64
+1085815,2022,Charter Next Generation- Massillon,8333 Navarre Rd SE,Massillon,44646,65
+1085815,2023,Charter Next Generation - Massillon,8333 Navarre Rd SW,Massillon,44646,57
+1085815,2024,Charter Next Generation - Massillon,8333 Navarre Rd SW,Massillon,44646,75
+1085815,2025,Charter Next Generation - Massillon,8333 Navarre Rd SW,Massillon,44646,79
+1092585,2023,"Quikey Manufacturing Co., Inc.",1500 Industrial Parkway,Akron,44310,99
+1092585,2025,"Quikey Manufacturing Co., Inc.",1500 Industrial Parkway,Akron,44310,101
+1093025,2018,"Shin-Etsu Silicones of America, Inc.",1150 Damar Drive,Akron,44305,160
+1093025,2019,"Shin-Etsu Silicones of America, Inc.",1150 Damar Drive,Akron,44305,80.00
+1093025,2023,Shin Etsu Silicones of America,1130 Tower Drive,Akron,44305,12
+1093025,2024,Shin Etsu Silicones of America,1130 Tower Drive,Akron,44305,13
+1093025,2025,Shin Etsu Silicones of America,1130 Tower Drive,Akron,44305,12
+1101270,2023,Venango Machine,14118 State HWY 8,Wattsburg,16442,16
+1101270,2024,Venango Machine,14118 State HWY 8,Wattsburg,16442,17
+1101270,2025,Venango Machine,14118 State HWY 8,Wattsburg,16442,16
+1109124,2023,Freudenberg-NOK,11617 State Route 13,Milan,44846,271
+1109124,2024,Freudenberg-NOK,11617 State Route 13,Milan,44846,267
+1109124,2025,Freudenberg-NOK,11617 State Route 13,Milan,44846,326
+1113070,2016,Saint-Gobain Performance Plastics,335 North Diamond Street,Ravenna,44266,164
+1113070,2017,Saint-Gobain Performance Plastics,335 North Diamond Street,Ravenna,44266,163
+1113070,2018,Saint-Gobain Performance Plastics,335 North Diamond Street,Ravenna,44266,163
+1113070,2023,Saint-Gobain Performance Plastics,335 N. Diamond St.,Ravenna,44266,124
+1113070,2024,Saint-Gobain Performance Plastics,335 N. Diamond St.,Ravenna,44266,133
+1113070,2025,Saint-Gobain Performance Plastics,335 N. Diamond St.,Ravenna,44266,132
+1154717,2020,Paramont Machine Co,963 Commercial Ave SE,New Philadelphia,44663,34
+1154717,2023,Paramont Machine Company,963 Commerical Ave SE,New Philadelphia,44663,25
+1154717,2024,Paramont Machine Company,963 Commerical Ave SE,New Philadelphia,44663,26
+1154717,2025,Paramont Machine Company,963 Commerical Ave SE,New Philadelphia,44663,24
+1170263,2022,Alliance Innovations,905 Hickory Lane,Mansfield,44905,16
+1170263,2023,Alliance Innovations LLC,905 HICKORY LN,MANSFIELD,449E6,21
+1170263,2024,Alliance Innovations LLC,905 HICKORY LN,MANSFIELD,44905,36
+1170263,2025,Alliance Innovations LLC,501 Newman Street,MANSFIELD,44902,42
+1200158,2020,MPC Plating ,9921 Clinton Road ,Brooklyn ,44144,108
+1200158,2021,MPC Plating LLC,9921 Clinton Rd,Brooklyn,44144,106
+1200158,2023,MPC Plating LLC,9921 Clinton Road,Brooklyn,44144,81
+1200158,2025,MPC Plating LLC,9921 Clinton Road,Brooklyn,44144,46
+1204957,2023,Cooper Standard Industrial Specialty Group,2228 Reiser Ave SE,New Philadelphia,44663,264
+1204957,2024,Cooper Standard Industrial Specialty Group,2228 Reiser Ave SE,New Philadelphia,44663,264
+1204957,2025,Cooper Standard Industrial Specialty Group,2228 Reiser Ave SE,New Philadelphia,44663,232
+1206911,2025,Koroseal Interior Products (Corp),1111 Medina Rd,Medina,44256,90
+1207113,2020,Argent International,41016 Concept Drive,Plymouth,48170,140
+1207113,2021,Argent International,41016 Concept Drive,Plymouth,48170,145
+1207113,2022,Argent International,41016 Concept Drive,Plymouth,48170,145
+1207113,2023,Argent International,41016 Concept Drive,Plymouth,48170,140
+1207113,2024,Argent International,41016 Concept Drive,Plymouth,48170,140
+1207113,2025,Argent International,41016 Concept Drive,Plymouth,48170,140
+1261640,2024,Peak Performance Polymers,9109 State Route 250 NW,Strasburg,44680,25
+1261640,2025,Peak Performance Polymers,9109 State Route 250 NW,Strasburg,44680,20
+1284638,2017,PM Plastics,One Bank Street,Orchard Park,14127,33
+1284638,2018,PM Plastics,One Bank Street,Orchard Park,14127,32
+1284638,2019,PM Plastics,One Bank Street,Orchard Park,14127,30.00
+1284638,2020,PM Plastics,One Bank Street,Orchard Park,14127,24
+1284638,2024,"PM Plastics, Inc.",1 bank st,Orchard Park,14127,30
+1284638,2025,"PM Plastics, Inc.",1 bank st,Orchard Park,14127,33
+1326562,2022,Yokohama Industries Americas Ohio,474 Newell Street,Painesville,44077,53
+1326562,2023,Yokohama Industries Americas Ohio,474 Newell Street,Painesville,44077,67
+1326562,2024,Yokohama Industries Americas Ohio,474 Newell St,Painesville,44077,64
+1326562,2025,Yokohama Industries Americas Ohio,474 Newell St,Painesville,44077,78
+1338411,2024,GuidedSMILE,7100 E. Pleasant Valley Rd. (Suite 150),Independence,44131,30
+1338411,2025,GuidedSMILE,7100 E. Pleasant Valley Rd. (Suite 150),Independence,44131,28
+1372579,2024,"Ball Bounce and Sport, Inc",One Hedstrom Drive,Ashland,44805,33
+1372579,2025,"Ball Bounce and Sport, Inc",One Hedstrom Drive,Ashland,44805,37
+1401244,2024,Pentair Water Filtration,220 Park Drive,Chardon,44024,150
+1401244,2025,Pentair Water Filtration,220 Park Drive,Chardon,44024,135
+1403938,2024,little tikes,2180 Barlow Rd,Hudson,44236,575
+1403938,2025,little tikes,2180 Barlow Rd,Hudson,44236,439
+1418452,2016,Team Wendy,17000 St. Clair Ave.,Cleveland,44110,76
+1418452,2020,Team Wendy,17000 St. Clair Ave.,Cleveland,44110,125
+1418452,2025,Team Wendy,17000 St. Clair Ave,Cleveland,44110,460
+1418725,2016,"Diversitak, Inc",15400 Woodrow Wilson St,Detroit,48238,25
+1418725,2024,Diversitak,15400 Woodrow Wilson St,Detroit,48238,22
+1418725,2025,Diversitak,15400 Woodrow Wilson St,Detroit,48238,22
+1444425,2025,Momentous Mold & Machine LLC,"1225 Munroe Falls Ave. Cuyahoga Falls, OH 44221",Cuyahoga Falls,44221,58
+1447895,2019,"Staroba Plastics, Inc.",42 EDGEWOOD DRIVE,HOLLAND,14080,73.00
+1447895,2020,Staroba Plastics,42 Edgewood Dr.,Holland,14080,82
+1447895,2021,Staroba Plastics,42 Edgewood Dr.,Holland,14080,86
+1447895,2024,"Staroba Plastics, Inc.",42 Edgewood Drive,Holland,14080,83
+1447895,2025,"Staroba Plastics, Inc.",42 Edgewood Drive,Holland,14080,91
+1448582,2025,Perry Fiberglass OH,611 Lowell St,Elyria,44035,90
+1450510,2019,Republic Powdered Metals,2628 Pearl Road,Medina,44256,37.00
+1450510,2020,Republic Powdered Metals,2628 Pearl Road,Medina,44256,29
+1450510,2025,Republic Powdered Metals,2628 Pearl Rd.,Medina,44256,33
+1454209,2016,Permatex-Solon,6875 Parkland Blvd,Solon,44139,167
+1454209,2022,Permatex - Solon,6875 Parkland Blvd,SOLON,44139,200
+1454209,2023,Permatex - Solon,6875 Parkland Blvd,SOLON,44139,210
+1454209,2025,Permatex - Solon,6875 Parkland Blvd,Solon,44139,238
+1470648,2017,"TROY INNOVATIVE INSTRUMENTS, INC.",15111 WHITE ROAD,MIDDLEFIELD,44062,37
+1470648,2018,TROY INNOVATIVE INSTRUMENTS INC,15111 WHITE ROAD,MIDDLEFIELD,44062,34
+1470648,2020,Troy Innovative Instruments Inc.,15111 WHITE RD,MIDDLEFIELD,44062,35
+1470648,2021,Troy Innovative Instruments Inc.,15111 WHITE RD,MIDDLEFIELD,44062,35
+1470648,2022,Troy Innovative Instruments Inc.,15111 WHITE RD,MIDDLEFIELD,44062,35
+1470648,2023,Troy Innovative Instruments Inc.,15111 WHITE RD,MIDDLEFIELD,44062,34
+1470648,2024,Troy Innovative Instruments Inc.,15111 WHITE RD,MIDDLEFIELD,44062,32
+1470648,2025,Troy Innovative Instruments,15111 White Rd,Middlefield,44062,27
+1471790,2025,Prospect Mold and Die Company,1100 Main Street,Cuyahoga Falls,44221,125
+1477376,2025,Myers Tire Supply,1293 South Main Street,Akron,44301,133
+1477377,2017,Blair Rubber Company,5020 Enterprise Parkway,Seville,44273,54
+1477377,2019,Blair Rubber Company,5020 Enterprise Parkway,Seville,44273,70.00
+1477377,2022,Blair Rubber Company,5020 Enterprise Pkwy,Seville,44273,65
+1477377,2023,Blair Rubber Company,5020 Enterprise Pkwy,Seville,44273,53
+1477377,2024,Blair Rubber Company,5020 Enterprise Pkwy,Seville,44273,55
+1477377,2025,Blair Rubber,5020 Enterprises pkwy,Seville,44273,52
+1507253,2017,SUPERB INDUSTRIES INC,330 THIRD ST NW,SUGARCREEK,44681,74
+1507253,2025,Superb Industries,100 Innovation Plaza,Sugarcreek,44681,76
+1526503,2017,Foundation Industries,880 B. West Waterloo Road,Akron,44314,58
+1526503,2021,Foundation Industries Company,880 B West Waterloo Rd,Akron,44314,65
+1526503,2022,Foundation Industries Company,880 B West Waterloo Rd,Akron,44314,66
+1526503,2023,Foundation Industries Company,880 B West Waterloo Rd,Akron,44314,52
+1526503,2024,Foundation Industries Company,880 B West Waterloo Rd,Akron,44314,40
+1526503,2025,Foundation Industries Company,880 B West Waterloo Rd.,Akron,44314,35
+1565273,2025,U-C Coatings Buffalo,2250 Fillmore Ave,Buffalo,14214,26
+1568136,2017,BUDZAR INDUSTRIES INC,38241 WILLOUGHBY PARKWAY,WILLOUGHBY,44094,105
+1568136,2020,Budzar Industries LLC,38241 Willoughby Pkwy,Willoughby,44094,131
+1568136,2025,BUDZAR INDUSTRIES LLC,38241 WILLOUGHBY PARKWAY,WILLOUGHBY,44094,140
