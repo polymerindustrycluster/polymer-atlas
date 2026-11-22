@@ -1,7 +1,8 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.17.1 — 2026-11-20 (§4.13 presence floor for tier C/U: every tier-C/U record carries at least one evidence row, the complement of V-65's tier-A/B floor; validator V-68, with the 858 records that had none at adoption baselined — owner ruling 2026-11-20, `tasks/evidence-presence-floor-2026-11-20/README.md`).
+**Version:** v1.18 — 2026-11-21 (§4.8 EIN/UEI minting codified: EIN and UEI mint only from government filings — Form 5500 / 5500-SF, Form 990, OSHA ITA 300A, SAM.gov / USAspending — on the exact name-and-street basis (R11) under the exactly-one rule, into `data/registry_links.csv`, the org-grain identifier table of record since v1.1; validator V-6 gains the one-legal-entity dedupe alarm (an EIN value may sit on only one org). Backfill in the same pass mints EINs from the 2026-11-21 Form 5500 bulk sponsor index and the OSHA ITA bulk pull — owner ruling 2026-11-21, “Yes to both — EIN schema first, then wave 1”).
+Previous: v1.17.1 — 2026-11-20 (§4.13 presence floor for tier C/U: every tier-C/U record carries at least one evidence row, the complement of V-65's tier-A/B floor; validator V-68, with the 858 records that had none at adoption baselined — owner ruling 2026-11-20, `tasks/evidence-presence-floor-2026-11-20/README.md`).
 Previous: v1.17 — 2026-11-20 (evidence-integrity increment, owner-approved 2026-11-20: §4.13 floor rule — no naked tier-A/B records (validator V-65; the adoption census is grandfathered shrink-only in `scripts/validate_debt_baseline.json`); §4.22 archive at capture (validator V-66); §4.6/§4.11 `scale_band` completions conversion; §4.12.2 participation citations cite in-row — staging pointers prohibited in published citation fields (validator V-67)).
 Previous: v1.16.4 — 2026-11-19 (§4.12.2: the organizer's final list of registered companies for a named past edition counts as an attendee list — owner ruling 2026-11-19d item 1, `tasks/owner-rulings-2026-11-19d/README.md`).
 Previous: v1.16.3 — 2026-11-19 (§3.6 `extrusion` capability rollup adds `rubber_extrusion` — owner ruling 2026-11-19c item 1, `tasks/owner-rulings-2026-11-19c/README.md`).
@@ -1174,12 +1175,15 @@ so federal-award discovery and corroboration can key-match instead of
 name-matching — the FRS/TRI/FDA mechanics of this table, applied to the
 federal-awards source class.
 
+**EIN and UEI minting [v1.18] (owner ruling 2026-11-21).** Organization registry identity lives in this table and nowhere else: `EIN` (v1.7.7, R11) and `UEI` (v1.4) are the org-grain counterparts of §4.21's person identifiers, and no second org-identifier table is created — splitting registry identity across two tables would break this section's recorded-once doctrine. An `EIN` row mints **only from a government filing** — a Form 5500 / 5500-SF sponsor record (bulk EFAST2), a Form 990 filing (`EIN_NONPROFIT`, minted from ProPublica, is grandfathered), or an OSHA ITA Form 300A establishment record — and only on the R11 basis: the filing matched by sponsor/establishment name **and** by street to a site of the org. A `UEI` row mints only on the exact-UEI basis above (a SAM.gov Entity Management record or a USAspending recipient record). **Exactly-one rule:** where a name match yields more than one candidate EIN, where two organizations pass the street leg for the same EIN, or where a candidate EIN is already linked to a different organization, no row is minted; the case is recorded as an exception in the minting lane's audit, never resolved by picking one. The EIN comes verbatim from the filing and is stored as the 9-digit string, leading zeros preserved (the hyphenated display form is not stored). An EIN attaches to the legal entity — the organization — and never to a site: `site_id` stays empty on `EIN` / `UEI` rows (R10 confines `site_id` to the facility-grain registries). One EIN identifies one legal entity: the same EIN value on two organization records is a dedupe alarm (the records are presumptively the same legal entity, or a parent/subsidiary grain error), enforced by validator V-6 and resolved as a record adjudication, never as a second link row. An org with no EIN row asserts nothing: most Atlas organizations file no federal form that publishes one.
+
 Seed population: the adjudicated GLEIF / Wikidata / EDGAR crosswalk (141 of its 142
 seed orgs carry into the table at application; the one holdout is named in the
 implementation package's match audit). Non-hits are provenance only — the table never
-records "unregistered" or "no parent". EIN appears only via ProPublica for nonprofits
-(`EIN_NONPROFIT`); EIN yield from GLEIF/Wikidata/EDGAR was zero and no bulk EIN source
-is adopted. FRS / TRI / FDA registries join by the same mechanics when a wave produces
+records "unregistered" or "no parent". EIN appears via ProPublica for nonprofits
+(`EIN_NONPROFIT`); EIN yield from GLEIF/Wikidata/EDGAR was zero. Bulk EIN minting
+from the Form 5500 sponsor index and OSHA ITA was adopted at v1.18 (above); before
+that, R11 rows were minted per-record from individual filings. FRS / TRI / FDA registries join by the same mechanics when a wave produces
 org-keyed matches — no rows are minted speculatively.
 
 ### 4.9 People records **[v1.2]** (`data/people.csv`) — professors; federal-lab research staff **[v1.7.3]**

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate the Polymer Atlas CSVs. Stdlib only. Exit 1 on any error.
 
-Checks (v1 gate + schema additions through v1.17, per AGENTS.md / docs/SCHEMA.md):
+Checks (v1 gate + schema additions through v1.18, per AGENTS.md / docs/SCHEMA.md):
 - org_id / site_id format and uniqueness
 - ring_primary in 1..5; verification_tier in A/B/C/U
 - every record has >=1 source; tier A/B records must have last_verified
@@ -13,6 +13,7 @@ Checks (v1 gate + schema additions through v1.17, per AGENTS.md / docs/SCHEMA.md
 - [v1.2] membership citation rule: pic_member=true requires a
   polymerindustrycluster.org membership_source_url; no orphan citations
 - [v1.1] registry_links.csv: FK, registry enum, ID formats, uniqueness
+- [v1.18] registry_links EIN dedupe alarm: one EIN value on at most one org (§4.8)
 - [v1.2] members.csv: MBR ids, record_class/FK discipline, flag cross-check
 - [v1.2] ecosystem record_grain + program/office grain checks
 - [v1.2] people.csv: exact header, no contact fields, CRM-source tripwire
@@ -783,6 +784,20 @@ for i, r in enumerate(links, 2):
     if key in seen_links:
         errors.append(f"registry_links.csv:{i} duplicate link triple {key}")
     seen_links.add(key)
+
+
+# [v1.18, owner ruling 2026-11-21] One EIN identifies one legal entity: the
+# same EIN value (EIN, or the grandfathered EIN_NONPROFIT) on two different
+# orgs is a dedupe alarm, never a second link row (SCHEMA section 4.8).
+_ein_owner = {}
+for i, r in enumerate(links, 2):
+    if (r.get("registry") or "").strip() in {"EIN", "EIN_NONPROFIT"}:
+        _v = (r.get("registry_id") or "").strip()
+        _o = (r.get("org_id") or "").strip()
+        if _v in _ein_owner and _ein_owner[_v] != _o:
+            errors.append(f"registry_links.csv:{i} EIN {_v} also linked to {_ein_owner[_v]} (V-6, v1.18 dedupe alarm)")
+        else:
+            _ein_owner[_v] = _o
 
 # V-7: members + flag cross-check
 member_ids, member_org_links, member_eco_links = set(), set(), set()
