@@ -1,0 +1,26 @@
+rank,org_id,legal_name,website,ring_primary,tier,prior_screen_only,base_commit
+1,ORG-000025,Musson Rubber Co.,http://www.mussonrubber.com,1,C,False,393c3895
+2,ORG-000256,Buckeye Rubber & Packing Co.,https://buckeyerubber.com/,3,B,False,393c3895
+3,ORG-000483,Pentair,https://www.pentair.com/,1,A,False,393c3895
+4,ORG-002068,Chemstress Consultant Company,https://www.chemstress.com,3,B,True,393c3895
+5,ORG-001391,KONG Company,https://www.kongcompany.com/,3,C,False,393c3895
+6,ORG-000033,LyondellBasell,https://lyondellbasell.com,2,C,False,393c3895
+7,ORG-000098,Spazzolplastica North America LLC,https://www.spazzolplastica.it,1,B,False,393c3895
+8,ORG-001183,Ventra (Flex-N-Gate),https://flex-n-gate.com/,1,B,False,393c3895
+9,ORG-001808,Eurotech,https://eurotechdirect.com,3,A,True,393c3895
+10,ORG-001541,AlphaMicron Inc.,https://alphamicron.com/,4,A,False,393c3895
+11,ORG-001963,M S B Machine,https://msbmachine.com,3,A,True,393c3895
+12,ORG-001742,Global Waste and Recycling LLC,https://globalwasteandrecycling.com/,3,C,True,393c3895
+13,ORG-000135,Valtris Specialty Chemicals,https://www.valtris.com,2,B,False,393c3895
+14,ORG-000186,SKF USA Inc.,https://www.skf.com,1,C,False,393c3895
+15,ORG-000048,Akrochem Corp.,https://akrochem.com,3,C,False,393c3895
+16,ORG-002157,"Custom Pultrusions, Inc.",http://custompultrusions.com,1,A,False,393c3895
+17,ORG-002049,Sietins Plastics Inc (Sietins Precision),https://sietins.com,1,A,False,393c3895
+18,ORG-000555,Rubbermaid,https://www.newellbrands.com/,1,B,False,393c3895
+19,ORG-000416,GLI Pool Products,https://www.glipoolproducts.com/,1,A,False,393c3895
+20,ORG-001648,WORTHINGTON PRODUCTS,http://tuffboom.com/,1,B,False,393c3895
+21,ORG-000635,The Wooster Brush Company,https://www.woosterbrush.com/,1,B,False,393c3895
+22,ORG-001730,3D Dental Designs and Development LLC,https://3d-dent.com/,2,B,False,393c3895
+23,ORG-000207,A.R.E. Accessories,https://realtruck.com/,1,A,False,393c3895
+24,ORG-000056,CF Extrusion Technologies,https://cfextrusion.com,3,A,False,393c3895
+25,ORG-002011,"Solutions in Polycarbonate, LLC",https://solutionsinpc.com,1,A,False,393c3895

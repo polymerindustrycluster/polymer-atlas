@@ -1,0 +1,40 @@
+org_id,field,reason,pages_read,settling_fact
+ORG-000025,processes,distributor_service_menu,5,"A sentence that Musson itself fabricates or assembles, naming the process (candidate fabrication_unspecified held)"
+ORG-000025,markets_served,no_market_claim,5,A sentence naming a customer industry (the pages list products and brands only)
+ORG-000256,processes,no_readable_page,0,"A readable copy of the home page (robots.txt request reset by the server, curl exit 92, after the one retry; an availability fact)"
+ORG-000256,markets_served,no_readable_page,0,Same
+ORG-000483,processes,no_polymer_process_named,6,A sentence naming a polymer process; the pages say pump parts are machined and cartridges made with recycled materials
+ORG-002068,processes,not_a_processor,3,Chemstress is an engineering and construction firm; no §3.1 process applies unless an owner ruling says otherwise
+ORG-001391,processes,no_process_named,3,A sentence naming molding (or another §3.1 process) for the rubber toys; the page says products are made at the Colorado headquarters
+ORG-001391,markets_served,no_vocab_market,3,"A §3.3 term for pet products, or an owner ruling adding one"
+ORG-000098,processes,parent_group_page,4,A page of Spazzolplastica North America LLC itself (the record website is the Italian parent site)
+ORG-000098,markets_served,parent_group_page,4,Same: a North America entity page; candidate agriculture quote held
+ORG-001183,processes,parent_group_page,1,"A Ventra page, or an owner ruling that the Flex-N-Gate group site speaks for the record; the home page names no process (only ""plastics, metals, lighting and mechanical assemblies experience"")"
+ORG-001183,markets_served,parent_group_page,1,Same; candidate automotive_unspecified quote held
+ORG-001808,processes,no_readable_page,0,A readable copy of the home page (HTTP 403 to this client; an availability fact)
+ORG-001808,markets_served,no_readable_page,0,Same
+ORG-001541,processes,no_process_named,6,A sentence stating that AlphaMicron itself makes or coats liquid-crystal films or cells with a §3.1 process (none of the six pages read names one)
+ORG-001963,markets_served,no_market_claim,2,"A sentence naming an industry the molds go to (the page says ""clients and customers from many different sectors"")"
+ORG-001742,processes,waste_management_not_process,4,"A sentence that the company itself sorts, bales, grinds or reprocesses material (candidate recycling_unspecified held)"
+ORG-001742,markets_served,no_vocab_market,4,"A §3.3 term for waste-management customers, or a sentence naming an industry served"
+ORG-000135,processes,no_vocab_process,6,"A sentence naming a §3.1 process; the page says it operates ""in the production of specialty chemical additives and precursors"", which no §3.1 term names"
+ORG-000186,processes,no_readable_page,0,A readable copy of the home page (a script-rendered page returned HTTP 200 with no main text; an availability fact)
+ORG-000186,markets_served,no_readable_page,0,Same
+ORG-000048,processes,distributor_supplier_not_process,6,"A sentence that Akrochem itself compounds or blends (the pages describe supplying ""compounding materials"")"
+ORG-002157,processes,no_readable_page,0,"A readable copy of the home page (robots.txt request timed out after the one retry, curl exit 28; an availability fact)"
+ORG-002157,markets_served,no_readable_page,0,Same
+ORG-002049,processes,robots_blocked,0,"A page the site permits crawlers to read, or a permission from the site"
+ORG-002049,markets_served,robots_blocked,0,Same
+ORG-000555,processes,parent_group_page,5,A Rubbermaid page (the record website is the Newell Brands parent site)
+ORG-000555,markets_served,parent_group_page,5,Same; candidate consumer_goods_housewares quote held
+ORG-000416,processes,no_process_named,5,"A sentence naming how the vinyl liners and covers are made (the pages say ""lean manufacturing processes"")"
+ORG-000416,markets_served,no_vocab_market,5,An owner ruling on whether swimming-pool products map to lawn_garden_recreation
+ORG-001648,processes,product_spec_not_company_process,3,A sentence that the company itself extrudes or fabricates (the one hit is an HDPE product feature)
+ORG-001648,markets_served,ambiguous_vocabulary,3,An owner ruling: dam and hydropower customers as infrastructure_civil or energy_renewables_battery
+ORG-000635,processes,no_process_named,3,A sentence naming a §3.1 process for brushes and roller covers
+ORG-000635,markets_served,no_vocab_market,3,"A §3.3 term for painting tools (professional painters), or an owner ruling adding one"
+ORG-001730,processes,no_process_named,6,A sentence naming how the dental resin and cutting products are made
+ORG-000207,processes,no_readable_page,0,A readable copy of the home page (HTTP 202 with no body; an availability fact)
+ORG-000207,markets_served,no_readable_page,0,Same
+ORG-002011,processes,no_readable_page,0,"A readable copy of the home page (TLS certificate failure, curl exit 60, no insecure retry; an availability fact)"
+ORG-002011,markets_served,no_readable_page,0,Same
