@@ -94,9 +94,9 @@ c059aee6da3a163c51aec7112481bdac76f900bc362019a233917e7ef3b987ee  witness_extrac
 c58012fbdaaa525a9211c250cc67ac864cb02909b95f736e237749d92e343c08  witness_extract_sites_ita.csv
 ```
 
-**The committed copies are not byte-identical.** Three `street_as_printed` cells held an individual's contact detail or name (AGENTS §6):
+**The committed copies are not byte-identical.** The originals use CRLF; the repo's `.gitattributes` stores every CSV with LF, so the copies are LF. Three `street_as_printed` cells held an individual's contact detail or name (AGENTS §6):
 two email addresses (ITA extract lines 400 and 3926) and one "ATTENTION: <person>" line (inspection extract line 2704). They are replaced by
-`[REDACTED: email address in the street field]` and `[REDACTED NAME]`; every other byte is unchanged. The derivation is identical on original
+`[REDACTED: email address in the street field]` and `[REDACTED NAME]`; every other byte is unchanged apart from the line endings. The derivation is identical on original
 and redacted (checked: same 2,621 sites, same dates, same rejected rows; the email cells are unreadable streets either way). Checksums of the
 committed copies are in `inputs/SHA256SUMS`, and `check.py` verifies them.
 
