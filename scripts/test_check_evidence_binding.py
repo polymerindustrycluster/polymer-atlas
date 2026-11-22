@@ -5,6 +5,7 @@ text outside data/); the comment on each case names the real row it models. Plan
 must PASS; what cannot be inspected must be UNINSPECTABLE, never PASS.
 """
 import contextlib
+import hashlib
 import io
 import subprocess
 import tempfile
@@ -423,30 +424,47 @@ class GateMechanics(unittest.TestCase):
         head = [ev("S-PROS", ITA, "q", eid="EVD-1"), ev("S-CARN", ITA, "q", eid="EVD-2"), ev("S-CARN", ITA, "q", eid="EVD-3")]
         self.assertEqual([e["evidence_id"] for e in b.changed_rows(base, head)], ["EVD-2", "EVD-3"])
 
-    def test_sample_is_gate_chosen(self):
-        ids = [f"EVD-{n}" for n in range(100)]
-        sample = b.sample_ids(ids)
-        self.assertEqual(len(sample), 30)
-        self.assertEqual(sample, b.sample_ids(list(reversed(ids))))  # order-free: the builder cannot steer it
-        self.assertEqual(len(b.sample_ids(ids[:4])), 4)  # all, when fewer than 30
+    def test_proof_admits_uninspectable_rows_row_by_row(self):  # controller ruling 2026-11-22 (supersedes sampling)
+        quote = "Kestrel Molding runs its caps line at 41 Ferry Landing Rd"
+        capture = ("<html><body><p>About us</p><p>" + quote + "</p></body></html>").encode()
+        sha, off = hashlib.sha256(capture).hexdigest(), capture.decode().index(quote)
+        wb = "https://web.archive.org/web/20261101000000/https://kestrel.example/about"
+        evs = {e: dict(ev("ORG-8", "https://kestrel.example/about", quote, table="organizations", eid=e),
+                       created_by="claude-code lane-a") for e in ("EVD-1", "EVD-2")}
+        res = [{"evidence_id": e, "verdict": "UNINSPECTABLE", "created_by": "claude-code lane-a"} for e in evs]
+        res.append({"evidence_id": "EVD-F", "verdict": "FAIL", "created_by": "lane-z"})  # FAIL rows are never proved in
+        cap = "tasks/lane-a/captures/kestrel.html"
 
-    def test_sample_admission(self):
-        res = [{"evidence_id": f"EVD-{n}", "verdict": "UNINSPECTABLE", "created_by": "claude-code lane-a"} for n in range(40)]
-        res.append({"evidence_id": "EVD-F", "verdict": "FAIL", "created_by": "lane-z"})  # FAIL rows never sample
-        want = b.sample_ids([r["evidence_id"] for r in res[:40]])
-        path = "tasks/lane-a/BINDING_SAMPLE.csv"
-        def body(ids, verdict="VERIFIED"):
-            return ("evidence_id,verdict,reviewer_family,reviewer_model,read\n"
-                    + "".join(f"{i},{verdict},gemini,gemini-4-hydrogen,the cited page\n" for i in ids))
-        self.assertEqual(b.check_samples(res, {path: body(want)}.get), [])
-        missing = b.check_samples(res, {}.get)
-        self.assertEqual(len(missing), 1)
-        self.assertIn(want[0], missing[0])  # the gate prints the rows to review
-        for files in ({path: body(want, "STILL_UNCERTAIN")}, {path: body(want[1:])},
-                      {path: body(want + ["EVD-99"])}, {path: body([r["evidence_id"] for r in res[:30]])},
-                      {path: body(want).replace(",gemini,", ",,")}, {path: body(want).replace("gemini-4-hydrogen", "")},
-                      {path: "evidence_id,verdict,reviewer_family,read\n"}):
-            self.assertTrue(b.check_samples(res, files.get), files)
+        def check(lines, archive=None, files=None):
+            body = "evidence_id,capture,capture_sha256,quote_offset,quote_length\n" + "".join(x + "\n" for x in lines)
+            store = {"tasks/lane-a/BINDING_PROOF.csv": body.encode(), cap: capture, **(files or {})}
+            return b.check_proofs(res, evs, archive or {}, store.get)
+
+        good = [f"EVD-1,{cap},{sha},{off},{len(quote)}", f"EVD-2,{wb},{'a' * 64},0,10"]
+        self.assertEqual(check(good, {"EVD-2": wb}), [])
+        self.assertEqual(check(good), [])  # no archive_links row: the ref is shape-checked only
+        for lines, archive, files in (
+                (good[:1], None, None),  # a row with no proof line is a lead
+                ([f"EVD-1,{cap},{sha},{off + 1},{len(quote)}", good[1]], None, None),  # the quote is not at that offset
+                ([f"EVD-1,{cap},{'0' * 64},{off},{len(quote)}", good[1]], None, None),  # hash of another capture
+                (good, None, {cap: capture + b" "}),  # the capture changed after the proof
+                (good, {"EVD-2": wb.replace("2026110", "2026100")}, None),  # not the row's archive_links capture
+                ([good[0], f"EVD-2,https://kestrel.example/about,{'a' * 64},0,10"], None, None),  # live URL, no capture
+                ([good[0], f"EVD-2,{wb},{'a' * 63},0,10"], None, None),  # malformed hash
+                ([good[0], f"EVD-2,{wb},{'a' * 64},0,0"], None, None),  # empty span
+                ([good[0], f"EVD-2,../data/x,{'a' * 64},0,10"], None, None),  # a path outside tasks/
+                ([f"EVD-1,tasks/lane-a/captures/missing.html,{sha},{off},{len(quote)}", good[1]], None, None)):
+            self.assertTrue(check(lines, archive, files), lines)
+        self.assertIn("no tasks/<folder>/BINDING_PROOF.csv", b.check_proofs(res, evs, {}, {}.get)[0])
+
+    def test_audit_sample_admits_nothing(self):
+        res = [{"evidence_id": f"EVD-{n}", "verdict": "PASS" if n % 4 else "FAIL", "created_by": "lane-a"}
+               for n in range(100)]
+        pick = b.audit_sample(res, 10, "7")["lane-a"]
+        self.assertEqual(len(pick), 10)
+        self.assertTrue(all(r["verdict"] == "PASS" for r in pick))  # it measures escapes: rows the gate passed
+        self.assertEqual(pick, b.audit_sample(list(reversed(res)), 10, "7")["lane-a"])  # order-free
+        self.assertNotEqual(pick, b.audit_sample(res, 10, "8")["lane-a"])  # the seed moves it
 
     def test_provenance_folder_named_by_created_by(self):
         with tempfile.TemporaryDirectory() as d:
@@ -477,7 +495,7 @@ class KnownAnswer(unittest.TestCase):
         code, out = self.run_main("--new-since", "6a76e923", "--head", "17834918")
         self.assertEqual(code, 1)
         self.assertIn("23564 rows added or re-pointed", out)
-        self.assertIn("SAMPLE created_by 'spaghetti-batch6-2026-11-22': 122 UNINSPECTABLE rows and no", out)
+        self.assertIn("PROOF created_by 'spaghetti-batch6-2026-11-22': 122 UNINSPECTABLE rows and no", out)
 
     def test_batch6_has_no_provenance_folder(self):
         code, out = self.run_main("--provenance-since", "6a76e923", "--head", "17834918")

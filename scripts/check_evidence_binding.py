@@ -31,11 +31,10 @@ Usage:
   python3 scripts/check_evidence_binding.py --all [--head REF] [--out verdicts.csv]
   python3 scripts/check_evidence_binding.py --new-since origin/main      # PR gate: rows added or re-pointed since
   python3 scripts/check_evidence_binding.py --provenance-since origin/main  # tasks/<created_by>/check.py required
---new-since exits 1 on any FAIL row (no waiver exists: fix the row or make it a lead), and on UNINSPECTABLE rows
-unless sample-admitted: per created_by label the gate picks the 30 UNINSPECTABLE rows with the lowest
-sha256(evidence_id) (all, if fewer), and tasks/<folder named by a created_by word>/BINDING_SAMPLE.csv
-(evidence_id,verdict,reviewer_family,reviewer_model,read) must carry exactly those ids, each VERIFIED.
-Exit 2 = could not check.
+  python3 scripts/check_evidence_binding.py --sample 20 --seed 7 [--since origin/main]  # audit only, admits nothing
+--new-since exits 1 on any FAIL row (no waiver exists: fix the row or make it a lead), and on any UNINSPECTABLE row
+without a per-row proof line in tasks/<folder named by a created_by word>/BINDING_PROOF.csv
+(evidence_id,capture,capture_sha256,quote_offset,quote_length; see check_proofs). Exit 2 = could not check.
 """
 import argparse
 import csv
@@ -55,8 +54,8 @@ from build_echo_spine import STATE_NAMES  # noqa: E402
 
 csv.field_size_limit(10**9)
 BINDING_FIELDS = ("record_table", "record_id", "claim_type", "claim_detail", "source_ref")
-SAMPLE_COLS = ("evidence_id", "verdict", "reviewer_family", "reviewer_model", "read")
-SAMPLE_N = 30
+PROOF_COLS = ("evidence_id", "capture", "capture_sha256", "quote_offset", "quote_length")
+ARCHIVE_RE = re.compile(r"https://web\.archive\.org/web/\d{14}/\S+$")
 DIRECTIONS = {"n", "s", "e", "w", "ne", "nw", "se", "sw"}
 
 # Source families whose quote format is known. Deny by default: any other non-URL source is unknown_source_family.
@@ -546,14 +545,12 @@ def changed_rows(base_evs, head_evs):
 
 
 def tasks_file(ref, path):
-    """Text of a tasks/ file at ref (None = working tree), or None when it does not exist."""
+    """Bytes of a repository file at ref (None = working tree), or None when it does not exist."""
     if ref is None:
         f = ROOT / path
-        return f.read_text(encoding="utf-8") if f.is_file() else None
-    try:
-        return git("show", f"{ref}:{path}")
-    except subprocess.CalledProcessError:
-        return None
+        return f.read_bytes() if f.is_file() else None
+    r = subprocess.run(["git", "-C", str(ROOT), "show", f"{ref}:{path}"], capture_output=True)
+    return r.stdout if r.returncode == 0 else None
 
 
 def label_tokens(label):
@@ -562,47 +559,90 @@ def label_tokens(label):
     return [t for t in [label] + label.split() if t and ".." not in t and not t.startswith("/")]
 
 
-def sample_ids(ids):
-    """The gate's own sample: the SAMPLE_N ids with the lowest sha256(evidence_id). The builder cannot choose it."""
-    return sorted(ids, key=lambda i: hashlib.sha256(i.encode()).hexdigest())[:SAMPLE_N]
+def quote_of(ev):
+    return ev["claim_detail"].partition("quote:")[2].strip()
 
 
-def check_samples(results, read):
-    """Problems with sample admission of UNINSPECTABLE rows, one line each; read(path) -> text or None."""
-    unins = defaultdict(list)
+def check_proofs(results, evs, archive, read):
+    """Problems with the per-row proof of UNINSPECTABLE rows, one line each (controller ruling 2026-11-22).
+
+    Every UNINSPECTABLE row needs a line in tasks/<folder named by a created_by word>/BINDING_PROOF.csv: the capture it
+    was read from (a Wayback archive_ref, which must equal the row's data/archive_links.csv ref where one exists, or a
+    repo path to a stored capture), the capture's sha256, and the quote's character offset and length in the capture.
+    A repo capture is verified here: its hash, and the row's quote at that offset. An archive capture is not fetched.
+    evs: {evidence_id: row}; archive: {evidence_id: archive_ref}; read(path) -> bytes or None.
+    """
+    need = defaultdict(list)
     for r in results:
         if r["verdict"] == "UNINSPECTABLE":
-            unins[r["created_by"].strip()].append(r["evidence_id"])
-    need = defaultdict(set)  # sample file path -> the ids it must carry
-    problems = []
-    for label, ids in sorted(unins.items()):
-        sample = sample_ids(ids)
-        path = next((f"tasks/{t}/BINDING_SAMPLE.csv" for t in label_tokens(label)
-                     if read(f"tasks/{t}/BINDING_SAMPLE.csv") is not None), None)
+            need[r["created_by"].strip()].append(r["evidence_id"])
+    proofs, problems, files = {}, [], {}
+    for label, ids in sorted(need.items()):
+        path = next((f"tasks/{t}/BINDING_PROOF.csv" for t in label_tokens(label)
+                     if read(f"tasks/{t}/BINDING_PROOF.csv") is not None), None)
         if path is None:
-            problems.append(f"created_by '{label}': {len(ids)} UNINSPECTABLE rows and no tasks/<folder>/BINDING_SAMPLE.csv;"
-                            f" review these {len(sample)} gate-chosen rows: " + " ".join(sample))
+            problems.append(f"created_by '{label}': {len(ids)} UNINSPECTABLE rows and no tasks/<folder>/BINDING_PROOF.csv;"
+                            f" each needs a proof line, or is a lead until proved")
             continue
-        need[path] |= set(sample)
-    for path, want in sorted(need.items()):
-        reader = csv.DictReader(io.StringIO(read(path)))
-        if tuple(reader.fieldnames or ()) != SAMPLE_COLS:
-            problems.append(f"{path}: header must be {','.join(SAMPLE_COLS)}")
-            continue
-        got = {}
-        for r in reader:
-            eid = (r.get("evidence_id") or "").strip()
-            if not all((r.get(c) or "").strip() for c in SAMPLE_COLS):
-                problems.append(f"{path}:{reader.line_num}: every column ({','.join(SAMPLE_COLS)}) is required")
-            elif r["verdict"].strip() not in ("VERIFIED", "REJECT", "STILL_UNCERTAIN"):
-                problems.append(f"{path}:{reader.line_num}: verdict must be VERIFIED, REJECT or STILL_UNCERTAIN")
-            elif r["verdict"].strip() != "VERIFIED":
-                problems.append(f"{path}:{reader.line_num}: {eid} is {r['verdict'].strip()}; the sample does not admit")
-            got[eid] = r
-        if set(got) != want:
-            problems.append(f"{path}: must carry exactly the gate's sample; missing {sorted(want - set(got))[:10]}, "
-                            f"not in the sample {sorted(set(got) - want)[:10]}")
+        if path not in files:
+            reader = csv.DictReader(io.StringIO(read(path).decode("utf-8")))
+            files[path] = []
+            if tuple(reader.fieldnames or ()) != PROOF_COLS:
+                problems.append(f"{path}: header must be {','.join(PROOF_COLS)}")
+            else:
+                for row in reader:
+                    eid = (row["evidence_id"] or "").strip()
+                    if eid in proofs:
+                        problems.append(f"{path}:{reader.line_num}: second proof line for {eid}")
+                    proofs[eid] = (f"{path}:{reader.line_num}", row)
+        for eid in ids:
+            if eid not in proofs:
+                problems.append(f"{eid} ({label}): no proof line in {path}")
+                continue
+            at, row = proofs[eid]
+            why = proof_problem(row, evs[eid], archive.get(eid), read)
+            if why:
+                problems.append(f"{at}: {eid}: {why}")
     return problems
+
+
+def proof_problem(row, ev, archive_ref, read):
+    cap, sha, off, n = (row[c].strip() for c in PROOF_COLS[1:])
+    if not re.fullmatch(r"[0-9a-f]{64}", sha):
+        return "capture_sha256 is not 64 lowercase hex digits"
+    if not (off.isdigit() and n.isdigit() and int(n) > 0):
+        return "quote_offset and quote_length must be whole numbers, the length above zero"
+    if cap.startswith("http"):
+        if not ARCHIVE_RE.match(cap):
+            return "an http capture must be a Wayback archive ref (https://web.archive.org/web/<14 digits>/<url>)"
+        if archive_ref and cap != archive_ref:
+            return "capture differs from the row's data/archive_links.csv archive_ref"
+        return ""  # shortcut: CI does not fetch the web; the lane's check.py replays the capture, its reviewer re-runs it
+    if not cap.startswith("tasks/") or ".." in cap:
+        return "capture must be an archive ref or a repo path under tasks/"
+    data = read(cap)
+    if data is None:
+        return f"capture file {cap} is not in the tree"
+    if hashlib.sha256(data).hexdigest() != sha:
+        return "capture_sha256 does not match the capture file"
+    text, off, n = data.decode("utf-8", errors="replace"), int(off), int(n)
+    if off + n > len(text):
+        return "quote span runs past the end of the capture"
+    quote = quote_of(ev)
+    if quote and text[off:off + n] != quote:
+        return "the row's quote is not at that offset in the capture"
+    return ""
+
+
+def audit_sample(results, n, seed):
+    """Audit of the gate, never admission: N PASS rows per created_by label, chosen by sha256(seed:evidence_id), for a
+    reviewer to read; the share found unbound estimates the gate's escape rate."""
+    by_label = defaultdict(list)
+    for r in results:
+        if r["verdict"] == "PASS":
+            by_label[r["created_by"].strip()].append(r)
+    return {k: sorted(v, key=lambda r: hashlib.sha256(f"{seed}:{r['evidence_id']}".encode()).hexdigest())[:n]
+            for k, v in sorted(by_label.items())}
 
 
 def provenance_missing(new_evs, has_check):
@@ -624,12 +664,16 @@ def main(argv=None):
     g.add_argument("--all", action="store_true", help="report every evidence row by verdict, created_by and source")
     g.add_argument("--new-since", metavar="REF", help="gate rows added or re-pointed since the merge-base with REF")
     g.add_argument("--provenance-since", metavar="REF", help="require tasks/<created_by>/check.py for new rows")
+    g.add_argument("--sample", metavar="N", type=int, help="audit only: list N PASS rows per created_by label to read")
+    ap.add_argument("--seed", default="1", help="--sample seed")
+    ap.add_argument("--since", metavar="REF", help="--sample: only rows added or re-pointed since REF")
     ap.add_argument("--head", help="git ref to read instead of the working tree")
     ap.add_argument("--out", help="write per-row verdicts to this CSV")
     a = ap.parse_args(argv)
     try:
         head_evs = rows(a.head, "evidence_*.csv")
-        base = resolve_base(a.new_since or a.provenance_since, a.head) if not a.all else None
+        since = a.new_since or a.provenance_since or (a.since if a.sample else None)
+        base = resolve_base(since, a.head) if since else None
     except subprocess.CalledProcessError as e:
         print(f"binding gate: cannot read git state ({e.stderr.strip()}); failing closed")
         return 2
@@ -639,7 +683,7 @@ def main(argv=None):
     if len({e["evidence_id"] for e in head_evs}) != len(head_evs):
         print("binding gate: duplicate evidence_id on the head tree; failing closed")
         return 2
-    evs = head_evs if a.all else changed_rows(rows(base, "evidence_*.csv"), head_evs)
+    evs = head_evs if base is None else changed_rows(rows(base, "evidence_*.csv"), head_evs)
 
     if a.provenance_since:
         if a.head is None:
@@ -667,21 +711,32 @@ def main(argv=None):
             return 2
         report(results, len(head_evs))
         return 0
+    if a.sample:
+        print(f"audit sample (admits nothing): {a.sample} PASS rows per created_by label, seed {a.seed}; read each and "
+              f"count the unbound ones to estimate the gate's escape rate")
+        for label, picked in audit_sample(results, a.sample, a.seed).items():
+            print(f"\n{label}")
+            for r in picked:
+                print(f"  {r['evidence_id']} {r['at']} {r['record_table']} {r['record_id']} {r['claim_type']}")
+        return 0
     report(results, len(evs)) if results else None
     fails = [r for r in results if r["verdict"] == "FAIL"]
     n_unins = sum(r["verdict"] == "UNINSPECTABLE" for r in results)
-    problems = check_samples(results, lambda path: tasks_file(a.head, path))
+    archive = {r["evidence_id"]: r["archive_ref"] for r in rows(a.head, "archive_links.csv")}
+    problems = check_proofs(results, {e["evidence_id"]: e for e in evs}, archive, lambda path: tasks_file(a.head, path))
     print(f"\nbinding gate: {len(results)} rows added or re-pointed since {base[:10]}; "
           f"{len(results) - len(fails) - n_unins} PASS, {len(fails)} FAIL (blocking), {n_unins} UNINSPECTABLE "
-          f"(admitted only by a VERIFIED gate-chosen sample)")
+          f"(admitted only by a per-row proof line)")
     for r in fails[:200]:
         print(f"  FAIL {r['reason']:40s} {r['evidence_id']} {r['at']}")
     if len(fails) > 200:
         print(f"  ... and {len(fails) - 200} more (use --out for the full list)")
     if fails:
         print("A FAIL row has no waiver: fix the row, or take it out and hold it as a lead.")
-    for line in problems:
-        print("  SAMPLE " + line)
+    for line in problems[:200]:
+        print("  PROOF " + line)
+    if len(problems) > 200:
+        print(f"  ... and {len(problems) - 200} more proof problems")
     return 1 if fails or problems else 0
 
 if __name__ == "__main__":

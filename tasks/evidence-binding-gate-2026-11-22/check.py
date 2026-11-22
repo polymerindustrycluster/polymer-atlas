@@ -41,9 +41,9 @@ EXPECTED = {
     'batches.FAIL': 12891,
     'batches.PASS': 20899,
     'batches.UNINSPECTABLE': 304,
+    'batches.needs_proof_line': 304,
+    'batches.needs_proof_line_with_archive_link': 178,
     'batches.rows': 34094,
-    'batches.sample_labels': 4,
-    'batches.sample_owed': 116,
     'batches.spaghetti-batch5-2026-11-22.FAIL': 3364,
     'batches.spaghetti-batch5-2026-11-22.PASS': 6870,
     'batches.spaghetti-batch5-2026-11-22.UNINSPECTABLE': 118,
@@ -61,9 +61,9 @@ EXPECTED = {
     'main_all.FAIL': 13095,
     'main_all.PASS': 22605,
     'main_all.UNINSPECTABLE': 45810,
+    'main_all.needs_proof_line': 45810,
+    'main_all.needs_proof_line_with_archive_link': 5363,
     'main_all.rows': 81510,
-    'main_all.sample_labels': 357,
-    'main_all.sample_owed': 8193,
     'main_without_batches.FAIL': 204,
     'main_without_batches.PASS': 1706,
     'main_without_batches.UNINSPECTABLE': 45506,
@@ -71,7 +71,8 @@ EXPECTED = {
     'mutant.hq_from_any_source.caught': True,
     'mutant.no_unit_test.caught': True,
     'mutant.number_only_streets.caught': True,
-    'mutant.sample_by_order.caught': True,
+    'mutant.proof_any_archive_ref.caught': True,
+    'mutant.proof_quote_unchecked.caught': True,
     'mutant.token_subset_names.caught': True,
     'mutant.web_any_domain.caught': True,
     'mutant.web_civic_only.caught': True,
@@ -143,8 +144,8 @@ MUTANTS = {  # name: (original line fragment, loosened replacement) — each mus
     "web_civic_only": ('    return "" if parts[0] in q and (not parts[1] or parts[1] in q) else',
                        '    return "" if parts[0] in q else'),
     "web_name_unchecked": ("        if not hits:\n", "        if False:\n"),
-    "sample_by_order": ("    return sorted(ids, key=lambda i: hashlib.sha256(i.encode()).hexdigest())[:SAMPLE_N]",
-                        "    return list(ids)[:SAMPLE_N]"),
+    "proof_quote_unchecked": ("    if quote and text[off:off + n] != quote:", "    if False:"),
+    "proof_any_archive_ref": ("        if archive_ref and cap != archive_ref:", "        if False:"),
 }
 BATCH14 = re.compile(r"^spaghetti-(burndown-batch[1-4]|drift-rewitness|nourl-cleared)-")  # the 2,846 burn-down web rows
 PEOPLE_LABEL = "spaghetti evidence-backfill-w1-2026-11-19"
@@ -268,12 +269,14 @@ def main():
     show("batches: shifted-column rows if the facility label were the operator", shifted)
     got.update({f"shifted_if_facility.{k}": v for k, v in shifted.items()})
 
-    # sample a PR would owe: per created_by label, min(30, its UNINSPECTABLE rows)
-    for name, res in (("batches", q_res), ("main_all", main_res)):
-        un = Counter(r["created_by"].strip() for r in res if r["verdict"] == "UNINSPECTABLE")
-        got[f"{name}.sample_owed"] = sum(min(b.SAMPLE_N, n) for n in un.values())
-        got[f"{name}.sample_labels"] = len(un)
-        print(f"\n{name}: sample owed {got[f'{name}.sample_owed']} rows over {len(un)} created_by labels")
+    # per-row proof a PR would owe: every UNINSPECTABLE row; how many already have an archive_links capture
+    for name, res, ref in (("batches", q_res, BATCH_HEAD), ("main_all", main_res, MAIN)):
+        archive = {r["evidence_id"] for r in b.rows(ref, "archive_links.csv")}
+        un = [r["evidence_id"] for r in res if r["verdict"] == "UNINSPECTABLE"]
+        got[f"{name}.needs_proof_line"] = len(un)
+        got[f"{name}.needs_proof_line_with_archive_link"] = sum(e in archive for e in un)
+        print(f"\n{name}: {len(un)} rows would need a proof line; {got[f'{name}.needs_proof_line_with_archive_link']} "
+              f"of them have a data/archive_links.csv capture")
 
     # web quotes on main (controller ruling 2026-11-22): the burn-down batch 1-4 family and everything else
     web = [r for r in main_res if r["source_family"] == "url" and r["reason"] not in ("no_quote", "other_table")]

@@ -13,8 +13,9 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
       - the site street is not equal under `street_key`;
       - a headquarters address comes from a source other than an entity-address source;
       - a web quote is off the record's own domain, or lacks the site's street.
-    - **UNINSPECTABLE rows:** admitted only by a gate-chosen sample. That is the 30 rows per `created_by` label with the
-      lowest sha256 of evidence_id, each VERIFIED in `tasks/<folder>/BINDING_SAMPLE.csv`.
+    - **UNINSPECTABLE rows:** admitted only row by row, through a proof line in `tasks/<folder>/BINDING_PROOF.csv`. Each
+      line gives the capture, its sha256, and the quote's offset and length. A capture stored in the repo is verified;
+      an archive capture must match `data/archive_links.csv`. `--sample N --seed S` is an audit and admits nothing.
     - **Rows already on `main`:** reported by `--all`, not failed;
   - on pull requests, the evidence provenance check (`--provenance-since`, since 2026-11-22): each `created_by` label of
     an added evidence row must name, by one of its words, a `tasks/<folder>/` holding a `check.py`;
