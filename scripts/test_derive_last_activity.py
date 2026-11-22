@@ -25,6 +25,13 @@ SAME = [  # equal atlas.street_key
     ("One Innovation Drive", "One Innovation Dr"),                  # SITE-004431: leading number word
     ("191 American Blvd, Suite 100", "191 American Blvd Suite 100"),  # same suite on both sides
     ("191 American Blvd, Suite 100", "191 American Blvd"),          # suite on one side only
+    ("1700A Old Mansfield Road", "1700A OLD MANSFIELD RD"),         # alphanumeric house number (SITE-000620)
+    ("94A Dries Rd.", "94A Dries Road"),                            # SITE-002625
+    ("222W 33Rd St", "222W 33RD st"),                               # SITE-008309
+    ("W188 N11707 Maple Road", "W188 N11707 MAPLE ROAD"),           # Wisconsin grid (SITE-010184)
+    ("N7660 Industrial Rd", "N7660 Industrial Rd"),                 # SITE-010157
+    ("One Centro Way", "ONE CENTRO WAY"),                           # number word (SITE-004403)
+    ("Spur 119 East", "SPUR 119 E"),                                # highway with a digit token (SITE-003175)
 ]
 DIFFERENT = [  # true mismatches: the date must not move to this site
     ("217 Thweatt Blvd", "568 THWEATT BLVD."),                      # same street, other house number
@@ -46,7 +53,10 @@ DIFFERENT = [  # true mismatches: the date must not move to this site
 NEVER = [  # blank and number-less streets are never equal, even to themselves
     ("", "1 Main St"), ("", ""), ("1 Main St", ""), ("P.O. Box 5", "P.O. BOX 5"),
     ("Chemical Plant Rd", "Chemical Plant Road"), ("1604 Building", "1604 Building Barth Street"),
-    ("BIDA Complex Building 350, 3rd and Oak St.", "BIDA COMPLEX #350 3RD & OAK STREET"),  # equal key, no civic number
+    ("BIDA Complex Building 350, 3rd and Oak St.", "BIDA COMPLEX #350 3RD & OAK STREET"),  # equal key, no civic number (SITE-002182)
+    ("Freeport Center Bldg Z-13", "FREEPORT CENTER BUILDING Z-13"),                        # building name (SITE-005976)
+    ("1790 Building", "1790 Building, Washington St."),             # building name: key collapses to "1790" (SITE-003187)
+    ("3206 #6 Road", "3206 #6 RD"),                                 # street_key limit: the key collapses to "3206" (SITE-003780)
 ]
 KNOWN_MISSES = [  # real variants atlas.street_key does not collapse; rejected on purpose, listed as follow-ups in the README
     ("ONE PLASTICS DR", "1 Plastics Drive"),                        # number word

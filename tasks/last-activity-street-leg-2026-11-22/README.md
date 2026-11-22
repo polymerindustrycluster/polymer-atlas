@@ -49,9 +49,12 @@ Of the 2,632 kept: 2,536 keep the identical date and source; **96** keep a date 
 because the winning row was at another street (or another suite) and a same-street row remained (osha_ita→osha_inspection 63, osha_inspection→osha_ita 33).
 Unit for the row counts: tier-A extract rows (inspection 2,312 + ITA 2,771 = 5,083): 3,403 applied, 1,680 failed the street test;
 tier-B rows (2,264) are excluded as before. `CLEARED_SITES.csv` lists every cleared site with its reason, its old date and source, the site's street and the
-tier-A streets printed in the extract. `HELD_EQUAL_KEYS.csv` lists the 9 tier-A rows with equal, non-empty keys that are held: 3 suite conflicts
-(SITE-000514, SITE-004585, SITE-019015; only SITE-000514 loses its date; the other two keep or take a same-suite row), 3 with no civic number, 3 with a bare number
-(for example "1604 Building" and "1604 Building Barth Street" both key to "1604": equality there does not witness a street; this guard is stricter than "a digit in the key").
+tier-A streets printed in the extract. `HELD_EQUAL_KEYS.csv` lists the 9 tier-A rows (8 sites) with equal, non-empty keys that are held: 3 suite conflicts (SITE-000514, SITE-004585, SITE-019015; only
+SITE-000514 loses its date; the other two keep or take a same-suite row) and 6 rows on 5 sites that have no civic number to witness a street: four building or park names
+(SITE-002182 "BIDA Complex Building 350…", SITE-002988 "1604 Building", SITE-003187 "1790 Building", SITE-005976 "Freeport Center Bldg Z-13") and SITE-003780 ("3206 #6 Road"):
+a **`street_key` limit**, since its unit regex strips "#6 Road" and leaves the key "3206", so equality there does not witness a street. `street_key` is not patched here.
+The other 12 equal-key sites that review round 1 found dated no longer (Wisconsin grid addresses such as N44 W33341 and W188 N11707, alphanumeric numbers such as 1700A
+and 94A, number words such as "One Centro Way", "Spur 119 East") keep their dates under the civic-number rule; each is a test case.
 
 The 449 blank-street sites match the controller's count. The controller's other figures counted sites whose winning row was at another street; this table counts
 sites left with no same-street row, so the splits differ.
