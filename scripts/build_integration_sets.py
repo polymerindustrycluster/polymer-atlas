@@ -863,7 +863,7 @@ def apply_to_copy(tmpdata):
                 w.writeheader()
                 w.writerows(rows)
     # evidence: fill <ALLOC> from atlas.py next-id run against the TEMP copy
-    out = subprocess.run([sys.executable, str(ROOT / "scripts/atlas.py"), "--data-dir", str(tmpdata), "next-id", "EVD", "--json"],
+    out = subprocess.run([sys.executable, str(ROOT / "scripts/atlas.py"), "--data-dir", str(tmpdata), "--tasks-dir", str(ROOT / "tasks"), "next-id", "EVD", "--json"],
                          capture_output=True, text=True, check=True).stdout
     nxt = json.loads(out)["prefixes"][0]["next_id"]
     st["first_evd"] = nxt

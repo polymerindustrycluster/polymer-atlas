@@ -18,12 +18,12 @@ Usage (run from the repo root; add --data-dir PATH to point at another tree):
   python3 scripts/atlas.py shard-of --site-state OH           # sites_OH.csv
   python3 scripts/atlas.py shard-of --hq-state QC --hq-country CA   # organizations_INTL.csv
 
-Exit codes: next-id 0 ok / 2 unknown prefix; dedupe-check 0 no hits / 1 hits;
+Exit codes: next-id 0 ok / 2 unknown prefix / 3 reservation floor cannot be checked; dedupe-check 0 no hits / 1 hits;
 show 0 found / 1 not found; shard-of 0 resolved / 3 needs more facts /
 4 unplaceable site.  Every command accepts --json (shard-of and next-id too).
 
 ID rule (SCHEMA Appendix C §6.1): scan EVERY shard of the table, take the
-max numeric suffix + 1; gaps are permanent and are never filled.  Only a
+max numeric suffix + 1 (ids a tasks/**/REMOVALS.csv retired count toward the max; --tasks-dir); gaps are permanent and are never filled.  Only a
 table's own primary-key column counts toward the max (the first column of each
 table file; registry_links has none; sites.site_group_id defines GRP-).  IDs that
 appear only in foreign-key columns are tracked separately and reported when they
@@ -121,7 +121,20 @@ def num(i):
     return int(ID_RE.match(i).group(2))
 
 
-def next_id_report(prefix, d):
+def reserved_ids(tasks_dir):
+    """prefix -> {ids} retired by a tasks/**/REMOVALS.csv (a key that is itself an XXX-###### id: a removed evidence row,
+    a merged person). An id is never reused (AGENTS §3; DECISIONS 2026-11-22), so the allocator's floor includes them."""
+    out = defaultdict(set)
+    for path in sorted(glob.glob(os.path.join(tasks_dir, "**", "REMOVALS.csv"), recursive=True)):
+        with open(path, newline="", encoding="utf-8-sig") as fh:
+            for r in csv.DictReader(fh):
+                m = ID_RE.match((r.get("key") or "").strip())
+                if m:
+                    out[m.group(1)].add(m.group(0))
+    return out
+
+
+def next_id_report(prefix, d, reserved=frozenset()):
     ids = d["ids"]
     rep = {"prefix": prefix, "pk_columns": sorted(d["pk_cols"]), "count": len(ids),
            "files": sorted({f for fl in ids.values() for f in fl}), "warnings": []}
@@ -132,12 +145,21 @@ def next_id_report(prefix, d):
     else:
         mx, width = None, len(ID_RE.match(top_ref).group(2)) if top_ref else 6
     rep["max_id"] = mx
-    rep["next_id"] = f"{prefix}-{(num(mx) if mx else 0) + 1:0{width}d}" if mx else None
+    # floor = the larger of the max id in data/ and any id a REMOVALS.csv retired
+    top_res = max(reserved, key=num, default=None)
+    rep["max_reserved_id"] = top_res
+    floor = max([x for x in (mx, top_res) if x], key=num, default=None)
+    if floor and not ids:
+        width = len(ID_RE.match(floor).group(2))
+    if top_res and mx and num(top_res) > num(mx):
+        rep["warnings"].append(f"{len([i for i in reserved if num(i) > num(mx)])} retired id(s) (REMOVALS.csv) exceed the data max; "
+                               f"the next id starts above {top_res}. Retired ids are never reused.")
+    rep["next_id"] = f"{prefix}-{num(floor) + 1:0{width}d}" if floor else None
     rep["duplicates"] = {i: fl for i, fl in ids.items() if len(fl) > 1 and d["unique"]}
     if rep["duplicates"]:
         rep["warnings"].append(f"{len(rep['duplicates'])} duplicate primary key(s): " +
                                ", ".join(f"{i} in {'+'.join(fl)}" for i, fl in list(rep["duplicates"].items())[:5]))
-    base = num(mx) if mx else 0
+    base = num(floor) if floor else 0
     above = sorted((i for i in d["refs"] if num(i) > base), key=num)
     rep["referenced_above_max"] = above
     rep["max_referenced"] = top_ref
@@ -164,6 +186,17 @@ def dangling_refs(info):
 
 def cmd_next_id(a, tables):
     info = scan_ids(tables)
+    if a.no_reservation_floor:
+        reserved = {}
+    else:
+        tasks_dir = a.tasks_dir or os.path.join(os.path.normpath(a.data_dir), "..", "tasks")
+        if not os.path.isdir(tasks_dir):  # fail closed: a missing folder must not read as "nothing is retired"
+            print(f"next-id: cannot check the reservation floor: no tasks directory at {os.path.normpath(tasks_dir)}. Pass --tasks-dir "
+                  "(the folder holding tasks/**/REMOVALS.csv), or --no-reservation-floor for a fresh tree that has retired no ids.", file=sys.stderr)
+            return 3
+        reserved = reserved_ids(tasks_dir)
+    for p_, ids_ in reserved.items():
+        info[p_]                                  # a prefix that only REMOVALS.csv knows is still served
     if a.all:
         prefixes = sorted(info)
     else:
@@ -173,7 +206,7 @@ def cmd_next_id(a, tables):
         if p not in info:
             print(f"unknown prefix {p!r}; known: {', '.join(sorted(info))}", file=sys.stderr); return 2
         prefixes = [p]
-    reps = [next_id_report(p, info[p]) for p in prefixes]
+    reps = [next_id_report(p, info[p], reserved.get(p, frozenset())) for p in prefixes]
     audit = None
     if a.audit:
         audit = {k: sorted(set(v), key=lambda s: (s.split('-')[0], num(s))) for k, v in sorted(dangling_refs(info).items())}
@@ -633,6 +666,8 @@ def cmd_shard_of(a, data_dir):
 def build_parser():
     p = argparse.ArgumentParser(prog="atlas.py", description="Read-only helper for polymer-atlas mechanical rules.")
     p.add_argument("--data-dir", default=DEFAULT_DATA, help="data directory (default: ../data relative to this script)")
+    p.add_argument("--tasks-dir", default=None, help="folder searched for REMOVALS.csv whose retired ids next-id never reuses (default: <data-dir>/../tasks; next-id exits 3 when it does not exist)")
+    p.add_argument("--no-reservation-floor", action="store_true", help="next-id: skip the REMOVALS.csv floor (a fresh tree that has retired no ids; tests)")
     sub = p.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("next-id", help="tree-wide max and next free id for a prefix")
     s.add_argument("prefix", nargs="?"); s.add_argument("--all", action="store_true")
