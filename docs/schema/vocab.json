@@ -12,6 +12,16 @@
     "not_stated"
    ]
   },
+  "ADDRESS_ROLES": {
+   "governs": "evidence.address_role",
+   "section": "SCHEMA §4.13 (v1.19)",
+   "values": [
+    "agent",
+    "mailing",
+    "physical",
+    "registered_office"
+   ]
+  },
   "CADENCES": {
    "governs": "events.cadence",
    "section": "SCHEMA §4.12.1",
@@ -349,6 +359,16 @@
     "national_us",
     "ne_ohio",
     "ohio"
+   ]
+  },
+  "LAST_ACTIVITY_SOURCES": {
+   "governs": "sites.last_activity_source",
+   "section": "SCHEMA §4.5 (v1.19)",
+   "values": [
+    "echo",
+    "fmcsa_mcs150",
+    "osha_inspection",
+    "osha_ita"
    ]
   },
   "LEVELS": {
@@ -694,11 +714,15 @@
     "FRS",
     "IPEDS_UNITID",
     "LEI",
+    "NPDES_PERMIT_ID",
     "OHIO_SOS_CHARTER",
+    "RCRA_EPA_ID",
     "SEC_CIK",
     "SEC_CIK_PARENT_FILER",
+    "STATE_ENTITY_ID",
     "TRI_TRIFID",
     "UEI",
+    "USDOT",
     "WIKIDATA"
    ]
   },
