@@ -20,7 +20,7 @@ non-final filing with active participants, then most active participants, then A
 Signer names, phones and care-of fields are never read. Rows cite the filing by form, plan-year end and ACK_ID (a named
 source: V-66 does not apply). Stdlib only.
 """
-import csv, hashlib, importlib.util, io, json, re, sys, zipfile
+import csv, hashlib, importlib.util, io, json, re, subprocess, sys, zipfile
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -70,8 +70,8 @@ def frame(repo):
     return orgs, eins
 
 
-def filings(fdir, names, eins):
-    """Yield filings whose sponsor name/DBA key is wanted or whose EIN is wanted (never reads signer/phone/care-of)."""
+def filings(fdir, names, eins, acks=()):
+    """Yield filings whose sponsor name/DBA key, EIN or ACK_ID is wanted (never reads signer/phone/care-of)."""
     sha = {}
     for z in sorted(Path(fdir).glob("F_5500_*_Latest.zip")):
         kind = "5500-SF" if "_SF_" in z.name else "5500"
@@ -90,12 +90,13 @@ def filings(fdir, names, eins):
                     continue
                 ein = re.sub(r"\D", "", g(row, sp["ein"]))
                 keys = {name_key(g(row, sp["name"])), name_key(g(row, sp["dba"]))}
-                if not (keys & names or ein in eins):
+                if not (keys & names or ein in eins or g(row, sp["ack"]) in acks):
                     continue
                 yield dict(kind=kind, zip=z.name, sha=sha[z.name], ack=g(row, sp["ack"]), ein=ein, name=g(row, sp["name"]),
                            dba=g(row, sp["dba"]), keys=keys, active=spine.num(g(row, sp["active"])), final=g(row, sp["final"]),
                            plan_num=g(row, sp["plan"]), end=g(row, TAX_PRD[kind]),
-                           loc=(g(row, sp["loc"][2]), g(row, sp["loc"][3]).upper()), mail=(g(row, sp["mail"][2]), g(row, sp["mail"][3]).upper()))
+                           loc=(g(row, sp["loc"][2]), g(row, sp["loc"][3]).upper()), mail=(g(row, sp["mail"][2]), g(row, sp["mail"][3]).upper()),
+                           loc_street=g(row, sp["loc"][0]), mail_street=g(row, sp["mail"][0]))
 
 
 def in_hq(f, o):
@@ -220,6 +221,100 @@ def match(repo, fdir):
           f"({dict(Counter(p['claim_type'] for p in packet))}); tiers {dict(Counter(b['atlas']['verification_tier'] for b in bundle))}")
 
 
+HQ_TYPE = re.compile(r"hq|headquarters", re.I)
+ORIGINAL = HERE / "packet_rows_2026-11-20.csv"
+DROP_WHY = "organization evidenced since 2026-11-20"
+
+
+def hq_streets(repo, orgs):
+    """org_id -> {site_id: street} for ACTIVE sites whose site_type says HQ and whose city/state are the org's HQ city/state.
+    Organization records carry no street field; an HQ site's street_address is the Atlas's recorded HQ street."""
+    out = defaultdict(dict)
+    for f in sorted((Path(repo) / "data").glob("sites_*.csv")):
+        for s in rd(f):
+            o = orgs.get(s["org_id"])
+            if (o and s["operating_status"] == "active" and HQ_TYPE.search(s["site_type"]) and s["street_address"].strip()
+                    and (city_key(s["city"]), s["state"].strip().upper()) == (city_key(o["hq_city"]), o["hq_state"].strip().upper())):
+                out[s["org_id"]][s["site_id"]] = s["street_address"].strip()
+    return out
+
+
+def street_test(f, where, sites):
+    """('SAME'|'DIFFERENT'|'NO_HQ_STREET'|'NO_FILING_STREET'|'PO_BOX_OR_NO_NUMBER', settling fact). The filing's street (location if it
+    governs, else mailing) must equal, under atlas.street_key, the street of an Atlas HQ site in the HQ city."""
+    street = f["loc_street"] if where == "location" else f["mail_street"]
+    if not street or "@" in street:
+        return "NO_FILING_STREET", "the filing's street line is empty or not a street"
+    if spine.pobox(street):
+        return "PO_BOX_OR_NO_NUMBER", f"the filing's street line is a post-office box or has no street number ('{street}')"
+    if not sites:
+        return "NO_HQ_STREET", f"the Atlas holds no active HQ site with a street in the HQ city; the filing says '{street}'"
+    for sid, st in sorted(sites.items()):
+        if atlas.street_key(st) == atlas.street_key(street):
+            return "SAME", f"{sid}: '{st}'"
+    return "DIFFERENT", f"filing street '{street}' vs Atlas HQ site street " + "; ".join(f"{sid} '{st}'" for sid, st in sorted(sites.items()))
+
+
+def cut(repo, fdir):
+    """2026-11-22 owner cut ('Cut to what's new'): keep every row on an organization that still has no evidence row in
+    data/evidence_organizations_*.csv, plus every liveness row; drop the other organizations' existence/address rows;
+    hold a kept address row unless the filing's street equals an Atlas HQ site street."""
+    repo = Path(repo)
+    orig = rd(ORIGINAL)
+    led = {l["org_id"]: l for l in rd(HERE / "ledger.csv")}
+    orgs = {o["org_id"]: o for f in sorted((repo / "data").glob("organizations_*.csv")) for o in rd(f)}
+    evidenced = {r["record_id"].strip() for f in (repo / "data").glob("evidence_organizations_*.csv") for r in rd(f)
+                 if r["created_by"] != CREATED_BY}
+    lane = sorted({r["record_id"] for r in orig})
+    zero = {o for o in lane if o not in evidenced and orgs.get(o, {}).get("status") == "active"}
+    sites = hq_streets(repo, {o: orgs[o] for o in lane})
+    acks = {led[o]["ack_id"] for o in lane}
+    fil = {f["ack"]: f for f in filings(fdir, set(), set(), acks)}
+    kept, dropped, held, bundle = [], [], [], []
+    stats = Counter()
+    for r in orig:
+        o, l = r["record_id"], led[r["record_id"]]
+        f = fil.get(l["ack_id"])
+        same = f and (f["ein"], f["name"], f["end"], "" if f["active"] is None else str(f["active"]), f["final"]) == (
+            l["filing_eins"], l["sponsor"], l["plan_year_end"], str(l["active"]), l["final"])
+        if r["claim_type"] != "liveness" and o not in zero:
+            dropped.append(dict(r, reason=DROP_WHY if orgs.get(o, {}).get("status") == "active" else
+                                "organization evidenced since 2026-11-20 or no longer active")); continue
+        if not same:
+            held.append(dict(r, reason=f"the filing ACK_ID {l['ack_id']} is absent or changed in the 2026-11-22 EFAST2 files; "
+                                       "re-run the match before review")); continue
+        if r["claim_type"] == "address":
+            where = in_hq(f, orgs[o])
+            verdict, fact = street_test(f, where, sites.get(o, {}))
+            stats[verdict] += 1
+            if verdict != "SAME":
+                held.append(dict(r, reason=f"{verdict}: {fact}")); continue
+            r = dict(r, claim_detail=r["claim_detail"] + f"; the street matches the Atlas HQ site {fact}"
+                     f" (filing street '{f['loc_street'] if where == 'location' else f['mail_street']}')")
+        kept.append(r)
+    assert len(kept) + len(dropped) + len(held) == len(orig), (len(kept), len(dropped), len(held), len(orig))
+    flds = list(orig[0])
+    wr(HERE / "packet_rows.csv", kept, flds)
+    wr(HERE / "dropped_rows.csv", dropped, flds + ["reason"])
+    wr(HERE / "held_rows.csv", held, flds + ["reason"])
+    kept_orgs = {r["record_id"] for r in kept}
+    old = {b["record_id"]: b for b in json.loads((HERE / "review_bundle_2026-11-20.json").read_text(encoding="utf-8"))}
+    for oid in sorted(kept_orgs):
+        b, f = old[oid], fil[led[oid]["ack_id"]]
+        mine = {r["claim_type"]: r for r in kept if r["record_id"] == oid}
+        bundle.append(dict(b, filing=dict(b["filing"], location_street=f["loc_street"], mailing_street=f["mail_street"]),
+                           atlas_hq_site_streets=sites.get(oid, {}), evidence_status="none" if oid in zero else "evidenced elsewhere; liveness row only",
+                           proposed={k: {"tier_effect": v["tier_effect"], "observed_date": v["observed_date"], "claim_detail": v["claim_detail"]}
+                                     for k, v in mine.items()}))
+    (HERE / "review_bundle.json").write_text(json.dumps(bundle, indent=1, ensure_ascii=False), encoding="utf-8")
+    print(f"commit {subprocess.run(['git', '-C', str(repo), 'rev-parse', '--short', 'HEAD'], capture_output=True, text=True).stdout.strip()}: "
+          f"{len(lane)} lane organizations, {len(zero)} with no evidence row in data/evidence_organizations_*.csv "
+          f"(excluding this lane's own); original packet {len(orig)} rows -> kept {len(kept)} {dict(Counter(r['claim_type'] for r in kept))}, "
+          f"dropped {len(dropped)} {dict(Counter(r['claim_type'] for r in dropped))}, held {len(held)} "
+          f"{dict(Counter(h['reason'].split(':')[0] for h in held))}; address street test on zero-evidence orgs {dict(stats)}; "
+          f"kept rows on {len(kept_orgs)} orgs; filings found {len(fil)} of {len(acks)}")
+
+
 def plant(repo, fdir):
     """(1) score each witnessed org's names against ANOTHER org's HQ city/state (rotated); (2) give each EIN-linked org
     the next EIN-linked org's EINs. Expect 0 witnesses from each."""
@@ -271,6 +366,8 @@ if __name__ == "__main__":
     m = sys.argv[1]
     if m == "match":
         match(sys.argv[2], sys.argv[3])
+    elif m == "cut":
+        cut(sys.argv[2], sys.argv[3])
     elif m == "plant":
         sys.exit(1 if plant(sys.argv[2], sys.argv[3]) else 0)
     else:

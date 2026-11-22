@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Append the Form 5500-lane rows the review families judged SOUND, then shrink V-65/V-68 by the orgs they evidence.
 
-    python3 tasks/evidence-form5500-orgs-2026-11-20/apply.py . --start EVD-410701 --codex c1.json c2.json [--agy a1.json a2.json]
+    python3 tasks/evidence-form5500-orgs-2026-11-20/apply.py . --start EVD-480100 --codex c1.json c2.json [--agy a1.json a2.json]
 
-Reviews are HELD until at least 2026-11-22 (owner, 2026-11-20). With --agy, a row applies only if both families judged
+The packet is the 2026-11-22 cut (owner: "Cut to what's new"). IDs come from this lane's reserved range
+EVD-480100..480999 and must lie above the tree maximum. A non-liveness row applies only to an organization that still has
+no evidence row of any other lane. With --agy, a row applies only if both families judged
 it SOUND (the standing two-family rule). Without it, Codex alone gates the lane under the owner's waiver of 2026-11-20
 ("Codex-only for now"), and each applied row's notes say so. Each family's files must cover every packet row. An org
 whose `existence` row a family rejected loses all its rows. IDs ascend from --start and must be absent tree-wide; rows
@@ -44,7 +46,13 @@ for name, v in fams.items():
     assert not miss, f"{name}: {len(miss)} packet rows have no verdict, e.g. {miss[:3]}"
 sound = lambda k: all(v[k]["verdict"] == "SOUND" for v in fams.values())
 bad = {r["record_id"] for r in packet if r["claim_type"] == "existence" and not sound((r["record_id"], "existence"))}
-used = {r["evidence_id"] for f in (repo / "data").glob("evidence_*.csv") for r in rd(f)}
+ev_rows = [r for f in (repo / "data").glob("evidence_*.csv") for r in rd(f)]
+used = {r["evidence_id"] for r in ev_rows}
+assert 480100 <= start <= 480999 and start > max(int(i[4:]) for i in used), f"start {start} is outside EVD-480100..480999 or not above the tree maximum"
+assert start + len(packet) - 1 <= 480999, "packet overruns the lane's reserved EVD range"
+other_ev = {r["record_id"] for r in ev_rows if r["record_table"] == "organizations" and r["created_by"] != "claude-code-evd-form5500-lane"}
+stale = sorted({r["record_id"] for r in packet if r["claim_type"] != "liveness" and r["record_id"] in other_ev})
+assert not stale, f"packet is stale: {len(stale)} organizations with non-liveness rows now have other evidence, e.g. {stale[:3]}"
 applied, withheld, n = [], [], start
 for r in packet:
     k = (r["record_id"], r["claim_type"])
