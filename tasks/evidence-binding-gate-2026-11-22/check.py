@@ -100,6 +100,7 @@ EXPECTED = {
     'mutant.number_only_streets.caught': True,
     'mutant.parent_corporate_form.caught': True,
     'mutant.provenance_borrowed_folder.caught': True,
+    'mutant.state_as_floor.caught': True,
     'mutant.state_needs_zip.caught': True,
     'mutant.token_subset_names.caught': True,
     'mutant.web_any_domain.caught': True,
@@ -113,6 +114,7 @@ EXPECTED = {
     'pass_basis.org': 18121,
     'pass_basis.site_name_lead': 366,
     'pass_basis.site_name_other': 880,
+    'pass_site_name_is_parent': 10,
     'people.no_quote/institution_has_no_website': 35,
     'people.no_quote/off_institution_domain': 23,
     'people.no_quote/on_institution_domain': 676,
@@ -162,7 +164,9 @@ MUTANTS = {  # name: (file, original fragment, loosened replacement); each must 
     "no_unit_test": ("m", "    return any(x and y and x != y for x, y in ((units(a), units(b)), (buildings(a), buildings(b))))",
                      "    return False"),
     "no_building_test": ("m", "(buildings(a), buildings(b))))", "(units(a), units(b))))"),
-    "designator_part_dropped": ("g", "        if not DESIGNATOR_ONLY_RE.match(x):\n            break", "        break"),
+    "designator_part_dropped": ("g", "        if not designator_part(x):\n            break", "        break"),
+    "state_as_floor": ("g", "    return bool(DESIGNATOR_ONLY_RE.match(x)) and not (m and state_code(m[1]))",
+                       "    return bool(DESIGNATOR_ONLY_RE.match(x))"),
     "no_state_test": ("g", '        if q_st and rec.get("state")', '        if False and rec.get("state")'),
     "no_city_test": ("g", "        if qc and rc and not qc & rc:", "        if False:"),
     "state_needs_zip": ("g", "    st = state_code(last)\n", "    st = state_code(last) if zipped else \"\"\n"),
@@ -341,6 +345,17 @@ def main():
     print(f"batches: corporate-form names that are a recorded parent's (FAIL, Codex r2 finding 4): "
           f"{got['corporate_form_parent']}")
     finding3(q_evs, q_res, got)
+    idx_h, by_id = b.Index.load(BATCH_HEAD), {e["evidence_id"]: e for e in q_evs}
+    via_site = []  # owner question: a site-name part that is a recorded parent's name still binds (finding 4 is the
+    for r in q_res:  # corporate-form path only)
+        if r["verdict"] == "PASS" and r["name_basis"] in ("site_name_lead", "site_name_other"):
+            e = by_id[r["evidence_id"]]
+            p = b.parse_quote(e["claim_detail"].partition("quote:")[2].strip(), b.family_of(e["source_ref"]))
+            if b.name_keys(p["names"]) & idx_h.parent_keys(e["record_table"], e["record_id"]):
+                via_site.append(r["evidence_id"])
+    got["pass_site_name_is_parent"] = len(via_site)
+    print(f"batches: PASS rows whose site-name match is also a recorded parent's name: {len(via_site)} "
+          f"(e.g. {', '.join(via_site[:4])})")
     basis = Counter(r["name_basis"] for r in q_res if r["verdict"] == "PASS")
     show("batches: PASS rows by name basis (quoted form / held name that matched)", basis)
     got.update({f"pass_basis.{k}": v for k, v in basis.items()})

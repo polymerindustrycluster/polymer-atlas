@@ -233,14 +233,20 @@ def street_part(addr):
     the derivation agree and a stated suite or building reaches the designator test (Codex r2 finding 2)."""
     parts = (addr or "").split(",")
     lead = []
-    while len(parts) > 1 and DESIGNATOR_ONLY_RE.match(parts[0]):
+    while len(parts) > 1 and designator_part(parts[0]):
         lead.append(parts.pop(0))
     trail = []
     for x in parts[1:]:
-        if not DESIGNATOR_ONLY_RE.match(x):
+        if not designator_part(x):
             break
         trail.append(x)
     return ",".join(parts[:1] + lead + trail)
+
+
+def designator_part(x):
+    """A comma part that is only a suite, unit, floor or building, and not a state: "FL 33101" is Florida, not a floor."""
+    m = re.fullmatch(r"\s*([A-Za-z]{2})\.?\s*(\d[\dE-]{3,9})?\s*", x)
+    return bool(DESIGNATOR_ONLY_RE.match(x)) and not (m and state_code(m[1]))
 
 
 def quoted_place(addr):

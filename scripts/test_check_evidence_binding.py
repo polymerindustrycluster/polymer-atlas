@@ -367,6 +367,8 @@ class Verdicts(unittest.TestCase):
         self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, DAYTON, OH 45402")),
                    "FAIL", "city_differs")
         self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, DOVER, TX")), "FAIL", "state_differs")
+        self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, FL 33101")), "FAIL",
+                   "state_differs")  # "FL" after the street is Florida, not a floor
         self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, DOVER OHIO")), "PASS")
         self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, DAYTON")), "FAIL", "city_differs")
         self.check(ev("S-BLDG", OSHA, "TAMARACK RUBBER CO, 518 FENWICK GROVE RD BLDG 1, WEST FENWICK TWP, OH 44299"),
