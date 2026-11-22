@@ -37,28 +37,21 @@ run live on PR #461 and PR #462 on 2026-11-22.
 
 ## The binding-gate job (rules 2 and 3 on the PR tree)
 
-The workflow's second check run, `binding-gate`, runs main's `scripts/check_evidence_binding.py` (PR #467) three times,
-each with `--tree pr`: `--new-since <base>`, `--verify-proofs <base>` and `--provenance-since <base>`. The PR merge
-result is checked out as data into `./pr`; the trusted checkout (the base branch, `fetch-depth: 0`) supplies the code
-and the rules. Both checkouts use `persist-credentials: false`, and the job has `permissions: {}` (the repository is
-public). States: `passed` (success), `failed` and `cannot_inspect` (failure), `not_yet` ("gate not yet on main", neutral).
-Neutral counts as passing for a required check, so it is a visible grey, not a green. The job first checks that
-`pr/`'s merge commit has the current PR head as its second parent, and fails if not (a stale merge ref).
+The workflow's second check run, `binding-gate`, runs main's `scripts/check_evidence_binding.py` (PR #467, the gate for
+structured rows) twice, each with `--tree pr`: `--new-since origin/main` and `--provenance-since origin/main`. The PR
+merge result is checked out as data into `./pr`; the trusted checkout (the base branch, `fetch-depth: 0`) supplies the code
+and the rules. **Nothing from the PR tree is executed**, so the job needs no isolation: it has `permissions: {}` (the
+repository is public) and both checkouts use `persist-credentials: false`. A separate job, which runs no PR code,
+holds `checks: write` and publishes the result. The job fails if the merge commit's second parent is not the current PR
+head (a stale merge ref).
 
-**Network isolation, measured 2026-11-22 on throwaway runs** (branch deleted afterwards): on `ubuntu-latest` (now Ubuntu
-26.04) and `ubuntu-24.04`, `unshare -rn` is REFUSED (`kernel.apparmor_restrict_unprivileged_userns = 1`); on
-`ubuntu-22.04` it works. `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0` makes it work on both newer
-images, and inside it a connection to 1.1.1.1:53 fails (errno 101) where outside it connects. Docker with
-`--network none` also works, but the default seccomp profile blocks `unshare -rn` inside the container (needs
-`--security-opt seccomp=unconfined`), so the container route would weaken the isolation more than the sysctl does. **Route
-used: the sysctl on a pinned `ubuntu-24.04` job.** There is no skip path: if `unshare -rn` still fails, the gate's
-provenance step exits 2 and the job says `cannot_inspect` (failure). Cost of the route: the ephemeral runner VM allows
-unprivileged user namespaces for the rest of the job, a larger kernel attack surface for the PR's `check.py`; the job
-holds no token and no secret, and the VM is discarded.
-
-A separate job, which runs no PR code, holds `checks: write` and publishes the result. `TestBindingGateJob` pins these
-properties in the workflow text. **Not verified:** the gate steps themselves have not run on a runner (the script is not
-on `main` until #467 merges); only the isolation measurement above was run for real.
+States: `passed` (success); `failed` and `cannot_inspect` (failure; the latter when main's script lacks a mode or exits
+2); `not_yet`. **`not_yet` is the one pass that checked nothing:** until `scripts/check_evidence_binding.py` is on `main`
+the check run says "gate not yet on main: nothing was checked" and posts success, because the gate cannot judge the PR
+that adds it, and a failure would block that PR. Nothing is neutral and nothing is skipped: a step that cannot run its
+check fails. Web-row proofs (`--verify-proofs`) and anything that executes PR files come in a later PR with their own
+step. `TestBindingGateJob` pins these properties in the workflow text. **Not verified:** the gate steps have not run on
+a runner (the script is not on `main` until #467 merges).
 
 ## Counterexamples from Codex's round 1 on PR #466 (each is now a test)
 

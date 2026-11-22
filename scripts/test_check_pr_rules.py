@@ -325,18 +325,19 @@ class TestBindingGateJob(unittest.TestCase):
         for bad in ("GH_TOKEN", "github.token", "secrets.", "GITHUB_TOKEN", "checks: write"):
             self.assertNotIn(bad, self.job)
 
-    def test_pr_is_checked_out_as_data_into_pr_and_main_runs_the_gate_on_it(self):
+    def test_pr_is_checked_out_as_data_into_pr_and_main_runs_exactly_two_gate_modes(self):
         self.assertIn("ref: refs/pull/${{ env.PR }}/merge", self.job)
         self.assertIn("path: pr", self.job)
-        self.assertIn("for mode in --new-since --verify-proofs --provenance-since", self.job)
+        self.assertIn("for mode in --new-since --provenance-since; do", self.job)
         self.assertIn('scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr', self.job)
         self.assertIn("gate not yet on main", self.job)
-        self.assertNotIn("python3 pr/", self.job)  # nothing is run from the PR tree except by the gate's own isolation
+        self.assertNotIn("python3 pr/", self.job)  # nothing is run from the PR tree
+        self.assertIn("fetch-depth: 0", self.job)
 
-    def test_unshare_must_work_and_there_is_no_skip_path(self):
-        self.assertIn("kernel.apparmor_restrict_unprivileged_userns=0", self.job)
-        self.assertIn("runs-on: ubuntu-24.04", self.job)
-        self.assertNotIn("skipped", self.job.lower())
+    def test_no_isolation_probe_no_proof_fetch_no_neutral_result(self):
+        for bad in ("verify-proofs", "unshare", "docker", "sysctl", "setpriv", "skipped", "neutral"):
+            self.assertNotIn(bad, self.job.lower())
+        self.assertNotIn("neutral", self.text.lower().replace("never neutral", ""))
 
     def test_only_the_publish_job_holds_a_token(self):
         self.assertIn("checks: write", self.publish)

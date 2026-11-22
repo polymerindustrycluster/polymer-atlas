@@ -40,14 +40,11 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
 
   The same workflow has a second check run, `binding-gate` (rules 2 and 3): when `scripts/check_evidence_binding.py`
   exists on `main`, the job checks out the PR merge result as data into `./pr` (both checkouts with
-  `persist-credentials: false`, job `permissions: {}`) and runs main's script with `--tree pr`: `--new-since`,
-  `--verify-proofs` and `--provenance-since`, each against the base branch. Until the script is on `main` the check run is
-  neutral and says "gate not yet on main". The provenance step executes one PR-supplied file,
-  `tasks/<folder>/check.py`, inside the gate's own `unshare -rn` (no network) and refuses to run without it. GitHub's
-  `ubuntu-24.04` and later refuse unprivileged user namespaces by default (measured 2026-11-22), so the job pins
-  `ubuntu-24.04` and sets `kernel.apparmor_restrict_unprivileged_userns=0` first; if `unshare -rn` still fails the result
-  is `cannot_inspect` (failure), never a skip. A separate job, which never touches PR code, posts the result. Require
-  `binding-gate` in the ruleset as well as `pr-rules`.
+  `persist-credentials: false`, job `permissions: {}`; nothing from the PR tree is executed) and runs main's script
+  twice with `--tree pr`: `--new-since origin/main` and `--provenance-since origin/main`. Until the script is on `main`
+  the check run says "gate not yet on main: nothing was checked" and passes; every other step that cannot run its check
+  fails. A separate job, which never touches PR code, posts the result. Require `binding-gate` in the ruleset as well as
+  `pr-rules`.
 
   Every check prints what it inspected and what it could not; whatever it could not inspect, including a failed read of
   a tracked git object, fails the run. Rules 2 and 3 are `scripts/check_evidence_binding.py`, documented with that

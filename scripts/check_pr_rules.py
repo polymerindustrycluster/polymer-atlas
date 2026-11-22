@@ -412,12 +412,12 @@ def post_check(head_sha, rc, text, name="pr-rules", conclusion=None):
     return r.returncode == 0
 
 
-GATE_STATES = {"passed": "success", "not_yet": "neutral", "failed": "failure", "cannot_inspect": "failure"}
+GATE_STATES = {"passed": "success", "not_yet": "success", "failed": "failure", "cannot_inspect": "failure"}
 
 
 def publish_gate(dirpath, pr_number):
     """Post the binding-gate job's result (head, state, log files in `dirpath`) as the check run `binding-gate`.
-    `not_yet` (the gate is not on main) is neutral: visibly not a pass."""
+    `not_yet` (the gate is not on main, so nothing was checked) posts success with that stated in the summary; nothing is neutral."""
     d = Path(dirpath)
     head, state = (d / "head").read_text().strip(), (d / "state").read_text().strip()
     log = (d / "log").read_text(errors="replace") if (d / "log").exists() else ""

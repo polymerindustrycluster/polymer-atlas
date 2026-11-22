@@ -9,13 +9,11 @@
 # The result is published as a check run named `pr-rules` on the PR head, which is the check the ruleset requires.
 # It is evaluated again on every PR event and on every PR comment created, edited or deleted, selected by PR number.
 #
-# Second check run, `binding-gate`: main's scripts/check_evidence_binding.py (--new-since, --verify-proofs,
-# --provenance-since, each with --tree pr) judges the PR merge result, checked out as data into ./pr. The gate's
-# provenance step executes one PR-supplied file (tasks/<folder>/check.py) on a copy, with a stripped environment, inside
-# `unshare -rn` (no network); it refuses to run without that, so an unusable namespace is `cannot_inspect` (failure),
-# never a skip. That job has `permissions: {}`, and both checkouts use persist-credentials: false. If the script is not
-# on main yet, the check run says "gate not yet on main" (neutral). A separate job publishes the result, so the job
-# that runs PR code never holds a token.
+# Second check run, `binding-gate`: main's scripts/check_evidence_binding.py (--new-since and --provenance-since, each
+# with --tree pr) judges the PR merge result, checked out as data into ./pr. The gate executes nothing from the PR
+# tree. The job has `permissions: {}`, and both checkouts use persist-credentials: false. If the script is not on main
+# yet, the check run says "gate not yet on main: nothing was checked" and passes (the gate cannot judge the PR that
+# adds it); a step that cannot run its check fails, never neutral. A separate job publishes the result.
 name: pr-rules
 
 on:
@@ -50,7 +48,7 @@ jobs:
 
   binding-gate:
     if: github.event_name == 'pull_request_target' || github.event.issue.pull_request
-    runs-on: ubuntu-24.04  # pinned: unprivileged user namespaces are refused on 24.04 and later until the sysctl step below
+    runs-on: ubuntu-latest
     timeout-minutes: 40
     permissions: {}
     env:
@@ -61,12 +59,12 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: actions/checkout@v4  # the PR merge result, as DATA in ./pr; nothing in it is run except the gate's own isolated check.py
+      - uses: actions/checkout@v4  # the PR merge result, as DATA in ./pr; nothing in it is executed
         with:
           ref: refs/pull/${{ env.PR }}/merge
           path: pr
           fetch-depth: 2
-          persist-credentials: false  # no token in pr/.git/config: the provenance step executes a PR-supplied check.py
+          persist-credentials: false  # no token in pr/.git/config
       - name: Pin the PR head the result is about
         run: |
           set -eu
@@ -75,20 +73,16 @@ jobs:
           head=$(git rev-parse "refs/remotes/pr/$PR")
           [ "$(git -C pr rev-parse HEAD^2)" = "$head" ] || { echo "merge ref is not the current PR head: stale, failing"; exit 1; }
           echo "$head" > "$out/head"
-      - name: Allow unprivileged user namespaces (the gate runs check.py inside unshare -rn)
-        run: |
-          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 || true
-          unshare -rn true && echo "unshare -rn works" || echo "unshare -rn refused: the provenance step will exit 2"
       - name: Run main's binding gate on the PR tree
         run: |
           set -u
           out=/tmp/gate-out; log="$out/log"; : > "$log"
           if [ ! -f scripts/check_evidence_binding.py ]; then
-            echo "gate not yet on main (scripts/check_evidence_binding.py is absent): nothing run, passes" | tee -a "$log"
+            echo "gate not yet on main (scripts/check_evidence_binding.py is absent): nothing was checked" | tee -a "$log"
             echo not_yet > "$out/state"; exit 0
           fi
           worst=0
-          for mode in --new-since --verify-proofs --provenance-since; do
+          for mode in --new-since --provenance-since; do
             echo "== python3 scripts/check_evidence_binding.py $mode $BASE --tree pr" | tee -a "$log"
             if ! python3 scripts/check_evidence_binding.py --help 2>&1 | grep -q -- "$mode"; then
               echo "main's gate has no $mode: cannot inspect" | tee -a "$log"; r=2
