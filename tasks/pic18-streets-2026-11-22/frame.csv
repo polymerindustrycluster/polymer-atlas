@@ -1,0 +1,122 @@
+site_id,org_id,org_name,site_name,site_type,city,zip,county,tier,website,org_sites_in_frame,shuffle_rank,canary
+SITE-000008,ORG-000009,Myers Industries Inc.,Myers Industries — Akron HQ,hq_and_plant,Akron,44301,Summit,B,https://www.myersindustries.com,1,7,1
+SITE-000013,ORG-000014,"D & D Plastics, Inc.","D & D Plastics, Inc. — Akron",hq_only,Akron,,Summit,C,none_found,1,41,0
+SITE-000014,ORG-000015,Diamond America Corporation,Diamond America — Akron,manufacturing_plant,Akron,,Summit,A,https://daextrusion.com,1,109,0
+SITE-000026,ORG-000027,The Hygenic Corp.,The Hygenic Corp. — Akron,manufacturing_plant,Akron,44221,Summit,C,https://www.hygenic.com,1,29,0
+SITE-000032,ORG-000032,"Acme Pattern Works, Inc.","Acme Pattern Works, Inc. — Akron",tool_shop,Akron,,Summit,C,none_found,1,114,0
+SITE-000036,ORG-000036,Win Plastic Extrusions LLC,Win Plastic Extrusions LLC — Akron,manufacturing_plant,Akron,,Summit,C,https://extrudedplastics.com,1,54,0
+SITE-000040,ORG-000040,Spectrum Plastics Corp.,Spectrum Plastics Corp. — Akron,manufacturing_plant,Akron,,Summit,C,https://splastics.com,1,33,0
+SITE-000042,ORG-000042,"Multibase, Inc.","Multibase, Inc. — Akron",manufacturing_plant,Akron,44321,Summit,C,https://dupont.com/multibase-family.html,1,113,0
+SITE-000054,ORG-000054,"Americhem, Inc.","Americhem, Inc. — Cuyahoga Falls",hq_and_plant,Cuyahoga Falls,44310,Summit,C,https://americhem.com,1,60,0
+SITE-000056,ORG-000056,CF Extrusion Technologies,CF Extrusion Technologies — Cuyahoga Falls,hq_only,Cuyahoga Falls,,Summit,A,https://cfextrusion.com,1,25,1
+SITE-000066,ORG-000066,"Custom Plastic Extrusions, Ltd.","Custom Plastic Extrusions, Ltd. — Hudson",manufacturing_plant,Hudson,,Summit,C,none_found,1,37,0
+SITE-000067,ORG-000067,R.C. Graham Co. LLC (dba Hand-Tite),Taylor Made Pipe Plugs — Hudson,manufacturing_plant,Hudson,,Summit,C,https://hand-tite.com,1,63,0
+SITE-000078,ORG-000078,Giesecke+Devrient America,Giesecke+Devrient America — Twinsburg,manufacturing_plant,Twinsburg,,Summit,B,https://gi-de.com,1,72,0
+SITE-000092,ORG-000092,Ohio Rubber Group,Ohio Rubber Group — Hudson,hq_only,Hudson,44236,Summit,B,https://ohiorubbergroup.org,1,56,0
+SITE-000106,ORG-000107,T&M Plastics Co.,T&M Plastics Co. — Cleveland,manufacturing_plant,Cleveland,,Cuyahoga,B,http://www.tmplasticsusa.com,1,23,1
+SITE-000115,ORG-000116,AMD Plastics,AMD Plastics — Euclid,hq_only,Euclid,,Cuyahoga,A,https://www.amdplastics.com/,1,26,0
+SITE-000123,ORG-000124,Prime Conduit Inc.,Prime Conduit — Beachwood,hq_only,Beachwood,,Cuyahoga,B,https://primeconduit.com,1,8,1
+SITE-000136,ORG-000136,Roto Polymers,Roto Polymers — Warrensville Heights,manufacturing_plant,Warrensville Heights,,Cuyahoga,A,https://rotopolymers.com,1,90,0
+SITE-000147,ORG-000147,Chem-Materials Co.,Chem-Materials — Westlake,warehouse_distribution,Westlake,,Cuyahoga,C,https://www.chem-materials.com/,1,32,0
+SITE-000148,ORG-000148,WV International,WV International — Strongsville,warehouse_distribution,Strongsville,,Cuyahoga,C,https://wvintl.com,1,2,1
+SITE-000150,ORG-000150,"NSL Analytical Services, Inc.",NSL Analytical Services — Warrensville Heights,lab_testing,Warrensville Heights,44128,Cuyahoga,B,http://nslanalytical.com/,1,51,0
+SITE-000155,ORG-000155,Eaton Corporation,Eaton — Beachwood,hq_only,Beachwood,44100,Cuyahoga,C,https://www.eaton.com,1,108,0
+SITE-000158,ORG-000158,Cleveland State University,Cleveland State University — Cleveland,campus,Cleveland,44114,Cuyahoga,A,https://www.csuohio.edu,1,6,1
+SITE-000188,ORG-000181,SpringSeal Inc.,SpringSeal — Streetsboro,manufacturing_plant,Streetsboro,,Portage,C,http://www.springsealinc.com/,1,68,0
+SITE-000199,ORG-000192,Triangle Chemical Co.,Triangle Chemical — Mentor,warehouse_distribution,Mentor,,Lake,B,http://trianglechem.com/,1,31,0
+SITE-000204,ORG-000197,Kenda American Technology Center,Kenda American Technology Center — Green,rd_center,Green,44720,Summit,B,https://www.kendatire.com/,1,40,0
+SITE-000210,ORG-000050,"Synthomer, Inc.",Synthomer — Akron,manufacturing_plant,Akron,,Summit,C,https://synthomer.com,1,50,0
+SITE-000220,ORG-000207,A.R.E. Accessories,A.r.e. Accessories — Massillon,manufacturing_plant,Massillon,44646,Stark,A,https://realtruck.com/,2,76,0
+SITE-000243,ORG-000229,"American Molded Plastic, Inc.","American Molded Plastic, Inc. — Newton Falls",tool_shop,Newton Falls,44444,Trumbull,C,https://americanmoldedplastic.com/,1,83,0
+SITE-000255,ORG-000239,The B.B. Bradley Company,The B.B. Bradley Company — Painesville,manufacturing_plant,Painesville,,Lake,C,https://bbbradley.com/,1,103,0
+SITE-000256,ORG-000240,"Baker Plastics, Inc.",Baker Plastics — Youngstown,manufacturing_plant,Youngstown,44502,Mahoning,C,https://www.bakerplastics.com/,1,119,0
+SITE-000292,ORG-000273,"ChemSpec, Ltd.",ChemSpec — Canton,warehouse_distribution,Canton,44718,Stark,C,https://www.safic-alcan.com/en-us/,1,17,1
+SITE-000297,ORG-000278,Silgan Dispensing,"Cobra Plastics, Inc. — Macedonia",tool_shop,Macedonia,44056,Summit,C,https://www.silgandispensing.com/,1,24,1
+SITE-000308,ORG-000289,"Corrosion Resistant Technologies, Inc.","Corrosion Resistant Technologies, Inc. — Chagrin Falls",manufacturing_plant,Chagrin Falls,,Geauga,C,https://www.corrosionresistanttech.com/,1,97,0
+SITE-000362,ORG-000340,"Flambeau, Inc.",Flambeau Sharon Center Plant,manufacturing_plant,Wadsworth,44281,Medina,B,https://www.flambeau.com/,1,62,0
+SITE-000373,ORG-000349,Full Circle Technologies,Full Circle Technologies — Barberton,hq_only,Barberton,44203,Summit,C,https://fullcircle-tech.com,1,80,0
+SITE-000425,ORG-000396,JK Plastics,JK Plastics — Middlefield,manufacturing_plant,Middlefield,,Geauga,C,https://jkplasticsllc.com/,1,92,0
+SITE-000456,ORG-000426,MacDivitt Rubber Co. LLC,"Mac Divitt Rubber Co., LLC — North Perry",manufacturing_plant,North Perry,44081,Lake,A,https://www.macdivittrubber.com/,1,20,1
+SITE-000501,ORG-000469,"Northeastern Plastics International, Inc.","Northeastern Plastics International, Inc — Canton",manufacturing_plant,Canton,44707,Stark,C,https://northeasternplastics.com/,1,100,0
+SITE-000519,ORG-000485,"Perry Fiberglass Products, Inc.",Perry Fiberglass OH — Elyria,manufacturing_plant,Elyria,44035,Lorain,C,https://www.perryfiberglass.com/,1,16,1
+SITE-000524,ORG-000490,Philpott Solutions Group,Philpott Rubber Extrusions — Mogadore,manufacturing_plant,Mogadore,,Portage,C,https://philpottsolutions.com/,1,12,1
+SITE-000527,ORG-004564,Preformed Line Products Company,Pilot Plastics — Peninsula,manufacturing_plant,Peninsula,,Summit,C,,1,34,0
+SITE-000562,ORG-000526,Profile Rubber Corp.,"Profile Rubber Corp., Inc. — Wadsworth",recycling_facility,Wadsworth,44281,Medina,C,https://profilerubber.com/,1,9,1
+SITE-000577,ORG-000541,"R.D. Abbott Company, Inc.",RD Abbott Company — Barberton,warehouse_distribution,Barberton,44203,Summit,C,https://rdabbott.com/,1,91,0
+SITE-000761,ORG-000665,"Amcor Flexibles North America, Inc.","Venture Packaging, Inc.",manufacturing_plant,Monroeville,,Huron,C,https://www.amcor.com/,2,70,0
+SITE-001150,ORG-001065,"R & S Technologies, Inc.","R & S Technologies, Inc. — Bellevue",manufacturing_plant,Bellevue,,Huron,C,http://www.r-s-t-inc.com/,1,15,1
+SITE-001296,ORG-001197,Engineered Plastic Components,Wilbert Plastic Services — Bellevue,tool_shop,Bellevue,44811,Huron,C,https://www.epcmfg.com/,1,101,0
+SITE-001392,ORG-000030,"Piedmont Plastics, Inc.","Piedmont Plastics, Inc. — Youngstown",warehouse_distribution,Youngstown,,Mahoning,C,https://piedmontplastics.com,1,87,0
+SITE-001420,ORG-001381,Hyload Inc.,Hyload Inc. — Wadsworth,manufacturing_plant,Wadsworth,44281,Medina,B,https://www.hyload.com/,1,36,0
+SITE-001435,ORG-000665,"Amcor Flexibles North America, Inc.",Amcor — Aurora (PVC Stretch Film),manufacturing_plant,Aurora,,Portage,B,https://www.amcor.com/,2,117,0
+SITE-001440,ORG-001397,PolyKinetix,PolyKinetix — Massillon,recycling_facility,Massillon,44746,Stark,B,https://polykinetix.com,1,89,0
+SITE-001441,ORG-001398,"Smithers Medical Products, Inc.",Smithers Medical Products — North Canton,manufacturing_plant,North Canton,,Stark,B,https://smithersmedicalproducts.com/,1,99,0
+SITE-001455,ORG-001409,American Bath Group,American Bath Group — Salem,manufacturing_plant,Salem,44460,Columbiana,B,https://americanbathgroup.com/,1,45,0
+SITE-001473,ORG-001426,Techniplas US LLC,Techniplas US LLC dba NEXXTA — Mansfield,manufacturing_plant,Mansfield,44903,Richland,B,,1,27,0
+SITE-001483,ORG-001435,"Meese, Inc.",Meese (MODRoto) — Ashtabula,manufacturing_plant,Ashtabula,,Ashtabula,B,https://modroto.com,1,3,1
+SITE-001503,ORG-001452,"dlhBOWLES, Inc.",dlhBOWLES — Canton,manufacturing_plant,Canton,44706,Stark,B,,1,107,0
+SITE-001504,ORG-001453,Flow Polymers LLC,Flow Polymers — Cleveland,manufacturing_plant,Cleveland,44108,Cuyahoga,B,,1,53,0
+SITE-001509,ORG-001458,Polyram USA,Polyram USA — Avon,manufacturing_plant,Avon,44011,Lorain,B,,1,71,0
+SITE-001528,ORG-001469,"FDIE, LLC","FDIE, LLC — Cleveland",manufacturing_plant,Cleveland,44110,Cuyahoga,B,,1,69,0
+SITE-001545,ORG-001479,O2 RegenTech LLC,O2 RegenTech - Akron,rd_center,Akron,,Summit,C,http://www.o2regentech.com,1,49,0
+SITE-001569,ORG-001505,VisionAir Solutions,VisionAir Solutions — Akron,manufacturing_plant,Akron,44306,Summit,C,https://visionairsolutions.com/,1,93,0
+SITE-001572,ORG-001508,ICHOR VASCULAR INC,ICHOR VASCULAR INC — Brecksville,manufacturing_plant,Brecksville,44141,Cuyahoga,C,https://ichorvascular.com/,1,13,1
+SITE-001575,ORG-001511,Beacon Biosignals,Beacon Biosignals — Cleveland,manufacturing_plant,Cleveland,44103,Cuyahoga,C,https://clevemed.com/,1,11,1
+SITE-001614,ORG-001549,STERIS Corporation,STERIS Corporation — Mentor,manufacturing_plant,Mentor,44060,Lake,B,https://steris.com/,2,106,0
+SITE-001615,ORG-001549,STERIS Corporation,STERIS Corporation — Mentor,manufacturing_plant,Mentor,44060,Lake,B,https://steris.com/,2,120,0
+SITE-001624,ORG-001558,"Myrava, LLC","Myrava, LLC — Parma",manufacturing_plant,Parma,44130,Cuyahoga,C,https://myrava.com/,1,46,0
+SITE-001650,ORG-001579,CartierWilson LLC,CartierWilson LLC — Solon,sales_office,Solon,44139,Cuyahoga,A,https://cartierwilson.com/,1,94,0
+SITE-001652,ORG-001581,ePac Flexible Packaging,ePac Flexible Packaging — Solon,manufacturing_plant,Solon,,Cuyahoga,B,https://epacflexibles.com/,1,98,0
+SITE-001665,ORG-001593,Amros Industries Inc,Amros Industries Inc — Cleveland,manufacturing_plant,Cleveland,,Cuyahoga,B,https://clamshellusa.com/,1,18,1
+SITE-001670,ORG-001598,J B Jewitt Co Inc,J B Jewitt Co Inc — Cleveland,manufacturing_plant,Cleveland,,Cuyahoga,B,https://homesteadfinishingproducts.com/,1,48,0
+SITE-001676,ORG-000207,A.R.E. Accessories,A.R.E. Accessories — Mount Eaton,manufacturing_plant,Mount Eaton,,Wayne,C,https://realtruck.com/,2,81,0
+SITE-001708,ORG-001635,EAGLE PLASTICS GROUP,EAGLE PLASTICS GROUP — North Canton,manufacturing_plant,Green,,Summit,A,http://www.eagleplasticsgroup.com/,1,28,0
+SITE-001718,ORG-001644,RPM INDUSTRIES,RPM INDUSTRIES — Elyria,manufacturing_plant,Elyria,,Lorain,B,https://www.rpmindinc.com/,1,121,0
+SITE-001731,ORG-001655,C4 Polymers Inc,C4 Polymers Inc — Chagrin Falls,manufacturing_plant,Chagrin Falls,,Geauga,B,https://c4poly.com/,1,64,0
+SITE-001774,ORG-001698,Prime Engineered Plastics,Prime Engineered Plastics,manufacturing_plant,Canton,,Stark,B,https://www.prime-plastics.com/,1,79,0
+SITE-001777,ORG-001701,Cru Performance Coatings LLC,Cru Performance Coatings LLC,manufacturing_plant,Cleveland,,Cuyahoga,B,https://www.continentalpaints.com/,1,58,0
+SITE-001784,ORG-001708,ECM Performance Materials Corp,ECM Performance Materials Corp,manufacturing_plant,Medina,,Medina,C,ecmpmc.com,1,84,0
+SITE-001786,ORG-001710,Herbert USA Inc,Herbert USA Inc,hq_only,Akron,,Summit,B,none found,1,86,0
+SITE-001793,ORG-001717,"FlexLink, LLC","FlexLink, LLC",manufacturing_plant,Cleveland,18222,Cuyahoga,B,flexlinkllc.com,1,115,0
+SITE-001795,ORG-001719,"Pyramid Plastics, Inc.","Pyramid Plastics, Inc.",manufacturing_plant,Cleveland,,Cuyahoga,C,pyramidplasticsinc.com,1,4,1
+SITE-001797,ORG-001721,"Truco, Inc.","Truco, Inc.",manufacturing_plant,Cleveland,,Cuyahoga,C,,1,118,0
+SITE-001798,ORG-001722,"Kinzie Advanced Polymers, LLC dba Grove Bags","Kinzie Advanced Polymers, LLC dba Grove Bags",manufacturing_plant,Bedford Heights,26201,Cuyahoga,B,grovebags.com,1,82,0
+SITE-001806,ORG-001730,3D Dental Designs and Development LLC,3D Dental Designs and Development LLC,manufacturing_plant,Shaker Heights,16781,Cuyahoga,B,https://3d-dent.com/,1,78,0
+SITE-001818,ORG-001742,Global Waste and Recycling LLC,Global Waste and Recycling LLC,hq_only,Beachwood,44122,Cuyahoga,C,https://globalwasteandrecycling.com/,1,21,1
+SITE-001821,ORG-001745,J.G. Sales Inc.,J.G. Sales Inc.,hq_only,Columbiana,44408,Columbiana,C,http://jgsalesweb.weebly.com/,1,39,0
+SITE-001824,ORG-001748,"PKG, LLC","PKG, LLC",manufacturing_plant,Olmsted Falls,44138,Cuyahoga,C,https://pkgllc.com/,1,116,0
+SITE-001868,ORG-001794,Dal-Little Fabricating Inc,Dal-Little Fabricating Inc,manufacturing_plant,Cleveland,,Cuyahoga,C,https://dallittle.com,1,14,1
+SITE-001911,ORG-001920,"Lawrence Machine, Inc.","Lawrence Machine, Inc.",manufacturing_plant,Massillon,,Stark,C,,1,44,0
+SITE-001912,ORG-001921,Potter's Inc,Potter's Inc,manufacturing_plant,Cleveland,,Cuyahoga,C,,1,96,0
+SITE-001917,ORG-001923,"Artemis Polymer Processing, Inc.","Artemis Polymer Processing, Inc.",manufacturing_plant,Akron,44305,Summit,B,https://artemispolymerprocessing.com,1,35,0
+SITE-001921,ORG-001927,GlueTread LLC,GlueTread LLC,manufacturing_plant,Hiram,44234,Portage,C,https://gluetread.com,1,95,0
+SITE-001934,ORG-001940,Synthetic Rubber Technologies,Synthetic Rubber Technologies,manufacturing_plant,Uniontown,44685,Stark,C,https://srtpolymers.com,1,105,0
+SITE-001938,ORG-001944,"Tristan Rubber Molding, Inc.","Tristan Rubber Molding, Inc.",manufacturing_plant,North Canton,44720,Stark,C,,1,57,0
+SITE-001940,ORG-001946,"WAUGS, Inc.","WAUGS, Inc.",tool_shop,Ashland,44805,Ashland,B,https://waugs.com,1,88,0
+SITE-001944,ORG-001950,Artisan Mold Co Inc,Artisan Mold Co Inc,tool_shop,Grafton,44044,Lorain,C,,1,43,0
+SITE-001953,ORG-001959,Jax Mold and Machine Inc,Jax Mold and Machine Inc,tool_shop,Akron,44312,Summit,B,https://tiremolds.com,1,65,0
+SITE-001958,ORG-001964,M Sacks International,M Sacks International,warehouse_distribution,Akron,44305,Summit,B,,1,74,0
+SITE-001959,ORG-001965,"McNeil & NRM International, Inc","McNeil & NRM International, Inc",tool_shop,Akron,44311,Summit,B,http://www.mcneilnrm.com/,1,67,0
+SITE-001964,ORG-001970,Northcoast Inc Recycling Specialists,Northcoast Inc Recycling Specialists,recycling_facility,Wickliffe,44092,Lake,B,,1,75,0
+SITE-001968,ORG-001974,Photo Tex Group Inc,Photo Tex Group Inc,warehouse_distribution,Boardman,44512,Mahoning,B,,1,66,0
+SITE-001980,ORG-001986,Optimax Plastic LLC,Optimax Plastic LLC,tool_shop,Kent,44240,Portage,B,https://optimaxplastic.com/index.php/rotomolding/,1,59,0
+SITE-001986,ORG-001992,Precision Polymer Casting LLC (dba Castinite),Precision Polymer Casting LLC (dba Castinite),manufacturing_plant,Perry,44081,Lake,B,https://precisionpolymercasting.com/,1,38,0
+SITE-001993,ORG-001999,"Raydar of Ohio, Inc.","Raydar of Ohio, Inc.",manufacturing_plant,Wadsworth,44281,Medina,B,raydarrubber.com,1,110,0
+SITE-002002,ORG-002008,Samjay & Sons LLC,Samjay & Sons LLC,warehouse_distribution,Fairlawn,44333,Summit,B,,1,77,0
+SITE-002004,ORG-002010,Sherwood Advanced Composite Technologies Corp,Sherwood Advanced Composite Technologies Corp,manufacturing_plant,Louisville,44641,Stark,B,sherwoodcorp.com,1,61,0
+SITE-002018,ORG-002024,Tolloti Pipe LLC,Tolloti Pipe LLC,manufacturing_plant,Uhrichsville,44683,Tuscarawas,B,,1,104,0
+SITE-002024,ORG-002030,Veretec Inc,Veretec Inc,manufacturing_plant,Jefferson,44047,Ashtabula,C,https://veretec.com/ (fetch failed - no extractable content),1,85,0
+SITE-002032,ORG-002038,"Pinnacle Recycling, LLC","Pinnacle Recycling, LLC",recycling_facility,Akron,44320,Summit,B,pinnaclerecyclingllc.com,1,52,0
+SITE-002035,ORG-002041,May Lin Silicone Products Inc.,May Lin Silicone Products Inc.,manufacturing_plant,Barberton,44203,Summit,C,https://www.may-lin.com,1,5,1
+SITE-002043,ORG-002049,Sietins Plastics Inc (Sietins Precision),Sietins Plastics Inc (Sietins Precision),manufacturing_plant,Bedford,44146,Cuyahoga,A,https://sietins.com,1,47,0
+SITE-002047,ORG-002053,STUCK LLC,STUCK LLC,manufacturing_plant,Akron,44313,Summit,C,stuckyourself.com,1,42,0
+SITE-002056,ORG-002057,Quality Fiberglass,Quality Fiberglass,manufacturing_plant,Marshallville,,Wayne,C,https://qualityfiberglass.net,1,102,0
+SITE-002059,ORG-002060,Canfield Plastics Inc,Canfield Plastics Inc,manufacturing_plant,Canfield,44406,Mahoning,C,https://canfieldplastics.com,1,73,0
+SITE-002063,ORG-002064,Poly Tech Plastics,Poly Tech Plastics,manufacturing_plant,Middlefield,44062,Geauga,C,https://polytechmolding.com (404 - not this firm's site),1,19,1
+SITE-002067,ORG-002067,Aropha Inc.,Aropha Inc.,lab_testing,Oakwood,44146,Cuyahoga,B,https://www.aropha.com,1,1,1
+SITE-002068,ORG-002068,Chemstress Consultant Company,Chemstress Consultant Company,hq_only,Akron,44308,Summit,B,https://www.chemstress.com,1,55,0
+SITE-002073,ORG-002073,EnergyEne Inc.,EnergyEne Inc.,manufacturing_plant,Wooster,44691,Wayne,B,https://energyene.com,1,111,0
+SITE-002096,ORG-002139,Enzyme Catalyzed Polymers LLC,Enzyme Catalyzed Polymers LLC,rd_center,Akron,,Summit,B,,1,112,0
+SITE-002100,ORG-002143,AXILEA LLC,AXILEA LLC,rd_center,Beachwood,,Cuyahoga,B,,1,10,1
+SITE-002110,ORG-002153,Checkpoint Systems,Checkpoint Systems,manufacturing_plant,Canton,,Stark,A,alphaworld.com,1,30,0
+SITE-003983,ORG-003545,"G-3 Chickadee Purchaser, LLC",G-3 Chickadee Akron R&D Facility,rd_center,Akron,,Summit,C,https://g-3chickadee.com/,1,22,1

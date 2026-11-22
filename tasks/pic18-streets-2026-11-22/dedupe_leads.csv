@@ -1,0 +1,3 @@
+site_id,street,other_site_id,other_org_id,other_city,where,other_street,blocking
+SITE-000519,377 Woodland Avenue,SITE-000520,ORG-000485,Elyria,"same operator, same city (unknown, tier C, street blank)",,1
+SITE-000562,350 State Street Building #7,SITE-005142,ORG-000757,ROCKY MOUNT,street_address,350 STATE ST,0
