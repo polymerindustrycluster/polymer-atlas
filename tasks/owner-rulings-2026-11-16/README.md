@@ -35,6 +35,9 @@ institution carries no program claim.
 - **R-SAM:** SAM.gov is used "filtered, leads only": drop every record marked as D&B-sourced or last updated before
   2022-04-04; use the rest only as discovery leads and for government-issued UEI links; copy no name or address
   from SAM into the Atlas.
+  *Superseded in part, 2026-11-22 (owner ruling, `DECISIONS.md`): a record of the public SAM.gov entity extract that
+  passes the filter above may be quoted as evidence, name and address included. The filter stands. SAM API responses
+  were not addressed and stay under this ruling.*
 
 ## R-REVIEW-FAMILY: the second review family
 

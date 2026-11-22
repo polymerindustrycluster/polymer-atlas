@@ -57,7 +57,9 @@ def expected(fr, sites, orgs, ita, spine, ev):
     s, i = sites[sid], ita[est]; o = orgs[s["org_id"]]
     n = int(i["annual_average_employees"]); b = band(n)
     assert b == i["band_from_avg_employees"], f"{est}: file band column {i['band_from_avg_employees']} != recomputed {b}"
-    bound = {e["record_id"] for e in ev if e["claim_type"] in ("existence", "address") and re.search(rf"establishment_id {est}\b", e["source_ref"]) and e["created_by"] != BY}
+    pointers = [r for f in ("frame.csv", "extra_bindings.csv") for r in read(D / f)]
+    bound = {r["site_id"] for r in pointers if r["establishment_id"] == est}
+    for x in bound - {sid}: assert sites[x]["org_id"] == s["org_id"] and sites[x]["city"] == s["city"], f"{x}: binding pointer is not a same-organization, same-city twin of {sid}"
     why = []
     if not s["street_address"].strip(): why.append("nostreet")
     elif not street_ok(s["street_address"], i["street"]): why.append("street")

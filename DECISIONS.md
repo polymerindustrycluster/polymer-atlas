@@ -117,3 +117,25 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   3. **Review record.** Each PR carries one comment per verifier naming its model family and model, its verdict and what
      it checked. 39 of the 42 PRs had no review or comment on GitHub.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
+
+## 2026-11-22: owner rulings on SAM extract evidence, the Muse pause and batch 7
+
+- **Decision:** three rulings after the review of burn-down batches 5 to 7.
+  1. **The public SAM.gov entity extract may be quoted as evidence.** This lifts, for the public extract only, the
+     2026-11-16 R-SAM bar on copying a SAM name or address into the Atlas (`tasks/owner-rulings-2026-11-16/README.md`).
+     The R-SAM filter stays: a record marked D&B-sourced, or last updated before 2022-04-04, is not quoted (D&B is a
+     licensed source under AGENTS.md section 5). SAM API responses were not addressed and stay under R-SAM. A batch
+     that quotes the extract shows that its rows pass the filter.
+  2. **Muse pauses minting and integration.** Until the owner lifts this, Muse opens no data PR and mints nothing. It
+     continues downloads and the archive copy, and may do read-only work: publishing its join code and match rules, and
+     triaging its own flagged rows without editing them. Reason: batch 5's OSHA site matches required name, city and
+     state but no street, and batches 6 and 7 were built before the address audit of 2026-11-22 identified the batch-5
+     mismatches.
+  3. **Batch 7 (PR #459) stays in draft** until its joins are checked the way batch 5's were.
+- **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
+
+## 2026-11-22: owner ruling, batches 5 and 6 reverted
+- **Decision:** burn-down batches 5 (PR #457) and 6 (PR #458) are taken off `main` whole: 34,094 evidence rows (33,916 labelled batch 5 or 6, and 178 QC-1 cured backfill rows labelled burn-down batch 1 or 2 that arrived in PR #457; the 39 recapture rows that arrived in PR #455 are not removed), 6,837 registry links and 364 archive links. A binding test over the 33,916 batch-5/6-labelled evidence rows (is the quoted operator a name the record holds, and is the quoted street the record's street) gave 24,241 PASS; 9,469 with an explicit FAIL verdict, on 2,590 records; and 206 with no binding verdict (free-text rows the test could not parse). Batch 5's OSHA site match required name, city and state but no street. This is an exception to the append-only rule of SCHEMA 4.13, taken so that nothing unproven stays in the canonical data while rows are re-checked.
+- **Return and IDs:** a removed row that later passes the binding gate and a replay against the raw source file returns under its original evidence ID in a new, reviewed PR. That is restoration of the same row, not reuse of an ID, so it does not conflict with AGENTS.md section 3 or the "never reused" rule of SCHEMA Appendix C 6.1. A removed ID is reserved for its own row and is never given to a different row; `scripts/atlas.py next-id` counts every id in a `tasks/**/REMOVALS.csv` toward its floor, so the allocator skips the gap (`EVD-425437` to `EVD-459524`), and exits non-zero rather than guess when it cannot find the tasks folder.
+- **What is kept:** `tasks/revert-batches-5-6-2026-11-22/quarantine/` holds, for every one of the 34,094 removed evidence rows, its ID, record keys, source key and first-cut binding verdict, passing and failing alike, with no row text; and the 6,837 removed registry links and 364 archive links, verbatim. The row text is recoverable from commit 17834918 by evidence ID. This supersedes the same day's narrower ruling to remove 844 rows.
+- **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.

@@ -73,9 +73,9 @@ def load():
 
 
 def bound_sites(est):
-    """Every site record, tree-wide, carrying an evidence row that cites this ITA establishment_id."""
-    pat = re.compile(rf"establishment_id {est}\b")
-    return {e["record_id"] for p in (ROOT / "data").glob("evidence_sites_*.csv") for e in read(p) if pat.search(e["source_ref"])}
+    """Every site record bound to this ITA establishment_id by a committed pointer: frame.csv plus extra_bindings.csv.
+    Batch-5 ITA witnesses were reverted from main (2026-11-22), so no evidence row is read for this."""
+    return {r["site_id"] for f in ("frame.csv", "extra_bindings.csv") for r in read(D / f) if r["establishment_id"] == est}
 
 
 def base_max_evd(base):
