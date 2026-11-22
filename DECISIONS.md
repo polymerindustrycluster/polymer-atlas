@@ -117,3 +117,18 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   3. **Review record.** Each PR carries one comment per verifier naming its model family and model, its verdict and what
      it checked. 39 of the 42 PRs had no review or comment on GitHub.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
+
+## 2026-11-22: owner rulings on SAM extract evidence, the Muse pause and batch 7
+
+- **Decision:** three rulings after the review of burn-down batches 5 to 7.
+  1. **The public SAM.gov entity extract may be quoted as evidence.** This lifts, for the public extract only, the
+     2026-11-16 R-SAM bar on copying a SAM name or address into the Atlas (`tasks/owner-rulings-2026-11-16/README.md`).
+     The R-SAM filter stays: a record marked D&B-sourced, or last updated before 2022-04-04, is not quoted (D&B is a
+     licensed source under AGENTS.md section 5). SAM API responses were not addressed and stay under R-SAM. A batch
+     that quotes the extract shows that its rows pass the filter.
+  2. **Muse pauses minting and integration.** Until the owner lifts this, Muse opens no data PR and mints nothing. It
+     continues downloads and the archive copy, and may do read-only work: publishing its join code and match rules, and
+     triaging its own flagged rows without editing them. Reason: batch 5's OSHA site matches required name, city and
+     state but no street, and batches 6 and 7 were built before any independent check of batch 5.
+  3. **Batch 7 (PR #459) stays in draft** until its joins are checked the way batch 5's were.
+- **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
