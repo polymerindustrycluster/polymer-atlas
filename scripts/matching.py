@@ -1,4 +1,5 @@
-"""One street test for the whole repo: is this printed street the record's street?
+"""One street test for the whole repo (is this printed street the record's street?), and the one name extension the
+owner allows on top of it (corporate_form_extension).
 
 Moved here from scripts/derive_last_activity.py (PR #463, owner ruling 2026-11-22 "Fix script, re-derive") so that the
 derivation and the evidence binding gate (scripts/check_evidence_binding.py) share one definition (controller ruling
@@ -9,7 +10,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from atlas import street_key  # noqa: E402  (stdlib-only module, no import side effects)
+from atlas import squash, street_key  # noqa: E402  (stdlib-only module, no import side effects)
 
 _UNIT = re.compile(r"\b(?:suite|ste|unit|apt|apartment|room|rm)\b\.?\s*#?\s*([a-z0-9-]+)|(?<=\S)\s*#\s*([a-z0-9-]+)", re.I)
 _NUMBER_WORDS = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"}
@@ -38,3 +39,27 @@ def same_street(site_street: str, printed: str) -> bool:
         return False
     ua, ub = units(site_street), units(printed)
     return not (ua and ub and ua != ub)
+
+
+# Owner ruling 2026-11-22 (multiple choice, DECISIONS.md): on a structured row whose street already passes
+# same_street(), a filing or permit name also binds when a held name is a leading run of it and every extra token is a
+# corporate-form word from this fixed list. Not for web rows, organization rows without a street test, or predecessor,
+# parent or notes-only names.
+CORPORATE_FORM_WORDS = ("Inc", "Incorporated", "LLC", "L.L.C.", "Corp", "Corporation", "Co", "Company", "Ltd",
+                        "Limited", "LP", "LLP", "Holdings", "Holding", "Group", "US", "USA", "U.S.", "North America",
+                        "Americas")
+_FORMS = sorted({tuple(squash(w).split()) for w in CORPORATE_FORM_WORDS}, key=len, reverse=True)
+
+
+def corporate_form_extension(held_key: str, quoted_key: str) -> bool:
+    """Is quoted_key a held name followed only by corporate-form words? Both are atlas.name_key values."""
+    h, q = held_key.split(), quoted_key.split()
+    if not h or len(q) <= len(h) or q[:len(h)] != h:
+        return False
+    rest = q[len(h):]
+    while rest:
+        form = next((f for f in _FORMS if tuple(rest[:len(f)]) == f), None)
+        if form is None:
+            return False
+        rest = rest[len(form):]
+    return True

@@ -60,9 +60,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from atlas import (LOCALITY_SEP_RE, PLATFORM_HOSTS, SUFFIX, UNIT_ONLY_RE, name_key, org_name_fields,  # noqa: E402
                    site_name_key, squash, street_key)
 from build_echo_spine import STATE_NAMES  # noqa: E402
-from matching import has_civic_number, same_street, units  # noqa: E402  (the repo's one street test, PR #463)
+from matching import corporate_form_extension, has_civic_number, same_street, units  # noqa: E402  (PR #463)
 
 csv.field_size_limit(10**9)
+ARCHIVE_RE = re.compile(r"https://web\.archive\.org/web/\d{14}/\S+")
 PROOF_COLS = ("evidence_id", "capture", "capture_sha256", "quote_offset", "quote_length", "verdict", "reader_family",
               "reader_model", "tie")
 DIRECTIONS = {"n", "s", "e", "w", "ne", "nw", "se", "sw"}
@@ -98,7 +99,9 @@ def git(*args):
 def data_files(ref, pattern):
     """[(path, text)] for data/<pattern> at a git ref, or the working tree when ref is None. Merged exports skipped."""
     if ref is None:
-        paths = sorted(p for p in (TREE / "data").glob(pattern) if not p.is_symlink())
+        paths = sorted((TREE / "data").glob(pattern))
+        if any(p.is_symlink() or not p.resolve().is_relative_to(TREE.resolve()) for p in paths):
+            raise subprocess.CalledProcessError(2, "data_files", stderr=f"a data/{pattern} file is a symlink")
         return [(f"data/{p.name}", p.read_text(encoding="utf-8")) for p in paths if not p.name.endswith("_all.csv")]
     names = [n for n in git("ls-tree", "--name-only", f"{ref}:data/").split()
              if Path(n).match(pattern) and not n.endswith("_all.csv")]
@@ -342,7 +345,12 @@ def judge(ev, idx):
     alt_keys = {k for n in p["alt_names"] for k in (name_key(n), site_name_key(n, rec.get("city") or "")) if k}
     held = idx.held_keys(table, rid)
     reasons, info = [], {}
-    if not qkeys & held:
+    if not qkeys & held and table == "sites" and not street_reason(rec.get("street_address"), p["addr"]) and any(
+            corporate_form_extension(h, q) for h in held for q in qkeys):
+        info["name_basis"] = "corporate_form"  # owner ruling 2026-11-22: held name + corporate-form words, street passes
+        if qkeys & idx.parent_keys(table, rid):
+            info["name_alt"] = "parent"  # measured: the extended name is also a parent's name (flagged to the owner)
+    elif not qkeys & held:
         reasons.append("name_not_held")
         alts = name_alternatives(idx, table, rid, qkeys, alt_keys, held)
         if comma_part_keys(p["names"]) & held:
@@ -387,7 +395,6 @@ PLATFORMS = set(PLATFORM_HOSTS) | {
     "carrd.co", "wix.com", "editorx.io", "azurewebsites.net", "cloudfront.net", "amazonaws.com", "firebaseapp.com",
     "web.app", "glitch.me", "000webhostapp.com", "jimdosite.com", "site123.me", "strikingly.com", "mystrikingly.com",
     "tumblr.com", "medium.com", "substack.com", "hs-sites.com", "ueniweb.com", "wpengine.com", "wpcomstaging.com"}
-SUFFIXES = set(SUFFIX.values())
 WEB_UNIT_RE = re.compile(r"^(?:suite|ste|unit|apt|apartment|room|rm)$")
 
 
@@ -450,24 +457,19 @@ def web_street_parts(rec_street):
         words = words[1:]  # "2210 C Larkspur Rd": the letter belongs to the civic number
     if not words:
         return "record_street_no_civic_number"
-    return t[0], words
+    return t[0], words[0]
 
 
 def web_street_reason(rec_street, quote):
     """FAIL unless the quote prints the record's civic number immediately before its first street word (a direction or
-    one letter may sit between) and no other street suffix ("321 Oak Avenue" for "321 Oak Street"), and FAIL when every such occurrence states a suite or unit the record contradicts."""
+    one letter may sit between), and FAIL when every such occurrence states a suite or unit the record contradicts."""
     parts = web_street_parts(rec_street)
     if isinstance(parts, str):
         return parts
-    num, words = parts
+    num, word = parts
     q = street_tokens(quote)
-    k = next((k for k, w in enumerate(words) if k and w in SUFFIXES), None)  # "321 oak st": the suffix sits at 1
-
-    def street_at(j):  # the record's first street word at j, and no other suffix where the record's suffix sits
-        return q[j:j + 1] == words[:1] and not (k and q[j + k:j + k + 1] and q[j + k] in SUFFIXES
-                                                 and q[j + k] != words[k])
-    hits = [i for i, x in enumerate(q) if x == num and (street_at(i + 1) or (
-        q[i + 1:i + 2] and (q[i + 1] in DIRECTIONS or len(q[i + 1]) == 1) and street_at(i + 2)))]
+    hits = [i for i, x in enumerate(q) if x == num and (q[i + 1:i + 2] == [word] or (
+        q[i + 1:i + 2] and (q[i + 1] in DIRECTIONS or len(q[i + 1]) == 1) and q[i + 2:i + 3] == [word]))]
     if not hits:
         return "street_absent_from_quote"
     rec_units = units(rec_street)
@@ -687,7 +689,7 @@ def raw_capture_url(archive_ref):
 
 
 def fetch_url(url, tries=3):
-    req = urllib.request.Request(url, headers={"User-Agent": "polymer-atlas-binding-gate/1"})
+    req = urllib.request.Request(url, headers={"User-Agent": "evidence-check/1"})
     for k in range(tries):
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
@@ -748,6 +750,8 @@ def proof_problem(r, ev, archive_ref, read, builder, fetch=None):
             return "no data/archive_links.csv line for this row: an archive capture is admitted only through its index line"
         if cap != archive_ref:
             return "capture differs from the row's data/archive_links.csv archive_ref"
+        if not ARCHIVE_RE.fullmatch(cap):  # the PR writes its own index line: only a Wayback capture is fetched
+            return "capture must be a https://web.archive.org/web/<14 digits>/<url> capture"
         if fetch is None:
             return ""  # form only: --verify-proofs fetches the capture and checks the digest and the quote
         try:
@@ -829,24 +833,40 @@ def isolation_prefix():
     return []
 
 
-def run_folder_checks(folders, head, timeout=900):
-    """Run tasks/<folder>/check.py for each folder on a COPY of the gated tree, last, with a minimal environment (no
-    token) and no network where the host allows it; {folder: (exit code, last output line)}. This is the only code
-    the gate executes from the tree it gates."""
+def tree_git_dir(tree):
+    """The git directory of a checkout, read from its .git entry without running git in it (its config is untrusted)."""
+    g = tree / ".git"
+    if g.is_file():
+        m = re.match(r"gitdir:\s*(.+)", g.read_text(encoding="utf-8").strip())
+        return str((tree / m[1]).resolve()) if m else ""
+    return str(g) if g.is_dir() else ""
+
+
+def run_folder_checks(folders, head, timeout=900, require_isolation=False):
+    """Run tasks/<folder>/check.py for each folder, last, on a COPY of the gated tree; {folder: (exit code, last
+    output line)} and the isolation obtained. The environment holds PATH, HOME (a temp dir), LANG and read access to
+    the checkout's git history (GIT_DIR, with a throwaway index), and no token; no network only where `unshare -rn`
+    works. require_isolation (--tree) refuses to run without it. This is the only code the gate executes from the
+    tree it gates."""
     out = {}
     if not folders:
         return out, ""
+    wrap = isolation_prefix()
+    if require_isolation and not wrap:
+        raise RuntimeError("no network isolation on this host (unshare -rn failed): --tree runs no check.py without it")
     with tempfile.TemporaryDirectory() as tmp:
         copy = Path(tmp) / "tree"
         if head is None:
             shutil.copytree(TREE, copy, symlinks=True, ignore=shutil.ignore_patterns(".git"))
+            gitdir = tree_git_dir(TREE)
         else:
             copy.mkdir()
             arch = subprocess.run(["git", "-C", str(ROOT), "archive", head], capture_output=True, check=True).stdout
             subprocess.run(["tar", "-x", "-C", str(copy)], input=arch, check=True)
-        wrap = isolation_prefix()
+            gitdir = git("rev-parse", "--absolute-git-dir").strip()
         env = {"PATH": f"{Path(sys.executable).parent}:/usr/bin:/bin", "HOME": tmp, "LANG": "C.UTF-8",
-               "PYTHONDONTWRITEBYTECODE": "1"}
+               "PYTHONDONTWRITEBYTECODE": "1", "GIT_TERMINAL_PROMPT": "0", "GIT_CONFIG_NOSYSTEM": "1",
+               "GIT_DIR": gitdir, "GIT_WORK_TREE": str(copy), "GIT_INDEX_FILE": str(Path(tmp) / "index")}
         for f in sorted(folders):
             try:
                 r = subprocess.run(wrap + [sys.executable, f"tasks/{f}/check.py"], cwd=copy, env=env,
@@ -941,9 +961,14 @@ def main(argv=None):
 
         def head_check(f):
             return bool((tasks_file(a.head, f"tasks/{f}/check.py") or b"").strip())
-        problems, isolation = provenance_problems(
-            evs, {e["created_by"].strip() for e in base_evs},
-            lambda f: any(x.startswith(f"tasks/{f}/") for x in base_paths), head_check, head=a.head)
+        try:
+            problems, isolation = provenance_problems(
+                evs, {e["created_by"].strip() for e in base_evs},
+                lambda f: any(x.startswith(f"tasks/{f}/") for x in base_paths), head_check, head=a.head,
+                run=lambda folders, head: run_folder_checks(folders, head, require_isolation=bool(a.tree)))
+        except RuntimeError as e:
+            print(f"provenance: {e}; failing closed")
+            return 2
         print(f"provenance: {len(evs)} evidence rows added or changed since {base[:10]} under "
               f"{len({e['created_by'].strip() for e in evs})} created_by label(s)" +
               (f"; folder checks ran with {isolation}" if isolation else ""))

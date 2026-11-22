@@ -88,5 +88,20 @@ class SameStreet(unittest.TestCase):
                 self.assertFalse(dl.same_street(site, printed))
 
 
+
+class CorporateForm(unittest.TestCase):
+    """Owner ruling 2026-11-22: a held name plus corporate-form words only."""
+
+    def test_admits_corporate_form_words_only(self):
+        from atlas import name_key
+        held = name_key("Acme Polymer")
+        for q in ("Acme Polymer USA", "Acme Polymer, L.L.C.", "Acme Polymer U.S. Holdings", "Acme Polymer North America",
+                  "Acme Polymer Group Ltd", "Acme Polymer Americas LP"):
+            self.assertTrue(dl.corporate_form_extension(held, name_key(q)), q)
+        for q in ("Acme Polymer Services", "Acme Polymer Fleet Services LLC", "Acme Polymer North", "Acme Polymers USA",
+                  "Acme Polymer", "Acme", "Other Acme Polymer USA", "Acme Polymer USA Plant 2"):
+            self.assertFalse(dl.corporate_form_extension(held, name_key(q)), q)
+
+
 if __name__ == "__main__":
     unittest.main()

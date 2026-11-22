@@ -34,7 +34,7 @@ ORGS = [
      "website": "https://kestrelmolding.wixsite.com/home"},  # a site on a shared platform host
     {"org_id": "ORG-9", "legal_name": "Alder Composites Corporation", "trade_names": "", "hq_city": "Chula Vista",
      "hq_state": "CA"},
-    {"org_id": "ORG-10", "legal_name": "Pinecrest Foam Holdings", "trade_names": "", "hq_city": "Dallas", "hq_state": "TX"},
+    {"org_id": "ORG-10", "legal_name": "Pinecrest Industries", "trade_names": "", "hq_city": "Dallas", "hq_state": "TX"},
     {"org_id": "ORG-11", "legal_name": "Pinecrest Foam LLC", "trade_names": "", "parent_org_id": "ORG-10",
      "hq_city": "Dallas", "hq_state": "TX"},
     {"org_id": "ORG-12", "legal_name": "Armacor LLC", "trade_names": "", "hq_city": "Mebane", "hq_state": "NC"},
@@ -270,7 +270,7 @@ class Verdicts(unittest.TestCase):
         self.assertIn("facility_label", info["name_alt"])
 
     def test_parent_name_is_strict_fail(self):  # parent's name on a subsidiary's site; owner question
-        info = self.check(ev("S-PIN", ITA, "Pinecrest Foam Holdings, 4471 Tanner Dr, Lancaster, PA 17699"),
+        info = self.check(ev("S-PIN", ITA, "Pinecrest Industries, 4471 Tanner Dr, Lancaster, PA 17699"),
                           "FAIL", "name_not_held")
         self.assertIn("parent", info["name_alt"])
 
@@ -314,6 +314,21 @@ class Verdicts(unittest.TestCase):
         info = self.check(ev("S-OAK3", OSHA, "OTHER OPERATOR, ACME POLYMER, 321 OAK ST, DOVER, OH 44699"), "FAIL",
                           "name_not_held")
         self.assertIn("comma_part", info["name_alt"])
+
+    def test_corporate_form_extension(self):  # owner ruling 2026-11-22: structured site rows whose street passes
+        info = self.check(ev("S-OAK3", ITA, "Acme Polymer USA Holdings, 321 Oak St, Dover, OH 44699"), "PASS")
+        self.assertEqual(info["name_basis"], "corporate_form")
+        self.check(ev("S-OAK3", ITA, "Acme Polymer Services, 321 Oak St, Dover, OH 44699"), "FAIL", "name_not_held")
+        self.check(ev("S-OAK3", ITA, "Acme Polymer USA, 99 Oak St, Dover, OH 44699"), "FAIL",
+                   "name_not_held+street_differs")  # only when the street already passes
+        self.check(ev("ORG-15", TCEQ, permit("Acme Polymer LP", "DOVER", "321 OAK ST, DOVER, OH 44699"),
+                      table="organizations"), "FAIL", "name_not_held")  # no street test on an organization row
+        self.check(ev("S-RR", TCEQ, permit("Riverbend Medical Fleet Services, LLC", "X", "5155 N GARNER ST, ROUND ROCK, "
+                                           "TX 78699")), "FAIL", "name_not_held")  # EVD-455899 shape stays FAIL
+        self.check(ev("S-PIN", ITA, "Pinecrest Industries Group, 4471 Tanner Dr, Lancaster, PA 17699"), "FAIL",
+                   "name_not_held")  # a parent's name plus a form word: the base must be a held name
+        info = self.check(ev("S-PIN", ITA, "Pinecrest Foam Holdings, 4471 Tanner Dr, Lancaster, PA 17699"), "PASS")
+        self.assertEqual(info["name_basis"], "corporate_form")  # the rule as ruled: held "Pinecrest Foam" + Holdings
 
     def test_permittee_is_one_name(self):  # Codex 5: "Other Operator, Acme Polymer" in a permittee field
         self.check(ev("S-OAK3", TCEQ, permit("Other Operator, Acme Polymer", "DOVER", "321 OAK ST, DOVER, OH 44699")),
@@ -416,12 +431,14 @@ class Verdicts(unittest.TestCase):
 
     def test_web_sibling_sites_one_quote(self):  # Codex 4: one quote naming the second sibling's address
         q = "Acme Polymer, 321 Oak Avenue, Suite 300, Dover OH"
-        self.check(self.web("S-OAK1", "https://acmepolymer.example/sites", q), "FAIL", "street_absent_from_quote")
+        self.check(self.web("S-OAK1", "https://acmepolymer.example/sites", q), "FAIL", "unit_differs")
         self.check(self.web("S-OAK2", "https://acmepolymer.example/sites", q), "READ_REQUIRED", "mechanics_clear")
         self.check(self.web("S-OAK1", "https://acmepolymer.example/sites", "321 Oak Street, Suite 300"), "FAIL",
                    "unit_differs")  # the suite alone changed
-        self.check(self.web("S-OAK3", "https://acmepolymer.example/sites", "321 Oak Avenue, Dover"), "FAIL",
-                   "street_absent_from_quote")  # same number and first word, another street suffix
+        self.check(self.web("S-OAK3", "https://acmepolymer.example/sites", "321 Oak Avenue, Dover"), "READ_REQUIRED",
+                   "mechanics_clear")  # another suffix is left to the reader: "Tampa E Blvd" must not FAIL
+        self.check(self.web("S-OAK3", "https://acmepolymer.example/", "321 Tampa East Blvd"), "FAIL",
+                   "street_absent_from_quote")
 
     def test_web_area_code_and_zip_are_not_civic_numbers(self):  # Codex 4
         self.check(self.web("S-OAK3", "https://acmepolymer.example/", "Call (321) 555-0100. Visit 99 Oak Street"),
@@ -540,6 +557,9 @@ class Proofs(unittest.TestCase):
 
     def test_archive_ref_must_be_the_index_line(self):  # Codex 1
         self.assertIn("no data/archive_links.csv line", self.check(self.good(), archive={})[0])
+        live = "https://kestrel.example/about"  # an index line the PR wrote itself, pointing at a live page
+        line = proof_line("EVD-2", live, self.sha, self.off, len(self.QUOTE))
+        self.assertIn("web.archive.org", self.check([self.good()[0], line], archive={"EVD-2": live})[0])
         other = self.WB.replace("20261101", "20261001")
         self.assertIn("differs from the row's", self.check(self.good(), archive={"EVD-2": other})[0])
 
@@ -712,6 +732,21 @@ class GateMechanics(unittest.TestCase):
             finally:
                 b.TREE = old
 
+    def test_tree_fails_closed(self):  # ruling F: a symlinked shard, and --tree check.py runs without isolation
+        with tempfile.TemporaryDirectory() as d:
+            t = Path(d) / "tree"
+            (t / "data").mkdir(parents=True)
+            (Path(d) / "outside.csv").write_text("evidence_id\nEVD-1\n")
+            (t / "data" / "evidence_x.csv").symlink_to(Path(d) / "outside.csv")
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(b.main(["--all", "--tree", str(t)]), 2)
+            old, b.isolation_prefix = b.isolation_prefix, lambda: []
+            try:
+                with self.assertRaises(RuntimeError):
+                    b.run_folder_checks({"x"}, None, require_isolation=True)
+            finally:
+                b.isolation_prefix = old
+
     def test_report_counts_sum(self):
         res = [{"verdict": v, "reason": "", "created_by": "x", "source_family": "url"} for v in b.VERDICTS]
         with contextlib.redirect_stdout(io.StringIO()):
@@ -756,6 +791,10 @@ class KnownAnswer(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("MISSING tasks/spaghetti-batch6-2026-11-22/check.py for created_by 'spaghetti-batch6-2026-11-22' "
                       "(23564 rows)", out)
+
+    def test_fleet_services_row_still_fails(self):  # owner ruling 2026-11-22: the real EVD-455899 stays FAIL
+        evs = {e["evidence_id"]: e for e in b.rows("17834918", "evidence_*.csv")}
+        self.assertEqual(b.judge(evs["EVD-455899"], b.Index.load("17834918"))[:2], ("FAIL", "name_not_held"))
 
     def test_building_number_row_does_not_pass(self):  # Codex 3: the real row the #463 guard holds
         evs = {e["evidence_id"]: e for e in b.rows("17834918", "evidence_*.csv")}

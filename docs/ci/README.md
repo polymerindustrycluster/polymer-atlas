@@ -32,8 +32,10 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
       1,000 evidence rows (rule 5), which bounds the fetches.
     - **`--provenance-since`**: each `created_by` label must name exactly one `tasks/<folder>/`. That folder must hold a
       non-empty `check.py`, and a new label adds its own folder. The checker runs that `check.py` and it must exit 0.
-      It runs last, on a copy of the tree, with no token in its environment. It has no network only where `unshare -rn` works,
-      and the log prints which isolation the run actually got. Whether the hosted runner allows it is unverified.
+      It runs last, on a copy of the tree, with no token in its environment. It can read the checkout's git history (`GIT_DIR`), so the authoritative workflow
+      checks out with `persist-credentials: false`. It has no network only where `unshare -rn` works: with `--tree` the
+      checker refuses to run a `check.py` without that and exits 2; in this job it runs anyway and the log says "network
+      NOT isolated". Whether the hosted runner allows `unshare -rn` is unverified.
     - `--sample N --seed S` is an audit and admits nothing. Rows already on `main` are reported by `--all`, not failed;
   - the vocabulary export check;
   - the unit and mutation tests;
