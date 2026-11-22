@@ -89,8 +89,8 @@ contact data, tombstone — never delete.
 
 ## Status
 
-**Inventory — 2026-11-20:** recomputed from the canonical CSVs at head
-`d984d73e03b5198dca461e810efb1f3b00a41cbb` (validator PASS, 0 errors).
+**Inventory — 2026-11-22:** recomputed from the canonical CSVs at head
+`1783491852856c25828da494f4c1fb6f08d52f47` (validator PASS, 0 errors).
 The canonical CSVs contain **5,026 organization rows, 7,196 site rows,
 408 ecosystem rows, 1,614 people rows and 253 program rows**, all statuses and
 all verification tiers, including candidates and tombstones. These are not
