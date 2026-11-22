@@ -9,13 +9,13 @@
 # The result is published as a check run named `pr-rules` on the PR head, which is the check the ruleset requires.
 # It is evaluated again on every PR event and on every PR comment created, edited or deleted, selected by PR number.
 #
-# Second check run, `binding-gate`: main's scripts/check_evidence_binding.py is run against the PR's data/ and tasks/
-# (fetched as data into a plain directory). The gate's provenance check executes one PR-supplied file
-# (tasks/<folder>/check.py), so that job has `permissions: {}` (the repository is public: no token is needed to fetch),
-# keeps no credential, and runs the gate as an unprivileged user inside a network namespace with no network
-# (`unshare --net`). If the runner cannot do that, the gate is NOT executed there and the check run says SKIPPED
-# (neutral); the validate job is then the only place the gate runs. If the script is not on main yet, the check run says
-# "gate not yet on main" (neutral). A separate job publishes the result, so the job that runs PR code never holds a token.
+# Second check run, `binding-gate`: main's scripts/check_evidence_binding.py (--new-since, --verify-proofs,
+# --provenance-since, each with --tree pr) judges the PR merge result, checked out as data into ./pr. The gate's
+# provenance step executes one PR-supplied file (tasks/<folder>/check.py) on a copy, with a stripped environment, inside
+# `unshare -rn` (no network); it refuses to run without that, so an unusable namespace is `cannot_inspect` (failure),
+# never a skip. That job has `permissions: {}`, and both checkouts use persist-credentials: false. If the script is not
+# on main yet, the check run says "gate not yet on main" (neutral). A separate job publishes the result, so the job
+# that runs PR code never holds a token.
 name: pr-rules
 
 on:
@@ -50,58 +50,56 @@ jobs:
 
   binding-gate:
     if: github.event_name == 'pull_request_target' || github.event.issue.pull_request
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
+    runs-on: ubuntu-24.04  # pinned: unprivileged user namespaces are refused on 24.04 and later until the sysctl step below
+    timeout-minutes: 40
     permissions: {}
     env:
       PR: ${{ github.event.pull_request.number || github.event.issue.number }}
       BASE: origin/${{ github.event.pull_request.base.ref || github.event.repository.default_branch }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4  # trusted: the base branch, whose checker and rules judge the PR
         with:
           fetch-depth: 0
-          persist-credentials: false  # no credential stays in .git/config for the step that runs PR-supplied code
-      - name: Fetch the PR head as data and export its data/ and tasks/ to a plain directory
+          persist-credentials: false
+      - uses: actions/checkout@v4  # the PR merge result, as DATA in ./pr; nothing in it is run except the gate's own isolated check.py
+        with:
+          ref: refs/pull/${{ env.PR }}/merge
+          path: pr
+          fetch-depth: 2
+          persist-credentials: false  # no token in pr/.git/config: the provenance step executes a PR-supplied check.py
+      - name: Pin the PR head the result is about
         run: |
           set -eu
           out=/tmp/gate-out; mkdir -p "$out"
           git fetch --no-tags -q origin "+refs/pull/$PR/head:refs/remotes/pr/$PR"   # anonymous: the repository is public
           head=$(git rev-parse "refs/remotes/pr/$PR")
+          [ "$(git -C pr rev-parse HEAD^2)" = "$head" ] || { echo "merge ref is not the current PR head: stale, failing"; exit 1; }
           echo "$head" > "$out/head"
-          git merge-base "$BASE" "$head" > "$out/base"
-          python3 scripts/check_pr_rules.py --export-tree "$head" /tmp/gate-tree
-          chmod -R a+rX /tmp/gate-tree
-          p="$GITHUB_WORKSPACE"; while [ "$p" != / ]; do sudo chmod o+x "$p"; p=$(dirname "$p"); done
-          sudo install -d -o 65534 -g 65534 /tmp/gate-home
-      - name: Run main's binding gate on the PR tree (no token, no network, unprivileged)
+      - name: Allow unprivileged user namespaces (the gate runs check.py inside unshare -rn)
+        run: |
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 || true
+          unshare -rn true && echo "unshare -rn works" || echo "unshare -rn refused: the provenance step will exit 2"
+      - name: Run main's binding gate on the PR tree
         run: |
           set -u
-          out=/tmp/gate-out; base=$(cat "$out/base"); log="$out/log"; : > "$log"
+          out=/tmp/gate-out; log="$out/log"; : > "$log"
           if [ ! -f scripts/check_evidence_binding.py ]; then
             echo "gate not yet on main (scripts/check_evidence_binding.py is absent): nothing run, passes" | tee -a "$log"
             echo not_yet > "$out/state"; exit 0
           fi
-          if ! /usr/bin/python3 scripts/check_evidence_binding.py --help 2>&1 | grep -q -- '--tree'; then
-            echo "scripts/check_evidence_binding.py on main has no --tree mode: cannot inspect the PR tree" | tee -a "$log"
-            echo cannot_inspect > "$out/state"; exit 0
-          fi
-          isolated() { sudo unshare --net -- setpriv --reuid 65534 --regid 65534 --clear-groups -- \
-            env -i PATH=/usr/bin:/bin HOME=/tmp/gate-home PYTHONDONTWRITEBYTECODE=1 \
-            GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=safe.directory GIT_CONFIG_VALUE_0='*' "$@"; }
-          # prove the isolation before any PR file runs: the command must start AND fail to reach the network
-          probe="import socket,sys; s=socket.socket(); s.settimeout(3); sys.exit(0 if s.connect_ex(('1.1.1.1', 53)) else 1)"
-          if ! isolated /usr/bin/python3 -c "$probe"; then
-            echo "SKIPPED: this runner cannot run the gate with no network and no privileges; the PR-supplied check.py was NOT executed here. The validate job runs the gate." | tee -a "$log"
-            echo skipped > "$out/state"; exit 0
-          fi
-          rc=0
-          for mode in --new-since --provenance-since; do
-            echo "== check_evidence_binding.py --tree /tmp/gate-tree $mode ${base:0:10}" | tee -a "$log"
-            isolated timeout 1500 /usr/bin/python3 scripts/check_evidence_binding.py --tree /tmp/gate-tree "$mode" "$base" 2>&1 | tee -a "$log"
-            r=${PIPESTATUS[0]}; echo "exit $r" | tee -a "$log"
-            [ "$r" -eq 0 ] || rc=1
+          worst=0
+          for mode in --new-since --verify-proofs --provenance-since; do
+            echo "== python3 scripts/check_evidence_binding.py $mode $BASE --tree pr" | tee -a "$log"
+            if ! python3 scripts/check_evidence_binding.py --help 2>&1 | grep -q -- "$mode"; then
+              echo "main's gate has no $mode: cannot inspect" | tee -a "$log"; r=2
+            else
+              timeout 1500 python3 scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr 2>&1 | tee -a "$log"
+              r=${PIPESTATUS[0]}
+            fi
+            echo "exit $r" | tee -a "$log"
+            if [ "$r" -ne 0 ] && [ "$r" -ne 1 ]; then worst=2; elif [ "$r" -eq 1 ] && [ "$worst" -eq 0 ]; then worst=1; fi
           done
-          if [ "$rc" -eq 0 ]; then echo passed > "$out/state"; else echo failed > "$out/state"; fi
+          case $worst in 0) echo passed;; 1) echo failed;; *) echo cannot_inspect;; esac > "$out/state"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

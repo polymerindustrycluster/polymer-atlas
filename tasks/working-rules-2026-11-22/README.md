@@ -37,25 +37,28 @@ run live on PR #461 and PR #462 on 2026-11-22.
 
 ## The binding-gate job (rules 2 and 3 on the PR tree)
 
-The workflow's second check run, `binding-gate`, runs main's `scripts/check_evidence_binding.py` against the PR's
-`data/` and `tasks/`, fetched as data into a plain directory (raw blob bytes: no checkout filter, `.gitattributes`
-rule, symlink or hook applies; `TestExportTree`). States: `passed` (success), `failed` and `cannot_inspect` (failure),
-`not_yet` ("gate not yet on main": neutral) and `skipped` (neutral). Neutral counts as passing for a required check, so a
-neutral result is a visible grey, not a green; the summary says why.
+The workflow's second check run, `binding-gate`, runs main's `scripts/check_evidence_binding.py` (PR #467) three times,
+each with `--tree pr`: `--new-since <base>`, `--verify-proofs <base>` and `--provenance-since <base>`. The PR merge
+result is checked out as data into `./pr`; the trusted checkout (the base branch, `fetch-depth: 0`) supplies the code
+and the rules. Both checkouts use `persist-credentials: false`, and the job has `permissions: {}` (the repository is
+public). States: `passed` (success), `failed` and `cannot_inspect` (failure), `not_yet` ("gate not yet on main", neutral).
+Neutral counts as passing for a required check, so it is a visible grey, not a green. The job first checks that
+`pr/`'s merge commit has the current PR head as its second parent, and fails if not (a stale merge ref).
 
-The gate's provenance check executes one PR-supplied file, `tasks/<folder>/check.py`. The job that may do so has
-`permissions: {}` (the repository is public, so the fetch needs no token), `persist-credentials: false`, no secret, and
-runs the gate as user 65534 inside `unshare --net` with an empty environment. Before any PR file runs, the job proves
-the isolation (the command must start and fail to reach 1.1.1.1:53); if it cannot, the gate is **not executed on that
-runner** and the result is `skipped`, leaving the gate to the `validate` job. A separate job, which runs no PR code,
-holds the `checks: write` token and publishes the result. `TestBindingGateJob` pins these properties in the workflow
-text.
+**Network isolation, measured 2026-11-22 on throwaway runs** (branch deleted afterwards): on `ubuntu-latest` (now Ubuntu
+26.04) and `ubuntu-24.04`, `unshare -rn` is REFUSED (`kernel.apparmor_restrict_unprivileged_userns = 1`); on
+`ubuntu-22.04` it works. `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0` makes it work on both newer
+images, and inside it a connection to 1.1.1.1:53 fails (errno 101) where outside it connects. Docker with
+`--network none` also works, but the default seccomp profile blocks `unshare -rn` inside the container (needs
+`--security-opt seccomp=unconfined`), so the container route would weaken the isolation more than the sysctl does. **Route
+used: the sysctl on a pinned `ubuntu-24.04` job.** There is no skip path: if `unshare -rn` still fails, the gate's
+provenance step exits 2 and the job says `cannot_inspect` (failure). Cost of the route: the ephemeral runner VM allows
+unprivileged user namespaces for the rest of the job, a larger kernel attack surface for the PR's `check.py`; the job
+holds no token and no secret, and the VM is discarded.
 
-**Not verified:** the isolation could not be exercised here (macOS; GitHub's runners need `sudo unshare --net` and
-`setpriv`, present on `ubuntu-latest` but untested by me), and the gate's `--tree` flag does not exist yet. The
-assumed interface is `--tree DIR --new-since SHA` and `--tree DIR --provenance-since SHA`. Residual risk: a PR-supplied
-`check.py` running as an unprivileged user with no network can still read the checkout and burn the job's time; it
-cannot reach a token (none is in the job), and the result files are written by the runner, not by that process.
+A separate job, which runs no PR code, holds `checks: write` and publishes the result. `TestBindingGateJob` pins these
+properties in the workflow text. **Not verified:** the gate steps themselves have not run on a runner (the script is not
+on `main` until #467 merges); only the isolation measurement above was run for real.
 
 ## Counterexamples from Codex's round 1 on PR #466 (each is now a test)
 

@@ -12,11 +12,9 @@ from one side of the diff counts as absent. Shortcut limits are in tasks/working
 In CI the workflow runs the copy of this file on the base branch (pull_request_target), never the PR's own copy, and
 --post publishes the result as the check run `pr-rules` on the PR head.
 
-Two helpers serve the binding-gate job of the same workflow: --export-tree writes the data/ and tasks/ blobs of a ref into
-a plain directory (data only), and --publish-gate posts the gate job's result as the check run `binding-gate`.
+--publish-gate posts the binding-gate job of the same workflow as the check run `binding-gate`.
 
 Usage: python3 scripts/check_pr_rules.py --pr 123 [--post]
-       python3 scripts/check_pr_rules.py --export-tree REF DEST
        python3 scripts/check_pr_rules.py --publish-gate DIR --pr 123
        python3 scripts/check_pr_rules.py --facts facts.json
        python3 scripts/check_pr_rules.py --write-baseline        (regenerate the grandfathered-label list from main)
@@ -414,44 +412,12 @@ def post_check(head_sha, rc, text, name="pr-rules", conclusion=None):
     return r.returncode == 0
 
 
-def export_tree(ref, dest, paths=("data/", "tasks/")):
-    """Write the blobs of `paths` at `ref` into `dest` as plain files, as data only: raw blob bytes, so no checkout
-    filter, .gitattributes rule (export-ignore, eol) or hook applies; symlinks and submodules are skipped and listed.
-    Returns (files written, skipped paths). A blob that cannot be read raises InspectionError."""
-    dest = Path(dest).resolve()
-    wanted, skipped = [], []
-    for entry in filter(None, git("ls-tree", "-r", "-z", "--full-tree", ref, "--", *paths).split("\0")):
-        meta, path = entry.split("\t", 1)
-        mode, _, sha = meta.split()
-        (wanted if mode in ("100644", "100755") else skipped).append((path, sha))
-    proc = subprocess.Popen(["git", "-C", str(REPO), "cat-file", "--batch"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-    try:
-        for path, sha in wanted:
-            target = (dest / path).resolve()
-            if dest not in target.parents:
-                raise InspectionError(f"path escapes the export directory: {path!r}")
-            proc.stdin.write(sha.encode() + b"\n")
-            proc.stdin.flush()
-            head = proc.stdout.readline().split()
-            if len(head) != 3 or head[1] != b"blob":
-                raise InspectionError(f"cannot read blob {sha[:12]} for {path}")
-            data = proc.stdout.read(int(head[2]))
-            proc.stdout.read(1)
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(data)
-    finally:
-        proc.stdin.close()
-        proc.stdout.close()
-        proc.wait()
-    return len(wanted), [p for p, _ in skipped]
-
-
-GATE_STATES = {"passed": "success", "not_yet": "neutral", "skipped": "neutral", "failed": "failure", "cannot_inspect": "failure"}
+GATE_STATES = {"passed": "success", "not_yet": "neutral", "failed": "failure", "cannot_inspect": "failure"}
 
 
 def publish_gate(dirpath, pr_number):
     """Post the binding-gate job's result (head, state, log files in `dirpath`) as the check run `binding-gate`.
-    `not_yet` (the gate is not on main) and `skipped` (no offline isolation) are neutral: visibly not a pass."""
+    `not_yet` (the gate is not on main) is neutral: visibly not a pass."""
     d = Path(dirpath)
     head, state = (d / "head").read_text().strip(), (d / "state").read_text().strip()
     log = (d / "log").read_text(errors="replace") if (d / "log").exists() else ""
@@ -482,14 +448,8 @@ def main(argv=None):
     ap.add_argument("--base", help="base ref (default origin/<the PR's base branch>)")
     ap.add_argument("--post", action="store_true", help="publish the result as the check run pr-rules on the PR head")
     ap.add_argument("--write-baseline", action="store_true")
-    ap.add_argument("--export-tree", nargs=2, metavar=("REF", "DEST"))
     ap.add_argument("--publish-gate", metavar="DIR")
     a = ap.parse_args(argv)
-    if a.export_tree:
-        n, skipped = export_tree(*a.export_tree)
-        print(f"exported {n} files from {a.export_tree[0][:12]} to {a.export_tree[1]}; skipped {len(skipped)} symlink/submodule path(s)"
-              + "".join(f"\n  skipped {p}" for p in skipped[:20]))
-        return 0
     if a.publish_gate:
         if not a.pr:
             ap.error("--publish-gate needs --pr")

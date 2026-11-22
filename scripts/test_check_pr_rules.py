@@ -295,12 +295,15 @@ class TestWorkflow(unittest.TestCase):
 
     text = (Path(__file__).resolve().parent.parent / ".github/workflows/pr-rules.yml").read_text()
 
-    def test_uses_pull_request_target_and_never_the_pr_tree(self):
+    def test_uses_pull_request_target_and_evaluate_never_checks_out_the_pr(self):
         self.assertIn("pull_request_target", self.text)
         self.assertNotRegex(self.text, r"(?m)^\s*pull_request:")
-        for bad in ("pull_request.head", "head.sha", "head_ref", "refs/pull/${{"):
-            self.assertNotIn(bad, self.text)
-        self.assertNotRegex(self.text, r"(?m)^\s*ref:")  # actions/checkout stays on the default (base) ref
+        evaluate = self.text[:self.text.index("\n  binding-gate:")]
+        publish = self.text[self.text.index("\n  publish-binding-gate:"):]
+        for part in (evaluate, publish):
+            for bad in ("pull_request.head", "head.sha", "head_ref", "refs/pull/${{"):
+                self.assertNotIn(bad, part)
+            self.assertNotRegex(part, r"(?m)^\s*ref:")  # actions/checkout stays on the default (base) ref
 
     def test_comment_edits_and_deletions_re_evaluate(self):
         for kind in ("created", "edited", "deleted"):
@@ -309,87 +312,35 @@ class TestWorkflow(unittest.TestCase):
 
 
 class TestBindingGateJob(unittest.TestCase):
-    """The job that may run a PR-supplied check.py holds no token, keeps no credential and runs offline."""
+    """The only job that checks out PR content holds no token, keeps no credential, and runs main's gate on it."""
 
     text = TestWorkflow.text
     job = text[text.index("\n  binding-gate:"):text.index("\n  publish-binding-gate:")]
     publish = text[text.index("\n  publish-binding-gate:"):]
 
-    def test_gate_job_has_no_token_no_credential_and_no_network(self):
+    def test_gate_job_has_no_token_and_no_persisted_credential_on_either_checkout(self):
         self.assertIn("permissions: {}", self.job)
-        self.assertIn("persist-credentials: false", self.job)
-        self.assertIn("unshare --net", self.job)
+        self.assertEqual(self.job.count("persist-credentials: false"), 2)
+        self.assertEqual(self.job.count("actions/checkout@v4"), 2)
         for bad in ("GH_TOKEN", "github.token", "secrets.", "GITHUB_TOKEN", "checks: write"):
             self.assertNotIn(bad, self.job)
 
-    def test_gate_job_does_not_run_when_isolation_is_unproven(self):
-        # the isolation probe must come before the gate and must route a failure to `skipped`, never to a run
-        self.assertLess(self.job.index('isolated /usr/bin/python3 -c "$probe"'), self.job.index("check_evidence_binding.py --tree"))
-        self.assertIn("echo skipped", self.job)
-        self.assertIn("echo not_yet", self.job)
+    def test_pr_is_checked_out_as_data_into_pr_and_main_runs_the_gate_on_it(self):
+        self.assertIn("ref: refs/pull/${{ env.PR }}/merge", self.job)
+        self.assertIn("path: pr", self.job)
+        self.assertIn("for mode in --new-since --verify-proofs --provenance-since", self.job)
+        self.assertIn('scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr', self.job)
+        self.assertIn("gate not yet on main", self.job)
+        self.assertNotIn("python3 pr/", self.job)  # nothing is run from the PR tree except by the gate's own isolation
+
+    def test_unshare_must_work_and_there_is_no_skip_path(self):
+        self.assertIn("kernel.apparmor_restrict_unprivileged_userns=0", self.job)
+        self.assertIn("runs-on: ubuntu-24.04", self.job)
+        self.assertNotIn("skipped", self.job.lower())
 
     def test_only_the_publish_job_holds_a_token(self):
         self.assertIn("checks: write", self.publish)
         self.assertEqual(self.text.count("checks: write"), 2)  # evaluate (top level) and publish; never the gate job
-
-
-class TestExportTree(unittest.TestCase):
-    def test_exports_raw_blobs_ignoring_attributes_and_skips_symlinks(self):
-        with tempfile.TemporaryDirectory() as t, tempfile.TemporaryDirectory() as dest:
-            root = Path(t)
-            g = lambda *a: subprocess.run(["git", "-C", t, "-c", "user.name=t", "-c", "user.email=t@example.org", *a], check=True, capture_output=True)
-            g("init", "-q", "-b", "main")
-            (root / "data").mkdir()
-            (root / "tasks/f").mkdir(parents=True)
-            (root / ".gitattributes").write_text("data/hidden.csv export-ignore\n*.csv text eol=crlf\n")
-            (root / "data/hidden.csv").write_bytes(b"a,b\n1,2\n")
-            (root / "data/sp ace.csv").write_bytes(b"x\n")
-            (root / "tasks/f/check.py").write_text("print(1)\n")
-            (root / "tasks/f/link").symlink_to("/etc/passwd")
-            (root / "outside.txt").write_text("not exported\n")
-            g("add", "-A"); g("commit", "-qm", "c")
-            old, c.REPO = c.REPO, root
-            try:
-                n, skipped = c.export_tree("HEAD", dest)
-            finally:
-                c.REPO = old
-            self.assertEqual(n, 3)
-            self.assertEqual(skipped, ["tasks/f/link"])
-            self.assertEqual((Path(dest) / "data/hidden.csv").read_bytes(), b"a,b\n1,2\n")  # export-ignore and eol ignored
-            self.assertTrue((Path(dest) / "data/sp ace.csv").exists())
-            self.assertFalse((Path(dest) / "outside.txt").exists())
-            self.assertFalse((Path(dest) / "tasks/f/link").exists())
-
-
-class TestPublishGate(unittest.TestCase):
-    def publish(self, state, live=HEAD, head=HEAD):
-        with tempfile.TemporaryDirectory() as d:
-            Path(d, "head").write_text(head + "\n")
-            Path(d, "state").write_text(state + "\n")
-            Path(d, "log").write_text("gate log\n")
-            with mock.patch.object(c, "gh_json", return_value={"headRefOid": live}), \
-                    mock.patch.object(c, "post_check", return_value=True) as post:
-                rc = c.publish_gate(d, 5)
-            return rc, post
-
-    def test_states_map_to_conclusions(self):
-        for state, concl in (("passed", "success"), ("failed", "failure"), ("cannot_inspect", "failure"),
-                             ("not_yet", "neutral"), ("skipped", "neutral")):
-            rc, post = self.publish(state)
-            self.assertEqual(rc, 0)
-            self.assertEqual(post.call_args.args[-1], concl, state)
-            self.assertEqual(post.call_args.args[-2], "binding-gate")
-
-    def test_unknown_state_or_bad_head_posts_nothing(self):
-        rc, post = self.publish("whatever")
-        self.assertEqual(rc, 1)
-        post.assert_not_called()
-        self.assertEqual(self.publish("passed", head="abc")[0], 1)
-
-    def test_stale_head_is_not_posted(self):
-        rc, post = self.publish("passed", live=OLD)
-        self.assertEqual(rc, 0)
-        post.assert_not_called()
 
 
 class TestCollectors(unittest.TestCase):
