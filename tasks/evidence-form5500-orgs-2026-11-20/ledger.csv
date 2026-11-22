@@ -1,0 +1,1200 @@
+org_id,tier,verdict,legal_name,hq_city,hq_state,atlas_eins,filing_eins,sponsor,dba,form,plan_year_end,active,final,loc_city,loc_state,mail_city,mail_state,ack_id
+ORG-000014,C,NONE,"D & D Plastics, Inc.",Akron,OH,,,,,,,,,,,,,
+ORG-000017,U,NONE,Chemigon LLC,Akron,OH,,,,,,,,,,,,,
+ORG-000019,C,NONE,King Machine Molds,Akron,OH,,,,,,,,,,,,,
+ORG-000020,U,NAME+CITY,Rapid Mold Repair & Machine Co.,Akron,OH,,341871234,RAPID MOLD REPAIR AND MACHINE INC,,5500-SF,2025-04-30,0,1,,,AKRON,OH,20251126141100NAL0002537043001
+ORG-000021,U,NONE,Paddington Group,Akron,OH,,,,,,,,,,,,,
+ORG-000022,U,NONE,Greatoo Inc.,,,,,,,,,,,,,,,
+ORG-000023,B,NONE,Ravizza Packaging USA Corp.,Akron,OH,,,,,,,,,,,,,
+ORG-000024,U,NONE,ALCO Chemical,Akron,OH,,,,,,,,,,,,,
+ORG-000025,C,NONE,Musson Rubber Co.,Akron,OH,,,,,,,,,,,,,
+ORG-000032,C,NONE,"Acme Pattern Works, Inc.",Akron,OH,,,,,,,,,,,,,
+ORG-000036,U,NONE,Win Plastic Extrusions LLC,Akron,OH,,,,,,,,,,,,,
+ORG-000038,B,NONE,Pioneer Plastics Corp.,Akron,OH,,,,,,,,,,,,,
+ORG-000049,C,NONE,"Akron Polymer Solutions, Inc.",Akron,OH,,,,,,,,,,,,,
+ORG-000053,A,NAME+CITY,Sovereign Chemical Co.,Akron,OH,,341161705,SOVEREIGN CHEMICAL COMPANY,,5500-SF,2025-12-31,10,0,,,AKRON,OH,20261005072913NAL0047208178001
+ORG-000056,A,NONE,CF Extrusion Technologies,Cuyahoga Falls,OH,,,,,,,,,,,,,
+ORG-000066,C,NONE,"Custom Plastic Extrusions, Ltd.",Hudson,OH,,,,,,,,,,,,,
+ORG-000068,C,NAME+CITY,"Plastic Process Equipment, Inc.",Macedonia,OH,,341151140,PLASTIC PROCESS EQUIPMENT INC,,5500,2025-12-31,46,0,,,MACEDONIA,OH,20261015125512NAL0008076723001
+ORG-000076,A,NAME+CITY,Crown Composites Tooling,Twinsburg,OH,,461017425,"CROWN COMPOSITES TOOLING, LLC",,5500-SF,2025-12-31,11,0,,,TWINSBURG,OH,20261012140512NAL0003328736001
+ORG-000078,B,NONE,Giesecke+Devrient America,Twinsburg,,,,,,,,,,,,,,
+ORG-000079,B,NAME+CITY,"General Plastex, Inc.",Barberton,OH,,341488779,GENERAL PLASTEX,,5500-SF,2025-08-31,13,0,,,BARBERTON,OH,20260330105608NAL0013150051001
+ORG-000080,C,NONE,Ace Plastics,Barberton,OH,,,,,,,,,,,,,
+ORG-000084,B,NONE,"Q Model, Inc.",Barberton,OH,,,,,,,,,,,,,
+ORG-000085,B,NONE,"Ohio Precision Molding, Inc.",Barberton,OH,,,,,,,,,,,,,
+ORG-000095,B,NONE,"MKV Polymers, Inc.",Akron,,,,,,,,,,,,,,
+ORG-000096,C,NONE,G3 Mixing Technologies,Akron,OH,,,,,,,,,,,,,
+ORG-000102,B,NONE,Alpha Technologies,Hudson,OH,,,,,,,,,,,,,
+ORG-000107,U,NONE,T&M Plastics Co.,Cleveland,OH,,,,,,,,,,,,,
+ORG-000111,C,NAME+CITY,William Exline Inc.,Cleveland,OH,,340211040,"WILLIAM EXLINE, INC.",,5500-SF,2025-06-30,9,0,,,CLEVELAND,OH,20260407094500NAL0004914099001
+ORG-000122,B,NAME+CITY,Lattice Composites LLC,Solon,OH,,853286992,"LATTICE COMPOSITES, LLC",,5500-SF,2025-12-31,5,0,,,SOLON,OH,20261013113744NAL0004297665001
+ORG-000139,B,NONE,FedPro,Warrensville Heights,OH,,,,,,,,,,,,,
+ORG-000144,U,NONE,Molders Choice,Solon,OH,,,,,,,,,,,,,
+ORG-000146,B,NONE,"SR Rubber Machinery Parts, Corp.",Cleveland,OH,,,,,,,,,,,,,
+ORG-000147,C,NAME+CITY,Chem-Materials Co.,Westlake,OH,,341544562,"CHEM-MATERIALS, INC.",,5500-SF,2025-12-31,13,0,,,WESTLAKE,OH,20260610130233NAL0015275666001
+ORG-000153,C,NAME+CITY,Moen Incorporated,North Olmsted,OH,,360548230,MOEN INCORPORATED,,5500,2025-12-31,540,0,,,NORTH OLMSTED,OH,20261015103428NAL0008365537001
+ORG-000157,C,NONE,GrafTech International,Brooklyn Heights,OH,,,,,,,,,,,,,
+ORG-000169,U,NAME+CITY,Zatkoff Seals & Packings,Farmington Hills,MI,,381683798,ZATKOFF SEALS & PACKINGS,,5500,2025-12-31,188,0,,,FARMINGTON HILLS,MI,20260714093206NAL0001584880001
+ORG-000170,B,NONE,Tahoma Rubber and Plastics Inc.,Barberton,OH,,,,,,,,,,,,,
+ORG-000171,B,NONE,Temarex Corporation,Akron,OH,,,,,,,,,,,,,
+ORG-000183,C,NAME+CITY,Die-Cut Products Co.,Cleveland,OH,,340659305,DIE CUT PRODUCTS,,5500-SF,2025-12-31,7,0,,,CLEVELAND,OH,20260815103211NAL0010688323001
+ORG-000184,B,NAME_STATE_ONLY,North Coast Seal,Brook Park,OH,,341496415,"NORTH COAST SEAL, INC.",,5500-SF,2025-12-31,10,0,,,BROOKPARK,OH,20261013042443NAL0001450883001
+ORG-000186,C,NAME_STATE_ONLY,SKF USA Inc.,,,,231043740,SKF USA INC.,,5500,2025-12-31,2233,,,,BLUE BELL,PA,20261007154059NAL0052854274001
+ORG-000192,C,NONE,Triangle Chemical Co.,Mentor,OH,,,,,,,,,,,,,
+ORG-000197,B,NONE,Kenda American Technology Center,,,,,,,,,,,,,,,
+ORG-000198,C,NONE,Ziegler Tire,Massillon,OH,,,,,,,,,,,,,
+ORG-000204,B,SPINE_OTHER_EIN,Hankook Tire America Corp.,Nashville,TN,,133090091,HANKOOK TIRE AMERICA CORP.,,5500,2025-12-31,1336,0,,,NASHVILLE,TN,20261014061218NAL0005843762001
+ORG-000206,B,NONE,"A. C. Wilson Enterprises, Inc.",Middlefield,OH,,,,,,,,,,,,,
+ORG-000207,A,NONE,A.R.E. Accessories,Massillon,OH,,,,,,,,,,,,,
+ORG-000212,B,NONE,Cutting Edge Converted Products,Cleveland,OH,,,,,,,,,,,,,
+ORG-000214,A,NONE,"Advanced Poly-Packaging, Inc.",Akron,OH,,,,,,,,,,,,,
+ORG-000217,A,NAME+CITY,Air Power Dynamics,Mentor,OH,,061666197,"AIR POWER DYNAMICS, LLC",,5500-SF,2025-10-15,0,1,,,MENTOR,OH,20260225151625NAL0002277043001
+ORG-000218,B,NONE,Akro-Mils,Akron,OH,,,,,,,,,,,,,
+ORG-000219,B,NONE,Akro-Plastics,Kent,OH,,,,,,,,,,,,,
+ORG-000220,A,NONE,"Akron Coating & Adhesives, Inc.",Akron,OH,,,,,,,,,,,,,
+ORG-000229,B,NONE,"American Molded Plastic, Inc.",Newton Falls,OH,,,,,,,,,,,,,
+ORG-000232,A,NONE,"Applied Medical Technology, Inc.",Brecksville,OH,,,,,,,,,,,,,
+ORG-000235,B,NONE,"Assembly Specialist, Inc.",Painesville,OH,,,,,,,,,,,,,
+ORG-000240,A,NONE,"Baker Plastics, Inc.",Youngstown,OH,,,,,,,,,,,,,
+ORG-000245,B,NAME+CITY,Luxium Solutions,Hiram,OH,,883779816,"LUXIUM SOLUTIONS, LLC",,5500,2025-12-31,306,0,,,HIRAM,OH,20261013144837NAL0004948178001
+ORG-000249,B,NAME+CITY,BMS Burns,Medina,OH,,341571477,BMS BURNS,,5500-SF,2025-08-31,5,0,,,MEDINA,OH,20260330105354NAL0009055553001
+ORG-000253,B,NONE,Borchers Americas Inc.,Westlake,OH,,,,,,,,,,,,,
+ORG-000254,B,NONE,Briarwood Products,Cleveland,OH,,,,,,,,,,,,,
+ORG-000256,B,NAME+CITY,Buckeye Rubber & Packing Co.,Beachwood,OH,,341366845,BUCKEYE RUBBER AND PACKING CO.,,5500-SF,2025-06-30,33,0,,,BEACHWOOD,OH,20251003115222NAL0002225632001
+ORG-000258,B,NAME+CITY,"C.A. Litzler Co., Inc.",Cleveland,OH,,340756231,"C. A. LITZLER CO., INC.",,5500-SF,2025-12-31,46,0,,,CLEVELAND,OH,20260416150006NAL0028347072001
+ORG-000260,A,NONE,"Capital Plastics, Inc.",Middlefield,OH,,,,,,,,,,,,,
+ORG-000265,B,NONE,CCL Label,Strongsville,OH,,,,,,,,,,,,,
+ORG-000266,B,NONE,CermeTech LLC,Cleveland,OH,,,,,,,,,,,,,
+ORG-000277,B,NONE,Cleveland Spray Foam,Rocky River,OH,,,,,,,,,,,,,
+ORG-000281,A,NONE,"Compass Insulation & Coatings, Inc.",Cleveland,OH,,,,,,,,,,,,,
+ORG-000282,A,NONE,Component Manufacturing and Design,Brunswick,OH,,,,,,,,,,,,,
+ORG-000285,B,NAME+CITY,"Consolidated Plastics Co., Inc.",Stow,OH,,341532477,"CONSOLIDATED PLASTICS COMPANY, INC.",,5500-SF,2025-12-31,10,0,,,STOW,OH,20260414120846NAL0019531136001
+ORG-000286,A,NONE,Container Compliance Corp.,Cleveland,OH,,,,,,,,,,,,,
+ORG-000288,A,NONE,"Corporate Consulting & Service Instruments, Inc.",Akron,OH,,,,,,,,,,,,,
+ORG-000292,B,NONE,"Crafters Wholesale Superstore, LLC",Parma,OH,,,,,,,,,,,,,
+ORG-000301,A,NONE,DEM Manufacturing LLC,Newbury,OH,,,,,,,,,,,,,
+ORG-000303,B,NONE,Desenco Inc.,Akron,OH,,,,,,,,,,,,,
+ORG-000305,A,NAME+CITY,"Diemaster Tool & Mold, Inc.",Macedonia,OH,,340972502,"DIEMASTER TOOL & MOLD, INC.",,5500-SF,2025-12-31,5,0,,,MACEDONIA,OH,20260519130636NAL0001042465001
+ORG-000307,B,NONE,Diversified Mold & Castings,Warrensville Heights,OH,,,,,,,,,,,,,
+ORG-000324,B,NONE,Elite Machinery Systems,Strongsville,OH,,,,,,,,,,,,,
+ORG-000326,A,NONE,"Enclosure Solutions, Inc.",Newbury,OH,,,,,,,,,,,,,
+ORG-000328,B,NONE,Equalseal.com,Fairlawn,OH,,,,,,,,,,,,,
+ORG-000332,A,NONE,Essentialware,Kirtland,OH,,,,,,,,,,,,,
+ORG-000334,A,NAME+CITY,Everhard Products Inc.,Canton,OH,,340863357,"EVERHARD PRODUCTS, INC.",,5500-SF,2025-12-31,90,0,,,CANTON,OH,20260327154829NAL0003623795001
+ORG-000337,B,NAME+CITY,"FACTS, Inc.",Cuyahoga Falls,OH,,341693974,FACTS INC,,5500-SF,2025-12-31,20,0,,,CUYAHOGA FALLS,OH,20260526083251NAL0006469491001
+ORG-000347,A,NONE,Four Seasons Industries,Garrettsville,OH,,,,,,,,,,,,,
+ORG-000351,B,NONE,"Gem City Plastic Machinery, Inc.",Brecksville,OH,,,,,,,,,,,,,
+ORG-000352,A,NONE,General Color & Chemical,Minerva,OH,,,,,,,,,,,,,
+ORG-000353,B,NAME+CITY,Glebus Alloys,Stow,OH,,341964506,GLEBUS ALLOYS LLC,,5500-SF,2025-12-31,4,0,,,STOW,OH,20260729123857NAL0018062259001
+ORG-000359,B,NONE,Grafton Machine & Rubber Co.,Ravenna,OH,,,,,,,,,,,,,
+ORG-000363,B,NONE,"Hanlon Composites, LLC",Elyria,OH,,,,,,,,,,,,,
+ORG-000364,A,NONE,"Hannecard Roller Coatings, Inc. / ASB Industries",Barberton,OH,,,,,,,,,,,,,
+ORG-000369,B,NAME+CITY,Heyden Mold & Bench Co.,Tallmadge,OH,,341357568,"HEYDEN MOLD & BENCH CO., INC.",,5500-SF,2025-12-31,13,0,,,TALLMADGE,OH,20260302105321NAL0000678259001
+ORG-000370,A,NONE,"High Tech Molding and Design, Inc.",Youngstown,OH,,,,,,,,,,,,,
+ORG-000378,A,NONE,Infinity Composites Inc.,Ashtabula,OH,,,,,,,,,,,,,
+ORG-000381,A,NONE,"Integrated Chemical Concepts, Inc.",Brecksville,OH,,,,,,,,,,,,,
+ORG-000383,A,NAME+CITY,"IDEAS, Inc.",North Canton,OH,,311500203,IDEAS INC,,5500-SF,2025-08-31,0,1,,,NORTH CANTON,OH,20260330105505NAL0020399394001
+ORG-000385,B,NAME+CITY,Iten Defense,Ashtabula,OH,,842321242,"ITEN DEFENSE, LLC",,5500,2025-12-31,102,0,,,ASHTABULA,OH,20260811141848NAL0007730081001
+ORG-000396,B,NONE,JK Plastics,Middlefield,OH,,,,,,,,,,,,,
+ORG-000401,B,NAME+CITY,JuggerBot 3D LLC,Youngstown,OH,,471505953,JUGGERBOT 3D LLC,,5500-SF,2025-12-31,12,0,,,YOUNGSTOWN,OH,20260729123940NAL0021039409001
+ORG-000404,B,NAME_STATE_ONLY,Keene Building Products,Euclid,OH,,320038874,"KEENE BUILDING PRODUCTS COMPANY, INC.",,5500-SF,2026-03-02,0,1,,,CLEVELAND,OH,20260504134714NAL0003143603001
+ORG-000405,B,NONE,Keener Rubber Company,Alliance,OH,,,,,,,,,,,,,
+ORG-000407,A,NAME+CITY,American Marble Industries,Canton,OH,,341488995,KEPHACO CORP.,AMERICAN MARBLE INDUSTRIES,5500-SF,2024-12-31,25,0,,,CANTON,OH,20251014130311NAL0004018144001
+ORG-000409,A,NONE,"Keyland Polymer UV Powder, LLC",Cleveland,OH,,,,,,,,,,,,,
+ORG-000415,A,NONE,Laszeray Technology Inc,North Royalton,OH,,,,,,,,,,,,,
+ORG-000416,A,NONE,GLI Pool Products,Youngstown,OH,,,,,,,,,,,,,
+ORG-000417,B,NONE,Lerner Molded Plastics,Aurora,OH,,,,,,,,,,,,,
+ORG-000420,A,NONE,"Linden Industries, Inc. dba Linden Polyurethane",Cuyahoga Falls,OH,,,,,,,,,,,,,
+ORG-000421,B,NONE,The Little Tikes Company,Hudson,OH,,,,,,,,,,,,,
+ORG-000422,B,NONE,Littlern Corp.,Barberton,OH,,,,,,,,,,,,,
+ORG-000423,B,NONE,LMT Mercer Group,Hartville,OH,,,,,,,,,,,,,
+ORG-000424,B,NONE,LT Molding Solutions,Hudson,OH,,,,,,,,,,,,,
+ORG-000427,A,NONE,"Main Street Lighting, Inc.",Medina,OH,,,,,,,,,,,,,
+ORG-000436,B,NONE,Merit Specialty Chemicals,Peninsula,OH,,,,,,,,,,,,,
+ORG-000437,A,NONE,Metalcrete Industries,Cleveland,OH,,,,,,,,,,,,,
+ORG-000439,B,NONE,Mickey Thompson Performance Tires & Wheels,Stow,OH,,,,,,,,,,,,,
+ORG-000442,A,NONE,"Middlefield Plastics, Inc.",Middlefield,OH,,,,,,,,,,,,,
+ORG-000443,B,NONE,"Midlands Technologies, Inc.",Canton,OH,,,,,,,,,,,,,
+ORG-000445,A,NAME+CITY,Miller Weldmaster Corporation,Navarre,OH,,341425990,MILLER WELDMASTER,,5500-SF,2025-12-31,76,0,,,NAVARRE,OH,20260629063055NAL0014085376001
+ORG-000450,B,NONE,"Molded Extruded Specialties, Div. of Frank Novak & Sons, Inc.",Cleveland,OH,,,,,,,,,,,,,
+ORG-000452,B,NONE,Molded Marketing LLC,Burbank,OH,,,,,,,,,,,,,
+ORG-000461,B,NONE,Nexen Tire America Technical Center,Richfield,OH,,,,,,,,,,,,,
+ORG-000465,B,NONE,Nitrojection Corporation,Chesterland,OH,,,,,,,,,,,,,
+ORG-000466,B,NONE,North American Coating Laboratories,Mentor,OH,,,,,,,,,,,,,
+ORG-000468,A,NONE,"North American Seal & Supply, Inc.",Cleveland,OH,,,,,,,,,,,,,
+ORG-000471,B,NONE,Novis Works LLC,Canton,OH,,,,,,,,,,,,,
+ORG-000472,A,NONE,Resivant Medical,Akron,OH,,,,,,,,,,,,,
+ORG-000480,A,NAME+CITY,"Palmer Holland, Inc",Westlake,OH,,340764574,"PALMER HOLLAND, INC.",,5500,2025-12-31,234,0,,,WESTLAKE,OH,20261012091503NAL0000809219001
+ORG-000482,B,NAME+CITY,ParkOhio Holdings Corp.,Cleveland,OH,,346520107,PARK OHIO INDUSTRIES INC,,5500,2025-12-31,2005,0,,,CLEVELAND,OH,20261015064037NAL0008503008001
+ORG-000491,B,NAME+CITY,Phoenix Associates,Chagrin Falls,OH,,931341451,PHOENIX ASSOCIATES LLC,,5500-SF,2025-12-31,13,0,,,CHAGRIN FALLS,OH,20260701062741NAL0013370913001
+ORG-000494,B,NONE,Plastic Extrusion Technologies,Middlefield,OH,,,,,,,,,,,,,
+ORG-000498,B,NAME+CITY,PlastiWin Capital Equipment,Twinsburg,OH,,275427477,"PLASTIWIN CAPITAL EQUIPMENT, LLC",,5500-SF,2025-12-31,5,0,,,TWINSBURG,OH,20260505084137NAL0000912176001
+ORG-000499,A,NONE,"Plastore, Inc.",Hudson,OH,,,,,,,,,,,,,
+ORG-000507,B,NONE,"PolyInsight, LLC",Akron,OH,,,,,,,,,,,,,
+ORG-000508,A,NONE,Polymer 5,Garrettsville,OH,,,,,,,,,,,,,
+ORG-000510,B,NAME+CITY,"Polymer Machinery Consultants, Ltd.",Tallmadge,OH,,260343820,"POLYMER MACHINERY CO., INC.",,5500-SF,2025-12-31,4,0,,,TALLMADGE,OH,20260331143639NAL0000261696001
+ORG-000514,A,NONE,Precision Coatings Inc.,Cleveland,OH,,,,,,,,,,,,,
+ORG-000515,B,NONE,"Precision Foam Fabrication, Inc.",Youngstown,OH,,,,,,,,,,,,,
+ORG-000524,A,NONE,Primeline Industries,Akron,OH,,,,,,,,,,,,,
+ORG-000526,B,NONE,Profile Rubber Corp.,Wadsworth,OH,,,,,,,,,,,,,
+ORG-000530,A,NONE,Protectoplas Company,Streetsboro,OH,,,,,,,,,,,,,
+ORG-000536,A,NAME+CITY,RADIX Wire & Cable LLC,Glenwillow,OH,,461783358,"RADIX WIRE & CABLE, LLC",,5500,2025-12-31,105,0,,,GLENWILLOW,OH,20260923050248NAL0014278514001
+ORG-000537,B,NONE,Rainbow Printing,Uniontown,OH,,,,,,,,,,,,,
+ORG-000538,A,NONE,Rapid Molding,North Canton,OH,,,,,,,,,,,,,
+ORG-000545,B,NONE,Extera,Middlefield,OH,,,,,,,,,,,,,
+ORG-000548,B,NONE,Rico Products Inc,Chagrin Falls,OH,,,,,,,,,,,,,
+ORG-000561,A,NONE,Savage Engineering Inc.,Garfield Heights,OH,,,,,,,,,,,,,
+ORG-000568,A,NAME+CITY,Sentry Protection Products,Lakewood,OH,,271961629,SENTRY PROTECTION LLC,,5500-SF,2025-12-31,2,0,,,LAKEWOOD,OH,20260915104731NAL0003285986001
+ORG-000570,A,NONE,Shini USA,Willoughby,OH,,,,,,,,,,,,,
+ORG-000574,B,NONE,SMC Ltd.,Twinsburg,OH,,,,,,,,,,,,,
+ORG-000576,A,NAME+CITY,"Soft-Lite, LLC",Streetsboro,OH,,341830274,SOFT-LITE LLC,,5500,2024-12-31,0,1,,,STREETSBORO,OH,20250619143622NAL0004700352001
+ORG-000587,A,NAME+CITY,"Squire, T. L. & Co., Inc.",Akron,OH,,341373179,"T.L. SQUIRE & COMPANY, INC.",,5500-SF,2025-12-31,6,0,,,AKRON,OH,20261001102009NAL0021773440001
+ORG-000590,B,NAME+CITY,"Stopol Equipment Sales, LLC",Valley City,OH,,270636083,"STOPOL EQUIPMENT SALES, LLC",,5500-SF,2025-12-31,9,0,,,VALLEY CITY,OH,20260922122732NAL0006169267001
+ORG-000592,A,NAME+CITY,"Sun State Plastics, Inc.",North Canton,OH,,341314718,SUN STATE PLASTICS INC.,,5500-SF,2026-03-31,6,0,,,NORTH CANTON,OH,20260729093257NAL0020701521001
+ORG-000593,B,NONE,Suncolor Corporation,North Canton,OH,,,,,,,,,,,,,
+ORG-000599,B,NONE,"Technifab, Inc.",Avon,OH,,,,,,,,,,,,,
+ORG-000604,B,NONE,"Thermal Aire Technologies, Inc.",Medina,OH,,,,,,,,,,,,,
+ORG-000605,B,NONE,ThermoCore Products Ltd,Ravenna,OH,,,,,,,,,,,,,
+ORG-000608,B,NONE,Tomlinson Industries,Parma,OH,,,,,,,,,,,,,
+ORG-000609,B,NONE,Toth Mold/Die Inc.,Bedford,OH,,,,,,,,,,,,,
+ORG-000621,A,NONE,Universal Plastics & Machine,Canton,OH,,,,,,,,,,,,,
+ORG-000624,A,NONE,Uway Extrusion LLC,Warren,OH,,,,,,,,,,,,,
+ORG-000627,B,NAME+CITY,Vulcan Machinery Corporation,Akron,OH,,341098572,VULCAN MACHINERY CORP.,,5500-SF,2025-12-31,8,0,,,AKRON,OH,20260724131357NAL0012626227001
+ORG-000629,B,NAME_STATE_ONLY,Walton Plastics,Walton Hills,OH,,341705898,"WALTON PLASTICS, INC.",,5500-SF,2025-12-31,67,0,,,BROOKLYN HEIGHTS,OH,20261015071635NAL0008056978001
+ORG-000639,A,NAME+CITY,"Youngstown Plastic Tooling & Machinery, Inc.",Youngstown,OH,,341437860,"YOUNGSTOWN PLASTIC TOOLING & MACHINERY, INC.",,5500-SF,2025-12-31,6,0,,,YOUNGSTOWN,OH,20260126105933NAL0002267456001
+ORG-000641,A,NONE,"Zeiger Industries, Inc.",Canton,OH,,,,,,,,,,,,,
+ORG-000644,B,NAME+CITY,889 Global Solutions Ltd.,Columbus,OH,,311730415,"889 GLOBAL SOLUTIONS, LTD.",,5500-SF,2025-12-31,7,0,,,COLUMBUS,OH,20260911154641NAL0008182418001
+ORG-000645,B,NONE,A.M. Toolbox,Dublin,OH,,,,,,,,,,,,,
+ORG-000646,B,NAME+CITY,A&P Technology Inc.,Cincinnati,OH,,611274219,"A & P TECHNOLOGY, INC.",,5500,2025-12-31,158,0,,,CINCINNATI,OH,20261001090904NAL0021702336001
+ORG-000648,B,NONE,Ace Sanitary,West Chester,OH,,,,,,,,,,,,,
+ORG-000652,A,NONE,Advanced Plastic Recycling,Minster,OH,,,,,,,,,,,,,
+ORG-000653,B,NONE,Advanced Plastic Systems,Gahanna,OH,,,,,,,,,,,,,
+ORG-000656,A,NONE,Agile Ultrasonics Corp.,Hilliard,OH,,,,,,,,,,,,,
+ORG-000662,B,NONE,Allied Plastics,Toledo,OH,,,,,,,,,,,,,
+ORG-000663,B,NONE,Alpine Material Solutions,Cincinnati,OH,,,,,,,,,,,,,
+ORG-000667,A,NONE,American Cutting Edge,Miamisburg,OH,,,,,,,,,,,,,
+ORG-000678,A,NONE,Applied Foam Solutions,Hamilton,OH,,,,,,,,,,,,,
+ORG-000679,B,NONE,APSX LLC,Blue Ash,OH,,,,,,,,,,,,,
+ORG-000681,B,NONE,Arch Polymers,Bellefontaine,OH,,,,,,,,,,,,,
+ORG-000682,A,NONE,Aries Science and Technology LLC,Columbus,OH,,,,,,,,,,,,,
+ORG-000685,B,NONE,Associated Plastics Corp.,Ada,OH,,,,,,,,,,,,,
+ORG-000692,B,NONE,Azelis Americas,West Chester,OH,,,,,,,,,,,,,
+ORG-000694,B,NONE,B. Schoenberg & Co.,Bucyrus,OH,,,,,,,,,,,,,
+ORG-000695,A,NONE,Baerlocher U.S.A.,Cincinnati,OH,,,,,,,,,,,,,
+ORG-000700,A,NONE,Bastech Inc.,Vandalia,OH,,,,,,,,,,,,,
+ORG-000701,A,NAME+CITY,Benchmark Industrial,Gahanna,OH,,832299285,"BENCHMARK INDUSTRIAL, INC.",,5500-SF,2025-12-31,85,0,,,GAHANNA,OH,20260609094502NAL0003755875001
+ORG-000702,B,NAME+CITY,Berlin Gardens LLC,Millersburg,OH,,263925753,"BERLIN GARDENS, LLC",,5500,2025-12-31,220,0,,,MILLERSBURG,OH,20261012091448NAL0002422658001
+ORG-000704,A,NONE,"Blackthorn, LLC",Clayton,OH,,,,,,,,,,,,,
+ORG-000707,B,NONE,American Custom Industries (ACI); 'Bobbart Industries' is the FRS-registered name at the address,Sylvania,OH,,,,,,,,,,,,,
+ORG-000709,A,NAME+CITY,"Borke Mold Specialists, Inc.",Hamilton,OH,,311300225,"BORKE MOLD SPECIALISTS, INC.",,5500-SF,2025-12-31,17,0,,,HAMILTON,OH,20260529115109NAL0009640515001
+ORG-000711,A,NAME+CITY,"Bryan Plastics Processing, LLC",Bryan,OH,,460938239,BRYAN PLASTICS PROCESSING,,5500-SF,2025-12-31,0,1,,,BRYAN,OH,20260729123613NAL0026911408001
+ORG-000715,A,NONE,"Buecomp, Inc.",Bloomville,OH,,,,,,,,,,,,,
+ORG-000716,B,NONE,Building Composites LLC,Moraine,OH,,,,,,,,,,,,,
+ORG-000718,B,NONE,C & M Rubber Co.,Dayton,OH,,,,,,,,,,,,,
+ORG-000721,B,NONE,"Carlisle Plastics Company, Inc.",New Carlisle,OH,,,,,,,,,,,,,
+ORG-000723,A,NONE,Provient Industrial,Fairfield,OH,,,,,,,,,,,,,
+ORG-000725,B,NONE,"Century Container, LLC",New Waterford,OH,,,,,,,,,,,,,
+ORG-000726,A,NONE,Century Label,Bowling Green,OH,,,,,,,,,,,,,
+ORG-000730,A,NONE,"Chatelain Plastics, Inc.",Findlay,OH,,,,,,,,,,,,,
+ORG-000731,B,NONE,ChemPrise,Cincinnati,OH,,,,,,,,,,,,,
+ORG-000733,A,NONE,"Choice Plastic Machinery, Inc.",Ashland,OH,,,,,,,,,,,,,
+ORG-000734,A,NONE,Cincinnati Process Technologies,Cincinnati,OH,,,,,,,,,,,,,
+ORG-000736,A,NONE,Clyde Foam LLC,Clyde,OH,,,,,,,,,,,,,
+ORG-000738,B,NONE,"Coexcell, Inc.",Maumee,OH,,,,,,,,,,,,,
+ORG-000739,B,NAME+CITY,Cold Jet,Loveland,OH,,200229498,"COLD JET, LLC",,5500,2025-12-31,142,0,,,LOVELAND,OH,20261006103420NAL0023872401001
+ORG-000740,B,NONE,"Color & Composite Technologies, Inc.",Sidney,OH,,,,,,,,,,,,,
+ORG-000745,B,NONE,Composites One LLC,Dublin,OH,,,,,,,,,,,,,
+ORG-000754,A,NAME+CITY,CoolSeal USA,Perrysburg,OH,,270448636,"COOLSEAL USA, LLC",,5500,2024-12-31,56,0,,,PERRYSBURG,OH,20250707083747NAL0001851667001
+ORG-000758,B,NONE,Cornerstone Research Group Inc.,Miamisburg,OH,,,,,,,,,,,,,
+ORG-000771,B,NONE,Creative Plastic Concepts,Sycamore,OH,,,,,,,,,,,,,
+ORG-000778,B,NONE,"Curbell Plastics, Inc.",Cincinnati,OH,,,,,,,,,,,,,
+ORG-000779,A,NONE,Custom Marble Solutions,Dayton,OH,,,,,,,,,,,,,
+ORG-000780,B,NONE,"Custom Molded Products, LLC",Wilmington,OH,,,,,,,,,,,,,
+ORG-000782,A,NONE,D.S. Brown,North Baltimore,OH,,,,,,,,,,,,,
+ORG-000787,B,NAME+CITY,Decorative Paint Inc.,Montpelier,OH,,273776137,"DECORATIVE PAINT, INC.",,5500-SF,2025-03-31,120,0,,,MONTPELIER,OH,20260108120944NAL0009140497001
+ORG-000791,A,NONE,DG Medical,Centerville,OH,,,,,,,,,,,,,
+ORG-000792,B,NONE,DIAMANT Polymers Inc.,Cincinnati,OH,,,,,,,,,,,,,
+ORG-000793,B,NONE,Dimex LLC,Marietta,OH,,,,,,,,,,,,,
+ORG-000794,A,NAME+CITY,DimcoGray Company,Centerville,OH,,310715229,DIMCOGRAY CORPORATION,,5500,2025-10-31,33,0,,,CENTERVILLE,OH,20260813065607NAL0009227651001
+ORG-000795,A,NONE,DLM Plastics,Findlay,OH,,,,,,,,,,,,,
+ORG-000800,B,NONE,Doyle Shamrock Industries,Holland,OH,,,,,,,,,,,,,
+ORG-000803,B,NONE,"DRS Industries, Inc.",Holland,OH,,,,,,,,,,,,,
+ORG-000807,A,NONE,"Dura-Belt, Inc.",Hilliard,OH,,,,,,,,,,,,,
+ORG-000811,B,NONE,EarthMark,Delaware,OH,,,,,,,,,,,,,
+ORG-000815,A,NONE,Elastostar Rubber Corporation,Plain City,OH,,,,,,,,,,,,,
+ORG-000817,A,NONE,Elite Precision Plastics,Cincinnati,OH,,,,,,,,,,,,,
+ORG-000818,B,NONE,Elledge Gasketing & Supply Co.,Lewis Center,OH,,,,,,,,,,,,,
+ORG-000822,B,NONE,EMI Corp.,Jackson Center,OH,,,,,,,,,,,,,
+ORG-000824,A,NONE,Endurica LLC,Findlay,OH,,,,,,,,,,,,,
+ORG-000826,B,NAME+CITY,Entrotech Inc,Columbus,OH,,311668800,"ENTROTECH, INC.",,5500-SF,2025-12-31,13,0,,,COLUMBUS,OH,20260518083131NAL0011594529001
+ORG-000831,B,NONE,F.B. Wright Cincinnati,West Chester,OH,,,,,,,,,,,,,
+ORG-000836,A,NAME+CITY,Fibre Glast Developments Corp.,Brookville,OH,,871092102,"FIBRE GLAST DEVELOPMENTS CORPORATION, LLC",,5500-SF,2025-12-31,19,0,,,BROOKVILLE,OH,20260609123721NAL0004407123001
+ORG-000837,B,NAME+CITY,Findlay Vinyl,Findlay,OH,,814939202,"FINDLAY VINYL, LLC",,5500-SF,2025-12-31,54,0,,,FINDLAY,OH,20260731104731NAL0023646753001
+ORG-000840,B,NONE,FL Tanks,Marietta,OH,,,,,,,,,,,,,
+ORG-000845,B,NONE,"Foam Concepts & Design, Inc.",Hamilton,OH,,,,,,,,,,,,,
+ORG-000848,B,NONE,"Fowler Products, Inc.",Crestline,OH,,,,,,,,,,,,,
+ORG-000855,B,NAME+CITY,Gilkey Window Company,Cincinnati,OH,,311250230,"GILKEY WINDOW CO., INC.",,5500,2025-12-31,112,0,,,CINCINNATI,OH,20260514152934NAL0016810482001
+ORG-000857,B,NONE,Fifty-Five Manufacturing LLC,Dayton,OH,,,,,,,,,,,,,
+ORG-000859,B,NONE,GLS Corp.,Dayton,OH,,,,,,,,,,,,,
+ORG-000863,B,NONE,The Granger Plastics Company,Middletown,OH,,,,,,,,,,,,,
+ORG-000866,B,NONE,Greenfield Precision Plastics,Greenfield,OH,,,,,,,,,,,,,
+ORG-000869,B,NONE,Guardian Medical,Swanton,OH,,,,,,,,,,,,,
+ORG-000871,B,NONE,H&H Industries,Oak Hill,OH,,,,,,,,,,,,,
+ORG-000872,B,NONE,Hamilton Caster,Hamilton,OH,,,,,,,,,,,,,
+ORG-000873,A,NONE,Hamilton Polymers Company,Leetonia,OH,,,,,,,,,,,,,
+ORG-000874,A,NONE,"Harmony Systems & Service, Inc.",Piqua,OH,,,,,,,,,,,,,
+ORG-000875,B,NONE,Harrington Industrial Plastics,Cincinnati,OH,,,,,,,,,,,,,
+ORG-000887,B,NAME+CITY,HydraTech Engineered Products LLC,Cincinnati,OH,,264011918,"HYDRATECH ENGINEERED PRODUCTS, LLC",,5500-SF,2025-12-31,13,0,,,CINCINNATI,OH,20261013145548NAL0004513203008
+ORG-000888,B,NAME+CITY,"IC3D, Inc.",Columbus,OH,,455526278,IC3D INC,,5500-SF,2025-04-30,6,0,,,COLUMBUS,OH,20251126140807NAL0009562194001
+ORG-000890,A,NONE,Industrial Fiberglass Specialties,Dayton,OH,,,,,,,,,,,,,
+ORG-000891,A,NONE,Industrial Hauling & Recycling,Lockland,OH,,,,,,,,,,,,,
+ORG-000892,B,NONE,Industrial Recyclers,Sidney,OH,,,,,,,,,,,,,
+ORG-000893,A,NONE,Industry Products Company,Piqua,OH,,,,,,,,,,,,,
+ORG-000896,A,NAME+CITY,Integral Manufacturing,Troy,OH,,271089694,"INTEGRAL MANUFACTURING, INC.",,5500,2025-06-30,112,0,,,TROY,OH,20260413114809NAL0029934434001
+ORG-000898,A,NAME+CITY,Interior Packaging Design,Milford,OH,,311613253,INTERIOR PACKAGING DESIGN LLC,,5500-SF,2025-12-31,11,0,,,MILFORD,OH,20260424083936NAL0003054563001
+ORG-000900,A,NONE,International Laminating Corporation,Dayton,OH,,,,,,,,,,,,,
+ORG-000906,B,NONE,"ISO Technologies, Inc.",Hebron,OH,,,,,,,,,,,,,
+ORG-000908,B,NONE,iVEX Packaging,Sidney,OH,,,,,,,,,,,,,
+ORG-000910,A,NONE,JMS Composites,Springfield,OH,,,,,,,,,,,,,
+ORG-000912,B,NONE,Johnson Plastics Plus,Findlay,OH,,,,,,,,,,,,,
+ORG-000914,B,NONE,"ENEOS Materials America, Inc.",Cincinnati,OH,,,,,,,,,,,,,
+ORG-000915,A,NONE,K & B Molded Products,Brookville,OH,,,,,,,,,,,,,
+ORG-000920,B,NONE,Klarity Medical Products,Heath,OH,,,,,,,,,,,,,
+ORG-000922,A,NAME_STATE_ONLY,KMAK Group LLC,Mt Sterling,OH,,263998063,"KMAK GROUP, LLC",,5500-SF,2025-04-30,19,0,,,LONDON,OH,20251126140706NAL0007100960001
+ORG-000923,B,NAME+CITY,"Kongsberg Precision Cutting Systems US, LLC",Miamisburg,OH,,854221605,"KONGSBERG PRECISION CUTTING SYSTEMS US, LLC",,5500,2024-12-31,78,0,,,MIAMISBURG,OH,20251015142129NAL0006565728001
+ORG-000926,B,NONE,Krom International,Celina,OH,,,,,,,,,,,,,
+ORG-000928,B,NONE,"L & C Plastic Bags, Inc",Covington,OH,,,,,,,,,,,,,
+ORG-000929,A,NONE,L. C. Liming & Sons Inc,Felicity,OH,,,,,,,,,,,,,
+ORG-000930,B,NAME+CITY,"LaserLinc, Inc.",Fairborn,OH,,311408890,LASERLINC INC.,,5500,2025-12-31,39,0,,,FAIRBORN,OH,20260923134054NAL0014921154001
+ORG-000932,B,NONE,Legacy Extrusions,Cincinnati,OH,,,,,,,,,,,,,
+ORG-000933,B,NONE,Liberty Tire Recycling,Pittsburgh,PA,,,,,,,,,,,,,
+ORG-000935,B,NONE,Logoplaste Lima,Lima,OH,,,,,,,,,,,,,
+ORG-000937,B,NONE,Ludlow Composites Corporation,Fremont,OH,,,,,,,,,,,,,
+ORG-000940,A,NONE,Magnum Tapes & Films,Marietta,OH,,,,,,,,,,,,,
+ORG-000941,B,NAME+CITY,Mallory Pattern Works,Toledo,OH,,381849205,"MALLORY PATTERN WORKS, INC.",,5500-SF,2025-12-31,6,0,,,TOLEDO,OH,20260520142932NAL0002480160001
+ORG-000942,A,NAME+CITY,"Mar-Pak, Inc.",Marietta,OH,,311320030,"MAR-PAK, INC.",,5500-SF,2025-12-31,8,0,,,MARIETTA,OH,20260818122938NAL0029686818001
+ORG-000943,B,NONE,Marble Arch Products,Franklin,OH,,,,,,,,,,,,,
+ORG-000945,A,NAME+CITY,Mark One Manufacturing,Minster,OH,,473582799,MARK ONE MANUFACTURING,,5500-SF,2024-12-31,0,1,,,MINSTER,OH,20250729141223NAL0006108210001
+ORG-000946,A,NONE,"Marne Plastics, LLC",Grove City,OH,,,,,,,,,,,,,
+ORG-000948,B,NONE,Materials Engineering and Technical Support Services Corp.,Westerville,OH,,,,,,,,,,,,,
+ORG-000953,B,NONE,Mechanical Resources Corp.,Miamisburg,OH,,,,,,,,,,,,,
+ORG-000954,B,NONE,Mesa ETP,Cincinnati,OH,,,,,,,,,,,,,
+ORG-000956,A,NAME+CITY,"Miami Valley Gasket Co., Inc.",Dayton,OH,,842053706,GEORDIE INVESTMENTS,MIAMI VALLEY GASKET CORP,5500-SF,2025-12-31,22,0,,,DAYTON,OH,20260729123853NAL0034828146001
+ORG-000960,B,NONE,Midwest Plastics,Lima,OH,,,,,,,,,,,,,
+ORG-000962,B,NONE,The Minco Group,Vandalia,OH,,,,,,,,,,,,,
+ORG-000963,A,NONE,"Model Graphics, Inc.",West Chester,OH,,,,,,,,,,,,,
+ORG-000964,B,NONE,"Molder's World, Inc.",Cincinnati,OH,,,,,,,,,,,,,
+ORG-000969,A,NAME+CITY,MTM Molded Products Co.,Dayton,OH,,310737619,MTM MOLDED PRODUCTS COMPANY,,5500-SF,2025-12-31,52,0,DAYTON,OH,DAYTON,OH,20260709120304NAL0000527264001
+ORG-000972,B,NONE,"Mulhern Belting, Inc.",Fairfield,OH,,,,,,,,,,,,,
+ORG-000977,C,NONE,NanoSperse,Kettering,OH,,,,,,,,,,,,,
+ORG-000980,B,NONE,Necotech LLC,Delaware,OH,,,,,,,,,,,,,
+ORG-000982,B,NONE,NetProto,Holland,OH,,,,,,,,,,,,,
+ORG-000985,B,NONE,"Newact, Inc.",Batavia,OH,,,,,,,,,,,,,
+ORG-000988,B,NONE,Nile Merry Tools LLC,Fairborn,OH,,,,,,,,,,,,,
+ORG-000990,B,NONE,"Northwestern Ohio Foam Packaging, Inc.",Wauseon,OH,,,,,,,,,,,,,
+ORG-000992,B,NAME+CITY,NOX US,Fostoria,OH,,473186192,"NOX US, LLC",,5500,2025-12-31,120,0,,,FOSTORIA,OH,20261012081447NAL0002103091001
+ORG-000993,A,NONE,Nu-Tech Polymers,Sharonville,OH,,,,,,,,,,,,,
+ORG-000994,B,NONE,"Nutter Machine Company, Inc.",Hebron,OH,,,,,,,,,,,,,
+ORG-000995,B,NONE,OCSiAl LLC,Columbus,OH,,,,,,,,,,,,,
+ORG-000998,B,NAME_STATE_ONLY,"Ohio Valley Gasket, Inc.",West Chester,OH,,311227028,"OHIO VALLEY GASKET, INC.",,5500-SF,2025-12-31,21,0,,,CINCINNATI,OH,20260522082243NAL0002220691001
+ORG-001000,B,NONE,"Olan Plastics, Inc.",Canal Winchester,OH,,,,,,,,,,,,,
+ORG-001008,B,NONE,PAC Worldwide,Middletown,OH,,,,,,,,,,,,,
+ORG-001015,B,NONE,"PGM Enterprises, LLC",Woodsfield,OH,,,,,,,,,,,,,
+ORG-001016,B,NONE,Phoenix Recycling,Columbus,OH,,,,,,,,,,,,,
+ORG-001019,B,NONE,Pinnacle Roller Co.,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001020,B,NONE,Pixargus Inc.,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001028,A,NONE,The Plastic Lumber Store LLC,Springfield,OH,,,,,,,,,,,,,
+ORG-001031,A,NAME+CITY,"Plastic Selection Group, Inc.",Worthington,OH,,384304490,PLASTIC SELECTION GROUP INC,,5500-SF,2025-12-31,2,0,,,WORTHINGTON,OH,20260420152432NAL0000789507001
+ORG-001035,A,NONE,PolyBag Central,Ray,OH,,,,,,,,,,,,,
+ORG-001038,B,NONE,Polyfill,Sidney,OH,,,,,,,,,,,,,
+ORG-001041,B,NAME_STATE_ONLY,PolyGroup Inc.,Cincinnati,OH,,510456600,"POLYGROUP, INC.",,5500-SF,2025-12-31,2,0,,,LOVELAND,OH,20260512124504NAL0006707889001
+ORG-001042,A,NONE,Polynew,Baltic,OH,,,,,,,,,,,,,
+ORG-001044,A,NAME_STATE_ONLY,"Custom Foam Products, Inc.",Fort Loramie,OH,,311621964;352925025,"CUSTOM FOAM PRODUCTS, INC.",,5500-SF,2025-12-31,59,0,,,FT. LORAMIE,OH,20261013051021NAL0003884432001
+ORG-001045,A,NONE,"Precision Polymers, Inc.",Reynoldsburg,OH,,,,,,,,,,,,,
+ORG-001050,A,NONE,ProPlastics LLC,Sidney,OH,,,,,,,,,,,,,
+ORG-001052,B,NONE,"Proto Plastics, Inc.",Tipp City,OH,,,,,,,,,,,,,
+ORG-001054,A,NONE,"Plastic Technologies, Inc.",Holland,OH,,,,,,,,,,,,,
+ORG-001057,B,NONE,Putnam Plastics Farm Products,West Carrollton,OH,,,,,,,,,,,,,
+ORG-001058,B,NONE,PVCStrip.com,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001059,A,NONE,"Pyramid Tool, Inc.",Dayton,OH,,,,,,,,,,,,,
+ORG-001062,B,NONE,Quick Metals Industrial Knives,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001063,B,NONE,R L Holdings,Fairfield,OH,,,,,,,,,,,,,
+ORG-001064,B,NONE,R L Industries,Fairfield,OH,,,,,,,,,,,,,
+ORG-001065,B,NONE,"R & S Technologies, Inc.",Bellevue,OH,,,,,,,,,,,,,
+ORG-001066,B,NONE,R3 Manufacturing Ltd.,Grove City,OH,,,,,,,,,,,,,
+ORG-001069,B,NONE,Re-cre8,Toledo,OH,,,,,,,,,,,,,
+ORG-001070,A,NAME+CITY,"Ready Technology, Inc.",Dayton,OH,,311419768,"READY TECHNOLOGY, INC.",,5500-SF,2025-12-31,21,0,,,DAYTON,OH,20260427091400NAL0004749699001
+ORG-001072,A,NONE,Renegade Materials Corp.,Miamisburg,OH,,,,,,,,,,,,,
+ORG-001075,A,NONE,Retterbush Fiberglass Corp.,Piqua,OH,,,,,,,,,,,,,
+ORG-001078,B,NONE,Rhetech Colors,Sandusky,OH,,,,,,,,,,,,,
+ORG-001081,B,NONE,Rieke,New Albany,OH,,,,,,,,,,,,,
+ORG-001089,B,NONE,ROTO Solutions,Ashland,OH,,,,,,,,,,,,,
+ORG-001096,B,NONE,Edge Adhesives,Grove City,OH,,,,,,,,,,,,,
+ORG-001097,A,NONE,Rudolph Bros. & Co.,Canal Winchester,OH,,,,,,,,,,,,,
+ORG-001098,A,NAME+CITY,"Rumford Industrial Group, Inc.",Miamisburg,OH,,310975436,RUMFORD INDUSTRIAL GROUP,,5500-SF,2025-12-31,7,0,,,MIAMISBURG,OH,20260729124135NAL0034842610001
+ORG-001100,A,NONE,Sapper Plastics LLC,Piketon,OH,,,,,,,,,,,,,
+ORG-001101,B,NAME+CITY,Savaré Specialty Adhesives,Delaware,OH,,550907139,SAVARE SPECIALTY ADHESIVES LLC,,5500-SF,2025-12-31,39,0,,,DELAWARE,OH,20260529142234NAL0018506258001
+ORG-001102,B,NONE,SCHÜTZ Container Systems,Perrysburg,OH,,,,,,,,,,,,,
+ORG-001103,B,NONE,Schupan Aluminum & Plastic Sales,Toledo,OH,,,,,,,,,,,,,
+ORG-001104,A,NONE,"Seal-Jet of Ohio, Inc.",Cincinnati,OH,,,,,,,,,,,,,
+ORG-001106,B,NAME_STATE_ONLY,"SEDECO USA, Inc.",West Chester Township,OH,,203828124,"SEDECO USA, INC.",,5500-SF,2025-04-30,3,0,,,WEST CHESTER,OH,20251126141136NAL0007019216001
+ORG-001107,B,NONE,Seeger Metals and Plastics,Toledo,OH,,,,,,,,,,,,,
+ORG-001111,A,NONE,Shirley K's,Zanesville,OH,,,,,,,,,,,,,
+ORG-001112,B,NONE,Shrader Retreading,Greenville,OH,,,,,,,,,,,,,
+ORG-001113,B,NAME_STATE_ONLY,Shrader Tire & Oil,Pemberville,OH,,340947077,SHRADER TIRE AND OIL INC,,5500,2025-12-31,205,0,,,TOLEDO,OH,20261006142922NAL0030882979001
+ORG-001125,A,NONE,Starwin Industries,Dayton,OH,,,,,,,,,,,,,
+ORG-001127,A,NONE,Stillwater Coating Co.,Greenville,OH,,,,,,,,,,,,,
+ORG-001132,A,NONE,Summers Rubber Company,Marietta,OH,,,,,,,,,,,,,
+ORG-001138,A,NONE,Syscom Advanced Materials,Columbus,OH,,,,,,,,,,,,,
+ORG-001139,A,NONE,"TAKK Industries, Inc.",Cleves,OH,,,,,,,,,,,,,
+ORG-001141,A,NAME+CITY,US Tanazawa Corp.,Batavia,OH,,464304262,US TANAZAWA CORPORATION,,5500-SF,2025-12-31,15,0,,,BATAVIA,OH,20260522115453NAL0004066352001
+ORG-001143,A,NONE,"Tech-Way Industries, Inc.",Franklin,OH,,,,,,,,,,,,,
+ORG-001152,A,NAME+CITY,The Thaman Rubber Company,Cincinnati,OH,,310738981,THE THAMAN RUBBER COMPANY,,5500-SF,2025-03-31,68,0,,,CINCINNATI,OH,20260112090511NAL0005393011001
+ORG-001154,A,NONE,Titan Industrial Plastics LLC,Lancaster,OH,,,,,,,,,,,,,
+ORG-001157,U,NONE,"TJC Polymers, Inc.",Kettering,OH,,,,,,,,,,,,,
+ORG-001158,A,NONE,The Toledo Bag Company,Toledo,OH,,,,,,,,,,,,,
+ORG-001162,B,NONE,Tooling Tech Group,Fort Loramie,OH,,,,,,,,,,,,,
+ORG-001163,A,NONE,Tooltex Inc.,Grove City,OH,,,,,,,,,,,,,
+ORG-001164,A,NAME+CITY,TPC Packaging Solutions,Cincinnati,OH,,310731346,"TPC PACKAGING SOLUTIONS, INC.",,5500,2025-12-31,93,0,,,CINCINNATI,OH,20261006131356NAL0026214401001
+ORG-001165,B,NONE,Trim Parts Inc,Lebanon,OH,,,,,,,,,,,,,
+ORG-001168,A,NAME+CITY,Thomas Tool & Mold Company,Westerville,OH,,311271899,THOMAS TOOL & MOLD COMPANY,,5500-SF,2024-12-31,8,0,,,WESTERVILLE,OH,20250408110247NAL0011082083001
+ORG-001169,A,NONE,"US Autoclave, Ltd.",Lima,OH,,,,,,,,,,,,,
+ORG-001170,A,NAME+CITY,UMD Automated Systems,Fredericktown,OH,,341832279,"UMD AUTOMATED SYSTEMS, INC.",,5500-SF,2025-12-31,63,0,,,FREDERICKTOWN,OH,20260615122430NAL0001542608001
+ORG-001172,U,NONE,"Uniloy Century, LLC",Tecumseh,MI,,,,,,,,,,,,,
+ORG-001174,A,NONE,United Precision Engineering,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001176,B,NAME+CITY,United States Plastic Corp.,Lima,OH,,340894533,UNITED STATES PLASTIC CORPORATION,,5500,2025-12-31,141,0,,,LIMA,OH,20260925102453NAL0008279987001
+ORG-001179,A,NAME+CITY,VBH Technologies,Cincinnati,OH,,311066285,VBH TECHNOLOGIES,,5500-SF,2025-12-31,17,0,,,CINCINNATI,OH,20260729124246NAL0018755523001
+ORG-001180,B,NONE,"Vampire Optical Coatings, Inc.",Pataskala,OH,,,,,,,,,,,,,
+ORG-001181,A,NONE,Veelo Technologies,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001188,A,NAME+CITY,USA Vinyl,Groveport,OH,,208104524,"USA VINYL, LLC",,5500-SF,2025-12-31,119,0,,,GROVEPORT,OH,20260922104446NAL0013190370001
+ORG-001190,B,NONE,Vinyl Kraft Windows and Doors,New Boston,OH,,,,,,,,,,,,,
+ORG-001191,B,NAME+CITY,Vinylmax LLC,Hamilton,OH,,311564962,"VINYLMAX, LLC",,5500,2025-12-31,270,,,,HAMILTON,OH,20260728165558NAL0017725747001
+ORG-001192,B,NAME+CITY,"Vision Color, LLC",West Unity,OH,,352180757,"VISION COLOR, LLC",,5500-SF,2025-12-31,33,0,,,WEST UNITY,OH,20260825132654NAL0025051697001
+ORG-001194,B,NONE,"Westar Plastics, LLC",Bryan,OH,,,,,,,,,,,,,
+ORG-001195,B,NONE,Western Ohio Packaging,Sidney,OH,,,,,,,,,,,,,
+ORG-001201,B,NONE,Wolf Composite Solutions,Columbus,OH,,,,,,,,,,,,,
+ORG-001203,B,NONE,Woodlawn Rubber Co.,Blue Ash,OH,,,,,,,,,,,,,
+ORG-001206,B,NONE,Yanfeng US Automotive Interior Systems II LLC,Bryan,OH,,,,,,,,,,,,,
+ORG-001207,B,NAME+CITY,Yizumi-HPM Corporation,Iberia,OH,,452710863,YIZUMI-HPM CORPORATION,,5500-SF,2025-12-31,20,0,,,IBERIA,OH,20260604141331NAL0002303362001
+ORG-001208,A,NAME+CITY,"Zed Industries, Inc.",Vandalia,OH,,316094598,"ZED INDUSTRIES, INC.",,5500-SF,2025-12-31,18,0,,,VANDALIA,OH,20260706131836NAL0018057473001
+ORG-001331,A,NONE,USA Rolls,Canfield,OH,,,,,,,,,,,,,
+ORG-001333,B,NAME+CITY,STEER America,Uniontown,OH,,261648296,STEER AMERICA INC.,,5500-SF,2024-12-31,10,0,,,UNIONTOWN,OH,20250825084458NAL0003832547001
+ORG-001334,A,NONE,"Terry Machinery USA, Inc.",Middleburg Heights,OH,,,,,,,,,,,,,
+ORG-001338,A,NAME+CITY,"Big Chief, Inc.",Cincinnati,OH,,310946275,THERMAL TECHNOLOGY DISTRIBUTION SOLUTIONS,"BIG CHIEF, INC.",5500,2025-12-31,116,,,,CINCINNATI,OH,20260714145601NAL0001695681001
+ORG-001340,A,NAME+CITY,French Oil Mill Machinery Company,Piqua,OH,,310288090,THE FRENCH OIL MILL MACHINERY CO.,,5500-SF,2025-11-30,64,0,,,PIQUA,OH,20260723161116NAL0011504355001
+ORG-001341,B,NONE,Hawthorn Aero,Miamisburg,OH,,,,,,,,,,,,,
+ORG-001343,B,NONE,NAWAH US,Englewood,OH,,,,,,,,,,,,,
+ORG-001344,A,NONE,"Plastic Resources, Inc.",Columbus,OH,,,,,,,,,,,,,
+ORG-001377,B,NONE,Tyrex Resources of Ohio,Zanesville,OH,,,,,,,,,,,,,
+ORG-001378,A,NONE,"Vertix, LLC",New Albany,OH,,,,,,,,,,,,,
+ORG-001380,B,NAME+CITY,Bauer Corporation,Wooster,OH,,341655052,BAUER CORPORATION,,5500-SF,2025-12-31,33,0,,,WOOSTER,OH,20260520071512NAL0002114976001
+ORG-001390,B,NONE,"Interpak, Inc.",Mentor,OH,,,,,,,,,,,,,
+ORG-001391,C,NAME+CITY,KONG Company,Golden,CO,,841559729,"KONG COMPANY, LLC",,5500,2026-02-28,214,,,,GOLDEN,CO,20260923082202NAL0014528802001
+ORG-001397,B,NONE,PolyKinetix,Massillon,OH,,,,,,,,,,,,,
+ORG-001411,A,NONE,"Creative Products, Inc.",Holland,OH,,,,,,,,,,,,,
+ORG-001412,B,NONE,Custom Cast Marbleworks,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001413,A,NONE,Electra Form Industries,Vandalia,OH,,,,,,,,,,,,,
+ORG-001414,B,NONE,"Flexmag Industries, Inc.",Marietta,OH,,,,,,,,,,,,,
+ORG-001417,U,NAME+CITY,Hersh Packing & Rubber Company,Canal Winchester,OH,,310743184,HERSH PACKING AND RUBBER COMPANY,,5500-SF,2025-08-31,17,0,,,CANAL WINCHESTER,OH,20260222085408NAL0000183792001
+ORG-001419,B,NONE,Pioneer Custom Molding Inc.,Pioneer,OH,,,,,,,,,,,,,
+ORG-001422,B,NONE,Elster Perfection Corporation,Geneva,OH,,,,,,,,,,,,,
+ORG-001424,B,NONE,Dometic Sanitation Corporation,Big Prairie,OH,,,,,,,,,,,,,
+ORG-001425,B,NAME_STATE_ONLY,Cooper Tire & Rubber Company,Findlay,OH,,344297750,COOPER TIRE & RUBBER COMPANY LLC,,5500,2025-12-31,3253,0,,,AKRON,OH,20260526093633NAL0012587778001
+ORG-001426,B,EIN+NAME,Techniplas US LLC,Mansfield,OH,851453716,851453716,TECHNIPLAS US LLC,,5500,2025-12-31,1161,0,,,NASHOTAH,WI,20261015150311NAL0009513200001
+ORG-001428,B,NONE,"Da-Lite Screen Company, Inc.",Blue Ash,OH,,,,,,,,,,,,,
+ORG-001429,B,NAME+CITY,"Nexeo Plastics, LLC",The Woodlands,TX,,320581570,"NEXEO PLASTICS, LLC",,5500,2025-12-31,270,0,,,THE WOODLANDS,TX,20261013095311NAL0003530257001
+ORG-001431,C,NAME_STATE_ONLY,"ABC Packaging Direct, LLC",Independence,OH,,651306832,"ABC PACKAGING DIRECT, LLC",,5500-SF,2025-12-31,1,0,,,AVON,OH,20261008194656NAL0034318595001
+ORG-001432,B,NAME_STATE_ONLY,Cell-O-Core Company,Wadsworth,OH,,340905832,CELL-O-CORE COMPANY,,5500-SF,2025-12-31,22,0,,,SHARON CENTER,OH,20260925100712NAL0008268851001
+ORG-001433,B,NAME+CITY,"Extruded Silicone Products, Inc.",Mogadore,OH,,341447775,"EXTRUDED SILICONE PRODUCTS AND GASKETS, INC.",,5500-SF,2024-12-31,27,0,,,MOGADORE,OH,20250822142233NAL0005183025001
+ORG-001435,B,NONE,"Meese, Inc.",Ashtabula,OH,,,,,,,,,,,,,
+ORG-001439,B,NONE,"RPS Composites Ohio, Inc.",Franklin,OH,,,,,,,,,,,,,
+ORG-001440,B,NAME+CITY,"Spectra Group Ltd., Inc.",Millbury,OH,,320536305,"FORMLABS OHIO, INC.",SPECTRA PHOTOPOLYMERS,5500-SF,2025-12-31,58,0,,,MILLBURY,OH,20260730205906NAL0023857713001
+ORG-001443,B,NONE,Alliance Carpet Cushion,Johnstown,OH,,,,,,,,,,,,,
+ORG-001446,B,NONE,Auria Holmesville LLC,Holmesville,OH,,,,,,,,,,,,,
+ORG-001448,B,NONE,"Bena, Inc.",Van Buren,OH,,,,,,,,,,,,,
+ORG-001449,B,NONE,Best-One Retreading of Toledo,Toledo,OH,,,,,,,,,,,,,
+ORG-001450,B,NONE,"Brighton Technologies Group, Inc.",Cincinnati,OH,,,,,,,,,,,,,
+ORG-001454,B,NAME+CITY,IMCD US,Westlake,OH,,341263101,"IMCD US, LLC",,5500,2025-06-30,373,,,,WESTLAKE,OH,20251218163620NAL0002670723001
+ORG-001455,B,NONE,"Lamports Filter Media, Inc.",Cleveland,OH,,,,,,,,,,,,,
+ORG-001458,B,NONE,Polyram USA,Avon,OH,,,,,,,,,,,,,
+ORG-001461,B,NONE,"Stuchell Products, LLC",Alliance,OH,,,,,,,,,,,,,
+ORG-001464,B,NONE,Cabbage Cases LLC,Columbus,OH,,,,,,,,,,,,,
+ORG-001465,B,NAME+CITY,Chalfant Sewing Fabricators Inc,Cleveland,OH,,340654853,CHALFANT SEWING FABRICATORS INC.,,5500-SF,2025-12-31,14,0,,,CLEVELAND,OH,20261015130056NAL0004034915001
+ORG-001468,A,NONE,TSP Inc.,Batavia,OH,,,,,,,,,,,,,
+ORG-001469,B,NONE,"FDIE, LLC",Cleveland,OH,,,,,,,,,,,,,
+ORG-001471,B,NONE,MSI Express Inc,Groveport,OH,,,,,,,,,,,,,
+ORG-001473,B,NAME+CITY,"Toagosei America, Inc.",West Jefferson,OH,,311738058,"TOAGOSEI AMERICA, INC.",,5500-SF,2025-12-31,41,0,,,WEST JEFFERSON,OH,20260629135530NAL0020710066001
+ORG-001478,C,NONE,Ohio Rubber and Floors,Van Wert,OH,,,,,,,,,,,,,
+ORG-001480,A,NONE,ACE Laboratories,Ravenna,OH,,,,,,,,,,,,,
+ORG-001481,B,NONE,ACE Innovations,Ravenna,OH,,,,,,,,,,,,,
+ORG-001483,B,NONE,"Power to Hydrogen, Inc.",Columbus,OH,,,,,,,,,,,,,
+ORG-001485,B,NONE,"ThreeBond International, Inc.",West Chester,OH,,,,,,,,,,,,,
+ORG-001487,A,NONE,"UGN, Inc.",Monroe,OH,,,,,,,,,,,,,
+ORG-001488,C,NONE,Hayashi Telempu North America Corporation,Lebanon,OH,,,,,,,,,,,,,
+ORG-001491,B,NONE,The Gorilla Glue Company,Sharonville,OH,,,,,,,,,,,,,
+ORG-001493,B,NONE,"United Industrial Sales Company, Inc.",Willoughby,OH,,,,,,,,,,,,,
+ORG-001495,B,NONE,Barwell Machinery USA Inc.,Brunswick,OH,,,,,,,,,,,,,
+ORG-001498,B,NONE,SigmaTEK Systems LLC,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001499,B,NAME+CITY,Lianda Corporation,Twinsburg,OH,,341814754,LIANDA CORPORATION,,5500-SF,2024-12-31,13,0,,,TWINSBURG,OH,20250611122141NAL0025949488001
+ORG-001500,A,NAME+CITY,Minco Tool & Mold Inc.,Dayton,OH,,310720199,"MINCO TOOL & MOLD, INC.",,5500,2025-12-31,262,0,,,DAYTON,OH,20260923132056NAL0023092178001
+ORG-001507,A,NONE,HOYA VISION CARE - CLEVELAND,Berea,OH,,,,,,,,,,,,,
+ORG-001509,B,NONE,"Health-Mor, Inc",Brooklyn,OH,,,,,,,,,,,,,
+ORG-001510,B,NAME+CITY,"SURGICAL APPLIANCE INDUSTRIES, INC.",Cincinnati,OH,,310397670,"SURGICAL APPLIANCE INDUSTRIES, INC.",,5500-SF,2025-12-31,197,0,,,CINCINNATI,OH,20261008105359NAL0033645395001
+ORG-001511,C,NONE,Beacon Biosignals,Cleveland,OH,,,,,,,,,,,,,
+ORG-001512,A,NONE,DICK MEDICAL SUPPLY,Columbus,OH,,,,,,,,,,,,,
+ORG-001513,B,NAME+CITY,Coltene/Whaledent Inc.,Cuyahoga Falls,OH,,133568101,"COLTENE/WHALEDENT, INC.",,5500,2025-12-31,266,0,,,CUYAHOGA FALLS,OH,20261012091401NAL0002185619001
+ORG-001518,A,NAME+CITY,"Enable Injections, Inc.",Cincinnati,OH,,271837834,"ENABLE INJECTIONS, INC.",,5500,2025-12-31,212,0,,,CINCINNATI,OH,20260617125832NAL0001321779001
+ORG-001519,B,NONE,Liebel-Flarsheim Company LLC,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001521,A,NAME+CITY,"So-Low Environmental Equipment Co., Inc.",Cincinnati,OH,,310644724,SO-LOW ENVIRONMENTAL EQUIPMENT CO.,,5500-SF,2025-09-30,35,0,,,CINCINNATI,OH,20260616100151NAL0001181824001
+ORG-001522,A,MULTI_EIN,"Health Care Logistics, Inc.",Circleville,OH,,310942682;310942782,"HEALTH CARE LOGISTICS, INC.",,5500,2025-12-31,340,0,,,CIRCLEVILLE,OH,20260825115047NAL0026594944001
+ORG-001525,A,NAME+CITY,"SPR Therapeutics, Inc",Cleveland,OH,,270337997,"SPR THERAPEUTICS, INC.",,5500,2025-12-31,290,0,,,CLEVELAND,OH,20260924103818NAL0014973763001
+ORG-001527,A,NONE,Impact Printing and Design,Columbus,OH,,,,,,,,,,,,,
+ORG-001529,A,NAME+CITY,AmeriWater LLC,Dayton,OH,,311448777,"AMERIWATER, LLC",,5500,2025-12-31,93,0,DAYTON,OH,DAYTON,OH,20261012085550NAL0002418608001
+ORG-001530,A,NAME+CITY,"APS Materials, Inc.",Dayton,OH,,310868493,"APS MATERIALS, INC",,5500,2025-09-30,181,0,DAYTON,OH,DAYTON,OH,20260312094246NAL0006684835001
+ORG-001531,A,NONE,"Ashton Pumpmatic, Inc.",Dayton,OH,,,,,,,,,,,,,
+ORG-001532,B,NAME+CITY,Norwood Medical LLC,Dayton,OH,,311013821,"NORWOOD MEDICAL, LLC",,5500,2025-12-31,1098,0,,,DAYTON,OH,20260924121043NAL0016476674001
+ORG-001533,A,NAME+CITY,RAM Precision Industries Inc,Centerville,OH,,311005280,"RAM PRECISION INDUSTRIES, INC.",,5500-SF,2025-12-31,78,0,,,CENTERVILLE,OH,20260521090701NAL0002033617001
+ORG-001534,B,NAME+CITY,"Zimmer Surgical, Inc.",Dover,OH,,810550216,"ZIMMER SURGICAL, INC.",,5500,2025-12-31,38,0,,,DOVER,OH,20260813104049NAL0021076754001
+ORG-001536,B,NONE,N8 Medical LLC,Dublin,OH,,,,,,,,,,,,,
+ORG-001539,B,NONE,GuidedSMILE LLC,Independence,OH,,,,,,,,,,,,,
+ORG-001540,B,NONE,"Emergency Products & Research, Inc.",Kent,OH,,,,,,,,,,,,,
+ORG-001543,B,NONE,Hammill Manufacturing Co. (Hammill Medical),Maumee,OH,,,,,,,,,,,,,
+ORG-001544,C,NAME+CITY,Troy Innovative Instruments Co LLC,Middlefield,OH,,341705149,"TROY INNOVATIVE INSTRUMENTS, INC.",,5500-SF,2026-09-29,0,1,,,MIDDLEFIELD,OH,20261016063127NAL0010193665001
+ORG-001547,A,NAME+CITY,"Bionix, LLC",Maumee,OH,,854091803,BIONIX LLC,,5500-SF,2025-12-31,59,0,,,MAUMEE,OH,20260723123800NAL0011227283001
+ORG-001552,B,NAME+CITY,"Formlabs Ohio, Inc.",Millbury,OH,,320536305,"FORMLABS OHIO, INC.",SPECTRA PHOTOPOLYMERS,5500-SF,2025-12-31,58,0,,,MILLBURY,OH,20260730205906NAL0023857713001
+ORG-001553,A,NONE,MASS Rehab Inc.,Moraine,OH,,,,,,,,,,,,,
+ORG-001554,A,NAME+CITY,WillowWood Global LLC,Mt Sterling,OH,,834525073,"WILLOWWOOD GLOBAL, LLC",,5500,2025-12-31,185,0,,,MT. STERLING,OH,20261012124816NAL0002823632001
+ORG-001559,A,NAME+CITY,"Gottfried Medical, Inc.",Toledo,OH,,341331069,GOTTFRIED MEDICAL INC.,,5500-SF,2025-12-31,40,0,,,TOLEDO,OH,20260805121709NAL0003167603001
+ORG-001561,B,NONE,"NML Medical, LLC",West Carrollton,OH,,,,,,,,,,,,,
+ORG-001563,B,NONE,"SurgTech, Inc.",Westlake,OH,,,,,,,,,,,,,
+ORG-001564,C,NONE,DMV Corporation,Zanesville,OH,,,,,,,,,,,,,
+ORG-001568,A,NAME+CITY,"Findlay Machine & Tool, LLC",Findlay,OH,,871464094,"FINDLAY MACHINE & TOOL, LLC",,5500-SF,2025-12-31,442,0,,,FINDLAY,OH,20261015110802NAL0013462914001
+ORG-001569,A,NAME+CITY,"Pleasant Precision, Inc.",Kenton,OH,,341210426,"PLEASANT PRECISION, INC.",,5500-SF,2025-09-30,39,0,,,KENTON,OH,20251217074119NAL0003808721001
+ORG-001571,A,NONE,Wavelock Advanced Technology Inc.,Montpelier,OH,,,,,,,,,,,,,
+ORG-001574,B,NONE,YSI Incorporated,Yellow Springs,OH,,,,,,,,,,,,,
+ORG-001575,B,NONE,"Life Sciences - Vandalia, LLC",Dayton,OH,,,,,,,,,,,,,
+ORG-001576,A,NONE,Aabaco Plastics Inc,Garfield Heights,OH,,,,,,,,,,,,,
+ORG-001578,A,NONE,Bright Idea Shops LLC,Akron,OH,,,,,,,,,,,,,
+ORG-001579,A,NONE,CartierWilson LLC,Solon,OH,,,,,,,,,,,,,
+ORG-001584,B,NAME+CITY,Green Innovations LLC,Solon,OH,,264230720,"GREEN INNOVATIONS, LLC",,5500-SF,2025-12-31,11,0,,,SOLON,OH,20260729123906NAL0018062803001
+ORG-001587,B,NONE,Miniature Plastic Molding,Solon,OH,,,,,,,,,,,,,
+ORG-001592,B,NAME+CITY,Alpha Tool & Mold Inc,Highland Heights,OH,,341258012,"ALPHA TOOL & MOLD, INC.",,5500-SF,2025-12-31,12,0,,,HIGHLAND HEIGHTS,OH,20260429093714NAL0010780561001
+ORG-001593,B,NONE,Amros Industries Inc,Cleveland,OH,,,,,,,,,,,,,
+ORG-001595,B,NAME+CITY,Eleven 10 LLC,Westlake,OH,,272058213,"ELEVEN-10, LLC",,5500-SF,2025-12-31,21,,,,WESTLAKE,OH,20261003093110NAL0044025730001
+ORG-001604,B,NONE,Bridgestone APM Company,Upper Sandusky,OH,,,,,,,,,,,,,
+ORG-001607,B,NONE,Kinetico Incorporated,Newbury,OH,,,,,,,,,,,,,
+ORG-001608,A,NONE,KLINGER Thermoseal,Sidney,OH,,,,,,,,,,,,,
+ORG-001612,B,NONE,GEALAN Window Systems Inc,Heath,OH,,,,,,,,,,,,,
+ORG-001613,B,NAME+CITY,GVS Filtration Inc,Findlay,OH,,452676797,"GVS FILTRATION, INC.",,5500,2025-12-31,268,0,,,FINDLAY,OH,20260611143506NAL0005383393001
+ORG-001615,A,NONE,Kansai Helios Coatings,Johnstown,OH,,,,,,,,,,,,,
+ORG-001616,A,NONE,MFM Building Products Corp,Coshocton,OH,,,,,,,,,,,,,
+ORG-001617,B,NONE,Poly6 Technologies Inc,Eastlake,OH,,,,,,,,,,,,,
+ORG-001620,B,NAME_STATE_ONLY,Technicote Inc,Trotwood,OH,,341313085,BEONTAG,,5500,2025-12-31,213,,,,MIAMISBURG,OH,20260406142832NAL0010027906001
+ORG-001625,A,NONE,AERO-BLAST PRODUCTS INC,Sharonville,OH,,,,,,,,,,,,,
+ORG-001626,B,NONE,AEROSPORT ADDITIVE,Canal Winchester,OH,,,,,,,,,,,,,
+ORG-001627,B,NONE,AEROTECH STYLING INC,Lyons,OH,,,,,,,,,,,,,
+ORG-001629,A,NAME+CITY,AK ATHLETIC EQUIPMENT INC,Canal Winchester,OH,,311368410,"AK ATHLETIC EQUIPMENT, INC.",,5500-SF,2025-11-30,0,1,,,CANAL WINCHESTER,OH,20260415103652NAL0026083680001
+ORG-001632,A,NONE,AMERICAN PAINT RECYCLERS LLC,Van Wert,OH,,,,,,,,,,,,,
+ORG-001633,A,MULTI_EIN,ARMORSOURCE LLC,Hebron,OH,,202236994;311730089,"ARMORSOURCE, LLC",,5500-SF,2025-12-31,66,0,,,HEBRON,OH,20260318101509NAL0004852144001
+ORG-001639,A,NONE,PLASTIC ENTERPRISES,Elyria,OH,,,,,,,,,,,,,
+ORG-001641,A,NONE,MAINE RUBBER PREFORMS AND EXTRUSIONS LLC,Middlefield,OH,,,,,,,,,,,,,
+ORG-001642,B,NONE,MOTIVO DISPLAY SOLUTIONS,Massillon,OH,,,,,,,,,,,,,
+ORG-001643,A,NONE,OVERMOLD EXPRESS,Mentor,OH,,,,,,,,,,,,,
+ORG-001650,A,NAME+CITY,BCM Inks USA Inc,Loveland,OH,,311259368,BCM INKS USA INC.,,5500-SF,2025-04-30,0,1,,,LOVELAND,OH,20251126140340NAL0004808449001
+ORG-001652,B,NONE,BMF Devices Inc,Miamisburg,OH,,,,,,,,,,,,,
+ORG-001654,A,NONE,Bullet Protective Coatings LLC,Plain City,OH,,,,,,,,,,,,,
+ORG-001659,A,NONE,Conversion Technologies International Inc,West Unity,OH,,,,,,,,,,,,,
+ORG-001660,C,NONE,D M Tool & Plastics Inc,Lewisburg,OH,,,,,,,,,,,,,
+ORG-001662,A,NONE,David E Easterday & Co Inc,Wilmot,OH,,,,,,,,,,,,,
+ORG-001663,B,NAME+CITY,Delaware Paint Company Ltd,Plain City,OH,,311747386,"THE DELAWARE PAINT COMPANY, LTD",,5500-SF,2025-12-31,13,0,,,PLAIN CITY,OH,20261008072716NAL0054329458001
+ORG-001673,A,NONE,Frigid Units Inc,Toledo,OH,,,,,,,,,,,,,
+ORG-001674,B,NAME+CITY,Garage Floor Coating - The Great Lakes LLC,Toledo,OH,,261995486,"GARAGE FLOOR COATING - THE GREAT LAKES, LLC",,5500-SF,2025-12-31,13,0,,,TOLEDO,OH,20260519084033NAL0000471171001
+ORG-001676,A,NONE,GK Packaging Inc,Plain City,OH,,,,,,,,,,,,,
+ORG-001677,B,NONE,Grit Guard Inc,Bellefontaine,OH,,,,,,,,,,,,,
+ORG-001680,B,NONE,Hytech Silicone Products Inc,Ravenna,OH,,,,,,,,,,,,,
+ORG-001681,B,NONE,Inter-Ion Inc,Cuyahoga Falls,OH,,,,,,,,,,,,,
+ORG-001682,A,NONE,Invisible Repair Products Inc,Tallmadge,OH,,,,,,,,,,,,,
+ORG-001684,A,NONE,Key Finishes LLC,Columbus,OH,,,,,,,,,,,,,
+ORG-001685,C,NAME+CITY,Kittyhawk Molding Company Inc,Carlisle,OH,,311295045,"KITTYHAWK MOLDING CO., INC.",,5500-SF,2025-12-31,14,0,,,CARLISLE,OH,20260529125835NAL0009687475001
+ORG-001686,A,NONE,Kohlfab Custom Plastics Fabrication Inc,Dayton,OH,,,,,,,,,,,,,
+ORG-001687,B,NONE,KSE Manufacturing,Sidney,OH,,,,,,,,,,,,,
+ORG-001688,B,NONE,Manta-Ray Inc,West Unity,OH,,,,,,,,,,,,,
+ORG-001689,C,NAME_STATE_ONLY,MEP Manufacturing Inc,Genoa,OH,,341603669,MEP MANUFACTURING INC,,5500-SF,2025-12-31,6,0,,,AVON LAKE,OH,20260718073723NAL0007231633001
+ORG-001690,A,NAME_STATE_ONLY,Microtek Laboratories Inc,Moraine,OH,,311134590,"MICROTEK LABORATORIES, INC.",,5500-SF,2025-09-22,0,1,,,DAYTON,OH,20260130132045NAL0004411683001
+ORG-001692,C,NONE,Molding Technologies Ltd,Hebron,OH,,,,,,,,,,,,,
+ORG-001693,A,NONE,Nationwide Concrete Restoration LLC,Toledo,OH,,,,,,,,,,,,,
+ORG-001695,B,NONE,Innovative Rubber Technologies Inc.,Wapakoneta,OH,,,,,,,,,,,,,
+ORG-001696,C,NAME+CITY,AULD CORPORATION,Columbus,OH,,465206553,AULD CORPORATION,,5500-SF,2025-08-31,2,0,,,COLUMBUS,OH,20260330130750NAL0014425298001
+ORG-001697,C,NAME+CITY,Nation Grinding Inc,Dayton,OH,,310716618,NATION GRINDING INC,,5500-SF,2024-12-31,14,0,,,DAYTON,OH,20250731133950NAL0010610258001
+ORG-001698,B,NONE,Prime Engineered Plastics,Canton,OH,,,,,,,,,,,,,
+ORG-001703,B,NONE,"Premier Aerosol Packaging, Inc.",Valley View,OH,,,,,,,,,,,,,
+ORG-001706,B,NONE,Complete Filter Media LLC,Lancaster,OH,,,,,,,,,,,,,
+ORG-001708,C,NONE,ECM Performance Materials Corp,Medina,OH,,,,,,,,,,,,,
+ORG-001710,B,NAME+CITY,Herbert USA Inc,Akron,OH,,061662596,HERBERT USA INC,,5500-SF,2025-12-31,33,0,,,AKRON,OH,20260416104436NAL0024776003001
+ORG-001711,B,NONE,LRP Solutions Inc,Coldwater,OH,,,,,,,,,,,,,
+ORG-001712,C,NONE,Mechanical Elastomerics Inc,Malvern,OH,,,,,,,,,,,,,
+ORG-001713,B,NONE,Mon-Say Corp,Toledo,OH,,,,,,,,,,,,,
+ORG-001717,B,NAME+CITY,"FlexLink, LLC",Cleveland,OH,,201399062,FLEXLINK LLC,,5500-SF,2025-12-31,9,0,,,CLEVELAND,OH,20260831112440NAL0006661857001
+ORG-001718,B,NONE,Kimberly-Clark Corporation,Warren,OH,,,,,,,,,,,,,
+ORG-001719,C,NONE,"Pyramid Plastics, Inc.",Cleveland,OH,,,,,,,,,,,,,
+ORG-001721,C,NONE,"Truco, Inc.",Cleveland,OH,,,,,,,,,,,,,
+ORG-001722,B,NONE,"Kinzie Advanced Polymers, LLC dba Grove Bags",Bedford Heights,OH,,,,,,,,,,,,,
+ORG-001723,B,NONE,P&T Products Inc,Sandusky,OH,,,,,,,,,,,,,
+ORG-001726,C,NONE,"Endura Plastics, Inc.",Kirtland,OH,,,,,,,,,,,,,
+ORG-001727,A,NONE,Woodrow Corporation,Springfield,OH,,,,,,,,,,,,,
+ORG-001731,B,NONE,"Nissha Medical Technologies (Ohio), Inc.",Norwalk,OH,,,,,,,,,,,,,
+ORG-001733,C,NONE,"Custom Seal, Inc.",Fremont,OH,,,,,,,,,,,,,
+ORG-001734,C,NAME_STATE_ONLY,Eagle Composites LLC,West Chester,OH,,831913376,EAGLE COMPOSITES,,5500-SF,2025-04-30,19,0,,,FAIRFIELD,OH,20251126140619NAL0004723537001
+ORG-001735,A,NONE,Magnum Molding Inc.,Conover,OH,,,,,,,,,,,,,
+ORG-001736,A,NONE,"Miami Valley Plastics, Inc.",Eldorado,OH,,,,,,,,,,,,,
+ORG-001738,B,NONE,Valley Plastics Company Inc.,Toledo,OH,,,,,,,,,,,,,
+ORG-001741,A,NAME+CITY,"Champion Manufacturing, Inc.",Marengo,OH,,311615275,"CHAMPION MANUFACTURING, INC.",,5500-SF,2025-12-31,3,0,,,MARENGO,OH,20260629221356NAL0012161569001
+ORG-001742,C,NONE,Global Waste and Recycling LLC,Beachwood,OH,,,,,,,,,,,,,
+ORG-001745,C,NONE,J.G. Sales Inc.,Columbiana,OH,,,,,,,,,,,,,
+ORG-001751,C,NAME+CITY,Timco Products Inc,Marysville,OH,,311437964,TIMCO PRODUCTS INC,,5500-SF,2024-12-31,0,1,,,MARYSVILLE,OH,20250729141329NAL0004860064001
+ORG-001754,A,NAME+CITY,"Licensed Specialty Products of Ohio, Inc.",Bradner,OH,,271482875,LICENSED SPECIALTY PRODUCTS OF OHIO,,5500-SF,2024-12-31,21,0,,,BRADNER,OH,20250714121007NAL0001048129001
+ORG-001756,C,NONE,Stronghold Coating Systems,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001761,B,NAME_STATE_ONLY,"Advanced Testing Laboratory, Inc.",Blue Ash,OH,,311217849,"ADVANCED TESTING LABORATORY, INC.",,5500,2025-12-31,566,0,,,CINCINNATI,OH,20261014114111NAL0006855472001
+ORG-001763,B,NONE,Rubber Mold Design LLC,Austinburg,OH,,,,,,,,,,,,,
+ORG-001764,B,NONE,NMC Metals Inc,Niles,OH,,,,,,,,,,,,,
+ORG-001770,C,NONE,Advanced Rubber & Plastics Company Incorporated,Perrysburg,OH,,,,,,,,,,,,,
+ORG-001771,C,NONE,Advantage Products Corp,Blue Ash,OH,,,,,,,,,,,,,
+ORG-001772,B,NAME+CITY,Akron Central Engraving Mold & Machine Co,Akron,OH,,341042160,"AKRON CENTRAL ENGRAVING MOLD & MACHINE COMPANY, INC.",,5500-SF,2025-06-30,14,0,,,AKRON,OH,20251110144658NAL0002196659001
+ORG-001773,B,NAME+CITY,Akron Special Machinery,Akron,OH,,341255565,AKRON SPECIAL MACHINERY,,5500-SF,2024-12-31,0,1,,,AKRON,OH,20250729090508NAL0003564768001
+ORG-001775,C,NONE,Allen County Recyclers Inc,Lima,OH,,,,,,,,,,,,,
+ORG-001777,A,NAME_STATE_ONLY,American Consolidated Industries Inc,Solon,OH,,341600691,"AMERICAN CONSOLIDATED INDUSTRIES,",,5500,2025-12-31,260,0,,,CLEVELAND,OH,20261015093827NAL0008297986001
+ORG-001778,A,NONE,American Plastics Distributors,Columbus,OH,,,,,,,,,,,,,
+ORG-001779,A,NONE,"American Sign Products, Inc.",Garfield Heights,OH,,,,,,,,,,,,,
+ORG-001782,B,NAME+CITY,ATC Nymold Corp,Andover,OH,,341774852,ATC LIGHTING & PLASTICS INC,,5500-SF,2025-12-31,34,0,,,ANDOVER,OH,20260608121316NAL0003211619001
+ORG-001784,A,NONE,BF Plastics Inc,North Lawrence,OH,,,,,,,,,,,,,
+ORG-001785,A,NONE,Bridge Components Industries Inc,Columbus,OH,,,,,,,,,,,,,
+ORG-001786,B,NONE,Chuoh of America Inc,Tipp City,OH,,,,,,,,,,,,,
+ORG-001789,B,NAME_STATE_ONLY,Cometic Gasket Inc,Concord Township,OH,,341630209,"COMETIC GASKET, INC.",,5500-SF,2025-12-31,112,0,,,CONCORD,OH,20261001071906NAL0039859218001
+ORG-001790,B,NONE,Composite Advantage,Dayton,OH,,,,,,,,,,,,,
+ORG-001793,A,NAME_STATE_ONLY,Custom Tarpaulin Products Inc,Boardman,OH,,341641211,CUSTOM TARPAULIN PRODUCTS,,5500-SF,2025-04-30,4,0,,,YOUNGSTOWN,OH,20251126140537NAL0002447619001
+ORG-001794,C,NONE,Dal-Little Fabricating Inc,Cleveland,OH,,,,,,,,,,,,,
+ORG-001796,C,NAME+CITY,Damon Industries Inc,Alliance,OH,,340683269,DAMON INDUSTRIES INC,,5500-SF,2025-12-31,33,0,,,ALLIANCE,OH,20260603121210NAL0000094752001
+ORG-001797,C,NAME+CITY,Diamond Line Containers Inc,Coventry Township,OH,,341806866,DIAMOND LINE CONTAINERS,SPRINGHILL FLORAL SUPPLY,5500-SF,2025-08-31,14,0,,,COVENTRY TOWNSHIP,OH,20260330105512NAL0014258290001
+ORG-001798,B,NONE,Die-Gem Co Inc,Akron,OH,,,,,,,,,,,,,
+ORG-001799,A,NAME+CITY,Diversipak Inc,Cincinnati,OH,,311761458,"DIVERSIPAK, INC.",,5500-SF,2025-12-31,5,0,,,CINCINNATI,OH,20260909080756NAL0003384289003
+ORG-001800,B,NAME+CITY,DM Tool & Plastics Inc,Lewisburg,OH,,310929643,"DM TOOL & PLASTICS, INC.",,5500-SF,2025-12-31,28,0,,,LEWISBURG,OH,20260903140515NAL0013564898001
+ORG-001801,A,NAME+CITY,"Eagle Mold Co., Inc.",Carlisle,OH,,311293923,"EAGLE MOLD, INC.",,5500-SF,2025-12-31,43,0,,,CARLISLE,OH,20260331163517NAL0000294177001
+ORG-001802,A,NAME+CITY,E.C. Shaw Company,Cincinnati,OH,,311647753,E.C. SHAW COMPANY,,5500-SF,2025-12-31,35,0,,,CINCINNATI,OH,20260409102147NAL0015903376001
+ORG-001803,C,NAME+CITY,ECM BioFilms Inc,Painesville,OH,,341881827,"ECM BIOFILMS, INC.",,5500-SF,2026-01-31,0,1,,,PAINESVILLE,OH,20261005191955NAL0032506914001
+ORG-001804,B,NONE,ELK3D LLC,Toledo,OH,,,,,,,,,,,,,
+ORG-001805,U,NONE,Elra Industries Inc,Hamilton,OH,,,,,,,,,,,,,
+ORG-001808,A,NONE,Eurotech,Richfield,OH,,,,,,,,,,,,,
+ORG-001809,B,NONE,Excello Fabric Finishers Inc,Coshocton,OH,,,,,,,,,,,,,
+ORG-001811,B,NAME_STATE_ONLY,F.B. Wright Co of Cincinnati,West Chester,OH,,310782655,"F.B. WRIGHT CO. OF CINCINNATI, INC.",,5500-SF,2025-12-31,24,0,,,CINCINNATI,OH,20260430122648NAL0012046481001
+ORG-001813,B,NONE,Formco / Molded Devices Inc,North Canton,OH,,,,,,,,,,,,,
+ORG-001814,B,NONE,Freedom Mold & Machine LLC,North Canton,OH,,,,,,,,,,,,,
+ORG-001815,B,NAME+CITY,Fukuvi USA Inc,Huber Heights,OH,,311465949,"FUKUVI USA, INC.",,5500-SF,2025-12-31,69,0,,,HUBER HEIGHTS,OH,20260724115202NAL0019343520001
+ORG-001817,A,NONE,G2 Materials Corp,Cleveland,OH,,,,,,,,,,,,,
+ORG-001818,B,NAME+CITY,Gapi USA Inc,Clayton,OH,,311222203,"GAPI USA, INC.",,5500-SF,2025-12-31,9,0,,,CLAYTON,OH,20260709143339NAL0001220530001
+ORG-001820,B,NONE,General Plastics Corp,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001821,B,NONE,Global Plastics Equipment & Services Inc,Perrysburg,OH,,,,,,,,,,,,,
+ORG-001822,B,NONE,GLT Products Inc,Solon,OH,,,,,,,,,,,,,
+ORG-001824,B,NONE,Greif Inc,Delaware,OH,,,,,,,,,,,,,
+ORG-001825,A,NONE,Hamilton Custom Molding Inc,Hamilton,OH,,,,,,,,,,,,,
+ORG-001827,B,NAME+CITY,Hart Industrial Products,Middletown,OH,,310731141,"HART INDUSTRIES, INC.",,5500-SF,2025-12-31,109,0,,,MIDDLETOWN,OH,20260504102252NAL0004812912001
+ORG-001828,A,NONE,Howard Industries Inc,Columbus,OH,,,,,,,,,,,,,
+ORG-001829,B,NONE,HP Enterprise Inc,Streetsboro,OH,,,,,,,,,,,,,
+ORG-001831,U,NONE,Innoplast,Cleveland,OH,,,,,,,,,,,,,
+ORG-001832,B,NONE,Intertex World Resources Inc.,Akron,OH,,,,,,,,,,,,,
+ORG-001835,B,NONE,JEG Plastics,Westerville,OH,,,,,,,,,,,,,
+ORG-001839,B,NAME_STATE_ONLY,KASE Equipment,Cleveland,OH,,340946425,KASE EQUIPMENT CORPORATION,,5500,2025-12-31,35,0,,,VALLEY VIEW,OH,20260526120416NAL0004343939001
+ORG-001840,B,NAME_STATE_ONLY,Koehler Rubber & Supply Co.,Cleveland,OH,,341102507,KOEHLER RUBBER & SUPPLY COMPANY,,5500-SF,2024-12-31,0,1,,,BROOKLYN HEIGHTS,OH,20250116152934NAL0023627153001
+ORG-001841,A,NAME+CITY,Koehlke Components Inc.,Franklin,OH,,310890033,"KOEHLKE COMPONENTS, INC.",,5500-SF,2026-06-30,19,0,,,FRANKLIN,OH,20260831150547NAL0008311984001
+ORG-001843,B,NAME+CITY,Kumho America Technical Center,Akron,OH,,980120640,KUMHO AMERICA TECHNICAL CENTER,,5500-SF,2025-12-31,17,0,,,AKRON,OH,20260707102328NAL0032996786001
+ORG-001844,U,NONE,Lee Plastic Co. LLC,Eaton,OH,,,,,,,,,,,,,
+ORG-001845,U,NONE,Marble Plastics,Columbus,OH,,,,,,,,,,,,,
+ORG-001847,B,NONE,Martin Wheel Co. Inc.,Tallmadge,OH,,,,,,,,,,,,,
+ORG-001848,B,NONE,MCD Plastics & Manufacturing Inc.,Piqua,OH,,,,,,,,,,,,,
+ORG-001849,B,NONE,Mid-Ohio Rotomolding,Ashland,OH,,,,,,,,,,,,,
+ORG-001850,B,NONE,Mil-Tek Rubber,Baltic,OH,,,,,,,,,,,,,
+ORG-001851,B,NONE,Modern Mold & Tool Corp.,Columbia Station,OH,,,,,,,,,,,,,
+ORG-001852,A,NONE,MLB Molded Urethane Products LLC,Swanton,OH,,,,,,,,,,,,,
+ORG-001853,U,NONE,National Applied Construction Products Inc.,Akron,OH,,,,,,,,,,,,,
+ORG-001857,B,NAME+CITY,Nu-Di Products Co. Inc.,Cleveland,OH,,341039504,NU-DI CORPORATION,,5500,2025-12-31,78,0,,,CLEVELAND,OH,20260923152413NAL0012435504001
+ORG-001858,A,NONE,NUPCO Inc.,New Bremen,OH,,,,,,,,,,,,,
+ORG-001860,B,NONE,Ohio Rotational Molding,Holgate,OH,,,,,,,,,,,,,
+ORG-001861,A,NONE,Orbit Manufacturing Inc.,Batavia,OH,,,,,,,,,,,,,
+ORG-001862,U,NONE,Perfect Rubber Mulch,Jefferson,OH,,,,,,,,,,,,,
+ORG-001867,U,NONE,Polymer Chain Inc.,Akron,OH,,,,,,,,,,,,,
+ORG-001870,U,NONE,Pro-Mold Inc.,Kipton,OH,,,,,,,,,,,,,
+ORG-001873,U,NONE,Protoduction 3D,Dayton,OH,,,,,,,,,,,,,
+ORG-001874,B,NAME_STATE_ONLY,PVS Plastics Technology Corp.,Dayton,OH,,200822975,PVS PLASTICS TECHNOLOGY CORP,,5500-SF,2025-12-31,58,0,,,HUBER HEIGHTS,OH,20260406130406NAL0009151667001
+ORG-001875,B,NONE,Q Holding Company,Pepper Pike,OH,,,,,,,,,,,,,
+ORG-001876,B,NONE,Quality Match Plate Co.,Southington,OH,,,,,,,,,,,,,
+ORG-001878,A,NONE,Qube Corporation,Chagrin Falls,OH,,,,,,,,,,,,,
+ORG-001880,A,NAME+CITY,Razor Edge Precision Grinding LLC,Akron,OH,,921077841,RAZOR EDGE PRECISION GRINDING LLC,,5500-SF,2025-12-31,5,0,,,AKRON,OH,20260511220455NAL0006303185001
+ORG-001884,U,NONE,Rubber & Gasket Company of America,Perrysburg,OH,,,,,,,,,,,,,
+ORG-001886,B,NAME+CITY,Rubicon Rubber LLC,Seville,OH,,934064617,RUBICON RUBBER LLC,,5500-SF,2025-12-31,9,0,,,SEVILLE,OH,20260729124151NAL0021740641001
+ORG-001887,B,NONE,Sabo Company,Newark,OH,,,,,,,,,,,,,
+ORG-001888,U,NAME+CITY,Safeguard Technology Inc.,Streetsboro,OH,,341718496,SAFEGUARD TECHNOLOGY INC,,5500-SF,2025-12-31,35,0,,,STREETSBORO,OH,20260730040159NAL0018909651001
+ORG-001889,B,NONE,Sanyu USA,Maumee,OH,,,,,,,,,,,,,
+ORG-001890,C,NONE,Savko Plastic Pipe & Fittings,Columbus,OH,,,,,,,,,,,,,
+ORG-001894,B,NONE,Shooting Range Supply,Jefferson,OH,,,,,,,,,,,,,
+ORG-001895,B,NONE,Sims Bros Recycling,Marion,OH,,,,,,,,,,,,,
+ORG-001897,B,NAME_STATE_ONLY,"SoffSeal, Inc.",Harrison,OH,,990378783,SOFFSEAL,,5500-SF,2025-12-31,8,0,,,LEBANON,OH,20260729124159NAL0018752659001
+ORG-001900,A,NONE,Stark's Plastics,Forest Park,OH,,,,,,,,,,,,,
+ORG-001901,B,NONE,Summit Environmental Group,Toledo,OH,,,,,,,,,,,,,
+ORG-001902,B,NONE,Superior Rubber Company Inc,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001903,B,NONE,Terpco Inc,Barberton,OH,,,,,,,,,,,,,
+ORG-001904,B,NONE,Thermo Plastic Trading Inc,Akron,OH,,,,,,,,,,,,,
+ORG-001905,A,NONE,Thermoprene Inc,Garfield Heights,OH,,,,,,,,,,,,,
+ORG-001906,U,NONE,Tosca,Sharonville,OH,,,,,,,,,,,,,
+ORG-001907,C,NONE,Total Plastics,Cleveland,OH,,,,,,,,,,,,,
+ORG-001909,B,NONE,TSR Inc,Strongsville,OH,,,,,,,,,,,,,
+ORG-001910,B,NONE,Ascenso Tires North America,Hudson,OH,,,,,,,,,,,,,
+ORG-001912,B,NAME+CITY,Universal Urethane Products Inc,Toledo,OH,,341128863,"UNIVERSAL URETHANE PRODUCTS, INC.",,5500-SF,2025-12-31,47,0,,,TOLEDO,OH,20260730092253NAL0028343824001
+ORG-001913,B,NONE,US Polymers Inc,Findlay,OH,,,,,,,,,,,,,
+ORG-001915,A,NAME+CITY,World Resource Solutions,Plain City,OH,,010627711,WORLD RESOURCE SOLUTIONS CORP.,,5500-SF,2026-05-21,0,1,,,PLAIN CITY,OH,20260604122148NAL0001936658001
+ORG-001916,A,NONE,Zero D Products Inc,Willoughby,OH,,,,,,,,,,,,,
+ORG-001919,B,NONE,"Catalyst Systems, Inc.",Gnadenhutten,OH,,,,,,,,,,,,,
+ORG-001920,C,NONE,"Lawrence Machine, Inc.",Massillon,OH,,,,,,,,,,,,,
+ORG-001923,B,NONE,"Artemis Polymer Processing, Inc.",Akron,OH,,,,,,,,,,,,,
+ORG-001924,A,NAME+CITY,"Baker and Associates, Inc.",Centerville,OH,,341500731,"BAKER AND ASSOCIATES, INC.",,5500-SF,2025-12-31,10,0,,,CENTERVILLE,OH,20260701112211NAL0013603953001
+ORG-001925,A,NONE,Bata Plastics Inc (Toledo plant),Toledo,OH,,,,,,,,,,,,,
+ORG-001926,B,NONE,"Expert Roto Molding (Eger Products, a Division of Kaivac)",Batavia,OH,,,,,,,,,,,,,
+ORG-001929,A,NONE,Saint-Gobain HyComp LLC (Hycomp LLC),Middleburg Heights,OH,,,,,,,,,,,,,
+ORG-001930,A,NONE,Industrial Thermoset Plastics (IT Plastics),Mentor,OH,,,,,,,,,,,,,
+ORG-001932,B,NONE,"Next Specialty Resins, Inc. (Next Resins)",Toledo,OH,,,,,,,,,,,,,
+ORG-001934,B,NONE,Rack Coating Services Inc.,Canal Fulton,OH,,,,,,,,,,,,,
+ORG-001936,A,NAME+CITY,"Rotocast Technologies, Inc.",Akron,OH,,341819582,"ROTOCAST TECHNOLOGIES, INC.",,5500-SF,2025-12-31,18,0,,,AKRON,OH,20260929095151NAL0018130065001
+ORG-001939,B,NONE,Synesis LLC,Creston,OH,,,,,,,,,,,,,
+ORG-001940,C,NONE,Synthetic Rubber Technologies,Uniontown,OH,,,,,,,,,,,,,
+ORG-001942,A,NONE,"Tire Gard (Precision Tool Grinding, Inc.)",Elida,OH,,,,,,,,,,,,,
+ORG-001943,B,NONE,Trans-Foam Inc.,Tallmadge,OH,,,,,,,,,,,,,
+ORG-001944,C,NONE,"Tristan Rubber Molding, Inc.",North Canton,OH,,,,,,,,,,,,,
+ORG-001945,B,NONE,"Vinyl Profiles, LLC (Vinyl Profiles Inc)",North Jackson,OH,,,,,,,,,,,,,
+ORG-001946,B,NONE,"WAUGS, Inc.",Ashland,OH,,,,,,,,,,,,,
+ORG-001948,B,NONE,Advanced Mold and Engineering Inc,Dayton,OH,,,,,,,,,,,,,
+ORG-001950,C,NONE,Artisan Mold Co Inc,Grafton,OH,,,,,,,,,,,,,
+ORG-001951,B,NONE,Castek Inc,Elyria,OH,,,,,,,,,,,,,
+ORG-001952,B,NONE,Catalysis Additive Tooling LLC,Columbus,OH,,,,,,,,,,,,,
+ORG-001953,A,NONE,Clear Packaging LLC (Clear Packaging Laboratories),Cincinnati,OH,,,,,,,,,,,,,
+ORG-001954,B,NAME+CITY,Crum Manufacturing Inc,Waterville,OH,,341752675,"CRUM MANUFACTURING, INC.",,5500-SF,2025-04-10,0,1,,,WATERVILLE,OH,20250521124312NAL0001851761001
+ORG-001955,B,NONE,Diffused Gas Technologies Inc,Lebanon,OH,,,,,,,,,,,,,
+ORG-001956,C,NONE,Eihinger Machine Inc,Massillon,OH,,,,,,,,,,,,,
+ORG-001959,B,NONE,Jax Mold and Machine Inc,Akron,OH,,,,,,,,,,,,,
+ORG-001960,B,NONE,K & E Plastic Pipe and Trailer Sales LLC,Reedsville,OH,,,,,,,,,,,,,
+ORG-001961,B,NONE,Lambda Research Inc,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001962,C,NONE,"Lasttic, LLC",Holmesville,OH,,,,,,,,,,,,,
+ORG-001964,B,NONE,M Sacks International,Akron,OH,,,,,,,,,,,,,
+ORG-001965,B,NONE,"McNeil & NRM International, Inc",Akron,OH,,,,,,,,,,,,,
+ORG-001966,A,NAME+CITY,Metcut Research Associates Inc,Cincinnati,OH,,310599320,METCUT RESEARCH ASSOCIATES INC.,,5500,2026-04-30,0,1,,,CINCINNATI,OH,20261021075949NAL0000835473001
+ORG-001967,A,NAME+CITY,Murrplastik Systems Inc,Milford,OH,,232927075,"MURRPLASTIK SYSTEMS, INC.",,5500-SF,2025-12-31,23,0,,,MILFORD,OH,20260910115452NAL0008719810001
+ORG-001968,B,NONE,National Exposure Testing Inc,Sylvania,OH,,,,,,,,,,,,,
+ORG-001969,B,NONE,National Plastic Film Co Inc,Fairfield,OH,,,,,,,,,,,,,
+ORG-001970,B,NAME_STATE_ONLY,Northcoast Inc Recycling Specialists,Wickliffe,OH,,341773265,"NORTHCOAST, INC. RECYCLING SPECIALISTS",,5500-SF,2025-12-31,13,0,,,MENTOR,OH,20260715130256NAL0002166707003
+ORG-001971,B,NONE,Oakley Die & Mold Co. Inc.,Mason,OH,,,,,,,,,,,,,
+ORG-001972,B,NONE,Penco Acquisition Co. LLC dba Penco Tool,Ashtabula,OH,,,,,,,,,,,,,
+ORG-001973,C,NONE,"Pesco, Inc. dba Production Engineering",Dayton,OH,,,,,,,,,,,,,
+ORG-001974,B,NAME+CITY,Photo Tex Group Inc,Boardman,OH,,300008728,"PHOTO TEX GROUP, INC.",,5500-SF,2025-12-31,6,0,,,BOARDMAN,OH,20261009114453NAL0027648769001
+ORG-001975,A,NONE,"Plastic Regrinders, Inc",Glenford,OH,,,,,,,,,,,,,
+ORG-001976,A,NAME_STATE_ONLY,Rack Processing Company Inc,Moraine,OH,,310535048,RACK PROCESSING COMPANY,,5500-SF,2025-12-31,51,0,,,DAYTON,OH,20260721125700NAL0013229680001
+ORG-001977,C,NONE,Recycling Group Ltd,Cincinnati,OH,,,,,,,,,,,,,
+ORG-001979,A,NAME+CITY,Tripack LLC,Milford,OH,,262371734,"TRIPACK, LLC",,5500-SF,2025-12-31,43,0,,,MILFORD,OH,20260730110726NAL0019316163001
+ORG-001980,A,NONE,"TROESTER Machinery, Ltd.",Cuyahoga Falls,OH,,,,,,,,,,,,,
+ORG-001981,B,NONE,Tuckers Mold Polishing LLC,Troy,OH,,,,,,,,,,,,,
+ORG-001982,B,NONE,"XL Pattern Shop, Inc.",Orrville,OH,,,,,,,,,,,,,
+ORG-001983,A,NAME+CITY,Ohio Taxidermy Supply Inc,Killbuck,OH,,263331130,OHIO TAXIDERMY SUPPLY INC,,5500-SF,2025-12-31,9,0,,,KILLBUCK,OH,20260716174015NAL0006833474001
+ORG-001984,A,NAME+CITY,Ohio Valley Ink LLC,Cincinnati,OH,,464361461,"OHIO VALLEY INK, LLC",,5500-SF,2025-12-31,5,0,,,CINCINNATI,OH,20261022090103NAL0002319520001
+ORG-001985,B,NAME+CITY,Operational Support Services LLC,Findlay,OH,,300110575,"OPERATIONAL SUPPORT SERVICES, LLC",,5500-SF,2025-12-31,51,0,,,FINDLAY,OH,20260219081321NAL0008569408001
+ORG-001986,B,NONE,Optimax Plastic LLC,Kent,OH,,,,,,,,,,,,,
+ORG-001987,B,NAME+CITY,Osburn Associates Inc,Logan,OH,,311041388,OSBURN ASSOCIATES INC,,5500-SF,2025-12-31,57,0,,,LOGAN,OH,20260511080207NAL0005140339001
+ORG-001988,C,NONE,Pentagon Protection US LLC,Columbus,OH,,,,,,,,,,,,,
+ORG-001990,A,NAME+CITY,Poly Concepts LLC,Saint Henry,OH,,260573043,"POLY CONCEPTS, LLC",,5500-SF,2025-12-31,5,0,,,SAINT HENRY,OH,20260429073750NAL0005761235001
+ORG-001991,A,NONE,Powder Coating Plus LLC,Archbold,OH,,,,,,,,,,,,,
+ORG-001995,B,NONE,"Proto Mold Products Co., Inc.",Piqua,OH,,,,,,,,,,,,,
+ORG-001996,A,NONE,PTC Enterprises Inc,Edon,OH,,,,,,,,,,,,,
+ORG-001997,B,NONE,"Quikey Manufacturing Co, Inc.",Akron,OH,,,,,,,,,,,,,
+ORG-001999,B,NONE,"Raydar of Ohio, Inc.",Wadsworth,OH,,,,,,,,,,,,,
+ORG-002001,B,NONE,REP Services Inc,Bucyrus,OH,,,,,,,,,,,,,
+ORG-002003,B,NAME+CITY,"Roboworld, LLC",Mason,OH,,391930182,"ROBOWORLD, LLC",,5500-SF,2025-12-31,6,0,,,MASON,OH,20260929115352NAL0024267698001
+ORG-002004,B,NONE,Roboworld Molded Products LLC,West Chester,OH,,,,,,,,,,,,,
+ORG-002005,A,NAME+CITY,Rosati's Window Co. LLC,Columbus,OH,,311697753,"ROSATI'S WINDOW CO, LLC",,5500-SF,2025-12-31,64,0,,,COLUMBUS,OH,20260629065914NAL0011431873001
+ORG-002006,C,NONE,Rose Layman Laminating & Mounting (current operator; formerly Rose Laminating & Mounting Company),Batavia,OH,,,,,,,,,,,,,
+ORG-002008,B,NONE,Samjay & Sons LLC,Fairlawn,OH,,,,,,,,,,,,,
+ORG-002009,C,NONE,SaN Pallet LLC (SaN Pallets),Troy,OH,,,,,,,,,,,,,
+ORG-002010,B,NONE,Sherwood Advanced Composite Technologies Corp,Louisville,OH,,,,,,,,,,,,,
+ORG-002011,A,NONE,"Solutions in Polycarbonate, LLC",Medina,OH,,,,,,,,,,,,,
+ORG-002012,B,NAME+CITY,South Coast Specialty Chemicals LLC,Piqua,OH,,204762004,"SOUTH COAST SPECIALTY CHEMICALS, LLC",,5500-SF,2025-12-31,16,0,,,PIQUA,OH,20261006222623NAL0026776849024
+ORG-002013,B,NONE,Southern Adhesives & Coatings Inc,Cincinnati,OH,,,,,,,,,,,,,
+ORG-002015,C,NONE,Tamarron Technology Inc,Springboro,OH,,,,,,,,,,,,,
+ORG-002016,B,NONE,V-Seal Concrete Sealers LLC,Lewis Center,OH,,,,,,,,,,,,,
+ORG-002019,B,NONE,"The Brown Company of Findlay, Ltd.",Findlay,OH,,,,,,,,,,,,,
+ORG-002020,B,NAME+CITY,The Electro Prime Group LLC,Toledo,OH,,061748533,ELECTRO PRIME GROUP LLC,,5500-SF,2025-12-31,37,0,,,TOLEDO,OH,20260629125312NAL0014860672001
+ORG-002021,B,NONE,The Moldmakers Inc,Kenton,OH,,,,,,,,,,,,,
+ORG-002023,C,NONE,Thinnovations LLC dba SmartPaint,Columbus,OH,,,,,,,,,,,,,
+ORG-002024,B,NONE,Tolloti Pipe LLC,Uhrichsville,OH,,,,,,,,,,,,,
+ORG-002026,C,NONE,Tronplas Inc,Findlay,OH,,,,,,,,,,,,,
+ORG-002027,B,NONE,United Feed Screws Limited,Akron,OH,,,,,,,,,,,,,
+ORG-002028,C,NONE,U.S. Foam Corporation of Indiana,Cincinnati,OH,,,,,,,,,,,,,
+ORG-002029,A,NONE,Valutex Reinforcements Inc,Washington Court House,OH,,,,,,,,,,,,,
+ORG-002030,C,NONE,Veretec Inc,Jefferson,OH,,,,,,,,,,,,,
+ORG-002032,A,NONE,Vital Polymers L.L.C.,Dayton,OH,,,,,,,,,,,,,
+ORG-002033,A,NONE,Wellston Aerosol Manufacturing Co. Inc.,Wellston,OH,,,,,,,,,,,,,
+ORG-002035,B,NONE,Wolf Creek Portable Piping Products LLC,Dayton,OH,,,,,,,,,,,,,
+ORG-002036,B,NONE,Zeres Inc,Bowling Green,OH,,,,,,,,,,,,,
+ORG-002038,B,NAME+CITY,"Pinnacle Recycling, LLC",Akron,OH,,272407944,"PINNACLE RECYCLING, LLC",,5500-SF,2024-11-18,0,1,,,AKRON,OH,20250724232921NAL0005337505014
+ORG-002041,C,NONE,May Lin Silicone Products Inc.,Barberton,OH,,,,,,,,,,,,,
+ORG-002046,B,NAME+CITY,AV Flexologic USA LLC,Bryan,OH,,462398242,AV FLEXOLOGIC USA LLC,,5500-SF,2025-12-31,5,0,,,BRYAN,OH,20260921094154NAL0009504112001
+ORG-002047,B,NONE,Wayne-Dalton Plastics (Wayne Dalton Corp),Conneaut,OH,,,,,,,,,,,,,
+ORG-002048,A,NAME+CITY,TRUECHOICEPACK CORP,West Chester,OH,,462296013,TRUECHOICEPACK,,5500-SF,2025-12-31,5,0,,,WEST CHESTER,OH,20260608144202NAL0003798336001
+ORG-002049,A,NONE,Sietins Plastics Inc (Sietins Precision),Bedford,OH,,,,,,,,,,,,,
+ORG-002050,B,NONE,"Diskin Enterprises, LLC",Garrettsville,OH,,,,,,,,,,,,,
+ORG-002051,B,NAME+CITY,"SEAWAY PATTERN MANUFACTURING, INC.",Toledo,OH,,340897757,"SEAWAY PATTERN MANUFACTURING, INC.",,5500-SF,2025-04-30,2,0,,,TOLEDO,OH,20250922115657NAL0004678689001
+ORG-002052,B,NONE,"ProTech, LLC",Gibsonburg,OH,,,,,,,,,,,,,
+ORG-002054,C,NONE,Associated Paper Stock Inc,North Lima,OH,,,,,,,,,,,,,
+ORG-002055,C,NONE,Neo Industries Inc,Conneaut,OH,,,,,,,,,,,,,
+ORG-002056,C,NONE,P & E Sales Ltd.,Alliance,OH,,,,,,,,,,,,,
+ORG-002057,C,NONE,Quality Fiberglass,Marshallville,OH,,,,,,,,,,,,,
+ORG-002059,B,NONE,Altum LLC,Canal Winchester,OH,,,,,,,,,,,,,
+ORG-002062,C,NONE,Fouty & Co Inc,Oregon,OH,,,,,,,,,,,,,
+ORG-002063,B,NONE,KLW Plastics,Monroe,OH,,,,,,,,,,,,,
+ORG-002064,C,NONE,Poly Tech Plastics,Middlefield,OH,,,,,,,,,,,,,
+ORG-002069,B,NAME+CITY,"Summit Glove, Inc.",Minerva,OH,,341867765,"SUMMIT GLOVE, INC.",,5500-SF,2025-12-31,12,0,,,MINERVA,OH,20260918041918NAL0004934193001
+ORG-002070,B,NONE,Systech Environmental Corporation,Paulding,OH,,,,,,,,,,,,,
+ORG-002071,B,NAME+CITY,De Ruijter International USA Inc,Coldwater,OH,,341817672,"DE RUIJTER INTERNATIONAL USA, INC.",,5500-SF,2025-12-31,0,1,,,COLDWATER,OH,20260508072458NAL0002796675001
+ORG-002072,C,NONE,Vexor Technology Inc (TRI variant name: Reworld Medina LLC),Medina,OH,,,,,,,,,,,,,
+ORG-002076,C,NONE,"Meteora3D, Incorporated",Cincinnati,OH,,,,,,,,,,,,,
+ORG-002077,B,NAME_STATE_ONLY,Vector ElectroMagnetics LLC,Beavercreek,OH,,462881550,"VECTOR ELECTROMAGNETICS, LLC",,5500-SF,2025-12-31,13,0,,,WILMINGTON,OH,20260904095805NAL0013866387001
+ORG-002078,B,NONE,"ZeoVation, Inc.",Columbus,OH,,,,,,,,,,,,,
+ORG-002079,U,NONE,TDM LLC,Ashtabula,OH,,,,,,,,,,,,,
+ORG-002080,B,NONE,Mitsubishi Chemical Performance Polymers Inc,Bellevue,OH,,,,,,,,,,,,,
+ORG-002124,C,NONE,NAMSA,Northwood,OH,,,,,,,,,,,,,
+ORG-002125,A,NONE,Normec OWS,Ghent,,,,,,,,,,,,,,
+ORG-002132,B,NONE,"International Converter, Inc.",Caldwell,OH,,,,,,,,,,,,,
+ORG-002138,B,NONE,POWDER COATING SPECIALTY LLC,Cincinnati,OH,,,,,,,,,,,,,
+ORG-002139,B,NONE,Enzyme Catalyzed Polymers LLC,Akron,OH,,,,,,,,,,,,,
+ORG-002141,B,NAME_STATE_ONLY,TRIFECTA TOOL AND ENGINEERING LLC,Kettering,OH,,331093897,TRIFECTA TOOL AND ENGINEERING LLC,,5500-SF,2025-04-30,0,1,,,DAYTON,OH,20251126141230NAL0004750177001
+ORG-002142,B,NONE,OH 4 INDUSTRIES LLC,Lebanon,OH,,,,,,,,,,,,,
+ORG-002143,B,NONE,AXILEA LLC,Beachwood,OH,,,,,,,,,,,,,
+ORG-002145,B,NONE,All Coatings Corp.,Youngstown,OH,,,,,,,,,,,,,
+ORG-002148,B,NONE,THE ARTHUR CORPORATION,Huron,OH,341352998,,,,,,,,,,,,
+ORG-002150,B,NONE,Biena Tech Llc,Akron,OH,,,,,,,,,,,,,
+ORG-002151,B,NONE,Black Bounce Rubber & Tire LLC,Millersburg,OH,,,,,,,,,,,,,
+ORG-002152,A,NONE,BLAKO INDUSTRIES INC.,Bowling Green,OH,,,,,,,,,,,,,
+ORG-002153,A,NONE,Checkpoint Systems,Canton,OH,,,,,,,,,,,,,
+ORG-002154,B,NONE,Composite Engineering,Amelia,OH,,,,,,,,,,,,,
+ORG-002155,B,NONE,Cottage Play Systems LLC,Millersburg,OH,,,,,,,,,,,,,
+ORG-002156,B,NAME+CITY,Creative Mold & Machine,Newbury,OH,,341559162,"CREATIVE MOLD & MACHINE, INC.",,5500-SF,2025-12-31,30,0,,,NEWBURY,OH,20260430142519NAL0000018403001
+ORG-002159,B,NONE,"ENCORE INDUSTRIES, INC.",Sandusky,OH,,,,,,,,,,,,,
+ORG-002160,A,NONE,FELICITY PLANT,Felicity,OH,,,,,,,,,,,,,
+ORG-002161,B,NONE,EG INDUSTRIES,Circleville,OH,,,,,,,,,,,,,
+ORG-002162,B,NONE,Gerich Fiberglass,Mount Gilead,OH,,,,,,,,,,,,,
+ORG-002163,B,NAME+CITY,"K & K Services, Inc.",Wadsworth,OH,,562308586,K&K SERVICES INC,,5500-SF,2025-08-31,3,0,,,WADSWORTH,OH,20260330105520NAL0014258642001
+ORG-002165,B,NONE,MEDAL Components,Holgate,OH,,,,,,,,,,,,,
+ORG-002167,B,NONE,"PLYMOUTH FOAM, LLC",Newcomerstown,OH,,,,,,,,,,,,,
+ORG-002172,B,NONE,Wright Materials Research Co.,Beavercreek,OH,,,,,,,,,,,,,
+ORG-002173,B,NONE,"PureCycle Technologies, Inc.",Ironton,OH,,,,,,,,,,,,,
+ORG-002177,B,NONE,Berkley Prods Co.,Akron,PA,,,,,,,,,,,,,
+ORG-002178,A,NONE,Lesko Enterprises,Albion,PA,,,,,,,,,,,,,
+ORG-002179,B,NONE,Filmtech Corp.,Allentown,PA,,,,,,,,,,,,,
+ORG-002182,A,NONE,International Polymers Corp.,Allentown,PA,,,,,,,,,,,,,
+ORG-002183,B,NONE,Niagara Bottling LLC,Allentown,PA,,,,,,,,,,,,,
+ORG-002186,C,NONE,Polymer Dynamics Inc.,Allentown,PA,,,,,,,,,,,,,
+ORG-002187,B,NAME+CITY,"Royal Industries International, Inc.",Allentown,PA,,135557433,ROYAL INDUSTRIES INTERNATIONAL,,5500-SF,2025-12-31,43,0,,,ALLENTOWN,PA,20260512120529NAL0006010499002
+ORG-002190,B,NAME+CITY,"Valley Extrusions, LLC.",Allentown,PA,,020590797,VALLEY EXTRUSIONS LLC,,5500,2024-12-31,154,0,,,ALLENTOWN,PA,20250707112620NAL0005741872001
+ORG-002191,C,NONE,New Pig Burns Ave,Altoona,PA,,,,,,,,,,,,,
+ORG-002193,A,NONE,Simona America Inc.,Archbald,PA,,,,,,,,,,,,,
+ORG-002195,B,NONE,"Alex Color Company, Inc.",Ashland,PA,,,,,,,,,,,,,
+ORG-002196,B,NONE,Flextron Industries Inc.,Aston,PA,,,,,,,,,,,,,
+ORG-002197,B,NONE,Performax Global,Aston,PA,,,,,,,,,,,,,
+ORG-002198,C,NONE,Rebus Inc.,Aston,PA,,,,,,,,,,,,,
+ORG-002199,B,NONE,Surteco North Amer Inc.,Auburn,PA,,,,,,,,,,,,,
+ORG-002200,B,NONE,Anholt Tech,Avondale,PA,,,,,,,,,,,,,
+ORG-002201,B,NONE,Edlon Avondale Fac,Avondale,PA,,,,,,,,,,,,,
+ORG-002202,B,NONE,Edlon Inc.,Avondale,PA,,,,,,,,,,,,,
+ORG-002203,B,NONE,Hpe Extrusion Solutions,Bally,PA,,,,,,,,,,,,,
+ORG-002205,C,NONE,Lehigh Gasket Inc.,Bath,PA,,,,,,,,,,,,,
+ORG-002208,A,NONE,Green Garden Products Company LLC,Bedford,PA,,,,,,,,,,,,,
+ORG-002209,B,NONE,"F Group Nano, LLC",Bellefonte,PA,,,,,,,,,,,,,
+ORG-002210,B,NONE,"Analytic Plastics, Inc.",Bensalem,PA,,,,,,,,,,,,,
+ORG-002211,B,EIN+NAME,Laminated Materials Corp.,Bensalem,PA,232135078,232135078,LAMINATED MATERIALS CORPORATION,LMC PLASTICSOURCE,5500-SF,2024-12-31,0,0,,,BENSALEM,PA,20250909114605NAL0012853971001
+ORG-002212,B,NONE,Nytef Plastics,Bensalem,PA,,,,,,,,,,,,,
+ORG-002213,B,NONE,Pelmor Lab,Bensalem,PA,,,,,,,,,,,,,
+ORG-002214,B,NONE,Rjm MFG Inc. (Dba Tara Tape),Bensalem,PA,,,,,,,,,,,,,
+ORG-002215,B,NONE,Berwick Offray LLC,Berwick,PA,,,,,,,,,,,,,
+ORG-002216,B,NONE,L & P Berwick Div Leggett & Platt,Berwick,PA,,,,,,,,,,,,,
+ORG-002217,B,NONE,"Specialty Roller And Machine, Inc.",Berwick,PA,,,,,,,,,,,,,
+ORG-002219,B,NAME_STATE_ONLY,Alpha Packaging,Bethlehem,PA,,231720695,ALPHA PACKAGING CORP.,,5500-SF,2025-12-31,16,0,,,CENTERPORT,PA,20261005064938NAL0026029824001
+ORG-002220,B,NONE,B Braun Med Bethlehem Plt,Bethlehem,PA,,,,,,,,,,,,,
+ORG-002222,A,NONE,Lehigh Valley Plastics,Bethlehem,PA,,,,,,,,,,,,,
+ORG-002225,B,NONE,Icp Industrial - Birdsboro,Birdsboro,PA,,,,,,,,,,,,,
+ORG-002226,A,NAME+CITY,"Ker Custom Molders, Inc.",Birdsboro,PA,,204639677,"KER CUSTOM MOLDERS, INC.",,5500,2025-12-31,39,0,,,BIRDSBORO,PA,20260430092238NAL0011899745001
+ORG-002228,B,NONE,Foam Fabricators Inc.,Bloomsburg,PA,,,,,,,,,,,,,
+ORG-002231,B,NAME+CITY,"Gehr Plastics, Inc.",Boothwyn,PA,,333259107,"GEHR PLASTICS, INC.",,5500-SF,2025-12-31,22,0,,,BOOTHWYN,PA,20261015130406NAL0008852066001
+ORG-002232,B,NAME+CITY,"Luicana Industries, Inc.",Boyertown,PA,,232960613,"LUICANA INDUSTRIES, INC.",,5500-SF,2025-12-31,18,0,,,BOYERTOWN,PA,20260929113724NAL0016664225001
+ORG-002233,B,NONE,C&G Arms LLC,Brackenridge,PA,,,,,,,,,,,,,
+ORG-002234,C,NONE,Pandalai Coating Company,Brackenridge,PA,,,,,,,,,,,,,
+ORG-002235,A,NONE,Luminite Prod,Bradford,PA,,,,,,,,,,,,,
+ORG-002236,B,NONE,"Reichhold Chemicals, Inc. (Polynt-Reichhold group)",Bridgeville,PA,,,,,,,,,,,,,
+ORG-002237,C,NONE,Mathews Marble MFG Inc.,Bridgeville,PA,,,,,,,,,,,,,
+ORG-002238,A,NONE,"Abtec, Inc.",Bristol,PA,,,,,,,,,,,,,
+ORG-002241,A,NONE,Dunmore Corp.,Bristol,PA,,,,,,,,,,,,,
+ORG-002242,B,NONE,Huntington Foam LLC,Brockway,PA,,,,,,,,,,,,,
+ORG-002243,C,NAME+CITY,"Ishman Plastic And Wood Cutting, Inc.",Brookville,PA,,680537250,ISHMAN PLASTIC & WOOD CUTTING INC.,,5500-SF,2025-12-31,19,0,,,BROOKVILLE,PA,20260716131138NAL0005679216001
+ORG-002246,A,NAME+CITY,"Pittsburgh Plastics Manufacturing, Inc.",Butler,PA,,251485820,PITTSBURGH PLASTICS MANUFACTURING,,5500-SF,2025-12-31,22,0,,,BUTLER,PA,20260505114027NAL0001469362001
+ORG-002247,B,NONE,Bhb Plastic Molding,Cambridge Springs,PA,,,,,,,,,,,,,
+ORG-002249,B,NONE,National Rubber Corporation,Canonsburg,PA,,,,,,,,,,,,,
+ORG-002250,B,NONE,Trident Rubber Inc.,Canonsburg,PA,,,,,,,,,,,,,
+ORG-002252,B,NAME_STATE_ONLY,Lane Enterprises Inc.,Carlisle,PA,,232383584,"LANE ENTERPRISES, LLC",,5500,2025-12-31,550,0,,,CAMP HILL,PA,20260708213858NAL0034626498001
+ORG-002253,B,NAME+CITY,John Wall Inc.,Carmichaels,PA,,251751546,"JOHN WALL, INC.",,5500-SF,2025-12-31,14,0,,,CARMICHAELS,PA,20260901101342NAL0008333168001
+ORG-002257,A,EIN+NAME,"Rose Plastic USA, L.L.L.P.",Coal Center,PA,223517645,223517645,"ROSE PLASTIC USA, L.L.L.P.",,5500-SF,2025-12-31,56,0,,,COAL CENTER,PA,20261013115237NAL0004555954001
+ORG-002258,B,NONE,Pacer Ind,Coatesville,PA,,,,,,,,,,,,,
+ORG-002259,C,NONE,Comor Inc.,Cochranton,PA,,,,,,,,,,,,,
+ORG-002262,A,NONE,Poux Plastics Inc.,Cochranton,PA,,,,,,,,,,,,,
+ORG-002263,A,NONE,Rpx Composites,Commodore,PA,,,,,,,,,,,,,
+ORG-002264,A,NONE,Southco Concordville Facility,Concordville,PA,,,,,,,,,,,,,
+ORG-002265,C,NONE,Mondo USA Inc.,Conshohocken,PA,,,,,,,,,,,,,
+ORG-002267,B,EIN+NAME,Entech Plastics Inc.,Corry,PA,251777699,251777699,"ENTECH PLASTICS, INC.",,5500-SF,2025-12-31,12,0,,,CORRY,PA,20260715071707NAL0001784771001
+ORG-002268,A,EIN+NAME,"Allegheny Plastics, Inc.",Cranberry Township,PA,250918127,250918127,"ALLEGHENY PLASTICS, INC.",,5500-SF,2024-12-30,0,1,,,CRANBERRY TOWNSHIP,PA,20250911101013NAL0000370737001
+ORG-002270,B,EIN+NAME,"Reliant Molding, Inc.",Cranesville,PA,251651980,251651980,"RELIANT MOLDING, INC.",,5500,2025-12-31,24,0,,,CRANESVILLE,PA,20260617095223NAL0002577344001
+ORG-002274,B,NONE,Vision Profile Extrusions USA Ltd,Delmont,PA,,,,,,,,,,,,,
+ORG-002277,B,NAME+CITY,Eastern Machine & Conveyors Inc.,Donora,PA,,251412776,"EASTERN MACHINE & CONVEYORS, INC.",,5500-SF,2025-12-31,7,0,,,DONORA,PA,20260723140756NAL0020965410001
+ORG-002278,B,NONE,Proto-Cast LLC,Douglassville,PA,,,,,,,,,,,,,
+ORG-002279,A,NONE,Agc Chem Amer Inc.,Downingtown,PA,,,,,,,,,,,,,
+ORG-002280,B,NONE,Arbonite Division Of Valjon Industries Inc.,Doylestown,PA,,,,,,,,,,,,,
+ORG-002282,C,NAME_STATE_ONLY,Powder Solutions Inc.,Doylestown,PA,,232964856,POWDER SOLUTIONS INC,,5500-SF,2025-12-31,8,0,,,NEW BRITAIN,PA,20260501094943NAL0000691955001
+ORG-002283,B,NONE,New Pig Corporation - Duncansville Site,Duncansville,PA,,,,,,,,,,,,,
+ORG-002286,B,NONE,Blair Tool & Plastic,East Freedom,PA,,,,,,,,,,,,,
+ORG-002287,B,NAME+CITY,Iridium Industries,East Stroudsburg,PA,,134033374,"IRIDIUM INDUSTRIES, INC.",,5500-SF,2025-12-31,119,0,,,EAST STROUDSBURG,PA,20260818154236NAL0019980899001
+ORG-002288,B,NONE,Crayola LLC - Kresslersville Rd Plant,Easton,PA,,,,,,,,,,,,,
+ORG-002289,A,EIN+NAME,"Ecopax, LLC",Easton,PA,205013410,205013410,ECOPAX LLC,,5500,2025-12-31,181,0,,,EASTON,PA,20261015155907NAL0004313843001
+ORG-002290,A,EIN+NAME,Fluortek Inc,Easton,PA,222326986,222326986,"FLUORTEK, INC.",,5500-SF,2021-07-01,0,1,,,EASTON,PA,20250506103751NAL0009155793002
+ORG-002291,A,NONE,Georg Fischer LLC (GF Harvel),Easton,PA,,,,,,,,,,,,,
+ORG-002292,C,NONE,Molded Acoustical Products of Easton Inc,Easton,PA,,,,,,,,,,,,,
+ORG-002293,B,NONE,"Palmer Plastics, Inc.",Easton,PA,,,,,,,,,,,,,
+ORG-002295,A,NAME_STATE_ONLY,Unicast Inc,Easton,PA,,232166524,UNICAST COMPANY,,5500,2025-12-31,46,0,,,BOYERTOWN,PA,20260710090755NAL0000857907001
+ORG-002296,C,NONE,U-POL US Corp,Easton,PA,,,,,,,,,,,,,
+ORG-002297,B,NONE,Plastrac Inc.,Edgemont,PA,,,,,,,,,,,,,
+ORG-002298,B,NONE,Metamora Products Corporation,Elkland,PA,,,,,,,,,,,,,
+ORG-002299,A,NONE,Wolverine Plastics Inc.,Ellwood City,PA,,,,,,,,,,,,,
+ORG-002300,B,NONE,Polar Tech Industries of PA Inc,Elysburg,PA,,,,,,,,,,,,,
+ORG-002301,B,NONE,Electro Chemical Engineering & Manufacturing Co,Emmaus,PA,,,,,,,,,,,,,
+ORG-002303,A,NONE,"Amatech Polycel, LLC",Erie,PA,,,,,,,,,,,,,
+ORG-002305,A,EIN+NAME,Erie Industrial Plastics Inc.,Erie,PA,823761176,823761176,"ERIE INDUSTRIAL PLASTICS, INC.",,5500-SF,2025-12-31,7,0,,,ERIE,PA,20260327121228NAL0012971170001
+ORG-002306,B,NONE,"Erie Mill & Press Co., Inc.",Erie,PA,,,,,,,,,,,,,
+ORG-002307,B,NONE,General Partitions,Erie,PA,,,,,,,,,,,,,
+ORG-002309,B,NAME+CITY,Insul Board,Erie,PA,,251340993,"INSUL BOARD, INC.",,5500,2025-12-31,7,0,,,ERIE,PA,20260612123125NAL0005955841001
+ORG-002310,A,NONE,"Lake Erie Rubber Works, Inc.",Erie,PA,,,,,,,,,,,,,
+ORG-002314,A,NONE,Plastek Grp-Spectrum Molding &,Erie,PA,,,,,,,,,,,,,
+ORG-002315,A,EIN+NAME,"Plastek Industries, Inc.",Erie,PA,251219548;251327950,251219548,"PLASTEK INDUSTRIES, INC.",,5500,2025-12-31,1047,,,,ERIE,PA,20261009124648NAL0031712608002
+ORG-002316,A,NONE,Plastikos Medical LLC,Erie,PA,,,,,,,,,,,,,
+ORG-002317,A,EIN+NAME,Polymer Molding,Erie,PA,251721547,251721547,POLYMER MOLDING INC.,,5500-SF,2025-12-31,52,0,,,ERIE,PA,20260731120311NAL0037690034001
+ORG-002318,B,NONE,Rehrig Pacific,Erie,PA,,,,,,,,,,,,,
+ORG-002319,B,NONE,Rehrig Pacific Bldg 2,Erie,PA,,,,,,,,,,,,,
+ORG-002320,B,NAME+CITY,Seaway Manufacturing Corp,Erie,PA,,251069263,SEAWAY MANUFACTURING CORPORATION,,5500-SF,2025-12-31,56,0,,,ERIE,PA,20261007115758NAL0027486385001
+ORG-002321,C,NONE,Thermoclad - Iroquois Ave,Erie,PA,,,,,,,,,,,,,
+ORG-002322,B,NONE,"United-Erie Division of ICC, Inc",Erie,PA,,,,,,,,,,,,,
+ORG-002327,B,NAME_STATE_ONLY,Carclo Technical Plastics,Export,PA,,251575404,"CARCLO TECHNICAL PLASTICS, INC",,5500,2025-06-30,242,0,,,LATROBE,PA,20260415141504NAL0034835618001
+ORG-002329,B,NAME+CITY,Boy Machines Inc.,Exton,PA,,452746786,"BOY MACHINES, INC.",,5500-SF,2025-12-31,22,0,,,EXTON,PA,20260715090925NAL0003669746001
+ORG-002330,A,NONE,Dsm Biomedical Inc. - Sierra Drive,Exton,PA,,,,,,,,,,,,,
+ORG-002331,C,EIN+NAME,Klinkau America Inc.,Exton,PA,042861592,042861592,"KLINKAU AMERICA, INC.",,5500-SF,2025-12-31,2,0,,,EXTON,PA,20260805134413NAL0002578145001
+ORG-002332,B,NONE,"Packaging Technology, Inc.",Exton,PA,,,,,,,,,,,,,
+ORG-002334,B,NAME+CITY,United Plastics Machinery LLC,Exton,PA,,200538754,"UNITED PLASTICS MACHINERY, LLC",,5500-SF,2025-12-31,11,0,,,EXTON,PA,20260527160132NAL0007605233001
+ORG-002335,B,NONE,Hunter Panels LLC,Fairchance,PA,,,,,,,,,,,,,
+ORG-002337,B,NAME+CITY,Ultra Pak Inc.,Fairless Hills,PA,,232650818,"ULTRA-PAK, INC.",,5500-SF,2025-12-31,16,0,,,FAIRLESS HILLS,PA,20260730142826NAL0035710290001
+ORG-002338,A,NONE,"American Molding And Technologies, Inc.",Fairview,PA,,,,,,,,,,,,,
+ORG-002339,A,EIN+NAME,Formtech Enterprises,Fairview,PA,341392863,341392863,"FORMTECH ENTERPRISES, INC.",,5500-SF,2025-12-31,33,0,,,FAIRVIEW,PA,20261010184903NAL0001142866001
+ORG-002340,A,NONE,Grimm Ind,Fairview,PA,,,,,,,,,,,,,
+ORG-002341,B,NAME+CITY,Hanes Erie,Fairview,PA,,251649454,"HANES ERIE, INC.",,5500-SF,2025-12-31,94,0,,,FAIRVIEW,PA,20260911145402NAL0006046449001
+ORG-002342,B,NONE,Precise Plastics Inc-Uvlight,Fairview,PA,,,,,,,,,,,,,
+ORG-002343,A,NAME+CITY,Garrett Liners Inc.,Fallsington,PA,,510113863,"GARRETT LINERS, INC.",,5500-SF,2025-12-31,45,0,,,FALLSINGTON,PA,20261013132752NAL0004761760001
+ORG-002344,B,NONE,Donaldson Co. Inc.,Feasterville,PA,,,,,,,,,,,,,
+ORG-002345,B,NONE,"Novares Us, LLC - Felton Plant",Felton,PA,,,,,,,,,,,,,
+ORG-002347,C,NAME+CITY,Iris Ltd. Inc.,Fleetwood,PA,,232174489,"IRIS, LTD., INC.",,5500-SF,2026-06-30,19,0,,,FLEETWOOD,PA,20260930090750NAL0017681857001
+ORG-002352,A,NONE,Valley Plastics Inc.,Forty Fort,PA,,,,,,,,,,,,,
+ORG-002354,C,NONE,Freeport Terminals,Freeport,PA,,,,,,,,,,,,,
+ORG-002355,C,NONE,Asap Hydraulics Inc.,Gap,PA,,,,,,,,,,,,,
+ORG-002356,B,NONE,Herbert Cooper Co.,Genesee,PA,,,,,,,,,,,,,
+ORG-002357,B,NAME+CITY,C & E Plastics Inc.,Georgetown,PA,,251686222,C & E PLASTICS INC,,5500-SF,2025-12-31,50,0,,,GEORGETOWN,PA,20260805095059NAL0002766289001
+ORG-002358,A,NAME_STATE_ONLY,Pannier Corp.,Gibsonia,PA,,250940589,PANNIER CORPORATION,,5500-SF,2025-12-31,87,0,,,PITTSBURGH,PA,20260518073050NAL0011536545001
+ORG-002359,C,NONE,Pannier Graphic Div.,Gibsonia,PA,,,,,,,,,,,,,
+ORG-002360,B,NONE,Anderson Plastics Inc.,Girard,PA,,,,,,,,,,,,,
+ORG-002361,B,NONE,Emsco Group,Girard,PA,,,,,,,,,,,,,
+ORG-002362,B,NONE,Jamestown Powder Coatings,Girard,PA,,,,,,,,,,,,,
+ORG-002363,C,NONE,Cott MFG,Glassport,PA,,,,,,,,,,,,,
+ORG-002364,B,NONE,La France Corp.,Glen Mills,PA,,,,,,,,,,,,,
+ORG-002366,B,NONE,Addev Walco Inc.,Glenshaw,PA,,,,,,,,,,,,,
+ORG-002367,A,NONE,Mi Windows And Doors LLC - Gratz,Gratz,PA,,,,,,,,,,,,,
+ORG-002369,B,NONE,Stretchpak Inc.,Greensburg,PA,,,,,,,,,,,,,
+ORG-002374,A,NONE,Accu Mold & Tool MFG,Halifax,PA,,,,,,,,,,,,,
+ORG-002376,C,NONE,Colonial Fiberglass Industries,Hanover,PA,,,,,,,,,,,,,
+ORG-002377,A,NONE,Hanover Plastic Prod,Hanover,PA,,,,,,,,,,,,,
+ORG-002379,B,NONE,Polymer Concepts Tech Pby Inc.,Hanover,PA,,,,,,,,,,,,,
+ORG-002380,A,NONE,Sonoco Plastics,Hanover,PA,,,,,,,,,,,,,
+ORG-002381,B,NONE,"Slocomb Windows And Doors, Inc.",Hanover Township,PA,,,,,,,,,,,,,
+ORG-002382,A,NONE,Martech Medical Products-Warehouse,Harleysville,PA,,,,,,,,,,,,,
+ORG-002386,A,NONE,Advanced Composite Products Inc.,Harrisburg,PA,,,,,,,,,,,,,
+ORG-002387,B,NONE,Jet Plastica Ind Inc.,Hatfield,PA,,,,,,,,,,,,,
+ORG-002388,A,NONE,Reubes Plastics Inc.,Hatfield,PA,,,,,,,,,,,,,
+ORG-002389,C,NONE,Surco Inc.,Hatfield,PA,,,,,,,,,,,,,
+ORG-002391,A,NONE,The Rodon Group,Hatfield,PA,,,,,,,,,,,,,
+ORG-002394,A,NAME_STATE_ONLY,Eam-Mosca Corp.,Hazleton,PA,,112578359,EAM-MOSCA CORPORATION,,5500,2025-12-31,260,0,,,HAZLE TOWNSHIP,PA,20261009083522NAL0016570195001
+ORG-002395,B,NONE,Fabri Kal Corp.,Hazleton,PA,,,,,,,,,,,,,
+ORG-002396,C,NONE,Jml Industries Inc.,Hazleton,PA,,,,,,,,,,,,,
+ORG-002398,B,NONE,"Schoolhouse Plastics, Inc.",Hazleton,PA,,,,,,,,,,,,,
+ORG-002399,C,NONE,Simona America Incorporated,Hazleton,PA,,,,,,,,,,,,,
+ORG-002400,B,NAME+CITY,"Thoren Caging Systems, Inc.",Hazleton,PA,,232113788,"THOREN CAGING SYSTEMS, INC.",,5500-SF,2025-06-30,25,0,,,HAZLETON,PA,20260408154455NAL0014483440001
+ORG-002402,A,NONE,Mold Specialties Inc.,Hershey,PA,,,,,,,,,,,,,
+ORG-002404,C,NONE,"Gellner Industrial, LLC",Hometown,PA,,,,,,,,,,,,,
+ORG-002405,B,NONE,PA Gellner & Co. L.L.C.,Hometown,PA,,,,,,,,,,,,,
+ORG-002406,C,NONE,Hartman Plastics Inc.,Honey Brook,PA,,,,,,,,,,,,,
+ORG-002409,A,NAME+CITY,Biocoat Inc.,Horsham,PA,,232666477,BIOCOAT INCORPORATED,,5500,2025-12-31,63,0,,,HORSHAM,PA,20261002145817NAL0020309585001
+ORG-002411,C,NONE,Chartiers Packaging Inc. Dba Chartiers Industries,Houston,PA,,,,,,,,,,,,,
+ORG-002412,B,NAME+CITY,"Venture Precision Tool, Inc.",Hummelstown,PA,,251661113,"VENTURE PRECISION TOOL, INC.",,5500-SF,2026-02-19,0,1,,,HUMMELSTOWN,PA,20260220083609NAL0010656208001
+ORG-002413,B,NONE,FRP Fabricators Inc.,Huntingdon,PA,,,,,,,,,,,,,
+ORG-002414,B,NONE,"Ajr Polytron, Inc.",Huntingdon Valley,PA,,,,,,,,,,,,,
+ORG-002415,B,NONE,Fielco Industries,Huntingdon Valley,PA,,,,,,,,,,,,,
+ORG-002416,C,NONE,Penn Protective Coatings,Huntingdon Valley,PA,,,,,,,,,,,,,
+ORG-002417,A,EIN+NAME,Strauss Engineering Co.,Huntingdon Valley,PA,231431702,231431702,STRAUSS ENGINEERING COMPANY,,5500-SF,2025-12-31,42,0,,,HUNTINGTON VALLEY,PA,20260909203025NAL0004424385001
+ORG-002418,B,NONE,Donaldson Co. Ivyland Fac,Ivyland,PA,,,,,,,,,,,,,
+ORG-002419,B,EIN+NAME,Eastern Web Handling,Ivyland,PA,232463534,232463534,"EASTERN WEB HANDLING, INC.",,5500-SF,2025-12-31,10,0,,,IVYLAND,PA,20260704064214NAL0013418883001
+ORG-002420,A,EIN+NAME,Tubro Co. Inc.,Ivyland,PA,232026089,232026089,"TUBRO CO., INC",,5500-SF,2025-12-31,14,0,,,WARMINSTER,PA,20260225075322NAL0005280291001
+ORG-002421,B,NONE,Jamestown Paint Co.,Jamestown,PA,,,,,,,,,,,,,
+ORG-002423,A,EIN+NAME,Baw Plastics Inc.,Jefferson Hills,PA,251576131,251576131,BAW PLASTICS INC,,5500-SF,2025-12-31,89,0,,,JEFFERSON HILLS,PA,20260922124450NAL0013317186001
+ORG-002424,B,NONE,Sap Manufacturing LLC,Jefferson Township,PA,,,,,,,,,,,,,
+ORG-002425,B,NAME+CITY,Industrial Floor Corporation,Jenkintown,PA,,231717420,INDUSTRIAL FLOOR CORPORATION,,5500-SF,2025-12-31,3,0,,,JENKINTOWN,PA,20260713085624NAL0007728434001
+ORG-002426,B,NONE,Norcen Inds Inc.,Jersey Shore,PA,,,,,,,,,,,,,
+ORG-002427,B,NONE,West Pharm Serv Js SW,Jersey Shore,PA,,,,,,,,,,,,,
+ORG-002429,B,NONE,Atofina Chem Inc.,King Of Prussia,PA,,,,,,,,,,,,,
+ORG-002430,B,NONE,Purolite Corporation,King Of Prussia,PA,,,,,,,,,,,,,
+ORG-002431,C,NONE,Safeguard Technologies Corp.,King Of Prussia,PA,,,,,,,,,,,,,
+ORG-002434,B,NONE,Bergad Incorporated,Kittanning,PA,,,,,,,,,,,,,
+ORG-002435,B,NONE,Dielectric Solutions LLC,Kittanning,PA,,,,,,,,,,,,,
+ORG-002436,A,NAME+CITY,Aline Components Inc.,Kulpsville,PA,,231665539,"ALINE COMPONENTS, INC.",,5500-SF,2025-12-31,0,1,,,KULPSVILLE,PA,20261008103152NAL0016020611001
+ORG-002437,A,NAME+CITY,Greene Tweed & Co. Inc.,Kulpsville,PA,,464212973,"GREENE, TWEED & CO., INC.",,5500,2025-12-31,420,0,,,KULPSVILLE,PA,20261002103231NAL0042377314001
+ORG-002439,A,EIN+NAME,Palram Americas,Kutztown,PA,870513572,870513572,"PALRAM AMERICAS, INC.",,5500,2025-12-31,189,0,,,KUTZTOWN,PA,20260724144659NAL0012009395001
+ORG-002440,B,NAME+CITY,"Armstrong World Industries, Inc.",Lancaster,PA,,230366390,ARMSTRONG WORLD INDUSTRIES INC,,5500,2025-12-31,3018,0,LANCASTER,PA,LANCASTER,PA,20261015110922NAL0003873699001
+ORG-002442,B,NONE,Ecore Intl Inc.,Lancaster,PA,,,,,,,,,,,,,
+ORG-002444,B,NAME_STATE_ONLY,Fenner Inc.,Lancaster,PA,,362646332,"FENNER, INC.",,5500-SF,2025-12-31,24,0,,,LITITZ,PA,20260302133110NAL0000741107001
+ORG-002445,B,NONE,Interface Solutions Centerville Plt,Lancaster,PA,,,,,,,,,,,,,
+ORG-002446,B,NONE,Interface Performance Materials,Lancaster,PA,,,,,,,,,,,,,
+ORG-002448,B,NONE,Mxl Ind Inc.,Lancaster,PA,,,,,,,,,,,,,
+ORG-002451,B,NONE,True Precision Plastics,Lancaster,PA,,,,,,,,,,,,,
+ORG-002452,A,EIN+NAME,Moldamatic LLC,Langhorne,PA,202484930,202484930,"MOLDAMATIC, LLC",,5500,2025-09-30,149,0,,,PENNDEL,PA,20260714154821NAL0001332451001
+ORG-002454,B,NAME+CITY,Handelok Bag Co.,Lansdale,PA,,232703905,HANDELOK BAG COMPANY INC.,,5500-SF,2025-12-31,56,0,,,LANSDALE,PA,20260930155834NAL0025997314001
+ORG-002455,B,NONE,Kendik Rubber & Plastic Products Co. Inc.,Lansdale,PA,,,,,,,,,,,,,
+ORG-002457,B,NONE,Classic Industries Corporation,Latrobe,PA,,,,,,,,,,,,,
+ORG-002458,B,NONE,Ctp Carrera Inc.,Latrobe,PA,,,,,,,,,,,,,
+ORG-002459,B,NONE,Import Export Tire Company Inc.,Latrobe,PA,,,,,,,,,,,,,
+ORG-002461,A,NONE,"Sun Star, Incorporated",Latrobe,PA,,,,,,,,,,,,,
+ORG-002463,B,NONE,Sp Acquisition Company LLC Dba Reitech Corporation,Laureldale,PA,,,,,,,,,,,,,
+ORG-002464,A,NONE,D A R A Inc.,Lebanon,PA,,,,,,,,,,,,,
+ORG-002467,B,NONE,"Entrance, Inc.",Leesport,PA,,,,,,,,,,,,,
+ORG-002469,A,NONE,Abtrex Industries Inc.,Leetsdale,PA,,,,,,,,,,,,,
+ORG-002470,B,NAME+CITY,"Allegheny Performance Plastics, LLC",Leetsdale,PA,,461321243,"ALLEGHENY PERFORMANCE PLASTICS, LLC",,5500-SF,2025-12-31,86,0,,,LEETSDALE,PA,20261001200352NAL0012364947001
+ORG-002471,A,NONE,Impact Guard LLC,Leetsdale,PA,,,,,,,,,,,,,
+ORG-002475,B,NONE,G & T Industries Of Pennsylvania Inc. Lancaster Div,Leola,PA,,,,,,,,,,,,,
+ORG-002476,B,NONE,Marbleon Inc.,Leola,PA,,,,,,,,,,,,,
+ORG-002477,B,NONE,North Amer Pipe Corp.,Leola,PA,,,,,,,,,,,,,
+ORG-002478,B,NONE,North American Pipe Corporation (Westlake Pipe & Fittings),Leola,PA,,,,,,,,,,,,,
+ORG-002479,B,NONE,Fiberglass Tech Inc.,Levittown,PA,,,,,,,,,,,,,
+ORG-002480,B,NAME+CITY,"Polycube Company, LLC",Levittown,PA,,464665148,THE POLYCUBE COMPANY LLC,,5500-SF,2025-12-31,14,0,,,LEVITTOWN,PA,20260924105210NAL0011381505001
+ORG-002481,A,NONE,"Culver Tool & Die, Inc.",Lewisberry,PA,,,,,,,,,,,,,
+ORG-002483,B,NONE,Trinity Plastics,Lewistown,PA,,,,,,,,,,,,,
+ORG-002486,B,NONE,Tily Manufacturing Inc.,Littlestown,PA,,,,,,,,,,,,,
+ORG-002488,A,NONE,Keystone Foam Corp.,Loyalhanna,PA,,,,,,,,,,,,,
+ORG-002489,B,NONE,Luicana Ind Inc.,Macungie,PA,,,,,,,,,,,,,
+ORG-002490,A,NAME+CITY,Smooth-On Inc.,Macungie,PA,,221290880,"SMOOTH-ON, INC.",,5500,2025-12-31,236,0,,,MACUNGIE,PA,20261002124809NAL0026049379001
+ORG-002492,B,NONE,Peace Products Company,Malvern,PA,,,,,,,,,,,,,
+ORG-002494,B,NAME+CITY,"The Resin Enterprise, Inc.",Malvern,PA,,232603228,"THE RESIN ENTERPRISE, INC.",,5500-SF,2025-12-31,5,0,,,MALVERN,PA,20260812074614NAL0013295554001
+ORG-002495,B,NONE,Shattered Fx LLC,Manheim,PA,,,,,,,,,,,,,
+ORG-002496,B,NONE,Bedford Materials Co.,Manns Choice,PA,,,,,,,,,,,,,
+ORG-002498,B,NONE,Tredegar Film Prod Inc.,Mar Lin,PA,,,,,,,,,,,,,
+ORG-002500,B,NONE,Braskem Amer Inc.,Marcus Hook,PA,,,,,,,,,,,,,
+ORG-002501,C,NONE,Advanced Plastic Systems Inc.,Mars,PA,,,,,,,,,,,,,
+ORG-002504,B,NONE,Tri-Tech Molding,Mckean,PA,,,,,,,,,,,,,
+ORG-002505,B,NONE,"Allegany Solid Surfaces Technology, LLC",Mcsherrystown,PA,,,,,,,,,,,,,
+ORG-002506,A,EIN+NAME,"Say Plastics, Inc.",Mcsherrystown,PA,232625883,232625883,"SAY PLASTICS, INC.",,5500,2025-12-31,32,0,,,MCSHERRYSTOWN,PA,20260710083809NAL0001398864001
+ORG-002507,B,NONE,Advantage Precision Plastics I,Meadville,PA,,,,,,,,,,,,,
+ORG-002508,A,NONE,C & J Ind,Meadville,PA,,,,,,,,,,,,,
+ORG-002509,B,EIN+NAME,"Evolution Molding Solutions, Inc.",Meadville,PA,274498502,274498502,"EVOLUTION MOLDING SOLUTIONS, INC.",,5500-SF,2025-12-31,10,0,,,MEADVILLE,PA,20261013162115NAL0002145651001
+ORG-002510,B,NAME+CITY,Holbrook Tool & Molding Inc.,Meadville,PA,,251372115,"HOLBROOK TOOL & MOLDING, INC.",,5500-SF,2025-12-31,31,0,,,MEADVILLE,PA,20260624134938NAL0008150209001
+ORG-002511,B,NONE,"Meadville New Products, Inc.",Meadville,PA,,,,,,,,,,,,,
+ORG-002512,B,NONE,Micro Plastics Inc.,Meadville,PA,,,,,,,,,,,,,
+ORG-002513,B,NONE,Moldex Tool & Design Corporation,Meadville,PA,,,,,,,,,,,,,
+ORG-002514,B,NONE,Ptr Tool And Plastics LLC,Meadville,PA,,,,,,,,,,,,,
+ORG-002515,B,NONE,"Qtd Plastics, Inc.",Meadville,PA,,,,,,,,,,,,,
+ORG-002516,A,NONE,Tamarack Packaging Limited,Meadville,PA,,,,,,,,,,,,,
+ORG-002519,B,NONE,Acrymax Tech Inc.,Media,PA,,,,,,,,,,,,,
+ORG-002520,B,EIN+NAME,Atlas Minerals & Chemicals Inc.,Mertztown,PA,232050903,232050903,"ATLAS MINERALS & CHEMICALS, INC",,5500,2025-12-31,20,0,,,MERTZTOWN,PA,20260729075719NAL0017653219001
+ORG-002521,B,NONE,Hilex Poly Co. LLC,Milesburg,PA,,,,,,,,,,,,,
+ORG-002522,A,NONE,Mi Profiles LLC - Millersburg,Millersburg,PA,,,,,,,,,,,,,
+ORG-002523,A,NONE,"Advanced Scientifics, Inc.",Millersburg,PA,,,,,,,,,,,,,
+ORG-002525,B,NONE,Truck Accessories Npdes Stormwater,Milton,PA,,,,,,,,,,,,,
+ORG-002526,B,NONE,Concretevoids LLC,Mohnton,PA,,,,,,,,,,,,,
+ORG-002528,B,NONE,Tegrant Diversified Brands Inc.,Montgomeryville,PA,,,,,,,,,,,,,
+ORG-002531,A,EIN+NAME,Ralph S Alberts Co. Inc.,Montoursville,PA,231723629,231723629,"RALPH S. ALBERTS COMPANY, INC.",,5500-SF,2025-12-31,81,0,,,MONTOURSVILLE,PA,20260916110838NAL0003830944001
+ORG-002532,B,EIN+NAME,"Tri-State Plastics, Inc.",Moon Township,PA,251159391,251159391,"TRI-STATE PLASTICS, INC.",,5500-SF,2024-12-31,26,0,,,MOON TOWNSHIP,PA,20250804063103NAL0001091200001
+ORG-002533,B,NONE,Cpg Intl,Moosic,PA,,,,,,,,,,,,,
+ORG-002538,A,NAME+CITY,Regency Plus,Mount Carmel,PA,,232962257,"REGENCY PLUS, INC.",,5500-SF,2025-12-31,47,0,,,MOUNT CARMEL,PA,20260317131732NAL0002097393001
+ORG-002540,B,NAME+CITY,Matamatic Inc.,Mount Pleasant,PA,,251751831,"MATAMATIC, INC.",,5500-SF,2025-12-31,7,0,,,MT. PLEASANT,PA,20261013131441NAL0004744210001
+ORG-002541,A,NONE,Monadnock Non-Wovens,Mount Pocono,PA,,,,,,,,,,,,,
+ORG-002542,B,NONE,Bleyer Gift Packs LLC,Mount Union,PA,,,,,,,,,,,,,
+ORG-002543,B,NONE,Fiber Glass Sys Inc.,Mount Union,PA,,,,,,,,,,,,,
+ORG-002546,B,NONE,Tempur Production USA LLC Dba Mountain Top Foam,Mountain Top,PA,,,,,,,,,,,,,
+ORG-002548,B,NONE,Advance Drainage Systems,Muncy,PA,,,,,,,,,,,,,
+ORG-002549,B,NONE,Charlotte Pipe & Foundry,Muncy,PA,,,,,,,,,,,,,
+ORG-002550,B,NONE,Msa Safety Pittsburgh MFG LLC,Murrysville,PA,,,,,,,,,,,,,
+ORG-002551,C,NAME_STATE_ONLY,Tarp America Inc.,Murrysville,PA,,232910895,"TARP AMERICA, INC.",,5500-SF,2025-12-31,11,0,,,APOLLO,PA,20260722202948NAL0019579698001
+ORG-002552,B,NAME+CITY,Metplas Inc.,Natrona Heights,PA,,251395638,"METPLAS, INC.",,5500-SF,2025-12-31,55,0,,,NATRONA HEIGHTS,PA,20260611152504NAL0006384545001
+ORG-002553,B,NONE,Airlite Plastics Co.,Nazareth,PA,,,,,,,,,,,,,
+ORG-002554,B,NONE,Nazareth Industrial Corporation,Nazareth,PA,,,,,,,,,,,,,
+ORG-002555,B,NONE,S G L Plastics,Nazareth,PA,,,,,,,,,,,,,
+ORG-002557,B,NONE,Compositek LLC,New Brighton,PA,,,,,,,,,,,,,
+ORG-002559,C,NONE,Pillings FRP,New Columbia,PA,,,,,,,,,,,,,
+ORG-002560,B,NONE,S & J Recycling Inc.,New Columbia,PA,,,,,,,,,,,,,
+ORG-002561,B,NONE,"Key-Link Fencing & Railing, Inc.",New Holland,PA,,,,,,,,,,,,,
+ORG-002562,B,NONE,"Superior Plastic Products, Inc.",New Holland,PA,,,,,,,,,,,,,
+ORG-002563,A,NONE,Namso Plastics Ind Inc.,New Kensington,PA,,,,,,,,,,,,,
+ORG-002564,C,NONE,Pittsburgh Technologies Group Inc.,New Kensington,PA,,,,,,,,,,,,,
+ORG-002565,B,NONE,Trigon Plastics LLC,Newmanstown,PA,,,,,,,,,,,,,
+ORG-002566,B,NONE,Nushield Inc.,Newtown,PA,,,,,,,,,,,,,
+ORG-002567,A,NAME+CITY,"Pelmor Laboratories, Inc.",Newtown,PA,,231490713,PELMOR LABORATORIES,,5500-SF,2025-12-31,12,0,,,NEWTOWN,PA,20260804122017NAL0001931522001
+ORG-002568,B,NAME+CITY,Crazy Aaron Enterprises,Norristown,PA,,233095881,CRAZY AARON ENTERPRISES INC.,,5500-SF,2025-12-31,73,0,,,NORRISTOWN,PA,20260428082838NAL0015336832001
+ORG-002569,C,NAME+CITY,Lite Tech Inc.,Norristown,PA,,232665289,"LITE TECH, INC.",,5500-SF,2025-04-30,0,1,,,NORRISTOWN,PA,20250512150836NAL0026975328001
+ORG-002571,B,NONE,Optinova Plymouth Meeting Facility,Norristown,PA,,,,,,,,,,,,,
+ORG-002572,B,NONE,Epc Powder Manufacturing Inc.,North East,PA,,,,,,,,,,,,,
+ORG-002573,A,NONE,"Nzk Plastics, LLC",North Versailles,PA,,,,,,,,,,,,,
+ORG-002574,A,NAME+CITY,Strong Industries Inc.,Northumberland,PA,,232796487,"STRONG INDUSTRIES, INC.",,5500-SF,2025-12-31,94,0,,,NORTHUMBERLAND,PA,20260930111221NAL0038165986001
+ORG-002575,B,NONE,Normandy Industries Inc.,Oakmont,PA,,,,,,,,,,,,,
+ORG-002576,A,NONE,Global Pkg,Oaks,PA,,,,,,,,,,,,,
+ORG-002577,B,NONE,Insta-Mold Products Inc.,Oaks,PA,,,,,,,,,,,,,
+ORG-002579,B,NONE,Kettle Creek Corporation,Ottsville,PA,,,,,,,,,,,,,
+ORG-002581,B,NONE,Taylor Ind Inc.,Parker Ford,PA,,,,,,,,,,,,,
+ORG-002582,C,NONE,General Plastics Inc.,Phila,PA,,,,,,,,,,,,,
+ORG-002584,B,NAME+CITY,C-Lec Plastics Inc.,Philadelphia,PA,,221843176,"C-LEC PLASTICS, INC.",,5500-SF,2025-12-31,16,0,,,PHILADELPHIA,PA,20260729160331NAL0035377026001
+ORG-002585,A,NONE,"Charles W. Thomas, Inc.",Philadelphia,PA,,,,,,,,,,,,,
+ORG-002586,C,NONE,Duralife USA LLC,Philadelphia,PA,,,,,,,,,,,,,
+ORG-002587,B,NONE,Epc Inc.,Philadelphia,PA,,,,,,,,,,,,,
+ORG-002588,B,NAME+CITY,"Fluoro Plastics, Inc.",Philadelphia,PA,,231396631,"FLUORO-PLASTICS, INC.",,5500-SF,2025-12-31,8,0,,,PHILADELPHIA,PA,20261015100844NAL0007175617001
+ORG-002589,C,NONE,Fun-Time International Inc.,Philadelphia,PA,,,,,,,,,,,,,
+ORG-002590,C,EIN+NAME,Highline Polycarbonate LLC,Philadelphia,PA,900406229,900406229,HIGHLINE POLYCARBONATE LLC,,5500-SF,2025-12-31,3,0,,,PHILADELPHIA,PA,20261006220414NAL0034359282023
+ORG-002592,A,NONE,Purolite LLC An Ecolab Co.,Philadelphia,PA,,,,,,,,,,,,,
+ORG-002593,B,NONE,Quint Co.,Philadelphia,PA,,,,,,,,,,,,,
+ORG-002594,C,NONE,Recycledelphia Inc.,Philadelphia,PA,,,,,,,,,,,,,
+ORG-002595,C,NONE,Schutz Na LLC,Philadelphia,PA,,,,,,,,,,,,,
+ORG-002597,A,NAME+CITY,"Src Elastomerics, Inc.",Philadelphia,PA,,231127920,"SRC ELASTOMERICS, INC.",,5500,2025-11-30,80,0,,,PHILADELPHIA,PA,20260630091105NAL0021700626001
+ORG-002598,C,NONE,Surf Technologies,Philadelphia,PA,,,,,,,,,,,,,
+ORG-002599,C,NONE,Vinylux Inc.,Philadelphia,PA,,,,,,,,,,,,,
+ORG-002600,C,NONE,Solar Innovations,Pine Grove,PA,,,,,,,,,,,,,
+ORG-002602,B,NONE,American Made Systems Inc.,Pittsburgh,PA,,,,,,,,,,,,,
+ORG-002604,B,NONE,Door Guard Inc.,Pittsburgh,PA,,,,,,,,,,,,,
+ORG-002605,B,NONE,Gateway Paint & Chemical,Pittsburgh,PA,,,,,,,,,,,,,
+ORG-002607,B,NONE,Marvel Marking Products Inc. Garage,Pittsburgh,PA,,,,,,,,,,,,,
+ORG-002608,A,NONE,Parker Plastics Corp.,Pittsburgh,PA,,,,,,,,,,,,,
+ORG-002609,A,NONE,Pruett Schaffer Chem Co.,Pittsburgh,PA,,,,,,,,,,,,,
+ORG-002610,A,NONE,Rapid Tpc LLC,Pittsburgh,PA,,,,,,,,,,,,,
+ORG-002611,B,NONE,"Tmi, LLC",Pittsburgh,PA,,,,,,,,,,,,,
+ORG-002613,C,NONE,Independent Refining Co. LLC,Pittston,PA,,,,,,,,,,,,,
+ORG-002614,B,NONE,Interstate Building Materials,Pittston,PA,,,,,,,,,,,,,
+ORG-002616,A,NONE,Optinova Valley Forge,Plymouth Meeting,PA,,,,,,,,,,,,,
+ORG-002617,B,NONE,J P Betz Inc. Dba Custom Inserts,Pomeroy,PA,,,,,,,,,,,,,
+ORG-002621,A,NONE,Precision Polymer Prod,Pottstown,PA,,,,,,,,,,,,,
+ORG-002623,A,NONE,Thermal Gard Bldg Prod Inc.,Punxsutawney,PA,,,,,,,,,,,,,
+ORG-002625,B,NAME+CITY,"Lancer Systems, Lp.",Quakertown,PA,,205073511,LANCER SYSTEMS LP,,5500,2025-12-31,32,0,,,QUAKERTOWN,PA,20260513094616NAL0007427377001
+ORG-002628,A,NONE,"Ammeraal Beltech Modular, Incorporated",Reading,PA,,,,,,,,,,,,,
+ORG-002631,B,NONE,G & T Industries,Reading,PA,,,,,,,,,,,,,
+ORG-002632,B,EIN+NAME,Hydrojet Services Inc.,Reading,PA,232521030,232521030,"HYDROJET SERVICES, INC.",,5500-SF,2025-04-30,23,0,,,READING,PA,20260212130422NAL0000144707001
+ORG-002634,B,NONE,Novipax LLC,Reading,PA,,,,,,,,,,,,,
+ORG-002635,B,EIN+NAME,Polyfab Corporation,Reading,PA,232075873,232075873,POLYFAB CORP,READING PLASTIC MACHINERY & FABRICATION,5500-SF,2025-12-31,47,0,,,READING,PA,20260729123534NAL0021720129001
+ORG-002636,A,NAME+CITY,Remcon Plastics Inc.,Reading,PA,,232221786,"REMCON PLASTICS, INC.",,5500,2025-12-31,69,0,,,READING,PA,20260527062445NAL0006244209001
+ORG-002637,B,NONE,Tray-Pak Corporation,Reading,PA,,,,,,,,,,,,,
+ORG-002638,B,NONE,Apex Urethane Millwork Red Lion,Red Lion,PA,,,,,,,,,,,,,
+ORG-002639,B,NONE,Custom Molds,Red Lion,PA,,,,,,,,,,,,,
+ORG-002641,B,NONE,Unipar Inc.,Reedsville,PA,,,,,,,,,,,,,
+ORG-002642,B,NONE,"Schweitzer-Mauduit International, Inc.",Richland,PA,,,,,,,,,,,,,
+ORG-002645,A,NAME+CITY,Fusion Coatings Inc.,Robesonia,PA,,232440344,"FUSION COATINGS, INC.",,5500-SF,2025-12-31,13,0,,,ROBESONIA,PA,20260522130252NAL0003522051001
+ORG-002646,A,NONE,Q-Cast Inc.,Rochester,PA,,,,,,,,,,,,,
+ORG-002647,B,NONE,"Plastic Supply Of Pennsylvania, Inc.",Royersford,PA,,,,,,,,,,,,,
+ORG-002648,A,NAME+CITY,"Polyflo, Inc.",Saint Clair,PA,,232350463,POLYFLO INC.,,5500-SF,2025-06-30,0,1,,,ST. CLAIR,PA,20260324114633NAL0003964306001
+ORG-002649,B,NAME+CITY,Winchester Industries Inc.,Saltsburg,PA,,251505265,WINCHESTER INDUSTRIES,,5500-SF,2025-12-31,25,0,,,SALTSBURG,PA,20260529153338NAL0019384226001
+ORG-002651,B,NAME+CITY,Cardinal Systems Inc.,Schuylkill Haven,PA,,232078490,"CARDINAL SYSTEMS, INC.",,5500,2025-12-31,153,0,,,SCHUYLKILL HAVEN,PA,20261015160942NAL0008621443001
+ORG-002652,A,NONE,M & Q Plastic Products Corporation,Schuylkill Haven,PA,,,,,,,,,,,,,
+ORG-002653,C,NONE,Laminations Inc.,Scranton,PA,,,,,,,,,,,,,
+ORG-002654,B,NONE,"Northeastern Plastics, Inc.",Scranton,PA,,,,,,,,,,,,,
+ORG-002657,B,NONE,Selmax Corp.,Selinsgrove,PA,,,,,,,,,,,,,
+ORG-002658,B,NAME_STATE_ONLY,"Bergeys, Inc.",Sellersville,PA,,231929243,"BERGEYS, INC.",,5500,2025-12-31,1541,0,,,SOUDERTON,PA,20260710104827NAL0000916915001
+ORG-002659,B,NONE,Crosstex Intl Inc.,Sharon,PA,,,,,,,,,,,,,
+ORG-002660,C,NONE,Advanced Fiberglass Svc Inc.,Sharpsville,PA,,,,,,,,,,,,,
+ORG-002661,C,NONE,Craigg MFG LLC,Sinking Spring,PA,,,,,,,,,,,,,
+ORG-002662,B,NONE,Palmer Intl Inc.,Skippack,PA,,,,,,,,,,,,,
+ORG-002663,A,NONE,L.M. Robbins Company Inc.,Slatington,PA,,,,,,,,,,,,,
+ORG-002664,B,NONE,Guy Chemical Company Inc.,Somerset,PA,,,,,,,,,,,,,
+ORG-002665,A,NONE,M & C Specialties Southampton Fac,Southampton,PA,,,,,,,,,,,,,
+ORG-002667,A,NAME+CITY,"Polymics, Ltd.",State College,PA,,932161271,POLYMICS LTD,,5500-SF,2025-12-31,34,0,,,STATE COLLEGE,PA,20260617022310NAL0001693425001
+ORG-002670,B,NAME+CITY,Knf Flexpak Corporation,Tamaqua,PA,,232955097,KNF FLEXPAK CORPORATION,,5500-SF,2025-12-31,124,0,,,TAMAQUA,PA,20260727125829NAL0029664034001
+ORG-002671,B,NONE,Transwestern Polymer,Tamaqua,PA,,,,,,,,,,,,,
+ORG-002672,B,NONE,New Holland Tire Inc.,Terre Hill,PA,,,,,,,,,,,,,
+ORG-002673,B,NAME+CITY,New Pig Corp.,Tipton,PA,,232363423,NEW PIG CORPORATION,,5500,2025-12-31,686,0,,,TIPTON,PA,20260713090044NAL0002511395001
+ORG-002675,B,NONE,Checkers Safety Group,Titusville,PA,,,,,,,,,,,,,
+ORG-002676,B,NONE,"Timi Plastics, Inc.",Towanda,PA,,,,,,,,,,,,,
+ORG-002677,B,NONE,Congoleum Corp.,Trainer,PA,,,,,,,,,,,,,
+ORG-002679,A,NONE,Mason Rubber Co. Inc.,Trevose,PA,,,,,,,,,,,,,
+ORG-002680,A,NONE,"A-Lok Products, Inc.",Tullytown,PA,,,,,,,,,,,,,
+ORG-002681,B,NONE,Raybob Packaging,Tullytown,PA,,,,,,,,,,,,,
+ORG-002682,C,NONE,Durr Marketing,Turtle Creek,PA,,,,,,,,,,,,,
+ORG-002683,B,NONE,Snap Tite Inc.  Union City Site,Union City,PA,,,,,,,,,,,,,
+ORG-002684,B,NAME+CITY,Craft Tire Inc.,Uniontown,PA,,251768455,"CRAFT TIRE, INC.",,5500-SF,2025-12-31,49,0,,,UNIONTOWN,PA,20260623141835NAL0008938336001
+ORG-002687,B,NONE,Medical Precision Plastics,Warminster,PA,,,,,,,,,,,,,
+ORG-002688,B,NONE,"Osram Sylvania Products Inc. - Warren, PA",Warren,PA,,,,,,,,,,,,,
+ORG-002689,B,NONE,Whirley Ind Inc.,Warren,PA,,,,,,,,,,,,,
+ORG-002690,B,NONE,Whirley Industries Harmar Street,Warren,PA,,,,,,,,,,,,,
+ORG-002691,A,NAME+CITY,Whirley Industries Inc.,Warren,PA,,251183490,"WHIRLEY INDUSTRIES, INC.",,5500,2025-12-31,379,0,,,WARREN,PA,20260828133022NAL0002926321001
+ORG-002692,A,EIN+NAME,Magee Plastics Company,Warrendale,PA,251203969,251203969,MAGEE PLASTICS COMPANY,,5500-SF,2025-06-30,0,1,,,WARRENDALE,PA,20251028114255NAL0006155907001
+ORG-002693,B,NONE,Rocal Corporation,Warrington,PA,,,,,,,,,,,,,
+ORG-002695,C,NAME+CITY,Ross Mould LLC,Washington,PA,,452979151,"ROSS MOULD, LLC",,5500-SF,2025-12-31,3,0,,,WASHINGTON,PA,20261014181151NAL0006753475001
+ORG-002696,A,NONE,Tef Cap Industries Inc.,West Chester,PA,,,,,,,,,,,,,
+ORG-002697,B,NONE,Synthomer Jefferson Hills LLC,West Elizabeth,PA,,,,,,,,,,,,,
+ORG-002699,B,EIN+NAME,Regenex Corporation,West Middlesex,PA,251680436,251680436,REGENEX CORPORATION,,5500-SF,2025-12-31,73,0,,,WEST MIDDLESEX,PA,20261014082412NAL0005017729001
+ORG-002702,B,NONE,"J Meyer & Sons, Inc.",West Point,PA,,,,,,,,,,,,,
+ORG-002703,A,NONE,General Foam Co.,Wilkes-Barre,PA,,,,,,,,,,,,,
+ORG-002704,B,NONE,Cromaglass Corp.,Williamsport,PA,,,,,,,,,,,,,
+ORG-002705,B,NONE,Plastic Dev,Williamsport,PA,,,,,,,,,,,,,
+ORG-002707,B,NONE,West Pharm Serv Wmpt SW,Williamsport,PA,,,,,,,,,,,,,
+ORG-002709,B,NONE,Finzer Roller Inc. Willow Street,Willow Street,PA,,,,,,,,,,,,,
+ORG-002710,B,NONE,"Brd Noise And Vibration Control, Inc.",Wind Gap,PA,,,,,,,,,,,,,
+ORG-002712,B,EIN+NAME,Fay L Wagner Inc.,Yeagertown,PA,251290948,251290948,"FAY L. WAGNER, INC.",,5500-SF,2025-12-04,0,1,,,YEAGERTOWN,PA,20251219132524NAL0014442514001
+ORG-002713,B,NONE,W.B Wagner Tire Inc.,Yeagertown,PA,,,,,,,,,,,,,
+ORG-002714,B,NONE,Keltrol Enterprises Inc.,York,PA,,,,,,,,,,,,,
+ORG-002716,A,NONE,"Plastic Fabricators, Inc.",York,PA,,,,,,,,,,,,,
+ORG-002718,B,NONE,Proxie Models Inc.,York,PA,,,,,,,,,,,,,
+ORG-002719,B,NONE,Quaker Plastic Corporation Thermoforming Div.,York,PA,,,,,,,,,,,,,
+ORG-002720,C,NONE,Spx Cooling Technologies,York,PA,,,,,,,,,,,,,
+ORG-002721,A,NONE,"Ug Plast, Inc.",York,PA,,,,,,,,,,,,,
+ORG-002724,B,NONE,Eagle Rubber Products Inc.,Zelienople,PA,,,,,,,,,,,,,
+ORG-002725,C,NONE,Fb Leopold Co. Inc.,Zelienople,PA,,,,,,,,,,,,,
+ORG-002732,A,NAME+CITY,Adept Corp.,York,PA,,231669970,ADEPT CORPORATION,,5500,2025-12-31,78,0,,,YORK,PA,20260415094419NAL0019652993001
+ORG-002733,A,NONE,Augustine Plastics Inc.,Somerset,PA,,,,,,,,,,,,,
+ORG-002734,A,NONE,Bardot Plastics Inc.,Easton,PA,,,,,,,,,,,,,
+ORG-002736,A,NONE,Bioplast Manufacturing LLC,Bristol,PA,,,,,,,,,,,,,
+ORG-002739,A,EIN+NAME,Chelsea Building Products,Oakmont,PA,232869908,232869908,CHELSEA BUILDING PRODUCTS INC,,5500,2025-12-31,468,,,,OAKMONT,PA,20261022121505NAL0019193808001
+ORG-002740,A,NONE,Conair Group Inc,Cranberry Township,PA,,,,,,,,,,,,,
+ORG-002743,A,NONE,Dipcraft Manufacturing Co,Braddock,PA,,,,,,,,,,,,,
+ORG-002745,A,NONE,Executool Precision Tooling Inc.,Erie,PA,,,,,,,,,,,,,
+ORG-002746,A,NONE,Fenner Drives Inc.,Lititz,PA,,,,,,,,,,,,,
+ORG-002748,A,NAME+CITY,Georgeko Industries Inc.,Erie,PA,,251446932,GEORGEKO INDUSTRIES INC,,5500-SF,2025-12-31,39,0,,,ERIE,PA,20260519075103NAL0000848945001
+ORG-002752,A,NAME+CITY,M&Q Packaging LLC,Schuylkill Haven,PA,,232108333,"M&Q PACKAGING, LLC",,5500,2025-10-31,119,0,SCHUYLKILL HAVEN,PA,SCHUYLKILL HAVEN,PA,20260127131117NAL0001493795001
+ORG-002753,A,NAME+CITY,Matrix Tool Inc.,Fairview,PA,,251259371,MATRIX TOOL INC,,5500,2025-10-31,126,0,,,FAIRVIEW,PA,20260731121616NAL0037736402001
+ORG-002754,A,NAME+CITY,Millet Plastics Inc.,Lebanon,PA,,233074264,MILLET PLASTICS INC.,,5500-SF,2025-12-31,24,0,,,LEBANON,PA,20260727082630NAL0015623091001
+ORG-002756,A,NAME+CITY,Munot Plastics Inc.,Erie,PA,,251126650,"MUNOT PLASTICS, INC.",,5500-SF,2025-09-30,34,0,ERIE,PA,ERIE,PA,20260506110013NAL0003064770001
+ORG-002761,B,NAME+CITY,Oil Creek Plastics Inc.,Titusville,PA,,232376404,OIL CREEK PLASTICS INC.,,5500-SF,2025-12-31,91,0,,,TITUSVILLE,PA,20261014075937NAL0005443235001
+ORG-002763,B,NONE,Polymar,Leola,PA,,,,,,,,,,,,,
+ORG-002764,B,EIN+NAME,Port Erie Plastics Inc,Harborcreek,PA,251032274,251032274,"PORT ERIE PLASTICS, INC.",,5500,2025-12-31,286,0,,,HARBORCREEK,PA,20261013133855NAL0001941827001
+ORG-002766,B,NONE,Race Tires America,Indiana,PA,,,,,,,,,,,,,
+ORG-002767,B,NONE,Rebling Plastics,Warrington,PA,,,,,,,,,,,,,
+ORG-002768,B,NAME+CITY,Retal PA LLC,Donora,PA,,352551544,"RETAL PA, LLC",,5500-SF,2025-12-31,61,0,,,DONORA,PA,20260716154215NAL0004610529001
+ORG-002773,B,EIN+NAME,Westmoreland Plastics,Latrobe,PA,251653517,251653517,WESTMORELAND PLASTICS COMPANY,,5500-SF,2025-12-31,1,0,,,LATROBE,PA,20260727062506NAL0021085296002
+ORG-002774,B,EIN+NAME,York Imperial Plastics Inc.,York,PA,232363926,232363926,"YORK IMPERIAL PLASTICS, INC.",,5500-SF,2025-12-31,57,0,,,YORK,PA,20260819151256NAL0018828001001
+ORG-002917,B,MULTI_EIN,Honeywell International Inc.,Charlotte,NC,,046736894;222640650;366683074,HONEYWELL INTERNATIONAL INC.,,5500,2025-12-31,44339,,,,CHARLOTTE,NC,20260923172833NAL0010456177005
+ORG-003106,B,NONE,Compagnie Generale des Etablissements Michelin SCA,,,,,,,,,,,,,,,
+ORG-003107,B,NONE,Pirelli & C. S.p.A.,,,,,,,,,,,,,,,
+ORG-003108,B,NONE,"The Yokohama Rubber Co., Ltd.",,,,,,,,,,,,,,,
+ORG-003109,B,NONE,Toyo Tire Corporation,,,,,,,,,,,,,,,
+ORG-003110,B,NONE,Nokian Tyres plc,,,,,,,,,,,,,,,
+ORG-003111,C,NONE,Giti Tire Group,,,,,,,,,,,,,,,
