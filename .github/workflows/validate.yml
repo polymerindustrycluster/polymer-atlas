@@ -36,6 +36,12 @@ jobs:
             echo "no base commit to compare against; skipping"; exit 0
           fi
           python3 scripts/check_row_loss.py --base "$base" $mode
+      - name: Guard — evidence rows a PR adds bind to their record (binding gate, owner ruling 2026-11-22)
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/check_evidence_binding.py --new-since "origin/${{ github.base_ref }}"
+      - name: Guard — evidence rows a PR adds name a tasks/<created_by>/check.py folder (owner ruling 2026-11-22)
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/check_evidence_binding.py --provenance-since "origin/${{ github.base_ref }}"
       - name: Vocabulary export is current
         run: python3 scripts/export_vocab.py --check
       - name: Unit and mutation tests
