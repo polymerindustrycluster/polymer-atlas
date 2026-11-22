@@ -99,3 +99,21 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
      Plastipak is excluded because its only quote is third-party. Applied only where the company's own sources do not
      state a conflicting year and both review families judged the row SOUND.
 - **Decided by:** the repo owner, in session, 2026-11-19/20, as multiple choice.
+
+## 2026-11-22: owner rulings on the merge gate, contact data in evidence quotes, and the review record
+
+- **Decision:** three rulings after a review of the 42 PRs merged since 2026-11-20 (UTC).
+  1. **No account merges ahead of `validate`.** The repository-admin bypass on the ruleset "main: require validate" was
+     removed on 2026-11-22. GitHub now refuses a merge until `validate` is green on the PR head; open the PR and wait, or
+     use auto-merge. Evidence: 23 of the 42 PRs, all from `agent/spaghetti/*` branches, were merged before `validate`
+     finished on their head. #422 and #423 then failed it (a V-64 unit test, not the data validator), and the broken
+     commits sat on `main` from the #422 merge (11:45Z) to the #426 merge (15:03Z) on 2026-11-20; the `main` check itself
+     read failed from 11:48Z to 15:06Z.
+  2. **Contact data in evidence quotes.** A company's public switchboard phone or fax number and a role address may stay
+     in a verbatim quote. An individual's email, a direct line, an extension or a mobile number may not: cut the quote
+     before it. AGENTS.md section 6 carries the sentence. Rows already in `data/evidence_*.csv` are not edited (evidence
+     is append-only); the rows that may hold an individual's detail are being triaged, and their remedy returns to the
+     owner.
+  3. **Review record.** Each PR carries one comment per verifier naming its model family and model, its verdict and what
+     it checked. 39 of the 42 PRs had no review or comment on GitHub.
+- **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
