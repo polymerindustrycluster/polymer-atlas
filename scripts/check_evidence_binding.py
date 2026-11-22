@@ -177,7 +177,7 @@ def parse_quote(q, fam):
     """{"names": [...], "alt_names": [...], "addr": str} or {"bad": reason}. alt_names = a permit's facility label."""
     _, fmt, op_fields, addr_field, _ = fam
     if fmt == "echo":  # NAME; STREET, CITY, ST ZIP; FRS registry ...
-        a = [x.strip() for x in PAREN_RE.sub(" ", q).split(";")]  # "(CRT; FORMERLY ...)" is not a field break
+        a = [x.strip() for x in PAREN_RE.sub(" ", q).split(";")]  # "(ABC; FORMERLY ...)" is not a field break
         if len(a) < 3 or not re.search(r",\s*[A-Z]{2}\s+\d{4,5}", a[1]):
             return {"bad": "parse_failed"}
         return {"names": [a[0]], "alt_names": [], "addr": a[1]}
@@ -257,7 +257,7 @@ def hq_in_quote(addr, org):
 # ---------------------------------------------------------------- verdict
 
 def name_keys(names):
-    """name_keys of each quoted name and of each comma part ("AOC, AOC" is establishment, company in OSHA ITA)."""
+    """name_keys of each quoted name and of each comma part ("ACME, ACME CO" is establishment, company in OSHA ITA)."""
     cands = [n for name in names for n in [name] + name.split(",")]
     return {k for n in cands for k in (name_key(n), name_key(PAREN_RE.sub(" ", n))) if k}
 
@@ -266,7 +266,7 @@ def name_alternatives(idx, table, rid, qkeys, alt_keys, held):
     """Owner-question bases a strict FAIL would pass under (measured, never passing)."""
     alts = []
     if {q.replace(" ", "") for q in qkeys} & {h.replace(" ", "") for h in held}:
-        alts.append("spacing")  # "C.U.E." vs "Cue", "H.B. Fuller" vs "HB Fuller"
+        alts.append("spacing")  # "A.B.C. Co" vs "ABC Co"
     if alt_keys & held:
         alts.append("facility_label")
     if qkeys & idx.parent_keys(table, rid):
@@ -291,9 +291,9 @@ def street_limit(rec_key, q_key):
         return "number_in_recorded_range"
     if [NUMBER_WORDS.get(t, t) for t in r] == [NUMBER_WORDS.get(t, t) for t in q]:
         return "number_word"
-    if r[1:] == q[1:]:  # "552 moore rd" vs "554 moore rd": another number on the same street (a campus?)
+    if r[1:] == q[1:]:  # "734 hollis rd" vs "736 hollis rd": another number on the same street (a campus?)
         return "same_street_other_number"
-    if r[0] == q[0]:  # "1719 hwy 72 e" vs "1719 us hwy 72 e" (subset) or "2220 nugget ave" vs "2220 nugget way"
+    if r[0] == q[0]:  # "100 hwy 9 e" vs "100 us hwy 9 e" (subset) or "100 elm ave" vs "100 elm way"
         return "same_number_token_subset" if set(r) <= set(q) or set(q) <= set(r) else "same_number_other"
     return ""
 
@@ -329,6 +329,12 @@ def judge(ev, idx):
     if not qkeys & held:
         reasons.append("name_not_held")
         info["name_alt"] = ";".join(name_alternatives(idx, table, rid, qkeys, alt_keys, held))
+    else:  # measured: which quoted form and which held name matched (audits the false-PASS side)
+        whole = {k for n in p["names"] for k in (name_key(n), name_key(PAREN_RE.sub(" ", n))) if k}
+        org = idx.org_keys(rec.get("org_id") if table == "sites" else rid)
+        lead = name_key(LOCALITY_SEP_RE.split(PAREN_RE.sub(" ", rec.get("site_name") or ""))[0])
+        info["name_basis"] = ("whole" if whole & held else "comma_part") + "/" + (
+            "org" if qkeys & org else "site_name_lead" if lead in qkeys else "site_name_other")
     if table == "sites":
         why = street_reason(rec.get("street_address"), p["addr"])
         if why == "no_civic_number" and not reasons:
@@ -338,6 +344,10 @@ def judge(ev, idx):
         city = squash(rec.get("city"))
         if not why and city and f" {city} " not in f" {squash(p['addr'])} ":
             info["city_not_in_quote"] = "1"  # measured only: the gate binds the street, not the city
+        st = re.search(r",\s*([A-Za-z][A-Za-z ]*?)\s*,?\s+\d[\dE-]{3,9}\s*$", p["addr"] or "")
+        q_st = st and (st[1].upper() if len(st[1]) == 2 else STATE_NAMES.get(st[1].title(), "?"))
+        if not why and q_st and q_st != (rec.get("state") or "").upper():
+            info["state_differs"] = q_st  # measured only
         if why == "street_differs":
             info["street_limit"] = street_limit(street_key(rec.get("street_address")), quote_street(p["addr"]))
     elif ev["claim_type"] == "address":
@@ -370,8 +380,14 @@ def judge_all(evs, idx):
                     "source_family": source_family(ev["source_ref"]), "verdict": v, "reason": reason,
                     "name_alt": info.get("name_alt", ""), "street_limit": info.get("street_limit", ""),
                     "hq_basis": info.get("hq_basis", ""), "if_facility_operator": info.get("if_facility_operator", ""),
-                    "city_not_in_quote": info.get("city_not_in_quote", "")})
+                    "city_not_in_quote": info.get("city_not_in_quote", ""), "state_differs": info.get("state_differs", ""),
+                    "name_basis": info.get("name_basis", "")})
     return out
+
+
+def raw_evidence_count(ref):
+    """Rows counted without the csv module: lines that open with an evidence id (an independent yield check)."""
+    return sum(len(re.findall(r"^EVD-\d+,", text, re.M)) for _, text in data_files(ref, "evidence_*.csv"))
 
 
 def report(results, total):
@@ -483,6 +499,10 @@ def main(argv=None):
     if a.out:
         write_csv(results, a.out)
     if a.all:
+        raw = raw_evidence_count(a.head)
+        if raw != len(head_evs):
+            print(f"binding gate: csv read {len(head_evs)} evidence rows but {raw} lines open with an evidence id")
+            return 2
         report(results, len(head_evs))
         return 0
     try:

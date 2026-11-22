@@ -9,8 +9,12 @@ Usage: python3 tasks/evidence-binding-gate-2026-11-22/check.py [--first-cut PATH
   --first-cut  the controller's first-cut verdicts.csv (outside the repo); adds the reconciliation table.
 """
 import argparse
+import ast
 import csv
+import re
+import subprocess
 import sys
+import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -22,6 +26,17 @@ MAIN, BATCH_BASE, BATCH_HEAD = "8f30ce0f", "4ee02127", "17834918"
 APPENDIX_A = {"EVD-431206": "CANNOT_TELL", "EVD-430188": "DIFFERENT_ADDRESS", "EVD-427648": "DIFFERENT_ADDRESS", "EVD-431826": "DIFFERENT_ADDRESS", "EVD-429348": "DIFFERENT_ADDRESS", "EVD-432372": "DIFFERENT_ADDRESS", "EVD-431544": "DIFFERENT_ADDRESS", "EVD-425964": "DIFFERENT_ADDRESS", "EVD-426070": "DIFFERENT_ADDRESS", "EVD-431900": "CANNOT_TELL", "EVD-429356": "DIFFERENT_ADDRESS", "EVD-434334": "DIFFERENT_ADDRESS", "EVD-425566": "DIFFERENT_ADDRESS", "EVD-426904": "DIFFERENT_ADDRESS", "EVD-429620": "DIFFERENT_ADDRESS", "EVD-430124": "DIFFERENT_ADDRESS", "EVD-432898": "DIFFERENT_ADDRESS", "EVD-430102": "DIFFERENT_ADDRESS", "EVD-427536": "DIFFERENT_ADDRESS", "EVD-431964": "DIFFERENT_ADDRESS", "EVD-429062": "DIFFERENT_ADDRESS", "EVD-428624": "SAME_PLACE", "EVD-429422": "DIFFERENT_ADDRESS", "EVD-430448": "DIFFERENT_ADDRESS", "EVD-427956": "DIFFERENT_ADDRESS", "EVD-432662": "DIFFERENT_ADDRESS", "EVD-432758": "DIFFERENT_ADDRESS", "EVD-434376": "DIFFERENT_ADDRESS", "EVD-430300": "DIFFERENT_ADDRESS", "EVD-429950": "DIFFERENT_ADDRESS", "EVD-435460": "DIFFERENT_ADDRESS", "EVD-428370": "DIFFERENT_ADDRESS", "EVD-428802": "DIFFERENT_ADDRESS", "EVD-426602": "CANNOT_TELL", "EVD-434936": "DIFFERENT_ADDRESS", "EVD-435244": "DIFFERENT_ADDRESS", "EVD-429388": "DIFFERENT_ADDRESS", "EVD-433872": "CANNOT_TELL", "EVD-430308": "DIFFERENT_ADDRESS", "EVD-429120": "DIFFERENT_ADDRESS", "EVD-431512": "DIFFERENT_ADDRESS", "EVD-431466": "DIFFERENT_ADDRESS", "EVD-427406": "DIFFERENT_ADDRESS", "EVD-434052": "DIFFERENT_ADDRESS", "EVD-431968": "DIFFERENT_ADDRESS", "EVD-431076": "CANNOT_TELL", "EVD-428318": "DIFFERENT_ADDRESS", "EVD-431352": "DIFFERENT_ADDRESS", "EVD-427348": "DIFFERENT_ADDRESS", "EVD-434836": "DIFFERENT_ADDRESS", "EVD-427280": "DIFFERENT_ADDRESS", "EVD-434024": "DIFFERENT_ADDRESS", "EVD-431524": "DIFFERENT_ADDRESS", "EVD-429428": "DIFFERENT_ADDRESS", "EVD-428032": "DIFFERENT_ADDRESS", "EVD-426068": "DIFFERENT_ADDRESS", "EVD-426334": "DIFFERENT_ADDRESS", "data/evidence_sites_VA.csv:417": "DIFFERENT_ADDRESS", "EVD-428870": "DIFFERENT_ADDRESS", "EVD-429916": "DIFFERENT_ADDRESS"}  # noqa: E501
 APPENDIX_B = {"EVD-443796": "MATCH", "EVD-442346": "MATCH", "EVD-439366": "MATCH", "EVD-449620": "DEFECT", "EVD-440898": "MATCH", "EVD-447490": "MATCH", "EVD-436578": "MATCH", "EVD-442068": "MATCH", "EVD-448086": "MATCH", "EVD-438364": "MATCH", "EVD-444906": "MATCH", "EVD-449054": "MATCH", "EVD-450226": "MATCH", "EVD-450128": "DEFECT", "EVD-445324": "MATCH", "EVD-450336": "MATCH", "EVD-447830": "MATCH", "EVD-446818": "MATCH", "EVD-448254": "MATCH", "EVD-449402": "MATCH", "EVD-446086": "MATCH", "EVD-454689": "MATCH", "EVD-454304": "MATCH", "EVD-454414": "MATCH", "EVD-453992": "MATCH", "EVD-454525": "MATCH", "EVD-454479": "MATCH", "EVD-457497": "MATCH", "EVD-456335": "MATCH", "EVD-457493": "DEFECT", "EVD-455899": "DEFECT", "EVD-457589": "DEFECT", "EVD-456891": "MATCH", "EVD-428884": "MATCH", "EVD-432074": "MATCH", "EVD-427874": "MATCH", "EVD-431182": "MATCH", "EVD-435496": "MATCH", "EVD-427788": "MATCH", "EVD-434612": "MATCH"}  # noqa: E501
 EXPECTED = {
+    'pass_basis.comma_part/org': 118,
+    'pass_basis.comma_part/site_name_lead': 24,
+    'pass_basis.whole/org': 18343,
+    'pass_basis.whole/site_name_lead': 1314,
+    'pass_basis.whole/site_name_other': 934,
+    'pass_site_state_differs': 0,
+    'test_segments_leaked': 0,
+    'mutant.token_subset_names.caught': True,
+    'mutant.number_only_streets.caught': True,
+    'mutant.no_unit_test.caught': True,
+    'mutant.hq_from_any_source.caught': True,
     'alt_would_pass.facility_label': 154,
     'alt_would_pass.leading_run': 1829,
     'alt_would_pass.notes': 868,
@@ -65,6 +80,50 @@ EXPECTED = {
     'street_limit.same_number_other': 1274,
     'street_limit.same_number_token_subset': 1552,
 }  # regenerate by emptying this dict and re-running
+
+
+TESTS = HERE.parents[1] / "scripts" / "test_check_evidence_binding.py"
+BOILERPLATE = re.compile(r"^(?:site of 'x'|existence|naics|sic|status|program|permit_number|county|source_record_key|frs "
+                         r"registry|rcrainfo handler|entity_type|dba name|award_count|recipient_uei|uei|ectypes)", re.I)
+MUTANTS = {  # name: (original line fragment, loosened replacement) — each must make the planted-defect tests fail
+    "token_subset_names": ("    if not qkeys & held:\n", "    if not any(set(q.split()) <= set(h.split()) or set(h.split())"
+                           " <= set(q.split()) for q in qkeys for h in held):\n"),
+    "number_only_streets": ('    if rk != qk:\n        return "street_differs"',
+                            '    if rk.split()[:1] != qk.split()[:1]:\n        return "street_differs"'),
+    "no_unit_test": ('    return "unit_differs" if ru and qu and not ru & qu else ""', '    return ""'),
+    "hq_from_any_source": ('        if basis == "facility":', '        if False:'),
+}
+
+
+def test_segments():
+    """Every comma/semicolon segment (10+ chars, not field boilerplate) of every string literal in the test file."""
+    lits = [n.value for n in ast.walk(ast.parse(TESTS.read_text(encoding="utf-8")))
+            if isinstance(n, ast.Constant) and isinstance(n.value, str)]
+    segs = {x.strip() for lit in lits for x in re.split(r"[;,]", lit)}
+    return {x for x in segs if len(x) >= 10 and not BOILERPLATE.match(x) and " " in x  # street-, ID- or name-like
+            and (re.search(r"\d", x) or len(x.split()) >= 3) and x != "permittee: 3"}  # the defect pattern itself
+
+
+def leaked(segments, blob):
+    return sorted(x for x in segments if x.lower() in blob)
+
+
+def run_mutants():
+    """Copy the gate and its tests, loosen one rule per copy, and return {mutant: failing test count}."""
+    caught = {}
+    for name, (old, new) in MUTANTS.items():
+        with tempfile.TemporaryDirectory() as d:
+            for f in ("check_evidence_binding.py", "test_check_evidence_binding.py", "atlas.py", "build_echo_spine.py"):
+                text = (HERE.parents[1] / "scripts" / f).read_text(encoding="utf-8")
+                text = text.replace("ROOT = Path(__file__).resolve().parents[1]", f"ROOT = Path({str(HERE.parents[1])!r})")
+                if f == "check_evidence_binding.py":
+                    assert text.count(old) == 1, f"mutant {name}: anchor not found once"
+                    text = text.replace(old, new)
+                (Path(d) / f).write_text(text, encoding="utf-8")
+            out = subprocess.run([sys.executable, "-m", "unittest", "test_check_evidence_binding.Verdicts"], cwd=d,
+                                 capture_output=True, text=True).stderr
+            caught[name] = len(re.findall(r"^FAIL: ", out, re.M))
+    return caught
 
 
 def table(results, key="verdict"):
@@ -120,7 +179,7 @@ def main():
     notes_rows = [r for r in name_fail if "notes" in r["name_alt"].split(";")]
     got["notes_rows"] = len(notes_rows)
     with open(HERE / "notes_name_rows.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["evidence_id", f"path_line_at_{BATCH_HEAD}", "record_table", "record_id", "reason", "name_alt"])
         for r in notes_rows:
             w.writerow([r["evidence_id"], r["at"], r["record_table"], r["record_id"], r["reason"], r["name_alt"]])
@@ -137,6 +196,12 @@ def main():
     got["pass_site_city_not_in_quote"] = len(cnq)
     print(f"\nbatches: site PASS rows whose quote does not print the record's city: {len(cnq)} of {len(pass_sites)} "
           f"(e.g. {', '.join(cnq[:4])})")
+    sd = [r["evidence_id"] for r in pass_sites if r["state_differs"]]
+    got["pass_site_state_differs"] = len(sd)
+    print(f"batches: site PASS rows whose quoted state differs from the record's: {len(sd)}")
+    basis = table([r for r in q_res if r["verdict"] == "PASS"], "name_basis")
+    show("batches: PASS rows by name basis (quoted form / held name that matched)", basis)
+    got.update({f"pass_basis.{k}": v for k, v in basis.items()})
     hq = [r for r in q_res if r["record_table"] != "sites" and r["claim_type"] == "address"]
     hqc = Counter((r["source_family"], r["reason"] or "PASS") for r in hq)
     print("\nbatches: organization address rows by source family and verdict reason")
@@ -169,6 +234,20 @@ def main():
         fb = [k for k in fc if k in q_ids]
         n_fail = sum(fc[k].startswith("FAIL") for k in fb)
         print(f"  first cut FAIL share on the batch rows: {n_fail}/{len(fb)} = {100 * n_fail / len(fb):.1f}%")
+
+    # no source quote text in the tests (controller instruction 2026-11-22): plant one real fragment and watch it fail
+    blob = "\n".join(e["claim_detail"] for e in b.rows(BATCH_HEAD, "evidence_*.csv")).lower()
+    segs = test_segments()
+    hits = leaked(segs, blob)
+    real = next(x.strip() for e in q_evs if "; " in e["claim_detail"] for x in e["claim_detail"].split(";")[1:2])
+    assert leaked(segs | {real}, blob), "leak guard failed to catch a planted real fragment"
+    print(f"\nleak guard: {len(segs)} test string segments checked against {BATCH_HEAD} claim_detail text; "
+          f"{len(hits)} found" + (": " + "; ".join(hits) if hits else ""))
+    got["test_segments_leaked"] = len(hits)
+    caught = run_mutants()
+    print("mutants (planted-defect tests failing when one rule is loosened): " +
+          ", ".join(f"{k}={v}" for k, v in caught.items()))
+    got.update({f"mutant.{k}.caught": v > 0 for k, v in caught.items()})
 
     bad = {k: (EXPECTED.get(k), v) for k, v in got.items() if EXPECTED and EXPECTED.get(k) != v}
     bad.update({k: (v, None) for k, v in EXPECTED.items() if k not in got})
