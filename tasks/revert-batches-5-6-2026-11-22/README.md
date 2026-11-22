@@ -15,7 +15,8 @@ batches 5 and 6 reverted"; supersedes the same day's narrower ruling to remove 8
 3. `scripts/atlas.py next-id` counts every id in a `tasks/**/REMOVALS.csv` toward its floor (review finding: it had offered `EVD-425437`, a removed id). Returning a
    removed row under its original ID later is restoration of the same row, not reuse, so AGENTS.md §3 and SCHEMA Appendix C §6.1 ("never reused") hold: a removed ID is
    reserved for its own row and never given to a different row. New
-   option `--tasks-dir` (default `<data-dir>/../tasks`); its one other caller, `scripts/build_integration_sets.py`, passes the repo's `tasks/`. Unit test with a planted manifest
+   option `--tasks-dir` (default `<data-dir>/../tasks`); **fail closed:** when that folder does not exist (e.g. `--data-dir` on a data-only copy) `next-id` exits 3 with
+   "cannot check the reservation floor" and offers no id; `--no-reservation-floor` skips the floor for a fresh tree (tests); its one other caller, `scripts/build_integration_sets.py`, passes the repo's `tasks/`. Unit test with a planted manifest
    in `scripts/test_atlas_cli.py`. On this head `next-id EVD` returns `EVD-459525`, above the highest retired id `EVD-459524`.
 4. Root `README.md` inventory paragraph recomputed for this head.
 5. `tasks/revert-batches-5-6-2026-11-22/`: this README, `gen.py` (generates everything below from the diff; never hand-written), `REMOVALS.csv`, `COUNTS.csv`, `quarantine/`, `check.py`.

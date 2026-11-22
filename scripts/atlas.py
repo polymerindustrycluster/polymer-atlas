@@ -18,7 +18,7 @@ Usage (run from the repo root; add --data-dir PATH to point at another tree):
   python3 scripts/atlas.py shard-of --site-state OH           # sites_OH.csv
   python3 scripts/atlas.py shard-of --hq-state QC --hq-country CA   # organizations_INTL.csv
 
-Exit codes: next-id 0 ok / 2 unknown prefix; dedupe-check 0 no hits / 1 hits;
+Exit codes: next-id 0 ok / 2 unknown prefix / 3 reservation floor cannot be checked; dedupe-check 0 no hits / 1 hits;
 show 0 found / 1 not found; shard-of 0 resolved / 3 needs more facts /
 4 unplaceable site.  Every command accepts --json (shard-of and next-id too).
 
@@ -186,7 +186,15 @@ def dangling_refs(info):
 
 def cmd_next_id(a, tables):
     info = scan_ids(tables)
-    reserved = reserved_ids(a.tasks_dir or os.path.join(os.path.normpath(a.data_dir), "..", "tasks"))
+    if a.no_reservation_floor:
+        reserved = {}
+    else:
+        tasks_dir = a.tasks_dir or os.path.join(os.path.normpath(a.data_dir), "..", "tasks")
+        if not os.path.isdir(tasks_dir):  # fail closed: a missing folder must not read as "nothing is retired"
+            print(f"next-id: cannot check the reservation floor: no tasks directory at {os.path.normpath(tasks_dir)}. Pass --tasks-dir "
+                  "(the folder holding tasks/**/REMOVALS.csv), or --no-reservation-floor for a fresh tree that has retired no ids.", file=sys.stderr)
+            return 3
+        reserved = reserved_ids(tasks_dir)
     for p_, ids_ in reserved.items():
         info[p_]                                  # a prefix that only REMOVALS.csv knows is still served
     if a.all:
@@ -658,7 +666,8 @@ def cmd_shard_of(a, data_dir):
 def build_parser():
     p = argparse.ArgumentParser(prog="atlas.py", description="Read-only helper for polymer-atlas mechanical rules.")
     p.add_argument("--data-dir", default=DEFAULT_DATA, help="data directory (default: ../data relative to this script)")
-    p.add_argument("--tasks-dir", default=None, help="folder searched for REMOVALS.csv whose retired ids next-id never reuses (default: <data-dir>/../tasks)")
+    p.add_argument("--tasks-dir", default=None, help="folder searched for REMOVALS.csv whose retired ids next-id never reuses (default: <data-dir>/../tasks; next-id exits 3 when it does not exist)")
+    p.add_argument("--no-reservation-floor", action="store_true", help="next-id: skip the REMOVALS.csv floor (a fresh tree that has retired no ids; tests)")
     sub = p.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("next-id", help="tree-wide max and next free id for a prefix")
     s.add_argument("prefix", nargs="?"); s.add_argument("--all", action="store_true")

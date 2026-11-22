@@ -5,6 +5,7 @@ import csv
 import hashlib
 import importlib.util
 import io
+import shutil
 import json
 import os
 from pathlib import Path
@@ -85,9 +86,10 @@ def build_tree(d):
 
 def run(argv, data_dir, tasks_dir=None):
     out, err = io.StringIO(), io.StringIO()
-    tasks_dir = tasks_dir or Path(data_dir) / "no-tasks-here"   # never the system temp dir's sibling `tasks/`
+    # never the system temp dir's sibling `tasks/`: fixtures name their own folder or skip the floor
+    floor = ["--tasks-dir", str(tasks_dir)] if tasks_dir else ["--no-reservation-floor"]
     with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
-        rc = atlas.main(["--data-dir", str(data_dir), "--tasks-dir", str(tasks_dir)] + argv)
+        rc = atlas.main(["--data-dir", str(data_dir)] + floor + argv)
     return rc, out.getvalue(), err.getvalue()
 
 
@@ -145,6 +147,23 @@ class NextIdTests(FixtureCase):
         self.assertEqual(json.loads(out)["prefixes"][0]["next_id"], "ORG-000902")
         rc, out, _ = run(["next-id", "EVD", "--json"], self.d)                          # no manifest: unchanged
         self.assertEqual(json.loads(out)["prefixes"][0]["next_id"], "EVD-000008")
+
+    def test_a_data_only_copy_fails_closed(self):
+        # --data-dir <copy>/data with no sibling tasks/ and no --tasks-dir: the floor cannot be checked, so no id is offered
+        root = Path(self._tmp.name) / "copy"
+        shutil.copytree(self.d, root / "data", ignore=shutil.ignore_patterns("copy"))
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            rc = atlas.main(["--data-dir", str(root / "data"), "next-id", "EVD", "--json"])
+        self.assertEqual(rc, 3)
+        self.assertEqual(out.getvalue(), "")
+        self.assertIn("reservation floor", err.getvalue())
+        (root / "tasks").mkdir()                                   # a sibling tasks/ restores the check
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            rc = atlas.main(["--data-dir", str(root / "data"), "next-id", "EVD", "--json"])
+        self.assertEqual(rc, 0)
+        rc, out2, _ = run(["next-id", "EVD", "--json"], root / "data")             # the explicit skip
+        self.assertEqual((rc, json.loads(out2)["prefixes"][0]["next_id"]), (0, "EVD-000008"))
 
     def test_width_preserved_and_other_prefixes_discovered(self):
         self.assertEqual(self.rep("SITE")["next_id"], "SITE-000501")
