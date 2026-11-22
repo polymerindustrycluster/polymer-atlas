@@ -1,37 +1,29 @@
-"""capture_text: the text a binding-gate proof line indexes. MIRRORS scripts/check_evidence_binding.py capture_text/_Text/norm_space as of PR #467
-head c5d886be (visible text of the HTML by stdlib html.parser, script/style/noscript/template skipped, entities decoded, whitespace collapsed to one
-space; offsets index this string). When #467 merges, import from it instead; check.py asserts parity with it if present."""
+"""main_text: the text every quote offset in this packet indexes (controller ruling 2026-11-22: quote from main text only; navigation, header, footer excluded).
+Derivation, reproducible: decode the capture bytes as UTF-8 (errors replaced); parse with fetch.Page (stdlib html.parser; drops script, style, noscript, nav, header, footer,
+aside, svg, form, select, button, iframe, template, head and any element whose class/id matches the menu-like pattern SKIP_CLASS; block elements start a new line); if that yields
+under 200 characters, re-parse with classskip=False (flagged); join the lines with ONE space; collapse whitespace. offset/length index this string (Python str indexes, code points).
+Replaces the earlier use of the binding gate's whole-page capture_text, which the controller ruled out."""
 import re
-from html.parser import HTMLParser
+import fetch
 
 
-class _Text(HTMLParser):
-    SKIP = {"script", "style", "noscript", "template"}
-
-    def __init__(self):
-        super().__init__(convert_charrefs=True)
-        self.parts, self.skip = [], 0
-
-    def handle_starttag(self, tag, attrs):
-        self.skip += tag in self.SKIP
-
-    def handle_endtag(self, tag):
-        self.skip -= tag in self.SKIP and self.skip > 0
-
-    def handle_data(self, data):
-        if not self.skip:
-            self.parts.append(data)
+def main_text(data):
+    body = data.decode('utf-8', errors='replace')
+    pg = fetch.Page(); pg.feed(body); lines, _ = pg.result()
+    if sum(len(t) for t, _ in lines) < 200:
+        pg = fetch.Page(classskip=False); pg.feed(body); lines, _ = pg.result()
+    return re.sub(r'\s+', ' ', ' '.join(t for t, _ in lines)).strip()
 
 
-def norm_space(s):
-    return re.sub(r"\s+", " ", s or "").strip()
-
-
-def capture_text(data):
-    s = data.decode("utf-8", errors="replace")
-    if re.search(r"<(?:html|body|head|p|div|span|table|br)\b", s[:4096], re.I):
-        t = _Text()
-        t.feed(s)
-        t.close()
-        s = " ".join(t.parts)
-    return norm_space(s)
+def page_text(data):
+    """Visible text of the whole page (script/style/noscript/template skipped, whitespace collapsed): used ONLY to tell 'address present but outside main text' from
+    'no address on the page'; never for a quote."""
+    from html.parser import HTMLParser
+    class T(HTMLParser):
+        def __init__(s): super().__init__(convert_charrefs=True); s.p, s.k = [], 0
+        def handle_starttag(s, tag, a): s.k += tag in ('script', 'style', 'noscript', 'template')
+        def handle_endtag(s, tag): s.k -= tag in ('script', 'style', 'noscript', 'template') and s.k > 0
+        def handle_data(s, d):
+            if not s.k: s.p.append(d)
+    t = T(); t.feed(data.decode('utf-8', errors='replace')); t.close()
+    return re.sub(r'\s+', ' ', ' '.join(t.p)).strip()

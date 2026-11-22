@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Re-verifies packet.csv against the stored captures (outside the repo; arg 1 overrides the store path) and proves the check fails on planted defects.
-Every packet row: capture bytes re-hash to capture_sha256; the quote is at offset/length in capture_text of those bytes; the quote holds the street and the record's city
+Every packet row: capture bytes re-hash to capture_sha256; the quote is at offset/length in main text of those bytes; the quote holds the street and the record's city
 (and the ZIP, if proposed); no phone number or email in the quote; the source URL's registrable domain is the organization's website domain (or a link-found page on it);
 archive_url has the SCHEMA 4.22 shape and cites source_url; county is the record's. Also: frame has 121 rows recomputed independently of frame.csv; every frame site is in
 exactly one of packet/holds; fetches.csv lists every packet capture. Exit 0 only if every real row passes AND every planted defect is caught."""
@@ -8,7 +8,7 @@ import csv, glob, gzip, hashlib, re, sys
 from pathlib import Path
 from urllib.parse import urlsplit
 D = Path(__file__).resolve().parent; R = D.parents[1]; sys.path.insert(0, str(D)); sys.path.insert(0, str(R / 'scripts'))
-from captext import capture_text
+from captext import main_text as capture_text
 STORE = Path(sys.argv[1] if len(sys.argv) > 1 else '/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/streets-2026-11-22')
 rd = lambda p: list(csv.DictReader(open(p, newline='', encoding='utf-8')))
 sha = lambda b: hashlib.sha256(b).hexdigest()
@@ -41,7 +41,7 @@ def problems(r):
     if r['archive_url']:
         m = ARCH.fullmatch(r['archive_url'])
         if not m or norm_url(m.group(1)) != norm_url(r['source_url']): p.append('archive_url does not cite source_url in 4.22 form')
-    elif r['archive_status'] != 'NOT_ARCHIVED': p.append('no archive_url and not flagged NOT_ARCHIVED')
+    else: p.append('no archive_url: a row without its archive capture is held (archive_unavailable)')
     return p
 
 def main():

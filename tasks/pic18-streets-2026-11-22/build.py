@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Builds packet.csv, holds.csv, dedupe_leads.csv, fetches.csv from verdicts.csv (hand readings), the stored captures and archive.csv. Writes nothing under data/.
-Each VERIFIED row: the quote must be a contiguous substring of capture_text of the capture (archive original bytes when archived, else the live bytes); the offset is computed
+Each VERIFIED row: the quote must be a contiguous substring of main text of the capture (archive original bytes when archived, else the live bytes); the offset is computed
 here, never typed; ZIP only if inside the quote; the proposed street must appear in the quote; AGENTS 3 step 3 dedupe runs over every site shard (and site notes)."""
-import csv, glob, hashlib, json, sys
+import csv, glob, hashlib, json, re, sys
 from pathlib import Path
 D = Path(__file__).resolve().parent; R = D.parents[1]; sys.path.insert(0, str(R / 'scripts')); sys.path.insert(0, str(D))
 from atlas import street_key, NOTES_STREET_RE
-from captext import capture_text
+from captext import main_text as capture_text
 STORE = Path('/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/streets-2026-11-22')
 rd = lambda p: list(csv.DictReader(open(p, newline='', encoding='utf-8')))
 sha = lambda b: hashlib.sha256(b).hexdigest()
@@ -29,18 +29,43 @@ for s in sites:
     if k: by_key.setdefault(k, []).append(s)
 assert {v['site_id'] for v in ver} <= set(frame)
 packet, holds, leads = [], [], []
+def health(oid, website):
+    """Classify why an organization's website gave nothing, from the fetch log (latest home row and the robots row before it). Returns (reason, detail, record_health_lead_text)."""
+    if not website or website.split()[0].lower().startswith('none'): return 'NO_WEBSITE_ON_RECORD', 'neither the site nor the organization carries a website; nothing to fetch under the no-guessing rule', ''
+    rows = [j for j in fx if j['org_id'] == oid]; homes = [j for j in rows if j['kind'] == 'home']
+    h = homes[-1] if homes else None
+    if h is None: return 'NOT_FETCHED', 'no fetch row for this organization', ''
+    npg = sum(1 for j in rows if j['kind'] != 'robots' and j.get('status') == 'ok')
+    if h['status'] == 'ok' or npg: return 'NO_ADDRESS_ON_PAGES_READ', f'{npg} page(s) read (home and links found on it); none states a street for this site in main text', ''
+    rb = [j for j in rows if j['kind'] == 'robots'][-1:]; ex = re.search(r'exit (\d+)', rb[0]['note']).group(1) if rb and re.search(r'exit (\d+)', rb[0]['note']) else ''
+    st = h['status']
+    if st == 'ROBOTS_BLOCKED': return 'ROBOTS_DISALLOWS', 'robots.txt disallows the page for our declared agent; not fetched', ''
+    if st == 'ROBOTS_UNREADABLE':
+        if rb and rb[0]['http'] == 403: return 'ROBOTS_HTTP_403', 'robots.txt request returned HTTP 403 (treated as closed; not fetched)', ''
+        cls = {'6': ('NO_DNS', 'the domain does not resolve (curl exit 6)'), '7': ('CONNECTION_REFUSED', 'connection refused (curl exit 7)'), '28': ('TIMEOUT', 'connection timed out (curl exit 28)'), '35': ('TLS_ERROR', 'TLS handshake failure (curl exit 35)'), '60': ('TLS_ERROR', 'certificate does not match the host (curl exit 60)')}.get(ex, ('TRANSPORT_ERROR', f'robots.txt request failed (curl exit {ex}) after the one HTTP/1.1 retry'))
+        return cls[0], cls[1] + '; availability fact, not evidence the company closed', ('dead domain: ' + cls[1]) if cls[0] == 'NO_DNS' else ''
+    if st == 'HTTP_404': return 'HOME_404', 'the record URL returned HTTP 404', 'record URL returns HTTP 404 (record website may be stale)'
+    if st == 'THIN_OR_EMPTY': return 'THIN_PAGE', 'home page gave under 200 characters of text (script- or image-rendered)', ''
+    return 'HOME_' + st, f'home page status {st}', ''
+health_leads = []
 for v in ver:
     f = frame[v['site_id']]
+    if v['reason'] == 'AUTO':
+        v['reason'], v['detail'], lead = health(f['org_id'], f['website'])
+        if lead: health_leads.append(dict(site_id=v['site_id'], org_id=f['org_id'], website=f['website'], what_happened=lead, date=max([j['fetched_at'] for j in fx if j['org_id'] == f['org_id']] or [''])[:10]))
     if v['verdict'] != 'VERIFIED':
         js = [j for j in fx if j['org_id'] == f['org_id'] and j['kind'] != 'robots']
         holds.append(dict(site_id=v['site_id'], org_id=f['org_id'], verdict=v['verdict'], reason=v['reason'], detail=v['detail'], website=f['website'], pages_fetched=sum(j.get('status') == 'ok' for j in js), fetch_statuses=';'.join(sorted({j.get('status', '') for j in js}))))
         continue
     q = v['quote']; assert '\n' not in q and q == ' '.join(q.split()), 'quote must be whitespace-collapsed'
     a = arch.get(v['page_url']); has_arch = bool(a and a['status'] == 'ok')
-    if has_arch: raw, shx, basis = (STORE / 'archive' / (a['archive_sha256'] + '.raw')).read_bytes(), a['archive_sha256'], 'archive_original'
-    else: lj = live[v['page_url']]; raw, shx, basis = (STORE / 'raw' / (lj['sha256'] + '.raw')).read_bytes(), lj['sha256'], 'live'
+    hold = lambda reason, detail: holds.append(dict(site_id=v['site_id'], org_id=f['org_id'], verdict='STILL_UNCERTAIN', reason=reason, detail=detail, website=f['website'], pages_fetched='', fetch_statuses=''))
+    if not has_arch:  # controller ruling 2026-11-22: a page whose Wayback save fails (after one later retry) is held
+        hold('ARCHIVE_UNAVAILABLE', f"reading VERIFIED ({v['street']}, {v['page_url']}) but the Wayback save failed twice; no row without its archive capture (SCHEMA 4.22). Settling fact: a successful save of that page."); continue
+    raw, shx, basis = (STORE / 'archive' / (a['archive_sha256'] + '.raw')).read_bytes(), a['archive_sha256'], 'archive_original'
     t = capture_text(raw); assert sha(raw) == shx
-    assert t.count(q) >= 1, f"{v['site_id']}: quote not in capture text"
+    if q not in t:
+        hold('ADDRESS_OUTSIDE_MAIN_TEXT', f"reading found {v['street']} on {v['page_url']} but not in the page's main text (navigation, header and footer excluded), so no quotable line (controller ruling 2026-11-22). Settling fact: the address in main text on some page of the company's own site."); continue
     off = t.index(q)
     assert v['street'].split(',')[0].lower() in q.lower() and f['city'].lower() in q.lower(), f"{v['site_id']}: street or city not in quote"
     assert not v['zip'] or v['zip'] in q
@@ -64,10 +89,11 @@ for v in ver:
         holds.append(dict(site_id=v['site_id'], org_id=f['org_id'], verdict='STILL_UNCERTAIN', reason='TWO_CANDIDATES', detail=f"page gives {v['street']}; another candidate on record: {other} (key: where seen). Which one is the site is a question for the owner.", website=f['website'], pages_fetched='', fetch_statuses='')); continue
     packet.append(dict(site_id=v['site_id'], org_id=f['org_id'], proposed_street=v['street'], city=f['city'], zip=v['zip'], county=f['county'],
                        county_basis="the record's county, unchanged (earlier street lanes' rule); not derived from the page",
-                       quote=q, source_url=v['page_url'], archive_url=a['archive_ref'] if has_arch else '', archive_captured_at=a['captured_at'] if has_arch else '',
-                       capture_basis=basis, capture_sha256=shx, archive_served_sha256=a['archive_served_sha256'] if has_arch else '', org_sites_all_shards=len(org_sites), org_sites_same_city=len(sib) + 1, offset=off, length=len(q), live_sha256=live[v['page_url']]['sha256'], tie=v['tie'], archive_status='' if has_arch else 'NOT_ARCHIVED'))
+                       quote=q, source_url=v['page_url'], archive_url=a['archive_ref'], archive_captured_at=a['captured_at'],
+                       capture_basis=basis, capture_sha256=shx, archive_served_sha256=a['archive_served_sha256'], org_sites_all_shards=len(org_sites), org_sites_same_city=len(sib) + 1, offset=off, length=len(q), live_sha256=live[v['page_url']]['sha256'], tie=v['tie'], archive_status=''))
 write('packet.csv', packet, ['site_id', 'org_id', 'proposed_street', 'city', 'zip', 'county', 'county_basis', 'quote', 'source_url', 'archive_url', 'archive_captured_at', 'capture_basis', 'capture_sha256', 'archive_served_sha256', 'offset', 'length', 'live_sha256', 'org_sites_all_shards', 'org_sites_same_city', 'tie', 'archive_status'])
 write('holds.csv', holds, ['site_id', 'org_id', 'verdict', 'reason', 'detail', 'website', 'pages_fetched', 'fetch_statuses'])
+write('record_health_leads.csv', health_leads, ['site_id', 'org_id', 'website', 'what_happened', 'date'])
 write('dedupe_leads.csv', leads, ['site_id', 'street', 'other_site_id', 'other_org_id', 'other_city', 'where', 'other_street', 'blocking'])
 ids = {}
 for r in frame.values():

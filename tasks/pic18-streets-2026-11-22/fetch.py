@@ -70,13 +70,14 @@ class Fetcher:
         self.last, self.robots, self.n, self.log = {}, {}, 0, open(STORE / 'fetches.jsonl', 'a')
     def curl(self, target):
         r = self.curl1(target)
-        return self.curl1(target) if r['exit'] != 0 else r  # the one retry, transport failure only
-    def curl1(self, target):
+        # the one retry, transport failure only; on curl exit 52/56/92 (HTTP/2 stream or empty-reply errors) it forces HTTP/1.1 and sends the bare declared token 'AtlasSiteCorpus/1.0' (the robots.txt agent) instead of the 'Mozilla/5.0 (compatible; ...)' form: plain probes showed the Mozilla-compatible form is what these servers reset, the bare token gets HTTP 200 (controller 2026-11-22; disclosed in README)
+        return self.curl1(target, r['exit'] in (52, 56, 92)) if r['exit'] != 0 else r
+    def curl1(self, target, h1=False):
         host = urlsplit(target).hostname
         time.sleep(max(0, self.last.get(host, 0) + 1.2 - time.time()))
         with tempfile.TemporaryDirectory() as tmp:
             raw, hd = Path(tmp, 'raw'), Path(tmp, 'h')
-            p = subprocess.run(['curl', '-sS', '-A', UA, '--max-time', '25', '--max-filesize', '8000000', '-D', str(hd), '-o', str(raw), '-w', '%{http_code}', target], capture_output=True, text=True)
+            p = subprocess.run(['curl', '-sS'] + (['--http1.1'] if h1 else []) + ['-A', (AGENT + '/1.0' if h1 else UA), '--max-time', '25', '--max-filesize', '8000000', '-D', str(hd), '-o', str(raw), '-w', '%{http_code}', target], capture_output=True, text=True)
             self.last[host] = time.time(); self.n += 1
             h = hd.read_text(errors='replace') if hd.exists() else ''
             loc = re.findall(r'(?im)^location:\s*(.*?)\s*$', h); ct = re.findall(r'(?im)^content-type:\s*(.*?)\s*$', h)

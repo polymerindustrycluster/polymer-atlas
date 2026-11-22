@@ -1,0 +1,7 @@
+site_id,org_id,website,what_happened,date
+SITE-001795,ORG-001719,pyramidplasticsinc.com,dead domain: the domain does not resolve (curl exit 6),2026-11-22
+SITE-002063,ORG-002064,https://polytechmolding.com (404 - not this firm's site),record URL returns HTTP 404 (record website may be stale),2026-11-22
+SITE-000042,ORG-000042,https://dupont.com/multibase-family.html,record URL returns HTTP 404 (record website may be stale),2026-11-22
+SITE-001420,ORG-001381,https://www.hyload.com/,record URL returns HTTP 404 (record website may be stale),2026-11-22
+SITE-001545,ORG-001479,http://www.o2regentech.com,dead domain: the domain does not resolve (curl exit 6),2026-11-22
+SITE-001934,ORG-001940,https://srtpolymers.com,dead domain: the domain does not resolve (curl exit 6),2026-11-22
