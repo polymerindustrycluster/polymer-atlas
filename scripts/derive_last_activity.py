@@ -69,7 +69,7 @@ def _units(street: str) -> set:
 def has_civic_number(key: str) -> bool:
     """A civic number in a street key: a token containing a digit, or a leading number word (one to ten); not a PO box in any spelling (PO Box, P.O. Box, P O Box, POB, P.O.B., Post Office Box)."""
     toks = key.split()
-    if re.search(r"\b(?:p ?o ?b(?:ox)?|post ?office ?box)\b", key):
+    if re.search(r"\b(?:p ?o ?b(?:ox)?|post ?office ?box)(?=[\s\d]|$)", key):
         return False                                                    # a PO box is not a civic address
     return any(re.search(r"\d", t) for t in toks) or bool(toks) and toks[0] in _NUMBER_WORDS
 
