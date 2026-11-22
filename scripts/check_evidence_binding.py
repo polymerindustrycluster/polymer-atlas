@@ -9,13 +9,20 @@ Every evidence row gets exactly one verdict:
   PASS            the quoted operator is a name the record holds (exact name_key, scripts/atlas.py); for a site row the
                   quoted street equals the site's street_address under street_key; for an organization `address` row
                   the source states the entity's own address and the quoted city and state are the record's HQ.
+                  A web (free-text) quote passes when it is bound by its source: an own_site URL on the record's own
+                  website domain, or a directory/press quote that contains a held name; a site address/existence
+                  row also needs the street's civic number and first street word in the quote, and an organization
+                  address row its HQ city and state. Any other site row stays UNINSPECTABLE.
   FAIL            with reasons: name_not_held, street_differs, unit_differs (both state a suite or unit and they
                   differ; street_key drops units), record_no_street, quote_no_street, hq_city_state_differs,
                   hq_from_facility_or_permit, hq_from_s5_identity_source (FMCSA filed address or a state filing,
-                  SCHEMA §4.8 S-5).
-  UNINSPECTABLE   with a reason: no_quote, free_text_web_quote, other_table, record_not_found, unknown_source_family,
-                  parse_failed, operator_not_a_name (shifted columns such as "permittee: 3"), no_civic_number (equal
-                  street keys with no civic number, such as a bare road or park name). Never a pass.
+                  SCHEMA §4.8 S-5); web quotes: not_own_site (own_site URL off the record's website domain),
+                  street_absent_from_quote.
+  UNINSPECTABLE   with a reason: no_quote, other_table, record_not_found, unknown_source_family, parse_failed,
+                  operator_not_a_name (shifted columns such as "permittee: 3"), no_civic_number (equal street keys with
+                  no civic number, such as a bare road or park name); web quotes: no_record_website,
+                  name_absent_from_quote, web_record_no_street, record_street_no_civic_number, web_class_untested
+                  (registry, government_filing), web_site_row_no_street_claim, hq_absent_from_quote. Never a pass.
 
 Strict reading (owner questions, measured in the name_alt column, never passing): a parent's name, a name found only
 in the record's notes, a permit's facility label, a quoted name that merely starts with a held name.
@@ -24,11 +31,15 @@ Usage:
   python3 scripts/check_evidence_binding.py --all [--head REF] [--out verdicts.csv]
   python3 scripts/check_evidence_binding.py --new-since origin/main      # PR gate: rows added or re-pointed since
   python3 scripts/check_evidence_binding.py --provenance-since origin/main  # tasks/<created_by>/check.py required
---new-since exits 1 on any FAIL or UNINSPECTABLE row without a waiver in a tasks/**/BINDING_WAIVERS.csv file
-(columns: evidence_id,reason,reviewer; one line per row; both reason and reviewer required). Exit 2 = could not check.
+--new-since exits 1 on any FAIL row (no waiver exists: fix the row or make it a lead), and on UNINSPECTABLE rows
+unless sample-admitted: per created_by label the gate picks the 30 UNINSPECTABLE rows with the lowest
+sha256(evidence_id) (all, if fewer), and tasks/<folder named by a created_by word>/BINDING_SAMPLE.csv
+(evidence_id,verdict,reviewer_family,reviewer_model,read) must carry exactly those ids, each VERIFIED.
+Exit 2 = could not check.
 """
 import argparse
 import csv
+import hashlib
 import io
 import re
 import subprocess
@@ -38,13 +49,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from atlas import (LOCALITY_SEP_RE, UNIT_ONLY_RE, UNIT_RE, name_key, org_name_fields, site_name_key, squash,  # noqa: E402
-                   street_key)
+from atlas import (LOCALITY_SEP_RE, SUFFIX, UNIT_ONLY_RE, UNIT_RE, domain_key, name_key,  # noqa: E402
+                   org_name_fields, site_name_key, squash, street_key)
 from build_echo_spine import STATE_NAMES  # noqa: E402
 
 csv.field_size_limit(10**9)
 BINDING_FIELDS = ("record_table", "record_id", "claim_type", "claim_detail", "source_ref")
-WAIVER_COLS = ("evidence_id", "reason", "reviewer")
+SAMPLE_COLS = ("evidence_id", "verdict", "reviewer_family", "reviewer_model", "read")
+SAMPLE_N = 30
+DIRECTIONS = {"n", "s", "e", "w", "ne", "nw", "se", "sw"}
 
 # Source families whose quote format is known. Deny by default: any other non-URL source is unknown_source_family.
 # (source_ref prefix, quote format, operator fields, address field, HQ basis for an organization `address` row)
@@ -310,7 +323,7 @@ def judge(ev, idx):
     if i < 0 or not detail[i + 6:].strip():
         return "UNINSPECTABLE", "no_quote", {}
     if src.startswith("http"):
-        return "UNINSPECTABLE", "free_text_web_quote", {}
+        return judge_web(ev, rec, idx, detail[i + 6:].strip())
     fam = family_of(src)
     if fam is None:
         return "UNINSPECTABLE", "unknown_source_family", {}
@@ -362,6 +375,118 @@ def judge(ev, idx):
     return ("FAIL", "+".join(reasons), info) if reasons else ("PASS", "", info)
 
 
+def record_websites(idx, table, rec):
+    """domain_keys of the record's own website: a site's organization website, else the organization's own."""
+    o = idx.orgs.get(rec.get("org_id")) if table == "sites" else rec
+    keys = (domain_key(w) for w in re.split(r"[;,\s]+", (o or {}).get("website") or ""))
+    return [k for k in keys if re.match(r"[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}(/|$)", k)]  # notes in the field are not hosts
+
+
+SECOND_LEVEL = {"co", "com", "ac", "gov", "org", "net", "edu", "ne", "or"}  # "acme.co.uk", "acme.com.au"
+
+
+def registrable(host):
+    """Last two host labels, three under a country second-level label. shortcut: no public-suffix list; add one if
+    a country code outside SECOND_LEVEL shows up among not_own_site rows."""
+    t = host.split(".")
+    return ".".join(t[-3:] if len(t) > 2 and len(t[-1]) == 2 and t[-2] in SECOND_LEVEL else t[-2:])
+
+
+def own_domain(src, site):
+    """Does the source URL (domain_key) sit on the record's website (domain_key)? Registrable domain, www-insensitive;
+    on a shared platform host (atlas.PLATFORM_HOSTS: wixsite, LinkedIn ...) the same host and a path under the site's."""
+    (sh, _, sp), (wh, _, wp) = src.partition("/"), site.partition("/")
+    if "/" in site:
+        return sh == wh and (sp + "/").startswith(wp.rstrip("/") + "/" if wp.strip("/") else "")
+    return "/" not in src and registrable(sh) == registrable(wh)
+
+
+def street_tokens(s):
+    """Tokens normalised as street_key normalises a street line, number words as digits."""
+    s = re.sub(r"\b(\d+)(st|nd|rd|th)\b", r"\1", (s or "").lower())
+    return [NUMBER_WORDS.get(t, SUFFIX.get(t, t)) for t in squash(s).split()]
+
+
+def web_street_parts(rec_street):
+    """(civic number, first street word) of a record street, or a reason it has none."""
+    t = street_tokens(street_key(rec_street))
+    if not t:
+        return "web_record_no_street"
+    if not has_civic_number(" ".join(t[:1])):
+        return "record_street_no_civic_number"
+    words = [w for w in t[1:] if w not in DIRECTIONS]
+    if len(words) > 2 and len(words[0]) == 1:
+        words = words[1:]  # "2210 C Larkspur Rd": the letter belongs to the civic number
+    return t[0], words[0] if words else ""
+
+
+def web_street_reason(rec_street, quote):
+    """A free-text quote must show the record street's civic number and first street word (ruling 2026-11-22)."""
+    parts = web_street_parts(rec_street)
+    if isinstance(parts, str):
+        return parts
+    q = set(street_tokens(quote))
+    return "" if parts[0] in q and (not parts[1] or parts[1] in q) else "street_absent_from_quote"
+
+
+def street_gap(rec_street, quote):
+    """Measured on PASS rows: the civic number and first street word are not within two tokens of each other."""
+    num, word = web_street_parts(rec_street)
+    q = street_tokens(quote)
+    return bool(word) and not any(x == num and word in q[i + 1:i + 3] for i, x in enumerate(q))
+
+
+def web_street_alt(rec_street, quote):
+    """Measured, never passing: the street is in the quote once spacing is ignored ("Bragg Ridge" / "Braggridge")."""
+    t = [w for w in street_tokens(street_key(rec_street)) if w not in DIRECTIONS]
+    q = "".join(w for w in street_tokens(quote) if w not in DIRECTIONS)
+    return "spacing" if len(t) > 1 and "".join(t[:3]) in q else ""
+
+
+def judge_web(ev, rec, idx, quote):
+    """A web quote is free text: bind it by the source domain, the quoted street and the quoted name."""
+    table, cls, ct = ev["record_table"], ev["source_class"], ev["claim_type"]
+    fails, unins, info = [], "", {}
+    site_street = table == "sites" and ct in ("address", "existence")
+    if site_street:
+        why = web_street_reason(rec.get("street_address"), quote)
+        if why == "street_absent_from_quote":
+            fails.append(why)
+            if web_street_alt(rec.get("street_address"), quote):
+                info["street_limit"] = "spacing"
+        elif why:
+            unins = why
+    if cls == "own_site":
+        sites = record_websites(idx, table, rec)
+        src = domain_key(ev["source_ref"])
+        if not sites:
+            unins = unins or "no_record_website"
+        elif not any(own_domain(src, w) for w in sites):
+            fails.append("not_own_site")
+            host = re.sub(r"[^a-z0-9]", "", src.split("/")[0])
+            if any(len(k.split()[0]) >= 4 and k.split()[0] in host for k in idx.held_keys(table, ev["record_id"])):
+                info["name_alt"] = "name_in_host"  # measured: a sister or regional domain carrying a held name
+    elif cls in ("directory", "press"):
+        q = f" {name_key(quote)} "
+        hits = [k for k in idx.held_keys(table, ev["record_id"]) if f" {k} " in q]
+        if not hits:
+            unins = unins or "name_absent_from_quote"
+        info["web_bound"] = f"name_{min(len(k.split()) for k in hits)}w" if hits else ""
+    else:
+        unins = unins or "web_class_untested"  # registry, government_filing: no mechanical test in the ruling
+    if fails:
+        return "FAIL", "+".join(fails), info
+    if unins:
+        return "UNINSPECTABLE", unins, info
+    if table == "sites" and not site_street:
+        return "UNINSPECTABLE", "web_site_row_no_street_claim", info  # own domain or name binds the company, not the plant
+    if table != "sites" and ct == "address" and not hq_in_quote(quote, rec):
+        return "UNINSPECTABLE", "hq_absent_from_quote", info
+    info["web_bound"] = (info.get("web_bound") or "domain") + (
+        "+street_gap" if site_street and street_gap(rec.get("street_address"), quote) else "")
+    return "PASS", "", info
+
+
 # ---------------------------------------------------------------- modes
 
 def source_family(src):
@@ -381,7 +506,7 @@ def judge_all(evs, idx):
                     "name_alt": info.get("name_alt", ""), "street_limit": info.get("street_limit", ""),
                     "hq_basis": info.get("hq_basis", ""), "if_facility_operator": info.get("if_facility_operator", ""),
                     "city_not_in_quote": info.get("city_not_in_quote", ""), "state_differs": info.get("state_differs", ""),
-                    "name_basis": info.get("name_basis", "")})
+                    "name_basis": info.get("name_basis", ""), "web_bound": info.get("web_bound", "")})
     return out
 
 
@@ -420,35 +545,72 @@ def changed_rows(base_evs, head_evs):
     return [e for e in head_evs if base.get(e["evidence_id"]) != tuple(e[f] for f in BINDING_FIELDS)]
 
 
-def tasks_files(ref, name):
+def tasks_file(ref, path):
+    """Text of a tasks/ file at ref (None = working tree), or None when it does not exist."""
     if ref is None:
-        return [(str(p.relative_to(ROOT)), p.read_text(encoding="utf-8")) for p in sorted((ROOT / "tasks").rglob(name))]
-    return [(p, git("show", f"{ref}:{p}")) for p in git("ls-tree", "-r", "--name-only", ref, "tasks/").split()
-            if p.endswith("/" + name)]
+        f = ROOT / path
+        return f.read_text(encoding="utf-8") if f.is_file() else None
+    try:
+        return git("show", f"{ref}:{path}")
+    except subprocess.CalledProcessError:
+        return None
 
 
-def load_waivers(files):
-    """{evidence_id: (path:line, reason, reviewer)}; raises ValueError on a malformed line."""
-    out = {}
-    for path, text in files:
-        reader = csv.DictReader(io.StringIO(text))
-        if tuple(reader.fieldnames or ()) != WAIVER_COLS:
-            raise ValueError(f"{path}: header must be {','.join(WAIVER_COLS)}")
+def label_tokens(label):
+    """Folder names a created_by label may use: the whole label, then each whitespace word."""
+    label = label.strip()
+    return [t for t in [label] + label.split() if t and ".." not in t and not t.startswith("/")]
+
+
+def sample_ids(ids):
+    """The gate's own sample: the SAMPLE_N ids with the lowest sha256(evidence_id). The builder cannot choose it."""
+    return sorted(ids, key=lambda i: hashlib.sha256(i.encode()).hexdigest())[:SAMPLE_N]
+
+
+def check_samples(results, read):
+    """Problems with sample admission of UNINSPECTABLE rows, one line each; read(path) -> text or None."""
+    unins = defaultdict(list)
+    for r in results:
+        if r["verdict"] == "UNINSPECTABLE":
+            unins[r["created_by"].strip()].append(r["evidence_id"])
+    need = defaultdict(set)  # sample file path -> the ids it must carry
+    problems = []
+    for label, ids in sorted(unins.items()):
+        sample = sample_ids(ids)
+        path = next((f"tasks/{t}/BINDING_SAMPLE.csv" for t in label_tokens(label)
+                     if read(f"tasks/{t}/BINDING_SAMPLE.csv") is not None), None)
+        if path is None:
+            problems.append(f"created_by '{label}': {len(ids)} UNINSPECTABLE rows and no tasks/<folder>/BINDING_SAMPLE.csv;"
+                            f" review these {len(sample)} gate-chosen rows: " + " ".join(sample))
+            continue
+        need[path] |= set(sample)
+    for path, want in sorted(need.items()):
+        reader = csv.DictReader(io.StringIO(read(path)))
+        if tuple(reader.fieldnames or ()) != SAMPLE_COLS:
+            problems.append(f"{path}: header must be {','.join(SAMPLE_COLS)}")
+            continue
+        got = {}
         for r in reader:
-            if not all((r.get(c) or "").strip() for c in WAIVER_COLS):
-                raise ValueError(f"{path}:{reader.line_num}: evidence_id, reason and reviewer are all required")
-            out[r["evidence_id"].strip()] = (f"{path}:{reader.line_num}", r["reason"].strip(), r["reviewer"].strip())
-    return out
+            eid = (r.get("evidence_id") or "").strip()
+            if not all((r.get(c) or "").strip() for c in SAMPLE_COLS):
+                problems.append(f"{path}:{reader.line_num}: every column ({','.join(SAMPLE_COLS)}) is required")
+            elif r["verdict"].strip() not in ("VERIFIED", "REJECT", "STILL_UNCERTAIN"):
+                problems.append(f"{path}:{reader.line_num}: verdict must be VERIFIED, REJECT or STILL_UNCERTAIN")
+            elif r["verdict"].strip() != "VERIFIED":
+                problems.append(f"{path}:{reader.line_num}: {eid} is {r['verdict'].strip()}; the sample does not admit")
+            got[eid] = r
+        if set(got) != want:
+            problems.append(f"{path}: must carry exactly the gate's sample; missing {sorted(want - set(got))[:10]}, "
+                            f"not in the sample {sorted(set(got) - want)[:10]}")
+    return problems
 
 
 def provenance_missing(new_evs, has_check):
     """{created_by: row count} for labels none of whose whitespace tokens names a tasks/<token>/check.py."""
     missing = Counter()
     for e in new_evs:
-        label = e["created_by"].strip()
-        tokens = [t for t in [label] + label.split() if t and ".." not in t and not t.startswith("/")]
-        if not any(has_check(t) for t in tokens):
-            missing[label] += 1
+        if not any(has_check(t) for t in label_tokens(e["created_by"])):
+            missing[e["created_by"].strip()] += 1
     return missing
 
 
@@ -505,24 +667,22 @@ def main(argv=None):
             return 2
         report(results, len(head_evs))
         return 0
-    try:
-        waivers = load_waivers(tasks_files(a.head, "BINDING_WAIVERS.csv"))
-    except ValueError as e:
-        print(f"binding gate: malformed waiver file: {e}")
-        return 2
     report(results, len(evs)) if results else None
-    bad = [r for r in results if r["verdict"] != "PASS" and r["evidence_id"] not in waivers]
-    waived = sum(r["verdict"] != "PASS" and r["evidence_id"] in waivers for r in results)
+    fails = [r for r in results if r["verdict"] == "FAIL"]
+    n_unins = sum(r["verdict"] == "UNINSPECTABLE" for r in results)
+    problems = check_samples(results, lambda path: tasks_file(a.head, path))
     print(f"\nbinding gate: {len(results)} rows added or re-pointed since {base[:10]}; "
-          f"{len(results) - len(bad) - waived} PASS, {waived} waived, {len(bad)} blocking")
-    for r in bad[:200]:
-        print(f"  {r['verdict']:13s} {r['reason'] or '-':40s} {r['evidence_id']} {r['at']}")
-    if len(bad) > 200:
-        print(f"  ... and {len(bad) - 200} more (use --out for the full list)")
-    if bad:
-        print("Fix the row, or add it to a tasks/<folder>/BINDING_WAIVERS.csv (evidence_id,reason,reviewer).")
-    return 1 if bad else 0
-
+          f"{len(results) - len(fails) - n_unins} PASS, {len(fails)} FAIL (blocking), {n_unins} UNINSPECTABLE "
+          f"(admitted only by a VERIFIED gate-chosen sample)")
+    for r in fails[:200]:
+        print(f"  FAIL {r['reason']:40s} {r['evidence_id']} {r['at']}")
+    if len(fails) > 200:
+        print(f"  ... and {len(fails) - 200} more (use --out for the full list)")
+    if fails:
+        print("A FAIL row has no waiver: fix the row, or take it out and hold it as a lead.")
+    for line in problems:
+        print("  SAMPLE " + line)
+    return 1 if fails or problems else 0
 
 if __name__ == "__main__":
     sys.exit(main())

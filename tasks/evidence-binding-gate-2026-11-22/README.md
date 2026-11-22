@@ -8,7 +8,7 @@ On 2026-11-22, batches 5 and 6 (PRs #457 and #458) added about 34,000 evidence r
 
 `validate.py` checks a row's form, never whether its quote is about that record. The owner ruled both batches reverted (another lane is doing that), and ruled that a row returns only if it passes a hardened binding gate. This folder holds that gate's record.
 
-Every number below comes from `python3 tasks/evidence-binding-gate-2026-11-22/check.py`. It reads pinned commits and fails if any of its 53 numbers drifts. Rows are cited by `evidence_id` only. No source quote text is copied here or in the tests (controller instruction, 2026-11-22).
+Every number below comes from `python3 tasks/evidence-binding-gate-2026-11-22/check.py`, except the replay table, which comes from `replay.py` beside it (written to [replay.csv](replay.csv)). `check.py` reads pinned commits and fails if any of its 94 numbers drifts. Rows are cited by `evidence_id` only. No source quote text is copied here or in the tests (controller instruction, 2026-11-22).
 
 ## What the gate decides
 
@@ -16,9 +16,9 @@ Every number below comes from `python3 tasks/evidence-binding-gate-2026-11-22/ch
 
 | Verdict | Meaning | Reasons |
 | --- | --- | --- |
-| PASS | The quoted operator is a name the record itself holds (exact `name_key`). For a site row, the quoted street equals the site's `street_address` under `street_key`, the key has a civic number, and no stated suite or unit conflicts. For an organization `address` row, the source states the entity's own address (USAspending recipient, SBIR firm) and the quoted city and state are the record's headquarters. | — |
-| FAIL | The quote is about something else. | `name_not_held`, `street_differs`, `unit_differs`, `record_no_street`, `quote_no_street`, `hq_from_facility_or_permit`, `hq_from_s5_identity_source`, `hq_city_state_differs` (several may join with `+`) |
-| UNINSPECTABLE | The gate cannot read the row. This is never a pass. Rows in this class are counted and reported. | `no_quote`, `free_text_web_quote`, `other_table`, `record_not_found`, `unknown_source_family`, `parse_failed`, `operator_not_a_name`, `no_civic_number` |
+| PASS | **Structured sources:** the quoted operator is a name the record itself holds (exact `name_key`). For a site row, the quoted street equals the site's `street_address` under `street_key`, the key has a civic number, and no stated suite or unit conflicts. For an organization `address` row, the source states the entity's own address (USAspending recipient, SBIR firm) and the quoted city and state are the record's headquarters. **Web quotes:** see "Web quotes" below. | — |
+| FAIL | The quote is about something else. | `name_not_held`, `street_differs`, `unit_differs`, `record_no_street`, `quote_no_street`, `hq_from_facility_or_permit`, `hq_from_s5_identity_source`, `hq_city_state_differs`; web: `not_own_site`, `street_absent_from_quote` (several may join with `+`) |
+| UNINSPECTABLE | The gate cannot read the row. This is never a pass. Rows in this class are counted and reported, and a pull request owes a sample review for them. | `no_quote`, `other_table`, `record_not_found`, `unknown_source_family`, `parse_failed`, `operator_not_a_name`, `no_civic_number`; web: `no_record_website`, `name_absent_from_quote`, `web_record_no_street`, `record_street_no_civic_number`, `web_class_untested`, `web_site_row_no_street_claim`, `hq_absent_from_quote` |
 
 How the quote is read:
 
@@ -27,6 +27,25 @@ How the quote is read:
 - **Shifted columns.** A permittee field with no letters (`operator_not_a_name`) is the NC DEQ layer's shifted columns, as in "permittee: 3".
 - **Civic number.** Equal street keys with no civic number, such as a bare park or road name, are UNINSPECTABLE. A civic number is a token holding a digit (`198A`, `N44 W33341`) or a leading number word (`One Innovation Dr`), so those forms pass (controller addition 2026-11-22).
 - **Suite or unit.** `street_key` drops suites, so a separate test fails a row only when both sides state a suite or unit and the two differ. This covers the SITE-000514 and SITE-019015 class from the 463 review.
+
+### Web quotes (controller ruling 2026-11-22)
+
+A web quote (`source_ref` starting with `http`) is free text. The gate runs three mechanical tests before it calls such a row UNINSPECTABLE.
+
+1. **Own site.** For an `own_site` row, the URL's host must be the record's own website domain. That is the site's organization's `website`, or the organization's own. The comparison is `domain_key` / `domain_match` from `scripts/atlas.py`, the dedupe check's domain test. It is www-insensitive and accepts a subdomain, and a platform host such as LinkedIn never matches. `normalize_website` in `scripts/liveness_sweep.py` strips `www.` but does not compare registrable domains, so it was not reused. Text in the website field that is not a host (notes) is ignored.
+   - Another domain is FAIL: `not_own_site`.
+   - No website on the record is UNINSPECTABLE: `no_record_website`.
+2. **Street.** On a site `address` or `existence` row, any web class, the street's civic number and its first street word must both appear in the quote. Tokens are normalised as `street_key` normalises a street line: suffixes, ordinals and number words. Direction words are skipped when the first street word is chosen, and so is a single letter that belongs to the civic number ("1957 B Pioneer Rd").
+   - Absent is FAIL: `street_absent_from_quote`.
+   - A record with no street is UNINSPECTABLE: `web_record_no_street`. So is a street with no civic number: `record_street_no_civic_number`.
+3. **Name.** On a `directory` or `press` row, a name the record holds (`name_key`) must appear in the quote. Otherwise the row is UNINSPECTABLE (`name_absent_from_quote`), not FAIL, because the page may name it outside the quoted span.
+
+A web row passes only when it is bound and nothing failed:
+
+- by the own-site domain, or for directory and press by a held name;
+- for a site row, by the street as well. A site row with another claim type (`scope`, `parent`) stays UNINSPECTABLE (`web_site_row_no_street_claim`), because a domain or a name binds the company, not the plant.
+- An organization `address` row also needs its headquarters city and state in the quote; otherwise it is `hq_absent_from_quote`.
+- The ruling gives no test for `registry` or `government_filing` web rows. They are UNINSPECTABLE (`web_class_untested`) unless the street test fails them.
 
 ### Modes
 
@@ -38,17 +57,22 @@ How the quote is read:
   It asserts that the rows judged equal the rows read, and that the evidence IDs are unique.
 - `--new-since REF` is the pull-request gate.
   - **What it checks:** rows that are new since the merge-base with REF, or whose binding fields (`record_table`, `record_id`, `claim_type`, `claim_detail`, `source_ref`) changed. A re-pointed row is a new claim.
-  - **Exit 1:** any FAIL or UNINSPECTABLE row without a waiver.
-  - **Exit 2:** an unreadable base, zero rows, a duplicate ID, or a malformed waiver file. The check fails closed.
+  - **Exit 1:** any FAIL row; or UNINSPECTABLE rows that the sample below does not admit.
+  - **Exit 2:** an unreadable base, zero rows or a duplicate ID. The check fails closed.
 - `--provenance-since REF` exits 1 when a `created_by` label of an added row does not name a `tasks/<folder>/` holding a `check.py`. The whole label counts, and so does any one of its words.
 
 Rows already on `main` are not failed. `--all` reports them.
 
-### Waiver file
+### No waivers; UNINSPECTABLE rows are admitted by a gate-chosen sample
 
-The waiver file is any `tasks/**/BINDING_WAIVERS.csv`. Its header is `evidence_id,reason,reviewer`, with one line per row. A reason and a reviewer are both required.
+There is no waiver file (controller ruling 2026-11-22).
 
-Waivers are keyed by `evidence_id`. IDs are never reused (AGENTS §3), so an old waiver cannot authorise a later row.
+- **FAIL rows.** A FAIL row is never waived. Fix the row, or take it out and hold it as a lead.
+- **UNINSPECTABLE rows.** These are admitted only by a recorded sample.
+  - **Who picks the sample.** For each `created_by` label in the pull request, the gate picks it. It takes the 30 rows with the lowest `sha256(evidence_id)` among that label's UNINSPECTABLE rows, or all of them if there are fewer than 30. The builder cannot choose it.
+  - **Where it goes.** `tasks/<folder>/BINDING_SAMPLE.csv` carries exactly those IDs. The folder is named by the label or one of its words, as for `check.py`. The header is `evidence_id,verdict,reviewer_family,reviewer_model,read`, and every column is required.
+  - **What fails.** Any verdict other than VERIFIED fails the PR. So does a missing ID, an extra ID, or a missing file. The gate prints the 30 IDs it wants.
+  - **What the gate cannot check.** The reviewer's family and model are recorded, not verified. The gate cannot tell who read the row or whether "read" is true.
 
 ### CI
 
@@ -62,20 +86,22 @@ Counts below are evidence rows.
 
 | Filter | Rows | PASS | FAIL | UNINSPECTABLE |
 | --- | ---: | ---: | ---: | ---: |
-| All evidence rows | 81,510 | 20,733 | 12,871 | 47,906 |
-| Without the rows PRs #457 and #458 added | 47,416 | 0 | 0 | 47,416 |
+| All evidence rows | 81,510 | 22,605 | 13,095 | 45,810 |
+| Without the rows PRs #457 and #458 added | 47,416 | 1,706 | 204 | 45,506 |
 
-No row outside the two join batches is inspectable. Of the 47,416, 41,461 carry no quote, and the rest are free-text web quotes, other tables or unknown families. The gate inspects the bulk-join formats and nothing else.
+Outside the two join batches, only web quotes are inspectable (next section). Of the 45,506 UNINSPECTABLE rows there, 41,461 carry no quote. A pull request that added all of `main` today would owe a sample of 8,193 rows over 357 `created_by` labels.
 
 **Quarantined batches** (rows PRs #457 and #458 added, 4ee02127 → 17834918):
 
 | `created_by` | Rows | PASS | FAIL | UNINSPECTABLE |
 | --- | ---: | ---: | ---: | ---: |
-| spaghetti-batch5-2026-11-22 | 10,352 | 6,808 (65.8%) | 3,354 (32.4%) | 190 |
+| spaghetti-batch5-2026-11-22 | 10,352 | 6,870 (66.4%) | 3,364 (32.5%) | 118 |
 | spaghetti-batch6-2026-11-22 | 23,564 | 13,925 (59.1%) | 9,517 (40.4%) | 122 |
-| spaghetti-burndown-batch1-2026-11-21 (re-added in #457) | 122 | 0 | 0 | 122 |
-| spaghetti-burndown-batch2-2026-11-21 (re-added in #457) | 56 | 0 | 0 | 56 |
-| **Both PRs** | **34,094** | **20,733 (60.8%)** | **12,871 (37.8%)** | **490** |
+| spaghetti-burndown-batch1-2026-11-21 (re-added in #457) | 122 | 90 | 6 | 26 |
+| spaghetti-burndown-batch2-2026-11-21 (re-added in #457) | 56 | 14 | 4 | 38 |
+| **Both PRs** | **34,094** | **20,899 (61.3%)** | **12,891 (37.8%)** | **304** |
+
+The sample these rows would owe is 116 rows over the 4 labels.
 
 FAIL and UNINSPECTABLE reasons in the batches, by row:
 
@@ -87,14 +113,14 @@ FAIL and UNINSPECTABLE reasons in the batches, by row:
 | `hq_from_s5_identity_source` | 627 |
 | `name_not_held+street_differs` | 474 |
 | `quote_no_street` | 406 |
-| `free_text_web_quote` | 364 |
 | `name_not_held+record_no_street` | 252 |
+| web quotes: `web_record_no_street` 139, `web_class_untested` 17, `not_own_site` 15, `no_record_website` 13, `name_absent_from_quote` 9, `street_absent_from_quote` 5 | 198 |
 | `operator_not_a_name` | 98 |
 | `hq_from_facility_or_permit` | 74 |
 | `name_not_held+quote_no_street` | 70 |
 | `no_civic_number` | 24 |
 | `unit_differs` | 14 |
-| other (`parse_failed` 4, three mixed HQ rows) | 7 |
+| other (`parse_failed` 4, two `name_not_held+unit_differs`, two mixed HQ rows) | 8 |
 
 By source family (PASS / FAIL / UNINSPECTABLE):
 
@@ -115,7 +141,41 @@ By source family (PASS / FAIL / UNINSPECTABLE):
 | IN IGMAP | 92 | 44 | 0 |
 | NJDEP | 46 | 16 | 0 |
 | GA EPD | 0 | 12 | 0 |
-| URL (free text) | 0 | 0 | 364 |
+| URL (web quote) | 166 | 20 | 178 |
+
+## Web quotes on `main` under the 2026-11-22 ruling
+
+Before the ruling, all 3,347 web-quote rows on `main` were UNINSPECTABLE. Under the three tests:
+
+| Filter (web-quote rows on `main` at 8f30ce0f) | Rows | PASS | FAIL | UNINSPECTABLE |
+| --- | ---: | ---: | ---: | ---: |
+| Burn-down batches 1 to 4 (`created_by` spaghetti-burndown-batch1 to 4, spaghetti-drift-rewitness, spaghetti-nourl-cleared, all 2026-11-21) | 2,846 | 1,642 | 210 | 994 |
+| All other web-quote rows | 501 | 230 | 14 | 257 |
+
+The 2,846 burn-down rows by reason:
+
+| Verdict and reason | Rows |
+| --- | ---: |
+| PASS | 1,642 |
+| UNINSPECTABLE `web_record_no_street` (site row, record has no street) | 677 |
+| UNINSPECTABLE `no_record_website` | 192 |
+| FAIL `not_own_site` | 113 |
+| UNINSPECTABLE `web_class_untested` (registry, government_filing) | 96 |
+| FAIL `street_absent_from_quote` | 93 |
+| UNINSPECTABLE `hq_absent_from_quote` | 12 |
+| UNINSPECTABLE `name_absent_from_quote` | 9 |
+| UNINSPECTABLE `record_street_no_civic_number` | 8 |
+| FAIL `street_absent_from_quote+not_own_site` | 4 |
+
+By record and claim, the PASS rows are 595 organization existence, 417 organization address, 317 site existence, 311 site address and 2 ecosystem existence.
+
+**The 734 people rows** (`spaghetti evidence-backfill-w1-2026-11-19`, all `own_site` existence) carry no quote, and the ruling's tests are written for sites and organizations. They stay UNINSPECTABLE (`other_table`), and the street and name tests cannot run on them. The one test that could run is the domain test. Measured against the website of the person's institution, it gives:
+
+- 642 rows on the institution's domain;
+- 57 rows off it;
+- 35 rows whose institution has no website.
+
+The gate does not apply it. A PR adding these rows would owe a 30-row sample.
 
 ## Calibration against the hand-labelled spotcheck
 
@@ -149,11 +209,12 @@ The first cut is `S/audits/2026-11-22-binding-test/binding.py`, whose `verdicts.
 | PASS → PASS | 20,589 |
 | FAIL → FAIL | 9,321 |
 | PASS → FAIL | 3,546 |
-| FREETEXT / OTHER_TABLE / NO_QUOTE → UNINSPECTABLE | 4,496 |
+| FREETEXT → PASS (web-quote tests) | 1,743 |
+| FREETEXT / OTHER_TABLE / NO_QUOTE → UNINSPECTABLE | 2,549 (1,108 / 804 / 637) |
+| FREETEXT → FAIL (web-quote tests) | 224 |
 | FAIL → PASS | 128 |
 | PASS → UNINSPECTABLE | 106 |
 | FAIL → UNINSPECTABLE | 20 |
-| FREETEXT → PASS / FAIL | 16 / 4 |
 
 The first cut's FAIL share on the batch rows reproduces at 9,469 / 34,094 = **27.8%**, which is the 28% the brief cites. On the same rows this gate fails 37.8%.
 
@@ -186,6 +247,7 @@ These are the batch PASS rows, by which quoted form matched which held name.
 | Whole quoted name = the full site name or another part of it | 934 |
 | One comma part ("company, facility label") = an organization name | 118 |
 | One comma part = the site name's leading part | 24 |
+| Web quote, bound by own-site domain or held name (and street, for sites) | 166 |
 
 Samples of the last three classes read as true matches: a name plus the site's locality, and a company plus its plant label.
 
@@ -224,20 +286,32 @@ The gate implements the strict reading. Each alternative reading below is measur
 
    - The brief's third named class, "&" against "and", does not exist: `squash` already folds "&" into "and", and EVD-428624 passes.
    - Whether a campus address (another number on one street, or another entrance) counts as a match is your ruling.
-7. **Headquarters from identity-only sources.** SCHEMA §4.8 S-5 (owner ruling 2026-11-22, battery S-5) governs this: a state filing's address may be an agent's, and the FMCSA address is the carrier's filed address. Under that ruling these rows fail:
+7. **Not open: headquarters from identity-only sources.** SCHEMA §4.8 S-5 already rules on this. State-entity and FMCSA addresses are identity-only: a state filing's address may be an agent's, and the FMCSA address is the carrier's filed address. These 627 rows therefore fail under an existing owner ruling:
    - 343 state-entity `principal_address` rows;
    - 284 FMCSA rows.
 
-   Each would otherwise pass on name, city and state. The question is whether a state filing's labelled *principal* office is an entity-address source.
+   Each would otherwise pass on name, city and state. The count is kept for the record, not as a question.
 8. **USAspending and SBIR as headquarters sources** (333 rows pass): I treated both as stating the entity's own address. But a UEI can be registered for a single plant, and an SBIR address dates from the award year.
    - USAspending recipient addresses come from SAM registrations. R-SAM (2026-11-16) bars copying a SAM name or address into the Atlas.
    - The 2026-11-22 ruling (DECISIONS.md) lifts that bar for the public SAM extract only.
    - Whether USAspending counts as SAM under R-SAM is your ruling.
 9. **Shifted columns** (NC DEQ, 98 rows): 94 would pass if the facility label were read as the operator.
-10. **Gate scope.** Under the brief as written, every new row with no quote or a free-text web quote is UNINSPECTABLE and needs its own waiver line.
-    - **Replay.** I replayed the last 40 first-parent commits on `main`, each against its parent. 22 of the 24 commits that added evidence rows had nothing inspectable. Burn-down batch 2 (c2b1d1803) alone would need 1,276 waiver lines.
-    - **Provenance.** The provenance check would have failed all 24.
-    - **Status.** The gate ships as written, with the provenance folder allowed to exist already at the head. This was put to the controller on 2026-11-22 with two narrower options: gate only the structured families, or accept one waiver line per `created_by`.
+10. **Web quotes.** These are measured on `main`; nothing in this list passes.
+    - **Sister domains.** 67 `not_own_site` rows sit on a host that carries a held name (a regional or sister domain, such as a `-usa` variant). Should another domain owned by the company count as its own site? Only a registry of company domains could tell.
+    - **Spacing.** 12 `street_absent_from_quote` rows show the street once spacing is ignored ("Maple Leaf" against "Mapleleaf").
+    - **Classes with no test.** `registry` and `government_filing` web rows have no test of their own, so 131 rows on `main` are `web_class_untested`. Which test should they get?
+    - **People rows.** The domain test is not applied to them (734 rows; 57 off the institution's domain).
+
+The strict reading ships. Questions 1 to 6 and 8 to 10 stay open, with their measured counts, until re-admission starts.
+
+## Replay: the last 40 commits under these rules
+
+The replay runs `replay.py` over the last 40 first-parent commits on `main` up to 8f30ce0f, judging each one against its parent. 24 of the 40 added or re-pointed evidence rows. "Sample owed" is the sample a PR would have owed: for each `created_by` label, the smaller of 30 and the label's UNINSPECTABLE rows. No commit carried a sample file.
+
+REPLAY_TABLE
+
+- **Binding gate.** One of the 24 commits would have passed: PR #427 (5fa5ba937), with 23 rows that all PASS. Every other commit had a FAIL row, or UNINSPECTABLE rows and no sample.
+- **Provenance.** The provenance check fails all 24 commits; no commit's `created_by` named a `tasks/<folder>/check.py`. This 24-of-24 failure is the baseline the rule starts from, not a defect in the rule.
 
 ## What this gate cannot see
 
@@ -246,27 +320,28 @@ The gate implements the strict reading. Each alternative reading below is measur
   - An extract older than an operator change can still pass. For example, a permit held by the new operator under the old street would pass.
   - Spotcheck §6 checked 15 quotes against the EPA bulk tables by hand.
 - **The city.** For a site row the gate binds the street, not the city.
-  - 242 of the 18,592 site PASS rows in the batches quote a city other than the record's, e.g. EVD-438149 and EVD-448255.
+  - 242 of the 18,592 structured-source site PASS rows in the batches quote a city other than the record's, e.g. EVD-438149 and EVD-448255. (The other 39 site PASS rows are web quotes, which the city is not read from.)
   - Some are mailing names for the same place (a big city's name for a suburb). Others may be a same-named street in another town.
   - The quoted state agrees with the record on every site PASS row in the batches: 0 differ, and the state was read on 18,582 of 18,592.
   - County is not checked at all.
-- **Identity behind an equal name.** An unrelated namesake at the same street would pass. Organization existence rows are judged on the name alone.
+- **Identity behind an equal name or domain.** An unrelated namesake at the same street would pass. Organization existence rows are judged on the name alone, or for a web quote on the domain alone. A web row passes on its own site even when the record's `website` was itself filled from that page.
   - The 57 Motiva permits for distinct stores pass existence 57 times from one registry. The gate does not measure that correlation.
   - The 57 matching headquarters rows fail.
 - **The claim's own value.** The gate compares the quote with the record's current fields, not with the value `claim_detail` asserts. If a record field changes later, the row's verdict can change.
 - **Tier ceilings.** The §4.13 `tier_effect` class ceilings are not checked. Neither is `address_role`.
 - **Field edits.** An edit to a row's tier effect, date or notes is not re-gated. Only a change to its binding fields is.
-- **Free text.** Free-text web quotes (3,347 rows on `main`) and rows without quotes (41,461) are UNINSPECTABLE. So is every row outside the bulk-join formats.
-- **Waivers.** The waiver's reviewer is free text, and the gate cannot verify who it names.
+- **Free text.** A web quote is bound only by the three mechanical tests. A quote that prints the right street and sits on the right domain can still be about something else on that page. Rows without quotes (41,461 on `main`) are UNINSPECTABLE, as is every row outside the bulk-join formats and the web tests.
+- **Samples.** The sample's reviewer family and model are recorded, not verified, and the gate cannot check what "read" says. Thirty rows per label bound the error rate loosely: 30 VERIFIED of 30 still allows about 10% bad rows at 95% confidence.
 - **Provenance.** The provenance check proves that a `check.py` exists. It does not prove that the script runs or that it reproduces the rows.
 
 ## Checks
 
 | Check | Command | Result |
 | --- | --- | --- |
-| Gate unit tests | `cd scripts && python3 -m unittest test_check_evidence_binding` (CI runs them through `scripts/run_tests.py`) | 49 tests OK. They cover planted defects, true matches and uninspectable rows, all synthetic strings shaped like real rows, plus a known-answer replay: `--new-since 6a76e923 --head 17834918` and `--provenance-since` on the same range both exit 1. |
-| This folder's check | `python3 tasks/evidence-binding-gate-2026-11-22/check.py` | 53 numbers OK. See the two rows below. |
-| Leak guard (inside `check.py`) | — | 0 of the 164 street-, ID- or name-like segments in the test strings occur in any `claim_detail` at 17834918. A planted real fragment is caught. |
-| Mutation check (inside `check.py`) | — | Copies of the gate each loosen one rule, and each loosening is caught by the planted-defect tests: token-subset names fail 6, number-only streets 2, no unit test 1, HQ from any source 2. |
+| Gate unit tests | `cd scripts && python3 -m unittest test_check_evidence_binding` (CI runs them through `scripts/run_tests.py`) | 56 tests OK. They cover planted defects, true matches, uninspectable rows, the web tests and sample admission, all synthetic strings shaped like real rows. They also include a known-answer replay: `--new-since 6a76e923 --head 17834918` and `--provenance-since` on the same range both exit 1. |
+| This folder's check | `python3 tasks/evidence-binding-gate-2026-11-22/check.py` | 94 numbers OK. See the two rows below. |
+| Leak guard (inside `check.py`) | — | 0 of the 181 street-, ID- or name-like segments in the test strings occur in any `claim_detail` at 17834918. A planted real fragment is caught. |
+| Mutation check (inside `check.py`) | — | Copies of the gate each loosen one rule, and the tests catch every loosening. Failing tests per loosening: token-subset names 6; number-only streets 2; no unit test 1; HQ from any source 2; any web domain 3; web street by civic number only 2; web name unchecked 1; sample by file order 2. |
+| Replay | `python3 tasks/evidence-binding-gate-2026-11-22/replay.py` | Writes `replay.csv`; the table above. |
 
 The remaining repository checks are recorded in the PR.

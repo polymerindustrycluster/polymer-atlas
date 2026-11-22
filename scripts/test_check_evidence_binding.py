@@ -18,14 +18,17 @@ ROOT = Path(__file__).resolve().parents[1]
 ORGS = [
     {"org_id": "ORG-1", "legal_name": "Harbor Plastics, Inc.", "trade_names": "Lakeside Plastics", "hq_city": "Cleveland",
      "hq_state": "OH"},
-    {"org_id": "ORG-2", "legal_name": "Northfield Chemical Inc.", "trade_names": "", "hq_city": "Midland", "hq_state": "MI"},
+    {"org_id": "ORG-2", "legal_name": "Northfield Chemical Inc.", "trade_names": "", "hq_city": "Midland", "hq_state": "MI",
+     "website": "(own-site contact page)"},  # notes in the website field are not a domain
     {"org_id": "ORG-3", "legal_name": "Riverbend Medical, Inc.", "trade_names": "", "hq_city": "San Clemente",
      "hq_state": "CA"},
     {"org_id": "ORG-4", "legal_name": "Containment Systems, Inc.", "trade_names": "", "hq_city": "Conroe", "hq_state": "TX"},
     {"org_id": "ORG-5", "legal_name": "Gulfstar Enterprises LLC", "trade_names": "", "hq_city": "Houston", "hq_state": "TX"},
     {"org_id": "ORG-6", "legal_name": "Crest Chemical LP", "trade_names": "", "hq_city": "Houston", "hq_state": "TX"},
-    {"org_id": "ORG-7", "legal_name": "Tamarack Rubber Company", "trade_names": "", "hq_city": "Akron", "hq_state": "OH"},
-    {"org_id": "ORG-8", "legal_name": "Kestrel Molding LLC", "trade_names": "", "hq_city": "Troy", "hq_state": "AL"},
+    {"org_id": "ORG-7", "legal_name": "Tamarack Rubber Company", "trade_names": "", "hq_city": "Akron", "hq_state": "OH",
+     "website": "https://www.tamarackrubber.example/about"},
+    {"org_id": "ORG-8", "legal_name": "Kestrel Molding LLC", "trade_names": "", "hq_city": "Troy", "hq_state": "AL",
+     "website": "https://kestrelmolding.wixsite.com/home"},  # a site on a shared platform host
     {"org_id": "ORG-9", "legal_name": "Alder Composites Corporation", "trade_names": "", "hq_city": "Chula Vista",
      "hq_state": "CA"},
     {"org_id": "ORG-10", "legal_name": "Pinecrest Foam Holdings", "trade_names": "", "hq_city": "Dallas", "hq_state": "TX"},
@@ -93,6 +96,8 @@ SITES = [
      "street_address": "2650 Prairie Blvd"},
     {"site_id": "S-CUE", "org_id": "ORG-13", "site_name": "BRT - Mount Hope", "city": "Mount Hope",
      "street_address": "940 Aspen Hill Road"},
+    {"site_id": "S-LET", "org_id": "ORG-7", "site_name": "Tamarack - Dunmore", "city": "Dunmore",
+     "street_address": "2210 C Larkspur Rd."},
     {"site_id": "S-NC", "org_id": "ORG-7", "site_name": "Tamarack - Fayetteville", "city": "Fayetteville",
      "street_address": "5530 Bragg Ridge St"},
 ]
@@ -116,10 +121,10 @@ def permit(permittee, facility, addr, county="HARRIS"):
             f"permit_number(s): 90001; TXD000000001; program(s): IHW; status(es): ACTIVE; source_record_key: RN=RN1")
 
 
-def ev(rid, source, quote, claim="existence", table="sites", eid="EVD-T"):
+def ev(rid, source, quote, claim="existence", table="sites", eid="EVD-T", cls="registry"):
     detail = f"site of 'x' at recorded address; quote: {quote}" if quote is not None else "existence (own site)"
     return {"evidence_id": eid, "record_table": table, "record_id": rid, "claim_type": claim, "claim_detail": detail,
-            "source_ref": source, "created_by": "test", "_at": "data/evidence_test.csv:2"}
+            "source_ref": source, "source_class": cls, "created_by": "test", "_at": "data/evidence_test.csv:2"}
 
 
 class Verdicts(unittest.TestCase):
@@ -333,8 +338,6 @@ class Verdicts(unittest.TestCase):
         self.assertEqual(info["if_facility_operator"], "PASS")
 
     def test_uninspectable_classes(self):
-        self.check(ev("S-NC", "https://example.com/locations", "We operate a plant at 5530 Bragg Ridge St"),
-                   "UNINSPECTABLE", "free_text_web_quote")
         self.check(ev("S-NC", "https://example.com/", None), "UNINSPECTABLE", "no_quote")
         self.check(ev("PERSON-1", "https://example.edu/", "x", table="people"), "UNINSPECTABLE", "other_table")
         self.check(ev("S-NONE", ITA, "x, 1 Q St, B, OH 44199"), "UNINSPECTABLE", "record_not_found")
@@ -342,6 +345,74 @@ class Verdicts(unittest.TestCase):
                    "UNINSPECTABLE", "unknown_source_family")
         self.check(ev("S-NC", RCRA, "TAMARACK RUBBER CO; NO ADDRESS PRINTED; FRS registry 1"), "UNINSPECTABLE",
                    "parse_failed")
+
+
+    # ---- web quotes (controller ruling 2026-11-22): domain, street and name tests before UNINSPECTABLE
+
+    def web(self, rid, url, quote, cls="own_site", claim="existence", table="sites"):
+        return ev(rid, url, quote, claim, table, cls=cls)
+
+    def test_web_own_site_with_street_passes(self):  # a locations page on a subdomain of the record's website
+        self.check(self.web("S-NC", "https://careers.tamarackrubber.example/plants",
+                            "Our Fayetteville plant, 5530 Bragg Ridge Street, makes hose."), "PASS")
+        self.check(self.web("S-ONE", "http://tamarackrubber.example/neenah", "Visit us at 1 Heron Dr, Neenah",
+                            claim="address"), "PASS")  # number word on the record, digit in the quote
+
+    def test_web_own_site_registrable_domain(self):  # the ruling: registrable domain, www-insensitive
+        info = self.check(self.web("ORG-7", "https://na.tamarackrubber.example/", "Tamarack Rubber makes hose",
+                                   table="organizations"), "PASS")  # a sibling subdomain of www.
+        self.assertEqual(info["web_bound"], "domain")
+        self.check(self.web("ORG-8", "https://kestrelmolding.wixsite.com/home/contact", "Kestrel molds caps",
+                            table="organizations"), "PASS")  # a page under the record's platform site
+        self.check(self.web("ORG-8", "https://othermolder.wixsite.com/home", "Kestrel molds caps",
+                            table="organizations"), "FAIL", "not_own_site")  # another tenant of the platform
+
+    def test_web_own_site_off_domain_fails(self):  # a distributor's page filed as own_site
+        self.check(self.web("S-NC", "https://hosedepot.example/brands/tamarack", "5530 Bragg Ridge St, Fayetteville"),
+                   "FAIL", "not_own_site")
+        self.check(self.web("ORG-7", "https://www.linkedin.com/company/tamarack", "Tamarack Rubber Company makes hose",
+                            table="organizations"), "FAIL", "not_own_site")  # a platform host is never the own site
+
+    def test_web_street_absent_fails(self):  # the page names another plant, or no street at all
+        self.check(self.web("S-NC", "https://www.tamarackrubber.example/", "Our plant at 812 Cedar Mill Rd"),
+                   "FAIL", "street_absent_from_quote")
+        self.check(self.web("S-NC", "https://www.tamarackrubber.example/", "5530 Cedar Mill Rd"),
+                   "FAIL", "street_absent_from_quote")  # civic number alone is not enough
+        self.check(self.web("S-NC", "https://hosedepot.example/", "Tamarack, Fayetteville NC", cls="registry"),
+                   "FAIL", "street_absent_from_quote")  # any web class, for a site address or existence row
+        self.check(self.web("S-NC", "https://hosedepot.example/", "Tamarack, Fayetteville NC"),
+                   "FAIL", "street_absent_from_quote+not_own_site")
+
+    def test_web_street_letter_and_measured_limits(self):
+        self.check(self.web("S-LET", "https://www.tamarackrubber.example/", "Street Address: 2210 LARKSPUR ROAD, DUNMORE"),
+                   "PASS")  # "2210 C": the letter belongs to the civic number
+        info = self.check(self.web("S-NC", "https://www.tamarackrubber.example/", "5530 Braggridge Street"),
+                          "FAIL", "street_absent_from_quote")
+        self.assertEqual(info.get("street_limit"), "spacing")  # measured, never passing
+        info = self.check(self.web("S-NC", "https://tamarackhose.example/", "5530 Bragg Ridge St"), "FAIL", "not_own_site")
+        self.assertEqual(info.get("name_alt"), "name_in_host")  # a sister domain: an owner question
+
+    def test_web_directory_and_press_need_a_held_name(self):
+        self.check(self.web("ORG-7", "https://rubberdirectory.example/m/77", "Tamarack Rubber Co. - hose and belting",
+                            cls="directory", table="organizations"), "PASS")
+        self.check(self.web("ORG-7", "https://rubberdirectory.example/m/77", "A hose and belting maker in Akron",
+                            cls="press", table="organizations"), "UNINSPECTABLE", "name_absent_from_quote")
+        self.check(self.web("S-NC", "https://rubberdirectory.example/m/77", "Tamarack, 5530 Bragg Ridge St",
+                            cls="directory", claim="address"), "PASS")
+
+    def test_web_still_uninspectable(self):
+        self.check(self.web("ORG-2", "https://northfield.example/", "Northfield makes resins", table="organizations"),
+                   "UNINSPECTABLE", "no_record_website")
+        self.check(self.web("S-BLANK", "https://www.tamarackrubber.example/", "Our Wickliffe plant"),
+                   "UNINSPECTABLE", "web_record_no_street")
+        self.check(self.web("S-NC", "https://www.tamarackrubber.example/", "Fayetteville makes hose", claim="scope"),
+                   "UNINSPECTABLE", "web_site_row_no_street_claim")  # the company, not the plant
+        self.check(self.web("S-NC", "https://state.example/registry/1", "TAMARACK RUBBER CO, 5530 BRAGG RIDGE ST",
+                            cls="government_filing"), "UNINSPECTABLE", "web_class_untested")
+        self.check(self.web("ORG-7", "https://www.tamarackrubber.example/", "Headquarters: Cleveland, Ohio",
+                            claim="address", table="organizations"), "UNINSPECTABLE", "hq_absent_from_quote")
+        self.check(self.web("ORG-7", "https://www.tamarackrubber.example/", "Headquarters: 40 Gorge Blvd, Akron, Ohio",
+                            claim="address", table="organizations"), "PASS")
 
 
 class GateMechanics(unittest.TestCase):
@@ -352,12 +423,30 @@ class GateMechanics(unittest.TestCase):
         head = [ev("S-PROS", ITA, "q", eid="EVD-1"), ev("S-CARN", ITA, "q", eid="EVD-2"), ev("S-CARN", ITA, "q", eid="EVD-3")]
         self.assertEqual([e["evidence_id"] for e in b.changed_rows(base, head)], ["EVD-2", "EVD-3"])
 
-    def test_waivers(self):
-        ok = [("tasks/x/BINDING_WAIVERS.csv", "evidence_id,reason,reviewer\nEVD-1,campus address,owner 2026-11-22\n")]
-        self.assertEqual(b.load_waivers(ok)["EVD-1"][2], "owner 2026-11-22")
-        for bad in ("evidence_id,reason\nEVD-1,x\n", "evidence_id,reason,reviewer\nEVD-1,x,\n"):
-            with self.assertRaises(ValueError):
-                b.load_waivers([("tasks/x/BINDING_WAIVERS.csv", bad)])
+    def test_sample_is_gate_chosen(self):
+        ids = [f"EVD-{n}" for n in range(100)]
+        sample = b.sample_ids(ids)
+        self.assertEqual(len(sample), 30)
+        self.assertEqual(sample, b.sample_ids(list(reversed(ids))))  # order-free: the builder cannot steer it
+        self.assertEqual(len(b.sample_ids(ids[:4])), 4)  # all, when fewer than 30
+
+    def test_sample_admission(self):
+        res = [{"evidence_id": f"EVD-{n}", "verdict": "UNINSPECTABLE", "created_by": "claude-code lane-a"} for n in range(40)]
+        res.append({"evidence_id": "EVD-F", "verdict": "FAIL", "created_by": "lane-z"})  # FAIL rows never sample
+        want = b.sample_ids([r["evidence_id"] for r in res[:40]])
+        path = "tasks/lane-a/BINDING_SAMPLE.csv"
+        def body(ids, verdict="VERIFIED"):
+            return ("evidence_id,verdict,reviewer_family,reviewer_model,read\n"
+                    + "".join(f"{i},{verdict},gemini,gemini-4-hydrogen,the cited page\n" for i in ids))
+        self.assertEqual(b.check_samples(res, {path: body(want)}.get), [])
+        missing = b.check_samples(res, {}.get)
+        self.assertEqual(len(missing), 1)
+        self.assertIn(want[0], missing[0])  # the gate prints the rows to review
+        for files in ({path: body(want, "STILL_UNCERTAIN")}, {path: body(want[1:])},
+                      {path: body(want + ["EVD-99"])}, {path: body([r["evidence_id"] for r in res[:30]])},
+                      {path: body(want).replace(",gemini,", ",,")}, {path: body(want).replace("gemini-4-hydrogen", "")},
+                      {path: "evidence_id,verdict,reviewer_family,read\n"}):
+            self.assertTrue(b.check_samples(res, files.get), files)
 
     def test_provenance_folder_named_by_created_by(self):
         with tempfile.TemporaryDirectory() as d:
@@ -388,6 +477,7 @@ class KnownAnswer(unittest.TestCase):
         code, out = self.run_main("--new-since", "6a76e923", "--head", "17834918")
         self.assertEqual(code, 1)
         self.assertIn("23564 rows added or re-pointed", out)
+        self.assertIn("SAMPLE created_by 'spaghetti-batch6-2026-11-22': 122 UNINSPECTABLE rows and no", out)
 
     def test_batch6_has_no_provenance_folder(self):
         code, out = self.run_main("--provenance-since", "6a76e923", "--head", "17834918")

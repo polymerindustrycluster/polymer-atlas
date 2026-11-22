@@ -6,10 +6,16 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
   - `scripts/validate.py`;
   - the personal-account URL guard on `tasks/` and `docs/` (`scripts/check_account_urls.py`, since 2026-11-19);
   - the row-loss guard;
-  - on pull requests, the evidence binding gate (`scripts/check_evidence_binding.py --new-since`, since 2026-11-22): every
-    evidence row the PR adds or re-points must PASS (quoted operator held by the record, site street equal under
-    `street_key`, headquarters only from an entity-address source) or carry a line in a `tasks/**/BINDING_WAIVERS.csv`
-    (evidence_id,reason,reviewer); rows already on `main` are reported by `--all`, not failed;
+  - on pull requests, the evidence binding gate (`scripts/check_evidence_binding.py --new-since`, since 2026-11-22):
+    - **What it checks:** the evidence rows the PR adds or re-points.
+    - **FAIL rows:** any one fails the PR, and there is no waiver. A row FAILs when:
+      - the quoted operator is not a name the record holds;
+      - the site street is not equal under `street_key`;
+      - a headquarters address comes from a source other than an entity-address source;
+      - a web quote is off the record's own domain, or lacks the site's street.
+    - **UNINSPECTABLE rows:** admitted only by a gate-chosen sample. That is the 30 rows per `created_by` label with the
+      lowest sha256 of evidence_id, each VERIFIED in `tasks/<folder>/BINDING_SAMPLE.csv`.
+    - **Rows already on `main`:** reported by `--all`, not failed;
   - on pull requests, the evidence provenance check (`--provenance-since`, since 2026-11-22): each `created_by` label of
     an added evidence row must name, by one of its words, a `tasks/<folder>/` holding a `check.py`;
   - the vocabulary export check;
