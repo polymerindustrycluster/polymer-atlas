@@ -26,3 +26,7 @@ The integration replay passed for all 18 size-band claims and reduced the
 size-unknown outcome to 374 of 794 PIC-18 owners. A planted missing claim
 failed. Validation and row-loss passed under the heavy lock, and the
 binding gate accepted all 18 new filing observations.
+
+Astra identified one resolved V-65 baseline entry. EVD-483064 supplies a
+`supports_B` witness for tier-B SITE-002105, so the baseline shrinks by that
+one entry.
