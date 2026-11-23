@@ -20,7 +20,7 @@ On the 794-owner PIC-18 frame, organizations with an active PIC-18 tier A–C si
 
 ## Archive and reader dispositions
 
-The sealed packet combined five pilot organization readings with thirteen scale readings. Claude Sonnet's November 23 readings cover the organization, site, quote and term for the admitted proposals. Thirteen admitted claims use live proof bytes. Seven retain their sealed bodies and six use refreshed bodies whose extracted main text and quote offsets Sonnet independently rechecked. Technoform uses a separately read Wayback body, with the exact proof hash, offset and archived-route digest. Nine live bodies and one archive body are pinned by hash in the private provenance store.
+The sealed packet combined five pilot organization readings with thirteen scale readings. Claude Sonnet's November 23 readings cover the organization, site, quote and term for the admitted proposals. Nine admitted claims use live proof bytes. Five retain their sealed bodies and four use refreshed bodies whose extracted main text and quote offsets Sonnet independently rechecked. Technoform, Parker and Rotocast use five proofs on three separately read Wayback bodies. Seven live bodies and three archive bodies are pinned by hash in the private provenance store.
 
 The authenticated Save Page Now round returned ten job timestamps. The exact Pioneer archive URLs reached their existing November 16 mementos, which both carry the reviewed quotes. Polymer Packaging uses an existing November 16 capture. The non-archive proofs still replay against the live URLs.
 
@@ -37,4 +37,4 @@ lockf -k /tmp/polymer-atlas-heavy.lock python3 scripts/check_row_loss.py --base 
 python3 scripts/check_evidence_binding.py --provenance-since origin/main
 ```
 
-`PACKET.sha256` pins the source proposal inputs. `CAPTURES.csv` records the exact original or refreshed live proof receipts. `ARCHIVES.csv` maps the admitted local packet IDs to their public capture references and supplies Technoform's archived proof digest and offset. `INPUTS.sha256` gives the private by-hash inputs used by the final proofs. The replay rejects a planted shifted offset. The hosted binding gate separately applies the exact-byte check to the PR merge ref.
+`PACKET.sha256` pins the source proposal inputs. `CAPTURES.csv` records the exact original or refreshed live proof receipts. `ARCHIVES.csv` maps the admitted local packet IDs to their public capture references and supplies the archived proof digests and offsets. `INPUTS.sha256` gives the private by-hash inputs used by the final proofs. The replay rejects a planted shifted offset. The hosted binding gate separately applies the exact-byte check to the PR merge ref.

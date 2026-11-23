@@ -17,13 +17,15 @@ FIRST_ID = 483026
 DAY = "2026-11-23"
 LABEL = f"codex {HERE.name}"
 HOLD = {"P3-000009", "P3-000010"}
-ARCHIVED_PROOF = {"P3-000003", "P3-000004", "P3-000005"}
+HOSTED_ARCHIVED_PROOF = {"P3-000006", "P3-000007", "P3-000017", "P3-000018"}
+ARCHIVED_PROOF = {"P3-000003", "P3-000004", "P3-000005"} | HOSTED_ARCHIVED_PROOF
 REFRESHED = {"P3-000001", "P3-000002", "P3-000003", "P3-000004", "P3-000005",
              "P3-000008", "P3-000016", "P3-000017", "P3-000018"}
 PACKET = Path.home() / ".bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/process-web-scale-2026-11-23"
 STORE = Path("/Volumes/johnpswan/work/GAC/polymer-atlas/atlas-store")
 PROVENANCE = "provenance/process-web-2026-11-23/captures/"
 WAYBACK_PROVENANCE = "provenance/process-web-2026-11-23-wayback/captures/"
+HOSTED_WAYBACK_PROVENANCE = "provenance/process-web-2026-11-23-wayback-2/captures/"
 CLAIMS = ("table", "record_id", "field", "verdict", "evidence_id")
 QUEUE = ("packet_id", "table", "record_id", "field", "term", "settling_fact")
 
@@ -139,7 +141,9 @@ def build(packet, store, idx):
                 proof["capture_date"] = DAY
         proof.update(capture_sha256=h, quote_offset=offset)
         require(re.fullmatch(r"[a-f0-9]{64}", h), f"{local}: bad capture digest")
-        capture_folder = WAYBACK_PROVENANCE if receipt["proof_sha256"] else PROVENANCE
+        capture_folder = PROVENANCE
+        if receipt["proof_sha256"]:
+            capture_folder = HOSTED_WAYBACK_PROVENANCE if local in HOSTED_ARCHIVED_PROOF else WAYBACK_PROVENANCE
         capture_path = f"{capture_folder}{h}.html"
         if capture_path not in captured:
             captured[capture_path] = (store / capture_path).read_bytes()

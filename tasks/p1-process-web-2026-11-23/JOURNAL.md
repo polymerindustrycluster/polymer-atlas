@@ -15,3 +15,5 @@ The Technoform archive carries the exact quote at offset 276 and its stable deco
 | `python3 scripts/check_evidence_binding.py --provenance-since origin/main` and `python3 scripts/check_account_urls.py` | PASS. The new evidence resolves to the task's replay and no account URL was found. |
 
 The PIC-18 coverage check reproduced the base denominator of 794 and the movement from 320 to 312 process-unknown owners. No unrelated record attributes changed.
+
+GitHub's network replay saw different live response bytes for Parker and Rotocast. Sonnet independently verified all four claims against two exact archived bodies. The revision uses their already-cited archive links as the proof route and updates only the four evidence claim markers and proof receipts. The process cells, archive links, claim ledger and tier counts stay as recorded above.
