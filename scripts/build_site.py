@@ -1391,6 +1391,8 @@ main.viz{max-width:none;padding:0;position:relative;height:max(540px,calc(100svh
 .viz-summary .vlegend li{display:flex;align-items:center;gap:var(--s-2)}
 .viz-summary .sw{width:12px;height:12px;border-radius:50%;flex:none;display:inline-block}
 .viz-summary .btns{margin:var(--s-4) 0}
+.viz-summary .btn{display:inline-flex;align-items:center;min-height:44px;padding:0 var(--s-4);border-radius:8px;border:1px solid var(--accent);background:var(--panel);color:var(--accent);font:700 var(--t-sm)/1.2 var(--f-body);text-decoration:none}
+.viz-summary .btn.primary{background:var(--accent);color:var(--accent-fg)}
 .hero-sky .btn{min-height:44px}
 @media (max-width:719.98px){
   main.viz{height:auto;overflow:visible}

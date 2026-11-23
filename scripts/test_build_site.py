@@ -1498,6 +1498,8 @@ class RefuteFixesTest(unittest.TestCase):
     def test_skyline_page_has_a_labelled_pause_button(self):
         html = self.read("skyline.html")
         self.assertRegex(html, r'<button class="btn" type="button" id="sky-play">Pause rotation</button>')
+        css = self.read("style.css")
+        self.assertIn(".viz-summary .btn.primary{background:var(--accent);color:var(--accent-fg)}", css)   # the skyline's phone summary sits outside .viz: white-on-paper buttons failed axe
 
     def test_404_base_comes_from_the_one_site_url_constant_and_howto_says_where_it_works(self):
         from unittest.mock import patch
