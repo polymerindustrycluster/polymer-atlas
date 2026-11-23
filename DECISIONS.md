@@ -346,3 +346,28 @@ against their cited filings with the filing year shown.
 - The controller approves only exact non-NAICS-source false positives from the private inventory. A separate lane
   repairs the public labels. The [protocol addendum](tasks/blind-audit-12-tooling-2026-11-23/PROTOCOL_ADDENDUM_2026-11-23.md)
   records packet handling without reopening the sealed draw.
+
+## 2026-11-23: blind audit 12 reading gates, “Settle PIC-18 first”
+
+> Settle PIC-18 first
+
+- **Owner ruling.** The audit 12 draw waits until two things are done. First, all 234 unread PIC-18 evidence rows from
+  screen 5 are read. Second, the PIC-18 evidence rows already known not to tie to their record (43 rows) are re-cited
+  or withdrawn. This supersedes the controller's earlier closing of that gate on a 50-row sample. The reason is the audit
+  12 protocol. A row whose page names a different operator or street makes its record wrong, and an unsettled claim
+  makes its record unresolved. PIC-18's pass rule counts both, however the reading gates graded them.
+- **Sample rule outside PIC-18.** Reading gates for rest of Ohio and rest of country close on a seeded random sample of
+  50 rows. The seed is written down before the draw, and reading stops at 2 or fewer REJECT. The unread rows are listed
+  as accepted open. They are not graded. Fifty rows bound the REJECT rate at about 7% (95% upper bound), which cannot
+  show 5%. That is why PIC-18 is read in full.
+- **What REJECT means.** A REJECT is a contradiction: the readable page names a different street or place than the
+  record. A page that is readable but does not tie the claim to the record's place is STILL_UNCERTAIN, not wrong. The
+  reading was fixed before the samples were read, and it is not changed for one region after its result is known. In
+  PIC-18, rows that stay STILL_UNCERTAIN are re-cited or withdrawn under the ruling above.
+- **Screen 5 routes rows, it never decides them.** Screen 5 replays each row's literal quote against its cached archive
+  capture. A FAIL or NOT_INSPECTED row goes to a reader. A PASS is not counted as a read, and the screen's false-fail
+  rate is reported, not gated.
+- **G6 and G7 narrowed.** G6 covers the ATLAS-9 reads outside PIC-18. G7 covers the second read of ATLAS-8's 86 open
+  claims. Both close when their reads are in. What stays STILL_UNCERTAIN after the second read is listed and accepted
+  open; it does not hold the draw. Inside PIC-18, the owner ruling above supersedes this.
+  For Claude-built rows, a read by another model family decides.
