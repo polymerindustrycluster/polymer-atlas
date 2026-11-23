@@ -1,0 +1,12 @@
+{
+ "candidates": 28,
+ "survive_positive_participants_reading": 22,
+ "survive_any_other_plan_number_reading": 21,
+ "fail_multiple_plans_positive": 3,
+ "fail_any_other_plan_number": 5,
+ "fail_newer_return": 3,
+ "newer_return_binds_recorded_street": 0,
+ "fail_partial_plan": 0,
+ "filings_under_the_28_eins": 87,
+ "organizations_surviving": 22
+}

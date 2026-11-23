@@ -1,0 +1,7 @@
+site_id,org_id,reason,detail,withdrawn_evidence_id
+SITE-000145,ORG-000145,f5500_multiple_plans,"2 plan numbers with positive participants in the window under the sponsor EIN (001, 501); one is required",EVD-481014
+SITE-000285,ORG-000267,newer_return_of_same_plan,"a return of plan 001 for plan year 2025 exists under the same EIN; it cannot be bound to the recorded street (different mailing line, not published), so the older filing is not used and nothing falls back",EVD-481024
+SITE-000293,ORG-000274,f5500_multiple_plans,"2 plan numbers with positive participants in the window under the sponsor EIN (001, 501); one is required",EVD-481025
+SITE-001897,ORG-001880,f5500_multiple_plans,"2 plan numbers with positive participants in the window under the sponsor EIN (001, 501); one is required",EVD-481083
+SITE-001972,ORG-001978,newer_return_of_same_plan,"a return of plan 001 for plan year 2025 exists under the same EIN; it cannot be bound to the recorded street (different mailing line, not published), so the older filing is not used and nothing falls back",EVD-481088
+SITE-002113,ORG-002156,newer_return_of_same_plan,"a return of plan 001 for plan year 2025 exists under the same EIN; it cannot be bound to the recorded street (different mailing line, not published), so the older filing is not used and nothing falls back",EVD-481091
