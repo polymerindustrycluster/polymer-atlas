@@ -11,3 +11,11 @@ Owner round 24, item 1, “Withhold now, repair too.” This governs reader pack
 ## R13 filing years
 
 [SCHEMA §1 R13](../../docs/SCHEMA.md) and owner round 24, item 2 require readers to check sampled bands against the cited filings. For size witnesses that state the sampled record's held band, the evidence context includes the stated filing year, a controlled source type and, when held, the public OSHA filing identifier. A missing or conflicting year remains unknown until checked against the filing. Raw claim detail, capture dates, tier effects and attribution stay private.
+
+## Public context false positives
+
+Under the 2026-11-23 controller ruling after #505, eligible public URL segments and resolved published labels may use the same exact cell, token and full-text approval process as judged values. The context inventory uses the seed-free frame. Only exact approved values remain visible when flagged. Structural violations and reserved metadata markers still block release.
+
+The controller approved all 111 exact public URL candidate rows from the seed-free frame at `952c4466` (57 frame records). The approval applies to the file with SHA-256 `9b8f516cea335883d6a38b72bc46db9122642459b9e18349162b659769c1fdf6`.
+
+The controller also approved two packet-side scrubs before serialization. Omit contaminated optional `match_basis` text from three registry links shown across SITE-008189, ORG-000190, ORG-003939 and ORG-004817. Remove the contact-bearing URL from PERSON-000194's citation. The public identifiers and underlying claims stay in scope. The final gate still rejects injected metadata and contact data. Repair of the public citation stays with the separate data lane.

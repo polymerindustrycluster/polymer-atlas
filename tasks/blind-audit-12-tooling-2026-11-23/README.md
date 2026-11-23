@@ -60,3 +60,18 @@ lockf -k /tmp/polymer-atlas-heavy.lock python3 tasks/blind-audit-12-tooling-2026
 ```
 
 This check uses a synthetic draw and independently checks stage release, plant substitutions, byte-identical packets and leak rejection. It then checks evidence for ten distinct main records from the public process-web batch against the mounted read-only store and requires a replay PASS on each. A planted quoted word absent from the stored capture must produce FIELD_ERROR. Other evidence rows are reported individually as unresolved when no usable capture is indexed.
+
+## Context and filing follow-up
+
+ATLAS-7 · `claimed:atlas-p1-audit12-tooling 2026-11-23` · Controller ruling after #505 (F6 and F9).
+
+At the intended snapshot, generate the private context candidate file and have the controller approve exact rows before release. This command uses the reconciled frame and has no seed input.
+
+```sh
+lockf -k /tmp/polymer-atlas-heavy.lock python3 -I tasks/blind-audit-12-tooling-2026-11-23/packets.py \
+  --context-inventory-at "$AT" --out "$PRIVATE/false_positive_candidates.csv"
+```
+
+Use both approval files in the packet build, `--approved "$APPROVED_JUDGED" --approved "$APPROVED_CONTEXT"`. Context approvals apply only to exact public URL segments and resolved published labels. Each candidate records the cell, token and full value. A structural violation or reserved metadata marker still blocks the build. The inventory reports such records separately.
+
+OSHA inspection detail URLs on the OSHA domain supply the public filing ID. Their explicitly stated opening year appears in the size-band evidence context.
