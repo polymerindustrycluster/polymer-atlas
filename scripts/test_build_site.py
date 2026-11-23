@@ -380,7 +380,7 @@ def make_directory_db(path):
         operating_status="active", verification_tier="A", last_verified="2026-10-30", country="US")
     ins("sites", site_id="SITE-000006", org_id="ORG-000005", site_name="Portage Foam - Ravenna", city="Ravenna", state="OH",
         county="Portage", ring_primary="2", operating_status="active", verification_tier="B", last_verified="2026-10-30",
-        country="US")
+        country="US", street_address="500 Portage Rd")
     ins("sites", site_id="SITE-000007", org_id="ORG-000006", site_name="Medina Mystery - Medina", city="Medina", state="OH",
         county="Medina", employee_band_site="unknown", operating_status="active", verification_tier="C",
         last_verified="2026-10-30", country="US")
@@ -593,6 +593,22 @@ class DirectoryFixtureTest(unittest.TestCase):
         self.assertEqual(by[("ORG-000001", "Summit")]["public_member_list"], "yes")
         self.assertEqual(by[("ORG-000004", "Stark")]["public_member_list"], "")
         self.assertIn("1 Main St, Akron, OH 44301", by[("ORG-000001", "Summit")]["pic18_site_addresses"])
+        self.assertEqual(by[("ORG-000004", "Stark")]["pic18_site_addresses"], "Street not recorded, Canton, OH")
+
+    def test_every_pic18_site_street_is_in_directory_csv(self):
+        """Site grain: each PIC-18 active tier A-C site row's street sits in the address cell of its owner-and-county row."""
+        rows = {(r["org_id"], r["pic18_counties"]): r for r in csv.DictReader(io.StringIO(self.read("directory.csv").lstrip("\ufeff")))}
+        sites = build_site.pic18_active_sites(self.atlas.sites)
+        self.assertEqual(len(sites), 5)
+        with_street = 0
+        for s in sites:
+            cell = rows[(s["org_id"], s["county"])]["pic18_site_addresses"]
+            if (s.get("street_address") or "").strip():
+                with_street += 1
+                self.assertIn(s["street_address"].strip(), cell, s["site_id"])
+            else:
+                self.assertIn("Street not recorded", cell, s["site_id"])
+        self.assertEqual(with_street, 2)                                   # SITE-000001 and SITE-000006 carry a street; the other three do not
 
     def test_without_javascript_the_directory_lists_every_row_on_static_county_pages(self):
         html = self.read("directory.html")
@@ -755,6 +771,20 @@ class RealDataHeadlineTest(unittest.TestCase):
         counts = [len(re.findall(r'<tr><th scope="row"><a href="../orgs/', h)) for h in static.values()]
         self.assertEqual(sum(counts), len(self.by_key))
         self.assertLessEqual(max(counts), 50)
+
+    def test_directory_csv_carries_every_site_street(self):
+        """Site grain: every PIC-18 site row's street, recomputed from the site CSVs, is in its owner-and-county row."""
+        rows = {(r["org_id"], r["pic18_counties"]): r["pic18_site_addresses"]
+                for r in csv.DictReader(io.StringIO(build_site.directory_csv(build_site.directory_rows(self.atlas), build_site.SITE_URL)))}
+        streets = 0
+        for s in self.sites:
+            cell = rows[(s["org_id"], s["county"])]
+            if s["street_address"].strip():
+                streets += 1
+                self.assertIn(s["street_address"].strip(), cell, s["site_id"])
+            else:
+                self.assertIn("Street not recorded", cell, s["site_id"])
+        self.assertGreater(streets, 600)                                   # most site rows have a street; an empty read must fail
 
     def test_summary_tables_match_the_csvs(self):
         page = build_site.build_directory_page(self.ctx, build_site.directory_rows(self.atlas))
