@@ -17,3 +17,5 @@ The Technoform archive carries the exact quote at offset 276 and its stable deco
 The PIC-18 coverage check reproduced the base denominator of 794 and the movement from 320 to 312 process-unknown owners. No unrelated record attributes changed.
 
 GitHub's network replay saw different live response bytes for Parker and Rotocast. Sonnet independently verified all four claims against two exact archived bodies. The revision uses their already-cited archive links as the proof route and updates only the four evidence claim markers and proof receipts. The process cells, archive links, claim ledger and tier counts stay as recorded above.
+
+The November 23 Save Page Now requests were deduplicated to these November 16 mementos. The requests were `spn2-1f212c915b044c8ae1ae4b27dd742f4ec2775588` for the about page and `spn2-4d55cc5044f7e0bb4ac1801eee25e060517496d3` for the homepage. The original capturers are recorded as `unknown`.
