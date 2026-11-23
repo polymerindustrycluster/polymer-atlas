@@ -23,3 +23,8 @@ Claude Sonnet 5.5 independently affirmed all 28 exact proof rows on
 popup labels changed. RheTech's site observation uses the one-site rule
 and the held page's address outside extracted main text. The quote
 itself replays in main text.
+
+The sealed-packet and application replay passed for all 40 decisions, 28
+witnesses and 15 canonical claims. A planted missing market claim failed
+replay. The validator and row-loss guard passed under the heavy lock. The
+account URL and provenance guards passed.
