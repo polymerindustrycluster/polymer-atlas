@@ -161,15 +161,17 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    harness shares one GitHub account, so a merge by the builder looks the
    same as a merge by anyone.
 2. **No evidence row or registry link merges without its packet and a
-   replay check in the repo.** *Partly checked.* The gate on the owner-split
-   PR #467 (`scripts/check_evidence_binding.py`, run by the `binding-gate`
-   check run of workflow `pr-rules` once it is on `main`) judges evidence
+   replay check in the repo.** *Partly checked.* The binding gate
+   (`scripts/check_evidence_binding.py`, run by the `binding-gate`
+   check run of workflow `pr-rules`) judges evidence
    rows from structured sources (site rows have a street test; organization
    existence and HQ address have different checks). It checks that the
    batch's task folder exists with a `check.py` and executes nothing from
-   the PR tree. It does not gate registry links. Web rows cannot be admitted
-   until a follow-up PR. People and program rows are held. It does not
-   replay a packet and it does not sample rows for admission.
+   the PR tree. Own-site web rows need a per-row proof in
+   `tasks/<folder>/BINDING_PROOF.csv` and capture replay in the gate
+   (owner ruling 2026-11-23, SCHEMA §4.13). The lane and reviewing family
+   run packet replays. Registry links, people and program rows remain
+   outside this admission path.
 3. **A binding gate in CI: the quoted operator is a name the record holds
    and the quoted street equals the record's street, or the row is a
    lead.** *Checked by the same gate, for structured evidence rows:* PASS
@@ -177,6 +179,8 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    matched positively and the quote contains no unexplained detail. Other
    rows are held for reading. PASS is a minimum condition for admission;
    source replay and independent review still apply.
+   Own-site web rows must also clear the web mechanics, replay against
+   the cited main text, and carry a reading by a different model family.
 4. **Review is tiered by risk, recorded on the PR.** *Practice.* (Owner
    ruling 2026-11-22, "tier by risk".) A PR that changes any file under
    `data/` gets review records from two model families at the current head;

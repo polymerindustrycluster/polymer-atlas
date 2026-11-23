@@ -1,7 +1,9 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.19.5 — 2026-11-22 (§1 R13 and §4.13 make Form 5500 active-participant counts leads only — owner ruling 2026-11-22, round 14, "Leads only").
+**Version:** v1.19.6 — 2026-11-23 (§4.13 admits replayed own-site web proofs and recent archived copies for street and market claims, owner ruling “Build it, archived pages count”).
+
+Previous: v1.19.5 — 2026-11-22 (§1 R13 and §4.13 make Form 5500 active-participant counts leads only — owner ruling 2026-11-22, round 14, "Leads only").
 
 Previous: v1.19.4 — 2026-11-22 (§4.4 `entity_type` gains the plain value `corporation` — owner ruling 2026-11-22, "Add 'corporation'"; 783 organizations rows filled from the legal name's Inc/Corp suffix, plus LLC and LP/LLP suffixes; the 79 `ohio_statewide` rows with a named Ohio county outside PIC-18 become `ohio_other`).
 Previous: v1.19.3 — 2026-11-22 (§1 R13 gains a five-year limit on the filing date behind an employee band — owner ruling 2026-11-22, "Headcount age: 5 years", multiple choice; no data row is changed by this revision).
@@ -1635,6 +1637,30 @@ them. |
 | `created_by` | string | **MUST** | The lane / researcher ID that produced the observation, in the `created_by` grammar of the record tables |
 | `notes` | string | Nice | One line: the observation's posture ("roster still filling at harvest"; "fetch via search-index retrieval of the exact URL; direct fetch HTTP 000 — availability noted, content dated 2024-11-14"). Licensed-source discovery provenance, where it exists, lives **here and only here** (see §5 interplay, below) |
 | `address_role` **[v1.19]** | enum, nullable | Nice | The role of the address an `address` claim witnesses: `physical` \| `mailing` \| `agent` \| `registered_office`. **Empty = unspecified** — the value on every pre-v1.19 row, and the honest value whenever the witness does not say which address it is publishing. Meaningful only on `address` claims; the validator warns on a role set on any other claim type. **ADDRESS_DIFF fires only within a role:** two witnesses of the *same* role stating different addresses are a contradiction to adjudicate; witnesses of *different* roles stating different addresses are both recorded and are not, without more, a contradiction — a carrier's filed address (FMCSA MCS-150) and a state filing's registered-agent address do not contradict a plant's physical address. New `address` claims should carry the role whenever the witness states or implies it; legacy rows are not backfilled in bulk — a role reaches a legacy row only by per-record adjudication. |
+
+**Own-site web proofs [v1.19.6, owner rulings 2026-11-22 and
+2026-11-23].** A lane may use a Wayback capture of the company's own
+page as a street or market witness when the live page cannot be read
+and the capture falls within the two calendar years ending on the row's
+`observed_date`, inclusive. Market observations use the existing
+`activity` or `scope` claim type. Record the original company URL in
+`source_ref`, the exact capture and its date in the §4.22 archive link,
+and the archived route in `claim_detail`. An older capture stays a lead.
+
+Each own-site web row submitted for admission carries a line in the
+`tasks/<folder>/BINDING_PROOF.csv` named by its `created_by` label. Use
+the `PROOF_COLS` header and `claim_sha256(row)` in
+`scripts/check_evidence_binding.py`. The capture is the original live
+URL or the indexed Wayback URL with `id_` after its timestamp. Hash the
+response bytes after gzip decoding, and record the zero-based Unicode
+character offset from `capture_text(bytes)`. The offset indexes the
+quote with whitespace collapsed, after removing page navigation,
+headers and footers. The folder README identifies the builder on a
+`Built by:` line. A different model family reads the page against the
+record and claim, and records its family, `VERIFIED` verdict and date.
+The binding gate replays the bytes and quote and applies the existing
+site street and unit checks. The lane and reviewing family run the
+packet replay.
 
 **Claim types at people grain [v1.10].** The claim vocabulary is
 shared; four of its values have people-grain referents. `existence` =

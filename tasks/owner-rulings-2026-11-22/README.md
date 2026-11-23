@@ -629,3 +629,13 @@ The later ruling supersedes the earlier allowance for active-participant counts 
 ### J3. Run the live-site trial for markets
 
 **Owner ruling, packet only.** Run a 25-organization live-site trial on the PIC-18 market-unknown frame. The controller's correction recorded that the prior live-site run had already tested the company-page process route. That route remains dropped after one hit in 25 organizations.
+
+## K. Round 16 (2026-11-23)
+
+### K1. Admit web proofs and count recent archived company pages for market
+
+**Owner ruling.** “Build it, archived pages count.” An own-site web evidence
+row can pass with a per-row proof, a reading from a different model family
+and a replay of its cited capture in the trusted binding gate. A company’s
+own archived page within two years counts for a market claim, as the owner
+allowed for street claims in round 8. SCHEMA §4.13 records both uses.

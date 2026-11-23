@@ -11,11 +11,10 @@
 # (with strict mode) since 2026-11-22: see docs/ci/README.md.
 #
 # Second check run, `binding-gate` (posted by publish-binding-gate; the job that does the work is `gate-run`, so exactly one
-# check is named `binding-gate`, and likewise one named `pr-rules`: the evaluate job posts it and is itself named `evaluate`): main's scripts/check_evidence_binding.py (--new-since and --provenance-since, each
+# check is named `binding-gate`, and likewise one named `pr-rules`: the evaluate job posts it and is itself named `evaluate`): main's scripts/check_evidence_binding.py (--verify-proofs and --provenance-since, each
 # with --tree pr) judges the PR merge result, checked out as data into ./pr. The gate executes nothing from the PR
-# tree. The job has `permissions: {}`, and both checkouts use persist-credentials: false. If the script is not on main
-# yet, the check run says "gate not yet on main: nothing was checked" and passes (the gate cannot judge the PR that
-# adds it); a step that cannot run its check fails, never neutral. A separate job publishes the result.
+# tree. The job has `permissions: {}`, and both checkouts use persist-credentials: false. If the script is absent from main,
+# or a cited capture cannot be replayed, the check fails closed. A separate job publishes the result.
 name: pr-rules
 
 on:
@@ -76,11 +75,11 @@ jobs:
           set -u
           out=/tmp/gate-out; log="$out/log"; : > "$log"
           if [ ! -f scripts/check_evidence_binding.py ]; then
-            echo "gate not yet on main (scripts/check_evidence_binding.py is absent): nothing was checked" | tee -a "$log"
-            echo not_yet > "$out/state"; exit 0
+            echo "gate not yet on main (scripts/check_evidence_binding.py is absent): cannot inspect" | tee -a "$log"
+            echo cannot_inspect > "$out/state"; exit 0
           fi
           worst=0
-          for mode in --new-since --provenance-since; do
+          for mode in --verify-proofs --provenance-since; do
             echo "== python3 scripts/check_evidence_binding.py $mode $BASE --tree pr" | tee -a "$log"
             if ! python3 scripts/check_evidence_binding.py --help 2>&1 | grep -q -- "$mode"; then
               echo "main's gate has no $mode: cannot inspect" | tee -a "$log"; r=2

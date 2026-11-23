@@ -2,15 +2,19 @@
 
 Every case is a synthetic string shaped like a real evidence row (controller instruction 2026-11-22: no source quote
 text outside data/); the comment on each case names the real row it models. Planted defects must FAIL; structured true matches
-must PASS; a web quote is never PASS (READ_REQUIRED at best); what cannot be inspected is UNINSPECTABLE. Each Codex
+must PASS; a web quote without a replayed proof is READ_REQUIRED at best; what cannot be inspected is UNINSPECTABLE. Each Codex
 finding on PR #467 has its counterexample here (the README maps finding -> test).
 """
 import contextlib
+import csv
+import gzip
+import hashlib
 import io
 import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import check_evidence_binding as b
 
@@ -734,7 +738,7 @@ class GateMechanics(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(b.main(["--all", "--tree", str(t)]), 2)
 
-    def test_held_rows_fail_the_gate(self):  # owner split: no web admission in this PR
+    def test_held_rows_fail_the_gate(self):
         with tempfile.TemporaryDirectory() as d:
             t = Path(d)
             (t / "data").mkdir()
@@ -752,7 +756,7 @@ class GateMechanics(unittest.TestCase):
                 code = b.main(["--new-since", head.strip(), "--tree", str(t)])
         self.assertEqual(code, 1, out.getvalue())
         self.assertIn("READ_REQUIRED", out.getvalue())
-        self.assertIn("lands in the follow-up", out.getvalue())
+        self.assertIn("BINDING_PROOF.csv", out.getvalue())
 
     def test_report_counts_sum(self):
         res = [{"verdict": v, "reason": "", "created_by": "x", "source_family": "url"} for v in b.VERDICTS]
@@ -777,6 +781,170 @@ def has_commits(*shas):
 
 
 @unittest.skipUnless(has_commits("6a76e923", "17834918"), "known-answer commits not in this clone (CI fetches all)")
+class WebProofs(unittest.TestCase):
+    SOURCE = "https://acmepolymer.example/about"
+    QUOTE = "Acme Polymer makes components for the automotive industry."
+    CAPTURE = f"<main><p>Markets</p><p>{QUOTE}</p></main>".encode()
+    FOLDER = "tasks/lane-t/"
+    BASE = "0" * 40
+
+    def setUp(self):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        self.tree = Path(temp.name)
+        (self.tree / "data").mkdir()
+        (self.tree / self.FOLDER).mkdir(parents=True)
+        (self.tree / self.FOLDER / "README.md").write_text("Built by: Codex\n")
+        (self.tree / self.FOLDER / "check.py").write_text("raise SystemExit('PR script executed')\n")
+        (self.tree / "data/organizations_OH.csv").write_text(
+            "org_id,legal_name,trade_names,website\n"
+            "ORG-T1,Acme Polymer,,https://acmepolymer.example/\n"
+            "ORG-T2,Acme Polymer II,,https://acmepolymer.example/\n")
+        self.ev = dict(evidence_id="EVD-T1", record_table="organizations", record_id="ORG-T1",
+                       claim_type="activity", claim_detail=f"markets_served=automotive; quote: {self.QUOTE}",
+                       source_ref=self.SOURCE, source_class="own_site", created_by="codex lane-t",
+                       observed_date="2026-11-23")
+        self.proof = dict(evidence_id="EVD-T1", record_id="ORG-T1", claim_sha256=b.claim_sha256(self.ev),
+                          capture=self.SOURCE, capture_date="2026-11-23", reader_date="2026-11-23",
+                          capture_sha256=hashlib.sha256(self.CAPTURE).hexdigest(), quote_offset=8,
+                          verdict="VERIFIED", reader_family="Gemini Hydrogen")
+        self.capture = self.CAPTURE
+        self.fetch_error = None
+
+    def archive(self, timestamp, *, duplicate=False):
+        day = f"{timestamp[:4]}-{timestamp[4:6]}-{timestamp[6:8]}"
+        prefix = "https://web.archive.org/web/"
+        indexed = f"{prefix}{timestamp}/{self.SOURCE}"
+        self.proof.update(capture=f"{prefix}{timestamp}id_/{self.SOURCE}", capture_date=day)
+        line = f"EVD-T1,{indexed},{day},codex lane-t\n"
+        (self.tree / "data/archive_links.csv").write_text(
+            "evidence_id,archive_ref,captured_at,created_by\n" + line * (2 if duplicate else 1))
+
+    def run_gate(self, *, proof_bytes=None, mode="--verify-proofs"):
+        with (self.tree / "data/evidence_t.csv").open("w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, self.ev)
+            writer.writeheader()
+            writer.writerow(self.ev)
+        p = self.tree / self.FOLDER / "BINDING_PROOF.csv"
+        if proof_bytes is None:
+            with p.open("w", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, b.PROOF_COLS)
+                writer.writeheader()
+                writer.writerow(self.proof)
+        else:
+            p.write_bytes(proof_bytes)
+        out = io.StringIO()
+        rows = b.rows
+        with (
+            contextlib.redirect_stdout(out),
+            patch.object(b, "resolve_base", return_value=self.BASE),
+            patch.object(b, "rows", side_effect=lambda ref, pattern: [] if ref else rows(ref, pattern)),
+            patch.object(b, "fetch_url", return_value=self.capture, side_effect=self.fetch_error) as fetch,
+        ):
+            code = b.main([mode, self.BASE, "--tree", str(self.tree)])
+        self.fetch = fetch
+        return code, out.getvalue()
+
+    def assert_held(self, problem, **kwargs):
+        code, out = self.run_gate(**kwargs)
+        self.assertEqual(code, 1, out)
+        self.assertIn(problem, out)
+        self.assertNotIn("web_proof_replayed", out)
+
+    def test_valid_live_and_archived_proofs(self):
+        for stamp in (None, "20241123013000"):  # inclusive two-calendar-year boundary
+            with self.subTest(stamp=stamp):
+                if stamp:
+                    self.archive(stamp)
+                code, out = self.run_gate()
+                self.assertEqual(code, 0, out)
+                self.assertIn("1 PASS", out)
+                self.fetch.assert_called_once_with(self.proof["capture"])
+
+    def test_repointed_row(self):
+        self.ev["record_id"] = "ORG-T2"
+        self.assert_held("proof record_id or claim_sha256 differs")
+        self.fetch.assert_not_called()
+
+    def test_edited_quote_or_claim(self):
+        detail = self.ev["claim_detail"]
+        for edited in (detail.replace("components", "parts"), detail.replace("automotive;", "medical;")):
+            with self.subTest(edited=edited):
+                self.ev["claim_detail"] = edited
+                self.assert_held("proof record_id or claim_sha256 differs")
+                self.fetch.assert_not_called()
+
+    def test_gzip_capture_by_header_and_magic(self):
+        raw = gzip.compress(self.CAPTURE)
+        for encoding in ("gzip", "", "identity"):
+            with self.subTest(encoding=encoding):
+                self.assertEqual(b.decode_capture(raw, encoding), self.CAPTURE)
+        with self.assertRaises(gzip.BadGzipFile):
+            b.decode_capture(self.CAPTURE, "gzip")
+
+    def test_quote_only_in_page_chrome(self):
+        for tag in ("header", "nav", "footer"):
+            with self.subTest(tag=tag):
+                self.capture = f"<main><p>Markets</p><{tag}>{self.QUOTE}</{tag}></main>".encode()
+                self.proof["capture_sha256"] = hashlib.sha256(self.capture).hexdigest()
+                self.assert_held("not at that offset in the capture's main text")
+        self.assertEqual(b.capture_text(b'<div role="main"><div>Markets</div> Industry</div>Outside'),
+                         "Markets Industry")
+        self.assertEqual(b.capture_text(b'<div role="contentinfo"><div>Nested</div>Footer</div>Body'), "Body")
+        self.assertEqual(b.capture_text(b'<div id="site-footer">Footer</div><p>Body</p>'), "Body")
+
+    def test_capture_digest_mismatch(self):
+        self.capture += b"\n"
+        self.assert_held("capture_sha256 does not match")
+
+    def test_fetch_failure(self):
+        self.fetch_error = TimeoutError("planted timeout")
+        for mode in ("--new-since", "--verify-proofs"):
+            with self.subTest(mode=mode):
+                self.assert_held("could not inspect capture: planted timeout", mode=mode)
+                self.fetch.assert_called_once()
+
+    def test_archived_market_capture_older_than_two_years(self):
+        self.archive("20241122000000")
+        self.assert_held("outside the two years ending on observed_date")
+        self.fetch.assert_not_called()
+
+    def test_capture_off_record_website(self):
+        self.proof["capture"] = "https://other.example/about"
+        self.assert_held("capture not_own_site")
+        self.fetch.assert_not_called()
+
+    def test_duplicate_archive_evidence_id(self):
+        self.archive("20261122000000", duplicate=True)
+        self.assert_held("duplicate archive evidence_id EVD-T1")
+        self.fetch.assert_not_called()
+
+    def test_invalid_utf8_in_the_proof_file(self):
+        self.assert_held("invalid UTF-8", proof_bytes=(",".join(b.PROOF_COLS) + "\n").encode() + b"\xff")
+        self.fetch.assert_not_called()
+
+    def test_same_family_reading_is_held(self):
+        self.proof["reader_family"] = "OpenAI"
+        self.assert_held("different known model families")
+        self.fetch.assert_not_called()
+
+    def test_web_street_unit_conflict_outranks_proof(self):
+        (self.tree / "data/sites_OH.csv").write_text(
+            "site_id,org_id,site_name,street_address\nSITE-T1,ORG-T1,Acme Polymer,52 Basin Rd Suite 22\n")
+        self.ev.update(record_table="sites", record_id="SITE-T1", claim_type="address",
+                       claim_detail="street; quote: Acme Polymer operates at 52 Basin Rd Suite 31.")
+        self.proof.update(record_id="SITE-T1", claim_sha256=b.claim_sha256(self.ev))
+        self.assert_held("unit_differs")
+        self.fetch.assert_not_called()
+
+    def test_private_capture_address_is_refused_before_connecting(self):
+        with patch.object(b.socket, "getaddrinfo", return_value=[(None, None, None, None, ("127.0.0.1", 443))]), \
+                patch.object(b.http.client, "HTTPSConnection") as connect:
+            with self.assertRaisesRegex(ValueError, "public unicast"):
+                b.fetch_url(self.SOURCE)
+            connect.assert_not_called()
+
+
 class KnownAnswer(unittest.TestCase):
     """Batch 6 (PR #458, 6a76e923..17834918) added 23,564 rows with every check green; this gate must block it."""
 
@@ -790,7 +958,7 @@ class KnownAnswer(unittest.TestCase):
         code, out = self.run_main("--new-since", "6a76e923", "--head", "17834918")
         self.assertEqual(code, 1)
         self.assertIn("23564 rows added or changed", out)
-        self.assertIn("READ_REQUIRED or UNINSPECTABLE row has no admission path in this gate", out)
+        self.assertIn("HELD, READ_REQUIRED or UNINSPECTABLE", out)
 
     def test_batch6_has_no_provenance_folder(self):
         code, out = self.run_main("--provenance-since", "6a76e923", "--head", "17834918")
