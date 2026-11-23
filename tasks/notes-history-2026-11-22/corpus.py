@@ -16,7 +16,7 @@ def contexts():
         r["_id"] = r["org_id"]; r["_table"] = "organizations"
     for r in sites:
         k = atlas.street_key(r["street_address"])
-        r["_ctx"] = {"street_keys": {k} if k else set(), "table": "sites"}
+        r["_ctx"] = {"street_keys": {k} if k else set(), "table": "sites", "street_blank": not k}
         r["_id"] = r["site_id"]; r["_table"] = "sites"
     return orgs, sites
 

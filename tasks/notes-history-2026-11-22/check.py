@@ -84,10 +84,13 @@ def main():
         else: fail(f"planted miss NOT caught: {name}")
     # ---------------------------------------------------------------- 3. DEPENDENCIES (corpus-wide)
     street_phr = [re.compile(r"Street(?:\s+correct(?:ion|ed)[^:]{0,20})?(?:\s*\((?:per|from)[^)]*\))?:\s*(\d[^;|\n]{2,80})", re.I), re.compile(r"Address[^:]{0,60}match\):\s*(\d[^;|\n]{2,80})", re.I)]  # copy of build_osha_ita._STREET_PATS
-    def skeys(t):
-        k = {atlas.notes_candidate_key(m[0]) for m in atlas.NOTES_STREET_RE.finditer(t)}
+    def skeys(t, city="", phrase_only=False):
+        k = set() if phrase_only else {atlas.notes_candidate_key(m[0]) for m in atlas.NOTES_STREET_RE.finditer(t)}
         for rx in street_phr:
-            for m in rx.finditer(t): k.add(atlas.street_key(re.split(r"\s\(|\.\s*$", m.group(1))[0]))
+            for m in rx.finditer(t):   # the readers' own trimming (build_osha_ita.street_from_notes): cut at a sentence full stop or ' ('
+                raw = re.split(r"(?<![\s.][A-Za-z])\.\s+|\s\(", m.group(1), maxsplit=1)[0].strip().rstrip(".").strip()
+                if city: raw = re.split(r",\s*" + re.escape(city), raw, flags=re.I)[0]
+                k.add(atlas.street_key(raw))
         return {x for x in k if x}
     FRS, FEI = re.compile(r"\b1\d{11}\b"), re.compile(r"\bFEI\W{0,3}(\d{6,10})\b")
     TOMB, WARNRX = re.compile(r"tombstoned as duplicate of (SITE-\d{6})", re.I), re.compile(r"\bWARN\b")
@@ -107,8 +110,10 @@ def main():
     for r in orgs + sites:
         orig, parts = r["notes"], r["_parts"]
         col = atlas.street_key(r.get("street_address", ""))
-        row_keys_orig = skeys(orig) - {col}
-        ids_o = set(FRS.findall(orig)); fei_o = set(FEI.findall(orig)); tomb_o = bool(TOMB.search(orig)) and r["_table"] == "sites"
+        is_site = r["_table"] == "sites"
+        row_keys_orig = (skeys(orig, r.get("city", "")) - {col}) if is_site else set()
+        blank_keys = skeys(orig, r.get("city", ""), True) if (is_site and not col) else set()   # the `Street...:` phrase the three street_from_notes readers use
+        ids_o = set(FRS.findall(orig)) if is_site else set(); fei_o = set(FEI.findall(orig)); tomb_o = bool(TOMB.search(orig)) and r["_table"] == "sites"
         warn_o = bool(WARNRX.search(orig)) and r["_table"] == "sites"; men_o = mentions(orig, r["_id"]) if r["_table"] == "organizations" else set()
         n_reader = sum(p["disp"] == "READER" for p in parts)
         for mode in res:
@@ -116,7 +121,11 @@ def main():
             c["rows"] += 1
             if row_keys_orig:
                 c["street+"] += 1
-                if not row_keys_orig <= skeys(a): c["street lost"] += 1
+                if not row_keys_orig <= skeys(a, r.get("city", "")): c["street lost"] += 1
+            if blank_keys:
+                c["street-only-in-notes+"] += 1
+                ak = skeys(a, r.get("city", ""), True)   # a key whose clean prefix survives is not a loss: the readers' own sentence split fails after an initial ("County Road K. CERT-SITE")
+                if any(not any(k.split()[:4] == x.split()[:4] for x in ak) for k in blank_keys): c["street-only-in-notes lost"] += 1
             if ids_o:
                 c["frs+"] += 1
                 if not ids_o <= set(FRS.findall(a)): c["frs lost from row"] += 1
@@ -141,18 +150,63 @@ def main():
             if mode == "script-only": c["reader pieces"] += n_reader
     for mode, c in res.items():
         print(f"  [{mode}] ", {k: v for k, v in sorted(c.items())})
-    for cls in ("street+", "frs+", "fei+", "tomb+", "warn+", "name-mention+"):
+    for cls in ("street+", "street-only-in-notes+", "frs+", "fei+", "tomb+", "warn+", "name-mention+"):
         if res["worst-case"][cls] == 0: fail(f"dependency class {cls} inspected zero positives (vacuous)")
+    parcel_rows = [r for r in sites if "parcel candidate queue" in r["notes"]]       # validator rule is vacuous live; test it on an in-memory copy with the county blanked
+    for r in parcel_rows:
+        for mode in res:
+            if "parcel candidate queue" not in group_after(r["_parts"], mode): fail(f"[{mode}] parcel marker lost on {r['_id']} when its county is blanked in memory")
+    ok(f"parcel marker survives both bounds on {len(parcel_rows)} marker rows with the county blanked in memory (V rule at validate.py:497)")
     for mode in res:   # pinned classes: code reads the phrase on the row, so no mode may lose it
-        for k in ("tomb lost", "warn lost", "parcel lost (V: Ohio blank county)", "settling lost (V-24)"):
+        for k in ("tomb lost", "warn lost", "parcel lost (V: Ohio blank county)", "settling lost (V-24)", "street-only-in-notes lost"):
             if res[mode][k]: fail(f"[{mode}] pinned marker lost: {k} = {res[mode][k]}")
     for cls in ("parcel+", "settling+"):
         if res["worst-case"][cls] == 0: print(f"  note: {cls} has zero live positives on this tree (validator rule is vacuous today: DESIGN §3); canary still carries the literal marker rows")
     ok("dependencies measured corpus-wide (see DESIGN §3 for what the lost counts mean)")
     json.dump({m: dict(c) for m, c in res.items()}, open(HERE / "dependency_counts.json", "w"), indent=1, sort_keys=True)
+
+    # ---------------------------------------------------------------- 3b. per-reader diff on the canary (row text only, before vs after)
+    lost = collections.Counter()
+    for c_ in cv:
+        r = by[c_["record_id"]]; o, a = c_["before"], c_["after"]; site = r["_table"] == "sites"
+        col = atlas.street_key(r.get("street_address", ""))
+        for name, fo, fa in (("street keys (sites)", (skeys(o, r.get("city", "")) - {col}) if site else set(), skeys(a, r.get("city", ""))), ("FRS ids (sites)", set(FRS.findall(o)) if site else set(), set(FRS.findall(a))),
+                             ("FEI ids", set(FEI.findall(o)), set(FEI.findall(a))), ("tombstone (sites)", set(TOMB.findall(o)), set(TOMB.findall(a))),
+                             ("WARN (sites)", {"w"} if WARNRX.search(o) and site else set(), {"w"} if WARNRX.search(a) else set())):
+            if fo: lost[name + " positives"] += 1
+            if fo - fa: lost[name + " LOST from row"] += 1; print(f"  canary {c_['record_id']}: {name} lost from the row: {sorted(fo - fa)[:3]}")
+    print("  canary per-reader:", dict(lost), "(a loss means that reader must take the note rebuilt from history; see DESIGN §3)")
+    # readers' identical-input route: rebuild the note from history by seq, and compare. Asserted for every row, not only the canary.
+    for r in orgs + sites:
+        if "".join(p["text"] for p in r["_parts"]) != r["notes"]: fail(f"{r['_id']} pieces do not rebuild the note")
+    ok(f"every one of {len(orgs) + len(sites)} notes rebuilds exactly from its pieces (the input readers get if they read history by seq)")
+    # ---------------------------------------------------------------- 3c. script-alone estimate, tested
+    alone = [r for r in orgs + sites if r["notes"].strip() and not any(p["disp"] == "READER" for p in r["_parts"])]
+    dirty = [r for r in alone if residue(group_after(r["_parts"], "script-only"))]
+    empty = [r for r in alone if not group_after(r["_parts"], "script-only").strip()]
+    print(f"  script-alone rows (no READER piece): {len(alone)}; fail the independent residue test: {len(dirty)}; end with an EMPTY note: {len(empty)}")
+    json.dump({"script_alone_rows": len(alone), "script_alone_residue_fail": len(dirty), "script_alone_empty_note": len(empty), "script_alone_clean_nonempty": len(alone) - len(dirty) - len([e for e in empty if e not in dirty])},
+              open(HERE / "script_alone.json", "w"), indent=1)
+    # ---------------------------------------------------------------- 3d. restatement fidelity: no digit run on the row that the source piece does not hold
+    bad = 0
+    for r in orgs + sites:
+        for p in r["_parts"]:
+            if p["disp"] == "RESTATE" and p["restated"] and not set(re.findall(r"\d+", p["restated"])) <= set(re.findall(r"\d+", p["text"])):
+                bad += 1; print("  digit not in source:", r["_id"], p["seq"])
+    for h in csv.DictReader(open(HERE / "canary_history.csv", encoding="utf-8")):
+        if h["on_row"] == "restated" and not set(re.findall(r"\d+", h["restated_as"])) <= set(re.findall(r"\d+", h["text"])):
+            bad += 1; print("  digit not in source (canary):", h["record_id"], h["seq"])
+    ok("restatement fidelity: every digit run in a restatement is in its source piece") if not bad else fail(f"{bad} restatements add a digit not in the source")
+    # ---------------------------------------------------------------- 3e. person rows: held pieces stay verbatim
+    prow = [r for r in orgs + sites if any(p["disp"] == "PERSON" for p in r["_parts"])]
+    for r in prow:
+        a = group_after(r["_parts"], "script-only")
+        for p in r["_parts"]:
+            if p["disp"] == "PERSON" and p["text"].strip() not in a: fail(f"{r['_id']} person piece not verbatim on the row")
+    ok(f"person-held pieces stay verbatim on the row ({len(prow)} rows; listed by path:line in DESIGN §7)")
     # ---------------------------------------------------------------- 4. TREE
-    d = subprocess.run(["git", "diff", "--stat", "origin/main", "--", "data"], cwd=HERE, capture_output=True, text=True).stdout.strip()
-    ok("data/ unchanged vs origin/main") if not d else fail("data/ differs from origin/main:\n" + d)
+    d = subprocess.run(["git", "diff", "--stat", subprocess.run(["git", "merge-base", "origin/main", "HEAD"], cwd=HERE, capture_output=True, text=True).stdout.strip(), "--", "data"], cwd=HERE, capture_output=True, text=True).stdout.strip()
+    ok("data/ unchanged vs the merge-base with origin/main") if not d else fail("data/ differs from the merge-base:\n" + d)
     print("\nRESULT:", "FAIL (%d)" % len(FAIL) if FAIL else "PASS")
     return 1 if FAIL else 0
 

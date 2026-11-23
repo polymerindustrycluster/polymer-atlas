@@ -13,3 +13,4 @@ Samples are seeded, drawn with `grade_sample.py` (and the MOVE draw inline, seed
 Conclusion used in DESIGN §6: the script moves pipeline text with ~4% loss of reader facts (audited, and nothing is lost from the repo because history keeps it),
 but defaulting unlisted plain text to KEEP leaves ~14% pipeline talk on rows after three rounds of word-list repair. A reader or a second model pass has to
 decide the unlisted pieces. Round 3's 14% is on n=50 (95% interval roughly 6% to 27%).
+rounds 3 and M: the 43 other drawn pieces in round 3 and 67 in round M were judged fine; round 1 and 2 verdicts are counts only (the seeds cannot be redrawn: the word list and pins changed after those rounds, so the pools differ).

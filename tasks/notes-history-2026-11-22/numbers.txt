@@ -1,0 +1,22 @@
+== §0 count reconciliation (rows with a hit; organizations / sites)
+  my agent|pass regex: 4168 / 5573
+  wide pipeline vocabulary: 4904 / 6931
+  controller-style (stats.py): 2756 / 2435
+  this lane's word list (notes_split.hits): 5011 / 7145
+  empty notes: 5 / 15
+== §1 taxonomy: pieces / notes (200-note sample), pieces / rows (all)
+  T1 creation line: sample 180/163  all 9608/9016
+  T10 source description/quote: sample 100/72  all 6872/4955
+  T11 other plain fact: sample 327/157  all 23415/9641
+  T2 harvest/staging wrapper: sample 75/33  all 6676/2668
+  T3 verification/tier/NAICS history: sample 43/32  all 2703/2086
+  T4 schema/vocabulary mapping: sample 17/15  all 738/679
+  T5 dedupe/merge/retire/fold: sample 16/11  all 412/344
+  T6 structured marker (BAND/CERT/CAPABILITY): sample 37/33  all 2308/2193
+  T7 street recorded in notes: sample 24/24  all 2038/2014
+  T8 flag/caution to integrator or owner: sample 9/9  all 325/319
+  T9 correction/withdrawn claim: sample 21/20  all 808/789
+== §5 dispositions (pieces) and reader kinds
+ organizations rows 5026: {'MOVE': 14204, 'READER': 9623, 'RESTATE': 798, 'KEEP': 155, 'PERSON': 1} | reader kinds {'plain-unlisted': 5624, 'mixed-pipeline-words': 3983, 'parent-fact+restated-unclean': 2, 'code-pinned': 10, 'street-mixed': 4} | rows needing a reader 4314 | agent|pass regex before 4168 after script-only 358 worst 0 | independent residue rows script-only 2591 worst 13
+ sites rows 7196: {'MOVE': 16002, 'READER': 11314, 'RESTATE': 2691, 'KEEP': 1114, 'PERSON': 1} | reader kinds {'mixed-pipeline-words': 4680, 'plain-unlisted': 5591, 'code-pinned-street': 927, 'marker-capability+restated-unclean': 5, 'code-pinned': 26, 'street-mixed': 85} | rows needing a reader 5479 | agent|pass regex before 5573 after script-only 795 worst 530 | independent residue rows script-only 3402 worst 781
+ script-alone: {'script_alone_rows': 2409, 'script_alone_residue_fail': 22, 'script_alone_empty_note': 1519, 'script_alone_clean_nonempty': 868}

@@ -90,7 +90,6 @@ def pieces(note):
         m = _PREFIX.match(t)
         if m and t[m.end():].strip():
             work = [t[:m.end()], t[m.end():]] + work
-            res_hold = None
             # the header itself must not be re-cut: emit it directly
             res.append(work.pop(0)); continue
         res.append(t)
@@ -165,7 +164,6 @@ def classify(text, ctx):
         key = atlas.street_key(re.split(r"\s\(|\.\s*$|;", addr)[0].rstrip(". "))
         if key and key in ctx.get("street_keys", ()):
             return "MOVE", "street-redundant", None  # the street_address column carries it; readers prefer the column
-        clean_tail = f"Street: {addr}"
         if hits(addr):
             return "READER", "street-mixed", None
         return ("KEEP", "street-fact", None) if not hits(t) else ("READER", "street-mixed", None)
@@ -210,7 +208,7 @@ _KINDS = [
 _KINDS = [(n, re.compile(rx)) for n, rx in _KINDS]
 
 
-def kind_of(text, truncated=False):
+def kind_of(text):
     t = text.strip()
     for n, rx in _KINDS:
         if rx.search(t):
@@ -218,9 +216,22 @@ def kind_of(text, truncated=False):
     return "T11 other plain fact"
 
 
-def is_truncated(note):
-    s = note.rstrip()
-    return s.endswith(("…", "(", ",", ":", " same", " and", " the", " of", "the")) or bool(re.search(r"\w$", s) and len(s) > 150 and not re.search(r"[.)\]'\"]$", s))
+_STREET_PHR = [re.compile(r"Street(?:\s+correct(?:ion|ed)[^:]{0,20})?(?:\s*\((?:per|from)[^)]*\))?:\s*(\d[^;|\n]{2,80})", re.I),
+               re.compile(r"Address[^:]{0,60}match\):\s*(\d[^;|\n]{2,80})", re.I)]  # copy of build_osha_ita._STREET_PATS (the readers' own patterns)
+
+
+def street_sentences(t):
+    """Streets a site-notes reader could find in piece text: 'Street: X.' for what a `Street...:` phrase yields, else 'Address mentioned in the source: X.'"""
+    out, seen = [], set()
+    for rx in _STREET_PHR:
+        for m in rx.finditer(t):
+            raw = re.split(r"\s\(|\.\s*$", m.group(1))[0].strip().rstrip(".").strip()
+            k = atlas.street_key(raw)
+            if k and k not in seen: seen.add(k); out.append((m.start(), f"Street: {raw}."))
+    for m in atlas.NOTES_STREET_RE.finditer(t):
+        k = atlas.notes_candidate_key(m[0])
+        if k and k not in seen: seen.add(k); out.append((m.start(), f"Address mentioned in the source: {m[0].strip()}."))
+    return [x[1] for x in sorted(out)]
 
 
 def split_note(note, ctx):
@@ -230,6 +241,10 @@ def split_note(note, ctx):
         d, k, r = classify(p, ctx)
         if d == "RESTATE" and r and hits(r):
             d, k, r = "READER", k + "+restated-unclean", None
+        if ctx.get("street_blank") and d in ("MOVE", "READER") and k != "code-pinned":
+            ss = street_sentences(p)   # the row has no street column, so notes are the only street: it must stay readable by atlas.py / street_from_notes
+            if ss and d == "MOVE": d, k, r = "RESTATE", "street-extracted", " ".join(ss)
+            elif ss: k = "code-pinned-street"
         out.append({"seq": i, "text": p, "disp": d, "kind": k, "restated": r})
     return out
 
@@ -251,7 +266,9 @@ def after_note(parts, decisions=None):
             if dec is None:
                 raise ValueError(f"unresolved READER piece {p['seq']}: {p['text'][:60]!r}")
             d, r = (dec, None) if isinstance(dec, str) else dec
-        if d in ("KEEP", "PERSON"):
+        if d == "PERSON":
+            row.append(p["text"].strip())      # verbatim: the history file holds nothing for this piece
+        elif d == "KEEP":
             row.append(tidy(p["text"]))
         elif d == "RESTATE":
             row.append(r)

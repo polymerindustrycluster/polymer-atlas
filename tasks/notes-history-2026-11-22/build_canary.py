@@ -26,11 +26,12 @@ def main():
         row_pieces = []
         for p, (d, rest, who) in zip(parts, res):
             on = {"KEEP": "kept", "MOVE": "moved", "RESTATE": "restated", "PERSON": "person-held"}[d]
-            if d in ("KEEP", "PERSON"): row_pieces.append(tidy(p["text"]))
+            if d == "PERSON": row_pieces.append(p["text"].strip())
+            elif d == "KEEP": row_pieces.append(tidy(p["text"]))
             elif d == "RESTATE": row_pieces.append(rest)
             hist.append({"table": r["_table"], "record_id": rid, "seq": p["seq"], "n_pieces": len(parts), "on_row": on,
                          "text": "" if d == "PERSON" else p["text"], "restated_as": rest or "", "kind": kind_of(p["text"]),
-                         "dated": (lambda m: m.group(0) if m else "")(DATE.search(p["text"])), "actor": (lambda m: m.group(0) if m else "")(AGENTS.search(p["text"])),
+                         "first_date": (lambda m: m.group(0) if m else "")(DATE.search(p["text"])), "actor": (lambda m: m.group(0) if m else "")(AGENTS.search(p["text"])),
                          "decided_by": who})
         after = " ".join(row_pieces)
         canary.append({"record_id": rid, "table": r["_table"], "tier": r["verification_tier"], "chosen_as": lab[rid], "source_line": f"data/{r['_file']}:{r['_line']}",
@@ -38,7 +39,7 @@ def main():
                        "pieces": len(parts), "kept": sum(x[0] == "KEEP" for x in res), "moved": sum(x[0] == "MOVE" for x in res),
                        "restated": sum(x[0] == "RESTATE" for x in res), "reader_decisions": sum(p["disp"] == "READER" for p in parts)})
     for n, h in enumerate(hist, 1): h["history_id"] = f"HST-{n:06d}"
-    cols = ["history_id", "table", "record_id", "seq", "n_pieces", "on_row", "text", "restated_as", "kind", "dated", "actor", "decided_by"]
+    cols = ["history_id", "table", "record_id", "seq", "n_pieces", "on_row", "text", "restated_as", "kind", "first_date", "actor", "decided_by"]
     with open("canary_history.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, cols, lineterminator="\n"); w.writeheader(); w.writerows(hist)
     cc = list(canary[0])

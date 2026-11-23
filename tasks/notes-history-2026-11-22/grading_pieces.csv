@@ -1,0 +1,11 @@
+round,seed,id,seq,verdict,why
+3,20261125,ORG-007110,4,wrong,process remark ("left blank") rather than a reader fact
+3,20261125,ORG-010501,2,wrong,federal packet id string left behind
+3,20261125,ORG-007066,6,wrong,"NAICS set remark, pipeline talk"
+3,20261125,SITE-010056,7,wrong,source fragment
+3,20261125,ORG-000038,1,wrong,"to-do for verification, not a fact"
+3,20261125,ORG-007046,4,wrong,integrator instruction
+3,20261125,ORG-000939,8,wrong,"mentions STRONG FRS rows (pipeline term)"
+M,20261126,SITE-005898,3,fact lost,own-brochure confirmation of the plant address swallowed by a coordinator lead-in
+M,20261126,ORG-000119,1,fact lost,own-site facility address swallowed by the burn-down lead-in
+M,20261126,SITE-001654,9,fact lost,a TRI-parent caution about the Atlas parent
