@@ -1,0 +1,14 @@
+org_id	reason	settling_fact
+ORG-001916	no_vocab_market	A controlled term for the jewelry trade or a company statement naming another market.
+ORG-000278	no_self_attributed_market_sentence	A sentence saying Silgan Dispensing supplies a named end market. Readable text had category headings, fragrance-product features and general dispensing claims.
+ORG-001534	group_page	A Zimmer Surgical sentence linking the recorded operator to the market. The captured pages speak for Zimmer Biomet.
+ORG-000026	product_uses	A sentence tying the listed applications or a named industry directly to Enterprise Rubber's customers or own supply.
+ORG-000325	group_page	A market statement attributable to Huntsman Advanced Materials Americas LLC. The captured website speaks for Huntsman.
+ORG-001409	group_page	An owner ruling on whether an umbrella portfolio statement counts when the Atlas organization is the group itself, or an operating-entity sentence saying it serves a named end market.
+ORG-001603	generic_applications	A Speedline sentence naming an industry it supplies, or an owner ruling that generic industrial and commercial applications qualifies.
+ORG-001455	product_uses	A Lamports sentence saying the company supplies wastewater or another named market. The examples concern uses of filter cloth.
+ORG-000197	group_page	A Kenda American Technology Center market statement. The captured page speaks for Kenda Tires.
+ORG-001956	no_named_market	A sentence naming a particular market served by the machine shop, beyond a wide range of industries.
+ORG-001128	group_page	A sentence attributable to Storopack Inc. describing its markets. The US-facing site describes Storopack as a global company and the industry paragraph uses group-level wording.
+ORG-000697	brand_attribution	A sentence binding the Hedstrom toy claims to Ball, Bounce and Sport Inc. and its end market. The reviewed pages use the umbrella brand and toy product descriptions.
+ORG-000623	no_vocab_market	An owner ruling on whether pools and waterparks map to lawn_garden_recreation, or a sentence naming a different controlled market.
