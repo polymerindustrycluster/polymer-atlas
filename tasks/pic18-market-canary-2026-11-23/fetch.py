@@ -4,7 +4,7 @@
 Bodies remain in memory. The reader can preserve inspected, privacy-safe
 sentences with their source offsets. Every response gets a digest and log row.
 """
-import csv, hashlib, json, re, subprocess, sys, time
+import csv, gzip, hashlib, io, json, re, subprocess, sys, time, zlib
 from threading import Thread
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -67,23 +67,37 @@ def reg_domain(host):
     h = host.lower().removeprefix('www.').split('.'); return '.'.join(h[-3:] if len(h) >= 3 and h[-2] in ('co', 'com', 'org', 'ac') else h[-2:])
 
 
+def decode_body(body, encoding):
+    if body and ('gzip' in encoding.lower() or body.startswith(b'\x1f\x8b')):
+        with gzip.GzipFile(fileobj=io.BytesIO(body)) as stream:
+            decoded = stream.read(20_000_001)
+        if len(decoded) > 20_000_000:
+            raise ValueError('decoded body exceeds 20 MB')
+        return decoded
+    return body
+
+
 class Fetcher:
-    def __init__(self):
-        STORE.mkdir(parents=True, exist_ok=True); (STORE / 'captures').mkdir(exist_ok=True)
+    charge_robots = False
+
+    def __init__(self, store=STORE, start=0):
+        store.mkdir(parents=True, exist_ok=True); (store / 'captures').mkdir(exist_ok=True)
         self.pages = {}
-        self.last, self.robots, self.n, self.log = {}, {}, 0, open(STORE / 'fetches.jsonl', 'x')
+        self.last, self.robots, self.n = {}, {}, start
+        self.log = (store / 'fetches.jsonl').open('a' if start else 'x')
     def curl(self, target, kind='robots'):
-        if kind != 'robots' and not self.remaining:
+        charge = kind != 'robots' or self.charge_robots
+        if charge and not self.remaining:
             return None
         r = self.curl1(target, kind)
-        if r['exit'] in {5, 6, 7, 16, 18, 28, 35, 52, 55, 56, 60, 92, 95, 96, 97} and (kind == 'robots' or self.remaining):
+        if r['exit'] in {5, 6, 7, 16, 18, 28, 35, 52, 55, 56, 60, 92, 95, 96, 97} and (not charge or self.remaining):
             return self.curl1(target, kind, True)
         return r
 
     def curl1(self, target, kind, h1=False):
         host = urlsplit(target).hostname
         time.sleep(max(0, self.last.get(host, 0) + 1.2 - time.time()))
-        if kind != 'robots':
+        if kind != 'robots' or self.charge_robots:
             self.remaining -= 1
         p = subprocess.run(
             ['curl', '-q', '-sS', '--noproxy', '*', '--proto', '=http,https',
@@ -96,12 +110,19 @@ class Fetcher:
         headers, _, code = p.stderr.decode(errors='replace').rpartition('ATLAS_HTTP:')
         loc = re.findall(r'(?im)^location:[ \t]*(.*?)\r?$', headers)
         ct = re.findall(r'(?im)^content-type:[ \t]*(.*?)\r?$', headers)
-        r = dict(code=int(code.strip() or 0), raw=p.stdout, location=loc[-1] if loc else '',
+        enc = re.findall(r'(?im)^content-encoding:[ \t]*(.*?)\r?$', headers)
+        memento = re.findall(r'(?im)^memento-datetime:[ \t]*(.*?)\r?$', headers)
+        try:
+            body, decode_error = decode_body(p.stdout, enc[-1] if enc else ''), False
+        except (OSError, EOFError, ValueError, zlib.error):
+            body, decode_error = b'', True
+        r = dict(code=int(code.strip() or 0), raw=body, location=loc[-1] if loc else '',
+                 decode_error=decode_error, memento=memento[-1] if memento else '',
                  ctype=ct[-1] if ct else '', exit=p.returncode, request=self.n)
         self.record(dict(kind='request', request_kind=kind, request=self.n,
                          url=public_url(target), http=r['code'], exit=r['exit'],
                          protocol='http/1.1 retry' if h1 else 'default',
-                         sha256=sha(r['raw']), bytes=len(r['raw'])))
+                         sha256='' if decode_error else sha(body), bytes=len(body), decode_error=decode_error))
         return r
 
     def allowed(self, target):
@@ -110,13 +131,16 @@ class Fetcher:
             ru = base + '/robots.txt'
             for _ in range(5):  # RFC 9309: follow up to five redirects when fetching robots.txt
                 r = self.curl(ru)
+                if r is None:
+                    self.record(dict(kind='robots', url=public_url(ru), note='request budget exhausted'))
+                    return None
                 if r['code'] in (301, 302, 303, 307, 308) and r['location']: ru = urljoin(ru, r['location']); continue
                 break
             rp = RobotFileParser()
-            if r['code'] in (404, 410) and not r['exit']: rp.parse([])
-            elif r['code'] == 200 and r['exit'] == 0: rp.parse(r['raw'].decode('utf-8', 'replace').splitlines())
+            if r['code'] in (404, 410) and not r['exit'] and not r['decode_error']: rp.parse([])
+            elif r['code'] == 200 and r['exit'] == 0 and not r['decode_error']: rp.parse(r['raw'].decode('utf-8', 'replace').splitlines())
             else: rp.parse(['User-agent: *', 'Disallow: /'])  # robots unreadable: treated as closed (not fetched), recorded as ROBOTS_UNREADABLE
-            self.robots[base] = (rp, r['code'], r['exit'])
+            self.robots[base] = (rp, r['code'] if not r['decode_error'] else 0, r['exit'])
             self.record(dict(kind='robots', url=public_url(ru), http=r['code'], sha256=sha(r['raw']), note='robots.txt read' if r['code'] == 200 else f'robots http {r["code"]} exit {r["exit"]}'))
         rp, code, _ = self.robots[base]
         return rp.can_fetch(AGENT, target) if code in (200, 404, 410) and not self.robots[base][2] else None
@@ -144,7 +168,7 @@ class Fetcher:
             if not r['exit'] and r['code'] in (301, 302, 303, 307, 308) and r['location']:
                 cur = urljoin(cur, r['location'])
                 continue
-            status = ('ok' if r['exit'] == 0 and r['code'] == 200 else f'HTTP_{r["code"]}'
+            status = ('DECODE_ERROR' if r['decode_error'] else 'ok' if r['exit'] == 0 and r['code'] == 200 else f'HTTP_{r["code"]}'
                       if r['exit'] == 0 else CLASS.get(r['exit'], f'CURL_{r["exit"]}'))
             return self.capture(target, cur, kind, status, r)
         else:
@@ -154,7 +178,7 @@ class Fetcher:
 
     def capture(self, target, cur, kind, status, r):
         row = dict(kind=kind, url=public_url(target), final_url=public_url(cur),
-                   status=status, request=r['request'], sha256=sha(r['raw']))
+                   status=status, request=r['request'], sha256='' if r['decode_error'] else sha(r['raw']))
         lines, links = [], []
         self.last_body = r['raw']
         if status == 'ok' and ('html' in r['ctype'].lower() or b'<html' in r['raw'][:2000].lower()

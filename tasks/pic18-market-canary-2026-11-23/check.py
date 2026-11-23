@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Replay the market packet and exercise five separately failing check rules."""
 import csv
+import gzip
 import hashlib
 import json
 import re
@@ -10,7 +11,8 @@ from math import sqrt
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from fetch import D, MAX_PAGES, STORE, reg_domain
+from archive import replay_parts
+from fetch import D, MAX_PAGES, STORE, decode_body, reg_domain
 from frame import frame
 from screen import CONTACT
 
@@ -118,28 +120,25 @@ def wilson(success, total):
     return max(0, center-half), min(1, center+half)
 
 
-def main(store):
-    drawn, known, counts, pools = frame()
-    sampled = read('frame.csv')
-    assert [(r['cohort'], int(r['rank']), r['org_id'], r['website']) for r in sampled] == drawn
-    websites = {r['org_id']: r['website'] for r in sampled}
-    assert len(websites) == 35
+def request_log(store):
     log = store / 'fetches.jsonl'
     entries = [json.loads(line) for line in log.read_text().splitlines()]
-    assert {r['org_id'] for r in entries} == websites.keys()
     requests = {r['request']: r for r in entries if r['kind'] == 'request'}
     assert [r['request'] for r in entries if r['kind'] == 'request'] == list(range(1, 1 + len(requests)))
-    attempts = Counter(r['org_id'] for r in requests.values() if r['request_kind'] != 'robots')
-    assert attempts and max(attempts.values()) <= MAX_PAGES
     for i, request in requests.items():
-        assert re.fullmatch(r'[0-9a-f]{64}', request['sha256'])
+        assert (request['sha256'] == '' if request.get('decode_error')
+                else re.fullmatch(r'[0-9a-f]{64}', request['sha256']))
         if request['protocol'] == 'http/1.1 retry':
             prev = requests[i-1]
             assert prev['protocol'] == 'default' and prev['exit'] and prev['url'] == request['url']
             assert prev['org_id'] == request['org_id'] and prev['request_kind'] == request['request_kind']
+    return entries, requests
+
+
+def capture_receipts(store, entries, requests, manifest_name):
     pages = {r['request']: r for r in entries if 'text_sha256' in r}
     assert {p.name for p in (store / 'captures').glob('*.json')} == {f'{i}.json' for i in pages}
-    manifest = ['{}  fetches.jsonl'.format(sha(log.read_bytes()))]
+    manifest = ['{}  fetches.jsonl'.format(sha((store / 'fetches.jsonl').read_bytes()))]
     captures = {}
     for i, page in sorted(pages.items()):
         path = store / 'captures' / f'{i}.json'
@@ -151,8 +150,91 @@ def main(store):
         captures[i] = capture['excerpts']
     actual = '\n'.join(manifest) + '\n'
     if '--seal' in sys.argv:
-        (D / 'CAPTURES.sha256').write_text(actual)
-    assert (D / 'CAPTURES.sha256').read_text() == actual, 'capture manifest changed'
+        (D / manifest_name).write_text(actual)
+    assert (D / manifest_name).read_text() == actual, 'capture manifest changed'
+    return pages, captures
+
+
+def check_archive(store, websites, live_readable, live_fills):
+    archive_store = store / 'wayback'
+    entries, requests = request_log(archive_store)
+    assert {r['org_id'] for r in entries} == websites.keys()
+    attempts = Counter(r['org_id'] for r in requests.values())
+    assert attempts.keys() == websites.keys() and max(attempts.values()) <= MAX_PAGES
+    assert all(r['request_kind'] in ('cdx', 'robots', 'wayback_capture') for r in requests.values())
+    lookups = [(r['org_id'], r.get('scope', 'exact')) for r in entries if r['kind'] == 'lookup']
+    assert len(lookups) == len(set(lookups))
+    assert {o for o, scope in lookups if scope == 'exact'} == websites.keys()
+    assert all(scope in ('exact', 'domain') for _, scope in lookups)
+    pages, excerpts = capture_receipts(archive_store, entries, requests, 'WAYBACK.sha256')
+    sources = {r['request']: r for r in entries if r['kind'] == 'archive_source'}
+    assert pages.keys() <= sources.keys()
+    for request in requests.values():
+        if request['request_kind'] == 'wayback_capture':
+            assert replay_parts(request['url'], websites[request['org_id']])
+    for i, page in pages.items():
+        source = sources[i]
+        assert replay_parts(page['final_url'], websites[page['org_id']]) == (source['captured_at'], source['source'])
+        assert (source['org_id'], source['status']) == (page['org_id'], page['status'])
+        assert requests[i]['request_kind'] == 'wayback_capture'
+        assert requests[i]['http'] == 200 and not requests[i]['exit'] and not requests[i]['decode_error']
+    selected = set()
+    pairs = set()
+    outcomes = read('archive_results.tsv', '\t')
+    assert len(outcomes) == len(websites) and {r['org_id'] for r in outcomes} == websites.keys()
+    for row in read('archive_selection.tsv', '\t'):
+        i, oid, term = int(row['request']), row['org_id'], row['term']
+        page = dict(pages[i], final_url=sources[i]['source'])
+        problems = quote_problems(row, page, websites[oid], excerpts[i])
+        assert not problems, (oid, term, problems)
+        assert (oid, term) not in pairs
+        pairs.add((oid, term))
+        selected.add((i, row['quote']))
+    assert selected == {(i, x['quote']) for i, values in excerpts.items() for x in values}
+    filled = {o for o, _ in pairs}
+    readable = {p['org_id'] for p in pages.values() if p['status'] == 'ok'}
+    assert filled <= readable
+    for row in outcomes:
+        oid = row['org_id']
+        expected = 'VERIFIED' if oid in filled else 'STILL_UNCERTAIN'
+        basis = 'archive_read' if oid in readable else 'no_readable_archive'
+        assert (row['verdict'], row['basis']) == (expected, basis)
+        assert row['note']
+    total_fills = live_fills + len(filled)
+    total_readable = live_readable + len(readable)
+    lo, hi = wilson(total_fills, 25)
+    print(f'archive: {len(readable)}/{len(websites)} rescued, {len(filled)} new fills ({len(pairs)} terms), '
+          f'{len(requests)} requests, {len(pages)} HTML captures')
+    print(f'combined: 25 = {total_fills} with fills + {total_readable-total_fills} held '
+          f'+ {25-total_readable} no readable page; Wilson 95% {lo:.1%}–{hi:.1%}')
+    encoded = gzip.compress(b'archive bytes')
+    assert decode_body(encoded, 'gzip') == decode_body(encoded, '') == b'archive bytes'
+    try:
+        decode_body(b'invalid compressed body', 'gzip')
+    except OSError:
+        pass
+    else:
+        raise AssertionError('invalid gzip accepted')
+    site = 'https://example.com'
+    prefix = 'https://web.archive.org/web/'
+    assert replay_parts(prefix + '20241123000000id_/https://www.example.com/', site)
+    assert not replay_parts(prefix + '20241122235959id_/https://example.com/', site)
+    assert not replay_parts(prefix + '20251123000000id_/https://example.org/', site)
+    assert not replay_parts(prefix + '20251123000000/https://example.com/', site)
+    print('archive selftest: gzip header and magic, broken gzip, date boundary, cross-domain and non-id_ passed')
+
+
+def main(store):
+    drawn, known, counts, pools = frame()
+    sampled = read('frame.csv')
+    assert [(r['cohort'], int(r['rank']), r['org_id'], r['website']) for r in sampled] == drawn
+    websites = {r['org_id']: r['website'] for r in sampled}
+    assert len(websites) == 35
+    entries, requests = request_log(store)
+    assert {r['org_id'] for r in entries} == websites.keys()
+    attempts = Counter(r['org_id'] for r in requests.values() if r['request_kind'] != 'robots')
+    assert attempts and max(attempts.values()) <= MAX_PAGES
+    pages, captures = capture_receipts(store, entries, requests, 'CAPTURES.sha256')
     hits = defaultdict(set)
     selected = set()
     for row in read('selection.tsv', '\t'):
@@ -191,6 +273,12 @@ def main(store):
     print(f'requests {sum(attempts.values())} page + {len(requests)-sum(attempts.values())} robots = {len(requests)}; HTML captures {len(pages)}')
     print(f'frame {counts}, excluding prior sample {pools}')
     selftest()
+    if (D / 'archive_results.tsv').exists():
+        missed = {r['org_id']: r['website'] for r in sampled
+                  if r['cohort'] == 'unknown' and r['org_id'] not in readable}
+        assert len(missed) == 12
+        unknown = {r['org_id'] for r in sampled if r['cohort'] == 'unknown'}
+        check_archive(store, missed, len(unknown & readable), len(unknown & hits.keys()))
 
 
 if __name__ == '__main__':

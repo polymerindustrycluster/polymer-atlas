@@ -1,0 +1,13 @@
+org_id	verdict	basis	note
+ORG-000103	STILL_UNCERTAIN	no_readable_archive	Neither CDX query gave a recent own-domain HTML capture with status 200. A readable capture or current own-site market sentence would settle it.
+ORG-000377	STILL_UNCERTAIN	no_readable_archive	Five recent archived home pages yielded 59 main-text characters each. A readable archived page or current own-site market sentence would settle it.
+ORG-001563	STILL_UNCERTAIN	archive_read	The home-page orthopedic implant claims end in truncated previews. A complete SurgTech sentence saying it supplies a named market would settle it.
+ORG-000040	STILL_UNCERTAIN	archive_read	Medical devices, transportation and electronics appear as headings. A Spectrum Plastics narrative sentence connecting the company to one of those markets would settle it.
+ORG-001934	STILL_UNCERTAIN	archive_read	Automotive is a standalone category. A Rack Coating Services sentence saying it supplies the automotive market or another controlled market would settle it.
+ORG-000358	STILL_UNCERTAIN	archive_read	The home page describes product uses, services and sales to businesses in general. A Grafix sentence tying those services to a named end market would settle it. The supplemental CDX lookup returned HTTP 503.
+ORG-003746	STILL_UNCERTAIN	no_readable_archive	Three archives returned no main text and the last capture attempt had a connection refusal. A readable own-page capture or current market sentence would settle it.
+ORG-002167	STILL_UNCERTAIN	no_readable_archive	The exact CDX lookup failed to connect. The domain lookup returned no qualifying HTML in the target paths. A readable own-page capture or current market sentence would settle it.
+ORG-001703	STILL_UNCERTAIN	archive_read	Premier's location in the packaging industry and its general paint uses do not name a customer end market. A Premier sentence naming one would settle it.
+ORG-000154	STILL_UNCERTAIN	no_readable_archive	The exact CDX lookup failed to connect and three recent replayed windenergy subdomain captures were thin. A readable archived or current Lincoln Electric market sentence would settle it.
+ORG-001891	STILL_UNCERTAIN	archive_read	The own-site process page describes designing and making inflatables. A sentence from Inflatable Images saying the company supplies a named end market would settle it.
+ORG-001719	STILL_UNCERTAIN	no_readable_archive	The exact lookup failed to connect and both replayed home pages were thin. A readable own-page capture or current market sentence would settle it.

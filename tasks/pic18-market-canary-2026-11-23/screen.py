@@ -14,7 +14,7 @@ def show(pages, args):
     pattern = re.compile(args[1] if len(args) > 1 else MKT, re.I)
     seen = set()
     for request, (row, lines) in pages.items():
-        if row['org_id'] != oid or re.search(r'/leadership|/team|/staff', row['final_url'], re.I):
+        if row['org_id'] != oid or re.search(r'/leadership|/team|/staff|/directors|/management', row['final_url'], re.I):
             continue
         print(f"{request} {row['final_url']} {row['status']} fallback={row.get('class_fallback', False)}")
         offset = 0
@@ -26,9 +26,10 @@ def show(pages, args):
     print('END SCREEN', flush=True)
 
 
-def preserve(pages, selection):
+def preserve(pages, selection, store=None):
     """Replay explicitly inspected sentences against volatile full text before saving."""
-    from fetch import STORE
+    if store is None:
+        from fetch import STORE as store
     selected = {}
     for item in csv.DictReader(selection.read_text().splitlines(), delimiter='\t'):
         request, quote = int(item['request']), item['quote']
@@ -45,7 +46,7 @@ def preserve(pages, selection):
         capture = dict(request=request, raw_sha256=row['sha256'], text_sha256=row['text_sha256'],
                        excerpts=selected.get(request, []))
         data = (json.dumps(capture, ensure_ascii=False, sort_keys=True) + '\n').encode()
-        (STORE / 'captures' / f'{request}.json').write_bytes(data)
+        (store / 'captures' / f'{request}.json').write_bytes(data)
     print(f'PRESERVED {len(pages)} extracted captures, {sum(map(len, selected.values()))} excerpts', flush=True)
 
 

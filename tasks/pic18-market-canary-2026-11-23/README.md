@@ -4,7 +4,7 @@
 
 The 25 organizations reconcile to **3 with a fill, 10 held after reading, and 12 with no readable page**. The 3 fills are ABC Packaging Direct, Kaufman Container and Hapco, with eight organization–term pairs in [selection.tsv](selection.tsv). Each source sentence attributes the supply to the sampled company and names an end market. The packet represents organization-level claims.
 
-The evidence binding gate on main assigns a web quote that clears the mechanical checks **READ_REQUIRED** ([checker](../../scripts/check_evidence_binding.py), lines 23 and 33). No fill can merge until the owner rules on a web admission path.
+The evidence binding gate on main assigns a web quote that clears the mechanical checks **READ_REQUIRED** ([checker](../../scripts/check_evidence_binding.py), lines 23 and 33). The owner approved admission by per-row proof on 2026-11-23. The current gate holds the fills until that path is deployed.
 
 ## Frame and control scoring
 
@@ -36,7 +36,7 @@ The control selection and holds were frozen before opening the recorded market t
 
 **156 HTTP attempts** across both cohorts, including **99 page requests** and **57 robots.txt requests**. The fetch ran **3 minutes 51 seconds** from first to last HTTP attempt (06:37:26–06:41:17 EST). The frame reconciliation through frozen reading took about **7 minutes**, followed by replay, documentation and branch publication.
 
-The November 22 fetcher retained its declared `Mozilla/5.0 (compatible; AtlasSiteCorpus/1.0)` user-agent, robots checks per hop, 1.2-second host delay and one conditional HTTP/1.1 transport retry. Redirect hops, retries and any meta refresh consume the six-attempt page budget. Market and industry links took priority over capabilities, about, product and service links. The adapted screen selected relevant lines for reading. A reader adjudicated the source operator, surrounding wording and controlled term. A failed fetch records availability for this run. No browser rendering, PDF reading or archival retry was used.
+The November 22 fetcher retained its declared `Mozilla/5.0 (compatible; AtlasSiteCorpus/1.0)` user-agent, robots checks per hop, 1.2-second host delay and one conditional HTTP/1.1 transport retry. Redirect hops, retries and any meta refresh consume the six-attempt page budget. Market and industry links took priority over capabilities, about, product and service links. The adapted screen selected relevant lines for reading. A reader adjudicated the source operator, surrounding wording and controlled term. A failed fetch records availability for this run. The live pass used HTTP text extraction. The Wayback follow-up is below.
 
 The `persist/market-canary-2026-11-23/` controller store has the attempt and response manifest, SHA-256 hashes of bodies and extracted text, and 79 extracted-capture receipts with privacy-reviewed exact excerpts where selected. Before writing excerpts, the fetch session matched each sentence against its in-memory extraction and recorded its original offset and line kind. Full page and robots bodies stayed in memory because they can contain names or direct contact data. Replay re-hashes the preserved receipts and checks the saved excerpts, while full-page hashes are receipt metadata. The branch includes the checksum manifest and the reviewed sentences.
 
@@ -52,4 +52,17 @@ The `persist/market-canary-2026-11-23/` controller store has the attempt and res
 
 `python3 tasks/pic18-market-canary-2026-11-23/check.py` replays the frame, attempt accounting, capture hashes, quote checks and control scoring. Five separate mutations pass with their relevant rule disabled and fail with it enabled. The mutations cover a paraphrase, a product-only sentence, a parent-group page, another organization's page and an invented term.
 
-Pages outside the six-attempt budget and independent second-reader adjudication were outside this trial. The packet is held for the owner decision on web-row admission.
+Pages outside the six-attempt budget and independent second-reader adjudication were outside this trial. The owner-approved admission path has yet to reach the binding gate on main.
+
+
+## Wayback follow-up, 2026-11-23
+
+The owner ruled that an own-site capture up to two years old can witness a market. The follow-up tried the 12 market-unknown organizations with no readable live page. **6 of 12 yielded readable archived pages, with zero new VERIFIED organizations or terms.** The combined result remains **3 of 25** with a VERIFIED fill (12%, 95% Wilson **4.2%–30.0%**). The other 22 comprise **16 held after reading** and **6 with no readable page**.
+
+The six readable recoveries were SurgTech, Spectrum Plastics, Rack Coating Services, Grafix, Premier Aerosol Packaging and Inflatable Images. The strict sentence rule held the claims in truncated product previews, market headings, standalone categories, and descriptions of product uses or services with no named customer market. The other six and their availability outcomes are in [archive_results.tsv](archive_results.tsv).
+
+The trial requested exact-URL CDX matches first. A second pass tried a filtered domain lookup where at least two requests remained. It prioritized market, industry, capability and company pages from the index, then replayed promising dated HTML candidates until a page was readable or the request limit was reached. The Lincoln Electric domain lookup returned subdomain captures, and all three tried were thin. The window was 2024-11-23 through 2026-11-23 inclusive. Replays required Wayback `id_`, a same-registrable-domain original and an in-window capture date. The original robots-aware user-agent was used throughout.
+
+**54 logged Wayback requests** (including two shared robots requests), plus one shared robots preflight. The two fetch passes spanned **5m 28s** from first to last logged request. Each organization stayed within six attempts across the passes. The fetcher recognized gzip via the Content-Encoding header or magic bytes and decompressed before hashing. [WAYBACK.sha256](WAYBACK.sha256) binds the attempt log and 22 extracted-capture receipts in `persist/market-canary-2026-11-23/wayback/`. Full bodies remained in memory for privacy. There were no selected archive excerpts.
+
+The named replay also checks the archive request cap, dates, original domain and receipts, and recomputes the combined Wilson interval. It exercises gzip detection and failure, the date boundary, and rejection of cross-domain or non-`id_` replays. The archive pass used one reader and the CDX results and pages reached under the request budget.
