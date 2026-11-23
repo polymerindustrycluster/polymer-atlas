@@ -1,0 +1,420 @@
+record_table,record_id,tier,rule,need_rank,existing_rows,best_existence,best_address,contradicted,name,street,city,county,missing_claims,rows_written,claims_cured,record_cured,address_only_by_mailing_reading,no_row_reasons
+sites,SITE-000002,B,V-65,2,0,,,,Lubrizol — Wickliffe HQ,,Wickliffe,Lake,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:6;site_has_no_civic_street:1
+sites,SITE-000011,C,V-68,1,0,,,,Akron Polymer Systems — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000013,C,V-68,1,0,,,,"D & D Plastics, Inc. — Akron",,Akron,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000014,A,V-65,3,0,,,,Diamond America — Akron,,Akron,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:3;site_has_no_civic_street:1
+sites,SITE-000015,U,V-68,0,0,,,,Gabriel Performance Products — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000019,U,V-68,0,0,,,,Rapid Mold Solutions — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000020,U,V-68,0,0,,,,Paddington Group — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000032,C,V-68,1,0,,,,"Acme Pattern Works, Inc. — Akron",,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000033,C,V-68,1,0,,,,LyondellBasell — Akron,,Akron,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:14;site_has_no_civic_street:1
+sites,SITE-000036,C,V-68,1,0,,,,Win Plastic Extrusions LLC — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000040,C,V-68,1,0,,,,Spectrum Plastics Corp. — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000042,C,V-68,1,0,,,,"Multibase, Inc. — Akron",,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000045,U,V-68,0,0,,,,Akron Ascent Innovations LLC — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000046,U,V-68,0,0,,,,"Akron Surface Technologies, Inc. — Akron",,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000054,C,V-68,1,0,,,,"Americhem, Inc. — Cuyahoga Falls",,Cuyahoga Falls,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:4;site_has_no_civic_street:1
+sites,SITE-000066,C,V-68,1,0,,,,"Custom Plastic Extrusions, Ltd. — Hudson",,Hudson,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000080,C,V-68,1,0,,,,Ace Plastics — Barberton,,Barberton,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000084,U,V-68,0,0,,,,"Q Model, Inc. — Barberton",,Barberton,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000097,U,V-68,0,0,,,,BioVerde — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000098,U,V-68,0,0,,,,Spazzolplastica — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000099,U,V-68,0,0,,,,Materium Technologies — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000100,U,V-68,0,0,,,,"R. E. Carroll, Inc. — Hudson",,Hudson,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000103,U,V-68,0,0,,,,HEXPOL Compounding — Copley,,Copley,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000106,B,V-65,2,0,,,,T&M Plastics Co. — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000110,U,V-68,0,0,,,,William Exline — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:4;site_has_no_civic_street:1
+sites,SITE-000113,U,V-68,0,0,,,,Stretchtape — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000115,A,V-65,3,0,,,,AMD Plastics — Euclid,,Euclid,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-000120,U,V-68,0,0,,,,Cleveland Polymer Company — Bedford Heights,,Bedford Heights,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000122,U,V-68,0,0,,,,Anita Plastics — Woodmere,,Woodmere,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000124,U,V-68,0,0,,,,Lamson & Sessions — Beachwood,,Beachwood,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000127,U,V-68,0,0,,,,Compking — North Randall,,North Randall,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000136,A,V-65,3,0,,,,Roto Polymers — Warrensville Heights,,Warrensville Heights,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000141,U,V-68,0,0,,,,Newko Polymers — Strongsville,,Strongsville,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000143,U,V-68,0,0,,,,Kennick Mold & Die — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000144,U,V-68,0,0,,,,Molders Choice — Solon,,Solon,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000147,C,V-68,1,0,,,,Chem-Materials — Westlake,,Westlake,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000148,C,V-68,1,0,,,,WV International — Strongsville,,Strongsville,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000151,U,V-68,0,0,,,,InterGroup International — Euclid,,Euclid,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000155,C,V-68,1,0,,,,Eaton — Beachwood,,Beachwood,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000158,A,V-65,3,0,,,,Cleveland State University — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-000160,U,V-68,0,0,,,,Team NEO — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000165,U,V-68,0,0,,,,Cuyahoga Community College — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000166,U,V-68,0,0,,,,Manufacturing Works — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000173,U,V-68,0,0,,,,Professional Plastics — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000174,C,V-68,1,0,,,,Hankook Tire America Technical Center — Green,,Green,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000175,U,V-68,0,0,,,,Murdock Industrial — Akron,,Akron,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-000177,U,V-68,0,0,,,,Tahoma Rubber and Plastics — Barberton,,Barberton,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:5;site_has_no_civic_street:1
+sites,SITE-000178,U,V-68,0,0,,,,Temarex — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000180,C,V-68,1,0,,,,IER Fujikura — Macedonia,,Macedonia,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000188,C,V-68,1,0,,,,SpringSeal — Streetsboro,,Streetsboro,Portage,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000194,U,V-68,0,0,,,,GroundScape Technologies — Brooklyn Heights,,Brooklyn Heights,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000199,B,V-65,2,0,,,,Triangle Chemical — Mentor,,Mentor,Lake,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000204,B,V-65,2,0,,,,Kenda American Technology Center — Green,,Green,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000207,U,V-68,0,0,,,,Elite Elastomers of Ohio — Wooster,,Wooster,Wayne,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-000211,C,V-68,1,0,,,,HEXPOL Compounding — Mogadore,,Mogadore,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000214,C,V-68,1,0,,,,Parker Hannifin — Wickliffe (Hose Products Division),,Wickliffe,Lake,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:17;site_has_no_civic_street:1
+sites,SITE-000215,B,V-65,2,0,,,,Hankook Tire & Technology - Green (America Technical Center),3535 Forest Lake Dr,Green,Summit,existence;address,0,,0,0,operator_name_not_held:7
+sites,SITE-000219,U,V-68,0,0,,,,"A. C. Wilson Enterprises, Inc — Middlefield",,Middlefield,Geauga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000220,A,V-65,3,0,,,,A.r.e. Accessories — Massillon,,Massillon,Stark,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:5;site_has_no_civic_street:1
+sites,SITE-000225,C,V-68,1,0,,,,Adhere (Cutting Edge Converted Products),,Cleveland,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000230,U,V-68,0,0,,,,Air Power Dynamics — Mentor,,Mentor,Lake,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000231,U,V-68,0,0,,,,Akro-Mils — Akron,,Akron,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:4;site_has_no_civic_street:1
+sites,SITE-000232,U,V-68,0,0,,,,Akro-Mils — Akron,,Akron,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:4;site_has_no_civic_street:1
+sites,SITE-000254,A,V-65,3,1,,,,Avery Dennison Performance Tapes,250 Chester St,Painesville,Lake,existence;address,2,address;existence,1,0,
+sites,SITE-000261,U,V-68,0,0,,,,Bicron Corp. — Hiram,,Hiram,Portage,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000270,C,V-68,1,0,,,,Briarwood Products — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000282,U,V-68,0,0,,,,Cast Nylons 4429,,Willoughby,Lake,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:6;site_has_no_civic_street:1
+sites,SITE-000292,C,V-68,1,0,,,,ChemSpec — Canton,,Canton,Stark,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000296,U,V-68,0,0,,,,Cleveland Spray Foam — Rocky River,,Rocky River,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000300,U,V-68,0,0,,,,"Compass Insulation & Coatings, Inc. — Cleveland",,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000308,C,V-68,1,0,,,,"Corrosion Resistant Technologies, Inc. — Chagrin Falls",,Chagrin Falls,Geauga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000347,U,V-68,0,0,,,,"Enclosure Solutions, Inc. — Newbury",,Newbury,Geauga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000374,B,V-65,2,0,,,,GARLAND CO INC — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:19;site_has_no_civic_street:1
+sites,SITE-000377,U,V-68,0,0,,,,Glebus Alloys — Stow,,Stow,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000384,C,V-68,1,0,,,,GRAFTON MACHINE & RUBBER CO INC — Ravenna,,Ravenna,Portage,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000391,B,V-65,2,0,,,,"HC COMPANIES, INC. — Middlefield",,Middlefield,Geauga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:8;site_has_no_civic_street:1
+sites,SITE-000394,C,V-68,1,0,,,,Heyden Mold & Bench Co — Tallmadge,,Tallmadge,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000408,U,V-68,0,0,,,,INTEGRITY PROCESSING LLC — Barberton,,Barberton,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-000409,A,V-65,3,0,,,,"INTERGRADED DESIGN ENGINEERING AND ANALYSIS SERVICES, INC. — North Canton",,North Canton,Stark,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000413,U,V-68,0,0,,,,ITEN INDUSTRIES INC. (PLANT 3),,Ashtabula,Ashtabula,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:23;site_has_no_civic_street:1
+sites,SITE-000414,C,V-68,1,0,,,,Iten Industries Inc. (Plant 4),,Ashtabula,Ashtabula,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:36;site_has_no_civic_street:1
+sites,SITE-000422,U,V-68,0,0,,,,"JBC Technologies, Inc. — North Ridgeville",,North Ridgeville,Lorain,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:7;site_has_no_civic_street:1
+sites,SITE-000433,C,V-68,1,0,,,,KEENE BUILDING PRODUCTS — Euclid,,Euclid,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:8;site_has_no_civic_street:1
+sites,SITE-000434,C,V-68,1,0,,,,Keener Rubber Company — Alliance,,Alliance,Stark,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:5;site_has_no_civic_street:1
+sites,SITE-000452,C,V-68,1,0,,,,Littlern Corp. — Barberton,,Barberton,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-000457,A,V-65,3,0,,,,MAIN STREET LIGHTING STANDARDS INC — Medina,,Medina,Medina,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000459,U,V-68,0,0,,,,Mansfield Paint — Medina,,Medina,Medina,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000463,A,V-65,3,1,,,,Cast Nylons 4300,4300 Hamann Parkway,Willoughby,Lake,existence;address,2,address;existence,1,0,
+sites,SITE-000482,A,V-65,3,0,,,,Molded Fiber Glass Companies — Ashtabula,,Ashtabula,Ashtabula,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:27;site_has_no_civic_street:1
+sites,SITE-000493,U,V-68,0,0,,,,Nexen Tire America Technical Center — Richfield,,Richfield,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000495,C,V-68,1,0,,,,"NFM Welding Engineers, Inc. — Massillon",,Massillon,Stark,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-000497,U,V-68,0,0,,,,Nitrojection Corporation — Chesterland,,Chesterland,Geauga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000501,C,V-68,1,0,,,,"Northeastern Plastics International, Inc — Canton",,Canton,Stark,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000504,U,V-68,0,0,,,,OKAPI Medical — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000510,B,V-65,2,0,,,,"Paarlo Plastics, Inc. — North Canton",,North Canton,Stark,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:14;site_has_no_civic_street:1
+sites,SITE-000516,U,V-68,0,0,,,,"Park-Ohio Industries, Inc. — Cleveland",,Cleveland,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:8;site_has_no_civic_street:1
+sites,SITE-000520,C,V-68,1,0,,,,Perry Fiberglass Products,,Elyria,Lorain,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:7;site_has_no_civic_street:1
+sites,SITE-000524,C,V-68,1,0,,,,Philpott Rubber Extrusions — Mogadore,,Mogadore,Portage,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000536,C,V-68,1,0,,,,Plextrusions — North Ridgeville,,North Ridgeville,Lorain,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000541,U,V-68,0,0,,,,"PolyInsight, LLC — Akron",,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000543,U,V-68,0,0,,,,Polymer Additives — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:3;site_has_no_civic_street:1
+sites,SITE-000548,C,V-68,1,0,,,,Precision Coatings Inc. — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000551,B,V-65,2,0,,,,"Preferred Solutions, Inc. — Independence",,Independence,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000572,A,V-65,3,0,,,,RADIX WIRE & CABLE LLC — Glenwillow,,Glenwillow,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000581,U,V-68,0,0,,,,RESOURCE MATERIAL HANDLING,,Middlefield,Geauga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-000585,U,V-68,0,0,,,,Rico Products Inc — Chagrin Falls,,Chagrin Falls,Geauga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000599,U,V-68,0,0,,,,SAS Rubber Co. — Painesville,,Painesville,Lake,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:11;site_has_no_civic_street:1
+sites,SITE-000607,B,V-65,2,0,,,,Sentry Protection — Lakewood,,Lakewood,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000616,U,V-68,0,0,,,,"Southwest Gasket Company, LLC — North Olmsted",,North Olmsted,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000638,C,V-68,1,0,,,,"Technifab, Inc. — Avon",,Avon,Lorain,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:13;site_has_no_civic_street:1
+sites,SITE-000645,C,V-68,1,0,,,,Thermocore Products — Ravenna,,Ravenna,Portage,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000663,U,V-68,0,0,,,,Universal Rubber & Plastics Corp. — Tallmadge,,Tallmadge,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:3;site_has_no_civic_street:1
+sites,SITE-000678,A,V-65,3,1,,,,Wrap Tite - Site 3,,Solon,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:16;site_has_no_civic_street:1
+sites,SITE-000719,A,V-65,3,0,,,,American Excelsior Company — Norwalk,,Norwalk,Huron,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:17;site_has_no_civic_street:1
+sites,SITE-000784,U,V-68,0,0,,,,"CENTURY CONTAINER, LLC-CENTURY INDUSTRIES CORP 2 — New Waterford",,New Waterford,Columbiana,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-000818,C,V-68,1,0,,,,Cooper Standard Industrial and Specialty Group,,New Philadelphia,Tuscarawas,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:4;site_has_no_civic_street:1
+sites,SITE-000919,U,V-68,0,0,,,,FREUDENBERG-NOK MILAN,,Milan,Erie,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:3;site_has_no_civic_street:1
+sites,SITE-000941,U,V-68,0,0,,,,Hamilton Polymers — Leetonia,,Leetonia,Columbiana,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000979,A,V-65,3,0,,,,"Jerico Plastic Industries, Inc. — Minerva",,Wadsworth,Medina,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-000994,U,V-68,0,0,,,,KPC KENTAK PRODUCTS COMPANY — East Liverpool,,East Liverpool,Columbiana,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-001122,U,V-68,0,0,,,,"Polyflex, Inc. — Baltic",,Baltic,Tuscarawas,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:4;site_has_no_civic_street:1
+sites,SITE-001179,U,V-68,0,0,,,,ROTO SOLUTIONS — Ashland,,Ashland,Ashland,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-001309,U,V-68,0,0,,,,Continental (Tech Hub partner),,Fairlawn,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001312,U,V-68,0,0,,,,USA Rolls — Canfield,,Canfield,Mahoning,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001391,C,V-68,1,0,,,,Ohio Foam Corp. — Youngstown,,Youngstown,Mahoning,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001392,C,V-68,1,0,,,,"Piedmont Plastics, Inc. — Youngstown",,Youngstown,Mahoning,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001395,B,V-65,2,0,,,,HEXPOL Compounding — Akron (Exeter Dr),,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001398,U,V-68,0,0,,,,Saint-Gobain HyComp LLC — Cleveland area (provisional),,Cleveland area,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001417,A,V-65,3,0,,,,Steere Enterprises — Tallmadge (350 Tacoma Ave),,Tallmadge,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:14;site_has_no_civic_street:1
+sites,SITE-001418,A,V-65,3,0,,,,Steere Enterprises — Tallmadge (303 Tacoma Ave),,Tallmadge,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:14;site_has_no_civic_street:1
+sites,SITE-001420,B,V-65,2,0,,,,Hyload Inc. — Wadsworth,,Wadsworth,Medina,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001432,B,V-65,2,0,,,,Lubrizol Advanced Materials — Brecksville,,Brecksville,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-001435,B,V-65,2,0,,,,Amcor — Aurora (PVC Stretch Film),,Aurora,Portage,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001440,B,V-65,2,0,,,,PolyKinetix — Massillon,,Massillon,Stark,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001441,B,V-65,2,0,,,,Smithers Medical Products — North Canton,,North Canton,Stark,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001455,B,V-65,2,0,,,,American Bath Group — Salem,,Salem,Columbiana,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001473,B,V-65,2,0,,,,Techniplas US LLC dba NEXXTA — Mansfield,,Mansfield,Richland,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001480,B,V-65,2,0,,,,Cell-O-Core — Wadsworth,,Wadsworth,Medina,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:5;site_has_no_civic_street:1
+sites,SITE-001503,B,V-65,2,0,,,,dlhBOWLES — Canton,,Canton,Stark,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-001509,B,V-65,2,0,,,,Polyram USA — Avon,,Avon,Lorain,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001525,A,V-65,3,0,,,,Henkel — Warrensville Heights (LOCTITE Cleveland plant),,Warrensville Heights,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:3;site_has_no_civic_street:1
+sites,SITE-001528,B,V-65,2,0,,,,"FDIE, LLC — Cleveland",,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001569,C,V-68,1,0,,,,VisionAir Solutions — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001572,C,V-68,1,0,,,,ICHOR VASCULAR INC — Brecksville,,Brecksville,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001614,B,V-65,2,0,,,,STERIS Corporation — Mentor,,Mentor,Lake,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:8;site_has_no_civic_street:1
+sites,SITE-001615,B,V-65,2,0,,,,STERIS Corporation — Mentor,,Mentor,Lake,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:8;site_has_no_civic_street:1
+sites,SITE-001624,C,V-68,1,0,,,,"Myrava, LLC — Parma",,Parma,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001652,B,V-65,2,0,,,,ePac Flexible Packaging — Solon,,Solon,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001670,B,V-65,2,0,,,,J B Jewitt Co Inc — Cleveland,,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001709,B,V-65,2,0,,,,ENGINEERED LAMINATES & COATINGS — Akron,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001718,B,V-65,2,0,,,,RPM INDUSTRIES — Elyria,,Elyria,Lorain,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001777,B,V-65,2,0,,,,Cru Performance Coatings LLC,,Cleveland,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001794,B,V-65,2,0,,,,Kimberly-Clark Corporation,,Warren,Trumbull,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001800,B,V-65,2,0,,,,Republic Powdered Metals Inc,,Medina,Medina,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:4;site_has_no_civic_street:1
+sites,SITE-001806,B,V-65,2,0,,,,3D Dental Designs and Development LLC,,Shaker Heights,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001818,C,V-68,1,0,,,,Global Waste and Recycling LLC,,Beachwood,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001821,C,V-68,1,0,,,,J.G. Sales Inc.,,Columbiana,Columbiana,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001835,B,V-65,2,0,,,,"The Original Mattress Factory, Inc.",,CLEVELAND,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:5;site_has_no_civic_street:1
+sites,SITE-001845,B,V-65,2,0,,,,"Polymer & Steel Technologies, Inc.",,Eastlake,Lake,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001849,A,V-65,3,0,,,,Carlisle TyrFil (Carlisle Polyurethane Systems),,Berea,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001878,A,V-65,3,0,,,,Graphic Art Systems Inc (Grafix Plastics),,Maple Heights,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001884,A,V-65,3,0,,,,Harrison Paint Corp. (Poxycoat line),,Canton,Stark,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:13;site_has_no_civic_street:1
+sites,SITE-001911,C,V-68,1,0,,,,"Lawrence Machine, Inc.",,Massillon,Stark,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001912,C,V-68,1,0,,,,Potter's Inc,,Cleveland,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:4;site_has_no_civic_street:1
+sites,SITE-001923,A,V-65,3,1,,,,Saint-Gobain HyComp LLC (Hycomp LLC),,Middleburg Heights,Cuyahoga,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-001929,B,V-65,2,0,,,,"Momentous Mold and Machine (formerly Reuther Mold & Manufacturing Co., Inc.)",,Cuyahoga Falls,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:5;site_has_no_civic_street:1
+sites,SITE-001932,C,V-68,1,0,,,,"Stemaco U.S.A., Inc.",,Hudson,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001934,C,V-68,1,0,,,,Synthetic Rubber Technologies,,Uniontown,Stark,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001938,C,V-68,1,0,,,,"Tristan Rubber Molding, Inc.",,North Canton,Stark,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:6;site_has_no_civic_street:1
+sites,SITE-001953,B,V-65,2,0,,,,Jax Mold and Machine Inc,,Akron,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-001958,B,V-65,2,0,,,,M Sacks International,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001959,B,V-65,2,0,,,,"McNeil & NRM International, Inc",,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001980,B,V-65,2,0,,,,Optimax Plastic LLC,,Kent,Portage,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001993,B,V-65,2,0,,,,"Raydar of Ohio, Inc.",,Wadsworth,Medina,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-001996,B,V-65,2,0,,,,Rez-Tech Corporation,,Kent,Portage,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:4;site_has_no_civic_street:1
+sites,SITE-002002,B,V-65,2,0,,,,Samjay & Sons LLC,,Fairlawn,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002004,B,V-65,2,0,,,,Sherwood Advanced Composite Technologies Corp,,Louisville,Stark,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002018,B,V-65,2,0,,,,Tolloti Pipe LLC,,Uhrichsville,Tuscarawas,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002024,C,V-68,1,0,,,,Veretec Inc,,Jefferson,Ashtabula,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002025,B,V-65,2,0,,,,Vinyltech International LLC,,North Jackson,Mahoning,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:2;site_has_no_civic_street:1
+sites,SITE-002039,B,V-65,2,0,,,,Newell Brands Inc. (Rubbermaid Home Products),,Mogadore,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002043,A,V-65,3,0,,,,Sietins Plastics Inc (Sietins Precision),,Bedford,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002047,C,V-68,1,0,,,,STUCK LLC,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002056,C,V-68,1,0,,,,Quality Fiberglass,,Marshallville,Wayne,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:4;site_has_no_civic_street:1
+sites,SITE-002057,B,V-65,2,0,,,,"Quikey Manufacturing Co, Inc.",,Akron,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:5;site_has_no_civic_street:1
+sites,SITE-002059,C,V-68,1,0,,,,Canfield Plastics Inc,,Canfield,Mahoning,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002063,C,V-68,1,0,,,,Poly Tech Plastics,,Middlefield,Geauga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002073,B,V-65,2,0,,,,EnergyEne Inc.,,Wooster,Wayne,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002082,A,V-65,3,0,,,,DayGlo Twinsburg site,,Twinsburg,Summit,existence;address,0,,0,0,held_name_in_the_same_city_site_has_no_street:1;site_has_no_civic_street:1
+sites,SITE-002096,B,V-65,2,0,,,,Enzyme Catalyzed Polymers LLC,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002100,B,V-65,2,0,,,,AXILEA LLC,,Beachwood,Cuyahoga,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-002102,B,V-65,2,0,,,,All Coatings Corp.,1301 N Meridian Rd,Youngstown,Mahoning,existence;address,0,,0,0,operator_name_not_held:1
+sites,SITE-002103,A,V-65,3,0,,,,"Altor Solutions - Gnadenhutten, OH",1 Southern Gateway Dr,Gnadenhutten,Tuscarawas,existence;address,2,address;existence,1,0,
+sites,SITE-002105,B,V-65,2,0,,,,THE ARTHUR CORPORATION,1305 Huron Avery Rd,Huron,Erie,existence;address,0,,0,0,mailing_role_only_not_a_physical_location_witness:1;operator_name_not_held:1;stale_filing_older_than_five_years_would_be_the_sole_witness:26
+sites,SITE-002106,A,V-65,3,0,,,,"Berry Global - Streetsboro, OH",1275 Ethan Ave,Streetsboro,Portage,existence;address,2,address;existence,1,0,
+sites,SITE-002107,B,V-65,2,0,,,,Biena Tech Llc,526 S Main St Ste 821,Akron,Summit,existence;address,0,,0,0,operator_name_not_held:20;street_differs:13
+sites,SITE-002116,B,V-65,2,0,,,,"ENCORE INDUSTRIES, INC.",319 Howard Dr,Sandusky,Erie,existence;address,0,,0,0,stale_filing_older_than_five_years_would_be_the_sole_witness:2
+sites,SITE-002120,B,V-65,2,0,,,,"K & K Services, Inc.",241 Hollybrier Dr,Wadsworth,Medina,existence;address,0,,0,0,mailing_role_only_not_a_physical_location_witness:2
+sites,SITE-002125,B,V-65,2,0,,,,Revlis Corporation,255 Huntington Ave,Akron,Summit,existence;address,0,,0,0,held_name_in_the_same_city_at_a_different_street:1
+sites,SITE-003229,B,V-65,2,0,,,,Absolute Haitian Ohio Technical Center,12900 Plaza Drive,Parma,Cuyahoga,existence;address,0,,0,0,operator_name_not_held:7
+sites,SITE-003327,B,V-65,2,0,,,,Budenheim USA - Mansfield,889 West Longview Avenue,Mansfield,Richland,existence;address,0,,0,0,held_name_in_the_same_city_at_a_different_street:1;mailing_role_only_not_a_physical_location_witness:3;operator_name_not_held:2
+sites,SITE-003406,B,V-65,2,0,,,,Covia Headquarters,3 Summit Park Drive Suite 700,Independence,Cuyahoga,existence;address,0,,0,0,mailing_role_only_not_a_physical_location_witness:9;operator_name_not_held:30;street_differs:12
+sites,SITE-003983,C,V-68,1,0,,,,G-3 Chickadee Akron R&D Facility,,Akron,Summit,existence;address,0,,0,0,site_has_no_civic_street:1
+sites,SITE-004018,B,V-65,2,0,,,,Micro-Poise Measurement Systems HQ,555 Mondial Pkwy,Streetsboro,Portage,existence;address,2,address;existence,1,0,
+sites,SITE-004208,B,V-65,2,0,,,,ST BlowMoulding USA Headquarters,204 Republic Street,Norwalk,Huron,existence;address,0,,0,0,operator_name_not_held:11
+organizations,ORG-000014,C,V-68,1,0,,,,"D & D Plastics, Inc.",,Akron,Summit,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:1;stale_filing_older_than_five_years_would_be_the_sole_witness:1
+organizations,ORG-000020,U,V-68,0,0,,,,Rapid Mold Repair & Machine Co.,,Akron,Summit,existence;address,1,existence,1,1,
+organizations,ORG-000021,U,V-68,0,0,,,,Paddington Group,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000032,C,V-68,1,0,,,,"Acme Pattern Works, Inc.",,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000036,U,V-68,0,0,,,,Win Plastic Extrusions LLC,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000045,U,V-68,0,0,,,,Akron Ascent Innovations LLC,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000046,U,V-68,0,0,,,,"Akron Surface Technologies, Inc.",,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000049,C,V-68,1,0,,,,"Akron Polymer Solutions, Inc.",,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000056,A,V-65,3,0,,,,CF Extrusion Technologies,,Cuyahoga Falls,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000066,C,V-68,1,0,,,,"Custom Plastic Extrusions, Ltd.",,Hudson,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000076,A,V-65,3,0,,,,Crown Composites Tooling,,Twinsburg,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-000079,B,V-65,2,0,,,,"General Plastex, Inc.",,Barberton,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-000080,C,V-68,1,0,,,,Ace Plastics,,Barberton,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000084,B,V-65,2,0,,,,"Q Model, Inc.",,Barberton,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000085,B,V-65,2,0,,,,"Ohio Precision Molding, Inc.",,Barberton,Summit,existence;address,1,existence,1,0,
+organizations,ORG-000096,C,V-68,1,0,,,,G3 Mixing Technologies,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000107,U,V-68,0,0,,,,T&M Plastics Co.,,Cleveland,Cuyahoga,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:1;stale_filing_older_than_five_years_would_be_the_sole_witness:1
+organizations,ORG-000111,C,V-68,1,0,,,,William Exline Inc.,,Cleveland,Cuyahoga,existence;address,1,existence,1,1,
+organizations,ORG-000120,A,V-65,3,1,,,,Molding Dynamics Inc.,,Bedford,Cuyahoga,existence;address,2,address;existence,1,0,
+organizations,ORG-000121,U,V-68,0,0,,,,Cleveland Polymer Company,,Bedford Heights,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000122,B,V-65,2,0,,,,Lattice Composites LLC,,Solon,Cuyahoga,existence;address,1,existence,1,1,
+organizations,ORG-000139,B,V-65,2,0,,,,FedPro,,Warrensville Heights,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000143,U,V-68,0,0,,,,Kennick Mold & Die,,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000144,U,V-68,0,0,,,,Molders Choice,,Solon,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000147,C,V-68,1,0,,,,Chem-Materials Co.,,Westlake,Cuyahoga,existence;address,1,existence,1,1,
+organizations,ORG-000151,U,V-68,0,0,,,,InterGroup International,,Euclid,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000168,U,V-68,0,0,,,,Murdock Industrial Inc.,,Akron,Summit,existence;address,1,existence,1,1,
+organizations,ORG-000170,B,V-65,2,0,,,,Tahoma Rubber and Plastics Inc.,,Barberton,Summit,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:5;stale_filing_older_than_five_years_would_be_the_sole_witness:5
+organizations,ORG-000173,C,V-68,1,0,,,,IER Fujikura Inc.,,Macedonia,Summit,existence;address,1,existence,1,1,
+organizations,ORG-000187,U,V-68,0,0,,,,GroundScape Technologies,,Brooklyn Heights,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000192,C,V-68,1,0,,,,Triangle Chemical Co.,,Mentor,Lake,existence;address,1,existence,1,1,
+organizations,ORG-000198,C,V-68,1,0,,,,Ziegler Tire,,Massillon,Stark,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000200,U,V-68,0,0,,,,Elite Elastomers of Ohio,,Wooster,Wayne,existence;address,1,existence,1,1,
+organizations,ORG-000214,A,V-65,3,0,,,,"Advanced Poly-Packaging, Inc.",,Akron,Summit,existence;address,1,existence,1,0,
+organizations,ORG-000225,A,V-65,3,1,,,,Allpass Corporation,,Madison,Lake,existence;address,2,address;existence,1,0,
+organizations,ORG-000240,A,V-65,3,0,,,,"Baker Plastics, Inc.",,Youngstown,Mahoning,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:3;stale_filing_older_than_five_years_would_be_the_sole_witness:3
+organizations,ORG-000243,A,V-65,3,1,,,,"BaseTek, LLC",,Middlefield,Geauga,existence;address,2,address;existence,1,0,
+organizations,ORG-000249,B,V-65,2,0,,,,BMS Burns,,Medina,Medina,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000260,A,V-65,3,0,,,,"Capital Plastics, Inc.",,Middlefield,Geauga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000281,A,V-65,3,0,,,,"Compass Insulation & Coatings, Inc.",,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000286,A,V-65,3,0,,,,Container Compliance Corp.,,Cleveland,Cuyahoga,existence;address,1,existence,1,0,
+organizations,ORG-000297,A,V-65,3,1,,,,"Dar-Tech, Inc.",,Maple Heights,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000301,A,V-65,3,0,,,,DEM Manufacturing LLC,,Newbury,Geauga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000305,A,V-65,3,0,,,,"Diemaster Tool & Mold, Inc.",,Macedonia,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-000310,A,V-65,3,1,,,,Dreco,,North Ridgeville,Lorain,existence;address,1,existence,1,0,
+organizations,ORG-000331,A,V-65,3,1,,,,Essential Sealing Products,,Chagrin Falls,Geauga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000332,A,V-65,3,0,,,,Essentialware,,Kirtland,Lake,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000361,A,V-65,3,1,,,,"H & B Machine & Tool Co., Inc.",,Cleveland,Cuyahoga,existence;address,2,address;existence,1,0,
+organizations,ORG-000365,A,V-65,3,1,,,,Harrison Machine & Plastic Corp.,,Garrettsville,Portage,existence;address,2,address;existence,1,0,
+organizations,ORG-000375,A,V-65,3,1,,,,"Imperial Plastics, Inc.",,Rittman,Wayne,existence;address,1,existence,1,0,
+organizations,ORG-000381,A,V-65,3,0,,,,"Integrated Chemical Concepts, Inc.",,Brecksville,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000383,A,V-65,3,0,,,,"IDEAS, Inc.",,North Canton,Stark,existence;address,1,existence,1,1,
+organizations,ORG-000385,B,V-65,2,0,,,,Iten Defense,,Ashtabula,Ashtabula,existence;address,2,address;existence,1,0,
+organizations,ORG-000391,A,V-65,3,1,,,,JACO Manufacturing Co.,,Berea,Cuyahoga,existence;address,2,address;existence,1,0,
+organizations,ORG-000396,B,V-65,2,0,,,,JK Plastics,,Middlefield,Geauga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000405,B,V-65,2,0,,,,Keener Rubber Company,,Alliance,Stark,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:5;stale_filing_older_than_five_years_would_be_the_sole_witness:5
+organizations,ORG-000409,A,V-65,3,0,,,,"Keyland Polymer UV Powder, LLC",,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000410,A,V-65,3,1,,,,"Killian Latex, Inc.",,Akron,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-000415,A,V-65,3,0,,,,Laszeray Technology Inc,,North Royalton,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000417,B,V-65,2,0,,,,Lerner Molded Plastics,,Aurora,Portage,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000422,B,V-65,2,0,,,,Littlern Corp.,,Barberton,Summit,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:2;stale_filing_older_than_five_years_would_be_the_sole_witness:2
+organizations,ORG-000427,A,V-65,3,0,,,,"Main Street Lighting, Inc.",,Medina,Medina,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000436,B,V-65,2,0,,,,Merit Specialty Chemicals,,Peninsula,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000437,A,V-65,3,0,,,,Metalcrete Industries,,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000439,B,V-65,2,0,,,,Mickey Thompson Performance Tires & Wheels,,Stow,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000441,A,V-65,3,1,,,,Mid-west Poly Pak,,Doylestown,Wayne,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:2;stale_filing_older_than_five_years_would_be_the_sole_witness:2
+organizations,ORG-000442,A,V-65,3,0,,,,"Middlefield Plastics, Inc.",,Middlefield,Geauga,existence;address,1,existence,1,0,
+organizations,ORG-000450,B,V-65,2,0,,,,"Molded Extruded Specialties, Div. of Frank Novak & Sons, Inc.",,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000457,A,V-65,3,1,,,,National Polymer,,Chagrin Falls,Geauga,existence;address,2,address;existence,1,0,
+organizations,ORG-000460,A,V-65,3,1,,,,Newko Polymers,,Strongsville,Cuyahoga,existence;address,0,,0,0,different_entity_trade_name:2
+organizations,ORG-000465,B,V-65,2,0,,,,Nitrojection Corporation,,Chesterland,Geauga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000468,A,V-65,3,0,,,,"North American Seal & Supply, Inc.",,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000471,B,V-65,2,0,,,,Novis Works LLC,,Canton,Stark,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000472,A,V-65,3,0,,,,Resivant Medical,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000482,B,V-65,2,0,,,,ParkOhio Holdings Corp.,,Cleveland,Cuyahoga,existence;address,0,,0,0,different_entity_trade_name:18
+organizations,ORG-000498,B,V-65,2,0,,,,PlastiWin Capital Equipment,,Twinsburg,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-000499,A,V-65,3,0,,,,"Plastore, Inc.",,Hudson,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000505,A,V-65,3,1,,,,Poly Source LLC,,Brunswick,Medina,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000514,A,V-65,3,0,,,,Precision Coatings Inc.,,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000515,B,V-65,2,0,,,,"Precision Foam Fabrication, Inc.",,Youngstown,Trumbull,existence;address,0,,0,0,sam_held_owner_question_dnb_flag:1
+organizations,ORG-000524,A,V-65,3,0,,,,Primeline Industries,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000530,A,V-65,3,0,,,,Protectoplas Company,,Streetsboro,Portage,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000535,A,V-65,3,1,,,,"R2 Sealant Systems, LLC",,Massillon,Stark,existence;address,2,address;existence,1,0,
+organizations,ORG-000548,B,V-65,2,0,,,,Rico Products Inc,,Chagrin Falls,Geauga,existence;address,0,,0,0,sam_held_owner_question_dnb_flag:1
+organizations,ORG-000561,A,V-65,3,0,,,,Savage Engineering Inc.,,Garfield Heights,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000572,A,V-65,3,1,,,,"Silco, Inc.",,Mentor,Lake,existence;address,2,address;existence,1,0,
+organizations,ORG-000583,A,V-65,3,1,,,,"Spiral Brushes, Inc.",,Stow,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-000592,A,V-65,3,0,,,,"Sun State Plastics, Inc.",,North Canton,Stark,existence;address,2,address;existence,1,0,
+organizations,ORG-000593,B,V-65,2,0,,,,Suncolor Corporation,,North Canton,Stark,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-000594,A,V-65,3,1,,,,Superior Mold & Die Co.,,Munroe Falls,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-000599,B,V-65,2,0,,,,"Technifab, Inc.",,Avon,Lorain,existence;address,1,existence,1,0,
+organizations,ORG-000615,A,V-65,3,1,,,,Triaxis Machine & Tool,,Valley City,Medina,existence;address,2,address;existence,1,0,
+organizations,ORG-000618,A,V-65,3,1,,,,United Initiators Inc.,,Elyria,Lorain,existence;address,2,address;existence,1,0,
+organizations,ORG-000629,B,V-65,2,0,,,,Walton Plastics,,Walton Hills,Cuyahoga,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:2;stale_filing_older_than_five_years_would_be_the_sole_witness:2
+organizations,ORG-000639,A,V-65,3,0,,,,"Youngstown Plastic Tooling & Machinery, Inc.",,Youngstown,Mahoning,existence;address,2,address;existence,1,0,
+organizations,ORG-000725,B,V-65,2,0,,,,"Century Container, LLC",,New Waterford,Columbiana,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:1;stale_filing_older_than_five_years_would_be_the_sole_witness:1
+organizations,ORG-000873,A,V-65,3,0,,,,Hamilton Polymers Company,,Leetonia,Columbiana,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001065,B,V-65,2,0,,,,"R & S Technologies, Inc.",,Bellevue,Huron,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:1;stale_filing_older_than_five_years_would_be_the_sole_witness:1
+organizations,ORG-001089,B,V-65,2,0,,,,ROTO Solutions,,Ashland,Ashland,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:1;stale_filing_older_than_five_years_would_be_the_sole_witness:1
+organizations,ORG-001329,A,V-65,3,1,,,,Dunstone Company Inc.,,Hiram,Geauga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001333,B,V-65,2,0,,,,STEER America,,Uniontown,Summit,existence;address,1,existence,1,1,
+organizations,ORG-001396,A,V-65,3,1,,,,Sure-foot Industries Corporation,,Cleveland,Cuyahoga,existence;address,2,address;existence,1,0,
+organizations,ORG-001422,B,V-65,2,0,,,,Elster Perfection Corporation,,Geneva,Ashtabula,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001426,B,V-65,2,0,,,,Techniplas US LLC,,Mansfield,Richland,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001431,C,V-68,1,0,,,,"ABC Packaging Direct, LLC",,Independence,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001432,B,V-65,2,0,,,,Cell-O-Core Company,,Wadsworth,Medina,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:5;stale_filing_older_than_five_years_would_be_the_sole_witness:5
+organizations,ORG-001433,B,V-65,2,0,,,,"Extruded Silicone Products, Inc.",,Mogadore,Summit,existence;address,0,,0,0,different_entity_trade_name:2;establishment_address_is_not_the_entitys_own_address:1;stale_filing_older_than_five_years_would_be_the_sole_witness:1
+organizations,ORG-001454,B,V-65,2,0,,,,IMCD US,,Westlake,Cuyahoga,existence;address,2,address;existence,1,0,
+organizations,ORG-001455,B,V-65,2,0,,,,"Lamports Filter Media, Inc.",,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001461,B,V-65,2,0,,,,"Stuchell Products, LLC",,Alliance,Stark,existence;address,1,existence,1,0,
+organizations,ORG-001469,B,V-65,2,0,,,,"FDIE, LLC",,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001479,C,V-68,1,0,,,,O2 RegenTech LLC,,Akron,Summit,existence;address,0,,0,0,sam_held_owner_question_dnb_flag:1
+organizations,ORG-001493,B,V-65,2,0,,,,"United Industrial Sales Company, Inc.",,Willoughby,Lake,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001499,B,V-65,2,0,,,,Lianda Corporation,,Twinsburg,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-001507,A,V-65,3,0,,,,HOYA VISION CARE - CLEVELAND,,Berea,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001511,C,V-68,1,0,,,,Beacon Biosignals,,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001525,A,V-65,3,0,,,,"SPR Therapeutics, Inc",,Cleveland,Cuyahoga,existence;address,2,address;existence,1,0,
+organizations,ORG-001540,B,V-65,2,0,,,,"Emergency Products & Research, Inc.",,Kent,Portage,existence;address,0,,0,0,sam_held_owner_question_dnb_flag:1
+organizations,ORG-001576,A,V-65,3,0,,,,Aabaco Plastics Inc,,Garfield Heights,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001584,B,V-65,2,0,,,,Green Innovations LLC,,Solon,Cuyahoga,existence;address,2,address;existence,1,0,
+organizations,ORG-001586,A,V-65,3,1,,,,Jos-Tech Inc,,Kent,Portage,existence;address,2,address;existence,1,0,
+organizations,ORG-001587,B,V-65,2,0,,,,Miniature Plastic Molding,,Solon,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001593,B,V-65,2,0,,,,Amros Industries Inc,,Cleveland,Cuyahoga,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:1;stale_filing_older_than_five_years_would_be_the_sole_witness:1
+organizations,ORG-001634,A,V-65,3,1,,,,ASTRA PRODUCTS OF OHIO LTD,,Ravenna,Portage,existence;address,2,address;existence,1,0,
+organizations,ORG-001640,A,V-65,3,1,,,,M-LINE INC,,Brunswick,Medina,existence;address,0,,0,0,sam_held_owner_question_dnb_flag:1
+organizations,ORG-001643,A,V-65,3,0,,,,OVERMOLD EXPRESS,,Mentor,Lake,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001653,A,V-65,3,1,,,,Bruns Brush Inc,,Willoughby,Lake,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:2;stale_filing_older_than_five_years_would_be_the_sole_witness:2
+organizations,ORG-001665,A,V-65,3,1,,,,Dischem International Inc,,North Canton,Stark,existence;address,2,address;existence,1,0,
+organizations,ORG-001704,A,V-65,3,1,,,,Venus Product Development Corporation,,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001708,C,V-68,1,0,,,,ECM Performance Materials Corp,,Medina,Medina,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001710,B,V-65,2,0,,,,Herbert USA Inc,,Akron,Summit,existence;address,1,existence,1,1,
+organizations,ORG-001718,B,V-65,2,0,,,,Kimberly-Clark Corporation,,Warren,Trumbull,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001719,C,V-68,1,0,,,,"Pyramid Plastics, Inc.",,Cleveland,Cuyahoga,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:2;stale_filing_older_than_five_years_would_be_the_sole_witness:2
+organizations,ORG-001721,C,V-68,1,0,,,,"Truco, Inc.",,Cleveland,Cuyahoga,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:1;stale_filing_older_than_five_years_would_be_the_sole_witness:1
+organizations,ORG-001723,B,V-65,2,0,,,,P&T Products Inc,,Sandusky,Erie,existence;address,1,existence,1,0,
+organizations,ORG-001726,C,V-68,1,0,,,,"Endura Plastics, Inc.",,Kirtland,Lake,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:6;stale_filing_older_than_five_years_would_be_the_sole_witness:6
+organizations,ORG-001731,B,V-65,2,0,,,,"Nissha Medical Technologies (Ohio), Inc.",,Norwalk,Huron,existence;address,1,existence,1,0,
+organizations,ORG-001744,A,V-65,3,1,,,,"Jet Di, Inc.",,Brunswick,Medina,existence;address,2,address;existence,1,0,
+organizations,ORG-001745,C,V-68,1,0,,,,J.G. Sales Inc.,,Columbiana,Columbiana,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001759,B,V-65,2,0,,,,"The Original Mattress Factory, Inc.",,CLEVELAND,Cuyahoga,existence;address,1,existence,1,1,
+organizations,ORG-001764,B,V-65,2,0,,,,NMC Metals Inc,,Niles,Trumbull,existence;address,1,existence,1,0,
+organizations,ORG-001773,B,V-65,2,0,,,,Akron Special Machinery,,Akron,Summit,existence;address,1,existence,1,1,
+organizations,ORG-001779,A,V-65,3,0,,,,"American Sign Products, Inc.",,Garfield Heights,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001780,A,V-65,3,1,,,,"American Testing Technologies, Inc.",,Akron,Summit,existence;address,1,existence,1,1,
+organizations,ORG-001789,B,V-65,2,0,,,,Cometic Gasket Inc,,Concord Township,Lake,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001793,A,V-65,3,0,,,,Custom Tarpaulin Products Inc,,Boardman,Mahoning,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001797,C,V-68,1,0,,,,Diamond Line Containers Inc,,Coventry Township,Summit,existence;address,1,existence,1,1,
+organizations,ORG-001798,B,V-65,2,0,,,,Die-Gem Co Inc,,Akron,Summit,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:1;stale_filing_older_than_five_years_would_be_the_sole_witness:1
+organizations,ORG-001803,C,V-68,1,0,,,,ECM BioFilms Inc,,Painesville,Lake,existence;address,1,existence,1,1,
+organizations,ORG-001808,A,V-65,3,0,,,,Eurotech,,Richfield,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001813,B,V-65,2,0,,,,Formco / Molded Devices Inc,,North Canton,Stark,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001826,A,V-65,3,1,,,,Hapco Inc,,Kent,Portage,existence;address,2,address;existence,1,0,
+organizations,ORG-001851,B,V-65,2,0,,,,Modern Mold & Tool Corp.,,Columbia Station,Lorain,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001853,U,V-68,0,0,,,,National Applied Construction Products Inc.,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001855,A,V-65,3,1,,,,NewKor Inc.,,Cleveland,Cuyahoga,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:5;stale_filing_older_than_five_years_would_be_the_sole_witness:5
+organizations,ORG-001868,A,V-65,3,1,,,,PolyMet Recovery LLC,,Akron,Summit,existence;address,0,,0,0,sam_held_owner_question_dnb_flag:1
+organizations,ORG-001870,U,V-68,0,0,,,,Pro-Mold Inc.,,Kipton,Lorain,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001878,A,V-65,3,0,,,,Qube Corporation,,Chagrin Falls,Geauga,existence;address,2,address;existence,1,0,
+organizations,ORG-001880,A,V-65,3,0,,,,Razor Edge Precision Grinding LLC,,Akron,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-001882,C,V-68,1,0,,,,Revere Products Co.,,Cleveland,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001888,U,V-68,0,0,,,,Safeguard Technology Inc.,,Streetsboro,Portage,existence;address,1,existence,1,1,
+organizations,ORG-001891,A,V-65,3,1,,,,"Scherba Industries, Inc.",,Brunswick,Medina,existence;address,2,address;existence,1,0,
+organizations,ORG-001894,B,V-65,2,0,,,,Shooting Range Supply,,Jefferson,Ashtabula,existence;address,0,,0,0,sam_held_owner_question_dnb_flag:1
+organizations,ORG-001903,B,V-65,2,0,,,,Terpco Inc,,Barberton,Summit,existence;address,1,existence,1,0,
+organizations,ORG-001904,B,V-65,2,0,,,,Thermo Plastic Trading Inc,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001905,A,V-65,3,0,,,,Thermoprene Inc,,Garfield Heights,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001909,B,V-65,2,0,,,,TSR Inc,,Strongsville,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001911,A,V-65,3,1,,,,"United Feed Screws, Ltd.",,Akron,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-001919,B,V-65,2,0,,,,"Catalyst Systems, Inc.",,Gnadenhutten,Tuscarawas,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:2;stale_filing_older_than_five_years_would_be_the_sole_witness:2
+organizations,ORG-001920,C,V-68,1,0,,,,"Lawrence Machine, Inc.",,Massillon,Stark,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001923,B,V-65,2,0,,,,"Artemis Polymer Processing, Inc.",,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001929,A,V-65,3,0,,,,Saint-Gobain HyComp LLC (Hycomp LLC),,Middleburg Heights,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001936,A,V-65,3,0,,,,"Rotocast Technologies, Inc.",,Akron,Summit,existence;address,2,address;existence,1,0,
+organizations,ORG-001940,C,V-68,1,0,,,,Synthetic Rubber Technologies,,Uniontown,Stark,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001943,B,V-65,2,0,,,,Trans-Foam Inc.,,Tallmadge,Summit,existence;address,1,existence,1,0,
+organizations,ORG-001944,C,V-68,1,0,,,,"Tristan Rubber Molding, Inc.",,North Canton,Stark,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:6;stale_filing_older_than_five_years_would_be_the_sole_witness:6
+organizations,ORG-001945,B,V-65,2,0,,,,"Vinyl Profiles, LLC (Vinyl Profiles Inc)",,North Jackson,Mahoning,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001946,B,V-65,2,0,,,,"WAUGS, Inc.",,Ashland,Ashland,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001950,C,V-68,1,0,,,,Artisan Mold Co Inc,,Grafton,Lorain,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001963,A,V-65,3,1,,,,M S B Machine,,Munroe Falls,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001964,B,V-65,2,0,,,,M Sacks International,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001965,B,V-65,2,0,,,,"McNeil & NRM International, Inc",,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001970,B,V-65,2,0,,,,Northcoast Inc Recycling Specialists,,Wickliffe,Lake,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-001972,B,V-65,2,0,,,,Penco Acquisition Co. LLC dba Penco Tool,,Ashtabula,Ashtabula,existence;address,2,address;existence,1,0,
+organizations,ORG-001999,B,V-65,2,0,,,,"Raydar of Ohio, Inc.",,Wadsworth,Medina,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002002,B,V-65,2,0,,,,Rez-Tech Corporation,,Kent,Portage,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:4;stale_filing_older_than_five_years_would_be_the_sole_witness:4
+organizations,ORG-002008,B,V-65,2,0,,,,Samjay & Sons LLC,,Fairlawn,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002010,B,V-65,2,0,,,,Sherwood Advanced Composite Technologies Corp,,Louisville,Stark,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002018,A,V-65,3,1,,,,Telar Corp.,,Columbia Station,Lorain,existence;address,2,address;existence,1,0,
+organizations,ORG-002022,A,V-65,3,1,,,,The Simplay3 Co,,Streetsboro,Portage,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002024,B,V-65,2,0,,,,Tolloti Pipe LLC,,Uhrichsville,Tuscarawas,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002030,C,V-68,1,0,,,,Veretec Inc,,Jefferson,Ashtabula,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002034,A,V-65,3,1,,,,Whip Guide Company,,Chagrin Falls,Geauga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002041,C,V-68,1,0,,,,May Lin Silicone Products Inc.,,Barberton,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002047,B,V-65,2,0,,,,Wayne-Dalton Plastics (Wayne Dalton Corp),,Conneaut,Ashtabula,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002049,A,V-65,3,0,,,,Sietins Plastics Inc (Sietins Precision),,Bedford,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002050,B,V-65,2,0,,,,"Diskin Enterprises, LLC",,Garrettsville,Portage,existence;address,1,existence,1,0,
+organizations,ORG-002054,C,V-68,1,0,,,,Associated Paper Stock Inc,,North Lima,Mahoning,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002055,C,V-68,1,0,,,,Neo Industries Inc,,Conneaut,Ashtabula,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002056,C,V-68,1,0,,,,P & E Sales Ltd.,,Alliance,Stark,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002057,C,V-68,1,0,,,,Quality Fiberglass,,Marshallville,Wayne,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:4;stale_filing_older_than_five_years_would_be_the_sole_witness:4
+organizations,ORG-002064,C,V-68,1,0,,,,Poly Tech Plastics,,Middlefield,Geauga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002069,B,V-65,2,0,,,,"Summit Glove, Inc.",,Minerva,Stark,existence;address,1,existence,1,1,
+organizations,ORG-002072,C,V-68,1,0,,,,Vexor Technology Inc (TRI variant name: Reworld Medina LLC),,Medina,Medina,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002079,U,V-68,0,0,,,,TDM LLC,,Ashtabula,Ashtabula,existence;address,1,existence,1,1,
+organizations,ORG-002134,A,V-65,3,1,,,,Pu1Tec Oh LLC,,Walton Hills,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002139,B,V-65,2,0,,,,Enzyme Catalyzed Polymers LLC,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002143,B,V-65,2,0,,,,AXILEA LLC,,Beachwood,Cuyahoga,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002145,B,V-65,2,0,,,,All Coatings Corp.,,Youngstown,Mahoning,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002148,B,V-65,2,0,,,,THE ARTHUR CORPORATION,,Huron,Erie,existence;address,2,address;existence,1,0,
+organizations,ORG-002150,B,V-65,2,0,,,,Biena Tech Llc,,Akron,Summit,existence;address,0,,0,0,no_held_name_record_at_the_hq_city_or_own_site_street:1
+organizations,ORG-002159,B,V-65,2,0,,,,"ENCORE INDUSTRIES, INC.",,Sandusky,Erie,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:1;stale_filing_older_than_five_years_would_be_the_sole_witness:1
+organizations,ORG-002163,B,V-65,2,0,,,,"K & K Services, Inc.",,Wadsworth,Medina,existence;address,2,address;existence,1,0,
+organizations,ORG-002167,B,V-65,2,0,,,,"PLYMOUTH FOAM, LLC",,Newcomerstown,Tuscarawas,existence;address,0,,0,0,establishment_address_is_not_the_entitys_own_address:2;stale_filing_older_than_five_years_would_be_the_sole_witness:2

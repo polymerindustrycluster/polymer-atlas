@@ -1,0 +1,17 @@
+{
+ "region": "pic18",
+ "frame": 419,
+ "date_unreadable_by_family": {},
+ "sam_holds": {
+  "organizations": 25
+ },
+ "strict": {
+  "rows": 123,
+  "records_cured": 78,
+  "records_with_both_claims": 45
+ },
+ "mailing_reading": {
+  "extra_address_rows": 19,
+  "records_with_both_claims": 64
+ }
+}
