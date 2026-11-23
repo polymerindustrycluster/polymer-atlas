@@ -4,7 +4,7 @@ Fills ONLY an unambiguous legal-form suffix at the very end of legal_name:
   LLC form   -> llc          (LLC, L.L.C., Limited Liability Company)
   LP form    -> partnership  (LP, L.P., LLP, L.L.P., LLLP, Limited [Liability] Partnership)
   corporation form -> corporation   (Inc, Inc., Incorporated, Corp, Corp., Corporation)  [owner ruling 2026-11-22, "Add 'corporation'"]
-`corporation` is the plain value added to the SCHEMA §4.4 enum at v1.19.3: a suffix does not say public or private, so public
+`corporation` is the plain value added to the SCHEMA §4.4 enum at v1.19.4: a suffix does not say public or private, so public
 or private is never guessed. Co, Company, Ltd and Limited stay unknown (they do not identify a corporation: an Ohio LLC may use
 Ltd). Co/Company inside the name ("Smith & Co., Inc.") is a name word, not a second form.
 Everything else is held."""

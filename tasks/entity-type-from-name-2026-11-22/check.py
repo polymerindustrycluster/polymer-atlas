@@ -23,7 +23,7 @@ def recompute(base):
 def known():
     mk = lambda n, c="US", s="OH", t="", e="unknown": dict(legal_name=n, hq_country=c, hq_state=s, stock_ticker=t, entity_type=e)
     cases = [("LLC", mk("Foo Plastics LLC"), "llc"), ("L.L.C.", mk("Foo, L.L.C."), "llc"), ("LP", mk("Foo Polymers LP"), "partnership"),
-             ("LLP", mk("Foo Polymers, LLP"), "partnership"), ("Inc fills (v1.19.3)", mk("Foo Inc."), "corporation"), ("Corp fills (v1.19.3)", mk("Foo Corp"), "corporation"),
+             ("LLP", mk("Foo Polymers, LLP"), "partnership"), ("Inc fills (v1.19.4)", mk("Foo Inc."), "corporation"), ("Corp fills (v1.19.4)", mk("Foo Corp"), "corporation"),
              ("Ltd held", mk("Foo Ltd."), ""), ("dba held", mk("Foo LLC dba Bar"), ""), ("conflict held", mk("Foo Co., LLC"), ""),
              ("foreign held", mk("Foo LLC", c="CA", s="ON"), ""), ("ticker held", mk("Foo LLC", t="FOO"), ""),
              ("Inc fills corporation", mk("Foo Inc."), "corporation"), ("Incorporated", mk("Foo, Incorporated"), "corporation"),

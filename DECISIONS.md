@@ -162,9 +162,24 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Applied:** 312 organizations whose HQ county is in PIC-18 and whose label was `pic12` (224), `ohio_other` (78) or `ohio_statewide` (10) are relabelled `ne_ohio` (`tasks/region-labels-2026-11-22/`). At that head zero organization rows carry `pic12`; 84 carry `ohio_statewide` (79 with a named Ohio county outside PIC-18, 5 with no county), which are not decided here.
 - **Why:** a company-owner review found PIC-18 companies labelled with the retired 12-county region or as other Ohio (8 of 20 sampled).
 - **Not decided here:** the 20 record errors (an out-of-state HQ with an Ohio county and similar) are leads, not relabels.
+
+## 2026-11-22: owner rulings for the PIC-18 size sprint (headcount age, corporate-word name matches)
+- **Decision:** two rulings, taken as multiple choice, that settle `tasks/pic18-size-sprint-2026-11-22/`.
+  1. **Headcount age: 5 years.** A filing sets a band only if its source date (ITA: the filing year's period end,
+     31 December; inspection: open date; Form 5500: plan year end) is on or after 2021-11-22. Older filings are held as
+     leads with the reason `stale_over_5_years`. Recorded in SCHEMA 1 R13 at v1.19.3.
+  2. **Name match when the street already matches: corporate words only.** The held name may be a leading run of the
+     filing name when every extra token is a corporate-form word from this fixed list: Inc, Incorporated, LLC, L.L.C.,
+     Corp, Corporation, Co, Company, Ltd, Limited, LP, LLP, Holdings, Holding, Group, US, USA, U.S., North America,
+     Americas. Anything else (Services, Logistics, a place name, another business word) stays held. Containment of one
+     name in the other is not accepted.
+- **Why:** the size sprint's first candidate set used inspection counts from 1974 to 2015 as 2026 bands, and found
+  filings whose company name differs from the record's only by a corporate word (GrafTech International Holdings,
+  RTS Companies US) beside filings of other businesses on the same street. The packet applies both rulings; the
+  alternatives are kept in controller storage, not in the repo.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
 
 ## 2026-11-22: `corporation` entity type, and `ohio_statewide` rows with a named county
-- **Decision:** two owner rulings of round 13, taken as multiple choice. (1) "Add 'corporation'": SCHEMA 4.4 `entity_type` gains a plain `corporation` value (v1.19.3), filled only where the legal name ends in Inc, Incorporated, Corp or Corporation; public or private is never guessed; Co, Company, Ltd and Limited stay `unknown`. (2) The 79 organization rows still carrying the undefined `ohio_statewide` with a named Ohio HQ county outside PIC-18 get `ohio_other`; the 5 with no county stay held.
+- **Decision:** two owner rulings of round 13, taken as multiple choice. (1) "Add 'corporation'": SCHEMA 4.4 `entity_type` gains a plain `corporation` value (v1.19.4), filled only where the legal name ends in Inc, Incorporated, Corp or Corporation; public or private is never guessed; Co, Company, Ltd and Limited stay `unknown`. (2) The 79 organization rows still carrying the undefined `ohio_statewide` with a named Ohio HQ county outside PIC-18 get `ohio_other`; the 5 with no county stay held.
 - **Applied:** `tasks/entity-type-from-name-2026-11-22/` (LLC and LP/LLP fills as in the earlier packet, plus the corporation fill) and `tasks/ohio-statewide-labels-2026-11-22/`. No evidence rows.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.

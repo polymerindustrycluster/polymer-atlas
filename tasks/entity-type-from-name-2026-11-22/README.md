@@ -1,7 +1,7 @@
 # entity_type from the legal name — 2026-11-22 (applied in this PR, both Ohio frames)
 
 **Why:** the company-owner review (19 of 20 sampled PIC-18 records had `entity_type` = `unknown` beside a legal name ending in LLC, Inc. or Corp.).
-Owner rulings 2026-11-22: "Add 'corporation'" (a plain `corporation` value, SCHEMA v1.19.3). Built on `origin/main` 22b1109e (`BASE_REF`). Unit: `organizations` rows, all statuses.
+Owner rulings 2026-11-22: "Add 'corporation'" (a plain `corporation` value, SCHEMA v1.19.4). Built on `origin/main` 22b1109e (`BASE_REF`). Unit: `organizations` rows, all statuses.
 
 ## Rule (`rules.py`, used by `build.py` and `check.py`)
 Fill `entity_type` only where the cell is blank or `unknown`, from the **final** suffix of `legal_name`:
