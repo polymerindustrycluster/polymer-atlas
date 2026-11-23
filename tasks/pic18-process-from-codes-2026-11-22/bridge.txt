@@ -1,0 +1,12 @@
+src | orgs_with_6digit_code | orgs_with_T1_code | orgs_with_T2_code
+1 osha_ita (filed by the establishment) | 82 | 9 | 9
+2 sam primary NAICS (entity registration) | 43 | 1 | 2
+3 osha inspection (assigned at inspection) | 59 | 4 | 4
+4 icis-air facility record | 29 | 6 | 1
+5 frs facility naics | 37 | 8 | 3
+src | orgs_with_6digit_code | orgs_T1 | orgs_T2
+union of the five sources | 127 | 18 | 14
+src | count(DISTINCT org_id) | count(DISTINCT org_id) FILTER (WHERE (naics = ANY(SELECT naics FROM t1))) | count(DISTINCT org_id) FILTER (WHERE (naics = ANY(SELECT naics FROM t2)))
+filed by the establishment or entity (sources 1+2) | 106 | 10 | 10
+src | count(DISTINCT org_id) | count(DISTINCT org_id) FILTER (WHERE (naics = ANY(SELECT naics FROM t1))) | count(DISTINCT org_id) FILTER (WHERE (naics = ANY(SELECT naics FROM t2)))
+sources 3+4+5 only (not filed by the establishment) | 21 | 4 | 1

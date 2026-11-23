@@ -1,0 +1,25 @@
+{
+ "frame_sites": 333,
+ "frame_orgs": 322,
+ "canary_sites": 25,
+ "seed": 20261122,
+ "fill_sites": 1,
+ "fill_terms": 2,
+ "leads": 9,
+ "leads_by_route": {
+  "A": 5,
+  "B": 3,
+  "C": 1
+ },
+ "holds": 15,
+ "holds_by_reason": {
+  "distributor_no_polymer_process": 3,
+  "grain_question": 1,
+  "material_developer_not_plant_process": 1,
+  "no_31_term_fits": 3,
+  "no_process_named": 2,
+  "no_statement_in_hand": 3,
+  "stored_page_is_an_error": 1,
+  "wrong_company_page": 1
+ }
+}

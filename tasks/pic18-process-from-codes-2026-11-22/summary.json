@@ -1,0 +1,23 @@
+{
+ "frame_sites": 333,
+ "frame_orgs": 322,
+ "lead_rows": 16,
+ "lead_sites": 15,
+ "lead_orgs": 15,
+ "by_filing_class": {
+  "osha_ita_establishment_filing": 13,
+  "sam_entity_registration": 3
+ },
+ "by_table_tier": {
+  "T1": 6,
+  "T2": 9
+ },
+ "by_term": {
+  "custom_compounding": 1,
+  "extrusion_profile": 3,
+  "foam_production_unspecified": 2,
+  "laminating": 2,
+  "mold_tool_making": 3,
+  "polymerization": 5
+ }
+}
