@@ -1273,6 +1273,11 @@ class RefuteFixesTest(unittest.TestCase):
                     ("Directory https://example.org/k; CRM export https://example.invalid/crm2; staging working/x.csv",))
         con.execute("UPDATE people SET public_profile_url=?", ("https://example.invalid/profile?mail=fixture%40example.invalid",))
         con.execute("UPDATE sites SET country='CA' WHERE site_id='SITE-000006'")
+        con.execute("UPDATE organizations SET description_1line=? WHERE org_id='ORG-000006'",
+                    ("Designed endpoint parent (verification wave 1, lane CF adjudication s4): Fixture Co.",))
+        con.execute("UPDATE organizations SET description_1line='Makes foam parts.' WHERE org_id='ORG-000005'")
+        con.execute("UPDATE organizations SET website='none_found' WHERE org_id='ORG-000004'")
+        con.execute("UPDATE organizations SET processes='other_specified_in_notes;extrusion' WHERE org_id='ORG-000005'")
         con.commit()
         con.close()
         cls.out = tmp / "site"
@@ -1348,6 +1353,54 @@ class RefuteFixesTest(unittest.TestCase):
             self.assertEqual(len(build_site.source_urls(ordinary)), 1, ordinary)
         self.assertEqual(build_site.lede("Exists only in the pic crm record."), build_site.lede("Exists only in the PIC CRM record."))
         self.assertIn("withheld", build_site.lede("Exists only in the pic crm record."))
+
+    def test_description_with_build_wording_is_withheld_on_the_page_and_in_the_graph(self):
+        leak = self.read("orgs/ORG-000006.html")
+        self.assertNotIn("verification wave", leak)
+        self.assertNotIn("lane CF", leak)
+        self.assertIn("withheld from this view because it may refer to internal material", leak)
+        ok = self.read("orgs/ORG-000005.html")
+        self.assertIn('<p class="lede">Makes foam parts.</p>', ok)                        # an ordinary description still shows
+        self.assertTrue(build_site.internal_wording("Designed endpoint parent (verification wave 1, lane CF adjudication s4)"))
+        self.assertTrue(build_site.internal_wording("Rung 1 carried by the packet; CHANGED from wave 7"))
+        self.assertFalse(build_site.internal_wording("Injection molder of automotive parts."))
+
+    def test_internal_wording_filter_is_the_blind_audit_scan(self):
+        root = Path(build_site.__file__).resolve().parent.parent
+        src = (root / "tasks" / "blind-audit-11-2026-11-17" / "sample.py").read_text(encoding="utf-8")
+        pattern = re.search(r"^LEAK = re\.compile\((r'.*'), re\.I\)$", src, re.M).group(1)
+        self.assertEqual(eval(pattern), build_site.INTERNAL_RE.pattern)                   # reused, not a second scan
+
+    def test_raw_data_markers_are_not_shown_as_words(self):
+        page = self.read("orgs/ORG-000004.html")
+        self.assertNotIn("none_found", page)
+        self.assertIn("No website found", page)
+        five = self.read("orgs/ORG-000005.html")
+        self.assertNotIn("other specified in notes", five)
+        self.assertIn("other (specified in the record&#x27;s notes, which are not published)", five.replace("&#39;", "&#x27;"))
+        self.assertNotIn("other specified in notes", self.read("directory.json"))
+
+    def test_stacked_phone_headers_hold_no_reachable_sort_button(self):
+        self.assertIn("table.stack thead button.sort{display:none}", self.read("style.css"))
+
+    def test_skyline_loads_nothing_heavy_on_a_phone(self):
+        html = self.read("skyline.html")
+        self.assertIn('data-libs="vendor/three.min.js" data-boot="skyline.js"', html)
+        self.assertNotRegex(html, r'<script[^>]*src="(?:vendor/three\.min\.js|skyline\.js)"')   # only explorer.js, and only from 720 px up
+        self.assertIn('class="viz-summary"', html)
+        self.assertIn("hero-sky{display:none!important}", self.read("style.css"))
+
+    def test_layout_shift_and_long_task_fixes_are_in_place(self):
+        css = self.read("style.css")
+        self.assertIn("#browse{min-height:100vh}", css)
+        self.assertIn("#chips{min-height:5.6rem}", css)
+        self.assertIn('rel="preload" href="fonts/lato-400-latin.woff2"', self.read("index.html"))
+        self.assertIn("new IntersectionObserver", self.read("sortable.js"))               # pages with dozens of tables enhance them as they near the screen
+
+    def test_howto_preview_names_every_page_that_fetches_data(self):
+        doc = (Path(build_site.__file__).resolve().parent.parent / "docs" / "SITE_HOWTO.md").read_text(encoding="utf-8")
+        for page in ("`directory.html`", "`experts.html`", "`skyline.html`", "`search.html`", "`map.html`"):
+            self.assertIn(page, doc.split("## Preview locally")[1].split("## What is deliberately not published")[0])
 
     def test_howto_publishing_recipes_build_the_graph_pages_and_no_claim_is_left_that_the_audit_refuted(self):
         doc = (Path(build_site.__file__).resolve().parent.parent / "docs" / "SITE_HOWTO.md").read_text(encoding="utf-8")

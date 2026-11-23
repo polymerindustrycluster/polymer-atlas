@@ -78,8 +78,8 @@ def vocab():
 
 
 def public_description(text):
-    """The one-line description, unless it refers to the private PIC CRM (the same filter the institution ledes use)."""
-    return "" if build_site.CRM_RE.search(str(text or "")) else text
+    """The one-line description, unless it refers to the private PIC CRM or carries build and review wording (the filter the ledes use)."""
+    return "" if build_site.internal_wording(text) else text
 
 
 def build_graph():

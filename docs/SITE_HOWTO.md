@@ -49,16 +49,14 @@ offline (`vendor/three.min.js` is not covered). `test_no_page_or_script_asks_ano
 
 ## Preview locally
 
-`search.html` and `map.html` load JSON with `fetch`, which browsers block for pages opened from disk (`file://`).
+`search.html`, `map.html`, `directory.html`, `experts.html`, `skyline.html` and the three graph pages load JSON with `fetch`, which browsers block for pages opened from disk (`file://`).
 Serve the folder instead:
 
 ```bash
-python3 -m http.server -d build/site 8000     # then open http://localhost:8000/
-python3 -m http.server -d build/pages 8000    # the whole site, graph pages included
+python3 -m http.server -d build/pages 8000    # then open http://localhost:8000/ (the whole site; build/site, from build_site.py alone, has no graph pages)
 ```
 
-The other pages (home, counties, organizations) also work when opened directly from disk, except for the graph pages,
-which fetch their data and so need the folder served over http (the shared `style.css` itself loads from disk).
+The pages that do not fetch data (home, counties, organizations) also work when opened directly from disk (`style.css` loads from disk too).
 
 ## What is deliberately not published
 
@@ -66,7 +64,7 @@ The generator renders a whitelist of public business fields. It never writes `no
 `pic_relevance` (prospecting stages) or any other internal column. It also withholds:
 
 - Source entries that refer to the PIC CRM or to staging/workshop paths (neither their text nor a link inside them), and one-line
-  descriptions that mention the CRM, on the organization pages and in the graph pages' data (AGENTS.md section 5.1). A source list says how many
+  descriptions that mention the CRM or carry build and review wording (the blind audits' leak scan, `INTERNAL_RE`; it also withholds the odd ordinary description, such as one that names Council Bluffs), on the organization pages and in the graph pages' data (AGENTS.md section 5.1). A source list says how many
   entries were left out; the repository CSV keeps the full text. `test_crm_marked_sources_never_render_and_the_omitted_count_is_stated` fails if one renders. A source entry is withheld when it names the CRM (any capitalisation), a path under `staging/`, `workshop/`, `working/` or `internal/` (the bare words are ordinary text and stay), or the folder names `crm-export`, `crm-crossref` and `pic-member-list`; a citation of PIC's public member list ("Public PIC member list") is a public source and stays.
 - Profile and other links that embed an email address, literally or percent-encoded, including the organization and event links in the graph data (the researcher is still listed, without a link).
 - Per-person pages. Professors and federal-lab research staff appear only as name, role as published, research

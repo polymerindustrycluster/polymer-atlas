@@ -152,6 +152,7 @@ VOCAB_LABELS = {
     # entity, ownership and site type
     "corporation_private": "private corporation", "corporation_public": "public corporation", "llc": "LLC",
     "private_equity_portfolio": "private equity portfolio", "hq_and_plant": "headquarters and plant", "hq_only": "headquarters only",
+    "other_specified_in_notes": "other (specified in the record's notes, which are not published)",
     "rd_center": "R&D center", "warehouse_distribution": "warehouse & distribution",
     # ecosystem organizations, programs, services
     "accelerator_incubator": "accelerator / incubator", "funder_capital": "funder / capital",
@@ -300,12 +301,22 @@ def url_links(urls):
 CRM_RE = re.compile(r"\bCRM\b", re.I)
 
 
+# Words that name a PR, pass, lane, packet, builder or owner decision in free text: the leak scan of the blind audits, copied from
+# tasks/blind-audit-11-2026-11-17/sample.py (test_internal_wording_filter_is_the_blind_audit_scan fails if the two drift apart).
+# It also hits ordinary text now and then ("Council Bluffs"); a description it hits is withheld, never half-shown.
+INTERNAL_RE = re.compile(r'#\d+|\bEVD-\d+|\bPR\b|pull request|\bpass[- ]?\d*\b|packet|(?-i:\blanes?\b|\bLanes? [A-Z0-9]{2,}\b)|\bwave\b|integration pass|integrator|codex|claude|grok|gemini|spaghetti|\bmuse\b|\bowner\b|\brulings?\b|battery|council|refut|\bminted\b|staging|banked|\bnotes?\b|created_by|tier[ _]?effect|supports_[ABCU]', re.I)
+
+
+def internal_wording(text):
+    return bool(CRM_RE.search(str(text or "")) or INTERNAL_RE.search(str(text or "")))
+
+
 def lede(text):
-    """Description paragraph; text that references the private PIC CRM is withheld."""
+    """Description paragraph; text that refers to the private PIC CRM or carries build and review wording is withheld."""
     if not nonempty(text):
         return ""
-    if CRM_RE.search(str(text)):
-        return ('<p class="muted">The one-line description is withheld from this view because it refers to '
+    if internal_wording(text):
+        return ('<p class="muted">The one-line description is withheld from this view because it may refer to '
                 "internal material; see the repository CSV.</p>")
     return f'<p class="lede">{esc(text)}</p>'
 
@@ -328,6 +339,8 @@ def safe_href(url):
 
 
 def ext_link(url, text=None):
+    if text is None and str(url or "").strip() == "none_found":   # the data's marker for "looked, found no website"
+        return "No website found"
     href = safe_href(url)
     if not href:
         return esc(text if text is not None else url)
@@ -540,6 +553,8 @@ def page(ctx, title, body, root="", active="", description="", head_extra="", sc
 <meta property="og:type" content="website">
 <meta property="og:image" content="{SITE_URL}og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="{root}fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{root}fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{root}style.css">
 <noscript><style>.menu-btn{{display:none}}.site-header nav{{display:block}}</style></noscript>
 {head_extra}
@@ -960,7 +975,21 @@ SORTABLE_JS = r"""(function () {
   var count = 0;
   window.atlasTable = function (t) { label(t); enhance(t, 'x' + count++); };   // for tables a page draws after load (experts.js)
   function init() {
-    Array.prototype.forEach.call(document.querySelectorAll('.table-wrap table'), function (t, i) { count = i + 1; label(t); enhance(t, i); });
+    var tables = Array.prototype.slice.call(document.querySelectorAll('.table-wrap table'));
+    count = tables.length;
+    function run(t, i) { label(t); enhance(t, i); }
+    if (tables.length > 10 && 'IntersectionObserver' in window) {
+      // A page with dozens of tables (a multinational's organization page) enhances each one as it nears the screen or its closed
+      // <details> opens, instead of all at once: the long task that blocked a phone for 866 ms.
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          io.unobserve(e.target);
+          var t = e.target.querySelector('table'); run(t, tables.indexOf(t));
+        });
+      }, { rootMargin: '800px 0px' });
+      tables.forEach(function (t) { io.observe(t.closest('.table-wrap') || t); });
+    } else tables.forEach(run);
     openTarget(); addEventListener('hashchange', openTarget);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
@@ -1052,6 +1081,7 @@ select{max-width:100%}
 @media (max-width:640px){
   .table-wrap:has(table.stack){overflow-x:visible}
   table.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.stack thead button.sort{display:none}   /* the header is hidden on a phone, so its sort buttons must not be reachable either */
   table.stack caption{display:block}
   table.stack,table.stack tbody,table.stack tr{display:block;width:100%}
   table.stack tr{border-top:1px solid var(--line);padding:8px 0;display:grid;grid-template-columns:1fr 1fr}
@@ -1249,7 +1279,9 @@ a.url{display:inline-block;max-width:15em;overflow:hidden;text-overflow:ellipsis
 .xmore:hover{border-color:var(--accent-hover);color:var(--accent-hover)}
 .xfilter{display:inline-flex;gap:6px;align-items:center;margin-left:8px;font-weight:400}
 @media (max-width:720px){.xrows li{grid-template-columns:1fr}}
-#count{font-weight:700}
+#count{font-weight:700;min-height:1.6em}
+#chips{min-height:5.6rem}
+#browse{min-height:100vh}   /* the institution table arrives after load; keep the footer below the fold meanwhile (layout shift) */
 
 /* ---- phone menu and the Views strip (shell) ---- */
 .menu-btn{display:none;align-items:center;min-height:44px;padding:0 var(--s-4);border:1px solid rgba(255,255,255,.4);border-radius:8px;background:transparent;color:var(--on-deep);font:700 var(--t-sm)/1 var(--f-display);cursor:pointer}
@@ -1355,10 +1387,11 @@ main.viz{max-width:none;padding:0;position:relative;height:max(540px,calc(100svh
 .viz-summary .vlegend li{display:flex;align-items:center;gap:var(--s-2)}
 .viz-summary .sw{width:12px;height:12px;border-radius:50%;flex:none;display:inline-block}
 .viz-summary .btns{margin:var(--s-4) 0}
+.hero-sky .btn{min-height:44px}
 @media (max-width:719.98px){
   main.viz{height:auto;overflow:visible}
   .viz-summary{display:block;padding:var(--s-5) var(--s-4)}
-  .viz .stage,.viz .rail,.viz .card,.viz .tip,.viz .title,.viz .bar,.viz .caption{display:none!important}
+  .viz .stage,.viz .rail,.viz .card,.viz .tip,.viz .title,.viz .bar,.viz .caption,.hero-sky{display:none!important}
 }
 @media (prefers-reduced-motion:reduce){.viz *{scroll-behavior:auto!important}}
 
@@ -2265,7 +2298,12 @@ def build_skyline_page(ctx):
     ctx.skyline = sky
     top = "".join(f"<li>{plural(h[2], 'site row')}: {esc(h[5])}</li>" for h in sky["hex"][:10])
     body = f"""
-<section class="hero" aria-labelledby="hero-title">
+<section class="viz-summary" aria-labelledby="vs-title"><h1 id="vs-title">3D skyline</h1>
+<p class="lede">Hexagonal columns over the United States: the taller the column, the more active site rows the Atlas holds there. The 3D view needs a screen 720 px wide or more; here are the largest clusters as text.</p>
+<p><strong>{fmt_int(len(active_ab(sites)))}</strong> active site rows (tiers A-C), {geo_note(active_ab(sites))}; <strong>{fmt_int(len(active_ab(pic)))}</strong> in the 18 PIC counties. {fmt_int(sky["n"])} of them have reference coordinates in the lower 48 states.</p>
+<ol>{top}</ol>
+<div class="btns"><a class="btn primary" href="directory.html">Find companies</a> <a class="btn" href="map.html">Street map</a> <a class="btn" href="counties/index.html">Counties</a></div></section>
+<section class="hero hero-sky" aria-labelledby="hero-title">
 <div class="hero-stage">
 <div id="skyline" data-src="skyline.json" role="img"
  aria-label="3D map of the United States with hexagonal columns whose height shows how many polymer industry site rows the Atlas holds in each area; the tallest stand in Northeast Ohio."></div>
@@ -2286,13 +2324,14 @@ def build_skyline_page(ctx):
 <button class="btn" type="button" data-sky-focus="ohio" aria-pressed="false">Northeast Ohio</button></div>
 </div>
 </section>
-<div class="sr-only"><p>Largest clusters of site rows on the 3D map:</p><ol>{top}</ol></div>
+<div class="sr-only hero-sky"><p>Largest clusters of site rows on the 3D map:</p><ol>{top}</ol></div>
 <p class="small muted">The 3D map shows {fmt_int(sky["n"])} active, tier A-C site rows with reference coordinates in the lower 48
 states, binned into hexagons; column height follows the count. Lime outlines mark the PIC-18 counties.
 Positions are interpolated from addresses and are never evidence.</p>
 """
-    return page(ctx, "3D skyline", body, "", "sky",
-                scripts=f'<script src="{THREE_JS}" defer></script>\n<script src="skyline.js" defer></script>')
+    # three.js, the data and the script load only on a screen 720 px or wider (explorer.js); a phone gets the summary and no WebGL
+    return page(ctx, "3D skyline", body, "", "sky", scripts='<script src="explorer.js" defer></script>',
+                main_attrs=f' data-libs="{THREE_JS}" data-boot="skyline.js"')
 
 
 def build_map_page(ctx, data_rows):
