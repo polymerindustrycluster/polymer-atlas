@@ -315,7 +315,10 @@ class TestBindingGateJob(unittest.TestCase):
         self.assertIn("ref: refs/pull/${{ env.PR }}/merge", self.job)
         self.assertIn("path: pr", self.job)
         self.assertIn("for mode in --verify-proofs --provenance-since; do", self.job)
-        self.assertIn('scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr', self.job)
+        self.assertIn('git -C pr rev-parse --verify HEAD^2', self.job)
+        self.assertIn('[ "$merge_parent" != "$head" ]', self.job)
+        self.assertIn('read -r head < "$out/head" || exit 2', self.job)
+        self.assertIn('scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr --pr-head "$head"', self.job)
         self.assertIn("gate not yet on main", self.job)
         self.assertNotIn("python3 pr/", self.job)  # nothing is run from the PR tree
         self.assertIn("fetch-depth: 0", self.job)
@@ -335,6 +338,15 @@ class TestBindingGateJob(unittest.TestCase):
         self.assertIn("needs: gate-run", self.publish)
         self.assertIn("needs.gate-run.result", self.publish)
         self.assertNotIn("needs.binding-gate", yml)
+
+    def test_publish_rejects_obsolete_unchecked_state(self):
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.object(c, "gh_json", return_value={"headRefOid": HEAD}), \
+                mock.patch.object(c, "post_check", return_value=True) as post:
+            result = Path(tmp)
+            (result / "head").write_text(HEAD)
+            (result / "state").write_text("not_yet")
+            self.assertEqual(c.publish_gate(result, 7), 1)
+            post.assert_not_called()
 
     def test_only_the_publish_job_holds_a_token(self):
         self.assertIn("checks: write", self.publish)
