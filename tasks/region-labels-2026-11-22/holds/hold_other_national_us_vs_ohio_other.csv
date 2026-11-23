@@ -1,0 +1,3 @@
+org_id,legal_name,hq_city,hq_state,hq_county,hq_in_scope,status,file
+ORG-000665,"Amcor Flexibles North America, Inc.",Bellevue,OH,Sandusky,national_us,active,organizations_OH.csv
+ORG-004031,Axcess Infrastructure,Dayton,OH,Montgomery,national_us,active,organizations_OH.csv

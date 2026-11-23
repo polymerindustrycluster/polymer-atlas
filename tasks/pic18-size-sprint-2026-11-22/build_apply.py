@@ -5,7 +5,7 @@
 The site edits are applied with scripts/apply_p1_crm_scrub.py --packet-dir <this folder> (the 2026-11-02 band pass's route).
 Convention followed: tasks/bands-apply-2026-11-02 (band cell + `BAND-SOURCE:` notes append) and tasks/size-band-evidence-2026-11-03
 (one `size_band` evidence row per fill, government_filing, supports_B). Deviations: no headcount anywhere (R13 / SCHEMA 4.4), and the
-date is the filing's source date (SCHEMA R13 v1.19.1), not the submission date or the pass date."""
+date is the filing's source date (SCHEMA R13 v1.19.3), not the submission date or the pass date."""
 import argparse, csv, hashlib, re, sys
 from pathlib import Path
 HERE = Path(__file__).resolve().parent; ROOT = HERE.parents[1]
