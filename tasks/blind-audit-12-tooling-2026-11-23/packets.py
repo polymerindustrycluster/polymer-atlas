@@ -203,10 +203,10 @@ def build(folder, out, reader=None, extend=()):
         reader = draw.GitReader(draw.require_ancestor(receipt["at"]))
     if hasattr(reader, "placements"):
         placements = reader.placements()
-        assigned = {rid: r["stratum"] for (t, rid), r in frame.items() if t in ("organizations", "ecosystem")}
-        for rid, (stratum, _) in placements.items():
-            if (rid in assigned if stratum == "EXCLUDED" else assigned.get(rid) != stratum):
-                raise ValueError("pinned B6 placements disagree with the draw frame")
+        assigned = {rid: r["region_basis"] for (t, rid), r in frame.items() if t in ("organizations", "ecosystem")}
+        for rid, (placement, _) in placements.items():
+            if (rid in assigned if placement == "EXCLUDED" else assigned.get(rid) != draw.PLACEMENT_REGION[placement]):
+                raise ValueError(f"pinned B6 placement disagrees with the draw frame for {rid}")
     rows = list(records_for_stage(sample, extend))
     if extend and set(extend) != {r["stratum"] for r in rows}:
         raise ValueError("each requested extension must have stage-2 rows")

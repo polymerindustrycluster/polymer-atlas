@@ -7,8 +7,8 @@ ATLAS-7 · `claimed:atlas-p1-audit12-tooling 2026-11-23`
 The controller retains the draw directory and passes its path to the tooling. The packet builder checks the hashes and counts in the draw receipt, reads public fields from the pinned commit, and checks B6 placements against the frame when the pinned draw reader provides them. The builder consumes the draw's placement decisions and excludes their reasoning from the reader files.
 
 ```sh
-python3 tasks/blind-audit-12-tooling-2026-11-23/packets.py --draw "$DRAW" --out "$STAGE1"
-python3 tasks/blind-audit-12-tooling-2026-11-23/packets.py --draw "$DRAW" --out "$STAGE2" --extend PIC18_RECORDS
+lockf -k /tmp/polymer-atlas-heavy.lock python3 tasks/blind-audit-12-tooling-2026-11-23/packets.py --draw "$DRAW" --out "$STAGE1"
+lockf -k /tmp/polymer-atlas-heavy.lock python3 tasks/blind-audit-12-tooling-2026-11-23/packets.py --draw "$DRAW" --out "$STAGE2" --extend PIC18_RECORDS
 ```
 
 Use a fresh private stage directory. Stage 1 includes the 18 plants. For stage 2 specify only the strata the decision rule extends. An extension contains only newly released records. Pass each reader their copy of the blind CSV, its SHA-256, these [reader instructions](REVIEWER_INSTRUCTIONS.md), the as-of date and any allowed schema materials. Keep `private_map.csv` for the controller to score plants. The output copies are byte-identical. A leak-scan hit stops the release. Use the blind ID and field in the diagnostic to review the underlying value privately before releasing anything.

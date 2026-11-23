@@ -28,8 +28,8 @@ def packet_check(root):
     seed = b"audit12-tooling-synthetic-only"
     at = "0" * 40
     sample, plants, _ = p.draw.run_draw(reader, at, seed, p.draw.sha(seed), draw_dir, plan=p.draw.TINY)
-    frame_row = next(r for r in sample if r["table"] == "organizations")
-    reader.placements = lambda: {frame_row["record_id"]: (frame_row["stratum"], "private ruling basis")}
+    frame_row = next(r for r in sample if r["table"] == "organizations" and r["stratum"] == "REST_US_RECORDS")
+    reader.placements = lambda: {frame_row["record_id"]: ("REST_OF_COUNTRY", "private ruling basis")}
     out = root / "stage1"
     p.build(draw_dir, out, reader)
     with (out / "blind_a.csv").open(newline="") as f:
