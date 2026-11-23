@@ -39,7 +39,9 @@ def main():
     for f in sorted(data.glob("sites_*.csv")):
         for r in rd(f): where[r["site_id"]] = (f.name, f.stem.split("_", 1)[1], r)
     used = {r["evidence_id"] for f in data.glob("evidence*.csv") for r in rd(f)} | {r["evidence_id"] for r in rd(data / "archive_links.csv") if "evidence_id" in r}
-    idmap = {r["site_id"]: r["evidence_id"] for r in rd(IDMAP)}; nxt = max(int(v[4:]) for v in idmap.values()) + 1
+    idmap = {r["site_id"]: r["evidence_id"] for r in rd(IDMAP)}
+    rowref = {r["site_id"]: r["packet_row_646545f6"] for r in rd(IDMAP) if r["packet_row_646545f6"]}   # evidence notes keep the packet.csv row number of head 646545f6, so the 50 kept rows stay byte-identical after the Form 5500 withdrawal
+    nxt = max(int(v[4:]) for v in idmap.values()) + 1
     edits, ev = [], []
     for n, p in enumerate(packet):
         sid = p["site_id"]; fname, tag, r = where[sid]
@@ -48,13 +50,13 @@ def main():
         lab, measure, ref, note = label(p); eid = idmap.get(sid)
         if eid is None: eid = f"EVD-{nxt:06d}"; nxt += 1
         assert EVD_FIRST <= int(eid[4:]) <= EVD_LAST and eid not in used, f"{eid} not unique tree-wide"
-        edits.append(dict(file=fname, row_id=sid, column="employee_band_site", old_sha256=sha(r["employee_band_site"]), new_value=p["band"], edit_class=f"BAND_SITE_{p['source'].upper()}", rationale=f"R13 source {p['r13_source']} {lab}; name match {p['name_match']}; packet.csv row {n + 2}"))
+        edits.append(dict(file=fname, row_id=sid, column="employee_band_site", old_sha256=sha(r["employee_band_site"]), new_value=p["band"], edit_class=f"BAND_SITE_{p['source'].upper()}", rationale=f"R13 source {p['r13_source']} {lab}; name match {p['name_match']}; packet.csv row {rowref.get(sid, n + 2)}"))
         notes = r["notes"]
         if a.append: notes = notes.split(" BAND-SOURCE: ")[0] if " BAND-SOURCE: " in notes else notes   # already applied: recompute the pre-edit notes
         edits.append(dict(file=fname, row_id=sid, column="notes", old_sha256=sha(notes), new_value=(notes.rstrip() + " " if notes.strip() else "") + f"BAND-SOURCE: employee_band_site={p['band']} from {note}", edit_class="BAND_SOURCE_NOTE", rationale="band provenance (source + date)"))
         ev.append(dict(evidence_id=eid, record_table="sites", record_id=sid, claim_type="size_band", claim_detail=f"employee_band_site={p['band']}: {lab}: {measure} in {p['band']} (band only, not a headcount)",
                        source_class="government_filing", source_ref=ref, observed_date=p["source_date"], tier_effect="supports_B", created_by=BY,
-                       notes=f"packet tasks/pic18-size-sprint-2026-11-22/packet.csv row {n + 2}; {p['name_match']} name match at an equal street; fills a blank or `unknown` cell only; shard {tag}", address_role=""))
+                       notes=f"packet tasks/pic18-size-sprint-2026-11-22/packet.csv row {rowref.get(sid, n + 2)}; {p['name_match']} name match at an equal street; fills a blank or `unknown` cell only; shard {tag}", address_role=""))
     assert len({e["evidence_id"] for e in ev}) == len(ev)
     cols = ["file", "row_id", "column", "old_sha256", "new_value", "edit_class", "rationale"]
     if not a.append:

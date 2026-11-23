@@ -13,8 +13,7 @@
  },
  "packet_fills_by_source": {
   "osha_ita": 47,
-  "osha_inspection": 3,
-  "form5500": 28
+  "osha_inspection": 3
  },
  "holds_by_reason": {
   "ita_multiple_establishments_at_street": 8,
@@ -25,6 +24,7 @@
   "stale_over_5_years": 26,
   "parent_name_lead": 6,
   "later_filing_other_name": 17,
+  "form5500_withdrawn_to_followup": 28,
   "f5500_partial_plan": 5,
   "f5500_multiple_plans": 11,
   "sources_disagree_in_window": 8,

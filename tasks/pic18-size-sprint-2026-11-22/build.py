@@ -176,6 +176,12 @@ def index(entries):
         ex[k].append(e); nr[(civic(k.split()[0]), squash(e["city"]))].append(e)
     return ex, nr
 
+WITHDRAW = set()
+
+def shown_st(e):
+    """a Form 5500 sponsor mailing line is never published (owner round 12); equality is still tested on it"""
+    return "[mailing street not published]" if e["kind"] == "f5500" else e["st"]
+
 def year_of(e):
     r = e["r"]
     return int(float(r["year_filing_for"])) if e["kind"] == "ita" else int(r["open_date"][:4]) if e["kind"] == "insp" else int(r["plan_year"][:4])
@@ -202,7 +208,7 @@ def classify(site, held, ix):
         elif c == "exact": notes.append(("street_equal_city_conflict", e, f"street equal and name held but city {e['city']!r} / ZIP {e['zip']!r} conflict with the site"))
     for e in nr.get((civic(sk.split()[0]), squash(site["city"])), []) if sk else []:
         if street_key(e["st"]) != sk and near_street(site["street_address"], e["st"]) and name_class(held, e["names"])[0] == "exact":
-            notes.append(("street_near_differs", e, f"name held, street {e['st']!r} vs site {site['street_address']!r} differs in suffix/directional/unit letter only"))
+            notes.append(("street_near_differs", e, f"name held, street {shown_st(e)!r} vs site {site['street_address']!r} differs in suffix/directional/unit letter only"))
     return eq, notes
 
 def size_flag(r):
@@ -336,8 +342,9 @@ for ln in open(a_man := "/Volumes/johnpswan/work/GAC/polymer-atlas/atlas-store/r
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--cache", required=True); ap.add_argument("--out", required=True)
-    ap.add_argument("--region", default="pic18", choices=sorted(REGIONS)); ap.add_argument("--frame-size", action="store_true", help="print the frame size for --region and stop (builds nothing)"); ap.add_argument("--data-dir"); ap.add_argument("--candidates-out", help="where to write candidates_all.csv (it lists unselected third-party filers, so it is not kept in the repo)"); ap.add_argument("--sample", type=int); ap.add_argument("--seed", type=int, default=20261122)
+    ap.add_argument("--region", default="pic18", choices=sorted(REGIONS)); ap.add_argument("--frame-size", action="store_true", help="print the frame size for --region and stop (builds nothing)"); ap.add_argument("--withdraw-source", action="append", default=[], help="a source whose fills go to holds as withdrawn to a follow-up (e.g. form5500)"); ap.add_argument("--data-dir"); ap.add_argument("--candidates-out", help="where to write candidates_all.csv (it lists unselected third-party filers, so it is not kept in the repo)"); ap.add_argument("--sample", type=int); ap.add_argument("--seed", type=int, default=20261122)
     ap.add_argument("--site-list", help="file of site_ids: run exactly these (any status/tier), frame-agnostic, for cross-lane comparison"); a = ap.parse_args()
+    global WITHDRAW; WITHDRAW = set(a.withdraw_source)
     orgs, sites = load_atlas(a.data_dir); fr, n_org, n_unk = frame(orgs, sites, a.region)
     if a.frame_size:
         print(f"region {a.region}: organization rows with an active tier A-C Ohio site {n_org}; size-unknown {n_unk}; frame sites {len(fr)}; with street {sum(1 for s in fr if s['street_address'].strip())}"); return
@@ -373,10 +380,12 @@ def main():
                               *[(f"FILL {res[lv][1]['source']} {res[lv][1]['band']} age {2026 - res[lv][1]['year']}" if res[lv][0] == "fill" else f"HOLD {res[lv][1]}" if res[lv][0] == "hold" else "none") for lv in LEVELS]])
         st = res["suffix"]
         nearinfo = [f"[{k} near-street row excluded] {w}" for k in notes if (w := would_be(k, notes[k], s))]
+        if st[0] == "fill" and st[1]["source"] in WITHDRAW:
+            holds.append((sid, oid, f"{st[1]['source']}_withdrawn_to_followup", "withdrawn from this PR to a follow-up packet after review round 2 (a second plan number under the same EIN, a later return of the same plan, and the owner question on whole-company plans); the band it would give is kept in that packet, not here", f"band {st[1]['band']} from {st[1]['source']} year {st[1]['year']}")); continue
         if st[0] == "fill":
             p = st[1]; p["note"] = " ".join(nearinfo); packet.append((sid, oid, p))
         elif st[0] == "hold":
-            nt = " | ".join(f"[{k}] {t}: {e['names'][:2]} @ {e['st']!r}" for k in notes for _, e, t in notes[k])[:500]
+            nt = " | ".join(f"[{k}] {t}: {e['names'][:2]} @ {shown_st(e)!r}" for k in notes for _, e, t in notes[k])[:500]
             fact = {"street_near_differs": "confirm the site's street against the operator's own page; the named filing would then apply", "ita_multiple_establishments_at_street": "which ITA establishment is this site (or whether the site covers all of them)",
                     "later_filing_other_name": "whether the later filing's operator is the same business (a successor/trade-name link) settles it", "filing_binds_two_sites": "a dedupe or which-site ruling for the two site records", "sources_disagree": "review of which count is this establishment's"}.get(st[1], "see detail")
             reason, detail = st[1], (st[2] + (" || " + nt if nt else ""))[:900]
@@ -386,7 +395,7 @@ def main():
         else:
             near = [(k, e) for k in notes for t, e, _ in notes[k] if t == "street_near_differs"]
             if near:
-                nt = " | ".join(f"[{k}] {t}: {e['names'][:2]} @ {e['st']!r} {would_be(k, notes[k], s)}" for k in notes for t, e, _ in notes[k] if t == "street_near_differs")
+                nt = " | ".join(f"[{k}] {t}: {e['names'][:2]} @ {shown_st(e)!r} {would_be(k, notes[k], s)}" for k in notes for t, e, _ in notes[k] if t == "street_near_differs")
                 holds.append((sid, oid, "street_near_differs", "confirm the site's street against the operator's own page; the named filing would then apply", scrub(nt[:900], per_kind, notes)))
             else:
                 anyeq = any(per_kind[k] for k in per_kind)
@@ -397,7 +406,7 @@ def main():
     def wcsv(name, hdr, rows):
         with open(out / name, "w", newline="") as f: w = csv.writer(f); w.writerow(hdr); w.writerows(rows)
     wcsv("packet.csv", ["site_id", "org_id", "source", "source_file", "file_sha256", "row_locator", "filing_year", "source_date", "age_years", "band", "r13_source", "name_match", "matched_name", "filing_name", "filing_street", "other_sources", "note"],
-         [[sid, oid, p["source"], "raw/" + p["e"]["r"]["file"], MAN["./" + p["e"]["r"]["file"]], f"{p['e']['r']['member']}|row={p['e']['r']['row']}|id={p['e']['r']['rid']}", p["year"], source_date(p["e"]), 2026 - p["year"], p["band"], p["r13"], p["name_match"], p["matched_name"], p["filing_name"], p["e"]["st"], p.get("also", ""), p.get("note", "")] for sid, oid, p in packet])
+         [[sid, oid, p["source"], "raw/" + p["e"]["r"]["file"], MAN["./" + p["e"]["r"]["file"]], f"{p['e']['r']['member']}|row={p['e']['r']['row']}|id={p['e']['r']['rid']}", p["year"], source_date(p["e"]), 2026 - p["year"], p["band"], p["r13"], p["name_match"], p["matched_name"], p["filing_name"], shown_st(p["e"]), p.get("also", ""), p.get("note", "")] for sid, oid, p in packet])
     wcsv("holds.csv", ["site_id", "org_id", "reason", "settling_fact", "detail"], holds)
     CAND_HDR = ["site_id", "org_id", "source", "source_file", "row_locator", "filing_year", "source_date", "on_or_after_2021-11-22", "age_years", "filing_names", "filing_street", "name_match", "band_of_row", "ita_size_code_check", "disposition_exact_only", "disposition_corporate_suffix_accepted (RULED)", "disposition_containment_accepted"]
     if a.candidates_out:

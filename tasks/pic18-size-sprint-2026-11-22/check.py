@@ -134,9 +134,29 @@ def reevaluate(packet, cache, orgs, sites):
         if r[0] != "fill" or r[1]["band"] != p["band"] or r[1]["source"] != p["source"]: errs.append(f"{p['site_id']}: matcher now says {r[0]} {r[1] if r[0] == 'hold' else (r[1]['source'], r[1]['band'])}, packet says {p['source']} {p['band']}")
     return errs
 
+def same_as(ref, packet, data_dir="data"):
+    """the packet's sites are byte-identical to what they were at `ref`: the whole site row, and every size_band evidence row (same ids, same cells)."""
+    import subprocess, glob
+    git = lambda path: subprocess.run(["git", "show", f"{ref}:{path}"], capture_output=True, text=True, check=True).stdout
+    P = {p["site_id"] for p in packet}; errs = []; n_sites = n_ev = 0
+    for f in sorted(glob.glob(f"{data_dir}/sites_*.csv")):
+        old = {r["site_id"]: r for r in csv.DictReader(io.StringIO(git(f)))}
+        for r in csv.DictReader(open(f, newline="", encoding="utf-8")):
+            if r["site_id"] in P:
+                n_sites += 1
+                if r != old.get(r["site_id"]): errs.append(f"{r['site_id']}: site row differs from {ref[:8]}")
+    for f in sorted(glob.glob(f"{data_dir}/evidence_sites_*.csv")):
+        old = {r["evidence_id"]: r for r in csv.DictReader(io.StringIO(git(f)))}
+        for r in csv.DictReader(open(f, newline="", encoding="utf-8")):
+            if r["record_id"] in P and r["claim_type"] == "size_band" and r["evidence_id"].startswith("EVD-481"):
+                n_ev += 1
+                if r != old.get(r["evidence_id"]): errs.append(f"{r['evidence_id']}: evidence row differs from or is absent at {ref[:8]}")
+    if n_sites != len(P) or n_ev != len(P): errs.append(f"found {n_sites} site rows and {n_ev} evidence rows for {len(P)} packet sites")
+    return errs
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--packet", required=True); ap.add_argument("--raw", required=True)
-    ap.add_argument("--selftest", action="store_true"); ap.add_argument("--no-hash", action="store_true"); ap.add_argument("--cache", help="Ohio-only cache dir (extract_oh.py output): also re-run the matcher's whole decision for every packet site"); ap.add_argument("--base-data", help="data dir of the base tree (the frame and the held names are computed on it); default data/"); ap.add_argument("--base", help="git ref of the base tree: also check that data/ differs from it only by the packet"); a = ap.parse_args()
+    ap.add_argument("--selftest", action="store_true"); ap.add_argument("--no-hash", action="store_true"); ap.add_argument("--cache", help="Ohio-only cache dir (extract_oh.py output): also re-run the matcher's whole decision for every packet site"); ap.add_argument("--base-data", help="data dir of the base tree (the frame and the held names are computed on it); default data/"); ap.add_argument("--same-as", help="git ref: assert the packet sites (site rows and size_band evidence rows) are byte-identical to that ref"); ap.add_argument("--base", help="git ref of the base tree: also check that data/ differs from it only by the packet"); a = ap.parse_args()
     packet = list(csv.DictReader(open(a.packet, newline="")))
     orgs, sites = B.load_atlas(a.base_data); fr_ids = {r["site_id"] for r in csv.DictReader(open(HERE / "frame.csv"))}   # the frame was computed on the base (393c3895); data/ now holds the fills
     man = {}
@@ -146,6 +166,8 @@ def main():
     d = HERE; frame = {r["site_id"] for r in csv.DictReader(open(d / "frame.csv"))}; held = {r["site_id"] for r in csv.DictReader(open(d / "holds.csv"))}; pk = {p["site_id"] for p in packet}
     if pk & held or pk | held != frame: errs.append(f"applied ({len(pk)}) + held ({len(held)}) != frame ({len(frame)}), or they overlap")
     if a.base: errs += check_applied(a.base, packet)
+    if a.same_as:
+        e2 = same_as(a.same_as, packet); print(f"packet sites byte-identical to {a.same_as[:8]}: {'yes' if not e2 else 'NO'} ({len(packet)} site rows and {len(packet)} evidence rows compared)"); errs += e2
     print(f"applied {len(pk)} + held {len(held)} = frame {len(frame)}: {'ok' if pk | held == frame and not pk & held else 'MISMATCH'}")
     print(f"replayed {len(packet)} packet rows: {len(errs)} failures"); [print("  FAIL", e) for e in errs[:50]]
     bad = bool(errs)
