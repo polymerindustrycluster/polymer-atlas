@@ -1,0 +1,27 @@
+{
+ "base_ref": "393c38957112c1d52fd052bc09b8a2c246669051",
+ "unit": "organizations rows (data/organizations_*.csv), all statuses",
+ "region": "PIC-18 (scripts/regions.py)",
+ "counts_by_class": {
+  "agree": 1381,
+  "hold_county_blank": 8,
+  "hold_label_blank": 1,
+  "hold_label_outside_ohio_but_ohio_pic18_county": 4,
+  "hold_ohio_statewide_undefined": 79,
+  "hold_other_national_us_vs_ohio_other": 2,
+  "hold_state_blank": 288,
+  "record_error_county_not_in_ohio": 1,
+  "record_error_county_not_in_state": 3,
+  "record_error_ohio_label_on_non_ohio_state": 9,
+  "relabel_ohio_other": 78,
+  "relabel_ohio_statewide": 10,
+  "relabel_pic12": 224,
+  "skip_no_state": 3,
+  "skip_non_ohio": 2935
+ },
+ "relabels_by_stored_label": {
+  "ohio_other": 78,
+  "pic12": 224,
+  "ohio_statewide": 10
+ }
+}
