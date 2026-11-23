@@ -759,6 +759,10 @@ class DirectoryCompaniesTest(unittest.TestCase):
         self.assertIn("var lost = Object.keys(counts[f]['_'] || {}).filter(function (id) { return !companies[id]; }).length;", self.js)   # left out = no row on the list
         self.assertIn("' company' : ' companies') + ' with unknown '", self.js)
         self.assertIn("Every filter except the member flag", self.html)
+        self.assertIn('A row with the "PIC member" badge is on the public member list. A row without it is not marked either way', self.html)
+        self.assertNotIn('is marked "on the public member list" or', self.html)                # the list shows a badge for Yes only; help must not promise a row label for No
+        doc = (Path(build_site.__file__).resolve().parent.parent / "docs" / "SITE_HOWTO.md").read_text(encoding="utf-8")
+        self.assertIn("each lists its unknown count except the member flag", doc)
 
 
 class RealDataHeadlineTest(unittest.TestCase):
