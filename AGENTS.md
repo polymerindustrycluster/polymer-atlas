@@ -15,6 +15,14 @@ them and never commit a hand-modified one. Never commit anything
 produced in a local staging or workshop area; only changes under
 `data/`, `docs/`, `scripts/`, and `tasks/` travel.
 
+**Where things live** (owner ruling 2026-11-22; this is a pointer, not an
+enforced rule, and no script checks it): `tasks/QUEUE.md` is the claim
+ledger, the line you mark `claimed:` before you build. The board is the
+tracker: commitments live in Kaneo, PIC workspace, project ATLAS (the repo's
+declared tracker from 2026-11-22). Decisions live in `DECISIONS.md`.
+Chat (the crosswalk `polymeratlas`) is for messages only: a decision or a
+commitment that exists only in chat does not exist.
+
 ## 1. Where truth lives
 
 - The CSVs in `data/` are canonical. Organizations and sites are
@@ -137,6 +145,104 @@ micro-pass were pushed directly to `main` — 19 logged pushes, each with
 per-push owner approval, local validation, and read-back verification.
 The branch/PR rule is unchanged for outside harnesses and non-campaign
 contributions. No other section is amended by this revision.*
+
+## 2a. Working rules — owner adoption 2026-11-22
+
+On 2026-11-21/22 one harness built, verified and merged about 34,000
+evidence rows in a day; 28% did not bind to their record, and every check
+was green. The owner adopted these seven rules on 2026-11-22 ("Adopt all
+seven"). A rule without a check gets one or is not called a rule, so this
+section says for each rule what is checked and what is only practice.
+**Rules 1, 4 and 7 are practice: nothing mechanical checks them.** What
+each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
+
+1. **The agent that builds a batch never merges it.** *Practice.* The
+   controller arranges the reviews. Nothing checks who merges: every
+   harness shares one GitHub account, so a merge by the builder looks the
+   same as a merge by anyone.
+2. **No evidence row or registry link merges without its packet and a
+   replay check in the repo.** *Partly checked.* The gate on the owner-split
+   PR #467 (`scripts/check_evidence_binding.py`, run by the `binding-gate`
+   check run of workflow `pr-rules` once it is on `main`) judges evidence
+   rows from structured sources (site rows have a street test; organization
+   existence and HQ address have different checks). It checks that the
+   batch's task folder exists with a `check.py` and executes nothing from
+   the PR tree. It does not gate registry links. Web rows cannot be admitted
+   until a follow-up PR. People and program rows are held. It does not
+   replay a packet and it does not sample rows for admission.
+3. **A binding gate in CI: the quoted operator is a name the record holds
+   and the quoted street equals the record's street, or the row is a
+   lead.** *Checked by the same gate, for structured evidence rows:* PASS
+   means that every binding check applicable to the row's record and claim
+   matched positively and the quote contains no unexplained detail. Other
+   rows are held for reading. PASS is a minimum condition for admission;
+   source replay and independent review still apply.
+4. **Review is tiered by risk, recorded on the PR.** *Practice.* (Owner
+   ruling 2026-11-22, "tier by risk".) A PR that changes any file under
+   `data/` gets review records from two model families at the current head;
+   every other PR gets one, from a family other than the builder's. The
+   controller arranges the reviews and posts a `**Review record**` comment
+   per verifier on the PR, naming the model, the verdict at the head SHA and
+   what was checked. A non-data PR is capped at two review rounds; after
+   that the open findings go to the owner. On a later round only the family
+   that refused re-reviews, unless the fix adds a file or changes more than
+   30 lines. Every finding is marked BLOCKING (a defect that reaches data or
+   users, publishes personal data, lets a check pass on what it could not
+   inspect, or lets CI be defeated) or FOLLOW-UP; follow-ups do not hold a
+   merge and are listed in the PR and on the board; a verdict is REFUTE
+   only when at least one finding is BLOCKING. **Nothing mechanical checks
+   any of this, and the records are self-reported comments on a shared
+   account.** The way to enforce it, if the owner later wants that, is
+   separate GitHub accounts for builders and reviewers with GitHub-required
+   reviews.
+5. **A batch is audited before the next one builds on it, with a size cap
+   per PR.** *Checked* by `scripts/check_pr_rules.py` (check run
+   `pr-rules`). A PR may add at most 1,000 evidence rows and 1,000 registry
+   links unless it adds a line to `DECISIONS.md` that contains the words
+   "size waiver" and `branch=<its complete branch name>` (compared for
+   equality with the PR's branch). A PR that touches `data/` fails while any
+   `created_by` label on `main` lacks an audit record: a file
+   `tasks/<folder>/AUDIT.md` on `main` with the lines `Label:`,
+   `Result: PASS`, `Sample:` and `Reviewers:` (a `Result: FAIL` blocks).
+   The labels on `main` on 2026-11-22 are grandfathered in
+   `tasks/working-rules-2026-11-22/audit_baseline.txt`. **Deployment
+   condition:** the audit stays current for a PR only once the controller
+   has made `pr-rules` a required check and turned on the ruleset's strict
+   (branch up to date with `main`) policy; until then two data PRs can both
+   pass against the same `main`.
+
+   **Standing freeze (owner policy 2026-11-22; no mechanical check).**
+   National evidence backfill outside PIC-18 is frozen until the PIC-18
+   unknown shares move. Exempt: repairs, re-admission of reverted rows that
+   answer a PIC-18 question, and the whole-Atlas audit. The next data work is
+   a PIC-18 size sprint from files already pulled and a 25-organization
+   live-site trial for process and markets, each as a packet through the
+   binding gate.
+6. **Raw inputs live in the shared store by checksum.** *Checked, format
+   only,* by `scripts/check_pr_rules.py`: a PR adding evidence rows or
+   registry links adds `tasks/<folder>/INPUTS.sha256` (lines of
+   `<sha256>  <path>`; the path is a file below `raw/` or `provenance/`, or
+   an existing repo file). The hashes themselves are checked by a reviewer
+   against the store; the check says so in its output.
+7. **Decisions in `DECISIONS.md`, commitments on the board, chat for
+   messages only.** *Practice.* Stated under "Start here"; no script can
+   tell a decision from a message.
+
+The `pr-rules` and `binding-gate` checks are evaluated by the checker and
+workflow on `main`, never by the PR's own copy (`pull_request_target`): a PR
+that changes `scripts/check_pr_rules.py` or `.github/workflows/pr-rules.yml`
+is judged by the version already on `main`. Neither reads a PR comment or a
+review record. A change to these rules or to their checks is an owner ruling
+(section 2 rule 9).
+
+*Revision note — 2026-11-22 (owner adoption, working rules): §2a added with
+the seven working rules; "Start here" gains the where-things-live paragraph
+and states that `tasks/QUEUE.md` is the claim ledger and the board is the
+tracker. Rules 1, 4 and 7 are practice, with no mechanical check; rule 4 is
+tiered by risk (two families for a PR touching `data/`, one for any other);
+rules 5 and 6 are checked by `pr-rules`; rules 2 and 3 are partly checked by
+the structured-row gate. The freeze joins rule 5 as owner policy. No data
+file is changed by this revision.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 
