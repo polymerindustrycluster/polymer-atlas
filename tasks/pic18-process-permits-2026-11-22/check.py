@@ -39,15 +39,20 @@ def main():
     assert not model["viol"], model["viol"]
     assert same(B.read_csv(HERE / "sites.csv"), model["sites"]) and same(B.read_csv(HERE / "proposals.csv"), props), "sites.csv or proposals.csv differs from the recomputed rows (run build.py)"
     assert json.load(open(HERE / "metrics.json")) == B.all_metrics(scr, model), "metrics.json differs from the recomputed metrics"
-    # outcome line against the controller's harness at HEAD (an independent implementation), and an independent count of the fall
-    h = subprocess.run([sys.executable, str(B.lb.S / "harness/pic18_unknown.py"), str(B.ROOT), "HEAD"], capture_output=True, text=True, check=True).stdout
-    mm = re.search(r"org rows=(\d+) proc_unknown=(\d+)", h); o = json.load(open(HERE / "metrics.json"))["outcome_line"]
-    assert mm and (int(mm[1]), int(mm[2])) == (o["pic18_org_rows"], o["process_unknown_before"]), f"outcome baseline differs from the harness: {h.strip()}"
-    cur = {}
-    for s in sites.values():
-        if s["state"] == "OH" and s["county"] in B.lb.__dict__.get("PIC18", PIC18) and s["operating_status"] == "active" and s["verification_tier"] in ("A", "B", "C"): cur.setdefault(s["org_id"], []).append(s)
+    # outcome line against the controller's harness (an independent implementation) at the merge-base (origin/main) and at HEAD, and an independent count of the fall
+    o = json.load(open(HERE / "metrics.json"))["outcome_line"]
+    def harness(ref):
+        h = subprocess.run([sys.executable, str(B.lb.S / "harness/pic18_unknown.py"), str(B.ROOT), ref], capture_output=True, text=True, check=True).stdout
+        mm = re.search(r"org rows=(\d+) proc_unknown=(\d+)", h); assert mm, h; return int(mm[1]), int(mm[2])
+    base_ref = F.BASE; hb = harness(base_ref); hh = harness("HEAD")
+    assert hb == (o["pic18_org_rows"], o["process_unknown_before"]), f"outcome baseline differs from the harness at origin/main: {hb}"
+    applied = bool(subprocess.run(["git", "-C", str(B.ROOT), "diff", "--name-only", base_ref, "HEAD", "--", "data/"], capture_output=True, text=True, check=True).stdout.strip())
+    assert hh == (o["pic18_org_rows"], o["process_unknown_after"] if applied else o["process_unknown_before"]), f"outcome at HEAD differs from the harness: {hh} (applied={applied})"
+    s0, o0 = F.atlas(); cur = {}
+    for s in s0:
+        if s["state"] == "OH" and s["county"] in PIC18 and s["operating_status"] == "active" and s["verification_tier"] in ("A", "B", "C"): cur.setdefault(s["org_id"], []).append(s)
     planned_orgs = {sites[s]["org_id"] for s in o["planned_site_terms"]}
-    fall = sum(1 for oid in planned_orgs if oid in cur and not any((x["processes"] or "").strip(" ;") for x in cur[oid]) and not (orgs[oid].get("processes") or "").strip(" ;"))
+    fall = sum(1 for oid in planned_orgs if oid in cur and not any((x["processes"] or "").strip(" ;") for x in cur[oid]) and not (o0.get(oid, {}).get("processes") or "").strip(" ;"))
     assert fall == o["fall"] == o["process_unknown_before"] - o["process_unknown_after"], f"outcome fall {o['fall']} differs from the independent count {fall}"
     # independent recount of the retrievable set: a site is retrievable when a stored final permit prints one of the site's own Facility IDs
     ids = {r["site_id"]: {a[-10:] for a in r["air_ids"].split(";")} for r in rows if r["air_ids"]}
@@ -73,8 +78,18 @@ def main():
     link = [{"site_id": r["site_id"], "echo_air_ids": r["echo_air_ids"]} for r in scr]
     assert not lc.audit_manifest(hashes, B.doc_text, link), lc.audit_manifest(hashes, B.doc_text, link)
     assert {p["route"] for p in props} <= {"processes", "capability", "already_held", "hold", "no_term"}
-    base = subprocess.run(["git", "-C", str(B.ROOT), "merge-base", "HEAD", "origin/main"], capture_output=True, text=True, check=True).stdout.strip()
-    assert not subprocess.run(["git", "-C", str(B.ROOT), "diff", "--name-only", base, "--", "data/"], capture_output=True, text=True, check=True).stdout.strip(), "a file under data/ changed: this lane is packet-only"
+    base = F.BASE; planned = [p for p in props if p["route"] == "processes"]
+    bf, nf = lc.data_diff(base)
+    assert not lc.audit_data(bf, nf, planned), lc.audit_data(bf, nf, planned)   # only the planned `processes` unions on planned site rows, and new evidence rows by this lane
+    assert not lc.audit_written(nf, planned, sites, hashes), "the rows written differ from the rows rebuilt from proposals.csv"
+    ev_base = max(int(r["evidence_id"][4:]) for f_ in lb.git("ls-tree", "-r", "--name-only", base, "data/").split("\n") if re.match(r"data/evidence_.*\.csv", f_) for r in lc.rd(lb.git("show", f"{base}:{f_}")))
+    mine = [int(r["evidence_id"][4:]) for r in nf.get("data/evidence_sites_OH.csv", []) if r["created_by"] == B.WHO]
+    assert not lc.audit_ids(mine, ev_base, "evidence"), "evidence ids are not above the base maximum"
+    if applied:
+        sites_now, ev_now, cap_now = (B.read_csv(B.ROOT / f_) for f_ in ("data/sites_OH.csv", "data/evidence_sites_OH.csv", "data/site_capabilities.csv"))
+        assert not lc.audit_complete(sites_now, ev_now, cap_now, planned), lc.audit_complete(sites_now, ev_now, cap_now, planned)
+        assert len(mine) == len(planned) == 2, f"{len(mine)} evidence rows for {len(planned)} planned writes"
+    assert not any(f_ not in ("data/sites_OH.csv", "data/evidence_sites_OH.csv") for f_ in nf), f"unexpected data files changed: {sorted(nf)}"
     names = lc.names_in_docs(); sig = lc.signatories(); assert names and sig and sig <= names, "the privacy scan must know every signatory printed in the stored permits"
     assert not lc.audit_privacy(task_files(), names), f"{len(lc.audit_privacy(task_files(), names))} privacy findings"
     # 4. injected defects: every one must be caught, by the rule that exists for it

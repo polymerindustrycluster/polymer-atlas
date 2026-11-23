@@ -10,10 +10,9 @@ site AND at its organization. A candidate Ohio EPA air facility ID comes from tw
         its organization's held name (atlas.name_key equal, or the earlier permit lane's holder_ok token rule).
 The ID is only a search term: build.py binds every permit on its printed Facility ID, holder and street.
 """
-import csv, glob, json, sys
+import csv, io, json, subprocess, sys
 from collections import defaultdict
 from pathlib import Path
-import duckdb
 HERE = Path(__file__).resolve().parent; ROOT = HERE.parents[1]; sys.path.insert(0, str(ROOT / "scripts"))
 from regions import PIC18
 from atlas import name_key, squash
@@ -24,12 +23,18 @@ def toks(x): return {w for w in squash(x).split() if w not in LEGAL}
 def name_ok(a, names):
     t = toks(a)
     return any(n and (n <= t or t <= n) for n in (toks(x) for x in names))
-def rd(p): return list(csv.DictReader(open(p, newline="", encoding="utf-8")))
+def _git(*a): return subprocess.run(["git", "-C", str(ROOT), *a], capture_output=True, text=True, check=True).stdout
+BASE = _git("merge-base", "HEAD", "origin/main").strip()   # the frame is read at the merge-base, so applying this lane's writes does not change it
+def rd(p):
+    p = Path(p)
+    if p.is_relative_to(ROOT / "data"): return list(csv.DictReader(io.StringIO(_git("show", f"{BASE}:data/{p.name}"), newline="")))
+    return list(csv.DictReader(open(p, newline="", encoding="utf-8")))
 def unk(v): return not {t.strip() for t in (v or "").split(";") if t.strip() and t.strip() != "unknown"}
 
 def atlas():
-    sites = [r for p in sorted(glob.glob(str(ROOT / "data/sites_*.csv"))) for r in rd(p)]
-    orgs = {r["org_id"]: r for p in sorted(glob.glob(str(ROOT / "data/organizations_*.csv"))) for r in rd(p)}
+    names = _git("ls-tree", "--name-only", BASE, "data/").split()
+    sites = [r for n in names if Path(n).name.startswith("sites_") for r in rd(ROOT / n)]
+    orgs = {r["org_id"]: r for n in names if Path(n).name.startswith("organizations_") for r in rd(ROOT / n)}
     for r in rd(ROOT / "data/ecosystem.csv"): orgs.setdefault(r["org_id"], r)   # the harness's fallback for non-organization entities
     return sites, orgs
 
@@ -39,6 +44,7 @@ def frame_sites(sites, orgs):
 
 def compute():
     """-> (rows, stats). Pure: reads the repo tree and the lake, writes nothing."""
+    import duckdb   # lazy: build.py imports atlas() from here and needs no lake
     sites, orgs = atlas(); fr, el = frame_sites(sites, orgs)
     per_org = defaultdict(int)
     for s in fr: per_org[s["org_id"]] += 1
