@@ -41,17 +41,16 @@ Compliant cases that must pass: `TestCompliant.*`, `TestRule5.test_valid_pass_au
 
 ## The binding-gate job
 
-The workflow's second check run, `binding-gate` (the work is done by the job `gate-run`; `publish-binding-gate` posts the one check with this name), runs main's `scripts/check_evidence_binding.py` (PR #467, the gate for
-structured rows) twice with `--tree pr`: `--new-since origin/main` and `--provenance-since origin/main`. The PR merge
-result is checked out as data into `./pr`; the trusted checkout (the base branch, `fetch-depth: 0`) supplies the code and
-the rules. **Nothing from the PR tree is executed.** The job has `permissions: {}` (the repository is public) and both
-checkouts use `persist-credentials: false`. A separate job, which runs no PR code, holds `checks: write` and publishes
-the result. The job fails if the merge commit's second parent is not the current PR head (a stale merge ref). States:
-`passed` (success); `failed` and `cannot_inspect` (failure; the latter when main's script lacks a mode or exits 2);
-`not_yet`. **`not_yet` is the one pass that checked nothing:** until `scripts/check_evidence_binding.py` is on `main` the
-check run says "gate not yet on main: nothing was checked" and posts success, because the gate cannot judge the PR that
-adds it. Nothing is neutral and nothing is skipped. `TestBindingGateJob` pins these properties in the workflow text.
-Not verified: the gate steps have not run on a runner (the script is not on `main` until #467 merges).
+The workflow's second check run, `binding-gate`, is posted by `publish-binding-gate`. The `gate-run` job
+runs main's `scripts/check_evidence_binding.py` twice with `--tree pr`, in modes `--verify-proofs origin/main`
+and `--provenance-since origin/main`. It checks out the PR merge result as data into `./pr` and uses the base
+checkout for code and rules. `--verify-proofs` fetches and replays the captures in eligible own-site row proofs.
+The lane and reviewing family run packet scripts. The job has `permissions: {}` and both checkouts use
+`persist-credentials: false`. The separate publisher holds `checks: write`.
+
+The job fails if the merge commit's second parent differs from the current PR head. A row failure posts `failed`.
+A missing base checker or mode, or another inspection error, posts `cannot_inspect`. Only `passed` publishes
+success. `TestBindingGateJob` pins the trusted workflow's entry points.
 
 ## What it cannot catch
 

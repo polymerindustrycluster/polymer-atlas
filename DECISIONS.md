@@ -233,3 +233,5 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Usage-limit recovery (“Add the wake, use a cheap worker”):** A BB automation runs every 30 minutes and hands child threads stopped on usage limits to a GPT-6 Luna steward. This is an operating decision.
 - **Live-site markets trial:** Run a 25-organization, packet-only trial on the PIC-18 market-unknown frame. The company-page process route remains dropped after one hit in 25 organizations in the prior trial.
 - **Decided by:** the repo owner, in the controller's session, 2026-11-23. See `tasks/owner-rulings-2026-11-22/README.md`, round 15.
+
+- **2026-11-23, round 16 (“Build it, archived pages count”):** Admit own-site web evidence by a per-row, cross-family proof and capture replay in the trusted gate. A company’s own archived page within two years counts for market, extending the 2026-11-22 street ruling. Decided by: owner. See SCHEMA §4.13 and the round-16 owner register.

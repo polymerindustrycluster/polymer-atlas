@@ -9,8 +9,8 @@ Owner ruling 2026-11-22, "strict floor, then merge": the gate is a FLOOR, not pr
 matched; admitting a data PR still needs two model families reading rows.
 
 Every evidence row gets exactly one verdict:
-  PASS            structured sources only, and only when EVERY leg matches positively and nothing in the quote is left
-                  unexplained. Name: the whole quoted operator field (never a comma part, nothing in parentheses
+  PASS            a web quote with a replayed proof, or a structured quote with EVERY leg matched positively and
+                  nothing left unexplained. Name: the whole quoted operator field (never a comma part, nothing in parentheses
                   dropped) is a name the record holds, or a held name plus corporate-form words only on a site row
                   whose street passes; not a recorded parent's name, nor a key shared with one unless the text is the
                   record's own; a site-name part made only of generic labels (matching.generic_label, either part of a
@@ -20,7 +20,7 @@ Every evidence row gets exactly one verdict:
                   ZIP and matching.same_locality true (state on both sides and equal; city equal, either part of a
                   parenthetical city, or ZIP5 equal); and the same quote not passing on another site record.
                   Organization `address` rows: the source states the entity's own address and the quoted city and state
-                  are the record's HQ. A web (free-text) quote is never PASS.
+                  are the record's HQ.
   FAIL            a demonstrated conflict: name_not_held, parent_name_lead (the filing names only a recorded parent: a
                   lead to be read), street_differs, unit_differs, record_no_street, quote_no_street, state_differs,
                   city_differs, hq_city_state_differs, hq_from_facility_or_permit, hq_from_s5_identity_source (SCHEMA
@@ -30,8 +30,8 @@ Every evidence row gets exactly one verdict:
   HELD            a structured row with no demonstrated conflict where a leg did not match positively:
                   held_for_reading:<legs> (name_with_parenthetical, name_equals_parent_key, address_with_parenthetical,
                   designator_not_on_both_sides, street_suffix_unexplained, locality_not_read, locality_not_matched, passes_on_two_records).
-  READ_REQUIRED   a web quote the mechanics did not fail. No admission path here (owner split of PR #467, 2026-11-22):
-                  per-row proof lands in the follow-up, branch agent/claude-code/evidence-binding-web-proofs-2026-11-22.
+                  A web proof for a record absent from the base is also HELD.
+  READ_REQUIRED   a web quote awaiting a valid, replayed per-row proof in tasks/<folder>/BINDING_PROOF.csv.
   UNINSPECTABLE   no_quote, other_table, record_not_found, unknown_source_family, parse_failed, operator_not_a_name,
                   no_civic_number. No admission path here either.
 Every verdict other than PASS fails the PR; FAIL, HELD and the rest differ only for the reader's queue.
@@ -43,23 +43,34 @@ field. A recorded parent's name never binds, on any path (DECISIONS.md, 2026-11-
 Usage:
   python3 scripts/check_evidence_binding.py --all [--head REF | --tree DIR] [--out verdicts.csv]
   python3 scripts/check_evidence_binding.py --new-since origin/main [--tree DIR]   # PR gate: rows added or changed
+  python3 scripts/check_evidence_binding.py --verify-proofs origin/main [--tree DIR]  # same gate with capture replay
   python3 scripts/check_evidence_binding.py --provenance-since origin/main [--tree DIR]  # tasks/<folder>/check.py exists
   python3 scripts/check_evidence_binding.py --sample 20 --seed 7 [--since origin/main]  # audit only, admits nothing
---new-since exits 1 on any row that is not PASS (no waiver exists). Exit 2 = could not check.
+--new-since and --verify-proofs both replay captures and exit 1 on any non-PASS. Exit 2 = could not check.
+--all and --sample report the mechanical verdicts without fetching captures.
 
 --tree DIR reads data/ and tasks/ from DIR, an untrusted checkout of the PR; the rules and this code come from the
 trusted checkout that runs it. Nothing from DIR is executed: --provenance-since checks that check.py is present; the
 replay it performs is run by the lane and by the reviewing family.
 """
 import argparse
+import contextlib
 import csv
+import gzip
 import hashlib
+import http.client
 import io
+import ipaddress
+import json
 import re
+import socket
 import subprocess
 import sys
 from collections import Counter, defaultdict
+from datetime import date, datetime
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 TREE = ROOT  # where data/ and tasks/ are read when no git ref is given; --tree moves it, ROOT stays the trusted code
@@ -71,6 +82,11 @@ from matching import (DESIGNATOR_ONLY_RE, city_differs, corporate_form_extension
                       generic_label, has_civic_number, same_locality, same_street, units)  # (PR #463)
 
 csv.field_size_limit(10**9)
+ARCHIVE_RE = re.compile(r"https://web\.archive\.org/web/([0-9]{14})(id_)?/(https?://[^\s]+)")
+PROOF_COLS = ("evidence_id", "record_id", "claim_sha256", "capture", "capture_date", "capture_sha256", "quote_offset",
+              "verdict", "reader_family", "reader_date")
+MAX_CAPTURE_BYTES = 8 * 1024 * 1024
+
 DIRECTIONS = {"n", "s", "e", "w", "ne", "nw", "se", "sw"}
 
 # Source families whose quote format is known. Deny by default: any other non-URL source is unknown_source_family.
@@ -539,8 +555,7 @@ def judge(ev, idx, _alone=False):
 
 
 # Shared hosting where one host carries many unrelated tenants: the record's own site there is its host AND path.
-# shortcut: a fixed list can never be complete; an unlisted shared host is compared by registrable domain, and every
-# web row is READ_REQUIRED anyway, so a miss here costs a FAIL, never a PASS.
+# shortcut: a fixed list can never be complete; add shared hosts as they are identified.
 PLATFORMS = set(PLATFORM_HOSTS) | {
     "pages.dev", "netlify.app", "vercel.app", "herokuapp.com", "blogspot.com", "myshopify.com", "webflow.io",
     "carrd.co", "wix.com", "editorx.io", "azurewebsites.net", "cloudfront.net", "amazonaws.com", "firebaseapp.com",
@@ -549,11 +564,13 @@ PLATFORMS = set(PLATFORM_HOSTS) | {
 WEB_UNIT_RE = re.compile(r"^(?:suite|ste|unit|apt|apartment|room|rm)$")
 
 
-def host_path(url):
-    """(host, path) of a URL or bare domain: lowercase, no scheme, port, www., query or trailing slash."""
-    s = re.sub(r"^[a-z][a-z0-9+.-]*://", "", (url or "").strip().lower())
+def host_path(url, *, preserve_path=False):
+    """(host, path) of a URL or bare domain, with optional case preservation for proof paths."""
+    s = re.sub(r"^[a-z][a-z0-9+.-]*://", "", (url or "").strip(), flags=re.I)
+    if not preserve_path:
+        s = s.lower()
     host, _, path = s.partition("/")
-    host = re.sub(r":\d+$", "", host.rsplit("@", 1)[-1]).rstrip(".")
+    host = re.sub(r":\d+$", "", host.rsplit("@", 1)[-1]).lower().rstrip(".")
     host = host[4:] if host.startswith("www.") else host
     return host, path.split("?")[0].split("#")[0].strip("/")
 
@@ -562,10 +579,16 @@ def on_platform(host):
     return any(host == h or host.endswith("." + h) for h in PLATFORMS)
 
 
-def record_websites(idx, table, rec):
-    """(host, path) of the record's own website: a site's organization website, else the organization's own."""
-    o = idx.orgs.get(rec.get("org_id")) if table == "sites" else rec
-    hps = (host_path(w) for w in re.split(r"[;,\s]+", (o or {}).get("website") or ""))
+def record_website(idx, table, rec):
+    """A site's website is held on its organization."""
+    org = idx.orgs.get(rec.get("org_id")) if table == "sites" else rec
+    return (org or {}).get("website") or ""
+
+
+def record_websites(idx, table, rec, *, preserve_path=False):
+    """Held website host/path pairs."""
+    hps = (host_path(w, preserve_path=preserve_path)
+           for w in re.split(r"[;,\s]+", record_website(idx, table, rec)))
     return [hp for hp in hps if re.fullmatch(r"[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}", hp[0])]  # notes are not hosts
 
 
@@ -643,9 +666,7 @@ def web_street_alt(rec_street, quote):
 
 
 def judge_web(ev, rec, idx, quote):
-    """A web quote is free text. Code can show it is NOT about the record (FAIL) but never that it is: a quote with
-    the right street and name can still describe a sibling plant, a former operator or a satellite office. So a web row
-    is FAIL or READ_REQUIRED, never PASS (controller ruling 2026-11-22 after the Codex review of PR #467)."""
+    """Apply the existing mechanical floor. A separate proof supplies the independent reading and source replay."""
     table, cls, ct = ev["record_table"], ev["source_class"], ev["claim_type"]
     fails, why, info = [], "", {}
     if table == "sites" and ct in ("address", "existence"):
@@ -773,6 +794,317 @@ def label_folder(label):
     return f if re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", f) and ".." not in f else ""
 
 
+MODEL_FAMILIES = {  # family -> words that name it (product, company or model line)
+    "anthropic": {"anthropic", "claude", "opus", "sonnet", "haiku", "fable"},
+    "openai": {"openai", "gpt", "codex", "chatgpt"},
+    "google": {"google", "gemini", "antigravity", "agy", "deepmind"},
+    "xai": {"xai", "grok"},
+}
+
+
+def family_of_text(text):
+    """The one model family a text names, or "" when it names none or several."""
+    words = set(re.findall(r"[a-z]+", (text or "").lower()))
+    fams = {f for f, keys in MODEL_FAMILIES.items() if words & keys}
+    return fams.pop() if len(fams) == 1 else ""
+
+
+def builder_family(readme):
+    """The family on the folder README's "Built by:" line, or ""."""
+    m = re.search(r"^\W*Built by:\s*(.+)$", (readme or b"").decode("utf-8", "replace"), re.M | re.I)
+    return family_of_text(m[1]) if m else ""
+
+
+# ---------------------------------------------------------------- per-row proof
+
+class _Text(HTMLParser):
+    SKIP = {"head", "script", "style", "noscript", "template", "nav", "header", "footer", "aside"}
+    CHROME = re.compile(r"(?:^|[-_\s])(?:navbar|navigation|header|footer|sidebar)(?:$|[-_\s])", re.I)
+    SKIP_ROLES = {"banner", "navigation", "contentinfo", "complementary"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts, self.main, self.skip = [], [], []
+        self.main_tag = None
+        self.main_depth = 0
+        self.has_main = False
+
+    def handle_starttag(self, tag, attrs):
+        if self.skip:
+            if tag == self.skip[0]:
+                self.skip.append(tag)
+            return
+        attrs = dict(attrs)
+        role = attrs.get("role")
+        labels = f"{attrs.get('id', '')} {attrs.get('class', '')}"
+        if (tag in self.SKIP or role in self.SKIP_ROLES or self.CHROME.search(labels)
+                or "hidden" in attrs or attrs.get("aria-hidden") == "true"):
+            self.skip.append(tag)
+        elif tag == self.main_tag:
+            self.main_depth += 1
+        elif not self.main_tag and (tag == "main" or role == "main"):
+            self.has_main = True
+            self.main_tag, self.main_depth = tag, 1
+
+    def handle_endtag(self, tag):
+        if self.skip:
+            if self.skip[-1] == tag:
+                self.skip.pop()
+        elif tag == self.main_tag:
+            self.main_depth -= 1
+            if not self.main_depth:
+                self.main_tag = None
+
+    def handle_data(self, data):
+        if not self.skip:
+            self.parts.append(data)
+            if self.main_tag:
+                self.main.append(data)
+
+
+def norm_space(s):
+    return re.sub(r"\s+", " ", s or "").strip()
+
+
+def capture_text(data):
+    """Proof offsets index UTF-8 text with HTML entities decoded and whitespace collapsed, in Unicode characters."""
+    parser = _Text()
+    parser.feed(data.decode("utf-8"))
+    parser.close()
+    return norm_space(" ".join(parser.main if parser.has_main else parser.parts))
+
+
+def claim_sha256(ev):
+    """Stable across CSV quoting and line numbering. Any change to the claim text or quote voids the reading."""
+    claim = [ev[k] for k in ("record_table", "claim_type", "claim_detail", "observed_date",
+                             "source_ref", "source_class", "tier_effect")]
+    return hashlib.sha256(json.dumps(claim, ensure_ascii=False, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def capture_url(url):
+    """A public HTTP(S) URL shape with an unambiguous host and path."""
+    if re.search(r"[\x00-\x20\x7f]", url) or "\\" in url:
+        raise ValueError("invalid capture URL characters")
+    u = urlsplit(url)
+    if (u.scheme not in ("https", "http") or not u.hostname or not re.fullmatch(r"[a-z0-9.-]+", u.hostname)
+            or u.username is not None or u.port is not None or u.fragment):
+        raise ValueError("capture requires an HTTP(S) hostname and default port")
+    path = unquote(u.path)
+    if re.search(r"%2f|%25", u.path, re.I) or "\\" in path or {".", ".."} & set(path.split("/")):
+        raise ValueError("ambiguous capture URL path")
+    return u
+
+
+def decode_capture(data, encoding):
+    if len(data) > MAX_CAPTURE_BYTES:
+        raise ValueError("capture exceeds byte limit")
+    if encoding.strip().lower() == "gzip" or data.startswith(b"\x1f\x8b"):
+        with gzip.GzipFile(fileobj=io.BytesIO(data)) as gz:
+            data = gz.read(MAX_CAPTURE_BYTES + 1)
+    elif encoding.strip().lower() not in ("", "identity"):
+        raise ValueError("unsupported capture encoding")
+    if len(data) > MAX_CAPTURE_BYTES:
+        raise ValueError("decoded capture exceeds byte limit")
+    return data
+
+
+def fetch_url(url):
+    """Read from a vetted public destination. The vetted IP is also the connection IP."""
+    u = capture_url(url)
+    port = 443 if u.scheme == "https" else 80
+    addresses = [ipaddress.ip_address(item[4][0])
+                 for item in socket.getaddrinfo(u.hostname, port, type=socket.SOCK_STREAM)]
+    if not addresses or any(not ip.is_global or ip.is_multicast for ip in addresses):
+        raise ValueError("capture host must resolve only to public unicast addresses")
+    addresses.sort(key=lambda ip: ip.version)
+    connection = http.client.HTTPSConnection if u.scheme == "https" else http.client.HTTPConnection
+    with contextlib.closing(connection(u.hostname, timeout=15)) as conn:
+        # Retain the URL hostname for the Host header, TLS SNI and certificate validation.
+        conn._create_connection = lambda addr, timeout, source: socket.create_connection(
+            (str(addresses[0]), addr[1]), timeout, source)
+        target = u.path or "/"
+        if u.query:
+            target += "?" + u.query
+        conn.request("GET", target, headers={"Accept-Encoding": "gzip", "User-Agent": "evidence-check/1"})
+        with conn.getresponse() as response:
+            if response.status != 200:
+                # A redirect must be resolved by the lane and cited as its own reviewed URL.
+                raise ValueError(f"capture returned HTTP {response.status}")
+            return decode_capture(response.read(MAX_CAPTURE_BYTES + 1), response.getheader("Content-Encoding", ""))
+
+
+def load_proof_file(path, data):
+    """Return proof rows keyed by evidence ID and any file-level problems."""
+    out, problems = {}, []
+    try:
+        reader = csv.reader(io.StringIO(data.decode("utf-8")), strict=True)
+        if tuple(next(reader, [])) != PROOF_COLS:
+            return out, [f"{path}: header must be {','.join(PROOF_COLS)}"]
+        for row in reader:
+            at = f"{path}:{reader.line_num}"
+            if len(row) != len(PROOF_COLS):
+                problems.append(f"{at}: {len(row)} cells, the header has {len(PROOF_COLS)}")
+                continue
+            r = dict(zip(PROOF_COLS, (c.strip() for c in row)))
+            if r["evidence_id"] in out:
+                problems.append(f"{at}: second proof line for {r['evidence_id']}")
+            out[r["evidence_id"]] = (at, r)
+    except (UnicodeDecodeError, csv.Error) as e:
+        return {}, [f"{path}: invalid UTF-8 or CSV: {e}"]
+    return out, problems
+
+
+def archive_index(links):
+    out, problems = {}, []
+    for link in links:
+        eid = link["evidence_id"]
+        if eid in out:
+            problems.append(f"data/archive_links.csv: duplicate archive evidence_id {eid}")
+        out[eid] = link
+    return out, problems
+
+
+def proof_date(value):
+    if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+        raise ValueError("proof dates must use YYYY-MM-DD")
+    return date.fromisoformat(value)
+
+
+def same_page(a, b):
+    """Compare original page URLs using §4.22's scheme, www and trailing slash allowances."""
+    def page(url):
+        u = capture_url(url)
+        return u.hostname.removeprefix("www."), u.path.rstrip("/"), u.query
+    return page(a) == page(b)
+
+
+def proof_capture(r, ev, idx, base_idx, archive):
+    """Validate the cited page and date before the trusted job makes a request."""
+    cap = r["capture"]
+    url = capture_url(cap)
+    captured = proof_date(r["capture_date"])
+    if proof_date(r["reader_date"]) < captured:
+        raise ValueError("reading predates the capture")
+    m = ARCHIVE_RE.fullmatch(cap)
+    original = m[3] if m else cap
+    source_ref = ev["source_ref"]
+    if m:
+        if not m[2] or not archive or archive["archive_ref"] != cap.replace(m[1] + "id_/", m[1] + "/", 1):
+            raise ValueError("Wayback id_ capture must match the row's archive link")
+        if captured != datetime.strptime(m[1], "%Y%m%d%H%M%S").date() or captured != proof_date(archive["captured_at"]):
+            raise ValueError("capture date differs from the archive index or timestamp")
+        observed = proof_date(ev.get("observed_date", ""))
+        oldest = observed.replace(year=observed.year - 2, day=28 if observed.month == 2 and observed.day == 29
+                                  else observed.day)
+        if not oldest <= captured <= observed:
+            raise ValueError("archive capture is outside the two years ending on observed_date")
+    elif url.hostname == "web.archive.org":
+        raise ValueError("Wayback capture must use a timestamp and id_")
+    table = ev["record_table"]
+    if not m and url.scheme != "https":
+        raise ValueError("live capture must use HTTPS")
+    capture_url(original)
+    rid = ev["record_id"]
+    base_record = base_idx.record(table, rid)
+    if record_website(base_idx, table, base_record) != record_website(idx, table, idx.record(table, rid)):
+        raise ValueError("record website differs from base")
+    websites = record_websites(base_idx, table, base_record, preserve_path=True)
+    if not any(own_domain(host_path(original, preserve_path=True), website) for website in websites):
+        raise ValueError("capture not_own_site")
+    if not (same_page(original, source_ref) if m else original == source_ref):
+        raise ValueError("capture differs from the row's cited page")
+    return cap
+
+
+def proof_problem(r, ev, idx, base_idx, archive, builder, fetch):
+    if r["record_id"] != ev["record_id"] or r["claim_sha256"] != claim_sha256(ev):
+        return "proof record_id or claim_sha256 differs from the evidence row"
+    if r["verdict"] != "VERIFIED":
+        return "only a VERIFIED reading admits a row"
+    rf = family_of_text(r["reader_family"])
+    if not (rf and builder and rf != builder):
+        return "builder and reader must name different known model families"
+    if not re.fullmatch(r"[0-9a-f]{64}", r["capture_sha256"]):
+        return "capture_sha256 must be 64 lowercase hex digits"
+    if not re.fullmatch(r"[0-9]{1,8}", r["quote_offset"]):
+        return "quote_offset must be a nonnegative integer within the capture byte limit"
+    quote = norm_space(ev["claim_detail"].partition("quote:")[2])
+    if len(quote) < 20:
+        return "quote must contain at least 20 characters"
+    try:
+        url = proof_capture(r, ev, idx, base_idx, archive)
+    except ValueError as e:
+        return str(e)
+    try:
+        data = fetch(url)
+    except Exception as e:  # Any fetch or decoding failure blocks admission.
+        return f"could not inspect capture: {e}"
+    if hashlib.sha256(data).hexdigest() != r["capture_sha256"]:
+        return "capture_sha256 does not match the decoded bytes"
+    start = int(r["quote_offset"])
+    try:
+        actual = capture_text(data)[start:start + len(quote)]
+    except UnicodeDecodeError:
+        return "capture text is not valid UTF-8"
+    if actual != quote:
+        return "the quote is not at that offset in the capture's main text"
+    return ""
+
+
+def check_proofs(results, evs, idx, load_base, archive, read, fetch):
+    """Replay proofs only for web rows that cleared the existing mechanical floor."""
+    need = defaultdict(list)
+    for row in results:
+        ev = evs[row["evidence_id"]]
+        if (row["verdict"] == "READ_REQUIRED" and row["reason"] == "mechanics_clear"
+                and ev["source_class"] == "own_site"):
+            need[label_folder(row["created_by"])].append(row)
+    if not need:
+        return []
+    base_idx = load_base()
+    problems, cache = [], {}
+
+    def cached_fetch(url):
+        if url not in cache:
+            try:
+                cache[url] = fetch(url)
+            except Exception as e:
+                cache[url] = e
+        if isinstance(cache[url], Exception):
+            raise cache[url]
+        return cache[url]
+
+    for folder, candidates in sorted(need.items()):
+        path = f"tasks/{folder}/BINDING_PROOF.csv"
+        data = read(path) if folder else None
+        if data is None:
+            problems.append(f"{len(candidates)} rows need proofs in the folder named by created_by; absent: {path}")
+            continue
+        proofs, shape = load_proof_file(path, data)
+        if shape:
+            problems.extend(shape)
+            continue
+        builder = builder_family(read(f"tasks/{folder}/README.md"))
+        for result in candidates:
+            eid = result["evidence_id"]
+            if base_idx.record(result["record_table"], result["record_id"]) is None:
+                result.update(verdict="HELD", reason="record absent from base")
+                continue
+            if eid not in proofs:
+                problems.append(f"{eid}: no proof line in {path}")
+                continue
+            at, row = proofs[eid]
+            why = proof_problem(row, evs[eid], idx, base_idx, archive.get(eid), builder, cached_fetch)
+            if why:
+                problems.append(f"{at}: {eid}: {why}")
+            else:
+                result.update(verdict="PASS", reason="web_proof_replayed")
+    return problems
+
+
+# ---------------------------------------------------------------- provenance
+
+
 def provenance_problems(new_evs, base_labels, base_has_folder, head_check_bytes):
     """Problems with the provenance of the rows a PR adds or changes, one line per created_by label: the label names
     exactly one folder; that folder holds a non-empty check.py; a label new to the base adds its folder in this PR.
@@ -816,6 +1148,7 @@ def main(argv=None):
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--all", action="store_true", help="report every evidence row by verdict, created_by and source")
     g.add_argument("--new-since", metavar="REF", help="gate rows added or changed since the merge-base with REF")
+    g.add_argument("--verify-proofs", metavar="REF", help="same as --new-since: replay web proofs")
     g.add_argument("--provenance-since", metavar="REF", help="require tasks/<folder>/check.py for new rows")
     g.add_argument("--sample", metavar="N", type=int, help="audit only: list N PASS rows per created_by label to read")
     ap.add_argument("--seed", default="1", help="--sample seed")
@@ -827,7 +1160,7 @@ def main(argv=None):
     ap.add_argument("--out", help="write per-row verdicts to this CSV")
     a = ap.parse_args(argv)
     TREE = Path(a.tree).resolve() if a.tree else ROOT
-    gate = a.new_since
+    gate = a.new_since or a.verify_proofs
     try:
         head_evs = rows(a.head, "evidence_*.csv")
         since = gate or a.provenance_since or (a.since if a.sample else None)
@@ -859,6 +1192,16 @@ def main(argv=None):
 
     idx = Index.load(a.head)
     results = judge_all(evs, idx)
+    problems = []
+    if gate:
+        try:
+            archive, problems = archive_index(rows(a.head, "archive_links.csv"))
+            if not problems:
+                problems = check_proofs(results, {e["evidence_id"]: e for e in evs}, idx, lambda: Index.load(base),
+                                        archive, lambda path: tasks_file(a.head, path), fetch_url)
+        except (csv.Error, UnicodeError, OSError, subprocess.CalledProcessError) as e:
+            print(f"binding gate: could not inspect proof inputs: {e}")
+            return 2
     if a.out:
         write_csv(results, a.out)
     if a.all:
@@ -890,10 +1233,12 @@ def main(argv=None):
     if fails:
         print("A FAIL row has no waiver: fix the row, or take it out and hold it as a lead.")
     if held:
-        print("A HELD, READ_REQUIRED or UNINSPECTABLE row has no admission path in this gate: take it out and hold it as a "
-              "lead. Admission of web rows by per-row proof lands in the follow-up "
-              "(branch agent/claude-code/evidence-binding-web-proofs-2026-11-22).")
-    return 1 if fails or held else 0
+        print("Held rows require a binding match. Eligible own-site rows may supply a proof.")
+    for problem in problems[:200]:
+        print("  PROOF " + problem)
+    if len(problems) > 200:
+        print(f"  ... and {len(problems) - 200} more proof problems")
+    return 1 if fails or held or problems else 0
 
 
 if __name__ == "__main__":

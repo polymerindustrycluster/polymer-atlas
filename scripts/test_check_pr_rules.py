@@ -314,14 +314,15 @@ class TestBindingGateJob(unittest.TestCase):
     def test_pr_is_checked_out_as_data_into_pr_and_main_runs_exactly_two_gate_modes(self):
         self.assertIn("ref: refs/pull/${{ env.PR }}/merge", self.job)
         self.assertIn("path: pr", self.job)
-        self.assertIn("for mode in --new-since --provenance-since; do", self.job)
+        self.assertIn("for mode in --verify-proofs --provenance-since; do", self.job)
         self.assertIn('scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr', self.job)
         self.assertIn("gate not yet on main", self.job)
         self.assertNotIn("python3 pr/", self.job)  # nothing is run from the PR tree
         self.assertIn("fetch-depth: 0", self.job)
 
-    def test_no_isolation_probe_no_proof_fetch_no_neutral_result(self):
-        for bad in ("verify-proofs", "unshare", "docker", "sysctl", "setpriv", "skipped", "neutral"):
+    def test_proof_replay_has_no_isolation_probe_or_neutral_result(self):
+        self.assertIn('echo cannot_inspect > "$out/state"', self.job)
+        for bad in ("unshare", "docker", "sysctl", "setpriv", "skipped", "neutral", "echo not_yet"):
             self.assertNotIn(bad, self.job.lower())
         self.assertNotIn("neutral", self.text.lower().replace("never neutral", ""))
 
