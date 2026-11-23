@@ -7,7 +7,7 @@ and later Sonnet scale read are recorded in the sealed packet. The controller
 holds P3-MKT-000007 for lack of a public archive copy.
 
 The 15 selected archived pages reproduce every eligible quote. The proof
-routes comprise 11 live claim rows with stable byte checks and 17 archived
+routes comprise 10 live claim rows with stable byte checks and 18 archived
 claim rows. The 16 distinct bodies were verified and landed in the shared
 private provenance store. HB Machine's November 23 save receipt redirects
 to the unchanged 2026-11-16 capture. The controller authorized that true
@@ -30,3 +30,9 @@ The sealed-packet and application replay passed for all 40 decisions, 28
 witnesses and 15 canonical claims. A planted missing market claim failed
 replay. The validator and row-loss guard passed under the heavy lock. The
 account URL and provenance guards passed.
+
+Tarkett P3-MKT-000020 received HTTP 403 on its live proof route in both
+hosted checks and the local trusted gate. The controller approved the
+20261123175713 public archive with the identical reviewed bytes and literal
+`unknown` creator, conditional on hosted replay. Inter-Ion passed on its
+reviewed archive.
