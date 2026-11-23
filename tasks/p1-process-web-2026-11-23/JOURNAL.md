@@ -19,3 +19,5 @@ The PIC-18 coverage check reproduced the base denominator of 794 and the movemen
 GitHub's network replay saw different live response bytes for Parker and Rotocast. Sonnet independently verified all four claims against two exact archived bodies. The revision uses their already-cited archive links as the proof route and updates only the four evidence claim markers and proof receipts. The process cells, archive links, claim ledger and tier counts stay as recorded above.
 
 The November 23 Save Page Now requests were deduplicated to these November 16 mementos. The requests were `spn2-1f212c915b044c8ae1ae4b27dd742f4ec2775588` for the about page and `spn2-4d55cc5044f7e0bb4ac1801eee25e060517496d3` for the homepage. The original capturers are recorded as `unknown`.
+
+The American Sign Products organization witness (ORG-001779) cures one V-65 baseline gap at tier A. The branch removes precisely that resolved entry. The hosted baseline test originally reproduced the difference between 1,329 listed debts and 1,328 remaining violations.
