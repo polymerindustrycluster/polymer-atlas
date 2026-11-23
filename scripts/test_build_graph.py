@@ -7,6 +7,7 @@ import importlib.util
 import json
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 HERE = Path(__file__).resolve().parent
 SPEC = importlib.util.spec_from_file_location("build_graph", HERE / "build_graph.py")
@@ -60,7 +61,8 @@ class GeoAndEventsTests(unittest.TestCase):
             spec.loader.exec_module(m)
             return m
         cls.geo = load("build_geo_graph").build_data()
-        cls.ev = load("build_events_3d").build_data()
+        cls.events = load("build_events_3d")
+        cls.ev = cls.events.build_data()
 
     def test_geo_fields_whitelisted(self):
         self.assertEqual({k for s in self.geo["sites"] for k in s} - {"n", "o", "c", "s", "y", "p", "la", "lo"}, set())
@@ -83,6 +85,25 @@ class GeoAndEventsTests(unittest.TestCase):
             self.assertIn(l["target"], ids)
             self.assertIn(l["role"], {"exhibitor", "sponsor", "speaker", "organizer", "host", "attendee"})  # SCHEMA 4.12.2 role enum (v1.12)
         self.assertNotIn("PERSON-", json.dumps(self.ev))
+
+    def test_event_roster_keeps_every_pic18_org(self):
+        event = {"event_id": "EVT-000001", "name": "Fixture Show", "organizer_name": "Fixture Organizer"}
+        orgs = [{"id": f"ORG-{i:06d}", "k": "org", "l": f"Company {i}", "p": 1}
+                for i in range(1, 11)]
+        participation = [
+            {"event_id": event["event_id"], "org_id": org["id"], "edition_year": "2026",
+             "role": "attendee" if i < 9 else "host"}
+            for i, org in enumerate(orgs)
+        ]
+        participation.append({**participation[0], "role": "exhibitor", "edition_year": "2025"})
+        with (patch.object(self.events.bg, "build_graph", return_value=(orgs, [])),
+              patch.object(self.events.bg, "read", side_effect=[[event], participation])):
+            data = self.events.build_data()
+        self.assertEqual([link["target"] for link in data["links"]], [org["id"] for org in orgs])
+        self.assertEqual([link["role"] for link in data["links"]], ["exhibitor"] + ["attendee"] * 8 + ["host"])
+        html = self.events.page(data, fragment=False)
+        self.assertIn('p12.map((p) => `<span class="chip" data-org-id="${esc(p.id)}">${esc(p.l)}</span>`)', html)
+        self.assertNotIn("p12.slice", html)
 
 
 if __name__ == "__main__":
