@@ -522,7 +522,8 @@ class DirectoryFixtureTest(unittest.TestCase):
 
     def test_no_prospect_or_pitch_wording_on_the_built_site(self):
         for p in self.out.rglob("*"):
-            if p.is_file() and p.name != "prospects.html" and p.suffix in {".html", ".js", ".json", ".css", ".csv"}:
+            if p.is_file() and p.name != "prospects.html" and p.suffix in {".html", ".js", ".json", ".css", ".csv"} \
+                    and "vendor" not in p.relative_to(self.out).parts:        # vendored libraries are not our wording ("pitch" is a camera angle)
                 self.assertNotRegex(p.read_text(encoding="utf-8-sig"), r"(?i)prospect|pitch", str(p.relative_to(self.out)))
 
     def test_prospects_urls_still_work(self):
