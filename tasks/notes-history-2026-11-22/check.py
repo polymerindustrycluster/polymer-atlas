@@ -52,6 +52,44 @@ def group_after(parts, mode):
         elif d == "RESTATE": out.append(p["restated"])
     return " ".join(out)
 
+def _git(cwd, *args):
+    r = subprocess.run(["git", *args], cwd=cwd, capture_output=True, text=True)
+    if r.returncode: raise RuntimeError(f"git {' '.join(args)} failed ({r.returncode}): {r.stderr.strip()[:200]}")
+    return r.stdout.strip()
+
+def data_diff(where, base_ref):
+    """None when data/ is identical to the merge-base of base_ref and HEAD (tracked changes in the working tree and untracked files count); else a message. Any git error is a message, never a pass."""
+    try:
+        root = _git(where, "rev-parse", "--show-toplevel")
+        base = _git(root, "merge-base", base_ref, "HEAD")
+        d = _git(root, "diff", "--stat", base, "--", "data")
+        u = _git(root, "status", "--porcelain", "--untracked-files=all", "--", "data")
+    except RuntimeError as e:
+        return str(e)
+    return (d + "\n" + u).strip() or None
+
+def selftest_tree():
+    """data_diff must see a changed file, an untracked file, and a missing base ref, from a subfolder, and pass a clean tree."""
+    import tempfile, os
+    with tempfile.TemporaryDirectory() as t:
+        t = Path(t); g = lambda *a: _git(t, *a)
+        g("init", "-q", "-b", "main"); g("config", "user.email", "x@x"); g("config", "user.name", "x")
+        (t / "data").mkdir(); (t / "tasks" / "k").mkdir(parents=True); (t / "data" / "probe.txt").write_text("a\n")
+        g("add", "."); g("commit", "-q", "-m", "c0"); g("update-ref", "refs/remotes/origin/main", "HEAD")
+        sub = t / "tasks" / "k"
+        if data_diff(sub, "origin/main") is not None: fail("selftest: clean fixture reported a diff")
+        (t / "data" / "probe.txt").write_text("b\n")
+        if data_diff(sub, "origin/main") is None: fail("selftest: edited tracked data file NOT seen from a subfolder")
+        g("checkout", "-q", "--", "data")
+        (t / "data" / "new.txt").write_text("n\n")
+        if data_diff(sub, "origin/main") is None: fail("selftest: untracked data file NOT seen")
+        os.remove(t / "data" / "new.txt")
+        g("config", "user.email", "x@x")
+        (t / "data" / "probe.txt").write_text("c\n"); g("commit", "-q", "-am", "c1")
+        if data_diff(sub, "origin/main") is None: fail("selftest: committed data change NOT seen")
+        if data_diff(sub, "origin/nope") is None: fail("selftest: missing base ref passed")
+    ok("tree check self-test: clean passes; edited, untracked, committed and missing-base cases all fail as they should")
+
 def main():
     orgs, sites = run()
     by = {r["_id"]: r for r in orgs + sites}
@@ -205,8 +243,9 @@ def main():
             if p["disp"] == "PERSON" and p["text"].strip() not in a: fail(f"{r['_id']} person piece not verbatim on the row")
     ok(f"person-held pieces stay verbatim on the row ({len(prow)} rows; listed by path:line in DESIGN §7)")
     # ---------------------------------------------------------------- 4. TREE
-    d = subprocess.run(["git", "diff", "--stat", subprocess.run(["git", "merge-base", "origin/main", "HEAD"], cwd=HERE, capture_output=True, text=True).stdout.strip(), "--", "data"], cwd=HERE, capture_output=True, text=True).stdout.strip()
-    ok("data/ unchanged vs the merge-base with origin/main") if not d else fail("data/ differs from the merge-base:\n" + d)
+    selftest_tree()
+    err = data_diff(HERE, "origin/main")
+    ok("data/ unchanged vs the merge-base with origin/main (root diff, working tree and untracked included)") if err is None else fail("data/ check: " + err)
     print("\nRESULT:", "FAIL (%d)" % len(FAIL) if FAIL else "PASS")
     return 1 if FAIL else 0
 
