@@ -93,7 +93,7 @@ def main():
     assert rng, "no reserved id range found in the repo text: the reservation check could not inspect"
     bad = [i for i in mine for a, z in rng if a <= i <= z]
     assert not bad, f"evidence ids {bad} fall in a reserved range {rng}"
-    assert [i for i in (481096, 482500) for a, z in rng if a <= i <= z] == [481096, 482500], "the reservation check is inert: the retired ids 481096 and 482500 were not flagged"
+    assert {i for i in (481096, 482500) for a, z in rng if a <= i <= z} == {481096, 482500}, "the reservation check is inert: the retired ids 481096 and 482500 were not flagged"
     assert all(B.RESERVED_FIRST <= i <= B.RESERVED_LAST for i in mine), f"evidence ids {mine} are outside this lane's reservation"
     if applied:
         sites_now, ev_now, cap_now = (B.read_csv(B.ROOT / f_) for f_ in ("data/sites_OH.csv", "data/evidence_sites_OH.csv", "data/site_capabilities.csv"))
