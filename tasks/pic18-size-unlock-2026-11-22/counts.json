@@ -1,0 +1,140 @@
+{
+  "seed": 20261122,
+  "controls": 3,
+  "permits_scanned": 84,
+  "labeled_permit_blocks": 11,
+  "name_frame_form5500_only": 16,
+  "name_sample_form5500_only": 5,
+  "outcome": {
+    "pic18_population": 794,
+    "starting_unknown": 396,
+    "sampled_org_rows_unlocked": 2,
+    "counterfactual_unknown": 394,
+    "sampled_org_ids": [
+      "ORG-000015",
+      "ORG-000155"
+    ]
+  },
+  "canaries": [
+    {
+      "frame": "name_not_held",
+      "result": "SAME_COMPANY",
+      "count": 0,
+      "n": 20,
+      "total_sites": 96,
+      "wilson_low_pct": 0,
+      "wilson_high_pct": 16.1,
+      "projected_sites": 0.0,
+      "projected_low": 0,
+      "projected_high": 15.5
+    },
+    {
+      "frame": "name_not_held",
+      "result": "OTHER_TENANT",
+      "count": 0,
+      "n": 20,
+      "total_sites": 96,
+      "wilson_low_pct": 0,
+      "wilson_high_pct": 16.1,
+      "projected_sites": 0.0,
+      "projected_low": 0,
+      "projected_high": 15.5
+    },
+    {
+      "frame": "name_not_held",
+      "result": "STILL_UNCERTAIN",
+      "count": 20,
+      "n": 20,
+      "total_sites": 96,
+      "wilson_low_pct": 83.9,
+      "wilson_high_pct": 100,
+      "projected_sites": 96.0,
+      "projected_low": 80.5,
+      "projected_high": 96
+    },
+    {
+      "frame": "name_not_held",
+      "result": "OSHA_BAND",
+      "count": 0,
+      "n": 20,
+      "total_sites": 96,
+      "wilson_low_pct": 0,
+      "wilson_high_pct": 16.1,
+      "projected_sites": 0.0,
+      "projected_low": 0,
+      "projected_high": 15.5
+    },
+    {
+      "frame": "no_street",
+      "result": "STREET_FOUND",
+      "count": 6,
+      "n": 20,
+      "total_sites": 121,
+      "wilson_low_pct": 14.5,
+      "wilson_high_pct": 51.9,
+      "projected_sites": 36.3,
+      "projected_low": 17.6,
+      "projected_high": 62.8
+    },
+    {
+      "frame": "no_street",
+      "result": "NO_HELD_STREET",
+      "count": 10,
+      "n": 20,
+      "total_sites": 121,
+      "wilson_low_pct": 29.9,
+      "wilson_high_pct": 70.1,
+      "projected_sites": 60.5,
+      "projected_low": 36.2,
+      "projected_high": 84.8
+    },
+    {
+      "frame": "no_street",
+      "result": "MULTIPLE_STREETS",
+      "count": 4,
+      "n": 20,
+      "total_sites": 121,
+      "wilson_low_pct": 8.1,
+      "wilson_high_pct": 41.6,
+      "projected_sites": 24.2,
+      "projected_low": 9.8,
+      "projected_high": 50.3
+    },
+    {
+      "frame": "no_street",
+      "result": "MULTIPLE_UNITS",
+      "count": 0,
+      "n": 20,
+      "total_sites": 121,
+      "wilson_low_pct": 0,
+      "wilson_high_pct": 16.1,
+      "projected_sites": 0.0,
+      "projected_low": 0,
+      "projected_high": 19.5
+    },
+    {
+      "frame": "no_street",
+      "result": "ALREADY_HELD_SIBLING_STREET",
+      "count": 0,
+      "n": 20,
+      "total_sites": 121,
+      "wilson_low_pct": 0,
+      "wilson_high_pct": 16.1,
+      "projected_sites": 0.0,
+      "projected_low": 0,
+      "projected_high": 19.5
+    },
+    {
+      "frame": "no_street",
+      "result": "OSHA_BAND",
+      "count": 2,
+      "n": 20,
+      "total_sites": 121,
+      "wilson_low_pct": 2.8,
+      "wilson_high_pct": 30.1,
+      "projected_sites": 12.1,
+      "projected_low": 3.4,
+      "projected_high": 36.4
+    }
+  ]
+}
