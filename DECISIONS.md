@@ -321,6 +321,23 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   ORG-000038's two pages in PR #502). The audit 12 draw will read the placements above from a checked-in list in
   `tasks/blind-audit-12-protocol-2026-11-23/`, added with the B6 data pull request, rather than from a new placement rule.
 
+## 2026-11-23 12:48: R13 size filings, “10 years, dated”
+
+> Accept filings up to 10 years old. Each band shows its source year, and a newer contradicting source
+> always wins. The audit 12 readers check a sample.
+
+The repo owner superseded the v1.19.3 five-year limit for R13 sources 1 and 2. SCHEMA v1.19.7 records
+the band-write cutoff, the hold for a stale or superseded filing, and the existing evidence and site
+notes fields that show the source year.
+
+## 2026-11-23 13:16: R13 filing-date and audit checks (round 24, item 2)
+
+> Say what is checked
+
+At write time the integrator replays each filing date against the raw snapshot. The PIC-18 ten-year
+packet supplies `tasks/pic18-size-10yr-2026-11-23/check.py`. Blind audit 12 readers check sampled bands
+against their cited filings with the filing year shown.
+
 ## 2026-11-23: round 24, item 1 · blind audit 12 judged values
 
 - **Owner ruling (“Withhold now, repair too”):** Keep a flagged judged field in the Audit 12 packet and show its value as
