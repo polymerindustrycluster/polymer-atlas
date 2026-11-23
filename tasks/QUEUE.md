@@ -665,3 +665,6 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 
 ## Working rules (owner adoption 2026-11-22)
 - [ ] `claimed:claude-code 2026-11-22` **Working rules into AGENTS.md section 2a, with checks:** `scripts/check_pr_rules.py` (rules 5 and 6), workflow `pr-rules`, `tasks/working-rules-2026-11-22/`. Board card ATLAS-4. Rules 2 and 3 land with the evidence-binding-gate branch; not built here.
+
+## PIC-18 street repairs from dated government filings
+- [ ] `claimed:atlas-w22-size-unlock 2026-11-22` **PIC-18 street fill:** screen the 121 missing-street sites in the published size sprint. Apply unanimous, dated, physical street matches with evidence, then rerun the OSHA size matcher. First user: the Atlas controller. Check use by 2026-12-20.
