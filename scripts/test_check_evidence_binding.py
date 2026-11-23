@@ -126,6 +126,10 @@ SITES = [
      "street_address": "321 Oak Street"},
     {"site_id": "S-OAK4", "org_id": "ORG-15", "site_name": "Acme Polymer - Oak Bldg", "city": "Dover", "state": "OH",
      "street_address": "321 Oak Street, Building A"},
+    {"site_id": "S-BASE", "org_id": "ORG-15", "site_name": "Acme Polymer - Basement", "city": "Dover", "state": "OH",
+     "zip": "44699", "street_address": "30 Larch Way, Basement Level"},
+    {"site_id": "S-LVL", "org_id": "ORG-15", "site_name": "Acme Polymer - Level", "city": "Dover", "state": "OH",
+     "zip": "44699", "street_address": "40 Larch Way, Level 2"},
     {"site_id": "S-PLANT2", "org_id": "ORG-15", "site_name": "Acme Polymer - Plant 2", "city": "Dover", "state": "OH",
      "street_address": "77 Kiln Rd"},
     {"site_id": "S-PHOLD", "org_id": "ORG-15", "site_name": "Acme Polymer Holdings - Elm Works", "city": "Dover",
@@ -458,6 +462,28 @@ class Verdicts(unittest.TestCase):
                    "held_for_reading:name_equals_parent_key")
         self.check(ev("S-ARES", TCEQ, permit("Acme Resin LLC", "X", "20 BIRCH LN, DOVER, OH 44699")), "PASS")
         self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", "22 BIRCH LN, DOVER, OH 44699")), "PASS")
+
+    # ---- Codex round 4 on 3e091665: two more constructed passes under the strict floor
+
+    def test_r4_1_one_sided_street_suffix(self):  # Codex r4: EVD-999981 / SITE-999981 (S-BASE here) and two neighbours each side
+        for sid, street in (("S-BASE", "30 LARCH WAY"), ("S-LVL", "40 LARCH WAY")):  # the record names a level, the quote does not
+            self.check(ev(sid, TCEQ, permit("Acme Polymer", "X", f"{street}, DOVER, OH 44699")), "HELD",
+                       "held_for_reading:street_suffix_unexplained")
+        self.check(ev("S-BASE", TCEQ, permit("Acme Polymer", "X", "30 LARCH WAY, BASEMENT LEVEL, DOVER, OH 44699")),
+                   "HELD", "held_for_reading:street_suffix_unexplained+locality_not_read")  # repeating it does not explain it
+        for suffix in ("LOWER LEVEL", "MEZZANINE"):  # the quote names a level, the record does not
+            self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", f"22 BIRCH LN, {suffix}, DOVER, OH 44699")),
+                       "HELD", "held_for_reading:locality_not_read")
+        self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", "22 BIRCH LN, DOVER, OH 44699")), "PASS")  # control
+
+    def test_r4_2_second_state_or_zip_in_the_locality(self):  # Codex r4: EVD-999984 / SITE-999984 (S-ZEP here) and neighbours
+        for place in (", DAYTON TX 75001, OH 44699", ", DAYTON TX 75001 OH 44699", ", TX, OH 44699",
+                      ", DAYTON, TX 75001, OH 44699", ", DAYTON TX, OH 44699", ", DOVER, OH 44699, 44601"):
+            self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", f"22 BIRCH LN{place}")), "HELD",
+                       "held_for_reading:locality_not_read")
+        self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", "22 BIRCH LN, OH 44699, TX 75001")), "FAIL",
+                   "state_differs+city_differs")  # a printed other state stays a demonstrated conflict
+        self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", "22 BIRCH LN, DOVER, OH 44699")), "PASS")  # control
 
     def test_r3_6_parentheses_are_not_dropped(self):
         for name in ("Acme Polymer (operated by Quill Resins)", "Acme Polymer (Storage Division)"):

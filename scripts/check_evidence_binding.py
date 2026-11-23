@@ -29,7 +29,7 @@ Every evidence row gets exactly one verdict:
                   the record's website; on a platform host, host and path must both match).
   HELD            a structured row with no demonstrated conflict where a leg did not match positively:
                   held_for_reading:<legs> (name_with_parenthetical, name_equals_parent_key, address_with_parenthetical,
-                  designator_not_on_both_sides, locality_not_read, locality_not_matched, passes_on_two_records).
+                  designator_not_on_both_sides, street_suffix_unexplained, locality_not_read, locality_not_matched, passes_on_two_records).
   READ_REQUIRED   a web quote the mechanics did not fail. No admission path here (owner split of PR #467, 2026-11-22):
                   per-row proof lands in the follow-up, branch agent/claude-code/evidence-binding-web-proofs-2026-11-22.
   UNINSPECTABLE   no_quote, other_table, record_not_found, unknown_source_family, parse_failed, operator_not_a_name,
@@ -287,6 +287,14 @@ def designator_part(x):
 ZIP_TAIL_RE = re.compile(r"(?:^|\s+)(\d{5}[-\s]\d{4}|\d{5}-?|\d{9}|\d{4}|\d[\dE]{2,8})$")  # ZIP, ZIP+4, "317E6"
 
 
+def city_is_plain(city):
+    """False when a quoted city holds a digit (a ZIP), a trailing state ("DAYTON TX"), or is itself a two-letter state
+    code: a second state or ZIP inside the locality is unexplained and is never completed from the tail (Codex r4)."""
+    cw = city.split()
+    return not (re.search(r"\d", city) or any(state_code(" ".join(cw[k:])) for k in range(1, len(cw)))
+                or (len(cw) == 1 and len(city) == 2 and state_code(city)))
+
+
 def quoted_place(addr):
     """(city, state code, ZIP as printed, complete) for the locality a quoted address states after its street: "STREET,
     CITY, ST ZIP", "STREET, CITY, ST", "STREET, CITY ST ZIP", "STREET, CITY, State", "STREET, CITY, ST ZIP 1234",
@@ -307,6 +315,8 @@ def quoted_place(addr):
     st = state_code(last)
     if st:
         used, city = 1, rest[-2] if len(rest) > 1 else ""
+        if not city_is_plain(city):
+            return city, st, z, False  # "Dayton TX 75001, OH 44699": a second state or ZIP inside the city is unexplained (Codex r4)
         used += bool(city)
         if len(rest) > 2 and re.fullmatch(r"(?i)(?:city|town|township|borough|village) of", city):
             city, used = rest[-3], 3  # ECHO prints "SPRINGFIELD, TOWNSHIP OF, OH"
@@ -314,7 +324,8 @@ def quoted_place(addr):
     words = last.split()
     for k in range(1, len(words)):  # "DOVER OH 44101" or "DOVER OHIO" in one comma part
         if state_code(" ".join(words[k:])):
-            return " ".join(words[:k]), state_code(" ".join(words[k:])), z, len(rest) == 1
+            c = " ".join(words[:k])
+            return c, state_code(" ".join(words[k:])), z, len(rest) == 1 and city_is_plain(c)
     if len(rest) == 1 and not z and not re.search(r"\d", last):
         return last, "", "", True
     return "", "", z, False
@@ -325,6 +336,13 @@ def state_code(s):
     if len(s) == 2:
         return s.upper() if s.upper() in STATE_NAMES.values() else ""
     return STATE_NAMES.get(s.title(), "")
+
+
+def street_suffix_unexplained(rec_street):
+    """True when the record's street line carries a comma part beyond the street and its designators ("321 Oak St,
+    Basement Level"): street_key drops it, so a quote naming only the street may name the building while the record
+    names a floor or wing. Never PASS (Codex r4, owner floor ruling); a quote repeating it is held by the locality leg."""
+    return len([x for x in (rec_street or "").split(",") if x.strip()]) > len(street_part(rec_street).split(","))
 
 
 def quote_street(addr):
@@ -492,6 +510,8 @@ def judge(ev, idx, _alone=False):
             reasons.append("unit_differs")  # one designator kind on both sides with different values (Codex r3 finding 3)
         elif units_seen == "unequal":
             holds.append("designator_not_on_both_sides")
+        if street_suffix_unexplained(rec.get("street_address")):
+            holds.append("street_suffix_unexplained")
         if not complete:
             holds.append("locality_not_read")  # no locality, or comma parts the parser could not read (finding 1)
         elif not same_locality(rec.get("city"), rec.get("state"), rec.get("zip"), q_city, q_st, q_zip):

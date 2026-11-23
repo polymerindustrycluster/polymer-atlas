@@ -25,7 +25,7 @@ Codex refuted the third round (head 9205837e) with 7 blocking findings, all from
 
 The tables at the end map each finding to the test that now holds it.
 
-Every number below comes from `python3 tasks/evidence-binding-gate-2026-11-22/check.py`, except the replay table, which comes from `replay.py` beside it (written to [replay.csv](replay.csv)). `check.py` reads pinned commits and fails if any of its 196 numbers drifts. Rows are cited by `evidence_id` only.
+Every number below comes from `python3 tasks/evidence-binding-gate-2026-11-22/check.py`, except the replay table, which comes from `replay.py` beside it (written to [replay.csv](replay.csv)). `check.py` reads pinned commits and fails if any of its 199 numbers drifts. Rows are cited by `evidence_id` only.
 
 ## What the gate decides
 
@@ -33,9 +33,9 @@ Every number below comes from `python3 tasks/evidence-binding-gate-2026-11-22/ch
 
 | Verdict | Meaning | Reasons |
 | --- | --- | --- |
-| PASS | **Structured sources only, every leg positive** (owner ruling 2026-11-22, "strict floor"). Name: the whole quoted operator field, parentheses kept, is a name the record holds by exact `name_key`, or (site row, street passing) a held name plus corporate-form words only; a site-name part counts unless every token in it is a generic label; never a recorded parent's name, and never a key the record shares with a recorded parent unless the text is the record's own name. Site row: `same_street()` holds; any designator on either side is stated and equal on both; `same_locality()` holds (state on both sides and equal; city or ZIP5 equal); and the same quote passes on no other site record. Organization `address` row: the source states the entity's own address (USAspending recipient, SBIR firm) and the quoted city and state are the record's headquarters. | — |
+| PASS | **Structured sources only, every leg positive** (owner ruling 2026-11-22, "strict floor"). Name: the whole quoted operator field, parentheses kept, is a name the record holds by exact `name_key`, or (site row, street passing) a held name plus corporate-form words only; a site-name part counts unless every token in it is a generic label; never a recorded parent's name, and never a key the record shares with a recorded parent unless the text is the record's own name. Site row: `same_street()` holds; the record's street line carries no comma part beyond the street and its designators (else HELD `street_suffix_unexplained`); any designator on either side is stated and equal on both; `same_locality()` holds (state on both sides and equal; city or ZIP5 equal); and the same quote passes on no other site record. Organization `address` row: the source states the entity's own address (USAspending recipient, SBIR firm) and the quoted city and state are the record's headquarters. | — |
 | FAIL | A demonstrated conflict: the quote is about something else. No waiver exists. | `name_not_held`, `parent_name_lead` (the filing names only a recorded parent: a lead to be read), `street_differs`, `unit_differs`, `state_differs`, `city_differs`, `record_no_street`, `quote_no_street`, `hq_from_facility_or_permit`, `hq_from_s5_identity_source`, `hq_city_state_differs`; web: `not_own_site`, `street_absent_from_quote`, `unit_differs` (several may join with `+`) |
-| HELD | A structured row where a leg did not match positively and nothing conflicts. It fails the PR like a FAIL; it goes to the reader's queue, not the rejects. | `held_for_reading:` and one or more of `name_with_parenthetical`, `name_equals_parent_key`, `address_with_parenthetical`, `designator_not_on_both_sides`, `locality_not_read`, `locality_not_matched`, `passes_on_two_records` (joined by `+`; the last also reports `also_passes_on`) |
+| HELD | A structured row where a leg did not match positively and nothing conflicts. It fails the PR like a FAIL; it goes to the reader's queue, not the rejects. | `held_for_reading:` and one or more of `name_with_parenthetical`, `name_equals_parent_key`, `address_with_parenthetical`, `designator_not_on_both_sides`, `street_suffix_unexplained`, `locality_not_read`, `locality_not_matched`, `passes_on_two_records` (joined by `+`; the last also reports `also_passes_on`) |
 | READ_REQUIRED | A web quote that the mechanical tests did not fail. A web quote is never PASS. | `mechanics_clear`, `no_record_website`, `name_absent_from_quote`, `web_record_no_street`, `record_street_no_civic_number`, `web_class_untested` |
 | UNINSPECTABLE | The gate cannot read the row. It is never a pass. | `no_quote`, `other_table`, `record_not_found`, `unknown_source_family`, `parse_failed`, `operator_not_a_name`, `no_civic_number` |
 
@@ -52,7 +52,7 @@ The gate passes a PR only when every row it adds or changes is PASS. A FAIL, HEL
 
   A building is read whole ("Bldg. 1-A" is 1A, not 1; Codex r3 finding 3). The derivation uses the same `same_street()`, so the building rule reaches it too. Re-derived on the #463 extracts against the 393c3895 site shards, all 7,196 site pairs are unchanged (2,632 populated, 4,564 empty), and `tasks/last-activity-street-leg-2026-11-22/check.py` passes.
 - **City and state** (Codex r2 finding 2). The city and state printed after the street are read with or without a ZIP ("…, DOVER, OH 44101", "…, DOVER, TX", "…, DOVER OHIO", "…, DAYTON"). A quoted state other than the site's is FAIL `state_differs`, as a two-letter code or a full state name. A quoted city other than the site's is FAIL `city_differs`, unless the quoted ZIP5 equals the site's `zip`. Both halves are controller rulings of 2026-11-22 within the owner's standard, not owner rulings. City names are compared as spellings of one name, never as nearby places: Mt/St/Ft/Pk spelled out, "City of X" and a trailing Township/City/Town/Village/Borough dropped, spaces ignored ("MC COOK" is McCook), ECHO's "SPRINGFIELD, TOWNSHIP OF" read as Springfield, and either part of a record city written with a second locality in parentheses ("Cleveland (Solon)", "Killingly (Dayville)"). A quoted county is not a city and is not compared. A ZIP is read as 5 digits, ZIP+4 (with a hyphen or a space), 9 digits, or 5 digits and a trailing dash; a 4-digit ZIP, "317E6", "00000" or a foreign postcode never matches. The test lives in `scripts/matching.py` (`city_keys`, `zip5`, `city_differs`, and `same_locality` for the derivation follow-up below), so the gate and the derivation can share it. A quoted other state stays its own reason, `state_differs`, which an equal ZIP never overrides. A missing city is not a conflict, so it is never FAIL; under the floor ruling it is not a match either (next bullet).
-- **Locality must match** (owner floor ruling; Codex r3 finding 1). The gate calls `matching.same_locality()` and PASSes only when it holds: the state is present on both sides and equal, and the city is equal (either part of a parenthetical city) or the ZIP5 is equal. A ZIP is read from ZIP, ZIP+4 with a hyphen or a space, or a trailing dash, and may stand in its own comma part. A locality the parser does not fully read (none printed, or a comma part left over) is HELD `locality_not_read`; a missing state or city with no equal ZIP is HELD `locality_not_matched`. Ten historical rows that skipped the locality call now pass it positively (`test_r3_1_historical_zip_forms_pass`).
+- **Locality must match** (owner floor ruling; Codex r3 finding 1). The gate calls `matching.same_locality()` and PASSes only when it holds: the state is present on both sides and equal, and the city is equal (either part of a parenthetical city) or the ZIP5 is equal. A ZIP is read from ZIP, ZIP+4 with a hyphen or a space, or a trailing dash, and may stand in its own comma part. A locality the parser does not fully read (none printed, a comma part left over, or a city that holds a digit, ends in a state or is itself a two-letter state code) is HELD `locality_not_read`; a missing state or city with no equal ZIP is HELD `locality_not_matched`. Ten historical rows that skipped the locality call now pass it positively (`test_r3_1_historical_zip_forms_pass`).
 - **Unit, room, floor, building** (owner floor ruling; Codex r3 finding 3). `matching.designators_compare()` reads suite, unit, apartment, room, floor, department and building designators (and "#12") on both sides. A conflict is FAIL `unit_differs`. A designator on one side only, or one the parser cannot read whole, is HELD `designator_not_on_both_sides`.
 - **One quote, two records** (owner floor ruling; Codex r3 finding 2). When a site row would PASS, the same quote is judged against every other site at the same street key. If it would PASS on another, it passes on neither: HELD `passes_on_two_records`, with the other site in `also_passes_on`.
 - **Operator.** A permittee, operator or establishment field is one name. It is never split on commas, so "Other Operator, Acme Polymer" does not match Acme Polymer. On a permit, the operator is the permittee, not the facility label.
@@ -133,21 +133,21 @@ Counts below are evidence rows.
 
 **`main` at 393c3895 (after #463; the reverted tree):** 47,416 rows. 0 PASS, 207 FAIL, 2,776 READ_REQUIRED and 44,433 UNINSPECTABLE. Under ruling A no web row passes, and every PASS on `main` was a web row. 41,461 of the UNINSPECTABLE rows carry no quote. A PR that added all of `main` would fail on all 47,416: 207 FAIL and 47,209 held. 6,744 of the held rows have an archive capture the follow-up's per-row proof could cite.
 
-**`main` at 8f30ce0f** (the branch cut, still holding batches 5 and 6): 81,510 rows. 20,178 PASS, 13,104 FAIL, 531 HELD, 3,120 READ_REQUIRED and 44,577 UNINSPECTABLE.
+**`main` at 8f30ce0f** (the branch cut, still holding batches 5 and 6): 81,510 rows. 20,160 PASS, 13,104 FAIL, 549 HELD, 3,120 READ_REQUIRED and 44,577 UNINSPECTABLE.
 
 **Quarantined batches** (rows PRs #457 and #458 added, 4ee02127 → 17834918):
 
 | `created_by` | Rows | PASS | FAIL | HELD | READ_REQUIRED | UNINSPECTABLE |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| spaghetti-batch5-2026-11-22 | 10,352 | 6,624 (64.0%) | 3,366 (32.5%) | 176 | 176 | 10 |
-| spaghetti-batch6-2026-11-22 | 23,564 | 13,554 (57.5%) | 9,521 (40.4%) | 355 | 0 | 134 |
+| spaghetti-batch5-2026-11-22 | 10,352 | 6,620 (63.9%) | 3,366 (32.5%) | 180 | 176 | 10 |
+| spaghetti-batch6-2026-11-22 | 23,564 | 13,540 (57.5%) | 9,521 (40.4%) | 369 | 0 | 134 |
 | spaghetti-burndown-batch1-2026-11-21 (re-added in #457) | 122 | 0 | 6 | 0 | 116 | 0 |
 | spaghetti-burndown-batch2-2026-11-21 (re-added in #457) | 56 | 0 | 4 | 0 | 52 | 0 |
-| **Both PRs** | **34,094** | **20,178 (59.2%)** | **12,897 (37.8%)** | **531** | **344** | **144** |
+| **Both PRs** | **34,094** | **20,160 (59.1%)** | **12,897 (37.8%)** | **549** | **344** | **144** |
 
-1,019 rows are held (HELD, READ_REQUIRED or UNINSPECTABLE) and fail the gate. 344 of them have an archive capture at 17834918.
+1,037 rows are held (HELD, READ_REQUIRED or UNINSPECTABLE) and fail the gate. 344 of them have an archive capture at 17834918.
 
-**What the floor ruling moved** (round three at 9205837e → this head, the same 34,094 rows): 531 rows PASS → HELD, 4 rows FAIL → PASS, nothing else. PASS falls from 20,705 to 20,178 (recall drops, as the owner accepted); no row moves to FAIL. The 531 by leg (a row may hold on two): designator on one side only 238, name key shared with a recorded parent 108, name with a parenthetical 82, locality not fully read 46, passes on two records 39, address with a parenthetical 30. The 4 FAIL → PASS rows quote, parentheses kept, exactly a held name: EVD-443131 and EVD-443132 the whole site name, EVD-438919 and EVD-438920 the operator's own legal name (whose parenthesis-stripped form is the parent's key, which made them `parent_name_lead` before). The 39 two-record rows fall on 6 pairs of site records at one street key: SITE-000335/SITE-000336, SITE-000627/SITE-001416, SITE-000683/SITE-001725, SITE-000005/SITE-002964 and SITE-002795/SITE-003966 each belong to one organization and may be duplicate site records; SITE-002685/SITE-002844 belong to two organizations. These are dedupe leads, not settled here.
+**What the floor ruling moved** (round three at 9205837e → this head, the same 34,094 rows): 549 rows PASS → HELD, 4 rows FAIL → PASS, nothing else. PASS falls from 20,705 to 20,160 (recall drops, as the owner accepted); no row moves to FAIL. The 549 by leg (a row may hold on two): designator on one side only 238, name key shared with a recorded parent 108, name with a parenthetical 82, locality not fully read 52, passes on two records 39, address with a parenthetical 30, street suffix on the record only 24. Round four's two fixes (below) moved 30 of these rows against the previous head 3e091665: 18 PASS → HELD, and 12 HELD rows gained a second leg; no row moved toward PASS. The 4 FAIL → PASS rows quote, parentheses kept, exactly a held name: EVD-443131 and EVD-443132 the whole site name, EVD-438919 and EVD-438920 the operator's own legal name (whose parenthesis-stripped form is the parent's key, which made them `parent_name_lead` before). The 39 two-record rows fall on 6 pairs of site records at one street key: SITE-000335/SITE-000336, SITE-000627/SITE-001416, SITE-000683/SITE-001725, SITE-000005/SITE-002964 and SITE-002795/SITE-003966 each belong to one organization and may be duplicate site records; SITE-002685/SITE-002844 belong to two organizations. These are dedupe leads, not settled here.
 
 Reasons for every verdict but PASS in the batches, by row:
 
@@ -157,7 +157,7 @@ Reasons for every verdict but PASS in the batches, by row:
 | `street_differs` | 3,558 |
 | `record_no_street` | 2,728 |
 | `hq_from_s5_identity_source` | 627 |
-| HELD (floor ruling): `designator_not_on_both_sides` 228, `name_equals_parent_key` 102, `name_with_parenthetical` 82, `locality_not_read` 40, `passes_on_two_records` 39, `address_with_parenthetical` 28, two legs 12 | 531 |
+| HELD (floor ruling): `designator_not_on_both_sides` 224, `name_equals_parent_key` 102, `name_with_parenthetical` 82, `locality_not_read` 38, `passes_on_two_records` 39, `address_with_parenthetical` 28, `street_suffix_unexplained` 12, two legs 24 | 549 |
 | `name_not_held+street_differs` | 488 |
 | `quote_no_street` | 434 |
 | web READ_REQUIRED: `mechanics_clear` 166, `web_record_no_street` 139, `web_class_untested` 17, `no_record_website` 13, `name_absent_from_quote` 9 | 344 |
@@ -181,9 +181,9 @@ By source family (PASS / FAIL / HELD / READ_REQUIRED / UNINSPECTABLE):
 
 | Source family | PASS | FAIL | HELD | READ_REQUIRED | UNINSPECTABLE |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| EPA ECHO | 9,054 | 7,138 | 304 | 0 | 30 |
-| OSHA | 6,624 | 3,356 | 176 | 0 | 10 |
-| FMCSA Company Census | 1,779 | 480 | 8 | 0 | 2 |
+| EPA ECHO | 9,042 | 7,138 | 316 | 0 | 30 |
+| OSHA | 6,620 | 3,356 | 180 | 0 | 10 |
+| FMCSA Company Census | 1,777 | 480 | 10 | 0 | 2 |
 | state-entity-files-bulk | 580 | 344 | 0 | 0 | 0 |
 | USAspending bulk | 662 | 4 | 5 | 0 | 0 |
 | TCEQ Central Registry | 199 | 431 | 10 | 0 | 0 |
@@ -268,9 +268,9 @@ The batch PASS rows, by which held name the whole quoted name matched:
 
 | Name basis | Rows |
 | --- | ---: |
-| A name of the operator organization | 17,748 |
+| A name of the operator organization | 17,732 |
 | The site name's leading part (not a generic label) | 1,278 |
-| The full site name or another part of it (not a generic label) | 986 |
+| The full site name or another part of it (not a generic label) | 984 |
 | A held name plus corporate-form words, street passing (owner ruling) | 166 |
 
 **PASS means that every mechanical leg matched, not that the quote is proven about the record and not that the row is admissible** (owner floor ruling). Two model families still read the rows of a data PR. Tier ceilings and address roles remain the validator's and the integrator's job.
@@ -320,8 +320,8 @@ The replay runs `replay.py` over the last 40 first-parent commits on `main` up t
 
 | Commit | Subject | Rows | PASS | FAIL | HELD | READ_REQUIRED | UNINSPECTABLE | Held | … with an archive link | Binding gate | Provenance |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 178349185 | Merge pull request #458 from polymerindustrycluster/agent/sp | 23,564 | 13,554 | 9,521 | 355 | 0 | 134 | 489 | 0 | fail | fail |
-| 6a76e923f | Merge pull request #457 from polymerindustrycluster/agent/sp | 10,530 | 6,624 | 3,376 | 176 | 344 | 10 | 530 | 344 | fail | fail |
+| 178349185 | Merge pull request #458 from polymerindustrycluster/agent/sp | 23,564 | 13,540 | 9,521 | 369 | 0 | 134 | 503 | 0 | fail | fail |
+| 6a76e923f | Merge pull request #457 from polymerindustrycluster/agent/sp | 10,530 | 6,620 | 3,376 | 180 | 344 | 10 | 534 | 344 | fail | fail |
 | 4924083cd | R2 re-capture recovery mint: 39 evidence rows + 39 archive l | 39 | 0 | 8 | 0 | 31 | 0 | 31 | 31 | fail | fail |
 | 4ea038848 | Phase C unit 3: 22 accuracy corrections (EVD-425415..425436  | 22 | 0 | 0 | 0 | 0 | 22 | 22 | 22 | fail | fail |
 | b99fd9e1e | Burn-down batch 4: R1 re-witness mint — 240 evidence rows +  | 240 | 0 | 24 | 0 | 216 | 0 | 216 | 216 | fail | fail |
@@ -344,15 +344,24 @@ The replay runs `replay.py` over the last 40 first-parent commits on `main` up t
 | 6c29fa6c4 | IPEDS CIP fills: 26 degree programs (EVD-400340..EVD-400365) | 26 | 0 | 0 | 0 | 0 | 26 | 26 | 0 | fail | fail |
 | 209be678e | Evidence backfill wave 1: 734 tier-A people existence witnes | 734 | 0 | 0 | 0 | 0 | 734 | 734 | 0 | fail | fail |
 | d48ce7e6a | Hygiene sweep (audit F11): Farathane duplicate merged, APT s | 5 | 0 | 0 | 0 | 0 | 5 | 5 | 0 | fail | fail |
-| **24 commits** | | **38,315** | **20,178** | **13,100** | **531** | **2,832** | **1,674** | **5,037** | **2,907** | 0 pass | 0 pass |
+| **24 commits** | | **38,315** | **20,160** | **13,100** | **549** | **2,832** | **1,674** | **5,055** | **2,907** | 0 pass | 0 pass |
 
-- **Binding gate.** None of the 24 commits would have passed. 5,037 rows were held, and 2,907 of them had an archive capture. Against round three, only the two batch merges move: 531 rows PASS → HELD and 4 FAIL → PASS (see "What the floor ruling moved").
+- **Binding gate.** None of the 24 commits would have passed. 5,055 rows were held, and 2,907 of them had an archive capture. Against round three, only the two batch merges move: 549 rows PASS → HELD and 4 FAIL → PASS (see "What the floor ruling moved").
 - **Provenance.** No commit's labels meet the folder rules, so all 24 fail. This is the baseline the rule starts from, not a defect in the rule.
 - **Migration commit.** SCHEMA v1.19 (4ee02127) added the empty `address_role` column to every evidence shard. Because an absent column counts as empty, it edits no row, and it does not appear in the table.
 
 ## Codex findings and the tests that hold them
 
 Tests are in `scripts/test_check_evidence_binding.py` unless noted. Each class was also loosened in a copy of the gate, and the mutation check in `check.py` confirms that the tests fail.
+
+**Round four** (`S/reviews/467-r4-confirm-codex.md`, REFUTE at 3e091665 on two newly constructed inputs; every round-three counterexample was confirmed fixed and all 34,094 historical verdicts accounted for). The controller ruled to fix exactly these two cases and their families, and then merge on a confirmation of those two cases only; a counterexample found after that is a follow-up PR. Four adversarial rounds so far on this PR.
+
+| Codex r4 finding | Fix | Tests | Mutants caught |
+| --- | --- | --- | --- |
+| 1. A record street "…, Basement Level" and a quote with only the street passed: the comma suffix was dropped by `street_key` and the designator parser returned an empty, parsed set | A comma part on the record's street line beyond the street and its designators is HELD `street_suffix_unexplained`; a quote that carries such a part is held by the locality leg | `Verdicts.test_r4_1_one_sided_street_suffix` (the reviewer's EVD-999981 / SITE-999981 shape, a second record level, and the quote-side "Lower Level" and "Mezzanine") | street_suffix_ignored |
+| 2. "Dayton TX 75001, OH 44699" was read as city "Dayton TX 75001" with state OH and the trailing ZIP | A quoted city that holds a digit, ends in a state, or is itself a two-letter state code is unexplained: HELD `locality_not_read`, never completed from the tail; a printed other state stays FAIL | `Verdicts.test_r4_2_second_state_or_zip_in_the_locality` (the reviewer's EVD-999984 / SITE-999984 shape and five neighbours) | city_with_second_state, city_second_state_one_part |
+
+A street suffix written without a comma ("321 Oak St Basement Level") still fails `street_differs`, as before; it never passes.
 
 **Round three** (`S/reviews/467-r3-review-codex.md`, seven blocking, all constructed counterexamples; owner ruling 2026-11-22, "strict floor, then merge"). Every counterexample is now a test that is not PASS, with its control beside it:
 
@@ -437,12 +446,12 @@ No tier-A row that passes the street test fails the locality test, so the locali
 
 | Check | Command | Result |
 | --- | --- | --- |
-| Gate unit tests | `cd scripts && python3 -m unittest test_check_evidence_binding` | 82 tests OK. They use synthetic strings shaped like real rows. They include every Codex counterexample of rounds one to three and a known-answer replay of batch 6: `--new-since` and `--provenance-since` both exit 1, and the real EVD-431716 row is not PASS. |
-| Street, label, locality, designator and corporate-form tests | `cd scripts && python3 -m unittest test_matching test_derive_last_activity` | 22 tests OK |
+| Gate unit tests | `cd scripts && python3 -m unittest test_check_evidence_binding` | 84 tests OK. They use synthetic strings shaped like real rows. They include every Codex counterexample of rounds one to three and a known-answer replay of batch 6: `--new-since` and `--provenance-since` both exit 1, and the real EVD-431716 row is not PASS. |
+| Street, label, locality, designator and corporate-form tests | `cd scripts && python3 -m unittest test_matching test_derive_last_activity` | 22 tests OK (106 with the gate's) |
 | Last-activity derivation | `python3 tasks/last-activity-street-leg-2026-11-22/check.py` | PASS; all 7,196 site pairs unchanged by the building rule and the whole-building read (2,632 populated) |
-| This folder's check | `python3 tasks/evidence-binding-gate-2026-11-22/check.py` | 196 numbers OK, 58 of them from the derivation follow-up |
-| Leak guard (inside `check.py`) | — | 0 of 268 segments occur in any `claim_detail` at 17834918. A planted real fragment is caught. |
-| Mutation check (inside `check.py`) | — | 38 loosenings, each caught by at least one failing test (the gate's `Verdicts` and `GateMechanics` tests and, since this round, `test_matching`). Failing tests per loosening: token subset names 12, comma split names 2, parenthetical names dropped 2, address paren dropped 1, corporate form any word 9, number only streets 2, no unit test 6, no building test 2, designator part dropped 3, state as floor 1, no state test 4, no city test 4, state needs zip 4, no paren city 2, paren city label 2, zip ignored 3, empty zips match 3, bare site labels 2, no label words 6, parent binds 3, parent form binds 1, parent key collision passes 1, locality call removed 1, locality unread passes 1, space zip unread 3, one sided designators pass 6, designator conflict ignored 1, two records ignored 1, building first digit only 2, hq from any source 2, web pass 7, web any domain 3, web platform as domain 2, web civic only 3, web no unit test 1, web name unchecked 1, edit some columns 1, provenance borrowed folder 1 |
+| This folder's check | `python3 tasks/evidence-binding-gate-2026-11-22/check.py` | 199 numbers OK, 58 of them from the derivation follow-up |
+| Leak guard (inside `check.py`) | — | 0 of 276 segments occur in any `claim_detail` at 17834918. A planted real fragment is caught. |
+| Mutation check (inside `check.py`) | — | 41 loosenings, each caught by at least one failing test (the gate's `Verdicts` and `GateMechanics` tests and, since this round, `test_matching`). Failing tests per loosening: token subset names 12, comma split names 2, parenthetical names dropped 2, address paren dropped 1, corporate form any word 9, number only streets 2, no unit test 6, no building test 2, designator part dropped 3, state as floor 1, no state test 5, no city test 5, state needs zip 4, no paren city 2, paren city label 2, zip ignored 4, empty zips match 3, bare site labels 2, no label words 6, parent binds 3, parent form binds 1, parent key collision passes 1, locality call removed 1, locality unread passes 3, space zip unread 3, one sided designators pass 6, designator conflict ignored 1, street suffix ignored 1, city with second state 1, city second state one part 1, two records ignored 1, building first digit only 2, hq from any source 2, web pass 7, web any domain 3, web platform as domain 2, web civic only 3, web no unit test 1, web name unchecked 1, edit some columns 1, provenance borrowed folder 1 |
 | Replay | `python3 tasks/evidence-binding-gate-2026-11-22/replay.py` | Writes `replay.csv`, the table above |
 
 The remaining repository checks are recorded in the PR.
