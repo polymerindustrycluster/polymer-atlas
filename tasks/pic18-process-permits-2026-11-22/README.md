@@ -10,11 +10,11 @@ First user: the Atlas integrator, who decides at the next wave review whether to
 
 | Route | Sites with an ID |
 |---|---|
-| FRS registry link (the site's own, or organization-level when the organization has one frame site) -> lake `echo_air_facilities` | 40 |
+| FRS registry link (the site's own, or organization-level when the organization has one frame site) -> lake `echo_air_facilities` | 46 |
 | Lake `echo_air_facilities` (OH) row at the site's street (`derive_last_activity.same_street`) with the site's or organization's held name | 45 |
-| FRS only / lake only / both | 13 / 18 / 27 |
+| FRS only / lake only / both | 13 / 12 / 33 |
 
-The lake route adds **18** sites FRS does not reach. **Name rule substituted:** the owner's corporate-words rule is not in the repo (the lake's `scripts/matching.py` arrives with PR #467), so the lake match uses `atlas.name_key` equality or the earlier lane's holder token rule; of the 46 lake ID matches, **32** are `name_key`-exact and **14** token-rule only. It affects which IDs are searched, not any write (every permit is bound on its own printed holder). **6** more frame sites match a lake row on street but not on name (a different operator at the address); not counted. The other 278 frame sites are unreachable by this route.
+The lake route adds **12** sites FRS does not reach. **Name rule substituted:** the owner's corporate-words rule is not in the repo (the lake's `scripts/matching.py` arrives with PR #467), so the lake match uses `atlas.name_key` equality or the earlier lane's holder token rule; of the 46 lake ID matches, **32** are `name_key`-exact and **14** token-rule only. It affects which IDs are searched, not any write (every permit is bound on its own printed holder). **6** more frame sites match a lake row on street but not on name (a different operator at the address); not counted. The other 278 frame sites are unreachable by this route.
 
 Of the 58: **24** were read on 2026-11-18 and are still without a process (re-bound today below; 9 of that lane's 33 left the frame because a process is now on record); **8** were searched then with no final permit (6 zero hits, 2 with only short letters, SITE-000517's being revocation letters; Muse's re-download found the same); **26** are new: **25 drawn as the canary** (seed 20261122) and **1 more (SITE-002106)**, searched on the go with 0 documents returned.
 

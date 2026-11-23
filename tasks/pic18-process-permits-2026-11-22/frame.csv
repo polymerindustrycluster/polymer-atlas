@@ -7,11 +7,11 @@ SITE-000027,ORG-000028,C,The M. F. Murdock Co. — Akron,"553 Carroll St, Suite 
 SITE-000028,ORG-000029,C,"Akron Rubber Development Laboratory, Inc. — Akron",2887 GILCHRIST ROAD,Akron,Summit,,,,,N,
 SITE-000029,ORG-000029,C,"Akron Rubber Development Laboratory, Inc. — Barberton",75 Robinson Ave,Barberton,Summit,,,,,N,
 SITE-000032,ORG-000032,C,"Acme Pattern Works, Inc. — Akron",,Akron,Summit,,,,,N,
-SITE-000035,ORG-000035,A,Saint-Gobain Performance Plastics — Akron,2664 Gilchrist Rd,Akron,Summit,OH0000001677000002,lake,OH0000001677000002:lake,OH0000001677000002:exact,N,Operating
+SITE-000035,ORG-000035,A,Saint-Gobain Performance Plastics — Akron,2664 Gilchrist Rd,Akron,Summit,OH0000001677000002,frs;lake,OH0000001677000002:frs+lake,OH0000001677000002:exact,N,Operating
 SITE-000038,ORG-000038,A,Pioneer Plastics Corp. — Akron,3330 Massillon Road,Akron,Summit,,,,,N,
 SITE-000047,ORG-000047,B,Smithers — Akron,425 W Market St,Akron,Summit,,,,,N,
 SITE-000048,ORG-000048,B,Akrochem Corp. — Akron,3770 Embassy Parkway,Akron,Summit,OH0000001677011283,frs;lake,OH0000001677011283:frs+lake,OH0000001677011283:exact,N,Operating
-SITE-000052,ORG-000052,A,Harwick Standard Distribution Corp. — Akron,60 South Seiberling Street,Akron,Summit,OH0000001677010605,lake,OH0000001677010605:lake,OH0000001677010605:exact,N,Operating
+SITE-000052,ORG-000052,A,Harwick Standard Distribution Corp. — Akron,60 South Seiberling Street,Akron,Summit,OH0000001677010605,frs;lake,OH0000001677010605:frs+lake,OH0000001677010605:exact,N,Operating
 SITE-000056,ORG-000056,A,CF Extrusion Technologies — Cuyahoga Falls,,Cuyahoga Falls,Summit,,,,,N,
 SITE-000058,ORG-000058,A,Steelastic — Cuyahoga Falls,One Vision Ln,Cuyahoga Falls,Summit,,,,,N,
 SITE-000066,ORG-000066,C,"Custom Plastic Extrusions, Ltd. — Hudson",,Hudson,Summit,,,,,N,
@@ -100,11 +100,11 @@ SITE-000755,ORG-000697,B,"BALL BOUNCE AND SPORT, INC. — Ashland",2040 Cellar D
 SITE-000761,ORG-000665,C,"Venture Packaging, Inc.",,Monroeville,Huron,,,,,N,
 SITE-000936,ORG-000868,C,Guardian Manufacturing Company — Willard,302 S. Conwell Ave,Willard,Huron,OH0000000339030016,frs,OH0000000339030016:frs,,Y,Operating
 SITE-000981,ORG-000911,C,"Johns Manville International, Inc. — Milan",49 Lockwood Road,Milan,Erie,OH0000000322002004,lake,OH0000000322002004:lake,OH0000000322002004:token_rule,N,Operating
-SITE-001078,ORG-000999,C,Okamoto Sandusky Manufacturing — Sandusky,3130 W. Monroe St,Sandusky,Erie,OH0000000322020019,lake,OH0000000322020019:lake,OH0000000322020019:exact,N,Operating
-SITE-001282,ORG-001183,C,Ventra Sandusky — Sandusky,3020 TIFFIN AVE,Sandusky,Erie,OH0000000322020042,lake,OH0000000322020042:lake,OH0000000322020042:token_rule,N,Operating
+SITE-001078,ORG-000999,C,Okamoto Sandusky Manufacturing — Sandusky,3130 W. Monroe St,Sandusky,Erie,OH0000000322020019,frs;lake,OH0000000322020019:frs+lake,OH0000000322020019:exact,N,Operating
+SITE-001282,ORG-001183,C,Ventra Sandusky — Sandusky,3020 TIFFIN AVE,Sandusky,Erie,OH0000000322020042,frs;lake,OH0000000322020042:frs+lake,OH0000000322020042:token_rule,N,Operating
 SITE-001311,ORG-001330,B,Finite Fiber — Akron,1374 Markle Street,Akron,Summit,,,,,N,
 SITE-001394,ORG-000033,B,LyondellBasell — Fairport Harbor (Equistar),110 Third Street,Fairport Harbor,Lake,OH0000000243020004,frs,OH0000000243020004:frs,,Y,Operating
-SITE-001397,ORG-000035,C,Saint-Gobain Performance Plastics — Ravenna (Aerospace),335 North Diamond Street,Ravenna,Portage,OH0000001667060007,lake,OH0000001667060007:lake,OH0000001667060007:exact,N,Operating
+SITE-001397,ORG-000035,C,Saint-Gobain Performance Plastics — Ravenna (Aerospace),335 North Diamond Street,Ravenna,Portage,OH0000001667060007,frs;lake,OH0000001667060007:frs+lake,OH0000001667060007:exact,N,Operating
 SITE-001399,ORG-000131,C,Tarkett North America — Middlefield,16035 Industrial Pkwy,Middlefield,Geauga,OH0000000228000289,frs,OH0000000228000289:frs,,N,Operating
 SITE-001419,ORG-001380,B,Bauer Corporation — Wooster,2540 Progress Drive,Wooster,Wayne,,,,,N,
 SITE-001420,ORG-001381,B,Hyload Inc. — Wadsworth,,Wadsworth,Medina,,,,,N,
@@ -309,7 +309,7 @@ SITE-002069,ORG-002069,B,"Summit Glove, Inc.",310 South Grant Street,Minerva,Sta
 SITE-002072,ORG-002072,C,Vexor Technology Inc (TRI variant name: Reworld Medina LLC),955 W Smith Road,Medina,Medina,OH0000001652050225,lake,OH0000001652050225:lake,OH0000001652050225:token_rule,N,Operating
 SITE-002073,ORG-002073,B,EnergyEne Inc.,,Wooster,Wayne,,,,,N,
 SITE-002079,ORG-000698,A,BASF Elyria site,120 PINE ST,Elyria,Lorain,OH0000000247040195;OH0000000247042020,lake,OH0000000247040195:lake;OH0000000247042020:lake,OH0000000247040195:exact;OH0000000247042020:token_rule,N,Operating;Permanently Closed
-SITE-002087,ORG-002131,B,Us Molding Machinery Co.,38294 Pelton Rd,Willoughby,Lake,OH0000000243161294,lake,OH0000000243161294:lake,OH0000000243161294:exact,N,Operating
+SITE-002087,ORG-002131,B,Us Molding Machinery Co.,38294 Pelton Rd,Willoughby,Lake,OH0000000243161294,frs;lake,OH0000000243161294:frs+lake,OH0000000243161294:exact,N,Operating
 SITE-002089,ORG-002133,B,VINYL TOOL & DIE,1144 Meadowbrook Ave,Youngstown,Mahoning,,,,,N,
 SITE-002091,ORG-002135,B,Applied Specialties Inc,33555 Pin Oak Pkwy,Avon Lake,Lorain,,,,,N,
 SITE-002093,ORG-002137,B,P & P MOLD & DIE INC.,1034 S Munroe Rd,Tallmadge,Summit,,,,,N,
