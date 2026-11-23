@@ -267,8 +267,10 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Trademark goods statements ("Leads only"):** a USPTO trademark goods statement never fills a market cell. One that names
   a use sector ("gloves for medical use") queues the organization for its own-site page, and that page is the witness under
   the round 16 ruling. Basis: the read-only market pilot (40 of the 316 PIC-18 market-unknown owners) met its pre-registered
-  floor exactly, 4 of 40 organizations with a reader-agreed term (rows: 8 agree, 2 disagree, 1 unresolved), but all 8 agreed
-  rows rest on abandoned or cancelled registrations, which show a past product line, not current sales. The FDA food-contact
+  floor exactly, 4 of 40 organizations with a reader-agreed term (rows: 8 agree, 2 disagree, 1 unresolved), but 6 of the 8
+  agreed rows rest on abandoned applications (3) or cancelled registrations (3), which show a past product line, not current
+  sales; the other 2 are live registrations (USPTO status 702). The owner was asked with "all 8", a controller error found in
+  review; the corrected count does not change the reason for the ruling, and the owner is told of the correction. The FDA food-contact
   and drug master file lists and the NHTSA lists matched 0 of the 40 and are not used for market.
 - **OpenCorporates ("Leads only"):** an OpenCorporates result may point to a charter or a status; a fact enters `data/` only
   after it is read at the state registry or another held source and cited there. OpenCorporates values never enter `data/`,
