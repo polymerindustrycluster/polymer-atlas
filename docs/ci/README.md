@@ -19,6 +19,12 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
   later `validate` step can still be deployed. It then builds the site with `scripts/build_pages.py` (public fields
   only; nothing generated is committed) and deploys it to GitHub Pages at
   https://polymerindustrycluster.github.io/polymer-atlas/. The Pages source is set to GitHub Actions.
+- **`nightly-watch.yml`** runs once a day (11:17 UTC) and on demand. It runs `scripts/nightly_watch.py` over the last 24
+  hours on `main` and fails the run, so GitHub emails the owner, when a bulk add, a data PR without two "**Review
+  record**" comments, a merge before `validate` finished, a red `main`, a flat PIC-18 outcome, an unexplained evidence
+  label or undeclared row loss shows up (rules a to g in the script's docstring). A second job, the only one with
+  `issues: write`, opens or updates one issue titled "Nightly watch: findings". What it cannot see, and what the owner
+  must set for the email to arrive: `tasks/nightly-watch-2026-11-22/README.md`.
 
 - **`pr-rules.yml`** (since 2026-11-22) runs on `pull_request_target` (a PR opened, pushed to, reopened or marked ready).
   It runs the checker and the workflow as they are on the base branch and never executes anything from the PR; it

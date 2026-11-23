@@ -1,0 +1,67 @@
+# Nightly watch on main: fails loudly (GitHub emails the failed scheduled run) and files ONE issue with the findings.
+# Edit this file directly; scripts/nightly_watch.py holds the rules and docs/ci/README.md describes the workflow.
+# tasks/nightly-watch-2026-11-22/README.md says what the owner must set so the email reaches them.
+name: nightly-watch
+
+on:
+  schedule:
+    - cron: "17 11 * * *"   # once a day at 11:17 UTC (06:17 US Eastern standard time), a few minutes past the hour
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+  actions: read
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0  # the watch reads first-parent history and the parent of every commit in the window
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Watch the last 24 hours on main (exit 1 findings, 2 could not inspect)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/nightly_watch.py --ref origin/main --report-file "$RUNNER_TEMP/nightly-watch-report.txt"
+      - name: Keep the report for the issue job
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-watch-report
+          path: ${{ runner.temp }}/nightly-watch-report.txt
+          if-no-files-found: ignore
+
+  issue:
+    needs: watch
+    if: ${{ always() && needs.watch.result != 'success' && needs.watch.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write   # this job only; the watch job above cannot write anything
+      actions: read
+    steps:
+      - uses: actions/download-artifact@v4
+        continue-on-error: true  # no report when the watch died before writing one
+        with:
+          name: nightly-watch-report
+      - name: Open or update the single findings issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Nightly watch: findings"
+          {
+            echo "Run: $RUN_URL ($(date -u +%Y-%m-%dT%H:%MZ))"; echo
+            if [ -f nightly-watch-report.txt ]; then echo '```'; cat nightly-watch-report.txt; echo '```'
+            else echo "The watch job ended without writing a report (see the run log). Treat this as a failed inspection."; fi
+          } > body.md
+          n=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "\"$title\" in:title" --json number,title \
+                -q "[.[] | select(.title == \"$title\")][0].number // empty")
+          if [ -n "$n" ]; then gh issue comment "$n" --repo "$GITHUB_REPOSITORY" --body-file body.md
+          else gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file body.md; fi
