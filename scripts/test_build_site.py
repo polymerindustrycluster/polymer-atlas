@@ -500,6 +500,107 @@ class ProspectsFixtureTest(unittest.TestCase):
         self.assertIn("data-nofilter", js)
         self.assertIn('id="ptable" data-nofilter', self.read("prospects.html"))
 
+    # ---- ATLAS-39: the public directory replaces the prospects page ----
+
+    def fixture_summary(self):
+        """County and ring tallies recomputed from the fixture's own site rows, with plain loops (no builder helper)."""
+        by_county, by_ring = {}, {}
+        for s in self.atlas.sites:
+            if not (s["state"] == "OH" and s["county"] in build_site.PIC12 and s["operating_status"] == "active"
+                    and s["verification_tier"] in ("A", "B", "C")):
+                continue
+            for table, key in ((by_county, s["county"]), (by_ring, s["_ring"] or "unknown")):
+                orgs, n = table.get(key, (set(), 0))
+                table[key] = (orgs | {s["org_id"]}, n + 1)
+        return by_county, by_ring
+
+    def summary_rows(self, html, kind):
+        """{label: (organization rows, site rows)} read from the summary table whose caption starts with kind."""
+        table = re.search(rf"<table[^>]*><caption>[^<]*{kind}[^<]*</caption>.*?</table>", html, re.S)
+        self.assertIsNotNone(table, kind)
+        out = {}
+        for m in re.finditer(r'<tr><th scope="row">(?:<a [^>]*>)?([^<]+)(?:</a>)?</th><td class="num">(\d+)</td><td class="num">(\d+)</td></tr>',
+                             table.group(0)):
+            out[m.group(1)] = (int(m.group(2)), int(m.group(3)))
+        return out
+
+    def test_no_prospect_or_pitch_wording_on_the_built_site(self):
+        for p in self.out.rglob("*"):
+            if p.is_file() and p.name != "prospects.html" and p.suffix in {".html", ".js", ".json", ".css", ".csv"}:
+                self.assertNotRegex(p.read_text(encoding="utf-8-sig"), r"(?i)prospect|pitch", str(p.relative_to(self.out)))
+
+    def test_prospects_urls_still_work(self):
+        stub = self.read("prospects.html")
+        self.assertIn('http-equiv="refresh"', stub)
+        self.assertIn("url=directory.html", stub)
+        self.assertIn('<a href="directory.html">', stub)
+        self.assertEqual((self.out / "prospects.csv").read_bytes(), (self.out / "directory.csv").read_bytes())
+
+    def test_summary_is_the_first_content_of_the_directory(self):
+        main = self.read("directory.html").split("<main", 1)[1]
+        self.assertIn("Northeast Ohio polymer companies", main.split("</h1>", 1)[0])
+        before_form = main.split("<form", 1)[0]
+        self.assertEqual(before_form.count("<table"), 2)                    # county and ring tables, nothing else, before the filters
+        self.assertTrue(before_form.index("<table") < before_form.index("</table>") < before_form.rindex("<table"))
+        self.assertRegex(before_form, r"<caption>[^<]*county[^<]*</caption>")
+        self.assertRegex(before_form, r"<caption>[^<]*ring[^<]*</caption>")
+
+    def test_summary_counts_match_the_site_rows_and_name_their_unit(self):
+        html = self.read("directory.html")
+        by_county, by_ring = self.fixture_summary()
+        for kind, expected in (("county", by_county), ("ring", by_ring)):
+            got = self.summary_rows(html, kind)
+            self.assertGreaterEqual(len(got), 3)
+            for label, (orgs, n) in expected.items():
+                key = f"Ring {label}" if kind == "ring" and label != "unknown" else label
+                self.assertEqual(got[key] if key in got else got[label], (len(orgs), n), f"{kind} {label}")
+        self.assertIn("organization rows with an active tier A-C site row", html)
+        total = re.search(r"<th scope=\"row\">All PIC-18</th><td class=\"num\">(\d+)</td><td class=\"num\">(\d+)</td>", html)
+        self.assertEqual((int(total.group(1)), int(total.group(2))), (5, 5))
+        self.assertIn("counted in each", html)                              # an organization in two counties is counted in both
+
+    def test_directory_list_is_data_not_markup_and_capped_at_50(self):
+        html = self.read("directory.html")
+        self.assertEqual(html.count("<tr data-"), 0)                        # no organization row is in the page itself
+        self.assertRegex(self.read("directory.js"), r"var PAGE = 50;")
+        rows = json.loads(self.read("directory.json"))["rows"]
+        by_county, _ = self.fixture_summary()
+        self.assertEqual(len(rows), sum(len(o) for o, _ in by_county.values()))   # one entry per organization row and county
+        self.assertEqual([r["co"] for r in rows], sorted(r["co"] for r in rows))   # grouped by county
+        main = next(r for r in rows if r["id"] == "ORG-000001")
+        self.assertIn("1 Main St, Akron, OH 44301", main["addr"])
+        stark = next(r for r in rows if r["id"] == "ORG-000004")
+        self.assertEqual(stark["addr"], ["Street not recorded, Canton, OH"])
+
+    def test_member_badge_is_the_public_flag_only(self):
+        rows = {r["id"]: r for r in json.loads(self.read("directory.json"))["rows"]}
+        self.assertTrue(rows["ORG-000001"]["member"])
+        self.assertFalse(rows["ORG-000004"]["member"])
+        self.assertIn("PIC member", self.read("directory.js"))
+        self.assertNotIn('name="mem"', self.read("directory.html"))
+        for p in self.out.rglob("*"):
+            if p.is_file():
+                self.assertNotIn("not on the public member list", p.read_text(encoding="utf-8-sig"), p.name)
+
+    def test_homepage_menu_and_footer_point_to_the_directory(self):
+        home = self.read("index.html")
+        self.assertEqual(home.count('href="directory.html"'), 3)            # menu, button, Explore card
+        self.assertIn("Northeast Ohio polymer companies", home)
+        self.assertIn('href="directory.csv"', self.read("search.html"))
+
+    def test_directory_csv_has_addresses_and_the_public_flag(self):
+        rows = list(csv.DictReader(io.StringIO(self.read("directory.csv").lstrip("\ufeff"))))
+        self.assertEqual(len(rows), len(json.loads(self.read("directory.json"))["rows"]))
+        by = {(r["org_id"], r["pic18_counties"]): r for r in rows}
+        self.assertEqual(by[("ORG-000001", "Summit")]["public_member_list"], "yes")
+        self.assertEqual(by[("ORG-000004", "Stark")]["public_member_list"], "")
+        self.assertIn("1 Main St, Akron, OH 44301", by[("ORG-000001", "Summit")]["pic18_site_addresses"])
+
+    def test_without_javascript_the_directory_points_to_county_pages_and_the_csv(self):
+        noscript = re.search(r"<noscript>(.*?)</noscript>", self.read("directory.html"), re.S).group(1)
+        self.assertIn('href="directory.csv"', noscript)
+        self.assertIn('href="counties/index.html"', noscript)
+
     def test_county_index_a_to_c_column_sums_to_the_headline(self):
         idx = self.read("counties/index.html")
         total = re.search(r'PIC-18 total</th><td></td><td class="num"><strong>([\d,]+)</strong>', idx)
