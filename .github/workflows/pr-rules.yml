@@ -19,7 +19,10 @@ name: pr-rules
 
 on:
   pull_request_target:
-    types: [opened, synchronize, reopened, ready_for_review]
+    # No ready_for_review: marking a PR ready does not change its head, and a second run on the same head can be
+    # cancelled while queued. The check runs this workflow posts through the API were then filed under the cancelled
+    # run's check suite, and the ruleset blocked the merge with every required check green (PR #492, 2026-11-23).
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read

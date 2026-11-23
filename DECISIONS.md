@@ -243,3 +243,8 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Residual unknowns (“Publish 'unknown' for now”):** Process and market cells that no admissible source fills are published as unknown. Company outreach is revisited after the pilots report.
 - **Pilot order (by staff need):** market verticals first, then process lists, then size and call lists, then the event and membership product fixes.
 - **Decided by:** the repo owner, in the controller's session, 2026-11-23, as multiple choice.
+
+## 2026-11-23: pr-rules no longer runs when a PR is marked ready
+
+- **Decision (“do the fix”):** `.github/workflows/pr-rules.yml` drops the `ready_for_review` trigger. On PR #492 a push and a ready toggle seconds apart started two runs on the same head; the queued one was cancelled, the `pr-rules` and `binding-gate` check runs the other posted through the API were filed under the cancelled run's check suite, and the ruleset blocked the merge with every required check green. Marking a PR ready does not change its head, so the checks have already judged it. Reopening a PR, re-running a run by hand, or moving the branch back to a commit already tested can still repeat work on one head; when a merge is blocked with every required check green, push a new commit. PR #493 was also blocked with its checks green, but both of its runs succeeded, so this does not explain it; its cause was not established.
+- **Decided by:** the repo owner, in the controller's session, 2026-11-23.
