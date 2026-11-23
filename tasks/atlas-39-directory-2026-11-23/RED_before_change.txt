@@ -1,0 +1,24 @@
+New tests run against the old prospects page (commit 526f8472, tests only), python3 -m unittest scripts.test_build_site.ProspectsFixtureTest:
+
+ERROR: test_directory_csv_has_addresses_and_the_public_flag
+    FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/tmp7urks0hv/site/directory.csv'
+ERROR: test_directory_list_is_data_not_markup_and_capped_at_50
+    FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/tmp7urks0hv/site/directory.html'
+ERROR: test_member_badge_is_the_public_flag_only
+    FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/tmp7urks0hv/site/directory.json'
+ERROR: test_summary_counts_match_the_site_rows_and_name_their_unit
+    FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/tmp7urks0hv/site/directory.html'
+ERROR: test_summary_is_the_first_content_of_the_directory
+    FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/tmp7urks0hv/site/directory.html'
+ERROR: test_without_javascript_the_directory_points_to_county_pages_and_the_csv
+    FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/7c/n93vps1j41l7zm2wg1hs5bm40000gn/T/tmp7urks0hv/site/directory.html'
+FAIL: test_homepage_menu_and_footer_point_to_the_directory
+    AssertionError: 0 != 3
+FAIL: test_no_prospect_or_pitch_wording_on_the_built_site
+    AssertionError: Regex matched: 'prospect' matches '(?i)prospect|pitch' in '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewpo
+FAIL: test_prospects_urls_still_work
+    AssertionError: 'http-equiv="refresh"' not found in '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=dev
+
+Ran 22 tests in 0.143s
+
+FAILED (failures=3, errors=6)
