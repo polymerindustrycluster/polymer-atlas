@@ -49,41 +49,14 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from atlas import street_key  # noqa: E402  (stdlib-only module, no import side effects)
+from matching import has_civic_number, same_street, street_key  # noqa: E402,F401  (the repo's one street test; report.py reads all three)
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUTS = ROOT / "tasks/last-activity-street-leg-2026-11-22/inputs"
 DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
 YEAR_RE = re.compile(r"\d{4}")
 
-# ---- street test ----------------------------------------------------------------------------------------
-_UNIT = re.compile(r"\b(?:suite|ste|unit|apt|apartment|room|rm)\b\.?\s*#?\s*([a-z0-9-]+)|(?<=\S)\s*#\s*([a-z0-9-]+)", re.I)
-_NUMBER_WORDS = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"}
-
-
-def _units(street: str) -> set:
-    """Suite / unit designators a street string states (`Suite 100`, `Ste. 5`, `Unit B`, `Apt 2`, `Rm 7`, a non-leading `#12`)."""
-    return {re.sub(r"[^a-z0-9]", "", (g1 or g2).lower()) for g1, g2 in _UNIT.findall(street or "")} - {""}
-
-
-def has_civic_number(key: str) -> bool:
-    """A civic number in a street key: a token containing a digit, or a leading number word (one to ten); not a PO box in any spelling (PO Box, P.O. Box, P O Box, POB, P.O.B., Post Office Box)."""
-    toks = key.split()
-    if re.search(r"\b(?:p ?o ?b(?:ox)?|post ?office ?box)(?=[\s\d]|$)", key):
-        return False                                                    # a PO box is not a civic address
-    return any(re.search(r"\d", t) for t in toks) or bool(toks) and toks[0] in _NUMBER_WORDS
-
-
-def same_street(site_street: str, printed: str) -> bool:
-    """The extract's street is the site's street: both `atlas.street_key` values are equal, non-empty, and carry a civic
-    number plus at least one more token (a bare number cannot witness a street). `street_key` discards suites, so when
-    the record and the extract both state a suite or unit and they differ, the row is not applied. A blank street is
-    never equal. No second normaliser lives here: variants the key misses are rejected, not guessed."""
-    key = street_key(site_street)
-    if not key or key != street_key(printed) or not has_civic_number(key) or len(key.split()) < 2:
-        return False
-    ua, ub = _units(site_street), _units(printed)
-    return not (ua and ub and ua != ub)
+# ---- street test: scripts/matching.py (shared with the evidence binding gate) ----------------------------
 
 
 # ---- derivation ----------------------------------------------------------------------------------------
