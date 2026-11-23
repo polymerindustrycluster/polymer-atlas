@@ -165,6 +165,46 @@ def cited(value):
     return " ".join(a11.urls(value)) if a11.LEAK.search(value) or a11.PASS_DATE.search(value) else value
 
 
+BAND_FIELDS = {"sites": "employee_band_site", "organizations": "employee_band_ohio"}
+FILING_SOURCES = {"osha_ita", "osha_inspection", "sba_ppp", "form_5500_lead", "government_filing"}
+YEAR = r"((?:19|20)\d{2})"
+EXPLICIT_YEAR = r"\bfiling[ _]year[ =:]+" + YEAR + r"\b"
+OSHA_FILING_ID = re.compile(r"\b(?:record id|establishment[_ ]id|activity[_ ]nr|id)[ =:]+(\d{1,20})\b", re.I)
+
+
+def band_filings(evidence, field, band):
+    """Show only the explicitly stated period of a size witness, without its builder prose."""
+    if not field or band in ("", "unknown"):
+        return []
+    result = set()
+    for row in evidence:
+        if row["claim_type"] != "size_band" or row.get("source_class") != "government_filing":
+            continue
+        detail, ref = row["claim_detail"], row["source_ref"]
+        if not re.match(rf"^{field}\s*=\s*{re.escape(band)}(?=$|[ :;,.(])", detail):
+            continue
+        if re.match(r"OSHA ITA\b", ref, re.I):
+            source = "osha_ita"
+            pattern = r"\b(?:CY[ =]*|calendar year\s+|filing year\s+|form 300A\s+|ITA\s+)" + YEAR + r"\b"
+        elif re.match(r"OSHA inspection\b", ref, re.I):
+            source = "osha_inspection"
+            pattern = r"\b(?:opened|open_date|inspection date)[ =:]*" + YEAR + r"-\d{2}-\d{2}\b"
+        elif "SBA PPP" in ref:
+            source, pattern = "sba_ppp", r"\bhistorical\s+" + YEAR + r"\b"
+        elif re.search(r"\b(?:Form 5500|EFAST2)\b", ref, re.I):
+            source, pattern = "form_5500_lead", r"\b(?:PY[ =]*|plan year\s+)" + YEAR + r"\b"
+        else:
+            source, pattern = "government_filing", EXPLICIT_YEAR
+        text = f"{ref} {detail}"
+        years = set(re.findall(pattern, text, re.I)) | set(re.findall(EXPLICIT_YEAR, text, re.I))
+        year = int(years.pop()) if len(years) == 1 else 0
+        locator = OSHA_FILING_ID.search(ref) if source in ("osha_ita", "osha_inspection") else None
+        for url in a11.urls(ref) or [""]:
+            result.add((source, year, locator[1] if locator else "", url))
+    return [dict(claim_type="size_band", url=url, filing_source=source, filing_year=year or None, filing_id=locator)
+            for source, year, locator, url in sorted(result)]
+
+
 class Head(a11.Head):
     """Use the draw reader for Audit 12 tables and Audit 11's indexed blind-row contract."""
 
@@ -228,8 +268,15 @@ def leak_scan(rows, visible_approvals=None):
                or child["table"] not in {*CHILDREN, "archive_links"} for child in children):
             raise ValueError("blind child contains unexpected fields")
         evidence = json.loads(row["evidence_json"])
-        if any(ev.keys() != {"claim_type", "url"} for ev in evidence):
-            raise ValueError("blind evidence contains unexpected fields")
+        for ev in evidence:
+            if ev.keys() == {"claim_type", "url"}:
+                continue
+            if (ev.keys() != {"claim_type", "url", "filing_source", "filing_year", "filing_id"}
+                    or ev["claim_type"] != "size_band" or ev["filing_source"] not in FILING_SOURCES
+                    or not re.fullmatch(r"(?:[0-9]{1,20})?", ev["filing_id"])
+                    or (ev["filing_year"] is not None and
+                        (type(ev["filing_year"]) is not int or not 1900 <= ev["filing_year"] <= 2099))):
+                raise ValueError("blind evidence contains unexpected fields or filing year")
         inspected = [{"table": row["table"], "values": json.loads(row["values_json"]),
                       "context": context}, *children]
         for part, child in enumerate(inspected):
@@ -324,6 +371,14 @@ def build(folder, out, reader=None, extend=(), approved=()):
         row.update(blind_id=blind_id, stratum=entry["stratum"],
                    context_json=json.dumps(context, ensure_ascii=False, sort_keys=True))
         row["cited_sources"] = cited(row["cited_sources"])
+        band_field = BAND_FIELDS.get(table, "")
+        filings = band_filings(h.evidence[table, rid], band_field, original.get(band_field, ""))
+        if filings:
+            evidence = json.loads(row["evidence_json"])
+            dated_urls = {f["url"] for f in filings}
+            evidence = [ev for ev in evidence
+                        if ev["claim_type"] != "size_band" or ev["url"] not in dated_urls]
+            row["evidence_json"] = json.dumps(evidence + filings, ensure_ascii=False)
         # Audit 11's generic withheld list also includes a few columns that are J for specific Audit 12 tables.
         row.update(columns_under_audit=";".join(judge),
                    values_json=json.dumps(values, ensure_ascii=False, sort_keys=True))

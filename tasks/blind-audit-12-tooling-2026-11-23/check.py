@@ -19,10 +19,15 @@ def packet_check(root):
         rid = site["site_id"]
         links.append(dict(org_id=site["org_id"], site_id=rid, registry="FRS",
                           registry_id=f"wave fixture {n}", match_basis="exact identity", as_of="2026-11-23"))
+        site["employee_band_site"] = "10-49"
         tables["evidence"].append(dict(evidence_id=f"EVD-{n:06d}", record_table="sites", record_id=rid,
                                        claim_type="address", source_ref="https://example.org/record",
                                        claim_detail="quote: private packet prose", tier_effect="supports_A",
                                        created_by="Claude"))
+        tables["evidence"].append(dict(evidence_id=f"EVD-{n+1000:06d}", record_table="sites", record_id=rid,
+            claim_type="size_band", claim_detail="employee_band_site=10-49: OSHA ITA Form 300A CY2023",
+            source_ref="OSHA ITA Form 300A CY2023, record id 1234",
+            source_class="government_filing", observed_date="2026-11-23"))
     for row in tables["organizations"]:
         row["naics_primary_source_name"] = "Grok wave fixture"
         row["description_1line"] = "See Note 9"
@@ -75,7 +80,20 @@ def packet_check(root):
         assert int(count["plant_cells"]) == expected[count["stratum"], True]
     site = next(r for r in rows if r["table"] == "sites")
     assert json.loads(site["values_json"])["street_address"] == "[withheld for blindness]"
-    assert json.loads(site["evidence_json"]) == [{"claim_type": "address", "url": "https://example.org/record"}]
+    evidence = json.loads(site["evidence_json"])
+    assert {"claim_type": "address", "url": "https://example.org/record"} in evidence
+    assert {"claim_type": "size_band", "url": "", "filing_source": "osha_ita", "filing_year": 2023,
+            "filing_id": "1234"} in evidence
+    assert "2026-11-23" not in site["evidence_json"]
+    assert not p.band_filings(tables["evidence"], "employee_band_site", "50-99")
+    unknown = dict(next(e for e in tables["evidence"] if e["claim_type"] == "size_band"),
+                   source_ref="OSHA ITA Form 300A", claim_detail="employee_band_site=10-49")
+    assert p.band_filings([unknown], "employee_band_site", "10-49")[0]["filing_year"] is None
+    inspection = dict(unknown, source_ref="OSHA inspection; source.zip!table.csv@2; id=5678",
+                      claim_detail="employee_band_site=10-49; OSHA inspection, filing year 2018; quote: fixture")
+    assert p.band_filings([inspection], "employee_band_site", "10-49") == [{
+        "claim_type": "size_band", "url": "", "filing_source": "osha_inspection",
+        "filing_year": 2018, "filing_id": "5678"}]
     link = json.loads(site["context_json"])["children"][0]
     assert link["values"]["site_id"] == site["record_id"] and "as_of" not in link["context"]
     assert link["values"]["registry_id"] == p.WITHHELD
