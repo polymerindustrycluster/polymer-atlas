@@ -34,3 +34,19 @@ uv run --with duckdb==2.0.1 python "$PACKET/build.py" --lake "$EPA_LAKE" --out /
 The checker rebuilds the selection, checks every packet row by its recorded Parquet source and raw CSV row number, and runs planted failures for a different street, a parent-only operator, and an ID held by another site. The builder also compares the projected witness fields against their original CSV rows in the ZIPs. Raw row numbers are 1-based data records with the header excluded. The first six columns of `packet.csv` follow `data/registry_links.csv` exactly. The remaining columns identify the raw witnesses. Program crosswalk rows carry separate locators for their program facility, crosswalk and FRS facility. The packet leaves registry and evidence integration to the controller. The builder and checker support `--region rest-oh` for the later pass.
 
 Verification on November 22 replayed all 206 links from 356 Parquet witness rows and rejected all three planted failures. All 19 input digests matched. `python3 scripts/validate.py` passed on the canonical tree.
+
+## Integration
+
+This pass appends the 206 approved registry links from PR #472. The six registry fields carry verbatim, including the original dates and match basis for the 164 returned links. SCHEMA §4.8 stores the EPA identifier as issued, and Atlas does not allocate a separate registry-link ID.
+
+Run `python3 tasks/pic18-epa-identifiers-2026-11-22/check_apply.py` before merging. It reads the approved packet and the pre-application registry file from `origin/main`, compares all six fields for every added link, and verifies that the rest of `data/` matches the base. It also tries an extra link and an altered registry ID in memory. To replay this application after merge, pass `--base b26d829b7db88b62c5ed4d3cbbcb87d76b762d01`.
+
+## Follow-up packet
+
+After this integration merges, build a separate packet with the rest-of-Ohio frame and revisit these reviewer-identified over-refusals:
+
+- Corporate-form normalization for `Co` and `Company`, and for `Corp` and `Corporation`.
+- Name normalization for `&` and `and`.
+- A company recorded as its own parent.
+- Ordinal normalization for `2ND` and `Second`.
+- Stripping a trailing parenthetical locality from the site name.

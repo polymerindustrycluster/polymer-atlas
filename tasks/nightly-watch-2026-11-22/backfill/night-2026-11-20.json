@@ -1,0 +1,547 @@
+{
+ "base": "ec7e19bebe",
+ "commits": [
+  {
+   "data_files": 0,
+   "date": "2026-11-19T09:20:34-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 401,
+   "removed": {},
+   "sha": "55ab601aa8",
+   "subject": "Owner rulings 2026-11-19 (W18 close-out battery): 7 items recorded, 0 data rows (#401)"
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-19T09:54:12-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 405,
+   "removed": {},
+   "sha": "86657a6bf1",
+   "subject": "integrate scripts: message on a stale pull ref; resolve it by full name (3 script sites, 0"
+  },
+  {
+   "data_files": 2,
+   "date": "2026-11-19T10:06:04-05:00",
+   "evidence_added": {
+    "claude atlas-w19-mktfollow": 6
+   },
+   "links_added": 0,
+   "pr": 403,
+   "removed": {},
+   "sha": "d75f8a7ce1",
+   "subject": "PIC-18 market follow-up (M1, M2): 3 of 14 organizations' markets_served filled (6 values),"
+  },
+  {
+   "data_files": 3,
+   "date": "2026-11-19T11:19:04-05:00",
+   "evidence_added": {
+    "claude-code atlas-w18-permit-followup": 2
+   },
+   "links_added": 0,
+   "pr": 402,
+   "removed": {},
+   "sha": "7f11966ad9",
+   "subject": "PIC-18 air-permit follow-up (P2-P4): 2 sites with a process written, 5 capability rows (3 "
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-19T11:25:28-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 408,
+   "removed": {},
+   "sha": "c96d4699f1",
+   "subject": "QUEUE 2026-11-19: done lines for #400-#403 and #405; permit and battery follow-ups (#408)"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-19T11:40:38-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 404,
+   "removed": {},
+   "sha": "1642a47634",
+   "subject": "Owner rulings 2026-11-18c: SAMPE 2026 attendees (+92 rows), alt text, SCHEMA v1.16.1 (#404"
+  },
+  {
+   "data_files": 2,
+   "date": "2026-11-19T12:06:26-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 409,
+   "removed": {},
+   "sha": "677c1803e1",
+   "subject": "New event series from the show harvest: +27 series, owner rulings 2026-11-19 (SCHEMA v1.16"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-19T12:37:02-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 410,
+   "removed": {},
+   "sha": "ecc18b1230",
+   "subject": "Owner rulings 2026-11-19c: rubber_extrusion rolls into extrusion (SCHEMA v1.16.3), 1 capab"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-19T13:23:19-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 411,
+   "removed": {},
+   "sha": "146982b5e4",
+   "subject": "Show harvest: +86 participation rows for the 27 new series (#411)"
+  },
+  {
+   "data_files": 10,
+   "date": "2026-11-19T17:03:46-05:00",
+   "evidence_added": {
+    "claude-code gleif-founded-2026-11-19": 25
+   },
+   "links_added": 0,
+   "pr": 406,
+   "removed": {},
+   "sha": "b7d77001e4",
+   "subject": "Merge pull request #406 from polymerindustrycluster/agent/claude-code/gleif-founded"
+  },
+  {
+   "data_files": 2,
+   "date": "2026-11-19T17:05:03-05:00",
+   "evidence_added": {
+    "claude-code bandb-people-2026-11-19": 285
+   },
+   "links_added": 0,
+   "pr": 407,
+   "removed": {},
+   "sha": "d83e4e07f8",
+   "subject": "Merge pull request #407 from polymerindustrycluster/agent/claude-code/bandb-people"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-19T17:05:53-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 412,
+   "removed": {},
+   "sha": "4c28a90251",
+   "subject": "Merge pull request #412 from polymerindustrycluster/agent/claude-code/lei-link-removals"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-19T17:28:11-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 414,
+   "removed": {},
+   "sha": "16c5a42456",
+   "subject": "Owner rulings 2026-11-19d (SCHEMA v1.16.4): Coatings Trends 2026 final registration list c"
+  },
+  {
+   "data_files": 2,
+   "date": "2026-11-19T17:36:21-05:00",
+   "evidence_added": {
+    "claude-code bandb-muse-2026-11-19": 6
+   },
+   "links_added": 0,
+   "pr": 413,
+   "removed": {},
+   "sha": "63ebeb6687",
+   "subject": "Merge pull request #413 from polymerindustrycluster/agent/claude-code/bandb-muse"
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-19T18:15:18-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 415,
+   "removed": {},
+   "sha": "dacf761507",
+   "subject": "Docs: CI is live (drop drifted docs/ci copies), close 2 resolved open issues, drop 1 stale"
+  },
+  {
+   "data_files": 2,
+   "date": "2026-11-19T19:39:12-05:00",
+   "evidence_added": {
+    "spaghetti-pic18-street-fills": 173
+   },
+   "links_added": 0,
+   "pr": 418,
+   "removed": {},
+   "sha": "d03caf2d0f",
+   "subject": "PIC-18 street fills: 162 verified street addresses from the Nov 14 verification packets (1"
+  },
+  {
+   "data_files": 2,
+   "date": "2026-11-19T20:14:06-05:00",
+   "evidence_added": {
+    "spaghetti bandb-linkage-2026-11-19": 37
+   },
+   "links_added": 0,
+   "pr": 419,
+   "removed": {},
+   "sha": "7b105fe28d",
+   "subject": "Band-B program linkage: 20 of 97 census newcomers linked to existing program rows + 17 ban"
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-19T21:59:25-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 416,
+   "removed": {},
+   "sha": "28820d8de5",
+   "subject": "Scrub 75 account URLs from tasks/ (unid, UC /p/, 3 /~ from #407); CI guard for tasks/ and "
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-19T22:03:35-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 417,
+   "removed": {},
+   "sha": "ef85d44a90",
+   "subject": "CI: run unit tests in parallel shards (scripts/run_tests.py); same tests, about 1.3-2x fas"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-19T22:09:53-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 420,
+   "removed": {},
+   "sha": "b7b3891003",
+   "subject": "Archive top-up tranches 1+2: 980 admitted Wayback witnesses (archive_links.csv) for the PI"
+  }
+ ],
+ "errors": [],
+ "head": "b7b3891003",
+ "labels_without_provenance": [],
+ "main_validate": {
+  "conclusion": "success",
+  "created_at": "2026-11-20T03:09:57Z",
+  "head_sha": "b7b3891003"
+ },
+ "prs": [
+  {
+   "data_files": 0,
+   "head_sha": "46e6c3a971",
+   "merge_sha": "55ab601aa8",
+   "merged_at": "2026-11-19T14:20:35Z",
+   "number": 401,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T14:20:07Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T14:15:42Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "820f0d4686",
+   "merge_sha": "86657a6bf1",
+   "merged_at": "2026-11-19T14:54:13Z",
+   "number": 405,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T14:50:14Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T14:45:54Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 2,
+   "head_sha": "c00f027337",
+   "merge_sha": "d75f8a7ce1",
+   "merged_at": "2026-11-19T15:06:05Z",
+   "number": 403,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T15:05:31Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T14:59:04Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 3,
+   "head_sha": "6f4cff5a0e",
+   "merge_sha": "7f11966ad9",
+   "merged_at": "2026-11-19T16:19:05Z",
+   "number": 402,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T16:11:48Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T16:08:11Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "f176cd9b3c",
+   "merge_sha": "c96d4699f1",
+   "merged_at": "2026-11-19T16:25:29Z",
+   "number": 408,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T16:24:31Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T16:20:04Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "02e7157769",
+   "merge_sha": "1642a47634",
+   "merged_at": "2026-11-19T16:40:38Z",
+   "number": 404,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T16:39:09Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T16:32:39Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 2,
+   "head_sha": "a788eb3f5c",
+   "merge_sha": "677c1803e1",
+   "merged_at": "2026-11-19T17:06:27Z",
+   "number": 409,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T17:02:59Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T16:56:31Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "257e3f9630",
+   "merge_sha": "ecc18b1230",
+   "merged_at": "2026-11-19T17:37:02Z",
+   "number": 410,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T17:32:35Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T17:25:58Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "10e8de16d2",
+   "merge_sha": "146982b5e4",
+   "merged_at": "2026-11-19T18:23:20Z",
+   "number": 411,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T18:22:04Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T18:16:46Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 10,
+   "head_sha": "316bd4ac3b",
+   "merge_sha": "b7d77001e4",
+   "merged_at": "2026-11-19T22:03:47Z",
+   "number": 406,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T18:03:02Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T17:56:32Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 2,
+   "head_sha": "650bb98ebe",
+   "merge_sha": "d83e4e07f8",
+   "merged_at": "2026-11-19T22:05:03Z",
+   "number": 407,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T16:23:43Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T16:17:16Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "f2815c27ff",
+   "merge_sha": "4c28a90251",
+   "merged_at": "2026-11-19T22:05:54Z",
+   "number": 412,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T20:46:46Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T20:43:04Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "ea1a24b314",
+   "merge_sha": "16c5a42456",
+   "merged_at": "2026-11-19T22:28:12Z",
+   "number": 414,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T22:26:44Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T22:21:26Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 2,
+   "head_sha": "9c27ae31ed",
+   "merge_sha": "63ebeb6687",
+   "merged_at": "2026-11-19T22:36:22Z",
+   "number": 413,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T22:11:31Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T22:07:05Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "37e6cdca6f",
+   "merge_sha": "dacf761507",
+   "merged_at": "2026-11-19T23:15:19Z",
+   "number": 415,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T23:01:46Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T22:55:13Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 2,
+   "head_sha": "4b1aa0b0c7",
+   "merge_sha": "d03caf2d0f",
+   "merged_at": "2026-11-20T00:39:13Z",
+   "number": 418,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T23:55:47Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T23:50:03Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 2,
+   "head_sha": "b1d1fb7a5a",
+   "merge_sha": "7b105fe28d",
+   "merged_at": "2026-11-20T01:14:06Z",
+   "number": 419,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-20T01:19:43Z",
+    "conclusion": "success",
+    "started_at": "2026-11-20T01:13:13Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "9e3ac7316f",
+   "merge_sha": "28820d8de5",
+   "merged_at": "2026-11-20T02:59:26Z",
+   "number": 416,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-19T23:41:42Z",
+    "conclusion": "success",
+    "started_at": "2026-11-19T23:36:08Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "71068b44d1",
+   "merge_sha": "ef85d44a90",
+   "merged_at": "2026-11-20T03:03:35Z",
+   "number": 417,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-20T03:02:53Z",
+    "conclusion": "success",
+    "started_at": "2026-11-20T02:59:55Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "c89af58045",
+   "merge_sha": "b7b3891003",
+   "merged_at": "2026-11-20T03:09:53Z",
+   "number": 420,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-20T03:11:25Z",
+    "conclusion": "success",
+    "started_at": "2026-11-20T03:07:43Z",
+    "status": "completed"
+   }
+  }
+ ],
+ "ref": "origin/main",
+ "since": "2026-11-19T11:17:00Z",
+ "task_folders_read": 357,
+ "unknown": {
+  "after": {
+   "band": 443,
+   "mkt": 316,
+   "n": 794,
+   "proc": 322
+  },
+  "before": {
+   "band": 443,
+   "mkt": 319,
+   "n": 794,
+   "proc": 324
+  }
+ },
+ "until": "2026-11-20T11:17:00Z"
+}

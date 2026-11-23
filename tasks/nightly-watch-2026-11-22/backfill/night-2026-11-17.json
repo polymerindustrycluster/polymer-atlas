@@ -1,0 +1,444 @@
+{
+ "base": "be2e6084d4",
+ "commits": [
+  {
+   "data_files": 47,
+   "date": "2026-11-16T14:35:02-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 336,
+   "removed": {},
+   "sha": "6b07f1811a",
+   "subject": "Merge pull request #336 from polymerindustrycluster/agent/codex/census-geocode"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-16T14:42:11-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 339,
+   "removed": {},
+   "sha": "25e6f7666c",
+   "subject": "Merge pull request #339 from polymerindustrycluster/agent/claude-code/affoa-flag-ruling"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-16T14:55:03-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 346,
+   "removed": {},
+   "sha": "ef32b5ba73",
+   "subject": "Merge pull request #346 from polymerindustrycluster/agent/claude-code/affoa-program-tombst"
+  },
+  {
+   "data_files": 3,
+   "date": "2026-11-16T17:04:51-05:00",
+   "evidence_added": {
+    "atlas-w16-fed-rematch": 103
+   },
+   "links_added": 105,
+   "pr": 341,
+   "removed": {},
+   "sha": "9bd1a8b5ba",
+   "subject": "Merge pull request #341 from polymerindustrycluster/agent/codex/oh-federal-rematch"
+  },
+  {
+   "data_files": 2,
+   "date": "2026-11-16T17:18:02-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 340,
+   "removed": {},
+   "sha": "d18224a098",
+   "subject": "Merge pull request #340 from polymerindustrycluster/agent/codex/pic-members-resync"
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-16T17:31:14-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 338,
+   "removed": {},
+   "sha": "29a6d0c4cf",
+   "subject": "Merge pull request #338 from polymerindustrycluster/agent/codex/nei-scc-scout"
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-16T17:41:24-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 345,
+   "removed": {},
+   "sha": "f9fe0b741e",
+   "subject": "Merge pull request #345 from polymerindustrycluster/agent/codex/ppp-loan-scout"
+  },
+  {
+   "data_files": 9,
+   "date": "2026-11-16T17:55:40-05:00",
+   "evidence_added": {
+    "atlas-w16-fixes": 13
+   },
+   "links_added": 0,
+   "pr": 337,
+   "removed": {},
+   "sha": "94ba88276b",
+   "subject": "Merge pull request #337 from polymerindustrycluster/agent/codex/integrator-backlog-4"
+  },
+  {
+   "data_files": 36,
+   "date": "2026-11-16T18:05:45-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 342,
+   "removed": {},
+   "sha": "a66e2aeb45",
+   "subject": "Merge pull request #342 from polymerindustrycluster/agent/codex/census-zip-fills"
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-16T18:14:37-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 335,
+   "removed": {},
+   "sha": "4abc9eb468",
+   "subject": "Merge pull request #335 from polymerindustrycluster/agent/codex/sam-entity-scout"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-16T18:31:25-05:00",
+   "evidence_added": {},
+   "links_added": 472,
+   "pr": 355,
+   "removed": {},
+   "sha": "d410968ab2",
+   "subject": "Merge pull request #355 from polymerindustrycluster/agent/codex/sam-uei-links"
+  },
+  {
+   "data_files": 14,
+   "date": "2026-11-16T18:51:04-05:00",
+   "evidence_added": {
+    "atlas-w16-capabilities": 11,
+    "atlas-w16-parents": 11,
+    "atlas-w16-quality": 18,
+    "atlas-w16-street-leads": 23,
+    "codex atlas-w16-markets-certs-2": 42,
+    "codex ppp-size-bands-2026-11-16": 248
+   },
+   "links_added": 0,
+   "pr": 359,
+   "removed": {},
+   "sha": "89d9e460e8",
+   "subject": "Merge pull request #359 from polymerindustrycluster/agent/claude-code/merge-train-2026-11-"
+  }
+ ],
+ "errors": [],
+ "head": "89d9e460e8",
+ "labels_without_provenance": [],
+ "main_validate": {
+  "conclusion": "success",
+  "created_at": "2026-11-16T23:51:07Z",
+  "head_sha": "89d9e460e8"
+ },
+ "prs": [
+  {
+   "data_files": 47,
+   "head_sha": "0ac9de3fd0",
+   "merge_sha": "6b07f1811a",
+   "merged_at": "2026-11-16T19:35:03Z",
+   "number": 336,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T19:07:18Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T19:03:00Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "1a08a658ce",
+   "merge_sha": "25e6f7666c",
+   "merged_at": "2026-11-16T19:42:12Z",
+   "number": 339,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T19:41:06Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T19:36:58Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "ef44020a5d",
+   "merge_sha": "ef32b5ba73",
+   "merged_at": "2026-11-16T19:55:04Z",
+   "number": 346,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T19:47:59Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T19:45:04Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 3,
+   "head_sha": "a98c8d6754",
+   "merge_sha": "9bd1a8b5ba",
+   "merged_at": "2026-11-16T22:04:52Z",
+   "number": 341,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T22:01:56Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T21:59:15Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 2,
+   "head_sha": "bb007b7e51",
+   "merge_sha": "d18224a098",
+   "merged_at": "2026-11-16T22:18:03Z",
+   "number": 340,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T22:14:32Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T22:11:43Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "08f92d751d",
+   "merge_sha": "29a6d0c4cf",
+   "merged_at": "2026-11-16T22:31:15Z",
+   "number": 338,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T22:27:09Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T22:23:36Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "028d0534c3",
+   "merge_sha": "f9fe0b741e",
+   "merged_at": "2026-11-16T22:41:24Z",
+   "number": 345,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T22:39:08Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T22:36:44Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 9,
+   "head_sha": "6f586ada3c",
+   "merge_sha": "94ba88276b",
+   "merged_at": "2026-11-16T22:55:41Z",
+   "number": 337,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T22:52:03Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T22:47:42Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 36,
+   "head_sha": "8911562834",
+   "merge_sha": "a66e2aeb45",
+   "merged_at": "2026-11-16T23:05:45Z",
+   "number": 342,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T23:03:38Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T23:00:30Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "6b9bfb17ea",
+   "merge_sha": "4abc9eb468",
+   "merged_at": "2026-11-16T23:14:37Z",
+   "number": 335,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T23:13:00Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T23:09:30Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "05ab95f1f2",
+   "merge_sha": "d410968ab2",
+   "merged_at": "2026-11-16T23:31:26Z",
+   "number": 355,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T23:29:32Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T23:27:02Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 14,
+   "head_sha": "c958a8f11e",
+   "merge_sha": "89d9e460e8",
+   "merged_at": "2026-11-16T23:51:04Z",
+   "number": 359,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-16T23:50:56Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T23:47:25Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 3,
+   "head_sha": "9d80d9f263",
+   "merge_sha": "915176b93f",
+   "merged_at": "2026-11-16T23:51:06Z",
+   "number": 352,
+   "review_records": 0,
+   "train_member": true,
+   "validate": {
+    "completed_at": "2026-11-16T22:30:56Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T22:26:43Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 4,
+   "head_sha": "a162af5151",
+   "merge_sha": "5b78ee7d25",
+   "merged_at": "2026-11-16T23:51:06Z",
+   "number": 348,
+   "review_records": 0,
+   "train_member": true,
+   "validate": {
+    "completed_at": "2026-11-16T23:28:40Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T23:25:08Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "91bc2731a2",
+   "merge_sha": "ac7f8b1e28",
+   "merged_at": "2026-11-16T23:51:06Z",
+   "number": 356,
+   "review_records": 0,
+   "train_member": true,
+   "validate": {
+    "completed_at": "2026-11-16T23:14:18Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T23:10:05Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 2,
+   "head_sha": "8c947f178c",
+   "merge_sha": "c958a8f11e",
+   "merged_at": "2026-11-16T23:51:07Z",
+   "number": 354,
+   "review_records": 0,
+   "train_member": true,
+   "validate": null
+  },
+  {
+   "data_files": 3,
+   "head_sha": "19c0120e96",
+   "merge_sha": "b72f9dfc73",
+   "merged_at": "2026-11-16T23:51:07Z",
+   "number": 351,
+   "review_records": 0,
+   "train_member": true,
+   "validate": null
+  },
+  {
+   "data_files": 9,
+   "head_sha": "6b162ff910",
+   "merge_sha": "23feb5c721",
+   "merged_at": "2026-11-16T23:51:07Z",
+   "number": 350,
+   "review_records": 0,
+   "train_member": true,
+   "validate": null
+  },
+  {
+   "data_files": 2,
+   "head_sha": "009fa4d387",
+   "merge_sha": "556ce16b04",
+   "merged_at": "2026-11-16T23:51:07Z",
+   "number": 349,
+   "review_records": 0,
+   "train_member": true,
+   "validate": {
+    "completed_at": "2026-11-16T20:02:14Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T19:58:44Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 2,
+   "head_sha": "832abf985e",
+   "merge_sha": "c7d606fd7c",
+   "merged_at": "2026-11-16T23:51:07Z",
+   "number": 353,
+   "review_records": 0,
+   "train_member": true,
+   "validate": null
+  }
+ ],
+ "ref": "origin/main",
+ "since": "2026-11-16T11:17:00Z",
+ "task_folders_read": 306,
+ "unknown": {
+  "after": {
+   "band": 445,
+   "mkt": 432,
+   "n": 794,
+   "proc": 340
+  },
+  "before": {
+   "band": 538,
+   "mkt": 439,
+   "n": 794,
+   "proc": 342
+  }
+ },
+ "until": "2026-11-17T11:17:00Z"
+}

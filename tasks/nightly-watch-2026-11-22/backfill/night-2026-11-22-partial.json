@@ -1,0 +1,219 @@
+{
+ "base": "4924083cd6",
+ "commits": [
+  {
+   "data_files": 153,
+   "date": "2026-11-22T06:46:02-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 456,
+   "removed": {},
+   "sha": "4ee02127b3",
+   "subject": "SCHEMA v1.19: S-1..S-6 \u2014 \u00a74.8 enum gains RCRA_EPA_ID/NPDES_PERMIT_ID/STATE_ENTITY_ID/USDOT"
+  },
+  {
+   "data_files": 51,
+   "date": "2026-11-22T11:15:25-05:00",
+   "evidence_added": {
+    "spaghetti-batch5-2026-11-22": 10352,
+    "spaghetti-burndown-batch1-2026-11-21": 122,
+    "spaghetti-burndown-batch2-2026-11-21": 56
+   },
+   "links_added": 0,
+   "pr": 457,
+   "removed": {},
+   "sha": "6a76e923fd",
+   "subject": "Merge pull request #457 from polymerindustrycluster/agent/spaghetti/batch5-2026-11-22"
+  },
+  {
+   "data_files": 99,
+   "date": "2026-11-22T12:46:29-05:00",
+   "evidence_added": {
+    "spaghetti-batch6-2026-11-22": 23564
+   },
+   "links_added": 6837,
+   "pr": 458,
+   "removed": {},
+   "sha": "1783491852",
+   "subject": "Merge pull request #458 from polymerindustrycluster/agent/spaghetti/batch6-2026-11-22"
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-22T14:43:31-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 460,
+   "removed": {},
+   "sha": "b09b4d47f4",
+   "subject": "Owner rulings 2026-11-22: merge gate, contact data in evidence quotes (AGENTS section 6), "
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-22T15:07:13-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 462,
+   "removed": {},
+   "sha": "8f30ce0fbd",
+   "subject": "Owner rulings 2026-11-22: public SAM extract as evidence (R-SAM filter stays), Muse pause,"
+  },
+  {
+   "data_files": 100,
+   "date": "2026-11-22T16:13:57-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 465,
+   "removed": {},
+   "sha": "3ce1cc7307",
+   "subject": "Revert burn-down batches 5 and 6 (owner ruling): data/ back to the 4ee02127 tree, every re"
+  },
+  {
+   "data_files": 44,
+   "date": "2026-11-22T16:26:51-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 463,
+   "removed": {},
+   "sha": "393c389571",
+   "subject": "last_activity street leg: apply OSHA extract rows only at the site's own street; re-derive"
+  }
+ ],
+ "errors": [],
+ "head": "393c389571",
+ "labels_without_provenance": [
+  "spaghetti-batch5-2026-11-22",
+  "spaghetti-batch6-2026-11-22",
+  "spaghetti-burndown-batch1-2026-11-21",
+  "spaghetti-burndown-batch2-2026-11-21"
+ ],
+ "main_validate": {
+  "conclusion": "success",
+  "created_at": "2026-11-22T21:26:54Z",
+  "head_sha": "393c389571"
+ },
+ "prs": [
+  {
+   "data_files": 153,
+   "head_sha": "fa387a873e",
+   "merge_sha": "4ee02127b3",
+   "merged_at": "2026-11-22T11:46:03Z",
+   "number": 456,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T11:50:39Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T11:46:01Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 51,
+   "head_sha": "1a5d12c61c",
+   "merge_sha": "6a76e923fd",
+   "merged_at": "2026-11-22T16:15:25Z",
+   "number": 457,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T13:22:40Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T13:17:31Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 99,
+   "head_sha": "5796822053",
+   "merge_sha": "1783491852",
+   "merged_at": "2026-11-22T17:46:30Z",
+   "number": 458,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T17:17:57Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T17:13:35Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "49c25ac767",
+   "merge_sha": "b09b4d47f4",
+   "merged_at": "2026-11-22T19:43:31Z",
+   "number": 460,
+   "review_records": 1,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T19:42:59Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T19:36:06Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "2bce35da82",
+   "merge_sha": "8f30ce0fbd",
+   "merged_at": "2026-11-22T20:07:14Z",
+   "number": 462,
+   "review_records": 1,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T20:06:43Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T20:01:46Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 100,
+   "head_sha": "2cc1952a17",
+   "merge_sha": "3ce1cc7307",
+   "merged_at": "2026-11-22T21:13:58Z",
+   "number": 465,
+   "review_records": 2,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T21:10:53Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T21:08:02Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 44,
+   "head_sha": "6566aa85ee",
+   "merge_sha": "393c389571",
+   "merged_at": "2026-11-22T21:26:51Z",
+   "number": 463,
+   "review_records": 2,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T21:26:35Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T21:21:51Z",
+    "status": "completed"
+   }
+  }
+ ],
+ "ref": "origin/main",
+ "since": "2026-11-22T11:17:00Z",
+ "task_folders_read": 369,
+ "unknown": {
+  "after": {
+   "band": 443,
+   "mkt": 316,
+   "n": 794,
+   "proc": 322
+  },
+  "before": {
+   "band": 443,
+   "mkt": 316,
+   "n": 794,
+   "proc": 322
+  }
+ },
+ "until": "2026-11-22T23:00:00Z"
+}
