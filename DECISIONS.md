@@ -142,6 +142,6 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 
 ## 2026-11-22: the day's rulings in one register
 
-- **Decision:** every owner ruling of 2026-11-22 is listed in `tasks/owner-rulings-2026-11-22/README.md`, with where each is carried. A ruling takes effect when it is made, not when the pull request that implements it merges; at the time of writing most of the day's rulings were carried only by open pull requests or branches. The earlier 2026-11-22 entries in this file give the reasons for the merge gate, the SAM extract, the Muse pause and the revert; the register covers the rest: review tiers, what may count as evidence (headcount age, name matching, archived copies), what to work on (PIC-18 first, then the rest of Ohio), and coordination.
-- **Why:** rule 5 of the working rules is that a decision is recorded in the durable ledger when it is made. On 2026-11-22 that was not happening: rulings sat in chat and on a private ledger until an implementing PR could merge.
+- **Decision:** Record the day's rulings and their governing sources in `tasks/owner-rulings-2026-11-22/README.md`.
+- **Basis:** Working rule 7 in AGENTS.md §2a (PR #466) records decisions in this ledger.
 - **Decided by:** the repo owner, in session, 2026-11-22.
