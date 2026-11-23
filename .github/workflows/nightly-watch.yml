@@ -12,6 +12,7 @@ permissions:
   contents: read
   pull-requests: read
   actions: read
+  checks: read   # still read-only: the per-PR `validate` check runs are read from the checks API
 
 jobs:
   watch:

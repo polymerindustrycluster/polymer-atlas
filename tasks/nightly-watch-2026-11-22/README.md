@@ -8,6 +8,12 @@ loudly, so GitHub emails the owner, and files one issue as a backstop.
 
 Built by: Claude Code, Anthropic (Claude Sonnet 5.5). Tooling only: nothing under `data/` changes.
 
+**The short answer.** Every backfilled night exits non-zero, because b (no review records) fires on every data PR before
+2026-11-22, so the quiet window is not silent: it raises b only. The first email is therefore the first night the watch
+exists, whatever the cause. Night by night, judged by the other rules: **c** first fires on the run ending 2026-11-20
+11:17 UTC, **e** and **f** on 2026-11-21, and **a** on **2026-11-22 (06:17 EST, Sunday)**, about 16.5 hours after the first
+bulk burn-down PR (#443) merged and before the 34,094 rows of #457 and #458 existed.
+
 ## What it checks
 
 `scripts/nightly_watch.py` looks at the last 24 hours on `main` (`--since <hours|date|ref>` and `--until` for a backfill)
@@ -19,16 +25,20 @@ rows. Constants are at the top of the script.
 |---|---|---|
 | a | bulk add | more than 1,000 evidence rows under one `created_by` label or by one PR; more than 1,000 registry links by one PR (`registry_links.csv` has no `created_by` column, so links can only be counted per PR) |
 | b | no review record | a merged PR that changed `data/` has fewer than 2 comments starting `**Review record**` posted before the merge |
-| c | merged before `validate` | the last `validate` check run on the PR head that started before the merge is missing, unfinished at the merge, or not `success`. A PR merged into a merge-train branch is exempt; the train PR that reaches `main` is judged |
+| c | merged before `validate` | the last `validate` check run on the PR head that started before the merge is unfinished at the merge or not `success`; or none started before the merge (reported with when it did start), or none exists. A PR merged into a merge-train branch is exempt; the train PR that reaches `main` is judged |
 | d | red `main` | the latest completed `validate` run on `main` is not `success` |
-| e | flat outcome | 3 or more `data/` PRs merged and none of the three PIC-18 unknown counts (process, market, size; the `pic18_unknown.py` definition, copied in) fell between the window's base and head |
+| e | flat outcome | 3 or more `data/` PRs merged (a merge train counts once, as its train PR) and none of the three PIC-18 unknown counts (process, market, size; the `pic18_unknown.py` definition, copied in) fell between the window's base and head |
 | f | no provenance | an evidence row added in the window whose `created_by` label is new and names no folder under `tasks/` (a folder name of 6 or more characters appears inside the label) |
+| (error) | no PR | a first-parent commit that is the merge commit of no merged PR (a direct push, or a missed search) is an inspection error: b and c cannot be judged for it. Zero in all seven nights |
 | g | undeclared loss | keyed rows removed from `data/`, or tracked files removed elsewhere, with no new `REMOVALS.csv` entry (it calls `scripts/check_row_loss.py`'s functions, once per first-parent commit) |
 
 Rows are counted per first-parent commit, never as a net window diff, so a batch that is merged and reverted the same day
 (#457 and #458, reverted by #465) still counts. Tests: `python3 scripts/test_nightly_watch.py` has one planted case per
-finding that must fire, a clean day that must pass, API and shallow-history failures that must fail, a real throwaway git
-repo for the row counting and merge-train handling, and the known-answer nights below.
+finding that must fire, a clean day that must pass, API failures, a shallow clone, an unresolvable window start and a
+commit with no PR that must fail, a real throwaway git repo for the row counting, undeclared and declared removals,
+label provenance and merge-train handling, and the committed known-answer nights below. I also ran the workflow's own
+command (default 24-hour window, `GITHUB_REPOSITORY` set, `--report-file`) and `--since 4924083c`, which reproduces the
+34,094 evidence rows and 6,837 registry links of the incident.
 
 ## Backfill (known answer)
 
@@ -49,18 +59,21 @@ The last row is the rest of 2026-11-22, up to 23:00 UTC.
 | **2026-11-22** | 16 | 15 | 2,744 | 1,765 | **3** | 15 | **16** | · | **1** | 9 | · |
 | 2026-11-22, to 23:00 UTC | 7 | 5 | 34,094 | 6,837 | 5 | 3 | 1 | · | 1 | 4 | · |
 
-(Cells are the number of findings; `·` is none. No run had an inspection error. `main`'s latest `validate` was green in
-every window, so d never fired.)
+(Cells are the number of findings; `·` is none. No run had an inspection error. d never fired: the latest completed
+`validate` run on `main` was green at the end of every window, and it is a different run each time (89d9e460, 099497fa,
+ec7e19be, b7b38910, e2116cc3, 4924083c, 393c3895), so the `created<=` filter does its job.)
 
 **Incident (2026-11-19 to 11-22).** The watch fires on a, b, c and e on the night ending 2026-11-22 11:17 UTC, the first
 night that contains the burn-down batches, and again on the partial day that contains #457 and #458:
 
 - a: `spaghetti-burndown-batch2-2026-11-21` added 1,728 evidence rows, PR #443 alone 1,276, and PR #453 1,765 registry
   links. In the last row, PR #458 adds 23,564 evidence rows and 6,837 links and PR #457 10,530 rows.
-- b: every `data/` PR before #460 lacks the two review records (11 of 11, 15 of 15, 3 of 3 in the three incident windows).
+- b: every `data/` PR before #460 lacks the two review records (11 of 11, 15 of 15, and 3 of the 5 on the last, partial day; the other two carry the records).
   #460, #462, #463 and #465, which carry the convention, come out clean.
 - c: all 16 PRs merged in the night ending 11-22 were merged without a finished `validate` on their head: 14 were merged
-  2 to 5 minutes before it finished, and #441 and #443 never had a `validate` run on their head. Not every incident PR trips it: #457 and #458, the two
+  2 to 5 minutes before it finished, and #441 and #443 were merged 1 to 2 minutes before any `validate` check had started
+  on their head (both later passed). On the night ending 11-20, #423 was merged one second before its `validate` started
+  and that run failed. Not every incident PR trips it: #457 and #458, the two
   largest, had a green `validate` that finished before their merge, so c alone would not have caught the 34,094 rows.
 - e: 11 data PRs in the night ending 11-21 and 15 in the next, and process/market/size unknowns stayed 322/316/443.
 
@@ -76,6 +89,13 @@ the same day, because rows are counted per commit.
 is no a, c, d, e, f or g, and no error. b is not a false alarm in the sense of a mistake: the review-record convention
 began with the owner rulings of 2026-11-22 (#460), so all 44 `data/` PRs in that window lack it. I did not date-gate b,
 because the same rule is what fires on the incident. It will be quiet once every data PR carries two records.
+
+f is silent there by construction, not because those labels were clean: the baseline holds every label present on
+2026-11-20, which includes all the labels created on 11-16 to 11-18, and 260 of the 356 labels then on `main` name no
+folder. From the freeze on, any new label that does not embed its folder name fires. One such firing is a false alarm:
+the night ending 11-21 flags `claude-code-evd-frs-lane` (152 rows, #436), whose folder `tasks/evidence-frs-sites-2026-11-20`
+exists but is not named in the label. The nine on the night ending 11-22 are the burn-down and phase-C labels, which have
+no folder.
 
 ### What I chose, and why
 
@@ -96,6 +116,9 @@ I cannot see the owner's GitHub settings, so each item below is unverified.
    merge, so the YAML is untested as a workflow in this PR (its script and tests are tested). After the merge, run it once
    by hand: Actions, nightly-watch, Run workflow. It will fail and open the issue if the last 24 hours have findings,
    which proves the whole path.
+   The job grants `checks: read` (also read-only) because the per-PR `validate` check runs come from the checks API; I could
+   not run the token from here. If the first manual run reports "Resource not accessible by integration", that is the
+   cause, and the same run shows it as an inspection failure (exit 2), never as a pass.
 2. **Who gets the failure email.** GitHub's documentation (Notifications for workflow runs, read 2026-11-22) says
    notifications for scheduled workflows go to the user who initially created the workflow; if a different user later
    edits the cron line, to that user; if the workflow is disabled and re-enabled, to whoever re-enabled it. With one

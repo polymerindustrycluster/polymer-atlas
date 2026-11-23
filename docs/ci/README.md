@@ -1,6 +1,6 @@
 # CI and Pages
 
-Both workflows are live in `.github/workflows/`. Edit them there; there is no second copy.
+The workflows are live in `.github/workflows/`. Edit them there; there is no second copy.
 
 - **`validate.yml`** runs on every pull request and every push to `main`:
   - `scripts/validate.py`;
