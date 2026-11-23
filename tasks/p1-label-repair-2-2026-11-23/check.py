@@ -67,6 +67,12 @@ def edits_at(base, at, persist, store):
     web_edits, web_holds, web_blanks, _ = wl["compute"](ROOT, base)
     edits = {}
     ledger = defaultdict(list)
+    reviewed = list(parse(task_bytes(at, LABEL, "LEDE_REVIEW.csv")))
+    ledes = {r["record_id"]: r for r in reviewed}
+    require(len(reviewed) == len(ledes) == 16
+            and Counter(r["disposition"] for r in reviewed) == {"revise": 1, "hold": 15},
+            "Lede review census differs")
+    proposals = {}
 
     def add(folder, key, old, new, verdict="corrected"):
         require(key not in edits and (old is None or old != new), f"{key}: duplicate or no-op repair")
@@ -93,8 +99,25 @@ def edits_at(base, at, persist, store):
             elif (key[0], key[2]) not in {("organizations", "naics_primary_source_name"), ("organizations", "description_1line"),
                                          ("events", "subject_note"), ("events", "geography_note")}:
                 raise SystemExit(f"{key}: outside label scope")
+            if folder == LABEL and key[2] == "description_1line":
+                rid = key[1]
+                review = ledes.get(rid)
+                if review:
+                    require(bool(review["reason"]), f"{rid}: missing review finding")
+                    proposed = review["rendered_description"]
+                    if review["disposition"] == "hold":
+                        require(not proposed, f"{rid}: held lede carries a replacement")
+                    else:
+                        require(proposed and proposed != new, f"{rid}: revised lede lacks a new text")
+                    proposals[rid] = (old, new, proposed or new, review["disposition"])
+                    if review["disposition"] == "hold":
+                        continue
+                    new = proposed or new
+                else:
+                    proposals[rid] = (old, new, new, "unreviewed")
             add(folder, key, old, new)
 
+    require(ledes.keys() <= proposals.keys(), "Lede review names a missing description")
     holds = list(parse((url / "holds.csv").read_bytes()))
     require(url_holds == {tuple(r[k] for k in (*CLAIMS[:3], "value")): r["reason"] for r in holds}
             and len(url_holds) == 3, "URL hold census differs")
@@ -120,18 +143,20 @@ def edits_at(base, at, persist, store):
 
     remain_url = {k: reason for k, reason in url_holds.items() if k[:3] not in edits}
     require(len(remain_url) == 1 and len(web_holds) == 4, "Remaining URL and website holds differ")
-    require(len(edits) == 199 and Counter(row["verdict"] for rows in ledger.values() for row in rows) ==
-            {"corrected": 193, "withdrawn": 6}, "Combined claim census differs")
+    require(len(edits) == 184 and Counter(row["verdict"] for rows in ledger.values() for row in rows) ==
+            {"corrected": 178, "withdrawn": 6}, "Combined claim census differs")
     artifacts = {
         f"tasks/{folder}/CLAIMS_CHECKED.csv": csv_bytes(sorted(rows, key=lambda r: tuple(r[k] for k in CLAIMS[:3])), CLAIMS)
         for folder, rows in ledger.items()
     }
     hold_header = (*CLAIMS[:3], "reason")
-    for folder, holds in ((URL, {k[:3]: v for k, v in remain_url.items()}),
+    label_holds = {("organizations", rid, "description_1line"): review["reason"]
+                   for rid, review in ledes.items() if review["disposition"] == "hold"}
+    for folder, holds in ((LABEL, label_holds), (URL, {k[:3]: v for k, v in remain_url.items()}),
                           (WEB, {k: reason for k, (_, reason) in web_holds.items()})):
         artifacts[f"tasks/{folder}/OPEN_QUEUE.csv"] = csv_bytes(
             (dict(zip(hold_header, (*key, why))) for key, why in sorted(holds.items())), hold_header)
-    return edits, artifacts, (ul, set(remain_url)), (wl, set(web_holds))
+    return edits, artifacts, (ul, set(remain_url)), (wl, set(web_holds)), proposals
 
 
 def expected_files(base, edits):
@@ -175,23 +200,67 @@ def expected_files(base, edits):
     return data
 
 
-def render(at, url_check, web_check):
+def render(at, url_check, web_check, proposals):
     u, url_holds = url_check
     w, web_holds = web_check
     with tempfile.TemporaryDirectory() as tmp:
-        subprocess.run(["tar", "-x", "-C", tmp], input=git("archive", at, "data"), check=True)
-        data = Path(tmp) / "data"
+        tree = Path(tmp)
+        subprocess.run(["tar", "-x", "-C", tmp], input=git("archive", at), check=True)
+        data = tree / "data"
         require(not u["leftovers"](data, url_holds), "Unclassified spaces remain in candidate URLs")
         require(not w["leftovers"](data, web_holds, set()), "Unclassified website values remain")
-        u["ahfa_pages"](ROOT, at, data)
+        subprocess.run([sys.executable, "scripts/build_sqlite.py"], cwd=tree, check=True, capture_output=True)
+        sys.path.insert(0, str(tree / "scripts"))
+        import build_site
+        out = tree / "release-check"
+        build_site.build_site(tree / "build/polymer-atlas.db", out, None, repo_url="https://example.invalid/repo",
+                              git={"sha": at, "date": "2026-11-23", "dirty": False}, today="2026-11-23")
+        newly_public = set()
+        for rid, (old, proposed, final, disposition) in proposals.items():
+            if build_site.internal_wording(old) and not build_site.internal_wording(proposed):
+                newly_public.add(rid)
+                require(disposition == "hold", f"{rid}: newly displayed lede must stay withheld")
+            if disposition != "unreviewed":
+                page = (out / "orgs" / f"{rid}.html").read_text()
+                published = build_site.lede(old if disposition == "hold" else final)
+                require(published in page, f"{rid}: rendered lede differs from the review")
+                require(build_site.internal_wording(old if disposition == "hold" else final) == (disposition == "hold"),
+                        f"{rid}: lede visibility differs from the decision")
+                if disposition == "hold":
+                    require(build_site.lede(proposed) not in page, f"{rid}: held proposal appeared")
+        revised = {rid for rid, (_, _, _, verdict) in proposals.items() if verdict != "unreviewed"}
+        require(len(newly_public) == 15 and revised - newly_public == {"ORG-001798"}, "Rendered review population differs")
+
         probes = ["ORG-001543", *sorted(MARKERS), *sorted(UNASSESSED), *DEAD]
-        pages = w["render"](ROOT, at, data, probes)
+        pages = {}
+        import re
+        for rid in probes:
+            page = (out / "orgs" / f"{rid}.html").read_text()
+            match = re.search(r"<dt>Website</dt><dd>(.*?)</dd>", page, re.S)
+            pages[rid] = match[1].strip() if match else ""
         require("https://hammillmedical.com/" in pages["ORG-001543"] and "hammillmedical.com;" not in pages["ORG-001543"],
                 "Corrected organization link did not render")
         require(all(pages[rid] == "No website found" for rid in MARKERS), "Website marker did not render")
-        require(all(pages[rid] == "(no Website row)" for rid in UNASSESSED | DEAD.keys()),
-                "Cleared website value rendered")
-    print("PASS built pages: three AHFA sources, one corrected website link, five markers and six cleared website fields")
+        require(all(not pages[rid] for rid in UNASSESSED | DEAD.keys()), "Cleared website value rendered")
+
+        ahfa = ("http://ahfa-website-cms.azurewebsites.net/Media/Uploads/PDFs/2023%20Formaldehyde%20Rule%20Workshop/"
+                "Session%202D%20-%20Hexion.pdf")
+        org_page = (out / "orgs" / "ORG-000880.html").read_text()
+        ahfa_ids = {"SITE-004972", "SITE-004977", "SITE-004979"}
+        rows = {r["site_id"]: r for state in ("MT", "OR", "TX")
+                for r in parse((data / f"sites_{state}.csv").read_bytes()) if r["site_id"] in ahfa_ids}
+        require(rows.keys() == ahfa_ids, "AHFA site population differs")
+        for rid, row in rows.items():
+            anchor = f'id="{rid}"'
+            require(anchor in org_page, f"{rid}: missing site article")
+            region = re.split(r'id="SITE-\d+"', org_page.split(anchor, 1)[1], maxsplit=1)[0]
+            sources = row["sources"]
+            require(build_site.source_urls(sources).count(ahfa) == 1 and build_site.omitted_sources(sources) == 0
+                    and f'href="{ahfa}"' in build_site.source_list(sources)
+                    and "left out of this view" not in region
+                    and ("Sources for this site" not in region or f'href="{ahfa}"' in region),
+                    f"{rid}: AHFA source did not render whole")
+    print("PASS built pages: 15 newly visible proposals held, one existing lede repaired, 3 AHFA links and 12 website field probes")
 
 
 def main():
@@ -204,7 +273,7 @@ def main():
     cli.add_argument("--render", action="store_true")
     a = cli.parse_args()
     base = a.base or git("merge-base", a.at, "origin/main").decode().strip()
-    edits, artifacts, url_check, web_check = edits_at(base, None if a.apply_backup else a.at, a.persist, a.store)
+    edits, artifacts, url_check, web_check, proposals = edits_at(base, None if a.apply_backup else a.at, a.persist, a.store)
     data = expected_files(base, edits)
     if a.apply_backup:
         a.apply_backup.mkdir(parents=True, exist_ok=True)
@@ -222,8 +291,8 @@ def main():
         for path, content in {**data, **artifacts}.items():
             require(path_at(a.at, path) == content, f"{path}: applied bytes differ")
         if a.render:
-            render(a.at, url_check, web_check)
-    print("PASS: 199 changed cells across three packets (193 corrected, 6 withdrawn); 1 URL hold and 4 website holds")
+            render(a.at, url_check, web_check, proposals)
+    print("PASS: 184 changed cells (178 corrected, 6 withdrawn); 15 lede, 1 URL and 4 website holds")
 
 
 if __name__ == "__main__":
