@@ -2,6 +2,7 @@
 counterexamples from Codex's two review rounds on PR #466, and the git collectors run against a throwaway repository.
 The checker reads no PR comment and no review record (owner ruling 2026-11-22). Synthetic PRs only."""
 import copy
+import re
 import subprocess
 import tempfile
 import unittest
@@ -24,6 +25,7 @@ GOOD = {
     "audit_texts": {"tasks/y/AUDIT.md": AUDIT.format(label="audited-lane", result="PASS")},
     "inputs_files": {"tasks/x/INPUTS.sha256": "# c\n" + "0" * 64 + "  raw/osha/file.csv\n"},
     "inputs_repo_ok": {},
+    "replay_scripts": ["tasks/x/check.py"],
 }
 
 
@@ -64,9 +66,10 @@ class TestCompliant(unittest.TestCase):
     def test_no_review_record_is_read_anywhere(self):
         # owner ruling 2026-11-22: review is practice; neither the facts nor the checker carry comments or PR bodies
         src = (Path(__file__).resolve().parent / "check_pr_rules.py").read_text()
-        for gone in ("Review record", "review_votes", "family_of", "counted_families", "Built by", '"comments"', "issue_comment"):
+        for gone in ("review_votes", "family_of", "counted_families", "Built by", '"comments"', "issue_comment"):
             self.assertNotIn(gone, src)
         self.assertEqual(run(mutated(comments=["**Review record** REFUTE"]))[0], 0)  # an unused fact changes nothing
+        # the one mention of a Review record is the fixed NOT RUN sentence; it is printed, never read from a comment
 
 
 
@@ -218,7 +221,7 @@ class TestWorkflow(unittest.TestCase):
     def test_uses_pull_request_target_and_evaluate_never_checks_out_the_pr(self):
         self.assertIn("pull_request_target", self.text)
         self.assertNotRegex(self.text, r"(?m)^\s*pull_request:")
-        evaluate = self.text[:self.text.index("\n  binding-gate:")]
+        evaluate = self.text[:self.text.index("\n  gate-run:")]
         publish = self.text[self.text.index("\n  publish-binding-gate:"):]
         for part in (evaluate, publish):
             for bad in ("pull_request.head", "head.sha", "head_ref", "refs/pull/${{"):
@@ -231,11 +234,68 @@ class TestWorkflow(unittest.TestCase):
         self.assertNotIn("github.event.comment", self.text)
 
 
+class TestReplayNotRun(unittest.TestCase):
+    NOTE = "source replay not run in hosted CI: needs the shared store; it is run by the reviewers and recorded in the Review record comment"
+
+    def test_pr_adding_evidence_row_and_check_py_prints_not_run(self):
+        rc, out = run(mutated(added_evidence_rows=1))
+        self.assertEqual(rc, 0, out)  # the conclusion stays as the other rules decide
+        self.assertIn("NOT RUN: tasks/x/check.py", out)
+        self.assertIn("NOT RUN: " + self.NOTE, out)
+        self.assertTrue(c.replay_not_run(mutated(added_evidence_rows=1)))
+
+    def test_registry_links_and_a_missing_check_py_also_print_it(self):
+        rc, out = run(mutated(added_evidence_rows=0, added_registry_links=2, replay_scripts=[]))
+        self.assertIn("NOT RUN: the PR adds or changes no tasks/*/check.py", out)
+        self.assertIn(self.NOTE, out)
+
+    def test_docs_only_pr_does_not(self):
+        rc, out = run(docs_pr(replay_scripts=[]))
+        self.assertEqual(rc, 0)
+        self.assertNotIn("NOT RUN", out)
+        self.assertFalse(c.replay_not_run(docs_pr()))
+
+    def test_unknown_replay_facts_fail_the_run(self):
+        f = mutated(added_evidence_rows=1)
+        del f["replay_scripts"]
+        self.assertEqual(run(f)[0], 1)
+
+    def test_collect_names_added_and_changed_check_py(self):
+        with tempfile.TemporaryDirectory() as t:
+            root = Path(t)
+            g = lambda *a: subprocess.run(["git", "-C", t, "-c", "user.name=t", "-c", "user.email=t@example.org", *a], check=True, capture_output=True)
+            g("init", "-q", "-b", "main")
+            (root / "data").mkdir()
+            (root / "tasks/a").mkdir(parents=True)
+            (root / "data/evidence_X.csv").write_text("evidence_id,created_by\nE1,l\n")
+            (root / "tasks/a/check.py").write_text("1\n")
+            (root / "tasks/a/other.py").write_text("1\n")
+            (root / c.BASELINE).parent.mkdir(parents=True, exist_ok=True)
+            (root / c.BASELINE).write_text("l\n")
+            g("add", "-A"); g("commit", "-qm", "b"); g("checkout", "-q", "-b", "pr")
+            (root / "data/evidence_X.csv").write_text("evidence_id,created_by\nE1,l\nE2,l\n")
+            (root / "tasks/a/check.py").write_text("2\n")
+            (root / "tasks/a/other.py").write_text("2\n")
+            (root / "tasks/b").mkdir()
+            (root / "tasks/b/check.py").write_text("1\n")
+            (root / "tasks/b/sub").mkdir()
+            (root / "tasks/b/sub/check.py").write_text("1\n")
+            g("add", "-A"); g("commit", "-qm", "h")
+            head = subprocess.run(["git", "-C", t, "rev-parse", "pr"], capture_output=True, text=True).stdout.strip()
+            old, c.REPO = c.REPO, root
+            try:
+                with mock.patch.object(c, "gh_json", return_value={"headRefOid": head, "headRefName": "pr", "baseRefName": "main"}):
+                    f = c.collect(1, "main")
+            finally:
+                c.REPO = old
+        self.assertEqual(sorted(f["replay_scripts"]), ["tasks/a/check.py", "tasks/b/check.py"])  # not other.py, not tasks/b/sub/
+
+
 class TestBindingGateJob(unittest.TestCase):
     """The only job that checks out PR content holds no token, keeps no credential, and runs main's gate on it."""
 
     text = TestWorkflow.text
-    job = text[text.index("\n  binding-gate:"):text.index("\n  publish-binding-gate:")]
+    job = text[text.index("\n  gate-run:"):text.index("\n  publish-binding-gate:")]
     publish = text[text.index("\n  publish-binding-gate:"):]
 
     def test_gate_job_has_no_token_and_no_persisted_credential_on_either_checkout(self):
@@ -258,6 +318,16 @@ class TestBindingGateJob(unittest.TestCase):
         for bad in ("verify-proofs", "unshare", "docker", "sysctl", "setpriv", "skipped", "neutral"):
             self.assertNotIn(bad, self.job.lower())
         self.assertNotIn("neutral", self.text.lower().replace("never neutral", ""))
+
+    def test_exactly_one_check_is_named_binding_gate_and_one_pr_rules(self):
+        # a job's check run takes the job's name (or its `name:`); the published runs are posted by the script by name
+        yml = self.text
+        jobs = re.findall(r"(?m)^  ([\w-]+):", yml[yml.index("\njobs:"):])
+        self.assertEqual(jobs, ["evaluate", "gate-run", "publish-binding-gate"])
+        self.assertNotRegex(yml, r"(?m)^\s+name:\s*(binding-gate|pr-rules)\s*$")  # no job `name:` that collides
+        self.assertIn("needs: gate-run", self.publish)
+        self.assertIn("needs.gate-run.result", self.publish)
+        self.assertNotIn("needs.binding-gate", yml)
 
     def test_only_the_publish_job_holds_a_token(self):
         self.assertIn("checks: write", self.publish)
