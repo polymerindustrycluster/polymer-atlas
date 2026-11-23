@@ -1,0 +1,76 @@
+frame,org_id,legal_name,entity_type,suffix,ownership_type,stock_ticker,hq_state,hq_country
+ohio_rest,ORG-000805,DuPont (Circleville plant,unknown,,,,DE,US
+ohio_rest,ORG-002065,Ashland Inc. (Ohio site operators: ISP Chemicals LLC - Columbus; ISP Lima LLC - Lima),unknown,,,,DE,US
+outside,ORG-007505,"Gerresheimer Peachtree City (USA), L.P.",unknown,,,,GA,US
+outside,ORG-003212,American Maplan Corporation dba battenfeld-cincinnati USA,unknown,,private_company,,KS,US
+outside,ORG-003873,Kingfa Sci. & Tech. (USA) Inc.,unknown,,,,MI,US
+outside,ORG-003232,Uponor North America (GF Building Flow Solutions Americas),unknown,,private_company,,MN,US
+outside,ORG-003099,Giti Tire (USA) Ltd.,unknown,,,,NC,US
+pic18,ORG-000067,R.C. Graham Co. LLC (dba Hand-Tite),unknown,,family_owned,,OH,US
+pic18,ORG-000313,DuPont — Valley View (Vespel) plant,unknown,,,,OH,US
+pic18,ORG-000322,ECP Corp dba Polycase,unknown,,,,OH,US
+pic18,ORG-000364,"Hannecard Roller Coatings, Inc. / ASB Industries",unknown,,,,OH,US
+pic18,ORG-000420,"Linden Industries, Inc. dba Linden Polyurethane",unknown,,,,OH,US
+pic18,ORG-000456,"NFM / Welding Engineers, Inc.",unknown,,,,OH,US
+pic18,ORG-000462,Next Dimension Components (current trade name unresolved,unknown,,,,OH,US
+pic18,ORG-000473,Oldcastle Infrastructure (IPG,unknown,,,,OH,US
+pic18,ORG-000609,Toth Mold/Die Inc.,unknown,,,,OH,US
+ohio_rest,ORG-000642,"20/20 Custom Molded Plastics, Ltd.",unknown,,,,OH,US
+ohio_rest,ORG-000707,American Custom Industries (ACI); 'Bobbart Industries' is the FRS-registered name at the address,unknown,,,,OH,US
+ohio_rest,ORG-000936,LRBG Chemicals (USA) Inc.,unknown,,,,OH,US
+ohio_rest,ORG-001091,Royal Building Products (Westlake Royal Building Products),unknown,,,,OH,US
+pic18,ORG-001183,Ventra (Flex-N-Gate),unknown,,,,OH,US
+pic18,ORG-001462,Clevite Elastomers Technical Center (Tenneco),unknown,,,,OH,US
+pic18,ORG-001513,Coltene/Whaledent Inc.,unknown,,,,OH,US
+pic18,ORG-001514,"Julius Zorn, Inc. (Juzo USA)",unknown,,,,OH,US
+ohio_rest,ORG-001535,"3B Medical, Inc. dba React Health",unknown,,,,OH,US
+ohio_rest,ORG-001543,Hammill Manufacturing Co. (Hammill Medical),unknown,,,,OH,US
+pic18,ORG-001546,Earthwalk Orthotics Acquisition Company LLC (Earthwalk Orthotics),unknown,,,,OH,US
+pic18,ORG-001548,Frantz Medical Development Ltd. (Frantz Medical Group),unknown,,,,OH,US
+pic18,ORG-001550,"United States Endoscopy Group, Inc. (STERIS Endoscopy)",unknown,,,,OH,US
+ohio_rest,ORG-001566,"Deimling/jeliho Plastics, Inc.",unknown,,,,OH,US
+pic18,ORG-001709,Goodlevel Enterprises LLC dba The Maple City Rubber Company (TUFTEX Balloons),unknown,,,,OH,US
+pic18,ORG-001722,"Kinzie Advanced Polymers, LLC dba Grove Bags",unknown,,,,OH,US
+pic18,ORG-001731,"Nissha Medical Technologies (Ohio), Inc.",unknown,,,,OH,US
+ohio_rest,ORG-001732,Thermo Fisher Scientific (Asheville) LLC,unknown,,,,OH,US
+pic18,ORG-001813,Formco / Molded Devices Inc,unknown,,,,OH,US
+pic18,ORG-001859,OEM/Miller,unknown,,,,OH,US
+ohio_rest,ORG-001925,Bata Plastics Inc (Toledo plant),unknown,,,,OH,US
+ohio_rest,ORG-001926,"Expert Roto Molding (Eger Products, a Division of Kaivac)",unknown,,,,OH,US
+pic18,ORG-001929,Saint-Gobain HyComp LLC (Hycomp LLC),unknown,,,,OH,US
+pic18,ORG-001930,Industrial Thermoset Plastics (IT Plastics),unknown,,,,OH,US
+pic18,ORG-001931,Cooper Standard Industrial and Specialty Group LLC (Lauren Manufacturing),unknown,,,,OH,US
+ohio_rest,ORG-001932,"Next Specialty Resins, Inc. (Next Resins)",unknown,,,,OH,US
+pic18,ORG-001935,"Momentous Mold and Machine (formerly Reuther Mold & Manufacturing Co., Inc.)",unknown,,,,OH,US
+ohio_rest,ORG-001942,"Tire Gard (Precision Tool Grinding, Inc.)",unknown,,,,OH,US
+pic18,ORG-001945,"Vinyl Profiles, LLC (Vinyl Profiles Inc)",unknown,,,,OH,US
+ohio_rest,ORG-001953,Clear Packaging LLC (Clear Packaging Laboratories),unknown,,,,OH,US
+pic18,ORG-001972,Penco Acquisition Co. LLC dba Penco Tool,unknown,,,,OH,US
+ohio_rest,ORG-001973,"Pesco, Inc. dba Production Engineering",unknown,,,,OH,US
+ohio_rest,ORG-001989,"Plastikos Corporation dba Multi-Form Plastics, Inc.",unknown,,,,OH,US
+pic18,ORG-001992,Precision Polymer Casting LLC (dba Castinite),unknown,,,,OH,US
+ohio_rest,ORG-002006,Rose Layman Laminating & Mounting (current operator; formerly Rose Laminating & Mounting Company),unknown,,,,OH,US
+ohio_rest,ORG-002009,SaN Pallet LLC (SaN Pallets),unknown,,,,OH,US
+ohio_rest,ORG-002023,Thinnovations LLC dba SmartPaint,unknown,,,,OH,US
+ohio_rest,ORG-002040,"StockPKG, Inc. (StockPKG Films), successor operator of United Converting, Inc.",unknown,,,,OH,US
+pic18,ORG-002043,"Mitsubishi Chemical America, Inc. (Bellevue Plant)",unknown,,,,OH,US
+pic18,ORG-002044,HEXPOL Compounding LLC (HEXPOL Akron / HEXPOL Silicone Compounding),unknown,,,,OH,US
+pic18,ORG-002045,Newell Brands Inc. (Rubbermaid Home Products),unknown,,,,OH,US
+pic18,ORG-002047,Wayne-Dalton Plastics (Wayne Dalton Corp),unknown,,,,OH,US
+pic18,ORG-002049,Sietins Plastics Inc (Sietins Precision),unknown,,,,OH,US
+pic18,ORG-002072,Vexor Technology Inc (TRI variant name: Reworld Medina LLC),unknown,,,,OH,US
+outside,ORG-002214,Rjm MFG Inc. (Dba Tara Tape),unknown,,,,PA,US
+outside,ORG-002236,"Reichhold Chemicals, Inc. (Polynt-Reichhold group)",unknown,,,,PA,US
+outside,ORG-002291,Georg Fischer LLC (GF Harvel),unknown,,,,PA,US
+outside,ORG-002302,AAH Acquisition LLC dba Snap-Tite Hose,unknown,,,,PA,US
+outside,ORG-002385,American Made LLC Dba Us Liner Company,unknown,,,,PA,US
+outside,ORG-002411,Chartiers Packaging Inc. Dba Chartiers Industries,unknown,,,,PA,US
+outside,ORG-002463,Sp Acquisition Company LLC Dba Reitech Corporation,unknown,,,,PA,US
+outside,ORG-002478,North American Pipe Corporation (Westlake Pipe & Fittings),unknown,,,,PA,US
+outside,ORG-002545,Crestwood Membranes Inc. Dba I2M,unknown,,,,PA,US
+outside,ORG-002546,Tempur Production USA LLC Dba Mountain Top Foam,unknown,,,,PA,US
+outside,ORG-002617,J P Betz Inc. Dba Custom Inserts,unknown,,,,PA,US
+outside,ORG-002726,Our Remedy LLC Dba Better Bungee,unknown,,,,PA,US
+outside,ORG-003164,"Toray Plastics (America), Inc.",unknown,,,,RI,US
+outside,ORG-010008,MSRS dba VM International,unknown,,,,,
+outside,ORG-002990,AEC (Application Engineering Company),unknown,,private_company,,WI,US
