@@ -687,3 +687,4 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 
 ## Public site (ATLAS-40)
 - [ ] `claimed:atlas-site-shell 2026-11-23` **One site shell, graph pages in the shell, blocking audit fixes (owner ruling 2026-11-23):** three PRs, `scripts/build_site.py`, `build_graph.py`, `build_geo_graph.py`, `build_events_3d.py`, `build_pages.py`, `scripts/assets/`, `docs/SITE_HOWTO.md`. Branches `agent/claude-code/site-shell-2026-11-23`, `.../site-graph-pages-2026-11-23`, `.../site-blocking-fixes-2026-11-23`. First user Sydney Marcum (City of Akron); non-use check 2026-12-23.
+- [ ] `claimed:atlas-p1-integrator-1 2026-11-23` **ATLAS-38 public label repair (G4):** Apply the reviewed round-24 descriptive-cell and people-citation edits. Branch `agent/codex/p1-label-repair-2026-11-23`. First user: the Atlas controller. Check use by 2026-11-30.
