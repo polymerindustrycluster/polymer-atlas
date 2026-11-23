@@ -2,7 +2,7 @@
 """Follow-up measure for the last_activity derivation (scripts/derive_last_activity.py); changes no data.
 
 Today the derivation applies a tier-A extract row (name + city + state, built by the extract harness) when same_street()
-holds, and never a tier-B row (name + state; the harness's city comparison failed). This script re-derives with one
+holds, and never a tier-B row (the extract does not define tier B beyond "not A"). This script re-derives with one
 change: an extract row of either tier applies when same_street() AND matching.same_locality() hold (same state, and
 the printed city is the site's city or either part of a parenthetical city, or the ZIP5 values are equal). It compares
 the result with the (last_activity_date, last_activity_source) pair every site carries at PIN and writes
