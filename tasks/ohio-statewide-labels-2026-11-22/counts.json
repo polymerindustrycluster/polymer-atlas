@@ -1,0 +1,9 @@
+{
+ "base_ref": "b26d829b7db88b62c5ed4d3cbbcb87d76b762d01",
+ "unit": "organizations rows (data/organizations_*.csv), all statuses",
+ "counts": {
+  "hold_county_blank": 5,
+  "not_ohio_statewide": 4942,
+  "relabel_ohio_statewide": 79
+ }
+}
