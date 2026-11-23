@@ -32,21 +32,25 @@ lockf -k /tmp/polymer-atlas-heavy.lock python3 scripts/validate.py
 lockf -k /tmp/polymer-atlas-heavy.lock python3 scripts/run_tests.py
 ```
 
-The census reads the 47,688 canonical evidence rows on
-`1600f540234aa9b8780309e0cc75db195c595daf`, the lane's `origin/main`
-base. Run the following separately from that base's worktree and this
-branch's worktree, supplying distinct output paths.
+The census reads every canonical evidence row on the main base. Run
+the following separately from that base's worktree and this branch's
+worktree, supplying distinct output paths.
 
 ```sh
 lockf -k /tmp/polymer-atlas-heavy.lock python3 -I scripts/check_evidence_binding.py \
-  --all --head 1600f540234aa9b8780309e0cc75db195c595daf --out "$OUT"
+  --all --head cd994c68042b6c1c1c65cc5af88ec416dd4ba7dd --out "$OUT"
 cmp "$BEFORE" "$AFTER"
 ```
 
-The complete verdict CSVs are byte-identical. There are zero changes
-to list in [CENSUS_DIFF.csv](CENSUS_DIFF.csv). Counts for all evidence
-rows are 50 PASS, 227 FAIL, 0 HELD, 2,826 READ_REQUIRED and 44,585
-UNINSPECTABLE. The census uses `--all` (pre-proof mechanics). Positive
+The complete verdict CSVs are byte-identical at both bases. There
+are zero changes to list in [CENSUS_DIFF.csv](CENSUS_DIFF.csv).
+
+| Main base | Evidence rows | PASS | FAIL | HELD | READ_REQUIRED | UNINSPECTABLE |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1600f540 (initial) | 47,688 | 50 | 227 | 0 | 2,826 | 44,585 |
+| cd994c68 (after G8a) | 47,696 | 56 | 227 | 0 | 2,828 | 44,585 |
+
+The census uses `--all` (pre-proof mechanics). Positive
 web admissions are exercised separately from stored captures. The SEC
 full-filing text path has a synthetic replay test. It accepts the
 standard full-submission filer header and a sole business address.
