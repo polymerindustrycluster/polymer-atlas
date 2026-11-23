@@ -353,7 +353,7 @@ def git_info(repo_root):
 # --------------------------------------------------------------------------
 # page layout
 
-NAV = [("prospects", "PIC-18 prospects", "prospects.html"), ("graph", "Graph", "graph/index.html"), ("geo", "Map + network", "graph/map.html"),
+NAV = [("directory", "Companies", "directory.html"), ("graph", "Graph", "graph/index.html"), ("geo", "Map + network", "graph/map.html"),
        ("shows", "Trade shows", "graph/events.html"), ("experts", "Programs & researchers", "experts.html"),
        ("search", "Search", "search.html"),
        ("counties", "Ohio counties", "counties/index.html"), ("map", "Street map", "map.html")]
@@ -421,7 +421,7 @@ def page(ctx, title, body, root="", active="", description="", head_extra="", sc
 Data license: <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.
 Source and data: <a href="{esc(ctx.repo_url)}" rel="noopener">{esc(ctx.repo_url)}</a>.</p>
 <p class="downloads"><strong>Take the data with you:</strong>
-<a href="{root}prospects.csv">PIC-18 prospects (CSV, all rows)</a> ·
+<a href="{root}directory.csv">Northeast Ohio polymer companies (CSV, all rows)</a> ·
 <a href="{esc(ctx.repo_url)}/releases/latest" rel="noopener">Latest data release (GitHub)</a></p>
 <p class="muted">{ctx.asof()}</p>
 <p class="muted">Coordinates are reference data, never evidence. A missing figure is not a zero.
@@ -1117,26 +1117,34 @@ MAP_JS = r"""(function () {
 })();
 """
 
-PROSPECTS_JS = r"""(function () {
+DIRECTORY_JS = r"""(function () {
   'use strict';
-  // Prospects filters. Rows are in the page (server-rendered); each carries its filter tokens in data-* attributes.
-  // Within one filter the choices are OR; across filters they are AND. "_" is the unknown option (a row with no tokens).
-  var form = document.getElementById('pfilters'), tbl = document.getElementById('ptable');
-  if (!form || !tbl) return;
-  var body = tbl.tBodies[0], q = document.getElementById('pq');
-  var status = document.getElementById('pstatus'), left = document.getElementById('pleft');
-  var F = ['co', 'ring', 'tier', 'band', 'proc', 'mat', 'mkt', 'own', 'mem'];
-  var PARAM = {co: 'county', ring: 'ring', tier: 'tier', band: 'employees', proc: 'process', mat: 'material', mkt: 'market', own: 'ownership', mem: 'member'};
-  var NAME = {co: 'county', ring: 'ring', tier: 'site tier', band: 'employee band', proc: 'process', mat: 'material', mkt: 'market', own: 'ownership', mem: 'member flag'};
-  var boxes = {};
+  // Directory. Rows load from directory.json (one per organization row and county, sorted by county then name) and are
+  // drawn PAGE at a time. Within one filter the choices are OR; across filters they are AND. "_" is the unknown option
+  // (a row with no tokens).
+  var PAGE = __PAGE__;
+  var form = document.getElementById('dfilters'), list = document.getElementById('dlist');
+  if (!form || !list) return;
+  var body = document.getElementById('dtable').tBodies[0], q = document.getElementById('dq');
+  var status = document.getElementById('dstatus'), left = document.getElementById('dleft');
+  var prev = document.getElementById('dprev'), next = document.getElementById('dnext'), pos = document.getElementById('dpos');
+  var F = ['co', 'ring', 'tier', 'band', 'proc', 'mat', 'mkt', 'own'];
+  var PARAM = {co: 'county', ring: 'ring', tier: 'tier', band: 'employees', proc: 'process', mat: 'material', mkt: 'market', own: 'ownership'};
+  var NAME = {co: 'county', ring: 'ring', tier: 'site tier', band: 'employee band', proc: 'process', mat: 'material', mkt: 'market', own: 'ownership'};
+  var COLS = ['Street address', 'Ring', 'Site tier', 'Process', 'Material', 'Market', 'Employees', 'Ownership', 'Evidence rows',
+              'Organization record (status, tier)', 'Website'];
+  var boxes = {}, data = [], hits = [], page = 0;
   F.forEach(function (f) { boxes[f] = Array.prototype.slice.call(form.querySelectorAll('input[name="' + f + '"]')); });
-  function toks(r, f) { var v = r.getAttribute('data-' + f); return v ? v.split(' ') : []; }
   function chosen(f) { return boxes[f].filter(function (b) { return b.checked; }).map(function (b) { return b.value; }); }
   function pass(r, f, sel) {
     if (!sel.length) return true;
-    var t = toks(r, f);
+    var t = r.tok[f];
     if (!t.length) return sel.indexOf('_') >= 0;
     return sel.some(function (v) { return t.indexOf(v) >= 0; });
+  }
+  function values(r) {   // the text of each column after the name, as on screen and in the download
+    var s = r.show;
+    return [r.addr.join('; '), s.ring, s.tier, s.proc, s.mat, s.mkt, s.band, s.own, String(r.ev), r.org, r.web || 'unknown'];
   }
   function fromUrl() {
     var u = new URLSearchParams(location.search);
@@ -1153,19 +1161,63 @@ PROSPECTS_JS = r"""(function () {
     var s = u.toString();
     history.replaceState(null, '', location.pathname + (s ? '?' + s : ''));
   }
+  function el(tag, text, attrs) {
+    var n = document.createElement(tag);
+    if (text !== undefined && text !== null) n.textContent = text;
+    if (attrs) Object.keys(attrs).forEach(function (k) { n.setAttribute(k, attrs[k]); });
+    return n;
+  }
+  function cell(i, label, v, r) {
+    var td = el('td', null, {'data-label': label});
+    if (i === 0) {   // one line per street address
+      r.addr.forEach(function (a, k) { if (k) td.appendChild(el('br')); td.appendChild(document.createTextNode(a)); });
+    } else if (i === 8) {
+      td.className = 'num';
+      td.appendChild(el('a', v, {href: 'orgs/' + r.id + '.html#evidence'}));
+    } else if (i === 10 && r.web) {
+      td.appendChild(el('a', v, {href: r.web, 'class': 'url', rel: 'noopener nofollow'}));
+    } else {
+      td.textContent = v;
+      if (v === 'unknown') td.className = 'muted';
+    }
+    return td;
+  }
+  function render() {
+    var pages = Math.max(1, Math.ceil(hits.length / PAGE)), perCounty = {};
+    hits.forEach(function (r) { perCounty[r.co] = (perCounty[r.co] || 0) + 1; });
+    page = Math.min(page, pages - 1);
+    body.textContent = '';
+    var last = null;
+    hits.slice(page * PAGE, page * PAGE + PAGE).forEach(function (r) {
+      if (r.co !== last) {   // county heading row
+        var h = el('tr', null, {'class': 'total'}), th = el('th', r.co + ' County: ' + perCounty[r.co].toLocaleString() + ' organization rows',
+          {scope: 'colgroup', colspan: String(COLS.length + 1)});
+        h.appendChild(th); body.appendChild(h); last = r.co;
+      }
+      var tr = el('tr'), th2 = el('th', null, {scope: 'row'});
+      th2.appendChild(el('a', r.name, {href: 'orgs/' + r.id + '.html'}));
+      if (r.member) { th2.appendChild(document.createTextNode(' ')); th2.appendChild(el('span', 'PIC member', {'class': 'badge'})); }
+      tr.appendChild(th2);
+      values(r).forEach(function (v, i) { tr.appendChild(cell(i, COLS[i], v, r)); });
+      body.appendChild(tr);
+    });
+    var from = hits.length ? page * PAGE + 1 : 0, to = Math.min(hits.length, page * PAGE + PAGE);
+    pos.textContent = 'Rows ' + from.toLocaleString() + ' to ' + to.toLocaleString() + ' of ' + hits.length.toLocaleString() + ' (page ' + (page + 1) + ' of ' + pages + ')';
+    prev.disabled = page === 0;
+    next.disabled = page >= pages - 1;
+  }
   function run() {
-    var sel = {}, term = q.value.trim().toLowerCase(), counts = {}, unk = {}, shown = 0;
-    F.forEach(function (f) { sel[f] = chosen(f); counts[f] = {}; unk[f] = 0; });
-    var rows = Array.prototype.slice.call(body.rows);
-    rows.forEach(function (r) {
+    var sel = {}, term = q.value.trim().toLowerCase(), counts = {};
+    F.forEach(function (f) { sel[f] = chosen(f); counts[f] = {}; });
+    hits = [];
+    data.forEach(function (r) {
       var ok = {}, all = true;
       F.forEach(function (f) { ok[f] = pass(r, f, sel[f]); if (!ok[f]) all = false; });
-      var okq = !term || r.cells[0].textContent.toLowerCase().indexOf(term) >= 0;
-      r.hidden = !(all && okq);
-      if (all && okq) shown++;
+      var okq = !term || r.name.toLowerCase().indexOf(term) >= 0;
+      if (all && okq) hits.push(r);
       F.forEach(function (f) {   // counts for one filter: rows that pass every OTHER filter
         if (!okq || !F.every(function (g) { return g === f || ok[g]; })) return;
-        var t = toks(r, f);
+        var t = r.tok[f];
         if (!t.length) t = ['_'];
         t.forEach(function (v) { counts[f][v] = (counts[f][v] || 0) + 1; });
       });
@@ -1179,16 +1231,44 @@ PROSPECTS_JS = r"""(function () {
       });
       var c = sel[f].length, u = counts[f]['_'] || 0;
       boxes[f][0].closest('details').querySelector('.sel').textContent = c ? ' (' + c + ' chosen)' : '';
-      if (c && sel[f].indexOf('_') < 0 && u && f !== 'mem') notes.push(u.toLocaleString() + ' with unknown ' + NAME[f]);
+      if (c && sel[f].indexOf('_') < 0 && u) notes.push(u.toLocaleString() + ' with unknown ' + NAME[f]);
     });
-    status.textContent = 'Showing ' + shown.toLocaleString() + ' of ' + rows.length.toLocaleString() + ' organization rows.';
+    status.textContent = 'Showing ' + hits.length.toLocaleString() + ' of ' + data.length.toLocaleString() + ' organization rows (one per organization and county).';
     left.textContent = notes.length ? 'Left out because the field is unknown (within your other choices): ' + notes.join('; ') + '. Choose "Unknown" in that filter to see them.' : '';
+    page = 0;
+    render();
     toUrl();
   }
+  function csvCell(s) {
+    s = String(s).replace(/\s+/g, ' ').trim();
+    if (/^[=+@]/.test(s) || /^-(?!\d)/.test(s)) s = "'" + s;   // spreadsheets would run a leading = + @ - as a formula
+    return /[",]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  }
+  document.getElementById('ddl').addEventListener('click', function () {   // every filtered row, not only the page on screen
+    var lines = [['County', 'Organization', 'PIC member'].concat(COLS).map(csvCell).join(',')];
+    hits.forEach(function (r) { lines.push([r.co, r.name, r.member ? 'yes' : ''].concat(values(r)).map(csvCell).join(',')); });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob(['﻿' + lines.join('\r\n') + '\r\n'], {type: 'text/csv;charset=utf-8'}));
+    a.download = 'northeast-ohio-polymer-companies-' + new Date().toISOString().slice(0, 10) + '.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+  function turn(d) { page += d; render(); status.focus(); }
+  prev.addEventListener('click', function () { turn(-1); });
+  next.addEventListener('click', function () { turn(1); });
   var timer;
   form.addEventListener('change', run);
   q.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(run, 120); });
-  fromUrl(); run();
+  fetch('directory.json').then(function (r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function (d) {
+    data = d.rows;
+    list.hidden = false;
+    fromUrl(); run();
+  }).catch(function (e) {
+    status.textContent = 'Could not load directory.json (' + e.message + '). If you opened this file directly from disk, serve the folder over http instead (see docs/SITE_HOWTO.md). The county pages and directory.csv hold the same rows.';
+  });
 })();
 """
 
@@ -1274,7 +1354,7 @@ skyline = importlib.util.module_from_spec(_sk_spec)
 _sk_spec.loader.exec_module(skyline)
 
 GLYPHS = {
-    "prospects": '<svg viewBox="0 0 240 84" aria-hidden="true"><g fill="none" stroke="var(--line)" stroke-width="1.4"><rect x="40" y="10" width="160" height="64" rx="6"/>'
+    "directory": '<svg viewBox="0 0 240 84" aria-hidden="true"><g fill="none" stroke="var(--line)" stroke-width="1.4"><rect x="40" y="10" width="160" height="64" rx="6"/>'
                  '<line x1="40" y1="28" x2="200" y2="28"/><line x1="40" y1="44" x2="200" y2="44"/><line x1="40" y1="60" x2="200" y2="60"/>'
                  '<line x1="92" y1="10" x2="92" y2="74"/><line x1="150" y1="10" x2="150" y2="74"/></g><rect x="48" y="33" width="36" height="6" rx="3" fill="var(--accent)"/>'
                  '<rect x="100" y="49" width="40" height="6" rx="3" fill="var(--r2)"/><rect x="158" y="33" width="30" height="6" rx="3" fill="var(--r1)"/></svg>',
@@ -1309,20 +1389,21 @@ def active_ab(sites):
 
 
 # --------------------------------------------------------------------------
-# PIC-18 prospects: one row per organization with an active tier A-C site row in a PIC-18 county
+# Northeast Ohio polymer companies (directory.html): one row per organization row and PIC-18 county,
+# built from the organization's active tier A-C site rows in that county
 
 UNKNOWN_VALUES = {"", "unknown"}       # blank and the literal vocabulary value both mean "nothing recorded"
 BAND_MINS = (50, 100, 250, 500, 1000)  # "N or more" shortcuts: a band whose lower bound is at least N
-PROSPECT_FACETS = [("co", "County"), ("ring", "Ring"), ("tier", "Site tier"), ("band", "Employees"),
-                   ("proc", "Process"), ("mat", "Material"), ("mkt", "Market"), ("own", "Ownership"),
-                   ("mem", "Public member list")]
-MEMBER_YES, MEMBER_NO = "on the public member list", "not on the public member list"   # AGENTS.md section 5.1
+DIRECTORY_PAGE = 50                    # rows rendered at a time, on screen and in the page script
+DIRECTORY_FACETS = [("co", "County"), ("ring", "Ring"), ("tier", "Site tier"), ("band", "Employees"),
+                    ("proc", "Process"), ("mat", "Material"), ("mkt", "Market"), ("own", "Ownership")]
+MEMBER_YES = "on the public member list"   # AGENTS.md section 5.1: the only membership wording; absence is never stated
 def known(values):
     return sorted({v for v in values if v not in UNKNOWN_VALUES})
 
 
 def tok(value):
-    """Filter token: one space-free word, so rows can carry several in one data attribute."""
+    """Filter token: one space-free word, so a row can carry several."""
     return re.sub(r"\s+", "_", str(value).strip())
 
 
@@ -1348,16 +1429,24 @@ def org_evidence_count(a, oid):
             + sum(len(evidence_view(a, "sites", s["site_id"])) for s in a.sites_by_org.get(oid, [])))
 
 
-def prospect_rows(a):
-    """One dict per organization row with at least one PIC-18 active tier A-C site row.
+def site_address(s):
+    """Street, city, state and ZIP as recorded; a missing street says so (158 of the PIC-18 site rows have none)."""
+    street = str(s.get("street_address") or "").strip() or "Street not recorded"
+    region = " ".join(x for x in [s.get("state"), s.get("zip")] if nonempty(x))
+    return ", ".join(x for x in [street, s.get("city"), region] if nonempty(x))
 
-    Employee band: the band on its PIC-18 site rows, else the organization's Ohio band. Process, material and
-    market follow the same rule. Each of those fields is (tokens, basis); no tokens means unknown."""
-    by_org = defaultdict(list)
+
+def directory_rows(a):
+    """One dict per organization row and PIC-18 county, from that organization's PIC-18 active tier A-C site rows there.
+
+    An organization with sites in two counties has two rows, so a county's row count is its organization count.
+    Employee band: the band on the row's site rows, else the organization's Ohio band. Process, material and market
+    follow the same rule. Each of those fields is (tokens, basis); no tokens means unknown."""
+    by_key = defaultdict(list)
     for s in pic18_active_sites(a.sites):
-        by_org[s["org_id"]].append(s)
+        by_key[(s["org_id"], s["county"])].append(s)
     rows = []
-    for oid, sites in by_org.items():
+    for (oid, county), sites in by_key.items():
         rec = a.orgs.get(oid) or a.eco.get(oid) or {}
 
         def pick(site_field, org_field):
@@ -1369,21 +1458,22 @@ def prospect_rows(a):
         rows.append({
             "id": oid, "name": rec.get("legal_name") or oid, "website": safe_href(rec.get("website")) or "",
             "hq_city": rec.get("hq_city") or rec.get("city") or "", "hq_state": rec.get("hq_state") or rec.get("state") or "",
-            "counties": sorted({s["county"] for s in sites}), "n_sites": len(sites),
-            "rings": known(s["_ring"] for s in sites if s["_ring"]), "tiers": sorted({s["verification_tier"] for s in sites}),
+            "county": county, "addr": sorted({site_address(s) for s in sites}), "n_sites": len(sites),
+            "rings": known(s["_ring"] for s in sites if s["_ring"]), "ring_sites": Counter(s["_ring"] or "_" for s in sites),
+            "tiers": sorted({s["verification_tier"] for s in sites}),
             "proc": pick("processes", "processes"), "mat": pick("materials", "materials"),
             "mkt": pick("markets_served", "markets_served"), "band": pick("employee_band_site", "employee_band_ohio"),
             "own": known(vals(rec.get("ownership_type"))), "member": rec.get("pic_member") == "true",
             "evidence": org_evidence_count(a, oid), "status": rec.get("status") or "", "org_tier": rec.get("verification_tier") or "",
         })
-    rows.sort(key=lambda r: (r["name"].lower(), r["id"]))
+    rows.sort(key=lambda r: (r["county"], r["name"].lower(), r["id"]))
     return rows
 
 
 def row_tokens(r, key):
     """The filter tokens one row carries for one facet (none = unknown)."""
     if key == "co":
-        return [tok(c) for c in r["counties"]]
+        return [tok(r["county"])]
     if key == "ring":
         return r["rings"]
     if key == "tier":
@@ -1394,8 +1484,6 @@ def row_tokens(r, key):
         return [tok(b) for b in bands] + [f"min{n}" for n in mins]
     if key == "own":
         return [tok(o) for o in r["own"]]
-    if key == "mem":
-        return ["yes" if r["member"] else "no"]
     return [tok(t) for t in r[key][0]]
 
 
@@ -1419,8 +1507,6 @@ def facet_options(rows, key):
     elif key == "tier":
         order = sorted(counts)
         labels = {x: f"Tier {x}: {TIERS[x][0]}" for x in order}
-    elif key == "mem":
-        order, labels = ["yes", "no"], {"yes": MEMBER_YES, "no": MEMBER_NO}
     elif key == "band":
         mins = [f"min{n}" for n in BAND_MINS]
         exact = sorted((t for t in counts if not t.startswith("min")), key=lambda t: (band_floor(t) or 0, t))
@@ -1434,115 +1520,149 @@ def facet_options(rows, key):
 def facet_html(rows, key, heading, open_):
     opts = facet_options(rows, key)
     n_unknown = sum(1 for r in rows if not row_tokens(r, key))
-    if key != "mem":   # the member flag is yes/no by construction: a record without the flag is "not on the list"
-        opts.append(("_", "Unknown (nothing recorded)", n_unknown))
+    opts.append(("_", "Unknown (nothing recorded)", n_unknown))
     items = "".join(
         f'<label class="opt"><input type="checkbox" name="{key}" value="{esc(t)}"> '
         f'<span class="t">{esc(label)}</span> <span class="n">{n}</span></label>' for t, label, n in opts)
-    note = ('<p class="small muted">No unknowns here: an organization not flagged is shown as not on the public list.</p>'
-            if key == "mem" else "")
     return (f'<details class="facet"{" open" if open_ else ""}><summary>{esc(heading)}<span class="sel"></span></summary>'
-            f'<div class="opts">{items}</div>{note}</details>')
+            f'<div class="opts">{items}</div></details>')
 
 
-def prospect_cell(tokens, basis, always_basis=False):
+def cell_text(tokens, basis, always_basis=False):
+    """A value for the list: readable vocabulary, with its basis when it comes from the organization's own record."""
     if not tokens:
-        return '<td data-sort="—"><span class="muted">unknown</span></td>'
-    tag = f' <span class="muted small">({basis})</span>' if basis and (always_basis or basis == "org record") else ""
-    return f"<td>{esc(vocab(';'.join(tokens)))}{tag}</td>"
+        return "unknown"
+    text = vocab(";".join(tokens))
+    return f"{text} ({basis})" if basis and (always_basis or basis == "org record") else text
 
 
-def prospect_tr(r):
-    attrs = " ".join(f'data-{k}="{esc(" ".join(row_tokens(r, k)))}"' for k, _ in PROSPECT_FACETS)
-    org_rec = ", ".join(x for x in [str(r["status"]).replace("_", " ") if r["status"] else "status unknown",
-                                    f"tier {r['org_tier']}" if r["org_tier"] else ""] if x)
-    web = f'<a class="url" href="{esc(r["website"])}" rel="noopener nofollow">{esc(r["website"])}</a>' if r["website"] else \
-        '<span class="muted">unknown</span>'
-    plain = lambda toks: (f"<td>{esc(', '.join(toks))}</td>" if toks else prospect_cell([], ""))   # noqa: E731
-    return (f'<tr {attrs}><th scope="row"><a href="orgs/{esc(safe_id(r["id"]))}.html">{esc(r["name"])}</a></th>'
-            f'<td>{esc(", ".join(r["counties"]))}</td>{plain(r["rings"])}<td>{esc(", ".join(r["tiers"]))}</td>'
-            f'{prospect_cell(*r["proc"])}{prospect_cell(*r["mat"])}{prospect_cell(*r["mkt"])}'
-            f'{prospect_cell(*r["band"], always_basis=True)}{prospect_cell(r["own"], "")}'
-            f'<td>{MEMBER_YES if r["member"] else MEMBER_NO}</td>'
-            f'<td class="num">{r["n_sites"]}</td><td class="num"><a href="orgs/{esc(safe_id(r["id"]))}.html#evidence">{r["evidence"]}</a></td>'
-            f'<td>{esc(org_rec)}</td><td>{web}</td></tr>')
+def directory_json(rows):
+    """directory.json: the list the page renders 50 rows at a time. Tokens drive the filters; show is the text on screen."""
+    out = []
+    for r in rows:
+        out.append({
+            "id": r["id"], "name": r["name"], "co": r["county"], "addr": r["addr"], "member": r["member"],
+            "web": r["website"], "ev": r["evidence"],
+            "org": ", ".join(x for x in [str(r["status"]).replace("_", " ") if r["status"] else "status unknown",
+                                         f"tier {r['org_tier']}" if r["org_tier"] else ""] if x),
+            "tok": {k: row_tokens(r, k) for k, _ in DIRECTORY_FACETS},
+            "show": {"ring": ", ".join(r["rings"]) or "unknown", "tier": ", ".join(r["tiers"]),
+                     "proc": cell_text(*r["proc"]), "mat": cell_text(*r["mat"]), "mkt": cell_text(*r["mkt"]),
+                     "band": cell_text(*r["band"], always_basis=True), "own": cell_text(r["own"], "")}})
+    return {"rows": out}
 
 
-def prospects_csv(rows, base_url):
-    """prospects.csv: the whole prospects table, one row per organization row; unknown is written out, never left blank."""
+def directory_csv(rows, base_url):
+    """directory.csv (and its copy prospects.csv): one row per organization row and PIC-18 county; unknown is written out,
+    never left blank. public_member_list is "yes" only for an organization on the public PIC member list; it is blank
+    otherwise, which is not a statement about membership."""
     out = io.StringIO()
     w = csv.writer(out, lineterminator="\r\n")
     w.writerow(["org_id", "organization", "website", "hq_city", "hq_state", "pic18_counties", "pic18_site_rows", "rings",
                 "site_tiers", "processes", "processes_basis", "materials", "materials_basis", "markets", "markets_basis",
                 "employee_band", "employee_band_basis", "ownership", "public_member_list", "evidence_rows",
-                "org_record_status", "org_record_tier", "atlas_page"])
+                "org_record_status", "org_record_tier", "atlas_page", "pic18_site_addresses"])
 
     def safe(v):   # spreadsheets run a leading = + @ - as a formula
         v = str(v)
         return "'" + v if re.match(r"[=+@]|-(?!\d)", v) else v
 
-    def cell(tokens):   # readable vocabulary, as in the table
+    def cell(tokens):   # readable vocabulary, as on the page
         return "; ".join(t.replace("_", " ") for t in tokens) if tokens else "unknown"
     for r in rows:
         w.writerow([safe(x) for x in [
-            r["id"], r["name"], r["website"] or "unknown", r["hq_city"], r["hq_state"], "; ".join(r["counties"]),
+            r["id"], r["name"], r["website"] or "unknown", r["hq_city"], r["hq_state"], r["county"],
             r["n_sites"], cell(r["rings"]), "; ".join(r["tiers"]),
             cell(r["proc"][0]), r["proc"][1] or "unknown", cell(r["mat"][0]), r["mat"][1] or "unknown",
             cell(r["mkt"][0]), r["mkt"][1] or "unknown", cell(r["band"][0]), r["band"][1] or "unknown",
-            cell(r["own"]), MEMBER_YES if r["member"] else MEMBER_NO, r["evidence"],
-            r["status"] or "unknown", r["org_tier"] or "unknown", f"{base_url}orgs/{safe_id(r['id'])}.html"]])
+            cell(r["own"]), "yes" if r["member"] else "", r["evidence"],
+            r["status"] or "unknown", r["org_tier"] or "unknown", f"{base_url}orgs/{safe_id(r['id'])}.html",
+            "; ".join(r["addr"])]])
     return out.getvalue()
 
 
-PROSPECT_HEAD = ["Organization", "County", "Ring", "Site tier", "Process", "Material", "Market", "Employees", "Ownership",
-                 "Public member list", "PIC-18 site rows", "Evidence rows", "Organization record (status, tier)", "Website"]
+DIRECTORY_HEAD = ["Organization", "Street address", "Ring", "Site tier", "Process", "Material", "Market", "Employees",
+                  "Ownership", "Evidence rows", "Organization record (status, tier)", "Website"]
 
 
-def build_prospects_page(ctx, rows):
+def summary_table(label, rows, caption):
+    """Summary table: (label, link or None, organization rows, site rows) lines plus the All PIC-18 total."""
+    def name(text, href):
+        return f'<a href="{esc(href)}">{esc(text)}</a>' if href else esc(text)
+    body = "".join(
+        f'<tr><th scope="row">{name(text, href)}</th>'
+        f'<td class="num">{fmt_int(n_org)}</td><td class="num">{fmt_int(n_site)}</td></tr>' for text, href, n_org, n_site in label)
+    total = (f'<tr class="total"><th scope="row">All PIC-18</th><td class="num">{fmt_int(len({r["id"] for r in rows}))}</td>'
+             f'<td class="num">{fmt_int(sum(r["n_sites"] for r in rows))}</td></tr>')
+    return (f'<table data-nosort data-nofilter data-nocsv><caption>{esc(caption)}</caption><thead><tr>'
+            f'<th scope="col">{esc(caption.rsplit(" ", 1)[1].capitalize())}</th><th scope="col" class="num">Organization rows</th>'
+            f'<th scope="col" class="num">Site rows</th></tr></thead><tbody>{body}{total}</tbody></table>')
+
+
+def build_directory_page(ctx, rows):
+    n_orgs = len({r["id"] for r in rows})
     n_sites = sum(r["n_sites"] for r in rows)
-    facets = "".join(facet_html(rows, k, h, k in ("co", "ring", "tier", "band", "mem")) for k, h in PROSPECT_FACETS)
+    counties = sorted({r["county"] for r in rows})
+    by_county = [(c, f"counties/{slug(c)}.html", sum(1 for r in rows if r["county"] == c),
+                  sum(r["n_sites"] for r in rows if r["county"] == c)) for c in counties]
+    ring_keys = sorted({k for r in rows for k in r["ring_sites"]}, key=lambda k: (k == "_", k))
+    by_ring = [(f"Ring {k}: {RINGS.get(k, '')}" if k != "_" else "Ring not recorded", None,
+                len({r["id"] for r in rows if r["ring_sites"].get(k)}), sum(r["ring_sites"].get(k, 0) for r in rows))
+               for k in ring_keys]
+    cap = "organization rows with an active tier A-C site row, by"
+    summary = (table_wrap(summary_table(by_county, rows, f"PIC-18 {cap} county"), "Counts by county")
+               + table_wrap(summary_table(by_ring, rows, f"PIC-18 {cap} ring"), "Counts by ring"))
+    facets = "".join(facet_html(rows, k, h, k in ("co", "ring", "tier", "band")) for k, h in DIRECTORY_FACETS)
     num = ' class="num"'
-    head = "".join(f'<th scope="col"{num if h in ("PIC-18 site rows", "Evidence rows") else ""}>{esc(h)}</th>'
-                   for h in PROSPECT_HEAD)
-    caption = ("PIC-18 prospects: organization rows with at least one site row in the 18 PIC counties "
-               "(operating status active; verification tiers A-C)")
-    tbl = table_wrap(f'<table id="ptable" data-nofilter><caption>{esc(caption)}</caption><thead><tr>{head}</tr></thead>'
-                     f'<tbody>{"".join(prospect_tr(r) for r in rows)}</tbody></table>', "PIC-18 prospects")
+    head = "".join(f'<th scope="col"{num if h == "Evidence rows" else ""}>{esc(h)}</th>' for h in DIRECTORY_HEAD)
     body = f"""
-<h1>PIC-18 prospects</h1>
-<p class="lede">{fmt_int(len(rows))} organization rows with at least one site row in the 18 PIC counties (operating status active,
-verification tier A-C; {fmt_int(n_sites)} such site rows). Pick values to build a list, then download it. The address bar holds
-your filters, so you can send the link.</p>
-<div class="banner note"><p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter shows how many rows are
-unknown. "{MEMBER_NO}" is not the same as "not a member".</p>
-<details class="more"><summary>How to read this page</summary>
-<p>One row per organization row, even when it has several PIC-18 site rows; counts here are organization rows, not unique
-ultimate parents. County, ring and site tier list every value among the organization's PIC-18 site rows, and a filter matches a
-row when any of them matches. Within one filter the choices are "or"; across filters they are "and".</p>
-<p><strong>Employees</strong> is the band recorded on the organization's PIC-18 site rows, otherwise the organization's Ohio band,
-and each row says which (site or org record). Process, material and market follow the same rule and say so when they come from
-the organization's own row. Bands are bands, never headcounts. "N or more" means the band starts at N or higher.</p>
-<p>Every filter counts its unknown rows within your other choices. Picking a value in a filter drops that filter's unknown rows
-from the list; the line under the filters says how many, and the "Unknown" choice shows them.</p>
-<p><strong>Public member list.</strong> A row is marked "{MEMBER_YES}" or "{MEMBER_NO}". The second only means the organization is
-not on the public list; do not use it alone to decide whom to pitch.</p></details></div>
-<form id="pfilters" onsubmit="return false" role="search" aria-label="Filter the prospects">
-<p><label for="pq"><strong>Name contains</strong></label><br><input type="search" id="pq" autocomplete="off"></p>
+<h1>Northeast Ohio polymer companies</h1>
+<p class="lede">{fmt_int(n_orgs)} organization rows with at least one active, tier A-C site row in the 18 PIC counties
+({fmt_int(n_sites)} such site rows). Each count below is organization rows with an active tier A-C site row in that county or ring.</p>
+{summary}
+<p class="small muted">An organization row with site rows in more than one county or ring is counted in each, so these columns can
+add up to more than the All PIC-18 line. Counts are organization rows, not unique ultimate parents.</p>
+<h2 id="find">Find a company</h2>
+<p>Search by name, narrow with the filters, and download what you see. The address bar holds your choices, so you can send the link.
+A <span class="badge">PIC member</span> badge marks an organization on PIC's public member list.</p>
+<details class="more"><summary>How to read the list</summary>
+<p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter shows how many rows are unknown.</p>
+<p>One row per organization row and county, grouped by county; an organization with site rows in two counties is listed under both,
+with the street addresses of the site rows in that county. Ring and site tier list every value among those site rows; within one
+filter the choices are "or", across filters "and". Street addresses are as recorded; a site row with no street says so.</p>
+<p><strong>Employees</strong> is the band recorded on the site rows in that county, otherwise the organization's Ohio band, and each row
+says which (site or org record). Process, material and market follow the same rule and say so when they come from the organization's
+own row. Bands are bands, never headcounts. "N or more" means the band starts at N or higher.</p></details>
+<form id="dfilters" onsubmit="return false" role="search" aria-label="Find a company">
+<p><label for="dq"><strong>Name contains</strong></label><br><input type="search" id="dq" autocomplete="off"></p>
 <div class="facets">{facets}</div>
-<p><a href="prospects.html">Clear all filters</a></p>
+<p><a href="directory.html">Clear all filters</a></p>
 </form>
-<p id="pstatus" role="status" aria-live="polite">Showing {fmt_int(len(rows))} of {fmt_int(len(rows))} organization rows.</p>
-<p id="pleft" class="small" aria-live="polite"></p>
-{tbl}
-<p class="small muted">The download button above saves the rows you see, with the columns shown. For the whole table with
-separate basis columns, take <a href="prospects.csv">prospects.csv</a> ({fmt_int(len(rows))} organization rows, unfiltered).
+<p id="dstatus" role="status" aria-live="polite" tabindex="-1">Loading the list...</p>
+<p id="dleft" class="small" aria-live="polite"></p>
+<div id="dlist" hidden>
+{table_wrap(f'<table id="dtable" class="stack" data-nosort data-nofilter data-nocsv><caption>Northeast Ohio polymer companies: organization rows by PIC-18 county (operating status active; verification tiers A-C)</caption><thead><tr>{head}</tr></thead><tbody></tbody></table>', "Northeast Ohio polymer companies")}
+<p id="dpager"><button type="button" id="dprev">Previous {DIRECTORY_PAGE}</button> <span id="dpos"></span> <button type="button" id="dnext">Next {DIRECTORY_PAGE}</button></p>
+<p class="tdl"><button type="button" id="ddl">Download these rows (CSV)</button></p>
+<p class="small muted">The download saves every row that matches your filters, not only the {DIRECTORY_PAGE} on screen. For the whole table,
+take <a href="directory.csv">directory.csv</a> ({fmt_int(len(rows))} organization rows by county, unfiltered).
 Evidence rows count the claim-level evidence on the organization's page (its own and its site rows').
 Website is the organization's recorded website. No contact people are published.</p>
-<noscript><p>Filtering needs JavaScript; all {fmt_int(len(rows))} rows are listed above and prospects.csv has the same rows.</p></noscript>
+</div>
+<noscript><p>The list and filters need JavaScript. Without it, open a county from the table above (see
+<a href="counties/index.html">all counties</a>) or take every row, with street addresses, from
+<a href="directory.csv">directory.csv</a>.</p></noscript>
 """
-    return page(ctx, "PIC-18 prospects", body, "", "prospects",
-                "Build a list of PIC-18 polymer organizations by county, ring, tier, process, material, market, size and ownership.",
-                "", '<script src="prospects.js" defer></script>')
+    return page(ctx, "Northeast Ohio polymer companies", body, "", "directory",
+                "Polymer companies in the 18 Northeast Ohio PIC counties: counts by county and ring, then search, filter and download the list with street addresses.",
+                "", '<script src="directory.js" defer></script>')
+
+
+def build_prospects_stub(ctx):
+    """prospects.html is kept so shared links work: it sends the reader on to the directory."""
+    return page(ctx, "This page has moved",
+                '<h1>This page has moved</h1>\n<p class="lede">The list is now <a href="directory.html">Northeast Ohio polymer companies</a>.</p>',
+                "", "", "", '<meta http-equiv="refresh" content="0; url=directory.html">')
 
 
 def build_index(ctx):
@@ -1603,8 +1723,8 @@ def build_index(ctx):
                 f'<span class="go">Open &rarr;</span></a>')
 
     explore = "".join([
-        xcard("prospects.html", "prospects", "PIC-18 prospects",
-              "Build a list: filter the PIC-18 organizations by county, ring, tier, process, size and more, then download it as CSV."),
+        xcard("directory.html", "directory", "Northeast Ohio polymer companies",
+              "Companies in the 18 PIC counties: counts by county and ring, then search, filter by process, size and more, and download the list with street addresses."),
         xcard("graph/index.html", "graph", "Industry graph",
               "Companies, institutions and the processes and materials that connect them. Hover to trace a supply web."),
         xcard("graph/map.html", "geo", "Map + network",
@@ -1632,7 +1752,7 @@ every fact tied to a public source. Built in Akron for Northeast Ohio, growing n
 <div><b>{fmt_int(len(active_ab(oh)))}</b><small>in Ohio</small></div>
 <div><b>{fmt_int(len(active_ab(pic)))}</b><small>in the 18 PIC counties</small></div>
 </div>
-<div class="cta"><a class="btn primary" href="prospects.html">PIC-18 prospects</a><a class="btn" href="graph/map.html">Explore the map</a>
+<div class="cta"><a class="btn primary" href="directory.html">Northeast Ohio polymer companies</a><a class="btn" href="graph/map.html">Explore the map</a>
 <a class="btn" href="graph/index.html">Industry graph</a><a class="btn" href="search.html">Search</a></div>
 </div>
 <div class="hero-legend"><span>Fewer sites</span><span class="ramp"></span><span>More</span><span>· hex ≈ 30 mi</span></div>
@@ -2000,7 +2120,7 @@ def evidence_section(a, table, rec, kind):
 
 def member_field(rec):
     if rec.get("pic_member") != "true":
-        return esc(MEMBER_NO)
+        return ""   # the flag is the public member list only: never say an organization is not on it
     href = safe_href(rec.get("membership_source_url"))
     return f'<a href="{esc(href)}" rel="noopener nofollow">{MEMBER_YES}</a>' if href else esc(MEMBER_YES)
 
@@ -2542,7 +2662,7 @@ def build_site(db_path, out_dir, qcew_path=None, repo_url=DEFAULT_REPO, git=None
     write(out_dir / "style.css", CSS.strip() + "\n")
     write(out_dir / "map.js", MAP_JS)
     write(out_dir / "search.js", SEARCH_JS)
-    write(out_dir / "prospects.js", PROSPECTS_JS)
+    write(out_dir / "directory.js", DIRECTORY_JS.replace("__PAGE__", str(DIRECTORY_PAGE)))
     write(out_dir / "sortable.js", SORTABLE_JS)
     shutil.copyfile(Path(__file__).resolve().parent / "assets" / "brand" / "pic-mark-color.svg", out_dir / "favicon.svg")
     og = Path(__file__).resolve().parent / "assets" / "og-image.jpg"
@@ -2585,10 +2705,13 @@ search for the company by name, or start from one of the views below.</p>
     write(out_dir / "experts.js", EXPERTS_JS)
     write(out_dir / "experts.html", build_experts_page(ctx, len(xj["people"]), len(xj["programs"])))
 
-    prospects = prospect_rows(atlas)
-    write(out_dir / "prospects.html", build_prospects_page(ctx, prospects))
-    with open(out_dir / "prospects.csv", "w", newline="", encoding="utf-8-sig") as f:   # BOM: Excel reads it as UTF-8
-        f.write(prospects_csv(prospects, SITE_URL))
+    directory = directory_rows(atlas)
+    write(out_dir / "directory.html", build_directory_page(ctx, directory))
+    write(out_dir / "directory.json", json.dumps(directory_json(directory), separators=(",", ":"), ensure_ascii=False))
+    for name in ("directory.csv", "prospects.csv"):   # prospects.csv is a copy, so links shared before the rename still work
+        with open(out_dir / name, "w", newline="", encoding="utf-8-sig") as f:   # BOM: Excel reads it as UTF-8
+            f.write(directory_csv(directory, SITE_URL))
+    write(out_dir / "prospects.html", build_prospects_stub(ctx))
     write(out_dir / "counties" / "index.html", build_counties_index(ctx))
     county_names = ohio_counties(atlas)
     for c in county_names:
