@@ -2110,9 +2110,9 @@ ORG-002170,newsroom_url,,held,Need a link to a recognized own-domain newsroom in
 ORG-002170,newsroom_feed_url,,held,Need a retained copy of the chosen newsroom.,,,,
 ORG-002173,linkedin_url,https://www.linkedin.com/company/purecycletechnologies/,yes,Unique deterministic own-site navigation witness.,https://www.purecycle.com/who-we-are,ORG-002173/62f2edf7c31ad46e939caa72a408712863c378f1bfba6b49e7275d1bc2b0feaa.html,8ddf232a70d2d2888a4249eb17f8060739d3ff72cf19a963604fb8c1dc9bdd8d,https://www.linkedin.com/company/purecycletechnologies/
 ORG-002173,newsroom_feed_url,,held,Need a feed URL advertised by the chosen newsroom.,,,,
-ORG-003002,linkedin_url,https://www.linkedin.com/company/omya/,yes,Unique deterministic own-site navigation witness.,https://www.omya.com/en/omya-specialty-materials/products,ORG-003002/b05818148de81509379f0a7e1e9d13ca7681e5ce724212841549651914c06557.html,42df49f122838a08e4851b85e260a56a10999685bf0179e210e7655dd37c6910,https://www.linkedin.com/company/omya/
-ORG-003002,newsroom_url,,held,Need a link to a recognized own-domain newsroom index.,,,,
-ORG-003002,newsroom_feed_url,,held,Need a retained copy of the chosen newsroom.,,,,
+ORG-003002,linkedin_url,,held,group-wide site/page for a national arm,,,,
+ORG-003002,newsroom_url,,held,group-wide site/page for a national arm,,,,
+ORG-003002,newsroom_feed_url,,held,group-wide site/page for a national arm,,,,
 ORG-003100,newsroom_url,,held,Need a reachable own-domain page that can be retained under the privacy rule.,,,,
 ORG-003100,newsroom_feed_url,,held,Need a reachable own-domain page that can be retained under the privacy rule.,,,,
 ORG-003105,linkedin_url,,held,Need a header/footer company anchor with an exact held-name slug.,,,,

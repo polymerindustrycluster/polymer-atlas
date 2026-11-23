@@ -313,6 +313,9 @@ def apply(packet):
 def sample(packet,repair):
     cells=[r for r in [*packet,repair] if r['applied']=='yes']
     assert len(cells)>=30,'fewer than 30 applied cells'
+    # Keep the released sample unless a sampled cell was withdrawn.
+    prior=snapshot('tasks/ohio-links-corpus-2026-11-23/sample.csv','433fe056f85070708b2a4db2ef81bf8dd645501e')
+    if all(r in cells for r in prior):return prior
     groups={col:[r for r in cells if r['column']==col] for col in COLS}
     quotas={col:30*len(rows)/len(cells) for col,rows in groups.items()}
     counts={col:int(quota) for col,quota in quotas.items()}
