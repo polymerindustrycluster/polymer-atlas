@@ -9,7 +9,7 @@ import re
 import subprocess
 from collections import Counter, defaultdict
 from datetime import datetime
-from itertools import combinations
+from itertools import combinations, count
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -19,6 +19,7 @@ STORE = Path("/Volumes/johnpswan/work/GAC/polymer-atlas/atlas-store")
 CACHE = Path.home() / ".bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/size-sprint-2026-11-22/cache"
 CUTOFF, AS_OF = "2021-11-22", "2026-11-22"
 BY = "codex " + HERE.name
+WITHDRAWN_EVIDENCE_IDS = {483004, 483005, 483007, 483008, 483013}
 
 
 def load(name, file):
@@ -158,7 +159,7 @@ def dated(w):
     return bool(w["date"] and CUTOFF <= w["date"] <= AS_OF)
 
 
-def street_decision(candidates, occupied):
+def street_decision(candidates, occupied, *, chosen=None, outside=()):
     current = [w for w in candidates if dated(w)]
     if not current:
         return "no_current_held_witness", []
@@ -166,6 +167,11 @@ def street_decision(candidates, occupied):
         return "dated_witnesses_disagree", current
     if street_key(current[0]["street"]) in occupied:
         return "duplicate_site_lead", current
+    if chosen is not None:
+        newer = {w["ref"]: w for w in outside if dated(w) and w["date"] > chosen["date"]
+                 and not same_street(w["street"], chosen["street"])}
+        if newer:
+            return "newer_filing_other_city", current + [newer[ref] for ref in sorted(newer)]
     return "eligible", current
 
 
@@ -296,7 +302,18 @@ def build(base, store, cache, first):
                 registry_below_tier = True
                 continue
             if verdict == "PASS":
-                proposals[sid] = (w, ev, row, current)
+                outside = (other for k in prefixes for other in pools[k]
+                           if other["date"] > w["date"] and same_street(other["street"], other["street"])
+                           and not B.city_ok(s, other["city"], other["zip"])
+                           and any(held_name(idx, s, name) for name in other["names"]))
+                disposition, reviewed = street_decision(current, occupied, chosen=w, outside=outside)
+                if disposition == "newer_filing_other_city":
+                    row.update(result=disposition, current_witnesses=len(reviewed),
+                               families=";".join(sorted({family(item["kind"]) for item in reviewed})),
+                               current_witness_refs="|".join(item["ref"] for item in reviewed))
+                    witnesses.update({item["ref"]: item for item in reviewed})
+                else:
+                    proposals[sid] = (w, ev, row, current)
                 break
         else:
             row["result"] = "registry_address_below_site_tier" if registry_below_tier else "no_bindable_address_quote"
@@ -332,7 +349,8 @@ def build(base, store, cache, first):
         row.update(band=result["band"], band_ref=w["ref"], band_disposition="band_fill")
         evs.append(ev)
         witnesses[w["ref"]] = w
-    for i, ev in enumerate(evs, first):
+    available_ids = (i for i in count(first) if i not in WITHDRAWN_EVIDENCE_IDS)
+    for i, ev in zip(available_ids, evs):
         ev["evidence_id"] = f"EVD-{i:06d}"
     for s in sites.values():
         s.pop("_held", None)

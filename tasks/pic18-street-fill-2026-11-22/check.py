@@ -112,7 +112,15 @@ def hashes(store, facts):
     return len(files)
 
 
+def relocation_control():
+    older = W.witness("ita", "old", ["Example Plastics"], "11 Garden Road", "Akron", "44301", "2023-12-31")
+    newer = W.witness("ita", "new", ["Example Plastics"], "20 Birch Lane", "Mogadore", "44260", "2025-12-31")
+    result, _ = W.street_decision([older], set(), chosen=older, outside=[newer])
+    require(result == "newer_filing_other_city", f"cross-city newer filing passed the street check: {result}")
+
+
 def controls(idx, witnesses, occupied, accepted):
+    relocation_control()
     w = witnesses[accepted["address_ref"]]
     require(W.street_decision([w], set())[0] == "eligible", "positive street control failed")
     changed = dict(w, street="99 Example Road")
@@ -129,7 +137,8 @@ def controls(idx, witnesses, occupied, accepted):
     site = dict(site_id=sid, org_id=oid, site_name="Example Plastics - Akron", city="Akron", county="Summit")
     i = W.G.Index([site], [dict(org_id=oid, legal_name="Example Plastics", trade_names="", ultimate_parent_name="Parent Polymer")])
     require(not W.held_name(i, site, "Parent Polymer Inc."), "parent-only filing passed")
-    print("Planted defects caught: other street, competing suites, stale date, duplicate key, raw street change, parent-only name.")
+    print("Planted defects caught: other street, competing suites, stale date, duplicate key, raw street change, "
+          "parent-only name, newer held-name filing in another city.")
 
 
 def expected_data(base, edits, evidence):
