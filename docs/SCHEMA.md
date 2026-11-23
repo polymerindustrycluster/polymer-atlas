@@ -1681,6 +1681,52 @@ self-reports its family, `VERIFIED` verdict and date. The gate replays
 the bytes and quote and applies the existing site street and unit
 checks. The lane and reviewing family run the packet replay.
 
+**Evidence binding routes [2026-11-23, ATLAS-38 G8].** The gate accepts
+the following witnesses for the claims below. The same proof date,
+capture digest, offset and independent reader requirements apply to
+press and SEC EDGAR sources.
+
+- Rubber World and Houlihan Capital notices may support an organization's
+  existence when a matching dateline accompanies a held operator name.
+  An explicit statement naming that operator as headquartered in the
+  held city and state can support the headquarters claim. Replay checks
+  the page's publication date and the exact notice text.
+- For county-bearing registry witnesses, use
+  `facility_name: …; address: STREET, CITY, ST ZIP; county: …` with a
+  recognized structured registry source. Use `place only; quote: …`
+  for an address claim on a site with no street. The gate requires a
+  held operator, exact city, state, ZIP and county for blank-street
+  sites. A county witnessed in a second registry must be explicitly
+  cited and tied to the same physical address in packet replay.
+- Registry operator comparison uses the AGENTS §3 step 2 normalization
+  plus equivalence of `&`, `+` and `and`. The fixed form-word list is
+  `inc llc corp co the ltd company corporation incorporated`. Other
+  words, including geographic qualifiers and plurals, stay in the
+  comparison. A shared parent or generic facility label is insufficient.
+- The county-bearing street route requires equal normalized street
+  lines and designators, state, exact full ZIP and county. The reviewed
+  postal-city pairs are Cleveland/Valley View and Cleveland/Garfield
+  Heights (OH 44125, Cuyahoga), and Cleveland/Euclid (OH 44117, Cuyahoga).
+  Apply those pairs only when a street is held and all those legs match.
+  This route does not establish an organization HQ from a site address.
+- Only CY2021 OSHA ITA uses the verified 43-character company prefix
+  rule. Cite `OSHA ITA CY2021 establishment id …` and quote
+  `company_name: …; establishment_name: …; address: STREET, CITY, ST ZIP`.
+  The raw company value must be exactly 43 characters before matching.
+  The normalized prefix must identify one held organization, with a
+  matching held physical establishment. An organization existence
+  claim also requires its held city and state to match that site.
+- For SEC EDGAR use `government_filing` and cite the exact HTTPS
+  submissions JSON or full filing submission text URL, optionally
+  prefixed by `SEC EDGAR `. The CIK must be the organization's sole
+  held SEC CIK in base and current records. Replay requires the same
+  CIK in the capture and the filer's complete business-address block
+  at the offset in the whitespace-normalized raw capture. A site
+  address must bind to a held headquarters site in base and current data.
+- The Kent State page wrapper `div#page.header-util-ct-3` retains its
+  page body. Main-text extraction still skips nested header, footer and
+  navigation elements.
+
 **Claim types at people grain [v1.10].** The claim vocabulary is
 shared; four of its values have people-grain referents. `existence` =
 the person is the person claimed, styled in a §4.9 Gate-A role on the

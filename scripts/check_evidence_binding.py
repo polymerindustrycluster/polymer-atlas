@@ -162,18 +162,22 @@ PROGRAM_ECOSYSTEM_CLAIMS = {"existence", "scope", "address"}
 class Index:
     """Index records by their declared table, with a shared organization index for foreign keys."""
 
-    def __init__(self, sites, orgs, ecosystem=(), programs=()):
+    def __init__(self, sites, orgs, ecosystem=(), programs=(), links=()):
         self.sites = {s["site_id"]: s for s in sites}
         self.tables = {"sites": self.sites, "organizations": {o["org_id"]: o for o in orgs},
                        "ecosystem": {o["org_id"]: o for o in ecosystem},
                        "programs": {p["program_id"]: p for p in programs}}
         self.orgs = self.tables["organizations"] | self.tables["ecosystem"]
         self._notes = {}
+        self.sec_ciks = defaultdict(set)
+        for link in links:
+            if link["registry"] == "SEC_CIK" and not link.get("site_id"):
+                self.sec_ciks[link["org_id"]].add(link["registry_id"])
 
     @classmethod
     def load(cls, ref=None):
         return cls(rows(ref, "sites_*.csv"), rows(ref, "organizations_*.csv"),
-                   rows(ref, "ecosystem.csv"), rows(ref, "programs.csv"))
+                   rows(ref, "ecosystem.csv"), rows(ref, "programs.csv"), rows(ref, "registry_links.csv"))
 
     def record(self, table, rid):
         return self.tables.get(table, {}).get(rid)
@@ -480,6 +484,97 @@ def record_locality(rec, addr):
     return "UNINSPECTABLE", "locality_not_matched"
 
 
+# Reviewed postal aliases, scoped to the exact state, county and ZIP.
+POSTAL_CITIES = {
+    ("OH", "cuyahoga", "44125"): {"cleveland", "garfield heights", "valley view"},
+    ("OH", "cuyahoga", "44117"): {"cleveland", "euclid"},
+}
+PRESS_HOSTS = {"rubberworld.com", "www.rubberworld.com", "houlihancapital.com", "www.houlihancapital.com"}
+ITA_2021 = "OSHA ITA CY2021 "
+ITA_COMPANY_WIDTH = 43  # CY2021 raw public CSV; adjacent years use different widths.
+
+
+def registry_name(name):
+    return name_key(name.replace("+", " and "))
+
+
+def registry_place(rec, addr, county):
+    """Return the qualifying place rule, or an empty string for an incomplete or conflicting place."""
+    city, state, zip_code, complete = quoted_place(addr)
+    actual = squash(rec.get("city"))
+    expected_zip = (rec.get("zip") or "").strip()
+    if not (complete and actual and city and state == rec.get("state") and zip_code == expected_zip
+            and re.fullmatch(r"\d{5}(?:-\d{4})?", zip_code) and county and county == squash(rec.get("county"))):
+        return ""
+    street = rec.get("street_address") or ""
+    if not street.strip():
+        return "blank_street_registry" if actual == squash(city) else ""
+    if (PAREN_RE.search(addr) or street_suffix_unexplained(street) or street_reason(street, addr)
+            or designators_compare(street, street_part(addr)) != "equal"):
+        return ""
+    if actual == squash(city):
+        return "registry_street"
+    aliases = POSTAL_CITIES.get((state, county, zip_code), set())
+    return "mailing_city" if "cleveland" in (actual, squash(city)) and {actual, squash(city)} <= aliases else ""
+
+
+def route_registry(ev, idx, rec, fam, quote):
+    """County-bearing registry witness or explicitly quoted 2021 ITA company and establishment fields."""
+    src, table, rid, claim = (ev[k] for k in ("source_ref", "record_table", "record_id", "claim_type"))
+    fields = labelled_fields(quote)
+    ita = src.startswith(ITA_2021) and quote.startswith("company_name:")
+    if ita:
+        columns = {"company_name", "establishment_name", "address"}
+    elif (table == "sites" and (fam[1] in ("echo", "osha") or fam[2] == ("permittee",))
+          and quote.startswith("facility_name:")):
+        columns = {"facility_name", "address", "county"}
+    else:
+        return None
+    if (ev["source_class"] not in ("registry", "government_filing") or claim not in ("address", "existence")
+            or not fields or set(fields) != columns or len(LABEL_RE.findall(quote)) != len(columns)):
+        return "HELD", "registry_fields_or_claim", {}
+    addr, county = fields["address"], squash(fields.get("county"))
+    org_id = rec.get("org_id") if table == "sites" else rid
+    operator = idx.orgs.get(org_id, {})
+    if ita:
+        if table not in ("organizations", "sites") or (table == "organizations" and claim != "existence"):
+            return "HELD", "ita_company_claim", {}
+        company = fields["company_name"]
+        if len(company) != ITA_COMPANY_WIDTH or not squash(company):
+            return "HELD", "ita_company_width", {}
+        # A prefix is insufficient by itself: require a unique held organization and a held physical establishment.
+        prefix = squash(company)
+        matches = {oid for oid, org in idx.tables["organizations"].items() if any(
+            len(squash(n)) > len(prefix) and squash(n).startswith(prefix)
+            for n in record_names(org))}
+        sites = [idx.sites[sid] for sid in idx.street_sites(quote_street(addr))
+                 if idx.sites[sid].get("org_id") == org_id]
+        bound = [site for site in sites if registry_place(site, addr, squash(site.get("county"))) == "registry_street"]
+        estab = registry_name(fields["establishment_name"])
+        if (matches == {org_id} and len(bound) == 1 and estab
+                and not ({registry_name(n) for n in idx.parent_names(table, rid)}
+                         & {registry_name(company), estab})
+                and (bound[0]["site_id"] == rid if table == "sites" else
+                     (squash(bound[0]["city"]) == squash(operator.get("hq_city"))
+                      and bound[0]["state"] == operator.get("hq_state")))):
+            return "PASS", "ita_cy2021_unique_prefix_and_establishment", {}
+        return "HELD", "ita_company_or_establishment_not_bound", {}
+    key = registry_name(fields["facility_name"])
+    site_label = LOCALITY_SEP_RE.split(rec.get("site_name") or "", maxsplit=1)[0]
+    held = {registry_name(n) for n in [*record_names(operator), site_label]}
+    parents = {registry_name(n) for n in idx.parent_names(table, rid)}
+    place = registry_place(rec, addr, county)
+    if not key or key not in held or key in parents or generic_label(key, rec.get("city") or "", county):
+        return "FAIL", "registry_operator_not_held", {}
+    if not place:
+        return "FAIL", "registry_place_not_bound", {}
+    if place == "blank_street_registry" and claim == "address" and not ev["claim_detail"].startswith("place only; quote:"):
+        return "HELD", "blank_street_requires_place_only_claim", {}
+    held_keys = idx.held_keys(table, rid)
+    basis = [] if name_keys([fields["facility_name"]]) & held_keys else ["registry_variant"]
+    return "PASS", "+".join([*basis, place]), {}
+
+
 def judge(ev, idx, _alone=False):
     """(verdict, reason, detail dict) for one evidence row. _alone skips the two-records rule (used by that rule)."""
     table, rid, detail, src = ev["record_table"], ev["record_id"], ev["claim_detail"], ev["source_ref"]
@@ -491,7 +586,7 @@ def judge(ev, idx, _alone=False):
     i = detail.find("quote:")
     if i < 0 or not detail[i + 6:].strip():
         return "UNINSPECTABLE", "no_quote", {}
-    if src.startswith("http"):
+    if src.startswith("http") or (ev["source_class"] == "government_filing" and edgar_ref(src)):
         return judge_web(ev, rec, idx, detail[i + 6:].strip())
     claim = ev["claim_type"]
     if table in PROGRAM_ECOSYSTEM_TABLES and claim not in PROGRAM_ECOSYSTEM_CLAIMS:
@@ -499,7 +594,17 @@ def judge(ev, idx, _alone=False):
     fam = family_of(src)
     if fam is None:
         return "UNINSPECTABLE", "unknown_source_family", {}
-    p = parse_quote(detail[i + 6:].strip(), fam)
+    quote = detail[i + 6:].strip()
+    route = route_registry(ev, idx, rec, fam, quote)
+    if route is not None:
+        if route[0] == "PASS" and table == "sites" and not _alone:
+            addr = labelled_fields(quote)["address"]
+            candidates = idx.street_sites(quote_street(addr)) | idx.street_sites("")
+            if any(judge(dict(ev, record_id=sid), idx, _alone=True)[0] == "PASS"
+                   for sid in candidates - {rid}):
+                return "HELD", "held_for_reading:passes_on_two_records", {}
+        return route
+    p = parse_quote(quote, fam)
     if "bad" in p:
         info = {}
         if p.get("facility"):  # measured: the verdict if a shifted-column source's facility label were the operator
@@ -736,9 +841,54 @@ def web_street_alt(rec_street, quote):
     return "spacing" if len(t) > 1 and "".join(t[:3]) in q else ""
 
 
+def press_binding(quote, idx, rid, rec, claim):
+    city, state = squash(rec.get("hq_city")), state_code(rec.get("hq_state"))
+    if not city or not state:
+        return ""
+    names = {registry_name(n) for n in record_names(rec)} - {
+        registry_name(n) for n in idx.parent_names("organizations", rid)}
+    place = rf"([A-Za-z .'-]+),\s*{state}\b"
+    lead = re.match(place + r"\s*[–—-]\s*(.+)", quote, re.I | re.S)
+    if claim == "existence" and lead and squash(lead[1]) == city:
+        if any(n and f" {n} " in f" {registry_name(lead[2])} " for n in names):
+            return "press_dateline"
+    for hq in re.finditer(r"\bheadquartered in " + place + r"\s*,\s*([^.;]+)", quote, re.I):
+        subject = re.split(r"\b(?:is|was|has|operates|announced)\b", hq[2], maxsplit=1, flags=re.I)[0]
+        if squash(hq[1]) == city and registry_name(subject) in names:
+            return "press_explicit_hq"
+    return ""
+
+
+def edgar_ref(source):
+    source = source.removeprefix("SEC EDGAR ")
+    try:
+        u = capture_url(source)
+    except ValueError:
+        return None
+    if u.scheme != "https" or u.query:
+        return None
+    if u.hostname == "data.sec.gov":
+        m = re.fullmatch(r"/submissions/CIK(\d{10})\.json", u.path)
+        if m:
+            return source, m[1], "submissions"
+    if u.hostname == "www.sec.gov":
+        m = re.fullmatch(r"/Archives/edgar/data/([1-9]\d{0,9})/(\d{18})/(\d{10}-\d{2}-\d{6})\.txt", u.path)
+        if m and m[2] == m[3].replace("-", ""):
+            return source, m[1].zfill(10), "filing"
+    return None
+
+
 def judge_web(ev, rec, idx, quote):
     """Apply the existing mechanical floor. A separate proof supplies the independent reading and source replay."""
     table, cls, ct = ev["record_table"], ev["source_class"], ev["claim_type"]
+    if cls == "government_filing" and table in ("sites", "organizations") and ct in ("existence", "address"):
+        if edgar_ref(ev["source_ref"]):
+            return "READ_REQUIRED", "sec_edgar", {}
+    if cls == "press" and table == "organizations" and ct in ("existence", "address"):
+        if host_path(ev["source_ref"])[0] in PRESS_HOSTS:
+            route = press_binding(quote, idx, ev["record_id"], rec, ct)
+            if route:
+                return "READ_REQUIRED", route, {}
     fails, why, info = [], "", {}
     if table in PROGRAM_ECOSYSTEM_TABLES:
         if ct not in PROGRAM_ECOSYSTEM_CLAIMS and not (ct == "activity" and cls == "own_site"):
@@ -907,16 +1057,21 @@ class _Text(HTMLParser):
         self.parts, self.main, self.skip = [], [], []
         self.main_tag = None
         self.main_depth = 0
+        self.publication_dates = set()
 
     def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == "meta" and self.skip == ["head"] and attrs.get("property") == "article:published_time":
+            self.publication_dates.add((attrs.get("content") or "")[:10])
         if self.skip:
             if tag == self.skip[0]:
                 self.skip.append(tag)
             return
-        attrs = dict(attrs)
         role = attrs.get("role")
         labels = f"{attrs.get('id', '')} {attrs.get('class', '')}"
         # Divi labels the whole body with its header layout.
+        if tag == "div" and attrs.get("id") == "page":
+            labels = re.sub(r"(?<!\S)header-util-ct-3(?!\S)", "", labels)
         chrome_label = tag not in ("html", "body") and self.CHROME.search(labels)
         if (tag in self.SKIP or role in self.SKIP_ROLES or chrome_label
                 or "hidden" in attrs or attrs.get("aria-hidden") == "true"):
@@ -1081,6 +1236,9 @@ def proof_capture(r, ev, idx, base_idx, archive, observed):
     m = ARCHIVE_RE.fullmatch(cap)
     original = m[3] if m else cap
     source_ref = ev["source_ref"]
+    edgar = edgar_ref(source_ref) if ev["source_class"] == "government_filing" else None
+    if edgar:
+        source_ref = edgar[0]
     if m:
         if not m[2] or not archive or archive["archive_ref"] != cap.replace(m[1] + "id_/", m[1] + "/", 1):
             raise ValueError("Wayback id_ capture must match the row's archive link")
@@ -1098,15 +1256,86 @@ def proof_capture(r, ev, idx, base_idx, archive, observed):
     capture_url(original)
     rid = ev["record_id"]
     base_record = base_idx.record(table, rid)
+    cited_page = same_page(original, source_ref) if m and not edgar else original == source_ref
+    if (edgar or ev["source_class"] == "press") and not cited_page:
+        raise ValueError("capture differs from the row's cited page")
+    if edgar:
+        if edgar_ref(original) != edgar or not edgar_matches_record(edgar[1], ev, base_idx):
+            raise ValueError("EDGAR capture CIK differs from the base record's sole held CIK")
+        if not edgar_matches_record(edgar[1], ev, idx):
+            raise ValueError("EDGAR capture CIK differs from the current record's sole held CIK")
+        return cap
+    if ev["source_class"] == "press":
+        if capture_url(original).hostname not in PRESS_HOSTS:
+            raise ValueError("capture publisher is outside the press route")
+        quote = norm_space(ev["claim_detail"].partition("quote:")[2])
+        if not press_binding(quote, base_idx, rid, base_record, ev["claim_type"]):
+            raise ValueError("press quote does not bind to the base record")
+        return cap
     if record_website(base_idx, table, base_record) != record_website(idx, table, idx.record(table, rid)):
         raise ValueError("record website differs from base")
     websites = record_websites(base_idx, table, base_record, preserve_path=True)
     if (not any(own_domain(host_path(original, preserve_path=True), website) for website in websites)
             or not matches_record_page(base_idx, table, base_record, original)):
         raise ValueError("capture not_own_site")
-    if not (same_page(original, source_ref) if m else original == source_ref):
+    if not cited_page:
         raise ValueError("capture differs from the row's cited page")
     return cap
+
+
+def edgar_matches_record(cik, ev, idx):
+    rec = idx.record(ev["record_table"], ev["record_id"])
+    oid = (rec or {}).get("org_id")
+    return bool(oid and idx.sec_ciks.get(oid) == {cik}
+                and sum(cik in codes for codes in idx.sec_ciks.values()) == 1)
+
+
+def edgar_business(data, route):
+    """Identify the filer and its business address in the source's own fields."""
+    text = data.decode("utf-8")
+    if route == "submissions":
+        block = json.loads(text)
+        address = block["addresses"]["business"]
+        match = re.search(r'"business"\s*:\s*(\{[^{}]*\})', text)
+        if not match or json.loads(match[1]) != address:
+            raise ValueError("EDGAR business address is missing or ambiguous")
+        fields = [address.get(k) for k in ("street1", "street2", "city", "stateOrCountry", "zipCode")]
+        return str(block["cik"]).zfill(10), fields, norm_space(match[1]), norm_space(text)
+    # Full submission .txt files carry the authoritative filer header ahead of the document bodies.
+    header = re.search(r"<SEC-HEADER>(.*?)</SEC-HEADER>", text, re.S)
+    if not header:
+        raise ValueError("EDGAR full submission header is absent")
+    filer = re.findall(r"(?m)^FILER:\s*\n((?:[ \t].*\n|\n)+)", header[1])
+    if len(filer) != 1:
+        raise ValueError("EDGAR document must have one filer")
+    cik = re.findall(r"(?m)^\s*CENTRAL INDEX KEY:\s*(\d{10})\s*$", filer[0])
+    addresses = re.findall(r"(?m)^\tBUSINESS ADDRESS:\s*\n((?:\t{2,}[^\n]+\n)+)", filer[0])
+    if len(cik) != 1 or len(addresses) != 1:
+        raise ValueError("EDGAR filer CIK or business address is missing or ambiguous")
+    fields = dict(line.strip().split(":", 1) for line in addresses[0].splitlines())
+    return cik[0], [fields.get(k, "").strip() for k in ("STREET 1", "STREET 2", "CITY", "STATE", "ZIP")], (
+        norm_space(addresses[0])), norm_space(text)
+
+
+def edgar_replay(ev, rec, base_record, data, quote, start):
+    _, cik, route = edgar_ref(ev["source_ref"])
+    actual_cik, fields, business, text = edgar_business(data, route)
+    if actual_cik != cik or quote != business or text[start:start + len(quote)] != quote:
+        return "EDGAR quote must replay the linked filer's complete business address"
+    line1, line2, city, state, zip_code = fields
+    if not all(isinstance(x, str) and x for x in (line1, city, state, zip_code)):
+        return "EDGAR business address is incomplete"
+    street = ", ".join(filter(None, (line1, line2)))
+    addr = f"{street}, {city}, {state} {zip_code}"
+    for held in (rec, base_record):
+        if ev["record_table"] == "sites":
+            county = squash(held.get("county"))
+            if (held.get("site_type") not in ("hq_only", "hq_and_plant")
+                    or registry_place(held, addr, county) not in ("registry_street", "mailing_city")):
+                return "EDGAR business address does not bind to the held headquarters site"
+        elif ev["claim_type"] != "existence" or not hq_in_quote(addr, held):
+            return "EDGAR business address does not bind the claimed organization locality"
+    return ""
 
 
 def proof_problem(r, ev, idx, base_idx, archive, observed, builder, fetch):
@@ -1136,9 +1365,19 @@ def proof_problem(r, ev, idx, base_idx, archive, observed, builder, fetch):
         return "capture_sha256 does not match the decoded bytes"
     start = int(r["quote_offset"])
     try:
+        table, rid = ev["record_table"], ev["record_id"]
+        if ev["source_class"] == "government_filing" and edgar_ref(ev["source_ref"]):
+            return edgar_replay(ev, idx.record(table, rid), base_idx.record(table, rid), data, quote, start)
+        if ev["source_class"] == "press":
+            parser = _Text()
+            parser.feed(data.decode("utf-8"))
+            if len(parser.publication_dates) != 1:
+                return "press capture must contain one publication date"
+            if proof_date(next(iter(parser.publication_dates))) > proof_date(r["capture_date"]):
+                return "press publication date is after the capture"
         actual = capture_text(data)[start:start + len(quote)]
-    except UnicodeDecodeError:
-        return "capture text is not valid UTF-8"
+    except (ValueError, KeyError, TypeError, AttributeError):
+        return "capture fields could not be read"
     if actual != quote:
         return "the quote is not at that offset in the capture's main text"
     return ""
@@ -1149,8 +1388,10 @@ def check_proofs(results, evs, idx, load_base, merge, pr_head, archive, read, fe
     need = defaultdict(list)
     for row in results:
         ev = evs[row["evidence_id"]]
-        if (row["verdict"] == "READ_REQUIRED" and row["reason"] == "mechanics_clear"
-                and ev["source_class"] == "own_site"):
+        if row["verdict"] == "READ_REQUIRED" and (
+            (row["reason"] == "mechanics_clear" and ev["source_class"] == "own_site")
+            or row["reason"] in ("press_dateline", "press_explicit_hq", "sec_edgar")
+        ):
             need[label_folder(row["created_by"])].append(row)
     if not need:
         return []
@@ -1203,7 +1444,9 @@ def check_proofs(results, evs, idx, load_base, merge, pr_head, archive, read, fe
             if why:
                 problems.append(f"{at}: {eid}: {why}")
             else:
-                result.update(verdict="PASS", reason="web_proof_replayed")
+                route = result["reason"]
+                result.update(verdict="PASS", reason="web_proof_replayed" if route == "mechanics_clear"
+                              else f"{route}_proof_replayed")
     return problems
 
 
@@ -1340,7 +1583,7 @@ def main(argv=None):
     if fails:
         print("A FAIL row has no waiver: fix the row, or take it out and hold it as a lead.")
     if held:
-        print("Held rows require a binding match. Eligible own-site rows may supply a proof.")
+        print("Held rows require a binding match. Eligible own-site, press and SEC EDGAR rows may supply a proof.")
     for problem in problems[:200]:
         print("  PROOF " + problem)
     if len(problems) > 200:
