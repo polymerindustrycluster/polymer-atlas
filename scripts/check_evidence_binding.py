@@ -986,12 +986,10 @@ def proof_capture(r, ev, idx, archive):
         if captured != datetime.strptime(m[1], "%Y%m%d%H%M%S").date() or captured != proof_date(archive["captured_at"]):
             raise ValueError("capture date differs from the archive index or timestamp")
         observed = proof_date(ev.get("observed_date", ""))
-        # Markets use the existing activity/scope claims.
-        if ev["claim_type"] in ("address", "market", "activity", "scope"):
-            oldest = observed.replace(year=observed.year - 2, day=28 if observed.month == 2 and observed.day == 29
-                                      else observed.day)
-            if not oldest <= captured <= observed:
-                raise ValueError("archive capture is outside the two years ending on observed_date")
+        oldest = observed.replace(year=observed.year - 2, day=28 if observed.month == 2 and observed.day == 29
+                                  else observed.day)
+        if not oldest <= captured <= observed:
+            raise ValueError("archive capture is outside the two years ending on observed_date")
     elif url.hostname == "web.archive.org":
         raise ValueError("Wayback capture must use a timestamp and id_")
     table = ev["record_table"]

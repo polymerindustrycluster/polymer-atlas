@@ -780,7 +780,6 @@ def has_commits(*shas):
                               capture_output=True).returncode == 0 for s in shas)
 
 
-@unittest.skipUnless(has_commits("6a76e923", "17834918"), "known-answer commits not in this clone (CI fetches all)")
 class WebProofs(unittest.TestCase):
     SOURCE = "https://acmepolymer.example/about"
     QUOTE = "Acme Polymer makes components for the automotive industry."
@@ -909,6 +908,13 @@ class WebProofs(unittest.TestCase):
         self.assert_held("outside the two years ending on observed_date")
         self.fetch.assert_not_called()
 
+    def test_archived_existence_capture_older_than_two_years(self):
+        self.ev.update(claim_type="existence", claim_detail=f"company existence; quote: {self.QUOTE}")
+        self.proof["claim_sha256"] = b.claim_sha256(self.ev)
+        self.archive("20130601000000")
+        self.assert_held("outside the two years ending on observed_date")
+        self.fetch.assert_not_called()
+
     def test_capture_off_record_website(self):
         self.proof["capture"] = "https://other.example/about"
         self.assert_held("capture not_own_site")
@@ -945,6 +951,7 @@ class WebProofs(unittest.TestCase):
             connect.assert_not_called()
 
 
+@unittest.skipUnless(has_commits("6a76e923", "17834918"), "known-answer commits not in this clone (CI fetches all)")
 class KnownAnswer(unittest.TestCase):
     """Batch 6 (PR #458, 6a76e923..17834918) added 23,564 rows with every check green; this gate must block it."""
 

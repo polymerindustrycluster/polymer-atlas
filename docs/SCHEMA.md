@@ -1645,7 +1645,8 @@ and the capture falls within the two calendar years ending on the row's
 `observed_date`, inclusive. Market observations use the existing
 `activity` or `scope` claim type. Record the original company URL in
 `source_ref`, the exact capture and its date in the §4.22 archive link,
-and the archived route in `claim_detail`. An older capture stays a lead.
+and the archived route in `claim_detail`. Every archived proof uses this
+date window. An older capture stays a lead.
 
 Each own-site web row submitted for admission carries a line in the
 `tasks/<folder>/BINDING_PROOF.csv` named by its `created_by` label. Use
