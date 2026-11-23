@@ -1257,5 +1257,185 @@ class BlockingFixesTest(unittest.TestCase):
         self.assertIn("all locations held, not only US states", home)
 
 
+
+class RefuteFixesTest(unittest.TestCase):
+    """ATLAS-40 PR 4: findings of the completion refute (geography labels, phone directory order, privacy filters, HOWTO claims)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        tmp = Path(cls.tmp.name)
+        make_directory_db(tmp / "f.db")
+        con = sqlite3.connect(tmp / "f.db")
+        crm = "https://example.invalid/crm-source"
+        con.execute("UPDATE organizations SET sources=? WHERE org_id='ORG-000002'", ("PIC CRM " + crm,))
+        con.execute("UPDATE organizations SET sources=? WHERE org_id='ORG-000003'",
+                    ("Directory https://example.org/k; CRM export https://example.invalid/crm2; staging working/x.csv",))
+        con.execute("UPDATE people SET public_profile_url=?", ("https://example.invalid/profile?mail=fixture%40example.invalid",))
+        con.execute("UPDATE sites SET country='CA' WHERE site_id='SITE-000006'")
+        con.execute("UPDATE organizations SET description_1line=? WHERE org_id='ORG-000006'",
+                    ("Designed endpoint parent (verification wave 1, lane CF adjudication s4): Fixture Co.",))
+        con.execute("UPDATE organizations SET description_1line='Makes foam parts.' WHERE org_id='ORG-000005'")
+        con.execute("UPDATE organizations SET website='none_found' WHERE org_id='ORG-000004'")
+        con.execute("UPDATE organizations SET processes='other_specified_in_notes;extrusion' WHERE org_id='ORG-000005'")
+        con.commit()
+        con.close()
+        cls.out = tmp / "site"
+        build_site.build_site(tmp / "f.db", cls.out, None, repo_url="https://example.com/repo",
+                              git={"sha": "abc1234", "date": "2026-11-01", "dirty": False}, today="2026-11-01")
+        cls.crm = crm
+        cls.profile = "https://example.invalid/profile?mail=fixture%40example.invalid"
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def read(self, rel):
+        return (self.out / rel).read_text(encoding="utf-8")
+
+    def test_geography_of_a_count_is_named_not_called_all_states(self):
+        self.assertEqual(build_site.geo_note([{"country": "US"}, {"country": "CA"}, {"country": "GB"}]), "1 in the US, 2 elsewhere")
+        for rel in ("index.html", "skyline.html"):
+            self.assertNotIn("all states", self.read(rel), rel)
+        home = self.read("index.html")
+        self.assertRegex(home, r"Site rows by ring \(operating status active; tiers A-C; all locations held: \d+ in the US, [1-9]\d* elsewhere\)")
+        self.assertRegex(self.read("skyline.html"), r"\d+ in the US, [1-9]\d* elsewhere")
+
+    def test_directory_summary_is_a_block_that_starts_closed_on_a_phone_so_the_list_follows_the_tab_order(self):
+        html = self.read("directory.html")
+        self.assertIn('<details class="dsummary" id="counts" open>', html)         # open on a desktop and without JavaScript
+        self.assertIn('href="#counts"', html)                                        # the way to the county counts from the top
+        self.assertNotIn('href="#find"', html)                                       # no shortcut into the part that is hidden without JavaScript
+        css = self.read("style.css")
+        self.assertNotIn(".dpage", css)                                              # no CSS reordering: visual order is document order
+        self.assertNotRegex(css, r"dsummary\{[^}]*order")
+        js = self.read("directory.js")
+        self.assertIn("if (summary) summary.open = false;", js)
+        self.assertRegex(js, r"details\.facet'\), function \(d\) \{ d\.open = false; \}")
+        self.assertLess(html.index('id="counts"'), html.index('id="dfind"'))          # document order: summary, then the finder and list
+
+    def test_embeds_email_sees_every_encoding(self):
+        for u in ("https://x.example/p?mail=a@b.example", "https://x.example/p?mail=a%40b.example", "https://x.example/p?mail=a%2540b.example"):
+            self.assertTrue(build_site.embeds_email(u), u)
+            self.assertIsNone(build_site.safe_href(u), u)
+        self.assertFalse(build_site.embeds_email("https://x.example/people/jane-roe"))
+
+    def test_crm_marked_sources_never_render_and_the_omitted_count_is_stated(self):
+        page = self.read("orgs/ORG-000002.html")
+        self.assertNotIn(self.crm, page)
+        self.assertNotIn("PIC CRM", page)
+        self.assertIn("1 source entry left out of this view because it refers to internal material", page)
+        k = self.read("orgs/ORG-000003.html")
+        self.assertIn("https://example.org/k", k)                                     # the public entry stays
+        self.assertNotIn("crm2", k)
+        self.assertIn("2 source entries left out of this view because they refer to internal material", k)
+        for p in self.out.rglob("*.html"):
+            self.assertNotIn(self.crm, p.read_text(encoding="utf-8"), p.name)
+
+    def test_encoded_email_in_a_profile_url_is_published_nowhere(self):
+        self.assertNotIn(self.profile, self.read("experts.json"))
+        self.assertNotIn("fixture%40example", self.read("experts.json"))
+        for p in (self.out / "orgs").glob("*.html"):
+            self.assertNotIn("fixture%40example", p.read_text(encoding="utf-8"), p.name)
+
+    def test_source_classifier_catches_routine_private_labels_and_keeps_the_public_member_list(self):
+        private = ("PIC crm https://example.invalid/a", "workshop/internal/reader.csv https://example.invalid/b", "staging/x.csv https://example.invalid/c",
+                   "CRM export https://example.invalid/d", "working/x.csv", "internal/notes https://example.invalid/e")
+        for e in private:
+            self.assertEqual(build_site.source_urls(e), [], e)
+            self.assertEqual(build_site.omitted_sources(e), 1, e)
+        keep = "Public PIC member list https://polymerindustrycluster.org/members; Company site https://example.com/about"
+        self.assertEqual(build_site.source_urls(keep), ["https://polymerindustrycluster.org/members", "https://example.com/about"])
+        self.assertEqual(build_site.omitted_sources(keep), 0)
+        for ordinary in ("University course page https://example.edu/education/workshop/session.pdf",
+                         "Plant page https://example.com/internal/about", "Public university workshop announcement https://example.edu/workshop", "Internal Revenue Service filing https://irs.example/f",
+                         "Staging area plant page https://example.com/staging"):
+            self.assertEqual(build_site.omitted_sources(ordinary), 0, ordinary)
+            self.assertEqual(len(build_site.source_urls(ordinary)), 1, ordinary)
+        self.assertEqual(build_site.lede("Exists only in the pic crm record."), build_site.lede("Exists only in the PIC CRM record."))
+        self.assertIn("withheld", build_site.lede("Exists only in the pic crm record."))
+
+    def test_description_with_build_wording_is_withheld_on_the_page_and_in_the_graph(self):
+        leak = self.read("orgs/ORG-000006.html")
+        self.assertNotIn("verification wave", leak)
+        self.assertNotIn("lane CF", leak)
+        self.assertIn("withheld from this view because it may refer to internal material", leak)
+        ok = self.read("orgs/ORG-000005.html")
+        self.assertIn('<p class="lede">Makes foam parts.</p>', ok)                        # an ordinary description still shows
+        self.assertTrue(build_site.internal_wording("Designed endpoint parent (verification wave 1, lane CF adjudication s4)"))
+        self.assertTrue(build_site.internal_wording("Rung 1 carried by the packet; CHANGED from wave 7"))
+        self.assertFalse(build_site.internal_wording("Injection molder of automotive parts."))
+
+    def test_source_classifier_both_directions_on_astras_six_citations(self):
+        cases = [("Public university workshop announcement https://example.invalid/education/course", True),
+                 ("Public PIC member list https://example.invalid/members", True),
+                 ("Internal Revenue Service filing https://example.invalid/filing", True),
+                 ("Staging area plant page https://example.invalid/plant", True),
+                 ("workshop/internal/reader.csv https://example.invalid/private", False),
+                 ("Public university course https://example.invalid/education/workshop/session.pdf", True),
+                 ("AHFA workshop PDF https://www.ahfa.us/Portals/0/workshop/2024/session.pdf", True),
+                 ("staging/working/x.csv", False)]
+        for text, public in cases:
+            self.assertEqual(build_site.omitted_sources(text), 0 if public else 1, text)
+            self.assertEqual(bool(build_site.source_urls(text)), public, text)
+
+    def test_temporary_record_ids_are_withheld_from_descriptions(self):
+        for text in ("Maker of foam (NEW:MJ-07) in Ohio", "NEW:AB-123 parent"):
+            self.assertTrue(build_site.internal_wording(text), text)
+            self.assertIn("withheld", build_site.lede(text))
+        self.assertFalse(build_site.internal_wording("Makes NEW England clam shells; ID: MJ-07"))
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("bg", Path(build_site.__file__).resolve().parent / "build_graph.py")
+        bg = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(bg)
+        self.assertEqual(bg.public_description("Parent (NEW:MJ-07)"), "")
+
+    def test_internal_wording_filter_is_the_blind_audit_scan(self):
+        root = Path(build_site.__file__).resolve().parent.parent
+        src = (root / "tasks" / "blind-audit-11-2026-11-17" / "sample.py").read_text(encoding="utf-8")
+        pattern = re.search(r"^LEAK = re\.compile\((r'.*'), re\.I\)$", src, re.M).group(1)
+        self.assertEqual(eval(pattern), build_site.INTERNAL_RE.pattern)                   # reused, not a second scan
+
+    def test_raw_data_markers_are_not_shown_as_words(self):
+        page = self.read("orgs/ORG-000004.html")
+        self.assertNotIn("none_found", page)
+        self.assertIn("No website found", page)
+        five = self.read("orgs/ORG-000005.html")
+        self.assertNotIn("other specified in notes", five)
+        self.assertIn("other (specified in the record&#x27;s notes, which are not published)", five.replace("&#39;", "&#x27;"))
+        self.assertNotIn("other specified in notes", self.read("directory.json"))
+
+    def test_stacked_phone_headers_hold_no_reachable_sort_button(self):
+        self.assertIn("table.stack thead button.sort{display:none}", self.read("style.css"))
+
+    def test_skyline_loads_nothing_heavy_on_a_phone(self):
+        html = self.read("skyline.html")
+        self.assertIn('data-libs="vendor/three.min.js" data-boot="skyline.js"', html)
+        self.assertNotRegex(html, r'<script[^>]*src="(?:vendor/three\.min\.js|skyline\.js)"')   # only explorer.js, and only from 720 px up
+        self.assertIn('class="viz-summary"', html)
+        self.assertIn("hero-sky{display:none!important}", self.read("style.css"))
+
+    def test_layout_shift_and_long_task_fixes_are_in_place(self):
+        css = self.read("style.css")
+        self.assertIn("#browse{min-height:100vh}", css)
+        self.assertIn("#chips{min-height:5.6rem}", css)
+        self.assertIn('rel="preload" href="fonts/lato-400-latin.woff2"', self.read("index.html"))
+        self.assertIn("new IntersectionObserver", self.read("sortable.js"))               # pages with dozens of tables enhance them as they near the screen
+
+    def test_howto_preview_names_every_page_that_fetches_data(self):
+        doc = (Path(build_site.__file__).resolve().parent.parent / "docs" / "SITE_HOWTO.md").read_text(encoding="utf-8")
+        for page in ("`directory.html`", "`experts.html`", "`skyline.html`", "`search.html`", "`map.html`"):
+            self.assertIn(page, doc.split("## Preview locally")[1].split("## What is deliberately not published")[0])
+
+    def test_howto_publishing_recipes_build_the_graph_pages_and_no_claim_is_left_that_the_audit_refuted(self):
+        doc = (Path(build_site.__file__).resolve().parent.parent / "docs" / "SITE_HOWTO.md").read_text(encoding="utf-8")
+        self.assertNotRegex(doc, r"python3 scripts/build_site\.py\ncd build/site")
+        self.assertIn("python3 scripts/build_pages.py          # the whole site", doc)
+        self.assertIn("netlify deploy --dir build/pages", doc)
+        for gone in ("so a phone transfers only the small page", "The only page that loads three.js;", "all links are relative, so a project sub-path works.",
+                     "keeping the query string and hash (`prospects.js`, with a refresh tag for no-JavaScript)", "the script only reads"):
+            self.assertNotIn(gone, doc)
+
+
 if __name__ == "__main__":
     unittest.main()
