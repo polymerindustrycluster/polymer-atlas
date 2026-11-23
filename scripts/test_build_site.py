@@ -330,16 +330,16 @@ class BuildSiteTest(unittest.TestCase):
         self.assertEqual(row[c["inh"]], 1)
         self.assertIn("*", self.read("counties/summit.html"))
 
-    def test_external_requests_only_on_map_page(self):
+    def test_leaflet_is_vendored_and_osm_tiles_are_the_only_external_request(self):
         map_html = self.read("map.html")
-        self.assertIn("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js", map_html)
-        self.assertIn("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css", map_html)
-        self.assertIn("OpenStreetMap", self.read("map.js"))
+        self.assertIn('href="vendor/leaflet/leaflet.css"', map_html)
+        self.assertIn('src="vendor/leaflet/leaflet.js"', map_html)
+        self.assertNotIn("unpkg.com", map_html)
+        self.assertIn("tile.openstreetmap.org", self.read("map.js"))
         self.assertIn("reference data", map_html)
         pat = re.compile(r'<(?:script|link|img)\b[^>]*(?:src|href)="https?://')
         for p in self.out.rglob("*.html"):
-            if p.name != "map.html":
-                self.assertIsNone(pat.search(p.read_text(encoding="utf-8")), p.name)
+            self.assertIsNone(pat.search(p.read_text(encoding="utf-8")), p.name)
 
     def test_index_provenance_and_license(self):
         idx = self.read("index.html")
@@ -522,7 +522,8 @@ class DirectoryFixtureTest(unittest.TestCase):
 
     def test_no_prospect_or_pitch_wording_on_the_built_site(self):
         for p in self.out.rglob("*"):
-            if p.is_file() and p.name != "prospects.html" and p.suffix in {".html", ".js", ".json", ".css", ".csv"}:
+            if p.is_file() and p.name != "prospects.html" and p.suffix in {".html", ".js", ".json", ".css", ".csv"} \
+                    and "vendor" not in p.relative_to(self.out).parts:        # vendored libraries are not our wording ("pitch" is a camera angle)
                 self.assertNotRegex(p.read_text(encoding="utf-8-sig"), r"(?i)prospect|pitch", str(p.relative_to(self.out)))
 
     def test_prospects_urls_still_work(self):
@@ -945,7 +946,9 @@ class SiteShellTest(unittest.TestCase):
         for path in self.pages:
             with self.subTest(page=str(path.relative_to(self.out))):
                 p = self.parsed(path)
-                self.assertEqual([c.rsplit("/", 1)[-1] for c in p.css if not c.startswith("http")], ["style.css"])   # the map's Leaflet CSS is vendored in PR 2
+                self.assertEqual([c.rsplit("/", 1)[-1] for c in p.css],
+                                 ["style.css", "leaflet.css"] if path.name == "map.html" and path.parent == self.out else ["style.css"])
+                self.assertFalse([c for c in p.css if c.startswith("http")])
                 self.assertEqual(p.skip, ["#main"])
                 self.assertIn("main", p.ids)
                 self.assertEqual(p.landmarks, {"main", "footer"})
@@ -1019,6 +1022,86 @@ class SiteShellTest(unittest.TestCase):
         self.assertNotIn("data-nocsv", county)
         self.assertIn('id="dtable" class="stack" data-nosort data-nofilter data-nocsv', (self.out / "directory.html").read_text(encoding="utf-8"))   # the list has its own toolbar
 
+    @staticmethod
+    def external_refs(text):
+        """Every src/href on a script, link, img, iframe or source tag that names another host, read by an HTML parser
+        (a regex is fooled by a '>' inside an earlier attribute value)."""
+        found = []
+
+        class P(HTMLParser):
+            def handle_starttag(self, tag, attrs):
+                if tag in ("script", "link", "img", "iframe", "source", "video", "audio", "embed", "object"):
+                    for name, value in attrs:
+                        v = (value or "").strip().lower()
+                        if name in ("src", "href", "data", "poster", "srcset") and re.match(r"(?:https?:)?//", v):
+                            found.append(f"<{tag} {name}={value}>")
+        p = P()
+        p.feed(text)
+        p.close()
+        return found
+
+    def test_the_external_reference_check_catches_every_way_to_write_one(self):
+        for sample in ('<script src="https://x.example/a.js"></script>', "<script src='https://x.example/a.js'></script>",
+                       "<script src=https://x.example/a.js></script>", '<link rel="stylesheet" href="//x.example/a.css">',
+                       "<img alt='' src='http://x.example/a.png'>", '<script defer SRC = "https://x.example/a.js">',
+                       '<script title="Maps > Layers" src="https://example.invalid/lib.js"></script>',
+                       "<script title='a > b' data-x=\"c > d\" src='//example.invalid/lib.js'></script>"):
+            self.assertTrue(self.external_refs(sample), sample)
+        for sample in ('<script src="shell.js"></script>', "<link rel='stylesheet' href='style.css'>", '<a href="https://github.com/x">x</a>',
+                       '<script title="https://x.example" src="a.js"></script>'):
+            self.assertFalse(self.external_refs(sample), sample)
+
+    def test_no_page_or_script_asks_another_host_for_anything_but_osm_tiles(self):
+        for path in self.pages:
+            refs = self.external_refs(path.read_text(encoding="utf-8"))
+            self.assertEqual(refs, [], str(path.relative_to(self.out)))
+        js_pat = re.compile(r"""(?:fetch\(|importScripts\(|\.src\s*=|new URL\()\s*[`"']https?://""")
+        for path in self.out.rglob("*.js"):
+            if "vendor" in path.relative_to(self.out).parts:
+                continue
+            text = path.read_text(encoding="utf-8")
+            for m in js_pat.finditer(text):
+                self.assertIn("tile.openstreetmap.org", text[m.start():m.end() + 40], path.name)
+
+    def test_vendored_libraries_are_published_with_license_and_checksums(self):
+        for lib in build_site.VENDOR_LIBS:
+            sums = (self.out / "vendor" / lib / "SHA256SUMS").read_text(encoding="utf-8")
+            self.assertRegex(sums, r"registry integrity sha512-")
+            self.assertTrue((self.out / "vendor" / lib / "LICENSE").is_file(), lib)
+
+    def test_each_explorer_page_names_files_that_exist_and_holds_no_data(self):
+        for name, boot, data in (("index", "graph.js", "graph.json"), ("map", "map-network.js", "map-network.json"),
+                                 ("events", "trade-shows.js", "trade-shows.json")):
+            path = self.out / "graph" / f"{name}.html"
+            text = path.read_text(encoding="utf-8")
+            with self.subTest(page=name):
+                self.assertLess(len(text), 60_000)                        # the data is fetched on a big screen, never shipped to a phone
+                self.assertNotRegex(text, r"<script(?![^>]*\bsrc=)[^>]*>")  # no inline script, no inline JSON
+                libs = re.search(r'data-libs="([^"]*)"', text).group(1).split()
+                self.assertEqual(re.search(r'data-boot="([^"]*)"', text).group(1), boot)
+                for rel in [*libs, boot, data]:
+                    self.assertTrue((path.parent / rel).is_file(), rel)   # each resolves, relative to the page
+                self.assertIn('class="viz-summary"', text)                # a phone gets a summary with the ring legend
+                self.assertIn("Ring 1", text)
+                self.assertIn('href="../directory.html"', text)           # and the way to the company list
+                self.assertIn('href="../search.html"', text)              # and to the Atlas-wide search
+                self.assertNotIn("same companies", text)                  # the list is the 18 PIC counties, not every company on the graph
+                self.assertIn("18 PIC counties", text)
+
+    def test_explorer_loader_skips_phones_and_the_legend_wording(self):
+        js = (self.out / "explorer.js").read_text(encoding="utf-8")
+        self.assertIn("719.98", js)                                        # below 720 px: nothing is loaded
+        geo = (self.out / "graph" / "map-network.js").read_text(encoding="utf-8")
+        self.assertIn("if (vw < 10 || vh < 10) return;", geo)                # a hidden stage (shrunk to a phone) is not drawn
+        self.assertEqual(geo.count("ctx.arc("), geo.count("Math.max(0, "))    # every arc radius is clamped at zero
+        self.assertRegex(js, r"narrow\.addEventListener\('change'")        # and it loads when the window grows past 720 px (rotate, resize)
+        graph = (self.out / "graph" / "graph.js").read_text(encoding="utf-8")
+        self.assertNotIn("Not on the public member list", graph)           # absence from the public list is never stated (AGENTS 5.1)
+        for rel in ("graph.js", "map-network.js", "trade-shows.js"):
+            text = (self.out / "graph" / rel).read_text(encoding="utf-8")
+            self.assertNotRegex(text, r"--ring[1-5x]")
+            self.assertNotIn("producers & processors", text)               # ring names come from RINGS
+
     def test_phone_menu_toggles_aria_expanded(self):
         js = (self.out / "shell.js").read_text(encoding="utf-8")
         self.assertIn("aria-expanded", js)
@@ -1029,7 +1112,7 @@ class SiteShellTest(unittest.TestCase):
             text = (self.out / "graph" / f"{name}.html").read_text(encoding="utf-8")
             with self.subTest(page=name):
                 self.assertIn('<main id="main"', text)
-                self.assertIn('href="../directory.html"', text)           # the list view of the same companies
+                self.assertIn('href="../directory.html"', text)           # the company list (18 PIC counties)
 
 
 if __name__ == "__main__":
