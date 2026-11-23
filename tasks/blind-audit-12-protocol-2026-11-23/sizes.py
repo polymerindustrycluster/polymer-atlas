@@ -22,11 +22,11 @@ BRIEF_FIGURE = {'target': 0.10, 'true_rate': 0.01, 'brief_n': 35}  # the lane br
 # Pre-registered plan. n1 = the ruling's size at 2% true error; n2 = the ruling's size at 3%. Battery item B-POWER may raise a 10% stratum's n2.
 PLAN = {
     'PIC18_RECORDS':     dict(target=0.05, n1=205, n2=460),
-    'REST_OHIO_RECORDS': dict(target=0.10, n1=55, n2=71),
-    'REST_US_RECORDS':   dict(target=0.10, n1=55, n2=71),
-    'RESEARCHERS':       dict(target=0.10, n1=55, n2=71),
-    'PROGRAMS':          dict(target=0.10, n1=55, n2=71),
-    'EVENTS':            dict(target=0.10, n1=55, n2=71),
+    'REST_OHIO_RECORDS': dict(target=0.10, n1=55, n2=110),
+    'REST_US_RECORDS':   dict(target=0.10, n1=55, n2=110),
+    'RESEARCHERS':       dict(target=0.10, n1=55, n2=110),
+    'PROGRAMS':          dict(target=0.10, n1=55, n2=110),
+    'EVENTS':            dict(target=0.10, n1=55, n2=110),
 }
 
 

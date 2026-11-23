@@ -282,3 +282,20 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   2026-11-01 ruling the site lists organizations not on the public member list, with its caveat, which is the most that public
   data allows.
 - **Decided by:** the repo owner, in the controller's session, 2026-11-23, as multiple choice.
+
+## 2026-11-23: round 20 rulings, own-site process evidence, blind audit 12 scope and size, program specialty tags
+
+- **Own-site pages for process ("Admit, company or plant"):** a company's own page may witness a process claim. It fills the
+  organization record; it fills a plant (site) only when the page names that plant's city or the company has one site. The
+  per-row proof and capture replay of SCHEMA §4.13 (PR #490) and a reading by a second model family apply to every row.
+  Basis: the read-only pilot met its pre-registered floor exactly: a reader agreed with a proposed term for 4 of 40 sampled
+  PIC-18 owners whose process is unknown (5 of 5 terms agreed); 2 of the 4 tie the process to the PIC-18 plant.
+- **Patents stay leads.** The patent pilot missed its pre-registered floor: a reader agreed for 3 of the 50 PIC-18
+  process-unknown owners with a patent lead, against a floor of 5.
+- **Blind audit 12 ("Accept all defaults", "Raise to 110"):** the scope questions B1 to B9 of
+  `tasks/blind-audit-12-protocol-2026-11-23/PROTOCOL.md` section 9 take their recommended defaults, and each 10% stratum reads
+  up to 110 records at stage 2 instead of 71 (a stratum whose true record error is 3% then passes about 77% of the time, and
+  one truly at 10% passes about 1.4% of the time). PIC-18 stays at 205 and 460.
+- **Program specialty tags ("Wrong: REJECT"):** a specialty tag on a program record that its cited page does not state makes
+  the record wrong; the tag is removed or replaced with what the page states.
+- **Decided by:** the repo owner, in the controller's session, 2026-11-23, as multiple choice.

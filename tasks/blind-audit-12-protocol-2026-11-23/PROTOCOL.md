@@ -184,7 +184,7 @@ Bound = two-sided 95% Wilson, z = 1.959964. For a non-census stratum, stage 1 re
 | stratum | target | n1 | n2 | early_k | futile_k | final_k | P(pass), true 2% | P(pass), true 3% | false pass at true = target |
 |---|---|---|---|---|---|---|---|---|---|
 | PIC18_RECORDS | 5% | 205 | 460 | 2 | 12 | 13 | 92% | 49% | 1.7% |
-| each 10% stratum (x5) | 10% | 55 | 71 | 0 | 3 | 2 | 83% | 64% | 2.3% |
+| each 10% stratum (x5) | 10% | 55 | 110 | 0 | 5 | 4 | 93% | 77% | 1.4% |
 
 **Sizes recomputed with code (`sizes.py`, continuous Wilson bound at k = rate x n), against DECISIONS.md:** 5% target at true 2%: **203** (ruling 205); at 3%: **457** (ruling 460); 10% target at
 2%: 55 (55); at 3%: 71 (71). The lane brief also listed "35 at 1%" for the 10% strata; DECISIONS.md states no figure at 1%. The recomputed 1% size is **43**; 35 is the zero-error size (0 errors in 35 gives a bound of 10%). Differences are reported, not
@@ -198,6 +198,10 @@ they are not 95%-pass sizes: at a true 3%, PIC-18 passes about half the time and
   Per-table rates inside a pooled stratum are descriptive and decide nothing. Counts name their unit and filter (AGENTS section 7).
 
 ## 9. Owner battery (not settled here; AGENTS section 2 rule 9). The protocol is sealed only after these are answered; `draw.py` implements the recommended defaults
+
+**Answered 2026-11-23 (owner round 20, multiple choice, DECISIONS.md):** B1-B9 "Accept all defaults" as recommended below;
+B10 "Raise to 110": each 10% stratum reads n2 = 110 (the table in section 8 shows the plan in force; the ruling's 71 is kept
+in `sizes.py` RULING for the record). The protocol is sealed with these answers.
 
 | id | question | recommendation | changes the draw? |
 |---|---|---|---|
