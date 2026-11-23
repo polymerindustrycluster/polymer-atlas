@@ -292,8 +292,10 @@ def collect(pr_number, base_ref=None):
             for ln in inputs_entries(text):
                 m = SHA_LINE.match(ln)
                 if m and valid_input_path(m.group(2)) and not in_store(m.group(2)):
-                    out = git("ls-tree", head, "--", m.group(2)).split()
-                    f["inputs_repo_ok"][m.group(2)] = bool(out) and out[1] == "blob"
+                    name = m.group(2)  # literal lookup: a pathspec like ":README.md" must not match README.md
+                    lines = git("--literal-pathspecs", "ls-tree", head, "--", name).splitlines()
+                    f["inputs_repo_ok"][name] = len(lines) == 1 and lines[0].split("\t", 1)[1:] == [name] \
+                        and lines[0].split()[1] == "blob" and lines[0].split()[0] in ("100644", "100755")
         if any(p.startswith("data/") for p in f["changed_files"]):
             f["main_labels"] = labels_at(base_ref)
             b = show(base_ref, BASELINE)

@@ -370,3 +370,19 @@ class TestCollectors(unittest.TestCase):
         self.assertEqual(f["baseline_labels"], ["lane-b"])
         self.assertEqual(list(f["audit_texts"]), ["tasks/y/AUDIT.md"])
         self.assertEqual(f["inputs_files"]["tasks/z/INPUTS.sha256"].count("\n"), 3)
+
+    def test_repo_input_is_looked_up_literally(self):
+        # Codex r3: ":README.md" is a git pathspec that matched README.md; it must not pass as an input name
+        self.base_repo()
+        self.write("README.md", "x\n")
+        self.write("data/evidence_X.csv", "evidence_id,note,created_by\nE1,,lane-a\nE2,,lane-b\nE3,,lane-c\n")
+        names = (":README.md", "./README.md", "README.md/", ":(top)README.md", "READ*.md", "README.md")
+        self.write("tasks/z/INPUTS.sha256", "".join("0" * 64 + "  " + n + "\n" for n in names))
+        self.g("add", "."); self.g("commit", "-qm", "head")
+        head = subprocess.run(["git", "-C", self.tmp.name, "rev-parse", "pr"], capture_output=True, text=True).stdout.strip()
+        with mock.patch.object(c, "gh_json", return_value={"headRefOid": head, "headRefName": "pr", "baseRefName": "main"}):
+            f = c.collect(1, "main")
+        self.assertEqual(f["inputs_repo_ok"], {":README.md": False, ":(top)README.md": False, "READ*.md": False, "README.md": True})
+        rc, out = run(f)
+        self.assertEqual(rc, 1)
+        self.assertIn("bad lines", out)  # "./README.md" and "README.md/" fail the path grammar before any lookup

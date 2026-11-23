@@ -164,16 +164,19 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    replay check in the repo.** *Partly checked.* The gate on the owner-split
    PR #467 (`scripts/check_evidence_binding.py`, run by the `binding-gate`
    check run of workflow `pr-rules` once it is on `main`) judges evidence
-   rows from structured sources by name and street. It checks that the
+   rows from structured sources (site rows have a street test; organization
+   existence and HQ address have different checks). It checks that the
    batch's task folder exists with a `check.py` and executes nothing from
    the PR tree. It does not gate registry links. Web rows cannot be admitted
    until a follow-up PR. People and program rows are held. It does not
    replay a packet and it does not sample rows for admission.
 3. **A binding gate in CI: the quoted operator is a name the record holds
    and the quoted street equals the record's street, or the row is a
-   lead.** *Checked by the same gate, for the rows it admits:* structured
-   evidence rows, by name and street, as rule 2 describes. The street test
-   does not apply to people or program rows; those are held, not tested.
+   lead.** *Checked by the same gate, for structured evidence rows:* PASS
+   means that every binding check applicable to the row's record and claim
+   matched positively and the quote contains no unexplained detail. Other
+   rows are held for reading. PASS is a minimum condition for admission;
+   source replay and independent review still apply.
 4. **Review is tiered by risk, recorded on the PR.** *Practice.* (Owner
    ruling 2026-11-22, "tier by risk".) A PR that changes any file under
    `data/` gets review records from two model families at the current head;

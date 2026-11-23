@@ -7,7 +7,8 @@
 # fetches the PR head as git objects to read them as data. A PR that changes this workflow or scripts/check_pr_rules.py
 # is therefore judged by the version already on main.
 #
-# The result is published as a check run named `pr-rules` on the PR head, which is the check the ruleset requires.
+# The result is published as a check run named `pr-rules` on the PR head, which the ruleset must be
+# set to require (a deployment condition, not yet done: see docs/ci/README.md).
 #
 # Second check run, `binding-gate`: main's scripts/check_evidence_binding.py (--new-since and --provenance-since, each
 # with --tree pr) judges the PR merge result, checked out as data into ./pr. The gate executes nothing from the PR

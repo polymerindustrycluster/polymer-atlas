@@ -150,3 +150,9 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   5. **Lighter running.** Mandatory startup reading is cut to one short page; a preflight command and generated counts precede review; the controller hands off to a fresh thread each wave; Opus is used only when the owner asks.
 - **Why:** 38 PRs merged from 2026-11-19 to 2026-11-22 moved the PIC-18 unknowns by zero; 251 review verdicts were spent on 80 PRs, and every PR that reached three or four rounds was a non-data PR.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
+
+## 2026-11-22: the day's rulings in one register
+
+- **Decision:** Record the day's rulings and their governing sources in `tasks/owner-rulings-2026-11-22/README.md`.
+- **Basis:** Working rule 7 in AGENTS.md §2a (PR #466) records decisions in this ledger.
+- **Decided by:** the repo owner, in session, 2026-11-22.
