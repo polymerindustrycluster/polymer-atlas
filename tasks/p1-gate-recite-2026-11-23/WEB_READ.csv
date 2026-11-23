@@ -1,0 +1,5 @@
+claim_id,capture_sha256,quote_offset,verdict,reader_family,reader_date
+EVD-405007,8d19b2f39ad1d812fc68d7ebb17e711d3a038bcc771c05659b8b4b26e99f49d5,157,VERIFIED,Claude Sonnet 5.5,2026-11-23
+EVD-421581,97c68b10dd01292ba4bac2c642438047eda6c8efef63c91886deabe0d90e517b,55,VERIFIED,Claude Sonnet 5.5,2026-11-23
+EVD-420042,c4ce71eff309277530af66374fd456b5ad6e67f33da33fb87abf5e444b9bf4fe,759,VERIFIED,Claude Sonnet 5.5,2026-11-23
+PROG-000014,fff47b4bc98f2f45d342129d3e4f5cc03406ed19dcbb7c8e22c5f90d4b2d83ea,0,VERIFIED,Claude Sonnet 5.5,2026-11-23

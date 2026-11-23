@@ -1,0 +1,8 @@
+table,record_id,field,verdict,evidence_id
+evidence,EVD-405007,claim_detail,corrected,EVD-483112
+evidence,EVD-421581,claim_detail,corrected,EVD-483113
+evidence,EVD-421870,claim_detail,corrected,EVD-483114
+evidence,EVD-422344,claim_detail,corrected,EVD-483115
+evidence,EVD-420042,claim_detail,corrected,EVD-483116
+ecosystem,ORG-000503,polymer_program_name,corrected,EVD-483117
+programs,PROG-000014,program_name,corrected,EVD-483117
