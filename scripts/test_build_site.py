@@ -1022,20 +1022,39 @@ class SiteShellTest(unittest.TestCase):
         self.assertNotIn("data-nocsv", county)
         self.assertIn('id="dtable" class="stack" data-nosort data-nofilter data-nocsv', (self.out / "directory.html").read_text(encoding="utf-8"))   # the list has its own toolbar
 
-    EXTERNAL_REF = re.compile(r"""<(?:script|link|img|iframe|source)\b[^>]*\b(?:src|href)\s*=\s*["']?(?:https?:)?//[^"'\s>]*""", re.I)
+    @staticmethod
+    def external_refs(text):
+        """Every src/href on a script, link, img, iframe or source tag that names another host, read by an HTML parser
+        (a regex is fooled by a '>' inside an earlier attribute value)."""
+        found = []
 
-    def test_the_external_reference_pattern_catches_every_way_to_write_one(self):
+        class P(HTMLParser):
+            def handle_starttag(self, tag, attrs):
+                if tag in ("script", "link", "img", "iframe", "source", "video", "audio", "embed", "object"):
+                    for name, value in attrs:
+                        v = (value or "").strip().lower()
+                        if name in ("src", "href", "data", "poster", "srcset") and re.match(r"(?:https?:)?//", v):
+                            found.append(f"<{tag} {name}={value}>")
+        p = P()
+        p.feed(text)
+        p.close()
+        return found
+
+    def test_the_external_reference_check_catches_every_way_to_write_one(self):
         for sample in ('<script src="https://x.example/a.js"></script>', "<script src='https://x.example/a.js'></script>",
                        "<script src=https://x.example/a.js></script>", '<link rel="stylesheet" href="//x.example/a.css">',
-                       "<img alt='' src='http://x.example/a.png'>", '<script defer SRC = "https://x.example/a.js">'):
-            self.assertRegex(sample, self.EXTERNAL_REF)
-        for sample in ('<script src="shell.js"></script>', "<link rel='stylesheet' href='style.css'>", '<a href="https://github.com/x">x</a>'):
-            self.assertNotRegex(sample, self.EXTERNAL_REF)
+                       "<img alt='' src='http://x.example/a.png'>", '<script defer SRC = "https://x.example/a.js">',
+                       '<script title="Maps > Layers" src="https://example.invalid/lib.js"></script>',
+                       "<script title='a > b' data-x=\"c > d\" src='//example.invalid/lib.js'></script>"):
+            self.assertTrue(self.external_refs(sample), sample)
+        for sample in ('<script src="shell.js"></script>', "<link rel='stylesheet' href='style.css'>", '<a href="https://github.com/x">x</a>',
+                       '<script title="https://x.example" src="a.js"></script>'):
+            self.assertFalse(self.external_refs(sample), sample)
 
     def test_no_page_or_script_asks_another_host_for_anything_but_osm_tiles(self):
         for path in self.pages:
-            m = self.EXTERNAL_REF.search(path.read_text(encoding="utf-8"))
-            self.assertIsNone(m, f"{path.relative_to(self.out)}: {m and m.group(0)[:120]}")
+            refs = self.external_refs(path.read_text(encoding="utf-8"))
+            self.assertEqual(refs, [], str(path.relative_to(self.out)))
         js_pat = re.compile(r"""(?:fetch\(|importScripts\(|\.src\s*=|new URL\()\s*[`"']https?://""")
         for path in self.out.rglob("*.js"):
             if "vendor" in path.relative_to(self.out).parts:
@@ -1072,6 +1091,9 @@ class SiteShellTest(unittest.TestCase):
     def test_explorer_loader_skips_phones_and_the_legend_wording(self):
         js = (self.out / "explorer.js").read_text(encoding="utf-8")
         self.assertIn("719.98", js)                                        # below 720 px: nothing is loaded
+        geo = (self.out / "graph" / "map-network.js").read_text(encoding="utf-8")
+        self.assertIn("if (vw < 10 || vh < 10) return;", geo)                # a hidden stage (shrunk to a phone) is not drawn
+        self.assertEqual(geo.count("ctx.arc("), geo.count("Math.max(0, "))    # every arc radius is clamped at zero
         self.assertRegex(js, r"narrow\.addEventListener\('change'")        # and it loads when the window grows past 720 px (rotate, resize)
         graph = (self.out / "graph" / "graph.js").read_text(encoding="utf-8")
         self.assertNotIn("Not on the public member list", graph)           # absence from the public list is never stated (AGENTS 5.1)

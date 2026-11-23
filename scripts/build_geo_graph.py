@@ -206,6 +206,7 @@ SCRIPT = r"""(async () => {
   let dpr = 1, vw = 0, vh = 0, tf = d3.zoomIdentity, base = { k: 1, x: 0, y: 0 };
   function resize() {
     dpr = window.devicePixelRatio || 1; vw = cv.clientWidth; vh = cv.clientHeight;   // the stage inside <main>, not the window
+    if (vw < 10 || vh < 10) return;   // the stage is hidden (phone width): nothing to size or draw
     cv.width = vw * dpr; cv.height = vh * dpr;
     const railW = vw > 720 ? 330 : 0, k = Math.min((vw - railW - 32) / W, (vh - 32) / H);
     base = { k, x: railW + (vw - railW - W * k) / 2, y: (vh - H * k) / 2 };
@@ -271,7 +272,7 @@ SCRIPT = r"""(async () => {
       if (!visible(i)) continue;
       const dim = sel >= 0 && S[i].o !== sel;
       ctx.globalAlpha = dim ? 0.18 : 0.9; ctx.fillStyle = color(i);
-      ctx.beginPath(); ctx.arc(cur[2 * i], cur[2 * i + 1], dim ? r * 0.8 : r, 0, 6.2832); ctx.fill();
+      ctx.beginPath(); ctx.arc(cur[2 * i], cur[2 * i + 1], Math.max(0, dim ? r * 0.8 : r), 0, 6.2832); ctx.fill();
     }
     ctx.globalAlpha = 1;
     // tags (network mode)
@@ -282,7 +283,7 @@ SCRIPT = r"""(async () => {
         if (!netTagOn[n]) return;
         const o = 2 * S.length + 2 * n, x = net[o], y = net[o + 1];
         ctx.fillStyle = t.x ? P.free : P[t.k];
-        ctx.beginPath(); ctx.arc(x, y, (2.5 + Math.sqrt(tagSites[n]) * 0.35) * px, 0, 6.2832); ctx.fill();
+        ctx.beginPath(); ctx.arc(x, y, Math.max(0, (2.5 + Math.sqrt(tagSites[n]) * 0.35) * px), 0, 6.2832); ctx.fill();
         if ((!t.x && tagSites[n] >= labelCut) || (!t.x && tf.k > 2.2) || tf.k > 5) {
           ctx.lineWidth = 3 * px; ctx.strokeStyle = P.bg; ctx.strokeText(t.l, x + 6 * px, y);
           ctx.fillStyle = P.fg; ctx.fillText(t.l, x + 6 * px, y); }
@@ -292,7 +293,7 @@ SCRIPT = r"""(async () => {
     // hover ring
     if (state.hover >= 0) {
       const i = state.hover; ctx.strokeStyle = P.accent; ctx.lineWidth = 2 * px;
-      ctx.beginPath(); ctx.arc(cur[2 * i], cur[2 * i + 1], r + 3 * px, 0, 6.2832); ctx.stroke();
+      ctx.beginPath(); ctx.arc(cur[2 * i], cur[2 * i + 1], Math.max(0, r + 3 * px), 0, 6.2832); ctx.stroke();
     }
     ctx.restore();
   }
