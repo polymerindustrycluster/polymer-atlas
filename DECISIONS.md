@@ -299,3 +299,21 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Program specialty tags ("Wrong: REJECT"):** a specialty tag on a program record that its cited page does not state makes
   the record wrong; the tag is removed or replaced with what the page states.
 - **Decided by:** the repo owner, in the controller's session, 2026-11-23, as multiple choice.
+
+## 2026-11-23: rounds 21 and 22, archive copies for own-site rows, binding-gate fixes, blind audit 12 placements
+
+- **Archive copies for own-site rows ("archive.org API keys"):** SCHEMA §4.22 archive-at-capture and validator V-66 stand
+  unchanged. Unauthenticated Save Page Now returned a bot check, so own-site pages are saved through the authenticated
+  archive.org Save Page Now API with keys the owner supplied; the keys are held outside the repository and never appear in it.
+  A by-hash copy in the private raw store does not stand in for the public archive reference. Where Save Page Now
+  deduplicates a save to an earlier, unchanged capture, that capture is cited with its true date once the row's quote is
+  reproduced from it.
+- **Binding-gate fixes ("Fix both"):** the binding gate judges evidence rows on program and ecosystem records with the same
+  binding tests as organization rows, and keeps the page's article text when a Divi-style page has an empty main element. An
+  empty extraction is never a PASS. Merged as PR #501; no existing row changed to or from PASS.
+- **Blind audit 12 records without a stratum ("Place by city, exclude 1"):** of the 31 records that fit no stratum at
+  `0b191fe6`, 28 are placed from sources. Two Ohio-headquartered organizations with no sourceable county (ORG-001835,
+  ORG-001503) go in the rest-of-Ohio stratum because every county their city spans lies outside PIC-18; no county is written to
+  the data. ORG-003769 is left out of the frame as a named, counted exclusion until a state registry read settles its
+  headquarters. The draw reads these placements from a checked-in list, not from a new rule.
+- **Decided by:** the repo owner, in the controller's session, 2026-11-23, as multiple choice.
