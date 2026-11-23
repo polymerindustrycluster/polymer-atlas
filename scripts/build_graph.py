@@ -548,9 +548,11 @@ def summary(title, lede, facts, root):
                      for r, n in build_site.RINGS.items())
     return (f'<section class="viz-summary" aria-labelledby="vs-title"><h1 id="vs-title">{html.escape(title)}</h1>'
             f'<p class="lede">{lede}</p>{facts}'
-            f'<p class="hint">The picture needs a screen 720 px wide or more. The same companies are listed, with street addresses, on the company page.</p>'
+            f'<p class="hint">The picture needs a screen 720 px wide or more. Find companies lists the companies in the 18 PIC counties, with street '
+            f'addresses; Search finds any organization in the Atlas, in any state.</p>'
             f'<div class="btns"><a class="btn primary" href="{root}directory.html">Find companies</a> '
-            f'<a class="btn" href="{root}map.html">Street map</a> <a class="btn" href="{root}counties/index.html">Counties</a></div>'
+            f'<a class="btn" href="{root}search.html">Search all states</a> <a class="btn" href="{root}map.html">Street map</a> '
+            f'<a class="btn" href="{root}counties/index.html">Counties</a></div>'
             f'<h2>Ring colours</h2><ul class="vlegend">{legend}</ul></section>')
 
 

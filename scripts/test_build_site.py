@@ -1022,14 +1022,20 @@ class SiteShellTest(unittest.TestCase):
         self.assertNotIn("data-nocsv", county)
         self.assertIn('id="dtable" class="stack" data-nosort data-nofilter data-nocsv', (self.out / "directory.html").read_text(encoding="utf-8"))   # the list has its own toolbar
 
+    EXTERNAL_REF = re.compile(r"""<(?:script|link|img|iframe|source)\b[^>]*\b(?:src|href)\s*=\s*["']?(?:https?:)?//[^"'\s>]*""", re.I)
+
+    def test_the_external_reference_pattern_catches_every_way_to_write_one(self):
+        for sample in ('<script src="https://x.example/a.js"></script>', "<script src='https://x.example/a.js'></script>",
+                       "<script src=https://x.example/a.js></script>", '<link rel="stylesheet" href="//x.example/a.css">',
+                       "<img alt='' src='http://x.example/a.png'>", '<script defer SRC = "https://x.example/a.js">'):
+            self.assertRegex(sample, self.EXTERNAL_REF)
+        for sample in ('<script src="shell.js"></script>', "<link rel='stylesheet' href='style.css'>", '<a href="https://github.com/x">x</a>'):
+            self.assertNotRegex(sample, self.EXTERNAL_REF)
+
     def test_no_page_or_script_asks_another_host_for_anything_but_osm_tiles(self):
-        html_pat = re.compile(r'<(?:script|link|img|iframe|source)\b[^>]*\b(?:src|href)="(?:https?:)?//[^"]*"')
         for path in self.pages:
-            text = path.read_text(encoding="utf-8")
-            for m in html_pat.finditer(text):
-                if m.group(0).startswith("<link") and 'rel="noopener"' in m.group(0):
-                    continue
-                self.fail(f"{path.relative_to(self.out)}: {m.group(0)[:120]}")
+            m = self.EXTERNAL_REF.search(path.read_text(encoding="utf-8"))
+            self.assertIsNone(m, f"{path.relative_to(self.out)}: {m and m.group(0)[:120]}")
         js_pat = re.compile(r"""(?:fetch\(|importScripts\(|\.src\s*=|new URL\()\s*[`"']https?://""")
         for path in self.out.rglob("*.js"):
             if "vendor" in path.relative_to(self.out).parts:
@@ -1059,10 +1065,14 @@ class SiteShellTest(unittest.TestCase):
                 self.assertIn('class="viz-summary"', text)                # a phone gets a summary with the ring legend
                 self.assertIn("Ring 1", text)
                 self.assertIn('href="../directory.html"', text)           # and the way to the company list
+                self.assertIn('href="../search.html"', text)              # and to the Atlas-wide search
+                self.assertNotIn("same companies", text)                  # the list is the 18 PIC counties, not every company on the graph
+                self.assertIn("18 PIC counties", text)
 
     def test_explorer_loader_skips_phones_and_the_legend_wording(self):
         js = (self.out / "explorer.js").read_text(encoding="utf-8")
         self.assertIn("719.98", js)                                        # below 720 px: nothing is loaded
+        self.assertRegex(js, r"narrow\.addEventListener\('change'")        # and it loads when the window grows past 720 px (rotate, resize)
         graph = (self.out / "graph" / "graph.js").read_text(encoding="utf-8")
         self.assertNotIn("Not on the public member list", graph)           # absence from the public list is never stated (AGENTS 5.1)
         for rel in ("graph.js", "map-network.js", "trade-shows.js"):
@@ -1080,7 +1090,7 @@ class SiteShellTest(unittest.TestCase):
             text = (self.out / "graph" / f"{name}.html").read_text(encoding="utf-8")
             with self.subTest(page=name):
                 self.assertIn('<main id="main"', text)
-                self.assertIn('href="../directory.html"', text)           # the list view of the same companies
+                self.assertIn('href="../directory.html"', text)           # the company list (18 PIC counties)
 
 
 if __name__ == "__main__":
