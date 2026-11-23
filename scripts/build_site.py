@@ -1554,9 +1554,9 @@ DIRECTORY_JS = r"""(function () {
   var body = document.getElementById('dtable').tBodies[0], q = document.getElementById('dq');
   var status = document.getElementById('dstatus'), left = document.getElementById('dleft');
   var prev = document.getElementById('dprev'), next = document.getElementById('dnext'), pos = document.getElementById('dpos');
-  var F = ['co', 'ring', 'tier', 'band', 'proc', 'mat', 'mkt', 'own'];
-  var PARAM = {co: 'county', ring: 'ring', tier: 'tier', band: 'employees', proc: 'process', mat: 'material', mkt: 'market', own: 'ownership'};
-  var NAME = {co: 'county', ring: 'ring', tier: 'site tier', band: 'employee band', proc: 'process', mat: 'material', mkt: 'market', own: 'ownership'};
+  var F = ['co', 'ring', 'tier', 'band', 'proc', 'mat', 'mkt', 'own', 'mem'];
+  var PARAM = {co: 'county', ring: 'ring', tier: 'tier', band: 'employees', proc: 'process', mat: 'material', mkt: 'market', own: 'ownership', mem: 'member'};
+  var NAME = {co: 'county', ring: 'ring', tier: 'site tier', band: 'employee band', proc: 'process', mat: 'material', mkt: 'market', own: 'ownership', mem: 'public member list flag'};
   var COLS = ['Street address', 'Ring', 'Site tier', 'Process', 'Material', 'Market', 'Employees', 'Ownership', 'Evidence rows',
               'Organization record (status, tier)', 'Website'];
   var boxes = {}, data = [], hits = [], page = 0;
@@ -1639,8 +1639,9 @@ DIRECTORY_JS = r"""(function () {
     prev.disabled = page === 0;
     next.disabled = page >= pages - 1;
   }
+  function size(o) { return o ? Object.keys(o).length : 0; }
   function run() {
-    var sel = {}, term = q.value.trim().toLowerCase(), counts = {};
+    var sel = {}, term = q.value.trim().toLowerCase(), counts = {};   // counts[f][v] = the organization ids behind a value: companies, not rows
     F.forEach(function (f) { sel[f] = chosen(f); counts[f] = {}; });
     hits = [];
     data.forEach(function (r) {
@@ -1652,21 +1653,23 @@ DIRECTORY_JS = r"""(function () {
         if (!okq || !F.every(function (g) { return g === f || ok[g]; })) return;
         var t = r.tok[f];
         if (!t.length) t = ['_'];
-        t.forEach(function (v) { counts[f][v] = (counts[f][v] || 0) + 1; });
+        t.forEach(function (v) { (counts[f][v] = counts[f][v] || {})[r.id] = 1; });
       });
     });
-    var notes = [];
+    var notes = [], companies = {}; hits.forEach(function (r) { companies[r.id] = 1; });
     F.forEach(function (f) {
       boxes[f].forEach(function (b) {
-        var n = counts[f][b.value] || 0;
+        var n = size(counts[f][b.value]);
         b.parentNode.querySelector('.n').textContent = n.toLocaleString();
         b.parentNode.classList.toggle('zero', n === 0 && !b.checked);
       });
-      var c = sel[f].length, u = counts[f]['_'] || 0;
+      var c = sel[f].length;
+      var lost = Object.keys(counts[f]['_'] || {}).filter(function (id) { return !companies[id]; }).length;   // left out = companies with no row on the list
       boxes[f][0].closest('details').querySelector('.sel').textContent = c ? ' (' + c + ' chosen)' : '';
-      if (c && sel[f].indexOf('_') < 0 && u) notes.push(u.toLocaleString() + ' with unknown ' + NAME[f]);
+      if (c && sel[f].indexOf('_') < 0 && lost) notes.push(lost.toLocaleString() + (lost === 1 ? ' company' : ' companies') + ' with unknown ' + NAME[f]);
     });
-    status.textContent = 'Showing ' + hits.length.toLocaleString() + ' of ' + data.length.toLocaleString() + ' rows (one per owner and county).';
+    var nc = size(companies), nr = hits.length;
+    status.textContent = 'Showing ' + nc.toLocaleString() + (nc === 1 ? ' company (' : ' companies (') + nr.toLocaleString() + (nr === 1 ? ' row' : ' rows') + ', one per owner and county).';
     left.textContent = notes.length ? 'Left out because the field is unknown (within your other choices): ' + notes.join('; ') + '. Choose "Unknown" in that filter to see them.' : '';
     page = 0;
     render();
@@ -1702,6 +1705,7 @@ DIRECTORY_JS = r"""(function () {
     return r.json();
   }).then(function (d) {
     data = d.rows;
+    data.forEach(function (r) { r.tok.mem = [r.member ? 'yes' : 'no']; });   // the filter is read from the public badge flag; the data file states no absence
     list.hidden = false;
     document.getElementById('ddl').disabled = false; document.getElementById('dcopy').disabled = false;
     fromUrl(); run();
@@ -1841,9 +1845,11 @@ def active_ab(sites):
 UNKNOWN_VALUES = {"", "unknown"}       # blank and the literal vocabulary value both mean "nothing recorded"
 BAND_MINS = (50, 100, 250, 500, 1000)  # "N or more" shortcuts: a band whose lower bound is at least N
 DIRECTORY_PAGE = 50                    # rows rendered at a time, on screen and in the page script
+MEMBER_NO = "not on the public member list"   # AGENTS.md section 5.1 and the 2026-11-01 ruling: shown only as a filter value, with its caveat
 DIRECTORY_FACETS = [("co", "County"), ("ring", "Ring"), ("tier", "Site tier"), ("band", "Employees"),
-                    ("proc", "Process"), ("mat", "Material"), ("mkt", "Market"), ("own", "Ownership")]
-MEMBER_YES = "on the public member list"   # AGENTS.md section 5.1: the only membership wording; absence is never stated
+                    ("proc", "Process"), ("mat", "Material"), ("mkt", "Market"), ("own", "Ownership"),
+                    ("mem", "On the public PIC member list")]
+MEMBER_YES = "on the public member list"   # AGENTS.md section 5.1: the public flag; record pages never state absence (the directory filter does, with its caveat)
 def known(values):
     return sorted({v for v in values if v not in UNKNOWN_VALUES})
 
@@ -1931,12 +1937,18 @@ def row_tokens(r, key):
         return [tok(b) for b in bands] + [f"min{n}" for n in mins]
     if key == "own":
         return [tok(o) for o in r["own"]]
+    if key == "mem":
+        return ["yes" if r["member"] else "no"]    # the record's public flag only (pic_member == "true", AGENTS.md section 5.1)
     return [tok(t) for t in r[key][0]]
 
 
 def facet_options(rows, key):
     """[(token, label, count over all rows)] in display order; the unknown option is added by the caller."""
-    counts = Counter(t for r in rows for t in row_tokens(r, key))
+    owners = defaultdict(set)                       # a count is companies: distinct organization ids among the rows (an owner in two counties counts once)
+    for r in rows:
+        for t in row_tokens(r, key):
+            owners[t].add(r["id"])
+    counts = Counter({t: len(ids) for t, ids in owners.items()})
     labels = {}
     for r in rows:
         if key in ("proc", "mat", "mkt"):
@@ -1945,7 +1957,10 @@ def facet_options(rows, key):
             labels.update({tok(t): vocab(t) for t in r["own"]})
         elif key == "band":
             labels.update({tok(b): b for b in r["band"][0]})
-    if key == "co":
+    if key == "mem":
+        order = ["yes", "no"]
+        labels = {"yes": "Yes", "no": "No"}
+    elif key == "co":
         order = sorted(counts)
         labels = {c: c for c in order}
     elif key == "ring":
@@ -1966,8 +1981,9 @@ def facet_options(rows, key):
 
 def facet_html(rows, key, heading, open_):
     opts = facet_options(rows, key)
-    n_unknown = sum(1 for r in rows if not row_tokens(r, key))
-    opts.append(("_", "Unknown (nothing recorded)", n_unknown))
+    n_unknown = len({r["id"] for r in rows if not row_tokens(r, key)})
+    if key != "mem":                                # the member flag is yes or no by construction: a record without the flag is "no"
+        opts.append(("_", "Unknown (nothing recorded)", n_unknown))
     items = "".join(
         f'<label class="opt"><input type="checkbox" name="{key}" value="{esc(t)}"> '
         f'<span class="t">{esc(label)}</span> <span class="n">{n}</span></label>' for t, label, n in opts)
@@ -1992,7 +2008,7 @@ def directory_json(rows):
             "web": r["website"], "ev": r["evidence"],
             "org": ", ".join(x for x in [str(r["status"]).replace("_", " ") if r["status"] else "status unknown",
                                          f"tier {r['org_tier']}" if r["org_tier"] else ""] if x),
-            "tok": {k: row_tokens(r, k) for k, _ in DIRECTORY_FACETS},
+            "tok": {k: row_tokens(r, k) for k, _ in DIRECTORY_FACETS if k != "mem"},   # the member filter is derived in directory.js from "member"
             "show": {"ring": ", ".join(r["rings"]) or "unknown", "tier": ", ".join(r["tiers"]),
                      "proc": cell_text(*r["proc"]), "mat": cell_text(*r["mat"]), "mkt": cell_text(*r["mkt"]),
                      "band": cell_text(*r["band"], always_basis=True), "own": cell_text(r["own"], "")}})
@@ -2081,8 +2097,11 @@ add up to more than the All PIC-18 line. Counts are owners, not unique ultimate 
 <h2 id="find">Find a company</h2>
 <p>Search by name, narrow with the filters, and download what you see. The address bar holds your choices, so you can send the link.
 A <span class="badge">PIC member</span> badge marks an owner on PIC's public member list.</p>
+<div class="banner note"><p><strong>Unknown means nothing is recorded: not zero, not small.</strong> "{MEMBER_NO}" is not the same as "not a member".</p></div>
 <details class="more"><summary>How to read the list</summary>
-<p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter shows how many rows are unknown.</p>
+<p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter except the member flag (which is yes or no by construction) shows how many companies are unknown.</p>
+<p><strong>Counts are companies.</strong> A company with sites in two counties has two rows (one per owner and county) and counts once in the figures above the list and beside each filter choice; the download has one row per owner and county.</p>
+<p><strong>Public member list.</strong> A row is marked "{MEMBER_YES}" or "{MEMBER_NO}". The second only means the organization is not on the public list.</p>
 <p>One row per owner and county, grouped by county; an owner with site rows in two counties is listed under both,
 with the street addresses of the site rows in that county. Ring and site tier list every value among those site rows; within one
 filter the choices are "or", across filters "and". Street addresses are as recorded; a site row with no street says so.</p>
