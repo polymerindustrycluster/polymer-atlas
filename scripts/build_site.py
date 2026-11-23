@@ -191,33 +191,33 @@ VOCAB_LABELS = {
     "recycled_content_pcr_pir": "recycled content (PCR, PIR)", "polyester_vinyl_ester_resins": "polyester & vinyl ester resins",
     "inks_colorants_masterbatch": "inks, colorants & masterbatch",
     # processes
-    "assembly_secondary_ops": "assembly & secondary operations", "die_cutting_converting": "die cutting & converting",
-    "plastics_machining_cnc": "plastics machining (CNC)", "plastics_fabrication_welding": "plastics fabrication & welding",
-    "ultrasonic_solvent_bonding": "ultrasonic & solvent bonding", "coating_applying": "coating (applying)",
+    "assembly_secondary_ops": "assembly / secondary operations", "die_cutting_converting": "die cutting / converting",
+    "plastics_machining_cnc": "plastics machining (CNC)", "plastics_fabrication_welding": "plastics fabrication / welding",
+    "ultrasonic_solvent_bonding": "ultrasonic / solvent bonding", "coating_applying": "coating (applying)",
     "coating_formulation": "coating formulation", "additive_manufacturing_polymer_production": "additive manufacturing (polymer production)",
-    "adhesive_sealant_formulation": "adhesive & sealant formulation", "blow_molding_extrusion": "blow molding (extrusion)",
+    "adhesive_sealant_formulation": "adhesive / sealant formulation", "blow_molding_extrusion": "blow molding (extrusion)",
     "blow_molding_injection": "blow molding (injection)", "blow_molding_stretch": "blow molding (stretch)",
     "composites_compression_smc_bmc": "composites (compression, SMC/BMC)", "composites_filament_winding": "composites (filament winding)",
     "composites_prepreg_autoclave": "composites (prepreg, autoclave)", "composites_pultrusion": "composites (pultrusion)",
     "composites_spray_up": "composites (spray-up)", "compounding_unspecified": "compounding (unspecified)",
-    "extrusion_pipe_tube": "extrusion (pipe & tube)", "extrusion_profile": "extrusion (profile)", "extrusion_sheet": "extrusion (sheet)",
-    "extrusion_unspecified": "extrusion (unspecified)", "extrusion_wire_cable_coating": "extrusion (wire & cable coating)",
+    "extrusion_pipe_tube": "extrusion (pipe / tube)", "extrusion_profile": "extrusion (profile)", "extrusion_sheet": "extrusion (sheet)",
+    "extrusion_unspecified": "extrusion (unspecified)", "extrusion_wire_cable_coating": "extrusion (wire / cable coating)",
     "fabrication_unspecified": "fabrication (unspecified)", "foam_molding_bead": "foam molding (bead)",
     "foam_molding_structural": "foam molding (structural)", "foam_production_unspecified": "foam production (unspecified)",
-    "hose_belting_manufacturing": "hose & belting manufacturing", "injection_molding_lsr_silicone": "injection molding (LSR silicone)",
+    "hose_belting_manufacturing": "hose / belting manufacturing", "injection_molding_lsr_silicone": "injection molding (LSR silicone)",
     "injection_molding_micro": "injection molding (micro)", "molding_unspecified": "molding (unspecified)",
-    "pigment_colorant_dispersion": "pigment & colorant dispersion", "potting_encapsulation_casting": "potting, encapsulation & casting",
-    "pulverizing_grinding_resin": "pulverizing & grinding (resin)", "recycling_chemical_pyrolysis": "recycling (chemical, pyrolysis)",
+    "pigment_colorant_dispersion": "pigment / colorant dispersion", "potting_encapsulation_casting": "potting, encapsulation / casting",
+    "pulverizing_grinding_resin": "pulverizing / grinding (resin)", "recycling_chemical_pyrolysis": "recycling (chemical, pyrolysis)",
     "recycling_chemical_solvolysis": "recycling (chemical, solvolysis)", "recycling_mechanical": "recycling (mechanical)",
-    "recycling_recovery": "recycling & recovery", "recycling_unspecified": "recycling (unspecified)",
-    "regrind_pelletizing": "regrind & pelletizing", "rubber_molding_compression": "rubber molding (compression)",
+    "recycling_recovery": "recycling / recovery", "recycling_unspecified": "recycling (unspecified)",
+    "regrind_pelletizing": "regrind / pelletizing", "rubber_molding_compression": "rubber molding (compression)",
     "rubber_molding_transfer": "rubber molding (transfer)", "rubber_molding_unspecified": "rubber molding (unspecified)",
-    "service_repair": "service & repair", "thermoforming_pressure": "thermoforming (pressure)",
-    "thermoforming_unspecified": "thermoforming (unspecified)", "tooling_mold_die": "tooling, mold & die",
-    "tooling_repair_maintenance": "tooling repair & maintenance", "two_shot_molding": "two-shot molding",
-    "vulcanization_curing_services": "vulcanization & curing services", "latex_dipping_foaming": "latex dipping & foaming",
-    "rubber_mixing_compounding": "rubber mixing & compounding", "mold_tool_making": "mold & tool making",
-    "compounding_extrusion": "compounding & extrusion", "printing_decorating_plastics": "printing & decorating plastics",
+    "service_repair": "service / repair", "thermoforming_pressure": "thermoforming (pressure)",
+    "thermoforming_unspecified": "thermoforming (unspecified)", "tooling_mold_die": "tooling, mold / die",
+    "tooling_repair_maintenance": "tooling repair / maintenance", "two_shot_molding": "two-shot molding",
+    "vulcanization_curing_services": "vulcanization / curing services", "latex_dipping_foaming": "latex dipping / foaming",
+    "rubber_mixing_compounding": "rubber mixing / compounding", "mold_tool_making": "mold / tool making",
+    "compounding_extrusion": "compounding / extrusion", "printing_decorating_plastics": "printing / decorating plastics",
 }
 
 
@@ -619,6 +619,9 @@ EXPERTS_JS = r"""(function () {
   var params = new URLSearchParams(location.search);
   var inst = params.get('inst') || '';
   $('q').value = params.get('q') || '';
+  function pick(id, fallback) { var v = params.get(id), ok = v && Array.prototype.some.call($(id).options, function (o) { return o.value === v; }); $(id).value = ok ? v : fallback; }
+  pick('kind', ''); pick('show', 'both'); pick('sort', 'inst');   // the link holds every selection, so Copy link reopens this view
+  if (params.get('view') === 'results' || params.get('view') === 'browse') $('tabs').setAttribute('data-forced', params.get('view'));
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function chip(t) { return '<button type="button" class="xchip" data-q="' + esc(t) + '">' + esc(t) + '</button>'; }
   function instName(id) { return (D.insts[id] || [id])[0]; }
@@ -770,6 +773,8 @@ EXPERTS_JS = r"""(function () {
     $('programs').innerHTML = grp(gg, 1, programRow, function (g) { return String(g[0]).toLowerCase(); }) + (prg.length > limit ? '<button type="button" class="xmore" data-more="1">Show more programs (' + (prg.length - limit).toLocaleString() + ' left)</button>' : '');
     if (view === 'results') { $('ppl').hidden = show === 'programs' || !ppl.length; $('prg').hidden = show === 'people' || !prg.length; }
     var u = new URLSearchParams(); if (q) u.set('q', $('q').value.trim()); if (st) u.set('state', st); if (inst) u.set('inst', inst);
+    if (kind) u.set('kind', kind); if (show !== 'both') u.set('show', show); if ($('sort').value !== 'inst') u.set('sort', $('sort').value);
+    if ($('tabs').getAttribute('data-forced')) u.set('view', $('tabs').getAttribute('data-forced'));
     try { history.replaceState(null, '', u.toString() ? '?' + u.toString() : location.pathname); } catch (e) {}
   }
   var t = null;
@@ -1404,14 +1409,19 @@ MAP_JS = r"""(function () {
         li.appendChild(el('a', r[C.name], {href: 'orgs/' + r[C.org] + '.html#' + r[C.id]}));
         li.appendChild(document.createTextNode(' \u2014 ' + [r[C.street] || 'Street not recorded', r[C.city], [r[C.st], r[C.zip]].filter(Boolean).join(' ')].filter(Boolean).join(', ') +
           (r[C.ring] ? ' \u00b7 Ring ' + r[C.ring] : ' \u00b7 Ring not recorded') + ' '));
-        var b = el('button', 'Show on map', {type: 'button', 'aria-label': 'Show on map: ' + r[C.name]}   // starts with the visible words (WCAG 2.5.3));
+        // the accessible name starts with the visible words (WCAG 2.5.3)
+        var b = el('button', 'Show on map', {type: 'button', 'aria-label': 'Show on map: ' + r[C.name]});
         b.addEventListener('click', function () { map.setView([r[C.lat], r[C.lon]], 15); markers[i].openPopup(); document.getElementById('map').scrollIntoView({block: 'center'}); });
         li.appendChild(b); ol.appendChild(li);
       });
       box.appendChild(ol);
       if (lastIdx.length > listLimit) {
         var more = el('button', 'Show 50 more sites', {type: 'button'});
-        more.addEventListener('click', function () { listLimit += LIST_PAGE; renderList(); });
+        more.addEventListener('click', function () {
+          var first = listLimit; listLimit += LIST_PAGE; renderList();
+          var added = document.querySelectorAll('#maplist ol.maplist li')[first];   // keep keyboard focus where the new rows begin
+          if (added) added.querySelector('a').focus();
+        });
         box.appendChild(more);
       }
     }

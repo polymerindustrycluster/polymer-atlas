@@ -1102,6 +1102,16 @@ class SiteShellTest(unittest.TestCase):
             self.assertNotRegex(text, r"--ring[1-5x]")
             self.assertNotIn("producers & processors", text)               # ring names come from RINGS
 
+    def test_every_built_script_parses(self):
+        import shutil
+        node = shutil.which("node")
+        self.assertIsNotNone(node, "node is needed to syntax-check the built scripts")     # a missing check must not look like a pass
+        scripts = [p for p in self.out.rglob("*.js") if "vendor" not in p.relative_to(self.out).parts]
+        self.assertGreater(len(scripts), 10)
+        for path in scripts:
+            r = subprocess.run([node, "--check", str(path)], capture_output=True, text=True)
+            self.assertEqual(r.returncode, 0, f"{path.relative_to(self.out)}: {r.stderr[:300]}")
+
     def test_phone_menu_toggles_aria_expanded(self):
         js = (self.out / "shell.js").read_text(encoding="utf-8")
         self.assertIn("aria-expanded", js)
@@ -1227,6 +1237,15 @@ class BlockingFixesTest(unittest.TestCase):
         self.assertIn('id="xcsv"', self.read("experts.html"))
         self.assertNotIn("D.pc[", js)                                                               # the browse table counts the matched records, not all of them
         self.assertIn("window.atlasTable = function", self.read("sortable.js"))
+        self.assertIn("u.set('kind', kind)", js)                                                    # Copy link holds every selection ...
+        self.assertIn("u.set('view'", js)
+        self.assertIn("pick('show', 'both')", js)                                                   # ... and the page reads them back
+
+    def test_show_more_sites_keeps_keyboard_focus_and_grouped_process_labels_make_no_claim_of_both(self):
+        self.assertIn("added.querySelector('a').focus()", self.read("map.js"))
+        self.assertEqual(build_site.vocab("latex_dipping_foaming"), "latex dipping / foaming")   # the schema's one grouped category, not two claims
+        for token in ("assembly_secondary_ops", "die_cutting_converting", "rubber_mixing_compounding", "potting_encapsulation_casting"):
+            self.assertNotIn(" & ", build_site.vocab(token), token)
 
     def test_trade_show_space_key_leaves_focused_buttons_alone(self):
         script = (Path(build_site.__file__).resolve().parent / "build_events_3d.py").read_text(encoding="utf-8")
