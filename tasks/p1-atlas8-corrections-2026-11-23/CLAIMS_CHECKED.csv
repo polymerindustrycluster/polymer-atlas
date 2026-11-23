@@ -469,7 +469,7 @@ organizations,ORG-000861,entity_type,verified,
 organizations,ORG-000862,entity_type,verified,
 organizations,ORG-000862,hq_in_scope,verified,
 organizations,ORG-000864,entity_type,verified,
-organizations,ORG-000864,status,verified,
+organizations,ORG-000864,status,verified,EVD-425421
 organizations,ORG-000864,status_date,verified,
 organizations,ORG-000867,entity_type,verified,
 organizations,ORG-000868,hq_in_scope,verified,
@@ -730,7 +730,7 @@ organizations,ORG-001462,hq_in_scope,verified,
 organizations,ORG-001465,entity_type,verified,
 organizations,ORG-001466,entity_type,verified,
 organizations,ORG-001468,entity_type,verified,
-organizations,ORG-001470,legal_name,verified,
+organizations,ORG-001470,legal_name,verified,EVD-425423
 organizations,ORG-001471,entity_type,verified,
 organizations,ORG-001472,entity_type,verified,
 organizations,ORG-001473,entity_type,verified,
@@ -1510,8 +1510,8 @@ organizations,ORG-002174,hq_in_scope,verified,
 organizations,ORG-002534,entity_type,verified,
 organizations,ORG-002922,entity_type,verified,
 organizations,ORG-003030,hq_in_scope,verified,
-organizations,ORG-003562,ultimate_parent_name,verified,
-organizations,ORG-003742,legal_name,verified,
+organizations,ORG-003562,ultimate_parent_name,verified,EVD-425418
+organizations,ORG-003742,legal_name,verified,EVD-425419
 organizations,ORG-003771,hq_in_scope,verified,
 organizations,ORG-003907,entity_type,verified,
 organizations,ORG-004193,hq_city,verified,
@@ -1600,7 +1600,7 @@ programs,PROG-000064,research_areas,verified,
 programs,PROG-000066,cip_code,verified,
 programs,PROG-000066,cip_source_type,verified,
 programs,PROG-000072,research_areas,verified,EVD-425433
-programs,PROG-000083,program_name,verified,
+programs,PROG-000083,program_name,verified,EVD-013042
 programs,PROG-000112,cip_code,verified,
 programs,PROG-000112,cip_source_type,verified,
 programs,PROG-000127,cip_code,verified,
@@ -1623,7 +1623,7 @@ programs,PROG-000157,cip_code,verified,
 programs,PROG-000157,cip_source_type,verified,
 programs,PROG-000163,cip_code,verified,EVD-400353
 programs,PROG-000163,cip_source_type,verified,EVD-400353
-programs,PROG-000304,program_name,verified,
+programs,PROG-000304,program_name,verified,EVD-425434
 programs,PROG-000306,cip_code,verified,
 programs,PROG-000306,cip_source_type,verified,
 programs,PROG-000309,cip_code,verified,
@@ -1685,9 +1685,9 @@ sites,SITE-000035,street_address,verified,
 sites,SITE-000037,street_address,verified,
 sites,SITE-000037,zip,verified,
 sites,SITE-000039,street_address,verified,
-sites,SITE-000041,city,verified,
-sites,SITE-000041,street_address,verified,
-sites,SITE-000041,zip,verified,
+sites,SITE-000041,city,verified,EVD-420033
+sites,SITE-000041,street_address,verified,EVD-420033
+sites,SITE-000041,zip,verified,EVD-420033
 sites,SITE-000042,street_address,verified,
 sites,SITE-000043,employee_band_site,verified,EVD-481002
 sites,SITE-000043,street_address,verified,EVD-399544
@@ -1729,9 +1729,9 @@ sites,SITE-000107,employee_band_site,verified,EVD-481012
 sites,SITE-000108,street_address,verified,EVD-399401
 sites,SITE-000130,street_address,verified,
 sites,SITE-000130,zip,verified,
-sites,SITE-000131,street_address,verified,
-sites,SITE-000131,zip,verified,
-sites,SITE-000132,street_address,verified,
+sites,SITE-000131,street_address,verified,EVD-420039
+sites,SITE-000131,zip,verified,EVD-420039
+sites,SITE-000132,street_address,verified,EVD-420040
 sites,SITE-000132,zip,verified,
 sites,SITE-000133,street_address,corrected,EVD-483021
 sites,SITE-000140,processes,verified,EVD-483000
@@ -1777,7 +1777,7 @@ sites,SITE-000309,street_address,verified,EVD-399412
 sites,SITE-000312,street_address,verified,EVD-399391
 sites,SITE-000330,street_address,verified,EVD-399435
 sites,SITE-000336,street_address,corrected,EVD-483022
-sites,SITE-000342,street_address,verified,
+sites,SITE-000342,street_address,verified,EVD-420034
 sites,SITE-000358,street_address,verified,EVD-399499
 sites,SITE-000360,employee_band_site,verified,EVD-481030
 sites,SITE-000361,employee_band_site,verified,EVD-481031
@@ -1888,8 +1888,8 @@ sites,SITE-001542,street_address,verified,
 sites,SITE-001546,street_address,verified,
 sites,SITE-001559,street_address,verified,EVD-399443
 sites,SITE-001560,employee_band_site,verified,EVD-481058
-sites,SITE-001560,street_address,verified,
-sites,SITE-001560,zip,verified,
+sites,SITE-001560,street_address,verified,EVD-420049
+sites,SITE-001560,zip,verified,EVD-420049
 sites,SITE-001561,street_address,verified,EVD-399462
 sites,SITE-001561,zip,verified,EVD-399462
 sites,SITE-001565,street_address,verified,EVD-399514
@@ -1945,8 +1945,8 @@ sites,SITE-001743,street_address,verified,
 sites,SITE-001743,zip,verified,
 sites,SITE-001756,street_address,verified,EVD-399483
 sites,SITE-001756,zip,verified,EVD-399483
-sites,SITE-001779,street_address,verified,
-sites,SITE-001779,zip,verified,
+sites,SITE-001779,street_address,verified,EVD-420035
+sites,SITE-001779,zip,verified,EVD-420035
 sites,SITE-001786,employee_band_site,verified,EVD-483014
 sites,SITE-001786,street_address,verified,EVD-483014
 sites,SITE-001792,street_address,verified,
@@ -1958,7 +1958,7 @@ sites,SITE-001807,employee_band_site,verified,EVD-481078
 sites,SITE-001807,street_address,verified,EVD-399441
 sites,SITE-001815,city,verified,EVD-420938
 sites,SITE-001815,street_address,verified,EVD-420938
-sites,SITE-001836,street_address,verified,
+sites,SITE-001836,street_address,verified,EVD-420051
 sites,SITE-001837,street_address,verified,
 sites,SITE-001840,street_address,verified,
 sites,SITE-001842,employee_band_site,verified,EVD-481080
@@ -1966,7 +1966,7 @@ sites,SITE-001843,org_id,verified,
 sites,SITE-001847,employee_band_site,verified,EVD-481081
 sites,SITE-001847,street_address,verified,
 sites,SITE-001847,zip,verified,
-sites,SITE-001856,street_address,verified,
+sites,SITE-001856,street_address,verified,EVD-420052
 sites,SITE-001873,street_address,verified,EVD-399448
 sites,SITE-001874,org_id,verified,
 sites,SITE-001883,org_id,verified,

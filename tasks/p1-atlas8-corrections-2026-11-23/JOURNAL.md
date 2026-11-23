@@ -11,3 +11,5 @@ Applied 2026-11-23 by atlas-p1-integrator-1 from main `f3c80b0a00d7adcb1be1347b6
 | `python3 scripts/check_evidence_binding.py --provenance-since origin/main` | PASS. Five additions under the label for this replay folder. |
 
 The replay rejected two planted defects in the isolated worktree. A claim for an unreviewed site failed the claim-ledger comparison. Replacing a corrected street with a wrong civic number failed the full data comparison. The original committed bytes were restored before the final push.
+
+A second witness-link pass filled 19 blank IDs on verified claims. Each added ID is an existing observation on the same record and citation, with the applicable claim type and the published value stated in its detail. The replay passed again. The claim dispositions, claim counts and data delta are identical to the previous head.

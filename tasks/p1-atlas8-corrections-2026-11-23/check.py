@@ -211,9 +211,24 @@ def sam_filter(store, reads):
     return result
 
 
-def witness_id(rows, witnesses):
+WITNESS_TYPES = {
+    "legal_name": {"existence"}, "trade_names": {"existence"}, "ultimate_parent_name": {"parent"},
+    "status": {"liveness"}, "status_date": {"liveness"}, "hq_city": {"address"}, "hq_county": {"address"},
+    "street_address": {"address"}, "zip": {"address"}, "city": {"address"},
+    "program_name": {"existence", "scope"}, "polymer_program_name": {"existence", "scope"},
+}
+
+
+def witness_terms(text):
+    return " " + " ".join(re.findall(r"[\w]+", text.casefold())) + " "
+
+
+def witness_id(rows, witnesses, record):
+    fallback = ""
     for row in rows:
-        candidates = witnesses.get(key(row)[:2], ())
+        candidates = [ev for ev in witnesses.get(key(row)[:2], ()) if ev["tier_effect"] != "contradicts"]
+        field = row["field"]
+        value = record.get(field, "")
         capture, source = row["capture_ref"], row["source_url"]
         explicit = set(re.findall(r"EVD-\d{6}", capture))
         if len(explicit) == 1:
@@ -226,10 +241,15 @@ def witness_id(rows, witnesses):
             ref = ev["source_ref"]
             quote = " ".join(row["quote"].split())
             detail = " ".join(ev["claim_detail"].split())
-            if (receipt and ref.endswith(receipt)
-                    or source and source == ref and quote and quote in detail):
+            same_citation = bool(source and source == ref)
+            exact_quote = bool(quote and quote in detail)
+            stated_value = (value and ev["claim_type"] in WITNESS_TYPES.get(field, ())
+                            and witness_terms(value) in witness_terms(detail))
+            if (receipt and ref.endswith(receipt)) or (same_citation and exact_quote):
                 return ev["evidence_id"]
-    return ""
+            if same_citation and stated_value and not fallback:
+                fallback = ev["evidence_id"]
+    return fallback
 
 
 def read_ita(store):
@@ -288,7 +308,7 @@ def proposed_edits(reads, witnesses, records, store, first_id):
         elif table == "sites" and rid in SAM_SITES and not sam[rid] and "store:sam/" in row["capture_ref"]:
             holds[k] = "SAM-only witness failed R-SAM"
         elif votes == {"VERIFIED"}:
-            claims[k] = ("verified", witness_id(rows, witnesses))
+            claims[k] = ("verified", witness_id(rows, witnesses, records[k[:2]][1]))
         elif votes == {"STILL_UNCERTAIN"}:
             if table == "programs" and rid in TAG_REMOVALS:
                 require(set(TAG_REMOVALS[rid]) <= set(field.split(";")), f"{k}: missing specialty verdict")
