@@ -999,6 +999,26 @@ class SiteShellTest(unittest.TestCase):
         self.assertNotRegex(js, r"insertBefore\(p, wrap\.nextSibling\)")   # the old below-the-table download paragraph
         self.assertNotRegex(js, r"(?:rows|row match)[\"']\s*;?\s*$|\+ ['\"] rows['\"]")   # counts go through plural()
 
+    def test_street_map_dots_read_the_same_ring_palette_as_the_key(self):
+        js = (self.out / "map.js").read_text(encoding="utf-8")
+        self.assertNotRegex(js, r"'[1-5x]'\s*:\s*'#")                      # no second hex palette for the dots
+        self.assertIn("'--r' + k", js)                                     # they read --r1..--r5, --rx, the tokens the key uses
+        css = (self.out / "style.css").read_text(encoding="utf-8")
+        for k in "12345x":
+            self.assertRegex(css, rf"--r{k}:#[0-9a-f]{{6}}")
+
+    def test_atlas_wide_search_stays_one_click_from_find_companies_and_home(self):
+        for rel in ("directory.html", "index.html"):
+            self.assertIn('href="search.html"', (self.out / rel).read_text(encoding="utf-8"), rel)
+
+    def test_toolbar_does_not_depend_on_sorting(self):
+        js = (self.out / "sortable.js").read_text(encoding="utf-8")
+        self.assertNotRegex(js, r"hasAttribute\('data-nosort'\)\) return")   # data-nosort removes the sort buttons only
+        county = next((self.out / "directory").glob("*.html")).read_text(encoding="utf-8")
+        self.assertRegex(county, r"<table data-nosort>")                   # the 50-row county pages get count, download and copy link
+        self.assertNotIn("data-nocsv", county)
+        self.assertIn('id="dtable" class="stack" data-nosort data-nofilter data-nocsv', (self.out / "directory.html").read_text(encoding="utf-8"))   # the list has its own toolbar
+
     def test_phone_menu_toggles_aria_expanded(self):
         js = (self.out / "shell.js").read_text(encoding="utf-8")
         self.assertIn("aria-expanded", js)

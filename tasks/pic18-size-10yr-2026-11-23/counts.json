@@ -1,0 +1,56 @@
+{
+  "added_by_window_owners": 9,
+  "age_only_site_retests": {
+    "binding_name_not_held": 1,
+    "eligible": 3,
+    "name_not_held": 3,
+    "stale_over_10_years": 19
+  },
+  "agreeing_owners": 83,
+  "base": "7a9731f2881e8ed5cfc6bfb7b1121167505868d2",
+  "current_frame_sites_held": 386,
+  "filing_holds_by_reason": {
+    "newer_contradicting_filing": 51,
+    "stale_over_10_years": 124
+  },
+  "five_year_owners": 9,
+  "frame_sites": 404,
+  "lost_by_window_owners": 0,
+  "packet_owners": 18,
+  "packet_sites": 18,
+  "packet_sites_by_filing_year": {
+    "2017": 3,
+    "2018": 4,
+    "2019": 2,
+    "2021": 1,
+    "2023": 1,
+    "2024": 2,
+    "2025": 4,
+    "2026": 1
+  },
+  "packet_sites_by_source": {
+    "osha_inspection": 6,
+    "osha_ita": 12
+  },
+  "paired_owners": 115,
+  "paired_sites": 115,
+  "pic18_owners": 794,
+  "pre_five_year_source_owners": 9,
+  "site_holds_by_reason": {
+    "binding_held_for_reading:designator_not_on_both_sides": 1,
+    "binding_name_not_held": 1,
+    "filing_binds_two_sites": 1,
+    "ita_multiple_establishments_at_street": 4,
+    "later_filing_other_name": 14,
+    "name_not_held": 105,
+    "near_street_filing_differs_from_fill": 1,
+    "no_civic_street": 115,
+    "no_filing_at_street": 106,
+    "private_looking_filer": 2,
+    "stale_over_10_years": 27,
+    "street_near_differs": 8,
+    "superseded_by_later_filing": 1
+  },
+  "unknown_size_owners": 392,
+  "within_one_band_owners": 110
+}
