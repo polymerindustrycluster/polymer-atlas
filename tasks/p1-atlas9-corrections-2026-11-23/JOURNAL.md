@@ -26,3 +26,13 @@ places the headquarters move in a company history entry. [Task source replay](ch
 Sonnet's detailed report is `reviews/atlas9-pr3-hq-read-sonnet.md` in the
 controller's review directory. The two exact HTML bodies are in private
 provenance under the paths in `INPUTS.sha256`.
+
+The audit 12 frame replay moved the two organization records out of PIC-18
+(1,931 to 1,929 records) and into the rest-of-country stratum (8,406 to 8,408
+records). The frame still has zero unassignable records and one named
+exclusion. The canonical site files are byte-identical to the base.
+
+The named batch check passed for 234 packet rows, 201 claims, eight HQ
+cells, two proofs and 41 queued evidence IDs. The validator and row-loss
+guard passed under the heavy lock. A repeat local replay with main's binding
+gate fetched both public mementos and passed both proofs.

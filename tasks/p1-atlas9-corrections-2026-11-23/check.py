@@ -210,6 +210,7 @@ def offices_and_proofs(ref, before, inputs):
     require(receipts.keys() == HQ.keys(), "receipt keys differ from approved corrections")
     base_arcs = by_id(BASE, "archive_links.csv", "evidence_id")
     base_idx = gate.Index.load(BASE)
+    idx = gate.Index.load(ref) if ref else base_idx
     store = {sha(data): data for data in inputs.values()}
     require(len(store) == 2 and store.keys() == {p["capture_sha256"] for p in proofs.values()},
             "exact capture input membership differs")
@@ -233,8 +234,8 @@ def offices_and_proofs(ref, before, inputs):
             require(arc["created_by"] == LABEL and receipt["job_id"].startswith("spn2-")
                     and arc["captured_at"] == DAY.isoformat(), "Total Plastics save receipt differs")
         ev = hq_witness(eid, old_eid, rec, proof["capture"])
-        require(gate.judge(ev, base_idx)[:2] == ("READ_REQUIRED", "mechanics_clear"), f"{eid}: gate floor")
-        fault = gate.proof_problem(proof, ev, base_idx, base_idx, arc, DAY, "openai",
+        require(gate.judge(ev, idx)[:2] == ("READ_REQUIRED", "mechanics_clear"), f"{eid}: gate floor")
+        fault = gate.proof_problem(proof, ev, idx, base_idx, arc, DAY, "openai",
                                    lambda _: store[proof["capture_sha256"]])
         require(not fault, f"{eid}: capture proof failed: {fault}")
         new_eids[old_eid] = eid
