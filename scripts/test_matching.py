@@ -101,6 +101,7 @@ class GenericLabels(unittest.TestCase):  # owner ruling 2026-11-22, "drop generi
         for w in dl.GENERIC_LABELS["facility"]:
             self.assertTrue(dl.generic_label(w), w)
         self.assertTrue(dl.generic_label("plant warehouse"))
+        self.assertTrue(dl.generic_label("main plant"))  # "main" added by the owner, 2026-11-22
 
     def test_numbers_and_ordinals(self):
         for k in ("plant 2", "plant no 2", "plant #2", "2nd plant", "plant two", "third building", "unit 4"):
@@ -121,8 +122,8 @@ class GenericLabels(unittest.TestCase):  # owner ruling 2026-11-22, "drop generi
         self.assertFalse(dl.generic_label("dover", city="Akron"))
 
     def test_names_are_not_labels(self):
-        for k in ("tamarack", "acme polymer", "main plant", "bonar plastics", "polymer works", "3m dover", ""):
-            self.assertFalse(dl.generic_label(k), k)  # "main" is not on the owner's list
+        for k in ("tamarack", "acme polymer", "main street plastics", "bonar plastics", "polymer works", "3m dover", ""):
+            self.assertFalse(dl.generic_label(k), k)
 
 
 class CorporateForm(unittest.TestCase):

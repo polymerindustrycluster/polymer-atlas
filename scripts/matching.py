@@ -86,7 +86,8 @@ def corporate_form_extension(held_key: str, quoted_key: str) -> bool:
 # held name only when every token in it is a generic label from this one fixed list, or the site's own city or county.
 # Any other part (a brand, a division, a trading name) is a held name.
 GENERIC_LABELS = {
-    "facility": ("plant", "facility", "warehouse", "works", "site", "office", "hq", "headquarters", "building", "unit"),
+    "facility": ("plant", "facility", "warehouse", "works", "site", "office", "hq", "headquarters", "building", "unit",
+                 "main"),  # "main": added by the owner, 2026-11-22
     "number": ("no", "number", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "first",
                "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"),  # and 2, #2, 2nd; never "3m"
     "compass": ("north", "south", "east", "west", "northeast", "northwest", "southeast", "southwest", "n", "s", "e", "w",
