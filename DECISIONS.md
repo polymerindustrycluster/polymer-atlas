@@ -248,3 +248,16 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 
 - **Decision (“do the fix”):** `.github/workflows/pr-rules.yml` drops the `ready_for_review` trigger. On PR #492 a push and a ready toggle seconds apart started two runs on the same head; the queued one was cancelled, the `pr-rules` and `binding-gate` check runs the other posted through the API were filed under the cancelled run's check suite, and the ruleset blocked the merge with every required check green. Marking a PR ready does not change its head, so the checks have already judged it. Reopening a PR, re-running a run by hand, or moving the branch back to a commit already tested can still repeat work on one head; when a merge is blocked with every required check green, push a new commit. PR #493 was also blocked with its checks green, but both of its runs succeeded, so this does not explain it; its cause was not established.
 - **Decided by:** the repo owner, in the controller's session, 2026-11-23.
+
+## 2026-11-23: round 18 rulings, audit strata for people, programs and events, and four stale PRs
+
+- **Decision (audit strata):** researchers (people records), programs, and events with their participation rows are each a
+  stratum of blind audit 12, held to the same unit as the round 17 target (a sampled record is wrong if any published field
+  on it is wrong) at a 95% Wilson upper bound of 10% or less.
+- **Decision (stale PRs, "close 2, park 2"):** PR #459 (batch 7, national evidence backfill) is closed under the standing
+  freeze, its branch kept. PR #482 (one size band outside PIC-18) is closed; the route re-runs in the rest-of-Ohio phase.
+  PRs #464 (Form 5500 organization lane) and #488 (notes history) stay open as drafts until blind audit 12 reports whether
+  they matter for accuracy. Nothing in them is rejected.
+- **Counting note (AGENTS §7):** the PIC-18 outcome frame of 794 is the owners of active tier A to C PIC-18 sites: 787
+  organization records plus 7 ecosystem records. Earlier controller notes called it "794 organization rows".
+- **Decided by:** the repo owner, in the controller's session, 2026-11-23, as multiple choice.
