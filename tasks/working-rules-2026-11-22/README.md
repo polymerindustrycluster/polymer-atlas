@@ -4,124 +4,81 @@ The owner adopted seven working rules on 2026-11-22 (AGENTS.md section 2a; DECIS
 The trigger: one harness built, verified and merged about 34,000 evidence rows in a day, 28% of them did not bind to
 their record, and every check was green. A rule without a check gets one or is not called a rule.
 
-`scripts/check_pr_rules.py` is the check for rules 1, 4, 5 and 6, run by `.github/workflows/pr-rules.yml`, which
-publishes the check run named `pr-rules` on the PR head. Its tests are `scripts/test_check_pr_rules.py` (run by
-`scripts/run_tests.py` in `validate`). Each test below names the planted violation that must fail and the compliant
-case that must pass.
+**Cut down by owner ruling (2026-11-22, after two Codex review rounds).** An earlier version of this PR also read PR
+comments and review records. It was dropped because it could not be made sound: a record is a self-reported comment on
+one shared GitHub account. Review (rules 1 and 4) is now practice, stated as such in AGENTS.md, and nothing in this PR
+reads a comment. What remains is below.
 
-**Independent control (owner ruling, controller 2026-11-22).** The workflow runs on `pull_request_target` and
-`issue_comment`, checks out the base branch only, and runs the checker on `main` against facts fetched for the PR
-number. It never checks out or executes PR code. **Consequence, stated plainly:** a PR that changes
-`scripts/check_pr_rules.py` or `.github/workflows/pr-rules.yml` is judged by the version already on `main`, so such a PR
-cannot weaken its own gate; it needs one review record from a family other than the builder's, like any non-data PR (owner ruling "tier by risk", 2026-11-22, which superseded the earlier instruction that tooling PRs need two families). The new version first judges the PR after
-the one that merges it. This PR itself cannot be judged by the new workflow before it merges (the workflow does not
-exist on `main`); it is run through the checker locally and needs one independent review record.
+| Rule | Status |
+|---|---|
+| 1. Builder never merges | Practice. Not checked. One GitHub account is shared by every harness, so who merged cannot be verified. |
+| 2. Packet and replay | Partly checked by PR #467's gate (below). Not replay, not sampling. |
+| 3. Binding gate | Checked for structured evidence rows by PR #467's gate, by name and street. |
+| 4. Tiered review | Practice. Not checked. Enforcement would need separate accounts and GitHub-required reviews (owner's choice, not now). |
+| 5. Size cap | Checked: `check_pr_rules.py`. |
+| 5. Audit before the next batch | Checked: `check_pr_rules.py`, with a deployment condition (below). |
+| 5. Freeze on national backfill | Owner policy. Not checked. |
+| 6. Raw inputs by checksum | Checked, format only: `check_pr_rules.py`. |
+| 7. Where things live | Practice. Not checked. |
 
-| Rule | What the check catches | Planted case (test class.method) |
+## What is checked, and the planted case for each
+
+`scripts/check_pr_rules.py`, run by `.github/workflows/pr-rules.yml` as the check run `pr-rules`; tests in
+`scripts/test_check_pr_rules.py` (run by `scripts/run_tests.py` in `validate`).
+
+| Check | What it catches | Planted case (test) |
 |---|---|---|
-| 1. Builder never merges | PR body without `Built by: <harness>, <model family>`; no counted reviewer from a family other than the builder's | `TestRules1And4.test_missing_built_by_line_fails`, `.test_builder_is_only_reviewer_family_fails` |
-| 2. Packet and replay | not here: `scripts/check_evidence_binding.py`, lands with branch `agent/claude-code/evidence-binding-gate-2026-11-22` | built by atlas-w22-binding-gate |
-| 3. Binding gate | not here: same lane and branch | built by atlas-w22-binding-gate |
-| 4. Tiered review: two families for a PR touching `data/`, one independent record for every other PR | fewer than two families approving at the current head; a stale-SHA record; a REFUTE; a later REFUTE withdrawing an approval; an abbreviated SHA; two models of one family; the same model under two family labels; a record with no model, an unknown model, or no "What it checked" | `TestRules1And4.*`, in particular `.test_scripts_ci_and_process_prs_need_one_independent_record`, `.test_any_data_file_makes_it_a_two_family_pr` |
-| 5. Size cap | more than 1,000 evidence rows or 1,000 new registry identities without a "size waiver" line, added to DECISIONS.md by the PR, naming exactly the PR's branch | `TestRule5.test_over_cap_without_waiver_fails`, `.test_registry_links_over_cap_fails`, `.test_waiver_must_name_exactly_this_branch` |
-| 5. Audit before the next batch | a data PR while a `created_by` label on `main` is not in the baseline and not named by a valid `AUDIT.md` (`Label:`, `Result: PASS`, `Sample:`, `Reviewers:`); a FAIL audit; a pending audit | `TestRule5.test_unaudited_label_blocks_a_data_pr`, `.test_pending_audit_does_not_count`, `.test_fail_audit_blocks`, `.test_audit_missing_sample_or_reviewers_does_not_count` |
-| 6. Raw inputs by checksum | evidence rows or registry links added with no `tasks/<folder>/INPUTS.sha256`; a malformed or empty line; an absolute path of either style, `.`, `..`, a directory, a repo path that is not an existing file | `TestRule6.*` |
-| all | a fact the check could not read (collection failure, a failed read of a tracked object, an empty changed-file list) fails the run | `TestUninspectable.*`, `TestCollectors.test_failed_read_of_a_tracked_path_raises`, `.test_collect_reports_a_failed_read_and_the_run_fails` |
+| Size cap | more than 1,000 evidence rows or 1,000 new registry identities without a waiver | `TestRule5.test_over_cap_without_waiver_fails`, `.test_registry_links_over_cap_fails`; compliant: `.test_at_cap_passes` |
+| Waiver | the waiver line must be added by the PR, contain "size waiver", and carry `branch=<name>` whose token EQUALS the PR's branch; every suffix tried (`+alternate`, `-extra`, `/more`, `.y`, `,`, `;`, `@x`, `#1`, `=y`, `.lock` and more), another branch, no `branch=` field, no waiver words, `xbranch=` all fail | `TestRule5.test_waiver_compares_the_complete_branch_field_for_equality` |
+| Audit record | a data PR while a `created_by` label on `main` is not in the baseline and not named by a valid `AUDIT.md` (`Label:`, `Result: PASS`, `Sample:`, `Reviewers:`); a pending audit, a missing field or a FAIL audit | `TestRule5.test_unaudited_label_blocks_a_data_pr`, `.test_pending_audit_does_not_count`, `.test_fail_audit_blocks`, `.test_audit_missing_sample_or_reviewers_does_not_count` |
+| INPUTS.sha256 | evidence rows or registry links with no `tasks/<folder>/INPUTS.sha256`; a malformed or empty line; an absolute path of either style, `.`, `..`, a directory; **the bare word `raw` or `provenance` (it names the store, not a file: at least one component below it is needed)**; a repo path that is not an existing file | `TestRule6.*`, in particular `.test_the_store_itself_is_not_a_file`, `.test_absolute_dot_dotdot_and_directory_paths_fail` |
+| Fail on what it could not inspect | a failed read of a tracked git object, a short CSV row, a missing column, a collection failure, an empty changed-file list | `TestUninspectable.*`, `TestCollectors.test_failed_read_of_a_tracked_path_raises`, `.test_collect_reports_a_failed_read_and_the_run_fails` |
+| Registry identity | a metadata edit to a held link is not a new link | `TestCollectors.test_registry_metadata_edit_is_not_a_new_link` |
+| Nothing reads a comment | the checker and workflow carry no comment, review-record or PR-body logic | `TestCompliant.test_no_review_record_is_read_anywhere`, `TestWorkflow.test_no_comment_trigger_and_no_comment_reading` |
 
-Compliant cases that must pass: `TestCompliant.*`, `TestRule5.test_at_cap_passes`,
-`.test_valid_pass_audit_clears_label_and_several_labels_per_file`, `TestRules1And4.test_later_approval_after_refute_restores`.
-`TestCollectors` runs the row counter, the label reader and `collect()` itself against a real git repository (quoted
-multiline fields, a metadata-only registry edit, a path absent at base, a failed blob read). `TestWorkflow` pins the
-workflow to `pull_request_target`, a base-only checkout, and comment created, edited and deleted. The check was also
-run live on PR #461 and PR #462 on 2026-11-22.
+Compliant cases that must pass: `TestCompliant.*`, `TestRule5.test_valid_pass_audit_clears_label_and_several_labels_per_file`.
+`TestCollectors` runs the row counter, the label reader and `collect()` itself against a real git repository.
 
-## The binding-gate job (rules 2 and 3 on the PR tree)
+## The binding-gate job
 
 The workflow's second check run, `binding-gate`, runs main's `scripts/check_evidence_binding.py` (PR #467, the gate for
-structured rows) twice, each with `--tree pr`: `--new-since origin/main` and `--provenance-since origin/main`. The PR
-merge result is checked out as data into `./pr`; the trusted checkout (the base branch, `fetch-depth: 0`) supplies the code
-and the rules. **Nothing from the PR tree is executed**, so the job needs no isolation: it has `permissions: {}` (the
-repository is public) and both checkouts use `persist-credentials: false`. A separate job, which runs no PR code,
-holds `checks: write` and publishes the result. The job fails if the merge commit's second parent is not the current PR
-head (a stale merge ref).
-
-States: `passed` (success); `failed` and `cannot_inspect` (failure; the latter when main's script lacks a mode or exits
-2); `not_yet`. **`not_yet` is the one pass that checked nothing:** until `scripts/check_evidence_binding.py` is on `main`
-the check run says "gate not yet on main: nothing was checked" and posts success, because the gate cannot judge the PR
-that adds it, and a failure would block that PR. Nothing is neutral and nothing is skipped: a step that cannot run its
-check fails. Web-row proofs (`--verify-proofs`) and anything that executes PR files come in a later PR with their own
-step. `TestBindingGateJob` pins these properties in the workflow text. **Not verified:** the gate steps have not run on
-a runner (the script is not on `main` until #467 merges).
-
-## Counterexamples from Codex's round 1 on PR #466 (each is now a test)
-
-| # | Finding | Fix |
-|---|---|---|
-| 1 | the PR's own checker judged the PR | `pull_request_target`, base checkout, `TestWorkflow` |
-| 2 | a later REFUTE or a stale abbreviated SHA still counted | latest record per verifier governs; the SHA is read only from the verdict line, 40 characters |
-| 3 | family labels and family-only records counted | family derived from the model by a fixed map; model, verdict with SHA and "What it checked" required |
-| 4 | a longer or prefixed branch name lifted the cap | exact branch, on a line the PR adds to DECISIONS.md |
-| 5 | audit gate stale after main moves | documented: the ruleset's strict policy (below) |
-| 6 | a failed blob read looked like zero rows | `InspectionError`; only a path absent from one side of the diff is absent |
-| 7 | a registry metadata edit counted as a new link | identity (org_id, registry, registry_id, site_id) |
-| 8 | Windows absolute path, `.` and directories accepted | relative POSIX file path; repo paths must exist as a file at head |
-| 9 | an edited or deleted comment did not re-evaluate; run chosen by SHA | `issue_comment` created, edited, deleted; evaluated by PR number through the API |
-
-## Review-record format the parser accepts
-
-A comment whose first line is `**Review record**`, then
-`- **Verifier:** <harness>, <model>, ...` (the model is the second comma-separated field),
-``- **Verdict:** APPROVE|REFUTE at `<40-hex head SHA>` `` and `- **What it checked:** <what, at least ten characters>`.
-The family comes from the model by a fixed map of whole words: GPT or Codex is OpenAI; Claude, Opus, Sonnet, Haiku or
-Fable is Anthropic; Gemini is Google; Grok is xAI; Muse is Meta. An unknown model does not count; two models of one
-family are one family. Formats on #460 and #462 (`OpenAI Codex, GPT-6.2 Astra, ...`) parse. A model name must be written
-so that its family appears in it (for example `Gemini 4 Hydrogen`, not `4 Hydrogen`).
+structured rows) twice with `--tree pr`: `--new-since origin/main` and `--provenance-since origin/main`. The PR merge
+result is checked out as data into `./pr`; the trusted checkout (the base branch, `fetch-depth: 0`) supplies the code and
+the rules. **Nothing from the PR tree is executed.** The job has `permissions: {}` (the repository is public) and both
+checkouts use `persist-credentials: false`. A separate job, which runs no PR code, holds `checks: write` and publishes
+the result. The job fails if the merge commit's second parent is not the current PR head (a stale merge ref). States:
+`passed` (success); `failed` and `cannot_inspect` (failure; the latter when main's script lacks a mode or exits 2);
+`not_yet`. **`not_yet` is the one pass that checked nothing:** until `scripts/check_evidence_binding.py` is on `main` the
+check run says "gate not yet on main: nothing was checked" and posts success, because the gate cannot judge the PR that
+adds it. Nothing is neutral and nothing is skipped. `TestBindingGateJob` pins these properties in the workflow text.
+Not verified: the gate steps have not run on a runner (the script is not on `main` until #467 merges).
 
 ## What it cannot catch
 
-- **Who merged (rule 1).** Every harness acts through one shared GitHub account, so a merge by the builder looks the
-  same as a merge by anyone. The check can only require that a record from a different family exists. Closing this
-  needs separate accounts or a human merge, which is an owner decision.
-- **A false review record.** The record is a self-reported comment any harness can post on the shared account. The
-  check reads the model, verdict, SHA and checked-line the comment claims; it cannot tell whether that model actually
-  reviewed. The reviewer's work is in its report, which the record points to.
-- **The hashes in `INPUTS.sha256` (rule 6).** Format only. A reviewer checks them against the shared store.
-- **A PR that edits the check** is judged by the version on `main` (see above), so it cannot weaken its own gate. What
-  remains: the version on `main` is only as good as its last two-family review, and the ruleset (a setting, not a file)
-  is what makes `pr-rules` required.
-- **A stale audit gate (finding 5).** Two data PRs tested against the same clean `main` can both pass, then the first
-  lands a new label. The check is re-evaluated on PR events and comments, not when `main` moves. The controller sets
-  the ruleset's strict policy (branch up to date with `main` before merge) when making `pr-rules` required, so a PR is
-  re-judged after `main` moves. Without that setting this gap is open.
-- **The round cap, the re-review scope and the BLOCKING or FOLLOW-UP marking (rule 4).** Practice for the controller, not
-  checked. The checker only notes a REFUTE record that names no BLOCKING finding; it still withdraws that approval.
-- **The freeze on national evidence backfill (rule 5).** Owner policy, no check.
-- **A raw-store path that is a directory.** Paths under `raw/` and `provenance/` are in the shared store, not the
-  repository, so the check cannot tell a file from a directory there; it rejects a trailing slash and `.`/`..`.
-- **Rule 5 audit content.** The check finds a file `AUDIT.md` naming the label; it does not judge the audit. Audit
-  files are read from `main`, so a PR cannot audit itself, but a thin audit file passes.
-- **Rule 5 counts rows the PR adds, not rows it changes.** A PR that rewrites 5,000 existing evidence rows adds none.
-  Row loss is `check_row_loss.py`'s job; row rewrites are not counted by anything.
-- **Rules 2 and 3**: not built here (see the table). **Rule 7** has no check (see AGENTS.md "Start here").
+- **Who merged, and whether a review happened (rules 1 and 4).** Practice only; see the table.
+- **A PR that edits the check** is judged by the version on `main`, so it cannot weaken its own gate. The version on
+  `main` is only as good as its last review, and the ruleset (a setting, not a file) is what makes `pr-rules` required.
+- **Audit freshness (deployment condition).** Two data PRs tested against the same clean `main` can both pass, and the
+  first then lands a new label. The check is evaluated on PR events, not when `main` moves. It holds only once the
+  controller has made `pr-rules` a required check **and** turned on the ruleset's strict (up-to-date) policy. Neither is
+  done by this PR; `docs/ci/README.md` says so.
+- **The hashes in `INPUTS.sha256`.** Format only. A reviewer checks them against the shared store. Paths under `raw/`
+  and `provenance/` are in the shared store, not the repository, so a directory there cannot be told from a file beyond
+  the rules above.
+- **Audit content.** The check finds an `AUDIT.md` with the four lines; it does not judge the audit. Audit files are read
+  from `main`, so a PR cannot audit itself, but a thin audit file passes.
+- **Rows a PR changes.** Only added rows are counted: a PR that rewrites 5,000 existing evidence rows adds none.
+  Row loss is `check_row_loss.py`'s job.
+- **Failed evaluation on an unchanged head.** If a re-run on the same head fails to collect, no new check run is posted
+  and an earlier result stands. A new push always starts from no result.
 
-## Rulings applied (controller, 2026-11-22) and what is still open
-
-Applied from the controller's message on Codex's round 1: independent control; the latest record per verifier; family
-from the model; exact-branch waiver; strict policy documented; read failures fail; registry identity; path grammar;
-comment events by PR number; AUDIT.md structure (`Label:`, `Result: PASS|FAIL`, `Sample:`, `Reviewers:`; pending does
-not count; FAIL blocks, including a grandfathered label); rule 3 scope as the binding gate enforces it.
-
-Still open for the owner or controller:
+## Still open for the owner or controller
 
 1. **Baseline scope.** The baseline holds all 440 `created_by` labels on `main` on 2026-11-22, including the batch-5 and
-   batch-6 labels. Those are the labels the revert removes and the re-admission PRs re-add, so grandfathering them
-   means a re-admission batch is not blocked for lack of an audit. Deleting the two lines
-   `spaghetti-batch5-2026-11-22` and `spaghetti-batch6-2026-11-22` from the baseline would require an `AUDIT.md` first.
-2. **The 2026-11-20 "Codex-only for now" waiver** (QUEUE.md, evidence lanes) conflicts with rule 4. The check does not
-   honour it: a data PR needs two families.
-3. **Labels in tables other than evidence.** The label reader takes `created_by` from every `data/*.csv` that has the
+   batch-6 labels. Those are the labels the revert removed and the re-admission PRs re-add, so grandfathering them means a
+   re-admission batch is not blocked for lack of an audit. Deleting `spaghetti-batch5-2026-11-22` and
+   `spaghetti-batch6-2026-11-22` from the baseline would require an `AUDIT.md` first.
+2. **Labels in tables other than evidence.** The label reader takes `created_by` from every `data/*.csv` that has the
    column, not only the evidence shards.
-4. **A FAIL audit is permanent until its file changes.** Any `AUDIT.md` with `Result: FAIL` blocks data PRs for that
-   label; a later PASS file does not override it. Clearing it means editing the FAIL record in a reviewed PR.
-5. **Merge-time versus comment-time.** A record posted after the last push counts when its SHA matches; a later push
-   makes it stale. Intended; stated so it is not a surprise.
+3. **A FAIL audit is permanent until its file changes.** A later PASS file does not override it.
+4. **Ruleset (controller):** require `pr-rules` and `binding-gate`, and turn on the strict policy (see above).

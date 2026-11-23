@@ -1,6 +1,6 @@
-"""check_pr_rules: one planted violation per rule that must fail, one compliant case that must pass, the nine
-counterexamples from Codex's round-1 review of PR #466, and the git collectors run against a throwaway repository.
-Synthetic PRs only."""
+"""check_pr_rules: one planted violation per check that must fail, one compliant case that must pass, the
+counterexamples from Codex's two review rounds on PR #466, and the git collectors run against a throwaway repository.
+The checker reads no PR comment and no review record (owner ruling 2026-11-22). Synthetic PRs only."""
 import copy
 import subprocess
 import tempfile
@@ -12,19 +12,11 @@ import check_pr_rules as c
 
 HEAD = "a" * 40
 OLD = "b" * 40
-CHECKED = "- **What it checked:** the diff against the rule text and the planted cases\n"
 AUDIT = "Label: {label}\nResult: {result}\nSample: 50 rows read\nReviewers: Codex, Gemini\n"
 
 
-def record(model, sha=HEAD, verdict="APPROVE", harness="Harness", checked=CHECKED, at=None):
-    at = f" at `{sha}`" if at is None else at
-    return (f"**Review record** (owner ruling 2026-11-22, item 3)\n\n- **Verifier:** {harness}, {model}, default tier.\n"
-            f"- **Verdict:** {verdict}{at}, round 1, zero open findings.\n{checked}")
-
-
 GOOD = {
-    "pr": {"number": 7, "head_sha": HEAD, "branch": "agent/claude-code/x", "body": "Built by: Claude Code, Anthropic\n\nrest"},
-    "comments": [record("GPT-6.2 Astra"), record("Gemini 4 Hydrogen")],
+    "pr": {"number": 7, "head_sha": HEAD, "branch": "agent/claude-code/x"},
     "changed_files": ["data/evidence_organizations_OH.csv", "tasks/x/INPUTS.sha256", "tasks/x/README.md"],
     "added_files": ["tasks/x/INPUTS.sha256"],
     "added_evidence_rows": 10, "added_registry_links": 0, "added_decisions_lines": [],
@@ -61,114 +53,27 @@ class TestCompliant(unittest.TestCase):
         self.assertIn("inspected:", out)
         self.assertIn("hashes themselves are NOT checked", out)
 
-    def test_non_data_pr_needs_one_record(self):
-        self.assertEqual(run(docs_pr(comments=[record("GPT-6.2 Astra")]))[0], 0)
-
-    def test_repo_path_in_inputs_passes_when_it_is_a_file(self):
-        f = mutated(inputs_files={"tasks/x/INPUTS.sha256": "0" * 64 + "  tasks/x/README.md\n"},
-                    inputs_repo_ok={"tasks/x/README.md": True})
-        self.assertEqual(run(f)[0], 0)
-
-
-class TestRules1And4(unittest.TestCase):
-    def test_one_family_on_data_pr_fails(self):
-        rc, out = run(mutated(comments=[record("GPT-6.2 Astra")]))
-        self.assertEqual(rc, 1)
-        self.assertIn("1 family(ies) approved", out)
-
-    def test_two_records_same_family_count_once(self):
-        self.assertEqual(run(mutated(comments=[record("GPT-6.2 Astra"), record("GPT-6 Luna")]))[0], 1)
-
-    def test_refute_does_not_count(self):
-        self.assertEqual(run(mutated(comments=[record("GPT-6.2 Astra", verdict="REFUTE"), record("Gemini 4 Hydrogen")]))[0], 1)
-
-    def test_non_record_comment_ignored(self):
-        self.assertEqual(run(mutated(comments=["LGTM, approve at " + HEAD, record("Gemini 4 Hydrogen")]))[0], 1)
-
-    # --- owner ruling 2026-11-22, tier by risk: only data/ needs two families
-    def test_scripts_ci_and_process_prs_need_one_independent_record(self):
-        for path in ("scripts/x.py", ".github/workflows/x.yml", "scripts/check_pr_rules.py", "tasks/x/README.md", "AGENTS.md"):
-            self.assertEqual(run(docs_pr(changed_files=[path], comments=[record("GPT-6.2 Astra")]))[0], 0, path)
-            self.assertEqual(run(docs_pr(changed_files=[path], comments=[]))[0], 1, path)
-            self.assertEqual(run(docs_pr(changed_files=[path], comments=[record("Opus 5.5")]))[0], 1, path)  # builder's own family
-
-    def test_any_data_file_makes_it_a_two_family_pr(self):
-        f = docs_pr(changed_files=["scripts/x.py", "data/organizations_OH.csv"], comments=[record("GPT-6.2 Astra")])
-        self.assertEqual(run(f)[0], 1)
-        f["comments"].append(record("Gemini 4 Hydrogen"))
-        self.assertEqual(run(f)[0], 0)
-
-    def test_refute_without_blocking_finding_is_noted_but_still_withdraws(self):
-        cs = [record("GPT-6.2 Astra"), record("Gemini 4 Hydrogen"), record("Gemini 4 Hydrogen", verdict="REFUTE")]
-        rc, out = run(mutated(comments=cs))
-        self.assertEqual(rc, 1)
-        self.assertIn("without a BLOCKING finding", out)
-        cs[2] += "\n- BLOCKING: a check passes on what it could not inspect\n"
-        self.assertNotIn("without a BLOCKING finding", run(mutated(comments=cs))[1])
-
-    def test_missing_built_by_line_fails(self):
-        rc, out = run(mutated(pr={"body": "no builder line"}))
-        self.assertEqual(rc, 1)
-        self.assertIn("Built by", out)
-
-    def test_builder_is_only_reviewer_family_fails(self):
-        rc, out = run(docs_pr(comments=[record("Opus 5.5")]))
-        self.assertEqual(rc, 1)
-        self.assertIn("other than the builder", out)
-
-    # --- finding 2: latest record per verifier governs; the SHA is read only from the verdict line
-    def test_later_refute_at_head_withdraws_approval(self):
-        cs = [record("GPT-6.2 Astra"), record("Gemini 4 Hydrogen"), record("Gemini 4 Hydrogen", verdict="REFUTE")]
-        rc, out = run(mutated(comments=cs))
-        self.assertEqual(rc, 1)
-        self.assertIn("withdraws google", out)
-
-    def test_later_approval_after_refute_restores(self):
-        cs = [record("GPT-6.2 Astra"), record("Gemini 4 Hydrogen", verdict="REFUTE"), record("Gemini 4 Hydrogen")]
-        self.assertEqual(run(mutated(comments=cs))[0], 0)
-
-    def test_refute_by_another_model_of_the_family_blocks_the_family(self):
-        cs = [record("GPT-6.2 Astra"), record("Gemini 4 Hydrogen"), record("Gemini 4 Argon", verdict="REFUTE")]
-        self.assertEqual(run(mutated(comments=cs))[0], 1)
-
-    def test_abbreviated_sha_with_full_sha_later_in_the_line_is_not_an_approval(self):
-        bad = record("Gemini 4 Hydrogen", at=f" at `{OLD[:8]}` (current head {HEAD} not reviewed)")
-        rc, out = run(mutated(comments=[record("GPT-6.2 Astra"), bad]))
-        self.assertEqual(rc, 1)
-        self.assertIn("without a full 40-character SHA", out)
-
-    def test_stale_head_does_not_count(self):
-        rc, out = run(mutated(comments=[record("GPT-6.2 Astra", sha=OLD), record("Gemini 4 Hydrogen")]))
-        self.assertEqual(rc, 1)
-        self.assertIn("stale", out)
-
-    # --- finding 3: family from the model; model, verdict+SHA and what was checked are all required
-    def test_same_model_under_two_family_labels_is_one_family(self):
-        cs = [record("GPT-6.2 Astra", harness="OpenAI Codex"), record("GPT-6.2 Astra", harness="Google Gemini")]
-        self.assertEqual(run(mutated(comments=cs))[0], 1)
-
-    def test_record_without_a_model_does_not_count(self):
-        no_model = ("**Review record**\n\n- **Verifier:** Google\n- **Verdict:** APPROVE at `" + HEAD + "`\n" + CHECKED)
-        rc, out = run(mutated(comments=[record("GPT-6.2 Astra"), no_model]))
-        self.assertEqual(rc, 1)
-        self.assertIn("no recognised model", out)
-
-    def test_unknown_model_does_not_count(self):
-        self.assertEqual(run(mutated(comments=[record("GPT-6.2 Astra"), record("Mystery Bot 9")]))[0], 1)
-
-    def test_record_without_what_it_checked_does_not_count(self):
-        rc, out = run(mutated(comments=[record("GPT-6.2 Astra"), record("Gemini 4 Hydrogen", checked="")]))
-        self.assertEqual(rc, 1)
-        self.assertIn("What it checked", out)
-
-    def test_muse_maps_to_meta(self):
-        self.assertEqual(c.family_of("Muse Spark"), "meta")
-        self.assertEqual(c.family_of("Fable 5.2"), "anthropic")
+    def test_non_data_pr_passes_without_any_record(self):
+        self.assertEqual(run(docs_pr())[0], 0)
 
     def test_empty_changed_file_list_is_not_inspected(self):
         rc, out = run(mutated(changed_files=[]))
         self.assertEqual(rc, 1)
         self.assertIn("NOT INSPECTED", out)
+
+    def test_no_review_record_is_read_anywhere(self):
+        # owner ruling 2026-11-22: review is practice; neither the facts nor the checker carry comments or PR bodies
+        src = (Path(__file__).resolve().parent / "check_pr_rules.py").read_text()
+        for gone in ("Review record", "review_votes", "family_of", "counted_families", "Built by", '"comments"', "issue_comment"):
+            self.assertNotIn(gone, src)
+        self.assertEqual(run(mutated(comments=["**Review record** REFUTE"]))[0], 0)  # an unused fact changes nothing
+
+
+
+    def test_repo_path_in_inputs_passes_when_it_is_a_file(self):
+        f = mutated(inputs_files={"tasks/x/INPUTS.sha256": "0" * 64 + "  tasks/x/README.md\n"},
+                    inputs_repo_ok={"tasks/x/README.md": True})
+        self.assertEqual(run(f)[0], 0)
 
 
 class TestRule5(unittest.TestCase):
@@ -184,14 +89,20 @@ class TestRule5(unittest.TestCase):
         self.assertEqual(run(mutated(added_evidence_rows=1000))[0], 0)
 
     # --- finding 4: exact branch name on an added DECISIONS.md line
-    def test_waiver_must_name_exactly_this_branch(self):
-        self.assertEqual(run(mutated(added_evidence_rows=3000, added_decisions_lines=["- size waiver for agent/other/y"]))[0], 1)
-        longer = ["- size waiver for agent/claude-code/x-extra: 3000 rows"]
-        self.assertEqual(run(mutated(added_evidence_rows=3000, added_decisions_lines=longer))[0], 1)
-        prefix = ["- size waiver for agent/claude-code/x/more: 3000 rows"]
-        self.assertEqual(run(mutated(added_evidence_rows=3000, added_decisions_lines=prefix))[0], 1)
-        mine = ["- Size waiver: agent/claude-code/x adds 3000 rows, owner approved"]
-        self.assertEqual(run(mutated(added_evidence_rows=3000, added_decisions_lines=mine))[0], 0)
+    def waiver(self, line):
+        return run(mutated(added_evidence_rows=3000, added_decisions_lines=[line]))[0]
+
+    def test_waiver_compares_the_complete_branch_field_for_equality(self):
+        base = "agent/claude-code/x"
+        for suffix in ("+alternate", "-extra", "/more", ".y", ",", ";", "@x", "#1", "%", "=y", "'", ")", "}", "_", "!", "&",
+                       "$", "(", "{", "x", "..", ".lock", "\u00e9"):
+            self.assertEqual(self.waiver(f"- Size waiver: branch={base}{suffix} adds 3000 rows"), 1, suffix)
+        self.assertEqual(self.waiver("- size waiver: branch=agent/other/y adds 3000 rows"), 1)
+        self.assertEqual(self.waiver("- size waiver for agent/claude-code/x (no branch= field)"), 1)
+        self.assertEqual(self.waiver("- branch=agent/claude-code/x adds 3000 rows (no waiver words)"), 1)
+        self.assertEqual(self.waiver("- Size waiver: xbranch=agent/claude-code/x"), 1)
+        self.assertEqual(self.waiver("- Size waiver: branch=agent/claude-code/x adds 3000 rows, owner approved"), 0)
+        self.assertEqual(self.waiver("- size waiver: branch=agent/other/y and branch=agent/claude-code/x"), 0)
 
     def test_unaudited_label_blocks_a_data_pr(self):
         rc, out = run(mutated(main_labels=["old-lane", "audited-lane", "new-lane"]))
@@ -203,7 +114,7 @@ class TestRule5(unittest.TestCase):
         self.assertEqual(run(f)[0], 1)
 
     def test_audit_gate_not_applied_without_data_change(self):
-        self.assertEqual(run(docs_pr(main_labels=["new-lane"], comments=[record("GPT-6.2 Astra")]))[0], 0)
+        self.assertEqual(run(docs_pr(main_labels=["new-lane"]))[0], 0)
 
     def test_missing_audit_facts_fail_instead_of_pass(self):
         f = mutated()
@@ -256,8 +167,17 @@ class TestRule6(unittest.TestCase):
     # --- finding 8
     def test_absolute_dot_dotdot_and_directory_paths_fail(self):
         for path in ("../secret", "/etc/passwd", "C:\\Users\\x\\raw.csv", "C:/x/raw.csv", "\\\\server\\share\\f", ".", "..",
-                     "raw/../../x", "raw/./x", "raw/", "raw//x", "raw\\osha\\x.csv"):
+                     "raw/../../x", "raw/./x", "raw/", "raw//x", "raw\\osha\\x.csv", "provenance/", "provenance//x"):
             self.assertEqual(run(self.inputs("0" * 64 + "  " + path))[0], 1, path)
+
+    def test_the_store_itself_is_not_a_file(self):
+        # the bare word names the store (finding 4): below raw/ or provenance/ needs at least one component
+        for word in ("raw", "provenance"):
+            line = "0" * 64 + "  " + word
+            self.assertEqual(run(self.inputs(line, {word: False}))[0], 1, word)
+            self.assertEqual(run(self.inputs(line))[0], 1, word)  # also not inspected as a repo path
+        self.assertFalse(c.in_store("raw") or c.in_store("provenance"))
+        self.assertTrue(c.in_store("raw/x") and c.in_store("provenance/a/b.csv"))
 
     def test_repo_path_must_exist_as_a_file(self):
         line = "0" * 64 + "  tasks/x/missing.csv"
@@ -291,7 +211,7 @@ class TestUninspectable(unittest.TestCase):
 
 
 class TestWorkflow(unittest.TestCase):
-    """Finding 1 and 9: the workflow judges a PR with the base branch's checker and re-judges on comment edits."""
+    """The workflow judges a PR with the base branch's checker, and reads no comment."""
 
     text = (Path(__file__).resolve().parent.parent / ".github/workflows/pr-rules.yml").read_text()
 
@@ -305,10 +225,10 @@ class TestWorkflow(unittest.TestCase):
                 self.assertNotIn(bad, part)
             self.assertNotRegex(part, r"(?m)^\s*ref:")  # actions/checkout stays on the default (base) ref
 
-    def test_comment_edits_and_deletions_re_evaluate(self):
-        for kind in ("created", "edited", "deleted"):
-            self.assertIn(kind, self.text)
-        self.assertNotIn("gh run rerun", self.text)  # selects by PR number via the API, not by run or SHA
+    def test_no_comment_trigger_and_no_comment_reading(self):
+        self.assertNotRegex(self.text, r"(?m)^\s*issue_comment:")
+        self.assertNotIn("github.event.issue", self.text)
+        self.assertNotIn("github.event.comment", self.text)
 
 
 class TestBindingGateJob(unittest.TestCase):
@@ -416,9 +336,7 @@ class TestCollectors(unittest.TestCase):
         self.write("data/evidence_X.csv", "evidence_id,note,created_by\nE1,,lane-a\nE2,,lane-b\nE3,,lane-c\n")
         self.g("commit", "-qam", "head")
         head = subprocess.run(["git", "-C", self.tmp.name, "rev-parse", "pr"], capture_output=True, text=True).stdout.strip()
-        meta = {"headRefOid": head, "headRefName": "pr", "baseRefName": "main", "body": "Built by: Claude Code, Anthropic",
-                "comments": [{"body": record("GPT-6.2 Astra")}, {"body": record("Gemini 4 Hydrogen", sha=head)}]}
-        meta["comments"][0]["body"] = record("GPT-6.2 Astra", sha=head)
+        meta = {"headRefOid": head, "headRefName": "pr", "baseRefName": "main"}
         real = c._git
 
         def broken_main_csv(*args):
@@ -443,7 +361,7 @@ class TestCollectors(unittest.TestCase):
         self.write("DECISIONS.md", "# d\n- size waiver pr\n")
         self.g("add", "."); self.g("commit", "-qm", "head")
         head = subprocess.run(["git", "-C", self.tmp.name, "rev-parse", "pr"], capture_output=True, text=True).stdout.strip()
-        meta = {"headRefOid": head, "headRefName": "pr", "baseRefName": "main", "body": "x", "comments": []}
+        meta = {"headRefOid": head, "headRefName": "pr", "baseRefName": "main"}
         with mock.patch.object(c, "gh_json", return_value=meta):
             f = c.collect(1, "main")
         self.assertEqual(f["uninspectable"], [])

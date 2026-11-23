@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """check_pr_rules: the mechanical half of the working rules adopted 2026-11-22 (AGENTS.md section 2a).
 
-Checks one pull request against rules 1, 4, 5 and 6. Rules 2 and 3 are scripts/check_evidence_binding.py (another
-lane). Rule 7 has no check.
+Checks one pull request against rules 5 and 6: the size cap, the audit record for every created_by label on main, and
+INPUTS.sha256. Rules 1 and 4 (review) are practice, not checked; rules 2 and 3 are scripts/check_evidence_binding.py
+(another lane); rule 7 has no check. Nothing here reads PR comments or review records.
 
 Facts come from a JSON file (--facts, testable offline) or are collected live (--pr N, needs git and the gh CLI).
 Every rule prints what it inspected and what it could not inspect; anything it could not inspect FAILS the run, so a
@@ -33,19 +34,7 @@ REPO = Path(__file__).resolve().parent.parent
 MAX_EVIDENCE_ROWS = 1000  # rule 5: evidence rows one PR may add without a size waiver
 MAX_REGISTRY_LINKS = 1000  # rule 5: registry links one PR may add without a size waiver
 BASELINE = "tasks/working-rules-2026-11-22/audit_baseline.txt"
-TWO_FAMILY_PATHS = ("data/",)  # tier by risk (owner ruling 2026-11-22): data/ needs two families, every other PR one
 REGISTRY_IDENTITY = ("org_id", "registry", "registry_id", "site_id")  # SCHEMA 4.8 grain; match_basis, as_of are metadata
-MODEL_FAMILY = (  # fixed map, matched on whole words of the model name (and of "Built by" text); owner ruling 2026-11-22
-    ("gpt", "openai"), ("codex", "openai"), ("openai", "openai"),
-    ("claude", "anthropic"), ("opus", "anthropic"), ("sonnet", "anthropic"), ("haiku", "anthropic"),
-    ("fable", "anthropic"), ("anthropic", "anthropic"),
-    ("gemini", "google"), ("google", "google"), ("grok", "xai"), ("xai", "xai"), ("muse", "meta"), ("meta", "meta"))
-RECORD_HEAD = re.compile(r"\A\s*\*\*Review record\*\*", re.I)
-VERIFIER = re.compile(r"^\s*[-*]\s*\*\*Verifier:\*\*\s*(.+)$", re.M | re.I)
-# the verdict word, then optionally "at <40 hex>" immediately: an abbreviated SHA, or a SHA mentioned later, is no SHA
-VERDICT = re.compile(r"^\s*[-*]\s*\*\*Verdict:\*\*\s*(APPROVE|REFUTE)\b(?:\s+at\s+`?([0-9a-f]{40})(?![0-9a-f]))?", re.M | re.I)
-CHECKED = re.compile(r"^\s*[-*]\s*\*\*What it checked:\*\*\s*(\S.{9,})$", re.M | re.I)
-BUILT_BY = re.compile(r"^Built by:\s*([^,\n]+),\s*(.+?)\s*$", re.M)
 SHA_LINE = re.compile(r"^([0-9a-f]{64})  (\S.*)$")
 INPUTS_PATH = re.compile(r"^tasks/[^/]+/INPUTS\.sha256$")
 AUDIT_PATH = re.compile(r"^tasks/[^/]+/AUDIT\.md$")
@@ -53,89 +42,6 @@ AUDIT_PATH = re.compile(r"^tasks/[^/]+/AUDIT\.md$")
 
 class InspectionError(Exception):
     """A tracked object could not be read, or a file is not what the check needs: the run must fail, not pass."""
-
-
-def family_of(text):
-    t = text.lower()
-    found = {fam for kw, fam in MODEL_FAMILY if re.search(r"(?<![a-z])" + re.escape(kw) + r"(?![a-z])", t)}
-    return found.pop() if len(found) == 1 else None  # none or several: cannot classify
-
-
-def review_votes(comments):
-    """Every Review record with a known verifier -> latest vote per verifier (model). Returns (votes, notes).
-    votes[model_key] = dict(fam, verdict, sha, complete, idx). The latest record per verifier governs."""
-    votes, notes = {}, []
-    for i, body in enumerate(comments):
-        if not RECORD_HEAD.match(body or ""):
-            continue
-        v, d = VERIFIER.search(body), VERDICT.search(body)
-        parts = [x.strip() for x in v.group(1).split(",")] if v else []
-        fam = family_of(parts[1]) if len(parts) > 1 else None
-        if not d:
-            notes.append(f"comment {i}: Review record without a Verdict line (not counted)")
-        elif fam is None:
-            notes.append(f"comment {i}: no recognised model in the Verifier line {(v.group(1)[:60] if v else '')!r}; "
-                         "need '<harness>, <model>, ...' (not counted)")
-        else:
-            key = re.sub(r"\s+", " ", parts[1].lower())
-            checked = bool(CHECKED.search(body))
-            if d.group(1).upper() == "REFUTE" and not re.search(r"\bBLOCKING\b", body):
-                notes.append(f"comment {i}: REFUTE without a BLOCKING finding (does not follow the tier rule; still withdraws)")
-            if not checked:
-                notes.append(f"comment {i}: no 'What it checked' line of substance (cannot count as an approval)")
-            votes[key] = dict(fam=fam, verdict=d.group(1).upper(), sha=(d.group(2) or "").lower(), complete=checked, idx=i)
-    return votes, notes
-
-
-def counted_families(comments, head_sha):
-    """-> ({family: [model, ...]}, notes). A family counts when one of its verifiers' latest vote is a complete APPROVE
-    at exactly the head SHA and none of its verifiers' latest vote is a REFUTE (at the head or at no SHA)."""
-    votes, notes = review_votes(comments)
-    ok, blocked = {}, set()
-    for key, vt in votes.items():
-        if vt["verdict"] == "REFUTE":
-            if vt["sha"] in ("", head_sha.lower()):
-                blocked.add(vt["fam"])
-                notes.append(f"comment {vt['idx']}: {key} REFUTE at the head withdraws {vt['fam']}")
-            else:
-                notes.append(f"comment {vt['idx']}: {key} REFUTE at an older SHA (its latest vote; not an approval)")
-        elif not vt["sha"]:
-            notes.append(f"comment {vt['idx']}: {key} APPROVE without a full 40-character SHA (not counted)")
-        elif vt["sha"] != head_sha.lower():
-            notes.append(f"comment {vt['idx']}: {key} APPROVE is at {vt['sha'][:8]}, not the head {head_sha[:8]} (stale, not counted)")
-        elif vt["complete"]:
-            ok.setdefault(vt["fam"], []).append(key)
-    return {fam: m for fam, m in ok.items() if fam not in blocked}, notes
-
-
-def check_review(f, out):
-    """Rules 1 and 4. Returns (failures, not_inspected)."""
-    fails, blind = [], []
-    pr, comments, files = f.get("pr"), f.get("comments"), f.get("changed_files")
-    if not pr or not pr.get("head_sha") or pr.get("body") is None or comments is None or files is None:
-        return fails, ["PR head SHA, body, comments or changed-file list missing from the facts"]
-    if not files:
-        return fails, ["the PR's changed-file list is empty: cannot tell what the PR touches"]
-    two = any(p.startswith(TWO_FAMILY_PATHS) for p in files)
-    need = 2 if two else 1
-    counted, notes = counted_families(comments, pr["head_sha"])
-    out.append(f"inspected: {len(files)} changed files; {len(comments)} PR comments; head {pr['head_sha'][:8]}")
-    out.append(f"  PR touches data/: {two} -> {need} family(ies) required")
-    out.extend(f"  note: {n}" for n in notes)
-    out.append(f"  counted (family: models): {counted or 'none'}")
-    if len(counted) < need:
-        fails.append(f"rule 4: {len(counted)} family(ies) approved the current head; {need} required")
-    m = BUILT_BY.search(pr["body"])
-    if not m:
-        fails.append('rule 1: PR body has no line "Built by: <harness>, <model family>"')
-    else:
-        builder = family_of(m.group(2))
-        out.append(f"  builder: {m.group(1).strip()}, {m.group(2).strip()} -> family {builder}")
-        if builder is None:
-            fails.append(f"rule 1: builder family not recognised in {m.group(2)!r}")
-        elif not set(counted) - {builder}:
-            fails.append(f"rule 1: no counted reviewer is from a family other than the builder's ({builder})")
-    return fails, blind
 
 
 def _field(text, name):
@@ -164,18 +70,21 @@ def check_size(f, out):
     for k in ("added_evidence_rows", "added_registry_links", "changed_files", "added_decisions_lines", "pr"):
         if f.get(k) is None:
             blind.append(f"facts missing {k!r}")
+    if not blind and not f["changed_files"]:
+        blind.append("the PR's changed-file list is empty: cannot tell what the PR touches")
     if blind:
         return fails, blind
     ev, rl, files = f["added_evidence_rows"], f["added_registry_links"], f["changed_files"]
     branch = f["pr"].get("branch", "")
     out.append(f"inspected: PR adds {ev} evidence rows (cap {MAX_EVIDENCE_ROWS}) and {rl} registry links (cap {MAX_REGISTRY_LINKS})")
     if ev > MAX_EVIDENCE_ROWS or rl > MAX_REGISTRY_LINKS:
-        naming = r"(?<![\w/.-])" + re.escape(branch) + r"(?![\w/.-])"
-        waiver = [ln for ln in f["added_decisions_lines"] if branch and re.search(naming, ln) and re.search(r"size waiver", ln, re.I)]
-        out.append(f"  size waiver line added to DECISIONS.md naming exactly {branch!r}: {'found' if waiver else 'none'}")
+        # the waiver line is "size waiver ... branch=<complete branch name>": the branch= token must EQUAL the PR's branch
+        waiver = [ln for ln in f["added_decisions_lines"] if branch and re.search(r"size waiver", ln, re.I)
+                  and branch in re.findall(r"\bbranch=(\S+)", ln)]
+        out.append(f"  size waiver line added to DECISIONS.md with branch={branch}: {'found' if waiver else 'none'}")
         if not waiver:
             fails.append(f"rule 5: over the size cap ({ev} evidence rows, {rl} registry links) and the PR adds no DECISIONS.md "
-                         f'line naming exactly its branch and the words "size waiver"')
+                         f'line with the words "size waiver" and branch=<its complete branch name>')
     if not any(p.startswith("data/") for p in files):
         out.append("  audit gate: not applicable, the PR touches nothing under data/")
         return fails, blind
@@ -218,7 +127,9 @@ def inputs_entries(text):
 
 
 def in_store(path):
-    return path.split("/")[0] in ("raw", "provenance")
+    """A file path below raw/ or provenance/: the bare word `raw` names the store itself, not a file."""
+    parts = path.split("/")
+    return parts[0] in ("raw", "provenance") and len(parts) > 1
 
 
 def check_inputs(f, out):
@@ -264,8 +175,7 @@ def check_inputs(f, out):
     return fails, blind
 
 
-RULES = (("rules 1 and 4 (review record, builder != reviewer)", check_review),
-         ("rule 5 (size cap, audit before the next batch)", check_size),
+RULES = (("rule 5 (size cap, audit before the next batch)", check_size),
          ("rule 6 (raw inputs by checksum)", check_inputs))
 
 
@@ -355,9 +265,8 @@ def gh_json(*args):
 def collect(pr_number, base_ref=None):
     f: dict = {"uninspectable": []}
     try:
-        meta = gh_json("pr", "view", str(pr_number), "--json", "headRefOid,headRefName,baseRefName,body,comments")
-        f["pr"] = {"number": pr_number, "head_sha": meta["headRefOid"], "branch": meta["headRefName"], "body": meta["body"] or ""}
-        f["comments"] = [c["body"] for c in meta["comments"]]
+        meta = gh_json("pr", "view", str(pr_number), "--json", "headRefOid,headRefName,baseRefName")
+        f["pr"] = {"number": pr_number, "head_sha": meta["headRefOid"], "branch": meta["headRefName"]}
     except (subprocess.CalledProcessError, KeyError, ValueError, FileNotFoundError) as e:
         f["uninspectable"].append(f"gh pr view failed: {e}")
         return f
