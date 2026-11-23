@@ -12,6 +12,34 @@ Packet only. Nothing under `data/` changed, no PR opened. Claim: atlas-w22-web-c
 
 **Threshold: the process count is under the pre-set 5 of 25 on every reading (1 as held, 3 if both pending rulings go yes), so on this trial the own-site route is dropped for process.** At 3 of 25 the interval still reaches 30%, so this is a decision rule met, not a measured rate. The 7 unreadable organizations cannot be excluded as hidden fills; the route's ceiling here is 1 to 3 of the 18 with a readable page. The route does better for markets (7 of 25), but that was not the question's threshold and the frame was chosen for process-unknown, not market-unknown.
 
+## Verified fills: organization, field, term, capture (quote text is in `candidates.csv`)
+One VERIFIED process fill and 7 organizations with a VERIFIED market fill (15 term rows):
+
+| Organization | Field | Term | Capture (extracted-text sha256) |
+|---|---|---|---|
+| ORG-001963 M S B Machine | processes | `mold_tool_making` | `11b1f5d005be7bfd04aa3734856cb35939e0b551f6e1c991dc83e0a27b350e6f` offset 368 |
+| ORG-000033 LyondellBasell | markets_served | `aerospace_defense` | `539ecc544d911e4a967d0105ee9a09966b73306149bc7cb910ab28bcad82fc71` offset 74 |
+| ORG-000033 LyondellBasell | markets_served | `agriculture` | `d6618ebca594d88c060d3a02f72b71160dbc17cf7e0bab3029822ea451d010ff` offset 67 |
+| ORG-000033 LyondellBasell | markets_served | `marine` | `539ecc544d911e4a967d0105ee9a09966b73306149bc7cb910ab28bcad82fc71` offset 74 |
+| ORG-000033 LyondellBasell | markets_served | `medical_healthcare_general` | `5e9c82b46ef5c96ee05f7b79ede6125e4e4bb1e7f0604b423334b3b67c42503f` offset 3151 |
+| ORG-000033 LyondellBasell | markets_served | `pharmaceutical_biotech` | `5e9c82b46ef5c96ee05f7b79ede6125e4e4bb1e7f0604b423334b3b67c42503f` offset 3151 |
+| ORG-000033 LyondellBasell | markets_served | `rail_transportation` | `539ecc544d911e4a967d0105ee9a09966b73306149bc7cb910ab28bcad82fc71` offset 74 |
+| ORG-000048 Akrochem Corp. | markets_served | `plastics_rubber_processors` | `56f1c797b0e4e498fc58695eadb60003ff431aac8852273a606e0c76e1d4791c` offset 45 |
+| ORG-000056 CF Extrusion Technologies | markets_served | `food_processing_foodservice` | `78fb521de1bb4d9225455ba18f0fb6726dd94b351a19a2c21a437d7d357e36e3` offset 367 |
+| ORG-000056 CF Extrusion Technologies | markets_served | `plastics_rubber_processors` | `78fb521de1bb4d9225455ba18f0fb6726dd94b351a19a2c21a437d7d357e36e3` offset 367 |
+| ORG-000483 Pentair | markets_served | `agriculture` | `748f51f422fdd277f9c5c9f8dcaf0d89de0355397158b2099d01ffe168fbe5fc` offset 1665 |
+| ORG-000483 Pentair | markets_served | `food_processing_foodservice` | `f4a22d42d3e2f3629fd8658ad3f9cb72bae748a592a004640d045e652d8a458e` offset 1022 |
+| ORG-000483 Pentair | markets_served | `water_wastewater` | `748f51f422fdd277f9c5c9f8dcaf0d89de0355397158b2099d01ffe168fbe5fc` offset 460 |
+| ORG-001541 AlphaMicron Inc. | markets_served | `automotive_unspecified` | `746f5088e066be278a36971f7fa6393444f1d4c46867a9803214e44f4a884ffc` offset 632 |
+| ORG-001730 3D Dental Designs and Development LLC | markets_served | `dental` | `260578a90a8c37b849d20150d59c9f20e870b4d9ffe9623120f6af99b93f2bcf` offset 1042 |
+| ORG-002068 Chemstress Consultant Company | markets_served | `chemical_mining_metals_processing` | `03d5c241d3b64459260312a05dbb8c36fe39e98ead49ea727125faa1b4686262` offset 388 |
+
+## Process holds among the readable organizations
+18 organizations had a readable page; 1 filled a process, so **17 readable organizations have no process fill**. Hold reasons (unit: organizations, one reason each): no_process_named 5; parent_group_page 3; distributor_service_menu 1; no_polymer_process_named 1; not_a_processor 1; owner_ruling_polymerization 1; waste_management_not_process 1; no_vocab_process 1; distributor_supplier_not_process 1; product_spec_not_company_process 1; equipment_maker_vocab_ruling 1. The other 7 unreadable organizations are in the table above under `no_readable_page` and `robots_blocked`.
+
+## What a source has to contain to name a process
+The pages read here name **products and markets, not methods**: "we supply…", "for the automotive industry", a product catalogue, a brand list. Of 18 readable organizations one states a process of its own in a sentence (MSB: "can produce any type of mold"); two more state one only through a parent's technology claim or an equipment maker's service line, which are held on rulings. A source that can settle process therefore has to be (a) about the establishment, not the group, (b) in the vocabulary of operations, naming what is done to the material (molds, extrudes, compounds, thermoforms, vulcanizes, coats), and (c) written by or for a regulator or auditor, not a marketer: an air, wastewater or hazardous-waste permit that lists emission units, an equipment or production-line listing, a customer or supplier technical-data sheet that states the process, a plant tour or a capability statement that an engineer wrote. Marketing pages state it only by accident. The next route should be chosen on those three properties; I did not test any other source.
+
 ## What the holds say a different source would need to supply
 Process holds, 24 organizations (`holds.csv`): no readable page 7; no process named by a readable page 5 (KONG, AlphaMicron, GLI, Wooster, 3D Dental); parent or group page, not the record's own entity 3 (Spazzolplastica, Ventra, Rubbermaid/Newell); distributor, supplier or service-menu wording 3 (Musson, Akrochem, plus Worthington's product spec); not a processor 3 (Chemstress engineering firm, Global Waste and Recycling, Pentair pumps); pending owner ruling 2 (LyondellBasell, CF Extrusion); no §3.1 term for the process 1 (Valtris chemical additives).
 - The pages are marketing pages. They name products and industries readily and name a plant process rarely: where a process is stated it is as an equipment maker's or tool maker's service ("dies, gear-cutting tools, and molds"), a parent's technology claim ("our proprietary technology produces polymers"), or a shop's about page (MSB). Plant-level "we injection mold…" sentences did not appear in the 18 readable organizations.
