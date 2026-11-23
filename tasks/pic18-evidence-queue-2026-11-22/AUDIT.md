@@ -33,5 +33,5 @@ the rows that were audited.
   post-merge sample was drawn.
 - Hosted CI cannot replay the packet (the raw files are in the shared store); the replays ran on the reviewers'
   machines.
-- These rows witness existence, address and activity claims. They fill no process, market or size value: PIC-18
+- These rows witness existence (78 rows) and address (45 rows) claims. They fill no process, market or size value: PIC-18
   organization rows with unknown process, market and size are 322, 316 and 396 of 794 before and after.
