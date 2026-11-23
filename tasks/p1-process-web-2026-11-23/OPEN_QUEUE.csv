@@ -1,0 +1,5 @@
+packet_id,table,record_id,field,term,settling_fact
+P3-000004,organizations,ORG-001667,processes,coating_formulation,a capture whose main text carries the quoted process wording
+P3-000005,sites,SITE-001743,processes,coating_formulation,a capture whose main text carries the quoted process wording
+P3-000009,organizations,ORG-000248,processes,rubber_mixing_compounding,"a capture whose bytes are stable across two gate fetches, or a held route"
+P3-000010,sites,SITE-000264,processes,rubber_mixing_compounding,"a capture whose bytes are stable across two gate fetches, or a held route"
