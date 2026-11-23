@@ -30,6 +30,7 @@ Every evidence row gets exactly one verdict:
   HELD            a structured row with no demonstrated conflict where a leg did not match positively:
                   held_for_reading:<legs> (name_with_parenthetical, name_equals_parent_key, address_with_parenthetical,
                   designator_not_on_both_sides, street_suffix_unexplained, locality_not_read, locality_not_matched, passes_on_two_records).
+                  A web proof for a record absent from the base is also HELD.
   READ_REQUIRED   a web quote awaiting a valid, replayed per-row proof in tasks/<folder>/BINDING_PROOF.csv.
   UNINSPECTABLE   no_quote, other_table, record_not_found, unknown_source_family, parse_failed, operator_not_a_name,
                   no_civic_number. No admission path here either.
@@ -578,10 +579,16 @@ def on_platform(host):
     return any(host == h or host.endswith("." + h) for h in PLATFORMS)
 
 
+def record_website(idx, table, rec):
+    """A site's website is held on its organization."""
+    org = idx.orgs.get(rec.get("org_id")) if table == "sites" else rec
+    return (org or {}).get("website") or ""
+
+
 def record_websites(idx, table, rec, *, preserve_path=False):
-    """(host, path) of the record's own website: a site's organization website, else the organization's own."""
-    o = idx.orgs.get(rec.get("org_id")) if table == "sites" else rec
-    hps = (host_path(w, preserve_path=preserve_path) for w in re.split(r"[;,\s]+", (o or {}).get("website") or ""))
+    """Held website host/path pairs."""
+    hps = (host_path(w, preserve_path=preserve_path)
+           for w in re.split(r"[;,\s]+", record_website(idx, table, rec)))
     return [hp for hp in hps if re.fullmatch(r"[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}", hp[0])]  # notes are not hosts
 
 
@@ -869,7 +876,8 @@ def capture_text(data):
 
 def claim_sha256(ev):
     """Stable across CSV quoting and line numbering. Any change to the claim text or quote voids the reading."""
-    claim = [ev[k] for k in ("record_table", "claim_type", "claim_detail")]
+    claim = [ev[k] for k in ("record_table", "claim_type", "claim_detail", "observed_date",
+                             "source_ref", "source_class", "tier_effect")]
     return hashlib.sha256(json.dumps(claim, ensure_ascii=False, separators=(",", ":")).encode("utf-8")).hexdigest()
 
 
@@ -970,7 +978,7 @@ def same_page(a, b):
     return page(a) == page(b)
 
 
-def proof_capture(r, ev, idx, archive):
+def proof_capture(r, ev, idx, base_idx, archive):
     """Validate the cited page and date before the trusted job makes a request."""
     cap = r["capture"]
     url = capture_url(cap)
@@ -993,8 +1001,14 @@ def proof_capture(r, ev, idx, archive):
     elif url.hostname == "web.archive.org":
         raise ValueError("Wayback capture must use a timestamp and id_")
     table = ev["record_table"]
+    if not m and url.scheme != "https":
+        raise ValueError("live capture must use HTTPS")
     capture_url(original)
-    websites = record_websites(idx, table, idx.record(table, ev["record_id"]), preserve_path=True)
+    rid = ev["record_id"]
+    base_record = base_idx.record(table, rid)
+    if record_website(base_idx, table, base_record) != record_website(idx, table, idx.record(table, rid)):
+        raise ValueError("record website differs from base")
+    websites = record_websites(base_idx, table, base_record, preserve_path=True)
     if not any(own_domain(host_path(original, preserve_path=True), website) for website in websites):
         raise ValueError("capture not_own_site")
     if not (same_page(original, source_ref) if m else original == source_ref):
@@ -1002,7 +1016,7 @@ def proof_capture(r, ev, idx, archive):
     return cap
 
 
-def proof_problem(r, ev, idx, archive, builder, fetch):
+def proof_problem(r, ev, idx, base_idx, archive, builder, fetch):
     if r["record_id"] != ev["record_id"] or r["claim_sha256"] != claim_sha256(ev):
         return "proof record_id or claim_sha256 differs from the evidence row"
     if r["verdict"] != "VERIFIED":
@@ -1014,8 +1028,11 @@ def proof_problem(r, ev, idx, archive, builder, fetch):
         return "capture_sha256 must be 64 lowercase hex digits"
     if not re.fullmatch(r"[0-9]{1,8}", r["quote_offset"]):
         return "quote_offset must be a nonnegative integer within the capture byte limit"
+    quote = norm_space(ev["claim_detail"].partition("quote:")[2])
+    if len(quote) < 20:
+        return "quote must contain at least 20 characters"
     try:
-        url = proof_capture(r, ev, idx, archive)
+        url = proof_capture(r, ev, idx, base_idx, archive)
     except ValueError as e:
         return str(e)
     try:
@@ -1024,7 +1041,6 @@ def proof_problem(r, ev, idx, archive, builder, fetch):
         return f"could not inspect capture: {e}"
     if hashlib.sha256(data).hexdigest() != r["capture_sha256"]:
         return "capture_sha256 does not match the decoded bytes"
-    quote = norm_space(ev["claim_detail"].partition("quote:")[2])
     start = int(r["quote_offset"])
     try:
         actual = capture_text(data)[start:start + len(quote)]
@@ -1035,7 +1051,7 @@ def proof_problem(r, ev, idx, archive, builder, fetch):
     return ""
 
 
-def check_proofs(results, evs, idx, archive, read, fetch):
+def check_proofs(results, evs, idx, load_base, archive, read, fetch):
     """Replay proofs only for web rows that cleared the existing mechanical floor."""
     need = defaultdict(list)
     for row in results:
@@ -1043,6 +1059,9 @@ def check_proofs(results, evs, idx, archive, read, fetch):
         if (row["verdict"] == "READ_REQUIRED" and row["reason"] == "mechanics_clear"
                 and ev["source_class"] == "own_site"):
             need[label_folder(row["created_by"])].append(row)
+    if not need:
+        return []
+    base_idx = load_base()
     problems, cache = [], {}
 
     def cached_fetch(url):
@@ -1068,11 +1087,14 @@ def check_proofs(results, evs, idx, archive, read, fetch):
         builder = builder_family(read(f"tasks/{folder}/README.md"))
         for result in candidates:
             eid = result["evidence_id"]
+            if base_idx.record(result["record_table"], result["record_id"]) is None:
+                result.update(verdict="HELD", reason="record absent from base")
+                continue
             if eid not in proofs:
                 problems.append(f"{eid}: no proof line in {path}")
                 continue
             at, row = proofs[eid]
-            why = proof_problem(row, evs[eid], idx, archive.get(eid), builder, cached_fetch)
+            why = proof_problem(row, evs[eid], idx, base_idx, archive.get(eid), builder, cached_fetch)
             if why:
                 problems.append(f"{at}: {eid}: {why}")
             else:
@@ -1175,8 +1197,8 @@ def main(argv=None):
         try:
             archive, problems = archive_index(rows(a.head, "archive_links.csv"))
             if not problems:
-                problems = check_proofs(results, {e["evidence_id"]: e for e in evs}, idx, archive,
-                                        lambda path: tasks_file(a.head, path), fetch_url)
+                problems = check_proofs(results, {e["evidence_id"]: e for e in evs}, idx, lambda: Index.load(base),
+                                        archive, lambda path: tasks_file(a.head, path), fetch_url)
         except (csv.Error, UnicodeError, OSError, subprocess.CalledProcessError) as e:
             print(f"binding gate: could not inspect proof inputs: {e}")
             return 2

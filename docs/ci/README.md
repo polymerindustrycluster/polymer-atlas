@@ -15,8 +15,8 @@ The workflows are live in `.github/workflows/`. Edit them there; there is no sec
     - **The gate is a floor, not proof** (owner ruling 2026-11-22, "strict floor, then merge"). PASS means every
       mechanical leg matched positively. Admitting a data PR still needs two model families reading its rows. A
       counterexample found after merge becomes a test and a fix as a follow-up.
-    - **`--new-since`** gates every evidence row the PR adds, and every row whose content changed in any column.
-      - **PASS** (structured sources only) needs every leg to match: the quoted operator is a held name, whole, or a
+    - **`--verify-proofs`** (also `--new-since`) gates every evidence row the PR adds, and every row whose content changed in any column.
+      - **PASS for structured sources** needs every leg to match: the quoted operator is a held name, whole, or a
         held name plus corporate-form words only, with no parenthetical or trailing text dropped, never a recorded
         parent's name, and never a site-name part made only of generic labels. For a site, `scripts/matching.py`
         `same_street()` holds; any suite, unit, room, floor or building stated on either side is stated and equal on
@@ -26,9 +26,9 @@ The workflows are live in `.github/workflows/`. Edit them there; there is no sec
       - **FAIL**: a demonstrated conflict (another name, street, unit, city or state). No waiver.
       - **HELD** (`held_for_reading:<legs>`): a leg did not match positively and nothing conflicts. It fails the PR
         like a FAIL; the difference is only which reader's queue the row goes to.
-      - **READ_REQUIRED and UNINSPECTABLE** also fail the PR: a web quote is never PASS, and this gate has no
-        admission path for it. Take such a row out and hold it as a lead. Admission of web rows by per-row proof is
-        follow-up work on branch `agent/claude-code/evidence-binding-web-proofs-2026-11-22`, not yet a PR.
+      - **PASS for own-site web quotes** requires a per-row proof and capture replay under SCHEMA §4.13.
+        Missing proof, a fetch error, or a replay mismatch blocks admission.
+      - **READ_REQUIRED and UNINSPECTABLE** fail the PR. Hold these rows as leads until they can be proved.
     - **`--provenance-since`**: each `created_by` label must name exactly one `tasks/<folder>/`. That folder must hold a
       non-empty `check.py`, and a new label adds its own folder in the PR. **The gate checks presence only and executes
       nothing from the tree it gates.** The replay that `check.py` performs is run by the lane, and again by the
@@ -67,19 +67,18 @@ The workflows are live in `.github/workflows/`. Edit them there; there is no sec
     - a PR that adds evidence rows or registry links adds `tasks/<folder>/INPUTS.sha256` (`<sha256>  <path>`, a file
       below `raw/` or `provenance/`, or an existing repo file); format only, a reviewer checks the hashes against the
       shared store.
-  - **`binding-gate`** (rules 2 and 3): when `scripts/check_evidence_binding.py` exists on `main`, the job checks out the
-    PR merge result as data into `./pr` (both checkouts with `persist-credentials: false`, job `permissions: {}`;
-    nothing from the PR tree is executed) and runs main's script twice with `--tree pr`: `--new-since origin/main` and
-    `--provenance-since origin/main`. Until the script is on `main` the check run says "gate not yet on main: nothing
-    was checked" and passes; every other step that cannot run its check fails. A separate job, which never touches PR
-    code, posts the result.
+  - **`binding-gate`** (rules 2 and 3) checks out the PR merge result as data into `./pr`. Both checkouts use
+    `persist-credentials: false`, and the job has `permissions: {}`. It runs main's checker with `--tree pr` in
+    two modes, `--verify-proofs origin/main` and `--provenance-since origin/main`. If the base checker is missing
+    or cannot run either mode, the published check fails with `cannot_inspect`. A separate trusted job posts
+    the result.
 
   Every check prints what it inspected and what it could not; whatever it could not inspect, including a failed read of
   a tracked git object, fails the run. Rules 2 and 3 are `scripts/check_evidence_binding.py` (PR #467), documented with
   that script. The planted cases and the limits are in `tasks/working-rules-2026-11-22/README.md`. Locally:
   `python3 scripts/check_pr_rules.py --pr <number>` (needs `gh`).
 
-  **Replay is not run in hosted CI.** A PR that adds evidence rows or registry links gets a `NOT RUN` line for each
+  **Packet replay uses the shared store.** A PR that adds evidence rows or registry links gets a `NOT RUN` line for each
   `tasks/*/check.py` it adds or changes, and for the sentence "source replay not run in hosted CI: needs the shared
   store; it is run by the reviewers and recorded in the Review record comment"; the `pr-rules` title then ends "source
   replay NOT RUN in hosted CI". The conclusion is still decided by the other rules.
@@ -88,9 +87,7 @@ The workflows are live in `.github/workflows/`. Edit them there; there is no sec
   are required status checks and the strict (branch up to date with `main`) policy is on, so the audit gate of AGENTS.md
   section 2a, rule 5 is re-judged against current `main` before a merge. Exactly one check run is named `pr-rules` (the
   job that posts it is `evaluate`) and exactly one is named `binding-gate` (posted by `publish-binding-gate`; the job
-  that does the work is `gate-run`). If `gate-run` fails on a fresh head, nothing is posted under that name and the merge waits; a repeat run on a head that already has a green `binding-gate` posts no replacement. While
-  `scripts/check_evidence_binding.py` is not on `main`, the posted check is titled "binding-gate: NOT CHECKED (gate not
-  yet on main)": a pass that inspected nothing.
+  that does the work is `gate-run`). If `gate-run` fails on a fresh head, nothing is posted under that name and the merge waits; a repeat run on a head that already has a green `binding-gate` posts no replacement.
 
 Preview the site locally with
 `python3 scripts/build_pages.py && python3 -m http.server -d build/pages 8000`, then open http://localhost:8000.

@@ -1651,17 +1651,22 @@ date window. An older capture stays a lead.
 Each own-site web row submitted for admission carries a line in the
 `tasks/<folder>/BINDING_PROOF.csv` named by its `created_by` label. Use
 the `PROOF_COLS` header and `claim_sha256(row)` in
-`scripts/check_evidence_binding.py`. The capture is the original live
-URL or the indexed Wayback URL with `id_` after its timestamp. Hash the
-response bytes after gzip decoding, and record the zero-based Unicode
-character offset from `capture_text(bytes)`. The offset indexes the
-quote with whitespace collapsed, after removing page navigation,
-headers and footers. The folder README identifies the builder on a
-`Built by:` line. A different model family reads the page against the
-record and claim, and records its family, `VERIFIED` verdict and date.
-The binding gate replays the bytes and quote and applies the existing
-site street and unit checks. The lane and reviewing family run the
-packet replay.
+`scripts/check_evidence_binding.py`. The digest binds the claim, quote,
+observation date, source URL and class, and tier effect. The record
+must exist on the base tree and hold the same website in the PR.
+The capture is the original live HTTPS URL or the indexed Wayback URL
+with `id_` after its timestamp. Hash the response bytes after gzip
+decoding and record the zero-based Unicode character offset from
+`capture_text(bytes)`. The quote must contain at least 20 characters
+after whitespace is collapsed. Main-text extraction uses HTML tags and
+common page labels to exclude navigation, headers and footers. The
+reader checks the actual page for any boilerplate the heuristic misses.
+
+The folder README identifies the builder on a `Built by:` line. A
+different model family reads the page against the record and claim and
+self-reports its family, `VERIFIED` verdict and date. The gate replays
+the bytes and quote and applies the existing site street and unit
+checks. The lane and reviewing family run the packet replay.
 
 **Claim types at people grain [v1.10].** The claim vocabulary is
 shared; four of its values have people-grain referents. `existence` =
@@ -3360,3 +3365,4 @@ unchanged.
 - **v1.19.3 — 2026-11-22 (owner ruling 2026-11-22, "Headcount age: 5 years", multiple choice).** §1 R13 gains an age limit: a filing sets an employee band only if it is dated within five years of the date the band is written (source date: ITA 31 December of the filing year; inspection open date; Form 5500 plan-year end; 2021-11-22 for the pass of 2026-11-22); older filings are held as leads with the reason `stale_over_5_years`. The ruling came out of the size sprint (`tasks/pic18-size-sprint-2026-11-22/README.md`), where 14 of the first 117 candidate fills rested on inspections of 1974 to 2015. No data row is changed by this revision.
 - **v1.19.4 — 2026-11-22 (owner ruling 2026-11-22, "Add 'corporation'", multiple choice; and the round-13 follow-up on `ohio_statewide`).** (1) §4.4 `entity_type` enum gains `corporation`, the plain value for a legal name ending in Inc, Inc., Incorporated, Corp, Corp. or Corporation; public or private is not guessed, so the suffix never sets `corporation_public` or `corporation_private`, and Co, Company, Ltd and Limited stay `unknown`. `scripts/export_vocab.py`, `docs/schema/vocab.json` and `scripts/profile_fields.py` carry the new value. `tasks/entity-type-from-name-2026-11-22/` fills blank or `unknown` cells only, never overwriting: `corporation` 783, `llc` 228, `partnership` 4 organization rows in PIC-18 and the rest of Ohio (by frame in its README). (2) 79 organization rows with `hq_in_scope` = `ohio_statewide` and a named Ohio HQ county outside PIC-18 become `ohio_other` (`tasks/ohio-statewide-labels-2026-11-22/`); 5 with no county stay held. At this revision no organization row carries `pic12`.
 - **v1.19.5 — 2026-11-22 (owner ruling 2026-11-22, round 14, "Leads only").** §1 R7 and R13 and §4.13 remove Form 5500 active-participant counts as a size-band source. They stay leads. The rules for OSHA ITA establishment records and OSHA inspections are unchanged. No data rows change.
+- **v1.19.6 — 2026-11-23 (owner ruling, round 16, “Build it, archived pages count”).** §4.13 defines per-row own-site web proofs with capture replay and extends the street rule for recent archived company pages to market claims. No data rows change.

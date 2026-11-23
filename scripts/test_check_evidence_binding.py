@@ -799,10 +799,12 @@ class WebProofs(unittest.TestCase):
             "org_id,legal_name,trade_names,website\n"
             "ORG-T1,Acme Polymer,,https://acmepolymer.example/\n"
             "ORG-T2,Acme Polymer II,,https://acmepolymer.example/\n")
+        with (self.tree / "data/organizations_OH.csv").open() as f:
+            self.base_orgs = list(csv.DictReader(f))
         self.ev = dict(evidence_id="EVD-T1", record_table="organizations", record_id="ORG-T1",
                        claim_type="activity", claim_detail=f"markets_served=automotive; quote: {self.QUOTE}",
                        source_ref=self.SOURCE, source_class="own_site", created_by="codex lane-t",
-                       observed_date="2026-11-23")
+                       observed_date="2026-11-23", tier_effect="supports_A")
         self.proof = dict(evidence_id="EVD-T1", record_id="ORG-T1", claim_sha256=b.claim_sha256(self.ev),
                           capture=self.SOURCE, capture_date="2026-11-23", reader_date="2026-11-23",
                           capture_sha256=hashlib.sha256(self.CAPTURE).hexdigest(), quote_offset=8,
@@ -834,10 +836,16 @@ class WebProofs(unittest.TestCase):
             p.write_bytes(proof_bytes)
         out = io.StringIO()
         rows = b.rows
+
+        def tree_rows(ref, pattern):
+            if ref:
+                return self.base_orgs if pattern == "organizations_*.csv" else []
+            return rows(ref, pattern)
+
         with (
             contextlib.redirect_stdout(out),
             patch.object(b, "resolve_base", return_value=self.BASE),
-            patch.object(b, "rows", side_effect=lambda ref, pattern: [] if ref else rows(ref, pattern)),
+            patch.object(b, "rows", side_effect=tree_rows),
             patch.object(b, "fetch_url", return_value=self.capture, side_effect=self.fetch_error) as fetch,
         ):
             code = b.main([mode, self.BASE, "--tree", str(self.tree)])
@@ -872,6 +880,43 @@ class WebProofs(unittest.TestCase):
                 self.ev["claim_detail"] = edited
                 self.assert_held("proof record_id or claim_sha256 differs")
                 self.fetch.assert_not_called()
+
+    def test_edited_observation_date(self):
+        self.ev["observed_date"] = "2026-11-22"
+        self.assert_held("proof record_id or claim_sha256 differs")
+        self.fetch.assert_not_called()
+
+    def test_edited_tier_effect(self):
+        self.ev["tier_effect"] = "supports_B"
+        self.assert_held("proof record_id or claim_sha256 differs")
+        self.fetch.assert_not_called()
+
+    def test_edited_website_cannot_be_used_for_proof(self):
+        path = self.tree / "data/organizations_OH.csv"
+        path.write_text(path.read_text().replace("acmepolymer.example", "other.example"))
+        self.ev["source_ref"] = "https://other.example/about"
+        self.proof.update(capture=self.ev["source_ref"], claim_sha256=b.claim_sha256(self.ev))
+        self.assert_held("record website differs from base")
+        self.fetch.assert_not_called()
+
+    def test_record_absent_from_base_is_held(self):
+        self.base_orgs = []
+        code, out = self.run_gate()
+        self.assertEqual(code, 1, out)
+        self.assertRegex(out, r"HELD +record absent from base")
+        self.fetch.assert_not_called()
+
+    def test_short_quote_is_held(self):
+        self.ev["claim_detail"] = "synthetic market claim; quote: Markets"
+        self.proof.update(claim_sha256=b.claim_sha256(self.ev), quote_offset=0)
+        self.assert_held("quote must contain at least 20 characters")
+        self.fetch.assert_not_called()
+
+    def test_live_capture_requires_https(self):
+        self.ev["source_ref"] = self.SOURCE.replace("https://", "http://")
+        self.proof.update(capture=self.ev["source_ref"], claim_sha256=b.claim_sha256(self.ev))
+        self.assert_held("live capture must use HTTPS")
+        self.fetch.assert_not_called()
 
     def test_gzip_capture_by_header_and_magic(self):
         raw = gzip.compress(self.CAPTURE)

@@ -170,7 +170,8 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    the PR tree. Own-site web rows need a per-row proof in
    `tasks/<folder>/BINDING_PROOF.csv` and capture replay in the gate
    (owner ruling 2026-11-23, SCHEMA §4.13). The lane and reviewing family
-   run packet replays. Registry links, people and program rows remain
+   run packet replays. The binding gate does not replay a packet and does not sample rows.
+   Registry links, people and program rows remain
    outside this admission path.
 3. **A binding gate in CI: the quoted operator is a name the record holds
    and the quoted street equals the record's street, or the row is a
@@ -180,7 +181,8 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    rows are held for reading. PASS is a minimum condition for admission;
    source replay and independent review still apply.
    Own-site web rows must also clear the web mechanics, replay against
-   the cited main text, and carry a reading by a different model family.
+   the cited main text, and carry a reading with a self-reported family
+   different from the builder’s.
 4. **Review is tiered by risk, recorded on the PR.** *Practice.* (Owner
    ruling 2026-11-22, "tier by risk".) A PR that changes any file under
    `data/` gets review records from two model families at the current head;
