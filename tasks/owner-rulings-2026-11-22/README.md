@@ -9,7 +9,7 @@ The quotations below identify the recorded decision and where to check it. Main 
 - **Contact quotes.** Main’s `DECISIONS.md` says the contact detail “may stay in a verbatim quote.” Main’s `AGENTS.md` §6 explicitly requires it to be incidental to a quote that witnesses another claim and lists the narrower bars. See C1 for both texts.
 - **Parent names.** The first name-match entry in PR #467 leaves parent names open. The later split entry records the owner’s “fail everywhere” decision, quoted in C6.
 - **City matching.** PR #467’s `DECISIONS.md` gives a city-equality requirement and then records the controller’s later locality instruction allowing an equal ZIP5 and treating a missing city as neutral. See A7–A7a for those texts and A7b for the owner’s subsequent strict-floor ruling.
-- **Industry codes.** The round 11 ledger says “industry codes as a low-tier lead” (D8). The In-Hand lane brief says “owner ruling: fill at a low tier, marked as inferred from a code” and asks for a fill proposal (C10).
+- **Industry codes (settled 2026-11-22, round 12).** The round 11 ledger says “industry codes as a low-tier lead” (D8). The In-Hand lane brief says “owner ruling: fill at a low tier, marked as inferred from a code” and asks for a fill proposal (C10). See G2 for the later ruling.
 - **Ohio backfill.** PR #466 freezes national backfill outside PIC-18 “until the PIC-18 unknown shares move” (D2). The later ledger direction says each Ohio route re-runs “when its PIC-18 PR merges (lifts the freeze for Ohio, route by route)” (D3). PR #466’s text does not mention the route-by-route release.
 - **Rendered-page tooling.** The round 8 ledger says “switch on the NAS browser for script pages.” The streets branch specifies Firecrawl for rendered pages, tesseract for images and SearXNG for official-page searches. See C8.
 - **Street canary yield.** The ledger records 7 of 25 verified on line 2161 and 5 of 25 verified on line 2165. The streets branch’s README reports 3 of 25 under the main-text rule. The full 121-site packet is a separate result cited in F2.
@@ -246,6 +246,8 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 
 **Controller implementation of the owner ruling in D8** · **ledger only**, `BOARD.md` line 2209; lane instructions in the controller’s `briefs/w1122/process-inhand.md`, Part B.
 
+**2026-11-22, round 12.** The owner superseded the code-derived fill proposal below. See G2.
+
 > pursue process via Ohio air permits, industry codes as a low-tier lead, and reading material already held (not the company form);
 
 > Part B: industry codes as a lead (owner ruling: fill at a low tier, marked as inferred from a code)
@@ -333,6 +335,10 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 **Owner ruling** · **ledger only**, `BOARD.md` line 2209
 
 > pursue process via Ohio air permits, industry codes as a low-tier lead, and reading material already held (not the company form);
+
+**2026-11-22, round 12.** Owner ruling, **ledger only**, `BOARD.md` line 2241, item 2. See G2.
+
+> This settles the earlier pick "industry codes as a low-tier lead" as leads only, no fills.
 
 ### D9. Pipeline history in public notes
 
@@ -503,3 +509,49 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 | Follow-up 3 | E4b records the retrospective model request, D7b records the NAS enrichment question and canary, and B6 quotes all three November 19 actions. |
 | Follow-up 4 | A4 quotes the rules 2–3 exclusion for people and program rows. |
 | Follow-up 5 | C8 quotes the ledger’s NAS-browser wording alongside the streets branch’s tooling instructions. |
+
+## G. Round 12 and consistency follow-through
+
+### G1. Process named in permit equipment descriptions
+
+**Owner ruling** · **ledger only**, `BOARD.md` line 2241, item 1.
+
+> a permit's equipment description may fill the process field when it names a process in the vocabulary, for that site only; general equipment (mixer, blender, paint booth) fills nothing.
+
+### G2. Industry codes stay leads
+
+**Owner ruling** · **ledger only**, `BOARD.md` line 2241, item 2. The rule cited there is in main, `docs/SCHEMA.md` §2.4.
+
+> SCHEMA 2.4 stands: no process is filled from an industry code; codes stay leads. This settles the earlier pick "industry codes as a low-tier lead" as leads only, no fills.
+
+### G3. Form 5500 mailing-address evidence
+
+**Owner ruling** · **ledger only**, `BOARD.md` line 2241, item 3.
+
+> A Form 5500 mailing address proves existence and city only: a filing under the company's legal name with a mailing address in its headquarters city shows the company exists there; it never proves a street or a plant location and the street line is not published; a size band still needs the mailing street to equal the single site's recorded street.
+
+### G4. Company confirmation form
+
+**Owner ruling** · **ledger only**, `BOARD.md` line 2241, item 4.
+
+> The company "confirm your record" form: not now.
+
+### G5. Region labels go first
+
+**Controller ruling** · **ledger only**, `BOARD.md` line 2232. Implementation in PR #470 at `d8854e88`, `tasks/region-labels-2026-11-22/README.md`.
+
+> region labels 312 PIC-18 relabels to ne_ohio (GO, PR to open first);
+
+### G6. Company-type fill waits for PR #470
+
+**Controller ruling** · **ledger only**, `BOARD.md` lines 2232 and 2240.
+
+> Entity-type HELD until #470 merges;
+
+### G7. Company-and-plant agreement held
+
+**Controller ruling** · **ledger only**, `BOARD.md` line 2232. Governing text in main, `docs/SCHEMA.md` §4.4, `processes[]` / `materials[]` / `markets_served[]` row.
+
+> company-plant agreement 435 orgs / 796 cells HELD: SCHEMA 4.4 says do not backfill site to parent, which contradicts the owner's pick: needs a dated revision and a tier ruling.
+
+> Parent = union of sites, but do not backfill a site's process to Parent unless Parent claims it corporately — note in field source
