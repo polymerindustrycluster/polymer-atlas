@@ -1,0 +1,9 @@
+table,record_id,field,verdict,evidence_id
+organizations,ORG-000095,hq_country,corrected,EVD-483040
+organizations,ORG-000095,hq_state,corrected,EVD-483040
+organizations,ORG-001417,hq_county,corrected,EVD-483041
+organizations,ORG-001767,hq_county,corrected,EVD-483042
+organizations,ORG-001915,hq_county,corrected,EVD-483043
+ecosystem,ORG-002175,county,corrected,EVD-483044
+ecosystem,ORG-002862,city,corrected,EVD-483045
+ecosystem,ORG-002862,state,corrected,EVD-483045

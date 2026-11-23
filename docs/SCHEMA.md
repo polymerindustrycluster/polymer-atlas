@@ -1,7 +1,9 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.19.6 — 2026-11-23 (§4.13 admits replayed own-site web proofs and recent archived copies for street and market claims, owner ruling “Build it, archived pages count”).
+**Version:** v1.19.7 — 2026-11-23 (§1 R13 allows filings up to ten years old, with source years shown and newer contradictory sources taking precedence).
+
+Previous: v1.19.6 — 2026-11-23 (§4.13 admits replayed own-site web proofs and recent archived copies for street and market claims, owner ruling “Build it, archived pages count”).
 
 Previous: v1.19.5 — 2026-11-22 (§1 R13 and §4.13 make Form 5500 active-participant counts leads only — owner ruling 2026-11-22, round 14, "Leads only").
 
@@ -447,10 +449,11 @@ R11. **No data row is changed by this revision.**
      and never fills a size band (owner ruling 2026-11-22, round 14,
      "Leads only").
 
-  Where the chosen source disagrees with another source by more than one band,
-  or with an existing in-vocabulary band, the row goes to review and is not
-  applied automatically. The band is always stored with
-  `employee_count_source_date` and never as a precise headcount (§4.4).
+  Apply the dated precedence rule below first. Send remaining differences of more than one band
+  between sources without a clear date order to review. A fill pass writes only a blank or
+  `unknown` band. If a band already in the Atlas conflicts with a newer source, send it through
+  a separate correction review to confirm that the source binds to the same establishment and is
+  newer. Once confirmed, the newer source supplies the corrected band. Store bands as ranges (§4.4).
 
   **[v1.13.3]** 4. SBA PPP loan job counts (owner ruling 2026-11-16, "Strict matches"), filling a
      **blank** band only (site `employee_band_site` or organization `employee_band_ohio`), labelled with the 2020 or 2021 loan date, never overwriting an existing band, and
@@ -458,12 +461,20 @@ R11. **No data row is changed by this revision.**
      name-and-city match, and every other use of the PPP data, stays a lead. Applied in PR #348;
      recorded in `tasks/owner-rulings-2026-11-18/README.md`.
 
-  **[v1.19.3]** **Age limit (owner ruling 2026-11-22, "Headcount age: 5 years").** A filing sets a band under
-  sources 1 and 2 only if it is dated within five years of the date the band is written. The filing date is, for ITA
-  300A, the end of the filing year (31 December); for an OSHA inspection, its open date.
-  For the pass of 2026-11-22 the cutoff is 2021-11-22. An older filing is a lead only and never sets a band; the
-  integrator records it as held with the reason `stale_over_5_years`. The limit applies to the evidence behind a band,
-  not to bands already in the data.
+  **[v1.19.7]** **Age limit (owner ruling 2026-11-23, “10 years, dated”).** A filing under sources 1 and 2
+  can set a band when its date is on or after the band-write date minus ten years. For ITA 300A use 31 December
+  of the filing year. For an OSHA inspection use its open date. The cutoff for the pass dated 2026-11-23 is
+  2016-11-23. Hold an older filing with reason `stale_over_10_years`. This supersedes the v1.19.3 five-year limit.
+  When admissible dated sources for the same establishment give different bands, use the newer one regardless
+  of the distance between the bands. A newer qualifying inspection can supersede an older ITA filing.
+  A dated own-site source can supersede a filing when it qualifies as site-size evidence under §4.13.
+  Lead-only sources have no precedence. Hold the older conflicting filing, with reason
+  `newer_contradicting_filing` when the newer source is also a filing.
+  Show the filing year in the band's `size_band` evidence `claim_detail` and store the filing's source date in
+  `observed_date`. Include that date in the existing `BAND-SOURCE` site note.
+  At write time the integrator replays each filing's date against the raw snapshot. For the PIC-18 ten-year packet,
+  the replay is `tasks/pic18-size-10yr-2026-11-23/check.py` on the packet branch. Show the filing year alongside
+  each sampled band for the blind audit 12 readers, who check the bands against the cited filings.
 
 ### Owner rulings — 2026-11-03 (equipment and availability) **[v1.9]**
 
@@ -3368,3 +3379,4 @@ unchanged.
 - **v1.19.4 — 2026-11-22 (owner ruling 2026-11-22, "Add 'corporation'", multiple choice; and the round-13 follow-up on `ohio_statewide`).** (1) §4.4 `entity_type` enum gains `corporation`, the plain value for a legal name ending in Inc, Inc., Incorporated, Corp, Corp. or Corporation; public or private is not guessed, so the suffix never sets `corporation_public` or `corporation_private`, and Co, Company, Ltd and Limited stay `unknown`. `scripts/export_vocab.py`, `docs/schema/vocab.json` and `scripts/profile_fields.py` carry the new value. `tasks/entity-type-from-name-2026-11-22/` fills blank or `unknown` cells only, never overwriting: `corporation` 783, `llc` 228, `partnership` 4 organization rows in PIC-18 and the rest of Ohio (by frame in its README). (2) 79 organization rows with `hq_in_scope` = `ohio_statewide` and a named Ohio HQ county outside PIC-18 become `ohio_other` (`tasks/ohio-statewide-labels-2026-11-22/`); 5 with no county stay held. At this revision no organization row carries `pic12`.
 - **v1.19.5 — 2026-11-22 (owner ruling 2026-11-22, round 14, "Leads only").** §1 R7 and R13 and §4.13 remove Form 5500 active-participant counts as a size-band source. They stay leads. The rules for OSHA ITA establishment records and OSHA inspections are unchanged. No data rows change.
 - **v1.19.6 — 2026-11-23 (owner ruling, round 16, “Build it, archived pages count”).** §4.13 defines per-row own-site web proofs with capture replay and extends the street rule for recent archived company pages to market claims. No data rows change.
+- **v1.19.7 — 2026-11-23 (owner ruling, “10 years, dated”).** §1 R13 replaces the five-year cutoff with ten years, shows the filing year, and gives a newer contradictory source precedence. Blind audit 12 samples the result.

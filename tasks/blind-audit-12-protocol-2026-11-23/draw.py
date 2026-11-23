@@ -21,6 +21,7 @@ SEED_SHA256 = '5144840e29ac8aad7204812bf272282ffe0e39a2ce6bb6ba795d4d35f68d3df3'
 STRATA = list(sizes.PLAN)
 STRATUM_TABLES = {'PIC18_RECORDS': ('organizations', 'ecosystem', 'sites'), 'REST_OHIO_RECORDS': ('organizations', 'ecosystem', 'sites'), 'REST_US_RECORDS': ('organizations', 'ecosystem', 'sites'),
                   'RESEARCHERS': ('people',), 'PROGRAMS': ('programs',), 'EVENTS': ('events', 'event_participation')}
+PLACEMENT_REGION = {"PIC18_RECORDS": "PIC18", "REST_OF_OHIO": "OHIO", "REST_OF_COUNTRY": "REST"}
 PLANT_PER_STRATUM = 3
 PLANT_POOL = 40  # records ranked just past n2 that may be turned into plants
 TIERS_PUBLISHED = ('A', 'B', 'C')  # U is "not counted in headline totals" on the site (build_site TIERS); named exclusion, never silent
@@ -151,6 +152,21 @@ class GitReader:
         exec(self.git('show', f'{self.at}:scripts/regions.py'), ns)  # the one county definition at the pinned SHA (AGENTS section 8)
         return set(ns['PIC18'])
 
+    def placements(self):
+        path = H.relative_to(ROOT).as_posix() + "/placements.csv"
+        if not self.git("ls-tree", "--name-only", self.at, "--", path).strip():
+            return {}
+        reader = csv.DictReader(io.StringIO(self.git("show", f"{self.at}:{path}")))
+        assert reader.fieldnames == ["record_id", "stratum", "basis", "source_url", "quote"], "placements.csv header"
+        entries = {}
+        for row in reader:
+            rid = row["record_id"]
+            assert None not in row and rid and re.fullmatch(r"ORG-\d{6}", rid) and rid not in entries, f"duplicate or invalid placement {rid}"
+            assert row["stratum"] in PLACEMENT_REGION or row["stratum"] == "EXCLUDED", f"invalid placement stratum {rid}"
+            assert (row["basis"] or "").strip() and (row["source_url"] or "").startswith("https://") and (row["quote"] or "").strip(), f"incomplete placement {rid}"
+            entries[rid] = (row["stratum"], row["basis"])
+        return entries
+
     def published_site_counts(self, sites):
         """Run the site builder's own active_ab / pic18_active_sites (scripts/build_site.py at the pinned SHA) on these rows."""
         with tempfile.TemporaryDirectory() as td:
@@ -247,6 +263,7 @@ def build_frame(R, pic18, check_published=True):
         return 'REST'
     stratum_of = {'PIC18': 'PIC18_RECORDS', 'OHIO': 'REST_OHIO_RECORDS', 'REST': 'REST_US_RECORDS'}
     frame, bad = [], []
+    placements, applied, named = R.placements(), set(), []
     def put(stratum, t, rid, basis, region_basis=''):
         frame.append(dict(stratum=stratum, table=t, record_id=rid, basis=basis, region_basis=region_basis))
     for t, idc in (('sites', 'site_id'), ('organizations', 'org_id'), ('ecosystem', 'org_id')):
@@ -261,9 +278,18 @@ def build_frame(R, pic18, check_published=True):
                 else:
                     reg = org_region(r, r['state'], r['county'], 'US')
             except Unassignable as e:
-                bad.append((t, r[idc], str(e)))
-                continue
+                rid = r[idc]
+                if rid not in placements:
+                    bad.append((t, rid, str(e)))
+                    continue
+                stratum, basis = placements[rid]
+                applied.add(rid)
+                if stratum == "EXCLUDED":
+                    named.append((t, rid, basis))
+                    continue
+                reg = PLACEMENT_REGION[stratum]
             put(stratum_of[reg], t, r[idc], inc[t][r[idc]], reg)
+    assert applied == placements.keys(), f"placement targets missing, outside the frame or already assigned: {sorted(placements.keys() - applied)}"
     for t, stratum in (('people', 'RESEARCHERS'), ('programs', 'PROGRAMS'), ('events', 'EVENTS'), ('event_participation', 'EVENTS')):
         for rid, basis in inc.get(t, {}).items():
             put(stratum, t, rid, basis)
@@ -271,10 +297,19 @@ def build_frame(R, pic18, check_published=True):
     rec = {}
     for t in T:
         n_in = len(inc.get(t, {}))
-        n_ex = sum(excl[t].values())
+        reasons = excl[t].copy()
         n_added = added.get(t, 0)
+        for table, rid, _ in named:
+            if table != t:
+                continue
+            n_in -= 1
+            if inc[t][rid] == "owner_of_frame_site":
+                n_added -= 1  # already counted outside the headline frame
+            else:
+                reasons[f"B6 named exclusion {rid}"] += 1
+        n_ex = sum(reasons.values())
         assert n_in - n_added + n_ex == len(T[t]), f'{t}: {n_in} - {n_added} + {n_ex} != {len(T[t])}'
-        rec[t] = dict(rows=len(T[t]), in_frame=n_in, of_which_owner_added=n_added, excluded=sum(excl[t].values()), excluded_by_reason=dict(sorted(excl[t].items())))
+        rec[t] = dict(rows=len(T[t]), in_frame=n_in, of_which_owner_added=n_added, excluded=n_ex, excluded_by_reason=dict(sorted(reasons.items())))
     assert len({(f['table'], f['record_id']) for f in frame}) == len(frame) == sum(rec[t]['in_frame'] for t in T) - len(bad), 'frame rows lost or duplicated'
     if check_published and hasattr(R, 'published_site_counts'):  # the site builder's own counts must equal ours
         pub = R.published_site_counts(T['sites'])
@@ -285,6 +320,9 @@ def build_frame(R, pic18, check_published=True):
         n_org = len([1 for r in T['organizations'] if ok(r, 'status')]); n_eco = len([1 for r in T['ecosystem'] if ok(r, 'status')])
         assert n_org + added['organizations'] == len(inc.get('organizations', {})) and n_eco + added['ecosystem'] == len(inc.get('ecosystem', {}))
         rec['published_site_counts'] = pub
+    rec["named_exclusions"] = {"count": len(named), "records": [
+        dict(table=t, record_id=rid, basis=basis) for t, rid, basis in named
+    ]}
     rec['frame_by_stratum'] = dict(Counter(f['stratum'] for f in frame))
     return frame, rec, bad
 
@@ -398,12 +436,12 @@ def run_draw(R, at, seed, expected_seed_sha, out, plan=None, pic18=None, protoco
     return sample, pl, receipt
 
 
-def require_ancestor(sha_, root=ROOT):
-    """`--at` must be a full SHA that is an ancestor of (or equal to) origin/main: no branch tip, no local commit."""
+def require_ancestor(sha_, root=ROOT, *, main_only=True):
+    """Require a full commit SHA, on origin/main when drawing."""
     full = subprocess.check_output(['git', 'rev-parse', '--verify', sha_ + '^{commit}'], cwd=root).decode().strip()
     if full != sha_:
         sys.exit(f'--at must be the full 40-hex SHA ({full})')
-    if subprocess.run(['git', 'merge-base', '--is-ancestor', full, 'origin/main'], cwd=root).returncode:
+    if main_only and subprocess.run(['git', 'merge-base', '--is-ancestor', full, 'origin/main'], cwd=root).returncode:
         sys.exit('refusing: --at is not an ancestor of origin/main')
     return full
 
@@ -420,6 +458,8 @@ class MemReader:
         return set(FIELD_CLASS) | set(OUT_OF_UNIT_TABLES)
     def regions(self):
         return {'Cuyahoga', 'Summit'}
+    def placements(self):
+        return {}
 
 
 def fixture():
@@ -561,6 +601,29 @@ def selftest():
             raise AssertionError('accepted an unclassified column')
         except AssertionError as e:
             assert 'new_column' in str(e)
+        class PlacementReader(MemReader):
+            def placements(self):
+                return self.entries
+        t = fixture()
+        t["ecosystem"][0]["county"] = ""
+        t["organizations"].append(dict(t["organizations"][0], org_id="ORG-000999", hq_state="", hq_county=""))
+        reader = PlacementReader(t)
+        reader.entries = {
+            "ORG-000300": ("REST_OF_OHIO", "fixture city"),
+            "ORG-000999": ("EXCLUDED", "fixture pending registry"),
+        }
+        placed, facts, missing = build_frame(reader, reader.regions(), False)
+        assert not missing and facts["named_exclusions"]["count"] == 1
+        assert next(r for r in placed if r["record_id"] == "ORG-000300")["stratum"] == "REST_OHIO_RECORDS"
+        assert not any(r["record_id"] == "ORG-000999" for r in placed)
+        for invalid in ("ORG-000001", "ORG-999999"):
+            reader.entries[invalid] = ("REST_OF_OHIO", "invalid fixture")
+            try:
+                build_frame(reader, reader.regions(), False)
+                raise AssertionError("stale or missing placement accepted")
+            except AssertionError as error:
+                assert "placement targets missing" in str(error) and invalid in str(error)
+            del reader.entries[invalid]
         # count reconciliation breaks when a published count differs
         class WrongPublished(MemReader):
             def published_site_counts(self, sites):
@@ -577,6 +640,7 @@ def selftest():
         sh('init', '-q'); (g / 'a').write_text('1'); sh('add', 'a'); sh('commit', '-qm', 'one'); c1 = sh('rev-parse', 'HEAD')
         sh('update-ref', 'refs/remotes/origin/main', c1); (g / 'a').write_text('2'); sh('commit', '-qam', 'two'); c2 = sh('rev-parse', 'HEAD')
         assert require_ancestor(c1, g) == c1
+        assert require_ancestor(c2, g, main_only=False) == c2
         for bad_at in (c2, c1[:10]):
             try:
                 require_ancestor(bad_at, g)
@@ -611,10 +675,10 @@ if __name__ == '__main__':
     elif a[:1] == ['fields-md']:
         print(fields_md())
     elif a[:1] == ['frame']:
-        at = require_ancestor(arg('--at'))
+        at = require_ancestor(arg('--at'), main_only=False)
         R = GitReader(at)
         frame, rec, bad = build_frame(R, R.regions())
-        print(json.dumps(dict(at=at, reconciliation=rec, unassignable=bad), indent=1, sort_keys=True))
+        print(json.dumps(dict(at=at, reconciliation=rec, unassignable_count=len(bad), unassignable=bad), indent=1, sort_keys=True))
     elif a[:1] == ['draw']:
         at = require_ancestor(arg('--at'))
         for flag, path in (('--expect-draw-sha256', Path(__file__).resolve()), ('--expect-sizes-sha256', H / 'sizes.json'), ('--expect-protocol-sha256', H / 'PROTOCOL.md')):
