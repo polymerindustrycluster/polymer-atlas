@@ -14,7 +14,7 @@ def clean():
     """A quiet day: one data PR with two review records, a successful validate that finished before the merge."""
     return {
         "ref": "origin/main", "since": "2026-11-20T11:17:00Z", "until": "2026-11-21T11:17:00Z", "base": "aaaaaaaaaa",
-        "head": "bbbbbbbbbb", "errors": [], "task_folders": ["evidence-fix-2026-11-20", "alpha-lane-pass-3"],
+        "head": "bbbbbbbbbb", "errors": [], "task_folders_read": 2, "labels_without_provenance": [],
         "commits": [{"sha": "bbbbbbbbbb", "date": "2026-11-21T01:00:00Z", "subject": "s", "pr": 10, "data_files": 2,
                      "evidence_added": {"claude-code evidence-fix-2026-11-20": 40}, "links_added": 5, "removed": {}}],
         "prs": [{"number": 10, "merged_at": "2026-11-21T01:00:00Z", "merge_sha": "bbbbbbbbbb", "head_sha": "cccccccccc",
@@ -84,6 +84,12 @@ class Planted(unittest.TestCase):
         f = clean(); f["prs"][0]["validate"] = None
         self.assertEqual(letters(f), {"c"})
 
+    def test_c_validate_started_only_after_the_merge(self):
+        f = clean(); f["prs"][0]["validate"] = dict(f["prs"][0]["validate"], late=True, started_at="2026-11-21T01:02:00Z")
+        findings, _ = nw.analyze(f)
+        self.assertEqual({x[1] for x in findings}, {"c"})
+        self.assertIn("before any validate check started", findings[0])
+
     def test_c_ignores_a_merge_train_member_but_not_the_train_pr(self):
         f = clean(); f["prs"][0]["validate"] = None; f["prs"][0]["train_member"] = True
         self.assertEqual(letters(f), set())
@@ -91,6 +97,14 @@ class Planted(unittest.TestCase):
     def test_d_main_validate_not_success(self):
         f = clean(); f["main_validate"]["conclusion"] = "failure"
         self.assertEqual(letters(f), {"d"})
+
+    def test_e_counts_a_train_pr_not_its_members(self):
+        f = clean()
+        for n in (11, 12):
+            f["commits"].append(dict(f["commits"][0], sha=f"{n:010d}", pr=None, evidence_added={}, links_added=0))
+            f["prs"].append(dict(f["prs"][0], number=n, train_member=True))
+        f["unknown"]["after"] = dict(f["unknown"]["before"])
+        self.assertNotIn("e", letters(f))
 
     def test_e_three_data_prs_and_no_unknown_count_fell(self):
         f = clean()
@@ -105,15 +119,10 @@ class Planted(unittest.TestCase):
     def test_f_label_names_no_tasks_folder(self):
         f = clean()
         f["commits"][0]["evidence_added"] = {"some-harness mystery-wave": 3}
+        f["labels_without_provenance"] = ["some-harness mystery-wave"]
         self.assertEqual(letters(f), {"f"})
-
-    def test_f_grandfathered_label_is_quiet_but_a_new_one_fires(self):
-        f = clean()
-        f["commits"][0]["evidence_added"] = {"old-wave-label": 3}
-        f["label_baseline"] = ["old-wave-label"]
-        self.assertEqual(letters(f), set())
-        f["commits"][0]["evidence_added"] = {"old-wave-label-2": 3}
-        self.assertEqual(letters(f), {"f"})
+        del f["labels_without_provenance"]  # not judged is an error, never a pass
+        self.assertEqual(nw.report(f)[1], 2)
 
     def test_f_label_rule(self):
         folders = ["size-band-evidence-2026-11-03", "bandb"]
@@ -147,6 +156,21 @@ class KnownAnswer(unittest.TestCase):
 
 
 class CouldNotInspect(unittest.TestCase):
+    def test_a_commit_with_no_pr_is_an_error(self):
+        errors = []
+        f = clean(); f["commits"].append(dict(f["commits"][0], sha="ffffffffff", pr=None))
+        # collect_github adds this error; analyze must carry any errors through to a non-zero exit
+        with mock.patch.object(nw, "git", return_value="aaaaaaaaaa\n"), mock.patch.object(
+                nw, "gh", side_effect=lambda *a: "[]" if a[:2] == ("pr", "list") else ""):
+            f["errors"] = errors
+            f["ref"], f["base"], f["head"] = "main", "aaaaaaaaaa", "bbbbbbbbbb"
+            try:
+                nw.collect_github(f, [], nw.parse_time("2026-11-20T11:17:00Z"), nw.parse_time("2026-11-21T11:17:00Z"), "o/r")
+            except Exception as e:
+                errors.append(str(e))
+        self.assertTrue(any("merge commit of no merged PR" in e for e in errors), errors)
+        self.assertEqual(nw.report(f)[1], 2)
+
     def test_errors_fail_without_findings(self):
         f = clean(); f["errors"] = ["GitHub: gh api: HTTP 502"]
         text, code = nw.report(f)
@@ -194,10 +218,36 @@ class RealGit(unittest.TestCase):
         # base resolves to the root commit, so the one later commit is the window
         self.assertEqual(len(facts["commits"]), 1)
         self.assertEqual(facts["commits"][0]["evidence_added"], {"claude evidence-fix-2026-11-20": 3})
-        self.assertEqual(facts["task_folders"], ["evidence-fix-2026-11-20"])
+        self.assertEqual(facts["task_folders_read"], 1)
         text, code = nw.report(facts)
         self.assertEqual(code, 2, text)
         self.assertIn("HTTP 502", text)
+
+    def test_labels_without_provenance_come_from_the_baseline_and_the_folders(self):
+        baseline = nw.BASELINE_FILE
+        errors = []
+        with mock.patch.object(nw, "gh", side_effect=RuntimeError("x")), mock.patch.object(nw, "BASELINE_FILE", self.d / "baseline.txt"):
+            (self.d / "baseline.txt").write_text("claude evidence-fix-2026-11-20\n")
+            facts = nw.collect("main", *self.window(), "o/r", errors)
+            self.assertEqual(facts["labels_without_provenance"], [])  # names its folder (and is grandfathered)
+            (self.d / "baseline.txt").write_text("")
+            self.assertEqual(nw.collect("main", *self.window(), "o/r", [])["labels_without_provenance"], [])  # names its folder
+        subprocess.run(["git", "-C", str(self.d), "mv", "tasks/evidence-fix-2026-11-20", "tasks/other-folder-9"], check=True)
+        subprocess.run(["git", "-C", str(self.d), "commit", "-qam", "rename"], check=True, capture_output=True)
+        with mock.patch.object(nw, "gh", side_effect=RuntimeError("x")), mock.patch.object(nw, "BASELINE_FILE", self.d / "baseline.txt"):
+            self.assertEqual(nw.collect("main", *self.window(), "o/r", [])["labels_without_provenance"], ["claude evidence-fix-2026-11-20"])
+            (self.d / "baseline.txt").write_text("claude evidence-fix-2026-11-20\n")
+            self.assertEqual(nw.collect("main", *self.window(), "o/r", [])["labels_without_provenance"], [])
+        self.assertTrue(baseline.exists())  # the shipped baseline file is there
+
+    def test_shallow_clone_is_an_error(self):
+        shallow = Path(self.tmp.name) / "shallow"
+        subprocess.run(["git", "clone", "-q", "--depth", "1", f"file://{self.d}", str(shallow)], check=True, capture_output=True)
+        with mock.patch.object(nw, "ROOT", shallow):
+            errors = []
+            facts = nw.collect("origin/main", *self.window(), "o/r", errors)
+        self.assertTrue(any("shallow" in e for e in errors), errors)
+        self.assertEqual(nw.report(facts)[1], 2)
 
     def test_unresolvable_window_start_is_an_error_not_zero_commits(self):
         errors = []
@@ -231,7 +281,9 @@ class RealGit(unittest.TestCase):
         member = git("rev-parse", "HEAD")
         git("checkout", "-q", "main"); git("merge", "-q", "--no-ff", "-m", "train", "train")
         train = git("rev-parse", "HEAD")
-        prs = [{"number": 5, "mergedAt": "2026-11-21T01:00:00Z", "mergeCommit": {"oid": member}, "headRefOid": "h" * 40,
+        add_three = git("rev-parse", "main^1")
+        prs = [{"number": 4, "mergedAt": "2026-11-21T00:50:00Z", "mergeCommit": {"oid": add_three}, "headRefOid": "g" * 40, "comments": []},
+               {"number": 5, "mergedAt": "2026-11-21T01:00:00Z", "mergeCommit": {"oid": member}, "headRefOid": "h" * 40,
                 "comments": [{"body": "**Review record**\nok", "createdAt": "2026-11-21T00:30:00Z"},
                              {"body": "**Review record**\nlate", "createdAt": "2026-11-21T02:00:00Z"}]},
                {"number": 6, "mergedAt": "2026-11-21T01:05:00Z", "mergeCommit": {"oid": train}, "headRefOid": "i" * 40, "comments": []}]

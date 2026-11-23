@@ -166,8 +166,11 @@ def collect(ref, since, until, repo, errors):
             errors.append(f"commit {sha[:10]}: {e}")
     try:
         names = [n for n in git("ls-tree", "--name-only", head, "tasks/").split("\n") if n]
-        facts["task_folders"] = sorted(n.split("/")[-1] for n in names)
-        facts["label_baseline"] = BASELINE_FILE.read_text().splitlines()
+        facts["task_folders"] = [n.split("/")[-1] for n in names]
+        baseline = set(BASELINE_FILE.read_text().splitlines())
+        added = {l for c in facts["commits"] for l in c["evidence_added"]}
+        facts["labels_without_provenance"] = sorted(l for l in added if l not in baseline and not label_names_a_folder(l, facts["task_folders"]))
+        facts["task_folders_read"] = len(facts.pop("task_folders"))
         facts["unknown"] = {"before": unknown_counts(base), "after": unknown_counts(head)}
     except Exception as e:
         errors.append(f"tasks/ folders, label baseline or PIC-18 unknown counts: {e}")
@@ -206,11 +209,17 @@ def collect_github(facts, shas, since, until, repo):
             "-q", ".check_runs[] | select(.name==\"" + VALIDATE + "\") | {status,conclusion,started_at,completed_at}"
         ).splitlines() if line.strip()]
         started = [r for r in runs if r["started_at"] and parse_time(r["started_at"]) < merged]
-        last = max(started, key=lambda r: r["started_at"], default=None)
+        later = [r for r in runs if r not in started and r["started_at"]]
+        last = (max(started, key=lambda r: r["started_at"]) if started
+                else dict(min(later, key=lambda r: r["started_at"]), late=True) if later else None)
         facts["prs"].append({"number": p["number"], "merged_at": p["mergedAt"], "merge_sha": s, "train_member": train,
                              "head_sha": p["headRefOid"][:10], "data_files": data_files,
                              "review_records": records, "validate": last})
         seen.add(p["number"])
+    for c in facts["commits"]:  # b and c cannot be judged for a commit no PR explains (a direct push, or a missed search)
+        if not c["pr"]:
+            facts["errors"].append(f"commit {c['sha']} on {facts['ref']} is the merge commit of no merged PR "
+                                   f"(a direct push, or the PR search missed it): b and c not judged for it")
     for p in prs:  # a PR merged inside the window that no commit of the window explains cannot be judged
         if p["number"] not in seen and since < parse_time(p["mergedAt"]) <= until:
             facts["errors"].append(f"PR #{p['number']} merged in the window but its merge commit is not in the "
@@ -236,6 +245,7 @@ def analyze(facts):
     findings, errors = [], list(facts.get("errors", []))
     commits, prs = facts["commits"], facts["prs"]
     data_prs = [p for p in prs if p["data_files"]]
+    data_prs_e = [p for p in data_prs if not p["train_member"]]  # the train PR stands for its members
 
     per_label = Counter()
     for c in commits:
@@ -261,7 +271,10 @@ def analyze(facts):
             continue
         v = p["validate"]
         if v is None:
-            findings.append(f"[c] PR #{p['number']} merged {p['merged_at']} with no {VALIDATE} check started on its head {p['head_sha']}")
+            findings.append(f"[c] PR #{p['number']} merged {p['merged_at']}; its head {p['head_sha']} has no {VALIDATE} check at all")
+        elif v.get("late"):
+            findings.append(f"[c] PR #{p['number']} merged {p['merged_at']} before any {VALIDATE} check started on its head "
+                            f"(first started {v['started_at']}, {v['conclusion'] or v['status']})")
         elif not v["completed_at"] or v["status"] != "completed" or parse_time(v["completed_at"]) > parse_time(p["merged_at"]):
             findings.append(f"[c] PR #{p['number']} merged {p['merged_at']} before its {VALIDATE} check finished "
                             f"(status {v['status']}, completed {v['completed_at']})")
@@ -273,16 +286,17 @@ def analyze(facts):
         findings.append(f"[d] latest completed {VALIDATE} run on main ({mv['head_sha']}, {mv['created_at']}) is {mv['conclusion']}")
 
     unk = facts.get("unknown")
-    if unk and len(data_prs) >= MIN_DATA_PRS:
+    if unk and len(data_prs_e) >= MIN_DATA_PRS:
         b, a = unk["before"], unk["after"]
         if all(a[k] >= b[k] for k in ("proc", "mkt", "band")):
-            findings.append(f"[e] {len(data_prs)} data/ PRs merged and no PIC-18 unknown count fell: process {b['proc']}->{a['proc']}, "
+            findings.append(f"[e] {len(data_prs_e)} data/ PRs merged and no PIC-18 unknown count fell: process {b['proc']}->{a['proc']}, "
                             f"market {b['mkt']}->{a['mkt']}, size {b['band']}->{a['band']} (of {b['n']}->{a['n']} org rows)")
 
-    folders, baseline = facts.get("task_folders"), set(facts.get("label_baseline", ()))
-    if folders is not None:
+    if "labels_without_provenance" not in facts:
+        errors.append("f not judged: labels_without_provenance missing from the facts")
+    else:
         for label, n in sorted(per_label.items(), key=lambda kv: -kv[1]):
-            if label not in baseline and not label_names_a_folder(label, folders):
+            if label in facts["labels_without_provenance"]:
                 findings.append(f"[f] created_by '{label}': {n:,} evidence row(s) added; new label, and no tasks/ folder name appears in it")
 
     for c in commits:
@@ -301,7 +315,7 @@ def inspected(facts):
              "pull requests: " + (", ".join(f"#{p['number']}" + ("t" if p["train_member"] else "") for p in prs) or "none")
              + (" (t = merged into a merge train)" if any(p["train_member"] for p in prs) else ""),
              f"rows added: {ev:,} evidence ({len(Counter(l for c in cs for l in c['evidence_added']))} created_by labels), {links:,} registry links",
-             f"tasks/ folders read: {len(facts.get('task_folders') or [])}"]
+             f"tasks/ folders read: {facts.get('task_folders_read', 0)}; labels without provenance: {len(facts.get('labels_without_provenance', []))}"]
     if facts.get("unknown"):
         b, a = facts["unknown"]["before"], facts["unknown"]["after"]
         lines.append(f"PIC-18 unknown counts (process/market/size): {b['proc']}/{b['mkt']}/{b['band']} -> {a['proc']}/{a['mkt']}/{a['band']}")
