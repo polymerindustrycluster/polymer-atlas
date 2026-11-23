@@ -659,3 +659,6 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
     - Job boards and university employer lists are leads only.
   - **First user and non-use date:** to be named by the owner when this is promoted (portfolio rule 8).
 - [ ] `claimed:claude-code 2026-11-22` **PIC-18 evidence queue from the NAS files (V-65 / V-68):** one witness per missing claim, existence and address, from the public OSHA and Form 5500 files; 78 of 419 PIC-18 records cured in the first packet (EVD-482000..482122, `tasks/pic18-evidence-queue-2026-11-22/`), baseline shrunk by 78. Remaining: 341 records (189 sites with no civic street need a street route first; organizations with no held-name filing need another source), then the rest of Ohio on the same build (`--region oh_rest`) once this merges. Branch `agent/claude-code/pic18-evidence-2026-11-22`; reserved IDs EVD-482000..482999.
+
+## Working rules (owner adoption 2026-11-22)
+- [ ] `claimed:claude-code 2026-11-22` **Working rules into AGENTS.md section 2a, with checks:** `scripts/check_pr_rules.py` (rules 5 and 6), workflow `pr-rules`, `tasks/working-rules-2026-11-22/`. Board card ATLAS-4. Rules 2 and 3 land with the evidence-binding-gate branch; not built here.

@@ -1,0 +1,289 @@
+org_id,legal_name,hq_city,hq_state,hq_county,hq_in_scope,status,file
+ORG-001430,"Solvay Specialty Polymers USA, LLC",Brussels,,,international,active,organizations_INTL.csv
+ORG-002125,Normec OWS,Ghent,,,international,active,organizations_INTL.csv
+ORG-002136,Kongsberg Automotive,Kongsberg,,,international,active,organizations_INTL.csv
+ORG-002907,Amcor plc,Bristol,,Bristol,international,active,organizations_INTL.csv
+ORG-002975,Intouch Monitoring Ltd,Brixworth,,,international,active,organizations_INTL.csv
+ORG-003106,Compagnie Generale des Etablissements Michelin SCA,,,,international,active,organizations_INTL.csv
+ORG-003107,Pirelli & C. S.p.A.,,,,international,active,organizations_INTL.csv
+ORG-003108,"The Yokohama Rubber Co., Ltd.",,,,international,active,organizations_INTL.csv
+ORG-003109,Toyo Tire Corporation,,,,international,active,organizations_INTL.csv
+ORG-003110,Nokian Tyres plc,,,,international,active,organizations_INTL.csv
+ORG-003111,Giti Tire Group,,,,international,active,organizations_INTL.csv
+ORG-004006,"OASIS Elastomers Industrial, Lda",Sintra,,,international,active,organizations_INTL.csv
+ORG-004018,Sudarshan Chemical Industries Limited,Pune,,,international,active,organizations_INTL.csv
+ORG-004019,Susonity Commercial GmbH,Gernsheim,,,international,active,organizations_INTL.csv
+ORG-004022,VMI Holland B.V.,Epe,,,international,active,organizations_INTL.csv
+ORG-004273,Future Pipe Industries,Dubai,,,national_us,active,organizations_INTL.csv
+ORG-007501,IMS Gear SE & Co. KGaA,Donaueschingen,,,international,active,organizations_INTL.csv
+ORG-007918,Infra Pipes,Mississauga,,,international,active,organizations_INTL.csv
+ORG-008109,Kordsa Teknik Tekstil A.S.,İzmit,,,international,active,organizations_INTL.csv
+ORG-008306,HEYCO-WERK USA Inc.,Remscheid,,,international,active,organizations_INTL.csv
+ORG-000022,Greatoo Inc.,,,Summit,international,active,organizations_US.csv
+ORG-000033,LyondellBasell,,,Summit,,active,organizations_US.csv
+ORG-000050,"Synthomer, Inc.",,,Portage,,active,organizations_US.csv
+ORG-000073,Professional Plastics,,,Summit,,active,organizations_US.csv
+ORG-000078,Giesecke+Devrient America,Twinsburg,,Summit,,active,organizations_US.csv
+ORG-000095,"MKV Polymers, Inc.",Akron,,Summit,international,active,organizations_US.csv
+ORG-000125,Lamson & Sessions,Beachwood,,Cuyahoga,,acquired,organizations_US.csv
+ORG-000186,SKF USA Inc.,,,Cuyahoga,,active,organizations_US.csv
+ORG-000197,Kenda American Technology Center,,,Summit,,active,organizations_US.csv
+ORG-000202,Quality Belt Maintenance Ltd.,,,Lorain,,active,organizations_US.csv
+ORG-003703,"JTW International, Inc.",,,GA,national_us,active,organizations_US.csv
+ORG-003769,Side America Corp.,,,,national_us,active,organizations_US.csv
+ORG-004000,UBE Corporation America Inc.,,,,national_us,active,organizations_US.csv
+ORG-004041,Protexic,,,,national_us,active,organizations_US.csv
+ORG-004094,ONA Polymers LLC,,,,national_us,active,organizations_US.csv
+ORG-004099,Girard Industries,,,,national_us,active,organizations_US.csv
+ORG-004101,Marlam Industries Inc.,,,,national_us,active,organizations_US.csv
+ORG-004103,IKO Northeast Inc.,,,,national_us,active,organizations_US.csv
+ORG-004104,Robroy Enclosures,,,,national_us,active,organizations_US.csv
+ORG-004105,Vendura Industries LLC,,,,national_us,active,organizations_US.csv
+ORG-004111,Porex Technologies Corp,,,,national_us,active,organizations_US.csv
+ORG-004112,Empire Fiberglass Products Inc.,,,,national_us,active,organizations_US.csv
+ORG-004114,Pro-Tect Manufacturing Inc,,,,national_us,active,organizations_US.csv
+ORG-004115,Sampson Fiberglass Inc.,,,,national_us,active,organizations_US.csv
+ORG-004117,Albar Industries Inc,,,,national_us,active,organizations_US.csv
+ORG-004119,CWC Industries Inc,,,,national_us,active,organizations_US.csv
+ORG-004120,BJB Enterprises Inc,,,,national_us,active,organizations_US.csv
+ORG-004121,Eagle Packaging Inc.,,,,national_us,active,organizations_US.csv
+ORG-004125,Premier Foam Inc,,,,national_us,active,organizations_US.csv
+ORG-004127,Pol-Tex,,,,national_us,active,organizations_US.csv
+ORG-004128,POR Products LLC,,,,national_us,active,organizations_US.csv
+ORG-004133,Iatric Manufacturing Solutions LLC,,,,national_us,active,organizations_US.csv
+ORG-004255,OESL Automotive USA LLC,,,,national_us,active,organizations_US.csv
+ORG-004258,"Barrette Outdoor Living, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004263,"Containment Solutions, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004293,"West Agro, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004310,"Hutchinson Sealing Systems, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004311,Jacuzzi Brands LLC,,,,national_us,active,organizations_US.csv
+ORG-004322,Zodiac Pool Solutions LLC,,,,national_us,merged,organizations_US.csv
+ORG-004326,Royal Baths Manufacturing Co.,,,,national_us,active,organizations_US.csv
+ORG-004346,American Renolit Corporation,,,,national_us,active,organizations_US.csv
+ORG-004347,Americh Corp,,,,national_us,active,organizations_US.csv
+ORG-004349,Chemprene LLC,,,,national_us,active,organizations_US.csv
+ORG-004351,Arizona Environmental Container Corp,,,,national_us,active,organizations_US.csv
+ORG-004352,Armada Rubber Manufacturing Co,,,,national_us,active,organizations_US.csv
+ORG-004354,Armorock LLC,,,,national_us,active,organizations_US.csv
+ORG-004355,Arropol Chemicals Inc.,,,,national_us,active,organizations_US.csv
+ORG-004356,Atlantic Footcare Inc,,,,national_us,active,organizations_US.csv
+ORG-004363,"Carstens Industries, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004364,Carstin Brands LLC,,,,national_us,active,organizations_US.csv
+ORG-004367,Central Marble Products Inc,,,,national_us,active,organizations_US.csv
+ORG-004368,CF Maier Composites Inc.,,,,national_us,active,organizations_US.csv
+ORG-004370,Chemelex LLC,,,,national_us,active,organizations_US.csv
+ORG-004373,Comcast Urethane,,,,national_us,active,organizations_US.csv
+ORG-004374,Comfort Revolution,,,,national_us,active,organizations_US.csv
+ORG-004375,Complete Home Concepts Inc,,,,national_us,active,organizations_US.csv
+ORG-004376,Composite Designs Inc,,,,national_us,active,organizations_US.csv
+ORG-004379,Custom Fiberglass Molding Inc,,,,national_us,active,organizations_US.csv
+ORG-004380,Custom Fiberglass Inc,,,,national_us,active,organizations_US.csv
+ORG-004381,Dadi Bathware,,,,national_us,active,organizations_US.csv
+ORG-004382,Dakota Fiberglass Inc.,,,,national_us,active,organizations_US.csv
+ORG-004384,DFA US Inc.,,,,national_us,active,organizations_US.csv
+ORG-004385,DGP Inc,,,,national_us,active,organizations_US.csv
+ORG-004387,DiversiTech Corporation,,,,national_us,active,organizations_US.csv
+ORG-004388,DT Fiberglass Inc,,,,national_us,active,organizations_US.csv
+ORG-004391,"IDEX Health & Science, LLC",,,,national_us,active,organizations_US.csv
+ORG-004395,Hyundai Transys,,,,national_us,active,organizations_US.csv
+ORG-004425,"Industrial Models, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004522,"HB&G Building Products, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004525,Western Bonded Products Inc,,,,national_us,active,organizations_US.csv
+ORG-004526,Wm. T. Burnett & Co.,,,,national_us,active,organizations_US.csv
+ORG-004527,Zanini Tennessee Inc.,,,,national_us,active,organizations_US.csv
+ORG-004528,"Alamo Marble, Ltd.",,,,national_us,active,organizations_US.csv
+ORG-004529,Anchor Seal,,,,national_us,active,organizations_US.csv
+ORG-004530,"APG Polytech, LLC",,,,national_us,active,organizations_US.csv
+ORG-004532,"Chemtrusion, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004535,"ELANTAS PDG, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004536,"Elastomer Specialties, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004537,"Electri-Glass, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004539,Epic Resins,,,,national_us,active,organizations_US.csv
+ORG-004541,"GEZOLAN (KRAIBURG), LP",,,,national_us,active,organizations_US.csv
+ORG-004542,Great Lakes Polymer Technologies LLC,,,,national_us,active,organizations_US.csv
+ORG-004543,"Indulor America, LP",,,,national_us,active,organizations_US.csv
+ORG-004544,Inland Coatings,,,,national_us,active,organizations_US.csv
+ORG-004545,JLOK Corp,,,,national_us,active,organizations_US.csv
+ORG-004546,Jewell Hudgens Machine Co,,,,national_us,active,organizations_US.csv
+ORG-004547,Killeen Marble Inc,,,,national_us,active,organizations_US.csv
+ORG-004548,Lewcott Corp,,,,national_us,active,organizations_US.csv
+ORG-004550,"Mesa Marble & Stone Co., Inc.",,,,national_us,active,organizations_US.csv
+ORG-004553,Mylar Specialty Films US Limited Partnership,,,,national_us,active,organizations_US.csv
+ORG-004554,"Neutron Products, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004555,Nupla Corporation,,,,national_us,active,organizations_US.csv
+ORG-004556,Oregon Rubber Mills Co,,,,national_us,active,organizations_US.csv
+ORG-004557,Orlandi Statuary Co.,,,,national_us,active,organizations_US.csv
+ORG-004559,PML Inc,,,,national_us,active,organizations_US.csv
+ORG-004561,"Polyurethane Specialties Company, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004563,Prefere Melamines LLC,,,,national_us,active,organizations_US.csv
+ORG-004565,Chemical Research/Technology Company,,,,national_us,active,organizations_US.csv
+ORG-004566,"R&D Marble, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004571,SK Primacor Americas LLC,,,,national_us,active,organizations_US.csv
+ORG-004819,"Closure Systems International Americas, Inc.",,,,national_us,active,organizations_US.csv
+ORG-004826,IPEX USA LLC,,,,national_us,active,organizations_US.csv
+ORG-005102,"Dorel Juvenile Group, Inc.",,,,national_us,active,organizations_US.csv
+ORG-005108,"B & F Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-005117,Chiyoda USA Corporation,,,,national_us,active,organizations_US.csv
+ORG-005118,Triangle Rubber Co. LLC,,,,national_us,active,organizations_US.csv
+ORG-005119,DeKALB Molded Plastics Company,,,,national_us,active,organizations_US.csv
+ORG-005120,"Priority Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-006101,Hoffer Plastics Corp.,,,,national_us,active,organizations_US.csv
+ORG-006102,"Demgy Chicago, LLC",,,,national_us,active,organizations_US.csv
+ORG-006105,Rogan Corporation,,,,national_us,active,organizations_US.csv
+ORG-006106,"Williams Hayward Protective Coatings, Inc.",,,,national_us,active,organizations_US.csv
+ORG-006107,"Fabrik Industries, Inc.",,,,national_us,active,organizations_US.csv
+ORG-006108,Magenta LLC,,,,national_us,active,organizations_US.csv
+ORG-006110,"P&P Industries, Inc.",,,,national_us,active,organizations_US.csv
+ORG-006111,"Elgin Molded Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-006112,Nemera Buffalo Grove LLC,,,,national_us,active,organizations_US.csv
+ORG-006113,Packaging Personified Inc.,,,,national_us,active,organizations_US.csv
+ORG-006115,"G J Nikolas & Co., Inc.",,,,national_us,active,organizations_US.csv
+ORG-006116,"Secon Rubber and Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-006117,"Tiger Drylac USA, Inc.",,,,national_us,active,organizations_US.csv
+ORG-006118,Vanseal Corporation dba VRC Engineered Solutions,,,,national_us,active,organizations_US.csv
+ORG-006122,"North American Polymer Company, Ltd. (NAPCO)",,,,national_us,active,organizations_US.csv
+ORG-006124,"Clayens NP USA, Inc.",,,,national_us,active,organizations_US.csv
+ORG-006127,Midwest Can Company LLC,,,,national_us,active,organizations_US.csv
+ORG-007004,"Vaupell Molding & Tooling, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007009,"Regency Plastics - Ubly, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007010,"Robinson Industries, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007014,"SPI Blow Molding, LLC",,,,national_us,active,organizations_US.csv
+ORG-007024,"Eclipse Mold, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007030,Systex Products Corporation,,,,national_us,active,organizations_US.csv
+ORG-007033,"McPherson Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007034,"EFTEC North America, L.L.C.",,,,national_us,active,organizations_US.csv
+ORG-007035,"Century Plastics, LLC",,,,national_us,active,organizations_US.csv
+ORG-007037,"Ironwood Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007038,Summit Plastic Molding,,,,national_us,active,organizations_US.csv
+ORG-007039,"Camcar Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007040,A-Pac Manufacturing Co.,,,,national_us,active,organizations_US.csv
+ORG-007044,"Argonics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007046,Z Technologies Corporation,,,,national_us,active,organizations_US.csv
+ORG-007053,Mayfair Plastics Incorporated,,,,national_us,active,organizations_US.csv
+ORG-007054,"Diversitak, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007056,21st Century Plastics Corporation,,,,national_us,active,organizations_US.csv
+ORG-007058,AirBoss Flexible Products LLC,,,,national_us,active,organizations_US.csv
+ORG-007059,United Paint & Chemical Corporation,,,,national_us,active,organizations_US.csv
+ORG-007060,Vantage Plastics,,,,national_us,active,organizations_US.csv
+ORG-007062,Rivard Park Advisors LLC dba Lyons Manufacturing Group,,,,national_us,active,organizations_US.csv
+ORG-007063,"Preferred Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007064,Premier Protective Packaging Corporation,,,,national_us,active,organizations_US.csv
+ORG-007065,RheTech LLC,,,,national_us,active,organizations_US.csv
+ORG-007102,"F&M Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007104,"Cellox, LLC",,,,national_us,active,organizations_US.csv
+ORG-007105,"Copps Industries, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007108,"Phillips-Medisize, LLC",,,,national_us,active,organizations_US.csv
+ORG-007109,"Wisconsin Film & Bag, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007110,PAC Machinery Bags and Materials,,,,national_us,active,organizations_US.csv
+ORG-007111,"Ci-Dell Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007116,Tigre USA Inc.,,,,national_us,active,organizations_US.csv
+ORG-007204,Precision Fluorocarbon Inc,,,,national_us,active,organizations_US.csv
+ORG-007206,"SPR Packaging, LLC",,,,national_us,active,organizations_US.csv
+ORG-007305,United Comb and Novelty Corporation (dba United Solutions),,,,national_us,active,organizations_US.csv
+ORG-007310,New England Plastics Corporation,,,,national_us,active,organizations_US.csv
+ORG-007315,"Plastic Distributors & Fabricators, LLC",,,,national_us,active,organizations_US.csv
+ORG-007328,Accurate Composites LLC (dba Acculam),,,,national_us,active,organizations_US.csv
+ORG-007329,"Mayhew Basque Plastics, LLC",,,,national_us,active,organizations_US.csv
+ORG-007408,"International Coatings Company, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007412,"Nuconic Packaging, LLC",,,,national_us,active,organizations_US.csv
+ORG-007413,"Mercury Plastics, Inc. (PolyPak Packaging)",,,,national_us,active,organizations_US.csv
+ORG-007414,"Holz Rubber Company, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007415,"Pacific Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007416,Commex Corporation,,,,national_us,active,organizations_US.csv
+ORG-007417,"Santa Fe Rubber Products, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007419,"JSN Industries, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007420,"Global Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007421,"Al's Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007425,Fabricated Extrusion Company LLC,,,,national_us,active,organizations_US.csv
+ORG-007426,"West American Rubber Company, LLC",,,,national_us,active,organizations_US.csv
+ORG-007428,Omega Extruding Corp of California,,,,national_us,active,organizations_US.csv
+ORG-007432,"Poly Processing Company, LLC",,,,national_us,active,organizations_US.csv
+ORG-007440,Toray Advanced Composites,,,,national_us,active,organizations_US.csv
+ORG-007516,"GreenView Floors International, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007605,Spartan Composites LLC,,,,national_us,active,organizations_US.csv
+ORG-007606,American Vinyl Company,,,,national_us,active,organizations_US.csv
+ORG-007721,"Avon Plastics, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007726,"Northern Prairie Polymers, LLC",,,,national_us,active,organizations_US.csv
+ORG-007727,"Manus Products, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007728,Hiawatha Rubber Company,,,,national_us,active,organizations_US.csv
+ORG-007730,"Aggressive Industries, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007731,"Pride Solutions, LLC",,,,national_us,active,organizations_US.csv
+ORG-007733,"Rubber Industries, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007908,Holocraft Corporation,,,,national_us,active,organizations_US.csv
+ORG-007912,"Pan Technology, Inc.",,,,national_us,active,organizations_US.csv
+ORG-007917,Minor Rubber Company,,,,national_us,active,organizations_US.csv
+ORG-008002,"Darnel, Inc.",,,,national_us,active,organizations_US.csv
+ORG-008106,SaarGummi Tennessee Inc.,,,,national_us,active,organizations_US.csv
+ORG-008206,"Gracious Living Kentucky, Inc.",,,,national_us,active,organizations_US.csv
+ORG-008307,"Reiss Manufacturing, Inc.",,,,national_us,active,organizations_US.csv
+ORG-009001,WATSON COATINGS INC,,,,national_us,active,organizations_US.csv
+ORG-009003,TG MISSOURI,,,,national_us,active,organizations_US.csv
+ORG-009004,Davis Paint Co,,,,national_us,active,organizations_US.csv
+ORG-009006,MANCHESTER PACKAGING COMPANY,,,,national_us,active,organizations_US.csv
+ORG-009007,"T-N-T PLASTICS, INC.",,,,national_us,active,organizations_US.csv
+ORG-009010,U.S. Paint Corporation,,,,national_us,active,organizations_US.csv
+ORG-009013,KOLLER-CRAFT PLASTIC PRODUCTS,,,,national_us,active,organizations_US.csv
+ORG-009017,EMS-CHEMIE NORTH AMERICA INC,,,,national_us,active,organizations_US.csv
+ORG-009022,"RE: BUILD CR, LLC",,,,national_us,active,organizations_US.csv
+ORG-009026,HAHL INC,,,,national_us,active,organizations_US.csv
+ORG-009029,"CMP Coatings, Inc.",,,,national_us,active,organizations_US.csv
+ORG-009035,INDUSTRIAL PLASTICS & MACHINE,,,,national_us,active,organizations_US.csv
+ORG-009600,Peak Performance Polymers,,,,national_us,unknown,organizations_US.csv
+ORG-010001,"NATIONAL DIVERSIFIED SALES, INC.",,,,national_us,unknown,organizations_US.csv
+ORG-010002,"CONTAINER SUPPLY COMPANY, INC.",,,,national_us,unknown,organizations_US.csv
+ORG-010004,Norton Packaging Inc.,,,,national_us,unknown,organizations_US.csv
+ORG-010005,"RUBBERCRAFT CORPORATION OF CALIFORNIA, LTD.",,,,national_us,unknown,organizations_US.csv
+ORG-010008,MSRS dba VM International,,,,national_us,unknown,organizations_US.csv
+ORG-010009,ATS PRODUCTS INC,,,,national_us,unknown,organizations_US.csv
+ORG-010010,"American Poly-Foam CO., INC",,,,national_us,unknown,organizations_US.csv
+ORG-010100,"Sumitomo Electric Interconnect Products, Inc.",,,,national_us,unknown,organizations_US.csv
+ORG-010101,VANDERLANS & SONS INC.,,,,national_us,unknown,organizations_US.csv
+ORG-010102,"ABBA ROLLER, LLC",,,,national_us,unknown,organizations_US.csv
+ORG-010103,Epic Plastics,,,,national_us,unknown,organizations_US.csv
+ORG-010104,"PMR Co., Inc.",,,,national_us,unknown,organizations_US.csv
+ORG-010105,"Tranpak, Inc.",,,,national_us,unknown,organizations_US.csv
+ORG-010106,Uni Poly Inc.,,,,national_us,unknown,organizations_US.csv
+ORG-010107,RD Rubber Technology Corporation,,,,national_us,unknown,organizations_US.csv
+ORG-010108,"TK PAX, INC.",,,,national_us,unknown,organizations_US.csv
+ORG-010109,Spec Formliners,,,,national_us,unknown,organizations_US.csv
+ORG-010110,"MOTHER LODE PLASTICS MOLDING, INC.",,,,national_us,unknown,organizations_US.csv
+ORG-010111,KMC Acquisition LLC,,,,national_us,unknown,organizations_US.csv
+ORG-010112,"AMERICAN PACIFIC PLASTIC FABRICATORS, INC",,,,national_us,unknown,organizations_US.csv
+ORG-010200,"MYCRODYNE PLASTICS, INC",,,,national_us,unknown,organizations_US.csv
+ORG-010201,WEST-BAG INC,,,,national_us,unknown,organizations_US.csv
+ORG-010202,"Montebello Plastics, LLC",,,,national_us,unknown,organizations_US.csv
+ORG-010203,American Innotek,,,,national_us,unknown,organizations_US.csv
+ORG-010204,"MITCHELL RUBBER PRODUCTS, LLC",,,,national_us,unknown,organizations_US.csv
+ORG-010205,ARGEE MANUFACTURING CORPORATION OF SAN DIEGO,,,,national_us,unknown,organizations_US.csv
+ORG-010206,"PRO-TECH MATS INDUSTRIES, INC.",,,,national_us,unknown,organizations_US.csv
+ORG-010207,"VAN DUERR INDUSTRIES, INC.",,,,national_us,unknown,organizations_US.csv
+ORG-010208,"SIG Packaging, LLC",,,,national_us,unknown,organizations_US.csv
+ORG-010209,"U.S. RUBBER RECYCLING, INC.",,,,national_us,unknown,organizations_US.csv
+ORG-010300,DURABAG COMPANY INC.,,,,national_us,unknown,organizations_US.csv
+ORG-010301,TRM Manufacturing,,,,national_us,unknown,organizations_US.csv
+ORG-010302,"STYTEK, LLC",,,,national_us,unknown,organizations_US.csv
+ORG-010500,"ACCREDO PACKAGING, INC.",,,,national_us,unknown,organizations_US.csv
+ORG-010501,"CGT U.S. LIMITED, LLC",,,,national_us,unknown,organizations_US.csv
+ORG-010502,IGLOO PRODUCTS CORPORATION,,,,national_us,unknown,organizations_US.csv
+ORG-010503,"Orrex Plastics Co., LLC",,,,national_us,unknown,organizations_US.csv
+ORG-010504,KB Components Dallas Inc,,,,national_us,unknown,organizations_US.csv
+ORG-010505,Overwraps Packaging,,,,national_us,unknown,organizations_US.csv
+ORG-010506,"General Technologies, Inc.",,,,national_us,unknown,organizations_US.csv
+ORG-010507,Technical Chemical Company,,,,national_us,unknown,organizations_US.csv
+ORG-010508,Mosites Rubber Company,,,,national_us,unknown,organizations_US.csv
+ORG-010509,"Solmax Geosynthetics, LLC",,,,national_us,unknown,organizations_US.csv
+ORG-010600,GT Products LLC,,,,national_us,unknown,organizations_US.csv
+ORG-010601,ALL SOURCE,,,,national_us,unknown,organizations_US.csv
+ORG-010602,"PSI Urethanes, Inc.",,,,national_us,unknown,organizations_US.csv
+ORG-010603,CONCORD SUPPLY INC.,,,,national_us,unknown,organizations_US.csv
+ORG-010604,RELIANT WORLDWIDE PLASTICS,,,,national_us,unknown,organizations_US.csv
+ORG-010605,CARY PRODUCTS COMPANY,,,,national_us,unknown,organizations_US.csv
+ORG-010606,"DEXAS INTERNATIONAL, LTD",,,,national_us,unknown,organizations_US.csv
+ORG-010607,"APEX PLASTICS & TOOLING, INC.",,,,national_us,unknown,organizations_US.csv
+ORG-010608,Coverlay Manufacturing Inc.,,,,national_us,unknown,organizations_US.csv
+ORG-010609,PLASTIFORM INC.,,,,national_us,unknown,organizations_US.csv
+ORG-010700,DELFINGEN-TX,,,,national_us,unknown,organizations_US.csv
+ORG-010701,Dacon Industries,,,,national_us,unknown,organizations_US.csv
+ORG-010800,J  M PLASTICS INC,,,,national_us,unknown,organizations_US.csv
+ORG-010801,Prime Industries,,,,national_us,unknown,organizations_US.csv
+ORG-010802,"Ken Ross, Inc.",,,,national_us,unknown,organizations_US.csv
