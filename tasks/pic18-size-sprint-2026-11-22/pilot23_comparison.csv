@@ -1,0 +1,24 @@
+site_id,sibling_disposition,sibling_band,mine,mine_band_or_reason,agree
+SITE-000035,applied,100-249,FILL,100-249 (osha_ita 2025),yes
+SITE-000043,applied,10-49,FILL,10-49 (osha_ita 2025),yes
+SITE-000062,applied,10-49,FILL,10-49 (osha_ita 2025),yes
+SITE-000138,held,100-249,HOLD,later_filing_other_name,yes
+SITE-000250,held,10-49,HOLD,ita_multiple_establishments_at_street,yes
+SITE-000264,applied,50-99,FILL,50-99 (osha_ita 2024),yes
+SITE-000297,held,100-249,HOLD,no_street,yes
+SITE-000383,applied,10-49,HOLD,later_filing_other_name,NO
+SITE-000450,applied,250-499,HOLD,near_cutoff_source_disagrees,NO
+SITE-000517,held,100-249,HOLD,no_filing_at_street,yes
+SITE-000519,held,50-99,HOLD,no_street,yes
+SITE-000522,applied,10-49,HOLD,stale_over_5_years,NO
+SITE-000620,applied,100-249,HOLD,near_street_filing_differs_from_fill,NO
+SITE-000639,held,50-99,HOLD,ita_multiple_establishments_at_street,yes
+SITE-000683,held,50-99,HOLD,filing_binds_two_sites,yes
+SITE-000863,applied,100-249,HOLD,f5500_multiple_plans,NO
+SITE-001109,applied,10-49,HOLD,street_near_differs,NO
+SITE-001137,applied,500-999,HOLD,street_near_differs,NO
+SITE-001397,applied,100-249,FILL,100-249 (osha_ita 2025),yes
+SITE-001725,held,50-99,HOLD,filing_binds_two_sites,yes
+SITE-002110,held,100-249,HOLD,no_street,yes
+SITE-002114,held,50-99,HOLD,sources_disagree_in_window,yes
+SITE-002965,held,10-49,FILL,10-49 (osha_ita 2025),NO
