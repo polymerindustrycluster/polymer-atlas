@@ -140,8 +140,15 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **What is kept:** `tasks/revert-batches-5-6-2026-11-22/quarantine/` holds, for every one of the 34,094 removed evidence rows, its ID, record keys, source key and first-cut binding verdict, passing and failing alike, with no row text; and the 6,837 removed registry links and 364 archive links, verbatim. The row text is recoverable from commit 17834918 by evidence ID. This supersedes the same day's narrower ruling to remove 844 rows.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
 
-## 2026-11-22: `hq_in_scope` `ne_ohio` read as PIC-18 (applies the 2026-11-03 ruling)
-- **Decision:** SCHEMA 4.4 defines `ne_ohio` by a 20-county list marked "confirm once, then freeze in code". AGENTS.md section 8 (owner ruling 2026-11-03) makes PIC-18 the cluster reporting region, supersedes the earlier county lists, and puts the county set in `scripts/regions.py`. The schema line now points there (v1.19.2), and 312 organizations whose HQ county is in PIC-18 and whose label was the retired `pic12` (224), `ohio_other` (78) or `ohio_statewide` (10) are relabelled `ne_ohio`.
-- **Why:** a company-owner review found PIC-18 companies labelled with the retired 12-county region or as other Ohio (8 of 20 sampled). The packet is `tasks/region-labels-2026-11-22/`.
-- **Not decided:** `ohio_statewide` and `pic12` as enum values; the 20 record errors (an out-of-state HQ with an Ohio county and similar) are leads, not relabels.
-- **Decided by:** applies the existing owner ruling 2026-11-03 (AGENTS.md section 8); no new ruling.
+## 2026-11-22: the day's rulings in one register
+
+- **Decision:** Record the day's rulings and their governing sources in `tasks/owner-rulings-2026-11-22/README.md`.
+- **Basis:** Working rule 7 in AGENTS.md §2a (PR #466) records decisions in this ledger.
+- **Decided by:** the repo owner, in session, 2026-11-22.
+
+## 2026-11-22: `hq_in_scope` `ne_ohio` means the HQ county is in PIC-18 (owner ruling, in session)
+- **Decision:** the owner ruled, in session on 2026-11-22, "PIC-18 exactly" (multiple choice): the stored `hq_in_scope` value `ne_ohio` means the HQ county is in PIC-18; Carroll and Holmes are not `ne_ohio`. SCHEMA 4.4 defined `ne_ohio` by a 20-county list marked "confirm once, then freeze in code"; it now points at `scripts/regions.py` (v1.19.2). The owner ruling of 2026-11-03 (AGENTS.md section 8) fixed PIC-18 as the cluster *reporting* region and superseded the earlier county lists for reporting; it did not by itself change the stored field, which is why this ruling was asked for.
+- **Applied:** 312 organizations whose HQ county is in PIC-18 and whose label was `pic12` (224), `ohio_other` (78) or `ohio_statewide` (10) are relabelled `ne_ohio` (`tasks/region-labels-2026-11-22/`). At that head zero organization rows carry `pic12`; 84 carry `ohio_statewide` (79 with a named Ohio county outside PIC-18, 5 with no county), which are not decided here.
+- **Why:** a company-owner review found PIC-18 companies labelled with the retired 12-county region or as other Ohio (8 of 20 sampled).
+- **Not decided here:** the 20 record errors (an out-of-state HQ with an Ohio county and similar) are leads, not relabels.
+- **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.

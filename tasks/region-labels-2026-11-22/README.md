@@ -3,10 +3,8 @@
 **Why:** the company-owner review (8 of 20 PIC-18 companies labelled with the retired 12-county region or as other Ohio). Built on `origin/main` 393c3895.
 Unit: `organizations` rows, all statuses. Region is a parameter: `rules.py` reads `scripts/regions.py` `REGION` (PIC-18).
 
-## What the field means (and the conflict I am not settling)
-SCHEMA §4.4 enum is `ne_ohio | ohio_other | national_us | international`, with `ne_ohio` defined by a 20-county list (incl. Carroll, Holmes) marked "confirm once, then freeze".
-AGENTS.md §8 (owner ruling 2026-11-03) says the 19-county list is superseded by PIC-18 and also says "tag records with the county, never a region". The data holds two values
-outside the enum (`pic12`, 224 rows; `ohio_statewide`, 94 rows). I read `ne_ohio` as "HQ county is in PIC-18", the only reading consistent with AGENTS §8 and with the 698 existing `ne_ohio` rows (all in PIC-18 counties). That reading is Question 1.
+## What the field means
+SCHEMA §4.4 enum is `ne_ohio | ohio_other | national_us | international`. Before this PR `ne_ohio` was defined by a 20-county list (incl. Carroll, Holmes). Owner ruling 2026-11-22, in session: "PIC-18 exactly" (see below). At the base the data held two values outside the enum: `pic12` (224 rows, all relabelled here) and `ohio_statewide` (94 rows, 10 relabelled here, 84 remain).
 
 ## Rule (only rows with `hq_state` = OH are recomputed)
 county in PIC-18 → `ne_ohio`; other valid Ohio county → `ohio_other` (county validity from the repo's own county shapes, `scripts/assets/us-atlas`).
@@ -37,8 +35,9 @@ Golden CO + Stark — ORG-001391); 9 non-Ohio HQ carrying an Ohio label (e.g. OR
 Recomputes all 312 cells from state + county **and** an independent assertion (after = `ne_ohio` iff `hq_state` OH, county in `regions.PIC18`, label one of the three; recall: every such base row is a change or listed), fails on a planted wrong value, omission and overwrite (verified), requires identical validator output on a scratch apply (exit 0, 245 lines) and a cell-for-cell diff. 10 known-answer cases, including a same-city-site county conflict that must hold (run over every Ohio-HQ row it finds one lead, ORG-002077 Beavercreek recorded as Greene with a site row in Montgomery, listed in `record_errors.csv`; a city can span counties, so it is a lead).
 
 ## Reading of `ne_ohio` (SCHEMA v1.19.2) and what stays open
-SCHEMA §4.4 now says `ne_ohio` = HQ county in PIC-18, pointing at `scripts/regions.py`. The basis is AGENTS.md §8 alone (owner ruling 2026-11-03: PIC-18 is the reporting region, earlier county lists superseded, every script reads `regions.py`); the old schema list differed from PIC-18 only by Carroll and Holmes. Reviewers should judge that reading; one sentence of §8 ("tag records with the county, never a region") is in tension with a region-valued field and is left untouched.
-Not decided here (owner's): the enum values `pic12` / `ohio_statewide` (94 `ohio_statewide` rows remain, outside PIC-18, held); the 4 + 2 Ohio rows whose label says outside Ohio.
+SCHEMA §4.4 says `ne_ohio` = HQ county in PIC-18 (`scripts/regions.py`); Carroll and Holmes are not `ne_ohio`. Authority: the owner's ruling of 2026-11-22, in session, "PIC-18 exactly". The 2026-11-03 ruling (AGENTS.md §8) fixed the reporting region and superseded the earlier lists for reporting; it did not by itself change the stored field. The old schema list differed from PIC-18 only by Carroll and Holmes.
+Counts at this head (unit: organizations rows, all shards): zero rows carry `pic12`; 84 carry `ohio_statewide` (79 with a named Ohio county outside PIC-18, 5 with no county), outside the enum; 1,012 carry `ne_ohio` (700 at the base plus these 312; 1,010 of them have HQ state OH and a PIC-18 county, of which 698 were already `ne_ohio` at the base).
+Not decided here: what the 84 `ohio_statewide` rows become (a follow-up packet); the 4 + 2 Ohio rows whose label says outside Ohio.
 
 ## Leads to verify at a source (not relabelled, `record_errors.csv`, 20 rows)
 3 non-Ohio HQ with an Ohio county (ORG-000011 Nashville TN + Summit; ORG-000007 Houston TX + Ashtabula; ORG-001391 Golden CO + Stark); 9 non-Ohio HQ carrying an Ohio label (e.g. ORG-000372 TX `ne_ohio`); 1 county field that is a list (ORG-001147); 4 + 2 Ohio rows whose label says outside Ohio; 1 same-city county lead (ORG-002077). A failed fetch is not evidence either way.
