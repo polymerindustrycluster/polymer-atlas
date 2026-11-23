@@ -1257,5 +1257,88 @@ class BlockingFixesTest(unittest.TestCase):
         self.assertIn("all locations held, not only US states", home)
 
 
+
+class RefuteFixesTest(unittest.TestCase):
+    """ATLAS-40 PR 4: findings of the completion refute (geography labels, phone directory order, privacy filters, HOWTO claims)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        tmp = Path(cls.tmp.name)
+        make_directory_db(tmp / "f.db")
+        con = sqlite3.connect(tmp / "f.db")
+        crm = "https://example.invalid/crm-source"
+        con.execute("UPDATE organizations SET sources=? WHERE org_id='ORG-000002'", ("PIC CRM " + crm,))
+        con.execute("UPDATE organizations SET sources=? WHERE org_id='ORG-000003'",
+                    ("Directory https://example.org/k; CRM export https://example.invalid/crm2; staging working/x.csv",))
+        con.execute("UPDATE people SET public_profile_url=?", ("https://example.invalid/profile?mail=fixture%40example.invalid",))
+        con.execute("UPDATE sites SET country='CA' WHERE site_id='SITE-000006'")
+        con.commit()
+        con.close()
+        cls.out = tmp / "site"
+        build_site.build_site(tmp / "f.db", cls.out, None, repo_url="https://example.com/repo",
+                              git={"sha": "abc1234", "date": "2026-11-01", "dirty": False}, today="2026-11-01")
+        cls.crm = crm
+        cls.profile = "https://example.invalid/profile?mail=fixture%40example.invalid"
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def read(self, rel):
+        return (self.out / rel).read_text(encoding="utf-8")
+
+    def test_geography_of_a_count_is_named_not_called_all_states(self):
+        self.assertEqual(build_site.geo_note([{"country": "US"}, {"country": "CA"}, {"country": "GB"}]), "1 in the US, 2 elsewhere")
+        for rel in ("index.html", "skyline.html"):
+            self.assertNotIn("all states", self.read(rel), rel)
+        home = self.read("index.html")
+        self.assertRegex(home, r"Site rows by ring \(operating status active; tiers A-C; all locations held: \d+ in the US, [1-9]\d* elsewhere\)")
+        self.assertRegex(self.read("skyline.html"), r"\d+ in the US, [1-9]\d* elsewhere")
+
+    def test_directory_puts_the_list_before_the_summary_on_a_phone_and_collapses_the_filters(self):
+        html = self.read("directory.html")
+        self.assertIn('<div class="dpage">', html)
+        self.assertIn('<div class="dsummary" id="counts">', html)
+        self.assertIn('href="#counts"', html)                                         # the way to the county counts from the top
+        css = self.read("style.css")
+        self.assertIn("@media (max-width:719.98px){.dpage>.dsummary{order:2}}", css)
+        self.assertIn(".dpage>.dsummary{order:0}", css)                               # on a desktop the summary stays first
+        self.assertRegex(self.read("directory.js"), r"details\.facet'\), function \(d\) \{ d\.open = false; \}")
+
+    def test_embeds_email_sees_every_encoding(self):
+        for u in ("https://x.example/p?mail=a@b.example", "https://x.example/p?mail=a%40b.example", "https://x.example/p?mail=a%2540b.example"):
+            self.assertTrue(build_site.embeds_email(u), u)
+            self.assertIsNone(build_site.safe_href(u), u)
+        self.assertFalse(build_site.embeds_email("https://x.example/people/jane-roe"))
+
+    def test_crm_marked_sources_never_render_and_the_omitted_count_is_stated(self):
+        page = self.read("orgs/ORG-000002.html")
+        self.assertNotIn(self.crm, page)
+        self.assertNotIn("PIC CRM", page)
+        self.assertIn("1 source entry left out of this view because it refers to internal material", page)
+        k = self.read("orgs/ORG-000003.html")
+        self.assertIn("https://example.org/k", k)                                     # the public entry stays
+        self.assertNotIn("crm2", k)
+        self.assertIn("2 source entries left out of this view because they refer to internal material", k)
+        for p in self.out.rglob("*.html"):
+            self.assertNotIn(self.crm, p.read_text(encoding="utf-8"), p.name)
+
+    def test_encoded_email_in_a_profile_url_is_published_nowhere(self):
+        self.assertNotIn(self.profile, self.read("experts.json"))
+        self.assertNotIn("fixture%40example", self.read("experts.json"))
+        for p in (self.out / "orgs").glob("*.html"):
+            self.assertNotIn("fixture%40example", p.read_text(encoding="utf-8"), p.name)
+
+    def test_howto_publishing_recipes_build_the_graph_pages_and_no_claim_is_left_that_the_audit_refuted(self):
+        doc = (Path(build_site.__file__).resolve().parent.parent / "docs" / "SITE_HOWTO.md").read_text(encoding="utf-8")
+        self.assertNotRegex(doc, r"python3 scripts/build_site\.py\ncd build/site")
+        self.assertIn("python3 scripts/build_pages.py          # the whole site", doc)
+        self.assertIn("netlify deploy --dir build/pages", doc)
+        for gone in ("so a phone transfers only the small page", "The only page that loads three.js;", "all links are relative, so a project sub-path works.",
+                     "keeping the query string and hash (`prospects.js`, with a refresh tag for no-JavaScript)", "the script only reads"):
+            self.assertNotIn(gone, doc)
+
+
 if __name__ == "__main__":
     unittest.main()

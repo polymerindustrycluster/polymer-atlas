@@ -42,6 +42,7 @@ import shutil
 import sqlite3
 import subprocess
 import sys
+import urllib.parse
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -242,18 +243,51 @@ URL_RE = re.compile(r"https?://[^\s<>\"')\]]+")
 
 # Free text from source strings and evidence rows (claim text, notes, citations) is never published: it can quote a scraped
 # page or name a person, and no pattern filter makes free text safe. Pages show structured fields and the source links only.
+def embeds_email(url):
+    """True if the URL carries an email address, literally or percent-encoded (mail=a%40b.example, even encoded twice)."""
+    u = str(url or "")
+    for _ in range(4):
+        if "@" in u:
+            return True
+        d = urllib.parse.unquote(u)
+        if d == u:
+            return False
+        u = d
+    return "@" in u
+
+
 def public_url(url):
     """An http(s) link that is not an email address or a personal profile page."""
-    return bool(safe_href(url)) and "@" not in url and not re.search(r"linkedin\.com/(in|pub)/", url, re.I)
+    return bool(safe_href(url)) and not embeds_email(url) and not re.search(r"linkedin\.com/(in|pub)/", url, re.I)
+
+
+STAGING_RE = re.compile(r"\bstaging\b|\bworking/|crm[-_ ]?(?:export|crossref)|pic[-_ ]member[-_ ]list", re.I)
+
+
+def source_entries(text):
+    """A source string split into its entries (';' followed by a space or line break), each marked public or not. An entry that names the
+    private PIC CRM or a staging/workshop path is never public: neither its text nor a URL inside it is published."""
+    out = []
+    for e in re.split(r";\s+|\n", str(text or "")):
+        if e.strip():
+            out.append((e, not (CRM_RE.search(e) or STAGING_RE.search(e))))
+    return out
+
+
+def omitted_sources(text):
+    return sum(1 for _, ok in source_entries(text) if not ok)
 
 
 def source_urls(text):
-    """Distinct public URLs in a source string, in order: the only part of a citation the site shows."""
+    """Distinct public URLs in the public entries of a source string, in order: the only part of a citation the site shows."""
     seen = []
-    for m in URL_RE.finditer(str(text or "")):
-        u = m.group(0).rstrip(".,;:")
-        if public_url(u) and u not in seen:
-            seen.append(u)
+    for entry, ok in source_entries(text):
+        if not ok:
+            continue
+        for m in URL_RE.finditer(entry):
+            u = m.group(0).rstrip(".,;:")
+            if public_url(u) and u not in seen:
+                seen.append(u)
     return seen
 
 
@@ -276,14 +310,17 @@ def lede(text):
 
 def source_list(sources):
     urls = source_urls(sources)
+    n = omitted_sources(sources)
+    left_out = (f'<p class="small muted">{plural(n, "source entry", "source entries")} left out of this view because '
+                f'{"it refers" if n == 1 else "they refer"} to internal material; the repository CSV keeps the full text.</p>') if n else ""
     if not urls:
-        return '<p class="muted">No source link recorded.</p>'
-    return '<ul class="sources">' + "".join(f"<li>{url_links([u])}</li>" for u in urls) + "</ul>"
+        return '<p class="muted">No source link recorded.</p>' + left_out
+    return '<ul class="sources">' + "".join(f"<li>{url_links([u])}</li>" for u in urls) + "</ul>" + left_out
 
 
 def safe_href(url):
     """Return the url only if it is an http(s) URL (never javascript: etc.)."""
-    if nonempty(url) and re.match(r"^https?://", str(url).strip(), re.I):
+    if nonempty(url) and re.match(r"^https?://", str(url).strip(), re.I) and not embeds_email(url):
         return str(url).strip()
     return None
 
@@ -1153,6 +1190,9 @@ th[aria-sort=descending] button.sort::after{opacity:.9}
 .tfilter input{padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);font:inherit;min-width:0;width:16em;max-width:60%;min-height:40px}
 
 .tdl{margin:-.6em 0 1.2em}
+.dpage{display:flex;flex-direction:column}
+.dpage>*{order:1}.dpage>.dsummary{order:0}.dpage>.lede{order:-1}
+@media (max-width:719.98px){.dpage>.dsummary{order:2}}   /* on a phone the list comes before the long county and ring summary */
 .downloads{margin:.4em 0}
 .facets{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:.6em 0}
 details.facet{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:6px 12px;margin:0}
@@ -1483,6 +1523,7 @@ DIRECTORY_JS = r"""(function () {
   var COLS = ['Street address', 'Ring', 'Site tier', 'Process', 'Material', 'Market', 'Employees', 'Ownership', 'Evidence rows',
               'Organization record (status, tier)', 'Website'];
   var boxes = {}, data = [], hits = [], page = 0;
+  if (matchMedia('(max-width: 719.98px)').matches) Array.prototype.forEach.call(form.querySelectorAll('details.facet'), function (d) { d.open = false; });   // phones: the list first, filters on tap
   status.textContent = 'Loading the list...';
   F.forEach(function (f) { boxes[f] = Array.prototype.slice.call(form.querySelectorAll('input[name="' + f + '"]')); });
   function chosen(f) { return boxes[f].filter(function (b) { return b.checked; }).map(function (b) { return b.value; }); }
@@ -1740,6 +1781,12 @@ GLYPHS = {
 }
 
 
+def geo_note(sites):
+    """The true geography of a set of site rows, in words: how many are in the US and how many are elsewhere."""
+    us = sum(1 for s in sites if s.get("country") == "US")
+    return f"{fmt_int(us)} in the US, {fmt_int(len(sites) - us)} elsewhere"
+
+
 def active_ab(sites):
     return [s for s in sites if s.get("operating_status") == "active"
             and s.get("verification_tier") in ("A", "B", "C")]
@@ -1978,13 +2025,17 @@ def build_directory_page(ctx, rows):
                               for c in counties)
     body = f"""
 <h1>Northeast Ohio polymer companies</h1>
+<div class="dpage">
 <p class="lede">{fmt_int(n_orgs)} owners of active, tier A-C site rows in the 18 PIC counties: {fmt_int(n_orgs - n_eco)} organization records and
 {fmt_int(n_eco)} ecosystem records, with {fmt_int(n_sites)} such site rows. Each count below is owners with an active tier A-C site row in that county or ring.</p>
+<p class="small"><a href="#counts">Counts by county and ring</a> · <a href="#find">Find a company</a> · <a href="search.html">Search every organization, any state</a></p>
+<div class="dsummary" id="counts">
 {summary}
 <p>This page lists companies in the 18 PIC counties. For any other company in the Atlas, in any state,
 <a href="search.html">search every organization</a>.</p>
 <p class="small muted">An owner with site rows in more than one county or ring is counted in each, so these columns can
 add up to more than the All PIC-18 line. Counts are owners, not unique ultimate parents.</p>
+</div>
 <noscript><p>Search, filters and the paged list need JavaScript. Without it, browse by county, {DIRECTORY_PAGE} rows a page, with street addresses:
 {county_links}. Every row is also in <a href="directory.csv">directory.csv</a>.</p></noscript>
 <div id="dfind" hidden>
@@ -2015,6 +2066,7 @@ own row. Bands are bands, never headcounts. "N or more" means the band starts at
 take <a href="directory.csv">directory.csv</a> ({fmt_int(len(rows))} rows, one per owner and county, unfiltered).
 Evidence rows count the claim-level evidence on the owner's page (its own and its site rows').
 Website is the owner's recorded website. No contact people are published.</p>
+</div>
 </div>
 </div>
 """
@@ -2091,7 +2143,7 @@ def build_index(ctx):
         card(len(active_ab(sites)), "Site rows", "All locations held (US states, territories and a few non-US rows); operating status active; verification tiers A-C"),
         card(len(active_ab(oh)), "Ohio site rows", "State = OH; operating status active; verification tiers A-C"),
         card(len(active_ab(pic)), "PIC-18 county site rows", "Ohio county in the 18 PIC counties (NEO-SMART region); operating status active; tiers A-C"),
-        card(len(n_org_active), "Organization rows (parents)", "Status active; verification tiers A-C; all states"),
+        card(len(n_org_active), "Organization rows (parents)", "Status active; verification tiers A-C; all locations held (organization rows are not split by country)"),
         card(len(parents_oh), "Parent organization rows with an Ohio footprint", "Organization status active, tiers A-C, and at least one active Ohio site row in tiers A-C"),
         card(len(eco_active), "Ecosystem organization rows", "Ring 5 (schools, associations, economic development, labs); status active; tiers A-C"),
         card(len(prog_active), "Program rows", "Education, training and research programs with status active; all tiers"),
@@ -2105,7 +2157,7 @@ def build_index(ctx):
         f'<td>{esc(RING_TESTS.get(r, ""))}</td></tr>'
         for r in ["1", "2", "3", "4", "5", "?"] if r != "?" or ring_groups.get("?"))
     ring_tbl = table_wrap(
-        "<table><caption>Site rows by ring (operating status active; tiers A-C; all states)</caption>"
+        f"<table><caption>Site rows by ring (operating status active; tiers A-C; all locations held: {geo_note(active_ab(sites))})</caption>"
         "<thead><tr><th scope=\"col\">Ring</th><th scope=\"col\" class=\"num\">Site rows</th>"
         f"<th scope=\"col\">One-line test</th></tr></thead><tbody>{ring_rows}</tbody></table>",
         "Site rows by ring")
@@ -2222,7 +2274,7 @@ def build_skyline_page(ctx):
 <h1 id="hero-title">Where the site rows <em>stand.</em></h1>
 <p class="lede">Hexagonal columns over the United States: the taller the column, the more active site rows the Atlas holds there.</p>
 <div class="hero-stats">
-<div><b>{fmt_int(len(active_ab(sites)))}</b><small>active site rows (tiers A–C)<br>across all states</small></div>
+<div><b>{fmt_int(len(active_ab(sites)))}</b><small>active site rows (tiers A–C)<br>{geo_note(active_ab(sites))}</small></div>
 <div><b>{fmt_int(len(active_ab(pic)))}</b><small>in the 18 PIC counties</small></div>
 </div>
 <div class="cta"><a class="btn primary" href="directory.html">Find companies</a><a class="btn" href="map.html">Map</a></div>
@@ -2395,9 +2447,7 @@ def experts_json(ctx):
         return oid
 
     for p in a.people:
-        href = safe_href(p.get("public_profile_url")) or ""
-        if "@" in href:
-            href = ""
+        href = safe_href(p.get("public_profile_url")) or ""   # safe_href refuses a URL that embeds an email, encoded or not
         specs = specs_of(vals(p.get("research_specialties")))
         role = p.get("role_as_published") or str(p.get("role") or "").replace("_", " ")
         modes = sorted({str(g.get("mode") or "").replace("_", " ") for g in a.engagement_by_person.get(p.get("person_id"), [])} - {""})
@@ -2634,9 +2684,7 @@ def people_block(people, ctx):
     rows = ""
     for p in sorted(people, key=lambda p: (p.get("full_name") or "")):
         name = esc(p.get("full_name"))
-        href = safe_href(p.get("public_profile_url"))
-        if href and "@" in href:        # a profile URL embedding an email address is not published
-            href = None
+        href = safe_href(p.get("public_profile_url"))   # a profile URL embedding an email address (even percent-encoded) is not published
         if href:
             name = f'<a href="{esc(href)}" rel="noopener nofollow">{name}</a>'
         role = p.get("role_as_published") or str(p.get("role") or "").replace("_", " ")

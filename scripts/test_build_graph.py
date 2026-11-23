@@ -44,6 +44,11 @@ class BuildGraphTests(unittest.TestCase):
         for i, j, t in self.edges:
             self.assertTrue(0 <= i < j < len(self.nodes), (i, j, t))
 
+    def test_description_that_refers_to_the_crm_is_not_copied_to_the_graph(self):
+        self.assertEqual(bg.public_description("Exists only in the PIC CRM record."), "")
+        self.assertEqual(bg.public_description("Molds things."), "Molds things.")
+        self.assertEqual(bg.public_description(""), "")
+
     def test_page_renders(self):
         html = bg.page(self.nodes[:5], [])
         self.assertIn("<title>Industry graph | Polymer Industry Atlas</title>", html)
