@@ -675,3 +675,4 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 
 ## P1 exit test
 - [ ] `claimed:claude-code 2026-11-23` **Blind audit 12 protocol (ATLAS-7), protocol only:** frames, published-field classes, error grammar, blindness, sealed `draw.py`, pre-registered two-stage rule. Branch `agent/claude-code/blind-audit-12-protocol-2026-11-23`, folder `tasks/blind-audit-12-protocol-2026-11-23/`. No sample is drawn and no `data/` change. First user: the repo owner. Check use by 2026-12-21.
+- [ ] `claimed:atlas-p1-integrator-1 2026-11-23` **ATLAS-8 and PIC-18 contradictions:** Integrate the wave-2 dispositions and reconcile the published claims to the sealed packets. Branch `agent/codex/p1-atlas8-corrections-2026-11-23`.
