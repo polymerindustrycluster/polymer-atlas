@@ -587,3 +587,31 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 **Controller ruling** · **ledger only**, `BOARD.md` line 2257.
 
 > a reviewer sends BLOCKING findings straight to the builder lane in one message and sends the controller only the verdict line. A builder sends a new head to the controller only, never to a reviewer (a message to the Gemini clerk steers its live turn).
+
+## I. Round 14 and controller rulings on the size split and hosted checks
+
+### I1. Nightly watch merge
+
+**Owner ruling** · `BOARD.md` line 2328, item 1. PR #473 merged at `40a2f6e3`; see `tasks/nightly-watch-2026-11-22/README.md` and `.github/workflows/nightly-watch.yml`.
+
+> Nightly watch PR #473: "Merge it" after Codex confirmed both round-2 blocking findings FIXED at 06b768a5 (the two-round cap was spent; the owner's call).
+
+### I2. Form 5500 plan counts stay leads
+
+**Owner ruling** · `BOARD.md` line 2328, item 2. The standing rule is recorded in `DECISIONS.md` under “retirement-plan participant counts are leads only.” The packet is on branch `agent/claude-code/pic18-size-form5500-2026-11-22` at `78c40b65`, `tasks/pic18-size-form5500-2026-11-22/README.md`. The branch is parked, packet only, and has not merged.
+
+> Form 5500 plan counts: "Leads only": the number of active participants in a retirement plan does not stand as a plant's headcount; the 22 parked PIC-18 fills stay leads; PIC-18 unknown size stays 396.
+
+The later ruling supersedes the earlier allowance for active-participant counts in SCHEMA §1 R13 and §4.13. The street-match condition quoted in G3 does not make a plan count eligible for a size band.
+
+### I3. OSHA and Form 5500 packet split
+
+**Controller ruling** · `BOARD.md` line 2270. PR #468 merged at `8547aed3`; see `tasks/pic18-size-sprint-2026-11-22/README.md`, “Withdrawn to a follow-up: the 28 Form 5500 fills.” The parked packet and subsequent owner ruling are in I2.
+
+> Codex r2 REFUTE at 646545f6, all three blockers on the 28 Form 5500 fills (second plan numbers, older returns, mailing street in packet.csv); the 50 OSHA fills carry no finding. Split: #468 keeps the 50 OSHA fills; the 28 Form 5500 fills are withdrawn to a parked packet on agent/claude-code/pic18-size-form5500-2026-11-22 pending the owner's ruling on whole-company plans.
+
+### I4. Hosted replay check gap
+
+**Controller ruling** · `BOARD.md` line 2288. The reporting fix merged in PR #479 at `fb95d4c0`; see `docs/ci/README.md` and `scripts/check_pr_rules.py`.
+
+> Codex r1 REFUTE at e3765ea0, 0 failing rows of 123, 1 BLOCKING: hosted CI silently omits the packet replay. Ruled a defect of the hosted checks, not of the PR's rows; fix = an explicit NOT RUN line in the published pr-rules result (rules lane follow-up PR, items 1-5).
