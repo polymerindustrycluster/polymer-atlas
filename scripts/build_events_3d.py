@@ -224,7 +224,7 @@ SCRIPT = r"""(async () => {
   $("reset").onclick = overview;
   $("p12").onclick = () => { state.p12 = !state.p12; $("p12").setAttribute("aria-pressed", String(state.p12)); refresh(); };
   addEventListener("keydown", (e) => {
-    if (e.target.closest && e.target.closest("input, .participants")) return;
+    if (e.target.closest && e.target.closest("input, select, textarea, button, a, summary, .participants")) return;   // Space on a focused control activates that control
     if (e.key === " ") { e.preventDefault(); state.playing ? stop() : play(); }
     else if (e.key === "ArrowRight") { stop(); show(state.i + 1); }
     else if (e.key === "ArrowLeft") { stop(); show(state.i - 1); }

@@ -74,7 +74,14 @@ def build_data():
         org_tag_list[o] = sorted({tag_ref(t) for t in org_tags.get(i, [])})
     for o, rec in enumerate(orgs):
         rec["t"] = org_tag_list.get(o, [])
-    return {"sites": out_sites, "orgs": orgs, "tags": tags, "held_sites": len(sites)}
+    with_coords = 0
+    for s in sites:
+        try:
+            float(s["latitude"]), float(s["longitude"])
+            with_coords += 1
+        except (TypeError, ValueError):
+            pass
+    return {"sites": out_sites, "orgs": orgs, "tags": tags, "held_sites": len(sites), "with_coords": with_coords}
 
 
 PAGE = r"""<canvas id="cv" class="stage" aria-label="Map of polymer industry sites that can morph into a capability network"></canvas>
@@ -397,7 +404,9 @@ SCRIPT = r"""(async () => {
 
   function stats() {
     let n = 0, p = 0; for (let i = 0; i < S.length; i++) if (visible(i)) { n++; if (S[i].p) p++; }
-    $("stat").innerHTML = `<b>${n.toLocaleString()}</b> sites shown · <b>${p.toLocaleString()}</b> in PIC-18<br>${placed.toLocaleString()} of ${D.held_sites.toLocaleString()} non-closed sites have coordinates`;
+    const L = (x) => x.toLocaleString();
+    $("stat").innerHTML = `<b>${L(n)}</b> site rows shown (not closed; every verification tier) · <b>${L(p)}</b> in the 18 PIC counties<br>` +
+      `${L(placed)} of ${L(D.held_sites)} non-closed site rows are on the map: ${L(D.held_sites - D.with_coords)} have no coordinates and ${L(D.with_coords - placed)} have coordinates but are not plotted (organization not in the graph, or outside the US frame)`;
   }
   const retheme = () => { readTheme(); draw(); };
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", retheme);
@@ -433,10 +442,9 @@ def data_text(data):
 
 
 def page(data, root="../"):
-    facts = (f'<p><strong>{len(data["sites"]):,}</strong> site rows with coordinates, of <strong>{data["held_sites"]:,}</strong> site rows that are '
-             f'not closed, belonging to <strong>{len(data["orgs"]):,}</strong> organization rows, plotted on a map of the United States '
-             f'and arranged by <strong>{len(data["tags"]):,}</strong> capability tags in network view. Coordinates are reference data, never evidence. '
-             f'The street map shows the same site rows on streets.</p>')
+    facts = (f'<p><strong>{len(data["sites"]):,}</strong> site rows are on the map (of <strong>{data["held_sites"]:,}</strong> site rows that are '
+             f'not closed; <strong>{data["with_coords"]:,}</strong> have coordinates), belonging to <strong>{len(data["orgs"]):,}</strong> organization rows, plotted on a map of the United States '
+             f'and arranged by <strong>{len(data["tags"]):,}</strong> capability tags in network view. Coordinates are reference data, never evidence.</p>')
     body = bg.summary("Map + network", "Where the industry is, and how it connects.", facts, root) + PAGE
     return bg.explorer_page("Map + network", "geo",
                             "Every mapped site on a US map, with company networks drawn across it, then arranged by process, material and market.",
