@@ -273,7 +273,7 @@ def source_entries(text):
     out = []
     for e in re.split(r";\s+|\n", str(text or "")):
         if e.strip():
-            out.append((e, not (CRM_RE.search(e) or STAGING_RE.search(e))))
+            out.append((e, not (CRM_RE.search(e) or STAGING_RE.search(URL_RE.sub(" ", e)))))   # a path marker counts in the label, not inside a public URL
     return out
 
 

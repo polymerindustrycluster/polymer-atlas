@@ -1347,7 +1347,8 @@ class RefuteFixesTest(unittest.TestCase):
         keep = "Public PIC member list https://polymerindustrycluster.org/members; Company site https://example.com/about"
         self.assertEqual(build_site.source_urls(keep), ["https://polymerindustrycluster.org/members", "https://example.com/about"])
         self.assertEqual(build_site.omitted_sources(keep), 0)
-        for ordinary in ("Public university workshop announcement https://example.edu/workshop", "Internal Revenue Service filing https://irs.example/f",
+        for ordinary in ("University course page https://example.edu/education/workshop/session.pdf",
+                         "Plant page https://example.com/internal/about", "Public university workshop announcement https://example.edu/workshop", "Internal Revenue Service filing https://irs.example/f",
                          "Staging area plant page https://example.com/staging"):
             self.assertEqual(build_site.omitted_sources(ordinary), 0, ordinary)
             self.assertEqual(len(build_site.source_urls(ordinary)), 1, ordinary)
