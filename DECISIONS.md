@@ -140,6 +140,17 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **What is kept:** `tasks/revert-batches-5-6-2026-11-22/quarantine/` holds, for every one of the 34,094 removed evidence rows, its ID, record keys, source key and first-cut binding verdict, passing and failing alike, with no row text; and the 6,837 removed registry links and 364 archive links, verbatim. The row text is recoverable from commit 17834918 by evidence ID. This supersedes the same day's narrower ruling to remove 844 rows.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
 
+## 2026-11-22: owner rulings after the process retrospective
+
+- **Decision:** five rulings, after three advisers (Claude Fable 5.2, GPT-6.2 Astra, Gemini 4 Neon) reviewed the project's process from one fact sheet.
+  1. **Outcome first.** The next data work is a PIC-18 size sprint from files already pulled (OSHA headcounts and Form 5500 for single-site organizations) and a 25-organization live-site trial for process and markets, each as a packet through the binding gate.
+  2. **National evidence backfill is frozen** outside PIC-18 until the PIC-18 unknown shares move. Repairs, re-admission of reverted rows that answer a PIC-18 question, and the whole-Atlas audit are exempt.
+  3. **Review is tiered by risk.** Data PRs keep two families. Other PRs take one family and at most two rounds. Findings are marked blocking or follow-up, and follow-ups do not hold a merge.
+  4. **The comment-reading review check was dropped** after two review rounds found it could not be made sound; the rest of the checker stays (PR #466): size cap, audit record, INPUTS.sha256, and the binding-gate job. Review stays practice, and separate GitHub accounts for builders and reviewers are not created now.
+  5. **Lighter running.** Mandatory startup reading is cut to one short page; a preflight command and generated counts precede review; the controller hands off to a fresh thread each wave; Opus is used only when the owner asks.
+- **Why:** 38 PRs merged from 2026-11-19 to 2026-11-22 moved the PIC-18 unknowns by zero; 251 review verdicts were spent on 80 PRs, and every PR that reached three or four rounds was a non-data PR.
+- **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
+
 ## 2026-11-22: the day's rulings in one register
 
 - **Decision:** Record the day's rulings and their governing sources in `tasks/owner-rulings-2026-11-22/README.md`.
