@@ -307,8 +307,12 @@ CRM_RE = re.compile(r"\bCRM\b", re.I)
 INTERNAL_RE = re.compile(r'#\d+|\bEVD-\d+|\bPR\b|pull request|\bpass[- ]?\d*\b|packet|(?-i:\blanes?\b|\bLanes? [A-Z0-9]{2,}\b)|\bwave\b|integration pass|integrator|codex|claude|grok|gemini|spaghetti|\bmuse\b|\bowner\b|\brulings?\b|battery|council|refut|\bminted\b|staging|banked|\bnotes?\b|created_by|tier[ _]?effect|supports_[ABCU]', re.I)
 
 
+TEMP_ID_RE = re.compile(r"NEW:[A-Z]{2,}-\d+")   # a temporary record id from a build pass, as in "(NEW:MJ-07)"
+
+
 def internal_wording(text):
-    return bool(CRM_RE.search(str(text or "")) or INTERNAL_RE.search(str(text or "")))
+    t = str(text or "")
+    return bool(CRM_RE.search(t) or INTERNAL_RE.search(t) or TEMP_ID_RE.search(t))
 
 
 def lede(text):

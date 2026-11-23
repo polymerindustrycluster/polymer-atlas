@@ -1366,6 +1366,30 @@ class RefuteFixesTest(unittest.TestCase):
         self.assertTrue(build_site.internal_wording("Rung 1 carried by the packet; CHANGED from wave 7"))
         self.assertFalse(build_site.internal_wording("Injection molder of automotive parts."))
 
+    def test_source_classifier_both_directions_on_astras_six_citations(self):
+        cases = [("Public university workshop announcement https://example.invalid/education/course", True),
+                 ("Public PIC member list https://example.invalid/members", True),
+                 ("Internal Revenue Service filing https://example.invalid/filing", True),
+                 ("Staging area plant page https://example.invalid/plant", True),
+                 ("workshop/internal/reader.csv https://example.invalid/private", False),
+                 ("Public university course https://example.invalid/education/workshop/session.pdf", True),
+                 ("AHFA workshop PDF https://www.ahfa.us/Portals/0/workshop/2024/session.pdf", True),
+                 ("staging/working/x.csv", False)]
+        for text, public in cases:
+            self.assertEqual(build_site.omitted_sources(text), 0 if public else 1, text)
+            self.assertEqual(bool(build_site.source_urls(text)), public, text)
+
+    def test_temporary_record_ids_are_withheld_from_descriptions(self):
+        for text in ("Maker of foam (NEW:MJ-07) in Ohio", "NEW:AB-123 parent"):
+            self.assertTrue(build_site.internal_wording(text), text)
+            self.assertIn("withheld", build_site.lede(text))
+        self.assertFalse(build_site.internal_wording("Makes NEW England clam shells; ID: MJ-07"))
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("bg", Path(build_site.__file__).resolve().parent / "build_graph.py")
+        bg = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(bg)
+        self.assertEqual(bg.public_description("Parent (NEW:MJ-07)"), "")
+
     def test_internal_wording_filter_is_the_blind_audit_scan(self):
         root = Path(build_site.__file__).resolve().parent.parent
         src = (root / "tasks" / "blind-audit-11-2026-11-17" / "sample.py").read_text(encoding="utf-8")
