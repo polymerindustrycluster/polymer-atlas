@@ -371,3 +371,45 @@ against their cited filings with the filing year shown.
   claims. Both close when their reads are in. What stays STILL_UNCERTAIN after the second read is listed and accepted
   open; it does not hold the draw. Inside PIC-18, the owner ruling above supersedes this.
   For Claude-built rows, a read by another model family decides.
+
+## 2026-11-23 16:18 · PIC-18 settlement evidence floors (owner ruling)
+
+“Keep row, mark unverified (2026-11-23)”. Retain the evidence rows whose
+withdrawal would breach the presence floor. Apply the owner-listed tier U
+marks with a dated note and preserve their record values. For non-floor
+identity, existence and address withdrawals, tier U applies when the
+remaining rows fail to tie the affected claim. Records in the owner's
+keep list stand at their held tier.
+
+The owner also ruled “Yes, one gate PR”. Press notices, mailing city and
+municipality at the same ZIP, 43-character federal names, registry name
+variants, blank-street registry rows, EDGAR and Kent's header wrapper
+will be considered in a separate gate PR. Hold the re-admission rows
+until that gate work lands. This data PR applies the current gate.
+
+At 16:32 the controller confirmed the published owner census and the
+Enpac and Intertex tier marks. Each record listed below moves to U.
+
+| Record | Prior tier | Audit frame at `1600f540` |
+|---|---|---|
+| `ORG-000068` | C | PIC18_RECORDS |
+| `ORG-000206` | B | PIC18_RECORDS |
+| `ORG-000212` | B | PIC18_RECORDS |
+| `ORG-000265` | B | PIC18_RECORDS |
+| `ORG-000404` | B | PIC18_RECORDS |
+| `ORG-001397` | B | PIC18_RECORDS |
+| `ORG-001762` | B | outside |
+| `ORG-001832` | B | PIC18_RECORDS |
+| `ORG-001857` | B | PIC18_RECORDS |
+| `ORG-001886` | B | PIC18_RECORDS |
+| `ORG-002011` | A | PIC18_RECORDS |
+| `SITE-001296` | C | PIC18_RECORDS |
+| `SITE-001575` | C | PIC18_RECORDS |
+
+The PIC-18 owner census moves from 794 to 792 owners of active tier A–C
+sites. Beacon ORG-001511 leaves after SITE-001575 moves to U. ORG-001197
+leaves after SITE-001296 moves to U because its other sites fall outside
+PIC-18. The controller confirmed both departures. At the resulting
+792-owner denominator, 305 have unknown process, 303 have unknown
+market, and 372 have unknown size. The count changes reflect the frame
+departures. The separate audit strata are listed for the tier marks.
