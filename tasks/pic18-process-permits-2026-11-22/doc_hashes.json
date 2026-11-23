@@ -1,4 +1,28 @@
 {
+ "1015038": {
+  "bytes": 438064,
+  "expiration_date": "2022-02-13",
+  "facility_id": "0228000245",
+  "fetched_utc": "2026-11-18T17:23:37.710484+00:00",
+  "issue_date": "2019-03-15",
+  "pdf_sha256": "d3a6825b9b9715c539b6dfb454e520c5bbf8b9c9a065d7c5d2a3393ee650a889",
+  "permit_number": "P0125209",
+  "site_id": "SITE-002113",
+  "text_sha256": "8389e66829f97a0f5187dc2b0d9e9d82e47d73b1a75525c5c851862bbf6eca6f",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1015038"
+ },
+ "1049884": {
+  "bytes": 343265,
+  "expiration_date": "2020-01-28",
+  "facility_id": "1652070030",
+  "fetched_utc": "2026-11-18T17:20:50.437476+00:00",
+  "issue_date": "2019-05-06",
+  "pdf_sha256": "9533733039457fab19fb6b82a590d50e663a8866ac292086fe0b4784eda8f173",
+  "permit_number": "P0126459",
+  "site_id": "SITE-000264",
+  "text_sha256": "2307cecf8f257f9fba84729f3821b41f66a9a5869e48df075018c2511d1972d9",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1049884"
+ },
  "106755": {
   "bytes": 1091630,
   "expiration_date": "2024-10-16",
@@ -10,6 +34,30 @@
   "site_id": "SITE-001937",
   "text_sha256": "3643f0fea66e203e1c62a94696bebab3b416e708fbd52bcd426e1093d6ee820f",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=106755"
+ },
+ "107141": {
+  "bytes": 1381902,
+  "expiration_date": "2024-10-16",
+  "facility_id": "1677120068",
+  "fetched_utc": "2026-11-23T01:20:52.895862+00:00",
+  "issue_date": "2014-12-15",
+  "pdf_sha256": "78c50d17f936a858a27ba8bcfa464d3948dea9a16c27845c252e0e112e3e4a2a",
+  "permit_number": "P0118175",
+  "site_id": "SITE-001937",
+  "text_sha256": "46840d8df1fdfc9070ea7024215ba45f639b37933dce50192c64e7b2b1dee306",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=107141"
+ },
+ "1105626": {
+  "bytes": 387623,
+  "expiration_date": "2029-08-01",
+  "facility_id": "1318002448",
+  "fetched_utc": "2026-11-18T17:22:46.513942+00:00",
+  "issue_date": "2019-08-01",
+  "pdf_sha256": "7ab66a465323dac97a80e93c6d8fa1e38697a07fc6a434c4aef1c69c745bed7a",
+  "permit_number": "P0126248",
+  "site_id": "SITE-001504",
+  "text_sha256": "cd47da0666a19f01691ef020e4bbb56d88610c3bf415ab2e36f51d9661375872",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1105626"
  },
  "114001": {
   "bytes": 2236834,
@@ -23,6 +71,18 @@
   "text_sha256": "15ffe14a6d0dccaa0747efe42967567074de88f2bdabaaf8e55544afd2b5953a",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=114001"
  },
+ "1182457": {
+  "bytes": 425851,
+  "expiration_date": "2024-11-19",
+  "facility_id": "0243082019",
+  "fetched_utc": "2026-11-18T17:23:22.710141+00:00",
+  "issue_date": "2019-11-19",
+  "pdf_sha256": "22b5d613d3933be6dc8b82d51d50e57dcac4bc44d7f8bb762212bd8f5ad8773d",
+  "permit_number": "P0127107",
+  "site_id": "SITE-001833",
+  "text_sha256": "298d9507b8ea14d8ac546f720680e056ea30f87747a07b38506991c14ab2b3fd",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1182457"
+ },
  "1306250": {
   "bytes": 546690,
   "expiration_date": "2025-03-18",
@@ -34,6 +94,30 @@
   "site_id": "SITE-001078",
   "text_sha256": "4c8af78d69804f51e23cfc8be64c77bba5699e0c031c6f67e6743c3b32234c9a",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1306250"
+ },
+ "1315096": {
+  "bytes": 471529,
+  "expiration_date": "2030-03-06",
+  "facility_id": "1652070030",
+  "fetched_utc": "2026-11-18T17:20:48.908714+00:00",
+  "issue_date": "2020-03-06",
+  "pdf_sha256": "592aeff14d9d35823fd20144eb2ea25b7aa900821c32dfeac3f00858c5871096",
+  "permit_number": "P0127945",
+  "site_id": "SITE-000264",
+  "text_sha256": "3ade12261c510d70d2b70e78df4b4307fc7a38ce782aef7d5da6078f25be4a32",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1315096"
+ },
+ "1324400": {
+  "bytes": 488090,
+  "expiration_date": "2025-04-01",
+  "facility_id": "1667040015",
+  "fetched_utc": "2026-11-18T17:21:40.731748+00:00",
+  "issue_date": "2020-04-01",
+  "pdf_sha256": "d90b645913a6b40dfef0c9082f06bf9092726de7528798e960ded3c051d1b523",
+  "permit_number": "P0127863",
+  "site_id": "SITE-000601",
+  "text_sha256": "80260dbb695890b0ca0b05f21f6c8b363a828c0264f956a9490122674964f745",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1324400"
  },
  "1353231": {
   "bytes": 562098,
@@ -47,6 +131,18 @@
   "text_sha256": "79a086ada1a1aec2b68dbb066d7f9652d28fa6da7c0de60297a3be12114722e3",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1353231"
  },
+ "1390432": {
+  "bytes": 351573,
+  "expiration_date": "2025-08-19",
+  "facility_id": "1318005362",
+  "fetched_utc": "2026-11-18T17:23:30.515999+00:00",
+  "issue_date": "2020-08-19",
+  "pdf_sha256": "3916c1c3eb940b3df4db7c27f32dac523009f561bfe9c2406c8a316839049679",
+  "permit_number": "P0128766",
+  "site_id": "SITE-001888",
+  "text_sha256": "be8513e477cd2e1af51530201d5a3099670b40606b85cd289f177c76efbcd3e4",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1390432"
+ },
  "1410376": {
   "bytes": 432566,
   "expiration_date": "2030-09-03",
@@ -58,6 +154,18 @@
   "site_id": "SITE-001690",
   "text_sha256": "5e7ca88e35a15a6433dd70b06d64cfbc43cba3a091fd188ba60dfab9d7773677",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1410376"
+ },
+ "141783": {
+  "bytes": 1446608,
+  "expiration_date": "2024-10-16",
+  "facility_id": "1677120068",
+  "fetched_utc": "2026-11-23T01:20:51.745625+00:00",
+  "issue_date": "2015-03-12",
+  "pdf_sha256": "1d49c77e7783a985ce6c1bd210093e16848b9b47a0a0b7eadb6d90df339c1b03",
+  "permit_number": "P0118394",
+  "site_id": "SITE-001937",
+  "text_sha256": "e9514ddad939533307aecd9fcd38832baba5809918d85c026b7051a5f8b5ca8b",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=141783"
  },
  "144283": {
   "bytes": 1077802,
@@ -107,6 +215,18 @@
   "text_sha256": "25d73a476132e47430572b67610a3b92e0d97e9a440632d2bce5cb7067916867",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1491729"
  },
+ "1533707": {
+  "bytes": 359408,
+  "expiration_date": "2026-03-16",
+  "facility_id": "1318007657",
+  "fetched_utc": "2026-11-18T17:20:35.815775+00:00",
+  "issue_date": "2021-03-16",
+  "pdf_sha256": "aff1d1807e3ec803130f20b8423b7e40cbaba41439ac32095f091d9c94b4b8e8",
+  "permit_number": "P0129190",
+  "site_id": "SITE-000140",
+  "text_sha256": "68bad8d5d80311c66ff00a648f9cafe3129301699ca0f03315c9f73a53cd9020",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1533707"
+ },
  "1540495": {
   "bytes": 748919,
   "expiration_date": "2025-12-21",
@@ -118,6 +238,138 @@
   "site_id": "SITE-001433",
   "text_sha256": "9959c633d8593156c50f9f04e3c9a3f2ed633354187bea53eea8108af65b73cf",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1540495"
+ },
+ "1600646": {
+  "bytes": 367328,
+  "expiration_date": "2025-08-19",
+  "facility_id": "1318005362",
+  "fetched_utc": "2026-11-18T17:23:29.822639+00:00",
+  "issue_date": "2021-07-13",
+  "pdf_sha256": "74c1ae0d4738aedc9e7af4705516c6538d27b6981a43aa634951cb463f94650f",
+  "permit_number": "P0129711",
+  "site_id": "SITE-001888",
+  "text_sha256": "ac45a8be1f63dd039cb83b27e1d5c172145715db03552abe608315c61e3ead4c",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1600646"
+ },
+ "1631819": {
+  "bytes": 540126,
+  "expiration_date": "2026-09-21",
+  "facility_id": "0339030016",
+  "fetched_utc": "2026-11-18T17:22:12.937877+00:00",
+  "issue_date": "2021-08-31",
+  "pdf_sha256": "d4c0b66bd6b7c401a7dc376febb9bc573f678d9a891d849e72f8b12c661aeb5a",
+  "permit_number": "P0129365",
+  "site_id": "SITE-000936",
+  "text_sha256": "e0e129df309c6e3dec913c8a038ade2f6824f2847e937f0ac0e038a9afc30b3e",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1631819"
+ },
+ "1638095": {
+  "bytes": 670558,
+  "expiration_date": "2026-09-13",
+  "facility_id": "1318002813",
+  "fetched_utc": "2026-11-18T17:23:02.208755+00:00",
+  "issue_date": "2021-09-13",
+  "pdf_sha256": "25f35e74beba3d3c63f627c5597624dc7ae84c0899df923729ce340a4bd3cdd9",
+  "permit_number": "P0130251",
+  "site_id": "SITE-001530",
+  "text_sha256": "f976f6951425b86eea18a29034e5ff3b13cc236224880951a330833dfae86401",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1638095"
+ },
+ "1751578": {
+  "bytes": 340290,
+  "expiration_date": "2025-10-01",
+  "facility_id": "0247030884",
+  "fetched_utc": "2026-11-18T17:21:22.497631+00:00",
+  "issue_date": "2022-03-11",
+  "pdf_sha256": "a797639467cefc45542c8d388ec1e36e344941167e02ecb8fc54df89f2caeb93",
+  "permit_number": "P0131632",
+  "site_id": "SITE-000469",
+  "text_sha256": "bcf39485efd857719da0dce2f90b21cfd603348963d03650fee7c83ac6674135",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1751578"
+ },
+ "1784662": {
+  "bytes": 460178,
+  "expiration_date": "2032-04-12",
+  "facility_id": "0228000245",
+  "fetched_utc": "2026-11-18T17:23:36.463653+00:00",
+  "issue_date": "2022-04-12",
+  "pdf_sha256": "abf6153c8efffd3ee3457222e4f2a9f909d1605599685916e1a0ae0aeb2d5842",
+  "permit_number": "P0131633",
+  "site_id": "SITE-002113",
+  "text_sha256": "08f87b133cfd6e8bd8b1df9c5bb048081afcb81ead571386c61ef5fd3a5863f7",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1784662"
+ },
+ "1785814": {
+  "bytes": 379672,
+  "expiration_date": "2025-10-01",
+  "facility_id": "0247030884",
+  "fetched_utc": "2026-11-18T17:21:21.866697+00:00",
+  "issue_date": "2022-04-13",
+  "pdf_sha256": "d3afb5c968123edec8463c6c4625eb5e4b523c7129b233b7f36e5745fa1a8498",
+  "permit_number": "P0131631",
+  "site_id": "SITE-000469",
+  "text_sha256": "b31c19489ec70fc934774b6d8d0ced2d8edf54dd5fb8f6840af92455dba69779",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1785814"
+ },
+ "1815636": {
+  "bytes": 459788,
+  "expiration_date": "2027-05-16",
+  "facility_id": "0228000245",
+  "fetched_utc": "2026-11-18T17:23:35.695121+00:00",
+  "issue_date": "2022-05-16",
+  "pdf_sha256": "8f725d9113cce9bb3233c3320d0fafceb04d350d669f189c9b79084003d276a2",
+  "permit_number": "P0132076",
+  "site_id": "SITE-002113",
+  "text_sha256": "d9a726d4d4f8ea29240bdf6e2ef90f267898da4f97251d6252a5b9dfef67e7c5",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1815636"
+ },
+ "1840670": {
+  "bytes": 497145,
+  "expiration_date": "2027-06-30",
+  "facility_id": "1667040037",
+  "fetched_utc": "2026-11-18T17:23:24.272494+00:00",
+  "issue_date": "2022-06-09",
+  "pdf_sha256": "6582b00e5b637c54578bfbbfd5a6c2f1b4fa77201c2a5dbd1d03fb5b49828f24",
+  "permit_number": "P0129079",
+  "site_id": "SITE-001837",
+  "text_sha256": "24e89ca88b4b4a39bff2c17b4b142d7966f4b73aa917e4def4a8c76e535ce237",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1840670"
+ },
+ "1881861": {
+  "bytes": 360641,
+  "expiration_date": "2032-07-05",
+  "facility_id": "1318347780",
+  "fetched_utc": "2026-11-18T17:23:33.048267+00:00",
+  "issue_date": "2022-07-05",
+  "pdf_sha256": "f4a0c5a819e2f454e6b2bcf8249806d235833e0678df9607391321076a14e06b",
+  "permit_number": "P0131609",
+  "site_id": "SITE-001923",
+  "text_sha256": "cf083ef3ca84895472d34a81e82e5cbeda7a3335ee20dcd07b8cc6f6cd243d63",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=1881861"
+ },
+ "200319": {
+  "bytes": 170320,
+  "expiration_date": "2019-04-03",
+  "facility_id": "1318002448",
+  "fetched_utc": "2026-11-18T17:22:49.011183+00:00",
+  "issue_date": "2009-04-03",
+  "pdf_sha256": "b8f8263728c2b69e07fe709a11bf69ebaaf226dfc8c878443c2a214ff107a426",
+  "permit_number": "P0094392",
+  "site_id": "SITE-001504",
+  "text_sha256": "bb930523ea6f550ed5e195f875b61fa143ab935dbf5894903803dbb30a98b2f9",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=200319"
+ },
+ "202666": {
+  "bytes": 183299,
+  "expiration_date": "2019-11-16",
+  "facility_id": "1652080002",
+  "fetched_utc": "2026-11-18T17:22:54.898111+00:00",
+  "issue_date": "2009-11-16",
+  "pdf_sha256": "f0917784b8a628f109e8ca9db4b5a049f812eab4547c3407239d878fc44070d9",
+  "permit_number": "P0105659",
+  "site_id": "SITE-001510",
+  "text_sha256": "0d6114ced572e99c68f025ca1756721305d5dfd7381dc13d7adc4aab72eb3f6e",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=202666"
  },
  "2085215": {
   "bytes": 357753,
@@ -131,6 +383,54 @@
   "text_sha256": "5f2c28f601a33ff380b7ee5a6cc6c089912e8fc39f6e5b9f0a3ddd96eef04e87",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2085215"
  },
+ "209387": {
+  "bytes": 357721,
+  "expiration_date": "2021-01-19",
+  "facility_id": "1318008351",
+  "fetched_utc": "2026-11-18T17:23:29.223989+00:00",
+  "issue_date": "2011-01-19",
+  "pdf_sha256": "0d01d851819b18e1a72547a4d30570fd4e39490a7b6d087ab5038090dc886486",
+  "permit_number": "P0107218",
+  "site_id": "SITE-001868",
+  "text_sha256": "c499466456e3a8f315619e6e551ae2e0146aec21cfc1de76221638640e59e3fd",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=209387"
+ },
+ "2105248": {
+  "bytes": 422076,
+  "expiration_date": "",
+  "facility_id": "0204000441",
+  "fetched_utc": "2026-11-18T17:21:33.205325+00:00",
+  "issue_date": "2022-11-17",
+  "pdf_sha256": "ba41260cf4bbbac06c2f0352f9c8300c859fb1d057fbe52c11c7988995204bd8",
+  "permit_number": "P0133166",
+  "site_id": "SITE-000535",
+  "text_sha256": "713cffcd836ddca9a7b74ebd152531561ae6f2c2f3b7786b306c3a6f63c9ce2e",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2105248"
+ },
+ "2173968": {
+  "bytes": 398168,
+  "expiration_date": "",
+  "facility_id": "0204000441",
+  "fetched_utc": "2026-11-18T17:21:31.606060+00:00",
+  "issue_date": "2023-01-25",
+  "pdf_sha256": "7f77e86f5d0150f8a1e9f8f6839c4f71c6c4a1f88718019165afedd479fb007d",
+  "permit_number": "P0133569",
+  "site_id": "SITE-000535",
+  "text_sha256": "f6634bfbc2e7e7a51bca0081269e62977ab711cbc4a6b50763e820680942e7a6",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2173968"
+ },
+ "2197892": {
+  "bytes": 413200,
+  "expiration_date": "2027-03-07",
+  "facility_id": "1667080084",
+  "fetched_utc": "2026-11-18T17:23:08.603668+00:00",
+  "issue_date": "2023-02-09",
+  "pdf_sha256": "4498e9f9f1695f38665389522e4e885a5b1ba9677b075d14cf5fe81a7281ade3",
+  "permit_number": "P0133508",
+  "site_id": "SITE-001743",
+  "text_sha256": "e99b6493271c5401afc3fec90c5519cf5d6d03214cb4abf9005d0852ce5d24a1",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2197892"
+ },
  "221201": {
   "bytes": 308789,
   "expiration_date": "2021-11-08",
@@ -142,6 +442,114 @@
   "site_id": "SITE-001916",
   "text_sha256": "afe8db492416a1ee16ed3d0fd1a76e91ffb406ae0dd25b2e6d5c7ee25f0fec65",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=221201"
+ },
+ "2242238": {
+  "bytes": 438432,
+  "expiration_date": "2033-02-09",
+  "facility_id": "0339010104",
+  "fetched_utc": "2026-11-18T17:23:55.560088+00:00",
+  "issue_date": "2023-03-13",
+  "pdf_sha256": "d697648ad71ff64dfa3abeea1968929a05fbbb2e4d4470ecfbdc6776d9381fca",
+  "permit_number": "P0133817",
+  "site_id": "SITE-002855",
+  "text_sha256": "17bb631ff099d8777a542de77095273700cb6fef466acda345f1c9226807494a",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2242238"
+ },
+ "226461": {
+  "bytes": 211053,
+  "expiration_date": "2020-11-10",
+  "facility_id": "0228000289",
+  "fetched_utc": "2026-11-23T01:21:42.016444+00:00",
+  "issue_date": "2012-11-30",
+  "pdf_sha256": "281ee658eb3c8768ad3f94b4b4e7bbd767f1a895eb691229473d3a18a9f49ca6",
+  "permit_number": "P0111973",
+  "site_id": "SITE-001399",
+  "text_sha256": "09b570a6bdb27a8dbdb87fea1f26fbfaf6c22a8c9151a898228f57b16babc272",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=226461"
+ },
+ "2277640": {
+  "bytes": 391533,
+  "expiration_date": "2033-02-09",
+  "facility_id": "0339010104",
+  "fetched_utc": "2026-11-18T17:23:54.776129+00:00",
+  "issue_date": "2023-04-13",
+  "pdf_sha256": "2e9ed4a24a4601110351537e0508119e443fcbd022bd561d3f91fbf253ab4680",
+  "permit_number": "P0134028",
+  "site_id": "SITE-002855",
+  "text_sha256": "06cbeb04b148557f5ea00ae81350b430c5ce265ec133c5cc880ba11f564d76b1",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2277640"
+ },
+ "2283293": {
+  "bytes": 392546,
+  "expiration_date": "2033-02-09",
+  "facility_id": "0339010104",
+  "fetched_utc": "2026-11-18T17:23:54.035094+00:00",
+  "issue_date": "2023-04-19",
+  "pdf_sha256": "caf91d42513425133d3b4e452f42253550ca43a3d6df97f0778b33cceecf729a",
+  "permit_number": "P0134026",
+  "site_id": "SITE-002855",
+  "text_sha256": "ddde7527cc55108a0ab723a2534a4f2ee8828c6de66a0dc082712740b3e75881",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2283293"
+ },
+ "2283297": {
+  "bytes": 391869,
+  "expiration_date": "2033-02-09",
+  "facility_id": "0339010104",
+  "fetched_utc": "2026-11-18T17:23:53.355005+00:00",
+  "issue_date": "2023-04-19",
+  "pdf_sha256": "9a10a12d307218fe26323304eee7315a8d30f477148700482c654bd6a825fb3f",
+  "permit_number": "P0134029",
+  "site_id": "SITE-002855",
+  "text_sha256": "9365c2189ad11d371a211f99db9d9adb8cdd84c1764956cb63c0bd2f6f575d29",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2283297"
+ },
+ "2314844": {
+  "bytes": 383536,
+  "expiration_date": "2033-02-09",
+  "facility_id": "0339010104",
+  "fetched_utc": "2026-11-18T17:23:52.706906+00:00",
+  "issue_date": "2023-05-09",
+  "pdf_sha256": "d0320f5c4f3f9914a501683c72189a400b5c666152d043770b203f1038ab4e50",
+  "permit_number": "P0134116",
+  "site_id": "SITE-002855",
+  "text_sha256": "803dcb64d754c2d16baaa03b20938b04083de518c68a06b0064dcc56b83f8256",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2314844"
+ },
+ "2322961": {
+  "bytes": 408451,
+  "expiration_date": "2027-11-08",
+  "facility_id": "1677010000",
+  "fetched_utc": "2026-11-18T17:23:14.311308+00:00",
+  "issue_date": "2023-05-17",
+  "pdf_sha256": "6fd7f4a6e99406750138c237b788e1862c212e980d4c6d49afcafb09e16ce406",
+  "permit_number": "P0133751",
+  "site_id": "SITE-001792",
+  "text_sha256": "b75ffc482bec3320e47a2b708d950ffa4fd09f12177de12a4ef770ec60363141",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2322961"
+ },
+ "2335020": {
+  "bytes": 411239,
+  "expiration_date": "2033-02-09",
+  "facility_id": "0339010104",
+  "fetched_utc": "2026-11-18T17:23:52.070100+00:00",
+  "issue_date": "2023-05-23",
+  "pdf_sha256": "a8308da6f2001e1964768d6d90d58537b86f8effa20cfca7d2b3809acdb4b7b4",
+  "permit_number": "P0134120",
+  "site_id": "SITE-002855",
+  "text_sha256": "cc51b2eb82feac4c17a10808107e23cbca7c7e791fe053a7134f073a7ea4981a",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2335020"
+ },
+ "238155": {
+  "bytes": 316459,
+  "expiration_date": "2022-10-04",
+  "facility_id": "1677010937",
+  "fetched_utc": "2026-11-23T01:21:46.797817+00:00",
+  "issue_date": "2015-07-24",
+  "pdf_sha256": "0ee26342eea9e0b647405114487db17bf674ca755d4f5926e2ae91e5eb2409fb",
+  "permit_number": "P0118979",
+  "site_id": "SITE-001893",
+  "text_sha256": "36dba83b9054bfb1867f4080fa97f458fac8cac609d74abdb41b000f334a4f31",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=238155"
  },
  "2421336": {
   "bytes": 492125,
@@ -155,6 +563,54 @@
   "text_sha256": "411a9ab1e434c91fc30ed0b633af1b8489a9bdca126f3f3a871b4076d2b58858",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2421336"
  },
+ "243351": {
+  "bytes": 195287,
+  "expiration_date": "2024-10-16",
+  "facility_id": "1677120068",
+  "fetched_utc": "2026-11-23T01:20:54.609349+00:00",
+  "issue_date": "2014-10-16",
+  "pdf_sha256": "39003fe9b2813015814785376b1acc026d3d4a18a642fd05964bd4ee702a1b2b",
+  "permit_number": "P0117444",
+  "site_id": "SITE-001937",
+  "text_sha256": "28a83985d2884013ab04a6d5a792b278a0c7899d3eb6c584be886887b51b5345",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=243351"
+ },
+ "2509398": {
+  "bytes": 521964,
+  "expiration_date": "2027-03-07",
+  "facility_id": "1667080084",
+  "fetched_utc": "2026-11-18T17:23:06.613270+00:00",
+  "issue_date": "2023-08-08",
+  "pdf_sha256": "a8ecbb7b326b42d154b3a72996fabf051473075d049f18aa9ed8aaa99ef8c25a",
+  "permit_number": "P0133714",
+  "site_id": "SITE-001743",
+  "text_sha256": "97395f16059df5b119a2748b646be7126d0ae14b899366f87deff98169bb55e3",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2509398"
+ },
+ "2512984": {
+  "bytes": 479145,
+  "expiration_date": "2027-03-07",
+  "facility_id": "1667080084",
+  "fetched_utc": "2026-11-18T17:23:05.785652+00:00",
+  "issue_date": "2023-08-10",
+  "pdf_sha256": "7621b6f710304dd55ff802094b070ee274aa99ac4e16af46045937da4ee5cd89",
+  "permit_number": "P0134501",
+  "site_id": "SITE-001743",
+  "text_sha256": "c5926a9699e1619fe61ceda1200e73685eeb4d83f063eb1840edcc0480536b21",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2512984"
+ },
+ "2540958": {
+  "bytes": 670528,
+  "expiration_date": "2026-09-13",
+  "facility_id": "1318002813",
+  "fetched_utc": "2026-11-18T17:23:01.358868+00:00",
+  "issue_date": "2023-08-29",
+  "pdf_sha256": "f64ad536fe48e31f0a7bd45f39bae8503856ef1235629bb51afcb9cc96e7fa1a",
+  "permit_number": "P0134097",
+  "site_id": "SITE-001530",
+  "text_sha256": "981d71a5f922007450c1ebb5085b54eb9fb4291dd50bef7a3a1d0c499b1a404a",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2540958"
+ },
  "2606258": {
   "bytes": 350026,
   "expiration_date": "2031-02-02",
@@ -163,7 +619,7 @@
   "issue_date": "2023-10-20",
   "pdf_sha256": "2c45ff7c0b6a2f52f840b655c7a0af9f6350a22c434d3046e6879da366ab33ac",
   "permit_number": "P0134973",
-  "site_id": "SITE-000981",
+  "site_id": "SITE-001513",
   "text_sha256": "8e0638d5fb47ac2a7dd4de8ddb6e700dbc5b8c85e2ff77006f85c3ee5eb1c11c",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2606258"
  },
@@ -178,6 +634,54 @@
   "site_id": "SITE-000164",
   "text_sha256": "123b067657afa9c1eeef9ff11313d3a8daf2fe86b459c02d51b10eb8d35366e3",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2628355"
+ },
+ "2676480": {
+  "bytes": 384999,
+  "expiration_date": "2027-03-07",
+  "facility_id": "1667080084",
+  "fetched_utc": "2026-11-18T17:23:04.824189+00:00",
+  "issue_date": "2023-12-13",
+  "pdf_sha256": "5e11ea49a5aaaee6b545247c723cac678304951b5a40cebb3d0ddecb7f3e77f9",
+  "permit_number": "P0134621",
+  "site_id": "SITE-001743",
+  "text_sha256": "8fbf2e27775183746c74fdb42d711db7b9a1c36db7792d5720c64a5e95dc613d",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2676480"
+ },
+ "2741327": {
+  "bytes": 500485,
+  "expiration_date": "",
+  "facility_id": "1667020035",
+  "fetched_utc": "2026-11-18T17:23:49.079092+00:00",
+  "issue_date": "2024-02-14",
+  "pdf_sha256": "073078162186c8dac5516317e31d3e057803dd6375045e75e61c7bbb68cd8188",
+  "permit_number": "P0134851",
+  "site_id": "SITE-002114",
+  "text_sha256": "9ed21205e98f6bbc3fdb5bdb4dedf1a4be30e3a84a29b24c20a9de71b3798641",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2741327"
+ },
+ "2744566": {
+  "bytes": 301080,
+  "expiration_date": "2034-02-22",
+  "facility_id": "1677110102",
+  "fetched_utc": "2026-11-18T17:21:33.938551+00:00",
+  "issue_date": "2024-02-22",
+  "pdf_sha256": "d35f1a61119c8692984003c221f706fa639c94bdd2ab2008bd2038837afa6745",
+  "permit_number": "P0135464",
+  "site_id": "SITE-000547",
+  "text_sha256": "07817472ba332cf541116281fa9c81f2f08e8e0bcb37676e200091f57a4c50e7",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2744566"
+ },
+ "2764525": {
+  "bytes": 474046,
+  "expiration_date": "2029-03-26",
+  "facility_id": "0204000441",
+  "fetched_utc": "2026-11-18T17:21:28.558423+00:00",
+  "issue_date": "2024-03-05",
+  "pdf_sha256": "1a5e2c3c91a6862b7de0dc8f941c7fd3d96da946894cfe6b93ff9fe8750b61cb",
+  "permit_number": "P0134435",
+  "site_id": "SITE-000535",
+  "text_sha256": "4dbb451c479669565588bd4faa11acbb1c47e0909562ab381ebe91cc227b1223",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2764525"
  },
  "2781977": {
   "bytes": 342680,
@@ -227,6 +731,18 @@
   "text_sha256": "fb8c5da750804980ce7bfc9037b5a2812b17f4ec54a58b254cc49619b9065399",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2796164"
  },
+ "2819015": {
+  "bytes": 478976,
+  "expiration_date": "2026-06-10",
+  "facility_id": "1667020035",
+  "fetched_utc": "2026-11-18T17:23:47.128160+00:00",
+  "issue_date": "2024-04-26",
+  "pdf_sha256": "ead95d5e3ad53917453fcb1c667a7cff62307c6d4ed99819e14bb662e835b579",
+  "permit_number": "P0134852",
+  "site_id": "SITE-002114",
+  "text_sha256": "77fc8a08e6d7e5ed07b11db8cfe3c184ddd267d5e0aa4a3d8dc3aecc988ad5dd",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=2819015"
+ },
  "2857245": {
   "bytes": 471674,
   "expiration_date": "",
@@ -263,6 +779,18 @@
   "text_sha256": "97b1294b46849ffa1bde89a7e1f1f7a2e9565e778ed0d774d759216a590c3543",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3187941"
  },
+ "3267030": {
+  "bytes": 7016642,
+  "expiration_date": "",
+  "facility_id": "0679005057",
+  "fetched_utc": "2026-11-18T17:23:51.298187+00:00",
+  "issue_date": "2024-10-25",
+  "pdf_sha256": "f20abf0efc4ec2f137e6f9f004f739f7787a467d13da24f6925fdd6b6c5d9b56",
+  "permit_number": "P0135276",
+  "site_id": "SITE-002124",
+  "text_sha256": "b3a98844a23222c7565e624022f36326cd95060fd41bf3151318fcd13d403f81",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3267030"
+ },
  "3281747": {
   "bytes": 15434852,
   "expiration_date": "2029-11-26",
@@ -274,6 +802,18 @@
   "site_id": "SITE-001078",
   "text_sha256": "fb79ff7efb34401a370e352f6fba354acda1a6b42c84fb6497be8ac9c870be4f",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3281747"
+ },
+ "3300346": {
+  "bytes": 9290371,
+  "expiration_date": "2029-12-11",
+  "facility_id": "0243020004",
+  "fetched_utc": "2026-11-18T17:22:45.896378+00:00",
+  "issue_date": "2024-11-20",
+  "pdf_sha256": "cde262fd860ca47c6f01afeee1b97edca97a2d9c27af435aa7fe4cfa5b37d998",
+  "permit_number": "P0134971",
+  "site_id": "SITE-001394",
+  "text_sha256": "962c2dc8c07f6e91943645299d786d25e1be5501b1124650d7cf48c5e20c62ba",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3300346"
  },
  "3334130": {
   "bytes": 27267319,
@@ -287,6 +827,18 @@
   "text_sha256": "37a627e728af24c43148a1dda0a2df8b7f4bef3c178816066d460e1af89562d3",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3334130"
  },
+ "3367904": {
+  "bytes": 3760817,
+  "expiration_date": "2035-01-09",
+  "facility_id": "1677011342",
+  "fetched_utc": "2026-11-18T17:21:37.054058+00:00",
+  "issue_date": "2025-01-09",
+  "pdf_sha256": "fceb4bdf5bf113e75702d0446c2f5cdb7fc1a5ca96f7b0b48cdb751f743d65e4",
+  "permit_number": "P0136852",
+  "site_id": "SITE-000590",
+  "text_sha256": "eab7374c2169edb7954d0e2fdc769548dddda8a6e28cfe862c40edc6bae0db48",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3367904"
+ },
  "3391798": {
   "bytes": 11335523,
   "expiration_date": "2029-07-26",
@@ -299,6 +851,30 @@
   "text_sha256": "7c1919a43561969a8fdf384e7f1a7695f012a4df010a3206d6affbd982c1d177",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3391798"
  },
+ "3409034": {
+  "bytes": 6377741,
+  "expiration_date": "2030-02-04",
+  "facility_id": "0243082019",
+  "fetched_utc": "2026-11-18T17:23:21.904577+00:00",
+  "issue_date": "2025-02-04",
+  "pdf_sha256": "26aaafe1338df4912317b4ab6b6e6f934a909a9d677a10df1d5cf4f11e165a2d",
+  "permit_number": "P0137654",
+  "site_id": "SITE-001833",
+  "text_sha256": "7d90bed3a28e5f1dde9844dcbe1ebf64a0785e1ba0f6016e8349f0bb040e3e41",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3409034"
+ },
+ "3409036": {
+  "bytes": 6377741,
+  "expiration_date": "2030-02-04",
+  "facility_id": "0243082019",
+  "fetched_utc": "2026-11-18T17:23:19.257603+00:00",
+  "issue_date": "2025-02-04",
+  "pdf_sha256": "3bc7c8ab25d4f98aa96a60e9f238c0a47f7b49c352cb0c0d2e97d0b86627e10a",
+  "permit_number": "P0137654",
+  "site_id": "SITE-001833",
+  "text_sha256": "7d90bed3a28e5f1dde9844dcbe1ebf64a0785e1ba0f6016e8349f0bb040e3e41",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3409036"
+ },
  "3476191": {
   "bytes": 43581864,
   "expiration_date": "2028-10-10",
@@ -310,6 +886,30 @@
   "site_id": "SITE-002079",
   "text_sha256": "445166568945e805a713eeefb92327b66362f6a73b680456972b87a51830d9e9",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3476191"
+ },
+ "3482838": {
+  "bytes": 4448070,
+  "expiration_date": "2035-03-25",
+  "facility_id": "1652080002",
+  "fetched_utc": "2026-11-18T17:22:53.860575+00:00",
+  "issue_date": "2025-03-25",
+  "pdf_sha256": "89bdae8ff6c6a0a76c2132a63408e521f7d1977fe6b417a9d6ac163ec13da2f8",
+  "permit_number": "P0127562",
+  "site_id": "SITE-001510",
+  "text_sha256": "c62d1b5034cca912cff201ea74015bda6d91bd0ae2c6d0358882317e89404a15",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3482838"
+ },
+ "3489627": {
+  "bytes": 5895168,
+  "expiration_date": "2030-02-04",
+  "facility_id": "0243082019",
+  "fetched_utc": "2026-11-18T17:23:17.085664+00:00",
+  "issue_date": "2025-03-28",
+  "pdf_sha256": "62c467318373092069c6353636b0ed517e1a2c5e3b947c31a91187729e963d18",
+  "permit_number": "P0136498",
+  "site_id": "SITE-001833",
+  "text_sha256": "d9959b9fe7531dd2a1808f8b5f711832f9e1584253293f911a5359910d22c81a",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3489627"
  },
  "3792297": {
   "bytes": 4404124,
@@ -359,6 +959,18 @@
   "text_sha256": "a91415a7af28807f30fa4ab81379b41a69e64ccc35c50470ef6f8f2115e6c2ce",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3896812"
  },
+ "3915322": {
+  "bytes": 3609062,
+  "expiration_date": "2027-11-08",
+  "facility_id": "1677010000",
+  "fetched_utc": "2026-11-18T17:23:13.355166+00:00",
+  "issue_date": "2025-11-25",
+  "pdf_sha256": "61cb6914edbc1a151d1724e87991c640dc42c623aa2a3c16f67b49c8b69d3f0e",
+  "permit_number": "P0138488",
+  "site_id": "SITE-001792",
+  "text_sha256": "0b7084ffad981cb924a703cf2c4e6a80d0015f198b904ed2b1504c28b154382f",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3915322"
+ },
  "3937284": {
   "bytes": 4637680,
   "expiration_date": "",
@@ -383,6 +995,18 @@
   "text_sha256": "6a5920aa9aef2a93777b44f75f3db4c578bbf9d68a3b96c19c07c69a647b024a",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3937286"
  },
+ "3958223": {
+  "bytes": 4774225,
+  "expiration_date": "2027-11-08",
+  "facility_id": "1677010000",
+  "fetched_utc": "2026-11-18T17:23:10.763896+00:00",
+  "issue_date": "2026-01-05",
+  "pdf_sha256": "2179356cc6cb8693d8f38bea1f77658f1dcd8216fcff3f37212732f3b2544dad",
+  "permit_number": "P0138406",
+  "site_id": "SITE-001792",
+  "text_sha256": "f328637ab943b49ad4b2bbceae9464f0fa0eb9b1b71173e51a4af5e31d98aac7",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3958223"
+ },
  "3966767": {
   "bytes": 7638159,
   "expiration_date": "2031-01-12",
@@ -394,6 +1018,30 @@
   "site_id": "SITE-001397",
   "text_sha256": "4ad355643c74615e91ea7fa44da8cedb27e46d943d5471b5201b6c87bd2713ed",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3966767"
+ },
+ "3967110": {
+  "bytes": 4391842,
+  "expiration_date": "2031-01-12",
+  "facility_id": "1652080002",
+  "fetched_utc": "2026-11-18T17:22:51.216725+00:00",
+  "issue_date": "2026-01-12",
+  "pdf_sha256": "ed1f75e24b3c6d6f9b222c503cfc70ed945edfa22a9b900e75ac0b4641e82342",
+  "permit_number": "P0138530",
+  "site_id": "SITE-001510",
+  "text_sha256": "0985a855f2f9facbfc4e23de43a7350c8bf449c2b17d04af23dfb162a357ba9a",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=3967110"
+ },
+ "4002864": {
+  "bytes": 8347906,
+  "expiration_date": "2036-02-11",
+  "facility_id": "0247030884",
+  "fetched_utc": "2026-11-18T17:21:21.206572+00:00",
+  "issue_date": "2026-02-11",
+  "pdf_sha256": "885d02fc2b6cea7cf94b60642c4ae6f0300bbb70d99932a93baf7cf473fc7dfe",
+  "permit_number": "P0138867",
+  "site_id": "SITE-000469",
+  "text_sha256": "5768b8911fee5e4653446ada2aa9ed78d98f4a4383d77f61bea027335d90aeb2",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4002864"
  },
  "4014387": {
   "bytes": 11962855,
@@ -467,6 +1115,18 @@
   "text_sha256": "12ffba05b6bf5b665cbb2684d755be6fc860c81afb78390aaf2d6ee9503ca673",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4023003"
  },
+ "4055410": {
+  "bytes": 7418495,
+  "expiration_date": "",
+  "facility_id": "0243020004",
+  "fetched_utc": "2026-11-18T17:22:43.126469+00:00",
+  "issue_date": "2026-03-24",
+  "pdf_sha256": "1d92d8b33c8b05e76fed457248cdb809c1ce59baf17b4ffe6babddce2b7c6510",
+  "permit_number": "P0139815",
+  "site_id": "SITE-001394",
+  "text_sha256": "9bd1d4658633d89d0ce22dbbaeaef4ee93057d6e21153b86363bf60b986b85d5",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4055410"
+ },
  "4063585": {
   "bytes": 702114,
   "expiration_date": "2031-03-30",
@@ -499,7 +1159,7 @@
   "issue_date": "2026-04-07",
   "pdf_sha256": "d14ed6315d468acb533f02c1a04059289f8c1e58d1acd3c06762e01f47b97224",
   "permit_number": "P0139406",
-  "site_id": "SITE-000981",
+  "site_id": "SITE-001513",
   "text_sha256": "55b58ab5a8564ccff25528dad7eee8b39aaf6a2d1d0cf95bdc9364ff29b5d33c",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4073758"
  },
@@ -511,7 +1171,7 @@
   "issue_date": "2026-04-07",
   "pdf_sha256": "d14ed6315d468acb533f02c1a04059289f8c1e58d1acd3c06762e01f47b97224",
   "permit_number": "P0139406",
-  "site_id": "SITE-000981",
+  "site_id": "SITE-001513",
   "text_sha256": "55b58ab5a8564ccff25528dad7eee8b39aaf6a2d1d0cf95bdc9364ff29b5d33c",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4073759"
  },
@@ -527,6 +1187,78 @@
   "text_sha256": "a3b91b0695de6a8f2ae49a0d4f6d2bb0b839ac77121b28d704db159d2c7d3946",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4077653"
  },
+ "4130970": {
+  "bytes": 8898566,
+  "expiration_date": "2029-12-11",
+  "facility_id": "0243020004",
+  "fetched_utc": "2026-11-18T17:22:36.896616+00:00",
+  "issue_date": "2026-05-27",
+  "pdf_sha256": "cb64d3910259e12eaddcb91e2b8538e51df54ae1b84d1428e7c699a2af39e2c6",
+  "permit_number": "P0138933",
+  "site_id": "SITE-001394",
+  "text_sha256": "ee96906131fff54819321e61631c40bb576b7dd90e7afce4f2f90515b8abb7c8",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4130970"
+ },
+ "4130971": {
+  "bytes": 8898567,
+  "expiration_date": "2029-12-11",
+  "facility_id": "0243020004",
+  "fetched_utc": "2026-11-18T17:22:33.537641+00:00",
+  "issue_date": "2026-05-27",
+  "pdf_sha256": "58d6919a1acbaa0ed006660bc6b2ff9f2bdb09f01a07df0c93db034c7a9baf8a",
+  "permit_number": "P0138933",
+  "site_id": "SITE-001394",
+  "text_sha256": "ee96906131fff54819321e61631c40bb576b7dd90e7afce4f2f90515b8abb7c8",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4130971"
+ },
+ "4150862": {
+  "bytes": 4284878,
+  "expiration_date": "2031-06-10",
+  "facility_id": "1318007657",
+  "fetched_utc": "2026-11-18T17:20:34.983607+00:00",
+  "issue_date": "2026-06-10",
+  "pdf_sha256": "eeb424568ee7fd393bf8d2f0519032f79848dd48592eec55f007e14968736d23",
+  "permit_number": "P0140000",
+  "site_id": "SITE-000140",
+  "text_sha256": "0d51428c1eafcd190ffe9a04d97c9b701faf8766c7bb1371318e92d0b761796a",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4150862"
+ },
+ "4213969": {
+  "bytes": 11006184,
+  "expiration_date": "2031-08-03",
+  "facility_id": "0339030016",
+  "fetched_utc": "2026-11-18T17:22:03.823443+00:00",
+  "issue_date": "2026-08-03",
+  "pdf_sha256": "84ab63a698829f24c587d42f10f68954ce1dbdd1125f274a20b54cb33eea5f70",
+  "permit_number": "P0140055",
+  "site_id": "SITE-000936",
+  "text_sha256": "ae15b3a2376f8f529149fde0cbb4e6c7dc99a915b925404685d6134cad527d89",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4213969"
+ },
+ "4213970": {
+  "bytes": 11006068,
+  "expiration_date": "2031-08-03",
+  "facility_id": "0339030016",
+  "fetched_utc": "2026-11-18T17:21:59.985973+00:00",
+  "issue_date": "2026-08-03",
+  "pdf_sha256": "20988cac3222b4b439da668081098bc7aba43468e9a2fc7d45f1845614a06af6",
+  "permit_number": "P0140055",
+  "site_id": "SITE-000936",
+  "text_sha256": "ae15b3a2376f8f529149fde0cbb4e6c7dc99a915b925404685d6134cad527d89",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4213970"
+ },
+ "4238201": {
+  "bytes": 6612624,
+  "expiration_date": "2031-08-20",
+  "facility_id": "1667040015",
+  "fetched_utc": "2026-11-18T17:21:39.283920+00:00",
+  "issue_date": "2026-08-20",
+  "pdf_sha256": "3fea51a4f1253ccdb2881b62323852e546fbfcb9b80c7d8d11d412cbec22b045",
+  "permit_number": "P0140443",
+  "site_id": "SITE-000601",
+  "text_sha256": "b444db9d0d4ab11ef5fcc76f383643e82b6a5927fdab3d32363dfa9e1d9604f9",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4238201"
+ },
  "4335170": {
   "bytes": 4386464,
   "expiration_date": "",
@@ -538,6 +1270,42 @@
   "site_id": "SITE-000154",
   "text_sha256": "6191ce757e340e053f8100245559c30cfd6f4bda7a8c1fc14577e77fb3bcbcf5",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=4335170"
+ },
+ "462449": {
+  "bytes": 299372,
+  "expiration_date": "2022-10-04",
+  "facility_id": "1677010937",
+  "fetched_utc": "2026-11-23T01:21:45.876367+00:00",
+  "issue_date": "2016-07-12",
+  "pdf_sha256": "fbf666967459b5d600a3c0f0e876e7230842038a76d262b35cb30b88f22346c8",
+  "permit_number": "P0121102",
+  "site_id": "SITE-001893",
+  "text_sha256": "21dc0aeb8f5249d184d04fd102c711b67e4ca769d01767c59a55d1d79b8edc39",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=462449"
+ },
+ "462450": {
+  "bytes": 299435,
+  "expiration_date": "2022-10-04",
+  "facility_id": "1677010937",
+  "fetched_utc": "2026-11-23T01:21:45.021774+00:00",
+  "issue_date": "2016-07-12",
+  "pdf_sha256": "8bd7d5bdd98afb39a3265d1bcc9633b1e122fd31f461c4c92100f5d287055351",
+  "permit_number": "P0121114",
+  "site_id": "SITE-001893",
+  "text_sha256": "9442a62e23b9ebfff11a79bfe702a185e9da1b2b524f9e99d8b8daec00371808",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=462450"
+ },
+ "536120": {
+  "bytes": 513336,
+  "expiration_date": "2026-12-28",
+  "facility_id": "1318170304",
+  "fetched_utc": "2026-11-23T01:23:36.752879+00:00",
+  "issue_date": "2016-12-28",
+  "pdf_sha256": "bfbe2ea1b63fd0a29cca64b22d73a1581482e9e127c89581275b485f53c225e9",
+  "permit_number": "P0095301",
+  "site_id": "SITE-001434",
+  "text_sha256": "bf8eebca6e7c10a604eb38cfb856a0a6791061e969047c89075be308935cb721",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=536120"
  },
  "673456": {
   "bytes": 318332,
@@ -551,6 +1319,18 @@
   "text_sha256": "7e7e8591db8ffa9a72a81372303db8b875bc737f8f4e866eda990a7e529087fa",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=673456"
  },
+ "686599": {
+  "bytes": 391434,
+  "expiration_date": "2020-01-28",
+  "facility_id": "1652070030",
+  "fetched_utc": "2026-11-18T17:20:53.005189+00:00",
+  "issue_date": "2017-09-05",
+  "pdf_sha256": "f961fb662d336afd582adcb43691ff4a774ebdfdd1043c6cf2f44497138a3270",
+  "permit_number": "P0122907",
+  "site_id": "SITE-000264",
+  "text_sha256": "462a4c8eff28704c46f2fc6a6b0bc31743d309929168f7ec44b458b7331db703",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=686599"
+ },
  "714123": {
   "bytes": 323567,
   "expiration_date": "2020-08-18",
@@ -562,6 +1342,18 @@
   "site_id": "SITE-001690",
   "text_sha256": "8d57b88a6216f647b03edfa51cc99125f8052f815fb3e80b7bca637e69fb6c31",
   "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=714123"
+ },
+ "891729": {
+  "bytes": 303308,
+  "expiration_date": "2020-01-28",
+  "facility_id": "1652070030",
+  "fetched_utc": "2026-11-18T17:20:51.221570+00:00",
+  "issue_date": "2018-08-22",
+  "pdf_sha256": "6ca8212a115145e6e06864831086e739fba62d92725ebd66b340340521f42add",
+  "permit_number": "P0124482",
+  "site_id": "SITE-000264",
+  "text_sha256": "7e07729783676e4a4193283aa2ad911efc3a7956928b0b1c19fc99cef0f977f3",
+  "url": "https://edocpub.epa.ohio.gov/publicportal/ViewDocument.aspx?docid=891729"
  },
  "894553": {
   "bytes": 303453,

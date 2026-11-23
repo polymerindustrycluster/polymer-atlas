@@ -3,6 +3,15 @@
  "frame_no_process_site_and_org": 336,
  "frame_blank_street": 81,
  "frame_with_air_id": 58,
+ "distinct_air_ids": 59,
+ "lake_matches_name_key_exact": 32,
+ "lake_matches_token_rule_only": 14,
+ "air_ids_shared_by_two_sites": {
+  "OH0000000322002004": [
+   "SITE-000981",
+   "SITE-001513"
+  ]
+ },
  "same_street_name_mismatch_no_id": 6,
  "sites_with_id_from_frs": 40,
  "sites_with_id_from_lake": 45,

@@ -2,11 +2,11 @@
  "canary": {
   "canary_sites": 25,
   "status": {
-   "air_record_no_final_permit_in_newest_6": 5,
+   "air_record_no_final_permit_in_newest_6": 4,
    "air_record_no_document_found": 4,
-   "retrievable_permit": 16
+   "retrievable_permit": 17
   },
-  "retrievable_permit_sites": 16,
+  "retrievable_permit_sites": 17,
   "strict_bound_sites": 7,
   "near_bound_sites": 0,
   "sites_with_process_written_to_processes": 1,
@@ -16,10 +16,10 @@
   "sites_with_capability_row_only": 0,
   "sites_with_any_fill": 1,
   "verified_sites": 1,
-  "still_uncertain_sites": 15,
+  "still_uncertain_sites": 16,
   "reject_sites": 0,
   "held_sites_by_reason": {
-   "not_bound": 9,
+   "not_bound": 10,
    "ancillary_only": 1,
    "no_listed_process": 4,
    "no_capability_destination": 1
@@ -37,11 +37,11 @@
   },
   "wilson95": {
    "retrievable_of_canary": [
-    16,
+    17,
     25,
     [
-     0.445,
-     0.797
+     0.484,
+     0.828
     ]
    ],
    "bound_of_canary": [
@@ -54,10 +54,10 @@
    ],
    "bound_of_retrievable": [
     7,
-    16,
+    17,
     [
-     0.231,
-     0.668
+     0.216,
+     0.64
     ]
    ],
    "any_fill_of_canary": [
@@ -86,14 +86,14 @@
    ]
   }
  },
- "full_frame_read": {
+ "new_26": {
   "canary_sites": 26,
   "status": {
-   "air_record_no_final_permit_in_newest_6": 5,
+   "air_record_no_final_permit_in_newest_6": 4,
    "air_record_no_document_found": 5,
-   "retrievable_permit": 16
+   "retrievable_permit": 17
   },
-  "retrievable_permit_sites": 16,
+  "retrievable_permit_sites": 17,
   "strict_bound_sites": 7,
   "near_bound_sites": 0,
   "sites_with_process_written_to_processes": 1,
@@ -103,10 +103,10 @@
   "sites_with_capability_row_only": 0,
   "sites_with_any_fill": 1,
   "verified_sites": 1,
-  "still_uncertain_sites": 15,
+  "still_uncertain_sites": 16,
   "reject_sites": 0,
   "held_sites_by_reason": {
-   "not_bound": 9,
+   "not_bound": 10,
    "ancillary_only": 1,
    "no_listed_process": 4,
    "no_capability_destination": 1
@@ -124,11 +124,11 @@
   },
   "wilson95": {
    "retrievable_of_canary": [
-    16,
+    17,
     26,
     [
-     0.425,
-     0.776
+     0.462,
+     0.806
     ]
    ],
    "bound_of_canary": [
@@ -141,10 +141,10 @@
    ],
    "bound_of_retrievable": [
     7,
-    16,
+    17,
     [
-     0.231,
-     0.668
+     0.216,
+     0.64
     ]
    ],
    "any_fill_of_canary": [
@@ -173,20 +173,114 @@
    ]
   }
  },
+ "full_frame_read": {
+  "canary_sites": 58,
+  "status": {
+   "air_record_no_final_permit_in_newest_6": 6,
+   "air_record_no_document_found": 11,
+   "retrievable_permit": 41
+  },
+  "retrievable_permit_sites": 41,
+  "strict_bound_sites": 15,
+  "near_bound_sites": 3,
+  "sites_with_process_written_to_processes": 2,
+  "process_sites": [
+   "SITE-000140",
+   "SITE-001078"
+  ],
+  "sites_with_capability_row_only": 0,
+  "sites_with_any_fill": 2,
+  "verified_sites": 4,
+  "still_uncertain_sites": 37,
+  "reject_sites": 0,
+  "held_sites_by_reason": {
+   "not_bound": 23,
+   "near_bound": 3,
+   "ancillary_only": 2,
+   "no_capability_destination": 4,
+   "no_listed_process": 5
+  },
+  "proposal_holds_by_reason": {
+   "not_bound": 4,
+   "near_bound": 1,
+   "no_capability_destination": 5,
+   "equipment_only_ruling_2026_11_22": 3,
+   "substrate_not_stated": 1,
+   "permit_description_only": 1
+  },
+  "tier_of_canary": {
+   "A": 15,
+   "C": 20,
+   "B": 23
+  },
+  "wilson95": {
+   "retrievable_of_canary": [
+    41,
+    58,
+    [
+     0.58,
+     0.808
+    ]
+   ],
+   "bound_of_canary": [
+    15,
+    58,
+    [
+     0.164,
+     0.384
+    ]
+   ],
+   "bound_of_retrievable": [
+    15,
+    41,
+    [
+     0.236,
+     0.519
+    ]
+   ],
+   "any_fill_of_canary": [
+    2,
+    58,
+    [
+     0.009,
+     0.117
+    ]
+   ],
+   "processes_written_of_canary": [
+    2,
+    58,
+    [
+     0.009,
+     0.117
+    ]
+   ],
+   "any_fill_of_bound": [
+    2,
+    15,
+    [
+     0.037,
+     0.379
+    ]
+   ]
+  }
+ },
  "outcome_line": {
   "pic18_org_rows": 794,
   "process_unknown_before": 322,
-  "process_unknown_after": 321,
-  "fall": 1,
+  "process_unknown_after": 320,
+  "fall": 2,
   "planned_site_terms": {
+   "SITE-000140": [
+    "foam_extrusion"
+   ],
    "SITE-001078": [
     "calendering"
    ]
   },
   "process_unknown_after_if": {
-   "site_name_holder_rule (SITE-001282)": 320,
-   "site_name_holder_rule + holder_suffix_rule (SITE-001282, SITE-000981)": 319,
-   "tier_A_B_processes_route_open (bound, named unit-level term, tier A/B)": 316
+   "site_name_holder_rule (SITE-001282)": 319,
+   "site_name_holder_rule + holder_suffix_rule (SITE-001282, SITE-000981)": 318,
+   "tier_A_B_processes_route_open (bound, named unit-level term, tier A/B)": 315
   },
   "tier_A_B_sites_in_that_scenario": [
    "SITE-000601",

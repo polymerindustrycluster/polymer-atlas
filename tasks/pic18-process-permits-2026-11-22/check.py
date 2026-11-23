@@ -14,10 +14,11 @@ sys.modules["build"] = lb   # the lane's check.py does `import build as B`; hand
 _spec = importlib.util.spec_from_file_location("lane_check", B.ROOT / "tasks/pic18-permit-lane-2026-11-18/check.py"); lc = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(lc)
 _corp = lc.company_corpus
 def _corp_plus_sites():
-    """The lane's corpus of Ohio organization names, plus every Atlas site name: a two-word site name ("Ventra Salem") is not a person."""
-    return _corp() + " | " + " | ".join(s["site_name"].lower() for s in B.atlas()[0].values())
+    """The lane's corpus of Ohio organization names, plus the frame sites' names: a two-word site name ("Ventra Salem") is not a person."""
+    ids = {r["site_id"] for r in B.read_csv(HERE / "frame.csv")}
+    return _corp() + " | " + " | ".join(s["site_name"].lower() for i, s in B.atlas()[0].items() if i in ids)
 lc.company_corpus = _corp_plus_sites
-EXPECTED_DEFECTS = 12   # README reads this number
+EXPECTED_DEFECTS = 13   # README reads this number
 
 def task_files(): return {p.name: p.read_text() for p in sorted(HERE.iterdir()) if p.suffix in (".csv", ".json", ".md", ".py", ".txt") and p.name != "check.py"} | {"check.py": Path(__file__).read_text()}
 def same(a, b): return [{k: str(v) for k, v in r.items()} for r in a] == [{k: str(v) for k, v in r.items()} for r in b]
@@ -51,9 +52,21 @@ def main():
     # independent recount of the retrievable set: a site is retrievable when a stored final permit prints one of the site's own Facility IDs
     ids = {r["site_id"]: {a[-10:] for a in r["air_ids"].split(";")} for r in rows if r["air_ids"]}
     allsites = [t["site_id"] for t in FE.targets()]
-    rec = sorted(s for s in allsites if any(cb.final_permit(B.doc_text(d), f) and B.header(B.doc_text(d))["facility_id"] in ids[s] for x in [json.load(open(P / "search_hits_all.json"))[s]]
+    rec = sorted(s for s in allsites if any(B.final_permit(B.doc_text(d), f) and B.header(B.doc_text(d))["facility_id"] in ids[s] for x in [json.load(open(P / "search_hits_all.json"))[s]]
                                           for q in x["searches"] for d, _ in q.get("hits", []) if (P / "docs" / f"{d}.txt").exists() for f in [q["fid"]]))
-    assert rec == model["frame"], f"retrievable recount {len(rec)} differs from the build's {len(model['frame'])}"
+    new26 = {t["site_id"] for t in FE.targets()}
+    assert rec == sorted(s for s in model["frame"] if s in new26), f"retrievable recount {len(rec)} differs from the build's new-site frame"
+    assert same(B.read_csv(HERE / "carried.csv"), B.carried()), "carried.csv differs from the re-bind of the carried sites on today's Atlas rows (run build.py)"
+    carried = B.read_csv(HERE / "carried.csv"); scr_c = {r["site_id"] for r in scr if r["set"] == "carried_read_2026_11_18"}
+    assert {x["site_id"] for x in carried} == scr_c and scr_c <= set(model["frame"]) and len(model["frame"]) == len(rec) + len(scr_c), "carried sites differ from the frame's carried set"
+    # no silent pass: every fetched document is classified; a large one that is not a permit, a letter, a draft or a study fails the run
+    Hh = json.load(open(P / "search_hits_all.json")); Jj = B.journal(); kinds = {}
+    for s_, v_ in Hh.items():
+        for q_ in v_["searches"]:
+            for d_, _t in q_.get("hits", []):
+                if d_ in Jj: kinds[d_] = B.classify(B.doc_text(d_))
+    assert kinds and "other" not in kinds.values(), f"unclassified large documents: {[d for d, k in kinds.items() if k == 'other']}"
+    assert all(isinstance(q_.get("n"), int) or "err" in q_ for v_ in Hh.values() for q_ in v_["searches"]), "a portal search has no parsed result count"
     # 3. audits (the earlier lane's rules): quote in stored text, §3.1 term, ancillary, bind, witness, tier, expiry, strength, owner holds
     assert not lc.audit(props, sites, orgs), lc.audit(props, sites, orgs)
     lb.N_FRAME = len(model["frame"]); assert not lc.audit_frame(scr), "frame"
@@ -66,17 +79,18 @@ def main():
     assert not lc.audit_privacy(task_files(), names), f"{len(lc.audit_privacy(task_files(), names))} privacy findings"
     # 4. injected defects: every one must be caught, by the rule that exists for it
     def row(Pp, **m): return next(p for p in Pp if all(p[k] == v for k, v in m.items()))
-    def one(rule, mut, kind="props"):
+    def one(rule, mut, kind="props", expect=None):
         Pp = copy.deepcopy(props); S2 = copy.deepcopy(sites)
         if kind == "props": got = lc.audit(mut(Pp, S2) or Pp, S2, orgs)
         elif kind == "manifest": got = lc.audit_manifest(mut(copy.deepcopy(hashes)), B.doc_text, link)
         elif kind == "privacy": got = lc.audit_privacy(mut(), names)
         elif kind == "frame": got = lc.audit_frame(mut(copy.deepcopy(scr)))
         elif kind == "compute": got = [("COMPUTE", v) for v in mut()]
-        assert any(g[0] == rule for g in got), f"injected defect {rule} was NOT caught: {got[:3]}"
+        assert any(g[0] == rule and (expect is None or expect in str(g[1])) for g in got), f"injected defect {rule} ({expect}) was NOT caught by its own rule: {got[:3]}"
         return rule
-    written = [p for p in props if p["route"] in ("processes", "capability")]; other = next(h for h in hashes.values() if h["site_id"] != written[0]["site_id"])
-    w0 = written[0]["site_id"]; planted = "Polyester gelcoat spray up booth planted by the check that no permit prints."
+    written = [p for p in props if p["route"] in ("processes", "capability")] or [p for p in props if p["bind_doc"] == "BOUND" and p["term"]]
+    assert written, "no bound proposal to plant defects on"
+    other = next(h for h in hashes.values() if h["site_id"] != written[0]["site_id"]); w0 = written[0]["site_id"]; planted = "Polyester gelcoat spray up booth planted by the check that no permit prints."
     def swap_doc():   # a permit for another facility cited for this site
         d = next(d for d, h in hashes.items() if h["facility_id"] not in ids[w0]); return d
     def wrong_facility_screen():
@@ -90,9 +104,10 @@ def main():
         inp2 = copy.deepcopy(inp); inp2["V"]["sites"][w0]["quotes"][0]["quote"] = planted; lb.N_FRAME = len(model["frame"]); return lb.compute(inp2)["viol"]
     done = [
         one("QUOTE", lambda Pp, S2: row(Pp, site_id=w0).update(quote=planted)),
-        one("COMPUTE", planted_quote_verdict, "compute"),
-        one("COMPUTE", wrong_facility_screen, "compute"),
-        one("COMPUTE", wrong_facility_verdict, "compute"),
+        one("COMPUTE", planted_quote_verdict, "compute", "quote not found in order"),
+        one("COMPUTE", wrong_facility_screen, "compute", "printed Facility IDs"),
+        one("COMPUTE", wrong_facility_verdict, "compute", "is not one of the site's final permits"),
+        one("COMPUTE", unseen_term, "compute", "is not in SCHEMA §3.1"),
         one("BIND", lambda Pp, S2: S2[w0].update(street_address="9999 Nowhere Rd")),
         one("TERM", lambda Pp, S2: row(Pp, site_id=w0).update(term="not_a_schema_term")),
         one("MANIFEST", lambda h: h[next(d for d, x in h.items() if x["site_id"] == w0)].update(facility_id="0000000000") or h, "manifest"),

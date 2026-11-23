@@ -243,6 +243,64 @@
    "hold_reason": "not_bound",
    "quotes": [],
    "note": "printed holder 'Ventra Salem, LLC' vs Atlas organization 'Ventra (Flex-N-Gate)'; the units read are paint booths and a paint line"
+  },
+  "SITE-001434": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "not_bound",
+   "quotes": [
+    {
+     "doc": "536120",
+     "quote": "Mini Tote Re-Mixer (MX-1270)",
+     "terms": [],
+     "grade": "list",
+     "note": "P017: a mixer, general equipment (the permit is a mixers-only PTIO)"
+    }
+   ],
+   "note": "printed holder 'ASK Chemicals (formerly Ashland Chemical)' and municipality 'Cleveland' (Atlas: Cuyahoga Heights; same street); the units are mixers with dust collectors: no \u00a73.1 process named. Found only after repairing the canary's `FINALAIR` format miss"
+  },
+  "SITE-000140": {
+   "verdict": "VERIFIED",
+   "hold_reason": null,
+   "quotes": [
+    {
+     "doc": "4150862",
+     "quote": "P027, EPE Foam Extrusion Line",
+     "terms": [
+      "foam_extrusion"
+     ],
+     "grade": "list",
+     "note": "P027 unit heading; the permit description (not used) states it is an expanded polyethylene foam extrusion line. Bound today because the Atlas street, blank on 2026-11-18, is now filled and equals the permit's"
+    }
+   ],
+   "note": "was held not_bound on 2026-11-18 (blank Atlas street)"
+  },
+  "SITE-001792": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "no_listed_process",
+   "quotes": [
+    {
+     "doc": "2322961",
+     "quote": "Synthetic Rubber Pilot Plant - Vessels & Piping",
+     "terms": [],
+     "grade": "list",
+     "note": "P005 heading: a pilot plant; polymerization is not stated"
+    }
+   ],
+   "note": "bound today (the Atlas street, blank on 2026-11-18, is now filled); the units are a synthetic rubber pilot plant, an ethanol-to-butadiene pilot plant and fugitive components: no \u00a73.1 process is named"
+  },
+  "SITE-001743": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "near_bound",
+   "quotes": [
+    {
+     "doc": "2676480",
+     "quote": "Blue Mixer (Polymer Steel Product)",
+     "terms": [],
+     "grade": "list",
+     "note": "P014: a mixer, general equipment; no \u00a73.1 process named"
+    }
+   ],
+   "note": "the Atlas street, blank on 2026-11-18, is now filled; printed `1818 Miller Pkwy` vs Atlas `1818 Miller Parkway` is a format variant (follow-up 1). The units read are a mixer"
   }
  }
 }

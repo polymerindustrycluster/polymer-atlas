@@ -60,19 +60,28 @@ def compute():
             if sid not in ("", s["site_id"]) or (sid == "" and per_org[s["org_id"]] != 1): continue
             for f in by_reg.get(rid, []): ids.setdefault(f[0], {"routes": set(), "f": f})["routes"].add("frs")
         for f in by_street.get(squash(s["street_address"]).split(" ")[0] if s["street_address"] else "~", []):
-            if same_street(s["street_address"], f[3]) and (name_ok(f[2], names) or name_key(f[2]) in {name_key(n) for n in names}):
-                ids.setdefault(f[0], {"routes": set(), "f": f})["routes"].add("lake")
+            if not same_street(s["street_address"], f[3]): continue
+            exact = name_key(f[2]) in {name_key(n) for n in names}
+            if exact or name_ok(f[2], names):
+                d = ids.setdefault(f[0], {"routes": set(), "f": f}); d["routes"].add("lake"); d["exact"] = d.get("exact", False) or exact
         out.append({"site_id": s["site_id"], "org_id": s["org_id"], "tier": s["verification_tier"], "site_name": s["site_name"], "street_address": s["street_address"], "city": s["city"],
                     "county": s["county"], "air_ids": ";".join(sorted(ids)), "routes": ";".join(sorted({r for v in ids.values() for r in v["routes"]})),
                     "route_per_id": ";".join(f"{k}:{'+'.join(sorted(v['routes']))}" for k, v in sorted(ids.items())),
+                    "lake_name_match": ";".join(f"{k}:{'exact' if v.get('exact') else 'token_rule'}" for k, v in sorted(ids.items()) if "lake" in v["routes"]),
                     "done_2026_11_18": "Y" if s["site_id"] in done else "N", "ech_status": ";".join(sorted({v["f"][6] or "" for v in ids.values()}))})
     withid = [r for r in out if r["air_ids"]]
     has = {r["site_id"] for r in withid}; fr_by = {s["site_id"]: s for s in fr}
     lead = sum(any(f[3] and fr_by[sid]["street_address"] and same_street(fr_by[sid]["street_address"], f[3]) for f in by_street.get(squash(fr_by[sid]["street_address"]).split(" ")[0] if fr_by[sid]["street_address"] else "~", []))
                for sid in fr_by if sid not in has)
     old = {r["site_id"] for r in rd(ROOT / "tasks/pic18-permit-canary-2026-11-18/pool.csv")}
+    kinds = [x.split(":")[1] for r in out for x in r["lake_name_match"].split(";") if x]
+    shared = {}
+    for r in withid:
+        for a in r["air_ids"].split(";"): shared.setdefault(a, []).append(r["site_id"])
+    shared = {a: v for a, v in shared.items() if len(v) > 1}
     stats = {"pic18_active_ac_sites": len(el), "frame_no_process_site_and_org": len(fr), "frame_blank_street": sum(not (s["street_address"] or "").strip() for s in fr),
-             "frame_with_air_id": len(withid), "same_street_name_mismatch_no_id": lead,
+             "frame_with_air_id": len(withid), "distinct_air_ids": len({a for r in withid for a in r["air_ids"].split(";")}), "lake_matches_name_key_exact": kinds.count("exact"), "lake_matches_token_rule_only": kinds.count("token_rule"),
+             "air_ids_shared_by_two_sites": {a: v for a, v in shared.items()}, "same_street_name_mismatch_no_id": lead,
              "sites_with_id_from_frs": sum(any("frs" in x.split(":")[1].split("+") for x in r["route_per_id"].split(";") if x) for r in withid),
              "sites_with_id_from_lake": sum(any("lake" in x.split(":")[1].split("+") for x in r["route_per_id"].split(";") if x) for r in withid),
              "frs_only": sum(r["routes"] == "frs" for r in withid), "lake_only": sum(r["routes"] == "lake" for r in withid), "both": sum(r["routes"] == "frs;lake" for r in withid),

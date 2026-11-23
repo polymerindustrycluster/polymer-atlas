@@ -27,12 +27,79 @@ def atlas():
         if r["org_id"] not in orgs: orgs[r["org_id"]] = {**r, "trade_names": r.get("trade_names", "") or ""}
     return sites, orgs
 lb.atlas = atlas
+import bisect
+@functools.lru_cache(maxsize=64)
+def _toks(text):
+    """(word tokens with their line numbers, lines), as the earlier lane's position() builds them. The lane's `text.count("\\n", 0, m.start())` per token is quadratic on a 600,000-character Title V permit; a bisect over newline offsets gives the same line number."""
+    nl = [i for i, ch in enumerate(text) if ch == "\n"]
+    return [(m.group(), bisect.bisect_left(nl, m.start())) for m in re.finditer(r"[a-z0-9]+", text.lower())], text.split("\n")
+
+def position(text, quote):
+    """lane build.position(), same rules, linear time."""
+    toks, lines = _toks(text); q = cb.words(quote); n = len(q); w = [t for t, _ in toks]; found = ""
+    for i in range(len(w) - n + 1):
+        if w[i:i + n] != q: continue
+        ln = toks[i][1]
+        if "....." in lines[ln]: continue
+        found = "other"
+        if re.match(r"\s*\d+\.\s+([A-Z]\d{3}\b|Emissions Unit Group)", lines[ln]): return "unit_heading"
+        for k in range(ln, max(-1, ln - 60), -1):
+            L = lines[k]
+            if re.match(r"\s*[a-z]\)\s", L): break
+            if re.search(r"Permit Description:", L): cls = "permit_description" if ln - k < 6 else ""
+            elif re.search(r"Facility Description:", L): cls = "facility_description" if ln - k < 3 else ""
+            elif re.search(r"Operations,?\s+Propert\S*\s+and/or\s+Equipment\s+Description:\s*$", L): cls = "unit_paragraph" if ln - k < 8 else ""
+            elif re.match(r"\s*EU\s*ID\b", L): cls = "unit_table_row"
+            else: continue
+            if cls: return cls
+            break
+    return found
+
+def first_line(text, quote):
+    toks, lines = _toks(text); q = cb.words(quote); n = len(q); w = [t for t, _ in toks]
+    return next((toks[i][1] for i in range(len(w) - n + 1) if w[i:i + n] == q and "....." not in lines[toks[i][1]]), None)
+
+_lane_position = lb.position; lb.position = position; lb.first_line = first_line
+
 def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
+def final_permit(text, fid):
+    """The canary's final_permit() with one repair: older permits print `RE: FINALAIR POLLUTION ...` (pdftotext drops the space), which the canary's `FINAL\\s+AIR` read as not final."""
+    return (fid in text and len(text) >= 15000 and bool(re.search(r"RE:\s*FINAL\s*AIR", text[:4000])) and bool(re.search(r"Emissions?\s+Unit", text)) and bool(re.search(r"Terms\s+and\s+Conditions", text, re.I)))
+
+def classify(text):
+    """final | proposed_or_draft | revocation | study | short_letter (< 15,000 characters, never a permit by the lane's rule) | other. A large document that is `other` is one this lane could not classify: check.py fails on it."""
+    head = text[:4000]
+    if re.search(r"RE:\s*(?:PRELIMINARY\s+)?(?:PROPOSED|DRAFT)\b", head): return "proposed_or_draft"
+    if re.search(r"RE:\s*FINAL[^\n]*REVOCATION", head): return "revocation"
+    if re.search(r"RE:\s*FINAL\s*AIR", head): return "final"
+    if re.search(r"Engineering\s+Study", text[:1500]): return "study"
+    return "short_letter" if len(text) < 15000 else "other"
+
+def inspectable(d):
+    """False for a document with a large PDF and almost no text (a scan or an image): it cannot be read as 'no permit'. Classified letters (revocation, proposed, draft) are inspectable."""
+    j = journal()[d]; t = doc_text(d)
+    return classify(t) in ("revocation", "proposed_or_draft", "final") or not (j["bytes"] > 200000 and len(t) < 10000)
+
+CAN18 = lb.S / "persist/pic18-permit-canary-2026-11-18"
 def journal():
+    """This lane's fetch journal plus the 2026-11-18 canary's (the carried sites' documents; Muse's manifest and that lane's store hold the same files)."""
     J = {}
-    for l in open(P / "fetch_journal.jsonl"): d = json.loads(l); J[d["docid"]] = d
+    for src in (CAN18 / "fetch_journal_v2.jsonl", P / "fetch_journal.jsonl"):
+        for l in open(src): d = json.loads(l); J[d["docid"]] = d
     return J
+
+def stage_carried():
+    """Copy the carried sites' stored permits (read on 2026-11-18) into this lane's store, sha256-checked against the canary's fetch journal. No fetch."""
+    import shutil
+    J = journal(); n = 0
+    for r in read_csv(ROOT / "tasks/pic18-permit-canary-2026-11-18/screen.csv"):
+        for d in [x for x in r["final_permit_docids"].split(";") if x]:
+            for ext, key in (("pdf", "pdf_sha256"), ("txt", "text_sha256")):
+                src = CAN18 / "docs" / f"{d}.{ext}"; dst = P / "docs" / f"{d}.{ext}"
+                assert sha(src) == J[d][key], f"{d}.{ext}: sha256 differs from the fetch journal"
+                if not dst.exists() or sha(dst) != J[d][key]: shutil.copy2(src, dst); n += 1
+    return n
 
 def screen_rows():
     """One row per canary site from the stored search hits and fetched documents: air IDs, documents listed, final permits whose printed Facility ID is one of the site's IDs."""
@@ -41,14 +108,26 @@ def screen_rows():
     canary = {c["site_id"] for c in read_csv(HERE / "canary_sites.csv")}
     for c in FE.targets():
         s = c["site_id"]; h = hits[s]; ids = c["air_ids"].split(";"); fids = [x["fid"] for x in h["searches"]]
+        assert all(isinstance(x.get("n"), int) or "err" in x for x in h["searches"]), f"{s}: a portal search has no parsed result count"
         n_hits = sum(x.get("n") or 0 for x in h["searches"]); err = [x for x in h["searches"] if "err" in x]
         docs = [d for x in h["searches"] for d in x.get("hits", [])]; fetched = [d for d, _ in docs if d in J]
-        fin = sorted({d for d in fetched if any(cb.final_permit(doc_text(d), f) for f in fids)})
+        fin = sorted({d for d in fetched if any(final_permit(doc_text(d), f) for f in fids)})
         if err: status = "search_failed"
         elif not n_hits: status = "air_record_no_document_found"
+        elif not fin and any(inspectable(d) is False for d in fetched): status = "document_not_text_inspectable"
         elif not fin: status = "air_record_no_final_permit_in_newest_6"
         else: status = "retrievable_permit"
         out.append({"site_id": s, "set": "canary" if s in canary else "frame_extra", "echo_air_ids": c["air_ids"], "route": c["routes"], "edoc_documents_listed": n_hits, "docs_fetched": len(fetched), "final_permit_docids": ";".join(fin), "status": status})
+    return out + carried_screen(canary)
+
+def carried_screen(canary):
+    """The 32 frame sites with an ID that were screened on 2026-11-18 (24 read, 8 searched with no final permit): status and documents from that screen, no new fetch."""
+    old = {r["site_id"]: r for r in read_csv(ROOT / "tasks/pic18-permit-canary-2026-11-18/screen.csv")}; out = []
+    for r in read_csv(HERE / "frame.csv"):
+        s = r["site_id"]
+        if not r["air_ids"] or s in canary or s not in old: continue
+        o = old[s]; out.append({"site_id": s, "set": "carried_read_2026_11_18" if o["status"] == "retrievable_permit" else "searched_2026_11_18_no_permit", "echo_air_ids": r["air_ids"], "route": r["routes"],
+                                "edoc_documents_listed": o["edoc_documents_listed"], "docs_fetched": o["docs_fetched"], "final_permit_docids": o["final_permit_docids"], "status": o["status"]})
     return out
 
 def write_csv(name, rows):
@@ -57,7 +136,10 @@ def write_csv(name, rows):
 
 def loaded(scr):
     caps = {(r["site_id"], r["capability_type"], r["term"]) for r in read_csv(ROOT / "data/site_capabilities.csv")}
-    return dict(V=json.load(open(HERE / "verdicts.json")), scr=scr, text=doc_text, caps=caps, **dict(zip(("sites", "orgs"), atlas())))
+    V = json.load(open(HERE / "verdicts.json")); have = {r["site_id"] for r in scr}
+    for s, v in json.load(open(ROOT / "tasks/pic18-permit-lane-2026-11-18/verdicts.json"))["sites"].items():   # the carried sites' readings, recomputed under today's rows
+        if s in have and s not in V["sites"]: V["sites"][s] = v
+    return dict(V=V, scr=scr, text=doc_text, caps=caps, **dict(zip(("sites", "orgs"), atlas())))
 
 def doc_hashes(scr):
     J = journal(); out = {}
@@ -98,7 +180,7 @@ def metrics(scr, model):
 
 def readme(scr, model, m):
     fs = json.load(open(HERE / "frame_stats.json")); EXPECTED = int(re.search(r"EXPECTED_DEFECTS = (\d+)", (HERE / "check.py").read_text()).group(1))
-    c, f, o = m["canary"], m["full_frame_read"], m["outcome_line"]
+    c, n26, f, o = m["canary"], m["new_26"], m["full_frame_read"], m["outcome_line"]
     def w_of(k, n): lo, hi = wilson(k, n); return f"{lo:.1%}–{hi:.1%}"
     pct = lambda k, n: f"{k}/{n} (Wilson 95% {w_of(k, n)})"
     sc = {r["site_id"]: r for r in scr}; P = {}
@@ -112,8 +194,10 @@ def readme(scr, model, m):
         ps = P.get(r["site_id"], []); terms = "; ".join(sorted({p["term"] for p in ps if p["term"]})) or "none"
         wr = "; ".join(f"processes: `{p['term']}` ({p['strength']})" for p in ps if p["route"] == "processes") or "none"
         why = r["hold_reason"] + ((": " + r["strict_reasons"]) if r["hold_reason"] == "not_bound" else "") + ((". " + r["note"]) if r["note"] else "")
-        rows.append(f"| {r['site_id']} | {r['tier']} | {r['strict_bind']} | {terms} | {wr} | {r['verdict']}{(': ' + why) if r['verdict'] != 'VERIFIED' else ''} |")
-    st = Counter(r["status"] for r in scr); sc2 = o["process_unknown_after_if"]; k1, k2, k3 = list(sc2.values())
+        rows.append(f"| {r['site_id']} | {sc[r['site_id']]['set'].replace('_2026_11_18', '')} | {r['tier']} | {r['strict_bind']} | {terms} | {wr} | {r['verdict']}{(': ' + why) if r['verdict'] != 'VERIFIED' else ''} |")
+    car = read_csv(HERE / "carried.csv"); ck = Counter((x["bind_2026_11_18"], x["bind_today"]) for x in car)
+    changed = [x["site_id"] for x in car if x["bind_2026_11_18"] != x["bind_today"] or bool(x["near_format_only"]) != (x["hold_reason_2026_11_18"] == "near_bound")]
+    sc2 = o["process_unknown_after_if"]; k1, k2, k3 = list(sc2.values()); wrote = ", ".join(sorted(o["planned_site_terms"]))
     return f"""# PIC-18 process from Ohio EPA air permits: full frame (58 sites) as a packet, canary first (no change under data/)
 
 Claim: atlas-w22-process-permits, controller-assigned, 2026-11-22 (owner pick "Ohio air permits"). Reuses the 2026-11-18 lane unchanged (`tasks/pic18-permit-lane-2026-11-18/`, owner ruling 2026-11-18b item 1) and applies the owner ruling of 2026-11-22 relayed by the controller: a permit emissions-unit description fills `processes` only when it **names** a process in the SCHEMA §3.1 vocabulary, quoted from the permit, for that site only; general equipment (mixer, blender, paint booth, station) fills nothing and is a hold; no equipment-implies-process mapping beyond the 2026-11-18 lane's. Generated by `build.py`; checked by `check.py`. **Packet only: no data row, no PR.**
@@ -122,71 +206,79 @@ First user: the Atlas integrator, who decides at the next wave review whether to
 
 ## The frame (`frame.py`, recomputed by `check.py`)
 
-**Unit: Atlas sites, state OH, county in PIC-18, `operating_status` active, tier A–C.** {fs['pic18_active_ac_sites']} sites; **{fs['frame_no_process_site_and_org']}** have no process at the site and none at the organization (blank street on {fs['frame_blank_street']}). **{fs['frame_with_air_id']} of those have an Ohio EPA air facility ID** (59 IDs; two sites carry two):
+**Unit: Atlas sites, state OH, county in PIC-18, `operating_status` active, tier A–C.** {fs['pic18_active_ac_sites']} sites; **{fs['frame_no_process_site_and_org']}** have no process at the site and none at the organization (blank street on {fs['frame_blank_street']}). **{fs['frame_with_air_id']} of those have an Ohio EPA air facility ID** ({fs['distinct_air_ids']} distinct IDs; two sites carry two, and one ID sits on two sites, below):
 
 | Route | Sites with an ID |
 |---|---|
 | FRS registry link (the site's own, or organization-level when the organization has one frame site) -> lake `echo_air_facilities` | {fs['sites_with_id_from_frs']} |
-| Lake `echo_air_facilities` (OH) row at the site's street (`derive_last_activity.same_street`) with the site's or organization's held name (`atlas.name_key` equal, or the earlier lane's holder token rule) | {fs['sites_with_id_from_lake']} |
+| Lake `echo_air_facilities` (OH) row at the site's street (`derive_last_activity.same_street`) with the site's or organization's held name | {fs['sites_with_id_from_lake']} |
 | FRS only / lake only / both | {fs['frs_only']} / {fs['lake_only']} / {fs['both']} |
 
-The lake route adds **{fs['lake_only']}** sites FRS does not reach (the 26 new sites are 18 lake-only and 8 with an FRS link the 2026-11-18 pool did not hold). **{fs['same_street_name_mismatch_no_id']}** more frame sites match a lake row on street but not on name (a different operator at the address); not counted. The other {fs['frame_no_process_site_and_org'] - fs['frame_with_air_id']} frame sites are unreachable by this route.
+The lake route adds **{fs['lake_only']}** sites FRS does not reach. **Name rule substituted:** the owner's corporate-words rule is not in the repo (the lake's `scripts/matching.py` arrives with PR #467), so the lake match uses `atlas.name_key` equality or the earlier lane's holder token rule; of the {fs['lake_matches_name_key_exact'] + fs['lake_matches_token_rule_only']} lake ID matches, **{fs['lake_matches_name_key_exact']}** are `name_key`-exact and **{fs['lake_matches_token_rule_only']}** token-rule only. It affects which IDs are searched, not any write (every permit is bound on its own printed holder). **{fs['same_street_name_mismatch_no_id']}** more frame sites match a lake row on street but not on name (a different operator at the address); not counted. The other {fs['frame_no_process_site_and_org'] - fs['frame_with_air_id']} frame sites are unreachable by this route.
 
-Of the {fs['frame_with_air_id']}: **{fs['with_id_done_2026_11_18']}** were retrievable and read on 2026-11-18 and are still without a process (held; 9 of that lane's 33 left the frame because a process is now on record); **{fs['with_id_searched_2026_11_18_no_permit']}** were searched then with no final permit retrievable (7 zero hits, 2 no final among the newest six, as Muse's re-download confirms); **{fs['with_id_new']}** are new: **25 drawn as the canary** (seed 20261122) and **1 more (SITE-002106)**, searched on the go with 0 documents returned.
+Of the {fs['frame_with_air_id']}: **{fs['with_id_done_2026_11_18']}** were read on 2026-11-18 and are still without a process (re-bound today below; 9 of that lane's 33 left the frame because a process is now on record); **{fs['with_id_searched_2026_11_18_no_permit']}** were searched then with no final permit (6 zero hits, 2 with only short letters, SITE-000517's being revocation letters; Muse's re-download found the same); **{fs['with_id_new']}** are new: **25 drawn as the canary** (seed 20261122) and **1 more (SITE-002106)**, searched on the go with 0 documents returned.
 
-Documents: Ohio EPA eDocument search by the 10-digit Facility ID, newest six non-draft documents per ID, the earlier lane's route (`fetch.py`; no URL guessed). The 24 earlier sites' documents are Muse's and the earlier lane's stored files and were not re-fetched. PDFs and text are in controller storage with sha256 (`doc_hashes.json`); none is in the repo (cover letters name individuals).
+**Shared ID, a dedupe lead (not a merge).** `OH0000000322002004` is on **SITE-000981** (Johns Manville, 49 Lockwood Road, Milan, ORG-000911) and on **SITE-001513** (Clevite Elastomers Technical Center, 33 Lockwood Rd, Milan, ORG-001462, a different organization and street number). The permit prints 49 Lockwood Road, so it can only bind SITE-000981; whether SITE-001513's FRS link is wrong or the two share a facility is for the integrator. The SITE-000981 scenario below carries that caveat. (The ID is in Muse's manifest; its permits for it were fetched in the 2026-11-18 canary and are the ones read here.)
+
+Documents: Ohio EPA eDocument search by the 10-digit Facility ID, newest six non-draft, non-correspondence documents per ID, the earlier lane's route (`fetch.py`; no URL guessed). The 24 carried sites' documents are the earlier lane's stored files (sha256-checked against its fetch journal, copied into this lane's store; no re-fetch). PDFs and text are in controller storage with sha256 (`doc_hashes.json`); none is in the repo (cover letters name individuals).
+
+**Repaired format miss.** The 2026-11-18 screen read `RE: FINAL AIR` with a required space, so permits from 2016 and earlier that print `RE: FINALAIR` were classed not final. `build.py` now accepts both and `check.py` fails on any large unclassified document. Effect: SITE-001434 gains a permit (mixers only; held). No other site's status changes.
 
 ## Result
 
-| Measure (unit: sites) | Canary (25 new) | Full frame read here (26 new) |
-|---|---|---|
-| Retrievable final permit with the printed Facility ID | **{pct(c['retrievable_permit_sites'], 25)}**; lake route {by_route['lake'][0]}/{by_route['lake'][1]}, FRS-linked {by_route['frs'][0]}/{by_route['frs'][1]} | {f['retrievable_permit_sites']}/26 |
-| Not retrievable (availability facts, not absence) | {25 - c['retrievable_permit_sites']}: {c['status'].get('air_record_no_document_found', 0)} zero documents, {c['status'].get('air_record_no_final_permit_in_newest_6', 0)} no final permit in the newest six | {26 - f['retrievable_permit_sites']} |
-| Strictly bound (printed Facility ID, holder = Atlas legal or trade name, street, city) | **{pct(c['strict_bound_sites'], 25)}**; of retrievable {pct(c['strict_bound_sites'], c['retrievable_permit_sites'])} | {f['strict_bound_sites']} |
-| Written to `processes` (tier C, bound, a §3.1 process named at a unit) | **{pct(c['sites_with_process_written_to_processes'], 25)}**: {', '.join(c['process_sites']) or 'none'} | {f['sites_with_process_written_to_processes']} |
-| Capability row only (tier A/B) | {c['sites_with_capability_row_only']} | {f['sites_with_capability_row_only']} |
-| Any fill | **{pct(c['sites_with_any_fill'], 25)}** | {f['sites_with_any_fill']} |
-| Held sites by reason | {c['held_sites_by_reason']} | {f['held_sites_by_reason']} |
+| Measure (unit: sites) | Canary (25) | New frame read now (26) | Full frame (58: 26 new + 24 carried read + 8 searched) |
+|---|---|---|---|
+| Retrievable final permit with the printed Facility ID | **{pct(c['retrievable_permit_sites'], 25)}**; lake route {by_route['lake'][0]}/{by_route['lake'][1]}, FRS-linked {by_route['frs'][0]}/{by_route['frs'][1]} | {n26['retrievable_permit_sites']}/26 | {f['retrievable_permit_sites']}/58 |
+| Not retrievable (availability facts, not absence) | {25 - c['retrievable_permit_sites']}: {c['status'].get('air_record_no_document_found', 0)} zero documents, {c['status'].get('air_record_no_final_permit_in_newest_6', 0)} only letters (revocation) or correspondence | {26 - n26['retrievable_permit_sites']} | {58 - f['retrievable_permit_sites']} |
+| Strictly bound today (printed Facility ID, holder = Atlas legal or trade name, street, city) | **{pct(c['strict_bound_sites'], 25)}**; of retrievable {pct(c['strict_bound_sites'], c['retrievable_permit_sites'])} | {n26['strict_bound_sites']} | {f['strict_bound_sites']} |
+| Written to `processes` (tier C, bound, a §3.1 process named at a unit) | **{pct(c['sites_with_process_written_to_processes'], 25)}**: {', '.join(c['process_sites']) or 'none'} | {n26['sites_with_process_written_to_processes']} | **{f['sites_with_process_written_to_processes']}**: {', '.join(f['process_sites'])} |
+| Capability row only (tier A/B) | {c['sites_with_capability_row_only']} | {n26['sites_with_capability_row_only']} | {f['sites_with_capability_row_only']} |
+| Held sites by reason | {c['held_sites_by_reason']} | {n26['held_sites_by_reason']} | {f['held_sites_by_reason']} |
 
-The 24 earlier sites stay held under the new ruling as the 2026-11-18 lane left them (carried from its `sites.csv`, not re-read): 16 not bound, 2 near-bound (format), 1 ancillary, 3 no capability destination, 2 verified as capability rows or already held. The ruling changes nothing for them: no held one is a tier C site with a bound, named term.
+**The 24 carried sites were re-bound on today's Atlas rows** (`carried.csv`; their documents from 2026-11-18, the earlier lane's newest permit rule): bound then/now {ck[('BOUND', 'BOUND')]} unchanged, {ck[('NOT_BOUND', 'BOUND')]} newly bound, {ck[('NOT_BOUND', 'NOT_BOUND')]} unchanged not bound, ruling-relevant changes at {', '.join(changed)}. The Atlas street, blank on 2026-11-18, has since been filled for **SITE-000140** (tier C; now bound, `P027, EPE Foam Extrusion Line` names `foam_extrusion` at a unit heading: a **write**), **SITE-001792** (tier B; bound; a synthetic rubber pilot plant, no process named: hold) and **SITE-001743** (tier A; now a format-only near-bind on `Pkwy`: hold). The rest of the carried sites keep their 2026-11-18 verdicts; the 2026-11-22 ruling changes none of them, because no other carried tier C site is bound with a named term.
 
-**Outcome line this packet would give** (PIC-18 organization rows, process unknown, harness definition, working tree at 393c389): **{o['process_unknown_before']} -> {o['process_unknown_after']} of {o['pic18_org_rows']}** (-{o['fall']}: SITE-001078, `calendering`, ORG-000999's only PIC-18 site). Only a `processes` cell on a tier C site moves it. Rulings that would add (each an owner ruling, none applied): a holder rule that also accepts the Atlas site name -> **{k1}** (SITE-001282, `compression_molding`); that plus a plant-suffix holder rule -> **{k2}** (SITE-000981, `rubber_calendering` and `rubber_extrusion`, a rubber roofing calender/extruder line); opening the `processes` route to tier A/B sites with a bound, named unit term (SITE-000601, SITE-001888, SITE-001937, SITE-002124, SITE-002855) -> **{k3}** from the packet, upper bound.
+**Outcome line this packet would give** (PIC-18 organization rows, process unknown, harness definition, working tree at 393c389): **{o['process_unknown_before']} -> {o['process_unknown_after']} of {o['pic18_org_rows']}** (-{o['fall']}: {wrote}; each the only PIC-18 site of its organization). Only a `processes` cell on a tier C site moves it. Rulings that would add (owner rulings, none applied): a holder rule that also accepts the Atlas site name -> **{k1}** (SITE-001282, `compression_molding`); that plus a plant-suffix holder rule -> **{k2}** (SITE-000981, `rubber_calendering` and `rubber_extrusion`, a rubber roofing calender/extruder line; caveat above); opening the `processes` route to tier A/B sites with a bound, named unit-level term (SITE-000601, SITE-001888, SITE-001937, SITE-002124, SITE-002855) -> **{k3}** from the packet, upper bound.
 
 ## What this says
 
-The route is real and thin. {f['retrievable_permit_sites']} of the 26 new sites have a permit, 7 bind, 1 writes. Of the 7 bound sites, 4 state no polymer process (a resin and chemical blender, a metals recovery plant, an inorganic catalyst plant, a plastic-parts paint-booth line), 1 is a roofing line of general equipment, and 1 (foam board cutting, tier B) names a process with no capability destination. Nine of the 16 retrievable sites fail the bind, 8 on form not identity (holder form 5, blank Atlas street 2, municipality 1). The frame is small because only {fs['frame_with_air_id']} of {fs['frame_no_process_site_and_org']} frame sites have an air ID, and the bind rule is the larger loss: it turns 16 retrievable permits into 7.
+**The decision that moves the number most is whether the 2026-11-22 ruling lifts the 2026-11-14 rule that a `supports_C` term on a tier A/B record is a capability row only: {o['process_unknown_after']} versus {k3}.** The packet keeps the rule.
 
-## Per site (the 26 sites read now)
+The route is real and thin. Of the 26 new sites {n26['retrievable_permit_sites']} have a permit, 7 bind, 1 writes. Of the 7 bound new sites, 4 state no polymer process (a resin and chemical blender, a metals recovery plant, an inorganic catalyst plant, a plastic-parts paint-booth line), 1 is a roofing line of general equipment, and 1 (foam board cutting, tier B) names a process with no capability destination. Ten of the 17 retrievable new sites fail the bind, 9 on form not identity (holder form 6, blank Atlas street 2, municipality 1). The bind rule is the larger loss. Frame size is the other: only {fs['frame_with_air_id']} of {fs['frame_no_process_site_and_org']} frame sites have an air ID.
 
-| Site | Tier | Bind | §3.1 terms proposed | Write | Verdict |
-|---|---|---|---|---|---|
+Four sites whose only documents in the newest six are revocation letters (SITE-000035, SITE-000250, SITE-002087, 2015-2020, and SITE-000517 from the earlier pool) are a record-health lead, not a status finding (AGENTS §3).
+
+## Per site (the 58 frame sites read; the 8 searched with no final permit are in `screen.csv`)
+
+| Site | Set | Tier | Bind | §3.1 terms proposed | Write | Verdict |
+|---|---|---|---|---|---|---|
 {chr(10).join(rows)}
 
 `proposals.csv` has every quote with its document, permit number, dates, bind, witness position, strength, route and hold reason; `sites.csv` the site grain. SITE-001078's other proposals: `laminating` held as equipment only ("Kawakami Laminator", a machine name) and `printing_decorating_plastics` held because the substrate is not stated. SITE-002106: the portal search returned 0 documents for its ID (an availability fact).
 
 ## Follow-up rulings (owner rulings; none applied). The earlier lane's three, restated with counts, and three new
 
-Counts: earlier lane = its 33 retrievable sites (24 still in the frame); canary = the 16 retrievable sites read now.
+Counts: earlier lane = its 33 retrievable sites; today = the 41 retrievable sites above (17 new + 24 carried).
 
-1. **USPS abbreviations and a `Twp.` suffix bind.** Earlier lane: 3 sites (SITE-000264, SITE-001137, SITE-002113; SITE-001137 has since left the frame). Canary: 0 sites differ by that alone (SITE-001399's `Pkwy` is one of two differences). Recommend yes, unchanged.
-2. **A permit's `Permit Description` counts as a unit description at `supports_C`.** Earlier: 1 site (SITE-000814, since filled elsewhere). Canary: 0. Recommend yes, unchanged; it matters little.
-3. **Capability terms and the tier A/B route.** Earlier: `compounding_unspecified`/`extrusion_unspecified` -> their §3.6 parents (1 site), `coating_applying` (2 sites), `foam_molding_bead` (1). Canary adds `foam_fabrication` (SITE-001937). The 2026-11-22 ruling says a named process "may fill `processes`"; it does not say whether that lifts the 2026-11-14 rule that a `supports_C` term on a tier A/B record is a capability row only. **The packet keeps that rule.** If the owner lifts it, the outcome line moves to {k3} (5 sites above); recommend lifting only for a unit-level named term at a bound site, as the scenario counts.
-4. **NEW: holder-name form.** 5 of 16 retrievable canary sites fail on the holder: 3 on the holder alone with street, city and Facility ID equal (`Johns Manville-Milan Plant` for `Johns Manville (Milan)`; `Ventra Sandusky, LLC` and `Ventra Salem, LLC` for `Ventra (Flex-N-Gate)`), 2 with a second difference (`The Lincoln Electric Company`, also municipality; `Tarkett USA Inc.` for `Tarkett North America`, also street form). Recommend: also accept the Atlas **site name** (text before the locality). It settles the two Ventra sites; Johns Manville, Lincoln and Tarkett stay held as organization-identity questions.
-5. **NEW: blank Atlas street** (2 of 16: SITE-000220, SITE-001916; the permit prints a street, but the permit cannot supply the street it is tested against). Recommend: hold; fill the street from another source first. {fs['frame_blank_street']} of the {fs['frame_no_process_site_and_org']} frame sites have a blank street.
-6. **NEW: printed municipality differs from the Atlas city** at an equal street (SITE-001654 `Bedford` vs `Walton Hills`; SITE-000154 `Cleveland` vs `Euclid`, which also differs on the holder). Recommend: hold; a postal city is not an identity.
+1. **USPS abbreviations and a `Twp.` suffix bind.** Today: **SITE-000264, SITE-001743, SITE-002113** differ by format alone (3 of 41; SITE-001137 left the frame). Among the 17 new, none but SITE-001743's carried case; SITE-001399's `Pkwy` is one of two differences. Recommend yes, unchanged: none of the three has a tier C term to write (SITE-000264 calendering is tier A; SITE-001743 and SITE-002113 name none).
+2. **A permit's `Permit Description` counts as a unit description at `supports_C`.** Today: 0 sites would change (SITE-000814 was the one, since filled elsewhere). Recommend yes, unchanged; it matters little. Note SITE-000140's permit description also states its foam extrusion line; the write rests on the unit heading, not on it.
+3. **Capability terms and the tier A/B route.** Earlier: `compounding_unspecified`/`extrusion_unspecified` -> parents (1 site), `coating_applying` (2), `foam_molding_bead` (1). New: `foam_fabrication` (SITE-001937). As above, whether the named-process ruling lifts the tier A/B capability-only rule is the one that moves the number. Recommend lifting only for a unit-level named term at a bound site, as the scenario counts.
+4. **NEW: holder-name form.** 6 of 17 retrievable new sites fail on the holder: 3 on the holder alone with street, city and Facility ID equal (`Johns Manville-Milan Plant` for `Johns Manville (Milan)`; `Ventra Sandusky, LLC` and `Ventra Salem, LLC` for `Ventra (Flex-N-Gate)`), 3 with a second difference (`The Lincoln Electric Company`, also municipality; `Tarkett USA Inc.` for `Tarkett North America`, also street form; `ASK Chemicals (formerly Ashland Chemical)` for `ASK Chemicals LP`, also municipality). Recommend: also accept the Atlas **site name** (text before the locality). It settles the two Ventra sites; Johns Manville, Lincoln, Tarkett and ASK stay held as organization-identity questions.
+5. **NEW: blank Atlas street** (2 of 17 new: SITE-000220, SITE-001916; the permit prints a street, but the permit cannot supply the street it is tested against). Recommend: hold; fill the street from another source first (the three carried sites above were bound that way). {fs['frame_blank_street']} of the {fs['frame_no_process_site_and_org']} frame sites have a blank street.
+6. **NEW: printed municipality differs from the Atlas city** at an equal street (SITE-001654 `Bedford` vs `Walton Hills`; SITE-000154 `Cleveland` vs `Euclid`; SITE-001434 `Cleveland` vs `Cuyahoga Heights`; the last two also differ on the holder). Recommend: hold; a postal city is not an identity.
 
 ## Self-refute
 
-- Grain: {len(model['props'])} proposals; the one written term is unit-level, none rests on a permit or facility description.
-- Strength: the written term is graded `list` (a one-line unit label), so `supports_C`; no `supports_A` write.
-- Equipment rule: 3 quotes held as equipment only (a laminator, a rubber mixer, a roofing saturator line); resin blending, reactors and vinyl mixers carry no term; the one write names its process in the unit text ("heated rolling and calendering operations").
+- Grain: {len(model['props'])} proposals; the two written terms are unit-level (a unit paragraph and a unit heading); none rests on a permit or facility description.
+- Strength: both written terms are graded `list` (a one-line label or heading), so `supports_C`; no `supports_A` write.
+- Equipment rule: 3 new quotes held as equipment only (a laminator, a rubber mixer, a roofing saturator line); resin blending, reactors, mixers and vinyl mixers carry no term; the two writes name their process in the unit text ("heated rolling and calendering operations"; "EPE Foam Extrusion Line").
+- Stale input: the carried sites' binds were recomputed on today's Atlas rows after the first draft carried them from 2026-11-18; three changed (above).
 - Attribution: every quote is the holder's own permit; none from a parent, customer or equipment maker. Binding: SITE-001937's two older permits print holder `Trans-foam 281 SW` and are not cited.
 
 ## Reproduction and checks
 
-`uv run --with duckdb python tasks/pic18-process-permits-2026-11-22/frame.py` (frame), `python3 fetch.py draw|search|merge|docs` (network; resumable; `new_facility_ids.csv` lists IDs not in Muse's manifest), `python3 build.py`, and the named check `uv run --with duckdb python tasks/pic18-process-permits-2026-11-22/check.py`: recomputes the frame from the repo and the lake, the registered draw, the stored-permit hashes, the screen, every proposal (the earlier lane's audit rules, imported), the outcome line against the controller harness, the data diff (none under `data/`), a privacy scan (emails, phones, every person name printed in the stored permits), then runs {EXPECTED} injected defects and fails unless each is caught, including a quote not in the stored text and a permit for another facility.
+`uv run --with duckdb python tasks/pic18-process-permits-2026-11-22/frame.py` (frame), `python3 fetch.py draw|search|merge|docs` (network; resumable; `new_facility_ids.csv` lists IDs not in Muse's manifest), `python3 build.py`, and the named check `uv run --with duckdb python tasks/pic18-process-permits-2026-11-22/check.py`: recomputes the frame from the repo and the lake, the registered draw, the stored-permit hashes, the screen (failing on an unparsed search count or an unclassified large document), every proposal (the earlier lane's audit rules, imported), the carried re-bind, the outcome line against the controller harness, the data diff (none under `data/`), a privacy scan (emails, phones, every person name printed in the stored permits), then runs {EXPECTED} injected defects and fails unless each is caught by the rule meant for it, including a quote not in the stored text and a permit for another facility.
 
-Not checked: permits beyond the newest six documents per ID; the 24 earlier held sites (carried, not re-read) and the 8 searched with no final permit (not re-searched); local-agency permits; whether any plant still runs the permitted equipment; units of unbound sites beyond headings and one term each. A permit is a statement as of its issue date and never a status finding.
+Not checked: permits beyond the newest six documents per ID; the 8 sites searched with no final permit (not re-searched); the 23 carried sites other than the three that changed (their 2026-11-18 readings carried, re-bound only); local-agency permits; whether any plant still runs the permitted equipment; units of unbound sites beyond headings and one term each; OCR of image-only permits (none found: the 5 sites with no final permit hold revocation letters or correspondence). A permit is a statement as of its issue date and never a status finding.
 """
 
 def unknown_orgs(planned=None):
@@ -222,16 +314,33 @@ def outcome(model):
     return {"pic18_org_rows": n, "process_unknown_before": before, "process_unknown_after": after, "fall": before - after, "planned_site_terms": planned,
             "process_unknown_after_if": sc, "tier_A_B_sites_in_that_scenario": sorted({s for s, _ in ab})}
 
+def carried():
+    """The 24 sites read on 2026-11-18 that are still in the frame: strict bind recomputed on today's Atlas rows from that lane's stored permits (its newest permit, as that lane did)."""
+    old = {r["site_id"]: r for r in read_csv(ROOT / "tasks/pic18-permit-lane-2026-11-18/sites.csv")}
+    scr18 = {r["site_id"]: r for r in read_csv(ROOT / "tasks/pic18-permit-canary-2026-11-18/screen.csv")}
+    L18 = lb.S / "persist/pic18-permit-lane-2026-11-18/docs"; sites, orgs = atlas(); out = []
+    for r in read_csv(HERE / "frame.csv"):
+        s = r["site_id"]
+        if r["done_2026_11_18"] != "Y": continue
+        docs = scr18[s]["final_permit_docids"].split(";"); tx = {d: (L18 / f"{d}.txt").read_text() for d in docs}; hd = {d: header(tx[d]) for d in docs}
+        newest = sorted(docs, key=lambda d: (cb.mdy(hd[d]["issue_date"]), d), reverse=True)[0]
+        strict, near = lb.bind_near(hd[newest], sites[s], orgs[sites[s]["org_id"]], hd[newest]["facility_id"])
+        out.append({"site_id": s, "tier": sites[s]["verification_tier"], "bind_2026_11_18": old[s]["strict_bind"], "bind_today": "BOUND" if not strict else "NOT_BOUND", "near_format_only": near,
+                    "reasons_today": "; ".join(strict), "verdict_2026_11_18": old[s]["verdict"], "hold_reason_2026_11_18": old[s]["hold_reason"]})
+    return out
+
 def all_metrics(scr, model):
-    canary = {r["site_id"] for r in scr if r["set"] == "canary"}
-    return {"canary": metrics(*subset(scr, model, canary)), "full_frame_read": metrics(scr, model), "outcome_line": outcome(model)}
+    canary = {r["site_id"] for r in scr if r["set"] == "canary"}; new26 = {r["site_id"] for r in scr if r["set"] in ("canary", "frame_extra")}
+    return {"canary": metrics(*subset(scr, model, canary)), "new_26": metrics(*subset(scr, model, new26)), "full_frame_read": metrics(scr, model), "outcome_line": outcome(model)}
 
 def main():
+    stage_carried()
     scr = screen_rows(); write_csv("screen.csv", scr)
     model = model_of(scr)
     assert not model["viol"], model["viol"]
     write_csv("sites.csv", model["sites"]); write_csv("proposals.csv", model["props"])
     json.dump(doc_hashes(scr), open(HERE / "doc_hashes.json", "w"), indent=1, sort_keys=True)
+    write_csv("carried.csv", carried())
     m = all_metrics(scr, model); json.dump(m, open(HERE / "metrics.json", "w"), indent=1)
     (HERE / "README.md").write_text(readme(scr, model, m)); print(json.dumps(m, indent=1)[:600])
 
