@@ -202,8 +202,9 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    "size waiver" and `branch=<its complete branch name>` (compared for
    equality with the PR's branch). A PR that touches `data/` fails while any
    `created_by` label on `main` lacks an audit record: a file
-   `tasks/<folder>/AUDIT.md` on `main` with the lines `Label:`,
-   `Result: PASS`, `Sample:` and `Reviewers:` (a `Result: FAIL` blocks).
+   `tasks/<folder>/AUDIT.md` on `main` or added by the PR itself, with the
+   lines `Label:`, `Result: PASS`, `Sample:` and `Reviewers:` (a
+   `Result: FAIL` blocks).
    The labels on `main` on 2026-11-22 are grandfathered in
    `tasks/working-rules-2026-11-22/audit_baseline.txt`. **Deployment
    condition:** the audit stays current for a PR only once the controller
@@ -243,6 +244,9 @@ tiered by risk (two families for a PR touching `data/`, one for any other);
 rules 5 and 6 are checked by `pr-rules`; rules 2 and 3 are partly checked by
 the structured-row gate. The freeze joins rule 5 as owner policy. No data
 file is changed by this revision.*
+
+*Revision note — 2026-11-23 (owner ruling, round 15): §2a rule 5 allows
+the prior batch's audit record to be added by the next data PR.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 
