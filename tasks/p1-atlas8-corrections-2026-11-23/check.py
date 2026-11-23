@@ -230,6 +230,9 @@ def witness_id(rows, witnesses, record):
         field = row["field"]
         value = record.get(field, "")
         capture, source = row["capture_ref"], row["source_url"]
+        if field == "employee_band_site":
+            candidates = [ev for ev in candidates if ev["claim_type"] == "size_band"
+                          and ev["claim_detail"].startswith((f"employee_band_site={value};", f"employee_band_site={value}:"))]
         explicit = set(re.findall(r"EVD-\d{6}", capture))
         if len(explicit) == 1:
             ids = [ev["evidence_id"] for ev in candidates if ev["evidence_id"] in explicit]
@@ -245,7 +248,17 @@ def witness_id(rows, witnesses, record):
             exact_quote = bool(quote and quote in detail)
             stated_value = (value and ev["claim_type"] in WITNESS_TYPES.get(field, ())
                             and witness_terms(value) in witness_terms(detail))
-            if (receipt and ref.endswith(receipt)) or (same_citation and exact_quote):
+            # The stored university URL is the program page. The CIP observation
+            # identifies the NCES source, institution and code in its claim text.
+            unit = re.search(r"\bUNITID=(\d+)\b", row["quote"])
+            ipeds = (
+                field in {"cip_code", "cip_source_type"} and source.startswith(("https://nces.ed.gov/ipeds/", "raw/ipeds/"))
+                and unit is not None and ev["claim_type"] == "code"
+                and "IPEDS" in detail and f"UNITID {unit[1]})" in detail
+                and detail.startswith(f"CIP {record['cip_code']} (")
+                and detail.endswith(f"cip_source_type={record['cip_source_type']}")
+            )
+            if ipeds or (receipt and ref.endswith(receipt)) or (same_citation and exact_quote):
                 return ev["evidence_id"]
             if same_citation and stated_value and not fallback:
                 fallback = ev["evidence_id"]
