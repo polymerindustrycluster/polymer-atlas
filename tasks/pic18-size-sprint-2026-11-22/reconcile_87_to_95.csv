@@ -1,0 +1,11 @@
+site_id,org_id,direction,source,band,reason
+SITE-000068,ORG-000068,entered,form5500,10-49,entered: pre-ruling chosen fill was older than 5 years and was dropped after selection; a recent source now fills (precedence falling through)
+SITE-000079,ORG-000079,entered,form5500,10-49,entered: pre-ruling chosen fill was older than 5 years and was dropped after selection; a recent source now fills (precedence falling through)
+SITE-000275,ORG-000258,entered,form5500,10-49,entered: pre-ruling chosen fill was older than 5 years and was dropped after selection; a recent source now fills (precedence falling through)
+SITE-000310,ORG-000291,entered,form5500,10-49,entered: pre-ruling chosen fill was older than 5 years and was dropped after selection; a recent source now fills (precedence falling through)
+SITE-000339,ORG-000318,entered,form5500,10-49,entered: pre-ruling hold sources_disagree no longer applies once stale filings are ignored
+SITE-000488,ORG-000456,entered,form5500,100-249,entered: pre-ruling chosen fill was older than 5 years and was dropped after selection; a recent source now fills (precedence falling through)
+SITE-001599,ORG-001534,entered,form5500,10-49,entered: pre-ruling hold sources_disagree no longer applies once stale filings are ignored
+SITE-001680,ORG-001607,left,osha_ita,250-499,left: now held near_cutoff_source_disagrees
+SITE-001834,ORG-001758,entered,form5500,10-49,entered: pre-ruling chosen fill was older than 5 years and was dropped after selection; a recent source now fills (precedence falling through)
+SITE-001856,ORG-001777,entered,form5500,10-49,entered: pre-ruling chosen fill was older than 5 years and was dropped after selection; a recent source now fills (precedence falling through)

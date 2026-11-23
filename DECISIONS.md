@@ -139,3 +139,19 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Return and IDs:** a removed row that later passes the binding gate and a replay against the raw source file returns under its original evidence ID in a new, reviewed PR. That is restoration of the same row, not reuse of an ID, so it does not conflict with AGENTS.md section 3 or the "never reused" rule of SCHEMA Appendix C 6.1. A removed ID is reserved for its own row and is never given to a different row; `scripts/atlas.py next-id` counts every id in a `tasks/**/REMOVALS.csv` toward its floor, so the allocator skips the gap (`EVD-425437` to `EVD-459524`), and exits non-zero rather than guess when it cannot find the tasks folder.
 - **What is kept:** `tasks/revert-batches-5-6-2026-11-22/quarantine/` holds, for every one of the 34,094 removed evidence rows, its ID, record keys, source key and first-cut binding verdict, passing and failing alike, with no row text; and the 6,837 removed registry links and 364 archive links, verbatim. The row text is recoverable from commit 17834918 by evidence ID. This supersedes the same day's narrower ruling to remove 844 rows.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
+
+## 2026-11-22: owner rulings for the PIC-18 size sprint (headcount age, corporate-word name matches)
+- **Decision:** two rulings, taken as multiple choice, that settle `tasks/pic18-size-sprint-2026-11-22/`.
+  1. **Headcount age: 5 years.** A filing sets a band only if its source date (ITA: the filing year's period end,
+     31 December; inspection: open date; Form 5500: plan year end) is on or after 2021-11-22. Older filings are held as
+     leads with the reason `stale_over_5_years`. Recorded in SCHEMA 1 R13 at v1.19.1.
+  2. **Name match when the street already matches: corporate words only.** The held name may be a leading run of the
+     filing name when every extra token is a corporate-form word from this fixed list: Inc, Incorporated, LLC, L.L.C.,
+     Corp, Corporation, Co, Company, Ltd, Limited, LP, LLP, Holdings, Holding, Group, US, USA, U.S., North America,
+     Americas. Anything else (Services, Logistics, a place name, another business word) stays held. Containment of one
+     name in the other is not accepted.
+- **Why:** the size sprint's first candidate set used inspection counts from 1974 to 2015 as 2026 bands, and found
+  filings whose company name differs from the record's only by a corporate word (GrafTech International Holdings,
+  RTS Companies US) beside filings of other businesses on the same street. The packet applies both rulings; the
+  alternatives stay in `candidates_all.csv`.
+- **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.

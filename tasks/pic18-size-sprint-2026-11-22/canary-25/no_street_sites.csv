@@ -1,0 +1,10 @@
+site_id,org_id,city,org_has_another_site_with_street_any_status,org_has_another_active_site_with_street
+SITE-000562,ORG-000526,Wadsworth,no,no
+SITE-000123,ORG-000124,Beachwood,yes,yes
+SITE-001784,ORG-001708,Medina,no,no
+SITE-001455,ORG-001409,Salem,yes,yes
+SITE-000032,ORG-000032,Akron,no,no
+SITE-002096,ORG-002139,Akron,no,no
+SITE-000501,ORG-000469,Canton,no,no
+SITE-001652,ORG-001581,Solon,no,no
+SITE-002002,ORG-002008,Fairlawn,no,no

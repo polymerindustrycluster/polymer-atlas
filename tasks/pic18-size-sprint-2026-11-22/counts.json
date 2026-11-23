@@ -1,0 +1,36 @@
+{
+ "frame_sites": 465,
+ "orgs_in_selection": 443,
+ "orgs_filled_with_5y_limit": {
+  "strict": 92,
+  "suffix": 95,
+  "contain": 115
+ },
+ "orgs_filled_no_age_limit_reference": {
+  "strict": 115,
+  "suffix": 118,
+  "contain": 139
+ },
+ "packet_fills_by_source": {
+  "osha_ita": 55,
+  "osha_inspection": 3,
+  "form5500": 40
+ },
+ "holds_by_reason": {
+  "ita_multiple_establishments_at_street": 9,
+  "no_street": 121,
+  "no_filing_at_street": 69,
+  "name_not_held": 96,
+  "f5500_not_single_establishment": 1,
+  "stale_over_5_years": 26,
+  "later_filing_other_name": 16,
+  "f5500_plans_disagree": 3,
+  "street_near_differs": 7,
+  "filing_binds_two_sites": 4,
+  "sources_disagree": 4,
+  "near_cutoff_source_disagrees": 4,
+  "f5500_no_active_participants": 4,
+  "near_street_filing_differs_from_fill": 2,
+  "ita_years_disagree": 1
+ }
+}
