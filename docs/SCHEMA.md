@@ -2920,6 +2920,15 @@ Merged exports are never committed to `data/`; the validator treats
 their presence there as an error (V-37), because a committed merged
 file is a second canonical source waiting to drift.
 
+**2026-11-22 (owner ruling “Show, don't copy”).** The release bundle's
+`data/organizations_all.csv` adds `processes_incl_sites`,
+`materials_incl_sites`, and `markets_served_incl_sites`. Each uses
+the source column's semicolon-separated tokens, deduplicated across the
+company row and its site rows at all verification tiers with an
+operating status other than `closed`. The company page shows the same
+values with their sources and displays site verification tiers.
+Canonical fields and SQLite tables retain their existing meanings.
+
 ## 7. Validator and builder changes (specification)
 
 Validator rule numbers below are **provisional**: the applied

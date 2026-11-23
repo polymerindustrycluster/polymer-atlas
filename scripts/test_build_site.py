@@ -69,6 +69,8 @@ def make_db(path):
     ins("organizations", ORG_COLS, org_id="ORG-000003", legal_name="Keystone Compounds", ring_primary="2",
         hq_city="Erie", hq_state="PA", status="active", verification_tier="B", last_verified="2026-10-02",
         description_1line="Exists only in the CRM record.", sources="Directory https://example.org/k")
+    ins("organizations", ORG_COLS, org_id="ORG-000004", legal_name="Standalone Compounds",
+        status="active", processes="injection_molding;extrusion")
     ins("sites", SITE_COLS, site_id="SITE-000001", org_id="ORG-000001", site_name="Evil Plastics - Akron plant",
         site_type="manufacturing_plant", city="Akron", state="OH", zip="44301", county="Summit",
         ring_primary="1", naics_primary="326199", processes="injection_molding", operating_status="active",
@@ -77,13 +79,15 @@ def make_db(path):
         country="US", notes="secret note 330-555-0199")
     ins("sites", SITE_COLS, site_id="SITE-000002", org_id="ORG-000001", site_name="Evil Plastics - Annex",
         city="Akron", state="OH", county="Summit", ring_primary=None, operating_status="active",
+        processes="blow_molding", materials="legacy_<custom>", markets_served="marine",
         verification_tier="U", last_verified="2026-10-30", latitude="41.09", longitude="-81.52", country="US")
     ins("sites", SITE_COLS, site_id="SITE-000003", org_id="ORG-000003", site_name="Keystone - Erie",
         city="Erie", state="PA", county="Erie", ring_primary="2", operating_status="active",
-        verification_tier="B", last_verified="2026-10-02", country="US")
+        processes="compounding_formulation", verification_tier="C", last_verified="2026-10-02", country="US")
     ins("sites", SITE_COLS, site_id="SITE-000004", org_id="ORG-000002", site_name="Old Rubber - Cleveland",
         city="Cleveland", state="OH", county="Cuyahoga", ring_primary="1", operating_status="closed",
-        verification_tier="C", last_verified="2026-10-01", latitude="41.5", longitude="-81.7", country="US")
+        processes="extrusion", verification_tier="C", last_verified="2026-10-01", latitude="41.5", longitude="-81.7",
+        country="US")
     ins("ecosystem", ECO_COLS, org_id="ORG-000501", legal_name="University of Akron",
         ecosystem_subtype="university_college", city="Akron", state="OH", county="Summit", status="active",
         verification_tier="A", last_verified="2026-10-29", sources="https://www.uakron.edu",
@@ -172,7 +176,7 @@ class BuildSiteTest(unittest.TestCase):
             self.assertTrue((self.out / "counties" / f"{c.lower()}.html").is_file(), c)
         for oid in ["ORG-000001", "ORG-000002", "ORG-000003", "ORG-000501"]:
             self.assertTrue((self.out / "orgs" / f"{oid}.html").is_file(), oid)
-        self.assertEqual(self.result["org_pages"], 3)
+        self.assertEqual(self.result["org_pages"], 4)
         self.assertEqual(self.result["eco_pages"], 1)
         self.assertEqual(self.result["map_sites"], 3)  # three fixture sites carry coordinates
 
@@ -201,7 +205,24 @@ class BuildSiteTest(unittest.TestCase):
         self.assertIn(XSS_NAME, names)      # raw in JSON; the JS renders it with textContent
         self.assertNotIn("innerHTML", self.read("search.js"))
         self.assertNotIn("innerHTML", self.read("map.js"))
-        self.assertEqual(len(data["rows"]), 4)  # 3 organizations + 1 ecosystem row
+        self.assertEqual(len(data["rows"]), 5)  # 4 organizations + 1 ecosystem row
+
+    def test_company_fields_show_union_with_value_level_provenance(self):
+        def fields(oid):
+            return self.read(f"orgs/{oid}.html").split('<dl class="fields">', 1)[1].split("</dl>", 1)[0]
+
+        company = fields("ORG-000001")
+        processes = re.search(r"<dt>Processes</dt><dd>(.*?)</dd>", company)[1]
+        self.assertRegex(processes, r"extrusion[^<]*<span[^>]*>\(Company row\)")
+        self.assertEqual(processes.count("injection molding"), 1)
+        self.assertRegex(processes, r"injection molding.*?Company row.*?Evil Plastics - Akron plant.*?Tier A</span>")
+        self.assertRegex(processes, r"blow molding.*?Evil Plastics - Annex.*?Tier U</span>.*?unverified candidate")
+        self.assertRegex(company, r"<dt>Materials</dt><dd>.*?legacy &lt;custom&gt;.*?Evil Plastics - Annex.*?Tier U")
+        self.assertRegex(company, r"<dt>Markets served</dt><dd>.*?marine.*?Evil Plastics - Annex.*?Tier U")
+        self.assertRegex(fields("ORG-000003"), r"<dt>Processes</dt><dd>.*?compounding formulation.*?Keystone - Erie.*?Tier C</span>.*?single secondary source")
+        self.assertNotIn("<dt>Processes</dt>", fields("ORG-000002"))
+        self.assertIn("<dt>Processes</dt><dd>injection molding, extrusion</dd>", fields("ORG-000004"))
+        self.assertIn("<dt>Processes</dt><dd>extrusion</dd>", self.read("orgs/ORG-000002.html"))
 
     def test_counts_carry_unit_and_filter(self):
         idx = self.read("index.html")
@@ -213,7 +234,7 @@ class BuildSiteTest(unittest.TestCase):
             self.assertTrue(re.search(r"rows", unit), unit)
             self.assertTrue(re.search(r"status|tiers|Ring 5", filt), filt)
         by_unit = {u: n for n, u, _ in cards}
-        # fixture: active tier A-C sites are SITE-000001 (A) and SITE-000003 (B)
+        # fixture: active tier A-C sites are SITE-000001 (A) and SITE-000003 (C)
         self.assertEqual(by_unit["Site rows"], "2")
         self.assertEqual(by_unit["Ohio site rows"], "1")
         self.assertEqual(by_unit["Organization rows (parents)"], "2")
