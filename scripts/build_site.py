@@ -42,6 +42,7 @@ import shutil
 import sqlite3
 import subprocess
 import sys
+import urllib.parse
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -151,6 +152,7 @@ VOCAB_LABELS = {
     # entity, ownership and site type
     "corporation_private": "private corporation", "corporation_public": "public corporation", "llc": "LLC",
     "private_equity_portfolio": "private equity portfolio", "hq_and_plant": "headquarters and plant", "hq_only": "headquarters only",
+    "other_specified_in_notes": "other (specified in the record's notes, which are not published)",
     "rd_center": "R&D center", "warehouse_distribution": "warehouse & distribution",
     # ecosystem organizations, programs, services
     "accelerator_incubator": "accelerator / incubator", "funder_capital": "funder / capital",
@@ -242,18 +244,53 @@ URL_RE = re.compile(r"https?://[^\s<>\"')\]]+")
 
 # Free text from source strings and evidence rows (claim text, notes, citations) is never published: it can quote a scraped
 # page or name a person, and no pattern filter makes free text safe. Pages show structured fields and the source links only.
+def embeds_email(url):
+    """True if the URL carries an email address, literally or percent-encoded (mail=a%40b.example, even encoded twice)."""
+    u = str(url or "")
+    for _ in range(4):
+        if "@" in u:
+            return True
+        d = urllib.parse.unquote(u)
+        if d == u:
+            return False
+        u = d
+    return "@" in u
+
+
 def public_url(url):
     """An http(s) link that is not an email address or a personal profile page."""
-    return bool(safe_href(url)) and "@" not in url and not re.search(r"linkedin\.com/(in|pub)/", url, re.I)
+    return bool(safe_href(url)) and not embeds_email(url) and not re.search(r"linkedin\.com/(in|pub)/", url, re.I)
+
+
+# Private staging material: a path under staging/, workshop/, working/ or internal/ (a bare word like "workshop" is ordinary text), or the CRM folders by their file names (crm-export, crm-crossref, pic-member-list).
+# A citation of PIC's public member list ("Public PIC member list", with spaces) is a public source and stays.
+STAGING_RE = re.compile(r"\b(?:staging|workshop|working|internal)/|crm[-_ ]?(?:export|crossref)|pic[-_]member[-_]list", re.I)
+
+
+def source_entries(text):
+    """A source string split into its entries (';' followed by a space or line break), each marked public or not. An entry that names the
+    private PIC CRM or a staging/workshop path is never public: neither its text nor a URL inside it is published."""
+    out = []
+    for e in re.split(r";\s+|\n", str(text or "")):
+        if e.strip():
+            out.append((e, not (CRM_RE.search(e) or STAGING_RE.search(URL_RE.sub(" ", e)))))   # a path marker counts in the label, not inside a public URL
+    return out
+
+
+def omitted_sources(text):
+    return sum(1 for _, ok in source_entries(text) if not ok)
 
 
 def source_urls(text):
-    """Distinct public URLs in a source string, in order: the only part of a citation the site shows."""
+    """Distinct public URLs in the public entries of a source string, in order: the only part of a citation the site shows."""
     seen = []
-    for m in URL_RE.finditer(str(text or "")):
-        u = m.group(0).rstrip(".,;:")
-        if public_url(u) and u not in seen:
-            seen.append(u)
+    for entry, ok in source_entries(text):
+        if not ok:
+            continue
+        for m in URL_RE.finditer(entry):
+            u = m.group(0).rstrip(".,;:")
+            if public_url(u) and u not in seen:
+                seen.append(u)
     return seen
 
 
@@ -261,34 +298,53 @@ def url_links(urls):
     return " ".join(f'<a href="{esc(u)}" rel="noopener nofollow">{esc(u)}</a>' for u in urls)
 
 
-CRM_RE = re.compile(r"\bCRM\b")
+CRM_RE = re.compile(r"\bCRM\b", re.I)
+
+
+# Words that name a PR, pass, lane, packet, builder or owner decision in free text: the leak scan of the blind audits, copied from
+# tasks/blind-audit-11-2026-11-17/sample.py (test_internal_wording_filter_is_the_blind_audit_scan fails if the two drift apart).
+# It also hits ordinary text now and then ("Council Bluffs"); a description it hits is withheld, never half-shown.
+INTERNAL_RE = re.compile(r'#\d+|\bEVD-\d+|\bPR\b|pull request|\bpass[- ]?\d*\b|packet|(?-i:\blanes?\b|\bLanes? [A-Z0-9]{2,}\b)|\bwave\b|integration pass|integrator|codex|claude|grok|gemini|spaghetti|\bmuse\b|\bowner\b|\brulings?\b|battery|council|refut|\bminted\b|staging|banked|\bnotes?\b|created_by|tier[ _]?effect|supports_[ABCU]', re.I)
+
+
+TEMP_ID_RE = re.compile(r"NEW:[A-Z]{2,}-\d+")   # a temporary record id from a build pass, as in "(NEW:MJ-07)"
+
+
+def internal_wording(text):
+    t = str(text or "")
+    return bool(CRM_RE.search(t) or INTERNAL_RE.search(t) or TEMP_ID_RE.search(t))
 
 
 def lede(text):
-    """Description paragraph; text that references the private PIC CRM is withheld."""
+    """Description paragraph; text that refers to the private PIC CRM or carries build and review wording is withheld."""
     if not nonempty(text):
         return ""
-    if CRM_RE.search(str(text)):
-        return ('<p class="muted">The one-line description is withheld from this view because it refers to '
+    if internal_wording(text):
+        return ('<p class="muted">The one-line description is withheld from this view because it may refer to '
                 "internal material; see the repository CSV.</p>")
     return f'<p class="lede">{esc(text)}</p>'
 
 
 def source_list(sources):
     urls = source_urls(sources)
+    n = omitted_sources(sources)
+    left_out = (f'<p class="small muted">{plural(n, "source entry", "source entries")} left out of this view because '
+                f'{"it refers" if n == 1 else "they refer"} to internal material; the repository CSV keeps the full text.</p>') if n else ""
     if not urls:
-        return '<p class="muted">No source link recorded.</p>'
-    return '<ul class="sources">' + "".join(f"<li>{url_links([u])}</li>" for u in urls) + "</ul>"
+        return '<p class="muted">No source link recorded.</p>' + left_out
+    return '<ul class="sources">' + "".join(f"<li>{url_links([u])}</li>" for u in urls) + "</ul>" + left_out
 
 
 def safe_href(url):
     """Return the url only if it is an http(s) URL (never javascript: etc.)."""
-    if nonempty(url) and re.match(r"^https?://", str(url).strip(), re.I):
+    if nonempty(url) and re.match(r"^https?://", str(url).strip(), re.I) and not embeds_email(url):
         return str(url).strip()
     return None
 
 
 def ext_link(url, text=None):
+    if text is None and str(url or "").strip() == "none_found":   # the data's marker for "looked, found no website"
+        return "No website found"
     href = safe_href(url)
     if not href:
         return esc(text if text is not None else url)
@@ -501,6 +557,8 @@ def page(ctx, title, body, root="", active="", description="", head_extra="", sc
 <meta property="og:type" content="website">
 <meta property="og:image" content="{SITE_URL}og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="{root}fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{root}fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{root}style.css">
 <noscript><style>.menu-btn{{display:none}}.site-header nav{{display:block}}</style></noscript>
 {head_extra}
@@ -921,7 +979,21 @@ SORTABLE_JS = r"""(function () {
   var count = 0;
   window.atlasTable = function (t) { label(t); enhance(t, 'x' + count++); };   // for tables a page draws after load (experts.js)
   function init() {
-    Array.prototype.forEach.call(document.querySelectorAll('.table-wrap table'), function (t, i) { count = i + 1; label(t); enhance(t, i); });
+    var tables = Array.prototype.slice.call(document.querySelectorAll('.table-wrap table'));
+    count = tables.length;
+    function run(t, i) { label(t); enhance(t, i); }
+    if (tables.length > 10 && 'IntersectionObserver' in window) {
+      // A page with dozens of tables (a multinational's organization page) enhances each one as it nears the screen or its closed
+      // <details> opens, instead of all at once: the long task that blocked a phone for 866 ms.
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          io.unobserve(e.target);
+          var t = e.target.querySelector('table'); run(t, tables.indexOf(t));
+        });
+      }, { rootMargin: '800px 0px' });
+      tables.forEach(function (t) { io.observe(t.closest('.table-wrap') || t); });
+    } else tables.forEach(run);
     openTarget(); addEventListener('hashchange', openTarget);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
@@ -1013,6 +1085,7 @@ select{max-width:100%}
 @media (max-width:640px){
   .table-wrap:has(table.stack){overflow-x:visible}
   table.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.stack thead button.sort{display:none}   /* the header is hidden on a phone, so its sort buttons must not be reachable either */
   table.stack caption{display:block}
   table.stack,table.stack tbody,table.stack tr{display:block;width:100%}
   table.stack tr{border-top:1px solid var(--line);padding:8px 0;display:grid;grid-template-columns:1fr 1fr}
@@ -1153,6 +1226,7 @@ th[aria-sort=descending] button.sort::after{opacity:.9}
 .tfilter input{padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);font:inherit;min-width:0;width:16em;max-width:60%;min-height:40px}
 
 .tdl{margin:-.6em 0 1.2em}
+details.dsummary>summary{font:700 1.15rem/1.25 var(--f-display);margin:.6em 0;min-height:44px;display:flex;align-items:center}
 .downloads{margin:.4em 0}
 .facets{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:.6em 0}
 details.facet{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:6px 12px;margin:0}
@@ -1209,7 +1283,9 @@ a.url{display:inline-block;max-width:15em;overflow:hidden;text-overflow:ellipsis
 .xmore:hover{border-color:var(--accent-hover);color:var(--accent-hover)}
 .xfilter{display:inline-flex;gap:6px;align-items:center;margin-left:8px;font-weight:400}
 @media (max-width:720px){.xrows li{grid-template-columns:1fr}}
-#count{font-weight:700}
+#count{font-weight:700;min-height:1.6em}
+#chips{min-height:5.6rem}
+#browse{min-height:100vh}   /* the institution table arrives after load; keep the footer below the fold meanwhile (layout shift) */
 
 /* ---- phone menu and the Views strip (shell) ---- */
 .menu-btn{display:none;align-items:center;min-height:44px;padding:0 var(--s-4);border:1px solid rgba(255,255,255,.4);border-radius:8px;background:transparent;color:var(--on-deep);font:700 var(--t-sm)/1 var(--f-display);cursor:pointer}
@@ -1315,10 +1391,11 @@ main.viz{max-width:none;padding:0;position:relative;height:max(540px,calc(100svh
 .viz-summary .vlegend li{display:flex;align-items:center;gap:var(--s-2)}
 .viz-summary .sw{width:12px;height:12px;border-radius:50%;flex:none;display:inline-block}
 .viz-summary .btns{margin:var(--s-4) 0}
+.hero-sky .btn{min-height:44px}
 @media (max-width:719.98px){
   main.viz{height:auto;overflow:visible}
   .viz-summary{display:block;padding:var(--s-5) var(--s-4)}
-  .viz .stage,.viz .rail,.viz .card,.viz .tip,.viz .title,.viz .bar,.viz .caption{display:none!important}
+  .viz .stage,.viz .rail,.viz .card,.viz .tip,.viz .title,.viz .bar,.viz .caption,.hero-sky{display:none!important}
 }
 @media (prefers-reduced-motion:reduce){.viz *{scroll-behavior:auto!important}}
 
@@ -1483,6 +1560,12 @@ DIRECTORY_JS = r"""(function () {
   var COLS = ['Street address', 'Ring', 'Site tier', 'Process', 'Material', 'Market', 'Employees', 'Ownership', 'Evidence rows',
               'Organization record (status, tier)', 'Website'];
   var boxes = {}, data = [], hits = [], page = 0;
+  var summary = document.getElementById('counts');
+  if (matchMedia('(max-width: 719.98px)').matches) {   // phones: the list first (closed blocks hold no tab stops), the filters and the county counts on tap
+    Array.prototype.forEach.call(form.querySelectorAll('details.facet'), function (d) { d.open = false; });
+    if (summary) summary.open = false;
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#counts"]'), function (a) { a.addEventListener('click', function () { if (summary) summary.open = true; }); });
   status.textContent = 'Loading the list...';
   F.forEach(function (f) { boxes[f] = Array.prototype.slice.call(form.querySelectorAll('input[name="' + f + '"]')); });
   function chosen(f) { return boxes[f].filter(function (b) { return b.checked; }).map(function (b) { return b.value; }); }
@@ -1740,6 +1823,12 @@ GLYPHS = {
 }
 
 
+def geo_note(sites):
+    """The true geography of a set of site rows, in words: how many are in the US and how many are elsewhere."""
+    us = sum(1 for s in sites if s.get("country") == "US")
+    return f"{fmt_int(us)} in the US, {fmt_int(len(sites) - us)} elsewhere"
+
+
 def active_ab(sites):
     return [s for s in sites if s.get("operating_status") == "active"
             and s.get("verification_tier") in ("A", "B", "C")]
@@ -1980,11 +2069,12 @@ def build_directory_page(ctx, rows):
 <h1>Northeast Ohio polymer companies</h1>
 <p class="lede">{fmt_int(n_orgs)} owners of active, tier A-C site rows in the 18 PIC counties: {fmt_int(n_orgs - n_eco)} organization records and
 {fmt_int(n_eco)} ecosystem records, with {fmt_int(n_sites)} such site rows. Each count below is owners with an active tier A-C site row in that county or ring.</p>
+<p class="small"><a href="#counts">Counts by county and ring</a> · <a href="search.html">Search every organization, any state</a></p>
+<details class="dsummary" id="counts" open><summary>Counts by county and ring</summary>
 {summary}
-<p>This page lists companies in the 18 PIC counties. For any other company in the Atlas, in any state,
-<a href="search.html">search every organization</a>.</p>
 <p class="small muted">An owner with site rows in more than one county or ring is counted in each, so these columns can
 add up to more than the All PIC-18 line. Counts are owners, not unique ultimate parents.</p>
+</details>
 <noscript><p>Search, filters and the paged list need JavaScript. Without it, browse by county, {DIRECTORY_PAGE} rows a page, with street addresses:
 {county_links}. Every row is also in <a href="directory.csv">directory.csv</a>.</p></noscript>
 <div id="dfind" hidden>
@@ -2091,7 +2181,7 @@ def build_index(ctx):
         card(len(active_ab(sites)), "Site rows", "All locations held (US states, territories and a few non-US rows); operating status active; verification tiers A-C"),
         card(len(active_ab(oh)), "Ohio site rows", "State = OH; operating status active; verification tiers A-C"),
         card(len(active_ab(pic)), "PIC-18 county site rows", "Ohio county in the 18 PIC counties (NEO-SMART region); operating status active; tiers A-C"),
-        card(len(n_org_active), "Organization rows (parents)", "Status active; verification tiers A-C; all states"),
+        card(len(n_org_active), "Organization rows (parents)", "Status active; verification tiers A-C; all locations held (organization rows are not split by country)"),
         card(len(parents_oh), "Parent organization rows with an Ohio footprint", "Organization status active, tiers A-C, and at least one active Ohio site row in tiers A-C"),
         card(len(eco_active), "Ecosystem organization rows", "Ring 5 (schools, associations, economic development, labs); status active; tiers A-C"),
         card(len(prog_active), "Program rows", "Education, training and research programs with status active; all tiers"),
@@ -2105,7 +2195,7 @@ def build_index(ctx):
         f'<td>{esc(RING_TESTS.get(r, ""))}</td></tr>'
         for r in ["1", "2", "3", "4", "5", "?"] if r != "?" or ring_groups.get("?"))
     ring_tbl = table_wrap(
-        "<table><caption>Site rows by ring (operating status active; tiers A-C; all states)</caption>"
+        f"<table><caption>Site rows by ring (operating status active; tiers A-C; all locations held: {geo_note(active_ab(sites))})</caption>"
         "<thead><tr><th scope=\"col\">Ring</th><th scope=\"col\" class=\"num\">Site rows</th>"
         f"<th scope=\"col\">One-line test</th></tr></thead><tbody>{ring_rows}</tbody></table>",
         "Site rows by ring")
@@ -2212,7 +2302,12 @@ def build_skyline_page(ctx):
     ctx.skyline = sky
     top = "".join(f"<li>{plural(h[2], 'site row')}: {esc(h[5])}</li>" for h in sky["hex"][:10])
     body = f"""
-<section class="hero" aria-labelledby="hero-title">
+<section class="viz-summary" aria-labelledby="vs-title"><h1 id="vs-title">3D skyline</h1>
+<p class="lede">Hexagonal columns over the United States: the taller the column, the more active site rows the Atlas holds there. The 3D view needs a screen 720 px wide or more; here are the largest clusters as text.</p>
+<p><strong>{fmt_int(len(active_ab(sites)))}</strong> active site rows (tiers A-C), {geo_note(active_ab(sites))}; <strong>{fmt_int(len(active_ab(pic)))}</strong> in the 18 PIC counties. {fmt_int(sky["n"])} of them have reference coordinates in the lower 48 states.</p>
+<ol>{top}</ol>
+<div class="btns"><a class="btn primary" href="directory.html">Find companies</a> <a class="btn" href="map.html">Street map</a> <a class="btn" href="counties/index.html">Counties</a></div></section>
+<section class="hero hero-sky" aria-labelledby="hero-title">
 <div class="hero-stage">
 <div id="skyline" data-src="skyline.json" role="img"
  aria-label="3D map of the United States with hexagonal columns whose height shows how many polymer industry site rows the Atlas holds in each area; the tallest stand in Northeast Ohio."></div>
@@ -2222,7 +2317,7 @@ def build_skyline_page(ctx):
 <h1 id="hero-title">Where the site rows <em>stand.</em></h1>
 <p class="lede">Hexagonal columns over the United States: the taller the column, the more active site rows the Atlas holds there.</p>
 <div class="hero-stats">
-<div><b>{fmt_int(len(active_ab(sites)))}</b><small>active site rows (tiers A–C)<br>across all states</small></div>
+<div><b>{fmt_int(len(active_ab(sites)))}</b><small>active site rows (tiers A–C)<br>{geo_note(active_ab(sites))}</small></div>
 <div><b>{fmt_int(len(active_ab(pic)))}</b><small>in the 18 PIC counties</small></div>
 </div>
 <div class="cta"><a class="btn primary" href="directory.html">Find companies</a><a class="btn" href="map.html">Map</a></div>
@@ -2233,13 +2328,14 @@ def build_skyline_page(ctx):
 <button class="btn" type="button" data-sky-focus="ohio" aria-pressed="false">Northeast Ohio</button></div>
 </div>
 </section>
-<div class="sr-only"><p>Largest clusters of site rows on the 3D map:</p><ol>{top}</ol></div>
+<div class="sr-only hero-sky"><p>Largest clusters of site rows on the 3D map:</p><ol>{top}</ol></div>
 <p class="small muted">The 3D map shows {fmt_int(sky["n"])} active, tier A-C site rows with reference coordinates in the lower 48
 states, binned into hexagons; column height follows the count. Lime outlines mark the PIC-18 counties.
 Positions are interpolated from addresses and are never evidence.</p>
 """
-    return page(ctx, "3D skyline", body, "", "sky",
-                scripts=f'<script src="{THREE_JS}" defer></script>\n<script src="skyline.js" defer></script>')
+    # three.js, the data and the script load only on a screen 720 px or wider (explorer.js); a phone gets the summary and no WebGL
+    return page(ctx, "3D skyline", body, "", "sky", scripts='<script src="explorer.js" defer></script>',
+                main_attrs=f' data-libs="{THREE_JS}" data-boot="skyline.js"')
 
 
 def build_map_page(ctx, data_rows):
@@ -2395,9 +2491,7 @@ def experts_json(ctx):
         return oid
 
     for p in a.people:
-        href = safe_href(p.get("public_profile_url")) or ""
-        if "@" in href:
-            href = ""
+        href = safe_href(p.get("public_profile_url")) or ""   # safe_href refuses a URL that embeds an email, encoded or not
         specs = specs_of(vals(p.get("research_specialties")))
         role = p.get("role_as_published") or str(p.get("role") or "").replace("_", " ")
         modes = sorted({str(g.get("mode") or "").replace("_", " ") for g in a.engagement_by_person.get(p.get("person_id"), [])} - {""})
@@ -2634,9 +2728,7 @@ def people_block(people, ctx):
     rows = ""
     for p in sorted(people, key=lambda p: (p.get("full_name") or "")):
         name = esc(p.get("full_name"))
-        href = safe_href(p.get("public_profile_url"))
-        if href and "@" in href:        # a profile URL embedding an email address is not published
-            href = None
+        href = safe_href(p.get("public_profile_url"))   # a profile URL embedding an email address (even percent-encoded) is not published
         if href:
             name = f'<a href="{esc(href)}" rel="noopener nofollow">{name}</a>'
         role = p.get("role_as_published") or str(p.get("role") or "").replace("_", " ")
