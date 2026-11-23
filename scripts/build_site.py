@@ -1656,18 +1656,18 @@ DIRECTORY_JS = r"""(function () {
         t.forEach(function (v) { (counts[f][v] = counts[f][v] || {})[r.id] = 1; });
       });
     });
-    var notes = [];
+    var notes = [], companies = {}; hits.forEach(function (r) { companies[r.id] = 1; });
     F.forEach(function (f) {
       boxes[f].forEach(function (b) {
         var n = size(counts[f][b.value]);
         b.parentNode.querySelector('.n').textContent = n.toLocaleString();
         b.parentNode.classList.toggle('zero', n === 0 && !b.checked);
       });
-      var c = sel[f].length, u = size(counts[f]['_']);
+      var c = sel[f].length;
+      var lost = Object.keys(counts[f]['_'] || {}).filter(function (id) { return !companies[id]; }).length;   // left out = companies with no row on the list
       boxes[f][0].closest('details').querySelector('.sel').textContent = c ? ' (' + c + ' chosen)' : '';
-      if (c && sel[f].indexOf('_') < 0 && u) notes.push(u.toLocaleString() + ' with unknown ' + NAME[f]);
+      if (c && sel[f].indexOf('_') < 0 && lost) notes.push(lost.toLocaleString() + (lost === 1 ? ' company' : ' companies') + ' with unknown ' + NAME[f]);
     });
-    var companies = {}; hits.forEach(function (r) { companies[r.id] = 1; });
     var nc = size(companies), nr = hits.length;
     status.textContent = 'Showing ' + nc.toLocaleString() + (nc === 1 ? ' company (' : ' companies (') + nr.toLocaleString() + (nr === 1 ? ' row' : ' rows') + ', one per owner and county).';
     left.textContent = notes.length ? 'Left out because the field is unknown (within your other choices): ' + notes.join('; ') + '. Choose "Unknown" in that filter to see them.' : '';
@@ -1705,6 +1705,7 @@ DIRECTORY_JS = r"""(function () {
     return r.json();
   }).then(function (d) {
     data = d.rows;
+    data.forEach(function (r) { r.tok.mem = [r.member ? 'yes' : 'no']; });   // the filter is read from the public badge flag; the data file states no absence
     list.hidden = false;
     document.getElementById('ddl').disabled = false; document.getElementById('dcopy').disabled = false;
     fromUrl(); run();
@@ -2007,7 +2008,7 @@ def directory_json(rows):
             "web": r["website"], "ev": r["evidence"],
             "org": ", ".join(x for x in [str(r["status"]).replace("_", " ") if r["status"] else "status unknown",
                                          f"tier {r['org_tier']}" if r["org_tier"] else ""] if x),
-            "tok": {k: row_tokens(r, k) for k, _ in DIRECTORY_FACETS},
+            "tok": {k: row_tokens(r, k) for k, _ in DIRECTORY_FACETS if k != "mem"},   # the member filter is derived in directory.js from "member"
             "show": {"ring": ", ".join(r["rings"]) or "unknown", "tier": ", ".join(r["tiers"]),
                      "proc": cell_text(*r["proc"]), "mat": cell_text(*r["mat"]), "mkt": cell_text(*r["mkt"]),
                      "band": cell_text(*r["band"], always_basis=True), "own": cell_text(r["own"], "")}})
@@ -2098,7 +2099,7 @@ add up to more than the All PIC-18 line. Counts are owners, not unique ultimate 
 A <span class="badge">PIC member</span> badge marks an owner on PIC's public member list.</p>
 <div class="banner note"><p><strong>Unknown means nothing is recorded: not zero, not small.</strong> "{MEMBER_NO}" is not the same as "not a member".</p></div>
 <details class="more"><summary>How to read the list</summary>
-<p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter shows how many companies are unknown.</p>
+<p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter except the member flag (which is yes or no by construction) shows how many companies are unknown.</p>
 <p><strong>Counts are companies.</strong> A company with sites in two counties has two rows (one per owner and county) and counts once in the figures above the list and beside each filter choice; the download has one row per owner and county.</p>
 <p><strong>Public member list.</strong> A row is marked "{MEMBER_YES}" or "{MEMBER_NO}". The second only means the organization is not on the public list.</p>
 <p>One row per owner and county, grouped by county; an owner with site rows in two counties is listed under both,

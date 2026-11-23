@@ -741,8 +741,10 @@ class DirectoryCompaniesTest(unittest.TestCase):
 
     def test_member_filter_is_the_public_flag_and_its_caveat_is_on_the_page(self):
         by = {r["id"]: r for r in self.rows}
-        self.assertEqual(by["ORG-000001"]["tok"]["mem"], ["yes"])
-        self.assertEqual(by["ORG-000004"]["tok"]["mem"], ["no"])
+        self.assertTrue(by["ORG-000001"]["member"])
+        self.assertFalse(by["ORG-000004"]["member"])
+        self.assertTrue(all("mem" not in r["tok"] for r in self.rows))                       # the data file carries no member token, least of all "no"
+        self.assertIn("r.tok.mem = [r.member ? 'yes' : 'no']", self.js)                      # the filter derives from the public badge flag in the page script
         self.assertEqual(self.option("mem", "yes") + self.option("mem", "no"), len(set(by)))   # every company is one or the other, once
         self.assertIn('<div class="banner note">', self.html)
         self.assertIn('is not the same as "not a member"', self.html)
@@ -754,6 +756,9 @@ class DirectoryCompaniesTest(unittest.TestCase):
         self.assertIn("', one per owner and county).'", self.js)
         self.assertNotIn("rows (one per owner and county).'", self.js.replace(", one per owner and county).'", ""))   # the old row-only line is gone
         self.assertIn("Counts are companies.", self.html)
+        self.assertIn("var lost = Object.keys(counts[f]['_'] || {}).filter(function (id) { return !companies[id]; }).length;", self.js)   # left out = no row on the list
+        self.assertIn("' company' : ' companies') + ' with unknown '", self.js)
+        self.assertIn("Every filter except the member flag", self.html)
 
 
 class RealDataHeadlineTest(unittest.TestCase):
