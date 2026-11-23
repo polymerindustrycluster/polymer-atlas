@@ -6,6 +6,8 @@ Read independently. Your dispatcher gives you a blind CSV, its SHA-256, the data
 
 One row is one Atlas record. Grade the fields in `columns_under_audit` at the values in `values_json`, plus each child's `values` under `context_json.children`. Use `context_json` and each child's `context` to identify the record and resolve its keys. `cited_sources` is the record's citation text. `evidence_json` gives claim types and public source URLs. The controller grades the evidence rows through binding and capture replay and checks the derived fields separately.
 
+If a value is shown as `[withheld for blindness]`, record the field as withheld in your note and check the underlying claim from evidence. For example, verify the NAICS code and its stated source type using the citations. Give no correct credit to the withheld literal and mark the record UNRESOLVED if you cannot settle its underlying claim. Apply the same rule to a child value.
+
 Check every populated judged value against primary or public sources at the grain claimed. The supplied citations are starting points. Re-fetch raw when needed, and check that a quote appears in order in the cited content. Budget about six primary-source fetches per record, including its children. A failed fetch tells you the route was unavailable. Observe the supplied user agent and route restrictions. Licensed data is a discovery lead only. Before a closure or no-establishment rejection, run the Form 5500 check. A sponsor filing blocks the rejection only when its address is the establishment under review.
 
 | Fields | What to check |

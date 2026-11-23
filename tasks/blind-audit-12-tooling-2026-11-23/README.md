@@ -11,7 +11,18 @@ lockf -k /tmp/polymer-atlas-heavy.lock python3 tasks/blind-audit-12-tooling-2026
 lockf -k /tmp/polymer-atlas-heavy.lock python3 tasks/blind-audit-12-tooling-2026-11-23/packets.py --draw "$DRAW" --out "$STAGE2" --extend PIC18_RECORDS
 ```
 
-Use a fresh private stage directory. Stage 1 includes the 18 plants. For stage 2 specify only the strata the decision rule extends. An extension contains only newly released records. Pass each reader their copy of the blind CSV, its SHA-256, these [reader instructions](REVIEWER_INSTRUCTIONS.md), the as-of date and any allowed schema materials. Keep `private_map.csv` for the controller to score plants. The output copies are byte-identical. A leak-scan hit stops the release. Use the blind ID and field in the diagnostic to review the underlying value privately before releasing anything.
+Use a fresh private stage directory. Stage 1 includes the 18 plants. For stage 2 specify only the strata the decision rule extends. An extension contains only newly released records. Pass each reader their copy of the blind CSV, its SHA-256, these [reader instructions](REVIEWER_INSTRUCTIONS.md), the as-of date and any allowed schema materials. Keep `private_map.csv` for the controller to score plants. The output copies are byte-identical. The [round 24 protocol addendum](PROTOCOL_ADDENDUM_2026-11-23.md) governs judged values caught by the blind scan. The packet retains the judged field and displays `[withheld for blindness]`. Header and metadata leaks stop release. Keep `withheld_cells.csv`, `withheld_counts.csv` and `private_map.csv` with the controller. Counts are judged cells in the released rows, per stratum, with plant cells separate. The private map identifies any plant whose substitution was withheld.
+
+### Exact-value review
+
+Generate a private candidate list at the intended snapshot before release. This inventory scans held judged values, including potential plant records, without running the draw.
+
+```sh
+lockf -k /tmp/polymer-atlas-heavy.lock python3 -I tasks/blind-audit-12-tooling-2026-11-23/packets.py \
+  --inventory-at "$AT" --out "$PRIVATE/false_positive_candidates.csv"
+```
+
+Copy only the controller-approved candidate rows to a separate CSV with the same header, then pass it as `--approved` when building packets. The approval applies to the named cell and exact text, with one row per matched token. NAICS source-name hits are withheld. Contact data is suppressed in the candidate list. Record the approved file's hash in the release ledger. Keep the inventory and approval file private.
 
 ### Evidence replay
 

@@ -40,6 +40,63 @@ EXTRA_LEAK = re.compile(r'\b(?:gate[_ -]?verdict|reader[_ -]?family|reviewer[_ -
 CONTACT = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|"
                      r"\(?\b\d{3}\)?[-. ]\d{3}[-. ]\d{4}\b")
 
+WITHHELD = "[withheld for blindness]"
+CANDIDATE_FIELDS = ("cell", "matched_token", "text")
+SOURCE_NAME = "naics_primary_source_name"
+# Phrasing found in judged prose during the seed-free review.
+PROVENANCE_PROSE = re.compile(r"\bstaged\b|\b(?:hence|raised to|lowered to|from) tier [ABCU]\b", re.I)
+HARD_VALUE = re.compile(r"created_by|tier[ _]?effect|supports_[ABCU]|\bEVD-\d+\b", re.I)
+
+
+def match_tokens(value):
+    decoded = unquote(value)
+    tokens = {m[0] for pattern in (a11.LEAK, EXTRA_LEAK, PROVENANCE_PROSE)
+              for m in pattern.finditer(decoded)}
+    if CONTACT.search(decoded):
+        tokens.add("[contact]")
+    return sorted(tokens)
+
+
+def display(value):
+    return WITHHELD if match_tokens(value) else value
+
+
+def cell_record(table, row, number):
+    return f"{table}/{row[draw.ID_COL[table]] if table in draw.ID_COL else number}"
+
+
+def false_positive_candidates(reader):
+    for table in (*draw.ID_COL, *CHILDREN, "archive_links"):
+        fields = [f for f, k in draw.FIELD_CLASS[table].items() if k == "J" and f != SOURCE_NAME]
+        for n, row in enumerate(reader.rows(table), 1):
+            key = cell_record(table, row, n)
+            for field in fields:
+                value = row[field]
+                tokens = match_tokens(value)
+                if "[contact]" in tokens:
+                    yield dict(cell=f"{key}/{field}", matched_token="[contact]", text="[withheld for privacy]")
+                else:
+                    for token in tokens:
+                        yield dict(cell=f"{key}/{field}", matched_token=token, text=value)
+
+
+def mask_values(values, key, approved, visible_approvals, part):
+    result = dict(values)
+    withheld = []
+    for field, value in values.items():
+        tokens = match_tokens(value)
+        if not tokens and value != WITHHELD:
+            continue
+        cell = f"{key}/{field}"
+        if (tokens and field != SOURCE_NAME and "[contact]" not in tokens
+                and not EXTRA_LEAK.search(unquote(value)) and not HARD_VALUE.search(unquote(value))
+                and all((cell, token, value) in approved for token in tokens)):
+            visible_approvals.add((part, field, value))
+            continue
+        result[field] = WITHHELD
+        withheld.append(cell)
+    return result, withheld
+
 
 def csv_rows(text):
     return list(csv.DictReader(io.StringIO(text, newline="")))
@@ -120,21 +177,21 @@ class Head(a11.Head):
         for row in self.ev_by_id.values():
             self.evidence[row["record_table"], row["record_id"]].append(row)
         for table, parents in CHILDREN.items():
-            for row in reader.rows(table):
+            for n, row in enumerate(reader.rows(table), 1):
                 keys = {(LINKS[f], row[f]) for f in parents if row[f]}
                 for t, key in sorted(keys):
                     if t == "organizations" and key in self.t["ecosystem"]:
                         t = "ecosystem"
-                    self.children[t, key].append(self.child(table, row))
+                    self.children[t, key].append(self.child(table, row, n))
         archives = unique(reader.rows("archive_links"), lambda r: (r["evidence_id"], r["archive_ref"]))
-        for (eid, _), row in archives.items():
+        for n, ((eid, _), row) in enumerate(archives.items(), 1):
             ev = self.ev_by_id[eid]
-            child = self.child("archive_links", row)
+            child = self.child("archive_links", row, n)
             child["context"]["cited_page_urls"] = a11.urls(ev["source_ref"])
             self.children[ev["record_table"], ev["record_id"]].append(child)
 
     def label(self, table, row):
-        return row[LABEL[table]]
+        return display(row[LABEL[table]])
 
     def context(self, table, row, audit):
         context = {}
@@ -147,19 +204,24 @@ class Head(a11.Head):
             related = (self.orgs.get(row[field]) if target == "organizations"
                        else self.t[target].get(row[field], [None])[0])
             if related:
-                context[field + "_resolved"] = related[LABEL[target]]
+                context[field + "_resolved"] = display(related[LABEL[target]])
         return context
 
-    def child(self, table, row):
+    def child(self, table, row, number):
         values = {f: row[f] for f, k in draw.FIELD_CLASS[table].items() if k == "J"}
-        return dict(table=table, values=values, context=self.context(table, row, values))
+        return dict(table=table, values=values, context=self.context(table, row, values),
+                    _key=cell_record(table, row, number))
 
 
-def leak_scan(rows):
+def leak_scan(rows, visible_approvals=None):
+    visible_approvals = visible_approvals or {}
     for row in rows:
         if row.keys() != set(FIELDS):
             raise ValueError("blind header contains unexpected fields")
         # Audit 11 scans the same payload. Scan child claims as values so published claim dates stay eligible.
+        judged = [f for f, k in draw.FIELD_CLASS[row["table"]].items() if k == "J"]
+        if row["columns_under_audit"].split(";") != judged:
+            raise ValueError("blind column list differs from the judged field list")
         context = json.loads(row["context_json"])
         children = context.pop("children", [])
         if any(child.keys() != {"table", "values", "context"}
@@ -168,8 +230,9 @@ def leak_scan(rows):
         evidence = json.loads(row["evidence_json"])
         if any(ev.keys() != {"claim_type", "url"} for ev in evidence):
             raise ValueError("blind evidence contains unexpected fields")
-        for child in [{"table": row["table"], "values": json.loads(row["values_json"]),
-                       "context": context}, *children]:
+        inspected = [{"table": row["table"], "values": json.loads(row["values_json"]),
+                      "context": context}, *children]
+        for part, child in enumerate(inspected):
             classes = draw.FIELD_CLASS[child["table"]]
             if child["values"].keys() != {f for f, k in classes.items() if k == "J"}:
                 raise ValueError("blind values differ from the judged field list")
@@ -179,23 +242,30 @@ def leak_scan(rows):
                 allowed.add("cited_page_urls")
             if child["context"].keys() - allowed:
                 raise ValueError("blind context contains unexpected fields")
+            unchecked = {f: v for f, v in child["values"].items()
+                         if (part, f, v) not in visible_approvals.get(row["blind_id"], ())}
             scope = dict(row, change_class=row["stratum"], change_kind="",
-                         values_json=json.dumps(child["values"], ensure_ascii=False),
+                         values_json=json.dumps(unchecked, ensure_ascii=False),
                          context_json=json.dumps(child["context"], ensure_ascii=False))
             if child.get("table") == "archive_links":
                 # This is the public archive link key (the same exception as Audit 11).
                 scope["context_json"] = json.dumps({k: v for k, v in child["context"].items() if k != "evidence_id"})
-                if not a11.ARCHIVE_KEY.fullmatch(child["context"]["evidence_id"] + "|" + child["values"]["archive_ref"]):
+                eid = child["context"]["evidence_id"]
+                ref = child["values"]["archive_ref"]
+                if not (re.fullmatch(r"EVD-\d{6}", eid) and
+                        (ref == WITHHELD or a11.ARCHIVE_KEY.fullmatch(f"{eid}|{ref}"))):
                     raise ValueError(f"{row['blind_id']}: malformed archive link key")
             hits = a11.leak_scan([scope])
             if hits:
                 raise ValueError(f"{row['blind_id']}: blind scan flagged {hits[0][1]}")
             for field in FIELDS:
-                if EXTRA_LEAK.search(unquote(scope[field])) or CONTACT.search(unquote(scope[field])):
+                decoded = unquote(scope[field])
+                if (any(pattern.search(decoded) for pattern in (EXTRA_LEAK, CONTACT, PROVENANCE_PROSE))
+                        or decoded != scope[field] and a11.LEAK.search(decoded)):
                     raise ValueError(f"{row['blind_id']}: blind scan flagged {field}")
 
 
-def build(folder, out, reader=None, extend=()):
+def build(folder, out, reader=None, extend=(), approved=()):
     receipt, frame, sample, plants = read_draw(folder)
     if reader is None:
         if receipt["plan"] != draw.sealed_plan():
@@ -216,7 +286,9 @@ def build(folder, out, reader=None, extend=()):
     # The public SHA and release list seed only the presentation order.
     random.Random(draw.sha(f"{receipt['at']}|{stage}|{','.join(sorted(extend))}".encode())).shuffle(rows)
     h = Head(reader)
-    blind, private = [], []
+    blind, private, private_withheld = [], [], []
+    visible_approvals = defaultdict(set)
+    withheld_counts = Counter()
     suffix = "-".join(sorted(extend))
     prefix = f"A12-S{stage}" + (f"-{suffix}" if suffix else "")
     for i, entry in enumerate(rows, 1):
@@ -235,34 +307,71 @@ def build(folder, out, reader=None, extend=()):
         row = a11.blind_row(h, dict(entry, change_kind="audit", change_class=entry["stratum"],
                                    changed_columns=";".join(judge)))
         h.t[table][rid][0] = original
+        blind_id = f"{prefix}-{i:04}"
+        allowed = visible_approvals[blind_id]
         context = json.loads(row["context_json"])
-        context["children"] = h.children[table, rid]
-        row.update(blind_id=f"{prefix}-{i:04}", stratum=entry["stratum"],
+        children = []
+        values, masked = mask_values({f: record[f] for f in judge}, f"{table}/{rid}", approved, allowed, 0)
+        for part, child in enumerate(h.children[table, rid], 1):
+            child_values, child_masked = mask_values(child["values"], child["_key"], approved, allowed, part)
+            children.append(dict(table=child["table"], values=child_values, context=child["context"]))
+            masked += child_masked
+        context["children"] = children
+        plant = "field" in entry
+        withheld_counts[entry["stratum"], plant] += len(masked)
+        private_withheld.extend(dict(blind_id=blind_id, stratum=entry["stratum"], cell=cell,
+                                    plant=str(plant).lower()) for cell in masked)
+        row.update(blind_id=blind_id, stratum=entry["stratum"],
                    context_json=json.dumps(context, ensure_ascii=False, sort_keys=True))
         row["cited_sources"] = cited(row["cited_sources"])
         # Audit 11's generic withheld list also includes a few columns that are J for specific Audit 12 tables.
         row.update(columns_under_audit=";".join(judge),
-                   values_json=json.dumps({f: record[f] for f in judge}, ensure_ascii=False, sort_keys=True))
+                   values_json=json.dumps(values, ensure_ascii=False, sort_keys=True))
         blind.append({f: row[f] for f in FIELDS})
         private.append(dict(blind_id=row["blind_id"], stratum=entry["stratum"], table=table, record_id=rid,
-                            plant_field=entry.get("field", "")))
-    leak_scan(blind)
+                            plant_field=entry.get("field", ""), plant_value_withheld=str(
+                                plant and values[entry["field"]] == WITHHELD).lower()))
+    leak_scan(blind, visible_approvals)
     out.mkdir(mode=0o700)
     packet = draw.csv_text(blind, FIELDS)
     for name in ("blind_a.csv", "blind_b.csv"):
         draw.write_private(out / name, packet)
     draw.write_private(out / "private_map.csv", draw.csv_text(private, list(private[0])))
+    draw.write_private(out / "withheld_cells.csv",
+                       draw.csv_text(private_withheld, ("blind_id", "stratum", "cell", "plant")))
+    counts = [dict(stratum=s, sampled_cells=withheld_counts[s, False], plant_cells=withheld_counts[s, True])
+              for s in draw.STRATA if not extend or s in extend]
+    draw.write_private(out / "withheld_counts.csv",
+                       draw.csv_text(counts, ("stratum", "sampled_cells", "plant_cells")))
     print(f"{len(blind)} reader rows, SHA-256 {draw.sha(packet.encode())}")
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--draw", required=True, type=Path)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--draw", type=Path)
+    source.add_argument("--inventory-at", help="full main SHA for a seed-free candidate inventory")
+    parser.add_argument("--approved", type=Path, help="controller-approved exact candidate rows")
     parser.add_argument("--out", required=True, type=Path)
     parser.add_argument("--extend", nargs="+", choices=draw.STRATA, default=[])
     args = parser.parse_args()
     try:
-        build(args.draw, args.out, extend=args.extend)
+        if args.inventory_at:
+            if args.approved or args.extend:
+                raise ValueError("inventory uses only --inventory-at and --out")
+            reader = draw.GitReader(draw.require_ancestor(args.inventory_at))
+            candidates = list(false_positive_candidates(reader))
+            draw.write_private(args.out, draw.csv_text(candidates, CANDIDATE_FIELDS))
+            print(f"{len(candidates)} candidate token occurrences in non-NAICS judged cells")
+        else:
+            approved = set()
+            if args.approved:
+                with args.approved.open(newline="") as f:
+                    records = csv.DictReader(f)
+                    if tuple(records.fieldnames or ()) != CANDIDATE_FIELDS:
+                        raise ValueError("approval CSV header must match the candidate inventory")
+                    approved = set(unique(records, lambda row: tuple(row[k] for k in CANDIDATE_FIELDS)))
+            build(args.draw, args.out, extend=args.extend, approved=approved)
     except ValueError as exc:
         parser.exit(1, f"packet build refused: {exc}\n")
     except (KeyError, OSError) as exc:

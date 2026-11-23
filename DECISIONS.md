@@ -320,3 +320,12 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   unchanged capture, that capture is cited with its true date once the row's quote is reproduced from it (first applied to
   ORG-000038's two pages in PR #502). The audit 12 draw will read the placements above from a checked-in list in
   `tasks/blind-audit-12-protocol-2026-11-23/`, added with the B6 data pull request, rather than from a new placement rule.
+
+## 2026-11-23: round 24, item 1 · blind audit 12 judged values
+
+- **Owner ruling (“Withhold now, repair too”):** Keep a flagged judged field in the Audit 12 packet and show its value as
+  `[withheld for blindness]`. Audit the underlying claim from evidence and give the withheld literal no correct credit.
+  Report withheld cells separately per stratum. Header and metadata leaks remain hard failures.
+- The controller approves only exact non-NAICS-source false positives from the private inventory. A separate lane
+  repairs the public labels. The [protocol addendum](tasks/blind-audit-12-tooling-2026-11-23/PROTOCOL_ADDENDUM_2026-11-23.md)
+  records packet handling without reopening the sealed draw.

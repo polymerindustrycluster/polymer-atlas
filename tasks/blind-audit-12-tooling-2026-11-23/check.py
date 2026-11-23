@@ -18,11 +18,16 @@ def packet_check(root):
     for n, site in enumerate(tables["sites"]):
         rid = site["site_id"]
         links.append(dict(org_id=site["org_id"], site_id=rid, registry="FRS",
-                          registry_id=str(n), match_basis="exact identity", as_of="2026-11-23"))
+                          registry_id=f"wave fixture {n}", match_basis="exact identity", as_of="2026-11-23"))
         tables["evidence"].append(dict(evidence_id=f"EVD-{n:06d}", record_table="sites", record_id=rid,
                                        claim_type="address", source_ref="https://example.org/record",
                                        claim_detail="quote: private packet prose", tier_effect="supports_A",
                                        created_by="Claude"))
+    for row in tables["organizations"]:
+        row["naics_primary_source_name"] = "Grok wave fixture"
+        row["description_1line"] = "See Note 9"
+    for row in tables["sites"]:
+        row["street_address"] = "Claude Freeman Drive"
     reader = p.draw.MemReader(tables)
     draw_dir = root / "draw"
     seed = b"audit12-tooling-synthetic-only"
@@ -31,17 +36,49 @@ def packet_check(root):
     frame_row = next(r for r in sample if r["table"] == "organizations" and r["stratum"] == "REST_US_RECORDS")
     reader.placements = lambda: {frame_row["record_id"]: ("REST_OF_COUNTRY", "private ruling basis")}
     out = root / "stage1"
-    p.build(draw_dir, out, reader)
+    allowed = next(r for r in sample if r["table"] == "organizations" and r["stage"] == 1)
+    cell = f"organizations/{allowed['record_id']}/description_1line"
+    fixture = next(r for r in tables["organizations"] if r["org_id"] == allowed["record_id"])
+    fixture["legal_name"] = "Claude Synthetic Manufacturing"
+    inventory = list(p.false_positive_candidates(reader))
+    assert dict(cell=cell, matched_token="Note", text="See Note 9") in inventory
+    assert not any(r["cell"].endswith("/naics_primary_source_name") for r in inventory)
+    naics = f"organizations/{allowed['record_id']}/naics_primary_source_name"
+    p.build(draw_dir, out, reader, approved={(cell, "Note", "See Note 9"),
+                                             (naics, "Grok", "Grok wave fixture"),
+                                             (naics, "wave", "Grok wave fixture")})
     with (out / "blind_a.csv").open(newline="") as f:
         rows = list(csv.DictReader(f))
     assert (out / "blind_a.csv").read_bytes() == (out / "blind_b.csv").read_bytes()
     assert len(rows) == sum(r["stage"] == 1 for r in sample) + len(plants)
     assert not {r["record_id"] for r in rows} & {r["record_id"] for r in sample if r["stage"] == 2}
     lookup = {(r["table"], r["record_id"]): r for r in rows}
+    org = lookup["organizations", allowed["record_id"]]
+    assert "naics_primary_source_name" in org["columns_under_audit"].split(";")
+    assert json.loads(org["values_json"])["naics_primary_source_name"] == "[withheld for blindness]"
+    assert json.loads(org["values_json"])["description_1line"] == "See Note 9"
+    assert org["record_label"] == json.loads(org["values_json"])["legal_name"] == p.WITHHELD
+    another = next(r for r in rows if r["table"] == "organizations" and r is not org)
+    assert json.loads(another["values_json"])["description_1line"] == "[withheld for blindness]"
+    assert "Grok wave fixture" not in (out / "blind_a.csv").read_text()
+    with (out / "withheld_counts.csv").open(newline="") as f:
+        counts = list(csv.DictReader(f))
+    plant_keys = {p.record_key(r) for r in plants}
+    expected = p.Counter()
+    for row in rows:
+        child_cells = [value for child in json.loads(row["context_json"])["children"]
+                       for value in child["values"].values()]
+        expected[row["stratum"], p.record_key(row) in plant_keys] += (
+            list(json.loads(row["values_json"]).values()) + child_cells).count(p.WITHHELD)
+    for count in counts:
+        assert int(count["sampled_cells"]) == expected[count["stratum"], False]
+        assert int(count["plant_cells"]) == expected[count["stratum"], True]
     site = next(r for r in rows if r["table"] == "sites")
+    assert json.loads(site["values_json"])["street_address"] == "[withheld for blindness]"
     assert json.loads(site["evidence_json"]) == [{"claim_type": "address", "url": "https://example.org/record"}]
     link = json.loads(site["context_json"])["children"][0]
     assert link["values"]["site_id"] == site["record_id"] and "as_of" not in link["context"]
+    assert link["values"]["registry_id"] == p.WITHHELD
     assert "private ruling basis" not in (out / "blind_a.csv").read_text()
     for plant in plants:
         table, field = plant["table"], plant["field"]
@@ -54,7 +91,8 @@ def packet_check(root):
         r["record_id"] for r in sample if r["stage"] == 2 and r["stratum"] == "PROGRAMS"
     }
     for leaked in (dict(rows[0], created_by="Some builder"),
-                   dict(rows[0], context_json='{"created_by":"Some builder"}')):
+                   dict(rows[0], context_json='{"created_by":"Some builder"}'),
+                   dict(rows[0], columns_under_audit=rows[0]["columns_under_audit"] + ";reviewer_label")):
         try:
             p.leak_scan([leaked])
         except ValueError:
