@@ -20,6 +20,35 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
   only; nothing generated is committed) and deploys it to GitHub Pages at
   https://polymerindustrycluster.github.io/polymer-atlas/. The Pages source is set to GitHub Actions.
 
+- **`pr-rules.yml`** (since 2026-11-22) runs on `pull_request_target` (a PR opened, pushed to, reopened or marked ready).
+  It runs the checker and the workflow as they are on the base branch and never executes anything from the PR; it
+  reads no PR comment and no review record. It is a separate workflow from `validate.yml`. Review (working rules 1 and
+  4, AGENTS.md section 2a) is practice and is not checked here. It publishes two check runs on the PR head:
+  - **`pr-rules`** (`scripts/check_pr_rules.py`, working rules 5 and 6):
+    - a PR adds at most 1,000 evidence rows and 1,000 new registry identities (org_id, registry, registry_id, site_id)
+      unless it adds a `DECISIONS.md` line with the words "size waiver" and `branch=<its complete branch name>`;
+    - a PR that touches `data/` fails while any `created_by` label on `main` is neither in
+      `tasks/working-rules-2026-11-22/audit_baseline.txt` nor named by a valid `tasks/<folder>/AUDIT.md` on `main`
+      (lines `Label:`, `Result: PASS|FAIL`, `Sample:`, `Reviewers:`), or whose audit says FAIL;
+    - a PR that adds evidence rows or registry links adds `tasks/<folder>/INPUTS.sha256` (`<sha256>  <path>`, a file
+      below `raw/` or `provenance/`, or an existing repo file); format only, a reviewer checks the hashes against the
+      shared store.
+  - **`binding-gate`** (rules 2 and 3): when `scripts/check_evidence_binding.py` exists on `main`, the job checks out the
+    PR merge result as data into `./pr` (both checkouts with `persist-credentials: false`, job `permissions: {}`;
+    nothing from the PR tree is executed) and runs main's script twice with `--tree pr`: `--new-since origin/main` and
+    `--provenance-since origin/main`. Until the script is on `main` the check run says "gate not yet on main: nothing
+    was checked" and passes; every other step that cannot run its check fails. A separate job, which never touches PR
+    code, posts the result.
+
+  Every check prints what it inspected and what it could not; whatever it could not inspect, including a failed read of
+  a tracked git object, fails the run. Rules 2 and 3 are `scripts/check_evidence_binding.py` (PR #467), documented with
+  that script. The planted cases and the limits are in `tasks/working-rules-2026-11-22/README.md`. Locally:
+  `python3 scripts/check_pr_rules.py --pr <number>` (needs `gh`).
+
+  **Not active until the controller acts** (repository settings, not files): `pr-rules` and `binding-gate` are not yet
+  required checks, and the ruleset's strict (up-to-date with `main`) policy is off. The audit gate depends on both
+  (AGENTS.md section 2a, rule 5): without strict mode, two data PRs can both pass against the same `main`.
+
 Preview the site locally with
 `python3 scripts/build_pages.py && python3 -m http.server -d build/pages 8000`, then open http://localhost:8000.
 

@@ -13,7 +13,8 @@ Produces, all under build/ (gitignored; nothing here is ever committed):
         COUNTS.md                   row counts per table, with units
     build/polymer-atlas-release-<date>-<sha>.zip
 
-The canonical data stays in data/*.csv; this script only copies and describes.
+The canonical data stays in data/*.csv. The release organization CSV adds
+generated columns combining company and site values.
 It runs scripts/build_sqlite.py first when build outputs are missing or older
 than the newest data/*.csv (or with --rebuild); with --no-build it requires
 them to exist and be current.
@@ -33,7 +34,13 @@ import sqlite3
 import subprocess
 import sys
 import zipfile
+from collections import defaultdict
 from pathlib import Path
+
+if __package__:
+    from .build_site import org_field_sources
+else:
+    from build_site import org_field_sources
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -85,6 +92,8 @@ BOOLEAN_COLS = {"diversified_conglomerate", "pic_member", "monitor_watch",
 MULTI_COLS = {"processes", "materials", "markets_served", "naics_secondary",
               "trade_names", "certifications", "tier1_qualifier",
               "tier1_qualifier_basis"}
+ORG_SITE_FIELDS = ("processes", "materials", "markets_served")
+ORG_SITE_COLUMNS = tuple(f"{field}_incl_sites" for field in ORG_SITE_FIELDS)
 RE_DATE = re.compile(r"\d{4}-\d{2}-\d{2}")
 RE_INT = re.compile(r"-?(0|[1-9]\d*)")
 RE_NUM = re.compile(r"-?\d+(\.\d+)?")
@@ -101,6 +110,10 @@ DESCRIPTIONS = {
     "verification_tier": "A primary | B authoritative directory | C single "
                          "secondary | U unverified (SCHEMA.md 4.1).",
     "last_verified": "ISO date a contributor actually checked the record.",
+    **{col: f"Generated union of {field} from the company and its site rows "
+            "whose operating status is not closed. Distinct source tokens "
+            "are separated by ';'. Includes all verification tiers."
+       for field, col in zip(ORG_SITE_FIELDS, ORG_SITE_COLUMNS)},
 }
 
 
@@ -124,6 +137,21 @@ def read_csv(path):
     with open(path, newline="", encoding="utf-8") as f:
         rdr = csv.DictReader(f)
         return list(rdr.fieldnames or []), list(rdr)
+
+
+def write_organization_export(path, cols, orgs, sites):
+    by_org = defaultdict(list)
+    for site in sites:
+        by_org[site["org_id"]].append(site)
+    with path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=[*cols, *ORG_SITE_COLUMNS])
+        writer.writeheader()
+        for org in orgs:
+            writer.writerow({
+                **org,
+                **{col: ";".join(org_field_sources(org, by_org.get(org["org_id"], ()), field))
+                   for field, col in zip(ORG_SITE_FIELDS, ORG_SITE_COLUMNS)},
+            })
 
 
 def data_inputs():
@@ -264,7 +292,7 @@ def build_descriptor(version, created, tables, counts):
             "capabilities. Built for the Polymer Industry Cluster (PIC), "
             "Greater Akron Chamber. Organizations and sites are separate "
             "units; always state the unit when quoting a count. A SQLite "
-            "build of the same data ships alongside as polymer-atlas.db."),
+            "build of the canonical data ships alongside as polymer-atlas.db."),
         "version": version,
         "created": created,
         "homepage": REPO_URL,
@@ -317,10 +345,16 @@ def main():
     # copy files and read them back for the descriptor
     shutil.copy2(DB, RELEASE / "polymer-atlas.db")
     published = {}  # name -> (path, cols, rows)
-    for t in SHARDED:
-        shutil.copy2(BUILD / f"{t}_all.csv", RELEASE / "data" / f"{t}_all.csv")
-        cols, rows = read_csv(RELEASE / "data" / f"{t}_all.csv")
-        published[t] = (f"data/{t}_all.csv", cols, rows)
+    for t in ("sites", "organizations", "evidence"):
+        path = f"data/{t}_all.csv"
+        source = BUILD / f"{t}_all.csv"
+        if t == "organizations":
+            cols, rows = read_csv(source)
+            write_organization_export(RELEASE / path, cols, rows, published["sites"][2])
+        else:
+            shutil.copy2(source, RELEASE / path)
+        cols, rows = read_csv(RELEASE / path)
+        published[t] = (path, cols, rows)
     for t in single_tables():
         shutil.copy2(DATA / f"{t}.csv", RELEASE / "data" / f"{t}.csv")
         cols, rows = read_csv(RELEASE / "data" / f"{t}.csv")

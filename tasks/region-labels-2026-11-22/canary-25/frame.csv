@@ -1,0 +1,26 @@
+org_id,category,legal_name,hq_city,hq_state,hq_county,hq_in_scope_before,hq_in_scope_after,site_counties,status
+ORG-001846,relabel_pic12,Barentz,Avon,OH,Lorain,pic12,ne_ohio,,merged
+ORG-002069,relabel_pic12,"Summit Glove, Inc.",Minerva,OH,Stark,pic12,ne_ohio,Stark,active
+ORG-001716,relabel_pic12,"Firestone Polymers, LLC",Akron,OH,Summit,pic12,ne_ohio,Summit,active
+ORG-001814,relabel_pic12,Freedom Mold & Machine LLC,North Canton,OH,Stark,pic12,ne_ohio,,active
+ORG-001698,relabel_pic12,Prime Engineered Plastics,Canton,OH,Stark,pic12,ne_ohio,Stark,active
+ORG-001867,relabel_pic12,Polymer Chain Inc.,Akron,OH,Summit,pic12,ne_ohio,,active
+ORG-001927,relabel_pic12,GlueTread LLC,Hiram,OH,Portage,pic12,ne_ohio,Portage,active
+ORG-001851,relabel_pic12,Modern Mold & Tool Corp.,Columbia Station,OH,Lorain,pic12,ne_ohio,,active
+ORG-001029,relabel_ohio_other,PPC Flex,Alliance,OH,Stark,ohio_other,ne_ohio,Franklin,active
+ORG-000955,relabel_ohio_other,Meteor Sealing Systems,Dover,OH,Tuscarawas,ohio_other,ne_ohio,Tuscarawas,active
+ORG-000706,relabel_ohio_other,Bob Sumerel Tire Co,Dover,OH,Tuscarawas,ohio_other,ne_ohio,Tuscarawas,active
+ORG-000999,relabel_ohio_other,Okamoto Sandusky Manufacturing,Sandusky,OH,Erie,ohio_other,ne_ohio,Erie,active
+ORG-001423,relabel_ohio_other,ABC Technologies Inc.,Bellevue,OH,Huron,ohio_other,ne_ohio,Huron;Sandusky,active
+ORG-001183,relabel_ohio_other,Ventra (Flex-N-Gate),Sandusky,OH,Erie,ohio_other,ne_ohio,Columbiana;Erie,active
+ORG-003771,relabel_ohio_other,ST BlowMoulding USA LLC,Norwalk,OH,Huron,ohio_other,ne_ohio,Huron,active
+ORG-001931,relabel_ohio_other,Cooper Standard Industrial and Specialty Group LLC (Lauren Manufacturing),New Philadelphia,OH,Tuscarawas,ohio_other,ne_ohio,Tuscarawas,active
+ORG-001731,relabel_ohio_statewide,"Nissha Medical Technologies (Ohio), Inc.",Norwalk,OH,Huron,ohio_statewide,ne_ohio,Huron,active
+ORG-001725,relabel_ohio_statewide,Thorworks Industries Inc,Sandusky,OH,Erie,ohio_statewide,ne_ohio,Erie,active
+ORG-001878,relabel_ohio_statewide,Qube Corporation,Chagrin Falls,OH,Geauga,ohio_statewide,ne_ohio,Geauga,active
+ORG-000098,hold_label_outside_ohio_but_ohio_pic18_county,Spazzolplastica North America LLC,Mentor,OH,Lake,international,,Lake;Summit,active
+ORG-004564,hold_label_outside_ohio_but_ohio_pic18_county,Preformed Line Products Company,Mayfield Village,OH,Cuyahoga,national_us,,Summit,active
+ORG-000011,record_error_county_not_in_state,"Bridgestone Americas, Inc.",Nashville,TN,Summit,national_us,,Summit,active
+ORG-000007,record_error_county_not_in_state,Vibrantz Technologies Inc.,Houston,TX,Ashtabula,national_us,,Ashtabula;Cuyahoga;Wayne,active
+ORG-001765,hold_ohio_statewide_undefined,A-Z Recycling Inc,Columbus,OH,Franklin,ohio_statewide,,Franklin,active
+ORG-000676,record_error_ohio_label_on_non_ohio_state,Apache Inc.,Cedar Rapids,IA,Linn,ohio_other,,Hamilton,active
