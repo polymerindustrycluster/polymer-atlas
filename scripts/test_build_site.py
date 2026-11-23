@@ -1334,7 +1334,7 @@ class RefuteFixesTest(unittest.TestCase):
             self.assertNotIn("fixture%40example", p.read_text(encoding="utf-8"), p.name)
 
     def test_source_classifier_catches_routine_private_labels_and_keeps_the_public_member_list(self):
-        private = ("PIC crm https://example.invalid/a", "workshop/internal/reader.csv https://example.invalid/b", "Muse staging https://example.invalid/c",
+        private = ("PIC crm https://example.invalid/a", "workshop/internal/reader.csv https://example.invalid/b", "staging/x.csv https://example.invalid/c",
                    "CRM export https://example.invalid/d", "working/x.csv", "internal/notes https://example.invalid/e")
         for e in private:
             self.assertEqual(build_site.source_urls(e), [], e)
@@ -1342,6 +1342,10 @@ class RefuteFixesTest(unittest.TestCase):
         keep = "Public PIC member list https://polymerindustrycluster.org/members; Company site https://example.com/about"
         self.assertEqual(build_site.source_urls(keep), ["https://polymerindustrycluster.org/members", "https://example.com/about"])
         self.assertEqual(build_site.omitted_sources(keep), 0)
+        for ordinary in ("Public university workshop announcement https://example.edu/workshop", "Internal Revenue Service filing https://irs.example/f",
+                         "Staging area plant page https://example.com/staging"):
+            self.assertEqual(build_site.omitted_sources(ordinary), 0, ordinary)
+            self.assertEqual(len(build_site.source_urls(ordinary)), 1, ordinary)
         self.assertEqual(build_site.lede("Exists only in the pic crm record."), build_site.lede("Exists only in the PIC CRM record."))
         self.assertIn("withheld", build_site.lede("Exists only in the pic crm record."))
 

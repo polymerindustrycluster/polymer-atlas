@@ -261,9 +261,9 @@ def public_url(url):
     return bool(safe_href(url)) and not embeds_email(url) and not re.search(r"linkedin\.com/(in|pub)/", url, re.I)
 
 
-# Private staging material: a staging or workshop path, or the CRM folders by their file names (crm-export, crm-crossref, pic-member-list).
+# Private staging material: a path under staging/, workshop/, working/ or internal/ (a bare word like "workshop" is ordinary text), or the CRM folders by their file names (crm-export, crm-crossref, pic-member-list).
 # A citation of PIC's public member list ("Public PIC member list", with spaces) is a public source and stays.
-STAGING_RE = re.compile(r"\bstaging\b|\bworkshop\b|\bworking/|\binternal/|crm[-_ ]?(?:export|crossref)|pic[-_]member[-_]list", re.I)
+STAGING_RE = re.compile(r"\b(?:staging|workshop|working|internal)/|crm[-_ ]?(?:export|crossref)|pic[-_]member[-_]list", re.I)
 
 
 def source_entries(text):
