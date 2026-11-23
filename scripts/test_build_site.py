@@ -527,8 +527,9 @@ class DirectoryFixtureTest(unittest.TestCase):
 
     def test_prospects_urls_still_work(self):
         stub = self.read("prospects.html")
-        self.assertIn('http-equiv="refresh"', stub)
-        self.assertIn("url=directory.html", stub)
+        self.assertIn('<noscript><meta http-equiv="refresh" content="0; url=directory.html"></noscript>', stub)
+        self.assertIn('<script src="prospects.js"></script>', stub)
+        self.assertIn("location.search", self.read("prospects.js"))      # saved filters travel to the directory
         self.assertIn('<a href="directory.html">', stub)
         self.assertEqual((self.out / "prospects.csv").read_bytes(), (self.out / "directory.csv").read_bytes())
 
@@ -550,7 +551,8 @@ class DirectoryFixtureTest(unittest.TestCase):
             for label, (orgs, n) in expected.items():
                 key = label if kind == "county" else ("Ring not recorded" if label == "unknown" else f"Ring {label}")
                 self.assertEqual(got[key], (len(orgs), n), f"{kind} {label}")
-        self.assertIn("organization rows with an active tier A-C site row", html)
+        self.assertIn("owners with an active tier A-C site row in that county or ring", html)
+        self.assertIn("4 organization records and\n1 ecosystem records", html)   # the unit is the owner, with the 787 + 7 split spelled out
         total = re.search(r"<th scope=\"row\">All PIC-18</th><td class=\"num\">(\d+)</td><td class=\"num\">(\d+)</td>", html)
         self.assertEqual((int(total.group(1)), int(total.group(2))), (5, 5))
         self.assertIn("counted in each", html)                              # an organization in two counties is counted in both
@@ -592,10 +594,24 @@ class DirectoryFixtureTest(unittest.TestCase):
         self.assertEqual(by[("ORG-000004", "Stark")]["public_member_list"], "")
         self.assertIn("1 Main St, Akron, OH 44301", by[("ORG-000001", "Summit")]["pic18_site_addresses"])
 
-    def test_without_javascript_the_directory_points_to_county_pages_and_the_csv(self):
-        noscript = re.search(r"<noscript>(.*?)</noscript>", self.read("directory.html"), re.S).group(1)
+    def test_without_javascript_the_directory_lists_every_row_on_static_county_pages(self):
+        html = self.read("directory.html")
+        noscript = re.search(r"<noscript>(.*?)</noscript>", html, re.S).group(1)
         self.assertIn('href="directory.csv"', noscript)
-        self.assertIn('href="counties/index.html"', noscript)
+        self.assertIn('href="directory/summit.html"', noscript)
+        self.assertIn('<div id="dfind" hidden>', html)                     # search and filters stay hidden until the script runs
+        self.assertNotIn("Loading the list", html)                         # the status text is the script's, not the page's
+        seen = []
+        for f in sorted((self.out / "directory").glob("*.html")):
+            page = f.read_text(encoding="utf-8")
+            rows = re.findall(r'<tr><th scope="row"><a href="../orgs/(ORG-\d+)\.html">', page)
+            self.assertLessEqual(len(rows), 50, f.name)
+            seen += [(r, f.stem) for r in rows]
+        self.assertEqual(len(seen), len(json.loads(self.read("directory.json"))["rows"]))   # every row, once
+        summit = self.read("directory/summit.html")
+        self.assertIn("1 Main St, Akron, OH 44301", summit)
+        self.assertIn('<span class="badge">PIC member</span>', summit)
+        self.assertIn('href="../directory.html"', summit)
 
     def test_county_index_a_to_c_column_sums_to_the_headline(self):
         idx = self.read("counties/index.html")
@@ -693,6 +709,7 @@ class RealDataHeadlineTest(unittest.TestCase):
 
         def tokens(v):
             return {t.strip() for t in (v or "").split(";") if t.strip() and t.strip() != "unknown"}
+        cls.eco_ids = {r["org_id"] for r in read("ecosystem.csv")}
         by_key = {}
         for s in cls.sites:
             by_key.setdefault((s["org_id"], s["county"]), []).append(s)
@@ -729,13 +746,21 @@ class RealDataHeadlineTest(unittest.TestCase):
         self.assertGreater(len(self.by_key), len(self.by_org))             # some organizations have sites in two counties
         page = build_site.build_directory_page(self.ctx, rows)
         self.assertEqual(page.count("<tr data-"), 0)                       # at most 50 rows are ever drawn, by directory.js
-        self.assertEqual(self.number(r"<p class=\"lede\">([\d,]+) organization rows", page), len(self.by_org))
+        self.assertEqual(self.number(r"<p class=\"lede\">([\d,]+) owners", page), len(self.by_org))
+        n_eco = len(set(self.by_org) & self.eco_ids)
+        self.assertGreater(n_eco, 0)
+        self.assertEqual(self.number(r"([\d,]+) organization records and", page), len(self.by_org) - n_eco)   # the unit's two parts
+        self.assertEqual(self.number(r"([\d,]+) ecosystem records", page), n_eco)
+        static = build_site.directory_static_pages(self.ctx, rows)       # the no-JavaScript path holds every row, 50 a page
+        counts = [len(re.findall(r'<tr><th scope="row"><a href="../orgs/', h)) for h in static.values()]
+        self.assertEqual(sum(counts), len(self.by_key))
+        self.assertLessEqual(max(counts), 50)
 
     def test_summary_tables_match_the_csvs(self):
         page = build_site.build_directory_page(self.ctx, build_site.directory_rows(self.atlas))
         county = re.search(r"<caption>[^<]* by county</caption>.*?</table>", page, re.S).group(0)
         got = {m.group(1): (int(m.group(2).replace(",", "")), int(m.group(3).replace(",", "")))
-               for m in re.finditer(r'<th scope="row"><a href="counties/[a-z-]+\.html">([^<]+)</a></th><td class="num">([\d,]+)</td><td class="num">([\d,]+)</td>', county)}
+               for m in re.finditer(r'<th scope="row"><a href="directory\.html\?county=[^"]+">([^<]+)</a></th><td class="num">([\d,]+)</td><td class="num">([\d,]+)</td>', county)}
         for c in {c for _, c in self.by_key}:
             orgs = {o for o, k in self.by_key if k == c}
             self.assertEqual(got[c], (len(orgs), sum(len(ss) for (o, k), ss in self.by_key.items() if k == c)), c)

@@ -1119,12 +1119,13 @@ MAP_JS = r"""(function () {
 
 DIRECTORY_JS = r"""(function () {
   'use strict';
-  // Directory. Rows load from directory.json (one per organization row and county, sorted by county then name) and are
+  // Directory. Rows load from directory.json (one per owner and county, sorted by county then name) and are
   // drawn PAGE at a time. Within one filter the choices are OR; across filters they are AND. "_" is the unknown option
   // (a row with no tokens).
   var PAGE = __PAGE__;
   var form = document.getElementById('dfilters'), list = document.getElementById('dlist');
   if (!form || !list) return;
+  document.getElementById('dfind').hidden = false;   // without JavaScript this part stays hidden; the noscript note and directory/ pages serve instead
   var body = document.getElementById('dtable').tBodies[0], q = document.getElementById('dq');
   var status = document.getElementById('dstatus'), left = document.getElementById('dleft');
   var prev = document.getElementById('dprev'), next = document.getElementById('dnext'), pos = document.getElementById('dpos');
@@ -1134,6 +1135,7 @@ DIRECTORY_JS = r"""(function () {
   var COLS = ['Street address', 'Ring', 'Site tier', 'Process', 'Material', 'Market', 'Employees', 'Ownership', 'Evidence rows',
               'Organization record (status, tier)', 'Website'];
   var boxes = {}, data = [], hits = [], page = 0;
+  status.textContent = 'Loading the list...';
   F.forEach(function (f) { boxes[f] = Array.prototype.slice.call(form.querySelectorAll('input[name="' + f + '"]')); });
   function chosen(f) { return boxes[f].filter(function (b) { return b.checked; }).map(function (b) { return b.value; }); }
   function pass(r, f, sel) {
@@ -1190,7 +1192,7 @@ DIRECTORY_JS = r"""(function () {
     var last = null;
     hits.slice(page * PAGE, page * PAGE + PAGE).forEach(function (r) {
       if (r.co !== last) {   // county heading row
-        var h = el('tr', null, {'class': 'total'}), th = el('th', r.co + ' County: ' + perCounty[r.co].toLocaleString() + ' organization rows',
+        var h = el('tr', null, {'class': 'total'}), th = el('th', r.co + ' County: ' + perCounty[r.co].toLocaleString() + ' owners',
           {scope: 'colgroup', colspan: String(COLS.length + 1)});
         h.appendChild(th); body.appendChild(h); last = r.co;
       }
@@ -1233,7 +1235,7 @@ DIRECTORY_JS = r"""(function () {
       boxes[f][0].closest('details').querySelector('.sel').textContent = c ? ' (' + c + ' chosen)' : '';
       if (c && sel[f].indexOf('_') < 0 && u) notes.push(u.toLocaleString() + ' with unknown ' + NAME[f]);
     });
-    status.textContent = 'Showing ' + hits.length.toLocaleString() + ' of ' + data.length.toLocaleString() + ' organization rows (one per organization and county).';
+    status.textContent = 'Showing ' + hits.length.toLocaleString() + ' of ' + data.length.toLocaleString() + ' rows (one per owner and county).';
     left.textContent = notes.length ? 'Left out because the field is unknown (within your other choices): ' + notes.join('; ') + '. Choose "Unknown" in that filter to see them.' : '';
     page = 0;
     render();
@@ -1389,7 +1391,7 @@ def active_ab(sites):
 
 
 # --------------------------------------------------------------------------
-# Northeast Ohio polymer companies (directory.html): one row per organization row and PIC-18 county,
+# Northeast Ohio polymer companies (directory.html): one row per owner (organization or ecosystem record) and PIC-18 county,
 # built from the organization's active tier A-C site rows in that county
 
 UNKNOWN_VALUES = {"", "unknown"}       # blank and the literal vocabulary value both mean "nothing recorded"
@@ -1437,9 +1439,10 @@ def site_address(s):
 
 
 def directory_rows(a):
-    """One dict per organization row and PIC-18 county, from that organization's PIC-18 active tier A-C site rows there.
+    """One dict per owner and PIC-18 county, from that owner's PIC-18 active tier A-C site rows there. An owner is an
+    organization record or an ecosystem record (787 and 7 at the time of writing).
 
-    An organization with sites in two counties has two rows, so a county's row count is its organization count.
+    An owner with sites in two counties has two rows, so a county's row count is its owner count.
     Employee band: the band on the row's site rows, else the organization's Ohio band. Process, material and market
     follow the same rule. Each of those fields is (tokens, basis); no tokens means unknown."""
     by_key = defaultdict(list)
@@ -1458,7 +1461,7 @@ def directory_rows(a):
         rows.append({
             "id": oid, "name": rec.get("legal_name") or oid, "website": safe_href(rec.get("website")) or "",
             "hq_city": rec.get("hq_city") or rec.get("city") or "", "hq_state": rec.get("hq_state") or rec.get("state") or "",
-            "county": county, "addr": sorted({site_address(s) for s in sites}), "n_sites": len(sites),
+            "county": county, "eco": oid not in a.orgs, "addr": sorted({site_address(s) for s in sites}), "n_sites": len(sites),
             "rings": known(s["_ring"] for s in sites if s["_ring"]), "ring_sites": Counter(s["_ring"] or "_" for s in sites),
             "tiers": sorted({s["verification_tier"] for s in sites}),
             "proc": pick("processes", "processes"), "mat": pick("materials", "materials"),
@@ -1553,7 +1556,7 @@ def directory_json(rows):
 
 
 def directory_csv(rows, base_url):
-    """directory.csv (and its copy prospects.csv): one row per organization row and PIC-18 county; unknown is written out,
+    """directory.csv (and its copy prospects.csv): one row per owner and PIC-18 county; unknown is written out,
     never left blank. public_member_list is "yes" only for an organization on the public PIC member list; it is blank
     otherwise, which is not a statement about membership."""
     out = io.StringIO()
@@ -1586,7 +1589,7 @@ DIRECTORY_HEAD = ["Organization", "Street address", "Ring", "Site tier", "Proces
 
 
 def summary_table(label, rows, caption):
-    """Summary table: (label, link or None, organization rows, site rows) lines plus the All PIC-18 total."""
+    """Summary table: (label, link or None, owners, site rows) lines plus the All PIC-18 total."""
     def name(text, href):
         return f'<a href="{esc(href)}">{esc(text)}</a>' if href else esc(text)
     body = "".join(
@@ -1595,39 +1598,45 @@ def summary_table(label, rows, caption):
     total = (f'<tr class="total"><th scope="row">All PIC-18</th><td class="num">{fmt_int(len({r["id"] for r in rows}))}</td>'
              f'<td class="num">{fmt_int(sum(r["n_sites"] for r in rows))}</td></tr>')
     return (f'<table data-nosort data-nofilter data-nocsv><caption>{esc(caption)}</caption><thead><tr>'
-            f'<th scope="col">{esc(caption.rsplit(" ", 1)[1].capitalize())}</th><th scope="col" class="num">Organization rows</th>'
+            f'<th scope="col">{esc(caption.rsplit(" ", 1)[1].capitalize())}</th><th scope="col" class="num">Owners</th>'
             f'<th scope="col" class="num">Site rows</th></tr></thead><tbody>{body}{total}</tbody></table>')
 
 
 def build_directory_page(ctx, rows):
     n_orgs = len({r["id"] for r in rows})
+    n_eco = len({r["id"] for r in rows if r["eco"]})
     n_sites = sum(r["n_sites"] for r in rows)
     counties = sorted({r["county"] for r in rows})
-    by_county = [(c, f"counties/{slug(c)}.html", sum(1 for r in rows if r["county"] == c),
+    by_county = [(c, f"directory.html?county={c}#find", sum(1 for r in rows if r["county"] == c),
                   sum(r["n_sites"] for r in rows if r["county"] == c)) for c in counties]
     ring_keys = sorted({k for r in rows for k in r["ring_sites"]}, key=lambda k: (k == "_", k))
     by_ring = [(f"Ring {k}: {RINGS.get(k, '')}" if k != "_" else "Ring not recorded", None,
                 len({r["id"] for r in rows if r["ring_sites"].get(k)}), sum(r["ring_sites"].get(k, 0) for r in rows))
                for k in ring_keys]
-    cap = "organization rows with an active tier A-C site row, by"
+    cap = "owners with an active tier A-C site row, by"
     summary = (table_wrap(summary_table(by_county, rows, f"PIC-18 {cap} county"), "Counts by county")
                + table_wrap(summary_table(by_ring, rows, f"PIC-18 {cap} ring"), "Counts by ring"))
     facets = "".join(facet_html(rows, k, h, k in ("co", "ring", "tier", "band")) for k, h in DIRECTORY_FACETS)
     num = ' class="num"'
     head = "".join(f'<th scope="col"{num if h == "Evidence rows" else ""}>{esc(h)}</th>' for h in DIRECTORY_HEAD)
+    county_links = " · ".join(f'<a href="directory/{slug(c)}.html">{esc(c)} ({fmt_int(sum(1 for r in rows if r["county"] == c))})</a>'
+                              for c in counties)
     body = f"""
 <h1>Northeast Ohio polymer companies</h1>
-<p class="lede">{fmt_int(n_orgs)} organization rows with at least one active, tier A-C site row in the 18 PIC counties
-({fmt_int(n_sites)} such site rows). Each count below is organization rows with an active tier A-C site row in that county or ring.</p>
+<p class="lede">{fmt_int(n_orgs)} owners of active, tier A-C site rows in the 18 PIC counties: {fmt_int(n_orgs - n_eco)} organization records and
+{fmt_int(n_eco)} ecosystem records, with {fmt_int(n_sites)} such site rows. Each count below is owners with an active tier A-C site row in that county or ring.</p>
 {summary}
-<p class="small muted">An organization row with site rows in more than one county or ring is counted in each, so these columns can
-add up to more than the All PIC-18 line. Counts are organization rows, not unique ultimate parents.</p>
+<p class="small muted">An owner with site rows in more than one county or ring is counted in each, so these columns can
+add up to more than the All PIC-18 line. Counts are owners, not unique ultimate parents.</p>
+<noscript><p>Search, filters and the paged list need JavaScript. Without it, browse by county, {DIRECTORY_PAGE} rows a page, with street addresses:
+{county_links}. Every row is also in <a href="directory.csv">directory.csv</a>.</p></noscript>
+<div id="dfind" hidden>
 <h2 id="find">Find a company</h2>
 <p>Search by name, narrow with the filters, and download what you see. The address bar holds your choices, so you can send the link.
-A <span class="badge">PIC member</span> badge marks an organization on PIC's public member list.</p>
+A <span class="badge">PIC member</span> badge marks an owner on PIC's public member list.</p>
 <details class="more"><summary>How to read the list</summary>
 <p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter shows how many rows are unknown.</p>
-<p>One row per organization row and county, grouped by county; an organization with site rows in two counties is listed under both,
+<p>One row per owner and county, grouped by county; an owner with site rows in two counties is listed under both,
 with the street addresses of the site rows in that county. Ring and site tier list every value among those site rows; within one
 filter the choices are "or", across filters "and". Street addresses are as recorded; a site row with no street says so.</p>
 <p><strong>Employees</strong> is the band recorded on the site rows in that county, otherwise the organization's Ohio band, and each row
@@ -1638,31 +1647,66 @@ own row. Bands are bands, never headcounts. "N or more" means the band starts at
 <div class="facets">{facets}</div>
 <p><a href="directory.html">Clear all filters</a></p>
 </form>
-<p id="dstatus" role="status" aria-live="polite" tabindex="-1">Loading the list...</p>
+<p id="dstatus" role="status" aria-live="polite" tabindex="-1"></p>
 <p id="dleft" class="small" aria-live="polite"></p>
 <div id="dlist" hidden>
-{table_wrap(f'<table id="dtable" class="stack" data-nosort data-nofilter data-nocsv><caption>Northeast Ohio polymer companies: organization rows by PIC-18 county (operating status active; verification tiers A-C)</caption><thead><tr>{head}</tr></thead><tbody></tbody></table>', "Northeast Ohio polymer companies")}
+{table_wrap(f'<table id="dtable" class="stack" data-nosort data-nofilter data-nocsv><caption>Northeast Ohio polymer companies: owners by PIC-18 county (operating status active; verification tiers A-C)</caption><thead><tr>{head}</tr></thead><tbody></tbody></table>', "Northeast Ohio polymer companies")}
 <p id="dpager"><button type="button" id="dprev">Previous {DIRECTORY_PAGE}</button> <span id="dpos"></span> <button type="button" id="dnext">Next {DIRECTORY_PAGE}</button></p>
 <p class="tdl"><button type="button" id="ddl">Download these rows (CSV)</button></p>
 <p class="small muted">The download saves every row that matches your filters, not only the {DIRECTORY_PAGE} on screen. For the whole table,
-take <a href="directory.csv">directory.csv</a> ({fmt_int(len(rows))} organization rows by county, unfiltered).
-Evidence rows count the claim-level evidence on the organization's page (its own and its site rows').
-Website is the organization's recorded website. No contact people are published.</p>
+take <a href="directory.csv">directory.csv</a> ({fmt_int(len(rows))} rows, one per owner and county, unfiltered).
+Evidence rows count the claim-level evidence on the owner's page (its own and its site rows').
+Website is the owner's recorded website. No contact people are published.</p>
 </div>
-<noscript><p>The list and filters need JavaScript. Without it, open a county from the table above (see
-<a href="counties/index.html">all counties</a>) or take every row, with street addresses, from
-<a href="directory.csv">directory.csv</a>.</p></noscript>
+</div>
 """
     return page(ctx, "Northeast Ohio polymer companies", body, "", "directory",
                 "Polymer companies in the 18 Northeast Ohio PIC counties: counts by county and ring, then search, filter and download the list with street addresses.",
                 "", '<script src="directory.js" defer></script>')
 
 
+def directory_static_pages(ctx, rows):
+    """{file name: html} for directory/<county>.html, <county>-2.html ...: the same rows, 50 a page, for readers without JavaScript."""
+    out = {}
+    for c in sorted({r["county"] for r in rows}):
+        crows = [r for r in rows if r["county"] == c]
+        pages = -(-len(crows) // DIRECTORY_PAGE)
+        names = [f"{slug(c)}.html" if n == 1 else f"{slug(c)}-{n}.html" for n in range(1, pages + 1)]
+        badge = ' <span class="badge">PIC member</span>'
+        for n, name in enumerate(names, 1):
+            part = crows[(n - 1) * DIRECTORY_PAGE:n * DIRECTORY_PAGE]
+            trs = "".join(
+                f'<tr><th scope="row"><a href="../orgs/{esc(safe_id(r["id"]))}.html">{esc(r["name"])}</a>'
+                f'{badge if r["member"] else ""}</th><td>{"<br>".join(esc(x) for x in r["addr"])}</td>'
+                f'<td>{esc(", ".join(r["rings"]) or "unknown")}</td><td>{esc(", ".join(r["tiers"]))}</td>'
+                f'<td>{esc(cell_text(*r["proc"]))}</td><td>{esc(cell_text(*r["band"], always_basis=True))}</td></tr>' for r in part)
+            nav = " · ".join(x for x in [
+                f'<a href="{names[n - 2]}">Previous {DIRECTORY_PAGE}</a>' if n > 1 else "",
+                f'<a href="{names[n]}">Next {DIRECTORY_PAGE}</a>' if n < pages else "",
+                '<a href="../directory.html">Counts for all counties</a>'] if x)
+            tbl = table_wrap(
+                f'<table data-nosort data-nofilter data-nocsv><caption>{esc(c)} County owners with an active tier A-C site row, '
+                f'rows {(n - 1) * DIRECTORY_PAGE + 1} to {(n - 1) * DIRECTORY_PAGE + len(part)} of {len(crows)}</caption><thead><tr>'
+                '<th scope="col">Owner</th><th scope="col">Street address</th><th scope="col">Ring</th><th scope="col">Site tier</th>'
+                f'<th scope="col">Process</th><th scope="col">Employees</th></tr></thead><tbody>{trs}</tbody></table>', f"{c} County owners")
+            body = (f'<h1>{esc(c)} County: Northeast Ohio polymer companies</h1>\n'
+                    f'<p class="lede">{fmt_int(len(crows))} owners with an active tier A-C site row in {esc(c)} County; page {n} of {pages}. '
+                    f'This plain page needs no JavaScript; <a href="../directory.html">the directory</a> adds search and filters.</p>\n'
+                    f'<p>{nav}</p>\n{tbl}\n<p>{nav}</p>')
+            out[name] = page(ctx, f"Northeast Ohio polymer companies: {c} County", body, "../", "directory",
+                             f"Polymer companies in {c} County, Ohio, with street addresses, {DIRECTORY_PAGE} a page.")
+    return out
+
+
+# prospects.html is kept so links shared before the rename work. It sends the reader to the directory with the query string
+# (saved filters) and hash intact; without JavaScript the refresh tag does the plain redirect.
+PROSPECTS_REDIRECT_JS = "location.replace('directory.html' + location.search + location.hash);\n"
+
+
 def build_prospects_stub(ctx):
-    """prospects.html is kept so shared links work: it sends the reader on to the directory."""
     return page(ctx, "This page has moved",
                 '<h1>This page has moved</h1>\n<p class="lede">The list is now <a href="directory.html">Northeast Ohio polymer companies</a>.</p>',
-                "", "", "", '<meta http-equiv="refresh" content="0; url=directory.html">')
+                "", "", "", '<noscript><meta http-equiv="refresh" content="0; url=directory.html"></noscript>\n<script src="prospects.js"></script>')
 
 
 def build_index(ctx):
@@ -2655,7 +2699,7 @@ def build_site(db_path, out_dir, qcew_path=None, repo_url=DEFAULT_REPO, git=None
     ctx = Ctx(atlas, load_qcew(qcew_path), git or git_info(ROOT), repo_url, today, db_date)
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    for sub in ("orgs", "counties"):          # only generated subdirs are cleared
+    for sub in ("orgs", "counties", "directory"):          # only generated subdirs are cleared
         if (out_dir / sub).exists():
             shutil.rmtree(out_dir / sub)
 
@@ -2712,6 +2756,9 @@ search for the company by name, or start from one of the views below.</p>
         with open(out_dir / name, "w", newline="", encoding="utf-8-sig") as f:   # BOM: Excel reads it as UTF-8
             f.write(directory_csv(directory, SITE_URL))
     write(out_dir / "prospects.html", build_prospects_stub(ctx))
+    write(out_dir / "prospects.js", PROSPECTS_REDIRECT_JS)
+    for name, html_ in directory_static_pages(ctx, directory).items():
+        write(out_dir / "directory" / name, html_)
     write(out_dir / "counties" / "index.html", build_counties_index(ctx))
     county_names = ohio_counties(atlas)
     for c in county_names:
