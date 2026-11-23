@@ -28,32 +28,35 @@ MAIN, CURRENT, BATCH_BASE, BATCH_HEAD = "8f30ce0f", "393c3895", "4ee02127", "178
 APPENDIX_A = {"EVD-431206": "CANNOT_TELL", "EVD-430188": "DIFFERENT_ADDRESS", "EVD-427648": "DIFFERENT_ADDRESS", "EVD-431826": "DIFFERENT_ADDRESS", "EVD-429348": "DIFFERENT_ADDRESS", "EVD-432372": "DIFFERENT_ADDRESS", "EVD-431544": "DIFFERENT_ADDRESS", "EVD-425964": "DIFFERENT_ADDRESS", "EVD-426070": "DIFFERENT_ADDRESS", "EVD-431900": "CANNOT_TELL", "EVD-429356": "DIFFERENT_ADDRESS", "EVD-434334": "DIFFERENT_ADDRESS", "EVD-425566": "DIFFERENT_ADDRESS", "EVD-426904": "DIFFERENT_ADDRESS", "EVD-429620": "DIFFERENT_ADDRESS", "EVD-430124": "DIFFERENT_ADDRESS", "EVD-432898": "DIFFERENT_ADDRESS", "EVD-430102": "DIFFERENT_ADDRESS", "EVD-427536": "DIFFERENT_ADDRESS", "EVD-431964": "DIFFERENT_ADDRESS", "EVD-429062": "DIFFERENT_ADDRESS", "EVD-428624": "SAME_PLACE", "EVD-429422": "DIFFERENT_ADDRESS", "EVD-430448": "DIFFERENT_ADDRESS", "EVD-427956": "DIFFERENT_ADDRESS", "EVD-432662": "DIFFERENT_ADDRESS", "EVD-432758": "DIFFERENT_ADDRESS", "EVD-434376": "DIFFERENT_ADDRESS", "EVD-430300": "DIFFERENT_ADDRESS", "EVD-429950": "DIFFERENT_ADDRESS", "EVD-435460": "DIFFERENT_ADDRESS", "EVD-428370": "DIFFERENT_ADDRESS", "EVD-428802": "DIFFERENT_ADDRESS", "EVD-426602": "CANNOT_TELL", "EVD-434936": "DIFFERENT_ADDRESS", "EVD-435244": "DIFFERENT_ADDRESS", "EVD-429388": "DIFFERENT_ADDRESS", "EVD-433872": "CANNOT_TELL", "EVD-430308": "DIFFERENT_ADDRESS", "EVD-429120": "DIFFERENT_ADDRESS", "EVD-431512": "DIFFERENT_ADDRESS", "EVD-431466": "DIFFERENT_ADDRESS", "EVD-427406": "DIFFERENT_ADDRESS", "EVD-434052": "DIFFERENT_ADDRESS", "EVD-431968": "DIFFERENT_ADDRESS", "EVD-431076": "CANNOT_TELL", "EVD-428318": "DIFFERENT_ADDRESS", "EVD-431352": "DIFFERENT_ADDRESS", "EVD-427348": "DIFFERENT_ADDRESS", "EVD-434836": "DIFFERENT_ADDRESS", "EVD-427280": "DIFFERENT_ADDRESS", "EVD-434024": "DIFFERENT_ADDRESS", "EVD-431524": "DIFFERENT_ADDRESS", "EVD-429428": "DIFFERENT_ADDRESS", "EVD-428032": "DIFFERENT_ADDRESS", "EVD-426068": "DIFFERENT_ADDRESS", "EVD-426334": "DIFFERENT_ADDRESS", "data/evidence_sites_VA.csv:417": "DIFFERENT_ADDRESS", "EVD-428870": "DIFFERENT_ADDRESS", "EVD-429916": "DIFFERENT_ADDRESS"}  # noqa: E501
 APPENDIX_B = {"EVD-443796": "MATCH", "EVD-442346": "MATCH", "EVD-439366": "MATCH", "EVD-449620": "DEFECT", "EVD-440898": "MATCH", "EVD-447490": "MATCH", "EVD-436578": "MATCH", "EVD-442068": "MATCH", "EVD-448086": "MATCH", "EVD-438364": "MATCH", "EVD-444906": "MATCH", "EVD-449054": "MATCH", "EVD-450226": "MATCH", "EVD-450128": "DEFECT", "EVD-445324": "MATCH", "EVD-450336": "MATCH", "EVD-447830": "MATCH", "EVD-446818": "MATCH", "EVD-448254": "MATCH", "EVD-449402": "MATCH", "EVD-446086": "MATCH", "EVD-454689": "MATCH", "EVD-454304": "MATCH", "EVD-454414": "MATCH", "EVD-453992": "MATCH", "EVD-454525": "MATCH", "EVD-454479": "MATCH", "EVD-457497": "MATCH", "EVD-456335": "MATCH", "EVD-457493": "DEFECT", "EVD-455899": "DEFECT", "EVD-457589": "DEFECT", "EVD-456891": "MATCH", "EVD-428884": "MATCH", "EVD-432074": "MATCH", "EVD-427874": "MATCH", "EVD-431182": "MATCH", "EVD-435496": "MATCH", "EVD-427788": "MATCH", "EVD-434612": "MATCH"}  # noqa: E501
 EXPECTED = {
-    'alt_would_pass.comma_part': 120,
+    'alt_would_pass.comma_part': 118,
     'alt_would_pass.facility_label': 154,
-    'alt_would_pass.leading_run': 1789,
-    'alt_would_pass.notes': 736,
+    'alt_would_pass.leading_run': 1787,
+    'alt_would_pass.notes': 710,
     'alt_would_pass.parent': 0,
-    'alt_would_pass.spacing': 130,
-    'alt_would_pass.token_subset': 2325,
+    'alt_would_pass.spacing': 126,
+    'alt_would_pass.token_subset': 2311,
     'appendix_A.CANNOT_TELL->FAIL': 5,
     'appendix_A.DIFFERENT_ADDRESS->FAIL': 54,
     'appendix_A.SAME_PLACE->PASS': 1,
     'appendix_B.DEFECT->FAIL': 5,
     'appendix_B.MATCH->FAIL': 9,
     'appendix_B.MATCH->PASS': 26,
-    'batches.FAIL': 12901,
-    'batches.PASS': 20705,
+    'batches.FAIL': 12897,
+    'batches.HELD': 531,
+    'batches.PASS': 20178,
     'batches.READ_REQUIRED': 344,
     'batches.UNINSPECTABLE': 144,
-    'batches.held': 488,
+    'batches.held': 1019,
     'batches.held_with_archive_link': 344,
     'batches.rows': 34094,
     'batches.spaghetti-batch5-2026-11-22.FAIL': 3366,
-    'batches.spaghetti-batch5-2026-11-22.PASS': 6800,
+    'batches.spaghetti-batch5-2026-11-22.HELD': 176,
+    'batches.spaghetti-batch5-2026-11-22.PASS': 6624,
     'batches.spaghetti-batch5-2026-11-22.READ_REQUIRED': 176,
     'batches.spaghetti-batch5-2026-11-22.UNINSPECTABLE': 10,
-    'batches.spaghetti-batch6-2026-11-22.FAIL': 9525,
-    'batches.spaghetti-batch6-2026-11-22.PASS': 13905,
+    'batches.spaghetti-batch6-2026-11-22.FAIL': 9521,
+    'batches.spaghetti-batch6-2026-11-22.HELD': 355,
+    'batches.spaghetti-batch6-2026-11-22.PASS': 13554,
     'batches.spaghetti-batch6-2026-11-22.UNINSPECTABLE': 134,
     'batches.spaghetti-burndown-batch1-2026-11-21.FAIL': 6,
     'batches.spaghetti-burndown-batch1-2026-11-21.READ_REQUIRED': 116,
@@ -66,10 +69,10 @@ EXPECTED = {
     'current_main.held_with_archive_link': 6744,
     'current_main.rows': 47416,
     'fail_city_differs': 46,
-    'fail_parent_name_lead': 84,
+    'fail_parent_name_lead': 86,
     'fail_state_differs': 0,
-    'finding3.literal_lost': 1104,
-    'finding3.literal_lost_now_pass': 1086,
+    'finding3.literal_lost': 1090,
+    'finding3.literal_lost_now_pass': 1072,
     'finding3.literal_lost_still_fail': 18,
     'finding3.still_fail.name_not_held': 4,
     'finding3.still_fail.parent_name_lead': 14,
@@ -99,15 +102,15 @@ EXPECTED = {
     'locality_followup.rule_a.rows.ita.B.applied.zip5': 33,
     'locality_followup.rule_a.rows.ita.B.street_fails': 1109,
     'locality_followup.rule_a.rows.ita.B.street_passes_locality_fails': 9,
-    'locality_followup.rule_b.change.date_or_source_changed': 26,
-    'locality_followup.rule_b.change.newly_dated': 91,
-    'locality_followup.rule_b.change_by_locality.city': 78,
+    'locality_followup.rule_b.change.date_or_source_changed': 23,
+    'locality_followup.rule_b.change.newly_dated': 89,
+    'locality_followup.rule_b.change_by_locality.city': 73,
     'locality_followup.rule_b.change_by_locality.parenthetical_city': 2,
     'locality_followup.rule_b.change_by_locality.zip5': 37,
     'locality_followup.rule_b.change_pic18.date_or_source_changed': 3,
-    'locality_followup.rule_b.change_pic18.newly_dated': 8,
-    'locality_followup.rule_b.pairs_changed': 117,
-    'locality_followup.rule_b.populated_after': 2723,
+    'locality_followup.rule_b.change_pic18.newly_dated': 7,
+    'locality_followup.rule_b.pairs_changed': 112,
+    'locality_followup.rule_b.populated_after': 2721,
     'locality_followup.rule_b.rows.inspection.A.applied.city': 1516,
     'locality_followup.rule_b.rows.inspection.A.street_fails': 796,
     'locality_followup.rule_b.rows.inspection.B.applied.city': 18,
@@ -117,10 +120,10 @@ EXPECTED = {
     'locality_followup.rule_b.rows.inspection.B.street_passes_locality_fails': 12,
     'locality_followup.rule_b.rows.ita.A.applied.city': 1887,
     'locality_followup.rule_b.rows.ita.A.street_fails': 884,
-    'locality_followup.rule_b.rows.ita.B.applied.city': 73,
+    'locality_followup.rule_b.rows.ita.B.applied.city': 67,
     'locality_followup.rule_b.rows.ita.B.applied.parenthetical_city': 2,
     'locality_followup.rule_b.rows.ita.B.applied.zip5': 24,
-    'locality_followup.rule_b.rows.ita.B.locality_passes_name_fails': 509,
+    'locality_followup.rule_b.rows.ita.B.locality_passes_name_fails': 515,
     'locality_followup.rule_b.rows.ita.B.street_fails': 1109,
     'locality_followup.rule_b.rows.ita.B.street_passes_locality_fails': 9,
     'locality_followup.sites': 7196,
@@ -133,8 +136,9 @@ EXPECTED = {
     'locality_followup.tier_a_locality.rows.ita.A.street_fails': 884,
     'locality_followup.tier_a_locality.rows.ita.B.excluded': 1726,
     'locality_followup.today.pairs_changed': 0,
-    'main_all.FAIL': 13108,
-    'main_all.PASS': 20705,
+    'main_all.FAIL': 13104,
+    'main_all.HELD': 531,
+    'main_all.PASS': 20178,
     'main_all.READ_REQUIRED': 3120,
     'main_all.UNINSPECTABLE': 44577,
     'main_all.rows': 81510,
@@ -142,13 +146,18 @@ EXPECTED = {
     'main_without_batches.READ_REQUIRED': 2776,
     'main_without_batches.UNINSPECTABLE': 44433,
     'main_without_batches.rows': 47416,
+    'mutant.address_paren_dropped.caught': True,
     'mutant.bare_site_labels.caught': True,
+    'mutant.building_first_digit_only.caught': True,
     'mutant.comma_split_names.caught': True,
     'mutant.corporate_form_any_word.caught': True,
+    'mutant.designator_conflict_ignored.caught': True,
     'mutant.designator_part_dropped.caught': True,
     'mutant.edit_some_columns.caught': True,
     'mutant.empty_zips_match.caught': True,
     'mutant.hq_from_any_source.caught': True,
+    'mutant.locality_call_removed.caught': True,
+    'mutant.locality_unread_passes.caught': True,
     'mutant.no_building_test.caught': True,
     'mutant.no_city_test.caught': True,
     'mutant.no_label_words.caught': True,
@@ -156,12 +165,18 @@ EXPECTED = {
     'mutant.no_state_test.caught': True,
     'mutant.no_unit_test.caught': True,
     'mutant.number_only_streets.caught': True,
+    'mutant.one_sided_designators_pass.caught': True,
+    'mutant.paren_city_label.caught': True,
     'mutant.parent_binds.caught': True,
     'mutant.parent_form_binds.caught': True,
+    'mutant.parent_key_collision_passes.caught': True,
+    'mutant.parenthetical_names_dropped.caught': True,
     'mutant.provenance_borrowed_folder.caught': True,
+    'mutant.space_zip_unread.caught': True,
     'mutant.state_as_floor.caught': True,
     'mutant.state_needs_zip.caught': True,
     'mutant.token_subset_names.caught': True,
+    'mutant.two_records_ignored.caught': True,
     'mutant.web_any_domain.caught': True,
     'mutant.web_civic_only.caught': True,
     'mutant.web_name_unchecked.caught': True,
@@ -169,25 +184,25 @@ EXPECTED = {
     'mutant.web_pass.caught': True,
     'mutant.web_platform_as_domain.caught': True,
     'mutant.zip_ignored.caught': True,
-    'notes_rows': 842,
-    'parent_via_site_name.now.FAIL parent_name_lead': 10,
-    'parent_via_site_name.rows': 10,
-    'pass_basis.corporate_form': 172,
-    'pass_basis.org': 18247,
-    'pass_basis.site_name_lead': 1288,
-    'pass_basis.site_name_other': 998,
+    'notes_rows': 808,
+    'parent_via_site_name.now.FAIL parent_name_lead': 4,
+    'parent_via_site_name.rows': 4,
+    'pass_basis.corporate_form': 166,
+    'pass_basis.org': 17748,
+    'pass_basis.site_name_lead': 1278,
+    'pass_basis.site_name_other': 986,
     'pass_site_name_is_parent': 0,
     'people.no_quote/institution_has_no_website': 35,
     'people.no_quote/off_institution_domain': 23,
     'people.no_quote/on_institution_domain': 676,
     'shifted_if_facility.FAIL name_not_held': 8,
     'shifted_if_facility.PASS': 90,
-    'street_limit.different_number': 924,
+    'street_limit.different_number': 922,
     'street_limit.number_in_recorded_range': 14,
     'street_limit.number_word': 92,
     'street_limit.same_number_other': 1270,
     'street_limit.same_number_token_subset': 1528,
-    'street_limit.same_street_other_number': 236,
+    'street_limit.same_street_other_number': 238,
     'test_segments_leaked': 0,
     'web.PASS': 0,
     'web.not_own_site.name_in_host': 60,
@@ -209,7 +224,7 @@ EXPECTED = {
     'web_other.READ_REQUIRED no_record_website': 3,
     'web_other.READ_REQUIRED web_class_untested': 31,
     'web_other.rows': 315,
-}  # regenerate by emptying this dict and re-running
+}
 
 
 TESTS = HERE.parents[1] / "scripts" / "test_check_evidence_binding.py"
@@ -218,8 +233,11 @@ BOILERPLATE = re.compile(r"^(?:synthetic claim|existence|naics|sic|status|progra
 MUTANTS = {  # name: (file, original fragment, loosened replacement); each must make the planted-defect tests fail
     "token_subset_names": ("g", "    elif not qkeys & held:\n", "    elif not any(set(q.split()) <= set(h.split()) or "
                            "set(h.split()) <= set(q.split()) for q in qkeys for h in held):\n"),
-    "comma_split_names": ("g", 'return {k for n in names for k in (name_key(n), name_key(PAREN_RE.sub(" ", n))) if k}',
-                          'return {k for n in names for x in n.split(",") for k in (name_key(x),) if k}'),
+    "comma_split_names": ("g", "    return {k for n in names for k in (name_key(n),) if k}",
+                          '    return {k for n in names for x in n.split(",") for k in (name_key(x),) if k}'),
+    "parenthetical_names_dropped": ("g", "    return {k for n in names for k in (name_key(n),) if k}",
+                                    '    return {k for n in names for k in (name_key(n), name_key(PAREN_RE.sub(" ", n))) if k}'),
+    "address_paren_dropped": ("g", '            holds.append("address_with_parenthetical")', "            pass"),
     "corporate_form_any_word": ("m", "        if form is None:\n            return False", "        if form is None:\n            form = rest[:1]"),
     "number_only_streets": ("g", '    if rk != qk:\n        return "street_differs"',
                             '    if rk.split()[:1] != qk.split()[:1]:\n        return "street_differs"'),
@@ -232,16 +250,26 @@ MUTANTS = {  # name: (file, original fragment, loosened replacement); each must 
     "no_state_test": ("g", '        if q_st and rec.get("state")', '        if False and rec.get("state")'),
     "no_city_test": ("g", '        if city_differs(rec.get("city"), rec.get("zip"), q_city, q_zip):', "        if False:"),
     "state_needs_zip": ("g", "    st = state_code(last)\n", "    st = state_code(last) if z else \"\"\n"),
-    "no_paren_city": ("m", '[re.sub(r"\\([^()]*\\)", " ", city or "")] + re.findall(r"\\(([^()]*)\\)", city or "")',
-                      '[city or ""]'),
+    "no_paren_city": ("m", '    for name in [re.sub(r"\\([^()]*\\)", " ", city or "")] + re.findall(r"\\(([^()]*)\\)", city or "")',
+                      '    for name in [city or ""]'),
+    "paren_city_label": ("m", '    city_parts = [re.sub(r"\\([^()]*\\)", " ", city or "")] + re.findall(r"\\(([^()]*)\\)", city or "")',
+                         '    city_parts = [city or ""]'),
     "zip_ignored": ("m", "qc & rc) and not same_zip5(rec_zip, q_zip)", "qc & rc)"),
     "empty_zips_match": ("m", "    return bool(zip5(a)) and zip5(a) == zip5(b)", "    return zip5(a) == zip5(b)"),
     "bare_site_labels": ("g", '        return ({k for k in self.site_keys(rid) if not generic_label(k, s.get("city") or "", s.get("county") or "")}',
                          "        return ({k for k in self.site_keys(rid)}"),
     "no_label_words": ("m", "    return bool(key.split()) and all(t in _LABEL_WORDS", "    return bool(key.split()) and all(False"),
-    "parent_binds": ("g", "    if not qkeys & own and any(q in parents or", "    if False and any(q in parents or"),
-    "parent_form_binds": ("g", "q in parents or any(corporate_form_extension(k, q) for k in parents) for q in qkeys):",
-                          "q in parents for q in qkeys):"),
+    "parent_binds": ("g", "    if any(is_parent(q) for q in qkeys | stripped)", "    if False and any(is_parent(q) for q in qkeys | stripped)"),
+    "parent_form_binds": ("g", "        return q in parents or any(corporate_form_extension(k, q) for k in parents)",
+                          "        return q in parents"),
+    "parent_key_collision_passes": ("g", "    elif on_parent and not qtexts & own_texts - parent_texts:", "    elif False:"),
+    "locality_call_removed": ("g", '        elif not same_locality(rec.get("city")', '        elif False and not same_locality(rec.get("city")'),
+    "locality_unread_passes": ("g", "        if not complete:", "        if False:"),
+    "space_zip_unread": ("g", r'(?:^|\s+)(\d{5}[-\s]\d{4}|', r'(?:^|\s+)('),
+    "one_sided_designators_pass": ("g", '        elif units_seen == "unequal":', "        elif False:"),
+    "designator_conflict_ignored": ("g", '        if units_seen == "conflict" and', "        if False and"),
+    "two_records_ignored": ("g", '    if table == "sites" and not _alone:', "    if False:"),
+    "building_first_digit_only": ("m", r"([a-z]?\d+(?:-?[a-z0-9]+)?|[a-z])\b", r"([a-z]?\d+[a-z]?|[a-z])\b"),
     "hq_from_any_source": ("g", '        if basis == "facility":', '        if False:'),
     "web_pass": ("g", '    return "READ_REQUIRED", why or "mechanics_clear", info',
                  '    return ("READ_REQUIRED", why, info) if why else ("PASS", "", info)'),
@@ -273,12 +301,12 @@ def leaked(segments, blob):
 
 
 def run_mutants():
-    """Copy the gate and its tests, loosen one rule per copy, and return {mutant: failing test count}."""
+    """Copy the gate, matching.py and their tests, loosen one rule per copy, and return {mutant: failing test count}."""
     caught = {}
     target = {"g": "check_evidence_binding.py", "m": "matching.py"}
     for name, (where, old, new) in MUTANTS.items():
         with tempfile.TemporaryDirectory() as d:
-            for f in ("check_evidence_binding.py", "test_check_evidence_binding.py", "matching.py"):
+            for f in ("check_evidence_binding.py", "test_check_evidence_binding.py", "matching.py", "test_matching.py"):
                 text = (HERE.parents[1] / "scripts" / f).read_text(encoding="utf-8")
                 text = text.replace("ROOT = Path(__file__).resolve().parents[1]", f"ROOT = Path({str(HERE.parents[1])!r})")
                 text = text.replace('sys.path.insert(0, str(ROOT / "scripts"))', 'sys.path.insert(1, str(ROOT / "scripts"))')
@@ -289,7 +317,7 @@ def run_mutants():
                     text = text.replace(old, new)
                 (Path(d) / f).write_text(text, encoding="utf-8")
             out = subprocess.run([sys.executable, "-m", "unittest", "test_check_evidence_binding.Verdicts",
-                                  "test_check_evidence_binding.GateMechanics"],
+                                  "test_check_evidence_binding.GateMechanics", "test_matching"],
                                  cwd=d, capture_output=True, text=True).stderr
             assert re.search(r"^Ran \d+ tests", out, re.M), f"mutant {name}: the tests did not run\n{out[-2000:]}"
             caught[name] = len(re.findall(r"^(?:FAIL|ERROR): ", out, re.M))
@@ -384,7 +412,7 @@ def main():
                                                   for k in {r["created_by"] for r in q_res}}).items()):
         show(f"batches, created_by {label}", c)
         got.update({f"batches.{label}.{k}": v for k, v in c.items()})
-    show("batches: FAIL and UNINSPECTABLE by reason", table([r for r in q_res if r["verdict"] != "PASS"], "reason"))
+    show("batches: every verdict but PASS, by reason", table([r for r in q_res if r["verdict"] != "PASS"], "reason"))
     fam = defaultdict(Counter)
     for r in q_res:
         fam[r["source_family"]][r["verdict"]] += 1
@@ -450,14 +478,14 @@ def main():
     show("batches: shifted-column rows if the facility label were the operator", shifted)
     got.update({f"shifted_if_facility.{k}": v for k, v in shifted.items()})
 
-    # held rows: READ_REQUIRED or UNINSPECTABLE fail this gate (no admission path here); how many the follow-up's
+    # held rows: HELD, READ_REQUIRED or UNINSPECTABLE fail this gate (no admission path here); how many the follow-up's
     # per-row proof could admit from a data/archive_links.csv capture
     for name, res, ref in (("batches", q_res, BATCH_HEAD), ("current_main", cur_res, CURRENT)):
         archive = {r["evidence_id"] for r in b.rows(ref, "archive_links.csv")}
         un = [r["evidence_id"] for r in res if r["verdict"] not in ("PASS", "FAIL")]
         got[f"{name}.held"] = len(un)
         got[f"{name}.held_with_archive_link"] = sum(e in archive for e in un)
-        print(f"\n{name}: {len(un)} rows held (READ_REQUIRED or UNINSPECTABLE); "
+        print(f"\n{name}: {len(un)} rows held (HELD, READ_REQUIRED or UNINSPECTABLE); "
               f"{got[f'{name}.held_with_archive_link']} of them have a data/archive_links.csv capture")
 
     # web quotes on main (controller ruling 2026-11-22): the burn-down batch 1-4 family and everything else

@@ -5,14 +5,10 @@ EVD-440061,data/evidence_sites_AL.csv:874,sites,SITE-005053,name_not_held,notes;
 EVD-440062,data/evidence_sites_AL.csv:875,sites,SITE-005053,name_not_held,notes;leading_run;token_subset
 EVD-441267,data/evidence_sites_AL.csv:904,sites,SITE-005840,name_not_held,notes;leading_run;token_subset
 EVD-441268,data/evidence_sites_AL.csv:905,sites,SITE-005840,name_not_held,notes;leading_run;token_subset
-EVD-444557,data/evidence_sites_AL.csv:994,sites,SITE-003428,name_not_held+record_no_street,notes;token_subset
-EVD-444558,data/evidence_sites_AL.csv:995,sites,SITE-003428,name_not_held+record_no_street,notes;token_subset
 EVD-446431,data/evidence_sites_AL.csv:1038,sites,SITE-005590,name_not_held+street_differs,notes;leading_run;token_subset
 EVD-446432,data/evidence_sites_AL.csv:1039,sites,SITE-005590,name_not_held+street_differs,notes;leading_run;token_subset
 EVD-446711,data/evidence_sites_AL.csv:1046,sites,SITE-005840,name_not_held,notes;leading_run;token_subset
 EVD-446712,data/evidence_sites_AL.csv:1047,sites,SITE-005840,name_not_held,notes;leading_run;token_subset
-EVD-448417,data/evidence_sites_AL.csv:1110,sites,SITE-003428,name_not_held+record_no_street,notes;token_subset
-EVD-448418,data/evidence_sites_AL.csv:1111,sites,SITE-003428,name_not_held+record_no_street,notes;token_subset
 EVD-449239,data/evidence_sites_AL.csv:1140,sites,SITE-005053,name_not_held,notes;leading_run;token_subset
 EVD-449240,data/evidence_sites_AL.csv:1141,sites,SITE-005053,name_not_held,notes;leading_run;token_subset
 EVD-449631,data/evidence_sites_AL.csv:1152,sites,SITE-005497,name_not_held,notes;leading_run;token_subset
@@ -71,8 +67,6 @@ EVD-457526,data/evidence_sites_CA.csv:3107,sites,SITE-004083,name_not_held,notes
 EVD-457527,data/evidence_sites_CA.csv:3108,sites,SITE-004083,name_not_held,notes;leading_run;token_subset
 EVD-440757,data/evidence_sites_CT.csv:598,sites,SITE-005486,name_not_held,notes;leading_run;token_subset
 EVD-440758,data/evidence_sites_CT.csv:599,sites,SITE-005486,name_not_held,notes;leading_run;token_subset
-EVD-443131,data/evidence_sites_CT.csv:658,sites,SITE-020001,name_not_held,notes;leading_run;token_subset
-EVD-443132,data/evidence_sites_CT.csv:659,sites,SITE-020001,name_not_held,notes;leading_run;token_subset
 EVD-446613,data/evidence_sites_CT.csv:688,sites,SITE-005739,name_not_held,notes
 EVD-446614,data/evidence_sites_CT.csv:689,sites,SITE-005739,name_not_held,notes
 EVD-446743,data/evidence_sites_CT.csv:694,sites,SITE-005863,name_not_held,notes
@@ -81,8 +75,6 @@ EVD-447741,data/evidence_sites_CT.csv:730,sites,SITE-020001,name_not_held,notes
 EVD-447742,data/evidence_sites_CT.csv:731,sites,SITE-020001,name_not_held,notes
 EVD-449921,data/evidence_sites_CT.csv:760,sites,SITE-005863,name_not_held,notes
 EVD-449922,data/evidence_sites_CT.csv:761,sites,SITE-005863,name_not_held,notes
-EVD-450351,data/evidence_sites_CT.csv:780,sites,SITE-020001,name_not_held,notes
-EVD-450352,data/evidence_sites_CT.csv:781,sites,SITE-020001,name_not_held,notes
 EVD-451327,data/evidence_sites_CT.csv:796,sites,SITE-005739,name_not_held,notes
 EVD-451328,data/evidence_sites_CT.csv:797,sites,SITE-005739,name_not_held,notes
 EVD-441481,data/evidence_sites_DE.csv:143,sites,SITE-005979,name_not_held,notes
@@ -121,10 +113,6 @@ EVD-452401,data/evidence_sites_FL.csv:989,sites,SITE-005052,name_not_held,notes;
 EVD-452402,data/evidence_sites_FL.csv:990,sites,SITE-005052,name_not_held,notes;leading_run;token_subset
 EVD-452425,data/evidence_sites_FL.csv:991,sites,SITE-005052,name_not_held,notes;leading_run;token_subset
 EVD-452426,data/evidence_sites_FL.csv:992,sites,SITE-005052,name_not_held,notes;leading_run;token_subset
-EVD-438715,data/evidence_sites_GA.csv:1122,sites,SITE-003707,name_not_held,notes;token_subset
-EVD-438716,data/evidence_sites_GA.csv:1123,sites,SITE-003707,name_not_held,notes;token_subset
-EVD-439009,data/evidence_sites_GA.csv:1128,sites,SITE-004263,name_not_held+record_no_street,notes;token_subset
-EVD-439010,data/evidence_sites_GA.csv:1129,sites,SITE-004263,name_not_held+record_no_street,notes;token_subset
 EVD-439601,data/evidence_sites_GA.csv:1150,sites,SITE-004762,name_not_held,notes
 EVD-439602,data/evidence_sites_GA.csv:1151,sites,SITE-004762,name_not_held,notes
 EVD-439649,data/evidence_sites_GA.csv:1156,sites,SITE-004793,name_not_held+street_differs,notes;leading_run;token_subset
@@ -133,8 +121,6 @@ EVD-439781,data/evidence_sites_GA.csv:1170,sites,SITE-004877,name_not_held,notes
 EVD-439782,data/evidence_sites_GA.csv:1171,sites,SITE-004877,name_not_held,notes;leading_run;token_subset
 EVD-440675,data/evidence_sites_GA.csv:1192,sites,SITE-005435,name_not_held,notes
 EVD-440676,data/evidence_sites_GA.csv:1193,sites,SITE-005435,name_not_held,notes
-EVD-444875,data/evidence_sites_GA.csv:1320,sites,SITE-004263,name_not_held+record_no_street,notes;token_subset
-EVD-444876,data/evidence_sites_GA.csv:1321,sites,SITE-004263,name_not_held+record_no_street,notes;token_subset
 EVD-445337,data/evidence_sites_GA.csv:1340,sites,SITE-004782,name_not_held,notes
 EVD-445338,data/evidence_sites_GA.csv:1341,sites,SITE-004782,name_not_held,notes
 EVD-446263,data/evidence_sites_GA.csv:1386,sites,SITE-005469,name_not_held,notes;token_subset
@@ -211,16 +197,6 @@ EVD-439541,data/evidence_sites_KS.csv:606,sites,SITE-004727,name_not_held,notes;
 EVD-439542,data/evidence_sites_KS.csv:607,sites,SITE-004727,name_not_held,notes;token_subset
 EVD-439943,data/evidence_sites_KS.csv:614,sites,SITE-004982,name_not_held,notes;leading_run;token_subset
 EVD-439944,data/evidence_sites_KS.csv:615,sites,SITE-004982,name_not_held,notes;leading_run;token_subset
-EVD-445265,data/evidence_sites_KS.csv:692,sites,SITE-004727,name_not_held,notes;token_subset
-EVD-445266,data/evidence_sites_KS.csv:693,sites,SITE-004727,name_not_held,notes;token_subset
-EVD-449167,data/evidence_sites_KS.csv:750,sites,SITE-004981,name_not_held,notes;leading_run;token_subset
-EVD-449168,data/evidence_sites_KS.csv:751,sites,SITE-004981,name_not_held,notes;leading_run;token_subset
-EVD-450355,data/evidence_sites_KS.csv:770,sites,SITE-020003,name_not_held,notes;token_subset
-EVD-450356,data/evidence_sites_KS.csv:771,sites,SITE-020003,name_not_held,notes;token_subset
-EVD-451025,data/evidence_sites_KS.csv:778,sites,SITE-004981,name_not_held,notes;leading_run;token_subset
-EVD-451026,data/evidence_sites_KS.csv:779,sites,SITE-004981,name_not_held,notes;leading_run;token_subset
-EVD-451939,data/evidence_sites_KS.csv:792,sites,SITE-005744,name_not_held,notes;leading_run;token_subset
-EVD-451940,data/evidence_sites_KS.csv:793,sites,SITE-005744,name_not_held,notes;leading_run;token_subset
 EVD-438023,data/evidence_sites_KY.csv:589,sites,SITE-002987,name_not_held,notes;token_subset
 EVD-438024,data/evidence_sites_KY.csv:590,sites,SITE-002987,name_not_held,notes;token_subset
 EVD-439583,data/evidence_sites_KY.csv:625,sites,SITE-004753,name_not_held,notes;leading_run;token_subset
@@ -289,8 +265,6 @@ EVD-441187,data/evidence_sites_ME.csv:93,sites,SITE-005780,name_not_held+street_
 EVD-441188,data/evidence_sites_ME.csv:94,sites,SITE-005780,name_not_held+street_differs,notes
 EVD-445059,data/evidence_sites_ME.csv:99,sites,SITE-004591,name_not_held,notes;token_subset
 EVD-445060,data/evidence_sites_ME.csv:100,sites,SITE-004591,name_not_held,notes;token_subset
-EVD-449857,data/evidence_sites_ME.csv:123,sites,SITE-005780,name_not_held,notes
-EVD-449858,data/evidence_sites_ME.csv:124,sites,SITE-005780,name_not_held,notes
 EVD-451343,data/evidence_sites_ME.csv:131,sites,SITE-005780,name_not_held+street_differs,notes
 EVD-451344,data/evidence_sites_ME.csv:132,sites,SITE-005780,name_not_held+street_differs,notes
 EVD-439581,data/evidence_sites_MI.csv:1933,sites,SITE-004752,name_not_held+street_differs,notes;leading_run;token_subset
@@ -381,8 +355,6 @@ EVD-457724,data/evidence_sites_NC.csv:2141,sites,SITE-005108,name_not_held,notes
 EVD-457725,data/evidence_sites_NC.csv:2142,sites,SITE-005108,name_not_held,notes;token_subset
 EVD-445993,data/evidence_sites_NH.csv:355,sites,SITE-005266,name_not_held,notes;leading_run;token_subset
 EVD-445994,data/evidence_sites_NH.csv:356,sites,SITE-005266,name_not_held,notes;leading_run;token_subset
-EVD-444211,data/evidence_sites_NJ.csv:791,sites,SITE-002959,name_not_held,notes;token_subset
-EVD-444212,data/evidence_sites_NJ.csv:792,sites,SITE-002959,name_not_held,notes;token_subset
 EVD-446119,data/evidence_sites_NJ.csv:821,sites,SITE-005360,name_not_held,notes;token_subset
 EVD-446120,data/evidence_sites_NJ.csv:822,sites,SITE-005360,name_not_held,notes;token_subset
 EVD-441563,data/evidence_sites_NM.csv:67,sites,SITE-006034,name_not_held,notes;token_subset
@@ -447,8 +419,6 @@ EVD-436863,data/evidence_sites_OH.csv:9302,sites,SITE-001526,name_not_held+recor
 EVD-436864,data/evidence_sites_OH.csv:9303,sites,SITE-001526,name_not_held+record_no_street,notes;token_subset
 EVD-436889,data/evidence_sites_OH.csv:9328,sites,SITE-001542,name_not_held,notes
 EVD-436890,data/evidence_sites_OH.csv:9329,sites,SITE-001542,name_not_held,notes
-EVD-437043,data/evidence_sites_OH.csv:9482,sites,SITE-001842,name_not_held,notes;token_subset
-EVD-437044,data/evidence_sites_OH.csv:9483,sites,SITE-001842,name_not_held,notes;token_subset
 EVD-437083,data/evidence_sites_OH.csv:9522,sites,SITE-001923,name_not_held+record_no_street,notes;token_subset
 EVD-437084,data/evidence_sites_OH.csv:9523,sites,SITE-001923,name_not_held+record_no_street,notes;token_subset
 EVD-437131,data/evidence_sites_OH.csv:9570,sites,SITE-002091,name_not_held,notes;leading_run;token_subset
@@ -489,8 +459,6 @@ EVD-447855,data/evidence_sites_OH.csv:10386,sites,SITE-001519,name_not_held,note
 EVD-447856,data/evidence_sites_OH.csv:10387,sites,SITE-001519,name_not_held,notes;leading_run;token_subset
 EVD-450367,data/evidence_sites_OH.csv:10428,sites,SITE-000752,name_not_held+record_no_street,notes
 EVD-450368,data/evidence_sites_OH.csv:10429,sites,SITE-000752,name_not_held+record_no_street,notes
-EVD-450385,data/evidence_sites_OH.csv:10446,sites,SITE-001519,name_not_held,notes;leading_run;token_subset
-EVD-450386,data/evidence_sites_OH.csv:10447,sites,SITE-001519,name_not_held,notes;leading_run;token_subset
 EVD-439597,data/evidence_sites_OK.csv:303,sites,SITE-004760,name_not_held,notes
 EVD-439598,data/evidence_sites_OK.csv:304,sites,SITE-004760,name_not_held,notes
 EVD-446669,data/evidence_sites_OK.csv:349,sites,SITE-005787,name_not_held+street_differs,notes;leading_run;token_subset
@@ -693,8 +661,6 @@ EVD-445477,data/evidence_sites_TN.csv:995,sites,SITE-004882,name_not_held,notes
 EVD-445478,data/evidence_sites_TN.csv:996,sites,SITE-004882,name_not_held,notes
 EVD-445687,data/evidence_sites_TN.csv:1003,sites,SITE-005031,name_not_held,notes;token_subset
 EVD-445688,data/evidence_sites_TN.csv:1004,sites,SITE-005031,name_not_held,notes;token_subset
-EVD-445741,data/evidence_sites_TN.csv:1005,sites,SITE-005069,name_not_held,notes;token_subset
-EVD-445742,data/evidence_sites_TN.csv:1006,sites,SITE-005069,name_not_held,notes;token_subset
 EVD-445833,data/evidence_sites_TN.csv:1013,sites,SITE-005130,name_not_held,notes;leading_run;token_subset
 EVD-445834,data/evidence_sites_TN.csv:1014,sites,SITE-005130,name_not_held,notes;leading_run;token_subset
 EVD-446121,data/evidence_sites_TN.csv:1025,sites,SITE-005361,name_not_held,notes;token_subset

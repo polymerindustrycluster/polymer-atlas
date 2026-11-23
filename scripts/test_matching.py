@@ -155,6 +155,32 @@ class Locality(unittest.TestCase):  # controller ruling 2026-11-22: same state, 
         self.assertFalse(dl.city_differs("Summit County", "", "Akron", ""))  # a county is not a city
 
 
+class StrictDesignators(unittest.TestCase):  # owner ruling 2026-11-22, "strict floor" (Codex r3 finding 3); gate only
+    def test_equal(self):
+        for a, b in (("1 Elm St", "1 Elm St"), ("1 Elm St, Suite 100", "1 Elm St Ste. 100"), ("1 Elm St Bldg. 1-A", "1 Elm St, Bldg 1A"),
+                     ("1 Elm St, 2nd Floor", "1 Elm St Fl 2"), ("1 Elm St Building # 1", "1 Elm St, Bldg 1")):
+            self.assertEqual(dl.designators_compare(a, b), "equal", (a, b))
+
+    def test_conflict(self):
+        for a, b in (("1 Elm St Bldg. 1-A", "1 Elm St Bldg. 1-B"), ("1 Elm St Building North", "1 Elm St Building South"),
+                     ("1 Elm St Unit A", "1 Elm St Unit. B"), ("1 Elm St Room 1", "1 Elm St Rm. 2")):
+            self.assertEqual(dl.designators_compare(a, b), "conflict", (a, b))
+
+    def test_unequal_is_neither(self):
+        for a, b in (("1 Elm St, Suite 100", "1 Elm St"), ("1 Elm St #12", "1 Elm St, Unit 12"), ("1 Elm St Suite", "1 Elm St Suite")):
+            self.assertEqual(dl.designators_compare(a, b), "unequal", (a, b))  # one-sided, other kind, or unreadable
+
+    def test_same_street_reads_whole_building(self):
+        self.assertEqual(dl.buildings("15 Larch Way, Bldg. 1-A"), {"1a"})
+        self.assertFalse(dl.same_street("15 Larch Way, Bldg. 1-A", "15 Larch Way, Bldg. 1-B"))
+
+    def test_zip_forms_and_parenthetical_labels(self):
+        for z in ("44706 1594", "44706-", "44706-1594", "447061594"):
+            self.assertEqual(dl.zip5(z), "44706", z)
+        self.assertTrue(dl.generic_label("solon", city="Cleveland (Solon)"))
+        self.assertTrue(dl.generic_label("cleveland", city="Cleveland (Solon)"))
+
+
 class CorporateForm(unittest.TestCase):
     """Owner ruling 2026-11-22: a held name plus corporate-form words only."""
 

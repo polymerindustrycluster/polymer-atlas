@@ -11,7 +11,9 @@ locality_followup.csv beside itself (site ids, dates, sources and the reason onl
 The extract does not document what tier B means beyond "not A", and 919 tier-B rows print the site's exact city, so
 tier B may also be a weaker name match. Each changed site therefore says whether the row that dates it passes the
 evidence gate's own name test (check_evidence_binding: a held name, not a parent-only name, or a held name plus
-corporate-form words); "rule_b" counts only those, "rule_a" counts every tier-B row.
+corporate-form words); "rule_b" counts only those, "rule_a" counts every tier-B row. The
+name test is the strict one (no parenthetical dropped; a key shared with a parent passes only on the own name's text);
+the gate's designator and two-records legs are not re-applied here, so rule_b is an upper bound on what the gate would pass.
 
 Usage: python3 tasks/evidence-binding-gate-2026-11-22/locality_followup.py
 """
@@ -54,9 +56,12 @@ def why_local(s, r):
 
 def name_binds(idx, sid, name):
     """The gate's name test for a structured site row whose street passes."""
-    q = gate.name_keys([name])
-    held, own, parents = idx.held_keys("sites", sid), idx.org_keys(idx.sites[sid].get("org_id")), idx.parent_keys("sites", sid)
-    if not q & own and any(k in parents or any(corporate_form_extension(p, k) for p in parents) for k in q):
+    q, oid = gate.name_keys([name]), idx.sites[sid].get("org_id")
+    held, own, parents = idx.held_keys("sites", sid), idx.org_keys(oid), idx.parent_keys("sites", sid)
+    on_parent = [k for k in q if k in parents or any(corporate_form_extension(p, k) for p in parents)]
+    # a parent-only name, or a key shared with a parent whose text is not the site's own alone (gate: HELD)
+    if on_parent and (not q & own or not {gate.squash(name)} & idx.own_texts(oid) - {gate.squash(n) for n in
+                                                                                     idx.parent_names("sites", sid)}):
         return False
     return bool(q & held) or any(corporate_form_extension(h, k) for h in held for k in q)
 

@@ -43,7 +43,7 @@ SITE-001490,OH,Cuyahoga,yes,date_or_source_changed,2025-04-03,osha_inspection,20
 SITE-001543,OH,Portage,yes,date_or_source_changed,2024-11-12,osha_inspection,2025-12-31,osha_ita,B,city,no
 SITE-001776,OH,Cuyahoga,yes,newly_dated,,,2025-12-31,osha_ita,B,city,no
 SITE-001792,OH,Summit,yes,newly_dated,,,2018-12-31,osha_ita,B,city,no
-SITE-002091,OH,Lorain,yes,newly_dated,,,2025-12-31,osha_ita,B,city,yes
+SITE-002091,OH,Lorain,yes,newly_dated,,,2025-12-31,osha_ita,B,city,no
 SITE-002118,OH,Pickaway,no,date_or_source_changed,2015-10-30,osha_inspection,2021-12-31,osha_ita,B,city,no
 SITE-002134,OH,Cuyahoga,yes,date_or_source_changed,2016-12-31,osha_ita,2017-01-27,osha_inspection,B,zip5,yes
 SITE-002140,PA,Lehigh,no,newly_dated,,,2021-12-31,osha_ita,B,city,yes
@@ -70,7 +70,7 @@ SITE-002527,PA,Westmoreland,no,newly_dated,,,2025-12-31,osha_ita,B,city,yes
 SITE-002529,PA,Monroe,no,newly_dated,,,2024-12-31,osha_ita,B,city,yes
 SITE-002541,PA,Northampton,no,date_or_source_changed,2025-05-23,osha_inspection,2025-12-31,osha_ita,B,city,no
 SITE-002566,PA,Schuylkill,no,newly_dated,,,2025-12-31,osha_ita,B,city,no
-SITE-002607,PA,Butler,no,date_or_source_changed,2019-01-29,osha_inspection,2025-12-31,osha_ita,B,city,yes
+SITE-002607,PA,Butler,no,date_or_source_changed,2019-01-29,osha_inspection,2025-12-31,osha_ita,B,city,no
 SITE-002624,PA,Berks,no,newly_dated,,,2021-12-31,osha_ita,B,city,no
 SITE-002634,PA,Lackawanna,no,newly_dated,,,2022-12-31,osha_ita,B,city,yes
 SITE-002658,PA,Centre,no,date_or_source_changed,2017-11-14,osha_inspection,2025-12-31,osha_ita,B,city,no
@@ -411,7 +411,7 @@ SITE-006067,MS,Smith,no,newly_dated,,,2025-12-31,osha_ita,B,city,no
 SITE-006069,MS,Tishomingo,no,newly_dated,,,2025-12-31,osha_ita,B,city,no
 SITE-006075,WV,Wood,no,date_or_source_changed,2018-03-22,osha_inspection,2025-12-31,osha_ita,B,city,no
 SITE-006079,WV,Berkeley,no,date_or_source_changed,2020-01-28,osha_inspection,2025-12-31,osha_ita,B,city,yes
-SITE-006104,AZ,Maricopa County,no,date_or_source_changed,2017-05-25,osha_inspection,2022-12-31,osha_ita,B,city,yes
+SITE-006104,AZ,Maricopa County,no,date_or_source_changed,2017-05-25,osha_inspection,2022-12-31,osha_ita,B,city,no
 SITE-006112,AZ,Maricopa County,no,newly_dated,,,2025-12-31,osha_ita,B,city,no
 SITE-006133,MD,Carroll,no,date_or_source_changed,2020-09-11,osha_inspection,2024-12-31,osha_ita,B,city,no
 SITE-006139,MD,Caroline,no,newly_dated,,,2023-12-31,osha_ita,B,city,no
@@ -432,7 +432,7 @@ SITE-006212,WA,Whatcom,no,newly_dated,,,2022-12-31,osha_ita,B,city,no
 SITE-006226,OR,Multnomah,no,newly_dated,,,2025-12-31,osha_ita,B,city,no
 SITE-006227,OR,Clackamas,no,newly_dated,,,2022-12-31,osha_ita,B,city,no
 SITE-006244,OR,Lane,no,newly_dated,,,2025-12-31,osha_ita,B,city,no
-SITE-006251,CT,Fairfield,no,date_or_source_changed,2025-07-25,osha_inspection,2025-12-31,osha_ita,B,city,yes
+SITE-006251,CT,Fairfield,no,date_or_source_changed,2025-07-25,osha_inspection,2025-12-31,osha_ita,B,city,no
 SITE-006267,CT,Windham,no,newly_dated,,,2025-12-31,osha_ita,B,parenthetical_city,yes
 SITE-006273,CT,New Haven,no,date_or_source_changed,2023-03-29,osha_inspection,2025-12-31,osha_ita,B,city,no
 SITE-006276,CT,Windham,no,date_or_source_changed,2022-09-30,osha_inspection,2025-12-31,osha_ita,B,city,no
@@ -443,7 +443,7 @@ SITE-006330,IA,Buchanan,no,date_or_source_changed,2024-02-14,osha_inspection,202
 SITE-006336,IA,Scott,no,date_or_source_changed,2025-04-23,osha_inspection,2025-12-31,osha_ita,B,city,no
 SITE-006340,IA,Floyd,no,newly_dated,,,2024-12-31,osha_ita,B,city,no
 SITE-006346,IA,Louisa,no,newly_dated,,,2025-12-31,osha_ita,B,city,no
-SITE-006347,IA,Jones,no,newly_dated,,,2025-12-31,osha_ita,B,city,yes
+SITE-006347,IA,Jones,no,newly_dated,,,2025-12-31,osha_ita,B,city,no
 SITE-006348,AL,Morgan,no,newly_dated,,,2025-12-31,osha_ita,B,city,no
 SITE-006351,AL,Jefferson,no,date_or_source_changed,2022-06-03,osha_inspection,2025-12-31,osha_ita,B,city,no
 SITE-006352,AL,Jefferson,no,newly_dated,,,2025-12-31,osha_ita,B,zip5,yes

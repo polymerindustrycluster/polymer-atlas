@@ -1,25 +1,25 @@
-commit,subject,rows,PASS,FAIL,READ_REQUIRED,UNINSPECTABLE,held,of_which_archive_link,labels,provenance_problems,binding_gate,provenance
-178349185,Merge pull request #458 from polymerindustrycluster/agent/sp,23564,13905,9525,0,134,134,0,1,1,fail,fail
-6a76e923f,Merge pull request #457 from polymerindustrycluster/agent/sp,10530,6800,3376,344,10,354,344,3,3,fail,fail
-4924083cd,R2 re-capture recovery mint: 39 evidence rows + 39 archive l,39,0,8,31,0,31,31,2,2,fail,fail
-4ea038848,Phase C unit 3: 22 accuracy corrections (EVD-425415..425436 ,22,0,0,0,22,22,22,1,1,fail,fail
-b99fd9e1e,Burn-down batch 4: R1 re-witness mint — 240 evidence rows + ,240,0,24,216,0,216,216,1,1,fail,fail
-a514c67d8,Burn-down batch 3 build F: wave-3 requeue mint — 124 evidenc,124,0,7,117,0,117,117,1,1,fail,fail
-9b2276f2e,Burn-down batch 3 build E2: quote-defect mint — 233 evidence,233,0,13,220,0,220,220,1,1,fail,fail
-c67ad8314,Burn-down batch 3 build E1: drift-recovered2 mint — 27 evide,27,0,1,26,0,26,26,1,1,fail,fail
-f06631bc6,Batch-2 drift-recovered mint: 178 evidence rows for 104 reco,178,0,22,156,0,156,156,1,1,fail,fail
-c29df58e8,No-URL cleared set: 16 two-family-reviewed evidence rows for,16,0,2,14,0,14,14,1,1,fail,fail
-120ec9204,Drift re-witness mint: 53 evidence rows for 28 records recov,53,0,4,49,0,49,49,1,1,fail,fail
-c2b1d1803,"Evidence burn-down batch 2: wave-3 backfill (1,276 rows, 699",1276,0,106,1170,0,1170,1170,1,1,fail,fail
-5219c5d79,"Evidence burn-down batch 1: wave-2 backfill (482 rows, 255 r",482,0,16,466,0,466,466,1,1,fail,fail
-117e38707,Phase C unit 2: 22 PIC-18 street fills from the judgment-que,22,0,0,0,22,22,21,1,1,fail,fail
-dd38735d8,Phase C unit 1: 32 department-row programs created from the ,32,0,0,0,32,32,32,1,1,fail,fail
-01ef298ec,Merge pull request #436 from polymerindustrycluster/agent/cl,152,0,0,0,152,152,0,1,1,fail,fail
-3f448ea18,Merge pull request #435 from polymerindustrycluster/agent/cl,204,0,0,0,204,204,0,1,1,fail,fail
-248e94099,Merge pull request #434 from polymerindustrycluster/agent/cl,251,0,0,0,251,251,0,1,1,fail,fail
-18cb709c5,Merge pull request #432 from polymerindustrycluster/agent/cl,80,0,0,0,80,80,0,1,1,fail,fail
-5fa5ba937,Merge pull request #427 from polymerindustrycluster/agent/cl,23,0,0,23,0,23,23,1,1,fail,fail
-edd9591c9,Merge pull request #424 from polymerindustrycluster/agent/cl,2,0,0,0,2,2,0,1,1,fail,fail
-6c29fa6c4,IPEDS CIP fills: 26 degree programs (EVD-400340..EVD-400365),26,0,0,0,26,26,0,1,1,fail,fail
-209be678e,Evidence backfill wave 1: 734 tier-A people existence witnes,734,0,0,0,734,734,0,1,1,fail,fail
-d48ce7e6a,"Hygiene sweep (audit F11): Farathane duplicate merged, APT s",5,0,0,0,5,5,0,1,1,fail,fail
+commit,subject,rows,PASS,FAIL,HELD,READ_REQUIRED,UNINSPECTABLE,held,of_which_archive_link,labels,provenance_problems,binding_gate,provenance
+178349185,Merge pull request #458 from polymerindustrycluster/agent/sp,23564,13554,9521,355,0,134,489,0,1,1,fail,fail
+6a76e923f,Merge pull request #457 from polymerindustrycluster/agent/sp,10530,6624,3376,176,344,10,530,344,3,3,fail,fail
+4924083cd,R2 re-capture recovery mint: 39 evidence rows + 39 archive l,39,0,8,0,31,0,31,31,2,2,fail,fail
+4ea038848,Phase C unit 3: 22 accuracy corrections (EVD-425415..425436 ,22,0,0,0,0,22,22,22,1,1,fail,fail
+b99fd9e1e,Burn-down batch 4: R1 re-witness mint — 240 evidence rows + ,240,0,24,0,216,0,216,216,1,1,fail,fail
+a514c67d8,Burn-down batch 3 build F: wave-3 requeue mint — 124 evidenc,124,0,7,0,117,0,117,117,1,1,fail,fail
+9b2276f2e,Burn-down batch 3 build E2: quote-defect mint — 233 evidence,233,0,13,0,220,0,220,220,1,1,fail,fail
+c67ad8314,Burn-down batch 3 build E1: drift-recovered2 mint — 27 evide,27,0,1,0,26,0,26,26,1,1,fail,fail
+f06631bc6,Batch-2 drift-recovered mint: 178 evidence rows for 104 reco,178,0,22,0,156,0,156,156,1,1,fail,fail
+c29df58e8,No-URL cleared set: 16 two-family-reviewed evidence rows for,16,0,2,0,14,0,14,14,1,1,fail,fail
+120ec9204,Drift re-witness mint: 53 evidence rows for 28 records recov,53,0,4,0,49,0,49,49,1,1,fail,fail
+c2b1d1803,"Evidence burn-down batch 2: wave-3 backfill (1,276 rows, 699",1276,0,106,0,1170,0,1170,1170,1,1,fail,fail
+5219c5d79,"Evidence burn-down batch 1: wave-2 backfill (482 rows, 255 r",482,0,16,0,466,0,466,466,1,1,fail,fail
+117e38707,Phase C unit 2: 22 PIC-18 street fills from the judgment-que,22,0,0,0,0,22,22,21,1,1,fail,fail
+dd38735d8,Phase C unit 1: 32 department-row programs created from the ,32,0,0,0,0,32,32,32,1,1,fail,fail
+01ef298ec,Merge pull request #436 from polymerindustrycluster/agent/cl,152,0,0,0,0,152,152,0,1,1,fail,fail
+3f448ea18,Merge pull request #435 from polymerindustrycluster/agent/cl,204,0,0,0,0,204,204,0,1,1,fail,fail
+248e94099,Merge pull request #434 from polymerindustrycluster/agent/cl,251,0,0,0,0,251,251,0,1,1,fail,fail
+18cb709c5,Merge pull request #432 from polymerindustrycluster/agent/cl,80,0,0,0,0,80,80,0,1,1,fail,fail
+5fa5ba937,Merge pull request #427 from polymerindustrycluster/agent/cl,23,0,0,0,23,0,23,23,1,1,fail,fail
+edd9591c9,Merge pull request #424 from polymerindustrycluster/agent/cl,2,0,0,0,0,2,2,0,1,1,fail,fail
+6c29fa6c4,IPEDS CIP fills: 26 degree programs (EVD-400340..EVD-400365),26,0,0,0,0,26,26,0,1,1,fail,fail
+209be678e,Evidence backfill wave 1: 734 tier-A people existence witnes,734,0,0,0,0,734,734,0,1,1,fail,fail
+d48ce7e6a,"Hygiene sweep (audit F11): Farathane duplicate merged, APT s",5,0,0,0,0,5,5,0,1,1,fail,fail

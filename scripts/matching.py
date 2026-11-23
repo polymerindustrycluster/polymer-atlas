@@ -41,15 +41,15 @@ def same_street(site_street: str, printed: str) -> bool:
     return not designators_conflict(site_street, printed)
 
 
-_BUILDING = re.compile(r"\b(?:bldg|building)\b\.?\s*#?\s*([a-z]?\d+[a-z]?|[a-z])\b", re.I)
+_BUILDING = re.compile(r"\b(?:bldg|building)\b\.?\s*#?\s*([a-z]?\d+(?:-?[a-z0-9]+)?|[a-z])\b", re.I)  # "1-A" whole (r3 finding 3)
 # A comma part that is only a designator ("Ste. 300", "Bldg B", "#12"): street-line parsers keep it with the street.
 DESIGNATOR_ONLY_RE = re.compile(r"^\s*(?:(?:suite|ste|unit|apt|apartment|bldg|building|floor|fl|room|rm|dept|department)"
                                 r"\b\.?|#)\s*#?\s*[\w-]*\s*$", re.I)
 
 
 def buildings(street: str) -> set:
-    """Building designators a street string states (`Building A`, `Bldg. 2`, `Bldg #3`)."""
-    return {g.lower() for g in _BUILDING.findall(street or "")}
+    """Building designators a street string states (`Building A`, `Bldg. 2`, `Bldg #3`, `Bldg. 1-A` = `Bldg 1A`)."""
+    return {g.lower().replace("-", "") for g in _BUILDING.findall(street or "")}
 
 
 def designators_conflict(a: str, b: str) -> bool:
@@ -101,8 +101,11 @@ _STATE_PHRASES = set(GENERIC_LABELS["us_state"])
 
 def generic_label(key: str, city: str = "", county: str = "") -> bool:
     """Is every token of a site-name part (an atlas.name_key) a generic label: a facility word, a number or ordinal, a
-    compass word, a US state, or the site's own city or county ("Plant 2", "North Warehouse", "Ohio", "Akron")?"""
-    places = {squash(city), squash(county), squash(county) + " county" if squash(county) else ""} - {""}
+    compass word, a US state, or the site's own city (either part of "Cleveland (Solon)") or county ("Plant 2", "North
+    Warehouse", "Ohio", "Akron", "Solon")? Codex r3 finding 4."""
+    city_parts = [re.sub(r"\([^()]*\)", " ", city or "")] + re.findall(r"\(([^()]*)\)", city or "")
+    places = {squash(c) for c in city_parts} | {squash(county), squash(county) + " county" if squash(county) else ""}
+    places -= {""}
     rest = f" {key} "
     for phrase in sorted(_STATE_PHRASES | places, key=len, reverse=True):
         while f" {phrase} " in rest:
@@ -138,9 +141,10 @@ def city_keys(city: str) -> set:
 
 
 def zip5(z: str) -> str:
-    """The 5-digit ZIP of "44139", "44139-1234" or "441391234"; "" for anything else (a 4-digit ZIP that lost its
-    leading zero, "317E6", a Canadian postcode, the "00000" placeholder): an unreadable ZIP never matches."""
-    m = re.fullmatch(r"\s*(\d{5})(?:-?\d{4})?\s*", z or "")
+    """The 5-digit ZIP of "44139", "44139-1234", "44139 1234", "441391234" or "44139-"; "" for anything else (a 4-digit
+    ZIP that lost its leading zero, "317E6", a Canadian postcode, the "00000" placeholder): an unreadable ZIP never
+    matches."""
+    m = re.fullmatch(r"\s*(\d{5})(?:[-\s]?\d{4})?-?\s*", z or "")
     return m[1] if m and m[1] != "00000" else ""
 
 
@@ -149,8 +153,8 @@ def same_zip5(a: str, b: str) -> bool:
 
 
 def city_differs(rec_city: str, rec_zip: str, q_city: str, q_zip: str) -> bool:
-    """Contrary evidence: both sides name a city, no spelling of one is a spelling of the other, and the ZIP5 values are
-    not equal. A missing city is not contrary evidence (the gate's state test is separate)."""
+    """A demonstrated conflict: both sides name a city, no spelling of one is a spelling of the other, and the ZIP5 values
+    are not equal. A missing city is no conflict, but it is no match either: the gate also requires same_locality()."""
     qc, rc = city_keys(q_city), city_keys(rec_city)
     return bool(qc and rc and not qc & rc) and not same_zip5(rec_zip, q_zip)
 
@@ -162,3 +166,45 @@ def same_locality(rec_city: str, rec_state: str, rec_zip: str, q_city: str, q_st
     if not st or st != (q_state or "").strip().upper():
         return False
     return bool(city_keys(q_city) & city_keys(rec_city)) or same_zip5(rec_zip, q_zip)
+
+
+# Owner ruling 2026-11-22, "strict floor, then merge" (Codex r3 finding 3): for the evidence gate a suite, unit, apartment,
+# room, floor, building or department stated on either side must be stated, and equal, on both. Gate-only: same_street()
+# above keeps its one-sided rule, so derive_last_activity.py is unchanged.
+_DESIG_KIND = {"suite": "suite", "ste": "suite", "unit": "unit", "apt": "apt", "apartment": "apt", "room": "room",
+               "rm": "room", "floor": "floor", "fl": "floor", "bldg": "building", "building": "building", "dept": "dept",
+               "department": "dept"}
+_DESIG = re.compile(r"\b(\d+)(?:st|nd|rd|th)\s+(?:floor|fl)\b"                       # "2nd Floor"
+                    r"|\b(" + "|".join(sorted(_DESIG_KIND, key=len, reverse=True)) + r")\b\.?\s*(?:#|no\b\.?)?\s*"
+                    r"([a-z0-9]+(?:-[a-z0-9]+)*)?"                                   # "Bldg. 1-A", "Building North"
+                    r"|(?<=\S)\s*#\s*([a-z0-9]+(?:-[a-z0-9]+)*)?", re.I)             # a non-leading "#12"
+
+
+def designators(street: str):
+    """({(kind, value)}, parsed): every designator a street string states. parsed is False when a designator word or "#"
+    has no value the pattern can read ("Suite", "Bldg. &"): the gate then cannot say the two sides are equal."""
+    found, parsed = set(), True
+    for m in _DESIG.finditer(street or ""):
+        if m[1]:
+            found.add(("floor", m[1]))
+        elif m[2]:
+            if m[3]:
+                found.add((_DESIG_KIND[m[2].lower()], m[3].lower().replace("-", "")))
+            else:
+                parsed = False
+        elif m[4]:
+            found.add(("number", m[4].lower().replace("-", "")))
+        else:
+            parsed = False
+    return found, parsed
+
+
+def designators_compare(a: str, b: str) -> str:
+    """"equal" (the same designators on both sides, or none on either), "conflict" (one kind on both sides with different
+    values: a demonstrated other unit), or "unequal" (one-sided, different kinds, or a designator the pattern cannot
+    read: not a match, not a demonstrated conflict)."""
+    (da, pa), (db, pb) = designators(a), designators(b)
+    for kind in {k for k, _ in da} & {k for k, _ in db}:
+        if not {v for k, v in da if k == kind} & {v for k, v in db if k == kind}:
+            return "conflict"
+    return "equal" if pa and pb and da == db else "unequal"

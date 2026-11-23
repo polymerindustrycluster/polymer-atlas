@@ -44,66 +44,70 @@ ORGS = [
      "website": "https://acmepolymer.example/", "ultimate_parent_name": "Acme Polymer Holdings"},
     {"org_id": "ORG-16", "legal_name": "Acme Molding", "trade_names": "", "hq_city": "Dover", "hq_state": "OH",
      "website": "https://acme.pages.dev/"},
+    {"org_id": "ORG-17", "legal_name": "Acme Resin LLC", "trade_names": "", "hq_city": "Dover", "hq_state": "OH",
+     "ultimate_parent_name": "Acme Resin Inc"},  # Codex r3 finding 5: the parent's key equals the subsidiary's
+    {"org_id": "ORG-18", "legal_name": "Zephyr Plastics Inc", "trade_names": "", "hq_city": "Dover", "hq_state": "OH",
+     "ultimate_parent_name": "Zephyr Plastics Inc"},  # a self-reference is not a parent
 ]
 SITES = [
     # two sibling sites of one operator, a few hundred metres apart (models SITE-000107 / SITE-000108)
-    {"site_id": "S-CARN", "org_id": "ORG-1", "site_name": "Harbor Plastics — Cleveland", "city": "Cleveland",
+    {"site_id": "S-CARN", "org_id": "ORG-1", "site_name": "Harbor Plastics — Cleveland", "city": "Cleveland", "state": "OH",
      "street_address": "4105 Marlowe Avenue"},
-    {"site_id": "S-PROS", "org_id": "ORG-1", "site_name": "Lakeside Plastics — Cleveland", "city": "Cleveland",
+    {"site_id": "S-PROS", "org_id": "ORG-1", "site_name": "Lakeside Plastics — Cleveland", "city": "Cleveland", "state": "OH",
      "street_address": "4188 Quarry Ave E"},
-    {"site_id": "S-VIC", "org_id": "ORG-2", "site_name": "Northfield — Victoria Site", "city": "Victoria",
+    {"site_id": "S-VIC", "org_id": "ORG-2", "site_name": "Northfield — Victoria Site", "city": "Victoria", "state": "TX",
      "street_address": "3812 Old Mission Rd N"},
-    {"site_id": "S-RR", "org_id": "ORG-3", "site_name": "Riverbend Medical - Round Rock Plant", "city": "Round Rock",
+    {"site_id": "S-RR", "org_id": "ORG-3", "site_name": "Riverbend Medical - Round Rock Plant", "city": "Round Rock", "state": "TX",
      "street_address": "5155 N Garner Street"},
-    {"site_id": "S-BAK", "org_id": "ORG-4", "site_name": "Containment Systems - Bakersfield", "city": "Bakersfield",
+    {"site_id": "S-BAK", "org_id": "ORG-4", "site_name": "Containment Systems - Bakersfield", "city": "Bakersfield", "state": "CA",
      "street_address": "3300 Orion Dr"},
-    {"site_id": "S-PAS", "org_id": "ORG-7", "site_name": "Tamarack - Pasadena Plant", "city": "Pasadena",
+    {"site_id": "S-PAS", "org_id": "ORG-7", "site_name": "Tamarack - Pasadena Plant", "city": "Pasadena", "state": "TX",
      "street_address": "15520 Shoreline Blvd"},
-    {"site_id": "S-AVON", "org_id": "ORG-7", "site_name": "Tamarack - Sheffield Lake", "city": "Sheffield Lake",
+    {"site_id": "S-AVON", "org_id": "ORG-7", "site_name": "Tamarack - Sheffield Lake", "city": "Sheffield Lake", "state": "OH",
      "street_address": "736 Hollis Rd"},
-    {"site_id": "S-PLAQ", "org_id": "ORG-7", "site_name": "Tamarack - Plaquemine Plant", "city": "Plaquemine",
+    {"site_id": "S-PLAQ", "org_id": "ORG-7", "site_name": "Tamarack - Plaquemine Plant", "city": "Plaquemine", "state": "LA",
      "street_address": "31840 HWY 617"},
-    {"site_id": "S-EJ", "org_id": "ORG-7", "site_name": "Tamarack - East Jordan", "city": "East Jordan",
+    {"site_id": "S-EJ", "org_id": "ORG-7", "site_name": "Tamarack - East Jordan", "city": "East Jordan", "state": "MI",
      "street_address": "7150 M-88 Highway"},
-    {"site_id": "S-BLANK", "org_id": "ORG-7", "site_name": "Tamarack - Wickliffe", "city": "Wickliffe",
+    {"site_id": "S-BLANK", "org_id": "ORG-7", "site_name": "Tamarack - Wickliffe", "city": "Wickliffe", "state": "OH",
      "street_address": ""},
-    {"site_id": "S-STE100", "org_id": "ORG-7", "site_name": "Tamarack - Columbus", "city": "Columbus",
+    {"site_id": "S-STE100", "org_id": "ORG-7", "site_name": "Tamarack - Columbus", "city": "Columbus", "state": "OH",
      "street_address": "377 Commerce Blvd, Suite 100"},
-    {"site_id": "S-STE140", "org_id": "ORG-7", "site_name": "Tamarack - Raleigh", "city": "Raleigh",
+    {"site_id": "S-STE140", "org_id": "ORG-7", "site_name": "Tamarack - Raleigh", "city": "Raleigh", "state": "NC",
      "street_address": "4870 Birch Hollow Circle Suite 140"},
-    {"site_id": "S-STE200", "org_id": "ORG-7", "site_name": "Tamarack - Goodyear", "city": "Goodyear",
+    {"site_id": "S-STE200", "org_id": "ORG-7", "site_name": "Tamarack - Goodyear", "city": "Goodyear", "state": "AZ",
      "street_address": "6120 S. Juniper Ln, Suite 200"},
-    {"site_id": "S-BLDG", "org_id": "ORG-7", "site_name": "Tamarack - West Fenwick", "city": "West Fenwick",
+    {"site_id": "S-BLDG", "org_id": "ORG-7", "site_name": "Tamarack - West Fenwick", "city": "West Fenwick", "state": "OH",
      "street_address": "518 Fenwick Grove Rd Building # 1"},
-    {"site_id": "S-ONE", "org_id": "ORG-7", "site_name": "Tamarack - Neenah", "city": "Neenah",
+    {"site_id": "S-ONE", "org_id": "ORG-7", "site_name": "Tamarack - Neenah", "city": "Neenah", "state": "WI",
      "street_address": "One Heron Drive"},
-    {"site_id": "S-198A", "org_id": "ORG-7", "site_name": "Tamarack - New Bern", "city": "New Bern",
+    {"site_id": "S-198A", "org_id": "ORG-7", "site_name": "Tamarack - New Bern", "city": "New Bern", "state": "NC",
      "street_address": "212B Larkin Blvd"},
-    {"site_id": "S-GRID", "org_id": "ORG-7", "site_name": "Tamarack - Oconomowoc", "city": "Oconomowoc",
+    {"site_id": "S-GRID", "org_id": "ORG-7", "site_name": "Tamarack - Oconomowoc", "city": "Oconomowoc", "state": "WI",
      "street_address": "N52 W24411 Cedar Plank Rd"},
-    {"site_id": "S-PARK", "org_id": "ORG-7", "site_name": "Tamarack - Neodesha", "city": "Neodesha",
+    {"site_id": "S-PARK", "org_id": "ORG-7", "site_name": "Tamarack - Neodesha", "city": "Neodesha", "state": "KS",
      "street_address": "Willow Bend Industrial Park"},
-    {"site_id": "S-AND", "org_id": "ORG-7", "site_name": "Tamarack - Berwick", "city": "Berwick",
+    {"site_id": "S-AND", "org_id": "ORG-7", "site_name": "Tamarack - Berwick", "city": "Berwick", "state": "PA",
      "street_address": "7th & Ashcroft Lane"},
-    {"site_id": "S-RANGE", "org_id": "ORG-7", "site_name": "Tamarack - Erie", "city": "Erie",
+    {"site_id": "S-RANGE", "org_id": "ORG-7", "site_name": "Tamarack - Erie", "city": "Erie", "state": "PA",
      "street_address": "2201-2205 Elm St"},
-    {"site_id": "S-ORD", "org_id": "ORG-7", "site_name": "Tamarack - Wadsworth", "city": "Wadsworth",
+    {"site_id": "S-ORD", "org_id": "ORG-7", "site_name": "Tamarack - Wadsworth", "city": "Wadsworth", "state": "OH",
      "street_address": "4417 First Street"},
-    {"site_id": "S-AOC", "org_id": "ORG-8", "site_name": "Kestrel - Valparaiso", "city": "Valparaiso",
+    {"site_id": "S-AOC", "org_id": "ORG-8", "site_name": "Kestrel - Valparaiso", "city": "Valparaiso", "state": "IN",
      "street_address": "1180 Dorsey Ave"},
-    {"site_id": "S-CT", "org_id": "ORG-8", "site_name": "Kestrel - East Haven plant", "city": "East Haven",
+    {"site_id": "S-CT", "org_id": "ORG-8", "site_name": "Kestrel - East Haven plant", "city": "East Haven", "state": "CT",
      "street_address": "77 Marsh Street Ext"},
-    {"site_id": "S-ARM", "org_id": "ORG-12", "site_name": "Armacor - Conover", "city": "Conover",
+    {"site_id": "S-ARM", "org_id": "ORG-12", "site_name": "Armacor - Conover", "city": "Conover", "state": "NC",
      "street_address": "2380 Holland Rd"},
-    {"site_id": "S-PIN", "org_id": "ORG-11", "site_name": "Pinecrest Foam - Lancaster", "city": "Lancaster",
+    {"site_id": "S-PIN", "org_id": "ORG-11", "site_name": "Pinecrest Foam - Lancaster", "city": "Lancaster", "state": "PA",
      "street_address": "4471 Tanner Dr"},
-    {"site_id": "S-MER", "org_id": "ORG-14", "site_name": "Meridian - Longview", "city": "Longview",
+    {"site_id": "S-MER", "org_id": "ORG-14", "site_name": "Meridian - Longview", "city": "Longview", "state": "TX",
      "street_address": "2650 Prairie Blvd"},
-    {"site_id": "S-CUE", "org_id": "ORG-13", "site_name": "BRT - Mount Hope", "city": "Mount Hope",
+    {"site_id": "S-CUE", "org_id": "ORG-13", "site_name": "BRT - Mount Hope", "city": "Mount Hope", "state": "WV",
      "street_address": "940 Aspen Hill Road"},
-    {"site_id": "S-LET", "org_id": "ORG-7", "site_name": "Tamarack - Dunmore", "city": "Dunmore",
+    {"site_id": "S-LET", "org_id": "ORG-7", "site_name": "Tamarack - Dunmore", "city": "Dunmore", "state": "PA",
      "street_address": "2210 C Larkspur Rd."},
-    {"site_id": "S-NC", "org_id": "ORG-7", "site_name": "Tamarack - Fayetteville", "city": "Fayetteville",
+    {"site_id": "S-NC", "org_id": "ORG-7", "site_name": "Tamarack - Fayetteville", "city": "Fayetteville", "state": "NC",
      "street_address": "5530 Bragg Ridge St"},
     # Codex counterexamples (review of PR #467)
     {"site_id": "S-1604", "org_id": "ORG-7", "site_name": "Tamarack - Dalton", "city": "Dalton", "state": "GA",
@@ -128,6 +132,25 @@ SITES = [
      "state": "OH", "county": "Tuscarawas", "street_address": "9 Elm Rd"},  # a site named for its parent
     {"site_id": "S-PAREN", "org_id": "ORG-15", "site_name": "Acme Polymer - Hub", "city": "Cleveland (Solon)",
      "state": "OH", "zip": "44139", "street_address": "5 Hub Rd"},  # a second locality in parentheses
+    # Codex r3 counterexamples (synthetic)
+    {"site_id": "S-TWA", "org_id": "ORG-15", "site_name": "Acme Polymer - Larch Dover", "city": "Dover", "state": "OH",
+     "zip": "44699", "street_address": "640 Larch Way"},  # finding 2: one street, two plants, one ZIP
+    {"site_id": "S-TWB", "org_id": "ORG-15", "site_name": "Acme Polymer - Larch Dayton", "city": "Dayton", "state": "OH",
+     "zip": "44699", "street_address": "640 Larch Way"},
+    {"site_id": "S-B1A", "org_id": "ORG-15", "site_name": "Acme Polymer - 1-A", "city": "Dover", "state": "OH",
+     "zip": "44699", "street_address": "15 Larch Way, Bldg. 1-A"},  # finding 3
+    {"site_id": "S-BN", "org_id": "ORG-15", "site_name": "Acme Polymer - North", "city": "Dover", "state": "OH",
+     "zip": "44699", "street_address": "16 Larch Way, Building North"},
+    {"site_id": "S-UA", "org_id": "ORG-15", "site_name": "Acme Polymer - Unit A", "city": "Dover", "state": "OH",
+     "zip": "44699", "street_address": "17 Larch Way, Unit A, Room 1"},
+    {"site_id": "S-SOLON", "org_id": "ORG-15", "site_name": "Acme Polymer - Solon", "city": "Cleveland (Solon)",
+     "state": "OH", "zip": "44139", "street_address": "8 Aurora Rd"},  # finding 4
+    {"site_id": "S-KDIV", "org_id": "ORG-15", "site_name": "Acme Polymer - Kestrel Division", "city": "Dover",
+     "state": "OH", "zip": "44699", "street_address": "12 Birch Ln"},
+    {"site_id": "S-ARES", "org_id": "ORG-17", "site_name": "Acme Resin - Dover", "city": "Dover", "state": "OH",
+     "zip": "44699", "street_address": "20 Birch Ln"},  # finding 5
+    {"site_id": "S-ZEP", "org_id": "ORG-18", "site_name": "Zephyr Plastics - Dover", "city": "Dover", "state": "OH",
+     "zip": "44699", "street_address": "22 Birch Ln"},
     {"site_id": "S-ZIP", "org_id": "ORG-15", "site_name": "Acme Polymer - Zip", "city": "Dover", "state": "OH",
      "street_address": "43000 Oak Street"},
     {"site_id": "S-PAGES", "org_id": "ORG-16", "site_name": "Acme Molding - Plant", "city": "Dover", "state": "OH",
@@ -381,6 +404,71 @@ class Verdicts(unittest.TestCase):
         self.check(ev("S-PAREN", TCEQ, permit("Acme Polymer", "X", "5 HUB RD, BEDFORD, OH 44146")), "FAIL", "city_differs")
         self.check(ev("S-PAREN", TCEQ, permit("Acme Polymer", "X", "5 HUB RD, SOLON, PA 44139")), "FAIL", "state_differs")
 
+    # ---- Codex round 3 on 9205837e (owner ruling 2026-11-22, "strict floor, then merge"): each counterexample is not PASS
+
+    def test_r3_1_locality_must_match_positively(self):
+        oak = lambda place: ev("S-OAK3", TCEQ, permit("Acme Polymer", "X", f"321 OAK ST{place}"))  # noqa: E731
+        self.check(oak(", DAYTON, TX 44699"), "FAIL", "state_differs+city_differs")
+        self.check(oak(", DAYTON, TX 44699 1234"), "FAIL", "state_differs+city_differs")  # a space ZIP+4 hides nothing
+        self.check(oak(", DOVER, TX 44699 1234"), "FAIL", "state_differs")
+        self.check(oak(", OH 45402"), "HELD", "held_for_reading:locality_not_matched")  # no city, another ZIP
+        self.check(oak(""), "HELD", "held_for_reading:locality_not_read")  # a bare street
+        self.check(oak(", DOVER, OH"), "PASS")
+
+    def test_r3_1_historical_zip_forms_pass(self):
+        # The ten historical rows that passed without the locality call (EVD-455166, EVD-455167, EVD-456396, EVD-456397,
+        # EVD-458684, EVD-458685, EVD-458686, EVD-458687 with a space ZIP+4; EVD-458756, EVD-458757 ending in a dash) now
+        # pass through same_locality(). Synthetic strings of the same shapes:
+        for place in (", DOVER, OH 44699 1594", ", DOVER, Ohio -", ", DOVER, OH 44699-1594", ", DOVER, OH 446991594",
+                      ", DOVER, OH 44699-"):
+            self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", f"22 BIRCH LN{place}")), "PASS")
+
+    def test_r3_2_one_quote_two_records(self):
+        for sid in ("S-TWA", "S-TWB"):  # Dayton's permit matches Dayton by city and Dover by ZIP: it passes on neither
+            info = self.check(ev(sid, TCEQ, permit("Acme Polymer", "X", "640 LARCH WAY, DAYTON, OH 44699")), "HELD",
+                              "held_for_reading:passes_on_two_records")
+            self.assertEqual(info["also_passes_on"], {"S-TWA": "S-TWB", "S-TWB": "S-TWA"}[sid])
+        self.check(ev("S-TWA", TCEQ, permit("Acme Polymer", "X", "640 LARCH WAY, DAYTON, OH 44601")), "FAIL",
+                   "city_differs")
+
+    def test_r3_3_building_and_unit_designators(self):
+        self.check(ev("S-B1A", TCEQ, permit("Acme Polymer", "X", "15 LARCH WAY, BLDG. 1-B, DOVER, OH 44699")), "FAIL",
+                   "unit_differs")
+        self.check(ev("S-B1A", TCEQ, permit("Acme Polymer", "X", "15 LARCH WAY, BLDG 1A, DOVER, OH 44699")), "PASS")
+        self.check(ev("S-BN", TCEQ, permit("Acme Polymer", "X", "16 LARCH WAY, BUILDING SOUTH, DOVER, OH 44699")),
+                   "FAIL", "unit_differs")
+        self.check(ev("S-UA", TCEQ, permit("Acme Polymer", "X", "17 LARCH WAY, UNIT. B, ROOM 1, DOVER, OH 44699")), "FAIL",
+                   "unit_differs")
+        self.check(ev("S-UA", TCEQ, permit("Acme Polymer", "X", "17 LARCH WAY, UNIT A, RM. 2, DOVER, OH 44699")), "FAIL",
+                   "unit_differs")
+        self.check(ev("S-UA", TCEQ, permit("Acme Polymer", "X", "17 LARCH WAY, UNIT A, RM 1, DOVER, OH 44699")), "PASS")
+        self.check(ev("S-UA", TCEQ, permit("Acme Polymer", "X", "17 LARCH WAY, UNIT A, ROOM 1, BLDG 3, DOVER, OH 44699")),
+                   "HELD", "held_for_reading:designator_not_on_both_sides")  # the building is on one side only
+        self.check(ev("S-OAK4", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, BLDG. B, DOVER, OH 44699")), "FAIL",
+                   "unit_differs")  # control: Building A against Bldg. B
+
+    def test_r3_4_parenthetical_city_is_not_a_name(self):
+        self.check(ev("S-SOLON", TCEQ, permit("Solon", "X", "8 AURORA RD, SOLON, OH 44139")), "FAIL", "name_not_held")
+        self.check(ev("S-SOLON", TCEQ, permit("Cleveland", "X", "8 AURORA RD, SOLON, OH 44139")), "FAIL", "name_not_held")
+        self.check(ev("S-SOLON", TCEQ, permit("Acme Polymer", "X", "8 AURORA RD, SOLON, OH 44139")), "PASS")
+        self.check(ev("S-KDIV", TCEQ, permit("Kestrel Division", "X", "12 BIRCH LN, DOVER, OH 44699")), "PASS")  # control
+
+    def test_r3_5_parent_key_equal_to_own(self):
+        self.check(ev("S-ARES", TCEQ, permit("Acme Resin Inc", "X", "20 BIRCH LN, DOVER, OH 44699")), "HELD",
+                   "held_for_reading:name_equals_parent_key")
+        self.check(ev("S-ARES", TCEQ, permit("Acme Resin LLC", "X", "20 BIRCH LN, DOVER, OH 44699")), "PASS")
+        self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", "22 BIRCH LN, DOVER, OH 44699")), "PASS")
+
+    def test_r3_6_parentheses_are_not_dropped(self):
+        for name in ("Acme Polymer (operated by Quill Resins)", "Acme Polymer (Storage Division)"):
+            self.check(ev("S-OAK3", TCEQ, permit(name, "X", "321 OAK ST, DOVER, OH 44699")), "HELD",
+                       "held_for_reading:name_with_parenthetical")
+        self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer Services", "X", "321 OAK ST, DOVER, OH 44699")), "FAIL",
+                   "name_not_held")
+        self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer USA", "X", "321 OAK ST, DOVER, OH 44699")), "PASS")
+        self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "X", "321 OAK ST (REAR), DOVER, OH 44699")), "HELD",
+                   "held_for_reading:address_with_parenthetical")
+
     def test_bare_site_label_is_not_the_operator(self):  # owner ruling 2026-11-22, "drop generic labels only"
         for name in ("Plant 2", "Dover", "Tuscarawas County", "North Works", "Ohio"):  # labels, city, county, state
             info = self.check(ev("S-PHOLD", TCEQ, permit(name, "X", "9 ELM RD, DOVER, OH 44699")), "FAIL", "name_not_held")
@@ -404,16 +492,19 @@ class Verdicts(unittest.TestCase):
             self.check(ev("S-CT", ITA, f"Kestrel Molding LLC, 77 Marsh St Ext, East Haven, CT {z}"), "PASS")
 
     def test_echo_parenthetical_with_semicolon(self):  # EVD-441359: "(XYZ; FORMERLY ...)" is not a field break
+        # Owner ruling 2026-11-22, "strict floor": the parenthetical is kept in the name, so the name is held only once it
+        # is dropped: HELD for a reader, never PASS (was PASS before the floor).
         self.check(ev("S-BAK", RCRA, "CONTAINMENT SYSTEMS INC (CSI; FORMERLY TANKCO); 3300 ORION DR, BAKERSFIELD, "
-                                     "CA 93399" + ECHO_TAIL), "PASS")
+                                     "CA 93399" + ECHO_TAIL), "HELD", "held_for_reading:name_with_parenthetical")
 
     def test_ampersand_and_intersection(self):  # EVD-428624
         self.check(ev("S-AND", OSHA, "TAMARACK RUBBER CO, 7TH AND ASHCROFT LANE, BERWICK, PA 18699"), "PASS")
 
-    def test_same_suite_and_one_sided_unit(self):  # EVD-430253; a unit on one side only is not a conflict
+    def test_same_suite_and_one_sided_unit(self):  # EVD-430253; a unit on one side only is no conflict, and no match
         self.check(ev("S-STE200", ITA, "Tamarack Rubber, 6120 S. Juniper Ln, Suite 200, Goodyear, AZ 85399"), "PASS")
-        self.check(ev("S-BLDG", NPDES, "TAMARACK RUBBER CO; 518 FENWICK GROVE ROAD, WEST FENWICK TWP, NJ 08099"
-                      + ECHO_TAIL), "PASS")
+        # Owner ruling 2026-11-22, "strict floor": a designator stated on one side only is HELD (was PASS before the floor).
+        self.check(ev("S-BLDG", NPDES, "TAMARACK RUBBER CO; 518 FENWICK GROVE ROAD, WEST FENWICK TWP, OH 44299"
+                      + ECHO_TAIL), "HELD", "held_for_reading:designator_not_on_both_sides")
 
     def test_civic_number_forms(self):  # 463 review: SITE-004431, SITE-011463, SITE-004620 are real civic numbers
         self.check(ev("S-ONE", ITA, "Tamarack Rubber Co, One Heron Dr, Neenah, WI 54999"), "PASS")
@@ -636,9 +727,9 @@ class GateMechanics(unittest.TestCase):
     def test_report_counts_sum(self):
         res = [{"verdict": v, "reason": "", "created_by": "x", "source_family": "url"} for v in b.VERDICTS]
         with contextlib.redirect_stdout(io.StringIO()):
-            b.report(res, 4)
+            b.report(res, len(b.VERDICTS))
             with self.assertRaises(AssertionError):
-                b.report(res, 5)
+                b.report(res, len(b.VERDICTS) + 1)
 
     def test_audit_sample_admits_nothing(self):
         res = [{"evidence_id": f"EVD-{n}", "verdict": "PASS" if n % 4 else "FAIL", "created_by": "lane-a"}

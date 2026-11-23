@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Replay the gate over the last 40 first-parent commits to main before the branch cut (8f30ce0f).
 
-For each commit that added or changed evidence rows: rows PASS / FAIL / READ_REQUIRED / UNINSPECTABLE; how many rows
-were held (READ_REQUIRED or UNINSPECTABLE: this gate has no admission path for them) and how many of those had a
-data/archive_links.csv capture at that commit; and whether the binding gate (--new-since: fails on any FAIL or held row)
+For each commit that added or changed evidence rows: rows PASS / FAIL / HELD / READ_REQUIRED / UNINSPECTABLE; how
+many rows were held (HELD, READ_REQUIRED or UNINSPECTABLE: this gate has no admission path for them) and how many of
+those had a data/archive_links.csv capture at that commit; and whether the binding gate (--new-since: fails on any FAIL or held row)
 and the provenance rules (--provenance-since) would have passed. Provenance is presence only, as in the gate (a label
 naming exactly one folder, a non-empty check.py, a new label adding its own folder); nothing is executed. Writes
 replay.csv beside itself. Takes about 5 minutes.
@@ -42,7 +42,7 @@ def main():
             new, base_labels, lambda f: any(x.startswith(f"tasks/{f}/") for x in base_paths),
             lambda f: (b.tasks_file(h, f"tasks/{f}/check.py") or b"").strip() if f"tasks/{f}/check.py" in paths else b"")
         out.append({"commit": h[:9], "subject": subj[:60], "rows": len(new), "PASS": v["PASS"], "FAIL": v["FAIL"],
-                    "READ_REQUIRED": v["READ_REQUIRED"], "UNINSPECTABLE": v["UNINSPECTABLE"],
+                    "HELD": v["HELD"], "READ_REQUIRED": v["READ_REQUIRED"], "UNINSPECTABLE": v["UNINSPECTABLE"],
                     "held": len(unins),
                     "of_which_archive_link": len(unins & set(archive)),
                     "labels": len({e["created_by"].strip() for e in new}), "provenance_problems": len(prov),
