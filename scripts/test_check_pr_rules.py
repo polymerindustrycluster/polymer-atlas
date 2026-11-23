@@ -315,6 +315,8 @@ class TestBindingGateJob(unittest.TestCase):
         self.assertIn("ref: refs/pull/${{ env.PR }}/merge", self.job)
         self.assertIn("path: pr", self.job)
         self.assertIn("for mode in --verify-proofs --provenance-since; do", self.job)
+        self.assertIn('git -C pr rev-parse --verify HEAD^2', self.job)
+        self.assertIn('[ "$merge_parent" != "$head" ]', self.job)
         self.assertIn('read -r head < "$out/head" || exit 2', self.job)
         self.assertIn('scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr --pr-head "$head"', self.job)
         self.assertIn("gate not yet on main", self.job)

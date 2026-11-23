@@ -40,7 +40,7 @@ jobs:
       # The authoritative run is the pull_request_target workflow (main's checker, --tree on the PR checkout).
       - name: Guard — evidence rows a PR adds or changes bind to their record (binding gate; early feedback)
         if: github.event_name == 'pull_request'
-        run: python3 scripts/check_evidence_binding.py --new-since "origin/${{ github.base_ref }}" --pr-head "${{ github.event.pull_request.head.sha }}"
+        run: python3 scripts/check_evidence_binding.py --new-since "origin/${{ github.base_ref }}"
       - name: Guard — each created_by label names its tasks/<folder>/ holding a non-empty check.py (early feedback)
         if: github.event_name == 'pull_request'
         run: python3 scripts/check_evidence_binding.py --provenance-since "origin/${{ github.base_ref }}"

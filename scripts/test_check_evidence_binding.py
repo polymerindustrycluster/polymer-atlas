@@ -10,6 +10,7 @@ import csv
 import gzip
 import hashlib
 import io
+import os
 import subprocess
 import tempfile
 import unittest
@@ -791,7 +792,7 @@ class WebProofs(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
-        self.tree = Path(temp.name)
+        self.tree = Path(temp.name).resolve()
         (self.tree / "data").mkdir()
         (self.tree / self.FOLDER).mkdir(parents=True)
         (self.tree / self.FOLDER / "README.md").write_text("Built by: Codex\n")
@@ -822,7 +823,7 @@ class WebProofs(unittest.TestCase):
         (self.tree / "data/archive_links.csv").write_text(
             "evidence_id,archive_ref,captured_at,created_by\n" + line * (2 if duplicate else 1))
 
-    def run_gate(self, *, proof_bytes=None, mode="--verify-proofs"):
+    def run_gate(self, *, proof_bytes=None, mode="--verify-proofs", git_read=None, pr_head=PR_HEAD):
         with (self.tree / "data/evidence_t.csv").open("w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, self.ev)
             writer.writeheader()
@@ -837,6 +838,9 @@ class WebProofs(unittest.TestCase):
             p.write_bytes(proof_bytes)
         out = io.StringIO()
         rows = b.rows
+        args = [mode, self.BASE]
+        if pr_head is not None:
+            args.extend(["--tree", str(self.tree), "--pr-head", pr_head])
 
         def tree_rows(ref, pattern):
             if ref:
@@ -847,10 +851,10 @@ class WebProofs(unittest.TestCase):
             contextlib.redirect_stdout(out),
             patch.object(b, "resolve_base", return_value=self.BASE),
             patch.object(b, "rows", side_effect=tree_rows),
-            patch.object(b, "git", return_value="2026-11-23\n") as git,
+            patch.object(b, "git", side_effect=git_read, return_value=f"{self.BASE} {self.PR_HEAD}\n2026-11-23\n") as git,
             patch.object(b, "fetch_url", return_value=self.capture, side_effect=self.fetch_error) as fetch,
         ):
-            code = b.main([mode, self.BASE, "--tree", str(self.tree), "--pr-head", self.PR_HEAD])
+            code = b.main(args)
         self.git = git
         self.fetch = fetch
         return code, out.getvalue()
@@ -875,29 +879,77 @@ class WebProofs(unittest.TestCase):
         self.archive("20140531000000")
         self.ev["observed_date"] = "2014-06-01"
         self.proof["claim_sha256"] = b.claim_sha256(self.ev)
-        self.assert_held("more than 30 days from PR head committer date")
+        self.assert_held("more than 30 days from merge commit committer date")
         self.fetch.assert_not_called()
 
-    def test_observation_40_days_from_head_is_held(self):
-        for observed in ("2026-10-14", "2027-01-02"):
+    def test_observation_beyond_30_days_from_merge_is_held(self):
+        for observed in ("2026-10-23", "2026-10-14", "2027-01-02"):
             with self.subTest(observed=observed):
                 self.ev["observed_date"] = observed
                 self.proof["claim_sha256"] = b.claim_sha256(self.ev)
-                self.assert_held("more than 30 days from PR head committer date")
+                self.assert_held("more than 30 days from merge commit committer date")
                 self.fetch.assert_not_called()
 
-    def test_observation_within_30_days_of_head_passes(self):
+    def test_observation_within_30_days_of_merge_passes(self):
         for observed, stamp in (("2026-10-24", None), ("2026-11-13", "20241113000000")):
             with self.subTest(observed=observed):
                 self.ev["observed_date"] = observed
                 self.proof["claim_sha256"] = b.claim_sha256(self.ev)
                 if stamp:
-                    self.archive(stamp)  # Exactly two years from observed_date, older if measured from the head.
+                    self.archive(stamp)  # Exactly two years from observed_date, older if measured from the merge.
                 code, out = self.run_gate()
                 self.assertEqual(code, 0, out)
                 self.assertIn("1 PASS", out)
-                self.git.assert_called_once_with("show", "--no-patch", "--format=%cs", "--end-of-options", self.PR_HEAD, "--")
+                self.git.assert_called_once_with("show", "--no-patch", "--format=%P%n%cs", "--end-of-options",
+                                                 "HEAD^{commit}", "--", worktree=self.tree)
                 self.fetch.assert_called_once()
+
+    def test_forged_head_date_cannot_admit_a_proof(self):
+        def git(*args, **kwargs):
+            return subprocess.check_output(["git", "-C", str(self.tree), *args], text=True, **kwargs).strip()
+
+        git("init", "-q")
+        empty = git("mktree", input="")
+        identity = dict(os.environ, GIT_AUTHOR_NAME="Synthetic", GIT_AUTHOR_EMAIL="synthetic@example.com",
+                        GIT_COMMITTER_NAME="Synthetic", GIT_COMMITTER_EMAIL="synthetic@example.com")
+
+        def commit(message, day, *parents):
+            return git("commit-tree", empty, "-m", message, *parents,
+                       env=dict(identity, GIT_AUTHOR_DATE=day, GIT_COMMITTER_DATE=day))
+
+        forged_day = "2014-06-01T08:00:00+00:00"
+        merge_day = "2026-11-23T08:00:00+00:00"
+        base = commit("base", merge_day)
+        forged = commit("PR head", forged_day, "-p", base)
+        merge = commit("GitHub merge", merge_day, "-p", base, "-p", forged)
+        git("update-ref", "HEAD", merge)
+        self.archive("20140531000000")
+        self.ev["observed_date"] = "2014-06-01"
+        self.proof["claim_sha256"] = b.claim_sha256(self.ev)
+        for mode, pr_head in (("--verify-proofs", forged), ("--new-since", None)):
+            with self.subTest(mode=mode), patch.object(b, "ROOT", self.tree):
+                self.assert_held("more than 30 days from merge commit committer date",
+                                 git_read=b.git, pr_head=pr_head, mode=mode)
+                self.fetch.assert_not_called()
+
+    def test_unreadable_merge_fails_closed(self):
+        error = subprocess.CalledProcessError(128, "git show", stderr="missing merge commit")
+        code, out = self.run_gate(git_read=error)
+        self.assertEqual(code, 2, out)
+        self.assertIn("could not inspect proof inputs", out)
+        self.fetch.assert_not_called()
+
+    def test_nonmerge_checkout_fails_closed(self):
+        code, out = self.run_gate(git_read=lambda *args, **kwargs: f"{self.BASE}\n2026-11-23\n")
+        self.assertEqual(code, 2, out)
+        self.assertIn("requires a two-parent merge commit", out)
+        self.fetch.assert_not_called()
+
+    def test_merge_with_wrong_second_parent_fails_closed(self):
+        code, out = self.run_gate(pr_head="2" * 40)
+        self.assertEqual(code, 2, out)
+        self.assertIn("merge commit's second parent differs from the pinned PR head", out)
+        self.fetch.assert_not_called()
 
     def test_repointed_row(self):
         self.ev["record_id"] = "ORG-T2"

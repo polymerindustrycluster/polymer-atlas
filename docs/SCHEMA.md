@@ -1647,7 +1647,7 @@ and the capture falls within the two calendar years ending on the row's
 `source_ref`, the exact capture and its date in the §4.22 archive link,
 and the archived route in `claim_detail`. Every archived proof uses this
 date window. An older capture stays a lead. Every web proof must have an
-`observed_date` within 30 calendar days of the PR head's Git committer date.
+`observed_date` within 30 calendar days of the committer date on GitHub's merge commit for the PR.
 
 Each own-site web row submitted for admission carries a line in the
 `tasks/<folder>/BINDING_PROOF.csv` named by its `created_by` label. Use
