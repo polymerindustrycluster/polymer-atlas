@@ -1,7 +1,7 @@
 # Notes history: move working history off the public row (design + 25-record canary)
 
 Status: PROPOSAL and canary packet. Nothing under `data/` changed (check.py proves it). Owner ruling 2026-11-22, "Move history out".
-Branch `agent/claude-code/notes-history-2026-11-22`, base `393c3895`. Run `python3 tasks/notes-history-2026-11-22/check.py` (PASS at the time of writing); `python3 numbers.py` prints every figure quoted in §0, §1 and §5 (saved in `numbers.txt`).
+Branch `agent/claude-code/notes-history-2026-11-22`, built on `393c3895`, figures re-run on `a8119ad1` (main moved; only the site RESTATE, T6 and empty-note counts changed; the canary is identical). Run `python3 tasks/notes-history-2026-11-22/check.py` (PASS at the time of writing); `python3 numbers.py` prints every figure quoted in §0, §1 and §5 (saved in `numbers.txt`).
 
 Units: **rows** are rows of `data/organizations_*.csv` (5,026) and `data/sites_*.csv` (7,196) on base `393c3895`; a **piece** is one sentence-sized
 segment of a `notes` value, cut by `notes_split.pieces` (whitespace stays on a piece, so cutting loses no character).
@@ -10,9 +10,9 @@ segment of a `notes` value, cut by `notes_split.pieces` (whitespace stays on a p
 
 The controller measured "agent or pass words in notes": 4,243 of 5,026 organization rows, 5,576 of 7,196 site rows (BOARD.md line 2206; the regex is not recorded).
 My nearest regex, `Grok|spaghetti|Muse|Codex|Claude|[Pp]ass[- ]\d+|PASS \d+|integration pass`, gives **4,168 and 5,573**: sites match within 3 rows, organizations differ by 75.
-I could not close the 75-row gap from the file; **the controller's exact pattern is needed**. All "before/after" numbers below use my regex and say so.
+The 75-row gap is left as a review follow-up (controller ruling 2026-11-23: use this lane's regex, report both counts). All "before/after" numbers below use my regex and say so.
 Other measures on the same rows: wider pipeline vocabulary (agent + pass + wave + verdict + staging + packet + lane + burn-down + integrator): 4,904 / 6,931;
-this lane's word list: 5,011 / 7,145; the controller-style regex in `stats.py` (`Grok|spaghetti|PASS \d|verdicts.csv|staging|working/|burn-down|integrator assert`): 2,756 / 2,435.
+this lane's word list: 5,011 / 7,147; the controller-style regex in `stats.py` (`Grok|spaghetti|PASS \d|verdicts.csv|staging|working/|burn-down|integrator assert`): 2,756 / 2,435.
 Rows with an empty note: 5 organizations, 15 sites.
 
 ## 1. Taxonomy of what notes contain
@@ -27,7 +27,7 @@ Read: 200 notes (100 organization + 100 site rows, every tier, seed 20261122, `s
 | T3 verification, tier, NAICS history | 43 / 32 | 2,703 / 2,086 | "PASS 8 ... Tier U -> A", "NAICS corrected per wave packet" |
 | T4 schema or vocabulary mapping | 17 / 15 | 738 / 679 | "Packet entity_type 'company' mapped to 'unknown' per SCHEMA §4.4 enum" |
 | T5 dedupe, merge, retire, fold | 16 / 11 | 412 / 344 | "[Dedupe ...: site re-pointed ORG-x -> ORG-y]", "RETIRED ... duplicate of SITE-x" |
-| T6 structured marker (BAND-SOURCE, CERT-SITE, CAPABILITY-QUEUE) | 37 / 33 | 2,308 / 2,193 | machine prefixes holding a real fact (size band and its source, certifications, a capability with no vocabulary term) |
+| T6 structured marker (BAND-SOURCE, CERT-SITE, CAPABILITY-QUEUE) | 38 / 34 | 2,357 / 2,236 | machine prefixes holding a real fact (size band and its source, certifications, a capability with no vocabulary term) |
 | T7 street recorded in notes | 24 / 24 | 2,038 / 2,014 | "Street: 1365 Shuler Ave", written when the schema had no street column; still the only street on rows with a blank `street_address` |
 | T8 flag or caution to an integrator or owner | 9 / 9 | 325 / 319 | "INTEGRATOR FLAG ... must not be merged", "do not promote" |
 | T9 correction or withdrawn claim | 21 / 20 | 808 / 789 | "address corrected to ...", "wrong foam class", superseded flags |
@@ -87,13 +87,13 @@ Proposed **v1.20**, three items:
 | piece disposition | pieces, organizations | pieces, sites |
 |---|---|---|
 | MOVE (lead-in or template match) | 14,204 | 16,002 |
-| RESTATE by template (BAND, CERT, capability, ring subtype, FRS id, parent, city grain, CIK, extracted street) | 798 | 2,691 |
+| RESTATE by template (BAND, CERT, capability, ring subtype, FRS id, parent, city grain, CIK, extracted street) | 798 | 2,740 |
 | KEEP (street fact, a few listed plain templates) | 155 | 1,114 |
 | PERSON (stays on the row verbatim, text not copied) | 1 | 1 |
 | READER (needs a person or a second pass) | 9,623 (5,624 plain-unlisted, 3,983 contain pipeline words, 16 pinned, street or unclean restatement) | 11,314 (5,591 plain-unlisted, 4,680 contain pipeline words, 1,043 pinned, street or unclean restatement) |
 
 Rows with **no** READER piece and a non-empty note: **2,409** (712 of 5,026 organizations and 1,717 of 7,196 sites, less rows whose note is already empty): 20% of 12,222 rows.
-Tested (check.py 3c): of those 2,409, **22 still fail the independent residue test** and **1,519 end with an empty note** (all their pieces move), so 868 end with a clean, non-empty note.
+Tested (check.py 3c): of those 2,409, **22 still fail the independent residue test** and **1,517 end with an empty note** (all their pieces move), so 870 end with a clean, non-empty note.
 An empty note is the right result for the owner but means those rows lose their only note text to history, so the 4% MOVE fact-loss rate applies to them.
 Rows that need a reader: **4,314 organizations and 5,479 sites (9,793 rows, 80%)**, 20,937 piece decisions: about 11,215 plain pieces a reader mostly confirms and about 8,663 that contain pipeline
 words and need rewriting. Hand grading (grading_rounds.md, grading_pieces.csv): script MOVE decisions lose a reader fact about 4% of the time (3 of 70);
@@ -128,7 +128,7 @@ Checks passed (check.py): person-held pieces stay verbatim; the rebuild by seq e
 ## 7. Personal data
 
 No individual's name is carried into any file in this folder: the person pattern pins a piece to the row and empties its `text`; `canary.csv` excludes both rows below.
-Rows whose `notes` name an individual or a trust named for one (path:line, no names copied):
+Both rows below were cleaned in PR #487 (names removed, nothing else changed); this packet was built before that change. Rows whose `notes` named an individual or a trust named for one (path:line, no names copied):
 - `data/organizations_OH.csv:1134` (a founder and chief executive named in the note)
 - `data/sites_MI.csv:168` (a TRI parent string that is a family trust named for an individual)
 
