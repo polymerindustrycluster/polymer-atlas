@@ -77,5 +77,5 @@ No live page, registry or street lookup (a failed street is a hold, not a miss).
 - `python3 scripts/check_row_loss.py --base origin/main` -> OK, no keyed row removed.
 - `python3 scripts/run_tests.py` -> 397 tests listed, 10 shards, 0 failed.
 - `python3 scripts/check_account_urls.py` -> 4875 files inspected, 0 lines with an account URL.
-- Outcome line (`pic18_unknown.py`, PIC-18 organization rows 794): origin/main `band_unknown=443 (55.8%)`; this branch OUTCOME_AFTER: a fall of 75 = the organizations filled. `proc_unknown` 322 and `mkt_unknown` 316 are unchanged.
+- Outcome line (`pic18_unknown.py`, PIC-18 organization rows 794): origin/main `band_unknown=443 (55.8%)`; this branch `band_unknown=368 (46.3%)`: a fall of 75 = the organizations filled. `proc_unknown` 322 and `mkt_unknown` 316 are unchanged.
 - `check.py` shares the street, name and band functions with `build.py`: it proves the packet reproduces from the raw files and that the data edits equal the packet, not that the matcher is correct.
