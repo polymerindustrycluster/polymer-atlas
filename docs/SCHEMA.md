@@ -1,7 +1,9 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.19.6 — 2026-11-23 (§4.13 admits replayed own-site web proofs and recent archived copies for street and market claims, owner ruling “Build it, archived pages count”).
+**Version:** v1.19.7 — 2026-11-23 (§1 R13 allows filings up to ten years old, with source years shown and newer contradictory sources taking precedence).
+
+Previous: v1.19.6 — 2026-11-23 (§4.13 admits replayed own-site web proofs and recent archived copies for street and market claims, owner ruling “Build it, archived pages count”).
 
 Previous: v1.19.5 — 2026-11-22 (§1 R13 and §4.13 make Form 5500 active-participant counts leads only — owner ruling 2026-11-22, round 14, "Leads only").
 
@@ -458,12 +460,16 @@ R11. **No data row is changed by this revision.**
      name-and-city match, and every other use of the PPP data, stays a lead. Applied in PR #348;
      recorded in `tasks/owner-rulings-2026-11-18/README.md`.
 
-  **[v1.19.3]** **Age limit (owner ruling 2026-11-22, "Headcount age: 5 years").** A filing sets a band under
-  sources 1 and 2 only if it is dated within five years of the date the band is written. The filing date is, for ITA
-  300A, the end of the filing year (31 December); for an OSHA inspection, its open date.
-  For the pass of 2026-11-22 the cutoff is 2021-11-22. An older filing is a lead only and never sets a band; the
-  integrator records it as held with the reason `stale_over_5_years`. The limit applies to the evidence behind a band,
-  not to bands already in the data.
+  **[v1.19.7]** **Age limit (owner ruling 2026-11-23, “10 years, dated”).** A filing under sources 1 and 2
+  can set a band when its date is on or after the band-write date minus ten years. For ITA 300A use 31 December
+  of the filing year. For an OSHA inspection use its open date. The cutoff for the pass dated 2026-11-23 is
+  2016-11-23. Hold an older filing with reason `stale_over_10_years`. This supersedes the v1.19.3 five-year limit.
+  A newer admissible source for the same establishment that puts it in a different band takes precedence, regardless
+  of the distance between the bands. Hold the older conflicting filing. Review conflicting sources with the same
+  date under the R13 review rule above. Apply the age limit when writing a band.
+  Show the filing year in the band's `size_band` evidence `claim_detail` and store the filing's source date in
+  `observed_date`. Include that date in the existing `BAND-SOURCE` site note.
+  The blind audit 12 readers check a sample.
 
 ### Owner rulings — 2026-11-03 (equipment and availability) **[v1.9]**
 
@@ -3367,4 +3373,5 @@ unchanged.
 - **v1.19.3 — 2026-11-22 (owner ruling 2026-11-22, "Headcount age: 5 years", multiple choice).** §1 R13 gains an age limit: a filing sets an employee band only if it is dated within five years of the date the band is written (source date: ITA 31 December of the filing year; inspection open date; Form 5500 plan-year end; 2021-11-22 for the pass of 2026-11-22); older filings are held as leads with the reason `stale_over_5_years`. The ruling came out of the size sprint (`tasks/pic18-size-sprint-2026-11-22/README.md`), where 14 of the first 117 candidate fills rested on inspections of 1974 to 2015. No data row is changed by this revision.
 - **v1.19.4 — 2026-11-22 (owner ruling 2026-11-22, "Add 'corporation'", multiple choice; and the round-13 follow-up on `ohio_statewide`).** (1) §4.4 `entity_type` enum gains `corporation`, the plain value for a legal name ending in Inc, Inc., Incorporated, Corp, Corp. or Corporation; public or private is not guessed, so the suffix never sets `corporation_public` or `corporation_private`, and Co, Company, Ltd and Limited stay `unknown`. `scripts/export_vocab.py`, `docs/schema/vocab.json` and `scripts/profile_fields.py` carry the new value. `tasks/entity-type-from-name-2026-11-22/` fills blank or `unknown` cells only, never overwriting: `corporation` 783, `llc` 228, `partnership` 4 organization rows in PIC-18 and the rest of Ohio (by frame in its README). (2) 79 organization rows with `hq_in_scope` = `ohio_statewide` and a named Ohio HQ county outside PIC-18 become `ohio_other` (`tasks/ohio-statewide-labels-2026-11-22/`); 5 with no county stay held. At this revision no organization row carries `pic12`.
 - **v1.19.5 — 2026-11-22 (owner ruling 2026-11-22, round 14, "Leads only").** §1 R7 and R13 and §4.13 remove Form 5500 active-participant counts as a size-band source. They stay leads. The rules for OSHA ITA establishment records and OSHA inspections are unchanged. No data rows change.
+- **v1.19.7 — 2026-11-23 (owner ruling, “10 years, dated”).** §1 R13 replaces the five-year cutoff with ten years, shows the filing year, and gives a newer contradictory source precedence. Blind audit 12 samples the result.
 - **v1.19.6 — 2026-11-23 (owner ruling, round 16, “Build it, archived pages count”).** §4.13 defines per-row own-site web proofs with capture replay and extends the street rule for recent archived company pages to market claims. No data rows change.

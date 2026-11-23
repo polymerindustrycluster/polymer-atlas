@@ -320,3 +320,12 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   unchanged capture, that capture is cited with its true date once the row's quote is reproduced from it (first applied to
   ORG-000038's two pages in PR #502). The audit 12 draw will read the placements above from a checked-in list in
   `tasks/blind-audit-12-protocol-2026-11-23/`, added with the B6 data pull request, rather than from a new placement rule.
+
+## 2026-11-23 12:48: R13 size filings, “10 years, dated”
+
+> Accept filings up to 10 years old. Each band shows its source year, and a newer contradicting source
+> always wins. The audit 12 readers check a sample.
+
+The repo owner superseded the v1.19.3 five-year limit for R13 sources 1 and 2. SCHEMA v1.19.7 records
+the band-write cutoff, the hold for a stale or superseded filing, and the existing evidence and site
+notes fields that show the source year.
