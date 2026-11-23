@@ -851,6 +851,18 @@ class ValidatorMutationTests(unittest.TestCase):
         self.edit_rows("people.csv", lambda r: r["person_id"] == pid, lambda r: r.update(institution_org_id=other_inst))
         self.assert_fails_with(self.V68_MSG.format(t="people", rid=pid, tier=me["verification_tier"]))
 
+    def test_replay_gap_is_reported_when_the_raw_store_is_missing(self):
+        # review 2026-11-22 (Codex, PR #475): a green hosted job must say that a NAS-only replay was not run.
+        tasks = Path(self.tmp.name) / f"tasks_{self._testMethodName}"
+        (tasks / "demo-packet").mkdir(parents=True)
+        for store, expect_gap in (("/nonexistent/raw-store", True), (str(self.tmp.name), False)):
+            (tasks / "demo-packet" / "REPLAY_NEEDS_RAW_STORE").write_text(store + "\n")
+            env = dict(os.environ, ATLAS_DATA_DIR=str(self.data), ATLAS_TASKS_DIR=str(tasks))
+            p = subprocess.run([sys.executable, str(VALIDATE)], env=env, capture_output=True, text=True)
+            out = p.stdout + p.stderr
+            self.assertEqual(p.returncode, 0, out[-800:])          # report only: never an error
+            self.assertEqual("replay gap: demo-packet/check.py" in out, expect_gap, out[-800:])
+
 
 if __name__ == "__main__":
     unittest.main()
