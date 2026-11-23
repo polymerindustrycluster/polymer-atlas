@@ -598,7 +598,8 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [x] `done 2026-11-18` `scripts/integrate/mergepr.sh` gains `MERGE_MODE=squash`, keeping `--match-head-commit` (PR #376).
 - [x] `done 2026-11-18` People identifier URLs (owner items 1 and 1b): 29 people rows replaced or blanked, validator V-62, SCHEMA v1.13.4 (PR #379, 9c94fc65).
 - [x] `done 2026-11-18` Blind audit 11 correction A11-113: the UEI registry link on ORG-000889 retired, 1 row (PR #382, 4d2aa3ac).
-- [ ] `open` Blind audit 11 correction A11-047 (ProVia `newsroom_feed_url`). The market and size lanes released `organizations_OH.csv` on 2026-11-18 (#383, #396 merged).
+- [ ] `claimed:atlas-w23-ohio-links 2026-11-23` **Ohio own-site navigation links**, excluding the prior PIC-18 corpus frame. Branch `agent/codex/ohio-links-corpus-2026-11-23`. First user: John, company profile lookups. Non-use review 2026-12-23.
+- [ ] `claimed:atlas-w23-ohio-links 2026-11-23` Blind audit 11 correction A11-047 (ProVia `newsroom_feed_url`). The market and size lanes released `organizations_OH.csv` on 2026-11-18 (#383, #396 merged).
 - [ ] `open` Re-verify Pedro Cortes (PERSON-001142): UTEP on record, Youngstown State in the 2022-23 catalog (owner item 5).
 - [ ] `open` Add Sen Gupta and Akkus from CWRU bulletin lines (roster-grade Gate B, owner item 3); add West when a current page states his research.
 - [x] `done 2026-11-18` Scrub account URLs from historical task files (owner items 1/1b, scrub forward): 109 URLs plus 9 in-URL repeats in 44 files (PR #378).
