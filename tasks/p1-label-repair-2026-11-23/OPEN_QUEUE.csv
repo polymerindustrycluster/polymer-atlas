@@ -1,0 +1,831 @@
+table,record_id,field,location,naics_source_type,reason
+event_participation,EVP-000359,role_detail,data/event_participation.csv:360,,controller-withheld; fact-preserving deletion or field correction requires reading
+event_participation,EVP-000360,role_detail,data/event_participation.csv:361,,controller-withheld; fact-preserving deletion or field correction requires reading
+event_participation,EVP-000361,role_detail,data/event_participation.csv:362,,controller-withheld; fact-preserving deletion or field correction requires reading
+events,EVT-000034,subject_note,data/events.csv:35,,controller-withheld; fact-preserving deletion or field correction requires reading
+events,EVT-000037,geography_note,data/events.csv:38,,controller-withheld; fact-preserving deletion or field correction requires reading
+events,EVT-000037,subject_note,data/events.csv:38,,controller-withheld; fact-preserving deletion or field correction requires reading
+events,EVT-000042,subject_note,data/events.csv:43,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-003096,naics_primary_source_name,data/organizations_CA.csv:7,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003097,naics_primary_source_name,data/organizations_CA.csv:8,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003648,naics_primary_source_name,data/organizations_CA.csv:48,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010000,naics_primary_source_name,data/organizations_CA.csv:121,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010003,naics_primary_source_name,data/organizations_CA.csv:122,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010007,naics_primary_source_name,data/organizations_CA.csv:123,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003112,description_1line,data/organizations_CT.csv:13,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-000805,naics_primary_source_name,data/organizations_DE.csv:3,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-002873,description_1line,data/organizations_DE.csv:5,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-003169,naics_primary_source_name,data/organizations_FL.csv:9,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003987,naics_primary_source_name,data/organizations_FL.csv:43,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003094,naics_primary_source_name,data/organizations_GA.csv:16,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000676,naics_primary_source_name,data/organizations_IA.csv:2,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003306,naics_primary_source_name,data/organizations_ID.csv:4,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003997,naics_primary_source_name,data/organizations_IL.csv:66,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001404,naics_primary_source_name,data/organizations_IN.csv:2,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001404,description_1line,data/organizations_IN.csv:2,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-003045,naics_primary_source_name,data/organizations_IN.csv:10,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003102,naics_primary_source_name,data/organizations_IN.csv:11,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003192,naics_primary_source_name,data/organizations_IN.csv:20,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003383,naics_primary_source_name,data/organizations_IN.csv:29,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003148,naics_primary_source_name,data/organizations_INTL.csv:19,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003991,naics_primary_source_name,data/organizations_INTL.csv:26,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003972,naics_primary_source_name,data/organizations_KS.csv:15,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000905,naics_primary_source_name,data/organizations_KY.csv:2,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003057,naics_primary_source_name,data/organizations_LA.csv:2,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003141,naics_primary_source_name,data/organizations_LA.csv:4,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000620,naics_primary_source_name,data/organizations_MA.csv:2,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-002908,naics_primary_source_name,data/organizations_MA.csv:6,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-002918,description_1line,data/organizations_MA.csv:7,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-003245,naics_primary_source_name,data/organizations_MA.csv:17,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003370,description_1line,data/organizations_MA.csv:19,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-000655,naics_primary_source_name,data/organizations_MI.csv:3,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000950,naics_primary_source_name,data/organizations_MI.csv:7,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-002913,naics_primary_source_name,data/organizations_MI.csv:14,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003003,naics_primary_source_name,data/organizations_MI.csv:25,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003100,naics_primary_source_name,data/organizations_MI.csv:34,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003139,naics_primary_source_name,data/organizations_MI.csv:36,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003448,naics_primary_source_name,data/organizations_MI.csv:55,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003980,naics_primary_source_name,data/organizations_MI.csv:94,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-004029,naics_primary_source_name,data/organizations_MI.csv:96,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003123,naics_primary_source_name,data/organizations_MO.csv:6,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003168,naics_primary_source_name,data/organizations_MS.csv:2,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-002917,description_1line,data/organizations_NC.csv:10,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-003087,naics_primary_source_name,data/organizations_NC.csv:22,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003099,naics_primary_source_name,data/organizations_NC.csv:24,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003154,naics_primary_source_name,data/organizations_NC.csv:27,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003667,naics_primary_source_name,data/organizations_NC.csv:48,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003710,naics_primary_source_name,data/organizations_NC.csv:53,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003943,naics_primary_source_name,data/organizations_NC.csv:71,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003945,naics_primary_source_name,data/organizations_NC.csv:72,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003946,naics_primary_source_name,data/organizations_NC.csv:73,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000899,naics_primary_source_name,data/organizations_NJ.csv:4,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003064,naics_primary_source_name,data/organizations_NJ.csv:20,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003944,naics_primary_source_name,data/organizations_NJ.csv:45,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003970,naics_primary_source_name,data/organizations_NJ.csv:46,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003999,naics_primary_source_name,data/organizations_NJ.csv:48,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-004032,naics_primary_source_name,data/organizations_NJ.csv:53,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000812,naics_primary_source_name,data/organizations_NY.csv:2,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003942,naics_primary_source_name,data/organizations_NY.csv:32,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000127,description_1line,data/organizations_OH.csv:105,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-000207,naics_primary_source_name,data/organizations_OH.csv:168,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000211,naics_primary_source_name,data/organizations_OH.csv:172,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000215,naics_primary_source_name,data/organizations_OH.csv:175,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000216,naics_primary_source_name,data/organizations_OH.csv:176,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000223,naics_primary_source_name,data/organizations_OH.csv:181,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000226,naics_primary_source_name,data/organizations_OH.csv:184,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000229,naics_primary_source_name,data/organizations_OH.csv:186,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000251,naics_primary_source_name,data/organizations_OH.csv:206,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000258,naics_primary_source_name,data/organizations_OH.csv:213,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000261,naics_primary_source_name,data/organizations_OH.csv:216,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000263,naics_primary_source_name,data/organizations_OH.csv:218,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000271,naics_primary_source_name,data/organizations_OH.csv:224,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000274,naics_primary_source_name,data/organizations_OH.csv:227,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000278,naics_primary_source_name,data/organizations_OH.csv:230,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000285,naics_primary_source_name,data/organizations_OH.csv:234,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000330,naics_primary_source_name,data/organizations_OH.csv:269,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000333,naics_primary_source_name,data/organizations_OH.csv:272,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000337,naics_primary_source_name,data/organizations_OH.csv:275,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000339,naics_primary_source_name,data/organizations_OH.csv:277,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000343,naics_primary_source_name,data/organizations_OH.csv:280,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000347,naics_primary_source_name,data/organizations_OH.csv:283,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000348,naics_primary_source_name,data/organizations_OH.csv:284,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000349,naics_primary_source_name,data/organizations_OH.csv:285,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000351,naics_primary_source_name,data/organizations_OH.csv:287,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000355,naics_primary_source_name,data/organizations_OH.csv:291,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000360,naics_primary_source_name,data/organizations_OH.csv:295,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000361,naics_primary_source_name,data/organizations_OH.csv:296,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000362,naics_primary_source_name,data/organizations_OH.csv:297,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000364,naics_primary_source_name,data/organizations_OH.csv:299,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000370,naics_primary_source_name,data/organizations_OH.csv:303,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000376,naics_primary_source_name,data/organizations_OH.csv:306,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000377,naics_primary_source_name,data/organizations_OH.csv:307,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000378,naics_primary_source_name,data/organizations_OH.csv:308,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000380,naics_primary_source_name,data/organizations_OH.csv:310,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000381,naics_primary_source_name,data/organizations_OH.csv:311,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000393,naics_primary_source_name,data/organizations_OH.csv:322,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000396,naics_primary_source_name,data/organizations_OH.csv:324,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000397,naics_primary_source_name,data/organizations_OH.csv:325,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000408,naics_primary_source_name,data/organizations_OH.csv:335,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000409,naics_primary_source_name,data/organizations_OH.csv:336,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000415,naics_primary_source_name,data/organizations_OH.csv:341,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000417,naics_primary_source_name,data/organizations_OH.csv:343,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000418,naics_primary_source_name,data/organizations_OH.csv:344,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000419,naics_primary_source_name,data/organizations_OH.csv:345,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000420,naics_primary_source_name,data/organizations_OH.csv:346,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000422,naics_primary_source_name,data/organizations_OH.csv:348,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000423,naics_primary_source_name,data/organizations_OH.csv:349,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000424,naics_primary_source_name,data/organizations_OH.csv:350,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000426,naics_primary_source_name,data/organizations_OH.csv:352,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000427,naics_primary_source_name,data/organizations_OH.csv:353,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000428,naics_primary_source_name,data/organizations_OH.csv:354,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000429,naics_primary_source_name,data/organizations_OH.csv:355,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000432,naics_primary_source_name,data/organizations_OH.csv:358,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000434,naics_primary_source_name,data/organizations_OH.csv:360,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000436,naics_primary_source_name,data/organizations_OH.csv:362,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000437,naics_primary_source_name,data/organizations_OH.csv:363,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000439,naics_primary_source_name,data/organizations_OH.csv:365,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000443,naics_primary_source_name,data/organizations_OH.csv:368,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000444,naics_primary_source_name,data/organizations_OH.csv:369,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000445,naics_primary_source_name,data/organizations_OH.csv:370,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000446,naics_primary_source_name,data/organizations_OH.csv:371,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000450,naics_primary_source_name,data/organizations_OH.csv:374,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000451,naics_primary_source_name,data/organizations_OH.csv:375,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000452,naics_primary_source_name,data/organizations_OH.csv:376,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000455,naics_primary_source_name,data/organizations_OH.csv:379,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000457,naics_primary_source_name,data/organizations_OH.csv:381,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000460,naics_primary_source_name,data/organizations_OH.csv:383,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000461,naics_primary_source_name,data/organizations_OH.csv:384,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000463,naics_primary_source_name,data/organizations_OH.csv:386,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000464,naics_primary_source_name,data/organizations_OH.csv:387,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000465,naics_primary_source_name,data/organizations_OH.csv:388,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000466,naics_primary_source_name,data/organizations_OH.csv:389,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000468,naics_primary_source_name,data/organizations_OH.csv:390,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000469,naics_primary_source_name,data/organizations_OH.csv:391,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000470,naics_primary_source_name,data/organizations_OH.csv:392,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000471,naics_primary_source_name,data/organizations_OH.csv:393,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000478,naics_primary_source_name,data/organizations_OH.csv:398,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000480,naics_primary_source_name,data/organizations_OH.csv:399,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000481,naics_primary_source_name,data/organizations_OH.csv:400,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000482,naics_primary_source_name,data/organizations_OH.csv:401,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000484,naics_primary_source_name,data/organizations_OH.csv:403,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000486,naics_primary_source_name,data/organizations_OH.csv:405,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000491,naics_primary_source_name,data/organizations_OH.csv:409,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000492,naics_primary_source_name,data/organizations_OH.csv:410,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000494,naics_primary_source_name,data/organizations_OH.csv:412,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000495,naics_primary_source_name,data/organizations_OH.csv:413,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000496,naics_primary_source_name,data/organizations_OH.csv:414,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000498,naics_primary_source_name,data/organizations_OH.csv:415,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000499,naics_primary_source_name,data/organizations_OH.csv:416,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000504,naics_primary_source_name,data/organizations_OH.csv:418,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000505,naics_primary_source_name,data/organizations_OH.csv:419,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000507,naics_primary_source_name,data/organizations_OH.csv:421,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000508,naics_primary_source_name,data/organizations_OH.csv:422,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000510,naics_primary_source_name,data/organizations_OH.csv:423,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000511,naics_primary_source_name,data/organizations_OH.csv:424,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000512,naics_primary_source_name,data/organizations_OH.csv:425,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000513,naics_primary_source_name,data/organizations_OH.csv:426,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000517,naics_primary_source_name,data/organizations_OH.csv:429,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000518,naics_primary_source_name,data/organizations_OH.csv:430,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000519,naics_primary_source_name,data/organizations_OH.csv:431,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000524,naics_primary_source_name,data/organizations_OH.csv:435,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000526,naics_primary_source_name,data/organizations_OH.csv:437,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000530,naics_primary_source_name,data/organizations_OH.csv:441,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000532,naics_primary_source_name,data/organizations_OH.csv:443,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000535,naics_primary_source_name,data/organizations_OH.csv:446,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000536,naics_primary_source_name,data/organizations_OH.csv:447,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000537,naics_primary_source_name,data/organizations_OH.csv:448,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000538,naics_primary_source_name,data/organizations_OH.csv:449,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000539,naics_primary_source_name,data/organizations_OH.csv:450,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000540,naics_primary_source_name,data/organizations_OH.csv:451,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000542,naics_primary_source_name,data/organizations_OH.csv:453,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000545,naics_primary_source_name,data/organizations_OH.csv:456,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000548,naics_primary_source_name,data/organizations_OH.csv:457,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000553,naics_primary_source_name,data/organizations_OH.csv:462,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000554,naics_primary_source_name,data/organizations_OH.csv:463,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000569,naics_primary_source_name,data/organizations_OH.csv:472,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000583,naics_primary_source_name,data/organizations_OH.csv:485,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000588,naics_primary_source_name,data/organizations_OH.csv:489,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000604,naics_primary_source_name,data/organizations_OH.csv:502,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000612,naics_primary_source_name,data/organizations_OH.csv:510,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000618,naics_primary_source_name,data/organizations_OH.csv:516,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000628,naics_primary_source_name,data/organizations_OH.csv:523,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000637,naics_primary_source_name,data/organizations_OH.csv:531,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000642,naics_primary_source_name,data/organizations_OH.csv:536,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000643,naics_primary_source_name,data/organizations_OH.csv:537,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000645,naics_primary_source_name,data/organizations_OH.csv:539,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000649,naics_primary_source_name,data/organizations_OH.csv:543,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000652,naics_primary_source_name,data/organizations_OH.csv:546,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000662,naics_primary_source_name,data/organizations_OH.csv:553,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000663,naics_primary_source_name,data/organizations_OH.csv:554,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000667,naics_primary_source_name,data/organizations_OH.csv:558,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000678,naics_primary_source_name,data/organizations_OH.csv:566,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000680,naics_primary_source_name,data/organizations_OH.csv:568,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000681,naics_primary_source_name,data/organizations_OH.csv:569,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000682,naics_primary_source_name,data/organizations_OH.csv:570,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000685,naics_primary_source_name,data/organizations_OH.csv:572,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000688,naics_primary_source_name,data/organizations_OH.csv:575,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000692,naics_primary_source_name,data/organizations_OH.csv:579,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000694,naics_primary_source_name,data/organizations_OH.csv:581,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000701,naics_primary_source_name,data/organizations_OH.csv:587,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000707,naics_primary_source_name,data/organizations_OH.csv:591,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000709,naics_primary_source_name,data/organizations_OH.csv:593,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000711,naics_primary_source_name,data/organizations_OH.csv:595,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000723,naics_primary_source_name,data/organizations_OH.csv:605,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000725,naics_primary_source_name,data/organizations_OH.csv:607,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000730,naics_primary_source_name,data/organizations_OH.csv:612,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000731,naics_primary_source_name,data/organizations_OH.csv:613,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000732,naics_primary_source_name,data/organizations_OH.csv:614,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000733,naics_primary_source_name,data/organizations_OH.csv:615,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000734,naics_primary_source_name,data/organizations_OH.csv:616,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000735,naics_primary_source_name,data/organizations_OH.csv:617,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000740,naics_primary_source_name,data/organizations_OH.csv:621,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000742,naics_primary_source_name,data/organizations_OH.csv:622,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000756,naics_primary_source_name,data/organizations_OH.csv:631,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000768,naics_primary_source_name,data/organizations_OH.csv:639,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000791,naics_primary_source_name,data/organizations_OH.csv:657,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000792,naics_primary_source_name,data/organizations_OH.csv:658,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000795,naics_primary_source_name,data/organizations_OH.csv:661,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000797,naics_primary_source_name,data/organizations_OH.csv:663,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000798,naics_primary_source_name,data/organizations_OH.csv:664,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000803,naics_primary_source_name,data/organizations_OH.csv:669,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000807,naics_primary_source_name,data/organizations_OH.csv:672,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000808,naics_primary_source_name,data/organizations_OH.csv:673,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000811,naics_primary_source_name,data/organizations_OH.csv:675,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000814,naics_primary_source_name,data/organizations_OH.csv:677,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000815,naics_primary_source_name,data/organizations_OH.csv:678,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000816,naics_primary_source_name,data/organizations_OH.csv:679,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000817,naics_primary_source_name,data/organizations_OH.csv:680,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000818,naics_primary_source_name,data/organizations_OH.csv:681,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000821,naics_primary_source_name,data/organizations_OH.csv:684,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000822,naics_primary_source_name,data/organizations_OH.csv:685,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000824,naics_primary_source_name,data/organizations_OH.csv:687,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000828,naics_primary_source_name,data/organizations_OH.csv:690,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000831,naics_primary_source_name,data/organizations_OH.csv:693,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000833,naics_primary_source_name,data/organizations_OH.csv:695,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000834,naics_primary_source_name,data/organizations_OH.csv:696,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000836,naics_primary_source_name,data/organizations_OH.csv:698,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000840,naics_primary_source_name,data/organizations_OH.csv:701,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000841,naics_primary_source_name,data/organizations_OH.csv:702,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000842,naics_primary_source_name,data/organizations_OH.csv:703,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000844,naics_primary_source_name,data/organizations_OH.csv:704,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000845,naics_primary_source_name,data/organizations_OH.csv:705,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000848,naics_primary_source_name,data/organizations_OH.csv:708,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000852,naics_primary_source_name,data/organizations_OH.csv:712,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000857,naics_primary_source_name,data/organizations_OH.csv:716,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000859,naics_primary_source_name,data/organizations_OH.csv:718,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000861,naics_primary_source_name,data/organizations_OH.csv:719,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000863,naics_primary_source_name,data/organizations_OH.csv:721,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000869,naics_primary_source_name,data/organizations_OH.csv:727,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000872,naics_primary_source_name,data/organizations_OH.csv:729,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000873,naics_primary_source_name,data/organizations_OH.csv:730,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000874,naics_primary_source_name,data/organizations_OH.csv:731,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000881,naics_primary_source_name,data/organizations_OH.csv:738,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000882,naics_primary_source_name,data/organizations_OH.csv:739,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000884,naics_primary_source_name,data/organizations_OH.csv:741,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000887,naics_primary_source_name,data/organizations_OH.csv:743,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000888,naics_primary_source_name,data/organizations_OH.csv:744,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000891,naics_primary_source_name,data/organizations_OH.csv:747,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000893,naics_primary_source_name,data/organizations_OH.csv:749,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000895,naics_primary_source_name,data/organizations_OH.csv:751,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000896,naics_primary_source_name,data/organizations_OH.csv:752,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000902,naics_primary_source_name,data/organizations_OH.csv:757,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000907,naics_primary_source_name,data/organizations_OH.csv:760,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000912,naics_primary_source_name,data/organizations_OH.csv:765,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000914,naics_primary_source_name,data/organizations_OH.csv:767,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000916,naics_primary_source_name,data/organizations_OH.csv:769,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000920,naics_primary_source_name,data/organizations_OH.csv:772,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000922,naics_primary_source_name,data/organizations_OH.csv:774,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000923,naics_primary_source_name,data/organizations_OH.csv:775,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000924,naics_primary_source_name,data/organizations_OH.csv:776,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000928,naics_primary_source_name,data/organizations_OH.csv:779,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000929,naics_primary_source_name,data/organizations_OH.csv:780,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000932,naics_primary_source_name,data/organizations_OH.csv:782,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000940,naics_primary_source_name,data/organizations_OH.csv:788,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000941,naics_primary_source_name,data/organizations_OH.csv:789,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000942,naics_primary_source_name,data/organizations_OH.csv:790,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000944,naics_primary_source_name,data/organizations_OH.csv:792,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000945,naics_primary_source_name,data/organizations_OH.csv:793,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000946,naics_primary_source_name,data/organizations_OH.csv:794,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000947,naics_primary_source_name,data/organizations_OH.csv:795,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000948,naics_primary_source_name,data/organizations_OH.csv:796,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000953,naics_primary_source_name,data/organizations_OH.csv:799,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000954,naics_primary_source_name,data/organizations_OH.csv:800,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000956,naics_primary_source_name,data/organizations_OH.csv:802,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000957,naics_primary_source_name,data/organizations_OH.csv:803,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000958,naics_primary_source_name,data/organizations_OH.csv:804,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000960,naics_primary_source_name,data/organizations_OH.csv:806,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000961,naics_primary_source_name,data/organizations_OH.csv:807,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000963,naics_primary_source_name,data/organizations_OH.csv:809,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000972,naics_primary_source_name,data/organizations_OH.csv:817,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000975,naics_primary_source_name,data/organizations_OH.csv:820,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000977,naics_primary_source_name,data/organizations_OH.csv:821,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000978,naics_primary_source_name,data/organizations_OH.csv:822,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000980,naics_primary_source_name,data/organizations_OH.csv:824,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000981,naics_primary_source_name,data/organizations_OH.csv:825,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000982,naics_primary_source_name,data/organizations_OH.csv:826,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000985,naics_primary_source_name,data/organizations_OH.csv:828,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000986,naics_primary_source_name,data/organizations_OH.csv:829,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000988,naics_primary_source_name,data/organizations_OH.csv:831,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000991,naics_primary_source_name,data/organizations_OH.csv:834,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000992,naics_primary_source_name,data/organizations_OH.csv:835,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000993,naics_primary_source_name,data/organizations_OH.csv:836,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000994,naics_primary_source_name,data/organizations_OH.csv:837,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000995,naics_primary_source_name,data/organizations_OH.csv:838,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000997,naics_primary_source_name,data/organizations_OH.csv:840,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000998,naics_primary_source_name,data/organizations_OH.csv:841,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001000,naics_primary_source_name,data/organizations_OH.csv:843,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001007,naics_primary_source_name,data/organizations_OH.csv:847,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001014,naics_primary_source_name,data/organizations_OH.csv:853,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001015,naics_primary_source_name,data/organizations_OH.csv:854,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001016,naics_primary_source_name,data/organizations_OH.csv:855,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001019,naics_primary_source_name,data/organizations_OH.csv:857,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001020,naics_primary_source_name,data/organizations_OH.csv:858,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001023,naics_primary_source_name,data/organizations_OH.csv:860,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001028,naics_primary_source_name,data/organizations_OH.csv:864,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001031,naics_primary_source_name,data/organizations_OH.csv:867,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001034,naics_primary_source_name,data/organizations_OH.csv:869,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001035,naics_primary_source_name,data/organizations_OH.csv:870,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001040,naics_primary_source_name,data/organizations_OH.csv:872,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001041,naics_primary_source_name,data/organizations_OH.csv:873,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001042,naics_primary_source_name,data/organizations_OH.csv:874,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001044,naics_primary_source_name,data/organizations_OH.csv:876,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001045,naics_primary_source_name,data/organizations_OH.csv:877,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001050,naics_primary_source_name,data/organizations_OH.csv:881,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001051,naics_primary_source_name,data/organizations_OH.csv:882,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001054,naics_primary_source_name,data/organizations_OH.csv:885,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001057,naics_primary_source_name,data/organizations_OH.csv:886,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001058,naics_primary_source_name,data/organizations_OH.csv:887,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001059,naics_primary_source_name,data/organizations_OH.csv:888,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001062,naics_primary_source_name,data/organizations_OH.csv:891,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001063,naics_primary_source_name,data/organizations_OH.csv:892,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001066,naics_primary_source_name,data/organizations_OH.csv:895,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001068,naics_primary_source_name,data/organizations_OH.csv:896,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001069,naics_primary_source_name,data/organizations_OH.csv:897,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001070,naics_primary_source_name,data/organizations_OH.csv:898,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001072,naics_primary_source_name,data/organizations_OH.csv:900,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001079,naics_primary_source_name,data/organizations_OH.csv:907,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001081,naics_primary_source_name,data/organizations_OH.csv:909,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001083,naics_primary_source_name,data/organizations_OH.csv:910,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001091,naics_primary_source_name,data/organizations_OH.csv:915,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001094,naics_primary_source_name,data/organizations_OH.csv:916,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001095,naics_primary_source_name,data/organizations_OH.csv:917,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001096,naics_primary_source_name,data/organizations_OH.csv:918,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001097,naics_primary_source_name,data/organizations_OH.csv:919,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001098,naics_primary_source_name,data/organizations_OH.csv:920,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001099,naics_primary_source_name,data/organizations_OH.csv:921,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001100,naics_primary_source_name,data/organizations_OH.csv:922,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001101,naics_primary_source_name,data/organizations_OH.csv:923,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001103,naics_primary_source_name,data/organizations_OH.csv:925,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001104,naics_primary_source_name,data/organizations_OH.csv:926,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001105,naics_primary_source_name,data/organizations_OH.csv:927,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001106,naics_primary_source_name,data/organizations_OH.csv:928,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001107,naics_primary_source_name,data/organizations_OH.csv:929,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001111,naics_primary_source_name,data/organizations_OH.csv:932,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001116,naics_primary_source_name,data/organizations_OH.csv:937,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001120,naics_primary_source_name,data/organizations_OH.csv:940,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001127,naics_primary_source_name,data/organizations_OH.csv:945,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001132,naics_primary_source_name,data/organizations_OH.csv:949,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001133,naics_primary_source_name,data/organizations_OH.csv:950,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001136,naics_primary_source_name,data/organizations_OH.csv:953,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001137,naics_primary_source_name,data/organizations_OH.csv:954,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001138,naics_primary_source_name,data/organizations_OH.csv:955,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001139,naics_primary_source_name,data/organizations_OH.csv:956,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001140,naics_primary_source_name,data/organizations_OH.csv:957,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001145,naics_primary_source_name,data/organizations_OH.csv:961,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001146,naics_primary_source_name,data/organizations_OH.csv:962,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001148,naics_primary_source_name,data/organizations_OH.csv:964,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001152,naics_primary_source_name,data/organizations_OH.csv:967,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001153,naics_primary_source_name,data/organizations_OH.csv:968,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001154,naics_primary_source_name,data/organizations_OH.csv:969,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001157,naics_primary_source_name,data/organizations_OH.csv:972,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001158,naics_primary_source_name,data/organizations_OH.csv:973,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001161,naics_primary_source_name,data/organizations_OH.csv:975,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001162,naics_primary_source_name,data/organizations_OH.csv:976,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001163,naics_primary_source_name,data/organizations_OH.csv:977,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001164,naics_primary_source_name,data/organizations_OH.csv:978,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001168,naics_primary_source_name,data/organizations_OH.csv:982,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001169,naics_primary_source_name,data/organizations_OH.csv:983,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001170,naics_primary_source_name,data/organizations_OH.csv:984,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001171,naics_primary_source_name,data/organizations_OH.csv:985,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001173,naics_primary_source_name,data/organizations_OH.csv:986,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001174,naics_primary_source_name,data/organizations_OH.csv:987,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001177,naics_primary_source_name,data/organizations_OH.csv:990,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001179,naics_primary_source_name,data/organizations_OH.csv:992,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001180,naics_primary_source_name,data/organizations_OH.csv:993,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001181,naics_primary_source_name,data/organizations_OH.csv:994,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001190,naics_primary_source_name,data/organizations_OH.csv:1002,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001192,naics_primary_source_name,data/organizations_OH.csv:1004,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001194,naics_primary_source_name,data/organizations_OH.csv:1005,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001195,naics_primary_source_name,data/organizations_OH.csv:1006,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001198,naics_primary_source_name,data/organizations_OH.csv:1008,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001201,naics_primary_source_name,data/organizations_OH.csv:1009,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001203,naics_primary_source_name,data/organizations_OH.csv:1010,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001205,naics_primary_source_name,data/organizations_OH.csv:1012,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001206,naics_primary_source_name,data/organizations_OH.csv:1013,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001207,naics_primary_source_name,data/organizations_OH.csv:1014,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001208,naics_primary_source_name,data/organizations_OH.csv:1015,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001337,naics_primary_source_name,data/organizations_OH.csv:1026,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001338,naics_primary_source_name,data/organizations_OH.csv:1027,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001339,naics_primary_source_name,data/organizations_OH.csv:1028,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001340,naics_primary_source_name,data/organizations_OH.csv:1029,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001341,naics_primary_source_name,data/organizations_OH.csv:1030,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001342,naics_primary_source_name,data/organizations_OH.csv:1031,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001343,naics_primary_source_name,data/organizations_OH.csv:1032,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001344,naics_primary_source_name,data/organizations_OH.csv:1033,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001345,naics_primary_source_name,data/organizations_OH.csv:1034,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001346,naics_primary_source_name,data/organizations_OH.csv:1035,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001377,naics_primary_source_name,data/organizations_OH.csv:1036,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001378,naics_primary_source_name,data/organizations_OH.csv:1037,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001386,naics_primary_source_name,data/organizations_OH.csv:1045,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001387,naics_primary_source_name,data/organizations_OH.csv:1046,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001389,naics_primary_source_name,data/organizations_OH.csv:1048,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001390,naics_primary_source_name,data/organizations_OH.csv:1049,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001395,naics_primary_source_name,data/organizations_OH.csv:1053,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001441,naics_primary_source_name,data/organizations_OH.csv:1096,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001449,naics_primary_source_name,data/organizations_OH.csv:1104,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001452,naics_primary_source_name,data/organizations_OH.csv:1107,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001453,naics_primary_source_name,data/organizations_OH.csv:1108,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001457,naics_primary_source_name,data/organizations_OH.csv:1112,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001461,naics_primary_source_name,data/organizations_OH.csv:1116,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001480,naics_primary_source_name,data/organizations_OH.csv:1134,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001504,naics_primary_source_name,data/organizations_OH.csv:1155,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001505,naics_primary_source_name,data/organizations_OH.csv:1156,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001506,naics_primary_source_name,data/organizations_OH.csv:1157,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001507,naics_primary_source_name,data/organizations_OH.csv:1158,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001508,naics_primary_source_name,data/organizations_OH.csv:1159,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001509,naics_primary_source_name,data/organizations_OH.csv:1160,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001510,naics_primary_source_name,data/organizations_OH.csv:1161,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001511,naics_primary_source_name,data/organizations_OH.csv:1162,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001512,naics_primary_source_name,data/organizations_OH.csv:1163,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001513,naics_primary_source_name,data/organizations_OH.csv:1164,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001514,naics_primary_source_name,data/organizations_OH.csv:1165,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001515,naics_primary_source_name,data/organizations_OH.csv:1166,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001516,naics_primary_source_name,data/organizations_OH.csv:1167,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001517,naics_primary_source_name,data/organizations_OH.csv:1168,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001518,naics_primary_source_name,data/organizations_OH.csv:1169,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001519,naics_primary_source_name,data/organizations_OH.csv:1170,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001520,naics_primary_source_name,data/organizations_OH.csv:1171,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001521,naics_primary_source_name,data/organizations_OH.csv:1172,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001522,naics_primary_source_name,data/organizations_OH.csv:1173,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001523,naics_primary_source_name,data/organizations_OH.csv:1174,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001524,naics_primary_source_name,data/organizations_OH.csv:1175,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001525,naics_primary_source_name,data/organizations_OH.csv:1176,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001526,naics_primary_source_name,data/organizations_OH.csv:1177,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001527,naics_primary_source_name,data/organizations_OH.csv:1178,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001528,naics_primary_source_name,data/organizations_OH.csv:1179,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001529,naics_primary_source_name,data/organizations_OH.csv:1180,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001530,naics_primary_source_name,data/organizations_OH.csv:1181,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001531,naics_primary_source_name,data/organizations_OH.csv:1182,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001532,naics_primary_source_name,data/organizations_OH.csv:1183,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001533,naics_primary_source_name,data/organizations_OH.csv:1184,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001534,naics_primary_source_name,data/organizations_OH.csv:1185,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001535,naics_primary_source_name,data/organizations_OH.csv:1186,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001536,naics_primary_source_name,data/organizations_OH.csv:1187,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001537,naics_primary_source_name,data/organizations_OH.csv:1188,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001538,naics_primary_source_name,data/organizations_OH.csv:1189,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001539,naics_primary_source_name,data/organizations_OH.csv:1190,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001540,naics_primary_source_name,data/organizations_OH.csv:1191,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001541,naics_primary_source_name,data/organizations_OH.csv:1192,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001542,naics_primary_source_name,data/organizations_OH.csv:1193,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001543,naics_primary_source_name,data/organizations_OH.csv:1194,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001544,naics_primary_source_name,data/organizations_OH.csv:1195,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001545,naics_primary_source_name,data/organizations_OH.csv:1196,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001546,naics_primary_source_name,data/organizations_OH.csv:1197,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001547,naics_primary_source_name,data/organizations_OH.csv:1198,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001548,naics_primary_source_name,data/organizations_OH.csv:1199,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001549,naics_primary_source_name,data/organizations_OH.csv:1200,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001550,naics_primary_source_name,data/organizations_OH.csv:1201,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001551,naics_primary_source_name,data/organizations_OH.csv:1202,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001552,naics_primary_source_name,data/organizations_OH.csv:1203,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001553,naics_primary_source_name,data/organizations_OH.csv:1204,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001554,naics_primary_source_name,data/organizations_OH.csv:1205,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001555,naics_primary_source_name,data/organizations_OH.csv:1206,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001556,naics_primary_source_name,data/organizations_OH.csv:1207,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001557,naics_primary_source_name,data/organizations_OH.csv:1208,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001558,naics_primary_source_name,data/organizations_OH.csv:1209,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001559,naics_primary_source_name,data/organizations_OH.csv:1210,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001560,naics_primary_source_name,data/organizations_OH.csv:1211,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001561,naics_primary_source_name,data/organizations_OH.csv:1212,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001562,naics_primary_source_name,data/organizations_OH.csv:1213,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001563,naics_primary_source_name,data/organizations_OH.csv:1214,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001564,naics_primary_source_name,data/organizations_OH.csv:1215,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001577,naics_primary_source_name,data/organizations_OH.csv:1228,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001581,naics_primary_source_name,data/organizations_OH.csv:1232,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001582,naics_primary_source_name,data/organizations_OH.csv:1233,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001589,naics_primary_source_name,data/organizations_OH.csv:1240,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001597,naics_primary_source_name,data/organizations_OH.csv:1247,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001604,naics_primary_source_name,data/organizations_OH.csv:1254,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001605,naics_primary_source_name,data/organizations_OH.csv:1255,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001606,naics_primary_source_name,data/organizations_OH.csv:1256,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001607,naics_primary_source_name,data/organizations_OH.csv:1257,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001608,naics_primary_source_name,data/organizations_OH.csv:1258,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001609,naics_primary_source_name,data/organizations_OH.csv:1259,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001617,naics_primary_source_name,data/organizations_OH.csv:1267,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001618,naics_primary_source_name,data/organizations_OH.csv:1268,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001620,naics_primary_source_name,data/organizations_OH.csv:1270,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001626,description_1line,data/organizations_OH.csv:1276,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001631,naics_primary_source_name,data/organizations_OH.csv:1281,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001639,description_1line,data/organizations_OH.csv:1288,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001647,naics_primary_source_name,data/organizations_OH.csv:1296,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001649,naics_primary_source_name,data/organizations_OH.csv:1298,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001660,naics_primary_source_name,data/organizations_OH.csv:1309,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001685,naics_primary_source_name,data/organizations_OH.csv:1334,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001689,naics_primary_source_name,data/organizations_OH.csv:1338,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001692,naics_primary_source_name,data/organizations_OH.csv:1341,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001695,description_1line,data/organizations_OH.csv:1344,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001696,description_1line,data/organizations_OH.csv:1345,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001697,description_1line,data/organizations_OH.csv:1346,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001698,description_1line,data/organizations_OH.csv:1347,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001699,description_1line,data/organizations_OH.csv:1348,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001700,description_1line,data/organizations_OH.csv:1349,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001702,description_1line,data/organizations_OH.csv:1351,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001703,description_1line,data/organizations_OH.csv:1352,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001704,description_1line,data/organizations_OH.csv:1353,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001716,description_1line,data/organizations_OH.csv:1365,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001718,description_1line,data/organizations_OH.csv:1367,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001720,description_1line,data/organizations_OH.csv:1369,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001721,description_1line,data/organizations_OH.csv:1370,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001722,description_1line,data/organizations_OH.csv:1371,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001723,description_1line,data/organizations_OH.csv:1372,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001727,description_1line,data/organizations_OH.csv:1376,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001733,naics_primary_source_name,data/organizations_OH.csv:1382,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001733,description_1line,data/organizations_OH.csv:1382,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001735,naics_primary_source_name,data/organizations_OH.csv:1384,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001736,naics_primary_source_name,data/organizations_OH.csv:1385,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001738,naics_primary_source_name,data/organizations_OH.csv:1387,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001739,naics_primary_source_name,data/organizations_OH.csv:1388,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001740,naics_primary_source_name,data/organizations_OH.csv:1389,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001740,description_1line,data/organizations_OH.csv:1389,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001741,naics_primary_source_name,data/organizations_OH.csv:1390,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001742,naics_primary_source_name,data/organizations_OH.csv:1391,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001743,naics_primary_source_name,data/organizations_OH.csv:1392,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001744,naics_primary_source_name,data/organizations_OH.csv:1393,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001746,naics_primary_source_name,data/organizations_OH.csv:1395,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001746,description_1line,data/organizations_OH.csv:1395,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001748,naics_primary_source_name,data/organizations_OH.csv:1397,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001750,naics_primary_source_name,data/organizations_OH.csv:1399,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001751,naics_primary_source_name,data/organizations_OH.csv:1400,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001752,naics_primary_source_name,data/organizations_OH.csv:1401,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001753,naics_primary_source_name,data/organizations_OH.csv:1402,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001753,description_1line,data/organizations_OH.csv:1402,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001754,description_1line,data/organizations_OH.csv:1403,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001755,naics_primary_source_name,data/organizations_OH.csv:1404,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001756,naics_primary_source_name,data/organizations_OH.csv:1405,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001758,description_1line,data/organizations_OH.csv:1407,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001759,description_1line,data/organizations_OH.csv:1408,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001766,description_1line,data/organizations_OH.csv:1415,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001770,naics_primary_source_name,data/organizations_OH.csv:1419,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001773,description_1line,data/organizations_OH.csv:1422,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001776,description_1line,data/organizations_OH.csv:1425,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001778,description_1line,data/organizations_OH.csv:1427,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001779,description_1line,data/organizations_OH.csv:1428,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001786,description_1line,data/organizations_OH.csv:1435,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001787,description_1line,data/organizations_OH.csv:1436,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001790,description_1line,data/organizations_OH.csv:1439,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001798,description_1line,data/organizations_OH.csv:1446,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001800,description_1line,data/organizations_OH.csv:1448,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001803,description_1line,data/organizations_OH.csv:1451,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001804,description_1line,data/organizations_OH.csv:1452,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001813,description_1line,data/organizations_OH.csv:1461,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001819,description_1line,data/organizations_OH.csv:1467,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001820,description_1line,data/organizations_OH.csv:1468,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001827,description_1line,data/organizations_OH.csv:1475,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001837,description_1line,data/organizations_OH.csv:1485,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001842,description_1line,data/organizations_OH.csv:1490,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001843,description_1line,data/organizations_OH.csv:1491,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001846,description_1line,data/organizations_OH.csv:1494,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001847,description_1line,data/organizations_OH.csv:1495,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001851,description_1line,data/organizations_OH.csv:1499,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001874,description_1line,data/organizations_OH.csv:1522,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001881,description_1line,data/organizations_OH.csv:1529,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001891,description_1line,data/organizations_OH.csv:1539,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001923,description_1line,data/organizations_OH.csv:1568,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001924,description_1line,data/organizations_OH.csv:1569,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001925,description_1line,data/organizations_OH.csv:1570,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001926,description_1line,data/organizations_OH.csv:1571,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001927,description_1line,data/organizations_OH.csv:1572,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001928,description_1line,data/organizations_OH.csv:1573,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001929,description_1line,data/organizations_OH.csv:1574,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001931,description_1line,data/organizations_OH.csv:1576,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001933,description_1line,data/organizations_OH.csv:1578,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001934,description_1line,data/organizations_OH.csv:1579,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001935,description_1line,data/organizations_OH.csv:1580,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001936,description_1line,data/organizations_OH.csv:1581,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001938,description_1line,data/organizations_OH.csv:1583,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001942,description_1line,data/organizations_OH.csv:1587,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001948,description_1line,data/organizations_OH.csv:1593,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001949,description_1line,data/organizations_OH.csv:1594,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001950,description_1line,data/organizations_OH.csv:1595,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001953,description_1line,data/organizations_OH.csv:1598,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001954,description_1line,data/organizations_OH.csv:1599,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001956,description_1line,data/organizations_OH.csv:1601,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001958,description_1line,data/organizations_OH.csv:1603,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001959,description_1line,data/organizations_OH.csv:1604,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001963,description_1line,data/organizations_OH.csv:1608,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001964,description_1line,data/organizations_OH.csv:1609,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001965,description_1line,data/organizations_OH.csv:1610,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001966,description_1line,data/organizations_OH.csv:1611,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001968,description_1line,data/organizations_OH.csv:1613,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001971,description_1line,data/organizations_OH.csv:1616,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001972,description_1line,data/organizations_OH.csv:1617,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001974,description_1line,data/organizations_OH.csv:1619,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001975,description_1line,data/organizations_OH.csv:1620,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001976,description_1line,data/organizations_OH.csv:1621,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001979,description_1line,data/organizations_OH.csv:1624,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001980,description_1line,data/organizations_OH.csv:1625,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001981,description_1line,data/organizations_OH.csv:1626,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001982,description_1line,data/organizations_OH.csv:1627,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001983,description_1line,data/organizations_OH.csv:1628,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001985,description_1line,data/organizations_OH.csv:1630,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001987,description_1line,data/organizations_OH.csv:1632,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001991,description_1line,data/organizations_OH.csv:1636,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001992,description_1line,data/organizations_OH.csv:1637,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001993,description_1line,data/organizations_OH.csv:1638,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-001994,description_1line,data/organizations_OH.csv:1639,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001995,description_1line,data/organizations_OH.csv:1640,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001996,description_1line,data/organizations_OH.csv:1641,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-001998,description_1line,data/organizations_OH.csv:1643,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002002,description_1line,data/organizations_OH.csv:1647,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002005,description_1line,data/organizations_OH.csv:1650,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002007,description_1line,data/organizations_OH.csv:1652,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002009,description_1line,data/organizations_OH.csv:1654,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002012,description_1line,data/organizations_OH.csv:1657,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002013,description_1line,data/organizations_OH.csv:1658,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002015,description_1line,data/organizations_OH.csv:1660,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002017,description_1line,data/organizations_OH.csv:1662,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002018,description_1line,data/organizations_OH.csv:1663,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002020,description_1line,data/organizations_OH.csv:1665,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002021,description_1line,data/organizations_OH.csv:1666,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002022,description_1line,data/organizations_OH.csv:1667,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002027,description_1line,data/organizations_OH.csv:1672,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002028,description_1line,data/organizations_OH.csv:1673,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002029,description_1line,data/organizations_OH.csv:1674,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002031,description_1line,data/organizations_OH.csv:1676,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002032,description_1line,data/organizations_OH.csv:1677,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002033,description_1line,data/organizations_OH.csv:1678,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002036,description_1line,data/organizations_OH.csv:1681,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002037,description_1line,data/organizations_OH.csv:1682,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002039,description_1line,data/organizations_OH.csv:1684,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002040,description_1line,data/organizations_OH.csv:1685,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002041,description_1line,data/organizations_OH.csv:1686,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002042,description_1line,data/organizations_OH.csv:1687,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002043,description_1line,data/organizations_OH.csv:1688,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002046,description_1line,data/organizations_OH.csv:1691,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002049,description_1line,data/organizations_OH.csv:1694,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002051,description_1line,data/organizations_OH.csv:1696,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002052,description_1line,data/organizations_OH.csv:1697,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002053,description_1line,data/organizations_OH.csv:1698,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002054,description_1line,data/organizations_OH.csv:1699,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002055,description_1line,data/organizations_OH.csv:1700,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002056,description_1line,data/organizations_OH.csv:1701,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002057,description_1line,data/organizations_OH.csv:1702,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002058,description_1line,data/organizations_OH.csv:1703,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002059,description_1line,data/organizations_OH.csv:1704,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002060,description_1line,data/organizations_OH.csv:1705,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002061,description_1line,data/organizations_OH.csv:1706,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002062,description_1line,data/organizations_OH.csv:1707,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002063,description_1line,data/organizations_OH.csv:1708,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002064,description_1line,data/organizations_OH.csv:1709,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002067,description_1line,data/organizations_OH.csv:1711,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002068,description_1line,data/organizations_OH.csv:1712,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002070,description_1line,data/organizations_OH.csv:1714,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002071,description_1line,data/organizations_OH.csv:1715,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002079,description_1line,data/organizations_OH.csv:1723,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002132,description_1line,data/organizations_OH.csv:1727,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002134,description_1line,data/organizations_OH.csv:1729,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002142,description_1line,data/organizations_OH.csv:1736,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002144,description_1line,data/organizations_OH.csv:1738,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002147,description_1line,data/organizations_OH.csv:1740,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002170,description_1line,data/organizations_OH.csv:1763,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002174,naics_primary_source_name,data/organizations_OH.csv:1767,own_site,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003101,naics_primary_source_name,data/organizations_OH.csv:1771,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003105,naics_primary_source_name,data/organizations_OH.csv:1772,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-004031,naics_primary_source_name,data/organizations_OH.csv:1785,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000933,naics_primary_source_name,data/organizations_PA.csv:5,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-002192,description_1line,data/organizations_PA.csv:22,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002196,description_1line,data/organizations_PA.csv:26,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002208,description_1line,data/organizations_PA.csv:38,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002214,description_1line,data/organizations_PA.csv:44,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002249,description_1line,data/organizations_PA.csv:79,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002250,description_1line,data/organizations_PA.csv:80,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002252,description_1line,data/organizations_PA.csv:82,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002283,description_1line,data/organizations_PA.csv:112,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002299,description_1line,data/organizations_PA.csv:128,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002331,description_1line,data/organizations_PA.csv:160,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002342,description_1line,data/organizations_PA.csv:171,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002392,description_1line,data/organizations_PA.csv:220,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002401,description_1line,data/organizations_PA.csv:229,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002415,description_1line,data/organizations_PA.csv:243,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002420,description_1line,data/organizations_PA.csv:248,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002425,description_1line,data/organizations_PA.csv:253,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002429,description_1line,data/organizations_PA.csv:257,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002435,description_1line,data/organizations_PA.csv:263,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002442,description_1line,data/organizations_PA.csv:270,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002449,description_1line,data/organizations_PA.csv:277,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002451,description_1line,data/organizations_PA.csv:279,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002453,description_1line,data/organizations_PA.csv:281,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002455,description_1line,data/organizations_PA.csv:283,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002480,description_1line,data/organizations_PA.csv:307,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002506,description_1line,data/organizations_PA.csv:333,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002526,description_1line,data/organizations_PA.csv:353,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002551,description_1line,data/organizations_PA.csv:375,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002556,description_1line,data/organizations_PA.csv:380,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002564,description_1line,data/organizations_PA.csv:388,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002566,description_1line,data/organizations_PA.csv:390,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002581,description_1line,data/organizations_PA.csv:405,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002583,description_1line,data/organizations_PA.csv:407,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002586,description_1line,data/organizations_PA.csv:410,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002590,description_1line,data/organizations_PA.csv:414,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002594,description_1line,data/organizations_PA.csv:418,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002596,description_1line,data/organizations_PA.csv:420,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002600,description_1line,data/organizations_PA.csv:424,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002613,description_1line,data/organizations_PA.csv:437,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002614,description_1line,data/organizations_PA.csv:438,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002616,description_1line,data/organizations_PA.csv:440,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002617,description_1line,data/organizations_PA.csv:441,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002620,description_1line,data/organizations_PA.csv:444,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002621,description_1line,data/organizations_PA.csv:445,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002623,description_1line,data/organizations_PA.csv:447,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002624,description_1line,data/organizations_PA.csv:448,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002626,description_1line,data/organizations_PA.csv:450,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002630,description_1line,data/organizations_PA.csv:454,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002635,description_1line,data/organizations_PA.csv:459,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002636,description_1line,data/organizations_PA.csv:460,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002637,description_1line,data/organizations_PA.csv:461,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002640,description_1line,data/organizations_PA.csv:464,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002641,description_1line,data/organizations_PA.csv:465,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002672,description_1line,data/organizations_PA.csv:495,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002679,description_1line,data/organizations_PA.csv:502,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002683,description_1line,data/organizations_PA.csv:506,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002686,description_1line,data/organizations_PA.csv:509,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002694,description_1line,data/organizations_PA.csv:517,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002714,description_1line,data/organizations_PA.csv:537,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002716,description_1line,data/organizations_PA.csv:539,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002754,description_1line,data/organizations_PA.csv:577,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-002757,description_1line,data/organizations_PA.csv:580,,possible build wording or literal public-name/term match; needs adjudication
+organizations,ORG-003103,naics_primary_source_name,data/organizations_PA.csv:608,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003104,naics_primary_source_name,data/organizations_PA.csv:609,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-004004,naics_primary_source_name,data/organizations_PA.csv:638,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003005,naics_primary_source_name,data/organizations_SC.csv:4,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003037,naics_primary_source_name,data/organizations_SC.csv:6,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003093,naics_primary_source_name,data/organizations_SC.csv:10,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003095,naics_primary_source_name,data/organizations_SC.csv:11,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003941,naics_primary_source_name,data/organizations_SC.csv:38,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003947,naics_primary_source_name,data/organizations_SC.csv:39,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003949,naics_primary_source_name,data/organizations_SC.csv:40,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003950,naics_primary_source_name,data/organizations_SC.csv:41,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003951,naics_primary_source_name,data/organizations_SC.csv:42,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003952,naics_primary_source_name,data/organizations_SC.csv:43,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003953,naics_primary_source_name,data/organizations_SC.csv:44,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003954,naics_primary_source_name,data/organizations_SC.csv:45,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003955,naics_primary_source_name,data/organizations_SC.csv:46,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003957,naics_primary_source_name,data/organizations_SC.csv:47,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003958,naics_primary_source_name,data/organizations_SC.csv:48,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003959,naics_primary_source_name,data/organizations_SC.csv:49,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003960,naics_primary_source_name,data/organizations_SC.csv:50,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003961,naics_primary_source_name,data/organizations_SC.csv:51,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003962,naics_primary_source_name,data/organizations_SC.csv:52,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003963,naics_primary_source_name,data/organizations_SC.csv:53,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003964,naics_primary_source_name,data/organizations_SC.csv:54,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003965,naics_primary_source_name,data/organizations_SC.csv:55,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003967,naics_primary_source_name,data/organizations_SC.csv:56,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003990,naics_primary_source_name,data/organizations_SC.csv:58,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003308,naics_primary_source_name,data/organizations_SD.csv:3,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-002915,naics_primary_source_name,data/organizations_TN.csv:7,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003098,naics_primary_source_name,data/organizations_TN.csv:11,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003956,naics_primary_source_name,data/organizations_TN.csv:31,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-000925,naics_primary_source_name,data/organizations_TX.csv:6,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001005,naics_primary_source_name,data/organizations_TX.csv:7,company_disclosed,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001429,naics_primary_source_name,data/organizations_TX.csv:8,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-001429,description_1line,data/organizations_TX.csv:8,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-002914,naics_primary_source_name,data/organizations_TX.csv:14,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-002991,naics_primary_source_name,data/organizations_TX.csv:23,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003056,naics_primary_source_name,data/organizations_TX.csv:26,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003079,naics_primary_source_name,data/organizations_TX.csv:31,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003756,naics_primary_source_name,data/organizations_TX.csv:90,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003911,naics_primary_source_name,data/organizations_TX.csv:102,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003922,naics_primary_source_name,data/organizations_TX.csv:104,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003994,naics_primary_source_name,data/organizations_TX.csv:109,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-004623,naics_primary_source_name,data/organizations_TX.csv:162,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-004000,naics_primary_source_name,data/organizations_US.csv:16,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-004826,description_1line,data/organizations_US.csv:105,,controller-withheld; fact-preserving deletion or field correction requires reading
+organizations,ORG-010004,naics_primary_source_name,data/organizations_US.csv:216,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010008,naics_primary_source_name,data/organizations_US.csv:218,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010010,naics_primary_source_name,data/organizations_US.csv:220,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010100,naics_primary_source_name,data/organizations_US.csv:221,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010103,naics_primary_source_name,data/organizations_US.csv:224,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010104,naics_primary_source_name,data/organizations_US.csv:225,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010105,naics_primary_source_name,data/organizations_US.csv:226,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010106,naics_primary_source_name,data/organizations_US.csv:227,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010107,naics_primary_source_name,data/organizations_US.csv:228,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010109,naics_primary_source_name,data/organizations_US.csv:230,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010111,naics_primary_source_name,data/organizations_US.csv:232,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010112,naics_primary_source_name,data/organizations_US.csv:233,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010202,naics_primary_source_name,data/organizations_US.csv:236,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010203,naics_primary_source_name,data/organizations_US.csv:237,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010208,naics_primary_source_name,data/organizations_US.csv:242,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010301,naics_primary_source_name,data/organizations_US.csv:245,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010503,naics_primary_source_name,data/organizations_US.csv:250,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010504,naics_primary_source_name,data/organizations_US.csv:251,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010505,naics_primary_source_name,data/organizations_US.csv:252,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010506,naics_primary_source_name,data/organizations_US.csv:253,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010507,naics_primary_source_name,data/organizations_US.csv:254,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010508,naics_primary_source_name,data/organizations_US.csv:255,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010509,naics_primary_source_name,data/organizations_US.csv:256,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010600,naics_primary_source_name,data/organizations_US.csv:257,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010602,naics_primary_source_name,data/organizations_US.csv:259,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010608,naics_primary_source_name,data/organizations_US.csv:265,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010700,naics_primary_source_name,data/organizations_US.csv:267,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010701,naics_primary_source_name,data/organizations_US.csv:268,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010800,naics_primary_source_name,data/organizations_US.csv:269,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010801,naics_primary_source_name,data/organizations_US.csv:270,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-010802,naics_primary_source_name,data/organizations_US.csv:271,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003119,naics_primary_source_name,data/organizations_VA.csv:7,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003299,naics_primary_source_name,data/organizations_WA.csv:9,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003989,naics_primary_source_name,data/organizations_WA.csv:18,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003948,naics_primary_source_name,data/organizations_WI.csv:56,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003966,naics_primary_source_name,data/organizations_WI.csv:57,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003969,naics_primary_source_name,data/organizations_WI.csv:58,government_filing,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+organizations,ORG-003228,naics_primary_source_name,data/organizations_WV.csv:3,directory_assigned,source-lookup follow-up: find a public NAICS citation in the record’s evidence rows
+people,,role_as_published,data/people.csv:1597,,controller-withheld; fact-preserving deletion or field correction requires reading
+programs,PROG-000094,facilities_note,data/programs.csv:95,,controller-withheld; fact-preserving deletion or field correction requires reading
