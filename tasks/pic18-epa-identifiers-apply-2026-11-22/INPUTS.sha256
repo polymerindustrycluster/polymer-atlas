@@ -1,0 +1,6 @@
+0a50e044b060571d09cd5f7e73cdd5cdeed44dba673d670c2d8fc0a0ea9e4a30  tasks/pic18-epa-identifiers-2026-11-22/packet.csv
+94dc5f9e9dfeff33e46efcbdee23b5334d08ed59795e43dc539a0c03a9cc01ee  tasks/pic18-epa-identifiers-2026-11-22/INPUTS.sha256
+b925c70b8a991e8021997dbeb0f73b01fcde8ee1a87b3360f5d35a270515d73f  raw/MANIFEST.sha256
+584754aac45afb94aea9bbb8115c43a1b23ff1485b04e04f9ba2ec72aa275612  raw/echo/2026-11-22-archive-snapshot/raw/frs_downloads.zip
+1dc1bda010f971fd9f50ca2367fa15dd77665ea94b2646c63ec1bdaf0774cfa3  raw/echo/2026-11-22-archive-snapshot/raw/npdes_downloads.zip
+cd889cb38fb8540d0400e211b98267f07f1d81e6c0a7b7e57afddec855964258  raw/echo/2026-11-22-archive-snapshot/raw/rcra_downloads.zip

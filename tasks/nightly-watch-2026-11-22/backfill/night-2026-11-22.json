@@ -1,0 +1,472 @@
+{
+ "base": "e2116cc3cd",
+ "commits": [
+  {
+   "data_files": 4,
+   "date": "2026-11-21T06:58:17-05:00",
+   "evidence_added": {
+    "spaghetti-phase-c-programs-2026-11-20": 32
+   },
+   "links_added": 0,
+   "pr": 440,
+   "removed": {},
+   "sha": "dd38735d80",
+   "subject": "Phase C unit 1: 32 department-row programs created from the dept-row sweep (PROG-000355..3"
+  },
+  {
+   "data_files": 3,
+   "date": "2026-11-21T09:11:14-05:00",
+   "evidence_added": {
+    "spaghetti-phase-c-streets-2026-11-21": 22
+   },
+   "links_added": 0,
+   "pr": 441,
+   "removed": {},
+   "sha": "117e387072",
+   "subject": "Phase C unit 2: 22 PIC-18 street fills from the judgment-queue packets (EVD-420033..420054"
+  },
+  {
+   "data_files": 13,
+   "date": "2026-11-21T10:25:30-05:00",
+   "evidence_added": {
+    "spaghetti-burndown-batch1-2026-11-21": 482
+   },
+   "links_added": 0,
+   "pr": 442,
+   "removed": {},
+   "sha": "5219c5d79a",
+   "subject": "Evidence burn-down batch 1: wave-2 backfill (482 rows, 255 records) via the packet-integra"
+  },
+  {
+   "data_files": 47,
+   "date": "2026-11-21T13:51:45-05:00",
+   "evidence_added": {
+    "spaghetti-burndown-batch2-2026-11-21": 1276
+   },
+   "links_added": 0,
+   "pr": 443,
+   "removed": {},
+   "sha": "c2b1d1803d",
+   "subject": "Evidence burn-down batch 2: wave-3 backfill (1,276 rows, 699 records) via the packet-integ"
+  },
+  {
+   "data_files": 7,
+   "date": "2026-11-21T15:44:47-05:00",
+   "evidence_added": {
+    "spaghetti-drift-rewitness-2026-11-21": 53
+   },
+   "links_added": 0,
+   "pr": 444,
+   "removed": {},
+   "sha": "120ec92040",
+   "subject": "Drift re-witness mint: 53 evidence rows for 28 records recovered from batch 1 held-capture"
+  },
+  {
+   "data_files": 6,
+   "date": "2026-11-21T15:50:19-05:00",
+   "evidence_added": {
+    "spaghetti-nourl-cleared-2026-11-21": 16
+   },
+   "links_added": 0,
+   "pr": 445,
+   "removed": {},
+   "sha": "c29df58e8f",
+   "subject": "No-URL cleared set: 16 two-family-reviewed evidence rows for 14 records (#445)"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-21T16:26:11-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 446,
+   "removed": {},
+   "sha": "5e768b6e40",
+   "subject": "Archive top-up tranche 3: 493 archive links appended (pool rows 1001-1500) (#446)"
+  },
+  {
+   "data_files": 21,
+   "date": "2026-11-21T16:41:15-05:00",
+   "evidence_added": {
+    "spaghetti-burndown-batch2-2026-11-21": 178
+   },
+   "links_added": 0,
+   "pr": 447,
+   "removed": {},
+   "sha": "f06631bc62",
+   "subject": "Batch-2 drift-recovered mint: 178 evidence rows for 104 records (PDF reading-order recover"
+  },
+  {
+   "data_files": 10,
+   "date": "2026-11-21T18:38:30-05:00",
+   "evidence_added": {
+    "spaghetti-burndown-batch2-2026-11-21": 27
+   },
+   "links_added": 0,
+   "pr": 448,
+   "removed": {},
+   "sha": "c67ad83144",
+   "subject": "Burn-down batch 3 build E1: drift-recovered2 mint \u2014 27 evidence rows + 27 archive links fo"
+  },
+  {
+   "data_files": 18,
+   "date": "2026-11-21T18:45:16-05:00",
+   "evidence_added": {
+    "spaghetti-burndown-batch2-2026-11-21": 233
+   },
+   "links_added": 0,
+   "pr": 449,
+   "removed": {},
+   "sha": "9b2276f2e8",
+   "subject": "Burn-down batch 3 build E2: quote-defect mint \u2014 233 evidence rows + 233 archive links for "
+  },
+  {
+   "data_files": 17,
+   "date": "2026-11-21T18:55:22-05:00",
+   "evidence_added": {
+    "spaghetti-burndown-batch3-2026-11-21": 124
+   },
+   "links_added": 0,
+   "pr": 450,
+   "removed": {},
+   "sha": "a514c67d8f",
+   "subject": "Burn-down batch 3 build F: wave-3 requeue mint \u2014 124 evidence rows + 124 archive links for"
+  },
+  {
+   "data_files": 0,
+   "date": "2026-11-22T03:10:34-05:00",
+   "evidence_added": {},
+   "links_added": 0,
+   "pr": 452,
+   "removed": {},
+   "sha": "124509d695",
+   "subject": "Source registry: docs/sources_registry.csv (81 rows) + regenerated SOURCES.md (#452)"
+  },
+  {
+   "data_files": 19,
+   "date": "2026-11-22T03:10:44-05:00",
+   "evidence_added": {
+    "spaghetti-burndown-batch4-2026-11-21": 240
+   },
+   "links_added": 0,
+   "pr": 451,
+   "removed": {},
+   "sha": "b99fd9e1e9",
+   "subject": "Burn-down batch 4: R1 re-witness mint \u2014 240 evidence rows + 240 archive links for 153 reco"
+  },
+  {
+   "data_files": 1,
+   "date": "2026-11-22T03:19:00-05:00",
+   "evidence_added": {},
+   "links_added": 1765,
+   "pr": 453,
+   "removed": {},
+   "sha": "31273fe462",
+   "subject": "SCHEMA v1.18: EIN minting doctrine in \u00a74.8 + backfill to 2,006 orgs (39.9%) (#453)"
+  },
+  {
+   "data_files": 20,
+   "date": "2026-11-22T03:23:37-05:00",
+   "evidence_added": {
+    "spaghetti-phase-c-unit3-2026-11-21": 22
+   },
+   "links_added": 0,
+   "pr": 454,
+   "removed": {},
+   "sha": "4ea038848c",
+   "subject": "Phase C unit 3: 22 accuracy corrections (EVD-425415..425436 after re-allocation) (#454)"
+  },
+  {
+   "data_files": 7,
+   "date": "2026-11-22T03:35:47-05:00",
+   "evidence_added": {
+    "spaghetti-burndown-batch1-2026-11-21": 25,
+    "spaghetti-burndown-batch2-2026-11-21": 14
+   },
+   "links_added": 0,
+   "pr": 455,
+   "removed": {},
+   "sha": "4924083cd6",
+   "subject": "R2 re-capture recovery mint: 39 evidence rows + 39 archive links for 23 records (burn-down"
+  }
+ ],
+ "errors": [],
+ "head": "4924083cd6",
+ "labels_without_provenance": [
+  "spaghetti-burndown-batch1-2026-11-21",
+  "spaghetti-burndown-batch2-2026-11-21",
+  "spaghetti-burndown-batch3-2026-11-21",
+  "spaghetti-burndown-batch4-2026-11-21",
+  "spaghetti-drift-rewitness-2026-11-21",
+  "spaghetti-nourl-cleared-2026-11-21",
+  "spaghetti-phase-c-programs-2026-11-20",
+  "spaghetti-phase-c-streets-2026-11-21",
+  "spaghetti-phase-c-unit3-2026-11-21"
+ ],
+ "main_validate": {
+  "conclusion": "success",
+  "created_at": "2026-11-22T08:35:50Z",
+  "head_sha": "4924083cd6"
+ },
+ "prs": [
+  {
+   "data_files": 4,
+   "head_sha": "85db75e2d1",
+   "merge_sha": "dd38735d80",
+   "merged_at": "2026-11-21T11:58:18Z",
+   "number": 440,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T12:00:48Z",
+    "conclusion": "success",
+    "started_at": "2026-11-21T11:58:11Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 3,
+   "head_sha": "db9677e943",
+   "merge_sha": "117e387072",
+   "merged_at": "2026-11-21T14:11:16Z",
+   "number": 441,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T14:17:10Z",
+    "conclusion": "success",
+    "late": true,
+    "started_at": "2026-11-21T14:12:50Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 13,
+   "head_sha": "df4bf30f76",
+   "merge_sha": "5219c5d79a",
+   "merged_at": "2026-11-21T15:25:31Z",
+   "number": 442,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T15:29:39Z",
+    "conclusion": "success",
+    "started_at": "2026-11-21T15:25:28Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 47,
+   "head_sha": "9949cab490",
+   "merge_sha": "c2b1d1803d",
+   "merged_at": "2026-11-21T18:51:46Z",
+   "number": 443,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T18:57:29Z",
+    "conclusion": "success",
+    "late": true,
+    "started_at": "2026-11-21T18:53:07Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 7,
+   "head_sha": "701a6b54b9",
+   "merge_sha": "120ec92040",
+   "merged_at": "2026-11-21T20:44:48Z",
+   "number": 444,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T20:49:12Z",
+    "conclusion": "success",
+    "started_at": "2026-11-21T20:44:46Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 6,
+   "head_sha": "005fb17621",
+   "merge_sha": "c29df58e8f",
+   "merged_at": "2026-11-21T20:50:19Z",
+   "number": 445,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T20:52:36Z",
+    "conclusion": "success",
+    "started_at": "2026-11-21T20:50:05Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "1269d1bd4d",
+   "merge_sha": "5e768b6e40",
+   "merged_at": "2026-11-21T21:26:12Z",
+   "number": 446,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T21:29:41Z",
+    "conclusion": "success",
+    "started_at": "2026-11-21T21:26:04Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 21,
+   "head_sha": "f99e726e50",
+   "merge_sha": "f06631bc62",
+   "merged_at": "2026-11-21T21:41:16Z",
+   "number": 447,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T21:45:44Z",
+    "conclusion": "success",
+    "started_at": "2026-11-21T21:41:12Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 10,
+   "head_sha": "6ec73fc832",
+   "merge_sha": "c67ad83144",
+   "merged_at": "2026-11-21T23:38:31Z",
+   "number": 448,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T23:42:56Z",
+    "conclusion": "success",
+    "started_at": "2026-11-21T23:38:28Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 18,
+   "head_sha": "1cc33dea3d",
+   "merge_sha": "9b2276f2e8",
+   "merged_at": "2026-11-21T23:45:17Z",
+   "number": 449,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T23:49:34Z",
+    "conclusion": "success",
+    "started_at": "2026-11-21T23:45:03Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 17,
+   "head_sha": "9aeb50057d",
+   "merge_sha": "a514c67d8f",
+   "merged_at": "2026-11-21T23:55:23Z",
+   "number": 450,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-21T23:59:39Z",
+    "conclusion": "success",
+    "started_at": "2026-11-21T23:55:12Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 0,
+   "head_sha": "8d8e6d0447",
+   "merge_sha": "124509d695",
+   "merged_at": "2026-11-22T08:10:35Z",
+   "number": 452,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T08:13:50Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T08:10:27Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 19,
+   "head_sha": "281cbbe6f4",
+   "merge_sha": "b99fd9e1e9",
+   "merged_at": "2026-11-22T08:10:45Z",
+   "number": 451,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T08:15:01Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T08:10:26Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 1,
+   "head_sha": "6dea251cc4",
+   "merge_sha": "31273fe462",
+   "merged_at": "2026-11-22T08:19:01Z",
+   "number": 453,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T08:22:12Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T08:18:52Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 20,
+   "head_sha": "815f09389b",
+   "merge_sha": "4ea038848c",
+   "merged_at": "2026-11-22T08:23:38Z",
+   "number": 454,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T08:28:05Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T08:23:34Z",
+    "status": "completed"
+   }
+  },
+  {
+   "data_files": 7,
+   "head_sha": "f1de1a3530",
+   "merge_sha": "4924083cd6",
+   "merged_at": "2026-11-22T08:35:48Z",
+   "number": 455,
+   "review_records": 0,
+   "train_member": false,
+   "validate": {
+    "completed_at": "2026-11-22T08:40:18Z",
+    "conclusion": "success",
+    "started_at": "2026-11-22T08:35:42Z",
+    "status": "completed"
+   }
+  }
+ ],
+ "ref": "origin/main",
+ "since": "2026-11-21T11:17:00Z",
+ "task_folders_read": 367,
+ "unknown": {
+  "after": {
+   "band": 443,
+   "mkt": 316,
+   "n": 794,
+   "proc": 322
+  },
+  "before": {
+   "band": 443,
+   "mkt": 316,
+   "n": 794,
+   "proc": 322
+  }
+ },
+ "until": "2026-11-22T11:17:00Z"
+}

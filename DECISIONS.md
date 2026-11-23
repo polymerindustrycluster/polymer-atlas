@@ -184,6 +184,12 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Applied:** `tasks/entity-type-from-name-2026-11-22/` (LLC and LP/LLP fills as in the earlier packet, plus the corporation fill) and `tasks/ohio-statewide-labels-2026-11-22/`. No evidence rows.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
 
+## 2026-11-22: retirement-plan participant counts are leads only
+
+- **Decision (“Leads only”):** A retirement plan's active-participant count is not a plant headcount and fills no size band. It stays a lead.
+- **Supersedes:** The allowance for Form 5500 active-participant counts in SCHEMA §1 R13 and §4.13. See `tasks/owner-rulings-2026-11-22/README.md`, I2, for the owner’s wording and the parked packet.
+- **Decided by:** the repo owner, in session, 2026-11-22, round 14.
+
 ## 2026-11-22: PIC-18 evidence queue from the NAS files; mailing address proves existence and city only; trade-name filers held
 
 - **Decision:** 123 evidence rows (EVD-482000..482122; 10 site rows, 113 organization rows) are applied for 78 of the 419 PIC-18 records in the V-65 / V-68 queue, built from the public OSHA and Form 5500 files held on the NAS (`tasks/pic18-evidence-queue-2026-11-22/`: frame, packet, leads, INPUTS.sha256, build, replay check). The debt baseline shrinks by exactly the 78 entries `validate.py` reports as now passing (V-65 by 67, V-68 by 11). Rules for the rows: one witness per missing claim per record; sites bind on the site's own street, state, city or ZIP5 and a held operator name; `tier_effect` is the strength SCHEMA 4.13 gives the source class (`government_filing`: `supports_A`).
