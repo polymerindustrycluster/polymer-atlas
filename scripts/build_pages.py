@@ -9,6 +9,7 @@ Layout of the output:
     graph/index.html    scripts/build_graph.py      (Sigma.js graph explorer)
     graph/map.html      scripts/build_geo_graph.py  (map / network hybrid)
     graph/events.html   scripts/build_events_3d.py  (3D trade-show presentation)
+    The three graph pages render inside the shared page shell of build_site.py (header, menu, footer, style.css one level up).
     .nojekyll           serve files as-is (no Jekyll processing)
 
 Every page is generated from the canonical CSVs in data/ and writes public fields
@@ -44,9 +45,9 @@ def main():
     run(SCRIPTS / "build_site.py", "--db", db, "--out", out)
     graph = out / "graph"
     graph.mkdir(parents=True, exist_ok=True)
-    run(SCRIPTS / "build_graph.py", "--out", graph / "index.html", "--home", "../index.html")
-    run(SCRIPTS / "build_geo_graph.py", "--out", graph / "map.html", "--home", "../index.html")
-    run(SCRIPTS / "build_events_3d.py", "--out", graph / "events.html", "--home", "../index.html")
+    run(SCRIPTS / "build_graph.py", "--out", graph / "index.html")
+    run(SCRIPTS / "build_geo_graph.py", "--out", graph / "map.html")
+    run(SCRIPTS / "build_events_3d.py", "--out", graph / "events.html")
     (out / ".nojekyll").write_text("", encoding="utf-8")
     pages = sum(1 for _ in out.rglob("*.html"))
     size = sum(p.stat().st_size for p in out.rglob("*") if p.is_file())

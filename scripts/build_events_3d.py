@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Build the Atlas events presentation: a 3D network of trade shows and their participants.
 
-    python3 scripts/build_events_3d.py                  # -> build/graph/events.html
-    python3 scripts/build_events_3d.py --fragment OUT   # body-only page (for hosts that add their own skeleton)
+    python3 scripts/build_events_3d.py                  # -> build/graph/events.html (rendered in the shared shell; scripts/build_pages.py)
 
 Event series (events.csv) are large nodes; organizations that exhibit, sponsor or
 otherwise take part (event_participation.csv) orbit them, coloured by ring. Organizations
@@ -61,85 +60,20 @@ def build_data():
     return {"nodes": out_nodes, "links": links}
 
 
-PAGE = r"""<title>Polymer Atlas Shows</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<style>
-@font-face { font-family: "Lato"; font-weight: 400; font-display: swap; src: url(../fonts/lato-400-latin.woff2) format("woff2"); }
-@font-face { font-family: "Lato"; font-weight: 700; font-display: swap; src: url(../fonts/lato-700-latin.woff2) format("woff2"); }
-/* Layout: a deliberately dark, single-look stage for big screens. 3D canvas full-bleed; title top-left,
-   control bar bottom-left, caption card bottom-right during the tour. */
-:root {
-  --bg: #052e36; --panel: rgba(7, 63, 73, .9); --fg: #eef3f2; --muted: #a9c2c3; --line: rgba(102, 215, 222, .24);
-  --gold: #b8d637; --accent: #66d7de;
-  --ring1: #66c0d2; --ring2: #e0a040; --ring3: #c98ab2; --ring4: #f08a64; --ring5: #9cc3ca; --ringx: #b0b3ae;
-  --f-display: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  --f-body: var(--f-display);
-  --f-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  color-scheme: dark;
-}
-html, body { height: 100%; }
-body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); overflow: hidden; }
-#stage { position: fixed; inset: 0; }
-.title { position: fixed; top: calc(14px + env(safe-area-inset-top, 0px)); left: max(16px, env(safe-area-inset-left, 0px)); z-index: 2; max-width: min(520px, calc(100% - 32px)); pointer-events: none; }
-.title .eyebrow { font: 600 12px/1 var(--f-display); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
-.title h1 { margin: 4px 0 0; font: 700 clamp(30px, 4.2vw, 54px)/0.95 var(--f-display); letter-spacing: .01em; text-wrap: balance; }
-.title p { margin: 8px 0 0; color: var(--muted); font: 500 12.5px/1.5 var(--f-mono); font-variant-numeric: tabular-nums; }
-.bar { position: fixed; left: max(16px, env(safe-area-inset-left, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 2;
-  display: flex; gap: 6px; flex-wrap: wrap; align-items: center; max-width: calc(100% - 32px); }
-.btn { padding: 9px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); cursor: pointer;
-  font: 700 14px/1 var(--f-display); backdrop-filter: blur(6px); }
-.btn:hover { border-color: var(--accent); }
-.btn:focus-visible { outline: 2px solid var(--accent); }
-.btn.primary { background: var(--gold); color: #052e36; border-color: var(--gold); }
-.btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
-.legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); padding: 0 6px; }
-.legend span { display: inline-flex; align-items: center; gap: 6px; }
-.sw { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-.caption { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 2;
-  width: min(420px, calc(100% - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px;
-  backdrop-filter: blur(10px); display: flex; flex-direction: column; gap: 10px; }
-.caption .step { font: 500 11.5px/1 var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
-.caption h2 { margin: 0; font: 700 32px/1 var(--f-display); text-wrap: balance; color: var(--gold); }
-.caption .sub { color: var(--muted); font-size: 14px; }
-.nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.nums div { display: flex; flex-direction: column; gap: 2px; }
-.nums b { font: 700 30px/1 var(--f-display); font-variant-numeric: tabular-nums; }
-.nums small { color: var(--muted); font-size: 12px; line-height: 1.25; }
-.chips { display: flex; flex-wrap: wrap; gap: 5px; }
-.participants { max-height: min(11rem, 30vh); overflow-y: auto; }
-.participants:focus-visible { outline: 2px solid var(--accent); }
-.chip { border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; font-size: 12.5px; }
-.chipbtn { background: transparent; color: var(--fg); cursor: pointer; font-family: inherit; text-align: left; }
-.chipbtn:hover { border-color: var(--accent); color: var(--accent); }
-.chipbtn small { color: var(--muted); }
-.caption a, .home a { color: var(--accent); }
-.progress { height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
-.progress i { display: block; height: 100%; width: 0; background: var(--gold); }
-.scene-tooltip { font: 13px/1.35 var(--f-body) !important; background: var(--panel) !important; border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px !important; }
-.scene-tooltip:empty { display: none !important; }
-.scene-tooltip small { color: var(--muted); font-family: var(--f-mono); font-size: 11px; }
-@media (max-width: 720px) {
-  .title p { display: none; }
-  .caption { top: calc(112px + env(safe-area-inset-top, 0px)); bottom: auto; left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px));
-    width: auto; padding: 14px 16px; gap: 8px; max-height: calc(100% - 200px); overflow: auto; }
-  .caption h2 { font-size: 26px; } .nums b { font-size: 24px; } .legend { display: none; } }
-@media (prefers-reduced-motion: reduce) { .progress i { transition: none !important; } }
-</style>
-
-<div id="stage" aria-label="3D network of trade shows and the organizations that take part"></div>
-<header class="title">
-  <div class="eyebrow">Polymer Atlas · trade shows</div>__HOME__
+PAGE = r"""<div id="stage" class="stage" role="img" aria-label="3D network of trade shows and the organizations that take part"></div>
+<div class="title">
+  <div class="eyebrow">Trade shows in 3D</div>
   <h1>Who shows up where</h1>
   <p id="stat"></p>
-</header>
-<nav class="bar" aria-label="Presentation controls">
+</div>
+<div class="bar" role="group" aria-label="Presentation controls">
   <button class="btn primary" id="play" type="button">Present</button>
   <button class="btn" id="prev" type="button" aria-label="Previous show">‹</button>
   <button class="btn" id="next" type="button" aria-label="Next show">›</button>
   <button class="btn" id="p12" type="button" aria-pressed="false">PIC-18 spotlight</button>
   <button class="btn" id="reset" type="button">Overview</button>
   <div class="legend" id="legend"></div>
-</nav>
+</div>
 <section class="caption" id="caption" hidden aria-live="polite"></section>
 
 <script src="__FG3D__"></script>
@@ -147,9 +81,9 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 <script>
 (() => {
   const D = JSON.parse(document.getElementById("atlas-data").textContent);
-  const css = getComputedStyle(document.documentElement), v = (n) => css.getPropertyValue(n).trim();
-  const RING = { "1": v("--ring1"), "2": v("--ring2"), "3": v("--ring3"), "4": v("--ring4"), "5": v("--ring5"), "": v("--ringx") };
-  const GOLD = v("--gold"), BG = v("--bg"), EVENT = v("--fg");
+  const css = getComputedStyle(document.getElementById("stage")), v = (n) => css.getPropertyValue(n).trim();   // the dark stage scope (.viz.dark)
+  const RING = { "1": v("--r1"), "2": v("--r2"), "3": v("--r3"), "4": v("--r4"), "5": v("--r5"), "": v("--rx") };
+  const GOLD = v("--lime"), BG = v("--bg"), EVENT = v("--fg");
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -214,7 +148,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 
   const controls = Graph.controls();
   controls.autoRotate = !reduced; controls.autoRotateSpeed = 0.45;
-  addEventListener("resize", () => Graph.width(innerWidth).height(innerHeight));
+  addEventListener("resize", () => Graph.width($("stage").clientWidth).height($("stage").clientHeight));
 
   function refresh() { Graph.nodeColor(Graph.nodeColor()).linkColor(Graph.linkColor()).linkWidth(Graph.linkWidth()).linkDirectionalParticles(Graph.linkDirectionalParticles()); }
 
@@ -310,30 +244,61 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 """
 
 
-def page(data, fragment, home=""):
+STAGE_CSS = r"""/* trade-show stage: title top-left, control bar bottom-left, caption card bottom-right during the tour.
+   Everything shared with the other explorers (tokens, .btn, .chips, .viz.dark) comes from style.css. */
+.viz .title { position: absolute; top: 14px; left: var(--s-4); z-index: 2; max-width: min(520px, calc(100% - 32px)); pointer-events: none; }
+.viz .title .eyebrow { font: 700 12px/1 var(--f-display); letter-spacing: .18em; text-transform: uppercase; color: var(--lime); }
+.viz .title h1 { margin: 4px 0 0; font: 700 clamp(30px, 4.2vw, 54px)/0.95 var(--f-display); letter-spacing: .01em; }
+.viz .title p { margin: 8px 0 0; color: var(--muted); font: 500 12.5px/1.5 var(--f-body); font-variant-numeric: tabular-nums; }
+.viz .bar { position: absolute; left: var(--s-4); bottom: var(--s-4); z-index: 2; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; max-width: calc(100% - 32px); }
+.viz .bar .btn { min-height: 44px; padding: 9px 14px; border-radius: 8px; background: var(--panel); font-size: 14px; backdrop-filter: blur(6px); }
+.viz .bar .btn.primary { background: var(--accent); color: var(--accent-fg); }
+.viz .bar .legend { flex-direction: row; gap: 12px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); padding: 0 6px; }
+.viz .bar .legend span { display: inline-flex; align-items: center; gap: 6px; }
+.viz .caption { position: absolute; right: var(--s-4); bottom: var(--s-4); z-index: 2; width: min(420px, calc(100% - 32px)); background: var(--panel);
+  border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; backdrop-filter: blur(10px); display: flex; flex-direction: column; gap: 10px; }
+.viz .caption .step { font: 700 11.5px/1 var(--f-body); color: var(--muted); font-variant-numeric: tabular-nums; }
+.viz .caption h2 { font: 700 32px/1 var(--f-display); color: var(--lime); }
+.viz .caption .sub { color: var(--muted); font-size: 14px; }
+.viz .nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.viz .nums div { display: flex; flex-direction: column; gap: 2px; }
+.viz .nums b { font: 700 30px/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.viz .nums small { color: var(--muted); font-size: 12px; line-height: 1.25; }
+.viz .participants { max-height: min(11rem, 30vh); overflow-y: auto; }
+.viz .participants:focus-visible { outline: 3px solid var(--accent); }
+.viz .chipbtn { background: transparent; color: var(--fg); text-align: left; }
+.viz .chipbtn:hover { border-color: var(--accent); color: var(--accent); }
+.viz .chipbtn small { color: var(--muted); }
+.viz .progress { height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.viz .progress i { display: block; height: 100%; width: 0; background: var(--lime); }
+.scene-tooltip { font: 13px/1.35 var(--f-body) !important; background: var(--panel) !important; border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px !important; }
+.scene-tooltip:empty { display: none !important; }
+.scene-tooltip small { color: var(--muted); font-size: 11px; }
+@media (max-width: 720px) {
+  .viz .title p { display: none; }
+  .viz .caption { top: 112px; bottom: auto; left: var(--s-4); right: var(--s-4); width: auto; padding: 14px 16px; gap: 8px; max-height: calc(100% - 200px); overflow: auto; }
+  .viz .caption h2 { font-size: 26px; } .viz .nums b { font-size: 24px; } .viz .bar .legend { display: none; } }
+@media (prefers-reduced-motion: reduce) { .viz .progress i { transition: none !important; } }
+"""
+
+
+def page(data, root="../"):
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    body = (PAGE.replace("__FG3D__", FG3D).replace("__DATA__", blob).replace("__ORGBASE__", bg.org_base(home))
-            .replace("__HOME__", bg.home_link(home, "div", "home", "pointer-events:auto;margin-top:6px;font-size:13px")))
-    if fragment:
-        return body
-    return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
-            '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
-            '<style>body{margin:0}[hidden]{display:none!important}</style>\n</head>\n<body>\n' + body + "\n</body>\n</html>\n")
+    body = PAGE.replace("__FG3D__", FG3D).replace("__DATA__", blob).replace("__ORGBASE__", bg.org_base(root))
+    return bg.build_site.page(bg.shell_ctx(), "Trade shows in 3D", body, root, "shows",
+                              description="Which companies exhibit, sponsor and speak at which trade shows, as a 3D network with a presentation mode.",
+                              head_extra=f"<style>\n{STAGE_CSS}</style>", main_class="viz dark")
 
 
 def main():
     ap = argparse.ArgumentParser(description="Build the Atlas 3D events presentation (single HTML file).")
     ap.add_argument("--out", default=str(bg.ROOT / "build" / "graph" / "events.html"))
-    ap.add_argument("--fragment", metavar="OUT")
-    ap.add_argument("--home", default="", help="href of an 'Atlas home' link")
+    ap.add_argument("--root", default="../", help="path from the page to the site root; ../ when published as graph/events.html")
     a = ap.parse_args()
     data = build_data()
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(data, False, a.home), encoding="utf-8")
-    if a.fragment:
-        Path(a.fragment).parent.mkdir(parents=True, exist_ok=True)
-        Path(a.fragment).write_text(page(data, True), encoding="utf-8")
+    out.write_text(page(data, a.root), encoding="utf-8")
     ev = sum(1 for n in data["nodes"] if n["k"] == "event")
     print(f"events: {ev} event series, {len(data['nodes']) - ev} organizations, {len(data['links'])} links -> {out}")
 

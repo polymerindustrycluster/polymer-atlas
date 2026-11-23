@@ -45,8 +45,8 @@ class BuildGraphTests(unittest.TestCase):
             self.assertTrue(0 <= i < j < len(self.nodes), (i, j, t))
 
     def test_page_renders(self):
-        html = bg.page(self.nodes[:5], [], fragment=True)
-        self.assertTrue(html.startswith("<title>"))
+        html = bg.page(self.nodes[:5], [])
+        self.assertIn("<title>Industry graph | Polymer Industry Atlas</title>", html)
         self.assertNotIn("__DATA__", html)
 
 
@@ -101,7 +101,7 @@ class GeoAndEventsTests(unittest.TestCase):
             data = self.events.build_data()
         self.assertEqual([link["target"] for link in data["links"]], [org["id"] for org in orgs])
         self.assertEqual([link["role"] for link in data["links"]], ["exhibitor"] + ["attendee"] * 8 + ["host"])
-        html = self.events.page(data, fragment=False)
+        html = self.events.page(data)
         self.assertIn('p12.map((p) => `<span class="chip" data-org-id="${esc(p.id)}">${esc(p.l)}</span>`)', html)
         self.assertNotIn("p12.slice", html)
 
