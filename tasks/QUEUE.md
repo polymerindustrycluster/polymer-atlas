@@ -672,6 +672,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 
 ## PIC-18 street repairs from dated government filings
 - [ ] `claimed:atlas-w22-size-unlock 2026-11-22` **PIC-18 street fill:** screen the 121 missing-street sites in the published size sprint. Apply unanimous, dated, physical street matches with evidence, then rerun the OSHA size matcher. First user: the Atlas controller. Check use by 2026-12-20.
+- [ ] `claimed:atlas-p2-size-10yr 2026-11-23` **PIC-18 ten-year size packet:** rerun the OSHA matcher on the current size-unknown frame and hand the packet to the integrator. Branch `agent/codex/pic18-size-10yr-2026-11-23`.
 - [ ] `claimed:atlas-w23-ohio-links 2026-11-23` **PIC-18 street-fill evidence repair:** append the American Bath Group ITA address observation for SITE-001455 to answer EVD-483012. Branch `agent/codex/pic18-street-fill-repair-2026-11-23`.
 
 ## P1 exit test
@@ -680,3 +681,4 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [ ] `claimed:atlas-p1-integrator-1 2026-11-23` **PIC-18 own-site process correction pass:** Replay and integrate the 18 cross-family process observations under round 20. Branch `agent/codex/p1-process-web-2026-11-23`. First user: the Atlas controller. Check use by 2026-11-30.
 - [ ] `claimed:atlas-p1-integrator-1 2026-11-23` **Audit 12 B6:** Reconcile the sealed placement packet, apply admissible geography fills and replay the B6 allowlist. Branch `agent/codex/p1-b6-placements-2026-11-23`. First user: the Atlas controller. Check use by 2026-11-30.
 - [ ] `claimed:atlas-p1-integrator-1 2026-11-23` **ATLAS-9 PIC-18 corrections:** Replay the sealed evidence dispositions and apply the two ruled headquarters corrections. Branch `agent/codex/p1-atlas9-corrections-2026-11-23`. First user: the Atlas controller. Check use by 2026-11-30.
+- [ ] `claimed:atlas-p1-integrator-1 2026-11-23` **PIC-18 ten-year size integration:** Apply the sealed OSHA packet under R13, replay every filing date and reconcile the PIC-18 unknown-size count. Branch `agent/codex/pic18-size-10yr-2026-11-23`. First user: the Atlas controller. Check use by 2026-11-30.
