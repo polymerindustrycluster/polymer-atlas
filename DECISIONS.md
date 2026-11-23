@@ -413,3 +413,12 @@ PIC-18. The controller confirmed both departures. At the resulting
 792-owner denominator, 305 have unknown process, 303 have unknown
 market, and 372 have unknown size. The count changes reflect the frame
 departures. The separate audit strata are listed for the tier marks.
+
+## 2026-11-23 — One evidence binding gate PR for ATLAS-38 G8
+
+The owner approved “Yes, one gate PR (2026-11-23)” so the gate can read
+the seven source and capture cases holding up PIC-18 settlement. The
+gate change precedes the data re-cites. A trade notice's dateline can
+bind organization existence. An HQ claim requires an explicit
+statement of headquarters. §4.13 records the remaining admission rules
+and the limits on street, locality, names, filing identity and replay.
