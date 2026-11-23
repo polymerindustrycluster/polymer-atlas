@@ -26,7 +26,8 @@ OSHA_RAW = {
     "1418310": "raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip",
 }
 ECHO_RAW = "raw/echo/2026-11-22-archive-snapshot/raw/rcra_downloads.zip"
-RAW_DOWNLOADS = {*OSHA_RAW.values(), ECHO_RAW}
+FRS_RAW = "raw/echo/2026-11-22-archive-snapshot/raw/frs_downloads.zip"
+RAW_DOWNLOADS = {*OSHA_RAW.values(), ECHO_RAW, FRS_RAW}
 REGISTRY = {
     "osha": "raw/osha/2026-11-22-archive-snapshot/out/ita_establishment_index.csv",
     "echo": "raw/echo/2026-11-22-archive-snapshot/out/echo_establishment_index.csv",
@@ -280,7 +281,7 @@ def mint_recitations(evidence, records, actions, candidates, meta, bodies, ref):
     return new_evs, archives, proofs, linked
 
 
-def data_delta(records, changes, new_evs, archives, moved):
+def data_delta(records, changes, new_evs, archives, inclusions, moved):
     """Write checked cells and optional HQ moves while retaining every other CSV line."""
     by_path = defaultdict(lambda: defaultdict(dict))
     for (table, rid, field), value in changes.items():
@@ -322,7 +323,8 @@ def data_delta(records, changes, new_evs, archives, moved):
             parts.append(csv_bytes([insert[1], *(v for _, v in incoming)], fields, with_header=False))
         require(seen == edits.keys(), f"{path}: edited record missing")
         out[path] = b"".join(parts)
-    for path, rows in dict(new_evs, **{"data/archive_links.csv": archives}).items():
+    append = {**new_evs, "data/archive_links.csv": archives, "data/inclusion_log.csv": inclusions}
+    for path, rows in append.items():
         original = git("show", f"{BASE}:{path}")
         require(original.endswith(b"\n"), f"{path}: append would run into last line")
         out[path] = original + csv_bytes(rows, parse(original).fieldnames, with_header=False)
@@ -339,11 +341,25 @@ def raw_download_matches(plain, store, digests):
             kind, key = p["store_file"], p["store_key"]
             path = OSHA_RAW[key] if kind == "osha" else ECHO_RAW
             groups[path][key] = p["quote"]
-    require(groups.keys() == RAW_DOWNLOADS, "Original registry download assignments differ")
+    require(groups.keys() == RAW_DOWNLOADS - {FRS_RAW}, "Original registry download assignments differ")
+    for path in RAW_DOWNLOADS:
+        with (store / path).open("rb") as body:
+            require(hashlib.file_digest(body, "sha256").hexdigest() == digests[path], f"{path}: raw download checksum differs")
+
+    registry_ids = defaultdict(set)
+    with zipfile.ZipFile(store / FRS_RAW) as z, z.open("FRS_PROGRAM_LINKS.csv") as stream:
+        rd = csv.reader(io.TextIOWrapper(stream, encoding="utf-8-sig", errors="replace", newline=""))
+        require(next(rd)[:3] == ["PGM_SYS_ACRNM", "PGM_SYS_ID", "REGISTRY_ID"], "FRS program-link columns differ")
+        for row in rd:
+            if row and row[0] == "RCRAINFO" and row[1] in groups[ECHO_RAW]:
+                registry_ids[row[1]].add(row[2])
+    for key, quote in groups[ECHO_RAW].items():
+        registry_id = quote.rpartition("; FRS registry ")[2]
+        require(re.fullmatch(r"[0-9]{12}", registry_id) and registry_ids[key] == {registry_id},
+                f"{key}: quoted FRS ID differs from the original RCRAINFO program link")
+
     for path, wanted in groups.items():
         source = store / path
-        with source.open("rb") as body:
-            require(hashlib.file_digest(body, "sha256").hexdigest() == digests[path], f"{path}: raw download checksum differs")
         with ExitStack() as stack:
             if path.endswith(".zip"):
                 z = stack.enter_context(zipfile.ZipFile(source))
@@ -360,7 +376,7 @@ def raw_download_matches(plain, store, digests):
                 q = wanted[key]
                 if path == ECHO_RAW:
                     source_quote = "; ".join((r["FACILITY_NAME"], f'{r["STREET_ADDRESS"]}, {r["CITY_NAME"]}, {r["STATE_CODE"]} {r["ZIP_CODE"]}'))
-                    if gate.norm_space(q.split("; FRS registry ")[0]).casefold() == gate.norm_space(source_quote).casefold():
+                    if gate.norm_space(q.rpartition("; FRS registry ")[0]).casefold() == gate.norm_space(source_quote).casefold():
                         found.add(key)
                 else:
                     addr = f'{r["street_address"]}, {r["city"]}, {r["state"]} {r["zip_code"]}'
@@ -536,6 +552,11 @@ def pittsburgh_hq(evidence, records, plain, meta, bodies, new, archives, proofs,
     archives.append(archive)
     proofs.append(proof)
     linked[case] = eid
+    return dict(date=ev["observed_date"], entity=f"{rid} Pittsburgh Paints",
+                decision=f"correct HQ scope from {before['hq_in_scope']} to national_us",
+                rule_cited="SCHEMA Appendix C §4 (placement correction)", researcher=LABEL,
+                notes=f"organizations_OH.csv to organizations_PA.csv. {eid} witnesses the HQ in "
+                      "Cranberry Township, Pennsylvania. The Huron plant remains SITE-001531.")
 
 
 OWNER_MARK = {"ORG-000068", "ORG-000206", "ORG-001762", "ORG-001886", "ORG-002011", "SITE-001575", "ORG-001832"}
@@ -554,7 +575,7 @@ def expected(packet, store, ref=None):
     require(FIXED_SCOPE <= scope and len(scope) == 17 and not scope & verified.keys(),
             "Scope replay overlaps accepted VERIFICATION or has unexpected coverage")
     new, archives, proofs, linked = mint_recitations(evidence, records, actions, candidates, meta, bodies, ref)
-    pittsburgh_hq(evidence, records, plain, meta, bodies, new, archives, proofs, linked, ref)
+    inclusion = pittsburgh_hq(evidence, records, plain, meta, bodies, new, archives, proofs, linked, ref)
 
     no_tie = ({eid for eid, r in actions.items() if r["action"] == "WITHDRAW"} | RULE4_EXTRA) - set(GATE_LIMITS) - scope - {"EVD-422303"}
     require("EVD-425055" in no_tie and actions["EVD-422303"]["other_support"].startswith("EVD-410477"),
@@ -679,7 +700,8 @@ def expected(packet, store, ref=None):
 
     claims.extend(cell_claims[k] for k in sorted(cell_claims))
     require(len({tuple(r[c] for c in CLAIMS[:3]) for r in claims}) == len(claims), "Duplicate checked claim")
-    data = data_delta(records, changes, new, archives, {"ORG-001470": "data/organizations_PA.csv"})
+    data = data_delta(records, changes, new, archives, [inclusion],
+                      {"ORG-001470": "data/organizations_PA.csv"})
     # Keep the shrink-only baseline aligned when an authorized tier mark resolves an existing V-65 gap.
     debt_path = "scripts/validate_debt_baseline.json"
     import json

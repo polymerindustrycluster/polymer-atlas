@@ -14,11 +14,13 @@ decisions. There are 34 changed canonical cells including 13 protocol
 notes. Eight observations are appended, seven at supports_C and one at
 supports_B. Two carry exact-byte own-site proofs and public archive links.
 The six structured observations independently rejoin the original OSHA
-and RCRA downloads as well as the source index rows.
+and RCRA downloads as well as the source index rows. The three RCRA
+quotes also rejoin the original FRS program links.
 
 Pittsburgh Paints' own page explicitly puts its headquarters in Cranberry
 Township, Pennsylvania. The organization moves to the PA shard with
-derived national_us scope. The unsupported Ohio HQ county is blanked.
+derived national_us scope and an inclusion-log entry. The unsupported
+Ohio HQ county is blanked.
 The Huron plant keeps its site record and its separate evidence. King
 Machine uses a separate, exact own-site existence quote from its
 already reviewed archive.
@@ -83,7 +85,7 @@ lockf -k /tmp/polymer-atlas-heavy.lock python3 -I tasks/p1-pic18-settle-2026-11-
 
 The replay verifies the two reader sets, the final 56 re-citation decisions
 and the sibling cases, the evidence floors, the 166 used archive or live
-body hashes, the two index hashes, the three original registry downloads,
+body hashes, the two index hashes, the four original registry downloads,
 the canonical diff and the claim and hold ledgers. Of 162 staged original
 bodies, three belong only to recitation proposals superseded before
 integration. The seven supplemental captures support the final sibling
