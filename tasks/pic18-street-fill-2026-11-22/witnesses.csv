@@ -1,0 +1,120 @@
+ref,kind,observed_date,event_ref,fields_sha256
+raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FACILITIES.csv@209787,air,2025-09-15,raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FCES_PCES.csv@1799456,1cb3fc3e41bc825ebb7a97b97f6f5551de819e0669b80843a978c13cf91fcb2c
+raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FACILITIES.csv@218423,air,2026-08-31,raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FCES_PCES.csv@1613713,55d9b3d87eb6e2adfffb556b57a6e53927e2ba0b612dc2dbbac7d710019e80d2
+raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FACILITIES.csv@218619,air,2024-10-31,raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FCES_PCES.csv@1610328,f57d7dc4cefe8efdba5b0c1b64da93faa8144850700c1bad348f08b73d40fef7
+raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FACILITIES.csv@219954,air,2024-04-03,raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FCES_PCES.csv@1687738,53a9f7d726645ea407ccb843042a285bf5479d64ab220bad9c3f57159ace7ecd
+raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FACILITIES.csv@221227,air,2026-09-30,raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FCES_PCES.csv@1722719,cd562a2536ad497946d75b358753870bee7fbac7ec8a053bdebc6b912e715dfc
+raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FACILITIES.csv@221253,air,2025-07-03,raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FCES_PCES.csv@1263215,2792b8f8f732ea41a8252ce271fd05c2c461be0b34f14af2ed875d34ac640ac7
+raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FACILITIES.csv@222801,air,2025-07-07,raw/echo/2026-11-22-archive-snapshot/raw/ICIS-AIR_downloads.zip!ICIS-AIR_FCES_PCES.csv@1598687,3864bcde1d6fbb81c2de58e40a79db16853419a5ae213eaaaecc69af25c28131
+raw/echo/2026-11-22-archive-snapshot/raw/rcra_downloads.zip!RCRA_FACILITIES.csv@1059177,rcra,2023-05-25,raw/echo/2026-11-22-archive-snapshot/raw/rcra_downloads.zip!RCRA_EVALUATIONS.csv@988910,9e6b01002df381a2897e74b86e104cc8c4620c9a7e5264fb7542c6b5c5ad50fc
+raw/osha/2026-11-22-archive-snapshot/raw/OSHA_inspection.zip!2026-11-20_chunk_5.csv@274161,insp,2023-01-27,,e99e14828f579a3888c7dd6488299f109277f3e269891a9db8d6cbb88f6efb45
+raw/osha/2026-11-22-archive-snapshot/raw/OSHA_inspection.zip!2026-11-20_chunk_5.csv@299629,insp,2023-01-27,,74efea2aab6b6d505c4858f9b1f3e42eca041502eab1e37571312b943ab72fdd
+raw/osha/2026-11-22-archive-snapshot/raw/OSHA_inspection.zip!2026-11-20_chunk_5.csv@472082,insp,2026-10-20,,6ef1b08bff8d74031b4ef87e9ec061338bab4a13bb50b2e88ba305468d3f6c6a
+raw/osha/2026-11-22-archive-snapshot/raw/OSHA_inspection.zip!2026-11-20_chunk_5.csv@481067,insp,2023-08-08,,a94d88bf1805f391203ebfe0bc89e8e61a8d73eb2708b906bd0ad0b47b1888e5
+raw/osha/2026-11-22-archive-snapshot/raw/OSHA_inspection.zip!2026-11-20_chunk_5.csv@484108,insp,2023-08-02,,250b84cdd61a95b958a916ea9abe6a403c81f5cf9953e244eb6d9d4a304aa883
+raw/osha/2026-11-22-archive-snapshot/raw/OSHA_inspection.zip!2026-11-20_chunk_6.csv@192404,insp,2025-10-03,,2024cbd76757d9262a5bd7c0be01262588e3acc39b536c87a8174f19864cab62
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@116447,ita,2021-12-31,,0f1aa91480a30ae858bc63234c4e33a80e719a6d44fc07cd88a3fd29ef29a69f
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@11697,ita,2021-12-31,,d6984801a6c03dd2820198617db834bac1b812772eb4aa2d2370ef3cf392255a
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@117301,ita,2021-12-31,,57b9428a29064484e819771f4487526611ac32c4a798f153369fd73385b2a3c2
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@119083,ita,2021-12-31,,88a145316163c722970d54bd2abb3b04ea231de1d5a51b57352905c7847f77c5
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@12437,ita,2021-12-31,,aab7b0a7ad423c70eedea9c778cf42d19c9485075320145c1869137298b0e09d
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@130885,ita,2021-12-31,,40ae4fec1d563106e18a83fcc3bf585b8b1fdac12de17275c120d0171f85013f
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@146450,ita,2021-12-31,,5bd74f50dccc0c8ae19bd6c52f8f892f06b229def7e11492608ece20ff8d41b2
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@185778,ita,2021-12-31,,62abed6f578272329c9bd237356f488d1e5d53f72725b713a2d5c96935025e10
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@185895,ita,2021-12-31,,8ea4308246508d3cea573558df8780c4a8d20a3326dc3bc4286961f19a551aa1
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@186780,ita,2021-12-31,,1a6c47f548b90d5b9d4929413c800582dc1b3684b7a1cd6b88817de3c66c4b1f
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@186831,ita,2021-12-31,,0414389be2d4661185005756ea7517b13233d086322495c2fd426e23006b3e3d
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@236545,ita,2021-12-31,,953be4608eacd606089fbfa5b5eb21f3393e2e2ea6adfdf83b96270e51e17d1f
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@254932,ita,2021-12-31,,6af2737fa0c0b88e5a901058d0fd92fb386fef0ed9eabf568da7106fbac8a010
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@270381,ita,2021-12-31,,1c94482c72e3e95f6db029c15fc54d1917d935600462441bd6f5819e086cdfed
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@303971,ita,2021-12-31,,d5f4eb38b831bf2287fc3d5edbaa695d0254565e75549cdc992e4054bd667c39
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@306710,ita,2021-12-31,,2aeed3a5c68785980d639f78da1fabe20cf5e15ab8b171584da17a595dcf208a
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@306711,ita,2021-12-31,,bd12a350191a97a569e9bf4ee40a53d41af304671bdbead43cc456ce23b3c7ac
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2021.zip!ITA 2021 data.csv@40469,ita,2021-12-31,,eebac08b62b6750818820e56861071ebac2a512d6cd24527b7ae2eb7e0510333
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@101722,ita,2022-12-31,,520106c51a174fb84e21e45f06371d34b9e8febf8a80191ca26aaa614eccc68a
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@104154,ita,2022-12-31,,341b68b577b54f7d379129d6499505918bf678557e3141ff4c4ef8958168d989
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@127285,ita,2022-12-31,,2c9ab91c0cc9dfb759e5fc30a5cd0af6a6106e6b11756227783de2d5511c8efa
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@127293,ita,2022-12-31,,39ebbdc82e5ab5d80a14d7079870b83348b052856e467244958dacf396f03f61
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@146108,ita,2022-12-31,,ed18a5ffacdee403e4a70f7b9a300a63078f20a33244904b1f271bde531d858e
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@146144,ita,2022-12-31,,d184a0d1aac17fcd864a4d87aa23111929bfff0d5b3a32c89aa7e82b5d217ba5
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@158555,ita,2022-12-31,,59c62268062765fc5ffe6caef98df6c8ffc05237996587cbae65bcd5ac0a9c35
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@164594,ita,2022-12-31,,ad99ed5bc086175752c79a81dc948de74d1991e2b99e4d91b13330969b30068b
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@17631,ita,2022-12-31,,4b56c60a37967891fddbb592395210d11e99f1fb85125c7d2244e4ac259de1db
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@210415,ita,2022-12-31,,41c51c17f31b88e07e301d822383836d061cf2550a6abe0f0b127cc2d1b49dd7
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@233180,ita,2022-12-31,,84820b695e0618a8ef5c2f28a7ee6628478debdbc0d0dd699c5bcc8f03b22d78
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@317043,ita,2022-12-31,,3bc52ded35cb1011b46f9dfc0a45be34d58fd231a47e73153286fbb1e7a0a61e
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@317044,ita,2022-12-31,,3dfe366b0f599248dfec15921d88be908be1e10fb2c39608dfc0f7e776f764ed
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@328799,ita,2022-12-31,,1da3b8bb49c695cc18d471e13a12dfd06e1dc3140d9569b91cb86bb2da7af7ba
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@36806,ita,2022-12-31,,89afe95581293b5069238a3ec27890302e1cc2ff4c360dcbe05c96972e6be264
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@38179,ita,2022-12-31,,3041fe7b21c022f45e4bb654b1aae4c08155e26d2500082a8ec2f26a01f7f6a1
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@51059,ita,2022-12-31,,5e1e837cebee23ed4ac59fad4d61073373bcabf5768cf707bbe2491315322a14
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@62011,ita,2022-12-31,,4ef266f8457df8a146bfbc5cdbbc5dc3579cfe7a6ba1c5fd39ca2f69bc78fef8
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@62178,ita,2022-12-31,,053a44ab8bb94c3e41aad49ddbebcf1bed6bb557cc38b0f03f7e54cf19a9b59b
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@65411,ita,2022-12-31,,314e1666d30c10492e0fc2e0cf622e7b7286c304b82c8c4c0d41b7babb1710ef
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA-data-cy2022.zip!CY 2022.csv@71244,ita,2022-12-31,,ddddd3b9e17c838195afdfe1efa45e0c5d3829253c12dfecf199649d8e995d2e
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@103561,ita,2023-12-31,,4efa1ef25c376570755bf1f791e6f2c384609197c8d39e1ffadf88efeaccaf73
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@116998,ita,2023-12-31,,0766429bfb474f28f96895c36ec08bc6c547734d6496f631618df2ad65dc1b37
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@117049,ita,2023-12-31,,813eedffeba3daa24d5cdbd0bebcba43099baecbbab760069c395cd7c8fd7410
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@15361,ita,2023-12-31,,31674494747098d673c80aed3568b93cdc10bb07aac2fee1667a3b8c36e0c76a
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@224340,ita,2023-12-31,,88d65e44bb0a67c725274e4c3865618751c734a3864c2ce664743e4aaa1bdbdf
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@263220,ita,2023-12-31,,2f0a2493db653f8bd885c5ab70270914dcc6613672daa750af3fe6f6f0507dc6
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@263231,ita,2023-12-31,,5e2ef42ed78bb023ea739aa8993ad0dd456af55012642312c803670496f436d4
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@369191,ita,2023-12-31,,75061aafc955bb6e6f09f37359a31871f9fb2246b95758e5ffbd1caa49d487bd
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@378287,ita,2023-12-31,,6066e0ef05bd41f5a0b71b4164835f0092deaf85dfe3fa8214e4d76ab3239ed9
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@381239,ita,2023-12-31,,49577d9a7d3ef54ed56a1e971b99b44074dac0af3672f85899219d9bf82ca03b
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@381241,ita,2023-12-31,,59d5d65be0a66fd22a8b4b5113fb2c38d82bebce4a3f5ce824562e6e360fb372
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@39379,ita,2023-12-31,,78a494602cca1460b76bb4eb337ad25171e45109848a56539dfdd23473d97079
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@49169,ita,2023-12-31,,55a471b8595e451004f6445af8e99b9eb43af0c35c40dc07cd638e2886e4d9a0
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@61596,ita,2023-12-31,,18aa7ac02b43fa184c7a176cd652b7df7ef0d17a8b2c66e2dcaa8a761be6a6b7
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@6439,ita,2023-12-31,,230f1803aa17ef42e6d3959fdb2584e259020f928540a154ee90f8e015e93c0c
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@6476,ita,2023-12-31,,13b8f9ab1b12151da8dfce970f7b0f40b3fddb10e491e90e7585ec1952c3b469
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@75345,ita,2023-12-31,,a220041826d226a48c86e3d9b83cfc608a8af5580292669c83fd16c4b67c5be0
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@86220,ita,2023-12-31,,eb1268bc9eab198dc8cb0f6c82d5d6e62b20b7f2143e8605a92d56c6f31fb561
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2023.zip!ITA 300A Summary Data 2023 through 12-31-2024_v2.csv@93445,ita,2023-12-31,,3b37cb9c4b4a420b6b54e702fc7140e93631590696e2d4abca8897843b69ee3c
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@11015,ita,2024-12-31,,39fca9684b5c7ea96f5c5082c9310398e5797ea875fcee6ee4fbb9de23c3d24b
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@11016,ita,2024-12-31,,7eb664e8fe922e85cc58727e96eeb678c7b3d3153bb73aec407c2bcf8cc3045e
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@111271,ita,2024-12-31,,655e800ea50a6c25add72fedf98007f06c04b2b3b3401ae30ad6d1a75e5caa0d
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@114156,ita,2024-12-31,,16d1a222e3ff4fb5706ba583c53292eb95e4543a2b49a6fc52f6a9592837daf6
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@114184,ita,2024-12-31,,7f619d332dcc2d450ad38a97b28ba51f945d935342ce2da43ac00a33145944b7
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@131815,ita,2024-12-31,,2973a06050a32beb095f9c6bacaa32dc5879e5a27e268aefca16802f2269b9f5
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@14769,ita,2024-12-31,,bb7bba1eeaecec550e40d75c475c6c3859ab48a066d4b4d273c8ce8286690af9
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@14773,ita,2024-12-31,,cfc032c59125497580e4479e223c028fac040618d82bdb42844ccfc79941dd67
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@15910,ita,2024-12-31,,908f0aa3340a49ca5508d979951288ef1c2098220f438924c9fe83f9feb948de
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@279840,ita,2024-12-31,,c3e2c1b6ab55ff8d2da1b6e1c811cef8e35fb67e4ed67c4cc5cb9f735309b40c
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@287612,ita,2024-12-31,,f64a9cea0b9a34d8187505a6cba0c0924f084bfdc3d66f8a2484896f2b6a10ad
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@291455,ita,2024-12-31,,05fdedb75ca7ddf531abac1003e45a9e0f661ff1c4e0772248789d83cc63af9e
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@296128,ita,2024-12-31,,6f09d7d9a847701f9596fd91fb9cae1e289b2b97cfee8dd3b77145c37df7ef55
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@365560,ita,2024-12-31,,30e2b7488d886eacafc4b51b3694d2b89ace0884976e9f520f223e543ff27e30
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@365561,ita,2024-12-31,,080263e6fceeaa4a5bcf3876a4677c144ce9cdf984d682b9d8b4dc90c1882248
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@61218,ita,2024-12-31,,a95477667ac9cbf117145f030874359c7aa7bc85ed2b4b5d6980b9b40efa1b84
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@64915,ita,2024-12-31,,4b686b8696545a92770bc8d1738f0d847c07127c629e29515bf69b2ecc090f9d
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2024.zip!ITA_300A_Summary_Data_2024_through_12-31-2025_v2.csv@8765,ita,2024-12-31,,50acae583e15102364168f01ae7d706ee6e5090df25abdb780356651208d0715
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@14360,ita,2025-12-31,,21907b07fcf95f5fa753d8470dc7caa975c6d286bbe16cad57b50ea5f9a4810b
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@14369,ita,2025-12-31,,bbdaeedad48f069ac10924619e4fad200af71d0ecfc631f68952b251a4880ce9
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@205682,ita,2025-12-31,,be88c1e1e33c4311eb75190c83e71a150055863610902df268b98fd06ccb8521
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@213278,ita,2025-12-31,,de28ca027ddafe5798c5e89362a66bde6ce8190b67b52991e738e55396a0f4e7
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@213302,ita,2025-12-31,,88f9a6df56be97f8c5a5bc63063835612413dd4f93256717e20fe138286c5d31
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@238515,ita,2025-12-31,,ebe3f6cfc5885daa14262e57e07893a750a596cbb625dac6edccad206d3b8b78
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@239296,ita,2025-12-31,,6ec3b995fbd32442e5a880d46fe79cbf5548cb2feb298c9cfd3cad135007ee98
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@286545,ita,2025-12-31,,bf1d39f6e6f712bac6e049aa6d8301ae37ab7fe3f63a9498cc0c37c77a61d5a9
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@288072,ita,2025-12-31,,69daf4d8de761860e928a5c3033f52824953887becd7ec37154f3f0aadcf9f2f
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@299440,ita,2025-12-31,,b8ead965ba505db2bc56d85f308b4d0fa91782e593ebddfd5cc2f0a52e6434b1
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@313416,ita,2025-12-31,,61fce422b5d7bcfd2a3c8218fc5a73d63be2aa0634f3027c3255f49c49be3f73
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@34169,ita,2025-12-31,,3816d4985f39bb95df4e1c8f9492137336ae8ccc94023b9f084f3c4e27430171
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@352594,ita,2025-12-31,,e209e19abc67667c4c0653c5451b11d98912313685a5b2505c7c46b302b41017
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@361628,ita,2025-12-31,,f9919c79d15335f89fb8136b5d3e7e644b3ce8b317991709f838d786ba5c8758
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@365247,ita,2025-12-31,,b709e8e222504f254cef46f441e7d6a1b177e5d072e56acb33e6b98361714522
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@4537,ita,2025-12-31,,d551362c7b9879c0b034633535480dbe4cfca189eadec777e23d8def7c2e4ab0
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@49204,ita,2025-12-31,,05a829d6da99af7d9d023d6d34d0d3d2f22bca0114368f10faac30724f521795
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@79557,ita,2025-12-31,,d1e242be916735760e012e4b1c56ee84b96bb74003a8b054119843ad89a7e4a1
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@87192,ita,2025-12-31,,6870e3ffdab71e72edebc7a95432cff28c47a3389ffdae15293d13eb880562bc
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@87194,ita,2025-12-31,,bf086f856a68a440979cf4709ea77a844c86da60f2a0615970537b8e007a3145
+raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@98746,ita,2025-12-31,,22e669ffbda7fd4e7dba4bb7cab6e9af2a83d67640864a27b72db8fa9502cac2
+raw/sam/2026-11-22-archive-snapshot/raw/SAM_PUBLIC_UTF-8_MONTHLY_V2_20261101_408dc50804f5434894ba3cc3ed4b914b.dat@334606,sam,2026-05-15,,fa2126d969f5fa5aea44501f40a33949bed7e6235ba1cfd305b5c183bab02256
+raw/sam/2026-11-22-archive-snapshot/raw/SAM_PUBLIC_UTF-8_MONTHLY_V2_20261101_408dc50804f5434894ba3cc3ed4b914b.dat@448519,sam,2026-10-02,,9a98652d19969ccb9faaa57411b5b0ec593f68458ffea38ed624563632616c1c
+raw/sam/2026-11-22-archive-snapshot/raw/SAM_PUBLIC_UTF-8_MONTHLY_V2_20261101_408dc50804f5434894ba3cc3ed4b914b.dat@471485,sam,2026-03-24,,39260e579aafe0199279a66129ef51062378e489892be7fae3e142e57f02c722
+raw/sam/2026-11-22-archive-snapshot/raw/SAM_PUBLIC_UTF-8_MONTHLY_V2_20261101_408dc50804f5434894ba3cc3ed4b914b.dat@540403,sam,2026-06-10,,1cf055593c628daf4204eaef781b097c6d3b7a800270166bdf7187135fdafc51
+raw/sam/2026-11-22-archive-snapshot/raw/SAM_PUBLIC_UTF-8_MONTHLY_V2_20261101_408dc50804f5434894ba3cc3ed4b914b.dat@810493,sam,2026-01-26,,d0be5045dd9a5216eba77219b08e99e32fef4fcf0850500695233ec39862752e
+raw/sam/2026-11-22-archive-snapshot/raw/SAM_PUBLIC_UTF-8_MONTHLY_V2_20261101_408dc50804f5434894ba3cc3ed4b914b.dat@841995,sam,2026-04-21,,667c5f5bd1c056930cf9d4fd31c3d6cec79be2556872b67eba7edd1f5866bcee
+raw/sam/2026-11-22-archive-snapshot/raw/SAM_PUBLIC_UTF-8_MONTHLY_V2_20261101_408dc50804f5434894ba3cc3ed4b914b.dat@861039,sam,2026-07-07,,c2d613e46edef6b294515ee48d23106e10b9608cf1534379c3be2b0310441a72
+raw/sam/2026-11-22-archive-snapshot/raw/SAM_PUBLIC_UTF-8_MONTHLY_V2_20261101_408dc50804f5434894ba3cc3ed4b914b.dat@895632,sam,2026-08-10,,132f8dc21818e5774e49427dbd8d8a8f6f582f80ca4385a950c4b0b3a1f12796
