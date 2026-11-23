@@ -85,6 +85,16 @@ def main():
     ev_base = max(int(r["evidence_id"][4:]) for f_ in lb.git("ls-tree", "-r", "--name-only", base, "data/").split("\n") if re.match(r"data/evidence_.*\.csv", f_) for r in lc.rd(lb.git("show", f"{base}:{f_}")))
     mine = [int(r["evidence_id"][4:]) for r in nf.get("data/evidence_sites_OH.csv", []) if r["created_by"] == B.WHO]
     assert not lc.audit_ids(mine, ev_base, "evidence"), "evidence ids are not above the base maximum"
+    # reserved ranges and retired gaps: no id of this lane may fall in any range another lane or the rulings record (`EVD-nnnnnn..nnnnnn`), and all must sit in this lane's own reservation
+    rng = []
+    for line in lb.git("grep", "-I", "-h", "-o", "-E", r"EVD-[0-9]{6}\.\.(EVD-)?[0-9]{6}", "HEAD", "--", "DECISIONS.md", "tasks/*/README.md", ":!tasks/pic18-process-permits-2026-11-22/README.md").split("\n"):
+        m_ = re.search(r"EVD-(\d{6})\.\.(?:EVD-)?(\d{6})", line)
+        if m_: rng.append((int(m_[1]), int(m_[2])))
+    assert rng, "no reserved id range found in the repo text: the reservation check could not inspect"
+    bad = [i for i in mine for a, z in rng if a <= i <= z]
+    assert not bad, f"evidence ids {bad} fall in a reserved range {rng}"
+    assert [i for i in (481096, 482500) for a, z in rng if a <= i <= z] == [481096, 482500], "the reservation check is inert: the retired ids 481096 and 482500 were not flagged"
+    assert all(B.RESERVED_FIRST <= i <= B.RESERVED_LAST for i in mine), f"evidence ids {mine} are outside this lane's reservation"
     if applied:
         sites_now, ev_now, cap_now = (B.read_csv(B.ROOT / f_) for f_ in ("data/sites_OH.csv", "data/evidence_sites_OH.csv", "data/site_capabilities.csv"))
         assert not lc.audit_complete(sites_now, ev_now, cap_now, planned), lc.audit_complete(sites_now, ev_now, cap_now, planned)
