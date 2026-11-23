@@ -1,0 +1,39 @@
+evidence_id,record_id,source_case,capture_sha256,decision,deciding_fact
+EVD-014718,SITE-000121,EVD-014722,109534d627999c3ac6ef73fa1e78b39b46170ba5f5588d7f50de8423701b54ba,held_floor,Operator-level page gives no Solon or Chagrin Falls site tie.
+EVD-014719,SITE-000121,EVD-014722,109534d627999c3ac6ef73fa1e78b39b46170ba5f5588d7f50de8423701b54ba,held_floor,Operator-level page gives no Solon or Chagrin Falls site tie.
+EVD-014720,SITE-000121,EVD-014722,109534d627999c3ac6ef73fa1e78b39b46170ba5f5588d7f50de8423701b54ba,held_floor,Operator-level page gives no Solon or Chagrin Falls site tie.
+EVD-014721,SITE-000121,EVD-014722,109534d627999c3ac6ef73fa1e78b39b46170ba5f5588d7f50de8423701b54ba,held_floor,Operator-level page gives no Solon or Chagrin Falls site tie.
+EVD-014722,SITE-000121,EVD-014722,109534d627999c3ac6ef73fa1e78b39b46170ba5f5588d7f50de8423701b54ba,held_floor,Operator-level page gives no Solon or Chagrin Falls site tie.
+EVD-014723,SITE-000121,EVD-014722,109534d627999c3ac6ef73fa1e78b39b46170ba5f5588d7f50de8423701b54ba,held_floor,Operator-level page gives no Solon or Chagrin Falls site tie.
+EVD-014724,SITE-000121,EVD-014722,109534d627999c3ac6ef73fa1e78b39b46170ba5f5588d7f50de8423701b54ba,held_floor,Operator-level page gives no Solon or Chagrin Falls site tie.
+EVD-014725,SITE-000121,EVD-014722,109534d627999c3ac6ef73fa1e78b39b46170ba5f5588d7f50de8423701b54ba,held_floor,Operator-level page gives no Solon or Chagrin Falls site tie.
+EVD-015360,SITE-000425,EVD-015360,2ea3ea30c244b952060e3273d7047cb6adaa7ca5f299325cd25bfa3b0cca89f7,retain,This cited page explicitly prints Middlefield and 44062.
+EVD-015365,SITE-000425,EVD-015360,2ea3ea30c244b952060e3273d7047cb6adaa7ca5f299325cd25bfa3b0cca89f7,retain,This cited page explicitly prints Middlefield and 44062.
+EVD-015366,SITE-000425,EVD-015360,2ea3ea30c244b952060e3273d7047cb6adaa7ca5f299325cd25bfa3b0cca89f7,retain,This cited page explicitly prints Middlefield and 44062.
+EVD-015361,SITE-000425,EVD-015361,ab57e00771312bdf3f3c5cdd14aa879aa567cec7cc465c5f956f2b2b941a1ae2,retain,This cited page explicitly prints Middlefield and 44062.
+EVD-015363,SITE-000425,EVD-015361,ab57e00771312bdf3f3c5cdd14aa879aa567cec7cc465c5f956f2b2b941a1ae2,retain,This cited page explicitly prints Middlefield and 44062.
+EVD-015364,SITE-000425,EVD-015361,ab57e00771312bdf3f3c5cdd14aa879aa567cec7cc465c5f956f2b2b941a1ae2,retain,This cited page explicitly prints Middlefield and 44062.
+EVD-015362,SITE-000425,EVD-015362,00aa04c6bd0b653373af7792313e07ce483f83ef35fa19397f5161dbd65aaa4a,withdraw,Homepage gives neither Middlefield nor 44062.
+EVD-015368,SITE-000425,EVD-015362,00aa04c6bd0b653373af7792313e07ce483f83ef35fa19397f5161dbd65aaa4a,withdraw,Homepage gives neither Middlefield nor 44062.
+EVD-015367,SITE-000425,EVD-015367,e87fcf348d5ee9098550e076c047d20decf28219a2ee45e904e09ea42620860a,retain,This cited page explicitly prints Middlefield and 44062.
+EVD-015369,SITE-000425,EVD-015367,e87fcf348d5ee9098550e076c047d20decf28219a2ee45e904e09ea42620860a,retain,This cited page explicitly prints Middlefield and 44062.
+EVD-015524,SITE-000481,EVD-015525,837f3dce1fd233135d43f0588406464741cb3ef52a241c6dc0b25edcb9d97ff5,withdraw,The generic industries list does not identify MES customers.
+EVD-015525,SITE-000481,EVD-015525,837f3dce1fd233135d43f0588406464741cb3ef52a241c6dc0b25edcb9d97ff5,withdraw,The generic industries list does not identify MES customers.
+EVD-015526,SITE-000481,EVD-015525,837f3dce1fd233135d43f0588406464741cb3ef52a241c6dc0b25edcb9d97ff5,withdraw,The generic industries list does not identify MES customers.
+EVD-015527,SITE-000481,EVD-015525,837f3dce1fd233135d43f0588406464741cb3ef52a241c6dc0b25edcb9d97ff5,withdraw,The generic industries list does not identify MES customers.
+EVD-015528,SITE-000481,EVD-015525,837f3dce1fd233135d43f0588406464741cb3ef52a241c6dc0b25edcb9d97ff5,withdraw,The generic industries list does not identify MES customers.
+EVD-015529,SITE-000481,EVD-015525,837f3dce1fd233135d43f0588406464741cb3ef52a241c6dc0b25edcb9d97ff5,withdraw,The generic industries list does not identify MES customers.
+EVD-015544,SITE-000481,EVD-015525,837f3dce1fd233135d43f0588406464741cb3ef52a241c6dc0b25edcb9d97ff5,retain,"The material and process claims use separate production wording, outside the generic market list."
+EVD-015548,SITE-000481,EVD-015525,837f3dce1fd233135d43f0588406464741cb3ef52a241c6dc0b25edcb9d97ff5,retain,"The material and process claims use separate production wording, outside the generic market list."
+EVD-015551,SITE-000481,EVD-015525,837f3dce1fd233135d43f0588406464741cb3ef52a241c6dc0b25edcb9d97ff5,retain,"The material and process claims use separate production wording, outside the generic market list."
+EVD-017844,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,retain,"The cited page explicitly names the corresponding sector, material or process."
+EVD-017845,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,withdraw,Irrigation is stated and agriculture is absent.
+EVD-017846,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,retain,"The cited page explicitly names the corresponding sector, material or process."
+EVD-017847,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,retain,"The cited page explicitly names the corresponding sector, material or process."
+EVD-017848,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,retain,"The cited page explicitly names the corresponding sector, material or process."
+EVD-017849,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,retain,"The cited page explicitly names the corresponding sector, material or process."
+EVD-017850,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,retain,"The cited page explicitly names the corresponding sector, material or process."
+EVD-017851,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,retain,"The cited page explicitly names the corresponding sector, material or process."
+EVD-017852,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,retain,"The cited page explicitly names the corresponding sector, material or process."
+EVD-017853,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,retain,"The cited page explicitly names the corresponding sector, material or process."
+EVD-017854,SITE-000864,EVD-017845,da4984b38add5571f9a20f78b446c6383766b8201107707ebe93f47b2fb69ad6,retain,"The cited page explicitly names the corresponding sector, material or process."

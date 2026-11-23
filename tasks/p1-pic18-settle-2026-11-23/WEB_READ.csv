@@ -1,0 +1,3 @@
+evidence_id,capture_sha256,quote_offset,verdict,reader_family,reader_date
+EVD-421209,3ce330c4ef7cee877b4bfa07d3ae29b124644be4d3ab546835887d01eaacc778,3577,VERIFIED,Gemini 4 Hydrogen,2026-11-23
+EVD-425423,9434187a04a84cf6b39ffb837aaeb6834dc01e200b8fd9a6a9bd6d3e7edbf6c4,2914,VERIFIED,Gemini 4 Hydrogen,2026-11-23
