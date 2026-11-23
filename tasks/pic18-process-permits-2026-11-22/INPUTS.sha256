@@ -1,0 +1,3 @@
+# Inputs for the two evidence rows. Format: "<sha256>  <path>"; the PDFs are Ohio EPA air permits fetched from the public eDocument portal; digests as in the store's raw/MANIFEST.sha256.
+eeb424568ee7fd393bf8d2f0519032f79848dd48592eec55f007e14968736d23  raw/permits-oh-air/2026-11-22/1318007657_4150862.pdf
+1854624028d9675867a63b15ff908c7d26b2b0a99aabb84e6145b6c24d099cc2  raw/permits-oh-air/2026-11-22/0322020019_3281747.pdf
