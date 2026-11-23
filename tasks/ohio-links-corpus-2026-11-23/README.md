@@ -16,4 +16,19 @@ The seed for `sample.csv` is `20261123`. It allocates 30 observations across the
 
 Round 1 review identified a parent-company newsroom on a domain held by a single Atlas record. The builder now holds all three navigation fields when the Atlas record cites a parent site or several records share the domain. `parent_site_holds.csv` records additional entity ambiguities found by reading the previously applied rows against their held names, operator notes and corporate domains. The same pinned corpus replays this narrower set of fills and regenerates the sample at the original seed.
 
-The national-arm scan checked filled organizations whose held name or notes signal a regional arm, plus Omya's description. Omya's group LinkedIn page was withdrawn. NOX US, Fukuvi USA and Ascenso Tires North America had arm-specific domains or slugs. Americas Styrenics is the held organization represented by AmSty. The additional subsidiary-name matches had distinct local brands on their own domains. All cells in the previously released sample remain applied, so the sample is preserved.
+## National-arm scan
+
+The scan screened 132 organizations with at least one fill at `433fe056`. The initial flag rule matched `US`, `USA`, `U.S.`, `America`, `Americas` or `North America` as whole words in the legal or trade names, or `US arm`, `North American arm` or `subsidiary of` in the notes. It flagged four organizations. The reviewer nominated ORG-003002, whose description identifies the US arm. A second screen across notes and descriptions also recognized `subsidiary/division of`, `US subsidiary` and `Americas arm` and flagged three more organizations. Eight distinct organizations were flagged and all eight were read against the proposed links and held records.
+
+| Organization | Disposition |
+| --- | --- |
+| ORG-000670 | Kept the newsroom on the exact entity's own site, which uses its acronym. |
+| ORG-000791 | Kept the LinkedIn slug matching the subsidiary's own name, linked from its own site. |
+| ORG-000912 | Kept the newsroom published on the subsidiary's distinct brand domain. |
+| ORG-000992 | Kept the newsroom and feed on the US arm's explicitly US-branded domain. |
+| ORG-001076 | Kept the newsroom and feed published on the subsidiary's own brand domain. |
+| ORG-001815 | Kept the LinkedIn slug that explicitly names the US arm, linked from its own site. |
+| ORG-001910 | Kept the newsroom and feed on the domain documented as the North American operator's own site. |
+| ORG-003002 | Withdrew the LinkedIn page for the global group from the US arm's record. |
+
+The withdrawn cell was outside the released sample, whose bytes were preserved.
