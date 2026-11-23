@@ -23,6 +23,7 @@ GOOD = {
     "added_evidence_rows": 10, "added_registry_links": 0, "added_decisions_lines": [],
     "main_labels": ["old-lane", "audited-lane"], "baseline_labels": ["old-lane"],
     "audit_texts": {"tasks/y/AUDIT.md": AUDIT.format(label="audited-lane", result="PASS")},
+    "pr_audit_texts": {},
     "inputs_files": {"tasks/x/INPUTS.sha256": "# c\n" + "0" * 64 + "  raw/osha/file.csv\n"},
     "inputs_repo_ok": {},
     "replay_scripts": ["tasks/x/check.py"],
@@ -445,6 +446,43 @@ class TestCollectors(unittest.TestCase):
         self.assertEqual(f["baseline_labels"], ["lane-b"])
         self.assertEqual(list(f["audit_texts"]), ["tasks/y/AUDIT.md"])
         self.assertEqual(f["inputs_files"]["tasks/z/INPUTS.sha256"].count("\n"), 3)
+
+    def test_audit_added_by_this_pr(self):
+        self.base_repo()
+        self.g("checkout", "-q", "main")
+        self.write("data/evidence_X.csv", "evidence_id,note,created_by\nE1,,lane-a\nE2,,lane-b\nE3,,lane-c\n")
+        self.g("commit", "-qam", "add unaudited label")
+        audit = "tasks/z/AUDIT.md"
+        passing = AUDIT.format(label="lane-c", result="PASS")
+        cases = (
+            ("no audit added", audit, None, 1, 0, 1, 0),
+            ("valid PASS", audit, passing, 0, 1, 0, 0),
+            ("valid FAIL", audit, AUDIT.format(label="lane-c", result="FAIL"), 1, 0, 0, 1),
+            ("other label", audit, AUDIT.format(label="lane-d", result="PASS"), 1, 0, 1, 0),
+            ("missing reviewers", audit, passing.split("Reviewers:")[0], 1, 0, 1, 0),
+            ("wrong filename", audit + "\n", passing, 1, 0, 1, 0),
+            ("only modifies a main audit", "tasks/y/AUDIT.md", passing, 1, 0, 1, 0),
+        )
+        for i, (case, path, text, expected_rc, pr_count, unaudited, failing) in enumerate(cases):
+            with self.subTest(case=case):
+                self.g("checkout", "-q", "-b", f"audit-{i}", "main")
+                self.write("data/evidence_X.csv", "evidence_id,note,created_by\nE1,changed,lane-a\nE2,,lane-b\nE3,,lane-c\n")
+                if text is not None:
+                    self.write(path, text)
+                self.g("add", ".")
+                self.g("commit", "-qm", case)
+                head = c.git("rev-parse", "HEAD").strip()
+                if case == "valid PASS":
+                    self.write(audit, AUDIT.format(label="lane-c", result="FAIL"))
+                with mock.patch.object(c, "gh_json", return_value={"headRefOid": head, "headRefName": f"audit-{i}"}):
+                    rc, out = run(c.collect(1, "main"))
+                if case == "valid PASS":
+                    self.write(audit, passing)
+                self.assertEqual(rc, expected_rc, out)
+                self.assertIn(f"1 audited on main, {pr_count} audited by this PR, {unaudited} unaudited", out)
+                self.assertIn(f"{failing} with a FAIL audit", out)
+                if failing:
+                    self.assertIn("says Result: FAIL: lane-c", out)
 
     def test_repo_input_is_looked_up_literally(self):
         # Codex r3: ":README.md" is a git pathspec that matched README.md; it must not pass as an input name

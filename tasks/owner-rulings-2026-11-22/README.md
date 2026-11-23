@@ -615,3 +615,17 @@ The later ruling supersedes the earlier allowance for active-participant counts 
 **Controller ruling** · `BOARD.md` line 2288. The reporting fix merged in PR #479 at `fb95d4c0`; see `docs/ci/README.md` and `scripts/check_pr_rules.py`.
 
 > Codex r1 REFUTE at e3765ea0, 0 failing rows of 123, 1 BLOCKING: hosted CI silently omits the packet replay. Ruled a defect of the hosted checks, not of the PR's rows; fix = an explicit NOT RUN line in the published pr-rules result (rules lane follow-up PR, items 1-5).
+
+## J. Round 15 (2026-11-23)
+
+### J1. The next data PR can carry the prior batch's audit
+
+**Owner ruling.** “Let it ride in the next PR.” The next data PR can add a `tasks/<folder>/AUDIT.md` for a `created_by` label already on `main`. The required lines are `Label:`, `Result: PASS`, `Sample:` and `Reviewers:`. A valid `Result: FAIL` from either source blocks. The checker on `main` reads the added file from the PR head as text.
+
+### J2. A steward picks up usage-limit stops
+
+**Owner ruling, process only.** “Add the wake, use a cheap worker.” Every 30 minutes a BB automation finds child threads stopped on a usage limit and hands them to a GPT-6 Luna steward.
+
+### J3. Run the live-site trial for markets
+
+**Owner ruling, packet only.** Run a 25-organization live-site trial on the PIC-18 market-unknown frame. The controller's correction recorded that the prior live-site run had already tested the company-page process route. That route remains dropped after one hit in 25 organizations.

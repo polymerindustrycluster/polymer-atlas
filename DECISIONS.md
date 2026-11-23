@@ -226,3 +226,10 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Controller ruling (trade-name hold):** a filing by an operating subsidiary does not witness the holding company, even when the subsidiary's name is recorded as a trade name of the holding record. An organization binds only through its legal name (or a marked alias of it). Six organizations are held with reason `different_entity_trade_name`: ORG-000383, ORG-000391, ORG-000460, ORG-000482, ORG-001433, ORG-001461 (`held_filer_not_the_record.csv`). Each is a record-quality lead: a subsidiary's or affiliate's name sitting in a parent's `trade_names`.
 - **Decided by (trade-name hold):** the controller thread of this orchestration, 2026-11-22. This is a controller ruling, not an owner ruling.
 - **Reproducibility, not correctness:** `check.py` replays each row from the raw files by path and sha256 with the builder's own matcher (`binding.py`); it shows the rows can be rebuilt, not that the matcher is right. The outcome line (PIC-18 process, market and size unknown shares) does not move: these rows add existence and address evidence only.
+
+## 2026-11-23: round 15 rulings
+
+- **Audit gate (“Let it ride in the next PR”):** The next data PR may add the prior batch's `tasks/<folder>/AUDIT.md`. The audit still requires `Label:`, `Result: PASS`, `Sample:` and `Reviewers:`. A valid `Result: FAIL` blocks from either source.
+- **Usage-limit recovery (“Add the wake, use a cheap worker”):** A BB automation runs every 30 minutes and hands child threads stopped on usage limits to a GPT-6 Luna steward. This is an operating decision.
+- **Live-site markets trial:** Run a 25-organization, packet-only trial on the PIC-18 market-unknown frame. The company-page process route remains dropped after one hit in 25 organizations in the prior trial.
+- **Decided by:** the repo owner, in the controller's session, 2026-11-23. See `tasks/owner-rulings-2026-11-22/README.md`, round 15.
