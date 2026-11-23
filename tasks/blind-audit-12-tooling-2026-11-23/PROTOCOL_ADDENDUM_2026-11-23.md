@@ -11,3 +11,7 @@ Owner round 24, item 1, “Withhold now, repair too.” This governs reader pack
 ## R13 filing years
 
 [SCHEMA §1 R13](../../docs/SCHEMA.md) and owner round 24, item 2 require readers to check sampled bands against the cited filings. For size witnesses that state the sampled record's held band, the evidence context includes the stated filing year, a controlled source type and, when held, the public OSHA filing identifier. A missing or conflicting year remains unknown until checked against the filing. Raw claim detail, capture dates, tier effects and attribution stay private.
+
+## Public context false positives
+
+Under the 2026-11-23 controller ruling after #505, eligible public URL segments and resolved published labels may use the same exact cell, token and full-text approval process as judged values. The context inventory uses the seed-free frame. Only exact approved values remain visible when flagged. Structural violations and reserved metadata markers still block release.

@@ -95,6 +95,35 @@ def packet_check(root):
         "claim_type": "size_band", "url": "", "filing_source": "osha_inspection",
         "filing_year": 2018, "filing_id": "5678"}]
     link = json.loads(site["context_json"])["children"][0]
+    public_url = "https://example.org/pr/annual-report"
+    citation = dict(site, cited_sources=public_url)
+    cell = f"sites/{site['record_id']}/cited_sources/url/1"
+    candidate = (cell, "pr", public_url)
+    hits = set()
+    p.leak_scan([citation], context_candidates=hits)
+    assert hits == {candidate}
+    p.leak_scan([citation], approved={candidate})
+    assert citation["cited_sources"] == public_url
+    for unapproved, approvals in (
+        (citation, ()),
+        (dict(citation, cited_sources=public_url + "-other"), {candidate}),
+        (dict(citation, record_id="SITE-999999"), {candidate}),
+        (dict(citation, created_by="builder"), {candidate}),
+        (dict(citation, cited_sources=public_url + "?created_by=abc"),
+         {(cell, "pr", public_url + "?created_by=abc"), (cell, "created_by", public_url + "?created_by=abc")}),
+    ):
+        try:
+            p.leak_scan([unapproved], approved=approvals)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("unapproved context escaped leak scan")
+    inspected = dict(unknown, source_ref="https://www.osha.gov/ords/imis/establishment.inspection_detail?id=98765",
+                     claim_detail="employee_band_site=10-49; OSHA inspection opened 2017-05-03")
+    filing = p.band_filings([inspected], "employee_band_site", "10-49")[0]
+    assert (filing["filing_source"], filing["filing_id"], filing["filing_year"]) == ("osha_inspection", "98765", 2017)
+    lookalike = dict(inspected, source_ref=inspected["source_ref"].replace("www.osha.gov", "osha.gov.example"))
+    assert p.band_filings([lookalike], "employee_band_site", "10-49")[0]["filing_year"] is None
     assert link["values"]["site_id"] == site["record_id"] and "as_of" not in link["context"]
     assert link["values"]["registry_id"] == p.WITHHELD
     assert "private ruling basis" not in (out / "blind_a.csv").read_text()

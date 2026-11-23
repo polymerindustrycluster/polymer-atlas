@@ -8,7 +8,7 @@ from pathlib import Path
 import random
 import re
 import sys
-from urllib.parse import unquote
+from urllib.parse import parse_qs, unquote, urlsplit
 
 HERE = Path(__file__).resolve().parent
 sys.path[:0] = [str(HERE.parent / name) for name in (
@@ -172,6 +172,23 @@ EXPLICIT_YEAR = r"\bfiling[ _]year[ =:]+" + YEAR + r"\b"
 OSHA_FILING_ID = re.compile(r"\b(?:record id|establishment[_ ]id|activity[_ ]nr|id)[ =:]+(\d{1,20})\b", re.I)
 
 
+def osha_inspection_id(ref):
+    matched = set()
+    for url in a11.urls(ref):
+        try:
+            parsed = urlsplit(url)
+            if (parsed.hostname not in ("osha.gov", "www.osha.gov") or parsed.username is not None
+                    or parsed.path not in ("/ords/imis/establishment.inspection_detail",
+                                           "/pls/imis/establishment.inspection_detail")):
+                continue
+        except ValueError:
+            continue
+        ids = parse_qs(parsed.query, keep_blank_values=True).get("id", [])
+        if len(ids) == 1 and re.fullmatch(r"[0-9]{1,20}", ids[0]):
+            matched.add(ids[0])
+    return matched.pop() if len(matched) == 1 else ""
+
+
 def band_filings(evidence, field, band):
     """Show only the explicitly stated period of a size witness, without its builder prose."""
     if not field or band in ("", "unknown"):
@@ -183,10 +200,11 @@ def band_filings(evidence, field, band):
         detail, ref = row["claim_detail"], row["source_ref"]
         if not re.match(rf"^{field}\s*=\s*{re.escape(band)}(?=$|[ :;,.(])", detail):
             continue
+        inspection_id = osha_inspection_id(ref)
         if re.match(r"OSHA ITA\b", ref, re.I):
             source = "osha_ita"
             pattern = r"\b(?:CY[ =]*|calendar year\s+|filing year\s+|form 300A\s+|ITA\s+)" + YEAR + r"\b"
-        elif re.match(r"OSHA inspection\b", ref, re.I):
+        elif inspection_id or re.match(r"OSHA inspection\b", ref, re.I):
             source = "osha_inspection"
             pattern = r"\b(?:opened|open_date|inspection date)[ =:]*" + YEAR + r"-\d{2}-\d{2}\b"
         elif "SBA PPP" in ref:
@@ -200,7 +218,7 @@ def band_filings(evidence, field, band):
         year = int(years.pop()) if len(years) == 1 else 0
         locator = OSHA_FILING_ID.search(ref) if source in ("osha_ita", "osha_inspection") else None
         for url in a11.urls(ref) or [""]:
-            result.add((source, year, locator[1] if locator else "", url))
+            result.add((source, year, inspection_id or (locator[1] if locator else ""), url))
     return [dict(claim_type="size_band", url=url, filing_source=source, filing_year=year or None, filing_id=locator)
             for source, year, locator, url in sorted(result)]
 
@@ -253,7 +271,57 @@ class Head(a11.Head):
                     _key=cell_record(table, row, number))
 
 
-def leak_scan(rows, visible_approvals=None):
+# Only literal public URL segments and resolved public labels can receive an exception.
+CONTEXT_RESERVED = re.compile(r"pull request|integration pass|\bPR[ #]+\d+|\b(?:gate|reader|reviewer)[_ -]id\b", re.I)
+
+
+def inspected_text(value, cell, approved, candidates, *, label=False):
+    def inspect(part, location):
+        decoded = unquote(part)
+        if any(pattern.search(decoded) for pattern in (
+                HARD_VALUE, EXTRA_LEAK, CONTACT, PROVENANCE_PROSE, CONTEXT_RESERVED)):
+            return part
+        tokens = set(match_tokens(part)) | {m[0] for m in a11.PASS_DATE.finditer(decoded)}
+        matches = {(location, token, part) for token in tokens}
+        if matches and candidates is not None:
+            candidates.update(matches)
+            return ""
+        return "" if matches and matches.issubset(approved) else part
+
+    if label:
+        return inspect(value, cell)
+    n = 0
+
+    def url_segment(match):
+        nonlocal n
+        n += 1
+        url = match[0].rstrip(".,;:")
+        try:
+            parsed = urlsplit(url)
+            if (not parsed.hostname or parsed.username is not None or parsed.password is not None):
+                return match[0]
+        except ValueError:
+            return match[0]
+        return inspect(url, f"{cell}/url/{n}") + match[0][len(url):]
+
+    return a11.URL.sub(url_segment, value)
+
+
+def inspected_context(context, cell, approved, candidates):
+    checked = dict(context)
+    for name, value in context.items():
+        location = f"{cell}/{name}"
+        if name.endswith("_resolved"):
+            checked[name] = inspected_text(value, location, approved, candidates, label=True)
+        elif name.endswith(("_ref", "_source")):
+            checked[name] = inspected_text(value, location, approved, candidates)
+        elif name == "cited_page_urls":
+            checked[name] = [inspected_text(url, f"{location}/{n}", approved, candidates)
+                             for n, url in enumerate(value, 1)]
+    return checked
+
+
+def leak_scan(rows, visible_approvals=None, *, approved=frozenset(), context_candidates=None):
     visible_approvals = visible_approvals or {}
     for row in rows:
         if row.keys() != set(FIELDS):
@@ -277,6 +345,10 @@ def leak_scan(rows, visible_approvals=None):
                     or (ev["filing_year"] is not None and
                         (type(ev["filing_year"]) is not int or not 1900 <= ev["filing_year"] <= 2099))):
                 raise ValueError("blind evidence contains unexpected fields or filing year")
+        cell = "/".join(record_key(row))
+        scanned_cites = inspected_text(row["cited_sources"], f"{cell}/cited_sources", approved, context_candidates)
+        scanned_evidence = [dict(ev, url=inspected_text(ev["url"], f"{cell}/evidence/{n}", approved, context_candidates))
+                            for n, ev in enumerate(evidence, 1)]
         inspected = [{"table": row["table"], "values": json.loads(row["values_json"]),
                       "context": context}, *children]
         for part, child in enumerate(inspected):
@@ -291,25 +363,68 @@ def leak_scan(rows, visible_approvals=None):
                 raise ValueError("blind context contains unexpected fields")
             unchecked = {f: v for f, v in child["values"].items()
                          if (part, f, v) not in visible_approvals.get(row["blind_id"], ())}
+            checked_context = inspected_context(child["context"], f"{cell}/context/{part}", approved, context_candidates)
             scope = dict(row, change_class=row["stratum"], change_kind="",
-                         values_json=json.dumps(unchecked, ensure_ascii=False),
-                         context_json=json.dumps(child["context"], ensure_ascii=False))
+                         values_json=json.dumps(unchecked, ensure_ascii=False), cited_sources=scanned_cites,
+                         evidence_json=json.dumps(scanned_evidence, ensure_ascii=False))
             if child.get("table") == "archive_links":
                 # This is the public archive link key (the same exception as Audit 11).
-                scope["context_json"] = json.dumps({k: v for k, v in child["context"].items() if k != "evidence_id"})
-                eid = child["context"]["evidence_id"]
+                eid = checked_context.pop("evidence_id")
                 ref = child["values"]["archive_ref"]
                 if not (re.fullmatch(r"EVD-\d{6}", eid) and
                         (ref == WITHHELD or a11.ARCHIVE_KEY.fullmatch(f"{eid}|{ref}"))):
                     raise ValueError(f"{row['blind_id']}: malformed archive link key")
+            scope["context_json"] = json.dumps(checked_context, ensure_ascii=False)
             hits = a11.leak_scan([scope])
             if hits:
                 raise ValueError(f"{row['blind_id']}: blind scan flagged {hits[0][1]}")
             for field in FIELDS:
                 decoded = unquote(scope[field])
-                if (any(pattern.search(decoded) for pattern in (EXTRA_LEAK, CONTACT, PROVENANCE_PROSE))
+                if (any(pattern.search(decoded) for pattern in (EXTRA_LEAK, CONTACT, PROVENANCE_PROSE, CONTEXT_RESERVED))
                         or decoded != scope[field] and a11.LEAK.search(decoded)):
                     raise ValueError(f"{row['blind_id']}: blind scan flagged {field}")
+
+
+def render_row(h, entry, blind_id, approved):
+    table, rid = record_key(entry)
+    original = h.t[table][rid][0]
+    record = original
+    judge = [f for f, k in draw.FIELD_CLASS[table].items() if k == "J"]
+    if "field" in entry:
+        field, donor = entry["field"], entry["donor_record_id"]
+        replacement = h.t[table][donor][0].get(field)
+        if field not in judge or not replacement or not original[field] or replacement == original[field]:
+            raise ValueError("invalid plant substitution")
+        record = dict(original, **{field: replacement})
+    # Audit 11 uses its changed-column path here, supplied with the entire explicit J whitelist.
+    h.t[table][rid][0] = record
+    row = a11.blind_row(h, dict(entry, change_kind="audit", change_class=entry["stratum"],
+                               changed_columns=";".join(judge)))
+    h.t[table][rid][0] = original
+    allowed = set()
+    context = json.loads(row["context_json"])
+    children = []
+    values, masked = mask_values({f: record[f] for f in judge}, f"{table}/{rid}", approved, allowed, 0)
+    for part, child in enumerate(h.children[table, rid], 1):
+        child_values, child_masked = mask_values(child["values"], child["_key"], approved, allowed, part)
+        children.append(dict(table=child["table"], values=child_values, context=child["context"]))
+        masked += child_masked
+    context["children"] = children
+    row.update(blind_id=blind_id, stratum=entry["stratum"],
+               context_json=json.dumps(context, ensure_ascii=False, sort_keys=True))
+    row["cited_sources"] = cited(row["cited_sources"])
+    band_field = BAND_FIELDS.get(table, "")
+    filings = band_filings(h.evidence[table, rid], band_field, original.get(band_field, ""))
+    if filings:
+        evidence = json.loads(row["evidence_json"])
+        dated_urls = {f["url"] for f in filings}
+        evidence = [ev for ev in evidence
+                    if ev["claim_type"] != "size_band" or ev["url"] not in dated_urls]
+        row["evidence_json"] = json.dumps(evidence + filings, ensure_ascii=False)
+    # Audit 11's generic withheld list also includes a few columns that are J for specific Audit 12 tables.
+    row.update(columns_under_audit=";".join(judge),
+               values_json=json.dumps(values, ensure_ascii=False, sort_keys=True))
+    return {f: row[f] for f in FIELDS}, masked, allowed
 
 
 def build(folder, out, reader=None, extend=(), approved=()):
@@ -339,54 +454,19 @@ def build(folder, out, reader=None, extend=(), approved=()):
     suffix = "-".join(sorted(extend))
     prefix = f"A12-S{stage}" + (f"-{suffix}" if suffix else "")
     for i, entry in enumerate(rows, 1):
-        table, rid = record_key(entry)
-        original = h.t[table][rid][0]
-        record = original
-        judge = [f for f, k in draw.FIELD_CLASS[table].items() if k == "J"]
-        if "field" in entry:
-            field, donor = entry["field"], entry["donor_record_id"]
-            replacement = h.t[table][donor][0].get(field)
-            if field not in judge or not replacement or not original[field] or replacement == original[field]:
-                raise ValueError("invalid plant substitution")
-            record = dict(original, **{field: replacement})
-        # Audit 11 uses its changed-column path here, supplied with the entire explicit J whitelist.
-        h.t[table][rid][0] = record
-        row = a11.blind_row(h, dict(entry, change_kind="audit", change_class=entry["stratum"],
-                                   changed_columns=";".join(judge)))
-        h.t[table][rid][0] = original
         blind_id = f"{prefix}-{i:04}"
-        allowed = visible_approvals[blind_id]
-        context = json.loads(row["context_json"])
-        children = []
-        values, masked = mask_values({f: record[f] for f in judge}, f"{table}/{rid}", approved, allowed, 0)
-        for part, child in enumerate(h.children[table, rid], 1):
-            child_values, child_masked = mask_values(child["values"], child["_key"], approved, allowed, part)
-            children.append(dict(table=child["table"], values=child_values, context=child["context"]))
-            masked += child_masked
-        context["children"] = children
+        row, masked, allowed = render_row(h, entry, blind_id, approved)
+        blind.append(row)
+        visible_approvals[blind_id] = allowed
         plant = "field" in entry
         withheld_counts[entry["stratum"], plant] += len(masked)
         private_withheld.extend(dict(blind_id=blind_id, stratum=entry["stratum"], cell=cell,
                                     plant=str(plant).lower()) for cell in masked)
-        row.update(blind_id=blind_id, stratum=entry["stratum"],
-                   context_json=json.dumps(context, ensure_ascii=False, sort_keys=True))
-        row["cited_sources"] = cited(row["cited_sources"])
-        band_field = BAND_FIELDS.get(table, "")
-        filings = band_filings(h.evidence[table, rid], band_field, original.get(band_field, ""))
-        if filings:
-            evidence = json.loads(row["evidence_json"])
-            dated_urls = {f["url"] for f in filings}
-            evidence = [ev for ev in evidence
-                        if ev["claim_type"] != "size_band" or ev["url"] not in dated_urls]
-            row["evidence_json"] = json.dumps(evidence + filings, ensure_ascii=False)
-        # Audit 11's generic withheld list also includes a few columns that are J for specific Audit 12 tables.
-        row.update(columns_under_audit=";".join(judge),
-                   values_json=json.dumps(values, ensure_ascii=False, sort_keys=True))
-        blind.append({f: row[f] for f in FIELDS})
-        private.append(dict(blind_id=row["blind_id"], stratum=entry["stratum"], table=table, record_id=rid,
-                            plant_field=entry.get("field", ""), plant_value_withheld=str(
-                                plant and values[entry["field"]] == WITHHELD).lower()))
-    leak_scan(blind, visible_approvals)
+        private.append(dict(blind_id=blind_id, stratum=entry["stratum"], table=entry["table"],
+                            record_id=entry["record_id"], plant_field=entry.get("field", ""),
+                            plant_value_withheld=str(plant and json.loads(row["values_json"])[entry["field"]]
+                                                     == WITHHELD).lower()))
+    leak_scan(blind, visible_approvals, approved=approved)
     out.mkdir(mode=0o700)
     packet = draw.csv_text(blind, FIELDS)
     for name in ("blind_a.csv", "blind_b.csv"):
@@ -401,12 +481,34 @@ def build(folder, out, reader=None, extend=(), approved=()):
     print(f"{len(blind)} reader rows, SHA-256 {draw.sha(packet.encode())}")
 
 
+def context_inventory(reader):
+    frame, _, bad = draw.build_frame(reader, reader.regions())
+    if bad:
+        raise ValueError(f"{len(bad)} records are unassignable")
+    head = Head(reader)
+    candidates, blocked = set(), []
+    candidate_records = 0
+    for entry in frame:
+        row, _, allowed = render_row(head, entry, "inventory", frozenset())
+        hits = set()
+        try:
+            leak_scan([row], {"inventory": allowed}, context_candidates=hits)
+        except ValueError as exc:
+            blocked.append((*record_key(entry), str(exc)))
+        if hits:
+            candidate_records += 1
+            candidates.update(hits)
+    return len(frame), candidate_records, candidates, blocked
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     source = parser.add_mutually_exclusive_group(required=True)
     source.add_argument("--draw", type=Path)
     source.add_argument("--inventory-at", help="full main SHA for a seed-free candidate inventory")
-    parser.add_argument("--approved", type=Path, help="controller-approved exact candidate rows")
+    source.add_argument("--context-inventory-at", help="full main SHA for seed-free public context candidates")
+    parser.add_argument("--approved", type=Path, action="append", default=[],
+                        help="controller-approved exact candidate rows; repeat for separate files")
     parser.add_argument("--out", required=True, type=Path)
     parser.add_argument("--extend", nargs="+", choices=draw.STRATA, default=[])
     args = parser.parse_args()
@@ -418,14 +520,27 @@ def main():
             candidates = list(false_positive_candidates(reader))
             draw.write_private(args.out, draw.csv_text(candidates, CANDIDATE_FIELDS))
             print(f"{len(candidates)} candidate token occurrences in non-NAICS judged cells")
+        elif args.context_inventory_at:
+            if args.approved or args.extend:
+                raise ValueError("context inventory uses only --context-inventory-at and --out")
+            reader = draw.GitReader(draw.require_ancestor(args.context_inventory_at))
+            n, matched, hits, blocked = context_inventory(reader)
+            candidates = [dict(zip(CANDIDATE_FIELDS, hit)) for hit in sorted(hits)]
+            draw.write_private(args.out, draw.csv_text(candidates, CANDIDATE_FIELDS))
+            print(f"{len(candidates)} candidate token rows over {matched} of {n} frame records; "
+                  f"{len(blocked)} records still hard-blocked")
+            if blocked:
+                for table, rid, why in blocked:
+                    print(f"{table}/{rid}: {why}", file=sys.stderr)
+                parser.exit(1)
         else:
             approved = set()
-            if args.approved:
-                with args.approved.open(newline="") as f:
+            for path in args.approved:
+                with path.open(newline="") as f:
                     records = csv.DictReader(f)
                     if tuple(records.fieldnames or ()) != CANDIDATE_FIELDS:
                         raise ValueError("approval CSV header must match the candidate inventory")
-                    approved = set(unique(records, lambda row: tuple(row[k] for k in CANDIDATE_FIELDS)))
+                    approved.update(unique(records, lambda row: tuple(row[k] for k in CANDIDATE_FIELDS)))
             build(args.draw, args.out, extend=args.extend, approved=approved)
     except ValueError as exc:
         parser.exit(1, f"packet build refused: {exc}\n")
