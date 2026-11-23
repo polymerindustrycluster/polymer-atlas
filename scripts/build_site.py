@@ -261,7 +261,9 @@ def public_url(url):
     return bool(safe_href(url)) and not embeds_email(url) and not re.search(r"linkedin\.com/(in|pub)/", url, re.I)
 
 
-STAGING_RE = re.compile(r"\bstaging\b|\bworking/|crm[-_ ]?(?:export|crossref)|pic[-_ ]member[-_ ]list", re.I)
+# Private staging material: a staging or workshop path, or the CRM folders by their file names (crm-export, crm-crossref, pic-member-list).
+# A citation of PIC's public member list ("Public PIC member list", with spaces) is a public source and stays.
+STAGING_RE = re.compile(r"\bstaging\b|\bworkshop\b|\bworking/|\binternal/|crm[-_ ]?(?:export|crossref)|pic[-_]member[-_]list", re.I)
 
 
 def source_entries(text):
@@ -295,7 +297,7 @@ def url_links(urls):
     return " ".join(f'<a href="{esc(u)}" rel="noopener nofollow">{esc(u)}</a>' for u in urls)
 
 
-CRM_RE = re.compile(r"\bCRM\b")
+CRM_RE = re.compile(r"\bCRM\b", re.I)
 
 
 def lede(text):
@@ -1190,9 +1192,7 @@ th[aria-sort=descending] button.sort::after{opacity:.9}
 .tfilter input{padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);font:inherit;min-width:0;width:16em;max-width:60%;min-height:40px}
 
 .tdl{margin:-.6em 0 1.2em}
-.dpage{display:flex;flex-direction:column}
-.dpage>*{order:1}.dpage>.dsummary{order:0}.dpage>.lede{order:-1}
-@media (max-width:719.98px){.dpage>.dsummary{order:2}}   /* on a phone the list comes before the long county and ring summary */
+details.dsummary>summary{font:700 1.15rem/1.25 var(--f-display);margin:.6em 0;min-height:44px;display:flex;align-items:center}
 .downloads{margin:.4em 0}
 .facets{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:.6em 0}
 details.facet{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:6px 12px;margin:0}
@@ -1523,7 +1523,12 @@ DIRECTORY_JS = r"""(function () {
   var COLS = ['Street address', 'Ring', 'Site tier', 'Process', 'Material', 'Market', 'Employees', 'Ownership', 'Evidence rows',
               'Organization record (status, tier)', 'Website'];
   var boxes = {}, data = [], hits = [], page = 0;
-  if (matchMedia('(max-width: 719.98px)').matches) Array.prototype.forEach.call(form.querySelectorAll('details.facet'), function (d) { d.open = false; });   // phones: the list first, filters on tap
+  var summary = document.getElementById('counts');
+  if (matchMedia('(max-width: 719.98px)').matches) {   // phones: the list first (closed blocks hold no tab stops), the filters and the county counts on tap
+    Array.prototype.forEach.call(form.querySelectorAll('details.facet'), function (d) { d.open = false; });
+    if (summary) summary.open = false;
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#counts"]'), function (a) { a.addEventListener('click', function () { if (summary) summary.open = true; }); });
   status.textContent = 'Loading the list...';
   F.forEach(function (f) { boxes[f] = Array.prototype.slice.call(form.querySelectorAll('input[name="' + f + '"]')); });
   function chosen(f) { return boxes[f].filter(function (b) { return b.checked; }).map(function (b) { return b.value; }); }
@@ -2025,17 +2030,14 @@ def build_directory_page(ctx, rows):
                               for c in counties)
     body = f"""
 <h1>Northeast Ohio polymer companies</h1>
-<div class="dpage">
 <p class="lede">{fmt_int(n_orgs)} owners of active, tier A-C site rows in the 18 PIC counties: {fmt_int(n_orgs - n_eco)} organization records and
 {fmt_int(n_eco)} ecosystem records, with {fmt_int(n_sites)} such site rows. Each count below is owners with an active tier A-C site row in that county or ring.</p>
-<p class="small"><a href="#counts">Counts by county and ring</a> · <a href="#find">Find a company</a> · <a href="search.html">Search every organization, any state</a></p>
-<div class="dsummary" id="counts">
+<p class="small"><a href="#counts">Counts by county and ring</a> · <a href="search.html">Search every organization, any state</a></p>
+<details class="dsummary" id="counts" open><summary>Counts by county and ring</summary>
 {summary}
-<p>This page lists companies in the 18 PIC counties. For any other company in the Atlas, in any state,
-<a href="search.html">search every organization</a>.</p>
 <p class="small muted">An owner with site rows in more than one county or ring is counted in each, so these columns can
 add up to more than the All PIC-18 line. Counts are owners, not unique ultimate parents.</p>
-</div>
+</details>
 <noscript><p>Search, filters and the paged list need JavaScript. Without it, browse by county, {DIRECTORY_PAGE} rows a page, with street addresses:
 {county_links}. Every row is also in <a href="directory.csv">directory.csv</a>.</p></noscript>
 <div id="dfind" hidden>
@@ -2066,7 +2068,6 @@ own row. Bands are bands, never headcounts. "N or more" means the band starts at
 take <a href="directory.csv">directory.csv</a> ({fmt_int(len(rows))} rows, one per owner and county, unfiltered).
 Evidence rows count the claim-level evidence on the owner's page (its own and its site rows').
 Website is the owner's recorded website. No contact people are published.</p>
-</div>
 </div>
 </div>
 """

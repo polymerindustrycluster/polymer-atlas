@@ -67,7 +67,8 @@ def https(url):
     url = (url or "").strip()
     if not url or url == "none_found":
         return ""
-    return url if url.startswith(("http://", "https://")) else "https://" + url
+    url = url if url.startswith(("http://", "https://")) else "https://" + url
+    return "" if build_site.embeds_email(url) else url   # the site's one link policy: no email address in a published link
 
 
 def vocab():

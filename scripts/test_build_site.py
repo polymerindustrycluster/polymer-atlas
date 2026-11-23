@@ -1296,15 +1296,18 @@ class RefuteFixesTest(unittest.TestCase):
         self.assertRegex(home, r"Site rows by ring \(operating status active; tiers A-C; all locations held: \d+ in the US, [1-9]\d* elsewhere\)")
         self.assertRegex(self.read("skyline.html"), r"\d+ in the US, [1-9]\d* elsewhere")
 
-    def test_directory_puts_the_list_before_the_summary_on_a_phone_and_collapses_the_filters(self):
+    def test_directory_summary_is_a_block_that_starts_closed_on_a_phone_so_the_list_follows_the_tab_order(self):
         html = self.read("directory.html")
-        self.assertIn('<div class="dpage">', html)
-        self.assertIn('<div class="dsummary" id="counts">', html)
-        self.assertIn('href="#counts"', html)                                         # the way to the county counts from the top
+        self.assertIn('<details class="dsummary" id="counts" open>', html)         # open on a desktop and without JavaScript
+        self.assertIn('href="#counts"', html)                                        # the way to the county counts from the top
+        self.assertNotIn('href="#find"', html)                                       # no shortcut into the part that is hidden without JavaScript
         css = self.read("style.css")
-        self.assertIn("@media (max-width:719.98px){.dpage>.dsummary{order:2}}", css)
-        self.assertIn(".dpage>.dsummary{order:0}", css)                               # on a desktop the summary stays first
-        self.assertRegex(self.read("directory.js"), r"details\.facet'\), function \(d\) \{ d\.open = false; \}")
+        self.assertNotIn(".dpage", css)                                              # no CSS reordering: visual order is document order
+        self.assertNotRegex(css, r"dsummary\{[^}]*order")
+        js = self.read("directory.js")
+        self.assertIn("if (summary) summary.open = false;", js)
+        self.assertRegex(js, r"details\.facet'\), function \(d\) \{ d\.open = false; \}")
+        self.assertLess(html.index('id="counts"'), html.index('id="dfind"'))          # document order: summary, then the finder and list
 
     def test_embeds_email_sees_every_encoding(self):
         for u in ("https://x.example/p?mail=a@b.example", "https://x.example/p?mail=a%40b.example", "https://x.example/p?mail=a%2540b.example"):
@@ -1329,6 +1332,18 @@ class RefuteFixesTest(unittest.TestCase):
         self.assertNotIn("fixture%40example", self.read("experts.json"))
         for p in (self.out / "orgs").glob("*.html"):
             self.assertNotIn("fixture%40example", p.read_text(encoding="utf-8"), p.name)
+
+    def test_source_classifier_catches_routine_private_labels_and_keeps_the_public_member_list(self):
+        private = ("PIC crm https://example.invalid/a", "workshop/internal/reader.csv https://example.invalid/b", "Muse staging https://example.invalid/c",
+                   "CRM export https://example.invalid/d", "working/x.csv", "internal/notes https://example.invalid/e")
+        for e in private:
+            self.assertEqual(build_site.source_urls(e), [], e)
+            self.assertEqual(build_site.omitted_sources(e), 1, e)
+        keep = "Public PIC member list https://polymerindustrycluster.org/members; Company site https://example.com/about"
+        self.assertEqual(build_site.source_urls(keep), ["https://polymerindustrycluster.org/members", "https://example.com/about"])
+        self.assertEqual(build_site.omitted_sources(keep), 0)
+        self.assertEqual(build_site.lede("Exists only in the pic crm record."), build_site.lede("Exists only in the PIC CRM record."))
+        self.assertIn("withheld", build_site.lede("Exists only in the pic crm record."))
 
     def test_howto_publishing_recipes_build_the_graph_pages_and_no_claim_is_left_that_the_audit_refuted(self):
         doc = (Path(build_site.__file__).resolve().parent.parent / "docs" / "SITE_HOWTO.md").read_text(encoding="utf-8")

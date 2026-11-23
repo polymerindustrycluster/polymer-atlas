@@ -44,6 +44,12 @@ class BuildGraphTests(unittest.TestCase):
         for i, j, t in self.edges:
             self.assertTrue(0 <= i < j < len(self.nodes), (i, j, t))
 
+    def test_links_with_an_email_are_not_exported_by_any_graph_builder(self):
+        for u in ("https://x.example/?m=a%40b.example", "x.example/?m=a@b.example", "https://x.example/%2540"):
+            self.assertEqual(bg.https(u), "", u)
+        self.assertEqual(bg.https("x.example/about"), "https://x.example/about")
+        self.assertEqual(bg.public_description("exists only in the crm record"), "")      # lowercase too
+
     def test_description_that_refers_to_the_crm_is_not_copied_to_the_graph(self):
         self.assertEqual(bg.public_description("Exists only in the PIC CRM record."), "")
         self.assertEqual(bg.public_description("Molds things."), "Molds things.")
