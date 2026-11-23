@@ -8,7 +8,10 @@ The quotations below identify the recorded decision and where to check it. Main 
 - **Review record.** Main’s `DECISIONS.md` explicitly requires comments naming the model family and model. PR #466’s `AGENTS.md` specifies family counts and records at the current head, but the sentence listing comment fields omits “model family.” Its `DECISIONS.md` item 3 also gives a shorter account of tiering. See A2–A3 for both texts.
 - **Contact quotes.** Main’s `DECISIONS.md` says the contact detail “may stay in a verbatim quote.” Main’s `AGENTS.md` §6 explicitly requires it to be incidental to a quote that witnesses another claim and lists the narrower bars. See C1 for both texts.
 - **Parent names.** The first name-match entry in PR #467 leaves parent names open. The later split entry records the owner’s “fail everywhere” decision, quoted in C6.
-- **City matching.** PR #467’s `DECISIONS.md` gives a city-equality requirement and then records the controller’s later locality instruction allowing an equal ZIP5 and treating a missing city as neutral. Both appear in A7 with their attribution.
+- **City matching.** PR #467’s `DECISIONS.md` gives a city-equality requirement and then records the controller’s later locality instruction allowing an equal ZIP5 and treating a missing city as neutral. See A7–A7a for those texts and A7b for the owner’s subsequent strict-floor ruling.
+- **Industry codes.** The round 11 ledger says “industry codes as a low-tier lead” (D8). The In-Hand lane brief says “owner ruling: fill at a low tier, marked as inferred from a code” and asks for a fill proposal (C10).
+- **Ohio backfill.** PR #466 freezes national backfill outside PIC-18 “until the PIC-18 unknown shares move” (D2). The later ledger direction says each Ohio route re-runs “when its PIC-18 PR merges (lifts the freeze for Ohio, route by route)” (D3). PR #466’s text does not mention the route-by-route release.
+- **Rendered-page tooling.** The round 8 ledger says “switch on the NAS browser for script pages.” The streets branch specifies Firecrawl for rendered pages, tesseract for images and SearXNG for official-page searches. See C8.
 - **Street canary yield.** The ledger records 7 of 25 verified on line 2161 and 5 of 25 verified on line 2165. The streets branch’s README reports 3 of 25 under the main-text rule. The full 121-site packet is a separate result cited in F2.
 
 ## Review and revert context
@@ -28,6 +31,12 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 **Owner ruling** · main, `DECISIONS.md` (“owner rulings on the merge gate, contact data in evidence quotes, and the review record”), item 3.
 
 > Each PR carries one comment per verifier naming its model family and model, its verdict and what it checked.
+
+### A2a. Muse posts verifier verdicts
+
+**Owner ruling** · **ledger only**, `BOARD.md` line 2078. See A3 for the later review tiers and B3 for the later Muse pause.
+
+> Muse posts verifier verdicts on PRs
 
 ### A3. Review tier, head, independence and round cap
 
@@ -56,6 +65,10 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 > **Decisions in `DECISIONS.md`, commitments on the board, chat for messages only.**
 
 > **Rules 1, 4 and 7 are practice: nothing mechanical checks them.**
+
+> People and program rows are held.
+
+> The street test does not apply to people or program rows; those are held, not tested.
 
 > A PR may add at most 1,000 evidence rows and 1,000 registry links unless it adds a line to `DECISIONS.md` that contains the words "size waiver" and `branch=<its complete branch name>` (compared for equality with the PR's branch). A PR that touches `data/` fails while any `created_by` label on `main` lacks an audit record: a file `tasks/<folder>/AUDIT.md` on `main` with the lines `Label:`, `Result: PASS`, `Sample:` and `Reviewers:` (a `Result: FAIL` blocks). The labels on `main` on 2026-11-22 are grandfathered in `tasks/working-rules-2026-11-22/audit_baseline.txt`. **Deployment condition:** the audit stays current for a PR only once the controller has made `pr-rules` a required check and turned on the ruleset's strict (branch up to date with `main`) policy; until then two data PRs can both pass against the same `main`.
 
@@ -92,6 +105,18 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 **Controller ruling** · PR #467 at `8bfea6b0`, `DECISIONS.md` (locality bullet in the split entry).
 
 > same state, and the quoted city is a spelling of the record's city or of either part of a parenthetical city, or the two ZIP5 values are equal; otherwise `city_differs`. A missing city on either side is not contrary evidence, and a quoted other state stays `state_differs`. This loosens the city half of the rule above (Codex r2 finding 2) by the ZIP5 leg.
+
+### A7b. Strict floor and merge condition
+
+**Owner ruling** · **ledger only**, `BOARD.md` line 2226. Later ruling on PR #467.
+
+> strict floor, then merge: PASS only when every leg matches positively and nothing in the quote is unexplained; else held for reading; Codex confirms its counterexamples fail and stops; gate documented as a floor, not proof.
+
+### A7c. Canonical street matcher
+
+**Controller ruling** · **ledger only**, `BOARD.md` line 2233.
+
+> the repo's street matcher is the canonical one: scripts/atlas.py street_key today, scripts/matching.py once PR #467 merges. The gate, the last-activity derivation and the labelled test set use it. Muse's pull-code street function is not used for anything that reaches the repo; its 402 disagreements with the repo's function (of 5,083 batch-5 pairs, Muse's count) are to be read and added to the labelled test set.
 
 ## B. Reverted batches and Muse
 
@@ -137,7 +162,7 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 
 **Owner ruling** · **ledger only**, `BOARD.md` line 2075
 
-> leave git history (scrub forward only)
+> merge #416 and #417 despite Codex REFUTE at cap; leave git history (scrub forward only); archive clerks.
 
 ## C. What may count as evidence
 
@@ -195,7 +220,9 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 
 ### C8. Rendered pages, address images and official page search
 
-**Owner ruling** · Branch `agent/claude-code/pic18-streets-2026-11-22` at `e4424601`, `DECISIONS.md` (“owner rulings, sources for a street address”), items 2–4.
+**Owner ruling** · Branch `agent/claude-code/pic18-streets-2026-11-22` at `e4424601`, `DECISIONS.md` (“owner rulings, sources for a street address”), items 2–4. Round 8 wording also in `BOARD.md` line 2167.
+
+> switch on the NAS browser for script pages, reading address images (flagged, second-model reading), a search for an official page
 
 > For a page that is thin because scripts build it, load it through the Firecrawl tools (markdown, onlyMainContent). It obeys robots.txt and is never used to get past a block, a login or a CAPTCHA. Mark source_route=rendered.
 
@@ -221,7 +248,13 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 
 > pursue process via Ohio air permits, industry codes as a low-tier lead, and reading material already held (not the company form);
 
-> Write the code-to-process table explicitly (code, title, process term, why it is one-to-one) and list the codes you reject as too broad (for example a general "all other plastics product" code maps to no single process). Keep it short and conservative; the table itself is what the owner approved in principle and will want to see. 2. Only a code filed BY the establishment in a government filing matched on street and held name counts (NAICS provenance per AGENTS section 4: `government_filing`); a directory code never does. 3. The fill is marked as inferred from a code: propose exactly how (which field or evidence claim carries "inferred from NAICS <code> on <filing>", which tier_effect),
+> Part B: industry codes as a lead (owner ruling: fill at a low tier, marked as inferred from a code)
+
+> Write the code-to-process table explicitly (code, title, process term, why it is one-to-one) and list the codes you reject as too broad (for example a general "all other plastics product" code maps to no single process). Keep it short and conservative; the table itself is what the owner approved in principle and will want to see.
+
+> Only a code filed BY the establishment in a government filing matched on street and held name counts (NAICS provenance per AGENTS section 4: `government_filing`); a directory code never does.
+
+> The fill is marked as inferred from a code: propose exactly how (which field or evidence claim carries "inferred from NAICS <code> on <filing>", which tier_effect), reading SCHEMA 3.1, 4.13 and the processes field rules, and whether the schema needs a dated sentence to allow it. If it does, write the proposed sentence and tell the controller before applying anything: schema wording is the owner's.
 
 ## D. Work commissioned and release conditions
 
@@ -280,6 +313,20 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 **Owner ruling** · **ledger only**, `BOARD.md` line 2201.
 
 > "Yes queue them": two board cards added behind the evidence lane: activity dates for the 122 PIC-18 sites with parenthetical city text (after #467 merges), and EPA identifiers for PIC-18 sites by exact facility match (after the evidence canary).
+
+### D7a. Activity-date diagnosis corrected
+
+**Controller correction** · **ledger only**, `BOARD.md` line 2219.
+
+> CORRECTION: the '122 PIC-18 sites miss last_activity_date because of parenthetical city text' claim (source-map lane, repeated by the controller to the owner) is withdrawn: city text is equal for 114 of 122; 97 need the OSHA extract rebuilt from the full files in the lake. Card ATLAS-23 rescoped.
+
+### D7b. NAS evidence enrichment and canary
+
+**Owner question and controller implementation** · **ledger only**, `BOARD.md` line 2199.
+
+> OWNER asked when the NAS files can enrich Ohio and the evidence queue.
+
+> Lane spawned: pic18-evidence (Sonnet): PIC-18 queue from the lake, one witness per missing claim, canary of 25 first, EVD-482000..482999 reserved. Ohio outside PIC-18 held by the freeze until the unknowns move.
 
 ### D8. Process work routes
 
@@ -373,6 +420,12 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 
 > use GPT-6.2 Sol agents where appropriate to save Anthropic usage.
 
+### E4b. Gemini 4 Neon for the retrospective
+
+**Owner direction for the retrospective** · **ledger only**, `BOARD.md` line 2136.
+
+> Gemini 4 Neon, owner asked for it by name; guard accepts Neon only with OWNER-APPROVED-NEON
+
 ### E5. Labelled set first and five tooling trials
 
 **Owner ruling** · **ledger only**, `BOARD.md` line 2177
@@ -438,3 +491,15 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 | 11 | E5 and F3 separate the full trial commission from its results, including Splink’s retained use for name triage and which decision model ran. |
 | 12 | The new `DECISIONS.md` entry cites §2a rule 7 in PR #466. |
 | Follow-up | The introduction gives the review window and the PR denominator independently of reverted row and link totals. |
+
+## Round 2 review findings
+
+| Finding | What changed |
+| --- | --- |
+| Blocking 1 | A2a quotes the owner’s Muse verifier-posting direction and points to the later review and pause rulings. |
+| Blocking 2 | C10 quotes the complete instructions on documenting a code-derived fill proposal and escalating schema wording before application. |
+| Follow-up 1 | The city-matching note points to both A7 and A7a. |
+| Follow-up 2 | The disagreements list compares D8 with C10 on industry-code use and D2 with D3 on release of Ohio backfill. |
+| Follow-up 3 | E4b records the retrospective model request, D7b records the NAS enrichment question and canary, and B6 quotes all three November 19 actions. |
+| Follow-up 4 | A4 quotes the rules 2–3 exclusion for people and program rows. |
+| Follow-up 5 | C8 quotes the ledger’s NAS-browser wording alongside the streets branch’s tooling instructions. |
