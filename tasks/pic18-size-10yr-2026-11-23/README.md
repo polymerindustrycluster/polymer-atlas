@@ -37,3 +37,23 @@ lockf -k /tmp/polymer-atlas-heavy.lock python3 scripts/validate.py
 ```
 
 The replay exports the pinned base, verifies all 17 sealed inputs, extracts the Ohio OSHA rows with `python3 -I` and compares all four generated artifacts byte-for-byte. The controls hold a planted 2015 inspection, admit a filing on 2016-11-23 and select the one-band-different newer filing over a higher-precedence older source. Disabling either cutoff or supersession made its probe fail. No fresh sources were fetched.
+
+## Data integration
+
+Applied from the sealed packet at `f3ad3053` on main `15183872` after
+correction PR 3 and the R13 schema revision (#506). The 18 Ohio site band
+fills cover 18 distinct PIC-18 owners. Each has a dated `BAND-SOURCE` note
+and a `supports_B` government-filing evidence row. `CLAIMS_CHECKED.csv`
+records the 18 corrected band claims. The note is source bookkeeping for
+that same claim.
+
+Recheck the full integration at the requested commit with:
+
+```sh
+lockf -k /tmp/polymer-atlas-heavy.lock python3 -I tasks/pic18-size-10yr-2026-11-23/check.py --at <head>
+```
+
+The check replays the original packet from the raw store, validates each
+candidate on the corrected base, compares the full canonical and claim
+diff, and verifies the reduction from 392 to 374 unknown-size owners among
+794 owners of active tier A–C PIC-18 sites.
