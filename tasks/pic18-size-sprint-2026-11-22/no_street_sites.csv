@@ -1,0 +1,122 @@
+site_id,org_id,city,org_has_another_site_with_street_any_status,org_has_another_active_site_with_street
+SITE-000008,ORG-000009,Akron,yes,yes
+SITE-000013,ORG-000014,Akron,no,no
+SITE-000014,ORG-000015,Akron,no,no
+SITE-000026,ORG-000027,Akron,yes,yes
+SITE-000032,ORG-000032,Akron,no,no
+SITE-000036,ORG-000036,Akron,no,no
+SITE-000040,ORG-000040,Akron,no,no
+SITE-000042,ORG-000042,Akron,no,no
+SITE-000054,ORG-000054,Cuyahoga Falls,yes,yes
+SITE-000056,ORG-000056,Cuyahoga Falls,no,no
+SITE-000066,ORG-000066,Hudson,no,no
+SITE-000067,ORG-000067,Hudson,no,no
+SITE-000078,ORG-000078,Twinsburg,no,no
+SITE-000092,ORG-000092,Hudson,no,no
+SITE-000106,ORG-000107,Cleveland,no,no
+SITE-000115,ORG-000116,Euclid,no,no
+SITE-000123,ORG-000124,Beachwood,yes,yes
+SITE-000136,ORG-000136,Warrensville Heights,no,no
+SITE-000147,ORG-000147,Westlake,no,no
+SITE-000148,ORG-000148,Strongsville,no,no
+SITE-000150,ORG-000150,Warrensville Heights,no,no
+SITE-000155,ORG-000155,Beachwood,no,no
+SITE-000158,ORG-000158,Cleveland,no,no
+SITE-000188,ORG-000181,Streetsboro,no,no
+SITE-000199,ORG-000192,Mentor,no,no
+SITE-000204,ORG-000197,Green,no,no
+SITE-000210,ORG-000050,Akron,yes,yes
+SITE-000220,ORG-000207,Massillon,no,no
+SITE-000243,ORG-000229,Newton Falls,no,no
+SITE-000255,ORG-000239,Painesville,no,no
+SITE-000256,ORG-000240,Youngstown,no,no
+SITE-000292,ORG-000273,Canton,no,no
+SITE-000297,ORG-000278,Macedonia,yes,yes
+SITE-000308,ORG-000289,Chagrin Falls,no,no
+SITE-000362,ORG-000340,Wadsworth,yes,yes
+SITE-000373,ORG-000349,Barberton,no,no
+SITE-000425,ORG-000396,Middlefield,no,no
+SITE-000456,ORG-000426,North Perry,no,no
+SITE-000501,ORG-000469,Canton,no,no
+SITE-000519,ORG-000485,Elyria,no,no
+SITE-000524,ORG-000490,Mogadore,yes,yes
+SITE-000527,ORG-004564,Peninsula,yes,yes
+SITE-000562,ORG-000526,Wadsworth,no,no
+SITE-000577,ORG-000541,Barberton,no,no
+SITE-000761,ORG-000665,Monroeville,yes,yes
+SITE-001150,ORG-001065,Bellevue,no,no
+SITE-001296,ORG-001197,Bellevue,yes,yes
+SITE-001392,ORG-000030,Youngstown,yes,yes
+SITE-001420,ORG-001381,Wadsworth,no,no
+SITE-001435,ORG-000665,Aurora,yes,yes
+SITE-001440,ORG-001397,Massillon,no,no
+SITE-001441,ORG-001398,North Canton,no,no
+SITE-001455,ORG-001409,Salem,yes,yes
+SITE-001473,ORG-001426,Mansfield,yes,yes
+SITE-001483,ORG-001435,Ashtabula,no,no
+SITE-001503,ORG-001452,Canton,no,no
+SITE-001504,ORG-001453,Cleveland,no,no
+SITE-001509,ORG-001458,Avon,no,no
+SITE-001528,ORG-001469,Cleveland,no,no
+SITE-001545,ORG-001479,Akron,no,no
+SITE-001569,ORG-001505,Akron,no,no
+SITE-001572,ORG-001508,Brecksville,no,no
+SITE-001575,ORG-001511,Cleveland,no,no
+SITE-001614,ORG-001549,Mentor,no,no
+SITE-001615,ORG-001549,Mentor,no,no
+SITE-001624,ORG-001558,Parma,no,no
+SITE-001650,ORG-001579,Solon,no,no
+SITE-001652,ORG-001581,Solon,no,no
+SITE-001665,ORG-001593,Cleveland,no,no
+SITE-001670,ORG-001598,Cleveland,no,no
+SITE-001676,ORG-000207,Mount Eaton,no,no
+SITE-001708,ORG-001635,Green,no,no
+SITE-001718,ORG-001644,Elyria,no,no
+SITE-001731,ORG-001655,Chagrin Falls,no,no
+SITE-001774,ORG-001698,Canton,no,no
+SITE-001777,ORG-001701,Cleveland,no,no
+SITE-001784,ORG-001708,Medina,no,no
+SITE-001786,ORG-001710,Akron,no,no
+SITE-001793,ORG-001717,Cleveland,no,no
+SITE-001795,ORG-001719,Cleveland,no,no
+SITE-001797,ORG-001721,Cleveland,no,no
+SITE-001798,ORG-001722,Bedford Heights,no,no
+SITE-001806,ORG-001730,Shaker Heights,no,no
+SITE-001818,ORG-001742,Beachwood,no,no
+SITE-001821,ORG-001745,Columbiana,no,no
+SITE-001824,ORG-001748,Olmsted Falls,no,no
+SITE-001868,ORG-001794,Cleveland,no,no
+SITE-001911,ORG-001920,Massillon,no,no
+SITE-001912,ORG-001921,Cleveland,no,no
+SITE-001917,ORG-001923,Akron,no,no
+SITE-001921,ORG-001927,Hiram,no,no
+SITE-001934,ORG-001940,Uniontown,no,no
+SITE-001938,ORG-001944,North Canton,no,no
+SITE-001940,ORG-001946,Ashland,no,no
+SITE-001944,ORG-001950,Grafton,no,no
+SITE-001953,ORG-001959,Akron,no,no
+SITE-001958,ORG-001964,Akron,no,no
+SITE-001959,ORG-001965,Akron,no,no
+SITE-001964,ORG-001970,Wickliffe,no,no
+SITE-001968,ORG-001974,Boardman,no,no
+SITE-001980,ORG-001986,Kent,no,no
+SITE-001986,ORG-001992,Perry,no,no
+SITE-001993,ORG-001999,Wadsworth,no,no
+SITE-002002,ORG-002008,Fairlawn,no,no
+SITE-002004,ORG-002010,Louisville,no,no
+SITE-002018,ORG-002024,Uhrichsville,no,no
+SITE-002024,ORG-002030,Jefferson,no,no
+SITE-002032,ORG-002038,Akron,no,no
+SITE-002035,ORG-002041,Barberton,no,no
+SITE-002043,ORG-002049,Bedford,no,no
+SITE-002047,ORG-002053,Akron,no,no
+SITE-002056,ORG-002057,Marshallville,no,no
+SITE-002059,ORG-002060,Canfield,no,no
+SITE-002063,ORG-002064,Middlefield,no,no
+SITE-002067,ORG-002067,Oakwood,no,no
+SITE-002068,ORG-002068,Akron,no,no
+SITE-002073,ORG-002073,Wooster,no,no
+SITE-002096,ORG-002139,Akron,no,no
+SITE-002100,ORG-002143,Beachwood,no,no
+SITE-002110,ORG-002153,Canton,no,no
+SITE-003983,ORG-003545,Akron,no,no

@@ -1768,6 +1768,17 @@ def vals(value):
     return [v.strip() for v in str(value or "").split(";") if v.strip()]
 
 
+def org_field_sources(org, sites, field):
+    """Map each recorded token to its supplying rows. None denotes the company row."""
+    sources = {token: [None] for token in vals(org.get(field))}
+    for site in sites:
+        if (site.get("operating_status") or "").strip() == "closed":
+            continue
+        for token in dict.fromkeys(vals(site.get(field))):
+            sources.setdefault(token, []).append(site)
+    return sources
+
+
 SPEC_LABELS = {  # controlled-vocabulary tokens whose plain underscore->space form reads badly
     "polyethylene_pe": "polyethylene (PE)", "polypropylene_pp": "polypropylene (PP)",
     "polyurethane_pu": "polyurethane (PU)", "pet_petg": "PET / PETG", "sbr": "SBR",
@@ -2096,6 +2107,23 @@ def tombstone_banner(rec, successor_id, a, kind):
     return ""
 
 
+def org_field_html(org, sites, field):
+    if not sites:
+        return esc(vocab(org.get(field)))
+    items = []
+    for token, sources in org_field_sources(org, sites, field).items():
+        origins = []
+        for site in sources:
+            if site is None:
+                origins.append("Company row")
+                continue
+            tier = site.get("verification_tier")
+            detail = f" · {TIERS[tier][0].lower()}" if tier in ("C", "U") else ""
+            origins.append(f'{esc(site.get("site_name") or site["site_id"])} {tier_badge(tier)}{detail}')
+        items.append(f'<div>{esc(vocab(token))} <span class="muted small">({" / ".join(origins)})</span></div>')
+    return "".join(items)
+
+
 def build_org_page(ctx, o):
     a = ctx.atlas
     oid = o["org_id"]
@@ -2146,9 +2174,9 @@ def build_org_page(ctx, o):
         ("Parent organization", parent), ("Ultimate parent (as named)", ult),
         ("Year founded", esc(o.get("year_founded"))), ("Stock ticker", esc(o.get("stock_ticker"))),
         ("Ownership", esc(vocab(o.get("ownership_type")))),
-        ("Primary NAICS", naics), ("Processes", esc(vocab(o.get("processes")))),
-        ("Materials", esc(vocab(o.get("materials")))),
-        ("Markets served", esc(vocab(o.get("markets_served")))),
+        ("Primary NAICS", naics), ("Processes", org_field_html(o, site_rows, "processes")),
+        ("Materials", org_field_html(o, site_rows, "materials")),
+        ("Markets served", org_field_html(o, site_rows, "markets_served")),
         ("Certifications", esc(vocab(o.get("certifications")))),
         ("Ohio employee band", esc(o.get("employee_band_ohio"))),
         ("Public member list", member_field(o)),
