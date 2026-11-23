@@ -219,6 +219,15 @@ in `sizes.py` RULING for the record). The protocol is sealed with these answers.
 Settled here as method, not scope (disclosed for the owner to veto): unresolved counted as wrong in the decision; omissions not errors; drift not an error; third-family adjudication
 and lead verification of every error; plants.
 
+**B6 answered 2026-11-23 (owner round 22, [DECISIONS.md](../../DECISIONS.md)).**
+The frame reads [placements.csv](placements.csv) from its pinned commit. The file lists
+the source-confirmed national or international ecosystem placements, approved Ohio city
+placements where every county lies outside PIC-18, and the named exclusion of ORG-003769
+pending the Sunbiz read. It accepts an entry only for a record that is otherwise
+unassignable in that frame. The reconciliation shows the named exclusion and its count.
+Dublin, Westerville and Columbus supply the approved Ohio city bases. The Columbus basis applies
+to the two Ohio Innovation Exchange records under the controller's implementation of round 22.
+
 ## 10. Reuse, checks, and what was not built
 
 Reused, not rebuilt: audit 10 and 11's whitelist-and-leak-scan packet builder (`tasks/blind-audit-11-2026-11-17/sample.py`), `REVIEWER_INSTRUCTIONS.md`, lock and receipt practice, adjudication fetch/build scripts,
