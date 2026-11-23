@@ -141,14 +141,14 @@ def build_graph():
             free = v not in VOC[t]
             if free and free_count[(t, v)] < FREE_MIN:
                 continue
-            add(f"{t}:{v}", k=t, l=v.replace("_", " "), **({"x": 1} if free else {}))
+            add(f"{t}:{v}", k=t, l=build_site.vocab_label(v), **({"x": 1} if free else {}))
             link(oid, f"{t}:{v}", t + ("x" if free else ""))
     # institutions -> tags they teach or research (program specialties)
     for p in programs:
         inst = p["institution_org_id"]
         for field, t in (("specialty_processes", "proc"), ("specialty_materials", "mat")):
             for v in set(vals(p.get(field))) & VOC[t]:
-                add(f"{t}:{v}", k=t, l=v.replace("_", " "))
+                add(f"{t}:{v}", k=t, l=build_site.vocab_label(v))
                 link(inst, f"{t}:{v}", "prog")
     for e in rel:
         if e["relationship_type"] == "parent_of":

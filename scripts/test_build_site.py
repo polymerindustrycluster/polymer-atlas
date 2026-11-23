@@ -690,7 +690,7 @@ class DirectoryFixtureTest(unittest.TestCase):
     def test_street_map_and_graph_default_to_pic18(self):
         sites = json.loads(self.read("sites.json"))
         self.assertEqual(sites["cols"][6], "st")
-        self.assertEqual(sites["cols"][-1], "co")
+        self.assertEqual(sites["cols"][11], "co")
         self.assertRegex(self.read("map.html"), r'id="f-pic18" checked data-counties="Ashland,Ashtabula,')
         self.assertIn("picOnly", self.read("map.js"))
 
@@ -1081,6 +1081,128 @@ class SiteShellTest(unittest.TestCase):
             with self.subTest(page=name):
                 self.assertIn('<main id="main"', text)
                 self.assertIn('href="../directory.html"', text)           # the list view of the same companies
+
+
+
+def luminance(hex_color):
+    c = [int(hex_color[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+    c = [v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4 for v in c]
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+
+
+def contrast(a, b):
+    la, lb = sorted((luminance(a), luminance(b)), reverse=True)
+    return (la + 0.05) / (lb + 0.05)
+
+
+class BlockingFixesTest(unittest.TestCase):
+    """ATLAS-40 PR 3: addresses where the first user looks, the accessibility failures the audit measured, readable vocabulary labels."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        tmp = Path(cls.tmp.name)
+        make_directory_db(tmp / "f.db")
+        cls.out = tmp / "site"
+        build_site.build_site(tmp / "f.db", cls.out, None, repo_url="https://example.com/repo",
+                              git={"sha": "abc1234", "date": "2026-11-01", "dirty": False}, today="2026-11-01")
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def read(self, rel):
+        return (self.out / rel).read_text(encoding="utf-8")
+
+    def tokens(self, css, dark):
+        block = re.search(r"@media \(prefers-color-scheme: dark\)\{\s*:root\{(.*?)\}\s*\}", css, re.S).group(1) if dark else re.search(r":root\{(.*?)\}", css, re.S).group(1)
+        return dict(re.findall(r"--([a-z0-9-]+):(#[0-9a-fA-F]{6})", block))
+
+    def test_county_sites_table_has_street_and_zip_as_recorded_never_invented(self):
+        html = self.read("counties/summit.html")
+        self.assertIn('<th scope="col">Street address</th><th scope="col">City</th><th scope="col">ZIP</th>', html)
+        self.assertIn("<td>1 Main St</td><td>Akron</td><td>44301</td>", html)                       # the recorded street and ZIP
+        self.assertEqual(html.count("<td>Street not recorded</td>"), 2)                             # the two Summit rows with no street say so
+
+    def test_street_map_data_popup_and_list_carry_the_address(self):
+        data = json.loads(self.read("sites.json"))
+        self.assertEqual(data["cols"][-2:], ["street", "zip"])
+        by = {r[0]: r for r in data["rows"]}
+        self.assertEqual(by["SITE-000001"][-2:], ["1 Main St", "44301"])
+        self.assertEqual(by["SITE-000002"][-2:], ["", ""])                                          # no street recorded: empty, not guessed
+        js = self.read("map.js")
+        self.assertIn("'Address: '", js)
+        self.assertIn("Street not recorded", js)
+        self.assertIn("Show on map", js)                                                            # the keyboard route to every dot
+        self.assertIn('id="maplist"', self.read("map.html"))
+
+    def test_search_results_carry_the_address_of_a_single_site_organization(self):
+        data = json.loads(self.read("orgs.json"))
+        addr = {r[0]: r[data["cols"].index("addr")] for r in data["rows"]}
+        self.assertEqual(addr["ORG-000005"], "Address: 500 Portage Rd, Ravenna, OH")
+        self.assertEqual(addr["ORG-000004"], "Address: Street not recorded, Canton, OH")
+        self.assertEqual(addr["ORG-000001"], "2 active site rows: addresses on its page")           # two sites: the count, not a guess at which
+        self.assertEqual(addr["ORG-000002"], "")                                                    # closed: no active site row
+        self.assertIn("r[C.addr]", self.read("search.js"))
+
+    def test_search_page_does_not_steal_focus_from_the_skip_link(self):
+        self.assertNotIn("autofocus", self.read("search.html"))
+
+    def test_contrast_of_the_active_tab_and_zero_count_options_in_both_schemes(self):
+        css = self.read("style.css")
+        self.assertIn(".xtabs button[aria-pressed=true]{background:var(--accent);color:var(--accent-fg)}", css)
+        self.assertNotRegex(css, r"label\.opt\.zero\{[^}]*opacity")
+        self.assertIn("label.opt.zero{color:var(--muted)}", css)
+        for dark in (False, True):
+            t = self.tokens(css, dark)
+            self.assertGreaterEqual(contrast(t["accent-fg"], t["accent"]), 4.5, ("active tab", dark))
+            self.assertGreaterEqual(contrast(t["muted"], t["panel"]), 4.5, ("zero-count option", dark))
+
+    def test_checkboxes_and_sort_buttons_meet_the_24px_target(self):
+        css = self.read("style.css")
+        self.assertIn("input[type=checkbox],input[type=radio]{width:24px;height:24px", css)
+        self.assertIn(".viz input[type=checkbox]{accent-color:var(--accent);margin:0;width:24px;height:24px", css)
+        self.assertRegex(css, r"th\[aria-sort\] button\.sort\{[^}]*min-height:24px")
+
+    def test_stacked_phone_cards_take_their_hidden_sort_buttons_out_of_the_tab_order(self):
+        js = self.read("sortable.js")
+        self.assertRegex(js, r"tabIndex = phone\.matches && table\.classList\.contains\('stack'\) \? -1 : 0")
+
+    def test_vocab_labels_are_schema_tokens_and_read_as_words(self):
+        schema = (Path(build_site.__file__).resolve().parent.parent / "docs" / "SCHEMA.md").read_text(encoding="utf-8")
+        for token in build_site.VOCAB_LABELS:
+            self.assertIn(f"`{token}`", schema, token)                                              # a label for a token, never a new term
+        self.assertEqual(build_site.vocab("corporation_public;llc"), "public corporation, LLC")
+        self.assertEqual(build_site.vocab("automotive_unspecified"), "automotive (OEM or aftermarket not stated)")
+        self.assertEqual(build_site.vocab("injection_molding;pet_petg"), "injection molding, PET / PETG")   # unmapped words and SPEC_LABELS still work
+
+    def test_labels_show_on_the_organization_page_not_the_slug(self):
+        build_site_html = self.read("orgs/ORG-000001.html")
+        self.assertNotIn("corporation private", build_site_html)
+        self.assertIn("private corporation", build_site_html)
+
+    def test_directory_search_matches_street_and_city_and_keeps_the_find_fragment(self):
+        js = self.read("directory.js")
+        self.assertIn("r.name + ' ' + r.addr.join(' ')", js)
+        self.assertIn("+ location.hash);", js)
+        self.assertIn("Name, street or city contains", self.read("directory.html"))
+
+    def test_experts_finder_has_sortable_downloadable_tables_and_one_population(self):
+        js = self.read("experts.js")
+        self.assertIn("window.atlasTable(t)", js)                                                   # the shared sort and toolbar on the browse table
+        self.assertIn("xcsv", js)
+        self.assertIn('id="xcsv"', self.read("experts.html"))
+        self.assertNotIn("D.pc[", js)                                                               # the browse table counts the matched records, not all of them
+        self.assertIn("window.atlasTable = function", self.read("sortable.js"))
+
+    def test_trade_show_space_key_leaves_focused_buttons_alone(self):
+        script = (Path(build_site.__file__).resolve().parent / "build_events_3d.py").read_text(encoding="utf-8")
+        self.assertIn('closest("input, select, textarea, button, a, summary, .participants")', script)
+
+    def test_home_hero_does_not_say_all_states_for_a_count_that_includes_other_countries(self):
+        home = self.read("index.html")
+        self.assertNotIn("across all states", home)
+        self.assertIn("all locations held, not only US states", home)
 
 
 if __name__ == "__main__":

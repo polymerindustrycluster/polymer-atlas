@@ -144,11 +144,93 @@ def slug(value):
     return re.sub(r"[^a-z0-9]+", "-", str(value).lower()).strip("-")
 
 
+# Display labels for controlled-vocabulary tokens whose underscore-to-space form reads badly ("corporation public", "assembly secondary
+# ops"). Every key is a token of docs/SCHEMA.md (test_vocab_labels_are_schema_tokens); a label only restates the token, it adds no meaning
+# and no new term. Research-specialty tokens have their own list, SPEC_LABELS, which vocab() also uses.
+VOCAB_LABELS = {
+    # entity, ownership and site type
+    "corporation_private": "private corporation", "corporation_public": "public corporation", "llc": "LLC",
+    "private_equity_portfolio": "private equity portfolio", "hq_and_plant": "headquarters and plant", "hq_only": "headquarters only",
+    "rd_center": "R&D center", "warehouse_distribution": "warehouse & distribution",
+    # ecosystem organizations, programs, services
+    "accelerator_incubator": "accelerator / incubator", "funder_capital": "funder / capital",
+    "government_lab_agency": "government lab / agency", "nonprofit_rd_consortium": "nonprofit R&D consortium",
+    "university_college": "university / college",
+    "internships_coops": "internships & co-ops", "k12_cte_workforce": "K-12 CTE workforce",
+    "licensing_tech_transfer": "licensing & tech transfer", "museum_education_outreach": "museum education & outreach",
+    "rd_design_engineering": "R&D & design engineering", "rd_facilities_access": "R&D facilities access",
+    "testing_characterization_access": "testing & characterization access",
+    "training_seats_open_enrollment": "training seats (open enrollment)", "funding_capital": "funding (capital)",
+    "funding_grants": "funding (grants)",
+    # certifications
+    "iso_9001": "ISO 9001", "iso_13485": "ISO 13485", "iso_14001": "ISO 14001", "iso_17025": "ISO 17025", "iso_45001": "ISO 45001",
+    "iatf_16949": "IATF 16949", "ul_recognized": "UL recognized", "nsf_certified_products": "NSF certified products",
+    "cleanroom_iso7": "cleanroom (ISO 7)", "cleanroom_iso8": "cleanroom (ISO 8)",
+    # markets
+    "automotive_oem": "automotive (OEM)", "automotive_aftermarket": "automotive (aftermarket)",
+    "automotive_unspecified": "automotive (OEM or aftermarket not stated)", "aerospace_defense": "aerospace & defense",
+    "pharmaceutical_biotech": "pharmaceutical & biotech", "construction_building_products": "construction & building products",
+    "infrastructure_civil": "infrastructure & civil", "packaging_consumer": "packaging (consumer)",
+    "packaging_industrial": "packaging (industrial)", "packaging_food_beverage": "packaging (food & beverage)",
+    "energy_oil_gas": "energy (oil & gas)", "energy_renewables_battery": "energy (renewables & battery)",
+    "electronics_electrical": "electronics & electrical", "telecom_datacom": "telecom & datacom",
+    "consumer_goods_housewares": "consumer goods & housewares", "furniture_office": "furniture (office)",
+    "lawn_garden_recreation": "lawn, garden & recreation", "toys_sporting_goods": "toys & sporting goods",
+    "rv_powersports_trailers": "RV, powersports & trailers", "footwear_apparel": "footwear & apparel",
+    "food_processing_foodservice": "food processing & foodservice", "water_wastewater": "water & wastewater",
+    "medical_healthcare_general": "medical & healthcare (general)", "cosmetics_personal_care": "cosmetics & personal care",
+    "chemical_mining_metals_processing": "chemicals, mining & metals processing", "tire_rubber_goods": "tires & rubber goods",
+    "machinery_equipment": "machinery & equipment", "rail_transportation": "rail & transportation",
+    # materials
+    "acetal_pom": "acetal (POM)", "acrylic_pmma": "acrylic (PMMA)", "nylon_pa": "nylon (PA)", "polycarbonate_pc": "polycarbonate (PC)",
+    "polystyrene_ps_hips": "polystyrene (PS, HIPS)", "natural_rubber_nr": "natural rubber (NR)", "neoprene_cr": "neoprene (CR)",
+    "nitrile_nbr": "nitrile (NBR)", "viton_fkm": "Viton (FKM)", "peek_high_performance": "PEEK (high performance)",
+    "foams_polymeric": "polymeric foams", "composites_thermoplastic": "composites (thermoplastic)",
+    "composites_thermoset": "composites (thermoset)", "composites_unspecified": "composites (unspecified)",
+    "thermoplastic_olefin_tpo": "thermoplastic olefin (TPO)", "melamine_urea_formaldehyde": "melamine / urea formaldehyde",
+    "recycled_content_pcr_pir": "recycled content (PCR, PIR)", "polyester_vinyl_ester_resins": "polyester & vinyl ester resins",
+    "inks_colorants_masterbatch": "inks, colorants & masterbatch",
+    # processes
+    "assembly_secondary_ops": "assembly & secondary operations", "die_cutting_converting": "die cutting & converting",
+    "plastics_machining_cnc": "plastics machining (CNC)", "plastics_fabrication_welding": "plastics fabrication & welding",
+    "ultrasonic_solvent_bonding": "ultrasonic & solvent bonding", "coating_applying": "coating (applying)",
+    "coating_formulation": "coating formulation", "additive_manufacturing_polymer_production": "additive manufacturing (polymer production)",
+    "adhesive_sealant_formulation": "adhesive & sealant formulation", "blow_molding_extrusion": "blow molding (extrusion)",
+    "blow_molding_injection": "blow molding (injection)", "blow_molding_stretch": "blow molding (stretch)",
+    "composites_compression_smc_bmc": "composites (compression, SMC/BMC)", "composites_filament_winding": "composites (filament winding)",
+    "composites_prepreg_autoclave": "composites (prepreg, autoclave)", "composites_pultrusion": "composites (pultrusion)",
+    "composites_spray_up": "composites (spray-up)", "compounding_unspecified": "compounding (unspecified)",
+    "extrusion_pipe_tube": "extrusion (pipe & tube)", "extrusion_profile": "extrusion (profile)", "extrusion_sheet": "extrusion (sheet)",
+    "extrusion_unspecified": "extrusion (unspecified)", "extrusion_wire_cable_coating": "extrusion (wire & cable coating)",
+    "fabrication_unspecified": "fabrication (unspecified)", "foam_molding_bead": "foam molding (bead)",
+    "foam_molding_structural": "foam molding (structural)", "foam_production_unspecified": "foam production (unspecified)",
+    "hose_belting_manufacturing": "hose & belting manufacturing", "injection_molding_lsr_silicone": "injection molding (LSR silicone)",
+    "injection_molding_micro": "injection molding (micro)", "molding_unspecified": "molding (unspecified)",
+    "pigment_colorant_dispersion": "pigment & colorant dispersion", "potting_encapsulation_casting": "potting, encapsulation & casting",
+    "pulverizing_grinding_resin": "pulverizing & grinding (resin)", "recycling_chemical_pyrolysis": "recycling (chemical, pyrolysis)",
+    "recycling_chemical_solvolysis": "recycling (chemical, solvolysis)", "recycling_mechanical": "recycling (mechanical)",
+    "recycling_recovery": "recycling & recovery", "recycling_unspecified": "recycling (unspecified)",
+    "regrind_pelletizing": "regrind & pelletizing", "rubber_molding_compression": "rubber molding (compression)",
+    "rubber_molding_transfer": "rubber molding (transfer)", "rubber_molding_unspecified": "rubber molding (unspecified)",
+    "service_repair": "service & repair", "thermoforming_pressure": "thermoforming (pressure)",
+    "thermoforming_unspecified": "thermoforming (unspecified)", "tooling_mold_die": "tooling, mold & die",
+    "tooling_repair_maintenance": "tooling repair & maintenance", "two_shot_molding": "two-shot molding",
+    "vulcanization_curing_services": "vulcanization & curing services", "latex_dipping_foaming": "latex dipping & foaming",
+    "rubber_mixing_compounding": "rubber mixing & compounding", "mold_tool_making": "mold & tool making",
+    "compounding_extrusion": "compounding & extrusion", "printing_decorating_plastics": "printing & decorating plastics",
+}
+
+
+def vocab_label(token):
+    t = token.strip()
+    return VOCAB_LABELS.get(t) or SPEC_LABELS.get(t) or t.replace("_", " ")
+
+
 def vocab(value):
     """Controlled-vocabulary multi-value field -> readable text (still unescaped)."""
     if not value:
         return ""
-    return ", ".join(v.strip().replace("_", " ") for v in str(value).split(";") if v.strip())
+    return ", ".join(vocab_label(v) for v in str(value).split(";") if v.strip())
 
 
 def nonempty(value):
@@ -536,9 +618,6 @@ EXPERTS_JS = r"""(function () {
   function place(id) { var i = D.insts[id] || []; return [i[1], i[2]].filter(Boolean).join(', '); }
   fetch('experts.json').then(function (r) { return r.json(); }).then(function (d) {
     D = d;
-    D.pc = {}; D.gc = {};
-    D.people.forEach(function (p) { D.pc[p[3]] = (D.pc[p[3]] || 0) + 1; });
-    D.programs.forEach(function (g) { D.gc[g[1]] = (D.gc[g[1]] || 0) + 1; });
     var states = {}; Object.keys(D.insts).forEach(function (k) { if (D.insts[k][2]) states[D.insts[k][2]] = 1; });
     Object.keys(states).sort().forEach(function (s) { var o = document.createElement('option'); o.value = s; o.textContent = s; $('state').appendChild(o); });
     $('state').value = params.get('state') || '';
@@ -564,7 +643,28 @@ EXPERTS_JS = r"""(function () {
     }).join('');
   }
   function specs(list) { return list.length ? '<span class="xs">' + list.slice(0, 4).map(chip).join('') + (list.length > 4 ? '<span class="muted small">+' + (list.length - 4) + '</span>' : '') + '</span>' : ''; }
-  var WORDS = [], FLAT = false;
+  var WORDS = [], FLAT = false, LAST = { ppl: [], prg: [] };
+  // Download the records the results list holds (all of them, not only the ones drawn so far) and copy the link that holds the search.
+  function csvCell(v) {
+    v = String(v == null ? '' : v).replace(/\s+/g, ' ').trim();
+    if (/^[=+@]/.test(v) || /^-(?!\d)/.test(v)) v = "'" + v;   // spreadsheets would run a leading = + @ - as a formula
+    return /[",]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+  $('xcsv').addEventListener('click', function () {
+    var lines = [['Record type', 'Name', 'Role or program (as shown)', 'Specialties', 'Institution', 'City', 'State', 'Link'].map(csvCell).join(',')];
+    LAST.ppl.forEach(function (p) { var i = D.insts[p[3]] || []; lines.push(['Researcher', p[0], p[1], p[2].join('; '), instName(p[3]), i[1], i[2], p[4]].map(csvCell).join(',')); });
+    LAST.prg.forEach(function (g) { var i = D.insts[g[1]] || []; lines.push(['Program', g[0], [g[2], g[3], g[4]].filter(Boolean).join(' · '), g[5].join('; '), instName(g[1]), i[1], i[2], g[6]].map(csvCell).join(',')); });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob(['\ufeff' + lines.join('\r\n') + '\r\n'], { type: 'text/csv;charset=utf-8' }));
+    a.download = 'programs-and-researchers-' + new Date().toISOString().slice(0, 10) + '.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+  $('xcopy').addEventListener('click', function () {
+    var say = function (t) { $('xmsg').textContent = t; setTimeout(function () { $('xmsg').textContent = ''; }, 2500); };
+    if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(function () { say('Link copied'); }, function () { say('Copy failed: copy the address bar'); });
+    else say('Copy the address bar');
+  });
   // "Why this matched": which fields hold at least one search word (OIEx-style), shown only during a search.
   function why(fields) {
     if (!WORDS.length) return '';
@@ -609,28 +709,29 @@ EXPERTS_JS = r"""(function () {
       if (o.value) o.textContent = o.dataset.base + ' (' + (by.kind[o.value] || 0).toLocaleString() + ')';
     });
   }
-  function browse(st, kind) {
-    // One compact table: a state header row, then one line per institution (name, city, researchers, programs).
-    var by = {};
-    Object.keys(D.insts).forEach(function (k) {
-      var i = D.insts[k]; if (!(D.pc[k] || D.gc[k])) return;
-      if ((st && i[2] !== st) || (kind && i[3] !== kind)) return;
-      (by[i[2] || 'Other'] = by[i[2] || 'Other'] || []).push(k);
+  function browse(ppl, prg) {
+    // One flat table, one line per institution that has a result under the current search and filters: the same records the
+    // results list shows, so the count above and this table can never describe different populations.
+    var pc = {}, gc = {};
+    ppl.forEach(function (p) { pc[p[3]] = (pc[p[3]] || 0) + 1; });
+    prg.forEach(function (g) { gc[g[1]] = (gc[g[1]] || 0) + 1; });
+    var ks = Object.keys(D.insts).filter(function (k) { return pc[k] || gc[k]; });
+    var tot = function (k) { return (pc[k] || 0) + (gc[k] || 0); };
+    ks.sort(function (a, b) {
+      var oa = D.insts[a][2] === 'OH' ? 0 : 1, ob = D.insts[b][2] === 'OH' ? 0 : 1;
+      return oa - ob || tot(b) - tot(a) || instName(a).localeCompare(instName(b));
     });
-    var sts = Object.keys(by).sort(function (a, b) { return (a === 'OH' ? -1 : b === 'OH' ? 1 : a.localeCompare(b)); });
-    var tot = function (k) { return (D.pc[k] || 0) + (D.gc[k] || 0); };
-    $('insts').innerHTML = '<div class="table-wrap"><table class="xtable"><thead><tr><th scope="col">Institution</th><th scope="col">City</th>' +
-      '<th scope="col" class="num">Researchers</th><th scope="col" class="num">Programs</th></tr></thead>' +
-      sts.map(function (s) {
-        var ks = by[s].sort(function (a, b) { return tot(b) - tot(a) || instName(a).localeCompare(instName(b)); });
-        return '<tbody><tr class="xst"><th colspan="4" scope="colgroup">' + esc(s) + ' <span class="muted">' + ks.length + ' institution' + (ks.length === 1 ? '' : 's') + '</span></th></tr>' +
-          ks.map(function (k) {
-            return '<tr><th scope="row"><button type="button" class="xinst" data-inst="' + esc(k) + '">' + esc(instName(k)) + '</button></th>' +
-              '<td data-label="City">' + esc(D.insts[k][1] || '') + '</td><td class="num" data-label="Researchers">' + (D.pc[k] || '') +
-              '</td><td class="num" data-label="Programs">' + (D.gc[k] || '') + '</td></tr>';
-          }).join('') + '</tbody>';
-      }).join('') + '</table></div>';
-    return sts.reduce(function (n, s) { return n + by[s].length; }, 0);
+    $('insts').innerHTML = ks.length ? '<div class="table-wrap"><table class="xtable" data-nofilter><caption>Institutions with polymer researcher and program records (current search and filters)</caption>' +
+      '<thead><tr><th scope="col">Institution</th><th scope="col">State</th><th scope="col">City</th>' +
+      '<th scope="col" class="num">Researchers</th><th scope="col" class="num">Programs</th></tr></thead><tbody>' +
+      ks.map(function (k) {
+        return '<tr><th scope="row"><button type="button" class="xinst" data-inst="' + esc(k) + '">' + esc(instName(k)) + '</button></th>' +
+          '<td>' + esc(D.insts[k][2] || '') + '</td><td>' + esc(D.insts[k][1] || '') + '</td><td class="num">' + (pc[k] || '') +
+          '</td><td class="num">' + (gc[k] || '') + '</td></tr>';
+      }).join('') + '</tbody></table></div>' : '';
+    var t = $('insts').querySelector('table');
+    if (t && window.atlasTable) window.atlasTable(t);   // sort buttons and the toolbar (count, CSV, copy link) of every other table
+    return ks.length;
   }
   function run() {
     if (!D) return;
@@ -644,7 +745,7 @@ EXPERTS_JS = r"""(function () {
     if (show !== 'people') D.programs.forEach(function (g, k) { if (instOk(g[1]) && matches(D.progHay[k], words)) prg.push(g); });
     var n = function (k, one, many) { return k.toLocaleString() + ' ' + (k === 1 ? one : many); };
     var view = $('tabs').getAttribute('data-forced') || (filtered ? 'results' : 'browse');
-    var nInst = browse(st, kind);
+    var nInst = browse(ppl, prg);
     $('count').innerHTML = esc((show === 'programs' ? '' : n(ppl.length, 'researcher record', 'researcher records')) +
       (show === 'both' ? ' and ' : '') + (show === 'people' ? '' : n(prg.length, 'program record', 'program records')) +
       (show !== 'both' && ppl.length + prg.length === 1 ? ' matches' : ' match') +
@@ -652,6 +753,8 @@ EXPERTS_JS = r"""(function () {
       (inst ? ' <span class="xfilter">Institution: <b>' + esc(instName(inst)) + '</b> <button type="button" class="xchip" id="noinst">remove</button></span>' : '');
     if ($('noinst')) $('noinst').onclick = function () { inst = ''; limit = PAGE; run(); };
     setView(view);
+    LAST = { ppl: ppl, prg: prg };
+    $('xbar').hidden = view !== 'results' || !(ppl.length + prg.length);
     $('empty').hidden = ppl.length + prg.length > 0;
     var pp = ppl.slice(0, limit), gg = prg.slice(0, limit);
     var instaz = $('sort').value === 'instaz';
@@ -757,6 +860,8 @@ SORTABLE_JS = r"""(function () {
     var rows = Array.prototype.slice.call(body.rows);
     if (rows.length < 2) return;
     var ths = head.rows[head.rows.length - 1].cells;
+    var phone = matchMedia('(max-width: 640px)');
+    function tabs() { Array.prototype.forEach.call(table.querySelectorAll('thead button.sort'), function (x) { x.tabIndex = phone.matches && table.classList.contains('stack') ? -1 : 0; }); }
     if (!table.hasAttribute('data-nosort')) Array.prototype.forEach.call(ths, function (th, col) {   // data-nosort: no sort buttons; the toolbar stays
       var b = document.createElement('button');
       b.type = 'button'; b.className = 'sort';
@@ -779,6 +884,7 @@ SORTABLE_JS = r"""(function () {
         pinned.forEach(function (r) { body.appendChild(r); });
       });
     });
+    tabs(); phone.addEventListener('change', tabs);   // the stacked phone cards hide the header, so its buttons must not take focus
     var filterable = rows.length > 12 && !table.hasAttribute('data-nofilter');   // data-nofilter: the page filters its own rows
     var withCsv = !table.hasAttribute('data-nocsv');
     if (filterable || withCsv) toolbar(table, rows, filterable, withCsv, idx);
@@ -800,8 +906,10 @@ SORTABLE_JS = r"""(function () {
     var id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
     var el = document.getElementById(id); if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView(); }
   }
+  var count = 0;
+  window.atlasTable = function (t) { label(t); enhance(t, 'x' + count++); };   // for tables a page draws after load (experts.js)
   function init() {
-    Array.prototype.forEach.call(document.querySelectorAll('.table-wrap table'), function (t, i) { label(t); enhance(t, i); });
+    Array.prototype.forEach.call(document.querySelectorAll('.table-wrap table'), function (t, i) { count = i + 1; label(t); enhance(t, i); });
     openTarget(); addEventListener('hashchange', openTarget);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
@@ -962,6 +1070,9 @@ input[type=search]{width:100%;max-width:34em;font-size:16px}
 #map{height:70vh;min-height:380px;border:1px solid var(--line);border-radius:8px}
 .btn-row{display:flex;flex-wrap:wrap;gap:6px;margin:.4em 0}
 ul.results{list-style:none;padding:0}
+ol.maplist{list-style:none;margin:0 0 var(--s-3);padding:0}
+ol.maplist li{border-top:1px solid var(--line);padding:var(--s-2) 0}
+ol.maplist button,#maplist>button{min-height:36px;margin-left:var(--s-2)}
 ul.results li{border-top:1px solid var(--line);padding:10px 0}
 ul.results .meta{color:var(--muted);font-size:.9rem}
 .leaflet-popup-content{color:#2b2c2a}
@@ -1019,7 +1130,7 @@ details.more[open] summary{border-bottom:1px solid var(--line);margin-bottom:8px
 @media (prefers-reduced-motion:reduce){.xcard,a,.btn{transition:none}}
 
 /* ---- sortable tables (sortable.js; progressive enhancement) ---- */
-th[aria-sort] button.sort{all:unset;cursor:pointer;display:inline;white-space:normal;font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;text-align:inherit}
+th[aria-sort] button.sort{all:unset;cursor:pointer;display:inline-flex;align-items:center;min-height:24px;white-space:normal;font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;text-align:inherit}
 th[aria-sort] button.sort:hover{color:var(--accent-hover)}
 th[aria-sort] button.sort:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 th[aria-sort] button.sort::after{content:"";display:inline-block;vertical-align:middle;margin:0 0 0 5px;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid currentColor;opacity:.3}
@@ -1036,10 +1147,11 @@ details.facet{border:1px solid var(--line);border-radius:8px;background:var(--pa
 details.facet summary{font-weight:700;min-height:32px;display:flex;align-items:center;gap:4px}
 details.facet .sel{font-weight:400;color:var(--accent)}
 details.facet .opts{max-height:15em;overflow-y:auto;padding:4px 0}
-details.facet label.opt{display:flex;gap:6px;align-items:baseline;padding:2px 0}
+details.facet label.opt{display:flex;gap:6px;align-items:center;min-height:32px;padding:2px 0}
+input[type=checkbox],input[type=radio]{width:24px;height:24px;flex:none;margin:0 2px}
 details.facet label.opt .t{flex:1}
 details.facet label.opt .n{color:var(--muted);font-variant-numeric:tabular-nums}
-details.facet label.opt.zero{opacity:.55}
+details.facet label.opt.zero{color:var(--muted)}
 a.url{display:inline-block;max-width:15em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
 #ptable td{font-size:.9rem}
 .explore-links{display:flex;gap:8px;flex-wrap:wrap;margin:.2em 0 1em}
@@ -1061,7 +1173,7 @@ a.url{display:inline-block;max-width:15em;overflow:hidden;text-overflow:ellipsis
 .xchip:hover{border-color:var(--accent-hover);color:var(--accent-hover)}
 .xtabs{display:flex;gap:0;margin:.4em 0 1em;border:1px solid var(--line);border-radius:8px;width:max-content;max-width:100%;overflow:hidden}
 .xtabs button{all:unset;cursor:pointer;padding:8px 16px;font:700 .88rem/1.2 var(--f-display);color:var(--muted)}
-.xtabs button[aria-pressed=true]{background:var(--accent);color:#fff}
+.xtabs button[aria-pressed=true]{background:var(--accent);color:var(--accent-fg)}
 .xtabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .xtable tr.xst th{background:var(--panel-2);font-size:.95rem;padding-top:10px}
 .xtable tr.xst th .muted{font-weight:400;font-size:.85rem}
@@ -1069,7 +1181,7 @@ a.url{display:inline-block;max-width:15em;overflow:hidden;text-overflow:ellipsis
 .xinst{all:unset;cursor:pointer;font-weight:700;color:var(--accent)}
 .xinst:hover{color:var(--accent-hover);text-decoration:underline}
 .xinst:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media (max-width:640px){.xtable th:nth-child(2),.xtable td:nth-child(2){display:none}.xtable td,.xtable th{padding:6px 10px}}
+@media (max-width:640px){.xtable th:nth-child(3),.xtable td:nth-child(3){display:none}.xtable td,.xtable th{padding:6px 10px}}
 .xgroup{margin:0 0 1em;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
 .xgroup h3{margin:0;padding:9px 14px;font-size:1rem;background:var(--panel-2);border-radius:8px 8px 0 0}
 .xgroup h3 .muted{font-weight:400;font-size:.88rem}
@@ -1152,7 +1264,7 @@ main.viz{max-width:none;padding:0;position:relative;height:max(540px,calc(100svh
 .viz .morph button:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
 .viz .toggles{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
 .viz .toggles label,.viz .opt{display:flex;align-items:center;gap:8px;min-height:28px;font-size:13.5px;cursor:pointer}
-.viz input[type=checkbox]{accent-color:var(--accent);margin:0;width:18px;height:18px;flex:none}
+.viz input[type=checkbox]{accent-color:var(--accent);margin:0;width:24px;height:24px;flex:none}
 .viz .sw{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block}
 .viz .search{position:relative}
 .viz .search input{width:100%;max-width:none;box-sizing:border-box;min-height:40px;padding:9px 11px;border-radius:7px;border:1px solid var(--line);background:var(--panel-2);color:var(--fg);font:14px var(--f-body)}
@@ -1258,7 +1370,7 @@ MAP_JS = r"""(function () {
       if (org) { p.appendChild(el('a', org, {href: 'orgs/' + r[C.org] + '.html'})); }
       else { p.appendChild(document.createTextNode(r[C.org])); }
       box.appendChild(p);
-      box.appendChild(el('div', 'City: ' + [r[C.city], r[C.st]].filter(Boolean).join(', ')));
+      box.appendChild(el('div', 'Address: ' + [r[C.street] || 'Street not recorded', r[C.city], [r[C.st], r[C.zip]].filter(Boolean).join(' ')].filter(Boolean).join(', ')));
       var ring = r[C.ring] ? 'Ring ' + r[C.ring] + ' (' + (RING_NAMES[r[C.ring]] || '') + ')' + (r[C.inh] ? ' *' : '') : 'Ring not recorded';
       box.appendChild(el('div', ring));
       box.appendChild(el('div', 'Verification tier: ' + (r[C.tier] || 'n/a')));
@@ -1272,6 +1384,30 @@ MAP_JS = r"""(function () {
       return Array.prototype.slice.call(document.querySelectorAll('input[name="' + name + '"]:checked'))
         .map(function (i) { return i.value; });
     }
+    // The dots cannot take keyboard focus, so every site that is shown is also in this list, with the address and a Show on map button.
+    var LIST_PAGE = 50, listLimit = LIST_PAGE, lastIdx = [];
+    function renderList() {
+      var box = document.getElementById('maplist'); box.textContent = '';
+      var note = el('p', lastIdx.length ? 'Showing ' + Math.min(listLimit, lastIdx.length).toLocaleString() + ' of ' + lastIdx.length.toLocaleString() +
+        ' site rows shown on the map; narrow the filters to list the rest.' : 'No site rows match the filters.', {'class': 'small muted'});
+      box.appendChild(note);
+      var ol = el('ol', null, {'class': 'maplist'});
+      lastIdx.slice(0, listLimit).forEach(function (i) {
+        var r = rows[i], li = el('li');
+        li.appendChild(el('a', r[C.name], {href: 'orgs/' + r[C.org] + '.html#' + r[C.id]}));
+        li.appendChild(document.createTextNode(' \u2014 ' + [r[C.street] || 'Street not recorded', r[C.city], [r[C.st], r[C.zip]].filter(Boolean).join(' ')].filter(Boolean).join(', ') +
+          (r[C.ring] ? ' \u00b7 Ring ' + r[C.ring] : ' \u00b7 Ring not recorded') + ' '));
+        var b = el('button', 'Show on map', {type: 'button', 'aria-label': 'Show ' + r[C.name] + ' on the map'});
+        b.addEventListener('click', function () { map.setView([r[C.lat], r[C.lon]], 15); markers[i].openPopup(); document.getElementById('map').scrollIntoView({block: 'center'}); });
+        li.appendChild(b); ol.appendChild(li);
+      });
+      box.appendChild(ol);
+      if (lastIdx.length > listLimit) {
+        var more = el('button', 'Show 50 more sites', {type: 'button'});
+        more.addEventListener('click', function () { listLimit += LIST_PAGE; renderList(); });
+        box.appendChild(more);
+      }
+    }
     function apply(fit) {
       var rings = checked('ring'), tiers = checked('tier'), states = checked('state');
       var allStatus = document.getElementById('f-allstatus').checked;
@@ -1280,15 +1416,16 @@ MAP_JS = r"""(function () {
       rings.forEach(function (v) { rs[v] = 1; }); tiers.forEach(function (v) { ts[v] = 1; });
       states.forEach(function (v) { ss[v] = 1; });
       group.clearLayers();
-      var shown = [];
+      var shown = [], idx = [];
       rows.forEach(function (r, i) {
         if (!rs[r[C.ring] || 'x']) return;
         if (!ts[r[C.tier] || 'x']) return;
         if (!ss[r[C.st] || 'x']) return;
         if (picOnly && !(r[C.st] === 'OH' && picCounties.indexOf(r[C.co]) >= 0)) return;
         if (!allStatus && r[C.status] !== 'active') return;
-        group.addLayer(markers[i]); shown.push(markers[i]);
+        group.addLayer(markers[i]); shown.push(markers[i]); idx.push(i);
       });
+      listLimit = LIST_PAGE; lastIdx = idx; renderList();
       status.textContent = 'Showing ' + shown.length.toLocaleString() + ' of ' + rows.length.toLocaleString() +
         ' site rows that have coordinates (filters applied: ring, tier, state' + (picOnly ? ', PIC-18 counties only' : '') + (allStatus ? '' : ', operating status active only') + ').';
       if (fit && shown.length) {
@@ -1355,7 +1492,7 @@ DIRECTORY_JS = r"""(function () {
     if (q.value.trim()) u.set('q', q.value.trim());
     F.forEach(function (f) { var c = chosen(f); if (c.length) u.set(PARAM[f], c.join(',')); });
     var s = u.toString();
-    history.replaceState(null, '', location.pathname + (s ? '?' + s : ''));
+    history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);   // keep #find
   }
   function el(tag, text, attrs) {
     var n = document.createElement(tag);
@@ -1409,7 +1546,7 @@ DIRECTORY_JS = r"""(function () {
     data.forEach(function (r) {
       var ok = {}, all = true;
       F.forEach(function (f) { ok[f] = pass(r, f, sel[f]); if (!ok[f]) all = false; });
-      var okq = !term || r.name.toLowerCase().indexOf(term) >= 0;
+      var okq = !term || (r.name + ' ' + r.addr.join(' ')).toLowerCase().indexOf(term) >= 0;   // name, street, city or ZIP
       if (all && okq) hits.push(r);
       F.forEach(function (f) {   // counts for one filter: rows that pass every OTHER filter
         if (!okq || !F.every(function (g) { return g === f || ok[g]; })) return;
@@ -1538,6 +1675,7 @@ SEARCH_JS = r"""(function () {
         r[C.status] && r[C.status] !== 'active' ? 'status: ' + String(r[C.status]).replace(/_/g, ' ') : ''
       ].filter(Boolean).join(' | ');
       li.appendChild(el('div', meta, {'class': 'meta'}));
+      if (r[C.addr]) li.appendChild(el('div', r[C.addr], {'class': 'meta'}));
       out.appendChild(li);
     });
     if (!terms.length && !ring && !st) count.textContent = 'Type a name, trade name or city to search ' + recs.length.toLocaleString() + ' organization rows (organizations and ecosystem organizations, all statuses and tiers).';
@@ -1845,7 +1983,7 @@ filter the choices are "or", across filters "and". Street addresses are as recor
 says which (site or org record). Process, material and market follow the same rule and say so when they come from the organization's
 own row. Bands are bands, never headcounts. "N or more" means the band starts at N or higher.</p></details>
 <form id="dfilters" onsubmit="return false" role="search" aria-label="Find a company">
-<p><label for="dq"><strong>Name contains</strong></label><br><input type="search" id="dq" autocomplete="off"></p>
+<p><label for="dq"><strong>Name, street or city contains</strong></label><br><input type="search" id="dq" autocomplete="off"></p>
 <div class="facets">{facets}</div>
 <p><a href="directory.html">Clear all filters</a></p>
 </form>
@@ -1989,7 +2127,7 @@ def build_index(ctx):
 <p class="lede">Plants, processors, materials makers, OEMs and the schools and groups behind them,
 every fact tied to a public source. Built in Akron for Northeast Ohio, growing nationally.</p>
 <div class="hero-stats">
-<div><b>{fmt_int(len(active_ab(sites)))}</b><small>active site rows (tiers A–C)<br>across all states</small></div>
+<div><b>{fmt_int(len(active_ab(sites)))}</b><small>active site rows (tiers A–C)<br>all locations held, not only US states</small></div>
 <div><b>{fmt_int(len(active_ab(oh)))}</b><small>in Ohio</small></div>
 <div><b>{fmt_int(len(active_ab(pic)))}</b><small>in the 18 PIC counties</small></div>
 </div>
@@ -2127,9 +2265,12 @@ organization because the site row has no ring of its own.</div>
 <p id="map-status" role="status" aria-live="polite">Loading map data...</p>
 <div id="map" role="application" aria-label="Map of polymer industry sites"></div>
 <noscript><p>The map needs JavaScript. County pages and search are available without the map.</p></noscript>
-<p class="small muted">The map is not keyboard-navigable; every site on it is also listed on its
-<a href="counties/index.html">county page</a> (PIC-18) or its organization page, reachable via
-<a href="search.html">search</a>. Map tiles &copy; OpenStreetMap contributors.</p>
+<h2 id="maplist-h">Sites shown on the map, as a list</h2>
+<p class="small">The dots on the map cannot be reached with the keyboard. This list holds the same site rows, with their street
+addresses; "Show on map" centres the map on one and opens its details. Every site is also on its
+<a href="counties/index.html">county page</a> (PIC-18) or its organization page, reachable via <a href="search.html">search</a>.</p>
+<div id="maplist" aria-labelledby="maplist-h"></div>
+<p class="small muted">Map tiles &copy; OpenStreetMap contributors.</p>
 """
     head = '<link rel="stylesheet" href="vendor/leaflet/leaflet.css">'
     scripts = ('<script src="vendor/leaflet/leaflet.js"></script>\n'
@@ -2140,7 +2281,7 @@ organization because the site row has no ring of its own.</div>
 def sites_json(ctx):
     """Compact site data for the map (only rows with coordinates)."""
     a = ctx.atlas
-    cols = ["id", "lat", "lon", "name", "org", "city", "st", "ring", "inh", "tier", "status", "co"]
+    cols = ["id", "lat", "lon", "name", "org", "city", "st", "ring", "inh", "tier", "status", "co", "street", "zip"]
     rows, orgs = [], {}
     for s in a.sites:
         try:
@@ -2150,7 +2291,8 @@ def sites_json(ctx):
         rows.append([s["site_id"], round(lat, 5), round(lon, 5), s.get("site_name") or "",
                      s["org_id"], s.get("city") or "", s.get("state") or "",
                      s["_ring"] or "", 1 if s["_ring_inherited"] else 0,
-                     s.get("verification_tier") or "", s.get("operating_status") or "", s.get("county") or ""])
+                     s.get("verification_tier") or "", s.get("operating_status") or "", s.get("county") or "",
+                     str(s.get("street_address") or "").strip(), s.get("zip") or ""])
         orgs[s["org_id"]] = a.name_of(s["org_id"]) or ""
     return {"cols": cols, "orgs": orgs, "rows": rows}
 
@@ -2283,6 +2425,7 @@ Try a specialty such as <a href="?q=rheology">rheology</a>, <a href="?q=elastome
 <div id="empty" class="xempty" hidden><strong>Nothing matches.</strong> Try fewer words or a broader specialty,
 or <button type="button" class="xchip" id="clear">clear the search and filters</button></div>
 <nav class="xtabs" aria-label="View" id="tabs"><button type="button" data-view="browse" aria-pressed="true">Browse by institution</button><button type="button" data-view="results" aria-pressed="false">Results list</button></nav>
+<div class="tbar" id="xbar" hidden><button type="button" id="xcsv">Download these rows (CSV)</button><button type="button" id="xcopy">Copy link</button><span class="tmsg" id="xmsg" role="status"></span></div>
 <section id="browse" aria-labelledby="browse-h"><h2 id="browse-h" class="sr-only">Institutions</h2><div id="insts"></div></section>
 <section id="ppl" aria-labelledby="ppl-h" hidden><h2 id="ppl-h">Researchers</h2><div id="people"></div></section>
 <section id="prg" aria-labelledby="prg-h" hidden><h2 id="prg-h">Programs</h2><div id="programs"></div></section>
@@ -2306,7 +2449,7 @@ def build_search_page(ctx, n):
 and all verification tiers) by name, trade name or city. Results are records, not unique companies.</p>
 <form onsubmit="return false" role="search">
 <p><label for="q"><strong>Name, trade name or city</strong></label><br>
-<input type="search" id="q" autocomplete="off" autofocus></p>
+<input type="search" id="q" autocomplete="off"></p>
 <div class="filters">
 <p><label for="ring">Ring</label><br><select id="ring">{ring_opts}</select></p>
 <p><label for="state">HQ state</label><br><select id="state"><option value="">Any state</option></select></p>
@@ -2323,15 +2466,22 @@ and all verification tiers) by name, trade name or city. Results are records, no
 
 def orgs_json(ctx):
     a = ctx.atlas
-    cols = ["id", "name", "trade", "city", "st", "ring", "kind", "status", "tier"]
+    cols = ["id", "name", "trade", "city", "st", "ring", "kind", "status", "tier", "addr"]
+
+    def addr(org_id):
+        """The site address of an organization with exactly one active site row; otherwise how many it has (never a guess at which)."""
+        active = [s for s in a.sites_by_org.get(org_id, []) if s.get("operating_status") == "active"]
+        if len(active) == 1:
+            return "Address: " + site_address(active[0])
+        return plural(len(active), "active site row") + ": addresses on its page" if active else ""
     rows = []
     for o in a.orgs.values():
         rows.append([safe_id(o["org_id"]), o.get("legal_name") or "", o.get("trade_names") or "",
                      o.get("hq_city") or "", o.get("hq_state") or "", o.get("ring_primary") or "",
-                     "o", o.get("status") or "", o.get("verification_tier") or ""])
+                     "o", o.get("status") or "", o.get("verification_tier") or "", addr(o["org_id"])])
     for e in a.eco.values():
         rows.append([safe_id(e["org_id"]), e.get("legal_name") or "", "", e.get("city") or "",
-                     e.get("state") or "", "5", "e", e.get("status") or "", e.get("verification_tier") or ""])
+                     e.get("state") or "", "5", "e", e.get("status") or "", e.get("verification_tier") or "", addr(e["org_id"])])
     rows.sort(key=lambda r: (r[1].lower(), r[0]))
     return {"cols": cols, "rows": rows}
 
@@ -2773,12 +2923,13 @@ that figure; it is not zero.</p>"""
         body_rows += (
             f'<tr><td><a href="../orgs/{esc(safe_id(s["org_id"]))}.html#{esc(safe_id(s["site_id"]))}">{esc(s.get("site_name") or s["site_id"])}</a></td>'
             f'<td>{a.org_link(s["org_id"], "../orgs/") if a.name_of(s["org_id"]) else esc(parent_name)}</td>'
-            f'<td>{esc(s.get("city"))}</td><td>{ring_badge(s["_ring"], s["_ring_inherited"])}</td>'
+            f'<td>{esc(str(s.get("street_address") or "").strip() or "Street not recorded")}</td>'
+            f'<td>{esc(s.get("city"))}</td><td>{esc(s.get("zip"))}</td><td>{ring_badge(s["_ring"], s["_ring_inherited"])}</td>'
             f'<td>{esc(vocab(s.get("processes")))}</td><td>{tier_badge(s.get("verification_tier"))}</td></tr>')
     sites_tbl = table_wrap(
         "<table><caption>Site rows (Ohio; this county; operating status active; all tiers)</caption><thead><tr>"
-        "<th scope=\"col\">Site</th><th scope=\"col\">Parent organization</th><th scope=\"col\">City</th>"
-        "<th scope=\"col\">Ring</th><th scope=\"col\">Processes</th><th scope=\"col\">Tier</th></tr></thead>"
+        "<th scope=\"col\">Site</th><th scope=\"col\">Parent organization</th><th scope=\"col\">Street address</th>"
+        "<th scope=\"col\">City</th><th scope=\"col\">ZIP</th><th scope=\"col\">Ring</th><th scope=\"col\">Processes</th><th scope=\"col\">Tier</th></tr></thead>"
         f"<tbody>{body_rows}</tbody></table>", f"{county} County sites") if srows else "<p>No active site rows.</p>"
 
     progs = [p for p in a.programs if p.get("state") == "OH" and p.get("county") == county
