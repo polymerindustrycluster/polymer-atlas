@@ -1,0 +1,15 @@
+packet_id,archive_ref,captured_at,capture_creator,proof_sha256,proof_offset
+P3-000001,https://web.archive.org/web/20261116234616/https://pioneerplasticscorp.com/about,2026-11-16,unknown,,
+P3-000002,https://web.archive.org/web/20261116234617/https://pioneerplasticscorp.com/,2026-11-16,unknown,,
+P3-000003,https://web.archive.org/web/20261123165022/https://www.technoform.com/en/about-us,2026-11-23,codex p1-process-web-2026-11-23,dce584111b9e5f58b9d9256764440f736ca24e935f711d59ce3e0a8485ef38cc,276
+P3-000006,https://web.archive.org/web/20261123165049/https://www.parkerhq.com/immersion-and-spray-painting-servic,2026-11-23,codex p1-process-web-2026-11-23,313d73e4c4e3e408ebbf5ec8e9ee5a1879028faabccd575cac85dc284ef389b9,108
+P3-000007,https://web.archive.org/web/20261123165049/https://www.parkerhq.com/immersion-and-spray-painting-servic,2026-11-23,codex p1-process-web-2026-11-23,313d73e4c4e3e408ebbf5ec8e9ee5a1879028faabccd575cac85dc284ef389b9,108
+P3-000008,https://web.archive.org/web/20261123165157/https://wvintl.com/,2026-11-23,codex p1-process-web-2026-11-23,,
+P3-000011,https://web.archive.org/web/20261116223449/https://www.polymerpkg.com/polymer-packaging-co-extruded-films/,2026-11-16,atlas-w16-archive,,
+P3-000012,https://web.archive.org/web/20261123165318/https://kentmold.com/molding/,2026-11-23,codex p1-process-web-2026-11-23,,
+P3-000013,https://web.archive.org/web/20261123165318/https://kentmold.com/molding/,2026-11-23,codex p1-process-web-2026-11-23,,
+P3-000014,https://web.archive.org/web/20261123165320/https://kentmold.com/about-kent-mold/,2026-11-23,codex p1-process-web-2026-11-23,,
+P3-000015,https://web.archive.org/web/20261123165320/https://kentmold.com/about-kent-mold/,2026-11-23,codex p1-process-web-2026-11-23,,
+P3-000016,https://web.archive.org/web/20261123165417/https://americansignproducts.com/,2026-11-23,codex p1-process-web-2026-11-23,,
+P3-000017,https://web.archive.org/web/20261123165546/https://rotocastmold.com/,2026-11-23,codex p1-process-web-2026-11-23,71560c5e0ad60c470e8118fb9d5c3f117e1c8b7cce6032353aae5f5faf811119,1481
+P3-000018,https://web.archive.org/web/20261123165546/https://rotocastmold.com/,2026-11-23,codex p1-process-web-2026-11-23,71560c5e0ad60c470e8118fb9d5c3f117e1c8b7cce6032353aae5f5faf811119,1481
