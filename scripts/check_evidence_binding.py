@@ -410,7 +410,7 @@ def judge(ev, idx):
         if q_st and rec.get("state") and q_st != rec["state"].strip().upper():
             reasons.append("state_differs")  # an explicit other state is contrary evidence (Codex review, PR #467)
         if city_differs(rec.get("city"), rec.get("zip"), q_city, q_zip):
-            reasons.append("city_differs")  # an explicit other city and ZIP too (owner split, Codex r2 finding 2)
+            reasons.append("city_differs")  # an explicit other city and ZIP too (controller rulings 2026-11-22, Codex r2 finding 2)
         if why == "no_civic_number" and not reasons:
             return "UNINSPECTABLE", why, info
         if why and why != "no_civic_number":
