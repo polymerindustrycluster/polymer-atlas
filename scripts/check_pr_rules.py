@@ -88,28 +88,32 @@ def check_size(f, out):
     if not any(p.startswith("data/") for p in files):
         out.append("  audit gate: not applicable, the PR touches nothing under data/")
         return fails, blind
-    for k in ("main_labels", "baseline_labels", "audit_texts"):
+    for k in ("main_labels", "baseline_labels", "audit_texts", "pr_audit_texts"):
         if f.get(k) is None:
             blind.append(f"facts missing {k!r} (audit gate)")
     if blind:
         return fails, blind
-    passed, failed = set(), set()
-    for path, text in sorted(f["audit_texts"].items()):
-        labels, result, why = parse_audit(text or "")
-        if why:
-            out.append(f"  ignored {path}: {why}")
-        elif result == "PASS":
-            passed |= labels
-        else:
-            failed |= labels
+    passed_main, passed_pr, failed = set(), set(), set()
+    for texts, passed in ((f["audit_texts"], passed_main), (f["pr_audit_texts"], passed_pr)):
+        for path, text in sorted(texts.items()):
+            labels, result, why = parse_audit(text or "")
+            if why:
+                out.append(f"  ignored {path}: {why}")
+            elif result == "PASS":
+                passed.update(labels)
+            else:
+                failed |= labels
     main_labels, base = set(f["main_labels"]), set(f["baseline_labels"])
-    unaudited = sorted((main_labels - base) - passed - failed)
+    audited_main = (main_labels & passed_main) - failed
+    audited_pr = (main_labels & passed_pr) - audited_main - failed
+    unaudited = sorted(main_labels - base - audited_main - audited_pr - failed)
     failing = sorted(main_labels & failed)
     out.append(f"  audit gate: {len(main_labels)} created_by labels on main, {len(base)} grandfathered in the baseline, "
-               f"{len(f['audit_texts'])} AUDIT.md file(s) on main, {len(unaudited)} unaudited, {len(failing)} with a FAIL audit")
+               f"{len(f['audit_texts'])} AUDIT.md file(s) on main, {len(audited_main)} audited on main, "
+               f"{len(audited_pr)} audited by this PR, {len(unaudited)} unaudited, {len(failing)} with a FAIL audit")
     if unaudited:
-        fails.append("rule 5: created_by label(s) on main with no valid PASS tasks/<folder>/AUDIT.md and not in the "
-                     "baseline: " + ", ".join(unaudited[:10]) + (" ..." if len(unaudited) > 10 else ""))
+        fails.append("rule 5: created_by label(s) on main with no valid PASS tasks/<folder>/AUDIT.md on main or added by the PR "
+                     "and not in the baseline: " + ", ".join(unaudited[:10]) + (" ..." if len(unaudited) > 10 else ""))
     if failing:
         fails.append("rule 5: created_by label(s) on main whose AUDIT.md says Result: FAIL: " + ", ".join(failing[:10]))
     return fails, blind
@@ -334,6 +338,7 @@ def collect(pr_number, base_ref=None):
                 f["baseline_labels"] = [ln for ln in b.splitlines() if ln.strip() and not ln.startswith("#")]
             f["audit_texts"] = {p: show(base_ref, p) for p in
                                 filter(AUDIT_PATH.match, git("ls-tree", "-r", "-z", "--name-only", base_ref, "--", "tasks/").split("\0"))}
+            f["pr_audit_texts"] = {p: git("show", f"{head}:{p}") for p in f["added_files"] if AUDIT_PATH.fullmatch(p)}
     except InspectionError as e:
         f["uninspectable"].append(str(e))
     return f
