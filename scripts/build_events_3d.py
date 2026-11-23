@@ -5,7 +5,7 @@
     python3 scripts/build_events_3d.py --fragment OUT   # body-only page (for hosts that add their own skeleton)
 
 Event series (events.csv) are large nodes; organizations that exhibit, sponsor or
-speak at them (event_participation.csv) orbit them, coloured by ring. Organizations
+otherwise take part (event_participation.csv) orbit them, coloured by ring. Organizations
 that attend several shows bridge the clusters. "Present" mode auto-tours the shows,
 largest first, flying the camera to each one with a caption (organizer, home city,
 participants, Ohio and PIC-18 participants) and particles running along its links;
@@ -27,7 +27,7 @@ bg = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(bg)
 
 FG3D = "https://cdn.jsdelivr.net/npm/3d-force-graph@1.73.4/dist/3d-force-graph.min.js"
-ROLE_RANK = {"organizer": 4, "sponsor": 3, "speaker": 2, "exhibitor": 1}
+ROLE_RANK = {"organizer": 6, "sponsor": 5, "speaker": 4, "exhibitor": 3, "host": 2, "attendee": 1}
 
 
 def build_data():
@@ -106,6 +106,8 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
 .nums b { font: 700 30px/1 var(--f-display); font-variant-numeric: tabular-nums; }
 .nums small { color: var(--muted); font-size: 12px; line-height: 1.25; }
 .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.participants { max-height: min(11rem, 30vh); overflow-y: auto; }
+.participants:focus-visible { outline: 2px solid var(--accent); }
 .chip { border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; font-size: 12.5px; }
 .chipbtn { background: transparent; color: var(--fg); cursor: pointer; font-family: inherit; text-align: left; }
 .chipbtn:hover { border-color: var(--accent); color: var(--accent); }
@@ -162,7 +164,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
   const events = D.nodes.filter((n) => n.k === "event").sort((a, b) => evLinks.get(b.id).length - evLinks.get(a.id).length);
   const orgs = D.nodes.filter((n) => n.k !== "event");
   const bridges = orgs.filter((o) => orgEvents.get(o.id) > 1).length;
-  $("stat").textContent = `${events.length} event series · ${orgs.length} organizations with a recorded exhibitor, sponsor or speaker role · ${bridges} take part in more than one series`;
+  $("stat").textContent = `${events.length} event series · ${orgs.length} organizations with recorded participation · ${bridges} take part in more than one series`;
   $("legend").innerHTML = [["1", "Ring 1"], ["2", "Ring 2"], ["3", "Ring 3"], ["4", "Ring 4"], ["5", "Ecosystem"]]
     .map(([r, t]) => `<span><i class="sw" style="background:${RING[r]}"></i>${t}</span>`).join("") + `<span><i class="sw" style="background:${EVENT}"></i>Event series</span>`;
 
@@ -231,6 +233,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
     const roles = {}; ls.forEach((l) => roles[l.role] = (roles[l.role] || 0) + 1);
     const shared = ps.filter((p) => orgEvents.get(p.id) > 1).length;
     const cap = $("caption");
+    cap.dataset.eventId = e.id;
     cap.innerHTML = `
       <div class="step">Show ${state.i + 1} of ${events.length}${e.yrs.length ? " · editions " + esc(e.yrs.join(", ")) : ""}</div>
       <h2>${esc(e.l)}</h2>
@@ -241,7 +244,8 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
         <div><b>${p12.length}</b><small>in the PIC-18 counties</small></div>
       </div>
       <div class="sub">${Object.entries(roles).map(([r, n]) => `${n} ${esc(r)}${n === 1 ? "" : "s"}`).join(" · ")} · ${shared} also attend other series</div>
-      ${p12.length ? `<div class="chips">${p12.slice(0, 8).map((p) => `<span class="chip">${esc(p.l)}</span>`).join("")}${p12.length > 8 ? `<span class="chip">+${p12.length - 8} more</span>` : ""}</div>` : ""}
+      ${p12.length ? `<div class="chips participants" role="region" aria-label="PIC-18 participants" tabindex="0">
+        ${p12.map((p) => `<span class="chip" data-org-id="${esc(p.id)}">${esc(p.l)}</span>`).join("")}</div>` : ""}
       ${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">Event website</a>` : ""}
       <div class="progress"><i id="prog"></i></div>`;
     cap.hidden = false;
@@ -254,6 +258,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
     const place = [n.c, n.s].filter(Boolean).join(", ");
     const ring = n.k === "eco" ? "Ecosystem organization" : (n.r ? "Ring " + n.r : "Ring not recorded");
     const cap = $("caption");
+    delete cap.dataset.eventId;
     cap.innerHTML = `
       <div class="step">${esc(ring)}${n.p ? " · PIC-18 county" : n.oh ? " · Ohio footprint" : ""}</div>
       <h2>${esc(n.l)}</h2>
@@ -283,7 +288,7 @@ body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); o
   $("reset").onclick = overview;
   $("p12").onclick = () => { state.p12 = !state.p12; $("p12").setAttribute("aria-pressed", String(state.p12)); refresh(); };
   addEventListener("keydown", (e) => {
-    if (e.target.closest && e.target.closest("input")) return;
+    if (e.target.closest && e.target.closest("input, .participants")) return;
     if (e.key === " ") { e.preventDefault(); state.playing ? stop() : play(); }
     else if (e.key === "ArrowRight") { stop(); show(state.i + 1); }
     else if (e.key === "ArrowLeft") { stop(); show(state.i - 1); }
