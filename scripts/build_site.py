@@ -1397,7 +1397,7 @@ MAP_JS = r"""(function () {
         li.appendChild(el('a', r[C.name], {href: 'orgs/' + r[C.org] + '.html#' + r[C.id]}));
         li.appendChild(document.createTextNode(' \u2014 ' + [r[C.street] || 'Street not recorded', r[C.city], [r[C.st], r[C.zip]].filter(Boolean).join(' ')].filter(Boolean).join(', ') +
           (r[C.ring] ? ' \u00b7 Ring ' + r[C.ring] : ' \u00b7 Ring not recorded') + ' '));
-        var b = el('button', 'Show on map', {type: 'button', 'aria-label': 'Show ' + r[C.name] + ' on the map'});
+        var b = el('button', 'Show on map', {type: 'button', 'aria-label': 'Show on map: ' + r[C.name]}   // starts with the visible words (WCAG 2.5.3));
         b.addEventListener('click', function () { map.setView([r[C.lat], r[C.lon]], 15); markers[i].openPopup(); document.getElementById('map').scrollIntoView({block: 'center'}); });
         li.appendChild(b); ol.appendChild(li);
       });

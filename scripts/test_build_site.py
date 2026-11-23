@@ -1134,6 +1134,7 @@ class BlockingFixesTest(unittest.TestCase):
         self.assertIn("'Address: '", js)
         self.assertIn("Street not recorded", js)
         self.assertIn("Show on map", js)                                                            # the keyboard route to every dot
+        self.assertIn("'aria-label': 'Show on map: '", js)                                          # the accessible name starts with the visible words
         self.assertIn('id="maplist"', self.read("map.html"))
 
     def test_search_results_carry_the_address_of_a_single_site_organization(self):
