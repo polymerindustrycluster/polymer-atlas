@@ -27,12 +27,12 @@ def num(v):
 def dist(a, b): return abs(BANDS.index(a) - BANDS.index(b))
 def zip5(z): return re.sub(r"\D", "", z or "")[:5]
 
-def load_atlas():
-    orgs = {}
-    for f in glob.glob(str(ROOT / "data/organizations_*.csv")) + [str(ROOT / "data/ecosystem.csv")]:
+def load_atlas(data=None):
+    data = Path(data) if data else ROOT / "data"; orgs = {}
+    for f in glob.glob(str(data / "organizations_*.csv")) + [str(data / "ecosystem.csv")]:
         for r in csv.DictReader(open(f, newline="", encoding="utf-8")):
             r.setdefault("legal_name", r.get("name", "")); orgs[r["org_id"]] = r
-    sites = [r for f in sorted(glob.glob(str(ROOT / "data/sites_*.csv"))) for r in csv.DictReader(open(f, newline="", encoding="utf-8"))]
+    sites = [r for f in sorted(glob.glob(str(data / "sites_*.csv"))) for r in csv.DictReader(open(f, newline="", encoding="utf-8"))]
     return orgs, sites
 
 def org_names(o, orgs, depth=0):
@@ -71,7 +71,7 @@ SUFX = {"st", "ave", "rd", "dr", "blvd", "hwy", "ln", "ct", "pl", "pkwy", "cir",
 CORP = {"inc", "incorporated", "llc", "corp", "corporation", "co", "company", "ltd", "limited", "lp", "llp", "holdings", "holding", "group", "us", "usa", "americas"}   # owner ruling 2026-11-22 B (plus the phrase "north america")
 WINDOW_LO = "2020-11-22"   # one year before the cutoff: pending-owner window (controller 2026-11-22)
 CUTOFF = "2021-11-22"   # owner ruling 2026-11-22 A: a filing sets a band only if its source date is on or after this
-RANK = {"exact": 3, "corporate_suffix_only": 2, "contained_other": 1, "not_held": 0}
+RANK = {"exact": 3, "corporate_suffix_only": 2, "contained_other": 1, "not_held": 0, "parent_name_lead": 0}   # owner ruling 2026-11-22 (round 9): a filing that names only a recorded parent never binds by machine
 LEVELS = {"strict": 3, "suffix": 2, "contain": 1}   # minimum name rank each level accepts
 SIZE_BANDS = {"1": {"1-9", "10-49"}, "21": {"10-49", "50-99"}, "22": {"100-249"}, "2": {"10-49", "50-99", "100-249"}, "3": {"250-499", "500-999", "1000-4999", "5000+"}}
 
@@ -93,7 +93,7 @@ def drop_na(toks):
         else: out.append(toks[i]); i += 1
     return out
 
-def name_class(held, names):
+def _best(held, names):
     """-> (class, held display name) best over the filing's names. exact | corporate_suffix_only | contained_other | not_held"""
     best = ("not_held", "")
     held = {coll(k): v for k, v in held.items()}
@@ -109,6 +109,42 @@ def name_class(held, names):
             if ft[:len(ht)] == ht and len(ft) > len(ht) and set(drop_na(ft[len(ht):])) <= CORP: c = "corporate_suffix_only"
             elif min(len(ft), len(ht)) >= 2 and (set(ft) <= set(ht) or set(ht) <= set(ft)): c = "contained_other"
             if RANK[c] > RANK[best[0]]: best = (c, disp)
+    return best
+
+BIZ = set("""inc incorporated llc corp corporation co company companies ltd lp llp plc usa us group holdings holding industries industrial industry plastics plastic rubber polymer polymers chemical chemicals
+products product manufacturing mfg machine machines machining tool tooling mold molding foam foams metal metals steel supply services service systems technologies technology tech international american america
+center centre hospital hospitals university college school city county church association society institute laboratory laboratories labs lab associates partners enterprises engineering equipment
+packaging packaged printing graphics coatings coating paint adhesives composites fiberglass fibre fiber glass wire cable seal seals sealing gasket extrusion extrusions extruded fabricating fabrication
+distribution distributors logistics transport trucking freight energy power electric electrical medical dental health care clinic pharmacy foods food farm farms mills mill works plant
+division dept department management consulting solutions design designs controls control instruments instrument optical vision labs research development bag bags box boxes container containers
+tire tires auto automotive truck trailer trailers marine boat boats pool pools roofing roof building buildings construction contractors contracting concrete cement stone wood lumber furniture
+global national united first general universal precision quality superior advanced applied custom premier standard pioneer summit eagle star""".split())
+def personal(n):
+    """an individual's name: two or three alphabetic words (initials allowed), none a business word"""
+    if not re.fullmatch(r"[A-Za-z][A-Za-z .,'-]*", n.strip()): return False
+    toks = [t.strip(".,'-").lower() for t in n.replace(",", " ").split()]; toks = [t for t in toks if t]
+    return 2 <= len(toks) <= 3 and not any(t in BIZ for t in toks)
+def scrub(text, per_kind, notes=None):
+    """replace, in a hold's free text, every source name of this site's candidate rows that looks like an individual (names of natural persons never enter the public task files)"""
+    names = {n for k in per_kind for e, _, _ in per_kind[k] for n in e["names"]} | {n for k in (notes or {}) for _, e, _ in notes[k] for n in e["names"]}
+    for n in sorted((n for n in names if personal(n)), key=len, reverse=True): text = text.replace(n, "[individual filer]")
+    return text
+
+def parent_match(held, names):
+    """True when a filing name matches a recorded parent (exact or corporate words), whatever it also matches"""
+    return _best({k: v for k, v in held.items() if v.startswith("parent:")}, names)[0] in ("exact", "corporate_suffix_only")
+
+PARENT_FACT = "a filing names a recorded parent, not the operator (owner ruling 2026-11-22, round 9: a parent name never binds by machine); a record link or the operator's own page tying the establishment to this operator would settle it"
+def parent_lead_any(held, per_kind):
+    return any(fresh(e) and parent_match(held, e["names"]) and RANK[c] < 2 for k in per_kind for e, c, _ in per_kind[k])
+
+def name_class(held, names):
+    """own names only bind. A filing that matches only a recorded parent (exact or corporate words) is `parent_name_lead`: never a held name."""
+    own = {k: v for k, v in held.items() if not v.startswith("parent:")}
+    best = _best(own, names)
+    if RANK[best[0]] == 0:
+        par = _best({k: v for k, v in held.items() if v.startswith("parent:")}, names)
+        if par[0] in ("exact", "corporate_suffix_only"): return ("parent_name_lead", par[1])
     return best
 
 def civic(t): return re.sub(r"(?<=\d)[a-z]$", "", t)
@@ -177,6 +213,15 @@ def size_flag(r):
     b = band_of(num(r["annual_average_employees"])) if num(r["annual_average_employees"]) >= 1 else ""
     return "consistent" if not b or min(dist(b, x) for x in SIZE_BANDS[code]) <= 1 else "code_conflicts_with_average"
 
+PARTIAL_NAME = re.compile(r"\b(unions?|bargain\w*|collective\w*|steel\s*workers?|teamsters?|hourly|salaried|ufcw|uaw|ibew|iuoe|laborers|pipefitters|plumbers|carpenters|machinists|retirees?)\b|\blocal\s*(no\.?|#)?\s*\d", re.I)
+def partial_plan(r):
+    """Form 5500 fields tested: PLAN_NAME / SF_PLAN_NAME (union, bargaining, hourly, salaried, local-number words), COLLECTIVE_BARGAIN_IND (main form only; the 5500-SF has no such field),
+    and TYPE_PENSION_BNFT_CODE / TYPE_WELFARE_BNFT_CODE (a welfare-only plan counts benefit enrolment, not the workforce). Returns the reason or ''."""
+    if PARTIAL_NAME.search(r["plan_name"] or ""): return "plan name says union, bargaining, hourly, salaried or a numbered local"
+    if (r.get("cb") or "").strip() == "1": return "collective bargaining indicator set"
+    if (r.get("welfare") or "").strip() and not (r.get("pension") or "").strip(): return "welfare-benefit plan only (no pension feature code)"
+    return ""
+
 def choose(kind, ok, n_active=None, peers=()):
     """ok = [(entry, class, held_name)] already filtered to the accepted name level. -> ('fill', payload) | ('hold', reason, detail, blocking)"""
     if kind == "ita":
@@ -211,13 +256,28 @@ def choose(kind, ok, n_active=None, peers=()):
     ok = [t for t in ok if count_of(t[0]) >= 1]
     if not ok: return ("hold", "f5500_no_active_participants", "name+street plans report 0 active participants", False)
     if n_active != 1: return ("hold", "f5500_not_single_establishment", f"organization has {n_active} active sites in the Atlas; R13 source 3 needs exactly 1", False)
+    plans = {(t[0]["r"]["ein"], t[0]["r"]["pn"] or t[0]["r"]["plan_name"]) for t in ok}
+    if len(plans) > 1: return ("hold", "f5500_multiple_plans", f"the sponsor files {len(plans)} plans in the window (EIN + plan number); none is taken (owner question: a single whole-company plan)", False)
+    why = partial_plan(ok[0][0]["r"])
+    if why: return ("hold", "f5500_partial_plan", f"the one plan is not shown to cover the whole workforce: {why}", False)
     y = max(year_of(t[0]) for t in ok); top = max((t for t in ok if year_of(t[0]) == y), key=lambda t: count_of(t[0])); b = band_of(count_of(top[0]))
     allb = {band_of(count_of(t[0])) for t in ok}
     if any(dist(b, x) > 1 for x in allb): return ("hold", "f5500_plans_disagree", f"plan bands across plan years 2023-2025 {sorted(allb, key=BANDS.index)}; latest-year top plan {b}", False)
     e, c, h = top
     return ("fill", dict(source="form5500", r13=3, e=e, year=y, band=b, matched_name=h, name_match=c, filing_name=e["r"]["sponsor"]))
 
-def evaluate(site, level, per_kind, active_n, by_street, near):
+def window_conflicts(per_kind, need, n_active, band):
+    """every source dated on or after the cutoff at this street under a held name, a rejected candidate included, that is more than one band from `band`.
+    Form 5500 plans count only for an organization with exactly one active site (R13 source 3)."""
+    out = []
+    for kind in per_kind:
+        if kind == "f5500" and n_active != 1: continue
+        for e, c, h in per_kind[kind]:
+            if RANK[c] >= need and fresh(e) and count_of(e) >= 1 and dist(band_of(count_of(e)), band) > 1:
+                out.append((e["kind"], source_date(e), band_of(count_of(e))))
+    return sorted(set(out), key=lambda t: t[1], reverse=True)
+
+def evaluate(site, level, per_kind, active_n, by_street, near, notes=None):
     """per_kind = {kind: street_equal list}. -> ('fill', payload) | ('hold', reason, detail) | ('none',)"""
     need = LEVELS[level]; fills, holds, stale = [], [], False
     for kind in ("ita", "insp", "f5500"):
@@ -234,13 +294,17 @@ def evaluate(site, level, per_kind, active_n, by_street, near):
         if holds: return ("hold", holds[0][0], holds[0][1])
         return ("hold", "stale_over_5_years", f"filing(s) at this street under a held name are all dated before {CUTOFF}; a lead only (owner ruling 2026-11-22 A)") if stale else ("none",)
     top = dict(fills[0]); others = fills[1:]
-    if any(dist(f["band"], top["band"]) > 1 for f in others): return ("hold", "sources_disagree", "R13: sources differ by more than one band: " + "; ".join(f"{f['source']}={f['band']} ({f['year']})" for f in fills))
+    conf = window_conflicts(per_kind, need, active_n[site["org_id"]], top["band"])
+    if conf: return ("hold", "sources_disagree_in_window", f"R13: fill {top['band']} from {top['source']} {top['year']}, but source(s) dated on or after {CUTOFF} at this street under a held name give: " + "; ".join(f"{k} {d} {b}" for k, d, b in conf[:6]))
     # assumption (controller 2026-11-22): a filing older than the limit is ignored as a band source AND as a conflicting source,
     # except one dated in the year before the cutoff that disagrees by >1 band: those sites are held pending the owner
     for kind in per_kind:
         win = [t for t in per_kind[kind] if RANK[t[1]] >= need and WINDOW_LO <= source_date(t[0]) < CUTOFF and count_of(t[0]) >= 1]
         bad = [t for t in win if dist(band_of(count_of(t[0])), top["band"]) > 1]
         if bad: return ("hold", "near_cutoff_source_disagrees", f"{kind} filing dated {source_date(bad[0][0])} (within a year before the {CUTOFF} cutoff) gives band {band_of(count_of(bad[0][0]))} against the fill {top['band']} from {top['source']} {top['year']}; pending the owner")
+    # superseded: the same plant (held name, near-identical street or conflicting city) filed in a later year than the fill
+    sup = sorted({f"{year_of(e)} {k}" for k, ns in (notes or {}).items() for t, e, _ in ns if t in ("street_near_differs", "street_equal_city_conflict") and year_of(e) > top["year"]})
+    if sup: return ("hold", "superseded_by_later_filing", f"fill from {top['source']} {top['year']}, but the same held name filed in later year(s) at a near-identical street or with a conflicting city/ZIP: {'; '.join(sup)}; the later filing shows the fill is superseded")
     # operator-change test: a later filing at this street, any source, under a name this level does not accept
     later = sorted({f"{year_of(e)} {e['names'][0]!r}" for kind in per_kind for e, c, _ in per_kind[kind] if RANK[c] < need and year_of(e) > top["year"]})
     top["later_other_name"] = "; ".join(later)
@@ -272,9 +336,9 @@ for ln in open(a_man := "/Volumes/johnpswan/work/GAC/polymer-atlas/atlas-store/r
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--cache", required=True); ap.add_argument("--out", required=True)
-    ap.add_argument("--region", default="pic18", choices=sorted(REGIONS)); ap.add_argument("--frame-size", action="store_true", help="print the frame size for --region and stop (builds nothing)"); ap.add_argument("--sample", type=int); ap.add_argument("--seed", type=int, default=20261122)
+    ap.add_argument("--region", default="pic18", choices=sorted(REGIONS)); ap.add_argument("--frame-size", action="store_true", help="print the frame size for --region and stop (builds nothing)"); ap.add_argument("--data-dir"); ap.add_argument("--candidates-out", help="where to write candidates_all.csv (it lists unselected third-party filers, so it is not kept in the repo)"); ap.add_argument("--sample", type=int); ap.add_argument("--seed", type=int, default=20261122)
     ap.add_argument("--site-list", help="file of site_ids: run exactly these (any status/tier), frame-agnostic, for cross-lane comparison"); a = ap.parse_args()
-    orgs, sites = load_atlas(); fr, n_org, n_unk = frame(orgs, sites, a.region)
+    orgs, sites = load_atlas(a.data_dir); fr, n_org, n_unk = frame(orgs, sites, a.region)
     if a.frame_size:
         print(f"region {a.region}: organization rows with an active tier A-C Ohio site {n_org}; size-unknown {n_unk}; frame sites {len(fr)}; with street {sum(1 for s in fr if s['street_address'].strip())}"); return
     print(f"PIC-18 org rows {n_org}; size-unknown {n_unk}; frame sites {len(fr)}; with street {sum(1 for s in fr if s['street_address'].strip())}")
@@ -300,7 +364,7 @@ def main():
         per_kind, notes = {}, {}
         for kind in ("ita", "insp", "f5500"): per_kind[kind], notes[kind] = classify(s, held, ix[kind])
         near = {k: w for k in notes if (w := would_be_band(k, notes[k]))}
-        res = {lv: evaluate(s, lv, per_kind, active_n, by_street, near) for lv in LEVELS}
+        res = {lv: evaluate(s, lv, per_kind, active_n, by_street, near, notes) for lv in LEVELS}
         disp[sid] = res
         for kind in per_kind:
             for e, c, h in per_kind[kind]:
@@ -315,22 +379,29 @@ def main():
             nt = " | ".join(f"[{k}] {t}: {e['names'][:2]} @ {e['st']!r}" for k in notes for _, e, t in notes[k])[:500]
             fact = {"street_near_differs": "confirm the site's street against the operator's own page; the named filing would then apply", "ita_multiple_establishments_at_street": "which ITA establishment is this site (or whether the site covers all of them)",
                     "later_filing_other_name": "whether the later filing's operator is the same business (a successor/trade-name link) settles it", "filing_binds_two_sites": "a dedupe or which-site ruling for the two site records", "sources_disagree": "review of which count is this establishment's"}.get(st[1], "see detail")
-            holds.append((sid, oid, st[1], fact, (st[2] + (" || " + nt if nt else ""))[:900]))
+            reason, detail = st[1], (st[2] + (" || " + nt if nt else ""))[:900]
+            if reason in ("stale_over_5_years", "name_not_held") and parent_lead_any(held, per_kind):
+                detail = f"was {reason}; " + detail; reason = "parent_name_lead"; fact = PARENT_FACT
+            holds.append((sid, oid, reason, fact, scrub(detail, per_kind, notes)))
         else:
             near = [(k, e) for k in notes for t, e, _ in notes[k] if t == "street_near_differs"]
             if near:
                 nt = " | ".join(f"[{k}] {t}: {e['names'][:2]} @ {e['st']!r} {would_be(k, notes[k], s)}" for k in notes for t, e, _ in notes[k] if t == "street_near_differs")
-                holds.append((sid, oid, "street_near_differs", "confirm the site's street against the operator's own page; the named filing would then apply", nt[:900]))
+                holds.append((sid, oid, "street_near_differs", "confirm the site's street against the operator's own page; the named filing would then apply", scrub(nt[:900], per_kind, notes)))
             else:
                 anyeq = any(per_kind[k] for k in per_kind)
-                holds.append((sid, oid, "name_not_held" if anyeq else "no_filing_at_street", "a record link (parent / trade name) tying the filing's company name to this operator would settle it, or the filing is another tenant" if anyeq else "no ITA, inspection or Form 5500 row in the raw store at this street", "; ".join(f"[{k}] {t[0]['names'][:2]} ({t[1]})" for k in per_kind for t in per_kind[k][:3])[:500]))
+                if parent_lead_any(held, per_kind):
+                    holds.append((sid, oid, "parent_name_lead", PARENT_FACT, scrub("; ".join(f"[{k}] {t[0]['names'][:2]} ({t[1]})" for k in per_kind for t in per_kind[k][:3])[:500], per_kind))); continue
+                holds.append((sid, oid, "name_not_held" if anyeq else "no_filing_at_street", "a record link (parent / trade name) tying the filing's company name to this operator would settle it, or the filing is another tenant" if anyeq else "no ITA, inspection or Form 5500 row in the raw store at this street", scrub("; ".join(f"[{k}] {t[0]['names'][:2]} ({t[1]})" for k in per_kind for t in per_kind[k][:3])[:500], per_kind)))
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
     def wcsv(name, hdr, rows):
         with open(out / name, "w", newline="") as f: w = csv.writer(f); w.writerow(hdr); w.writerows(rows)
     wcsv("packet.csv", ["site_id", "org_id", "source", "source_file", "file_sha256", "row_locator", "filing_year", "source_date", "age_years", "band", "r13_source", "name_match", "matched_name", "filing_name", "filing_street", "other_sources", "note"],
          [[sid, oid, p["source"], "raw/" + p["e"]["r"]["file"], MAN["./" + p["e"]["r"]["file"]], f"{p['e']['r']['member']}|row={p['e']['r']['row']}|id={p['e']['r']['rid']}", p["year"], source_date(p["e"]), 2026 - p["year"], p["band"], p["r13"], p["name_match"], p["matched_name"], p["filing_name"], p["e"]["st"], p.get("also", ""), p.get("note", "")] for sid, oid, p in packet])
     wcsv("holds.csv", ["site_id", "org_id", "reason", "settling_fact", "detail"], holds)
-    wcsv("candidates_all.csv", ["site_id", "org_id", "source", "source_file", "row_locator", "filing_year", "source_date", "on_or_after_2021-11-22", "age_years", "filing_names", "filing_street", "name_match", "band_of_row", "ita_size_code_check", "disposition_exact_only", "disposition_corporate_suffix_accepted (RULED)", "disposition_containment_accepted"], cands)
+    CAND_HDR = ["site_id", "org_id", "source", "source_file", "row_locator", "filing_year", "source_date", "on_or_after_2021-11-22", "age_years", "filing_names", "filing_street", "name_match", "band_of_row", "ita_size_code_check", "disposition_exact_only", "disposition_corporate_suffix_accepted (RULED)", "disposition_containment_accepted"]
+    if a.candidates_out:
+        with open(a.candidates_out, "w", newline="") as f: w = csv.writer(f); w.writerow(CAND_HDR); w.writerows(cands)
     wcsv("frame.csv", ["site_id", "org_id", "site_name", "street_address", "city", "zip", "county"], [[s[k] for k in ("site_id", "org_id", "site_name", "street_address", "city", "zip", "county")] for s in sel])
     wcsv("no_street_sites.csv", ["site_id", "org_id", "city", "org_has_another_site_with_street_any_status", "org_has_another_active_site_with_street"], nostreet)
     # org-level fill counts per name level, with the ruled 5-year limit and (for the record) without it

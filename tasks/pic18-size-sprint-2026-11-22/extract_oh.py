@@ -57,16 +57,16 @@ elif WHAT == "f5500":
                     if "OH" not in st: continue
                     rec = dict(sponsor=r["sponsor_dfe_name"], dba=r.get("spons_dfe_dba_name", ""), mail1=r["spons_dfe_mail_us_address1"], mail2=r["spons_dfe_mail_us_address2"], mailcity=r["spons_dfe_mail_us_city"], mailst=r["spons_dfe_mail_us_state"],
                                loc1=r["spons_dfe_loc_us_address1"], loc2=r["spons_dfe_loc_us_address2"], loccity=r["spons_dfe_loc_us_city"], locst=r["spons_dfe_loc_us_state"],
-                               ein=r["spons_dfe_ein"], plan_name=r.get("plan_name", ""), pn=r["spons_dfe_pn"], active=r.get("tot_active_partcp_cnt", ""), boy=r.get("tot_partcp_boy_cnt", ""),
+                               ein=r["spons_dfe_ein"], plan_name=r.get("plan_name", ""), pn=r["spons_dfe_pn"], cb=r.get("collective_bargain_ind", ""), pension=r.get("type_pension_bnft_code", ""), welfare=r.get("type_welfare_bnft_code", ""), active=r.get("tot_active_partcp_cnt", ""), boy=r.get("tot_partcp_boy_cnt", ""),
                                plan_year=r["form_plan_year_begin_date"], tax_prd=r.get("form_tax_prd", ""), received=r["date_received"])
                 else:
                     st = {(r.get("sf_spons_us_state") or "").upper(), (r.get("sf_spons_loc_us_state") or "").upper()}
                     if "OH" not in st: continue
                     rec = dict(sponsor=r["sf_sponsor_name"], dba=r.get("sf_sponsor_dfe_dba_name", ""), mail1=r["sf_spons_us_address1"], mail2=r["sf_spons_us_address2"], mailcity=r["sf_spons_us_city"], mailst=r["sf_spons_us_state"],
                                loc1=r["sf_spons_loc_us_address1"], loc2=r["sf_spons_loc_us_address2"], loccity=r["sf_spons_loc_us_city"], locst=r["sf_spons_loc_us_state"],
-                               ein=r["sf_spons_ein"], plan_name=r.get("sf_plan_name", ""), pn=r.get("sf_plan_num", ""), active=r.get("sf_tot_act_partcp_eoy_cnt", ""), boy=r.get("sf_tot_partcp_boy_cnt", ""),
+                               ein=r["sf_spons_ein"], plan_name=r.get("sf_plan_name", ""), pn=r.get("sf_plan_num", ""), cb="", pension=r.get("sf_type_pension_bnft_code", ""), welfare=r.get("sf_type_welfare_bnft_code", ""), active=r.get("sf_tot_act_partcp_eoy_cnt", ""), boy=r.get("sf_tot_partcp_boy_cnt", ""),
                                plan_year=r["sf_plan_year_begin_date"], tax_prd=r.get("sf_tax_prd", ""), received=r["date_received"])
                 rec.update(file=f"form5500/2026-11-22-archive-snapshot/raw/{pre}_{y}_Latest.zip", member=mem, row=i, rid=r["ack_id"], form=kind)
                 out.append(rec)
-    write("f5500_oh", ["file", "member", "row", "rid", "form", "sponsor", "dba", "mail1", "mail2", "mailcity", "mailst", "loc1", "loc2", "loccity", "locst", "ein", "plan_name", "pn", "active", "boy", "plan_year", "tax_prd", "received"], out)
+    write("f5500_oh", ["file", "member", "row", "rid", "form", "sponsor", "dba", "mail1", "mail2", "mailcity", "mailst", "loc1", "loc2", "loccity", "locst", "ein", "plan_name", "pn", "cb", "pension", "welfare", "active", "boy", "plan_year", "tax_prd", "received"], out)
 print(WHAT, "kept", len(out))

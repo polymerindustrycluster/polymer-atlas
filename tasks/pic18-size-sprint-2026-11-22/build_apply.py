@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "tasks/census-gap-people-2026-11-03"))
 from build_integration import append_rows  # noqa: E402
 csv.field_size_limit(10**9)
 EVD_FIRST, EVD_LAST = 481000, 481199   # reserved for this PR by the controller
+IDMAP = HERE / "evidence_id_map.csv"   # site -> id as first published (a55f7d93); an id is never reused or renumbered: a site later held leaves a gap
 BY = "claude-code pic18-size-bands-2026-11-22"
 VOCAB = {"1-9", "10-49", "50-99", "100-249", "250-499", "500-999", "1000-4999", "5000+"}
 rd = lambda p: list(csv.DictReader(open(p, newline="", encoding="utf-8")))
@@ -38,27 +39,30 @@ def main():
     for f in sorted(data.glob("sites_*.csv")):
         for r in rd(f): where[r["site_id"]] = (f.name, f.stem.split("_", 1)[1], r)
     used = {r["evidence_id"] for f in data.glob("evidence*.csv") for r in rd(f)} | {r["evidence_id"] for r in rd(data / "archive_links.csv") if "evidence_id" in r}
+    idmap = {r["site_id"]: r["evidence_id"] for r in rd(IDMAP)}; nxt = max(int(v[4:]) for v in idmap.values()) + 1
     edits, ev = [], []
     for n, p in enumerate(packet):
         sid = p["site_id"]; fname, tag, r = where[sid]
         assert r["employee_band_site"] in ("", "unknown") or (a.append and r["employee_band_site"] == p["band"]), f"{sid}: band cell holds {r['employee_band_site']!r} on the base"   # `unknown` is the schema placeholder for no band (SCHEMA 4.5), as in the frame definition
         assert p["band"] in VOCAB and r["site_id"] == sid and r["operating_status"] == "active", sid
-        lab, measure, ref, note = label(p); eid = f"EVD-{EVD_FIRST + n:06d}"
-        assert EVD_FIRST + n <= EVD_LAST and eid not in used, f"{eid} not unique"
+        lab, measure, ref, note = label(p); eid = idmap.get(sid)
+        if eid is None: eid = f"EVD-{nxt:06d}"; nxt += 1
+        assert EVD_FIRST <= int(eid[4:]) <= EVD_LAST and eid not in used, f"{eid} not unique tree-wide"
         edits.append(dict(file=fname, row_id=sid, column="employee_band_site", old_sha256=sha(r["employee_band_site"]), new_value=p["band"], edit_class=f"BAND_SITE_{p['source'].upper()}", rationale=f"R13 source {p['r13_source']} {lab}; name match {p['name_match']}; packet.csv row {n + 2}"))
         notes = r["notes"]
         if a.append: notes = notes.split(" BAND-SOURCE: ")[0] if " BAND-SOURCE: " in notes else notes   # already applied: recompute the pre-edit notes
         edits.append(dict(file=fname, row_id=sid, column="notes", old_sha256=sha(notes), new_value=(notes.rstrip() + " " if notes.strip() else "") + f"BAND-SOURCE: employee_band_site={p['band']} from {note}", edit_class="BAND_SOURCE_NOTE", rationale="band provenance (source + date)"))
         ev.append(dict(evidence_id=eid, record_table="sites", record_id=sid, claim_type="size_band", claim_detail=f"employee_band_site={p['band']}: {lab}: {measure} in {p['band']} (band only, not a headcount)",
                        source_class="government_filing", source_ref=ref, observed_date=p["source_date"], tier_effect="supports_B", created_by=BY,
-                       notes=f"packet tasks/pic18-size-sprint-2026-11-22/packet.csv row {n + 2}; {p['name_match']} name match at an equal street; blank-only fill; shard {tag}", address_role=""))
+                       notes=f"packet tasks/pic18-size-sprint-2026-11-22/packet.csv row {n + 2}; {p['name_match']} name match at an equal street; fills a blank or `unknown` cell only; shard {tag}", address_role=""))
     assert len({e["evidence_id"] for e in ev}) == len(ev)
     cols = ["file", "row_id", "column", "old_sha256", "new_value", "edit_class", "rationale"]
     if not a.append:
         with open(HERE / "edits.csv", "w", newline="", encoding="utf-8") as f: w = csv.DictWriter(f, cols, lineterminator="\n"); w.writeheader(); w.writerows(edits)
     ecols = list(ev[0])
     with open(HERE / "evidence_rows.csv", "w", newline="", encoding="utf-8") as f: w = csv.DictWriter(f, ecols, lineterminator="\n"); w.writeheader(); w.writerows(ev)
-    print(f"{len(edits)} cell edits over {len(packet)} sites; {len(ev)} evidence rows {ev[0]['evidence_id']}..{ev[-1]['evidence_id']}")
+    gaps = sorted(set(idmap.values()) - {e["evidence_id"] for e in ev})
+    print(f"{len(edits)} cell edits over {len(packet)} sites; {len(ev)} evidence rows {ev[0]['evidence_id']}..{ev[-1]['evidence_id']}; ids left as gaps (un-applied rows, never reused): {len(gaps)} {gaps}")
     if a.append:
         by = {}
         for e in ev: by.setdefault(f"evidence_sites_{where[e['record_id']][1]}.csv", []).append(e)

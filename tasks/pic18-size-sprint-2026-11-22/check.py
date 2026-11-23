@@ -116,11 +116,29 @@ def check_applied(base, packet, data_dir="data"):
     if len(allids) != sum(len(list(csv.DictReader(open(f, newline="", encoding="utf-8")))) for f in glob.glob(f"{data_dir}/evidence*.csv")): errs.append("evidence ids are not unique tree-wide")
     return errs
 
+def reevaluate(packet, cache, orgs, sites):
+    """Re-run build.py's decision (classify + evaluate, level `suffix` = the ruled name rule) for every packet site from the Ohio-only cache; it must still be that fill."""
+    from collections import Counter, defaultdict
+    active = [s for s in sites if s["operating_status"] == "active"]; active_n = Counter(s["org_id"] for s in active); by_street = defaultdict(list)
+    sd = {s["site_id"]: s for s in sites}
+    for s in active:
+        if s["street_address"].strip(): s["_held"] = B.held_names(s, orgs); by_street[B.street_key(s["street_address"])].append(s)
+    ix = {k: B.index(B.unify(B.rd(f"{cache}/{f}.csv"), k)) for k, f in (("ita", "ita_oh"), ("insp", "insp_oh"), ("f5500", "f5500_oh"))}
+    errs = []
+    for p in packet:
+        s = sd[p["site_id"]]; held = B.held_names(s, orgs); s["_held"] = held
+        pk, nt = {}, {}
+        for kind in ix: pk[kind], nt[kind] = B.classify(s, held, ix[kind])
+        near = {k: w for k in nt if (w := B.would_be_band(k, nt[k]))}
+        r = B.evaluate(s, "suffix", pk, active_n, by_street, near, nt)
+        if r[0] != "fill" or r[1]["band"] != p["band"] or r[1]["source"] != p["source"]: errs.append(f"{p['site_id']}: matcher now says {r[0]} {r[1] if r[0] == 'hold' else (r[1]['source'], r[1]['band'])}, packet says {p['source']} {p['band']}")
+    return errs
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--packet", required=True); ap.add_argument("--raw", required=True)
-    ap.add_argument("--selftest", action="store_true"); ap.add_argument("--no-hash", action="store_true"); ap.add_argument("--base", help="git ref of the base tree: also check that data/ differs from it only by the packet"); a = ap.parse_args()
+    ap.add_argument("--selftest", action="store_true"); ap.add_argument("--no-hash", action="store_true"); ap.add_argument("--cache", help="Ohio-only cache dir (extract_oh.py output): also re-run the matcher's whole decision for every packet site"); ap.add_argument("--base-data", help="data dir of the base tree (the frame and the held names are computed on it); default data/"); ap.add_argument("--base", help="git ref of the base tree: also check that data/ differs from it only by the packet"); a = ap.parse_args()
     packet = list(csv.DictReader(open(a.packet, newline="")))
-    orgs, sites = B.load_atlas(); fr_ids = {r["site_id"] for r in csv.DictReader(open(HERE / "frame.csv"))}   # the frame was computed on the base (393c3895); data/ now holds the fills
+    orgs, sites = B.load_atlas(a.base_data); fr_ids = {r["site_id"] for r in csv.DictReader(open(HERE / "frame.csv"))}   # the frame was computed on the base (393c3895); data/ now holds the fills
     man = {}
     for ln in open(f"{a.raw}/MANIFEST.sha256"):
         h, _, pth = ln.rstrip("\n").partition("  "); man[pth] = h
@@ -142,6 +160,17 @@ def main():
         old = [dict(packet[0])]; old[0]["source_date"] = "2019-12-31"
         ok3 = any("source date" in e for e in run(old, a.raw, orgs, sites, fr_ids, man, False))
         print("selftest wrong band caught:", ok1, "| row from a different street caught:", ok2, "| stale source date caught:", ok3); bad = bad or not (ok1 and ok2 and ok3)
+    if a.cache:
+        errs2 = reevaluate(packet, a.cache, orgs, sites)
+        print(f"re-ran the matcher's whole decision for {len(packet)} packet sites (all three sources, every in-window conflict, parent names, partial plans, superseded filings): {len(errs2)} differences"); [print("  FAIL", e) for e in errs2[:20]]
+        bad = bad or bool(errs2)
+    # unit selftests of the rules added after review round 1
+    held = {"acme products": "Acme Products", "bigco": "parent:BigCo"}
+    t1 = B.name_class(held, ["BigCo Inc"])[0] == "parent_name_lead" and B.name_class(held, ["Acme Products Inc"])[0] == "exact"
+    t2 = bool(B.partial_plan({"plan_name": "ACME UNION LOCAL 12 PLAN", "cb": "", "welfare": "", "pension": "2J"})) and bool(B.partial_plan({"plan_name": "ACME WELFARE", "cb": "", "welfare": "4A", "pension": ""})) and not B.partial_plan({"plan_name": "ACME 401(K) PLAN", "cb": "", "welfare": "", "pension": "2J"})
+    ent = {"kind": "ita", "r": {"annual_average_employees": "400", "year_filing_for": "2024", "file": "x", "member": "", "row": 1, "rid": "1", "submitted": ""}, "names": ["Acme"], "st": "1 Main St"}
+    t3 = bool(B.window_conflicts({"ita": [(ent, "exact", "Acme")], "insp": [], "f5500": []}, 2, 1, "10-49")) and not B.window_conflicts({"ita": [(ent, "exact", "Acme")], "insp": [], "f5500": []}, 2, 1, "250-499")
+    print("selftest parent-only name never binds:", t1, "| partial plans are caught:", t2, "| an in-window source more than one band away is a conflict:", t3); bad = bad or not (t1 and t2 and t3)
     sys.exit(1 if bad else 0)
 
 if __name__ == "__main__": main()
