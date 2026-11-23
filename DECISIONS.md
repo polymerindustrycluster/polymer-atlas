@@ -261,3 +261,24 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Counting note (AGENTS §7):** the PIC-18 outcome frame of 794 is the owners of active tier A to C PIC-18 sites: 787
   organization records plus 7 ecosystem records. Earlier controller notes called it "794 organization rows".
 - **Decided by:** the repo owner, in the controller's session, 2026-11-23, as multiple choice.
+
+## 2026-11-23: round 19 rulings, trademarks and OpenCorporates as leads, a web arm for the process pilot, first-user task 5
+
+- **Trademark goods statements ("Leads only"):** a USPTO trademark goods statement never fills a market cell. One that names
+  a use sector ("gloves for medical use") queues the organization for its own-site page, and that page is the witness under
+  the round 16 ruling. Basis: the read-only market pilot (40 of the 316 PIC-18 market-unknown owners) met its pre-registered
+  floor exactly, 4 of 40 organizations with a reader-agreed term (rows: 8 agree, 2 disagree, 1 unresolved), but 6 of the 8
+  agreed rows rest on abandoned applications (3) or cancelled registrations (3), which show a past product line, not current
+  sales; the other 2 are live registrations (USPTO status 702). The owner was asked with "all 8", a controller error found in
+  review; the corrected count does not change the reason for the ruling, and the owner is told of the correction. The FDA food-contact
+  and drug master file lists and the NHTSA lists matched 0 of the 40 and are not used for market.
+- **OpenCorporates ("Leads only"):** an OpenCorporates result may point to a charter or a status; a fact enters `data/` only
+  after it is read at the state registry or another held source and cited there. OpenCorporates values never enter `data/`,
+  `tasks/` or a pull request. Basis: its terms require ODbL share-alike for data combined with ours, and `data/` is CC BY 4.0.
+- **Own-site pages in the process pilot ("Yes, pilot it"):** the process pilot adds an own-site web arm with the same
+  pre-registered design (40 owners, a 10% minimum yield, about 6 fetches per organization). This reopens, for a pilot only, the
+  company-page process route recorded as dropped in round 15; if the arm misses its floor, the route stays dropped.
+- **First-user task 5 ("Answered within ruling"):** "PIC-18 companies that are not PIC members" is graded Answered: under the
+  2026-11-01 ruling the site lists organizations not on the public member list, with its caveat, which is the most that public
+  data allows.
+- **Decided by:** the repo owner, in the controller's session, 2026-11-23, as multiple choice.
