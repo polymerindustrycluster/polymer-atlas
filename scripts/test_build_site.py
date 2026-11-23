@@ -1495,6 +1495,24 @@ class RefuteFixesTest(unittest.TestCase):
         for page in ("`directory.html`", "`experts.html`", "`skyline.html`", "`search.html`", "`map.html`"):
             self.assertIn(page, doc.split("## Preview locally")[1].split("## What is deliberately not published")[0])
 
+    def test_skyline_page_has_a_labelled_pause_button(self):
+        html = self.read("skyline.html")
+        self.assertRegex(html, r'<button class="btn" type="button" id="sky-play">Pause rotation</button>')
+
+    def test_404_base_comes_from_the_one_site_url_constant_and_howto_says_where_it_works(self):
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as tmp:
+            with patch.object(build_site, "SITE_URL", "https://example.org/atlas/"):
+                build_site.build_site(Path(self.tmp.name) / "f.db", Path(tmp) / "site", None, repo_url="https://example.com/repo",
+                                      git={"sha": "abc1234", "date": "2026-11-01", "dirty": False}, today="2026-11-01")
+            page = (Path(tmp) / "site" / "404.html").read_text(encoding="utf-8")
+        refs = re.findall(r'(?:href|src)="(/[^"]*)"', page)
+        self.assertTrue(refs)
+        self.assertTrue(all(r.startswith("/atlas/") for r in refs), [r for r in refs if not r.startswith("/atlas/")])   # moved with SITE_URL, nothing hardcoded
+        self.assertNotIn("/polymer-atlas/", page.replace("https://example.org/atlas/", ""))
+        doc = (Path(build_site.__file__).resolve().parent.parent / "docs" / "SITE_HOWTO.md").read_text(encoding="utf-8")
+        self.assertIn("`404.html` takes its base from `SITE_URL`", doc)
+
     def test_howto_publishing_recipes_build_the_graph_pages_and_no_claim_is_left_that_the_audit_refuted(self):
         doc = (Path(build_site.__file__).resolve().parent.parent / "docs" / "SITE_HOWTO.md").read_text(encoding="utf-8")
         self.assertNotRegex(doc, r"python3 scripts/build_site\.py\ncd build/site")

@@ -2343,6 +2343,7 @@ def build_skyline_page(ctx):
 </div>
 <div class="hero-legend"><span>Fewer sites</span><span class="ramp"></span><span>More</span><span>· hex ≈ 30 mi</span></div>
 <div class="hero-tools"><span class="hero-hint">Drag to rotate</span>
+<button class="btn" type="button" id="sky-play">Pause rotation</button>
 <button class="btn" type="button" data-sky-focus="us" aria-pressed="true">United States</button>
 <button class="btn" type="button" data-sky-focus="ohio" aria-pressed="false">Northeast Ohio</button></div>
 </div>

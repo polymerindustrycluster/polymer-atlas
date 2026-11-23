@@ -248,14 +248,22 @@ SKYLINE_JS = r"""(function () {
     place(0); scene.add(mesh);
     if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
 
-    // camera orbit (drag to rotate; gentle sway when idle)
+    // camera orbit: drag to rotate. A slow sway runs on its own only until the visitor takes over (a drag) or presses Pause rotation;
+    // nothing restarts it but the Play rotation button (WCAG 2.2.2). With prefers-reduced-motion the view starts still.
     var view = { az: -0.25, el: 0.95, dist: 1150, tx: 40, tz: 10 }, goal = { tx: 40, tz: 10, dist: 1150 };
-    var dragging = false, last = null, idleAt = 0, t0 = performance.now();
+    var dragging = false, last = null, t0 = performance.now(), playing = !reduced, swayAt = 0, lastNow = t0, onScreen = true, looping = false;
+    var playBtn = document.getElementById('sky-play');
+    function setPlaying(on) {
+      playing = on;
+      if (playBtn) playBtn.textContent = on ? 'Pause rotation' : 'Play rotation';   // the label names the action, so no pressed state
+    }
+    setPlaying(playing);
+    if (playBtn) playBtn.addEventListener('click', function () { setPlaying(!playing); });
     function resize() { var w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
     resize(); window.addEventListener('resize', resize);
     var el = renderer.domElement;
-    el.addEventListener('pointerdown', function (e) { dragging = true; last = [e.clientX, e.clientY]; el.setPointerCapture(e.pointerId); });
-    el.addEventListener('pointerup', function () { dragging = false; idleAt = performance.now(); });
+    el.addEventListener('pointerdown', function (e) { dragging = true; setPlaying(false); last = [e.clientX, e.clientY]; el.setPointerCapture(e.pointerId); });   // taking over stops the sway for good
+    el.addEventListener('pointerup', function () { dragging = false; });
     el.addEventListener('pointermove', function (e) {
       if (dragging) {
         view.az -= (e.clientX - last[0]) * 0.006; view.el = Math.max(0.35, Math.min(1.35, view.el + (e.clientY - last[1]) * 0.004));
@@ -287,16 +295,25 @@ SKYLINE_JS = r"""(function () {
     }
 
     function frame(now) {
+      if (!onScreen) { looping = false; return; }     // nothing is drawn while the view is off screen; the observer below restarts the loop
       var k = (now - t0) / 1000;
       if (k < 3) place(k);
-      if (!dragging && !reduced && now - idleAt > 2500) view.az = -0.25 + Math.sin(k * 0.12) * 0.42;
+      if (playing && !dragging) {
+        swayAt += (now - lastNow) / 1000;               // the sway's own clock, so Play carries on from where the view is
+        view.az += (-0.25 + Math.sin(swayAt * 0.12) * 0.42 - view.az) * 0.04;
+      }
+      lastNow = now;
       view.tx += (goal.tx - view.tx) * 0.06; view.tz += (goal.tz - view.tz) * 0.06; view.dist += (goal.dist - view.dist) * 0.06;
       camera.position.set(view.tx + view.dist * Math.cos(view.el) * Math.sin(view.az), view.dist * Math.sin(view.el), view.tz + view.dist * Math.cos(view.el) * Math.cos(view.az));
       camera.lookAt(view.tx, 0, view.tz);
       renderer.render(scene, camera);
       requestAnimationFrame(frame);
     }
-    requestAnimationFrame(frame);
+    function start() { if (!looping) { looping = true; lastNow = performance.now(); requestAnimationFrame(frame); } }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) { onScreen = entries[entries.length - 1].isIntersecting; if (onScreen) start(); }).observe(stage);
+    }
+    start();
   }
 })();
 """
