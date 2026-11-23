@@ -50,5 +50,38 @@ class SkylineTests(unittest.TestCase):
         self.assertTrue(p["borders"] and p["pic12"])
 
 
+class SkylineMotionTests(unittest.TestCase):
+    """WCAG 2.2.2: no automatic resume, a labelled pause/play, no drawing while off screen, a still view under reduced motion."""
+
+    js = sk.SKYLINE_JS
+
+    def test_nothing_restarts_the_rotation_by_itself(self):
+        self.assertNotIn("idleAt", self.js)                                 # the old idle timer that resumed the sway 2.5 s after a drag
+        self.assertNotIn("2500", self.js)
+        self.assertIn("pointerdown", self.js)
+        self.assertRegex(self.js, r"pointerdown'[^\n]*setPlaying\(false\)")      # taking over stops it
+        self.assertEqual(self.js.count("setPlaying(true)"), 0)
+        self.assertIn("playBtn.addEventListener('click', function () { setPlaying(!playing); })", self.js)   # only the button starts it again
+
+    def test_a_labelled_pause_play_button_is_wired(self):
+        self.assertIn("document.getElementById('sky-play')", self.js)
+        self.assertIn("'Pause rotation' : 'Play rotation'", self.js)
+
+    def test_reduced_motion_starts_still(self):
+        self.assertIn("playing = !reduced", self.js)
+        self.assertIn("if (playing && !dragging)", self.js)                 # the sway is the only motion that is not a response to the visitor
+
+    def test_growth_finishes_even_if_the_view_was_off_screen_during_the_first_seconds(self):
+        self.assertIn("else if (!grown) { place(k); grown = true; }", self.js)   # the growth clock is wall time: a late first frame still sets final heights
+
+    def test_a_failed_load_leaves_no_inert_pause_button(self):
+        self.assertIn("var pb = document.getElementById('sky-play'); if (pb) pb.hidden = true;", self.js)
+
+    def test_no_frames_are_drawn_while_the_view_is_off_screen(self):
+        self.assertIn("new IntersectionObserver", self.js)
+        self.assertIn("if (!onScreen) { looping = false; return; }", self.js)   # the loop ends, so no requestAnimationFrame is scheduled
+        self.assertIn("if (onScreen) start();", self.js)                        # and comes back when the view does
+
+
 if __name__ == "__main__":
     unittest.main()
