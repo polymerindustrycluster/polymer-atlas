@@ -329,7 +329,8 @@ SCRIPT = r"""(async () => {
     if (i < 0) { tip.hidden = true; return; }
     const s = S[i];
     tip.replaceChildren(document.createTextNode(s.n), Object.assign(document.createElement("small"), { textContent: `${O[s.o].l} · ${[s.c, s.s].filter(Boolean).join(", ")}` }));
-    tip.hidden = false; tip.style.left = Math.min(ev.clientX + 14, vw - 270) + "px"; tip.style.top = (ev.clientY + 14) + "px";
+    const box = cv.getBoundingClientRect();   // the tooltip sits inside the stage, so its position is relative to the stage, not the window
+    tip.hidden = false; tip.style.left = Math.min(ev.clientX - box.left + 14, vw - 270) + "px"; tip.style.top = Math.min(ev.clientY - box.top + 14, vh - 60) + "px";
   });
   cv.addEventListener("pointerleave", () => { $("tip").hidden = true; state.hover = -1; draw(); });
   cv.addEventListener("click", (ev) => { const i = pick(ev); selectOrg(i >= 0 ? S[i].o : -1, i); });

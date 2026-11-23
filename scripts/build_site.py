@@ -686,7 +686,7 @@ EXPERTS_JS = r"""(function () {
 SORTABLE_JS = r"""(function () {
   'use strict';
   // Progressive enhancement: click a column header to sort; long tables get a filter box.
-  // Tables opt out with data-nosort; rows with class "total" stay at the bottom.
+  // data-nosort: no sort buttons. data-nocsv: no download. data-nofilter: no filter box. Rows with class "total" stay at the bottom.
   function key(cell) {
     if (!cell) return { n: null, t: '' };
     var raw = (cell.getAttribute('data-sort') || cell.textContent || '').trim();
@@ -753,11 +753,11 @@ SORTABLE_JS = r"""(function () {
   }
   function enhance(table, idx) {
     var head = table.tHead, body = table.tBodies[0];
-    if (!head || !body || table.hasAttribute('data-nosort')) return;
+    if (!head || !body) return;
     var rows = Array.prototype.slice.call(body.rows);
     if (rows.length < 2) return;
     var ths = head.rows[head.rows.length - 1].cells;
-    Array.prototype.forEach.call(ths, function (th, col) {
+    if (!table.hasAttribute('data-nosort')) Array.prototype.forEach.call(ths, function (th, col) {   // data-nosort: no sort buttons; the toolbar stays
       var b = document.createElement('button');
       b.type = 'button'; b.className = 'sort';
       while (th.firstChild) b.appendChild(th.firstChild);
@@ -1113,8 +1113,9 @@ a.url{display:inline-block;max-width:15em;overflow:hidden;text-overflow:ellipsis
 .hero-static h1 em{font-style:normal;color:var(--lime)}
 .hero-static .lede{color:var(--on-deep-muted);max-width:40em;margin:0 0 var(--s-4)}
 .hero-static .hero-stats{margin:0 0 var(--s-5)}
-.hero-static .skyline-link{display:inline-block;margin-top:var(--s-4);color:var(--light-blue);font-weight:700}
-.hero-static .skyline-link:hover{color:#fff}
+.hero-static .hero-links{margin:var(--s-4) 0 0}
+.hero-static .hero-links a{color:var(--light-blue);font-weight:700}
+.hero-static .hero-links a:hover{color:#fff}
 
 /* ---- one table toolbar, above every table: count, filter, Download these rows (CSV), Copy link ---- */
 .tbar{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-4);align-items:center;margin:var(--s-4) 0 var(--s-2)}
@@ -1201,7 +1202,10 @@ main.viz{max-width:none;padding:0;position:relative;height:max(540px,calc(100svh
 
 MAP_JS = r"""(function () {
   'use strict';
-  var COLORS = {'1': '#0072B2', '2': '#E69F00', '3': '#009E73', '4': '#CC79A7', '5': '#6d4fb3', 'x': '#777777'};
+  // Ring colours come from the page's own tokens (--r1..--r5, --rx in style.css), so the dots, the key and every other page agree.
+  var COLORS = {};
+  function readColors() { var css = getComputedStyle(document.documentElement); ['1', '2', '3', '4', '5', 'x'].forEach(function (k) { COLORS[k] = css.getPropertyValue('--r' + k).trim(); }); }
+  readColors();
   var RING_NAMES = {'1': 'Core Producers & Processors', '2': 'Materials, Compounding & Formulated Polymers',
     '3': 'Value Chain', '4': 'Downstream OEMs & Heavy Users', '5': 'Ecosystem'};
   var status = document.getElementById('map-status');
@@ -1237,8 +1241,12 @@ MAP_JS = r"""(function () {
       var m = L.circleMarker([r[C.lat], r[C.lon]], {
         renderer: canvas, radius: 5, weight: 1, color: '#222', fillColor: COLORS[key] || COLORS.x, fillOpacity: 0.85
       });
+      m.ringKey = key;
       m.bindPopup(function () { return popup(r); });
       return m;
+    });
+    matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {   // the key follows the scheme; so do the dots
+      readColors(); markers.forEach(function (m) { m.setStyle({fillColor: COLORS[m.ringKey] || COLORS.x}); });
     });
 
     function popup(r) {
@@ -1818,6 +1826,8 @@ def build_directory_page(ctx, rows):
 <p class="lede">{fmt_int(n_orgs)} owners of active, tier A-C site rows in the 18 PIC counties: {fmt_int(n_orgs - n_eco)} organization records and
 {fmt_int(n_eco)} ecosystem records, with {fmt_int(n_sites)} such site rows. Each count below is owners with an active tier A-C site row in that county or ring.</p>
 {summary}
+<p>This page lists companies in the 18 PIC counties. For any other company in the Atlas, in any state,
+<a href="search.html">search every organization</a>.</p>
 <p class="small muted">An owner with site rows in more than one county or ring is counted in each, so these columns can
 add up to more than the All PIC-18 line. Counts are owners, not unique ultimate parents.</p>
 <noscript><p>Search, filters and the paged list need JavaScript. Without it, browse by county, {DIRECTORY_PAGE} rows a page, with street addresses:
@@ -1878,7 +1888,7 @@ def directory_static_pages(ctx, rows):
                 f'<a href="{names[n]}">Next {DIRECTORY_PAGE}</a>' if n < pages else "",
                 '<a href="../directory.html">Counts for all counties</a>'] if x)
             tbl = table_wrap(
-                f'<table data-nosort data-nofilter data-nocsv><caption>{esc(c)} County owners with an active tier A-C site row, '
+                f'<table data-nosort><caption>{esc(c)} County owners with an active tier A-C site row, '
                 f'rows {(n - 1) * DIRECTORY_PAGE + 1} to {(n - 1) * DIRECTORY_PAGE + len(part)} of {len(crows)}</caption><thead><tr>'
                 '<th scope="col">Owner</th><th scope="col">Street address</th><th scope="col">Ring</th><th scope="col">Site tier</th>'
                 f'<th scope="col">Process</th><th scope="col">Employees</th></tr></thead><tbody>{trs}</tbody></table>', f"{c} County owners")
@@ -1985,7 +1995,7 @@ every fact tied to a public source. Built in Akron for Northeast Ohio, growing n
 </div>
 <div class="cta"><a class="btn primary" href="directory.html">Find companies</a><a class="btn" href="map.html">Map</a>
 <a class="btn" href="counties/index.html">Counties</a></div>
-<a class="skyline-link" href="skyline.html">View the 3D skyline</a>
+<p class="hero-links"><a href="search.html">Search every organization, any state</a> · <a href="skyline.html">View the 3D skyline</a></p>
 </div>
 </section>
 
