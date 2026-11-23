@@ -62,6 +62,17 @@ def planted_defects():
         assert admitted('linkedin_url',[valid_link])
         assert admitted('newsroom_url',[valid_room])
         assert admitted('newsroom_feed_url',[valid_room,overlap_feed])
+        org['notes']="Website is the parent's."
+        for col,pages in [('linkedin_url',[valid_link]),('newsroom_url',[valid_room]),
+                          ('newsroom_feed_url',[valid_room,overlap_feed])]:
+            assert admitted(col,pages,patch.object(b,'site_identity_hold',return_value=''))
+            assert not admitted(col,pages),f'parent-site {col} escaped'
+        print('PASS: unique parent site admitted with identity guard disabled and held with it enabled')
+
+        org['notes']=''
+        owners['example.org'].add('SIBLING')
+        assert not admitted('newsroom_url',[valid_room])
+        assert not admitted('newsroom_feed_url',[valid_room,overlap_feed])
 
 
 def check_manifest(manifest,frozen):

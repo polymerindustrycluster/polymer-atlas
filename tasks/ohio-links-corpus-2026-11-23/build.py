@@ -20,6 +20,9 @@ OLD_FEED='https://www.provia.com/feed/'
 ARTICLE_FEED='https://www.provia.com/feed/?post_type=article'
 FIELDS=['org_id','legal_name','trade_names','website','status','verification_tier',*COLS]
 PUBLIC_FIELDS=[k for k in FIELDS if k not in ('legal_name','trade_names')]
+PARENT_HOLDS=HERE/'parent_site_holds.csv'
+PARENT_SITE=re.compile(r"\b(?:website is the parent['’]s|parent(?: company)?(?:['’]s)? "
+                       r"(?:own )?(?:site|homepage|global-network page))\b",re.I)
 
 def snapshot(path, ref=BASE):
     raw=subprocess.check_output(['git','show',ref+':'+str(path)],cwd=ROOT)
@@ -41,7 +44,7 @@ def frame():
     frame=[(p,r) for p,r in orgs if r['org_id'] not in seen and r['status']=='active'
            and r['website'].strip().lower().startswith(('http://','https://'))
            and (p=='organizations_OH.csv' or r['org_id'] in ohio)]
-    rows=sorted(({k:r[k] for k in FIELDS} for _,r in frame),key=lambda r:r['org_id'])
+    rows=sorted(({k:r[k] for k in [*FIELDS,'notes']} for _,r in frame),key=lambda r:r['org_id'])
     assert (len(rows),sum(p=='organizations_OH.csv' for p,_ in frame),
             *(sum(not r[c] for r in rows) for c in COLS))==(748,717,717,701,728)
     return rows
@@ -198,8 +201,16 @@ def feed_candidates(row,pages):
            if own_url(urljoin(p['final_url'],href),owner) and 'comments' not in href.lower()}
     return room,feeds
 
-def candidates(row,pages,owners):
-    own=row['website'];loaded=loaded_pages(row,pages)
+def site_identity_hold(row,owners):
+    if PARENT_SITE.search(row.get('notes','')):
+        return 'Need an exact-entity navigation witness; the Atlas record cites a parent site.'
+    if owners.get(li.domain(row['website']))!={row['org_id']}:
+        return 'Need exact entity bridge; multiple held entities share website domain.'
+    return ''
+
+def candidates(row,pages,owners,review_hold=''):
+    loaded=loaded_pages(row,pages)
+    identity_hold=review_hold or site_identity_hold(row,owners)
     result=[]
     for col in COLS:
         if row[col]:continue
@@ -207,11 +218,11 @@ def candidates(row,pages,owners):
                           else 'Need a link to a recognized own-domain newsroom index.')
         if not loaded:reason='Need a reachable own-domain page that can be retained under the privacy rule.'
         elif row['status']!='active':reason='Need active exact-entity website verification.'
+        elif identity_hold:reason=identity_hold
         elif col=='linkedin_url':
             # All company anchors detect ambiguity; only proven header/footer anchors can fill.
             allvalues={li.canonical(h) for p,b in loaded for h,l in news.Links(b).links if li.canonical(h)}
             if len(allvalues)>1:reason='Need one company slug; stored pages link multiple company slugs.'
-            elif owners.get(li.domain(own))!={row['org_id']}:reason='Need exact entity bridge; multiple held entities share website domain.'
             else:
                 for p,b in loaded:
                     for a in li.Links(b).links:
@@ -250,7 +261,13 @@ def proposals(inputs,manifest):
     for rows in [*tables().values(),read(ROOT/'data/ecosystem.csv')]:
         for r in rows:
             if r.get('website'):owners[li.domain(r['website'] if '://' in r['website'] else 'https://'+r['website'])].add(r['org_id'])
-    return [v for r in inputs for v in candidates(r,groups[r['org_id']],owners)]
+    reviewed=read(PARENT_HOLDS)
+    holds={(r['org_id'],r['website']):r['settling_fact'] for r in reviewed}
+    assert len(holds)==len(reviewed) and all(holds.values())
+    assert holds.keys()<={(r['org_id'],r['website']) for r in inputs},'stale parent-site hold'
+    return [v for r in inputs for v in candidates(r,groups[r['org_id']],owners,
+                                                  holds.get((r['org_id'],r['website']),''))]
+
 def repair_row(manifest):
     row=next(r for r in snapshot('data/organizations_OH.csv') if r['org_id']==REPAIR)
     assert row['newsroom_feed_url']==OLD_FEED
