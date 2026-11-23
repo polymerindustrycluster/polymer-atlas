@@ -555,3 +555,35 @@ Main `DECISIONS.md` records “23 of the 42 PRs, all from `agent/spaghetti/*` br
 > company-plant agreement 435 orgs / 796 cells HELD: SCHEMA 4.4 says do not backfill site to parent, which contradicts the owner's pick: needs a dated revision and a tier ruling.
 
 > Parent = union of sites, but do not backfill a site's process to Parent unless Parent claims it corporately — note in field source
+
+## H. Round 13 and review routing
+
+### H1. Stored region label and residual Ohio rows
+
+**Owner ruling** · `BOARD.md` line 2255, item 1. The stored-field definition is carried in PR #470 at `a6963c31`, `DECISIONS.md` and `docs/SCHEMA.md` §4.4. The `ohio_statewide` packet is for the consistency follow-up branch. Its PR had yet to open at the time of writing.
+
+> Region label: "PIC-18 exactly": the stored hq_in_scope value ne_ohio means the HQ county is in PIC-18; Carroll and Holmes are not ne_ohio; the 79 rows still carrying the undefined value ohio_statewide with a named Ohio county outside PIC-18 get ohio_other in a follow-up packet, 5 with no county stay held.
+
+### H2. Corporation from a legal-name suffix
+
+**Owner ruling** · **ledger only**, `BOARD.md` line 2255, item 2. Implementation is for the consistency follow-up branch. Its PR had yet to open at the time of writing.
+
+> Company type: "Add 'corporation'": a plain corporation value in entity_type, filled only from Inc, Incorporated, Corp or Corporation at the end of the legal name; public or private is not guessed; Co, Company and Ltd stay unknown.
+
+### H3. Display the union of company and plant values
+
+**Owner ruling** · **ledger only**, `BOARD.md` line 2255, item 3. Implementation is assigned to branch `agent/codex/union-display-2026-11-22` in the controller’s `briefs/w1122/union-display.md`. The branch had yet to be pushed at the time of writing.
+
+> Plant values: "Show, don't copy": data unchanged; the company page and the release export show the union of the company's and its plants' processes, materials and markets, as SCHEMA 4.4 defines the parent; the held org-site-agreement packet is dropped.
+
+### H4. Rules checker fix and limited confirmation
+
+**Owner ruling** · **ledger only**, `BOARD.md` line 2255, item 4. The implementation PR is #466, `scripts/check_pr_rules.py` and `scripts/test_check_pr_rules.py`.
+
+> Rules PR #466: "Fix that one bug, then merge": the lane fixes the input-file lookup with Codex's counterexample as a test, Codex confirms that test only.
+
+### H5. Review messages and new heads
+
+**Controller ruling** · **ledger only**, `BOARD.md` line 2257.
+
+> a reviewer sends BLOCKING findings straight to the builder lane in one message and sends the controller only the verdict line. A builder sends a new head to the controller only, never to a reviewer (a message to the Gemini clerk steers its live turn).
