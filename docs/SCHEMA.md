@@ -1646,14 +1646,16 @@ and the capture falls within the two calendar years ending on the row's
 `activity` or `scope` claim type. Record the original company URL in
 `source_ref`, the exact capture and its date in the §4.22 archive link,
 and the archived route in `claim_detail`. Every archived proof uses this
-date window. An older capture stays a lead.
+date window. An older capture stays a lead. Every web proof must have an
+`observed_date` within 30 calendar days of the committer date on GitHub's merge commit for the PR.
 
 Each own-site web row submitted for admission carries a line in the
 `tasks/<folder>/BINDING_PROOF.csv` named by its `created_by` label. Use
 the `PROOF_COLS` header and `claim_sha256(row)` in
 `scripts/check_evidence_binding.py`. The digest binds the claim, quote,
 observation date, source URL and class, and tier effect. The record
-must exist on the base tree and hold the same website in the PR.
+must exist on the base tree and hold the same website in the PR. A web
+proof cannot serve a record that is new in the same PR.
 The capture is the original live HTTPS URL or the indexed Wayback URL
 with `id_` after its timestamp. Hash the response bytes after gzip
 decoding and record the zero-based Unicode character offset from

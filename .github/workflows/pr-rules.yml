@@ -68,7 +68,10 @@ jobs:
           out=/tmp/gate-out; mkdir -p "$out"
           git fetch --no-tags -q origin "+refs/pull/$PR/head:refs/remotes/pr/$PR"   # anonymous: the repository is public
           head=$(git rev-parse "refs/remotes/pr/$PR")
-          [ "$(git -C pr rev-parse HEAD^2)" = "$head" ] || { echo "merge ref is not the current PR head: stale, failing"; exit 1; }
+          if ! merge_parent=$(git -C pr rev-parse --verify HEAD^2) || [ "$merge_parent" != "$head" ]; then
+            echo "merge ref cannot be inspected for the current PR head"
+            exit 2
+          fi
           echo "$head" > "$out/head"
       - name: Run main's binding gate on the PR tree
         run: |
@@ -78,13 +81,14 @@ jobs:
             echo "gate not yet on main (scripts/check_evidence_binding.py is absent): cannot inspect" | tee -a "$log"
             echo cannot_inspect > "$out/state"; exit 0
           fi
+          read -r head < "$out/head" || exit 2
           worst=0
           for mode in --verify-proofs --provenance-since; do
-            echo "== python3 scripts/check_evidence_binding.py $mode $BASE --tree pr" | tee -a "$log"
+            echo "== python3 scripts/check_evidence_binding.py $mode $BASE --tree pr --pr-head $head" | tee -a "$log"
             if ! python3 scripts/check_evidence_binding.py --help 2>&1 | grep -q -- "$mode"; then
               echo "main's gate has no $mode: cannot inspect" | tee -a "$log"; r=2
             else
-              timeout 1500 python3 scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr 2>&1 | tee -a "$log"
+              timeout 1500 python3 scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr --pr-head "$head" 2>&1 | tee -a "$log"
               r=${PIPESTATUS[0]}
             fi
             echo "exit $r" | tee -a "$log"

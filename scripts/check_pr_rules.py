@@ -357,12 +357,11 @@ def post_check(head_sha, rc, text, name="pr-rules", conclusion=None, title=None)
     return r.returncode == 0
 
 
-GATE_STATES = {"passed": "success", "not_yet": "success", "failed": "failure", "cannot_inspect": "failure"}
+GATE_STATES = {"passed": "success", "failed": "failure", "cannot_inspect": "failure"}
 
 
 def publish_gate(dirpath, pr_number):
-    """Post the binding-gate job's result (head, state, log files in `dirpath`) as the check run `binding-gate`.
-    `not_yet` (the gate is not on main, so nothing was checked) posts success with that stated in the summary; nothing is neutral."""
+    """Post the binding-gate result for the pinned PR head."""
     d = Path(dirpath)
     head, state = (d / "head").read_text().strip(), (d / "state").read_text().strip()
     log = (d / "log").read_text(errors="replace") if (d / "log").exists() else ""
@@ -373,8 +372,7 @@ def publish_gate(dirpath, pr_number):
     if live != head:
         print(f"PR head moved ({head[:8]} -> {live[:8]}): not posting a result for a stale head")
         return 0
-    title = "binding-gate: NOT CHECKED (gate not yet on main)" if state == "not_yet" else None  # a pass that inspected nothing
-    return 0 if post_check(head, 0, f"binding gate: {state}\n{log}", "binding-gate", GATE_STATES[state], title) else 1
+    return 0 if post_check(head, 0, f"binding gate: {state}\n{log}", "binding-gate", GATE_STATES[state]) else 1
 
 
 def write_baseline(ref):

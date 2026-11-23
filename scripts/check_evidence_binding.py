@@ -30,7 +30,7 @@ Every evidence row gets exactly one verdict:
   HELD            a structured row with no demonstrated conflict where a leg did not match positively:
                   held_for_reading:<legs> (name_with_parenthetical, name_equals_parent_key, address_with_parenthetical,
                   designator_not_on_both_sides, street_suffix_unexplained, locality_not_read, locality_not_matched, passes_on_two_records).
-                  A web proof for a record absent from the base is also HELD.
+                  Web proofs are HELD for records absent from the base or observations outside the merge commit date window.
   READ_REQUIRED   a web quote awaiting a valid, replayed per-row proof in tasks/<folder>/BINDING_PROOF.csv.
   UNINSPECTABLE   no_quote, other_table, record_not_found, unknown_source_family, parse_failed, operator_not_a_name,
                   no_civic_number. No admission path here either.
@@ -43,14 +43,16 @@ field. A recorded parent's name never binds, on any path (DECISIONS.md, 2026-11-
 Usage:
   python3 scripts/check_evidence_binding.py --all [--head REF | --tree DIR] [--out verdicts.csv]
   python3 scripts/check_evidence_binding.py --new-since origin/main [--tree DIR]   # PR gate: rows added or changed
-  python3 scripts/check_evidence_binding.py --verify-proofs origin/main [--tree DIR]  # same gate with capture replay
+  python3 scripts/check_evidence_binding.py --verify-proofs origin/main [--tree DIR --pr-head SHA]  # same gate with capture replay
   python3 scripts/check_evidence_binding.py --provenance-since origin/main [--tree DIR]  # tasks/<folder>/check.py exists
   python3 scripts/check_evidence_binding.py --sample 20 --seed 7 [--since origin/main]  # audit only, admits nothing
 --new-since and --verify-proofs both replay captures and exit 1 on any non-PASS. Exit 2 = could not check.
 --all and --sample report the mechanical verdicts without fetching captures.
 
 --tree DIR reads data/ and tasks/ from DIR, an untrusted checkout of the PR; the rules and this code come from the
-trusted checkout that runs it. Nothing from DIR is executed: --provenance-since checks that check.py is present; the
+trusted checkout that runs it. Web proof replay uses the GitHub merge commit in the checkout and checks its
+second parent against --pr-head when a pinned PR head is supplied.
+Nothing from DIR is executed: --provenance-since checks that check.py is present; the
 replay it performs is run by the lane and by the reviewing family.
 """
 import argparse
@@ -113,8 +115,11 @@ NUMBER_WORDS.update(zip("first second third fourth fifth sixth seventh eighth ni
 
 # ---------------------------------------------------------------- loading
 
-def git(*args):
-    return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True, check=True).stdout
+def git(*args, worktree=None):
+    cmd = ["git", "-C", str(worktree or ROOT)]
+    if worktree is not None:
+        cmd.append("--git-dir=.git")
+    return subprocess.run([*cmd, *args], capture_output=True, text=True, check=True).stdout
 
 
 def data_files(ref, pattern):
@@ -970,6 +975,19 @@ def proof_date(value):
     return date.fromisoformat(value)
 
 
+def merge_committer_date(merge, pr_head):
+    if TREE != ROOT and not pr_head:
+        raise ValueError("--pr-head is required to replay proofs from --tree")
+    parents, day = git("show", "--no-patch", "--format=%P%n%cs", "--end-of-options", f"{merge}^{{commit}}",
+                       "--", worktree=TREE).splitlines()
+    parents = parents.split()
+    if len(parents) != 2:
+        raise ValueError("web proof replay requires a two-parent merge commit")
+    if pr_head and parents[1] != pr_head:
+        raise ValueError("merge commit's second parent differs from the pinned PR head")
+    return proof_date(day)
+
+
 def same_page(a, b):
     """Compare original page URLs using §4.22's scheme, www and trailing slash allowances."""
     def page(url):
@@ -978,7 +996,7 @@ def same_page(a, b):
     return page(a) == page(b)
 
 
-def proof_capture(r, ev, idx, base_idx, archive):
+def proof_capture(r, ev, idx, base_idx, archive, observed):
     """Validate the cited page and date before the trusted job makes a request."""
     cap = r["capture"]
     url = capture_url(cap)
@@ -993,7 +1011,6 @@ def proof_capture(r, ev, idx, base_idx, archive):
             raise ValueError("Wayback id_ capture must match the row's archive link")
         if captured != datetime.strptime(m[1], "%Y%m%d%H%M%S").date() or captured != proof_date(archive["captured_at"]):
             raise ValueError("capture date differs from the archive index or timestamp")
-        observed = proof_date(ev.get("observed_date", ""))
         oldest = observed.replace(year=observed.year - 2, day=28 if observed.month == 2 and observed.day == 29
                                   else observed.day)
         if not oldest <= captured <= observed:
@@ -1016,7 +1033,7 @@ def proof_capture(r, ev, idx, base_idx, archive):
     return cap
 
 
-def proof_problem(r, ev, idx, base_idx, archive, builder, fetch):
+def proof_problem(r, ev, idx, base_idx, archive, observed, builder, fetch):
     if r["record_id"] != ev["record_id"] or r["claim_sha256"] != claim_sha256(ev):
         return "proof record_id or claim_sha256 differs from the evidence row"
     if r["verdict"] != "VERIFIED":
@@ -1032,7 +1049,7 @@ def proof_problem(r, ev, idx, base_idx, archive, builder, fetch):
     if len(quote) < 20:
         return "quote must contain at least 20 characters"
     try:
-        url = proof_capture(r, ev, idx, base_idx, archive)
+        url = proof_capture(r, ev, idx, base_idx, archive, observed)
     except ValueError as e:
         return str(e)
     try:
@@ -1051,7 +1068,7 @@ def proof_problem(r, ev, idx, base_idx, archive, builder, fetch):
     return ""
 
 
-def check_proofs(results, evs, idx, load_base, archive, read, fetch):
+def check_proofs(results, evs, idx, load_base, merge, pr_head, archive, read, fetch):
     """Replay proofs only for web rows that cleared the existing mechanical floor."""
     need = defaultdict(list)
     for row in results:
@@ -1062,6 +1079,7 @@ def check_proofs(results, evs, idx, load_base, archive, read, fetch):
     if not need:
         return []
     base_idx = load_base()
+    merge_date = None
     problems, cache = [], {}
 
     def cached_fetch(url):
@@ -1093,8 +1111,19 @@ def check_proofs(results, evs, idx, load_base, archive, read, fetch):
             if eid not in proofs:
                 problems.append(f"{eid}: no proof line in {path}")
                 continue
+            if merge_date is None:
+                merge_date = merge_committer_date(merge, pr_head)
+            ev = evs[eid]
+            try:
+                observed = proof_date(ev.get("observed_date", ""))
+            except ValueError:
+                result.update(verdict="HELD", reason="invalid observed_date")
+                continue
+            if abs((observed - merge_date).days) > 30:
+                result.update(verdict="HELD", reason="observed_date more than 30 days from merge commit committer date")
+                continue
             at, row = proofs[eid]
-            why = proof_problem(row, evs[eid], idx, base_idx, archive.get(eid), builder, cached_fetch)
+            why = proof_problem(row, ev, idx, base_idx, archive.get(eid), observed, builder, cached_fetch)
             if why:
                 problems.append(f"{at}: {eid}: {why}")
             else:
@@ -1157,6 +1186,7 @@ def main(argv=None):
     src.add_argument("--head", help="git ref to read instead of the working tree")
     src.add_argument("--tree", metavar="DIR", help="read data/ and tasks/ from DIR (an authoritative run: this "
                                                    "script and its rules come from the trusted checkout)")
+    ap.add_argument("--pr-head", help="pinned PR head SHA to verify against the merge commit second parent")
     ap.add_argument("--out", help="write per-row verdicts to this CSV")
     a = ap.parse_args(argv)
     TREE = Path(a.tree).resolve() if a.tree else ROOT
@@ -1198,8 +1228,9 @@ def main(argv=None):
             archive, problems = archive_index(rows(a.head, "archive_links.csv"))
             if not problems:
                 problems = check_proofs(results, {e["evidence_id"]: e for e in evs}, idx, lambda: Index.load(base),
-                                        archive, lambda path: tasks_file(a.head, path), fetch_url)
-        except (csv.Error, UnicodeError, OSError, subprocess.CalledProcessError) as e:
+                                        a.head or "HEAD", a.pr_head, archive,
+                                        lambda path: tasks_file(a.head, path), fetch_url)
+        except (csv.Error, ValueError, OSError, subprocess.CalledProcessError) as e:
             print(f"binding gate: could not inspect proof inputs: {e}")
             return 2
     if a.out:
