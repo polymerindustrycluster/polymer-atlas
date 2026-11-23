@@ -1,0 +1,31 @@
+{
+ "script-only": {
+  "fei lost from row": 64,
+  "fei+": 132,
+  "frs lost from row": 288,
+  "frs+": 1158,
+  "name-mention lost from row": 75,
+  "name-mention+": 359,
+  "reader pieces": 20937,
+  "rows": 12222,
+  "settling+": 1,
+  "street lost": 881,
+  "street+": 3932,
+  "tomb+": 14,
+  "warn+": 14
+ },
+ "worst-case": {
+  "fei lost from row": 132,
+  "fei+": 132,
+  "frs lost from row": 525,
+  "frs+": 1158,
+  "name-mention lost from row": 350,
+  "name-mention+": 359,
+  "rows": 12222,
+  "settling+": 1,
+  "street lost": 3650,
+  "street+": 3932,
+  "tomb+": 14,
+  "warn+": 14
+ }
+}
