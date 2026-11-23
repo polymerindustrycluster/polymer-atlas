@@ -26,8 +26,8 @@ Every number below comes from `python3 tasks/evidence-binding-gate-2026-11-22/ch
 
 | Verdict | Meaning | Reasons |
 | --- | --- | --- |
-| PASS | **Structured sources only.** The quoted operator is a name the record itself holds, by exact `name_key` of the whole field; a site-name part counts only when it holds the organization's own name tokens. On a site row whose street passes, a held name followed only by corporate-form words also binds, unless it is a recorded parent's name (owner ruling 2026-11-22). For a site row, `scripts/matching.py` `same_street()` holds, and a quoted city or state equals the site's. For an organization `address` row, the source states the entity's own address (USAspending recipient, SBIR firm) and the quoted city and state are the record's headquarters. | — |
-| FAIL | The quote is about something else. No waiver exists. | `name_not_held`, `street_differs`, `unit_differs`, `state_differs`, `city_differs`, `record_no_street`, `quote_no_street`, `hq_from_facility_or_permit`, `hq_from_s5_identity_source`, `hq_city_state_differs`; web: `not_own_site`, `street_absent_from_quote`, `unit_differs` (several may join with `+`) |
+| PASS | **Structured sources only.** The quoted operator is a name the record itself holds, by exact `name_key` of the whole field; a site-name part counts unless every token in it is a generic label. On a site row whose street passes, a held name followed only by corporate-form words also binds (owner ruling 2026-11-22). A recorded parent's name never binds. For a site row, `scripts/matching.py` `same_street()` holds, and a quoted city or state equals the site's. For an organization `address` row, the source states the entity's own address (USAspending recipient, SBIR firm) and the quoted city and state are the record's headquarters. | — |
+| FAIL | The quote is about something else. No waiver exists. | `name_not_held`, `parent_name_lead` (the filing names only a recorded parent: a lead to be read), `street_differs`, `unit_differs`, `state_differs`, `city_differs`, `record_no_street`, `quote_no_street`, `hq_from_facility_or_permit`, `hq_from_s5_identity_source`, `hq_city_state_differs`; web: `not_own_site`, `street_absent_from_quote`, `unit_differs` (several may join with `+`) |
 | READ_REQUIRED | A web quote that the mechanical tests did not fail. A web quote is never PASS. | `mechanics_clear`, `no_record_website`, `name_absent_from_quote`, `web_record_no_street`, `record_street_no_civic_number`, `web_class_untested` |
 | UNINSPECTABLE | The gate cannot read the row. It is never a pass. | `no_quote`, `other_table`, `record_not_found`, `unknown_source_family`, `parse_failed`, `operator_not_a_name`, `no_civic_number` |
 
@@ -45,9 +45,16 @@ A PR is admitted only when every row it adds or changes is PASS. A FAIL, READ_RE
   The derivation uses the same `same_street()`, so the building rule reaches it too. Re-derived on the #463 extracts against the 393c3895 site shards, all 7,196 site pairs are unchanged (2,632 populated, 4,564 empty), and `tasks/last-activity-street-leg-2026-11-22/check.py` passes.
 - **City and state** (Codex r2 finding 2). The city and state printed after the street are read with or without a ZIP ("…, DOVER, OH 44101", "…, DOVER, TX", "…, DOVER OHIO", "…, DAYTON"). A quoted state other than the site's is FAIL `state_differs`, as a two-letter code or a full state name. A quoted city other than the site's is FAIL `city_differs`. City names are compared as spellings of one name, never as nearby places: Mt/St/Ft/Pk spelled out, "City of X" and a trailing Township/City/Town/Village/Borough dropped, spaces ignored ("MC COOK" is McCook), ECHO's "SPRINGFIELD, TOWNSHIP OF" read as Springfield, and either name of a record city written "Killingly (Dayville)". A quoted county is not a city and is not compared. A mailing city that differs from the record's city fails: the gate cannot tell a mailing city from another place.
 - **Operator.** A permittee, operator or establishment field is one name. It is never split on commas, so "Other Operator, Acme Polymer" does not match Acme Polymer. On a permit, the operator is the permittee, not the facility label.
-- **Site-name parts** (Codex r2 finding 3). A site name yields keys: the whole name, the name less its trailing locality, and each " - " part that is not the city. A key counts as the operator's name only when it holds every token of one of the organization's own names (legal or trade name, after `name_key`). So "Acme Polymer - Plant 2" holds "acme polymer plant 2" and "acme polymer", never "plant 2"; a permit naming only "Plant 2", "Main Plant", "Warehouse" or a locality fails `name_not_held`. Read literally, the rule also drops a site part that is a short brand or a division ("Tamarack" on a site of Tamarack Rubber Company, a division's name on its parent's site); see the owner questions for the count.
-- **Corporate-form words** (owner ruling 2026-11-22, `DECISIONS.md`). On a site row whose street already passes `same_street()`, a quoted name also binds when a held name is a leading run of it and every extra token is one of: Inc, Incorporated, LLC, L.L.C., Corp, Corporation, Co, Company, Ltd, Limited, LP, LLP, Holdings, Holding, Group, US, USA, U.S., North America, Americas. The rule is `matching.corporate_form_extension()`. It does not apply to web rows, to organization rows (they have no street test), or to predecessor or notes-only names. **A quoted name equal to a recorded parent's or ultimate parent's name never passes through it** (Codex r2 finding 4): "Acme Polymer Holdings" on a site of Acme Polymer whose ultimate parent is Acme Polymer Holdings is FAIL `name_not_held`, `name_alt` `parent;corporate_form`. "Acme Polymer Services" fails, and so does the fleet-services affiliate on EVD-455899.
-- **Other parsing.** Quote parsing uses an explicit table of source families (ECHO, OSHA, FMCSA, state entity files, USAspending, SBIR and nine state permit layers); any other source is `unknown_source_family`. A permittee field with no letters (`operator_not_a_name`) is the NC DEQ layer's shifted columns.
+- **Site-name parts** (Codex r2 finding 3; owner ruling 2026-11-22, "drop generic labels only"). A site name yields keys: the whole name, the name less its trailing locality, and each " - " part that is not the city. A key is ignored as a held name only when every token in it is a generic label from the one fixed list in `scripts/matching.py` (`GENERIC_LABELS`, `generic_label()`):
+  - facility words: plant, facility, warehouse, works, site, office, HQ, headquarters, building, unit;
+  - a number or ordinal (2, #2, 2nd, two, second, and "No." / "Number" before it);
+  - a compass word (north, NE, …);
+  - a US state, by name or code (the 50 states and DC);
+  - the site's own city or county.
+
+  Any other part (a brand, a division, a trading name) counts as a held name. So a permit naming only "Plant 2", "North Works", the site's city or its county fails `name_not_held`, while "Tamarack" on a site of Tamarack Rubber Company binds. "Main" is not on the owner's list, so "Main Plant" counts as a name.
+- **Corporate-form words** (owner ruling 2026-11-22, `DECISIONS.md`). On a site row whose street already passes `same_street()`, a quoted name also binds when a held name is a leading run of it and every extra token is one of: Inc, Incorporated, LLC, L.L.C., Corp, Corporation, Co, Company, Ltd, Limited, LP, LLP, Holdings, Holding, Group, US, USA, U.S., North America, Americas. The rule is `matching.corporate_form_extension()`. It does not apply to web rows, to organization rows (they have no street test), or to predecessor or notes-only names. "Acme Polymer Services" fails, and so does the fleet-services affiliate on EVD-455899.
+- **Parent names** (Codex r2 finding 4; owner ruling 2026-11-22, "fail everywhere"). A filing that names only a recorded parent or ultimate parent (or that name plus corporate-form words), and none of the operator organization's own names, never binds a subsidiary's record by machine, on any path, including when the parent's name is part of the site name. It is FAIL `parent_name_lead`: a lead to be read. "Acme Polymer Holdings" on a site of Acme Polymer whose ultimate parent is Acme Polymer Holdings fails this way, whether or not the site is named "Acme Polymer Holdings - Elm Works". - **Other parsing.** Quote parsing uses an explicit table of source families (ECHO, OSHA, FMCSA, state entity files, USAspending, SBIR and nine state permit layers); any other source is `unknown_source_family`. A permittee field with no letters (`operator_not_a_name`) is the NC DEQ layer's shifted columns.
 
 ### Web quotes: FAIL or READ_REQUIRED, never PASS (ruling A)
 
@@ -112,64 +119,65 @@ Counts below are evidence rows.
 
 **`main` today (393c3895, after #463):** 47,416 rows. 0 PASS, 207 FAIL, 2,776 READ_REQUIRED and 44,433 UNINSPECTABLE. Under ruling A no web row passes, and every PASS on `main` was a web row. 41,461 of the UNINSPECTABLE rows carry no quote. A PR that added all of `main` would fail on all 47,416: 207 FAIL and 47,209 held. 6,744 of the held rows have an archive capture the follow-up's per-row proof could cite.
 
-**`main` at 8f30ce0f** (the branch cut, still holding batches 5 and 6): 81,510 rows. 19,495 PASS, 14,324 FAIL, 3,120 READ_REQUIRED and 44,571 UNINSPECTABLE.
+**`main` at 8f30ce0f** (the branch cut, still holding batches 5 and 6): 81,510 rows. 20,565 PASS, 13,248 FAIL, 3,120 READ_REQUIRED and 44,577 UNINSPECTABLE.
 
 **Quarantined batches** (rows PRs #457 and #458 added, 4ee02127 → 17834918):
 
 | `created_by` | Rows | PASS | FAIL | READ_REQUIRED | UNINSPECTABLE |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| spaghetti-batch5-2026-11-22 | 10,352 | 6,632 (64.1%) | 3,536 (34.2%) | 176 | 8 |
-| spaghetti-batch6-2026-11-22 | 23,564 | 12,863 (54.6%) | 10,571 (44.9%) | 0 | 130 |
+| spaghetti-batch5-2026-11-22 | 10,352 | 6,800 (65.7%) | 3,366 (32.5%) | 176 | 10 |
+| spaghetti-batch6-2026-11-22 | 23,564 | 13,765 (58.4%) | 9,665 (41.0%) | 0 | 134 |
 | spaghetti-burndown-batch1-2026-11-21 (re-added in #457) | 122 | 0 | 6 | 116 | 0 |
 | spaghetti-burndown-batch2-2026-11-21 (re-added in #457) | 56 | 0 | 4 | 52 | 0 |
-| **Both PRs** | **34,094** | **19,495 (57.2%)** | **14,117 (41.4%)** | **344** | **138** |
+| **Both PRs** | **34,094** | **20,565 (60.3%)** | **13,041 (38.3%)** | **344** | **144** |
 
-482 rows are held (READ_REQUIRED or UNINSPECTABLE) and fail the gate. 344 of them have an archive capture at 17834918.
+488 rows are held (READ_REQUIRED or UNINSPECTABLE) and fail the gate. 344 of them have an archive capture at 17834918.
 
 FAIL, READ_REQUIRED and UNINSPECTABLE reasons in the batches, by row:
 
 | Reason | Rows |
 | --- | ---: |
-| `name_not_held` | 5,562 |
-| `street_differs` | 3,346 |
-| `record_no_street` | 2,672 |
-| `name_not_held+street_differs` | 678 |
+| `name_not_held` | 4,418 |
+| `street_differs` | 3,538 |
+| `record_no_street` | 2,710 |
 | `hq_from_s5_identity_source` | 627 |
-| `quote_no_street` | 418 |
+| `name_not_held+street_differs` | 484 |
+| `quote_no_street` | 432 |
 | web READ_REQUIRED: `mechanics_clear` 166, `web_record_no_street` 139, `web_class_untested` 17, `no_record_website` 13, `name_absent_from_quote` 9 | 344 |
-| `name_not_held+record_no_street` | 296 |
-| `city_differs` (new this round) | 144 |
-| `name_not_held+city_differs` | 110 |
+| `name_not_held+record_no_street` | 246 |
+| `city_differs` (new this round) | 152 |
+| `name_not_held+city_differs` | 102 |
 | `operator_not_a_name` (UNINSPECTABLE) | 98 |
-| `name_not_held+quote_no_street` | 82 |
+| `parent_name_lead` (new this round; 16 more with another reason) | 68 |
 | `hq_from_facility_or_permit` | 74 |
-| other `city_differs` combinations (with `street_differs` 28, `record_no_street` 10, three-way 30, `quote_no_street` 2) | 70 |
-| `no_civic_number` (UNINSPECTABLE) | 36 |
+| `name_not_held+quote_no_street` | 68 |
+| other `city_differs` combinations (with `street_differs` 30, `record_no_street` 10, three-way 26, `quote_no_street` 2) | 68 |
+| `no_civic_number` (UNINSPECTABLE) | 42 |
 | web FAIL: `not_own_site` 15, `street_absent_from_quote` 5 | 20 |
 | `unit_differs` | 14 |
 | other (`parse_failed` 4, two `name_not_held+unit_differs`, two mixed HQ rows) | 8 |
 
-Round two failed 12,857 of these rows; round three fails 14,117. By a one-off run of the round-two gate (c6b6f83b) on the same rows, which `check.py` cannot reproduce because that code is gone, the 1,260 more are 1,254 round-two PASS rows that now fail (1,098 on the name alone, 144 on the city alone, 8 on both, 4 on a suite) and 6 round-two `no_civic_number` rows that now fail on the name. 324 rows carry `city_differs` in all, some of which already failed in round two for another reason. No batch row quotes another state, and no corporate-form name in the batches is a recorded parent's.
+Round two failed 12,857 of these rows; round three fails 13,041. By a one-off run of the round-two gate (c6b6f83b) on the same rows, which `check.py` cannot reproduce because that code is gone, the 184 more are all round-two PASS rows: 152 quote another city, 24 name only a recorded parent (`parent_name_lead`; 10 of them bound through a site-name part), 4 state another suite, and 4 name only a generic label. 324 rows carry `city_differs` in all, most of which already failed in round two for another reason. No batch row quotes another state.
 
 By source family (PASS / FAIL / READ_REQUIRED / UNINSPECTABLE):
 
 | Source family | PASS | FAIL | READ_REQUIRED | UNINSPECTABLE |
 | --- | ---: | ---: | ---: | ---: |
-| EPA ECHO | 8,392 | 8,108 | 0 | 26 |
-| OSHA | 6,632 | 3,526 | 0 | 8 |
+| EPA ECHO | 9,226 | 7,270 | 0 | 30 |
+| OSHA | 6,800 | 3,356 | 0 | 10 |
 | FMCSA Company Census | 1,787 | 480 | 0 | 2 |
 | state-entity-files-bulk | 580 | 344 | 0 | 0 |
 | USAspending bulk | 667 | 4 | 0 | 0 |
-| TCEQ Central Registry | 203 | 437 | 0 | 0 |
-| PA DEP | 294 | 266 | 0 | 2 |
+| TCEQ Central Registry | 209 | 431 | 0 | 0 |
+| PA DEP | 310 | 250 | 0 | 2 |
 | Ohio EPA | 60 | 478 | 0 | 0 |
-| NC DEQ ArcGIS | 171 | 177 | 0 | 98 |
+| NC DEQ ArcGIS | 181 | 167 | 0 | 98 |
 | URL (web quote) | 0 | 20 | 344 | 0 |
-| CA DTSC | 284 | 78 | 0 | 0 |
-| CA SWRCB | 196 | 46 | 0 | 0 |
+| CA DTSC | 308 | 54 | 0 | 0 |
+| CA SWRCB | 204 | 38 | 0 | 0 |
 | SBIR/STTR bulk | 91 | 81 | 0 | 2 |
-| IN IGMAP | 94 | 42 | 0 | 0 |
-| NJDEP | 44 | 18 | 0 | 0 |
+| IN IGMAP | 96 | 40 | 0 | 0 |
+| NJDEP | 46 | 16 | 0 | 0 |
 | GA EPD | 0 | 12 | 0 | 0 |
 
 ## Web quotes on `main` today
@@ -216,25 +224,25 @@ The first cut is `S/audits/2026-11-22-binding-test/binding.py`, whose `verdicts.
 
 | First cut → this gate | Rows |
 | --- | ---: |
-| PASS → PASS | 19,367 |
-| FAIL → FAIL | 9,335 |
-| PASS → FAIL | 4,754 |
+| PASS → PASS | 20,423 |
+| FAIL → FAIL | 9,321 |
+| PASS → FAIL | 3,696 |
 | FREETEXT → READ_REQUIRED | 2,832 |
 | OTHER_TABLE / NO_QUOTE → UNINSPECTABLE | 1,441 (804 / 637) |
-| FREETEXT → FAIL (web tests) | 231 |
-| PASS → UNINSPECTABLE | 120 |
-| FAIL → PASS | 116 |
-| FAIL → UNINSPECTABLE | 18 |
-| FREETEXT → PASS (ECHO quotes the first cut did not parse) | 12 |
+| FREETEXT → FAIL (web tests) | 227 |
+| FAIL → PASS | 126 |
+| PASS → UNINSPECTABLE | 122 |
+| FAIL → UNINSPECTABLE | 22 |
+| FREETEXT → PASS (ECHO quotes the first cut did not parse) | 16 |
 
-The first cut's FAIL share on the batch rows reproduces at 9,469 / 34,094 = **27.8%**, the 28% the brief cites. On the same rows this gate fails 41.4%.
+The first cut's FAIL share on the batch rows reproduces at 9,469 / 34,094 = **27.8%**, the 28% the brief cites. On the same rows this gate fails 38.3%.
 
-- **Stricter (PASS → FAIL, 4,754).**
-  - The first cut accepted any token subset, which passed a held name inside another name and a parent's name two levels up. This gate requires exact `name_key` equality of the whole field with a name the record holds, and a site-name part only with the organization's name tokens.
+- **Stricter (PASS → FAIL, 3,696).**
+  - The first cut accepted any token subset, which passed a held name inside another name and a parent's name two levels up. This gate requires exact `name_key` equality of the whole field with a name the record holds, a site-name part only when it is not a generic label, and never a recorded parent's name.
   - The first cut passed facility-label matches.
   - The first cut never checked the city or the source of a headquarters claim against SCHEMA §4.8 S-5.
-- **Looser (FAIL → PASS, 116).** The first cut's OSHA parser misread a suite in its own comma part, a city printed twice and a 4-digit ZIP. Its ECHO test rejected number-word streets ("One … Drive").
-- **PASS → UNINSPECTABLE (120).** 98 are the NC DEQ shifted-column rows. The rest are equal street keys that name no place, such as a building number, and ECHO quotes the gate does not parse.
+- **Looser (FAIL → PASS, 126).** The first cut's OSHA parser misread a suite in its own comma part, a city printed twice and a 4-digit ZIP. Its ECHO test rejected number-word streets ("One … Drive").
+- **PASS → UNINSPECTABLE (122).** 98 are the NC DEQ shifted-column rows. The rest are equal street keys that name no place, such as a building number, and ECHO quotes the gate does not parse.
 
 ## The false-PASS side
 
@@ -243,9 +251,9 @@ The batch PASS rows, by which held name the whole quoted name matched:
 | Name basis | Rows |
 | --- | ---: |
 | A name of the operator organization | 18,121 |
-| The site name's leading part (holding the organization's name tokens) | 366 |
-| The full site name or another part of it (holding the organization's name tokens) | 880 |
-| A held name plus corporate-form words, street passing, not a parent's (owner ruling) | 128 |
+| The site name's leading part (not a generic label) | 1,278 |
+| The full site name or another part of it (not a generic label) | 996 |
+| A held name plus corporate-form words, street passing (owner ruling) | 170 |
 
 **PASS means that the quote binds to the record, not that the row is admissible.** Tier ceilings and address roles remain the validator's and the integrator's job.
 
@@ -253,13 +261,13 @@ The batch PASS rows, by which held name the whole quoted name matched:
 
 The gate implements the strict reading. Each alternative is measured on the batch rows; none of them passes in the gate. "Would pass" means the row's only defect is the one named.
 
-1. **Site-name parts that are a short brand or a division** (new, from the finding-3 rule). Read literally, the rule keeps a site-name part only when it holds every token of one of the organization's names. Measured with this round's city rule held fixed, it fails 940 of the 1,306 PASS rows that bound on the site name's leading part, 116 of the 996 that bound on the full site name or another part, and 42 of the 170 corporate-form rows whose held base was such a part: 1,098 rows. (Against round two's own 998 `site_name_other` PASS rows, 118 change: these 116, and 2 that now fail `city_differs`.) They are mostly a division or acquired brand named on its parent's site (a subsidiary plastics brand on its holding company's plant) and short brands ("Tamarack" for Tamarack Rubber Company). A narrower reading, dropping a part only when every token is a label word (plant, main, warehouse, facility, building, division, north, …), a number or the city, would keep 1,096 of the 1,098. **In the batches the bare-label case Codex built (finding 3) occurs at most 2 times; the literal rule's cost is the other 1,096.** Your ruling: literal (as implemented), or the label-vocabulary reading?
-2. **A held name plus more words** (`leading_run`). **Ruled 2026-11-22 for corporate-form words only** (see "Structured rows"). After the ruling and this round's rules, 1,543 rows still fail with a held name plus other words as their only defect, for example "ARMACOR LLC-CONOVER PLANT" against Armacor (modelled on EVD-445712). Plant words and other extensions stay open. The fleet-services affiliate on EVD-455899 still fails.
-3. **Permit facility label when the permittee differs:** 134 rows would pass. Examples: EVD-457497 and EVD-456891.
-4. **A parent's name** (parent chain or `ultimate_parent_name`): 58 rows would pass. Through the corporate-form rule a parent's name now fails (finding 4); no batch row was affected. **Open:** a site whose name holds its parent's name still binds that name as a site-name part, since the part holds the organization's tokens: 10 batch PASS rows bind this way (e.g. EVD-440581, EVD-439543). The ruling as worded covers only the corporate-form path; should a parent's name fail on every path?
-5. **A predecessor or other name found only in the record's notes:** 1,818 `name_not_held` rows match, and 1,502 of them have no other defect (more than round two's 770, because many site-name parts that no longer count also appear in notes). The list is [notes_name_rows.csv](notes_name_rows.csv) (evidence_id, path:line at 17834918, record_id; no notes text). Codex's read found EVD-437869 an apparent match of this kind.
-6. **Dotted initials** ("A.B.C." against "ABC"): 136 rows would pass. This is a `name_key` limit.
-7. **One comma part of a name field** (`comma_part`): 108 rows would pass if a held name as one comma part counted, as in OSHA's "ESTABLISHMENT, COMPANY". The same reading would pass "Other Operator, Acme Polymer", which is why it does not.
+1. **Site-name parts. Ruled 2026-11-22, "drop generic labels only"** (see "Structured rows"). The stricter reading first implemented this round (a part must hold the organization's name tokens) failed 1,098 round-two PASS rows. Under the ruling 1,080 of them pass and 18 still fail. 4 name only a generic label: a city plus a number (EVD-430449, EVD-430450) and a state plus "Plant" (EVD-435129, EVD-435130). The other 14 name only a recorded parent and fail `parent_name_lead` (EVD-449039, EVD-449040, EVD-439981, EVD-439982, EVD-449191, EVD-449192, EVD-457602, EVD-457603, EVD-441695, EVD-441696, EVD-445455, EVD-445456, EVD-434357, EVD-434358). The list is [finding3_still_fail.csv](finding3_still_fail.csv). "Main" is not on the owner's label list, so a part such as "Main Plant" counts as a name; say if it should be added.
+2. **A held name plus more words** (`leading_run`). **Ruled 2026-11-22 for corporate-form words only** (see "Structured rows"). After the ruling and this round's rules, 1,755 rows still fail with a held name plus other words as their only defect, for example "ARMACOR LLC-CONOVER PLANT" against Armacor (modelled on EVD-445712). Plant words and other extensions stay open. The fleet-services affiliate on EVD-455899 still fails.
+3. **Permit facility label when the permittee differs:** 154 rows would pass. Examples: EVD-457497 and EVD-456891.
+4. **A parent's name. Ruled 2026-11-22, "fail everywhere".** A filing naming only a recorded parent or ultimate parent never binds a subsidiary's record by machine; it fails `parent_name_lead`, a lead to be read. 84 batch rows fail this way (68 with no other defect). All 10 rows that bound through a site-name part holding the parent's name in this round's earlier build now fail `parent_name_lead`: EVD-440581, EVD-440582, EVD-439543, EVD-439544, EVD-456592, EVD-456593, EVD-451209, EVD-451210, EVD-451881, EVD-451882.
+5. **A predecessor or other name found only in the record's notes:** 842 `name_not_held` rows match, and 722 of them have no other defect. The list is [notes_name_rows.csv](notes_name_rows.csv) (evidence_id, path:line at 17834918, record_id; no notes text). Codex's read found EVD-437869 an apparent match of this kind.
+6. **Dotted initials** ("A.B.C." against "ABC"): 126 rows would pass. This is a `name_key` limit.
+7. **One comma part of a name field** (`comma_part`): 118 rows would pass if a held name as one comma part counted, as in OSHA's "ESTABLISHMENT, COMPANY". The same reading would pass "Other Operator, Acme Polymer", which is why it does not.
 8. **A mailing city** (new, from the finding-2 rule). 324 batch rows quote a city other than the record's, after spelling normalisation. Many are a mailing or postal city for the physical one ("Los Angeles" for City of Commerce, "Covington" for Fort Wright, a county name excluded); the gate cannot tell a mailing city from another place, so they fail. Examples: EVD-441995, EVD-450131.
 9. **Street-key limits** (reported, not widened), counted over the 4,064 rows whose reason includes `street_differs`:
 
@@ -275,9 +283,9 @@ The gate implements the strict reading. Each alternative is measured on the batc
    Codex's read adds two classes the strict reading fails: a filing that lists several suites, one of them the record's (EVD-443124 / SITE-019015), and a record street split into words ("Ind US Trial", EVD-437185 and EVD-432164).
 10. **Not open: headquarters from identity-only sources.** SCHEMA §4.8 S-5 already rules on this. These 627 rows (343 state-entity, 284 FMCSA) fail under an existing owner ruling. The count is kept for the record.
 11. **USAspending and SBIR as headquarters sources** (332 rows pass). A UEI can be registered for a single plant, and an SBIR address dates from the award year. Whether USAspending counts as SAM under R-SAM (2026-11-16, lifted for the public SAM extract on 2026-11-22) is your ruling.
-12. **Shifted columns** (NC DEQ, 98 rows): 74 would pass if the facility label were read as the operator.
+12. **Shifted columns** (NC DEQ, 98 rows): 90 would pass if the facility label were read as the operator.
 13. **Web quotes.** No web row passes; these are measured on `main` today.
-    - 58 `not_own_site` rows sit on a host that carries a held name (a sister or regional domain).
+    - 60 `not_own_site` rows sit on a host that carries a held name (a sister or regional domain).
     - 14 `street_absent_from_quote` rows show the street once spacing is ignored ("Bragg Ridge" against "Braggridge").
     - `registry` and `government_filing` web rows have no test of their own (111 rows on `main`, `web_class_untested`).
 14. **Codex's 30-row read of the round-one FAIL rows** (follow-up 1). Codex drew 30 FAIL rows, one per reason stratum plus 15 allocated by stratum size, with `Random(20261122)`. It read them against the historical records:
@@ -294,8 +302,8 @@ The replay runs `replay.py` over the last 40 first-parent commits on `main` up t
 
 | Commit | Subject | Rows | PASS | FAIL | READ_REQUIRED | UNINSPECTABLE | Held | … with an archive link | Binding gate | Provenance |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 178349185 | Merge pull request #458 from polymerindustrycluster/agent/sp | 23,564 | 12,863 | 10,571 | 0 | 130 | 130 | 0 | fail | fail |
-| 6a76e923f | Merge pull request #457 from polymerindustrycluster/agent/sp | 10,530 | 6,632 | 3,546 | 344 | 8 | 352 | 344 | fail | fail |
+| 178349185 | Merge pull request #458 from polymerindustrycluster/agent/sp | 23,564 | 13,765 | 9,665 | 0 | 134 | 134 | 0 | fail | fail |
+| 6a76e923f | Merge pull request #457 from polymerindustrycluster/agent/sp | 10,530 | 6,800 | 3,376 | 344 | 10 | 354 | 344 | fail | fail |
 | 4924083cd | R2 re-capture recovery mint: 39 evidence rows + 39 archive l | 39 | 0 | 8 | 31 | 0 | 31 | 31 | fail | fail |
 | 4ea038848 | Phase C unit 3: 22 accuracy corrections (EVD-425415..425436  | 22 | 0 | 0 | 0 | 22 | 22 | 22 | fail | fail |
 | b99fd9e1e | Burn-down batch 4: R1 re-witness mint — 240 evidence rows +  | 240 | 0 | 24 | 216 | 0 | 216 | 216 | fail | fail |
@@ -318,9 +326,9 @@ The replay runs `replay.py` over the last 40 first-parent commits on `main` up t
 | 6c29fa6c4 | IPEDS CIP fills: 26 degree programs (EVD-400340..EVD-400365) | 26 | 0 | 0 | 0 | 26 | 26 | 0 | fail | fail |
 | 209be678e | Evidence backfill wave 1: 734 tier-A people existence witnes | 734 | 0 | 0 | 0 | 734 | 734 | 0 | fail | fail |
 | d48ce7e6a | Hygiene sweep (audit F11): Farathane duplicate merged, APT s | 5 | 0 | 0 | 0 | 5 | 5 | 0 | fail | fail |
-| **24 commits** | | **38,315** | **19,495** | **14,320** | **2,832** | **1,668** | **4,500** | **2,907** | 0 pass | 0 pass |
+| **24 commits** | | **38,315** | **20,565** | **13,244** | **2,832** | **1,674** | **4,506** | **2,907** | 0 pass | 0 pass |
 
-- **Binding gate.** None of the 24 commits would have passed. 4,500 rows were held, and 2,907 of them had an archive capture.
+- **Binding gate.** None of the 24 commits would have passed. 4,506 rows were held, and 2,907 of them had an archive capture.
 - **Provenance.** No commit's labels meet the folder rules, so all 24 fail. This is the baseline the rule starts from, not a defect in the rule.
 - **Migration commit.** SCHEMA v1.19 (4ee02127) added the empty `address_role` column to every evidence shard. Because an absent column counts as empty, it edits no row, and it does not appear in the table.
 
@@ -334,8 +342,8 @@ Tests are in `scripts/test_check_evidence_binding.py` unless noted. Each class w
 | --- | --- | --- | --- | --- |
 | 1. A reading for one organization admits another's row | follow-up branch | Moved: bind the reading to evidence_id, record_id and a quote hash | — | — |
 | 2. "Ste. 300" vs Suite 100, Building A vs B, Dayton vs Dover, Dover TX with no ZIP all passed | this PR | Designator-only comma parts stay with the street; `matching.designators_conflict()` (suite/unit and building); city and state read with or without a ZIP; a city conflict is FAIL `city_differs` | `Verdicts.test_designators_and_place_conflicts`, `test_other_state_fails`, `test_shared_building_other_suite`; `test_matching.SameStreet.test_designators` | no_unit_test, no_building_test (in matching.py), designator_part_dropped, no_state_test, state_needs_zip, no_city_test |
-| 3. "Plant 2" passed as the operator of "Acme Polymer - Plant 2" | this PR | A site-name key counts only when it holds an organization name's tokens | `Verdicts.test_bare_site_label_is_not_the_operator` | bare_site_labels |
-| 4. "Acme Polymer Holdings", the recorded ultimate parent, passed through the corporate-form rule | this PR | A corporate-form name equal to a recorded parent's or ultimate parent's name is FAIL | `Verdicts.test_corporate_form_extension` | parent_corporate_form |
+| 3. "Plant 2" passed as the operator of "Acme Polymer - Plant 2" | this PR | A site-name part made only of generic labels (owner's fixed list in `matching.GENERIC_LABELS`, or the site's city or county) is not a held name | `Verdicts.test_bare_site_label_is_not_the_operator` ("Plant 2", the city, the county, "North Works", a state); `test_matching.GenericLabels` (one test per word class) | bare_site_labels, no_label_words (in matching.py) |
+| 4. "Acme Polymer Holdings", the recorded ultimate parent, passed through the corporate-form rule | this PR | A filing naming only a recorded parent (or parent + corporate-form words) fails `parent_name_lead` on every path, including through the site name | `Verdicts.test_parent_name_is_a_lead_on_every_path`, `test_corporate_form_extension`, `test_parent_name_is_strict_fail` | parent_binds, parent_form_binds |
 | 5. A folder's `check.py` ran unconfined | follow-up branch | Removed here: provenance is presence only, nothing is executed | `GateMechanics.test_provenance_rules` (presence only) | provenance_borrowed_folder |
 | 6. The trusted path does not verify archive bytes | follow-up branch | Moved: the trusted workflow runs archive verification and fails closed, never a neutral skip | — | — |
 | Follow-up: gzip captures | follow-up branch | Moved: decode gzip on Wayback `id_` responses | — | — |
@@ -379,12 +387,12 @@ Also tested: the owner's corporate-form rule (`Verdicts.test_corporate_form_exte
 
 | Check | Command | Result |
 | --- | --- | --- |
-| Gate unit tests | `cd scripts && python3 -m unittest test_check_evidence_binding` | 73 tests OK. They use synthetic strings shaped like real rows. They include the Codex counterexamples and a known-answer replay of batch 6: `--new-since` and `--provenance-since` both exit 1, and the real EVD-431716 row is not PASS. |
-| Street and corporate-form tests | `cd scripts && python3 -m unittest test_matching test_derive_last_activity` | 7 tests OK |
+| Gate unit tests | `cd scripts && python3 -m unittest test_check_evidence_binding` | 74 tests OK. They use synthetic strings shaped like real rows. They include the Codex counterexamples and a known-answer replay of batch 6: `--new-since` and `--provenance-since` both exit 1, and the real EVD-431716 row is not PASS. |
+| Street and corporate-form tests | `cd scripts && python3 -m unittest test_matching test_derive_last_activity` | 13 tests OK |
 | Last-activity derivation | `python3 tasks/last-activity-street-leg-2026-11-22/check.py` | PASS; all 7,196 site pairs unchanged by the building rule (2,632 populated) |
 | This folder's check | `python3 tasks/evidence-binding-gate-2026-11-22/check.py` | 120 numbers OK |
-| Leak guard (inside `check.py`) | — | 0 of 229 segments occur in any `claim_detail` at 17834918. A planted real fragment is caught. |
-| Mutation check (inside `check.py`) | — | 22 loosenings, each caught by at least one failing test. Failing tests per loosening: token subset names 8, comma split names 2, corporate form any word 4, number only streets 2, no unit test 3, no building test 1, designator part dropped 1, state as floor 1, no state test 2, no city test 1, state needs zip 1, bare site labels 1, parent corporate form 1, hq from any source 2, web pass 7, web any domain 3, web platform as domain 2, web civic only 3, web no unit test 1, web name unchecked 1, edit some columns 1, provenance borrowed folder 1 |
+| Leak guard (inside `check.py`) | — | 0 of 231 segments occur in any `claim_detail` at 17834918. A planted real fragment is caught. |
+| Mutation check (inside `check.py`) | — | 24 loosenings, each caught by at least one failing test. Failing tests per loosening: token subset names 9, comma split names 2, corporate form any word 6, number only streets 2, no unit test 3, no building test 1, designator part dropped 1, state as floor 1, no state test 2, no city test 1, state needs zip 1, bare site labels 1, no label words 1, parent binds 3, parent form binds 1, hq from any source 2, web pass 7, web any domain 3, web platform as domain 2, web civic only 3, web no unit test 1, web name unchecked 1, edit some columns 1, provenance borrowed folder 1 |
 | Replay | `python3 tasks/evidence-binding-gate-2026-11-22/replay.py` | Writes `replay.csv`, the table above |
 
 The remaining repository checks are recorded in the PR.

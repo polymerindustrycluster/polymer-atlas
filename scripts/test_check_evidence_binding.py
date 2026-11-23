@@ -124,6 +124,8 @@ SITES = [
      "street_address": "321 Oak Street, Building A"},
     {"site_id": "S-PLANT2", "org_id": "ORG-15", "site_name": "Acme Polymer - Plant 2", "city": "Dover", "state": "OH",
      "street_address": "77 Kiln Rd"},
+    {"site_id": "S-PHOLD", "org_id": "ORG-15", "site_name": "Acme Polymer Holdings - Elm Works", "city": "Dover",
+     "state": "OH", "county": "Tuscarawas", "street_address": "9 Elm Rd"},  # a site named for its parent
     {"site_id": "S-ZIP", "org_id": "ORG-15", "site_name": "Acme Polymer - Zip", "city": "Dover", "state": "OH",
      "street_address": "43000 Oak Street"},
     {"site_id": "S-PAGES", "org_id": "ORG-16", "site_name": "Acme Molding - Plant", "city": "Dover", "state": "OH",
@@ -271,10 +273,8 @@ class Verdicts(unittest.TestCase):
                           "FAIL", "name_not_held")
         self.assertIn("facility_label", info["name_alt"])
 
-    def test_parent_name_is_strict_fail(self):  # parent's name on a subsidiary's site; owner question
-        info = self.check(ev("S-PIN", ITA, "Pinecrest Industries, 4471 Tanner Dr, Lancaster, PA 17699"),
-                          "FAIL", "name_not_held")
-        self.assertIn("parent", info["name_alt"])
+    def test_parent_name_is_strict_fail(self):  # parent's name on a subsidiary's site: a lead, never a machine bind
+        self.check(ev("S-PIN", ITA, "Pinecrest Industries, 4471 Tanner Dr, Lancaster, PA 17699"), "FAIL", "parent_name_lead")
 
     def test_predecessor_in_notes_is_strict_fail(self):  # EVD-450005: predecessor named only in notes
         info = self.check(ev("S-MER", RCRA, "EASTGATE POLYMERS US; 2650 PRAIRIE BLVD, LONGVIEW, TX 75699" + ECHO_TAIL),
@@ -328,12 +328,11 @@ class Verdicts(unittest.TestCase):
         self.check(ev("S-RR", TCEQ, permit("Riverbend Medical Fleet Services, LLC", "X", "5155 N GARNER ST, ROUND ROCK, "
                                            "TX 78699")), "FAIL", "name_not_held")  # EVD-455899 shape stays FAIL
         self.check(ev("S-PIN", ITA, "Pinecrest Industries Group, 4471 Tanner Dr, Lancaster, PA 17699"), "FAIL",
-                   "name_not_held")  # a parent's name plus a form word: the base must be a held name
+                   "parent_name_lead")  # a parent's name plus a form word
         info = self.check(ev("S-PIN", ITA, "Pinecrest Foam Holdings, 4471 Tanner Dr, Lancaster, PA 17699"), "PASS")
         self.assertEqual(info["name_basis"], "corporate_form")  # the rule as ruled: held "Pinecrest Foam" + Holdings
-        info = self.check(ev("S-OAK3", ITA, "Acme Polymer Holdings, 321 Oak St, Dover, OH 44699"), "FAIL",
-                          "name_not_held")  # Codex r2 finding 4: the recorded ultimate parent's own name
-        self.assertEqual(info["name_alt"], "parent;corporate_form")
+        self.check(ev("S-OAK3", ITA, "Acme Polymer Holdings, 321 Oak St, Dover, OH 44699"), "FAIL",
+                   "parent_name_lead")  # Codex r2 finding 4: the recorded ultimate parent's own name
 
     def test_permittee_is_one_name(self):  # Codex 5: "Other Operator, Acme Polymer" in a permittee field
         self.check(ev("S-OAK3", TCEQ, permit("Other Operator, Acme Polymer", "DOVER", "321 OAK ST, DOVER, OH 44699")),
@@ -374,14 +373,20 @@ class Verdicts(unittest.TestCase):
         self.check(ev("S-BLDG", OSHA, "TAMARACK RUBBER CO, 518 FENWICK GROVE RD BLDG 1, WEST FENWICK TWP, OH 44299"),
                    "PASS")  # "Twp" and "Mt." are spellings, not other places
 
-    def test_bare_site_label_is_not_the_operator(self):  # owner split / Codex r2 finding 3
-        info = self.check(ev("S-PLANT2", TCEQ, permit("Plant 2", "X", "77 KILN RD, DOVER, OH 44699")),
-                          "FAIL", "name_not_held")
-        self.assertNotIn("site_name", info.get("name_basis", ""))
+    def test_bare_site_label_is_not_the_operator(self):  # owner ruling 2026-11-22, "drop generic labels only"
+        for name in ("Plant 2", "Dover", "Tuscarawas County", "North Works", "Ohio"):  # labels, city, county, state
+            info = self.check(ev("S-PHOLD", TCEQ, permit(name, "X", "9 ELM RD, DOVER, OH 44699")), "FAIL", "name_not_held")
+            self.assertNotIn("name_basis", info, name)
+        self.check(ev("S-PLANT2", TCEQ, permit("Plant 2", "X", "77 KILN RD, DOVER, OH 44699")), "FAIL", "name_not_held")
         info = self.check(ev("S-PLANT2", TCEQ, permit("Acme Polymer Plant 2", "X", "77 KILN RD, DOVER, OH 44699")), "PASS")
         self.assertEqual(info["name_basis"], "site_name_other")  # the label beside the operator's own name still binds
-        self.check(ev("S-AVON", ITA, "Tamarack, 736 Hollis Rd, Sheffield Lake, OH 44098"), "FAIL",
-                   "name_not_held")  # the ruling read literally: a short brand lacks the organization's other tokens
+        info = self.check(ev("S-AVON", ITA, "Tamarack, 736 Hollis Rd, Sheffield Lake, OH 44098"), "PASS")
+        self.assertEqual(info["name_basis"], "site_name_lead")  # a brand or short trading name is a held name
+
+    def test_parent_name_is_a_lead_on_every_path(self):  # owner ruling 2026-11-22, "fail everywhere"
+        for name in ("Acme Polymer Holdings", "Acme Polymer Holdings Inc"):  # in the site name, and + a form word
+            self.check(ev("S-PHOLD", TCEQ, permit(name, "X", "9 ELM RD, DOVER, OH 44699")), "FAIL", "parent_name_lead")
+        self.check(ev("S-PHOLD", TCEQ, permit("Acme Polymer", "X", "9 ELM RD, DOVER, OH 44699")), "PASS")
 
     def test_osha_four_digit_zip(self):  # EVD-430557: the ZIP lost its leading zero
         self.check(ev("S-CT", ITA, "Kestrel Molding LLC, 77 Marsh St Ext, East Haven, CT 6599"), "PASS")

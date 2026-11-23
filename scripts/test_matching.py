@@ -96,6 +96,35 @@ class SameStreet(unittest.TestCase):
         self.assertFalse(dl.same_street("321 Oak St, Building A", "321 Oak St, Building B"))
 
 
+class GenericLabels(unittest.TestCase):  # owner ruling 2026-11-22, "drop generic labels only": one test per word class
+    def test_facility_words(self):
+        for w in dl.GENERIC_LABELS["facility"]:
+            self.assertTrue(dl.generic_label(w), w)
+        self.assertTrue(dl.generic_label("plant warehouse"))
+
+    def test_numbers_and_ordinals(self):
+        for k in ("plant 2", "plant no 2", "plant #2", "2nd plant", "plant two", "third building", "unit 4"):
+            self.assertTrue(dl.generic_label(k), k)
+
+    def test_compass_words(self):
+        for w in dl.GENERIC_LABELS["compass"]:
+            self.assertTrue(dl.generic_label(f"{w} plant"), w)
+
+    def test_us_states(self):
+        for k in ("ohio", "oh", "north carolina", "new york plant", "west virginia works"):
+            self.assertTrue(dl.generic_label(k), k)
+        self.assertFalse(dl.generic_label("puerto rico"))  # a territory is not on the list
+
+    def test_city_and_county(self):
+        self.assertTrue(dl.generic_label("dover", city="Dover"))
+        self.assertTrue(dl.generic_label("tuscarawas county plant", county="Tuscarawas"))
+        self.assertFalse(dl.generic_label("dover", city="Akron"))
+
+    def test_names_are_not_labels(self):
+        for k in ("tamarack", "acme polymer", "main plant", "bonar plastics", "polymer works", "3m dover", ""):
+            self.assertFalse(dl.generic_label(k), k)  # "main" is not on the owner's list
+
+
 class CorporateForm(unittest.TestCase):
     """Owner ruling 2026-11-22: a held name plus corporate-form words only."""
 

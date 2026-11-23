@@ -11,6 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from atlas import squash, street_key  # noqa: E402  (stdlib-only module, no import side effects)
+from build_echo_spine import STATE_NAMES  # noqa: E402  (stdlib-only; the repo's one state-name table)
 
 _UNIT = re.compile(r"\b(?:suite|ste|unit|apt|apartment|room|rm)\b\.?\s*#?\s*([a-z0-9-]+)|(?<=\S)\s*#\s*([a-z0-9-]+)", re.I)
 _NUMBER_WORDS = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"}
@@ -79,3 +80,32 @@ def corporate_form_extension(held_key: str, quoted_key: str) -> bool:
             return False
         rest = rest[len(form):]
     return True
+
+
+# Owner ruling 2026-11-22 (multiple choice, DECISIONS.md), "drop generic labels only": a site-name part is ignored as a
+# held name only when every token in it is a generic label from this one fixed list, or the site's own city or county.
+# Any other part (a brand, a division, a trading name) is a held name.
+GENERIC_LABELS = {
+    "facility": ("plant", "facility", "warehouse", "works", "site", "office", "hq", "headquarters", "building", "unit"),
+    "number": ("no", "number", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "first",
+               "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"),  # and 2, #2, 2nd; never "3m"
+    "compass": ("north", "south", "east", "west", "northeast", "northwest", "southeast", "southwest", "n", "s", "e", "w",
+                "ne", "nw", "se", "sw"),
+    "us_state": tuple(sorted(squash(n) for n, c in STATE_NAMES.items() if c not in ("PR", "VI"))
+                      + sorted(c.lower() for c in STATE_NAMES.values() if c not in ("PR", "VI"))),
+}
+_LABEL_WORDS = {w for c in ("facility", "number", "compass") for w in GENERIC_LABELS[c]}
+_STATE_PHRASES = set(GENERIC_LABELS["us_state"])
+
+
+def generic_label(key: str, city: str = "", county: str = "") -> bool:
+    """Is every token of a site-name part (an atlas.name_key) a generic label: a facility word, a number or ordinal, a
+    compass word, a US state, or the site's own city or county ("Plant 2", "North Warehouse", "Ohio", "Akron")?"""
+    places = {squash(city), squash(county), squash(county) + " county" if squash(county) else ""} - {""}
+    rest = f" {key} "
+    for phrase in sorted(_STATE_PHRASES | places, key=len, reverse=True):
+        while f" {phrase} " in rest:
+            rest = rest.replace(f" {phrase} ", " ")
+    return bool(key.split()) and all(t in _LABEL_WORDS or re.fullmatch(r"#?\d+|\d+(?:st|nd|rd|th)", t)
+                                     for t in rest.split())
+

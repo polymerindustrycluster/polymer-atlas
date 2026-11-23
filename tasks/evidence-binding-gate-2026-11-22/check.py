@@ -27,38 +27,37 @@ MAIN, CURRENT, BATCH_BASE, BATCH_HEAD = "8f30ce0f", "393c3895", "4ee02127", "178
 APPENDIX_A = {"EVD-431206": "CANNOT_TELL", "EVD-430188": "DIFFERENT_ADDRESS", "EVD-427648": "DIFFERENT_ADDRESS", "EVD-431826": "DIFFERENT_ADDRESS", "EVD-429348": "DIFFERENT_ADDRESS", "EVD-432372": "DIFFERENT_ADDRESS", "EVD-431544": "DIFFERENT_ADDRESS", "EVD-425964": "DIFFERENT_ADDRESS", "EVD-426070": "DIFFERENT_ADDRESS", "EVD-431900": "CANNOT_TELL", "EVD-429356": "DIFFERENT_ADDRESS", "EVD-434334": "DIFFERENT_ADDRESS", "EVD-425566": "DIFFERENT_ADDRESS", "EVD-426904": "DIFFERENT_ADDRESS", "EVD-429620": "DIFFERENT_ADDRESS", "EVD-430124": "DIFFERENT_ADDRESS", "EVD-432898": "DIFFERENT_ADDRESS", "EVD-430102": "DIFFERENT_ADDRESS", "EVD-427536": "DIFFERENT_ADDRESS", "EVD-431964": "DIFFERENT_ADDRESS", "EVD-429062": "DIFFERENT_ADDRESS", "EVD-428624": "SAME_PLACE", "EVD-429422": "DIFFERENT_ADDRESS", "EVD-430448": "DIFFERENT_ADDRESS", "EVD-427956": "DIFFERENT_ADDRESS", "EVD-432662": "DIFFERENT_ADDRESS", "EVD-432758": "DIFFERENT_ADDRESS", "EVD-434376": "DIFFERENT_ADDRESS", "EVD-430300": "DIFFERENT_ADDRESS", "EVD-429950": "DIFFERENT_ADDRESS", "EVD-435460": "DIFFERENT_ADDRESS", "EVD-428370": "DIFFERENT_ADDRESS", "EVD-428802": "DIFFERENT_ADDRESS", "EVD-426602": "CANNOT_TELL", "EVD-434936": "DIFFERENT_ADDRESS", "EVD-435244": "DIFFERENT_ADDRESS", "EVD-429388": "DIFFERENT_ADDRESS", "EVD-433872": "CANNOT_TELL", "EVD-430308": "DIFFERENT_ADDRESS", "EVD-429120": "DIFFERENT_ADDRESS", "EVD-431512": "DIFFERENT_ADDRESS", "EVD-431466": "DIFFERENT_ADDRESS", "EVD-427406": "DIFFERENT_ADDRESS", "EVD-434052": "DIFFERENT_ADDRESS", "EVD-431968": "DIFFERENT_ADDRESS", "EVD-431076": "CANNOT_TELL", "EVD-428318": "DIFFERENT_ADDRESS", "EVD-431352": "DIFFERENT_ADDRESS", "EVD-427348": "DIFFERENT_ADDRESS", "EVD-434836": "DIFFERENT_ADDRESS", "EVD-427280": "DIFFERENT_ADDRESS", "EVD-434024": "DIFFERENT_ADDRESS", "EVD-431524": "DIFFERENT_ADDRESS", "EVD-429428": "DIFFERENT_ADDRESS", "EVD-428032": "DIFFERENT_ADDRESS", "EVD-426068": "DIFFERENT_ADDRESS", "EVD-426334": "DIFFERENT_ADDRESS", "data/evidence_sites_VA.csv:417": "DIFFERENT_ADDRESS", "EVD-428870": "DIFFERENT_ADDRESS", "EVD-429916": "DIFFERENT_ADDRESS"}  # noqa: E501
 APPENDIX_B = {"EVD-443796": "MATCH", "EVD-442346": "MATCH", "EVD-439366": "MATCH", "EVD-449620": "DEFECT", "EVD-440898": "MATCH", "EVD-447490": "MATCH", "EVD-436578": "MATCH", "EVD-442068": "MATCH", "EVD-448086": "MATCH", "EVD-438364": "MATCH", "EVD-444906": "MATCH", "EVD-449054": "MATCH", "EVD-450226": "MATCH", "EVD-450128": "DEFECT", "EVD-445324": "MATCH", "EVD-450336": "MATCH", "EVD-447830": "MATCH", "EVD-446818": "MATCH", "EVD-448254": "MATCH", "EVD-449402": "MATCH", "EVD-446086": "MATCH", "EVD-454689": "MATCH", "EVD-454304": "MATCH", "EVD-454414": "MATCH", "EVD-453992": "MATCH", "EVD-454525": "MATCH", "EVD-454479": "MATCH", "EVD-457497": "MATCH", "EVD-456335": "MATCH", "EVD-457493": "DEFECT", "EVD-455899": "DEFECT", "EVD-457589": "DEFECT", "EVD-456891": "MATCH", "EVD-428884": "MATCH", "EVD-432074": "MATCH", "EVD-427874": "MATCH", "EVD-431182": "MATCH", "EVD-435496": "MATCH", "EVD-427788": "MATCH", "EVD-434612": "MATCH"}  # noqa: E501
 EXPECTED = {
-    'alt_would_pass.comma_part': 108,
-    'alt_would_pass.facility_label': 134,
-    'alt_would_pass.leading_run': 1543,
-    'alt_would_pass.notes': 1502,
-    'alt_would_pass.parent': 58,
-    'alt_would_pass.spacing': 136,
-    'alt_would_pass.token_subset': 2165,
+    'alt_would_pass.comma_part': 118,
+    'alt_would_pass.facility_label': 154,
+    'alt_would_pass.leading_run': 1755,
+    'alt_would_pass.notes': 722,
+    'alt_would_pass.parent': 0,
+    'alt_would_pass.spacing': 126,
+    'alt_would_pass.token_subset': 2281,
     'appendix_A.CANNOT_TELL->FAIL': 5,
     'appendix_A.DIFFERENT_ADDRESS->FAIL': 54,
     'appendix_A.SAME_PLACE->PASS': 1,
     'appendix_B.DEFECT->FAIL': 5,
     'appendix_B.MATCH->FAIL': 9,
     'appendix_B.MATCH->PASS': 26,
-    'batches.FAIL': 14117,
-    'batches.PASS': 19495,
+    'batches.FAIL': 13041,
+    'batches.PASS': 20565,
     'batches.READ_REQUIRED': 344,
-    'batches.UNINSPECTABLE': 138,
-    'batches.held': 482,
+    'batches.UNINSPECTABLE': 144,
+    'batches.held': 488,
     'batches.held_with_archive_link': 344,
     'batches.rows': 34094,
-    'batches.spaghetti-batch5-2026-11-22.FAIL': 3536,
-    'batches.spaghetti-batch5-2026-11-22.PASS': 6632,
+    'batches.spaghetti-batch5-2026-11-22.FAIL': 3366,
+    'batches.spaghetti-batch5-2026-11-22.PASS': 6800,
     'batches.spaghetti-batch5-2026-11-22.READ_REQUIRED': 176,
-    'batches.spaghetti-batch5-2026-11-22.UNINSPECTABLE': 8,
-    'batches.spaghetti-batch6-2026-11-22.FAIL': 10571,
-    'batches.spaghetti-batch6-2026-11-22.PASS': 12863,
-    'batches.spaghetti-batch6-2026-11-22.UNINSPECTABLE': 130,
+    'batches.spaghetti-batch5-2026-11-22.UNINSPECTABLE': 10,
+    'batches.spaghetti-batch6-2026-11-22.FAIL': 9665,
+    'batches.spaghetti-batch6-2026-11-22.PASS': 13765,
+    'batches.spaghetti-batch6-2026-11-22.UNINSPECTABLE': 134,
     'batches.spaghetti-burndown-batch1-2026-11-21.FAIL': 6,
     'batches.spaghetti-burndown-batch1-2026-11-21.READ_REQUIRED': 116,
     'batches.spaghetti-burndown-batch2-2026-11-21.FAIL': 4,
     'batches.spaghetti-burndown-batch2-2026-11-21.READ_REQUIRED': 52,
-    'corporate_form_parent': 0,
     'current_main.FAIL': 207,
     'current_main.READ_REQUIRED': 2776,
     'current_main.UNINSPECTABLE': 44433,
@@ -66,22 +65,19 @@ EXPECTED = {
     'current_main.held_with_archive_link': 6744,
     'current_main.rows': 47416,
     'fail_city_differs': 324,
+    'fail_parent_name_lead': 84,
     'fail_state_differs': 0,
-    'finding3.corporate_form.label_vocab_would_keep': 42,
-    'finding3.corporate_form.now_fail': 42,
-    'finding3.corporate_form.pass_before': 170,
-    'finding3.site_name_lead.label_vocab_would_keep': 938,
-    'finding3.site_name_lead.now_fail': 940,
-    'finding3.site_name_lead.pass_before': 1306,
-    'finding3.site_name_other.label_vocab_would_keep': 116,
-    'finding3.site_name_other.now_fail': 116,
-    'finding3.site_name_other.pass_before': 996,
+    'finding3.literal_lost': 1098,
+    'finding3.literal_lost_now_pass': 1080,
+    'finding3.literal_lost_still_fail': 18,
+    'finding3.still_fail.name_not_held': 4,
+    'finding3.still_fail.parent_name_lead': 14,
     'hq_s5_would_pass.FMCSA Company Census': 284,
     'hq_s5_would_pass.state-entity-files-bulk': 343,
-    'main_all.FAIL': 14324,
-    'main_all.PASS': 19495,
+    'main_all.FAIL': 13248,
+    'main_all.PASS': 20565,
     'main_all.READ_REQUIRED': 3120,
-    'main_all.UNINSPECTABLE': 44571,
+    'main_all.UNINSPECTABLE': 44577,
     'main_all.rows': 81510,
     'main_without_batches.FAIL': 207,
     'main_without_batches.READ_REQUIRED': 2776,
@@ -95,10 +91,12 @@ EXPECTED = {
     'mutant.hq_from_any_source.caught': True,
     'mutant.no_building_test.caught': True,
     'mutant.no_city_test.caught': True,
+    'mutant.no_label_words.caught': True,
     'mutant.no_state_test.caught': True,
     'mutant.no_unit_test.caught': True,
     'mutant.number_only_streets.caught': True,
-    'mutant.parent_corporate_form.caught': True,
+    'mutant.parent_binds.caught': True,
+    'mutant.parent_form_binds.caught': True,
     'mutant.provenance_borrowed_folder.caught': True,
     'mutant.state_as_floor.caught': True,
     'mutant.state_needs_zip.caught': True,
@@ -109,17 +107,19 @@ EXPECTED = {
     'mutant.web_no_unit_test.caught': True,
     'mutant.web_pass.caught': True,
     'mutant.web_platform_as_domain.caught': True,
-    'notes_rows': 1818,
-    'pass_basis.corporate_form': 128,
+    'notes_rows': 842,
+    'parent_via_site_name.now.FAIL parent_name_lead': 10,
+    'parent_via_site_name.rows': 10,
+    'pass_basis.corporate_form': 170,
     'pass_basis.org': 18121,
-    'pass_basis.site_name_lead': 366,
-    'pass_basis.site_name_other': 880,
-    'pass_site_name_is_parent': 10,
+    'pass_basis.site_name_lead': 1278,
+    'pass_basis.site_name_other': 996,
+    'pass_site_name_is_parent': 0,
     'people.no_quote/institution_has_no_website': 35,
     'people.no_quote/off_institution_domain': 23,
     'people.no_quote/on_institution_domain': 676,
-    'shifted_if_facility.FAIL name_not_held': 24,
-    'shifted_if_facility.PASS': 74,
+    'shifted_if_facility.FAIL name_not_held': 8,
+    'shifted_if_facility.PASS': 90,
     'street_limit.different_number': 924,
     'street_limit.number_in_recorded_range': 14,
     'street_limit.number_word': 92,
@@ -128,7 +128,7 @@ EXPECTED = {
     'street_limit.same_street_other_number': 236,
     'test_segments_leaked': 0,
     'web.PASS': 0,
-    'web.not_own_site.name_in_host': 58,
+    'web.not_own_site.name_in_host': 60,
     'web.street_absent.spacing': 14,
     'web_batch1_4.FAIL not_own_site': 101,
     'web_batch1_4.FAIL street_absent_from_quote': 95,
@@ -170,9 +170,12 @@ MUTANTS = {  # name: (file, original fragment, loosened replacement); each must 
     "no_state_test": ("g", '        if q_st and rec.get("state")', '        if False and rec.get("state")'),
     "no_city_test": ("g", "        if qc and rc and not qc & rc:", "        if False:"),
     "state_needs_zip": ("g", "    st = state_code(last)\n", "    st = state_code(last) if zipped else \"\"\n"),
-    "bare_site_labels": ("g", "        return {k for k in self.site_keys(rid) if any(set(o.split()) <= set(k.split()) for o in org)} | org",
-                         "        return self.site_keys(rid) | org"),
-    "parent_corporate_form": ("g", "        if qkeys & idx.parent_keys(table, rid):  # a recorded parent", "        if False:  #"),
+    "bare_site_labels": ("g", '        return ({k for k in self.site_keys(rid) if not generic_label(k, s.get("city") or "", s.get("county") or "")}',
+                         "        return ({k for k in self.site_keys(rid)}"),
+    "no_label_words": ("m", "    return bool(key.split()) and all(t in _LABEL_WORDS", "    return bool(key.split()) and all(False"),
+    "parent_binds": ("g", "    if not qkeys & own and any(q in parents or", "    if False and any(q in parents or"),
+    "parent_form_binds": ("g", "q in parents or any(corporate_form_extension(k, q) for k in parents) for q in qkeys):",
+                          "q in parents for q in qkeys):"),
     "hq_from_any_source": ("g", '        if basis == "facility":', '        if False:'),
     "web_pass": ("g", '    return "READ_REQUIRED", why or "mechanics_clear", info',
                  '    return ("READ_REQUIRED", why, info) if why else ("PASS", "", info)'),
@@ -227,44 +230,55 @@ def run_mutants():
     return caught
 
 
-LABEL_WORDS = {"plant", "main", "warehouse", "facility", "site", "building", "bldg", "division", "operations", "ops", "mill",
-               "works", "factory", "campus", "center", "ctr", "north", "south", "east", "west", "distribution", "dc",
-               "office", "headquarters", "hq", "no", "number", "unit", "line"}
-
-
 def finding3(q_evs, q_res, got):
-    """Codex r2 finding 3 on the batches: the PASS rows that bound only through a site-name key without the
-    organization's name tokens, by r2 name basis; and, as an owner question, how many a narrower reading would keep
-    (drop a key only when every token is a label word, a number or the city)."""
+    """Codex r2 finding 3 on the batches, under the owner's "drop generic labels only" ruling: the round-two PASS rows
+    that bound through a site-name part (no filter), the rows the literal round-three rule failed (a part must hold the
+    organization's name tokens), and how many of those pass now. Writes finding3_still_fail.csv (ids only)."""
     idx = b.Index.load(BATCH_HEAD)
     ruled = b.Index.held_keys
 
     def unfiltered(self, table, rid):
         return ruled(self, table, rid) | (self.site_keys(rid) if table == "sites" else set())
 
-    def label_vocab(self, table, rid):
+    def literal(self, table, rid):
         if table != "sites":
             return ruled(self, table, rid)
-        city = set(b.squash(self.sites[rid].get("city")).split())
-        return ruled(self, table, rid) | {k for k in self.site_keys(rid) if not all(
-            t in LABEL_WORDS or t.isdigit() or t in city for t in k.split())}
+        org = self.org_keys(self.sites[rid].get("org_id"))
+        return {k for k in self.site_keys(rid) if any(set(o.split()) <= set(k.split()) for o in org)} | org
     now = {r["evidence_id"]: r for r in q_res}
-    out = {}
-    for name, fn in (("r2", unfiltered), ("label_vocab", label_vocab)):
-        b.Index.held_keys = fn
+    out, parents = {}, b.Index.parent_keys
+    for name, fn in (("r2", unfiltered), ("literal", literal)):  # both without the "fail everywhere" parent rule
+        b.Index.held_keys, b.Index.parent_keys = fn, lambda self, table, rid: set()
         try:
             out[name] = {r["evidence_id"]: r for r in b.judge_all(q_evs, idx)}
         finally:
-            b.Index.held_keys = ruled
-    print("\nbatches: Codex r2 finding 3 (site-name keys must hold the organization's name tokens)")
-    for basis in ("site_name_other", "site_name_lead", "corporate_form"):
-        before = [e for e, r in out["r2"].items() if r["verdict"] == "PASS" and r["name_basis"] == basis]
-        lost = [e for e in before if now[e]["verdict"] != "PASS"]
-        kept = sum(out["label_vocab"][e]["verdict"] == "PASS" for e in lost)
-        got.update({f"finding3.{basis}.pass_before": len(before), f"finding3.{basis}.now_fail": len(lost),
-                    f"finding3.{basis}.label_vocab_would_keep": kept})
-        print(f"  {basis}: {len(lost)} of {len(before)} PASS rows now FAIL; a label-vocabulary reading would keep {kept} "
-              f"(e.g. {', '.join(lost[:3])})")
+            b.Index.held_keys, b.Index.parent_keys = ruled, parents
+    lost = [e for e, r in out["r2"].items() if r["verdict"] == "PASS" and out["literal"][e]["verdict"] != "PASS"
+            and r["name_basis"] in ("site_name_lead", "site_name_other", "corporate_form")]
+    still = [e for e in lost if now[e]["verdict"] != "PASS"]
+    got.update({"finding3.literal_lost": len(lost), "finding3.literal_lost_now_pass": len(lost) - len(still),
+                "finding3.literal_lost_still_fail": len(still)})
+    got.update({f"finding3.still_fail.{k}": v for k, v in Counter(now[e]["reason"] for e in still).items()})
+    with open(HERE / "finding3_still_fail.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["evidence_id", f"path_line_at_{BATCH_HEAD}", "record_id", "round2_name_basis", "reason_now"])
+        for e in still:
+            w.writerow([e, now[e]["at"], now[e]["record_id"], out["r2"][e]["name_basis"], now[e]["reason"]])
+    by_id = {e["evidence_id"]: e for e in q_evs}
+    ten = []  # round three's open question: PASS on a site-name part that is a recorded parent's name
+    for e, r in out["literal"].items():
+        if r["verdict"] == "PASS" and r["name_basis"] in ("site_name_lead", "site_name_other"):
+            ev = by_id[e]
+            p = b.parse_quote(ev["claim_detail"].partition("quote:")[2].strip(), b.family_of(ev["source_ref"]))
+            if b.name_keys(p["names"]) & idx.parent_keys(ev["record_table"], ev["record_id"]):
+                ten.append(e)
+    got["parent_via_site_name.rows"] = len(ten)
+    got.update({f"parent_via_site_name.now.{k}": v for k, v in Counter(
+        f"{now[e]['verdict']} {now[e]['reason']}".strip() for e in ten).items()})
+    print(f"batches: PASS rows on a site-name part that is a parent's name (round three): {len(ten)}; now: "
+          + ", ".join(f"{e} {now[e]['verdict']} {now[e]['reason']}" for e in ten))
+    print(f"\nbatches: Codex r2 finding 3: the literal rule failed {len(lost)} round-two PASS rows; under \"drop generic "
+          f"labels only\" {len(lost) - len(still)} pass and {len(still)} still fail: {', '.join(still)}")
 
 
 def table(results, key="verdict"):
@@ -341,9 +355,6 @@ def main():
     sd = [r["evidence_id"] for r in q_res if "state_differs" in r["reason"].split("+")]
     got["fail_state_differs"] = len(sd)
     print(f"batches: site rows failing on a quoted state other than the record's: {len(sd)} (e.g. {', '.join(sd[:4])})")
-    got["corporate_form_parent"] = sum(r["name_alt"] == "parent;corporate_form" for r in q_res)
-    print(f"batches: corporate-form names that are a recorded parent's (FAIL, Codex r2 finding 4): "
-          f"{got['corporate_form_parent']}")
     finding3(q_evs, q_res, got)
     idx_h, by_id = b.Index.load(BATCH_HEAD), {e["evidence_id"]: e for e in q_evs}
     via_site = []  # owner question: a site-name part that is a recorded parent's name still binds (finding 4 is the
@@ -353,9 +364,11 @@ def main():
             p = b.parse_quote(e["claim_detail"].partition("quote:")[2].strip(), b.family_of(e["source_ref"]))
             if b.name_keys(p["names"]) & idx_h.parent_keys(e["record_table"], e["record_id"]):
                 via_site.append(r["evidence_id"])
-    got["pass_site_name_is_parent"] = len(via_site)
-    print(f"batches: PASS rows whose site-name match is also a recorded parent's name: {len(via_site)} "
-          f"(e.g. {', '.join(via_site[:4])})")
+    got["pass_site_name_is_parent"] = len(via_site)  # must be 0 under "fail everywhere"
+    lead = [r["evidence_id"] for r in q_res if "parent_name_lead" in r["reason"].split("+")]
+    got["fail_parent_name_lead"] = len(lead)
+    print(f"batches: PASS rows whose site-name match is also a recorded parent's name: {len(via_site)}; rows failing "
+          f"parent_name_lead: {len(lead)} (e.g. {', '.join(lead[:4])})")
     basis = Counter(r["name_basis"] for r in q_res if r["verdict"] == "PASS")
     show("batches: PASS rows by name basis (quoted form / held name that matched)", basis)
     got.update({f"pass_basis.{k}": v for k, v in basis.items()})

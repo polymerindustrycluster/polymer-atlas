@@ -1,6 +1,6 @@
 commit,subject,rows,PASS,FAIL,READ_REQUIRED,UNINSPECTABLE,held,of_which_archive_link,labels,provenance_problems,binding_gate,provenance
-178349185,Merge pull request #458 from polymerindustrycluster/agent/sp,23564,12863,10571,0,130,130,0,1,1,fail,fail
-6a76e923f,Merge pull request #457 from polymerindustrycluster/agent/sp,10530,6632,3546,344,8,352,344,3,3,fail,fail
+178349185,Merge pull request #458 from polymerindustrycluster/agent/sp,23564,13765,9665,0,134,134,0,1,1,fail,fail
+6a76e923f,Merge pull request #457 from polymerindustrycluster/agent/sp,10530,6800,3376,344,10,354,344,3,3,fail,fail
 4924083cd,R2 re-capture recovery mint: 39 evidence rows + 39 archive l,39,0,8,31,0,31,31,2,2,fail,fail
 4ea038848,Phase C unit 3: 22 accuracy corrections (EVD-425415..425436 ,22,0,0,0,22,22,22,1,1,fail,fail
 b99fd9e1e,Burn-down batch 4: R1 re-witness mint — 240 evidence rows + ,240,0,24,216,0,216,216,1,1,fail,fail

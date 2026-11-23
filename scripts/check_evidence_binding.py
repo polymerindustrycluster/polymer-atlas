@@ -7,13 +7,13 @@ operator, another street, or claimed a headquarters from a plant permit (tasks/e
 
 Every evidence row gets exactly one verdict:
   PASS            structured sources only. The quoted operator is a name the record holds (exact name_key of the whole
-                  field, never a comma part; a site-name part only when it holds the organization's own name
-                  tokens); for a site row matching.same_street(site street, quoted street) holds (the repo's one street
+                  field, never a comma part; a site-name part unless every token is a generic label,
+                  matching.generic_label); for a site row matching.same_street(site street, quoted street) holds (the repo's one street
                   test, shared with derive_last_activity.py: a suite, unit or building stated on both sides agrees)
-                  and a quoted city or state equals the site's; for an organization `address` row the source states the entity's own address and the quoted
-                  city and state are the record's HQ. A web (free-text) quote is never PASS.
+                  and a quoted city or state equals the site's; for an organization `address` row the source states
+                  the entity's own address and the quoted city and state are the record's HQ. A web (free-text) quote is never PASS.
   FAIL            name_not_held, street_differs, unit_differs, record_no_street, quote_no_street, state_differs,
-                  city_differs,
+                  city_differs, parent_name_lead (the filing names only a recorded parent: a lead to be read),
                   hq_city_state_differs, hq_from_facility_or_permit, hq_from_s5_identity_source (SCHEMA §4.8 S-5);
                   web quotes: street_absent_from_quote (no civic number directly followed by the record's street
                   word), unit_differs (every occurrence states another suite), not_own_site (an own_site URL off the
@@ -23,10 +23,9 @@ Every evidence row gets exactly one verdict:
   UNINSPECTABLE   no_quote, other_table, record_not_found, unknown_source_family, parse_failed, operator_not_a_name,
                   no_civic_number. No admission path here either.
 
-Strict reading (owner questions, measured in the name_alt column, never passing): a parent's name, a name found only
-in the record's notes, a permit's facility label, a quoted name that merely starts with a held name, one comma part
+Strict reading (owner questions, measured in the name_alt column, never passing): a name found only in the record's notes, a permit's facility label, a quoted name that merely starts with a held name, one comma part
 of an operator field. One owner-ruled extension passes: a held name plus corporate-form words only, on a site row whose
-street passes, unless the name is a recorded parent's (DECISIONS.md, 2026-11-22).
+street passes. A recorded parent's name never binds, on any path (DECISIONS.md, 2026-11-22).
 
 Usage:
   python3 scripts/check_evidence_binding.py --all [--head REF | --tree DIR] [--out verdicts.csv]
@@ -55,8 +54,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from atlas import (LOCALITY_SEP_RE, PLATFORM_HOSTS, SUFFIX, name_key, org_name_fields,  # noqa: E402
                    site_name_key, squash, street_key)
 from build_echo_spine import STATE_NAMES  # noqa: E402
-from matching import (DESIGNATOR_ONLY_RE, corporate_form_extension, has_civic_number, same_street,  # noqa: E402
-                      units)  # (PR #463)
+from matching import (DESIGNATOR_ONLY_RE, corporate_form_extension, generic_label, has_civic_number,  # noqa: E402
+                      same_street, units)  # (PR #463)
 
 csv.field_size_limit(10**9)
 DIRECTIONS = {"n", "s", "e", "w", "ne", "nw", "se", "sw"}
@@ -134,13 +133,14 @@ class Index:
         return {k for v in names for k in (name_key(v), name_key(PAREN_RE.sub(" ", v))) if k}
 
     def held_keys(self, table, rid):
-        """name_keys of every name the record itself holds (strict reading: no parent, no notes, no bare site label)."""
+        """name_keys of every name the record itself holds (strict reading: no parent, no notes, no generic site label)."""
         if table != "sites":
             return self.org_keys(rid)
-        org = self.org_keys(self.sites[rid].get("org_id"))
-        # A site-name key is the operator's name only when it holds every token of one of the organization's own names:
-        # a bare label ("Plant 2", "Main Plant", "Warehouse", a locality) never is (owner split, Codex r2 finding 3).
-        return {k for k in self.site_keys(rid) if any(set(o.split()) <= set(k.split()) for o in org)} | org
+        s = self.sites[rid]
+        # A site-name part made only of generic labels ("Plant 2", "North Warehouse", the site's city) is not a name;
+        # a brand, division or trading name is (owner ruling 2026-11-22, "drop generic labels only"; Codex r2 finding 3).
+        return ({k for k in self.site_keys(rid) if not generic_label(k, s.get("city") or "", s.get("county") or "")}
+                | self.org_keys(s.get("org_id")))
 
     def site_keys(self, rid):
         """Every key a site name yields: the whole name, the name less its trailing locality, each " - " part that is not
@@ -406,14 +406,17 @@ def judge(ev, idx):
     qkeys = name_keys(p["names"])
     alt_keys = {k for n in p["alt_names"] for k in (name_key(n), site_name_key(n, rec.get("city") or "")) if k}
     held = idx.held_keys(table, rid)
+    own = idx.org_keys(rec.get("org_id") if table == "sites" else rid)
+    parents = idx.parent_keys(table, rid)
     reasons, info = [], {}
-    if not qkeys & held and table == "sites" and not street_reason(rec.get("street_address"), p["addr"]) and any(
+    if not qkeys & own and any(q in parents or any(corporate_form_extension(k, q) for k in parents) for q in qkeys):
+        # A filing naming only a recorded parent (or parent + corporate-form words) never binds by machine, on any path,
+        # even when the parent's name is part of the site name: a lead to be read (owner ruling 2026-11-22, "fail
+        # everywhere"; Codex r2 finding 4).
+        reasons.append("parent_name_lead")
+    elif not qkeys & held and table == "sites" and not street_reason(rec.get("street_address"), p["addr"]) and any(
             corporate_form_extension(h, q) for h in held for q in qkeys):
-        if qkeys & idx.parent_keys(table, rid):  # a recorded parent's name never binds by this rule (Codex r2 finding 4)
-            reasons.append("name_not_held")
-            info["name_alt"] = "parent;corporate_form"
-        else:
-            info["name_basis"] = "corporate_form"  # owner ruling 2026-11-22: held name + corporate-form words, street passes
+        info["name_basis"] = "corporate_form"  # owner ruling 2026-11-22: held name + corporate-form words, street passes
     elif not qkeys & held:
         reasons.append("name_not_held")
         alts = name_alternatives(idx, table, rid, qkeys, alt_keys, held)
@@ -421,9 +424,8 @@ def judge(ev, idx):
             alts.append("comma_part")  # "ACME, ACME CO": one comma part is a held name (an owner question, never PASS)
         info["name_alt"] = ";".join(alts)
     else:  # measured: which held name matched (audits the false-PASS side)
-        org = idx.org_keys(rec.get("org_id") if table == "sites" else rid)
         lead = name_key(LOCALITY_SEP_RE.split(PAREN_RE.sub(" ", rec.get("site_name") or ""))[0])
-        info["name_basis"] = "org" if qkeys & org else "site_name_lead" if lead in qkeys else "site_name_other"
+        info["name_basis"] = "org" if qkeys & own else "site_name_lead" if lead in qkeys else "site_name_other"
     if table == "sites":
         why = street_reason(rec.get("street_address"), p["addr"])
         q_city, q_st = quoted_place(p["addr"])
