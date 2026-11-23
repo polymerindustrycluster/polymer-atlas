@@ -1,0 +1,357 @@
+{
+ "alternatives_10pct_n2": {
+  "110": {
+   "0.02": 0.9310729987643314,
+   "0.03": 0.7691407949640037,
+   "final_k": 4
+  },
+  "150": {
+   "0.02": 0.989171625019835,
+   "0.03": 0.9180339433731923,
+   "final_k": 7
+  },
+  "71": {
+   "0.02": 0.8313031034674689,
+   "0.03": 0.6431312437877545,
+   "final_k": 2
+  }
+ },
+ "effective_n_recomputed": {
+  "0.05": {
+   "0.0": 73,
+   "0.02": 203,
+   "0.03": 457
+  },
+  "0.1": {
+   "0.0": 35,
+   "0.01": 43,
+   "0.02": 55,
+   "0.03": 71
+  }
+ },
+ "futility_below": 0.05,
+ "futility_rate": 0.02,
+ "ruling_vs_recomputed": [
+  {
+   "difference": -2,
+   "recomputed_n": 203,
+   "ruling_n": 205,
+   "target": 0.05,
+   "true_rate": 0.02
+  },
+  {
+   "difference": -3,
+   "recomputed_n": 457,
+   "ruling_n": 460,
+   "target": 0.05,
+   "true_rate": 0.03
+  },
+  {
+   "difference": 8,
+   "recomputed_n": 43,
+   "ruling_n": 35,
+   "target": 0.1,
+   "true_rate": 0.01
+  },
+  {
+   "difference": 0,
+   "recomputed_n": 55,
+   "ruling_n": 55,
+   "target": 0.1,
+   "true_rate": 0.02
+  },
+  {
+   "difference": 0,
+   "recomputed_n": 71,
+   "ruling_n": 71,
+   "target": 0.1,
+   "true_rate": 0.03
+  }
+ ],
+ "strata": {
+  "EVENTS": {
+   "early_k": 0,
+   "false_pass_at_target": 0.022954532943313823,
+   "final_k": 2,
+   "futile_k": 3,
+   "n1": 55,
+   "n2": 71,
+   "outcomes": {
+    "0.01": {
+     "fail_futility": 0.017828760140394386,
+     "p": 0.01,
+     "pass_if_single_look_at_n2": 0.9654352232503027,
+     "pass_overall": 0.9657274703282028,
+     "pass_stage1": 0.5753547499769285,
+     "read_stage2": 0.40681648988267716
+    },
+    "0.02": {
+     "fail_futility": 0.09773545089344587,
+     "p": 0.02,
+     "pass_if_single_look_at_n2": 0.8300899568277301,
+     "pass_overall": 0.8313031034674689,
+     "pass_stage1": 0.3291805473947476,
+     "read_stage2": 0.5730840017118066
+    },
+    "0.03": {
+     "fail_futility": 0.22821111137861516,
+     "p": 0.03,
+     "pass_if_single_look_at_n2": 0.6410190507446955,
+     "pass_overall": 0.6431312437877545,
+     "pass_stage1": 0.18726015763786058,
+     "read_stage2": 0.5845287309835243
+    },
+    "0.1": {
+     "fail_futility": 0.922566125180331,
+     "p": 0.1,
+     "pass_if_single_look_at_n2": 0.022313165422644925,
+     "pass_overall": 0.022954532943313823,
+     "pass_stage1": 0.0030432527221704577,
+     "read_stage2": 0.07439062209749858
+    }
+   },
+   "single_stage_acceptance": {
+    "55": 1,
+    "71": 2
+   },
+   "target": 0.1
+  },
+  "PIC18_RECORDS": {
+   "early_k": 2,
+   "false_pass_at_target": 0.016533181327932318,
+   "final_k": 13,
+   "futile_k": 12,
+   "n1": 205,
+   "n2": 460,
+   "outcomes": {
+    "0.01": {
+     "fail_futility": 1.3975652998328394e-06,
+     "p": 0.01,
+     "pass_if_single_look_at_n2": 0.9997147456868841,
+     "pass_overall": 0.9997186142851429,
+     "pass_stage1": 0.6630797573352485,
+     "read_stage2": 0.3369188450994517
+    },
+    "0.02": {
+     "fail_futility": 0.0009737911384100552,
+     "p": 0.02,
+     "pass_if_single_look_at_n2": 0.9177287654145312,
+     "pass_overall": 0.9186572357579096,
+     "pass_stage1": 0.22086521484384813,
+     "read_stage2": 0.7781609940177419
+    },
+    "0.03": {
+     "fail_futility": 0.021841684108829345,
+     "p": 0.03,
+     "pass_if_single_look_at_n2": 0.4844782921191525,
+     "pass_overall": 0.48834427508015665,
+     "pass_stage1": 0.05309140178917215,
+     "read_stage2": 0.9250669141019985
+    },
+    "0.05": {
+     "fail_futility": 0.329692693662556,
+     "p": 0.05,
+     "pass_if_single_look_at_n2": 0.015392900225843846,
+     "pass_overall": 0.016533181327932318,
+     "pass_stage1": 0.0018908020939040061,
+     "read_stage2": 0.6684165042435399
+    }
+   },
+   "single_stage_acceptance": {
+    "205": 4,
+    "460": 13
+   },
+   "target": 0.05
+  },
+  "PROGRAMS": {
+   "early_k": 0,
+   "false_pass_at_target": 0.022954532943313823,
+   "final_k": 2,
+   "futile_k": 3,
+   "n1": 55,
+   "n2": 71,
+   "outcomes": {
+    "0.01": {
+     "fail_futility": 0.017828760140394386,
+     "p": 0.01,
+     "pass_if_single_look_at_n2": 0.9654352232503027,
+     "pass_overall": 0.9657274703282028,
+     "pass_stage1": 0.5753547499769285,
+     "read_stage2": 0.40681648988267716
+    },
+    "0.02": {
+     "fail_futility": 0.09773545089344587,
+     "p": 0.02,
+     "pass_if_single_look_at_n2": 0.8300899568277301,
+     "pass_overall": 0.8313031034674689,
+     "pass_stage1": 0.3291805473947476,
+     "read_stage2": 0.5730840017118066
+    },
+    "0.03": {
+     "fail_futility": 0.22821111137861516,
+     "p": 0.03,
+     "pass_if_single_look_at_n2": 0.6410190507446955,
+     "pass_overall": 0.6431312437877545,
+     "pass_stage1": 0.18726015763786058,
+     "read_stage2": 0.5845287309835243
+    },
+    "0.1": {
+     "fail_futility": 0.922566125180331,
+     "p": 0.1,
+     "pass_if_single_look_at_n2": 0.022313165422644925,
+     "pass_overall": 0.022954532943313823,
+     "pass_stage1": 0.0030432527221704577,
+     "read_stage2": 0.07439062209749858
+    }
+   },
+   "single_stage_acceptance": {
+    "55": 1,
+    "71": 2
+   },
+   "target": 0.1
+  },
+  "RESEARCHERS": {
+   "early_k": 0,
+   "false_pass_at_target": 0.022954532943313823,
+   "final_k": 2,
+   "futile_k": 3,
+   "n1": 55,
+   "n2": 71,
+   "outcomes": {
+    "0.01": {
+     "fail_futility": 0.017828760140394386,
+     "p": 0.01,
+     "pass_if_single_look_at_n2": 0.9654352232503027,
+     "pass_overall": 0.9657274703282028,
+     "pass_stage1": 0.5753547499769285,
+     "read_stage2": 0.40681648988267716
+    },
+    "0.02": {
+     "fail_futility": 0.09773545089344587,
+     "p": 0.02,
+     "pass_if_single_look_at_n2": 0.8300899568277301,
+     "pass_overall": 0.8313031034674689,
+     "pass_stage1": 0.3291805473947476,
+     "read_stage2": 0.5730840017118066
+    },
+    "0.03": {
+     "fail_futility": 0.22821111137861516,
+     "p": 0.03,
+     "pass_if_single_look_at_n2": 0.6410190507446955,
+     "pass_overall": 0.6431312437877545,
+     "pass_stage1": 0.18726015763786058,
+     "read_stage2": 0.5845287309835243
+    },
+    "0.1": {
+     "fail_futility": 0.922566125180331,
+     "p": 0.1,
+     "pass_if_single_look_at_n2": 0.022313165422644925,
+     "pass_overall": 0.022954532943313823,
+     "pass_stage1": 0.0030432527221704577,
+     "read_stage2": 0.07439062209749858
+    }
+   },
+   "single_stage_acceptance": {
+    "55": 1,
+    "71": 2
+   },
+   "target": 0.1
+  },
+  "REST_OHIO_RECORDS": {
+   "early_k": 0,
+   "false_pass_at_target": 0.022954532943313823,
+   "final_k": 2,
+   "futile_k": 3,
+   "n1": 55,
+   "n2": 71,
+   "outcomes": {
+    "0.01": {
+     "fail_futility": 0.017828760140394386,
+     "p": 0.01,
+     "pass_if_single_look_at_n2": 0.9654352232503027,
+     "pass_overall": 0.9657274703282028,
+     "pass_stage1": 0.5753547499769285,
+     "read_stage2": 0.40681648988267716
+    },
+    "0.02": {
+     "fail_futility": 0.09773545089344587,
+     "p": 0.02,
+     "pass_if_single_look_at_n2": 0.8300899568277301,
+     "pass_overall": 0.8313031034674689,
+     "pass_stage1": 0.3291805473947476,
+     "read_stage2": 0.5730840017118066
+    },
+    "0.03": {
+     "fail_futility": 0.22821111137861516,
+     "p": 0.03,
+     "pass_if_single_look_at_n2": 0.6410190507446955,
+     "pass_overall": 0.6431312437877545,
+     "pass_stage1": 0.18726015763786058,
+     "read_stage2": 0.5845287309835243
+    },
+    "0.1": {
+     "fail_futility": 0.922566125180331,
+     "p": 0.1,
+     "pass_if_single_look_at_n2": 0.022313165422644925,
+     "pass_overall": 0.022954532943313823,
+     "pass_stage1": 0.0030432527221704577,
+     "read_stage2": 0.07439062209749858
+    }
+   },
+   "single_stage_acceptance": {
+    "55": 1,
+    "71": 2
+   },
+   "target": 0.1
+  },
+  "REST_US_RECORDS": {
+   "early_k": 0,
+   "false_pass_at_target": 0.022954532943313823,
+   "final_k": 2,
+   "futile_k": 3,
+   "n1": 55,
+   "n2": 71,
+   "outcomes": {
+    "0.01": {
+     "fail_futility": 0.017828760140394386,
+     "p": 0.01,
+     "pass_if_single_look_at_n2": 0.9654352232503027,
+     "pass_overall": 0.9657274703282028,
+     "pass_stage1": 0.5753547499769285,
+     "read_stage2": 0.40681648988267716
+    },
+    "0.02": {
+     "fail_futility": 0.09773545089344587,
+     "p": 0.02,
+     "pass_if_single_look_at_n2": 0.8300899568277301,
+     "pass_overall": 0.8313031034674689,
+     "pass_stage1": 0.3291805473947476,
+     "read_stage2": 0.5730840017118066
+    },
+    "0.03": {
+     "fail_futility": 0.22821111137861516,
+     "p": 0.03,
+     "pass_if_single_look_at_n2": 0.6410190507446955,
+     "pass_overall": 0.6431312437877545,
+     "pass_stage1": 0.18726015763786058,
+     "read_stage2": 0.5845287309835243
+    },
+    "0.1": {
+     "fail_futility": 0.922566125180331,
+     "p": 0.1,
+     "pass_if_single_look_at_n2": 0.022313165422644925,
+     "pass_overall": 0.022954532943313823,
+     "pass_stage1": 0.0030432527221704577,
+     "read_stage2": 0.07439062209749858
+    }
+   },
+   "single_stage_acceptance": {
+    "55": 1,
+    "71": 2
+   },
+   "target": 0.1
+  }
+ },
+ "wilson_z": 1.959964,
+ "z_early": 2.326
+}
