@@ -1,0 +1,15 @@
+frame,org_id,legal_name,entity_type,suffix,ownership_type,stock_ticker,hq_state,hq_country
+ohio_rest,ORG-000931,Lear Corporation,unknown,Corporation,,LEA,MI,US
+outside,ORG-002926,Evonik Corporation,unknown,Corporation,,"EVK (Xetra, parent)",NJ,US
+outside,ORG-002932,"Mitsui Chemicals America, Inc.",unknown,Inc.,,"4183 (TSE, parent)",NY,US
+pic18,ORG-000142,Nordson Corporation,unknown,Corporation,,NDSN,OH,US
+pic18,ORG-000155,Eaton Corporation,unknown,Corporation,,ETN,OH,US
+pic18,ORG-000651,"Advanced Drainage Systems, Inc.",unknown,Inc.,,WMS,OH,US
+ohio_rest,ORG-000756,"Core Molding Technologies, Inc.",unknown,Inc.,,CMT,OH,US
+ohio_rest,ORG-000781,"Commercial Vehicle Group, Inc.",unknown,Inc.,,CVGI,OH,US
+ohio_rest,ORG-001545,"AtriCure, Inc.",unknown,Inc.,,ATRC,OH,US
+pic18,ORG-001549,STERIS Corporation,unknown,Corporation,,STE,OH,US
+ohio_rest,ORG-001824,Greif Inc,unknown,Inc,,GEF,OH,US
+pic18,ORG-000088,"PPG Industries, Inc.",unknown,Inc.,,PPG,PA,US
+pic18,ORG-000372,Huntsman Corporation,unknown,Corporation,,HUN,TX,US
+outside,ORG-003655,Legend Brands Inc.,unknown,Inc.,public_company,RPM,WA,USA

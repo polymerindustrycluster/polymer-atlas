@@ -1,8 +1,10 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.19.3 — 2026-11-22 (§1 R13 gains a five-year limit on the filing date behind an employee band — owner ruling 2026-11-22, "Headcount age: 5 years", multiple choice; no data row is changed by this revision).
+**Version:** v1.19.5 — 2026-11-22 (§1 R13 and §4.13 make Form 5500 active-participant counts leads only — owner ruling 2026-11-22, round 14, "Leads only").
 
+Previous: v1.19.4 — 2026-11-22 (§4.4 `entity_type` gains the plain value `corporation` — owner ruling 2026-11-22, "Add 'corporation'"; 783 organizations rows filled from the legal name's Inc/Corp suffix, plus LLC and LP/LLP suffixes; the 79 `ohio_statewide` rows with a named Ohio county outside PIC-18 become `ohio_other`).
+Previous: v1.19.3 — 2026-11-22 (§1 R13 gains a five-year limit on the filing date behind an employee band — owner ruling 2026-11-22, "Headcount age: 5 years", multiple choice; no data row is changed by this revision).
 Previous: v1.19.2 — 2026-11-22 (§4.4 `hq_in_scope`: `ne_ohio` means the HQ county is in PIC-18, Carroll and Holmes not `ne_ohio` — owner ruling 2026-11-22, in session, "PIC-18 exactly"; 312 organizations rows relabelled).
 
 Previous: v1.19 — 2026-11-22 (identifier, address-role, and derived-activity increment — owner ruling 2026-11-22, “I mean let’s add them all to the schema, why not”, battery candidates S-1…S-6: §4.8 registry enum gains `RCRA_EPA_ID`, `NPDES_PERMIT_ID`, `STATE_ENTITY_ID`, and `USDOT`, and the minting doctrine for `FRS`, `LEI`, and `SEC_CIK` is codified — no minting in this revision, minting rides the join batches; §4.13 evidence gains the `address_role` column (empty = unspecified) and the same-role ADDRESS_DIFF rule; §4.5 sites gain the derived `last_activity_date` / `last_activity_source` pair, initially populated by `scripts/derive_last_activity.py` from the 2026-11-21 OSHA bulk extracts, tier-A matches only. Validator: V-6 enum + facility grain + ID shapes, V-22 field set + role vocabulary, V-5 derived-pair discipline).
@@ -401,9 +403,8 @@ the rulings to existing rows is integrator work, queued in `tasks/QUEUE.md`.
   - Appoint a delegate for routine battery items. The owner names the person.
   - Activate the news / WARN monitor. Its hits only queue re-verification.
   - North America scope is held.
-  - A Form 5500 plan-participant count is admissible as an employee-band input.
-    It is `government_filing` with the plan year, always banded, and never a
-    precise headcount.
+  - Form 5500 active-participant counts are leads only under §1 R13
+    **[v1.19.5]**.
 - **R9. A row that is not a plant is corrected, not kept as a plant.** Offices,
   warehouses and distributors carried as `manufacturing_plant` rows get their
   `site_type` and ring corrected from evidence (B14: an office row's ring is not
@@ -439,8 +440,10 @@ R11. **No data row is changed by this revision.**
 - **R13. Site employee-band source precedence** for `employee_band_site`:
   1. OSHA ITA 300A annual average employees, most recent calendar year;
   2. the OSHA inspection `nr_in_estab`, most recent;
-  3. Form 5500 active participants, only for a single-establishment
-     organization (R7f).
+  3. **[v1.19.5] Form 5500 active-participant counts are leads only.**
+     A retirement plan's active-participant count is not a plant headcount
+     and never fills a size band (owner ruling 2026-11-22, round 14,
+     "Leads only").
 
   Where the chosen source disagrees with another source by more than one band,
   or with an existing in-vocabulary band, the row goes to review and is not
@@ -454,9 +457,9 @@ R11. **No data row is changed by this revision.**
      recorded in `tasks/owner-rulings-2026-11-18/README.md`.
 
   **[v1.19.3]** **Age limit (owner ruling 2026-11-22, "Headcount age: 5 years").** A filing sets a band under
-  sources 1 to 3 only if it is dated within five years of the date the band is written. The filing date is, for ITA
-  300A, the end of the filing year (31 December); for an OSHA inspection, its open date; for Form 5500, the plan-year
-  end. For the pass of 2026-11-22 the cutoff is 2021-11-22. An older filing is a lead only and never sets a band; the
+  sources 1 and 2 only if it is dated within five years of the date the band is written. The filing date is, for ITA
+  300A, the end of the filing year (31 December); for an OSHA inspection, its open date.
+  For the pass of 2026-11-22 the cutoff is 2021-11-22. An older filing is a lead only and never sets a band; the
   integrator records it as held with the reason `stale_over_5_years`. The limit applies to the evidence behind a band,
   not to bands already in the data.
 
@@ -943,7 +946,7 @@ One record per ultimate controlling organization operating in scope. A Parent ma
 | `trade_names[]` | string[] | **MUST** | DBA / former / brand-operating names: ["GEON", "PolyOne"] |
 | `parent_org_id` | FK → org_id, nullable | **MUST** | Immediate parent if this org is a subsidiary that still warrants its own Parent record (see §5.2 threshold) |
 | `ultimate_parent_name` + `ultimate_parent_country` | string | **MUST** if subsidiary | Free name if ultimate parent is out-of-scope and has no org_id |
-| `entity_type` | enum | **MUST** | `corporation_public` \| `corporation_private` \| `llc` \| `partnership` \| `sole_proprietor` \| `nonprofit` \| `government` \| `academic` \| `cooperative` \| `unknown` |
+| `entity_type` | enum | **MUST** | `corporation` \| `corporation_public` \| `corporation_private` \| `llc` \| `partnership` \| `sole_proprietor` \| `nonprofit` \| `government` \| `academic` \| `cooperative` \| `unknown` — **[v1.19.4]** `corporation` is the plain value for an organization whose legal name ends in Inc, Inc., Incorporated, Corp, Corp. or Corporation and for which public or private is not established; public or private is never guessed from a suffix. It is filled only from that suffix (owner ruling 2026-11-22, "Add 'corporation'"); Co, Company, Ltd and Limited do not set it. `llc` and `partnership` are likewise filled from an LLC or LP/LLP suffix at the end of the legal name. A cell that already holds a value is never overwritten |
 | `ring_primary` / `ring_secondary` | enum 1–5 / nullable | **MUST** | Per §1. Parent ring may differ from site rings |
 | `ring4_test` | string, e.g. "A+B" | MUST if Ring 4 | Which two prongs passed |
 | `diversified_conglomerate` | boolean | **MUST** | True for Parker-type parents; suppresses whole-co headcount rollups |
@@ -1618,7 +1621,7 @@ verification tier. It records what a lane actually observed.
 | `evidence_id` | string, immutable, `EVD-######` | **MUST** | Never reused; allocated at integration only, next-free at application (first allocation `EVD-000001`). Evidence rows are never deleted; a superseded or refuted observation is answered by a later row (typically `tier_effect=contradicts`, or a fresher `supports_*` row), never by editing the earlier row away |
 | `record_table` | enum | **MUST** | `organizations` \| `sites` \| `ecosystem` \| `programs` \| `people` **[v1.10]** — the table the evidenced record lives in. People records (§4.9) were deliberately out of scope at v1.6 — their every field already traces to a single cited public page per record; the owner admitted the class at **[v1.10]** (ruling 2026-11-04) so the two §4.9 gates become mechanically restatable claims (V-25) instead of prose in `sources[]` |
 | `record_id` | FK → the table named in `record_table` | **MUST** | `ORG-######` for organizations and ecosystem rows (ecosystem records carry org_ids), `SITE-######` for sites, `PROG-######` for programs, `PERSON-######` for people **[v1.10]**. Validator V-22 resolves the FK against the named table only |
-| `claim_type` | enum | **MUST** | `existence` \| `activity` \| `scope` \| `address` \| `parent` \| `liveness` \| `code` \| `size_band` **[2026-11-03, owner battery B-BAND]** — exactly one per row; `size_band` = a stated employee-size band (`employee_band_site` / `employee_band_ohio`) and its source, a band only and never a headcount; source classes `government_filing` (OSHA ITA 300A, OSHA inspection, Form 5500 active participants) or `own_site` only; ceiling `supports_B`; not a §4.13 must-have claim; an observation bearing on two claims carries two rows. `existence` = the entity is the entity claimed (legal name / identity). `activity` = the entity performs the claimed primary activity (the §1 test evidence). `scope` = the activity is in-scope polymer work under §§1–2 (the Ring decision's evidence). `address` = a stated address (HQ or site) is the entity's address, county included. `parent` = a stated parent / operator linkage. `liveness` = the entity was operating (or had ceased) at a date. `code` = a stated code (NAICS primary; CIP at program grain) and its §2.1 provenance. At v1.7 the `code` claim type also covers `code_assignments`
+| `claim_type` | enum | **MUST** | `existence` \| `activity` \| `scope` \| `address` \| `parent` \| `liveness` \| `code` \| `size_band` **[2026-11-03, owner battery B-BAND]** — exactly one per row; `size_band` = a stated employee-size band (`employee_band_site` / `employee_band_ohio`) and its source, a band only and never a headcount; source classes `government_filing` (OSHA ITA 300A, OSHA inspection) or `own_site` only **[v1.19.5]**; ceiling `supports_B`; not a §4.13 must-have claim; an observation bearing on two claims carries two rows. `existence` = the entity is the entity claimed (legal name / identity). `activity` = the entity performs the claimed primary activity (the §1 test evidence). `scope` = the activity is in-scope polymer work under §§1–2 (the Ring decision's evidence). `address` = a stated address (HQ or site) is the entity's address, county included. `parent` = a stated parent / operator linkage. `liveness` = the entity was operating (or had ceased) at a date. `code` = a stated code (NAICS primary; CIP at program grain) and its §2.1 provenance. At v1.7 the `code` claim type also covers `code_assignments`
 rows: a stated SIC assignment is witnessed by a `code` evidence
 row whose `claim_detail` names the assignment ("sic 3089 stated,
 EDGAR filer CIK 0001370946") — corroboration class; assignments
@@ -3208,8 +3211,9 @@ unchanged.
   - **Rules added:** the PIC CRM is never cited in a public row (validator
     V-50); no email-like string in a people profile URL (V-51); public-only
     `sources` (cleanup pass, not yet enforced); certification currency; the
-    three-point NAICS confidence scale; `member_since` is a year field; a Form
-    5500 participant count is admissible for employee bands.
+    three-point NAICS confidence scale; `member_since` is a year field; Form
+    5500 participant counts were admissible for employee bands at this revision
+    (superseded by v1.19.5).
   - **Process rulings:** see §1 "Owner rulings — 2026-11-01".
   - **Validator:** gains V-45..V-51, enforcing existing MUSTs plus the new
     rules, with a shrink-only grandfather baseline in
@@ -3327,4 +3331,5 @@ unchanged.
 - **v1.19.2 — 2026-11-22 (owner ruling 2026-11-22, in session, "PIC-18 exactly").** §4.4 `hq_in_scope`: `ne_ohio` means the HQ county is in PIC-18 (`scripts/regions.py`); Carroll and Holmes are not `ne_ohio`. The earlier definition, a 20-county list marked "confirm once, then freeze in code", is replaced by a pointer to PIC-18; it differed from PIC-18 only by Carroll and Holmes. The owner ruling of 2026-11-03 (AGENTS.md §8) fixed PIC-18 as the reporting region and superseded the earlier lists for reporting; the stored-field reading is the 2026-11-22 ruling. 312 `organizations` rows (frame PIC-18, `tasks/region-labels-2026-11-22/`) whose HQ county is a PIC-18 county carried `pic12` (224), `ohio_other` (78) or `ohio_statewide` (10) and now carry `ne_ohio`. At this revision zero organization rows carry `pic12`; 84 carry `ohio_statewide` (79 with a named Ohio county outside PIC-18, 5 with no county), outside the enum and not decided here. The 20 rows in `record_errors.csv` are leads to verify at a source.
 
 - **v1.19.3 — 2026-11-22 (owner ruling 2026-11-22, "Headcount age: 5 years", multiple choice).** §1 R13 gains an age limit: a filing sets an employee band only if it is dated within five years of the date the band is written (source date: ITA 31 December of the filing year; inspection open date; Form 5500 plan-year end; 2021-11-22 for the pass of 2026-11-22); older filings are held as leads with the reason `stale_over_5_years`. The ruling came out of the size sprint (`tasks/pic18-size-sprint-2026-11-22/README.md`), where 14 of the first 117 candidate fills rested on inspections of 1974 to 2015. No data row is changed by this revision.
-
+- **v1.19.4 — 2026-11-22 (owner ruling 2026-11-22, "Add 'corporation'", multiple choice; and the round-13 follow-up on `ohio_statewide`).** (1) §4.4 `entity_type` enum gains `corporation`, the plain value for a legal name ending in Inc, Inc., Incorporated, Corp, Corp. or Corporation; public or private is not guessed, so the suffix never sets `corporation_public` or `corporation_private`, and Co, Company, Ltd and Limited stay `unknown`. `scripts/export_vocab.py`, `docs/schema/vocab.json` and `scripts/profile_fields.py` carry the new value. `tasks/entity-type-from-name-2026-11-22/` fills blank or `unknown` cells only, never overwriting: `corporation` 783, `llc` 228, `partnership` 4 organization rows in PIC-18 and the rest of Ohio (by frame in its README). (2) 79 organization rows with `hq_in_scope` = `ohio_statewide` and a named Ohio HQ county outside PIC-18 become `ohio_other` (`tasks/ohio-statewide-labels-2026-11-22/`); 5 with no county stay held. At this revision no organization row carries `pic12`.
+- **v1.19.5 — 2026-11-22 (owner ruling 2026-11-22, round 14, "Leads only").** §1 R7 and R13 and §4.13 remove Form 5500 active-participant counts as a size-band source. They stay leads. The rules for OSHA ITA establishment records and OSHA inspections are unchanged. No data rows change.

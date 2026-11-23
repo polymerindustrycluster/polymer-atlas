@@ -1,0 +1,227 @@
+frame,org_id,legal_name,entity_type,suffix,ownership_type,stock_ticker,hq_state,hq_country
+outside,ORG-003478,Max Packaging Company,unknown,Company,private_company,,AL,US
+pic18,ORG-001391,KONG Company,unknown,Company,,,CO,US
+outside,ORG-003252,H. Muehlstein & Co.,unknown,Co.,private_company,,CT,US
+outside,ORG-003256,Osterman & Company,unknown,Company,private_company,,CT,US
+outside,ORG-002931,M. Holland Company,unknown,Company,private_company,,IL,US
+outside,ORG-003163,Stepan Company,unknown,Company,public_company,SCL,IL,US
+outside,ORG-003403,National Tool & Manufacturing Co.,unknown,Co.,,,IL,US
+outside,ORG-004515,"Tile Redi, Ltd.",unknown,Ltd.,private_company,,IN,US
+outside,ORG-002975,Intouch Monitoring Ltd,unknown,Ltd,,,,GB
+outside,ORG-003392,Husky Injection Molding Systems Ltd.,unknown,Ltd.,,,ON,CA
+outside,ORG-003679,Scientific Plastics Co.,unknown,Co.,private_company,,KS,United States
+outside,ORG-003604,Laminated Plastics Company,unknown,Company,private_company,,MA,US
+outside,ORG-002949,Edge-Sweets Company,unknown,Company,private_company,,MI,US
+outside,ORG-002958,PCS Company,unknown,Company,,,MI,US
+outside,ORG-003387,Franchino Mold & Engineering Company,unknown,Company,,,MI,US
+outside,ORG-003704,Kent Manufacturing Company,unknown,Company,private_company,,MI,US
+outside,ORG-003877,Mesick Mold Co,unknown,Co,private_company,,MI,US
+pic18,ORG-000870,H.B. Fuller Company,unknown,Company,,,MN,US
+ohio_rest,ORG-001093,RTP Company,unknown,Company,,,MN,US
+outside,ORG-003615,Precision Punch & Plastics Company,unknown,Company,private_company,,MN,US
+outside,ORG-003248,"Microban International, Ltd.",unknown,Ltd.,private_company,,NC,US
+outside,ORG-003280,Wilmington Pipe Company,unknown,Company,private_company,,NC,US
+outside,ORG-008004,"R&D Plastics of Hickory, Ltd.",unknown,Ltd.,,,NC,US
+outside,ORG-008013,Schlaadt USA Limited,unknown,Limited,,,NC,US
+outside,ORG-002925,Eastman Machine Company,unknown,Company,private_company,,NY,US
+outside,ORG-004401,Hunter Douglas Fabrication Company,unknown,Company,private_company,,NY,US
+pic18,ORG-000020,Rapid Mold Repair & Machine Co.,unknown,Co.,,,OH,US
+pic18,ORG-000025,Musson Rubber Co.,unknown,Co.,,,OH,US
+pic18,ORG-000031,Akron Porcelain & Plastics Co.,unknown,Co.,family_owned,,OH,US
+pic18,ORG-000053,Sovereign Chemical Co.,unknown,Co.,,,OH,US
+pic18,ORG-000057,Smithers-Oasis Co.,unknown,Co.,,,OH,US
+pic18,ORG-000066,"Custom Plastic Extrusions, Ltd.",unknown,Ltd.,,,OH,US
+pic18,ORG-000107,T&M Plastics Co.,unknown,Co.,,,OH,US
+pic18,ORG-000121,Cleveland Polymer Company,unknown,Company,,,OH,US
+pic18,ORG-000132,The Sherwin-Williams Company,unknown,Company,,SHW,OH,US
+pic18,ORG-000133,Oatey Co.,unknown,Co.,,,OH,US
+pic18,ORG-000147,Chem-Materials Co.,unknown,Co.,,,OH,US
+pic18,ORG-000179,Jet Rubber Company,unknown,Company,employee_owned,,OH,US
+pic18,ORG-000180,Enduro Rubber Company,unknown,Company,,,OH,US
+pic18,ORG-000183,Die-Cut Products Co.,unknown,Co.,,,OH,US
+pic18,ORG-000190,Clark Rubber & Plastics Co.,unknown,Co.,,,OH,US
+pic18,ORG-000192,Triangle Chemical Co.,unknown,Co.,,,OH,US
+pic18,ORG-000194,Salem-Republic Rubber Co.,unknown,Co.,,,OH,US
+pic18,ORG-000201,Ashtabula Rubber Co.,unknown,Co.,,,OH,US
+pic18,ORG-000208,A-ROO Company,unknown,Company,,,OH,US
+pic18,ORG-000230,American Wire & Cable Co.,unknown,Co.,,,OH,US
+pic18,ORG-000239,The B.B. Bradley Company,unknown,Company,,,OH,US
+pic18,ORG-000248,Blair Rubber Company,unknown,Company,,,OH,US
+pic18,ORG-000252,The Bonnot Company,unknown,Company,private_company,,OH,US
+pic18,ORG-000256,Buckeye Rubber & Packing Co.,unknown,Co.,,,OH,US
+pic18,ORG-000261,Carbon Polymers Company,unknown,Company,private_company,,OH,US
+pic18,ORG-000264,"Cast Nylons, LTD",unknown,LTD,,,OH,US
+pic18,ORG-000271,"Chem Technologies, Ltd.",unknown,Ltd.,,,OH,US
+pic18,ORG-000273,"ChemSpec, Ltd.",unknown,Ltd.,,,OH,US
+pic18,ORG-000348,Freeman Manufacturing & Supply Company,unknown,Company,,,OH,US
+pic18,ORG-000359,Grafton Machine & Rubber Co.,unknown,Co.,,,OH,US
+pic18,ORG-000369,Heyden Mold & Bench Co.,unknown,Co.,,,OH,US
+pic18,ORG-000376,IMS Company,unknown,Company,,,OH,US
+pic18,ORG-000380,Ingalls Process Equipment Co.,unknown,Co.,,,OH,US
+pic18,ORG-000391,JACO Manufacturing Co.,unknown,Co.,,,OH,US
+pic18,ORG-000392,Jaco Products Co.,unknown,Co.,,,OH,US
+pic18,ORG-000397,Johnson Brothers Rubber Co.,unknown,Co.,,,OH,US
+pic18,ORG-000402,Kent Adhesive Products Company,unknown,Company,,,OH,US
+pic18,ORG-000403,Karman Rubber Company,unknown,Company,,,OH,US
+pic18,ORG-000405,Keener Rubber Company,unknown,Company,,,OH,US
+pic18,ORG-000421,The Little Tikes Company,unknown,Company,,,OH,US
+pic18,ORG-000429,Mansfield Paint Company,unknown,Company,,,OH,US
+pic18,ORG-000458,Neff-Perkins Company,unknown,Company,,,OH,US
+pic18,ORG-000510,"Polymer Machinery Consultants, Ltd.",unknown,Ltd.,,,OH,US
+pic18,ORG-000530,Protectoplas Company,unknown,Company,,,OH,US
+pic18,ORG-000542,Red Seal Electric Co.,unknown,Co.,,,OH,US
+pic18,ORG-000574,SMC Ltd.,unknown,Ltd.,,,OH,US
+pic18,ORG-000575,Soberay & Sons Ltd,unknown,Ltd,,,OH,US
+pic18,ORG-000586,"Spunfab, Ltd.",unknown,Ltd.,,,OH,US
+pic18,ORG-000589,The Step2 Company,unknown,Company,,,OH,US
+pic18,ORG-000594,Superior Mold & Die Co.,unknown,Co.,,,OH,US
+pic18,ORG-000605,ThermoCore Products Ltd,unknown,Ltd,,,OH,US
+pic18,ORG-000613,The Trexler Rubber Company,unknown,Company,,,OH,US
+pic18,ORG-000635,The Wooster Brush Company,unknown,Company,,,OH,US
+ohio_rest,ORG-000644,889 Global Solutions Ltd.,unknown,Ltd.,,,OH,US
+pic18,ORG-000668,American Excelsior Company,unknown,Company,,,OH,US
+ohio_rest,ORG-000694,B. Schoenberg & Co.,unknown,Co.,,,OH,US
+pic18,ORG-000706,Bob Sumerel Tire Co,unknown,Co,,,OH,US
+ohio_rest,ORG-000710,BRP Manufacturing Company,unknown,Company,,,OH,US
+ohio_rest,ORG-000718,C & M Rubber Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-000743,Comfort Line Ltd.,unknown,Ltd.,,,OH,US
+ohio_rest,ORG-000775,Crushproof Tubing Company,unknown,Company,,,OH,US
+ohio_rest,ORG-000794,DimcoGray Company,unknown,Company,,,OH,US
+ohio_rest,ORG-000818,Elledge Gasketing & Supply Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-000819,Haviland Plastic Products Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-000847,Fournier Rubber & Supply Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-000855,Gilkey Window Company,unknown,Company,,,OH,US
+ohio_rest,ORG-000863,The Granger Plastics Company,unknown,Company,,,OH,US
+ohio_rest,ORG-000865,Green Tokai Co.,unknown,Co.,,,OH,US
+pic18,ORG-000868,Guardian Manufacturing Company,unknown,Company,,,OH,US
+pic18,ORG-000873,Hamilton Polymers Company,unknown,Company,,,OH,US
+ohio_rest,ORG-000893,Industry Products Company,unknown,Company,,,OH,US
+ohio_rest,ORG-000919,Key Resin Company,unknown,Company,,,OH,US
+pic18,ORG-000924,Kentak Products Company,unknown,Company,,,OH,US
+pic18,ORG-000968,MPS Manufacturing Company,unknown,Company,,,OH,US
+ohio_rest,ORG-000969,MTM Molded Products Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-000981,Netherland Rubber Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-000986,Newman Sanitary Gasket Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001019,Pinnacle Roller Co.,unknown,Co.,,,OH,US
+pic18,ORG-001027,Paramont Machine Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001066,R3 Manufacturing Ltd.,unknown,Ltd.,,,OH,US
+ohio_rest,ORG-001088,Roppe Holding Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001097,Rudolph Bros. & Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-001110,The Shepherd Color Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001127,Stillwater Coating Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-001132,Summers Rubber Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001149,Tencom Ltd.,unknown,Ltd.,,,OH,US
+ohio_rest,ORG-001152,The Thaman Rubber Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001158,The Toledo Bag Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001168,Thomas Tool & Mold Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001169,"US Autoclave, Ltd.",unknown,Ltd.,,,OH,US
+ohio_rest,ORG-001185,Versa Pak Ltd.,unknown,Ltd.,,,OH,US
+ohio_rest,ORG-001203,Woodlawn Rubber Co.,unknown,Co.,,,OH,US
+pic18,ORG-001328,Continental AG,unknown,AG,,,OH,US
+ohio_rest,ORG-001340,French Oil Mill Machinery Company,unknown,Company,,,OH,US
+pic18,ORG-001388,Hy-Ko Products Company,unknown,Company,,,OH,US
+pic18,ORG-001392,Kalcor Coatings Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001403,Graham Packaging Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001416,Heritage Bag Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001417,Hersh Packing & Rubber Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001425,Cooper Tire & Rubber Company,unknown,Company,,,OH,US
+pic18,ORG-001432,Cell-O-Core Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001437,Ottawa Rubber Company,unknown,Company,,,OH,US
+pic18,ORG-001438,Thogus Products Company,unknown,Company,family_owned,,OH,US
+pic18,ORG-001470,The Pittsburgh Paints Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001491,The Gorilla Glue Company,unknown,Company,,,OH,US
+pic18,ORG-001557,"MatPLUS, LTD",unknown,LTD,,,OH,US
+pic18,ORG-001573,Prentke Romich Company,unknown,Company,employee_owned,,OH,US
+pic18,ORG-001583,Grand River Rubber & Plastics Company,unknown,Company,employee_owned,,OH,US
+pic18,ORG-001585,High Tech Extrusions Ltd,unknown,Ltd,,,OH,US
+pic18,ORG-001588,The Kent Mold & Manufacturing Company,unknown,Company,,,OH,US
+pic18,ORG-001589,The Ruscoe Company,unknown,Company,,,OH,US
+pic18,ORG-001600,North Shore Strapping Company,unknown,Company,private_company,,OH,US
+ohio_rest,ORG-001604,Bridgestone APM Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001605,Clopay Building Products Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001606,Haas Door Company,unknown,Company,,,OH,US
+pic18,ORG-001630,AKRON BELTING & SUPPLY CO,unknown,CO,,,OH,US
+pic18,ORG-001634,ASTRA PRODUCTS OF OHIO LTD,unknown,LTD,,,OH,US
+ohio_rest,ORG-001663,Delaware Paint Company Ltd,unknown,Ltd,,,OH,US
+pic18,ORG-001678,Harrison Paint Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001692,Molding Technologies Ltd,unknown,Ltd,,,OH,US
+pic18,ORG-001702,J T Adams Company,unknown,Company,,,OH,US
+pic18,ORG-001740,Auto Technology Company,unknown,Company,,,OH,US
+ohio_rest,ORG-001743,Industrial Pattern & Mfg. Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-001752,Performance Plastics Ltd.,unknown,Ltd.,,,OH,US
+pic18,ORG-001758,Niles Building Products Company,unknown,Company,,,OH,US
+pic18,ORG-001772,Akron Central Engraving Mold & Machine Co,unknown,Co,,,OH,US
+pic18,ORG-001774,Alcon Tool Co,unknown,Co,,,OH,US
+pic18,ORG-001776,S. Slesnick Company,unknown,Company,,,OH,US
+pic18,ORG-001783,Beacon Gasket & Seals Co,unknown,Co,family_owned,,OH,US
+ohio_rest,ORG-001802,E.C. Shaw Company,unknown,Company,,,OH,US
+pic18,ORG-001807,The Euclid Chemical Company,unknown,Company,,,OH,US
+pic18,ORG-001834,J.C. Whitlam Manufacturing Co.,unknown,Co.,,,OH,US
+pic18,ORG-001840,Koehler Rubber & Supply Co.,unknown,Co.,,,OH,US
+pic18,ORG-001869,Pro-Line Automation Systems Ltd.,unknown,Ltd.,,,OH,US
+pic18,ORG-001875,Q Holding Company,unknown,Company,,,OH,US
+pic18,ORG-001876,Quality Match Plate Co.,unknown,Co.,,,OH,US
+pic18,ORG-001882,Revere Products Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-001887,Sabo Company,unknown,Company,,,OH,US
+pic18,ORG-001896,Slome Belting & Supply Co,unknown,Co,,,OH,US
+pic18,ORG-001911,"United Feed Screws, Ltd.",unknown,Ltd.,,,OH,US
+pic18,ORG-001949,Akron Steel Fabricators Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-001977,Recycling Group Ltd,unknown,Ltd,,,OH,US
+pic18,ORG-001980,"TROESTER Machinery, Ltd.",unknown,Ltd.,,,OH,US
+pic18,ORG-002014,Stroup & Son Ltd,unknown,Ltd,,,OH,US
+ohio_rest,ORG-002019,"The Brown Company of Findlay, Ltd.",unknown,Ltd.,,,OH,US
+pic18,ORG-002022,The Simplay3 Co,unknown,Co,,,OH,US
+pic18,ORG-002027,United Feed Screws Limited,unknown,Limited,,,OH,US
+pic18,ORG-002034,Whip Guide Company,unknown,Company,,,OH,US
+pic18,ORG-002056,P & E Sales Ltd.,unknown,Ltd.,,,OH,US
+pic18,ORG-002068,Chemstress Consultant Company,unknown,Company,,,OH,US
+pic18,ORG-002131,Us Molding Machinery Co.,unknown,Co.,,,OH,US
+pic18,ORG-002164,Liberty Mold & Machine Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-002170,Tech Mold & Tool Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-002172,Wright Materials Research Co.,unknown,Co.,,,OH,US
+ohio_rest,ORG-003488,Responsible Products Limited,unknown,Limited,private_company,,OH,US
+outside,ORG-002177,Berkley Prods Co.,unknown,Co.,,,PA,US
+outside,ORG-002234,Pandalai Coating Company,unknown,Company,,,PA,US
+outside,ORG-002254,Valley Tire Co.,unknown,Co.,,,PA,US
+outside,ORG-002272,Rowa Group Holding Gmbh,unknown,Gmbh,,,PA,US
+outside,ORG-002274,Vision Profile Extrusions USA Ltd,unknown,Ltd,,,PA,US
+outside,ORG-002301,Electro Chemical Engineering & Manufacturing Co,unknown,Co,,,PA,US
+outside,ORG-002323,Esstech -  Division Of Esschem Co.,unknown,Co.,,,PA,US
+outside,ORG-002356,Herbert Cooper Co.,unknown,Co.,,,PA,US
+outside,ORG-002375,Kore Mart Limited,unknown,Limited,,,PA,US
+outside,ORG-002417,Strauss Engineering Co.,unknown,Co.,,,PA,US
+outside,ORG-002421,Jamestown Paint Co.,unknown,Co.,,,PA,US
+outside,ORG-002454,Handelok Bag Co.,unknown,Co.,,,PA,US
+outside,ORG-002472,Westlake Plastics Co.,unknown,Co.,,,PA,US
+outside,ORG-002492,Peace Products Company,unknown,Company,,,PA,US
+outside,ORG-002496,Bedford Materials Co.,unknown,Co.,,,PA,US
+outside,ORG-002497,The Murus Company,unknown,Company,,,PA,US
+outside,ORG-002516,Tamarack Packaging Limited,unknown,Limited,,,PA,US
+outside,ORG-002553,Airlite Plastics Co.,unknown,Co.,,,PA,US
+outside,ORG-002593,Quint Co.,unknown,Co.,,,PA,US
+outside,ORG-002609,Pruett Schaffer Chem Co.,unknown,Co.,,,PA,US
+outside,ORG-002667,"Polymics, Ltd.",unknown,Ltd.,,,PA,US
+outside,ORG-002692,Magee Plastics Company,unknown,Company,,,PA,US
+outside,ORG-002703,General Foam Co.,unknown,Co.,,,PA,US
+outside,ORG-002743,Dipcraft Manufacturing Co,unknown,Co,,,PA,US
+outside,ORG-002744,Drug Plastics & Glass Co,unknown,Co,,,PA,US
+outside,ORG-002758,Neville Chemical Co,unknown,Co,,,PA,US
+outside,ORG-002760,Novelty Manufacturing Co.,unknown,Co.,,,PA,US
+outside,ORG-003612,Pena-Plas Company,unknown,Company,private_company,,PA,US
+outside,ORG-003962,U.S. Medical Chemical Company,unknown,Company,private_company,,SC,US
+outside,ORG-004172,Polymer Industrial Products Co.,unknown,Co.,private_company,,TN,US
+outside,ORG-002921,"Tricon Energy, Ltd.",unknown,Ltd.,private_company,,TX,US
+outside,ORG-002937,"Republic Plastics, Ltd.",unknown,Ltd.,private_company,,TX,US
+outside,ORG-002940,Tokai Carbon CB Ltd.,unknown,Ltd.,,TYO: 5301 (parent Tokai Carbon Co.),TX,US
+outside,ORG-003257,"Petroflex North America, Ltd.",unknown,Ltd.,private_company,,TX,US
+pic18,ORG-000202,Quality Belt Maintenance Ltd.,unknown,Ltd.,,,,
+outside,ORG-009004,Davis Paint Co,unknown,Co,,,,
+outside,ORG-009006,MANCHESTER PACKAGING COMPANY,unknown,COMPANY,,,,
+outside,ORG-010005,"RUBBERCRAFT CORPORATION OF CALIFORNIA, LTD.",unknown,LTD.,,,,
+outside,ORG-010507,Technical Chemical Company,unknown,Company,,,,
+outside,ORG-010508,Mosites Rubber Company,unknown,Company,,,,
+outside,ORG-010605,CARY PRODUCTS COMPANY,unknown,COMPANY,,,,
+outside,ORG-010606,"DEXAS INTERNATIONAL, LTD",unknown,LTD,,,,
+outside,ORG-002348,Carpenter Co.,unknown,Co.,,,VA,US
+outside,ORG-004164,Fiberglass Engineering Co,unknown,Co,private_company,,VA,US
+outside,ORG-003430,Hudson-Sharp Machine Company,unknown,Company,private_company,,WI,US

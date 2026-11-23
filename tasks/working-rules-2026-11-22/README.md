@@ -41,7 +41,7 @@ Compliant cases that must pass: `TestCompliant.*`, `TestRule5.test_valid_pass_au
 
 ## The binding-gate job
 
-The workflow's second check run, `binding-gate`, runs main's `scripts/check_evidence_binding.py` (PR #467, the gate for
+The workflow's second check run, `binding-gate` (the work is done by the job `gate-run`; `publish-binding-gate` posts the one check with this name), runs main's `scripts/check_evidence_binding.py` (PR #467, the gate for
 structured rows) twice with `--tree pr`: `--new-since origin/main` and `--provenance-since origin/main`. The PR merge
 result is checked out as data into `./pr`; the trusted checkout (the base branch, `fetch-depth: 0`) supplies the code and
 the rules. **Nothing from the PR tree is executed.** The job has `permissions: {}` (the repository is public) and both
@@ -81,4 +81,4 @@ Not verified: the gate steps have not run on a runner (the script is not on `mai
 2. **Labels in tables other than evidence.** The label reader takes `created_by` from every `data/*.csv` that has the
    column, not only the evidence shards.
 3. **A FAIL audit is permanent until its file changes.** A later PASS file does not override it.
-4. **Ruleset (controller):** require `pr-rules` and `binding-gate`, and turn on the strict policy (see above).
+4. **Ruleset:** done by the controller on 2026-11-22 (`pr-rules` and `binding-gate` required, strict policy on).

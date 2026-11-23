@@ -1,0 +1,211 @@
+##### night 2026-11-17  (python3 scripts/nightly_watch.py --facts tasks/nightly-watch-2026-11-22/backfill/night-2026-11-17.json)
+NIGHTLY WATCH — inspected:
+  window 2026-11-16T11:17:00Z .. 2026-11-17T11:17:00Z on origin/main (base be2e6084d4, head 89d9e460e8)
+  commits: 12 first-parent (9 touching data/, 0 with no PR)
+  pull requests: #336, #339, #346, #341, #340, #338, #345, #337, #342, #335, #355, #359, #352t, #348t, #356t, #354t, #351t, #350t, #349t, #353t (t = merged into a merge train)
+  rows added: 469 evidence (8 created_by labels), 577 registry links
+  tasks/ folders read: 306; labels without provenance: 0
+  PIC-18 unknown counts (process/market/size): 342/439/538 -> 340/432/445
+  latest completed validate run on main: success
+FINDING [b] PR #336 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #339 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #346 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #341 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #340 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #337 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #342 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #355 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #359 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #352 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #348 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #354 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #351 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #350 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #349 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #353 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+RESULT: FAIL — findings above
+
+##### night 2026-11-18  (python3 scripts/nightly_watch.py --facts tasks/nightly-watch-2026-11-22/backfill/night-2026-11-18.json)
+NIGHTLY WATCH — inspected:
+  window 2026-11-17T11:17:00Z .. 2026-11-18T11:17:00Z on origin/main (base 89d9e460e8, head 099497faba)
+  commits: 17 first-parent (10 touching data/, 0 with no PR)
+  pull requests: #363, #347t, #343t, #344, #358, #360, #361, #366, #364, #357, #365, #367, #369, #371, #368, #370, #373, #374, #372 (t = merged into a merge train)
+  rows added: 513 evidence (9 created_by labels), 0 registry links
+  tasks/ folders read: 319; labels without provenance: 0
+  PIC-18 unknown counts (process/market/size): 340/432/445 -> 331/383/445
+  latest completed validate run on main: success
+FINDING [b] PR #363 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #347 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #343 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #344 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #360 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #361 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #364 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #365 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #369 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #371 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #370 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #373 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+RESULT: FAIL — findings above
+
+##### night 2026-11-19  (python3 scripts/nightly_watch.py --facts tasks/nightly-watch-2026-11-22/backfill/night-2026-11-19.json)
+NIGHTLY WATCH — inspected:
+  window 2026-11-18T11:17:00Z .. 2026-11-19T11:17:00Z on origin/main (base 099497faba, head ec7e19bebe)
+  commits: 26 first-parent (16 touching data/, 0 with no PR)
+  pull requests: #376, #375, #378, #377, #380, #382, #379, #381, #385, #387, #388, #389, #391, #392, #386, #394, #390, #393, #384, #395, #383, #398, #397, #396, #399, #400
+  rows added: 188 evidence (10 created_by labels), 0 registry links
+  tasks/ folders read: 340; labels without provenance: 0
+  PIC-18 unknown counts (process/market/size): 331/383/445 -> 324/319/443
+  latest completed validate run on main: success
+FINDING [b] PR #382 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #379 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #381 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #385 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #388 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #389 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #386 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #394 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #390 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #393 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #384 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #395 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #383 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #397 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #396 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #400 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+RESULT: FAIL — findings above
+
+##### night 2026-11-20  (python3 scripts/nightly_watch.py --facts tasks/nightly-watch-2026-11-22/backfill/night-2026-11-20.json)
+NIGHTLY WATCH — inspected:
+  window 2026-11-19T11:17:00Z .. 2026-11-20T11:17:00Z on origin/main (base ec7e19bebe, head b7b3891003)
+  commits: 20 first-parent (14 touching data/, 0 with no PR)
+  pull requests: #401, #405, #403, #402, #408, #404, #409, #410, #411, #406, #407, #412, #414, #413, #415, #418, #419, #416, #417, #420
+  rows added: 534 evidence (7 created_by labels), 0 registry links
+  tasks/ folders read: 357; labels without provenance: 0
+  PIC-18 unknown counts (process/market/size): 324/319/443 -> 322/316/443
+  latest completed validate run on main: success
+FINDING [b] PR #403 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #402 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #404 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #409 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #410 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #411 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #406 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #407 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #412 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #414 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #413 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #418 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #419 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #420 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [c] PR #419 merged 2026-11-20T01:14:06Z before its validate check finished (status completed, completed 2026-11-20T01:19:43Z)
+FINDING [c] PR #420 merged 2026-11-20T03:09:53Z before its validate check finished (status completed, completed 2026-11-20T03:11:25Z)
+RESULT: FAIL — findings above
+
+##### night 2026-11-21  (python3 scripts/nightly_watch.py --facts tasks/nightly-watch-2026-11-22/backfill/night-2026-11-21.json)
+NIGHTLY WATCH — inspected:
+  window 2026-11-20T11:17:00Z .. 2026-11-21T11:17:00Z on origin/main (base b7b3891003, head e2116cc3cd)
+  commits: 18 first-parent (11 touching data/, 0 with no PR)
+  pull requests: #421, #422, #423, #426, #425, #424, #428, #429, #431, #430, #427, #432, #434, #435, #436, #437, #438, #439
+  rows added: 1,393 evidence (8 created_by labels), 0 registry links
+  tasks/ folders read: 367; labels without provenance: 0
+  PIC-18 unknown counts (process/market/size): 322/316/443 -> 322/316/443
+  latest completed validate run on main: success
+FINDING [b] PR #421 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #422 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #423 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #425 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #424 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #427 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #432 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #434 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #435 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #436 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #439 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [c] PR #421 merged 2026-11-20T11:43:07Z before its validate check finished (status completed, completed 2026-11-20T11:45:22Z)
+FINDING [c] PR #422 merged 2026-11-20T11:45:53Z before its validate check finished (status completed, completed 2026-11-20T11:48:07Z)
+FINDING [c] PR #423 merged 2026-11-20T11:58:02Z before any validate check started on its head (first started 2026-11-20T11:58:03Z, failure)
+FINDING [c] PR #439 merged 2026-11-21T03:20:38Z before its validate check finished (status completed, completed 2026-11-21T03:23:43Z)
+FINDING [e] 11 data/ PRs merged and no PIC-18 unknown count fell: process 322->322, market 316->316, size 443->443 (of 794->794 org rows)
+RESULT: FAIL — findings above
+
+##### night 2026-11-22  (python3 scripts/nightly_watch.py --facts tasks/nightly-watch-2026-11-22/backfill/night-2026-11-22.json)
+NIGHTLY WATCH — inspected:
+  window 2026-11-21T11:17:00Z .. 2026-11-22T11:17:00Z on origin/main (base e2116cc3cd, head 4924083cd6)
+  commits: 16 first-parent (15 touching data/, 0 with no PR)
+  pull requests: #440, #441, #442, #443, #444, #445, #446, #447, #448, #449, #450, #452, #451, #453, #454, #455
+  rows added: 2,744 evidence (9 created_by labels), 1,765 registry links
+  tasks/ folders read: 367; labels without provenance: 9
+  PIC-18 unknown counts (process/market/size): 322/316/443 -> 322/316/443
+  latest completed validate run on main: success
+FINDING [a] created_by 'label#364cc707': 1,728 evidence rows added (limit 1,000)
+FINDING [a] PR #443: 1,276 evidence rows added (limit 1,000)
+FINDING [a] PR #453: 1,765 registry links added (limit 1,000)
+FINDING [b] PR #440 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #441 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #442 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #443 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #444 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #445 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #446 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #447 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #448 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #449 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #450 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #451 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #453 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #454 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #455 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [c] PR #440 merged 2026-11-21T11:58:18Z before its validate check finished (status completed, completed 2026-11-21T12:00:48Z)
+FINDING [c] PR #441 merged 2026-11-21T14:11:16Z before any validate check started on its head (first started 2026-11-21T14:12:50Z, success)
+FINDING [c] PR #442 merged 2026-11-21T15:25:31Z before its validate check finished (status completed, completed 2026-11-21T15:29:39Z)
+FINDING [c] PR #443 merged 2026-11-21T18:51:46Z before any validate check started on its head (first started 2026-11-21T18:53:07Z, success)
+FINDING [c] PR #444 merged 2026-11-21T20:44:48Z before its validate check finished (status completed, completed 2026-11-21T20:49:12Z)
+FINDING [c] PR #445 merged 2026-11-21T20:50:19Z before its validate check finished (status completed, completed 2026-11-21T20:52:36Z)
+FINDING [c] PR #446 merged 2026-11-21T21:26:12Z before its validate check finished (status completed, completed 2026-11-21T21:29:41Z)
+FINDING [c] PR #447 merged 2026-11-21T21:41:16Z before its validate check finished (status completed, completed 2026-11-21T21:45:44Z)
+FINDING [c] PR #448 merged 2026-11-21T23:38:31Z before its validate check finished (status completed, completed 2026-11-21T23:42:56Z)
+FINDING [c] PR #449 merged 2026-11-21T23:45:17Z before its validate check finished (status completed, completed 2026-11-21T23:49:34Z)
+FINDING [c] PR #450 merged 2026-11-21T23:55:23Z before its validate check finished (status completed, completed 2026-11-21T23:59:39Z)
+FINDING [c] PR #452 merged 2026-11-22T08:10:35Z before its validate check finished (status completed, completed 2026-11-22T08:13:50Z)
+FINDING [c] PR #451 merged 2026-11-22T08:10:45Z before its validate check finished (status completed, completed 2026-11-22T08:15:01Z)
+FINDING [c] PR #453 merged 2026-11-22T08:19:01Z before its validate check finished (status completed, completed 2026-11-22T08:22:12Z)
+FINDING [c] PR #454 merged 2026-11-22T08:23:38Z before its validate check finished (status completed, completed 2026-11-22T08:28:05Z)
+FINDING [c] PR #455 merged 2026-11-22T08:35:48Z before its validate check finished (status completed, completed 2026-11-22T08:40:18Z)
+FINDING [e] 15 data/ PRs merged and no PIC-18 unknown count fell: process 322->322, market 316->316, size 443->443 (of 794->794 org rows)
+FINDING [f] created_by 'label#364cc707': 1,728 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#052d97b4': 507 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#16767251': 240 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#f4051a14': 124 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#2511f91c': 53 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#ca62dc89': 32 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#e266dfb3': 22 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#49955b87': 22 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#2f3a22b7': 16 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+RESULT: FAIL — findings above
+
+##### night 2026-11-22-partial  (python3 scripts/nightly_watch.py --facts tasks/nightly-watch-2026-11-22/backfill/night-2026-11-22-partial.json)
+NIGHTLY WATCH — inspected:
+  window 2026-11-22T11:17:00Z .. 2026-11-22T23:00:00Z on origin/main (base 4924083cd6, head 393c389571)
+  commits: 7 first-parent (5 touching data/, 0 with no PR)
+  pull requests: #456, #457, #458, #460, #462, #465, #463
+  rows added: 34,094 evidence (4 created_by labels), 6,837 registry links
+  tasks/ folders read: 369; labels without provenance: 4
+  PIC-18 unknown counts (process/market/size): 322/316/443 -> 322/316/443
+  latest completed validate run on main: success
+FINDING [a] created_by 'label#6b2561e2': 23,564 evidence rows added (limit 1,000)
+FINDING [a] created_by 'label#e6f09791': 10,352 evidence rows added (limit 1,000)
+FINDING [a] PR #457: 10,530 evidence rows added (limit 1,000)
+FINDING [a] PR #458: 23,564 evidence rows added (limit 1,000)
+FINDING [a] PR #458: 6,837 registry links added (limit 1,000)
+FINDING [b] PR #456 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #457 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [b] PR #458 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
+FINDING [c] PR #456 merged 2026-11-22T11:46:03Z before its validate check finished (status completed, completed 2026-11-22T11:50:39Z)
+FINDING [e] 5 data/ PRs merged and no PIC-18 unknown count fell: process 322->322, market 316->316, size 443->443 (of 794->794 org rows)
+FINDING [f] created_by 'label#6b2561e2': 23,564 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#e6f09791': 10,352 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#052d97b4': 122 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#364cc707': 56 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+RESULT: FAIL — findings above
+
