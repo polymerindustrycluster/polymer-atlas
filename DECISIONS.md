@@ -371,3 +371,12 @@ against their cited filings with the filing year shown.
   claims. Both close when their reads are in. What stays STILL_UNCERTAIN after the second read is listed and accepted
   open; it does not hold the draw. Inside PIC-18, the owner ruling above supersedes this.
   For Claude-built rows, a read by another model family decides.
+
+## 2026-11-23 — One evidence binding gate PR for ATLAS-38 G8
+
+The owner approved “Yes, one gate PR (2026-11-23)” so the gate can read
+the seven source and capture cases holding up PIC-18 settlement. The
+gate change precedes the data re-cites. A trade notice's dateline can
+bind organization existence. An HQ claim requires an explicit
+statement of headquarters. §4.13 records the remaining admission rules
+and the limits on street, locality, names, filing identity and replay.

@@ -10,6 +10,7 @@ import csv
 import gzip
 import hashlib
 import io
+import json
 import os
 import subprocess
 import tempfile
@@ -1236,6 +1237,106 @@ class KnownAnswer(unittest.TestCase):
         evs = {e["evidence_id"]: e for e in b.rows("17834918", "evidence_*.csv")}
         v, why, _ = b.judge(evs["EVD-431716"], b.Index.load("17834918"))
         self.assertEqual((evs["EVD-431716"]["record_id"], v, why), ("SITE-002988", "UNINSPECTABLE", "no_civic_number"))
+
+
+class G8Routes(unittest.TestCase):
+    def setUp(self):
+        self.org = dict(org_id="O", legal_name="Harbor + Reed Materials LLC", hq_city="Cleveland", hq_state="OH")
+        self.site = dict(site_id="S", org_id="O", city="Valley View", state="OH", zip="44125", county="Cuyahoga",
+                         street_address="")
+
+    def verdict(self, quote, *, ref="EPA ECHO RCRAInfo", cls="registry", claim="existence",
+                table="sites", other=()):
+        idx = b.Index([self.site], [self.org, *other])
+        return b.judge(ev("S" if table == "sites" else "O", ref, quote, claim, table, cls=cls), idx)[:2]
+
+    def test_registry_variant_and_blank_street(self):
+        q = "facility_name: Harbor & Reed Materials, Inc.; address: 16 Canal Rd, Valley View, OH 44125; county: Cuyahoga"
+        self.assertEqual(self.verdict(q), ("PASS", "registry_variant+blank_street_registry"))
+        for old, new in (("Materials", "Material"), ("Valley View", "Cleveland"), ("44125", "44126"),
+                         ("Cuyahoga", "Summit")):
+            with self.subTest(old=old):
+                self.assertNotEqual(self.verdict(q.replace(old, new))[0], "PASS")
+        self.assertNotEqual(self.verdict(q, claim="scope")[0], "PASS")
+
+    def test_postal_city_requires_exact_street_zip_and_county(self):
+        self.site["street_address"] = "16 Canal Road"
+        q = "facility_name: Harbor and Reed Materials LLC; address: 16 Canal Rd, Cleveland, OH 44125; county: Cuyahoga"
+        self.assertEqual(self.verdict(q), ("PASS", "registry_variant+mailing_city"))
+        for old, new in (("16 ", "18 "), ("44125", "44126"), ("Cuyahoga", "Summit"), ("Cleveland", "Akron")):
+            with self.subTest(old=old):
+                self.assertNotEqual(self.verdict(q.replace(old, new))[0], "PASS")
+
+    def test_press_dateline_only_admits_existence_after_replay(self):
+        q = "Cleveland, OH – Harbor and Reed Materials LLC announced a new facility on Friday."
+        kwargs = dict(ref="https://rubberworld.com/example/", cls="press", table="organizations")
+        self.assertEqual(self.verdict(q, **kwargs), ("READ_REQUIRED", "press_dateline"))
+        self.assertNotEqual(self.verdict(q, claim="address", **kwargs)[1], "press_dateline")
+        self.assertNotEqual(self.verdict(q.replace("Cleveland", "Akron"), **kwargs)[1], "press_dateline")
+
+    def test_kent_wrapper_keeps_body_and_strips_chrome(self):
+        data = (b'<div id="page" class="header-util-ct-3"><div class="site-header">Navigation</div>'
+                b'<main>Facility Details</main><footer>Footer</footer></div>')
+        self.assertEqual(b.capture_text(data), "Facility Details")
+        self.assertEqual(b.capture_text(data.replace(b"<main>", b"<p>").replace(b"</main>", b"</p>")),
+                         "Facility Details")
+
+    def test_ita_prefix_is_unique_and_has_a_held_site(self):
+        prefix = "Coastal Advanced Industrial Compounds Group"
+        self.assertEqual(len(prefix), 43)
+        self.org.update(legal_name=prefix + " Ohio, Inc.", hq_city="Valley View")
+        self.site["street_address"] = "16 Canal Road"
+        quote = f"company_name: {prefix}; establishment_name: Valley View Office; address: 16 Canal Rd, Valley View, OH 44125"
+        kwargs = dict(ref="OSHA ITA CY2021 establishment id 123", table="organizations")
+        self.assertEqual(self.verdict(quote, **kwargs), ("PASS", "ita_cy2021_unique_prefix_and_establishment"))
+        other = dict(self.org, org_id="OTHER", legal_name=prefix + " Texas, Inc.")
+        self.assertNotEqual(self.verdict(quote, other=[other], **kwargs)[0], "PASS")
+        self.assertNotEqual(self.verdict(quote.replace(prefix, prefix[:-1]), **kwargs)[0], "PASS")
+        self.assertNotEqual(self.verdict(quote.replace("16 Canal", "17 Canal"), **kwargs)[0], "PASS")
+
+    def replay(self, row, capture, quote, text, idx):
+        row.update(observed_date="2026-11-23", tier_effect="supports_C")
+        original = row["source_ref"].removeprefix("SEC EDGAR ")
+        proof = dict(record_id=row["record_id"], claim_sha256=b.claim_sha256(row), verdict="VERIFIED",
+                     reader_family="Gemini", reader_date="2026-11-23", capture=original, capture_date="2026-11-23",
+                     capture_sha256=hashlib.sha256(capture).hexdigest(), quote_offset=str(text.index(quote)))
+        observed = b.proof_date(row["observed_date"])
+        return b.proof_problem(proof, row, idx, idx, None, observed, "codex", lambda _: capture)
+
+    def test_press_replay_requires_publication_date(self):
+        idx = b.Index([], [self.org])
+        quote = "Cleveland, OH – Harbor and Reed Materials LLC announced a new facility on Friday."
+        row = ev("O", "https://rubberworld.com/example/", quote, table="organizations", cls="press")
+        html = f'<head><meta property="article:published_time" content="2025-10-14T05:38:00-04:00"></head><main>{quote}</main>'
+        self.assertEqual(self.replay(row, html.encode(), quote, quote, idx), "")
+        self.assertIn("publication date", self.replay(row, f"<main>{quote}</main>".encode(), quote, quote, idx))
+
+    def test_edgar_submissions_and_full_filing_require_held_cik(self):
+        self.site.update(street_address="16 Canal Road", site_type="hq_only")
+        link = dict(org_id="O", registry="SEC_CIK", registry_id="0000123456")
+        idx = b.Index([self.site], [self.org], links=[link])
+        address = dict(street1="16 CANAL RD", street2=None, city="CLEVELAND", stateOrCountry="OH", zipCode="44125")
+        quote = json.dumps(address)
+        capture = json.dumps(dict(cik="0000123456", addresses=dict(business=address)))
+        source = "https://data.sec.gov/submissions/CIK0000123456.json"
+        row = ev("S", source, quote, claim="address", cls="government_filing")
+        self.assertEqual(b.judge(row, idx)[:2], ("READ_REQUIRED", "sec_edgar"))
+        self.assertEqual(self.replay(row, capture.encode(), quote, capture, idx), "")
+        wrong = capture.replace("0000123456", "0000123457")
+        self.assertIn("linked filer", self.replay(row, wrong.encode(), quote, wrong, idx))
+        row["source_ref"] = source.replace("123456", "123457")
+        self.assertIn("sole held CIK", self.replay(row, wrong.encode(), quote, wrong, idx))
+
+        business = "\t\tSTREET 1: 16 CANAL RD\n\t\tCITY: CLEVELAND\n\t\tSTATE: OH\n\t\tZIP: 44125\n"
+        filing = ("<SEC-HEADER>\nFILER:\n\tCOMPANY DATA:\n\t\tCENTRAL INDEX KEY: 0000123456\n"
+                  "\tBUSINESS ADDRESS:\n" + business + "</SEC-HEADER>")
+        quote = b.norm_space(business)
+        src = "SEC EDGAR https://www.sec.gov/Archives/edgar/data/123456/000012345626000001/0000123456-26-000001.txt"
+        row = ev("S", src, quote, claim="address", cls="government_filing")
+        self.assertEqual(b.judge(row, idx)[:2], ("READ_REQUIRED", "sec_edgar"))
+        self.assertEqual(self.replay(row, filing.encode(), quote, b.norm_space(filing), idx), "")
+        wrong = filing.replace("0000123456", "0000123457")
+        self.assertIn("linked filer", self.replay(row, wrong.encode(), quote, b.norm_space(wrong), idx))
 
 
 if __name__ == "__main__":
