@@ -67,13 +67,19 @@ def https(url):
     url = (url or "").strip()
     if not url or url == "none_found":
         return ""
-    return url if url.startswith(("http://", "https://")) else "https://" + url
+    url = url if url.startswith(("http://", "https://")) else "https://" + url
+    return "" if build_site.embeds_email(url) else url   # the site's one link policy: no email address in a published link
 
 
 def vocab():
     v = json.loads((ROOT / "docs" / "schema" / "vocab.json").read_text(encoding="utf-8"))["vocabularies"]
     return {"proc": set(v["PROCESSES"]["values"]), "mat": set(v["MATERIALS"]["values"]),
             "mkt": set(v["MARKETS"]["values"])}
+
+
+def public_description(text):
+    """The one-line description, unless it refers to the private PIC CRM or carries build and review wording (the filter the ledes use)."""
+    return "" if build_site.internal_wording(text) else text
 
 
 def build_graph():
@@ -106,13 +112,13 @@ def build_graph():
             s["state"] == "OH" and s["county"] in PIC12 for s in ss)
         add(r["org_id"], k="org", l=r["legal_name"], r=r["ring_primary"] or "", c=r["hq_city"], s=r["hq_state"],
             n=len(ss), oh=int(oh), p=int(p12), m=int(r.get("pic_member") == "true"),
-            w=https(r["website"]), d=r["description_1line"])
+            w=https(r["website"]), d=public_description(r["description_1line"]))
     for r in eco:
         oh = r["state"] == "OH"
         add(r["org_id"], k="eco", g=r["ecosystem_subtype"] or "other", l=r["legal_name"], r="5", c=r["city"],
             s=r["state"], n=len(sites_by_org.get(r["org_id"], [])), oh=int(oh),
             p=int(oh and r["county"] in PIC12), m=int(r.get("pic_member") == "true"),
-            w=https(r["website"]), d=r["description_1line"])
+            w=https(r["website"]), d=public_description(r["description_1line"]))
 
     edges = set()
 
