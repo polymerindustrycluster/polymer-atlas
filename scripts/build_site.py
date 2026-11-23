@@ -544,15 +544,22 @@ Counts here are database rows, not industry totals.</p>
 EXPLORER_JS = r"""(function () {
   'use strict';
   // The graph, map + network and trade-show pages: on a screen 720 px or wider, load the page's libraries (data-libs, in order) and
-  // then its script (data-boot); below that the page shows its plain summary and loads none of them.
+  // then its script (data-boot); below that the page shows its plain summary and loads none of them. If the window later grows past
+  // 720 px (a rotated tablet, a resized window) the same load happens then, once.
   var main = document.getElementById('main');
-  if (!main || !main.hasAttribute('data-boot') || matchMedia('(max-width: 719.98px)').matches) return;
-  var urls = (main.getAttribute('data-libs') || '').split(' ').filter(Boolean).concat(main.getAttribute('data-boot'));
-  urls.forEach(function (u) {
-    var s = document.createElement('script'); s.src = u; s.async = false;   // async = false: run in the order listed
-    s.onerror = function () { var st = document.getElementById('stage'); if (st) st.textContent = 'Could not load ' + u + '.'; };
-    document.head.appendChild(s);
-  });
+  if (!main || !main.hasAttribute('data-boot')) return;
+  var narrow = matchMedia('(max-width: 719.98px)'), started = false;
+  function boot() {
+    if (started) return; started = true;
+    var urls = (main.getAttribute('data-libs') || '').split(' ').filter(Boolean).concat(main.getAttribute('data-boot'));
+    urls.forEach(function (u) {
+      var s = document.createElement('script'); s.src = u; s.async = false;   // async = false: run in the order listed
+      s.onerror = function () { var st = document.getElementById('stage'); if (st) st.textContent = 'Could not load ' + u + '.'; };
+      document.head.appendChild(s);
+    });
+  }
+  if (!narrow.matches) boot();
+  else narrow.addEventListener('change', function (e) { if (!e.matches) boot(); });
 })();
 """
 
