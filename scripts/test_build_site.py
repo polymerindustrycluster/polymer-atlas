@@ -576,10 +576,12 @@ class DirectoryFixtureTest(unittest.TestCase):
         self.assertTrue(rows["ORG-000001"]["member"])
         self.assertFalse(rows["ORG-000004"]["member"])
         self.assertIn("PIC member", self.read("directory.js"))
-        self.assertNotIn('name="mem"', self.read("directory.html"))
+        self.assertIn('name="mem" value="yes"', self.read("directory.html"))           # the filter: Yes / No, from the public flag only
+        self.assertIn('name="mem" value="no"', self.read("directory.html"))
+        self.assertIn('"not on the public member list" is not the same as "not a member"', self.read("directory.html"))   # the caveat, as the prospects page had it
         for p in self.out.rglob("*"):
-            if p.is_file() and p.suffix in {".html", ".js", ".json", ".css", ".csv"}:
-                self.assertNotIn("not on the public member list", p.read_text(encoding="utf-8-sig"), p.name)
+            if p.is_file() and p.suffix in {".html", ".js", ".json", ".css", ".csv"} and p.name != "directory.html":
+                self.assertNotIn("not on the public member list", p.read_text(encoding="utf-8-sig"), p.name)   # never on a record page, the CSV or the data
 
     def test_homepage_menu_and_footer_point_to_the_directory(self):
         home = self.read("index.html")
@@ -695,6 +697,65 @@ class DirectoryFixtureTest(unittest.TestCase):
         self.assertIn("picOnly", self.read("map.js"))
 
 
+class DirectoryCompaniesTest(unittest.TestCase):
+    """ATLAS-40 first-user fixes: counts are companies (distinct organizations), the member filter, old ?member=no links."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        tmp = Path(cls.tmp.name)
+        make_directory_db(tmp / "f.db")
+        con = sqlite3.connect(tmp / "f.db")
+        cols = ["site_id", "org_id", "site_name", "city", "state", "county", "ring_primary", "processes", "operating_status", "verification_tier", "country"]
+        con.execute(f"INSERT INTO sites ({','.join(cols)}) VALUES ({','.join('?' * len(cols))})",
+                    ["SITE-000099", "ORG-000004", "Stark Molders - Akron", "Akron", "OH", "Summit", "1", "extrusion", "active", "A", "US"])
+        con.commit()
+        con.close()
+        cls.out = tmp / "site"
+        build_site.build_site(tmp / "f.db", cls.out, None, repo_url="https://example.com/repo",
+                              git={"sha": "abc1234", "date": "2026-11-01", "dirty": False}, today="2026-11-01")
+        cls.rows = json.loads((cls.out / "directory.json").read_text(encoding="utf-8"))["rows"]
+        cls.html = (cls.out / "directory.html").read_text(encoding="utf-8")
+        cls.js = (cls.out / "directory.js").read_text(encoding="utf-8")
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def option(self, facet, value):
+        m = re.search(rf'name="{facet}" value="{value}"> <span class="t">[^<]*</span> <span class="n">(\d+)</span>', self.html)
+        self.assertIsNotNone(m, f"{facet}={value}")
+        return int(m.group(1))
+
+    def test_an_owner_in_two_counties_is_two_rows_and_one_company(self):
+        ids = [r["id"] for r in self.rows]
+        self.assertEqual(ids.count("ORG-000004"), 2)
+        self.assertGreater(len(ids), len(set(ids)))
+        with_ext = {r["id"] for r in self.rows if "extrusion" in r["tok"]["proc"]}
+        self.assertIn("ORG-000004", with_ext)
+        self.assertEqual(self.option("proc", "extrusion"), len(with_ext))                 # counted once, not once per county row
+        ring1_rows = [r for r in self.rows if "1" in r["tok"]["ring"]]
+        self.assertEqual(self.option("ring", "1"), len({r["id"] for r in ring1_rows}))   # ORG-000004 has a ring-1 row in each county
+        self.assertLess(self.option("ring", "1"), len(ring1_rows))
+        self.assertEqual(self.option("co", "Summit"), len({r["id"] for r in self.rows if r["co"] == "Summit"}))
+
+    def test_member_filter_is_the_public_flag_and_its_caveat_is_on_the_page(self):
+        by = {r["id"]: r for r in self.rows}
+        self.assertEqual(by["ORG-000001"]["tok"]["mem"], ["yes"])
+        self.assertEqual(by["ORG-000004"]["tok"]["mem"], ["no"])
+        self.assertEqual(self.option("mem", "yes") + self.option("mem", "no"), len(set(by)))   # every company is one or the other, once
+        self.assertIn('<div class="banner note">', self.html)
+        self.assertIn('is not the same as "not a member"', self.html)
+        self.assertIn("mem: 'member'", self.js)                                              # ?member=no (an old prospects link) applies the filter
+        self.assertIn("location.replace('directory.html' + location.search", (self.out / "prospects.js").read_text(encoding="utf-8"))
+
+    def test_status_line_names_companies_then_rows(self):
+        self.assertIn("' companies ('", self.js)
+        self.assertIn("', one per owner and county).'", self.js)
+        self.assertNotIn("rows (one per owner and county).'", self.js.replace(", one per owner and county).'", ""))   # the old row-only line is gone
+        self.assertIn("Counts are companies.", self.html)
+
+
 class RealDataHeadlineTest(unittest.TestCase):
     """The PIC-18 numbers on the built pages, recomputed from the canonical CSVs in data/ with the csv module alone
     (no builder helper, no SQLite): the headline, the county index total, the directory rows, the summary tables and two filter counts."""
@@ -806,7 +867,9 @@ class RealDataHeadlineTest(unittest.TestCase):
         def option(facet, value):
             return self.number(rf'name="{facet}" value="{value}"> <span class="t">[^<]*</span> <span class="n">(\d+)</span>', pro)
         self.assertEqual(option("co", "Summit"), len(self.summit_orgs))
-        self.assertEqual(option("proc", "injection_molding"), len(self.injection))
+        self.assertEqual(option("proc", "injection_molding"), len({o for o, _ in self.injection}))   # companies, not owner-and-county rows
+        self.assertEqual(option("mem", "yes"), len({o for o, _ in self.member_rows}))
+        self.assertEqual(option("mem", "no"), len({o for o, _ in self.by_key}) - len({o for o, _ in self.member_rows}))
         self.assertGreater(len(self.injection), 20)
         self.assertGreater(len(self.member_rows), 10)
         listed = json.loads(json.dumps(build_site.directory_json(rows)))["rows"]
