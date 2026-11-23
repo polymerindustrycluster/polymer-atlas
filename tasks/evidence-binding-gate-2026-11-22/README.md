@@ -21,7 +21,7 @@ Codex refuted the third round (head 9205837e) with 7 blocking findings, all from
 - **The gate is a floor, not proof.** A structured row is PASS only when every mechanical leg matches positively and nothing in the quote is left unexplained. PASS does not admit a data PR by itself: admission still needs two model families reading its rows.
 - **A row that is not PASS and shows no demonstrated conflict is HELD** (`held_for_reading:<legs>`). A demonstrated conflict stays FAIL. Both fail the PR; the difference is which reader's queue the row joins.
 - **After merge,** a new counterexample becomes a test and a fix as a follow-up. It is not a reason to hold the gate.
-- **Deployment is a condition, not a claim** (Codex r3 finding 7). The gate decides nothing until the trusted workflow in PR #466 is merged and made a required check under the ruleset's strict (branch up to date) policy. Until then the `validate.yml` binding steps are early feedback.
+- **Deployment is a condition, not a claim** (Codex r3 finding 7). The gate decides nothing until the trusted workflow from PR #466 (`pr-rules.yml`, check run `binding-gate`, merged at a7053b2b while this PR was open) is made a required check under the ruleset's strict (branch up to date) policy. Both are repository settings. Until then the `validate.yml` binding steps are early feedback.
 
 The tables at the end map each finding to the test that now holds it.
 
@@ -120,7 +120,7 @@ There is no prefix match, no extra token and no date variant. `--provenance-sinc
 
 The `validate` job checks out the PR and runs the PR's own copy of this checker. A PR that edits the checker or the workflow changes the result. So the two binding steps in `validate.yml` (`--new-since`, `--provenance-since`) are early feedback, labelled "not authoritative" in `docs/ci/README.md`.
 
-The authoritative run belongs to the rules lane (atlas-w22-rules, PR #466). It is a `pull_request_target` workflow that runs `main`'s checker against the PR's files with `--tree <PR checkout>`. With `--tree`:
+The authoritative run belongs to the rules lane (atlas-w22-rules, PR #466, merged at a7053b2b as `pr-rules.yml`, check run `binding-gate`). It is a `pull_request_target` workflow that runs `main`'s checker against the PR's files with `--tree <PR checkout>`. With `--tree`:
 
 - `data/` and `tasks/` are read from that directory;
 - symlinks are refused, as are paths that resolve outside it; a symlinked evidence shard stops the run (exit 2);
@@ -364,7 +364,7 @@ Tests are in `scripts/test_check_evidence_binding.py` unless noted. Each class w
 | 4. "Solon" bound a "Cleveland (Solon)" site through its site name | Either part of a parenthetical city is a generic label | `Verdicts.test_r3_4_parenthetical_city_is_not_a_name` (control: "Kestrel Division" passes) | paren_city_label |
 | 5. "Acme Polymer Inc", the recorded ultimate parent, passed for subsidiary "Acme Polymer LLC" on the shared key | HELD `name_equals_parent_key` unless the text is the record's own name; a self-referencing ultimate parent is not a parent | `Verdicts.test_r3_5_parent_key_equal_to_own` | parent_key_collision_passes |
 | 6. "Acme Polymer (operated by Quill Resins)" and "(Storage Division)" passed as exact matches | No parenthetical is dropped from a name; HELD `name_with_parenthetical`; an address parenthetical is HELD `address_with_parenthetical`; ECHO splits on ";" only outside parentheses | `Verdicts.test_r3_6_parentheses_are_not_dropped`, `test_echo_parenthetical_with_semicolon` | parenthetical_names_dropped, address_paren_dropped |
-| 7. Only early feedback is required today (deployment) | Stated as a condition, not a claim: the gate decides nothing until #466's trusted workflow is merged and required under the strict (up to date) ruleset policy | — (no code) | — |
+| 7. Only early feedback is required today (deployment) | Stated as a condition, not a claim: #466's trusted workflow is merged (a7053b2b), but the gate decides nothing until its `binding-gate` check is required under the strict (up to date) ruleset policy | — (no code) | — |
 | 8. Follow-up: "Dover Coatings" on "Acme Polymer - Dover Coatings" is dropped by the site-key prefix test | Not fixed here; a follow-up (a false HELD/FAIL, never a false PASS) | — | — |
 
 **Round two** (`S/reviews/467-r2-review-codex.md`, six blocking; owner split 2026-11-22):
@@ -430,7 +430,7 @@ No tier-A row that passes the street test fails the locality test, so the locali
 - **The claim's own value.** The gate compares the quote with the record's current fields, not with the value `claim_detail` asserts.
 - **Tier ceilings.** The §4.13 `tier_effect` ceilings and `address_role` are not checked.
 - **Provenance scripts.** The gate checks that a folder's `check.py` is present and not empty. It executes nothing, so it cannot tell whether that script reproduces the rows: the lane runs it, and the reviewing family runs it again.
-- **Its own trust.** Inside the `validate` job the gate is the PR's own copy. Only `main`'s copy run with `--tree` is authoritative, and only once PR #466's workflow is merged and required under the strict ruleset policy (Codex r3 finding 7).
+- **Its own trust.** Inside the `validate` job the gate is the PR's own copy. Only `main`'s copy run with `--tree` (the `binding-gate` check from PR #466) is authoritative, and only once that check is required under the strict ruleset policy (Codex r3 finding 7).
 - **Quote text in this PR.** The leak guard compares every street-, ID- or name-like segment of the test strings (at least 10 characters, field boilerplate excluded) with every `claim_detail` at 17834918, including the withdrawn rows. It does not scan for shorter phrases, registry boilerplate or this README. Rows are cited by ID and path:line only.
 
 ## Checks

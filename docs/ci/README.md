@@ -9,9 +9,9 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
   - on pull requests, two evidence binding steps (`scripts/check_evidence_binding.py`, since 2026-11-22). **These
     steps are early feedback, not authoritative:** `validate` runs the PR's own copy of the checker, so a PR that edits
     the checker or the workflow changes the result. The authoritative run is a `pull_request_target` workflow that runs
-    `main`'s checker with `--tree <PR checkout>` (owned by the working-rules lane, PR #466). **Condition:** the binding
-    gate decides nothing until that trusted workflow is merged and made a required check under the ruleset's strict
-    (branch up to date) policy; until then these steps are early feedback only.
+    `main`'s checker with `--tree <PR checkout>` (`pr-rules.yml`, check run `binding-gate`, merged with PR #466 at a7053b2b). **Condition:**
+    the binding gate decides nothing until `binding-gate` is made a required check under the ruleset's strict (branch up
+    to date) policy, which are repository settings (see below); until then these steps are early feedback only.
     - **The gate is a floor, not proof** (owner ruling 2026-11-22, "strict floor, then merge"). PASS means every
       mechanical leg matched positively. Admitting a data PR still needs two model families reading its rows. A
       counterexample found after merge becomes a test and a fix as a follow-up.
