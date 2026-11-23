@@ -183,3 +183,9 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 - **Decision:** two owner rulings of round 13, taken as multiple choice. (1) "Add 'corporation'": SCHEMA 4.4 `entity_type` gains a plain `corporation` value (v1.19.4), filled only where the legal name ends in Inc, Incorporated, Corp or Corporation; public or private is never guessed; Co, Company, Ltd and Limited stay `unknown`. (2) The 79 organization rows still carrying the undefined `ohio_statewide` with a named Ohio HQ county outside PIC-18 get `ohio_other`; the 5 with no county stay held.
 - **Applied:** `tasks/entity-type-from-name-2026-11-22/` (LLC and LP/LLP fills as in the earlier packet, plus the corporation fill) and `tasks/ohio-statewide-labels-2026-11-22/`. No evidence rows.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
+
+## 2026-11-22: retirement-plan participant counts are leads only
+
+- **Decision (“Leads only”):** A retirement plan's active-participant count is not a plant headcount and fills no size band. It stays a lead.
+- **Supersedes:** The allowance for Form 5500 active-participant counts in SCHEMA §1 R13 and §4.13. See `tasks/owner-rulings-2026-11-22/README.md`, I2, for the owner’s wording and the parked packet.
+- **Decided by:** the repo owner, in session, 2026-11-22, round 14.
