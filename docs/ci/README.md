@@ -54,7 +54,7 @@ Both workflows are live in `.github/workflows/`. Edit them there; there is no se
   are required status checks and the strict (branch up to date with `main`) policy is on, so the audit gate of AGENTS.md
   section 2a, rule 5 is re-judged against current `main` before a merge. Exactly one check run is named `pr-rules` (the
   job that posts it is `evaluate`) and exactly one is named `binding-gate` (posted by `publish-binding-gate`; the job
-  that does the work is `gate-run`). If `gate-run` fails, nothing is posted under that name and the merge waits. While
+  that does the work is `gate-run`). If `gate-run` fails on a fresh head, nothing is posted under that name and the merge waits; a repeat run on a head that already has a green `binding-gate` posts no replacement. While
   `scripts/check_evidence_binding.py` is not on `main`, the posted check is titled "binding-gate: NOT CHECKED (gate not
   yet on main)": a pass that inspected nothing.
 

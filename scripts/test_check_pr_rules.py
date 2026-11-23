@@ -270,12 +270,16 @@ class TestReplayNotRun(unittest.TestCase):
             (root / "data/evidence_X.csv").write_text("evidence_id,created_by\nE1,l\n")
             (root / "tasks/a/check.py").write_text("1\n")
             (root / "tasks/a/other.py").write_text("1\n")
+            (root / "tasks/c").mkdir()
+            (root / "tasks/c/check.py").symlink_to("../a/check.py")  # tracked symlink at base; the PR makes it a regular file (git status T)
             (root / c.BASELINE).parent.mkdir(parents=True, exist_ok=True)
             (root / c.BASELINE).write_text("l\n")
             g("add", "-A"); g("commit", "-qm", "b"); g("checkout", "-q", "-b", "pr")
             (root / "data/evidence_X.csv").write_text("evidence_id,created_by\nE1,l\nE2,l\n")
             (root / "tasks/a/check.py").write_text("2\n")
             (root / "tasks/a/other.py").write_text("2\n")
+            (root / "tasks/c/check.py").unlink()
+            (root / "tasks/c/check.py").write_text("3\n")
             (root / "tasks/b").mkdir()
             (root / "tasks/b/check.py").write_text("1\n")
             (root / "tasks/b/sub").mkdir()
@@ -288,7 +292,8 @@ class TestReplayNotRun(unittest.TestCase):
                     f = c.collect(1, "main")
             finally:
                 c.REPO = old
-        self.assertEqual(sorted(f["replay_scripts"]), ["tasks/a/check.py", "tasks/b/check.py"])  # not other.py, not tasks/b/sub/
+        # tasks/c/check.py is a type change (symlink -> regular file): a replay the PR supplies, so it is named too
+        self.assertEqual(sorted(f["replay_scripts"]), ["tasks/a/check.py", "tasks/b/check.py", "tasks/c/check.py"])  # not other.py, not tasks/b/sub/
 
 
 class TestBindingGateJob(unittest.TestCase):

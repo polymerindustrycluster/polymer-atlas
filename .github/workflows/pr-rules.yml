@@ -7,8 +7,8 @@
 # fetches the PR head as git objects to read them as data. A PR that changes this workflow or scripts/check_pr_rules.py
 # is therefore judged by the version already on main.
 #
-# The result is published as a check run named `pr-rules` on the PR head, which the ruleset must be
-# set to require (a deployment condition, not yet done: see docs/ci/README.md).
+# The result is published as a check run named `pr-rules` on the PR head, which the ruleset requires
+# (with strict mode) since 2026-11-22: see docs/ci/README.md.
 #
 # Second check run, `binding-gate` (posted by publish-binding-gate; the job that does the work is `gate-run`, so exactly one
 # check is named `binding-gate`, and likewise one named `pr-rules`: the evaluate job posts it and is itself named `evaluate`): main's scripts/check_evidence_binding.py (--new-since and --provenance-since, each

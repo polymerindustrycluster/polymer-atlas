@@ -308,7 +308,7 @@ def collect(pr_number, base_ref=None):
         pairs = list(zip(toks[0::2], toks[1::2]))
         f["changed_files"] = [p for _, p in pairs]
         f["added_files"] = [p for st, p in pairs if st == "A"]
-        f["replay_scripts"] = [p for st, p in pairs if st in ("A", "M") and re.fullmatch(r"tasks/[^/]+/check\.py", p)]
+        f["replay_scripts"] = [p for st, p in pairs if st in ("A", "M", "T") and re.fullmatch(r"tasks/[^/]+/check\.py", p)]
         ev = [p for p in f["changed_files"] if re.fullmatch(r"data/evidence_[^/]+\.csv", p)]
         f["added_evidence_rows"] = sum(added_rows(base, head, p, ("evidence_id",)) for p in ev)
         f["added_registry_links"] = added_rows(base, head, "data/registry_links.csv", REGISTRY_IDENTITY) \
