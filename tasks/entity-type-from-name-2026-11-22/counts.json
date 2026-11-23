@@ -1,0 +1,45 @@
+{
+ "base_ref": "22b1109ed6b18382583288240892e3e436962b46",
+ "unit": "organizations rows (data/organizations_*.csv), all statuses",
+ "counts": {
+  "ohio_rest|already_this": 2,
+  "ohio_rest|existing_corporation_value": 14,
+  "ohio_rest|fill": 445,
+  "ohio_rest|held_conflicting_forms": 7,
+  "ohio_rest|held_corporate_suffix": 54,
+  "ohio_rest|held_dba_form": 21,
+  "ohio_rest|held_foreign_or_unplaced": 1,
+  "ohio_rest|held_no_suffix": 242,
+  "ohio_rest|held_ticker_conflict": 5,
+  "outside|already_this": 381,
+  "outside|conflict_existing_value": 23,
+  "outside|existing_corporation_value": 1085,
+  "outside|fill": 667,
+  "outside|held_conflicting_forms": 41,
+  "outside|held_corporate_suffix": 181,
+  "outside|held_dba_form": 60,
+  "outside|held_foreign_or_unplaced": 134,
+  "outside|held_no_suffix": 533,
+  "outside|held_ticker_conflict": 62,
+  "pic18|already_this": 12,
+  "pic18|existing_corporation_value": 11,
+  "pic18|fill": 570,
+  "pic18|held_conflicting_forms": 8,
+  "pic18|held_corporate_suffix": 109,
+  "pic18|held_dba_form": 34,
+  "pic18|held_foreign_or_unplaced": 4,
+  "pic18|held_no_suffix": 310,
+  "pic18|held_ticker_conflict": 10
+ },
+ "changes_by_frame": {
+  "pic18": 570,
+  "ohio_rest": 445
+ },
+ "changes_by_value": {
+  "pic18|corporation": 456,
+  "pic18|llc": 110,
+  "ohio_rest|corporation": 327,
+  "ohio_rest|llc": 118,
+  "pic18|partnership": 4
+ }
+}

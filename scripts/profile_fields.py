@@ -121,7 +121,7 @@ VOCAB = {
                                "500-999", "1000-4999", "5000+", "unknown"},
     },
     "organizations": {
-        "entity_type": {"corporation_public", "corporation_private", "llc",
+        "entity_type": {"corporation", "corporation_public", "corporation_private", "llc",
                         "partnership", "sole_proprietor", "nonprofit",
                         "government", "academic", "cooperative", "unknown"},
         "ownership_type": {"public_company", "private_company",

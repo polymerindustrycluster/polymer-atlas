@@ -244,6 +244,7 @@
    "governs": "organizations.entity_type",
    "section": "SCHEMA §4.4",
    "values": [
+    "corporation",
     "corporation_public",
     "corporation_private",
     "llc",

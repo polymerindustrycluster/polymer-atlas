@@ -1,0 +1,28 @@
+frame,org_id,legal_name,entity_type,suffix,ownership_type,stock_ticker,hq_state,hq_country
+ohio_rest,ORG-000899,"International Cushioning Company, LLC",unknown,LLC,,,NJ,US
+outside,ORG-003708,"MHXCO Foam Company, LLC",unknown,LLC,private_company,,NY,US
+pic18,ORG-000058,"The Steelastic Company, LLC",unknown,LLC,,,OH,US
+pic18,ORG-000081,"Novex Operating Company, LLC",unknown,LLC,,,OH,US
+pic18,ORG-000302,"DermaMed Coatings Company, LLC",unknown,LLC,,,OH,US
+pic18,ORG-000426,MacDivitt Rubber Co. LLC,unknown,LLC,,,OH,US
+pic18,ORG-000577,"Southwest Gasket Company, LLC",unknown,LLC,,,OH,US
+ohio_rest,ORG-000744,"Composite Technologies Co., LLC",unknown,LLC,,,OH,US
+ohio_rest,ORG-001402,"Champion Window Manufacturing and Supply Co., LLC",unknown,LLC,,,OH,US
+ohio_rest,ORG-001440,"Spectra Group Ltd., Inc.",unknown,Inc.,,,OH,US
+ohio_rest,ORG-001519,Liebel-Flarsheim Company LLC,unknown,LLC,,,OH,US
+pic18,ORG-001544,Troy Innovative Instruments Co LLC,unknown,LLC,,,OH,US
+pic18,ORG-001609,"Morgan Adhesives Company, LLC",unknown,LLC,,,OH,US
+ohio_rest,ORG-001844,Lee Plastic Co. LLC,unknown,LLC,,,OH,US
+ohio_rest,ORG-002005,Rosati's Window Co. LLC,unknown,LLC,,,OH,US
+outside,ORG-002208,Green Garden Products Company LLC,unknown,LLC,,,PA,US
+outside,ORG-002347,Iris Ltd. Inc.,unknown,Inc.,,,PA,US
+outside,ORG-002405,PA Gellner & Co. L.L.C.,unknown,L.L.C.,,,PA,US
+outside,ORG-002480,"Polycube Company, LLC",unknown,LLC,,,PA,US
+outside,ORG-002521,Hilex Poly Co. LLC,unknown,LLC,,,PA,US
+outside,ORG-002539,Ck Composites Co. LLC,unknown,LLC,,,PA,US
+outside,ORG-002592,Purolite LLC An Ecolab Co.,unknown,Co.,,,PA,US
+outside,ORG-002613,Independent Refining Co. LLC,unknown,LLC,,,PA,US
+outside,ORG-003918,J B Weld Company LLC,unknown,LLC,employee_owned,,TX,US
+outside,ORG-010501,"CGT U.S. LIMITED, LLC",unknown,LLC,,,,
+outside,ORG-010503,"Orrex Plastics Co., LLC",unknown,LLC,,,,
+outside,ORG-003709,"Midwest Foam Corp, LLC",unknown,LLC,private_company,,WI,US
