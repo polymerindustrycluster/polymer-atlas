@@ -1,0 +1,3 @@
+evidence_id,record_id,claim_sha256,capture,capture_date,capture_sha256,quote_offset,verdict,reader_family,reader_date
+EVD-483046,ORG-000019,2cb27b9775ff980741f981a74bee5a07dcf21795b9b6d2ecc2fd7ce98ea1dfc3,https://web.archive.org/web/20260207202115id_/https://kingmachinemolds.com/corporate/,2026-02-07,3ce330c4ef7cee877b4bfa07d3ae29b124644be4d3ab546835887d01eaacc778,3550,VERIFIED,Claude Sonnet,2026-11-23
+EVD-483047,ORG-001907,728336af4af515c9e146e35f0c9aae9f79f25a0183d1b8f0ab43acd18442facc,https://web.archive.org/web/20261123175654id_/https://totalplastics.com/contact-us/,2026-11-23,eb6efc1b80faeac97d21b5f9de0467a55b9dac1c64781e221ca7452f25bd780e,906,VERIFIED,Claude Sonnet,2026-11-23

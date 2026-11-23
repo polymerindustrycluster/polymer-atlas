@@ -337,3 +337,12 @@ notes fields that show the source year.
 At write time the integrator replays each filing date against the raw snapshot. The PIC-18 ten-year
 packet supplies `tasks/pic18-size-10yr-2026-11-23/check.py`. Blind audit 12 readers check sampled bands
 against their cited filings with the filing year shown.
+
+## 2026-11-23: round 24, item 1 · blind audit 12 judged values
+
+- **Owner ruling (“Withhold now, repair too”):** Keep a flagged judged field in the Audit 12 packet and show its value as
+  `[withheld for blindness]`. Audit the underlying claim from evidence and give the withheld literal no correct credit.
+  Report withheld cells separately per stratum. Header and metadata leaks remain hard failures.
+- The controller approves only exact non-NAICS-source false positives from the private inventory. A separate lane
+  repairs the public labels. The [protocol addendum](tasks/blind-audit-12-tooling-2026-11-23/PROTOCOL_ADDENDUM_2026-11-23.md)
+  records packet handling without reopening the sealed draw.
