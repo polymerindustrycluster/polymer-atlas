@@ -659,3 +659,6 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
     - Each company's own careers page.
     - Job boards and university employer lists are leads only.
   - **First user and non-use date:** to be named by the owner when this is promoted (portfolio rule 8).
+
+## Working rules (owner adoption 2026-11-22)
+- [ ] `claimed:claude-code 2026-11-22` **Working rules into AGENTS.md section 2a, with checks:** `scripts/check_pr_rules.py` (rules 5 and 6), workflow `pr-rules`, `tasks/working-rules-2026-11-22/`. Board card ATLAS-4. Rules 2 and 3 land with the evidence-binding-gate branch; not built here.
