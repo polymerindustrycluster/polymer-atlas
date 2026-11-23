@@ -1,0 +1,16 @@
+table,record_id,field,verdict,evidence_id
+organizations,ORG-001078,markets_served,corrected,EVD-483066
+sites,SITE-001164,markets_served,corrected,EVD-483067
+organizations,ORG-001393,markets_served,corrected,EVD-483068
+organizations,ORG-002146,markets_served,corrected,EVD-483069
+organizations,ORG-004022,markets_served,corrected,EVD-483072
+organizations,ORG-001681,markets_served,corrected,EVD-483073
+organizations,ORG-000131,markets_served,corrected,EVD-483081
+organizations,ORG-000361,markets_served,corrected,EVD-483082
+organizations,ORG-000480,markets_served,corrected,EVD-483083
+organizations,ORG-002922,markets_served,corrected,EVD-483084
+organizations,ORG-001826,markets_served,corrected,EVD-483085
+organizations,ORG-001670,markets_served,corrected,EVD-483087
+sites,SITE-000386,markets_served,corrected,EVD-483088
+sites,SITE-001757,markets_served,corrected,EVD-483089
+organizations,ORG-000126,markets_served,corrected,EVD-483091

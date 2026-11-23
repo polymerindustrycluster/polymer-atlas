@@ -1,0 +1,13 @@
+packet_id,record_id,verdict,settling_fact
+P3-MKT-000007,ORG-004026,held,A public archive copy carrying the verified own-site quote.
+P3-MKT-000008,ORG-000540,held,An explicit end-market statement mapping to the proposed SCHEMA section 3.3 term.
+P3-MKT-000010,ORG-004022,held,A current first-party statement naming the market served by this operator.
+P3-MKT-000019,ORG-001681,held,An owner ruling on the section 3.3 term for electrical-utility customers.
+P3-MKT-000026,ORG-003196,held,An operator-specific statement tying the published market to the regional organization.
+P3-MKT-000028,ORG-001447,held,An operator-specific statement tying the published market to the regional organization.
+P3-MKT-000029,ORG-001447,held,An operator-specific statement tying the published market to the regional organization.
+P3-MKT-000030,ORG-001447,held,An operator-specific statement tying the published market to the regional organization.
+P3-MKT-000031,ORG-001447,rejected,The cited statement is attributed to a partner in a customer story.
+P3-MKT-000032,ORG-001635,rejected,The group wording fails operator binding and the proposed market term.
+P3-MKT-000039,ORG-003771,held,An operator-specific statement tying the published market to the regional organization.
+P3-MKT-000040,ORG-003771,held,An operator-specific statement tying the published market to the regional organization.
