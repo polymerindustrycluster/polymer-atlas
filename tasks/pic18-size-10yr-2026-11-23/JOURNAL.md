@@ -19,3 +19,10 @@ The canonical diff fills 18 blank or unknown size cells and appends their
 18 dated source notes. Each filing witness carries `supports_B`. Nine of these owners qualify only under the longer
 window. The 386 site holds in the original unknown frame stay in the
 packet. The audit sample is a separate blind-draw step.
+
+The raw replay matched all 17 snapshot checksums and reproduced the four
+packet artifacts byte for byte. The cutoff and newer-filing controls passed.
+The integration replay passed for all 18 size-band claims and reduced the
+size-unknown outcome to 374 of 794 PIC-18 owners. A planted missing claim
+failed. Validation and row-loss passed under the heavy lock, and the
+binding gate accepted all 18 new filing observations.
