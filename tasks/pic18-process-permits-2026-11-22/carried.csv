@@ -1,0 +1,25 @@
+site_id,tier,bind_2026_11_18,bind_today,near_format_only,reasons_today,verdict_2026_11_18,hold_reason_2026_11_18
+SITE-000140,C,NOT_BOUND,BOUND,,,STILL_UNCERTAIN,not_bound
+SITE-000264,A,NOT_BOUND,NOT_BOUND,format variant only (street abbreviation or Twp. suffix),permit street differs from the Atlas street,STILL_UNCERTAIN,near_bound
+SITE-000469,C,NOT_BOUND,NOT_BOUND,,holder name is not the Atlas legal or trade name; permit street differs from the Atlas street,STILL_UNCERTAIN,not_bound
+SITE-000535,B,NOT_BOUND,NOT_BOUND,,printed municipality 'Saybrook Twp.' differs from Atlas city 'Ashtabula',STILL_UNCERTAIN,not_bound
+SITE-000547,C,NOT_BOUND,NOT_BOUND,,holder name is not the Atlas legal or trade name,STILL_UNCERTAIN,not_bound
+SITE-000590,C,BOUND,BOUND,,,STILL_UNCERTAIN,ancillary_only
+SITE-000601,A,BOUND,BOUND,,,STILL_UNCERTAIN,no_capability_destination
+SITE-000936,C,NOT_BOUND,NOT_BOUND,,permit street differs from the Atlas street,STILL_UNCERTAIN,not_bound
+SITE-001394,B,NOT_BOUND,NOT_BOUND,,holder name is not the Atlas legal or trade name,STILL_UNCERTAIN,not_bound
+SITE-001504,B,NOT_BOUND,NOT_BOUND,,Atlas site row has no street,STILL_UNCERTAIN,not_bound
+SITE-001510,B,NOT_BOUND,NOT_BOUND,,printed municipality 'Sharon Twp.' differs from Atlas city 'Sharon Center',STILL_UNCERTAIN,not_bound
+SITE-001513,B,NOT_BOUND,NOT_BOUND,,holder name is not the Atlas legal or trade name; permit street differs from the Atlas street,STILL_UNCERTAIN,not_bound
+SITE-001530,B,BOUND,BOUND,,,VERIFIED,
+SITE-001743,A,NOT_BOUND,NOT_BOUND,format variant only (street abbreviation or Twp. suffix),permit street differs from the Atlas street,STILL_UNCERTAIN,not_bound
+SITE-001792,B,NOT_BOUND,BOUND,,,STILL_UNCERTAIN,not_bound
+SITE-001833,B,NOT_BOUND,NOT_BOUND,,holder name is not the Atlas legal or trade name,STILL_UNCERTAIN,not_bound
+SITE-001837,B,NOT_BOUND,NOT_BOUND,,holder name is not the Atlas legal or trade name,STILL_UNCERTAIN,not_bound
+SITE-001868,C,NOT_BOUND,NOT_BOUND,,holder name is not the Atlas legal or trade name; Atlas site row has no street,STILL_UNCERTAIN,not_bound
+SITE-001888,A,BOUND,BOUND,,,STILL_UNCERTAIN,no_capability_destination
+SITE-001923,A,NOT_BOUND,NOT_BOUND,,holder name is not the Atlas legal or trade name; Atlas site row has no street,STILL_UNCERTAIN,not_bound
+SITE-002113,B,NOT_BOUND,NOT_BOUND,format variant only (street abbreviation or Twp. suffix),printed municipality 'Newbury Twp.' differs from Atlas city 'Newbury',STILL_UNCERTAIN,near_bound
+SITE-002114,A,NOT_BOUND,NOT_BOUND,,permit street differs from the Atlas street,STILL_UNCERTAIN,not_bound
+SITE-002124,B,BOUND,BOUND,,,STILL_UNCERTAIN,no_capability_destination
+SITE-002855,B,BOUND,BOUND,,,VERIFIED,
