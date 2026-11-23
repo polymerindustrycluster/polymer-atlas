@@ -677,6 +677,48 @@ class Verdicts(unittest.TestCase):
                             self.assertNotEqual(v, "PASS", (rid, url, q, cls, claim))
 
 
+class ProgramAndEcosystemVerdicts(unittest.TestCase):
+    def test_structured_claims_bind_to_the_record_and_locality(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            (tree / "data").mkdir()
+            (tree / "data/programs.csv").write_text(
+                "program_id,program_name,institution_org_id,city,state\n"
+                "PROG-T1,Polymer Training Center,ORG-T1,Dover,OH\n")
+            (tree / "data/ecosystem.csv").write_text(
+                "org_id,legal_name,city,state,record_grain,office_name,parent_institution_org_id\n"
+                "ORG-T1,Acme Institute,Dover,OH,institution,,\n"
+                "ORG-T2,Acme Licensing Office,Dover,OH,office,Licensing Office,ORG-T1\n")
+            with patch.object(b, "TREE", tree):
+                idx = b.Index.load()
+            for table, rid, name in (("programs", "PROG-T1", "Polymer Training Center"),
+                                     ("ecosystem", "ORG-T1", "Acme Institute"),
+                                     ("ecosystem", "ORG-T2", "Licensing Office")):
+                for claim in ("existence", "scope", "address"):
+                    for operator, place, verdict in (
+                        (name, "Dover, OH", "PASS"),
+                        ("Another Institution", "Dover, OH", "FAIL"),
+                        (name, "Cleveland, OH", "FAIL"),
+                        (name, "Dover, DE", "FAIL"),
+                    ):
+                        with self.subTest(table=table, claim=claim, operator=operator, place=place):
+                            quote = f"recipient_name: {operator}; recipient_address: 100 Elm St, {place}"
+                            row = ev(rid, "USAspending bulk synthetic", quote, claim, table)
+                            self.assertEqual(b.judge(row, idx)[0], verdict)
+                with self.subTest(table=table, claim="code"):
+                    quote = f"recipient_name: {name}; recipient_address: 100 Elm St, Dover, OH"
+                    row = ev(rid, "USAspending bulk synthetic", quote, "code", table)
+                    self.assertEqual(b.judge(row, idx)[0], "UNINSPECTABLE")
+
+            quote = "recipient_name: Acme Institute; recipient_address: 100 Elm St, Dover, OH"
+            self.assertEqual(b.judge(ev("PROG-T1", "USAspending bulk synthetic", quote, table="programs"), idx)[0],
+                             "FAIL")
+            self.assertEqual(b.judge(ev("ORG-T2", "USAspending bulk synthetic", quote, table="ecosystem"), idx)[:2],
+                             ("FAIL", "parent_name_lead"))
+            self.assertEqual(b.judge(ev("ORG-T1", "USAspending bulk synthetic", quote, table="organizations"), idx)[:2],
+                             ("UNINSPECTABLE", "record_not_found"))
+
+
 class GateMechanics(unittest.TestCase):
     parallel_safe = True
 
@@ -803,6 +845,7 @@ class WebProofs(unittest.TestCase):
             "ORG-T2,Acme Polymer II,,https://acmepolymer.example/\n")
         with (self.tree / "data/organizations_OH.csv").open() as f:
             self.base_orgs = list(csv.DictReader(f))
+        self.base_tables = {}
         self.ev = dict(evidence_id="EVD-T1", record_table="organizations", record_id="ORG-T1",
                        claim_type="activity", claim_detail=f"markets_served=automotive; quote: {self.QUOTE}",
                        source_ref=self.SOURCE, source_class="own_site", created_by="codex lane-t",
@@ -844,7 +887,7 @@ class WebProofs(unittest.TestCase):
 
         def tree_rows(ref, pattern):
             if ref:
-                return self.base_orgs if pattern == "organizations_*.csv" else []
+                return self.base_orgs if pattern == "organizations_*.csv" else self.base_tables.get(pattern, [])
             return rows(ref, pattern)
 
         with (
@@ -874,6 +917,50 @@ class WebProofs(unittest.TestCase):
                 self.assertEqual(code, 0, out)
                 self.assertIn("1 PASS", out)
                 self.fetch.assert_called_once_with(self.proof["capture"])
+
+    def test_program_and_ecosystem_web_rows_require_proof_replay(self):
+        for table, rid, column, values in (
+            ("programs", "PROG-T1", "program_id", {"program_name": "Polymer Training Center", "url": self.SOURCE}),
+            ("ecosystem", "ORG-T3", "org_id", {"legal_name": "Acme Institute", "record_grain": "institution",
+                                             "website": "https://acmepolymer.example/"}),
+            ("ecosystem", "ORG-T4", "org_id", {"legal_name": "Acme Institute Office", "record_grain": "office",
+                                             "tto_url": self.SOURCE, "website": "https://acmepolymer.example/"}),
+        ):
+            with self.subTest(record=rid):
+                filename = f"{table}.csv"
+                record = {column: rid, "city": "Dover", "state": "OH", **values}
+                self.base_tables[filename] = [record]
+                with (self.tree / "data" / filename).open("w", newline="") as f:
+                    writer = csv.DictWriter(f, record)
+                    writer.writeheader()
+                    writer.writerow(record)
+                self.ev.update(record_table=table, record_id=rid, claim_type="scope", source_ref=self.SOURCE)
+                self.proof.update(record_id=rid, claim_sha256=b.claim_sha256(self.ev), capture=self.SOURCE)
+                self.assert_held("no proof line", proof_bytes=(",".join(b.PROOF_COLS) + "\n").encode())
+                code, out = self.run_gate()
+                self.assertEqual(code, 0, out)
+                self.assertIn("web_proof_replayed", out)
+                for address, expected in (
+                    ("100 Harp Lane, Dover, OH 44622", "web_proof_replayed"),
+                    ("100 Harp Lane, Cleveland, OH 44114", "locality_differs"),
+                    ("Acme Office 100 Harp Lane Dover, OH 44622", "locality_not_matched"),
+                ):
+                    with self.subTest(address=address):
+                        self.ev.update(claim_type="address", claim_detail=f"campus address; quote: {address}")
+                        self.capture = f"<main>{address}</main>".encode()
+                        self.proof.update(claim_sha256=b.claim_sha256(self.ev), quote_offset=0,
+                                          capture_sha256=hashlib.sha256(self.capture).hexdigest())
+                        code, out = self.run_gate()
+                        self.assertEqual(code, int(expected != "web_proof_replayed"), out)
+                        self.assertIn(expected, out)
+                self.ev.update(claim_type="scope", claim_detail=f"markets_served=automotive; quote: {self.QUOTE}")
+                self.capture = self.CAPTURE
+                self.proof.update(quote_offset=8, capture_sha256=hashlib.sha256(self.capture).hexdigest())
+                if "website" not in values or values["record_grain"] == "office":
+                    self.ev["source_ref"] = "https://acmepolymer.example/another-program"
+                    self.proof.update(capture=self.ev["source_ref"], claim_sha256=b.claim_sha256(self.ev))
+                    self.assert_held("not_own_site")
+                    self.fetch.assert_not_called()
 
     def test_backdated_observation_cannot_admit_a_2014_archive(self):
         self.archive("20140531000000")
@@ -1040,6 +1127,25 @@ class WebProofs(unittest.TestCase):
                          "Markets Industry")
         self.assertEqual(b.capture_text(b'<div role="contentinfo"><div>Nested</div>Footer</div>Body'), "Body")
         self.assertEqual(b.capture_text(b'<div id="site-footer">Footer</div><p>Body</p>'), "Body")
+
+    def test_divi_body_and_empty_main_replay(self):
+        for shell in (
+            '<html class="site-header-shell"><body class="et_fixed_nav et_show_nav et_header_style_left">{}</body></html>',
+            '<body><main> </main>{}</body>',
+        ):
+            with self.subTest(shell=shell):
+                self.capture = shell.format(
+                    f"<header>Site Header</header><p>{self.QUOTE}</p><footer>Site Footer</footer>"
+                ).encode()
+                self.proof.update(capture_sha256=hashlib.sha256(self.capture).hexdigest(), quote_offset=0)
+                code, out = self.run_gate()
+                self.assertEqual(code, 0, out)
+                self.assertIn("1 PASS", out)
+
+    def test_empty_capture_cannot_replay(self):
+        self.capture = f'<body><main> </main><footer>{self.QUOTE}</footer></body>'.encode()
+        self.proof.update(capture_sha256=hashlib.sha256(self.capture).hexdigest(), quote_offset=0)
+        self.assert_held("not at that offset in the capture's main text")
 
     def test_capture_digest_mismatch(self):
         self.capture += b"\n"
