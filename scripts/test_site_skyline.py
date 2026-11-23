@@ -71,6 +71,12 @@ class SkylineMotionTests(unittest.TestCase):
         self.assertIn("playing = !reduced", self.js)
         self.assertIn("if (playing && !dragging)", self.js)                 # the sway is the only motion that is not a response to the visitor
 
+    def test_growth_finishes_even_if_the_view_was_off_screen_during_the_first_seconds(self):
+        self.assertIn("else if (!grown) { place(k); grown = true; }", self.js)   # the growth clock is wall time: a late first frame still sets final heights
+
+    def test_a_failed_load_leaves_no_inert_pause_button(self):
+        self.assertIn("var pb = document.getElementById('sky-play'); if (pb) pb.hidden = true;", self.js)
+
     def test_no_frames_are_drawn_while_the_view_is_off_screen(self):
         self.assertIn("new IntersectionObserver", self.js)
         self.assertIn("if (!onScreen) { looping = false; return; }", self.js)   # the loop ends, so no requestAnimationFrame is scheduled

@@ -187,7 +187,8 @@ SKYLINE_JS = r"""(function () {
   var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var RING = { '1': 'Ring 1 · producers & processors', '2': 'Ring 2 · materials', '3': 'Ring 3 · value chain', '4': 'Ring 4 · OEMs', '5': 'Ring 5 · ecosystem', '?': 'Ring not set' };
 
-  function fail(msg) { stage.classList.add('sky-fallback'); var p = document.createElement('p'); p.className = 'sky-note'; p.textContent = msg; stage.appendChild(p); }
+  function fail(msg) { var pb = document.getElementById('sky-play'); if (pb) pb.hidden = true;   // no rotation to pause
+    stage.classList.add('sky-fallback'); var p = document.createElement('p'); p.className = 'sky-note'; p.textContent = msg; stage.appendChild(p); }
 
   fetch(stage.getAttribute('data-src')).then(function (r) { return r.json(); }).then(function (D) {
     if (!window.THREE) return fail('3D view unavailable (the 3D library did not load). The explorers below still work.');
@@ -251,7 +252,7 @@ SKYLINE_JS = r"""(function () {
     // camera orbit: drag to rotate. A slow sway runs on its own only until the visitor takes over (a drag) or presses Pause rotation;
     // nothing restarts it but the Play rotation button (WCAG 2.2.2). With prefers-reduced-motion the view starts still.
     var view = { az: -0.25, el: 0.95, dist: 1150, tx: 40, tz: 10 }, goal = { tx: 40, tz: 10, dist: 1150 };
-    var dragging = false, last = null, t0 = performance.now(), playing = !reduced, swayAt = 0, lastNow = t0, onScreen = true, looping = false;
+    var dragging = false, last = null, t0 = performance.now(), playing = !reduced, swayAt = 0, lastNow = t0, onScreen = true, looping = false, grown = false;
     var playBtn = document.getElementById('sky-play');
     function setPlaying(on) {
       playing = on;
@@ -298,6 +299,7 @@ SKYLINE_JS = r"""(function () {
       if (!onScreen) { looping = false; return; }     // nothing is drawn while the view is off screen; the observer below restarts the loop
       var k = (now - t0) / 1000;
       if (k < 3) place(k);
+      else if (!grown) { place(k); grown = true; }   // the growth clock is wall time: resuming after 3 s off screen must still set the final heights
       if (playing && !dragging) {
         swayAt += (now - lastNow) / 1000;               // the sway's own clock, so Play carries on from where the view is
         view.az += (-0.25 + Math.sin(swayAt * 0.12) * 0.42 - view.az) * 0.04;
