@@ -18,6 +18,11 @@ def new_frame():
     old = {r["site_id"] for r in csv.DictReader(open(ROOT / "tasks/pic18-permit-canary-2026-11-18/pool.csv"))}
     return sorted(r["site_id"] for r in csv.DictReader(open(HERE / "frame.csv")) if r["air_ids"] and r["site_id"] not in old)
 
+def targets():
+    """Canary sites, then the rest of the new frame (owner/controller go for the full frame, 2026-11-22): rows of {site_id, air_ids, routes}."""
+    can = list(csv.DictReader(open(HERE / "canary_sites.csv"))); fr = {r["site_id"]: r for r in csv.DictReader(open(HERE / "frame.csv"))}
+    return can + [{"site_id": s, "air_ids": fr[s]["air_ids"], "routes": fr[s]["routes"], "tier": fr[s]["tier"]} for s in new_frame() if s not in {c["site_id"] for c in can}]
+
 def draw():
     ids = new_frame(); pick = sorted(random.Random(SEED).sample(ids, min(N, len(ids))))
     fr = {r["site_id"]: r for r in csv.DictReader(open(HERE / "frame.csv"))}
@@ -28,8 +33,9 @@ def draw():
 def search(k=0, n=1):
     """k of n: worker k takes every n-th site and writes search_hits_k.json; `merge` joins them (one portal session per worker)."""
     out_p = P / (f"search_hits_{k}.json" if n > 1 else "search_hits.json"); out = json.load(open(out_p)) if out_p.exists() else {}
-    for i, r in enumerate(csv.DictReader(open(HERE / "canary_sites.csv"))):
-        if i % n != k or r["site_id"] in out: continue
+    seen = set().union(*(json.load(open(p)) for p in P.glob("search_hits*.json")))   # never search a site twice
+    for i, r in enumerate(targets()):
+        if i % n != k or r["site_id"] in out or r["site_id"] in seen: continue
         out[r["site_id"]] = {"site": r["site_id"], "searches": [{"fid": a[-10:], "air_id": a, **fp.run_search({fp.F_SEC: a[-10:]})} for a in r["air_ids"].split(";")]}
         json.dump(out, open(out_p, "w"), indent=1); print(r["site_id"], [x.get("n", x.get("err")) for x in out[r["site_id"]]["searches"]], flush=True)
 

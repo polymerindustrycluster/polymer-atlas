@@ -8,6 +8,7 @@ import copy, csv, importlib.util, json, random, re, subprocess, sys
 from pathlib import Path
 HERE = Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
 import build as B, frame as F
+sys.path.insert(0, str(B.ROOT / "scripts")); from regions import PIC18
 lb, cb, P = B.lb, B.cb, B.P
 sys.modules["build"] = lb   # the lane's check.py does `import build as B`; hand it the (re-pointed) lane build module
 _spec = importlib.util.spec_from_file_location("lane_check", B.ROOT / "tasks/pic18-permit-lane-2026-11-18/check.py"); lc = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(lc)
@@ -36,10 +37,21 @@ def main():
     model = B.model_of(scr); inp = B.loaded(scr); sites, orgs, props = inp["sites"], inp["orgs"], model["props"]
     assert not model["viol"], model["viol"]
     assert same(B.read_csv(HERE / "sites.csv"), model["sites"]) and same(B.read_csv(HERE / "proposals.csv"), props), "sites.csv or proposals.csv differs from the recomputed rows (run build.py)"
-    assert json.load(open(HERE / "metrics.json")) == B.metrics(scr, model), "metrics.json differs from the recomputed metrics"
+    assert json.load(open(HERE / "metrics.json")) == B.all_metrics(scr, model), "metrics.json differs from the recomputed metrics"
+    # outcome line against the controller's harness at HEAD (an independent implementation), and an independent count of the fall
+    h = subprocess.run([sys.executable, str(B.lb.S / "harness/pic18_unknown.py"), str(B.ROOT), "HEAD"], capture_output=True, text=True, check=True).stdout
+    mm = re.search(r"org rows=(\d+) proc_unknown=(\d+)", h); o = json.load(open(HERE / "metrics.json"))["outcome_line"]
+    assert mm and (int(mm[1]), int(mm[2])) == (o["pic18_org_rows"], o["process_unknown_before"]), f"outcome baseline differs from the harness: {h.strip()}"
+    cur = {}
+    for s in sites.values():
+        if s["state"] == "OH" and s["county"] in B.lb.__dict__.get("PIC18", PIC18) and s["operating_status"] == "active" and s["verification_tier"] in ("A", "B", "C"): cur.setdefault(s["org_id"], []).append(s)
+    planned_orgs = {sites[s]["org_id"] for s in o["planned_site_terms"]}
+    fall = sum(1 for oid in planned_orgs if oid in cur and not any((x["processes"] or "").strip(" ;") for x in cur[oid]) and not (orgs[oid].get("processes") or "").strip(" ;"))
+    assert fall == o["fall"] == o["process_unknown_before"] - o["process_unknown_after"], f"outcome fall {o['fall']} differs from the independent count {fall}"
     # independent recount of the retrievable set: a site is retrievable when a stored final permit prints one of the site's own Facility IDs
     ids = {r["site_id"]: {a[-10:] for a in r["air_ids"].split(";")} for r in rows if r["air_ids"]}
-    rec = sorted(s for s in canary if any(cb.final_permit(B.doc_text(d), f) and B.header(B.doc_text(d))["facility_id"] in ids[s] for x in [json.load(open(P / "search_hits_all.json"))[s]]
+    allsites = [t["site_id"] for t in FE.targets()]
+    rec = sorted(s for s in allsites if any(cb.final_permit(B.doc_text(d), f) and B.header(B.doc_text(d))["facility_id"] in ids[s] for x in [json.load(open(P / "search_hits_all.json"))[s]]
                                           for q in x["searches"] for d, _ in q.get("hits", []) if (P / "docs" / f"{d}.txt").exists() for f in [q["fid"]]))
     assert rec == model["frame"], f"retrievable recount {len(rec)} differs from the build's {len(model['frame'])}"
     # 3. audits (the earlier lane's rules): quote in stored text, §3.1 term, ancillary, bind, witness, tier, expiry, strength, owner holds
@@ -90,8 +102,8 @@ def main():
         one("PRIVACY", lambda: {"README.md": "write to someone" + chr(64) + "example.com"}, "privacy"),
         one("FRAME", lambda s: [dict(r, status="no_air_record") if r["site_id"] == w0 else r for r in s], "frame")]
     one_c = [d for d in done if d]; assert len(one_c) == EXPECTED_DEFECTS, f"{len(one_c)} injected defects run, EXPECTED_DEFECTS says {EXPECTED_DEFECTS}"
-    m = B.metrics(scr, model)
-    print(f"ok: frame {stats['frame_with_air_id']} sites with an air ID ({stats['with_id_new']} new); canary {len(canary)}; retrievable {m['retrievable_permit_sites']}; strict-bound {m['strict_bound_sites']}; "
-          f"any fill {m['sites_with_any_fill']}; {len(one_c)} injected defects all caught")
+    m = B.all_metrics(scr, model); f = m["full_frame_read"]
+    print(f"ok: frame {stats['frame_with_air_id']} sites with an air ID ({stats['with_id_new']} new, all read); canary {len(canary)}; retrievable {f['retrievable_permit_sites']}; strict-bound {f['strict_bound_sites']}; "
+          f"any fill {f['sites_with_any_fill']}; outcome line {o['process_unknown_before']} -> {o['process_unknown_after']}; {len(one_c)} injected defects all caught")
 
 if __name__ == "__main__": main()

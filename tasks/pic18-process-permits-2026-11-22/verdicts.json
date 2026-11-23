@@ -66,7 +66,8 @@
       "laminating"
      ],
      "grade": "list",
-     "note": "P030 laminator, emissions-unit-group table row"
+     "note": "P030 laminator, emissions-unit-group table row: a machine name, no process stated. Held under the 2026-11-22 ruling (general equipment fills nothing)",
+     "hold": "equipment_only_ruling_2026_11_22"
     },
     {
      "doc": "3281747",
@@ -122,16 +123,15 @@
       "rubber_mixing_compounding"
      ],
      "grade": "list",
-     "note": "P002 heading; held only on the holder and street format"
+     "note": "P002 heading: a mixer is general equipment; held under the 2026-11-22 ruling, and held on the holder and street form besides",
+     "hold": "equipment_only_ruling_2026_11_22"
     },
     {
      "doc": "1491729",
      "quote": "Rotocure Line",
-     "terms": [
-      "vulcanization_curing_services"
-     ],
+     "terms": [],
      "grade": "list",
-     "note": "P005 heading: a continuous cure line, but it is a service term in \u00a73.1; held with the term unsettled"
+     "note": "P005 heading: a cure line; no \u00a73.1 process is named (vulcanization_curing_services is a service term)"
     }
    ],
    "note": "printed holder 'Tarkett USA Inc.' vs Atlas organization 'Tarkett North America'; permit prints 'INDUSTRIAL PARKWAY' vs Atlas 'Industrial Pkwy'"
@@ -165,7 +165,7 @@
   },
   "SITE-001690": {
    "verdict": "STILL_UNCERTAIN",
-   "hold_reason": "no_capability_destination",
+   "hold_reason": "no_listed_process",
    "quotes": [
     {
      "doc": "1410376",
@@ -174,10 +174,11 @@
       "coating_applying"
      ],
      "grade": "list",
-     "note": "P901 asphalt roofing line; a saturator is read as a coating step"
+     "note": "P901 asphalt roofing line: a saturator and a sand applicator are machines; no coating process is named. Held under the 2026-11-22 ruling",
+     "hold": "equipment_only_ruling_2026_11_22"
     }
    ],
-   "note": "tier A: supports_C reaches only a capability row, and coating_applying has no \u00a73.6 term. PMMA mixers (P002-P004) and SBS loading name no \u00a73.1 process"
+   "note": "a roofing line (saturator, sand applicator, mixers), PMMA mixers and SBS loading: general equipment, no \u00a73.1 process named"
   },
   "SITE-001893": {
    "verdict": "STILL_UNCERTAIN",
