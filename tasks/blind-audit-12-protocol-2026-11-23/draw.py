@@ -376,7 +376,7 @@ def run_draw(R, at, seed, expected_seed_sha, out, plan=None, pic18=None, protoco
             pool += [dict(stratum=s, table=k.split('|', 1)[0], record_id=k.split('|', 1)[1]) for k in permutation(seed, at, s + '|outside', outside)[:PLANT_POOL]]
         for rank, k in enumerate(order, 1):
             t, i = k.split('|', 1)
-            sample.append(dict(stratum=s, rank=rank, stage=1 if rank <= plan[s]['n1'] else 2, table=t, record_id=i, region_basis=key[(t, i)]['region_basis'],
+            sample.append(dict(stratum=s, rank=rank, stage=1 if (len(by[s]) <= plan[s]['n2'] or rank <= plan[s]['n1']) else 2, table=t, record_id=i, region_basis=key[(t, i)]['region_basis'],
                                basis=key[(t, i)]['basis'], stratum_N=len(by[s]), census='true' if len(by[s]) <= plan[s]['n2'] else 'false'))
     vals = {(t, r[ID_COL[t]]): r for t in ID_COL for r in R.rows(t)}
     pl = plants(seed, at, pool, vals)
@@ -529,12 +529,12 @@ def selftest():
         refuses(lambda t: t['sites'][0].update(county=''), 'Ohio site with blank county')
         refuses(lambda t: t['organizations'].append(dict(t['organizations'][0], org_id='ORG-000500', hq_state='', hq_county='')), 'org with no state and no site')
         refuses(lambda t: t['organizations'][40].update(hq_county=''), 'Ohio HQ with blank county that owns only a rest-of-Ohio site (could be PIC-18)')
-        # census: N=90 researchers, n2=95: everyone is read, stage 1 stops at 10; plants come from published rows outside the frame; exactly 3 per stratum still
+        # census: N=90 researchers, n2=95: everyone is read, in one stage; plants come from published rows outside the frame; exactly 3 per stratum still
         cplan = {s: dict(v) for s, v in TINY.items()}
         cplan['RESEARCHERS'] = dict(cplan['RESEARCHERS'], n1=10, n2=95)
         cs, cp, cr = run('census', plan=cplan)
         rs = [r for r in cs if r['stratum'] == 'RESEARCHERS']
-        assert len(rs) == 90 and all(r['census'] == 'true' for r in rs) and sum(1 for r in rs if r['stage'] == 1) == 10
+        assert len(rs) == 90 and all(r['census'] == 'true' and r['stage'] == 1 for r in rs), 'a census is read whole, in one stage'
         cpl = [p for p in cp if p['stratum'] == 'RESEARCHERS']
         assert len(cpl) == 3 and all(int(p['record_id'][-6:]) >= 9990 for p in cpl), cpl
         # the plan is the sealed one: a changed executable plan, or a stale sizes.json, is refused before any ID is written
@@ -542,9 +542,10 @@ def selftest():
         sizes.PLAN['EVENTS']['n2'] += 1
         try:
             sealed_plan()
-            raise AssertionError('accepted an executable plan that differs from sizes.json')
         except AssertionError as e:
             assert 'differs' in str(e), e
+        else:
+            raise AssertionError('accepted an executable plan that differs from sizes.json')
         finally:
             sizes.PLAN['EVENTS']['n2'] -= 1
         assert sealed_plan() == sizes.PLAN

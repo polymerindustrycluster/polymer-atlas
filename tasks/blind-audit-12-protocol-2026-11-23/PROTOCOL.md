@@ -168,14 +168,14 @@ python3 .../draw.py draw --seed-file <controller's path> --at <SHA> --out <new f
   ranks 1..n2: a prefix**, so extending never re-draws. The controller releases stage-1 rows; stage-2 rows stay with the controller until section 8 says to read them.
 - Outputs: `frame.csv`, `sample.csv` (stratum, rank, stage, table, record_id, region basis, stratum N, census flag), `plants.csv`, `draw_receipt.json` (SHA, seed **sha256** only, `draw.py`/
   `sizes.json`/protocol sha256, plan, reconciliation, file hashes). The seed text is in no output.
-- Selection is simple random within the stratum over its pooled records, so inclusion probability is equal and **the effective n is n** (Kish factor 1). **Census branch.** A stratum with N at most n2 is read in full. If N is at most n1 all of it is read at stage 1; if n1 is below N at most n2, stage 1 reads n1 and the early and futility rules apply as usual, and the exact rate is stated only after every record is read (then k+u over N, no interval, PASS iff at most the target). A census is never decided on a partial read by the exact rule: a partial read uses the Wilson rules of section 8. No finite-population correction is applied; the bound is conservative for the small strata.
+- Selection is simple random within the stratum over its pooled records, so inclusion probability is equal and **the effective n is n** (Kish factor 1). **Census branch.** A stratum with N at most n2 is a census: all N records are released and read in one stage (stage 1 = everyone), the ordinary early, futility and final cutoffs of section 8 do **not** apply to it, and nothing is decided until every record is read. The decision is then exact: **PASS iff (k+u)/N is at most the stratum's target**, no interval (an interval would add sampling error a census does not have). No finite-population correction is applied; the bound is conservative for the small strata.
 - Grades are against the values **at the SHA**. Data merged after it is not corrected during the audit; corrections are listed and applied afterwards by PR.
 
 ## 8. Stopping and the decision (pre-registered; numbers in `sizes.json`, made by `sizes.py`)
 
 k = records graded wrong (FIELD_ERROR + CREATION_ERROR after adjudication); u = records still UNRESOLVED after adjudication; n = records read in the stratum. The decision uses
 the **conservative** count k+u (an unresolved record is treated as wrong): **At the final look, PASS iff the Wilson upper bound of (k+u)/n is at most the stratum's target.** The report also gives the bound at k alone. (This is a final-look rule: at stage 1 the three rules below govern, so for example 1 unresolved of 55 meets the ordinary bound but still reads stage 2 because it is above `early_k`.)
-Bound = two-sided 95% Wilson, z = 1.959964. Stage 1 reads n1, then:
+Bound = two-sided 95% Wilson, z = 1.959964. For a non-census stratum, stage 1 reads n1, then:
 
 1. k+u at or below `early_k`: PASS now (judged at z = 2.326, so the early look cannot raise the false-pass chance);
 2. k+u at or above `futile_k`: FAIL now (the chance stage 2 could pass, at a true 2% rate, is under 5%);
@@ -202,7 +202,7 @@ they are not 95%-pass sizes: at a true 3%, PIC-18 passes about half the time and
 | id | question | recommendation | changes the draw? |
 |---|---|---|---|
 | B1 | Which records are in the frame: the published headline cut (active, tiers A-C) or every published page, tombstoned, `unknown` and tier-U included? | Headline cut. Excluded at `1b924786`: 170 organizations, 33 ecosystem, 715 sites (389 of them active tier U), 11 people, 2 programs. Bounds then say nothing about those | yes |
-| B2 | Owners of a frame site whose own record is not active A-C (28 records at `1b924786`; 15 in the PIC-18 stratum, including 12 of the 794 PIC-18 outcome-frame owners) | Include: the site's owner is read in the outcome frame and its fields publish | yes |
+| B2 | Owners of a frame site whose own record is not active A-C (29 records at `1b924786` meet it, 28 of them assigned to a stratum and one held under B6; 15 of the assigned are in the PIC-18 stratum, including 12 of the 794 PIC-18 outcome-frame owners) | Include: the site's owner is read in the outcome frame and its fields publish | yes |
 | B3 | Region of an organization: by footprint (this draft) or by HQ only; and an organization with no HQ state that owns frame sites (placed by its sites alone here) | Footprint, first match wins as in 2.1, so a Texas parent with one PIC-18 plant is a PIC-18 record; an Ohio HQ with no county is held (B6) | yes |
 | B4 | Organizations, ecosystem and site rows pooled in one stratum per region by simple random sampling (this draft), or sampled per table with weights | Pooled: equal weights, Kish factor 1, matches "organizations and sites by region" | yes |
 | B5 | Ecosystem rows (408) are not named by the rulings | Include with organizations: they publish pages, are Ring 5 and are in the 794 outcome frame | yes |
