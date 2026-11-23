@@ -1,0 +1,190 @@
+site_id,site_name,city,county,tier,rule,held_name_rows_in_same_city_as_leads
+SITE-000002,Lubrizol — Wickliffe HQ,Wickliffe,Lake,B,V-65,6
+SITE-000011,Akron Polymer Systems — Akron,Akron,Summit,C,V-68,0
+SITE-000013,"D & D Plastics, Inc. — Akron",Akron,Summit,C,V-68,1
+SITE-000014,Diamond America — Akron,Akron,Summit,A,V-65,3
+SITE-000015,Gabriel Performance Products — Akron,Akron,Summit,U,V-68,0
+SITE-000019,Rapid Mold Solutions — Akron,Akron,Summit,U,V-68,0
+SITE-000020,Paddington Group — Akron,Akron,Summit,U,V-68,0
+SITE-000032,"Acme Pattern Works, Inc. — Akron",Akron,Summit,C,V-68,0
+SITE-000033,LyondellBasell — Akron,Akron,Summit,C,V-68,14
+SITE-000036,Win Plastic Extrusions LLC — Akron,Akron,Summit,C,V-68,0
+SITE-000040,Spectrum Plastics Corp. — Akron,Akron,Summit,C,V-68,0
+SITE-000042,"Multibase, Inc. — Akron",Akron,Summit,C,V-68,0
+SITE-000045,Akron Ascent Innovations LLC — Akron,Akron,Summit,U,V-68,0
+SITE-000046,"Akron Surface Technologies, Inc. — Akron",Akron,Summit,U,V-68,0
+SITE-000054,"Americhem, Inc. — Cuyahoga Falls",Cuyahoga Falls,Summit,C,V-68,4
+SITE-000066,"Custom Plastic Extrusions, Ltd. — Hudson",Hudson,Summit,C,V-68,0
+SITE-000080,Ace Plastics — Barberton,Barberton,Summit,C,V-68,0
+SITE-000084,"Q Model, Inc. — Barberton",Barberton,Summit,U,V-68,0
+SITE-000097,BioVerde — Akron,Akron,Summit,U,V-68,0
+SITE-000098,Spazzolplastica — Akron,Akron,Summit,U,V-68,0
+SITE-000099,Materium Technologies — Akron,Akron,Summit,U,V-68,0
+SITE-000100,"R. E. Carroll, Inc. — Hudson",Hudson,Summit,U,V-68,0
+SITE-000103,HEXPOL Compounding — Copley,Copley,Summit,U,V-68,0
+SITE-000106,T&M Plastics Co. — Cleveland,Cleveland,Cuyahoga,B,V-65,1
+SITE-000110,William Exline — Cleveland,Cleveland,Cuyahoga,U,V-68,4
+SITE-000113,Stretchtape — Cleveland,Cleveland,Cuyahoga,U,V-68,0
+SITE-000115,AMD Plastics — Euclid,Euclid,Cuyahoga,A,V-65,2
+SITE-000120,Cleveland Polymer Company — Bedford Heights,Bedford Heights,Cuyahoga,U,V-68,0
+SITE-000122,Anita Plastics — Woodmere,Woodmere,Cuyahoga,U,V-68,0
+SITE-000124,Lamson & Sessions — Beachwood,Beachwood,Cuyahoga,U,V-68,0
+SITE-000127,Compking — North Randall,North Randall,Cuyahoga,U,V-68,0
+SITE-000136,Roto Polymers — Warrensville Heights,Warrensville Heights,Cuyahoga,A,V-65,0
+SITE-000141,Newko Polymers — Strongsville,Strongsville,Cuyahoga,U,V-68,0
+SITE-000143,Kennick Mold & Die — Cleveland,Cleveland,Cuyahoga,U,V-68,0
+SITE-000144,Molders Choice — Solon,Solon,Cuyahoga,U,V-68,0
+SITE-000147,Chem-Materials — Westlake,Westlake,Cuyahoga,C,V-68,0
+SITE-000148,WV International — Strongsville,Strongsville,Cuyahoga,C,V-68,0
+SITE-000151,InterGroup International — Euclid,Euclid,Cuyahoga,U,V-68,0
+SITE-000155,Eaton — Beachwood,Beachwood,Cuyahoga,C,V-68,1
+SITE-000158,Cleveland State University — Cleveland,Cleveland,Cuyahoga,A,V-65,2
+SITE-000160,Team NEO — Cleveland,Cleveland,Cuyahoga,U,V-68,0
+SITE-000165,Cuyahoga Community College — Cleveland,Cleveland,Cuyahoga,U,V-68,1
+SITE-000166,Manufacturing Works — Cleveland,Cleveland,Cuyahoga,U,V-68,0
+SITE-000173,Professional Plastics — Cleveland,Cleveland,Cuyahoga,U,V-68,0
+SITE-000174,Hankook Tire America Technical Center — Green,Green,Summit,C,V-68,0
+SITE-000175,Murdock Industrial — Akron,Akron,Summit,U,V-68,2
+SITE-000177,Tahoma Rubber and Plastics — Barberton,Barberton,Summit,U,V-68,5
+SITE-000178,Temarex — Akron,Akron,Summit,U,V-68,0
+SITE-000180,IER Fujikura — Macedonia,Macedonia,Summit,C,V-68,0
+SITE-000188,SpringSeal — Streetsboro,Streetsboro,Portage,C,V-68,0
+SITE-000194,GroundScape Technologies — Brooklyn Heights,Brooklyn Heights,Cuyahoga,U,V-68,0
+SITE-000199,Triangle Chemical — Mentor,Mentor,Lake,B,V-65,0
+SITE-000204,Kenda American Technology Center — Green,Green,Summit,B,V-65,0
+SITE-000207,Elite Elastomers of Ohio — Wooster,Wooster,Wayne,U,V-68,2
+SITE-000211,HEXPOL Compounding — Mogadore,Mogadore,Summit,C,V-68,0
+SITE-000214,Parker Hannifin — Wickliffe (Hose Products Division),Wickliffe,Lake,C,V-68,17
+SITE-000219,"A. C. Wilson Enterprises, Inc — Middlefield",Middlefield,Geauga,U,V-68,0
+SITE-000220,A.r.e. Accessories — Massillon,Massillon,Stark,A,V-65,5
+SITE-000225,Adhere (Cutting Edge Converted Products),Cleveland,Cuyahoga,C,V-68,1
+SITE-000230,Air Power Dynamics — Mentor,Mentor,Lake,U,V-68,0
+SITE-000231,Akro-Mils — Akron,Akron,Summit,U,V-68,4
+SITE-000232,Akro-Mils — Akron,Akron,Summit,U,V-68,4
+SITE-000261,Bicron Corp. — Hiram,Hiram,Portage,U,V-68,1
+SITE-000270,Briarwood Products — Cleveland,Cleveland,Cuyahoga,C,V-68,0
+SITE-000282,Cast Nylons 4429,Willoughby,Lake,U,V-68,6
+SITE-000292,ChemSpec — Canton,Canton,Stark,C,V-68,0
+SITE-000296,Cleveland Spray Foam — Rocky River,Rocky River,Cuyahoga,U,V-68,0
+SITE-000300,"Compass Insulation & Coatings, Inc. — Cleveland",Cleveland,Cuyahoga,U,V-68,0
+SITE-000308,"Corrosion Resistant Technologies, Inc. — Chagrin Falls",Chagrin Falls,Geauga,C,V-68,0
+SITE-000347,"Enclosure Solutions, Inc. — Newbury",Newbury,Geauga,U,V-68,0
+SITE-000374,GARLAND CO INC — Cleveland,Cleveland,Cuyahoga,B,V-65,19
+SITE-000377,Glebus Alloys — Stow,Stow,Summit,U,V-68,0
+SITE-000384,GRAFTON MACHINE & RUBBER CO INC — Ravenna,Ravenna,Portage,C,V-68,0
+SITE-000391,"HC COMPANIES, INC. — Middlefield",Middlefield,Geauga,B,V-65,8
+SITE-000394,Heyden Mold & Bench Co — Tallmadge,Tallmadge,Summit,C,V-68,0
+SITE-000408,INTEGRITY PROCESSING LLC — Barberton,Barberton,Summit,U,V-68,2
+SITE-000409,"INTERGRADED DESIGN ENGINEERING AND ANALYSIS SERVICES, INC. — North Canton",North Canton,Stark,A,V-65,1
+SITE-000413,ITEN INDUSTRIES INC. (PLANT 3),Ashtabula,Ashtabula,U,V-68,23
+SITE-000414,Iten Industries Inc. (Plant 4),Ashtabula,Ashtabula,C,V-68,36
+SITE-000422,"JBC Technologies, Inc. — North Ridgeville",North Ridgeville,Lorain,U,V-68,7
+SITE-000433,KEENE BUILDING PRODUCTS — Euclid,Euclid,Cuyahoga,C,V-68,8
+SITE-000434,Keener Rubber Company — Alliance,Alliance,Stark,C,V-68,5
+SITE-000452,Littlern Corp. — Barberton,Barberton,Summit,C,V-68,2
+SITE-000457,MAIN STREET LIGHTING STANDARDS INC — Medina,Medina,Medina,A,V-65,0
+SITE-000459,Mansfield Paint — Medina,Medina,Medina,U,V-68,1
+SITE-000482,Molded Fiber Glass Companies — Ashtabula,Ashtabula,Ashtabula,A,V-65,27
+SITE-000493,Nexen Tire America Technical Center — Richfield,Richfield,Summit,U,V-68,0
+SITE-000495,"NFM Welding Engineers, Inc. — Massillon",Massillon,Stark,C,V-68,2
+SITE-000497,Nitrojection Corporation — Chesterland,Chesterland,Geauga,U,V-68,0
+SITE-000501,"Northeastern Plastics International, Inc — Canton",Canton,Stark,C,V-68,0
+SITE-000504,OKAPI Medical — Akron,Akron,Summit,U,V-68,0
+SITE-000510,"Paarlo Plastics, Inc. — North Canton",North Canton,Stark,B,V-65,14
+SITE-000516,"Park-Ohio Industries, Inc. — Cleveland",Cleveland,Cuyahoga,U,V-68,8
+SITE-000520,Perry Fiberglass Products,Elyria,Lorain,C,V-68,7
+SITE-000524,Philpott Rubber Extrusions — Mogadore,Mogadore,Portage,C,V-68,1
+SITE-000536,Plextrusions — North Ridgeville,North Ridgeville,Lorain,C,V-68,0
+SITE-000541,"PolyInsight, LLC — Akron",Akron,Summit,U,V-68,0
+SITE-000543,Polymer Additives — Cleveland,Cleveland,Cuyahoga,U,V-68,3
+SITE-000548,Precision Coatings Inc. — Cleveland,Cleveland,Cuyahoga,C,V-68,0
+SITE-000551,"Preferred Solutions, Inc. — Independence",Independence,Cuyahoga,B,V-65,0
+SITE-000572,RADIX WIRE & CABLE LLC — Glenwillow,Glenwillow,Cuyahoga,A,V-65,0
+SITE-000581,RESOURCE MATERIAL HANDLING,Middlefield,Geauga,U,V-68,2
+SITE-000585,Rico Products Inc — Chagrin Falls,Chagrin Falls,Geauga,U,V-68,1
+SITE-000599,SAS Rubber Co. — Painesville,Painesville,Lake,U,V-68,11
+SITE-000607,Sentry Protection — Lakewood,Lakewood,Cuyahoga,B,V-65,0
+SITE-000616,"Southwest Gasket Company, LLC — North Olmsted",North Olmsted,Cuyahoga,U,V-68,0
+SITE-000638,"Technifab, Inc. — Avon",Avon,Lorain,C,V-68,13
+SITE-000645,Thermocore Products — Ravenna,Ravenna,Portage,C,V-68,1
+SITE-000663,Universal Rubber & Plastics Corp. — Tallmadge,Tallmadge,Summit,U,V-68,3
+SITE-000678,Wrap Tite - Site 3,Solon,Cuyahoga,A,V-65,16
+SITE-000719,American Excelsior Company — Norwalk,Norwalk,Huron,A,V-65,17
+SITE-000784,"CENTURY CONTAINER, LLC-CENTURY INDUSTRIES CORP 2 — New Waterford",New Waterford,Columbiana,U,V-68,1
+SITE-000818,Cooper Standard Industrial and Specialty Group,New Philadelphia,Tuscarawas,C,V-68,4
+SITE-000919,FREUDENBERG-NOK MILAN,Milan,Erie,U,V-68,3
+SITE-000941,Hamilton Polymers — Leetonia,Leetonia,Columbiana,U,V-68,0
+SITE-000979,"Jerico Plastic Industries, Inc. — Minerva",Wadsworth,Medina,A,V-65,0
+SITE-000994,KPC KENTAK PRODUCTS COMPANY — East Liverpool,East Liverpool,Columbiana,U,V-68,2
+SITE-001122,"Polyflex, Inc. — Baltic",Baltic,Tuscarawas,U,V-68,4
+SITE-001179,ROTO SOLUTIONS — Ashland,Ashland,Ashland,U,V-68,1
+SITE-001309,Continental (Tech Hub partner),Fairlawn,Summit,U,V-68,0
+SITE-001312,USA Rolls — Canfield,Canfield,Mahoning,U,V-68,0
+SITE-001391,Ohio Foam Corp. — Youngstown,Youngstown,Mahoning,C,V-68,0
+SITE-001392,"Piedmont Plastics, Inc. — Youngstown",Youngstown,Mahoning,C,V-68,0
+SITE-001395,HEXPOL Compounding — Akron (Exeter Dr),Akron,Summit,B,V-65,0
+SITE-001398,Saint-Gobain HyComp LLC — Cleveland area (provisional),Cleveland area,Cuyahoga,U,V-68,0
+SITE-001417,Steere Enterprises — Tallmadge (350 Tacoma Ave),Tallmadge,Summit,A,V-65,14
+SITE-001418,Steere Enterprises — Tallmadge (303 Tacoma Ave),Tallmadge,Summit,A,V-65,14
+SITE-001420,Hyload Inc. — Wadsworth,Wadsworth,Medina,B,V-65,0
+SITE-001432,Lubrizol Advanced Materials — Brecksville,Brecksville,Cuyahoga,B,V-65,2
+SITE-001435,Amcor — Aurora (PVC Stretch Film),Aurora,Portage,B,V-65,0
+SITE-001440,PolyKinetix — Massillon,Massillon,Stark,B,V-65,0
+SITE-001441,Smithers Medical Products — North Canton,North Canton,Stark,B,V-65,0
+SITE-001455,American Bath Group — Salem,Salem,Columbiana,B,V-65,0
+SITE-001473,Techniplas US LLC dba NEXXTA — Mansfield,Mansfield,Richland,B,V-65,0
+SITE-001480,Cell-O-Core — Wadsworth,Wadsworth,Medina,B,V-65,5
+SITE-001503,dlhBOWLES — Canton,Canton,Stark,B,V-65,2
+SITE-001509,Polyram USA — Avon,Avon,Lorain,B,V-65,0
+SITE-001525,Henkel — Warrensville Heights (LOCTITE Cleveland plant),Warrensville Heights,Cuyahoga,A,V-65,3
+SITE-001528,"FDIE, LLC — Cleveland",Cleveland,Cuyahoga,B,V-65,0
+SITE-001569,VisionAir Solutions — Akron,Akron,Summit,C,V-68,0
+SITE-001572,ICHOR VASCULAR INC — Brecksville,Brecksville,Cuyahoga,C,V-68,0
+SITE-001614,STERIS Corporation — Mentor,Mentor,Lake,B,V-65,8
+SITE-001615,STERIS Corporation — Mentor,Mentor,Lake,B,V-65,8
+SITE-001624,"Myrava, LLC — Parma",Parma,Cuyahoga,C,V-68,0
+SITE-001652,ePac Flexible Packaging — Solon,Solon,Cuyahoga,B,V-65,0
+SITE-001670,J B Jewitt Co Inc — Cleveland,Cleveland,Cuyahoga,B,V-65,0
+SITE-001709,ENGINEERED LAMINATES & COATINGS — Akron,Akron,Summit,B,V-65,0
+SITE-001718,RPM INDUSTRIES — Elyria,Elyria,Lorain,B,V-65,0
+SITE-001777,Cru Performance Coatings LLC,Cleveland,Cuyahoga,B,V-65,0
+SITE-001794,Kimberly-Clark Corporation,Warren,Trumbull,B,V-65,0
+SITE-001800,Republic Powdered Metals Inc,Medina,Medina,B,V-65,4
+SITE-001806,3D Dental Designs and Development LLC,Shaker Heights,Cuyahoga,B,V-65,0
+SITE-001818,Global Waste and Recycling LLC,Beachwood,Cuyahoga,C,V-68,0
+SITE-001821,J.G. Sales Inc.,Columbiana,Columbiana,C,V-68,0
+SITE-001835,"The Original Mattress Factory, Inc.",CLEVELAND,Cuyahoga,B,V-65,5
+SITE-001845,"Polymer & Steel Technologies, Inc.",Eastlake,Lake,B,V-65,0
+SITE-001849,Carlisle TyrFil (Carlisle Polyurethane Systems),Berea,Cuyahoga,A,V-65,0
+SITE-001878,Graphic Art Systems Inc (Grafix Plastics),Maple Heights,Cuyahoga,A,V-65,0
+SITE-001884,Harrison Paint Corp. (Poxycoat line),Canton,Stark,A,V-65,13
+SITE-001911,"Lawrence Machine, Inc.",Massillon,Stark,C,V-68,0
+SITE-001912,Potter's Inc,Cleveland,Cuyahoga,C,V-68,4
+SITE-001923,Saint-Gobain HyComp LLC (Hycomp LLC),Middleburg Heights,Cuyahoga,A,V-65,2
+SITE-001929,"Momentous Mold and Machine (formerly Reuther Mold & Manufacturing Co., Inc.)",Cuyahoga Falls,Summit,B,V-65,5
+SITE-001932,"Stemaco U.S.A., Inc.",Hudson,Summit,C,V-68,0
+SITE-001934,Synthetic Rubber Technologies,Uniontown,Stark,C,V-68,0
+SITE-001938,"Tristan Rubber Molding, Inc.",North Canton,Stark,C,V-68,6
+SITE-001953,Jax Mold and Machine Inc,Akron,Summit,B,V-65,1
+SITE-001958,M Sacks International,Akron,Summit,B,V-65,0
+SITE-001959,"McNeil & NRM International, Inc",Akron,Summit,B,V-65,0
+SITE-001980,Optimax Plastic LLC,Kent,Portage,B,V-65,0
+SITE-001993,"Raydar of Ohio, Inc.",Wadsworth,Medina,B,V-65,0
+SITE-001996,Rez-Tech Corporation,Kent,Portage,B,V-65,4
+SITE-002002,Samjay & Sons LLC,Fairlawn,Summit,B,V-65,0
+SITE-002004,Sherwood Advanced Composite Technologies Corp,Louisville,Stark,B,V-65,0
+SITE-002018,Tolloti Pipe LLC,Uhrichsville,Tuscarawas,B,V-65,0
+SITE-002024,Veretec Inc,Jefferson,Ashtabula,C,V-68,0
+SITE-002025,Vinyltech International LLC,North Jackson,Mahoning,B,V-65,2
+SITE-002039,Newell Brands Inc. (Rubbermaid Home Products),Mogadore,Summit,B,V-65,0
+SITE-002043,Sietins Plastics Inc (Sietins Precision),Bedford,Cuyahoga,A,V-65,0
+SITE-002047,STUCK LLC,Akron,Summit,C,V-68,0
+SITE-002056,Quality Fiberglass,Marshallville,Wayne,C,V-68,4
+SITE-002057,"Quikey Manufacturing Co, Inc.",Akron,Summit,B,V-65,5
+SITE-002059,Canfield Plastics Inc,Canfield,Mahoning,C,V-68,0
+SITE-002063,Poly Tech Plastics,Middlefield,Geauga,C,V-68,0
+SITE-002073,EnergyEne Inc.,Wooster,Wayne,B,V-65,0
+SITE-002082,DayGlo Twinsburg site,Twinsburg,Summit,A,V-65,1
+SITE-002096,Enzyme Catalyzed Polymers LLC,Akron,Summit,B,V-65,0
+SITE-002100,AXILEA LLC,Beachwood,Cuyahoga,B,V-65,0
+SITE-003983,G-3 Chickadee Akron R&D Facility,Akron,Summit,C,V-68,0
