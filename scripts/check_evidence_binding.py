@@ -680,7 +680,7 @@ def judge_all(evs, idx):
                     "source_family": source_family(ev["source_ref"]), "verdict": v, "reason": reason,
                     "name_alt": info.get("name_alt", ""), "street_limit": info.get("street_limit", ""),
                     "hq_basis": info.get("hq_basis", ""), "if_facility_operator": info.get("if_facility_operator", ""),
-                    "name_basis": info.get("name_basis", "")})
+                    "name_basis": info.get("name_basis", ""), "also_passes_on": info.get("also_passes_on", "")})
     return out
 
 

@@ -131,7 +131,7 @@ The authoritative run belongs to the rules lane (atlas-w22-rules, PR #466, merge
 
 Counts below are evidence rows.
 
-**`main` today (393c3895, after #463):** 47,416 rows. 0 PASS, 207 FAIL, 2,776 READ_REQUIRED and 44,433 UNINSPECTABLE. Under ruling A no web row passes, and every PASS on `main` was a web row. 41,461 of the UNINSPECTABLE rows carry no quote. A PR that added all of `main` would fail on all 47,416: 207 FAIL and 47,209 held. 6,744 of the held rows have an archive capture the follow-up's per-row proof could cite.
+**`main` at 393c3895 (after #463; the reverted tree):** 47,416 rows. 0 PASS, 207 FAIL, 2,776 READ_REQUIRED and 44,433 UNINSPECTABLE. Under ruling A no web row passes, and every PASS on `main` was a web row. 41,461 of the UNINSPECTABLE rows carry no quote. A PR that added all of `main` would fail on all 47,416: 207 FAIL and 47,209 held. 6,744 of the held rows have an archive capture the follow-up's per-row proof could cite.
 
 **`main` at 8f30ce0f** (the branch cut, still holding batches 5 and 6): 81,510 rows. 20,178 PASS, 13,104 FAIL, 531 HELD, 3,120 READ_REQUIRED and 44,577 UNINSPECTABLE.
 
@@ -147,7 +147,7 @@ Counts below are evidence rows.
 
 1,019 rows are held (HELD, READ_REQUIRED or UNINSPECTABLE) and fail the gate. 344 of them have an archive capture at 17834918.
 
-**What the floor ruling moved** (round three at 9205837e → this head, the same 34,094 rows): 531 rows PASS → HELD, 4 rows FAIL → PASS, nothing else. PASS falls from 20,705 to 20,178 (recall drops, as the owner accepted); no row moves to FAIL. The 531 by leg (a row may hold on two): designator on one side only 238, name key shared with a recorded parent 108, name with a parenthetical 82, locality not fully read 46, passes on two records 39, address with a parenthetical 30. The 4 FAIL → PASS rows quote, parentheses kept, exactly a held name: EVD-443131 and EVD-443132 the whole site name, EVD-438919 and EVD-438920 the operator's own legal name (whose parenthesis-stripped form is the parent's key, which made them `parent_name_lead` before). The 39 two-record rows sit on 11 site records, in pairs at one street that look like duplicate site records: a dedupe lead, not settled here.
+**What the floor ruling moved** (round three at 9205837e → this head, the same 34,094 rows): 531 rows PASS → HELD, 4 rows FAIL → PASS, nothing else. PASS falls from 20,705 to 20,178 (recall drops, as the owner accepted); no row moves to FAIL. The 531 by leg (a row may hold on two): designator on one side only 238, name key shared with a recorded parent 108, name with a parenthetical 82, locality not fully read 46, passes on two records 39, address with a parenthetical 30. The 4 FAIL → PASS rows quote, parentheses kept, exactly a held name: EVD-443131 and EVD-443132 the whole site name, EVD-438919 and EVD-438920 the operator's own legal name (whose parenthesis-stripped form is the parent's key, which made them `parent_name_lead` before). The 39 two-record rows fall on 6 pairs of site records at one street key: SITE-000335/SITE-000336, SITE-000627/SITE-001416, SITE-000683/SITE-001725, SITE-000005/SITE-002964 and SITE-002795/SITE-003966 each belong to one organization and may be duplicate site records; SITE-002685/SITE-002844 belong to two organizations. These are dedupe leads, not settled here.
 
 Reasons for every verdict but PASS in the batches, by row:
 
@@ -173,7 +173,7 @@ Reasons for every verdict but PASS in the batches, by row:
 | `unit_differs` | 14 |
 | other (`parse_failed` 4, two `name_not_held+unit_differs`, two mixed HQ rows) | 8 |
 
-The FAIL reasons shift by a few rows between kinds (for example `name_not_held+record_no_street` 252 → 244, `record_no_street` 2,720 → 2,728) because an ECHO name is no longer split inside parentheses. Round two failed 12,857 of these rows; round three failed 12,901; this round fails 12,897. By a one-off run of the round-two gate (c6b6f83b) on the same rows, which `check.py` cannot reproduce because that code is gone, the 44 more are all round-two PASS rows: 24 name only a recorded parent (`parent_name_lead`; 10 of them bound through a site-name part), 12 quote another city with another or no readable ZIP, 4 state another suite, and 4 name only a generic label. 46 rows carry `city_differs` in all. No batch row quotes another state.
+Within FAIL, 16 rows change reason, all ECHO rows whose quote carries a parenthetical, because the parser now keeps it (a name keeps its parenthetical, and a field is split on ";" only outside parentheses): 8 drop `name_not_held` from `name_not_held+record_no_street` (the name with its parenthetical is held), 4 drop it from `name_not_held+street_differs` (the name now holds on `name_with_parenthetical`, which a FAIL outranks), and 4 move from `name_not_held` to `parent_name_lead` (the field read whole names only the parent). Round two failed 12,857 of these rows; round three failed 12,901; this round fails 12,897. By a one-off run of the round-two gate (c6b6f83b) on the same rows, which `check.py` cannot reproduce because that code is gone, the 44 more are all round-two PASS rows: 24 name only a recorded parent (`parent_name_lead`; 10 of them bound through a site-name part), 12 quote another city with another or no readable ZIP, 4 state another suite, and 4 name only a generic label. 46 rows carry `city_differs` in all. No batch row quotes another state.
 
 **The ZIP5 rule, measured.** Before it (head 1b4f49e1), 324 batch rows carried `city_differs`, 152 of them round-two PASS rows. With it, 278 of the 324 lose the reason: 140 become PASS and 138 still fail for another reason. 46 keep it. All 278 changes come from the ZIP5 leg. The parenthetical leg changed none: the gate already read both parts of a parenthetical city, and only 13 sites on the tree (9 in Ohio) have one.
 
@@ -198,7 +198,7 @@ By source family (PASS / FAIL / HELD / READ_REQUIRED / UNINSPECTABLE):
 | NJDEP | 46 | 16 | 0 | 0 | 0 |
 | GA EPD | 0 | 12 | 0 | 0 | 0 |
 
-## Web quotes on `main` today
+## Web quotes on `main` at 393c3895
 
 | Filter (web-quote rows on `main` at 393c3895, excluding `no_quote` and `other_table`) | Rows | FAIL | READ_REQUIRED |
 | --- | ---: | ---: | ---: |
@@ -302,7 +302,7 @@ The gate implements the strict reading. Each alternative is measured on the batc
 10. **Not open: headquarters from identity-only sources.** SCHEMA §4.8 S-5 already rules on this. These 627 rows (343 state-entity, 284 FMCSA) fail under an existing owner ruling. The count is kept for the record.
 11. **USAspending and SBIR as headquarters sources** (330 rows pass). A UEI can be registered for a single plant, and an SBIR address dates from the award year. Whether USAspending counts as SAM under R-SAM (2026-11-16, lifted for the public SAM extract on 2026-11-22) is your ruling.
 12. **Shifted columns** (NC DEQ, 98 rows): 90 would pass if the facility label were read as the operator.
-13. **Web quotes.** No web row passes; these are measured on `main` today.
+13. **Web quotes.** No web row passes; these are measured on `main` at 393c3895.
     - 60 `not_own_site` rows sit on a host that carries a held name (a sister or regional domain).
     - 14 `street_absent_from_quote` rows show the street once spacing is ignored ("Bragg Ridge" against "Braggridge").
     - `registry` and `government_filing` web rows have no test of their own (111 rows on `main`, `web_class_untested`).
