@@ -1,0 +1,2 @@
+org_id,column,value,applied,settling_fact,source_url,raw_file,sha256,href
+ORG-001053,newsroom_feed_url,,held,Need a successful robots-permitted fetch of the ProVia article feed.,https://www.provia.com/newsroom/,ORG-001053/eae73237e07bc555afc35d2910b0fe9268f3b39bcbb0ad875b0f741bf2cb7161.html,c10d6eff3f052aa0cdb8ca472f91a5368cf14beb6cda8d369f66eee3ac4b52db,https://www.provia.com/feed/?post_type=article
