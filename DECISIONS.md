@@ -422,3 +422,12 @@ gate change precedes the data re-cites. A trade notice's dateline can
 bind organization existence. An HQ claim requires an explicit
 statement of headquarters. §4.13 records the remaining admission rules
 and the limits on street, locality, names, filing identity and replay.
+
+## 2026-11-23 17:34 · Dead website domains
+
+“Dead domains: blank the website field and record the old domain in
+notes.” Apply the owner ruling to the two reviewed entries. ORG-001971
+holds the parked domain odm.com. ORG-002064 holds a 404 at
+polytechmolding.com that does not identify the firm. Clear both website
+cells, retain the date and observed condition in notes, and keep each
+organization status.

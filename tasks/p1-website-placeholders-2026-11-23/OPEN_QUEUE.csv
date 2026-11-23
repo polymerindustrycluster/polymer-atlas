@@ -1,0 +1,5 @@
+table,record_id,field,reason
+event_participation,EVP-000780,evidence_source_url,"a source description in a URL column (evidence_source_name already names the source); the column is not rendered; blank, move or keep is a data decision"
+event_participation,EVP-000781,evidence_source_url,"a source description in a URL column (evidence_source_name already names the source); the column is not rendered; blank, move or keep is a data decision"
+event_participation,EVP-000782,evidence_source_url,"a source description in a URL column (evidence_source_name already names the source); the column is not rendered; blank, move or keep is a data decision"
+organizations,ORG-001731,website,two URLs in one cell: which one is the website is a decision

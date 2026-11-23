@@ -1,0 +1,2 @@
+table,record_id,field,reason
+people,PERSON-000789,sources,"the first part of the URL is unfinished (no file extension, no closing slash) and nothing marks where the URL ends: spaced path, or prose after the URL"
