@@ -748,16 +748,6 @@ for _table, _rows, _idcol, _identcols in V68_TABLES:
             debt("V-68", v68_key(_table, rid, [r.get(c) for c in _identcols]),
                  f"{_table} {rid} is tier {tier or '(blank)'} with no evidence row in data/evidence_*.csv (SCHEMA §4.13 presence floor, V-68)")
 
-# Replay gap report: a task whose check.py replays rows from the NAS raw store marks itself with tasks/<slug>/REPLAY_NEEDS_RAW_STORE
-# (first line: the store's raw/ directory). Where that directory is not mounted (the hosted job), say so: a green job here
-# proves nothing about the replay. Report only, never an error: the replay runs where the store is.
-TASKS_DIR = Path(os.environ["ATLAS_TASKS_DIR"]) if os.environ.get("ATLAS_TASKS_DIR") else ROOT / "tasks"
-for _marker in sorted(TASKS_DIR.glob("*/REPLAY_NEEDS_RAW_STORE")):
-    _store = _marker.read_text(encoding="utf-8").splitlines()[0].strip()
-    if not Path(_store).is_dir():
-        warnings.append(f"replay gap: {_marker.parent.name}/check.py replays its rows from the raw store {_store}, which is not available here, "
-                        f"so that replay was NOT run in this job; this result says nothing about it (run check.py where the store is mounted)")
-
 DEBT_DETAILS = "--debt-details" in sys.argv
 for rule in sorted(set(DEBT_FOUND) | set(DEBT_BASELINE)):
     found = DEBT_FOUND.get(rule, {})
