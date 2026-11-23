@@ -472,8 +472,9 @@ R11. **No data row is changed by this revision.**
   `newer_contradicting_filing` when the newer source is also a filing.
   Show the filing year in the band's `size_band` evidence `claim_detail` and store the filing's source date in
   `observed_date`. Include that date in the existing `BAND-SOURCE` site note.
-  The blind audit 12 readers check a sample of bands against their cited sources. Binding replay checks the filing dates
-  under the audit's existing field classes.
+  At write time the integrator replays each filing's date against the raw snapshot. For the PIC-18 ten-year packet,
+  the replay is `tasks/pic18-size-10yr-2026-11-23/check.py` on the packet branch. Show the filing year alongside
+  each sampled band for the blind audit 12 readers, who check the bands against the cited filings.
 
 ### Owner rulings — 2026-11-03 (equipment and availability) **[v1.9]**
 

@@ -329,3 +329,11 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
 The repo owner superseded the v1.19.3 five-year limit for R13 sources 1 and 2. SCHEMA v1.19.7 records
 the band-write cutoff, the hold for a stale or superseded filing, and the existing evidence and site
 notes fields that show the source year.
+
+## 2026-11-23 13:16: R13 filing-date and audit checks (round 24, item 2)
+
+> Say what is checked
+
+At write time the integrator replays each filing date against the raw snapshot. The PIC-18 ten-year
+packet supplies `tasks/pic18-size-10yr-2026-11-23/check.py`. Blind audit 12 readers check sampled bands
+against their cited filings with the filing year shown.
