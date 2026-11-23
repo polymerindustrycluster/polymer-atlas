@@ -1,0 +1,24 @@
+frame,org_id,legal_name,entity_type,suffix,ownership_type,stock_ticker,hq_state,hq_country
+outside,ORG-005058,"Induron Protective Coatings, LLC",corporation_private,LLC,private_company,,AL,US
+outside,ORG-006138,"Fmi-Eps, LLC",corporation_private,LLC,,,ID,US
+outside,ORG-006147,Badraun Coatings LLC,corporation_private,LLC,,,ID,US
+outside,ORG-003350,SGL Carbon LLC,corporation_private,LLC,,,NC,US
+outside,ORG-006148,Delfex Innovations LLC,corporation_private,LLC,,,NH,US
+outside,ORG-006158,Lightblocks Mfg LLC,corporation_private,LLC,,,NH,US
+outside,ORG-006170,"Marmon Utility, LLC",corporation_private,LLC,,,NH,US
+outside,ORG-004201,Infineum USA L.P.,llc,L.P.,private_company,,NJ,US
+outside,ORG-006183,R4 Industrial USA LLC,corporation_private,LLC,,,NV,US
+outside,ORG-006191,"Ingenuim, LLC",corporation_private,LLC,,,NV,US
+outside,ORG-006198,"North American Specialty Laminations, LLC.",corporation_private,LLC.,,,NV,US
+outside,ORG-006202,"Stealth Finishing, LLC",corporation_private,LLC,,,NV,US
+outside,ORG-006203,Tike LLC,corporation_private,LLC,,,NV,US
+outside,ORG-006204,Piper Plastics LLC,corporation_private,LLC,,,NV,US
+outside,ORG-006209,"Epoxies, LLC",corporation_private,LLC,,,RI,US
+outside,ORG-004543,"Indulor America, LP",llc,LP,private_company,,,US
+outside,ORG-004553,Mylar Specialty Films US Limited Partnership,llc,Limited Partnership,private_company,,,US
+outside,ORG-006227,Merit3D LLC,corporation_private,LLC,,,UT,US
+outside,ORG-006236,Design Imaging LLC,corporation_private,LLC,,,UT,US
+outside,ORG-006242,Whitehead Composite Industries LLC,corporation_private,LLC,,,UT,US
+outside,ORG-006251,Enve Composites LLC,corporation_private,LLC,,,UT,US
+outside,ORG-006256,"Great Outdoor Products, LLC",corporation_private,LLC,,,UT,US
+outside,ORG-006260,Plastic Fabricating LLC,corporation_private,LLC,,,UT,US

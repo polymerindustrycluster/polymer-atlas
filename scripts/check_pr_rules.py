@@ -175,8 +175,36 @@ def check_inputs(f, out):
     return fails, blind
 
 
+REPLAY_NOT_RUN = ("source replay not run in hosted CI: needs the shared store; it is run by the reviewers and recorded "
+                  "in the Review record comment")
+
+
+def replay_not_run(f):
+    """True when the PR adds evidence rows or registry links: its packet's replay (tasks/<task>/check.py) cannot run here."""
+    return (f.get("added_evidence_rows") or 0) + (f.get("added_registry_links") or 0) > 0
+
+
+def check_replay(f, out):
+    """Not a pass/fail rule: says out loud that the replay did not run, so a green result is not read as a replayed one."""
+    fails, blind = [], []
+    for k in ("added_evidence_rows", "added_registry_links", "replay_scripts"):
+        if f.get(k) is None:
+            blind.append(f"facts missing {k!r}")
+    if blind:
+        return fails, blind
+    if not replay_not_run(f):
+        out.append("inspected: PR adds no evidence rows or registry links; no packet replay applies")
+        return fails, blind
+    out.extend(f"NOT RUN: {p} (added or changed by this PR)" for p in f["replay_scripts"])
+    if not f["replay_scripts"]:
+        out.append("NOT RUN: the PR adds or changes no tasks/*/check.py")
+    out.append("NOT RUN: " + REPLAY_NOT_RUN)
+    return fails, blind
+
+
 RULES = (("rule 5 (size cap, audit before the next batch)", check_size),
-         ("rule 6 (raw inputs by checksum)", check_inputs))
+         ("rule 6 (raw inputs by checksum)", check_inputs),
+         ("replay (packet check.py; reported, never run here)", check_replay))
 
 
 def run(f, write=print):
@@ -280,6 +308,7 @@ def collect(pr_number, base_ref=None):
         pairs = list(zip(toks[0::2], toks[1::2]))
         f["changed_files"] = [p for _, p in pairs]
         f["added_files"] = [p for st, p in pairs if st == "A"]
+        f["replay_scripts"] = [p for st, p in pairs if st in ("A", "M", "T") and re.fullmatch(r"tasks/[^/]+/check\.py", p)]
         ev = [p for p in f["changed_files"] if re.fullmatch(r"data/evidence_[^/]+\.csv", p)]
         f["added_evidence_rows"] = sum(added_rows(base, head, p, ("evidence_id",)) for p in ev)
         f["added_registry_links"] = added_rows(base, head, "data/registry_links.csv", REGISTRY_IDENTITY) \
@@ -310,12 +339,12 @@ def collect(pr_number, base_ref=None):
     return f
 
 
-def post_check(head_sha, rc, text, name="pr-rules", conclusion=None):
+def post_check(head_sha, rc, text, name="pr-rules", conclusion=None, title=None):
     """Publish the result as a check run on the PR head (GitHub Actions app, via GITHUB_REPOSITORY)."""
     repo = os.environ["GITHUB_REPOSITORY"]
     conclusion = conclusion or ("success" if rc == 0 else "failure")
     payload = {"name": name, "head_sha": head_sha, "status": "completed", "conclusion": conclusion,
-               "output": {"title": f"{name}: {conclusion}", "summary": "```\n" + text[-60000:] + "\n```"}}
+               "output": {"title": title or f"{name}: {conclusion}", "summary": "```\n" + text[-60000:] + "\n```"}}
     r = subprocess.run(["gh", "api", "-X", "POST", f"repos/{repo}/check-runs", "--input", "-"],
                        input=json.dumps(payload), capture_output=True, text=True)
     if r.returncode:
@@ -339,7 +368,8 @@ def publish_gate(dirpath, pr_number):
     if live != head:
         print(f"PR head moved ({head[:8]} -> {live[:8]}): not posting a result for a stale head")
         return 0
-    return 0 if post_check(head, 0, f"binding gate: {state}\n{log}", "binding-gate", GATE_STATES[state]) else 1
+    title = "binding-gate: NOT CHECKED (gate not yet on main)" if state == "not_yet" else None  # a pass that inspected nothing
+    return 0 if post_check(head, 0, f"binding gate: {state}\n{log}", "binding-gate", GATE_STATES[state], title) else 1
 
 
 def write_baseline(ref):
@@ -377,7 +407,8 @@ def main(argv=None):
     rc = run(f, lambda s: (lines.append(s), print(s)))
     if a.post:
         sha = (f.get("pr") or {}).get("head_sha")
-        if not sha or not post_check(sha, rc, "\n".join(lines)):
+        title = "pr-rules: " + ("pass" if rc == 0 else "FAIL") + "; source replay NOT RUN in hosted CI" if replay_not_run(f) else None
+        if not sha or not post_check(sha, rc, "\n".join(lines), title=title):
             return 1
     return rc
 

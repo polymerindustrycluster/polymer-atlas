@@ -178,3 +178,8 @@ and dated SCHEMA revisions; this ledger records release and operating decisions 
   RTS Companies US) beside filings of other businesses on the same street. The packet applies both rulings; the
   alternatives are kept in controller storage, not in the repo.
 - **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
+
+## 2026-11-22: `corporation` entity type, and `ohio_statewide` rows with a named county
+- **Decision:** two owner rulings of round 13, taken as multiple choice. (1) "Add 'corporation'": SCHEMA 4.4 `entity_type` gains a plain `corporation` value (v1.19.4), filled only where the legal name ends in Inc, Incorporated, Corp or Corporation; public or private is never guessed; Co, Company, Ltd and Limited stay `unknown`. (2) The 79 organization rows still carrying the undefined `ohio_statewide` with a named Ohio HQ county outside PIC-18 get `ohio_other`; the 5 with no county stay held.
+- **Applied:** `tasks/entity-type-from-name-2026-11-22/` (LLC and LP/LLP fills as in the earlier packet, plus the corporation fill) and `tasks/ohio-statewide-labels-2026-11-22/`. No evidence rows.
+- **Decided by:** the repo owner, in session, 2026-11-22, as multiple choice.
