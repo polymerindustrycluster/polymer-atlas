@@ -16,6 +16,13 @@
    "final_k": 2
   }
  },
+ "brief_figure_vs_recomputed": {
+  "brief_n": 35,
+  "recomputed_n": 43,
+  "target": 0.1,
+  "true_rate": 0.01,
+  "zero_error_n": 35
+ },
  "effective_n_recomputed": {
   "0.05": {
    "0.0": 73,
@@ -24,7 +31,6 @@
   },
   "0.1": {
    "0.0": 35,
-   "0.01": 43,
    "0.02": 55,
    "0.03": 71
   }
@@ -45,13 +51,6 @@
    "ruling_n": 460,
    "target": 0.05,
    "true_rate": 0.03
-  },
-  {
-   "difference": 8,
-   "recomputed_n": 43,
-   "ruling_n": 35,
-   "target": 0.1,
-   "true_rate": 0.01
   },
   {
    "difference": 0,

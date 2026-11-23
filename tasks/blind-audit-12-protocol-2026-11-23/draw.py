@@ -8,7 +8,7 @@
 
 Draw is read-only on the repository: data comes from `git show <SHA>:`, never the working tree. The seed is never printed or written.
 """
-import csv, hashlib, importlib.util, io, json, random, re, subprocess, sys, tempfile
+import csv, hashlib, importlib.util, io, json, os, random, re, subprocess, sys, tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -19,6 +19,9 @@ import sizes  # noqa: E402  (PLAN, the per-stratum sizes; one definition)
 
 SEED_SHA256 = '5144840e29ac8aad7204812bf272282ffe0e39a2ce6bb6ba795d4d35f68d3df3'  # the controller's sealed seed; there is deliberately no override
 STRATA = list(sizes.PLAN)
+STRATUM_TABLES = {'PIC18_RECORDS': ('organizations', 'ecosystem', 'sites'), 'REST_OHIO_RECORDS': ('organizations', 'ecosystem', 'sites'), 'REST_US_RECORDS': ('organizations', 'ecosystem', 'sites'),
+                  'RESEARCHERS': ('people',), 'PROGRAMS': ('programs',), 'EVENTS': ('events', 'event_participation')}
+PLANT_PER_STRATUM = 3
 PLANT_POOL = 40  # records ranked just past n2 that may be turned into plants
 TIERS_PUBLISHED = ('A', 'B', 'C')  # U is "not counted in headline totals" on the site (build_site TIERS); named exclusion, never silent
 
@@ -35,8 +38,8 @@ FIELD_CLASS = {
         'W': 'pic_relevance last_verified created_by notes last_activity_evidence_date liveness_signal monitor_watch',
         'D': 'tier1_qualifier tier1_qualifier_basis'},
     'sites': {
-        'K': 'site_id org_id sources',
-        'J': ('site_name site_type city state zip county ring_primary naics_primary naics_primary_source_type naics_confidence processes processes_other_note materials materials_other_note '
+        'K': 'site_id sources',
+        'J': ('org_id site_name site_type city state zip county ring_primary naics_primary naics_primary_source_type naics_confidence processes processes_other_note materials materials_other_note '
               'markets_served employee_band_site operating_status verification_tier street_address country site_group_id'),
         'W': 'last_verified created_by notes county_source',
         'D': 'last_activity_date last_activity_source',
@@ -52,8 +55,8 @@ FIELD_CLASS = {
         'J': 'full_name institution_org_id program_org_id role role_as_published research_specialties public_profile_url lab_url verification_tier status status_date',
         'W': 'last_verified'},
     'programs': {
-        'K': 'program_id institution_org_id sources',
-        'J': ('program_name program_type credential_types level cip_code cip_source_type unit_department description_1line url public_door_url first_year_awarded last_year_awarded '
+        'K': 'program_id sources',
+        'J': ('institution_org_id program_name program_type credential_types level cip_code cip_source_type unit_department description_1line url public_door_url first_year_awarded last_year_awarded '
               'latest_completions completions_year specialty_processes specialty_materials research_areas engagement_modes apprenticeship_registered employer_custom_training '
               'admissions_status facilities_note scale_band geography_served city state county status verification_tier'),
         'W': 'last_verified pic_relevance created_by notes'},
@@ -68,17 +71,25 @@ FIELD_CLASS = {
         'W': 'evidence_date last_verified created_by notes'},
     # child rows: judged with the record they hang from (PROTOCOL.md section 2.4)
     'evidence': {
-        'K': 'evidence_id record_table record_id claim_type source_ref', 'B': 'claim_detail source_class address_role',
-        'M': 'tier_effect', 'W': 'observed_date created_by notes'},
-    'registry_links': {'K': 'org_id site_id match_basis', 'J': 'registry registry_id', 'W': 'as_of'},
-    'site_capabilities': {'K': 'capability_id site_id org_id source_ref', 'J': 'capability_type term provenance', 'W': 'observed_date withdrawn_date created_by notes'},
-    'equipment': {'K': 'equipment_id host_org_id site_id program_id source_ref', 'J': 'name equipment_class access_mode', 'W': 'observed_date withdrawn_date created_by notes'},
+        'K': 'evidence_id record_table record_id claim_type source_ref', 'B': 'claim_detail source_class address_role observed_date',
+        'M': 'tier_effect', 'W': 'created_by notes'},
+    'registry_links': {'K': 'match_basis', 'J': 'org_id site_id registry registry_id', 'W': 'as_of'},
+    'site_capabilities': {'K': 'capability_id source_ref', 'J': 'site_id org_id capability_type term provenance withdrawn_date', 'W': 'observed_date created_by notes'},
+    'equipment': {'K': 'equipment_id source_ref', 'J': 'host_org_id site_id program_id name equipment_class access_mode withdrawn_date', 'W': 'observed_date created_by notes'},
     'people_identifiers': {'K': 'person_id identifier_type match_basis', 'J': 'identifier_id', 'W': 'as_of'},
-    'people_engagement': {'K': 'engagement_id person_id source_ref', 'J': 'mode', 'W': 'observed_date withdrawn_date created_by notes'},
+    'people_engagement': {'K': 'engagement_id person_id source_ref', 'J': 'mode withdrawn_date', 'W': 'observed_date created_by notes'},
+    'code_assignments': {'K': 'assignment_id source_name source_ref', 'J': 'org_id code_system code_value role source_type stated_title', 'W': 'observed_date created_by notes'},
     'archive_links': {'K': 'evidence_id', 'J': 'archive_ref captured_at', 'W': 'created_by'},
-    'members': {'K': 'member_row_id org_id', 'J': 'display_name member_tier record_class member_since membership_source_url snapshot_date', 'W': 'notes'},
+    'members': {'K': 'member_row_id', 'J': 'org_id display_name member_tier record_class member_since membership_source_url snapshot_date', 'W': 'notes'},
     'relationships': {'K': 'relationship_id from_org_id to_org_id', 'M': 'relationship_type effective_from effective_to basis source_ref', 'W': 'created_by notes'},
 }
+# Columns that exist only in the release export (scripts/export_release.py ORG_SITE_COLUMNS), not in data/: generated, recomputed by the integrator
+# with build_site.org_field_sources at the SHA, never read. A reader-visible org page shows the same union (build_site org_field_html).
+RELEASE_GENERATED = {'organizations': 'processes_incl_sites materials_incl_sites markets_served_incl_sites'}
+# data/ tables no stratum record carries: vocabulary, concordance, decision log, IPEDS reference layer (programs' IPEDS-derived fields are judged on programs).
+OUT_OF_UNIT_TABLES = {'ref_codes': 'reference vocabulary (NAICS titles shown on pages are reference data)', 'ref_code_map': 'code concordance, reference',
+                      'inclusion_log': 'decision log, builder prose', 'ipeds_institutions': 'IPEDS reference layer (SCHEMA 4.23)',
+                      'ipeds_programs': 'IPEDS reference layer (SCHEMA 4.23)', 'ipeds_completions': 'IPEDS reference layer (SCHEMA 4.23)'}
 FIELD_CLASS = {t: {c: k for k, cols in d.items() for c in cols.split()} for t, d in FIELD_CLASS.items()}
 CLASS_NAME = dict(J='judged by readers', K='context, not judged', B='judged by binding replay (integrator)', W='withheld, not judged', D='derived/generated, recomputed', R='reference, not read', M='machine-checked')
 TABLE_FILE = {  # table -> data/ path regex (shards are read as one table)
@@ -94,6 +105,9 @@ def fields_md():
         for c, k in cols.items():
             by[k].append(c)
         rows.append(f'| `{t}` | ' + ' | '.join(' '.join(f'`{c}`' for c in by[k]) or '—' for k in 'JKBWDRM') + ' |')
+    for t, cols in RELEASE_GENERATED.items():
+        rows.append(f'| `{t}` (release export only) | — | — | — | — | ' + ' '.join(f'`{c}`' for c in cols.split()) + ' | — | — |')
+    rows.append('| out of the unit | ' + '; '.join(f'`{t}` ({why})' for t, why in OUT_OF_UNIT_TABLES.items()) + ' | | | | | | |')
     return '\n'.join(rows)
 
 
@@ -106,6 +120,17 @@ class GitReader:
 
     def git(self, *a):
         return subprocess.check_output(['git', *a], cwd=self.root).decode('utf-8')
+
+    def table_names(self):
+        """Every table in data/ at the SHA: shard families by prefix, single files by stem; subfolders (data/ipeds/) are not tables."""
+        names = set()
+        for p in self.files:
+            m = re.fullmatch(r'data/([a-z_0-9]+?)(?:_(?:[A-Z0-9]{2,4}))?\.csv', p)
+            if not m:
+                continue
+            n = m.group(1)
+            names.add('evidence' if n.startswith('evidence_') else n)
+        return names
 
     def paths(self, table):
         return [p for p in self.files if re.fullmatch(TABLE_FILE[table], p)]
@@ -150,6 +175,8 @@ class Unassignable(Exception):
 def build_frame(R, pic18, check_published=True):
     """-> (frame rows, reconciliation dict, unassignable list). Asserts everything AGENTS section 2 rule 10 asks for."""
     T = {t: R.rows(t) for t in ('organizations', 'ecosystem', 'sites', 'people', 'programs', 'events', 'event_participation')}
+    tables_at_sha = set(R.table_names())
+    assert tables_at_sha == set(FIELD_CLASS) | set(OUT_OF_UNIT_TABLES) | {'organizations', 'sites', 'evidence'}, sorted(tables_at_sha ^ (set(FIELD_CLASS) | set(OUT_OF_UNIT_TABLES)))
     for t in FIELD_CLASS:  # every column classified exactly once, none unclassified, none missing: a new column cannot slip past the audit
         h = R.header(t)
         assert len(h) == len(set(h)) and set(h) == set(FIELD_CLASS[t]), (t, sorted(set(h) ^ set(FIELD_CLASS[t])))
@@ -211,9 +238,9 @@ def build_frame(R, pic18, check_published=True):
         regs = {site_region(s) for s in own}
         if 'PIC18' in regs or (state == 'OH' and county in pic18):
             return 'PIC18'
+        if state == 'OH' and not county:  # the HQ could be in PIC-18 and only a positive PIC-18 footprint (above) rules that in: hold, whatever else it owns
+            raise Unassignable('Ohio HQ with blank county and no PIC-18 frame site: could be PIC-18')
         if 'OHIO' in regs or state == 'OH':
-            if state == 'OH' and not county and 'OHIO' not in regs:
-                raise Unassignable('Ohio HQ with blank county and no frame site: could be PIC-18')
             return 'OHIO'
         if not state and country in ('', 'US', 'USA', 'United States') and not own:
             raise Unassignable('blank HQ state, no frame site')
@@ -271,7 +298,7 @@ def permutation(seed, at, stratum, ids):
     return ids
 
 
-def plants(seed, at, pool, values, per_stratum=3):
+def plants(seed, at, pool, values, per_stratum=PLANT_PER_STRATUM):
     """Defect plants (PROTOCOL.md section 6). `pool` = frame records ranked just past n2 in each stratum's permutation, so no plant ever
     stands in for a sampled record. Per stratum, `per_stratum` of them get one judged field swapped, in the READING PACKET ONLY, for the same
     field of another pool record of the same table whose value differs. Readers must flag them; plants never enter a rate."""
@@ -307,9 +334,25 @@ def csv_text(rows, cols):
     return f.getvalue()
 
 
+def sealed_plan():
+    """The plan the draw uses is the one committed in sizes.json, and sizes.json must equal what sizes.py computes now: no executable-only plan."""
+    committed = json.loads((H / 'sizes.json').read_text())
+    assert committed == json.loads(json.dumps(sizes.tables())), 'sizes.json differs from sizes.py: refusing to draw'
+    plan = {s: dict(target=committed['strata'][s]['target'], n1=committed['strata'][s]['n1'], n2=committed['strata'][s]['n2']) for s in STRATA}
+    assert plan == sizes.PLAN, 'sizes.PLAN differs from sizes.json: refusing to draw'
+    return plan
+
+
+def write_private(path, text):
+    """Outputs hold the whole sample, stage 2 included: owner-only files, never group- or world-readable."""
+    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    with os.fdopen(fd, 'w', encoding='utf-8') as f:
+        f.write(text)
+
+
 def run_draw(R, at, seed, expected_seed_sha, out, plan=None, pic18=None, protocol_path=None, check_published=True):
-    """The whole draw. `plan` is overridable only here (the selftest); the CLI always uses sizes.PLAN."""
-    plan = plan or sizes.PLAN
+    """The whole draw. `plan` may be overridden only by the selftest; the CLI path uses sealed_plan()."""
+    plan = plan or sealed_plan()
     if sha(seed) != expected_seed_sha:
         sys.exit('refusing to draw: the seed file does not match the sealed sha256')
     out = Path(out)
@@ -328,23 +371,30 @@ def run_draw(R, at, seed, expected_seed_sha, out, plan=None, pic18=None, protoco
         full = permutation(seed, at, s, [f"{t}|{i}" for t, i in key])
         order = full[:plan[s]['n2']]
         pool += [dict(stratum=s, table=k.split('|', 1)[0], record_id=k.split('|', 1)[1]) for k in full[plan[s]['n2']:plan[s]['n2'] + PLANT_POOL]]
+        if len(full) - plan[s]['n2'] < PLANT_POOL:  # census or near-census: no spare frame records, so plants come from published rows OUTSIDE the frame (same tables)
+            outside = [f"{t}|{r[ID_COL[t]]}" for t in STRATUM_TABLES[s] for r in R.rows(t) if (t, r[ID_COL[t]]) not in {(f['table'], f['record_id']) for f in frame}]
+            pool += [dict(stratum=s, table=k.split('|', 1)[0], record_id=k.split('|', 1)[1]) for k in permutation(seed, at, s + '|outside', outside)[:PLANT_POOL]]
         for rank, k in enumerate(order, 1):
             t, i = k.split('|', 1)
             sample.append(dict(stratum=s, rank=rank, stage=1 if rank <= plan[s]['n1'] else 2, table=t, record_id=i, region_basis=key[(t, i)]['region_basis'],
                                basis=key[(t, i)]['basis'], stratum_N=len(by[s]), census='true' if len(by[s]) <= plan[s]['n2'] else 'false'))
     vals = {(t, r[ID_COL[t]]): r for t in ID_COL for r in R.rows(t)}
     pl = plants(seed, at, pool, vals)
-    out.mkdir(parents=True, exist_ok=True)
+    short = {s: PLANT_PER_STRATUM - sum(1 for p in pl if p['stratum'] == s) for s in STRATA if sum(1 for p in pl if p['stratum'] == s) < PLANT_PER_STRATUM}
+    if short:
+        sys.exit(f'refusing to draw: no usable plant pool for strata {short} (the reader gate needs {PLANT_PER_STRATUM} per stratum)')
+    out.mkdir(parents=True, exist_ok=True, mode=0o700)
+    os.chmod(out, 0o700)
     texts = {'frame.csv': csv_text(sorted(frame, key=lambda f: (f['stratum'], f['table'], f['record_id'])), ['stratum', 'table', 'record_id', 'basis', 'region_basis']),
              'sample.csv': csv_text(sample, list(sample[0])), 'plants.csv': csv_text(pl, ['stratum', 'table', 'record_id', 'field', 'donor_record_id'])}
     for n, t in texts.items():
-        (out / n).write_text(t, encoding='utf-8')
+        write_private(out / n, t)
     me = Path(__file__).resolve()
     receipt = dict(at=at, seed_sha256=sha(seed), draw_py_sha256=sha(me.read_bytes()), sizes_json_sha256=sha((H / 'sizes.json').read_bytes()),
                    protocol_md_sha256=sha(Path(protocol_path or H / 'PROTOCOL.md').read_bytes()) if (protocol_path or (H / 'PROTOCOL.md').exists()) else None,
                    rng='random.Random(int(SHA256(seed|at|stratum))).shuffle over the table|id keys sorted ascending; stage 1 = first n1, stage 2 = first n2 (prefix)',
                    plan={s: plan[s] for s in STRATA}, reconciliation=rec, files={n: sha(t.encode()) for n, t in texts.items()})
-    (out / 'draw_receipt.json').write_text(json.dumps(receipt, indent=1, sort_keys=True) + '\n')
+    write_private(out / 'draw_receipt.json', json.dumps(receipt, indent=1, sort_keys=True) + '\n')
     return sample, pl, receipt
 
 
@@ -366,6 +416,8 @@ class MemReader:
         return [dict(r) for r in self.t.get(t, [])]
     def header(self, t):
         return list(FIELD_CLASS[t])
+    def table_names(self):
+        return set(FIELD_CLASS) | set(OUT_OF_UNIT_TABLES)
     def regions(self):
         return {'Cuyahoga', 'Summit'}
 
@@ -389,7 +441,9 @@ def fixture():
     for i in range(1, 91):
         t['people'].append(row('people', person_id=f'PERSON-{i:06d}', full_name=f'Fixture Person {i}', institution_org_id='ORG-000300', role_as_published='Professor', research_specialties=f'topic{i % 7}', verification_tier='A'))
         t['programs'].append(row('programs', program_id=f'PROG-{i:06d}', institution_org_id='ORG-000300', program_name=f'Fixture Program {i}', status='active', verification_tier='A', level=f'lvl{i % 5}'))
-    t['people'].append(row('people', person_id='PERSON-009999', full_name='Fixture Person U', institution_org_id='ORG-000300', verification_tier='U'))
+    for i in range(9990, 9996):  # published rows outside the frame (tier U, tombstoned): the plant pool of a census stratum
+        t['people'].append(row('people', person_id=f'PERSON-{i:06d}', full_name=f'Fixture Outside Person {i}', institution_org_id='ORG-000300', role_as_published=f'Role{i}', research_specialties=f'other{i}', verification_tier='U'))
+        t['programs'].append(row('programs', program_id=f'PROG-{i:06d}', institution_org_id='ORG-000300', program_name=f'Fixture Outside Program {i}', status='tombstoned', verification_tier='A', level=f'x{i}'))
     for i in range(1, 11):
         t['events'].append(row('events', event_id=f'EVT-{i:06d}', name=f'Fixture Event {i}', status='active', verification_tier='A', home_city=f'Town{i}'))
     for i in range(1, 121):
@@ -441,14 +495,14 @@ def selftest():
         # frame reconciliation: the owner of a PIC-18 site is in the PIC-18 frame though its own record is not active A-C; closed org is excluded, named
         fr = {(f['table'], f['record_id']): f for f in csv.DictReader((tmp / 'one' / 'frame.csv').open())}
         assert fr[('organizations', 'ORG-000200')]['stratum'] == 'PIC18_RECORDS' and fr[('organizations', 'ORG-000200')]['basis'] == 'owner_of_frame_site'
-        assert ('organizations', 'ORG-000201') not in fr and ('people', 'PERSON-009999') not in fr
+        assert ('organizations', 'ORG-000201') not in fr and ('people', 'PERSON-009990') not in fr
         rec = r1['reconciliation']
-        assert rec['organizations']['excluded_by_reason'] == {'status=closed; tier=A': 1, 'status=unknown; tier=U': 1} and rec['people']['excluded'] == 1 and rec['organizations']['of_which_owner_added'] == 1
+        assert rec['organizations']['excluded_by_reason'] == {'status=closed; tier=A': 1, 'status=unknown; tier=U': 1} and rec['people']['excluded'] == 6 and rec['organizations']['of_which_owner_added'] == 1
         assert rec['frame_by_stratum']['PIC18_RECORDS'] == 40 + 40 + 1 + 1 + 1 + 0, rec['frame_by_stratum']  # 40 orgs + 40 sites + owner org + its site + ecosystem record in Summit
         # plants: three per stratum with a usable donor, in stage 1, fields judged, value differs
         for s in STRATA:
             ps = [p for p in p1 if p['stratum'] == s]
-            assert 1 <= len(ps) <= 3, (s, len(ps))
+            assert len(ps) == 3, (s, len(ps))
         assert p1 == p2 and all(FIELD_CLASS[p['table']][p['field']] == 'J' for p in p1)
         sampled = {(r['table'], r['record_id']) for r in s1}
         assert not any((p['table'], p['record_id']) in sampled for p in p1), 'a plant stands in for a sampled record'
@@ -474,6 +528,30 @@ def selftest():
         refuses(lambda t: t['sites'].append(dict(t['sites'][0], site_id='SITE-777777', org_id='ORG-999999')), 'site with no owner')
         refuses(lambda t: t['sites'][0].update(county=''), 'Ohio site with blank county')
         refuses(lambda t: t['organizations'].append(dict(t['organizations'][0], org_id='ORG-000500', hq_state='', hq_county='')), 'org with no state and no site')
+        refuses(lambda t: t['organizations'][40].update(hq_county=''), 'Ohio HQ with blank county that owns only a rest-of-Ohio site (could be PIC-18)')
+        # census: N=90 researchers, n2=95: everyone is read, stage 1 stops at 10; plants come from published rows outside the frame; exactly 3 per stratum still
+        cplan = {s: dict(v) for s, v in TINY.items()}
+        cplan['RESEARCHERS'] = dict(cplan['RESEARCHERS'], n1=10, n2=95)
+        cs, cp, cr = run('census', plan=cplan)
+        rs = [r for r in cs if r['stratum'] == 'RESEARCHERS']
+        assert len(rs) == 90 and all(r['census'] == 'true' for r in rs) and sum(1 for r in rs if r['stage'] == 1) == 10
+        cpl = [p for p in cp if p['stratum'] == 'RESEARCHERS']
+        assert len(cpl) == 3 and all(int(p['record_id'][-6:]) >= 9990 for p in cpl), cpl
+        # the plan is the sealed one: a changed executable plan, or a stale sizes.json, is refused before any ID is written
+        assert sealed_plan() == sizes.PLAN
+        sizes.PLAN['EVENTS']['n2'] += 1
+        try:
+            sealed_plan()
+            raise AssertionError('accepted an executable plan that differs from sizes.json')
+        except AssertionError as e:
+            assert 'differs' in str(e), e
+        finally:
+            sizes.PLAN['EVENTS']['n2'] -= 1
+        assert sealed_plan() == sizes.PLAN
+        # outputs are owner-only
+        for f in (tmp / 'one').iterdir():
+            assert f.stat().st_mode & 0o077 == 0, f
+        assert (tmp / 'one').stat().st_mode & 0o077 == 0
         class BadHeader(MemReader):
             def header(self, t):
                 return FIELD_CLASS[t] and list(FIELD_CLASS[t]) + (['new_column'] if t == 'people' else [])
@@ -509,17 +587,19 @@ def selftest():
         assert '<!-- FIELDS:BEGIN -->\n' + fields_md() + '\n<!-- FIELDS:END -->' in proto, 'PROTOCOL.md field table differs from draw.py: run draw.py fields-md'
         assert SEED_SHA256 in proto and sha(b'') != SEED_SHA256
         # against the real repository at origin/main: columns all classified, IDs unique, counts reconciled to the site builder's own
-        try:
-            at = subprocess.check_output(['git', 'rev-parse', 'origin/main'], cwd=ROOT).decode().strip()
-        except subprocess.CalledProcessError:
-            at = None
-        if at:
+        r = subprocess.run(['git', 'rev-parse', '--verify', 'origin/main'], cwd=ROOT, capture_output=True)
+        at = r.stdout.decode().strip() if r.returncode == 0 else None
+        if at is None and '--synthetic-only' not in sys.argv:
+            raise SystemExit('selftest FAILED: no origin/main to build the real frame from (use --selftest --synthetic-only for the synthetic half alone)')
+        if at is None:
+            print('synthetic only: the real-data frame check did not run')
+        else:
             real, rec, bad = build_frame(GitReader(at), GitReader(at).regions())
             assert sum(rec['frame_by_stratum'].values()) == len(real) and set(rec['frame_by_stratum']) <= set(STRATA)
             print('real-data frame check at origin/main', at[:8], rec['frame_by_stratum'], f'{len(bad)} unassignable records (the draw would refuse)')
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
-    print('draw selftest: PASS')
+    print('draw selftest' + (' (synthetic only)' if '--synthetic-only' in sys.argv else '') + ': PASS')
 
 
 if __name__ == '__main__':
@@ -536,8 +616,11 @@ if __name__ == '__main__':
         print(json.dumps(dict(at=at, reconciliation=rec, unassignable=bad), indent=1, sort_keys=True))
     elif a[:1] == ['draw']:
         at = require_ancestor(arg('--at'))
+        for flag, path in (('--expect-draw-sha256', Path(__file__).resolve()), ('--expect-sizes-sha256', H / 'sizes.json'), ('--expect-protocol-sha256', H / 'PROTOCOL.md')):
+            if arg(flag) != sha(path.read_bytes()):  # the hashes the controller recorded in the ledger before the draw
+                sys.exit(f'refusing to draw: {flag} does not match {path.name} (record the three hashes and the SHA in the ledger first)')
         seed = Path(arg('--seed-file')).read_bytes()
-        s, p, r = run_draw(GitReader(at), at, seed, SEED_SHA256, arg('--out'))
+        s, p, r = run_draw(GitReader(at), at, seed, SEED_SHA256, arg('--out'), protocol_path=H / 'PROTOCOL.md')
         print(json.dumps(dict(at=at, drawn=dict(Counter(x['stratum'] for x in s)), stage1=dict(Counter(x['stratum'] for x in s if x['stage'] == 1)), plants=len(p)), sort_keys=True))
     else:
         sys.exit(__doc__)

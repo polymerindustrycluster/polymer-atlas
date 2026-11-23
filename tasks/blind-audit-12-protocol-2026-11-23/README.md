@@ -25,4 +25,4 @@ prefix of stage 2, a different n2 changes nothing before rank n1, plants never s
 ## Not checked
 
 The real draw (no seed seen; the sealed hash is only a constant), the packet builder, the replay harness over the binding gate, reader instructions for the new fields, and whether
-the J/K/B classification is complete in meaning (it is complete in columns: a missing column fails). At `8b3bf3a6` the real frame has 28 records that fit no stratum, so a draw would refuse (PROTOCOL B6).
+the J/K/B classification is complete in meaning (it is complete in columns: a missing column fails). At `1b924786` the real frame has 31 records that fit no stratum, so a draw would refuse (PROTOCOL B6).

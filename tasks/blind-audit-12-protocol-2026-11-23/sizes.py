@@ -16,8 +16,9 @@ Z = 1.959964
 Z_EARLY = 2.326     # stage-1 early PASS needs the 99%-level bound, so the second look cannot inflate the false-pass chance
 P_FUTILE = 0.02     # planning rate for the futility rule
 FUTILE_BELOW = 0.05  # stop for futility when P(stage 2 passes | stage-1 errors, rate 2%) is below this
-# Owner ruling 2026-11-23 round 17: effective n at an assumed true rate (continuous Wilson bound), quoted, then recomputed below.
-RULING = {0.05: {0.02: 205, 0.03: 460}, 0.10: {0.01: 35, 0.02: 55, 0.03: 71}}
+# Owner ruling 2026-11-23 round 17 (DECISIONS.md): effective n at an assumed true rate (continuous Wilson bound), quoted, then recomputed below.
+RULING = {0.05: {0.02: 205, 0.03: 460}, 0.10: {0.02: 55, 0.03: 71}}  # DECISIONS.md says 'about 55 to 71' for 10%; it states no figure at 1%
+BRIEF_FIGURE = {'target': 0.10, 'true_rate': 0.01, 'brief_n': 35}  # the lane brief's '35 at 1%': not in DECISIONS.md; 35 is the zero-error size
 # Pre-registered plan. n1 = the ruling's size at 2% true error; n2 = the ruling's size at 3%. Battery item B-POWER may raise a 10% stratum's n2.
 PLAN = {
     'PIC18_RECORDS':     dict(target=0.05, n1=205, n2=460),
@@ -89,6 +90,8 @@ def tables():
         rep['strata'][s] = dict(r, outcomes={str(p): p_outcomes(r, p) for p in (0.01, 0.02, 0.03, a['target'])},
                                 false_pass_at_target=p_outcomes(r, a['target'])['pass_overall'],
                                 single_stage_acceptance={str(n): accept_k(n, a['target']) for n in (a['n1'], a['n2'])})
+    b = BRIEF_FIGURE
+    rep['brief_figure_vs_recomputed'] = dict(b, recomputed_n=n_needed(b['true_rate'], b['target']), zero_error_n=n_needed(0.0, b['target']))
     rep['alternatives_10pct_n2'] = {str(n2): {pp: p_outcomes(rule(55, n2, 0.10), p)['pass_overall'] for pp, p in (('0.02', 0.02), ('0.03', 0.03))} | {'final_k': rule(55, n2, 0.10)['final_k']} for n2 in (71, 110, 150)}
     return rep
 
@@ -96,10 +99,10 @@ def tables():
 def selftest():
     # known answers (same as audit 11's stats.py)
     assert round(wilson_upper(0, 20), 6) == 0.161125 and round(wilson_upper(20, 20), 6) == 1.0 and round(wilson_upper(10, 20), 6) == 0.700702
-    # the ruling's 55 and 71 reproduce exactly; 205 and 460 within 3 records; 35 is the ZERO-error size, the 1% size is 43
+    # the ruling's 55 and 71 reproduce exactly; 205 and 460 within 3 records; the brief's 35 is the ZERO-error size, the 1% size is 43
     got = {(t, p): n_needed(p, t) for t, ps in RULING.items() for p in ps}
     assert got[(0.10, 0.02)] == 55 and got[(0.10, 0.03)] == 71 and got[(0.05, 0.02)] == 203 and got[(0.05, 0.03)] == 457, got
-    assert got[(0.10, 0.01)] == 43 and n_needed(0.0, 0.10) == 35, 'the ruling\'s 35 is the zero-error size, not the 1% size'
+    assert n_needed(0.01, 0.10) == 43 and n_needed(0.0, 0.10) == BRIEF_FIGURE['brief_n'] == 35, 'the brief\'s 35 is the zero-error size, not the 1% size'
     # acceptance numbers and monotonicity
     assert [accept_k(205, 0.05), accept_k(460, 0.05), accept_k(55, 0.10), accept_k(71, 0.10)] == [4, 13, 1, 2]
     assert all(accept_k(n, 0.10) <= accept_k(n + 1, 0.10) for n in range(5, 400))
