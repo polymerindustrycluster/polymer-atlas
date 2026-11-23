@@ -1,0 +1,870 @@
+frame,org_id,legal_name,entity_type,suffix,ownership_type,stock_ticker,hq_state,hq_country
+outside,ORG-003313,GS Manufacturing,unknown,,private_company,,CA,US
+outside,ORG-003356,TR Industries,unknown,,private_company,,CA,US
+outside,ORG-004494,Custom Marble & Onyx,unknown,,private_company,,CA,US
+outside,ORG-007404,Westcoat Specialty Coating Systems,unknown,,,,CA,US
+outside,ORG-007410,Labcon North America,unknown,,,,CA,US
+outside,ORG-007424,Emerald Packaging,unknown,,,,CA,US
+outside,ORG-007429,Magic Plastics,unknown,,,,CA,US
+outside,ORG-007431,Serco Mold,unknown,,,,CA,US
+outside,ORG-007439,MAST Technologies,unknown,,,,CA,US
+outside,ORG-010000,Watkins Wellness,unknown,,,,CA,US
+outside,ORG-010003,Cal spas,unknown,,,,CA,US
+outside,ORG-003594,Colorado Plastic Products,unknown,,,,CO,US
+outside,ORG-004005,Cray Valley,unknown,,unknown,,CO,US
+outside,ORG-003262,RapidPurge,unknown,,private_company,,CT,US
+outside,ORG-003793,Galata Chemicals,unknown,,private_company,,CT,US
+outside,ORG-004002,Van Dyk Recycling Solutions,unknown,,private_company,,CT,US
+outside,ORG-004512,Talalay Global,unknown,,private_company,,CT,US
+outside,ORG-002986,TA Instruments,unknown,,,,DE,US
+outside,ORG-003316,Industrial Plastic Systems,unknown,,private_company,,FL,US
+outside,ORG-003328,Marine Concepts,unknown,,private_company,,FL,US
+outside,ORG-003341,Pirate Rebar,unknown,,private_company,,FL,US
+outside,ORG-003389,Globeius,unknown,,,,FL,US
+outside,ORG-003898,Virtus Equipment,unknown,,private_company,,FL,US
+outside,ORG-007812,ADDMAN Group,unknown,,,,FL,US
+ohio_rest,ORG-000984,WinCup,unknown,,,,GA,US
+outside,ORG-002951,Huber Engineered Materials,unknown,,private_company,,GA,US
+outside,ORG-003577,Starrett-Bytewise,unknown,,,,GA,US
+outside,ORG-003788,Cimbar Performance Minerals,unknown,,private_company,,GA,US
+outside,ORG-004511,Synmar & Castech,unknown,,private_company,,GA,US
+outside,ORG-003235,High Country Fusion,unknown,,private_company,,ID,US
+outside,ORG-003147,Bales Metal Surface Solutions,unknown,,private_company,,IL,US
+outside,ORG-003361,Valto Engineered Materials,unknown,,,,IL,US
+outside,ORG-003373,Alliance Specialties and Laser Sales,unknown,,,,IL,US
+outside,ORG-003380,Cresswood Shredding Machinery,unknown,,,,IL,US
+outside,ORG-003391,Hoto Instruments,unknown,,,,IL,US
+outside,ORG-003414,"Shibaura Machine Company, America",unknown,,public_company,,IL,US
+outside,ORG-003514,Channeled Resources Group,unknown,,private_company,,IL,US
+outside,ORG-003587,Adams Plastics,unknown,,,,IL,US
+outside,ORG-003731,Broetje-Automation USA,unknown,,private_company,,IL,US
+outside,ORG-003836,Vinavil Americas,unknown,,,,IL,US
+outside,ORG-007207,Atkore International,unknown,,,,IL,US
+pic18,ORG-002544,Berry Global,unknown,,,,IN,US
+outside,ORG-003451,MonTech USA,unknown,,,,IN,US
+outside,ORG-003458,AirWave Packaging,unknown,,,,IN,US
+outside,ORG-003642,Fibertech Plastics,unknown,,private_company,,IN,USA
+outside,ORG-003662,Park Plastic Products,unknown,,private_company,,IN,USA
+outside,ORG-004406,Envirotech Extrusion,unknown,,private_company,,IN,US
+outside,ORG-005113,American Window and Glass,unknown,,,,IN,US
+ohio_rest,ORG-002125,Normec OWS,unknown,,,,,BE
+pic18,ORG-002136,Kongsberg Automotive,unknown,,,,,NO
+outside,ORG-003111,Giti Tire Group,unknown,,,,,SG
+outside,ORG-003437,AirBoss Rubber Solutions,unknown,,public_company,BOS,ON,CA
+outside,ORG-003616,Redwood Plastics and Rubber,unknown,,private_company,,BC,CA
+outside,ORG-003797,Kal-Polymers,unknown,,private_company,,ON,CA
+outside,ORG-004006,"OASIS Elastomers Industrial, Lda",unknown,,unknown,,,PT
+outside,ORG-007918,Infra Pipes,unknown,,,,,CA
+outside,ORG-008109,Kordsa Teknik Tekstil A.S.,unknown,,,,,TR
+outside,ORG-003240,INVISTA,unknown,,private_company,,KS,US
+outside,ORG-003605,Lustercraft Plastics,unknown,,private_company,,KS,US
+outside,ORG-002942,Wickert Hydraulic Presses USA,unknown,,private_company,,KY,US
+outside,ORG-003253,Neat Companies Group,unknown,,private_company,,KY,US
+outside,ORG-003305,Exel Composites USA,unknown,,,,KY,US
+outside,ORG-003917,ITW Performance Polymers & Fluids,unknown,,,,MA,US
+outside,ORG-003926,RH Adhesives,unknown,,private_company,,MA,US
+outside,ORG-003891,Middle River Aerostructure Systems,unknown,,,,MD,US
+outside,ORG-004390,GVS N.A.,unknown,,private_company,,ME,US
+pic18,ORG-000169,Zatkoff Seals & Packings,unknown,,,,MI,US
+ohio_rest,ORG-000655,Danfoss Power Solutions,unknown,,,,MI,US
+ohio_rest,ORG-000760,Corvac Composites,unknown,,,,MI,US
+ohio_rest,ORG-000950,Mayco International,unknown,,,,MI,US
+outside,ORG-003401,Maximum Mold Group,unknown,,,,MI,US
+outside,ORG-003404,Next Chapter Manufacturing,unknown,,,,MI,US
+outside,ORG-003407,Oerlikon HRSflow,unknown,,,,MI,US
+outside,ORG-003590,Alro Plastics,unknown,,,,MI,US
+outside,ORG-003622,UNIMATEC Chemicals America,unknown,,,,MI,US
+outside,ORG-003659,Michiana Rotational Molding,unknown,,private_company,,MI,USA
+outside,ORG-003714,RCO Engineering,unknown,,private_company,,MI,US
+outside,ORG-004409,Grand Rapids Foam Technologies,unknown,,private_company,,MI,US
+outside,ORG-007026,National Manufacturing Group,unknown,,,,MI,US
+outside,ORG-007031,Kendrick Plastics,unknown,,,,MI,US
+outside,ORG-003251,MrPEX Systems,unknown,,private_company,,MN,US
+outside,ORG-003336,North American Composites,unknown,,private_company,,MN,US
+outside,ORG-003371,AdvancedTek,unknown,,,,MN,US
+outside,ORG-003455,Wynca USA,unknown,,,,MN,US
+outside,ORG-003482,NatureStar Global,unknown,,private_company,,MN,US
+outside,ORG-003619,Seelye-Eiler Plastics,unknown,,private_company,,MN,US
+outside,ORG-003644,Gemstar Manufacturing,unknown,,private_company,,MN,USA
+outside,ORG-003671,Revolv Manufacturing,unknown,,private_company,,MN,United States
+outside,ORG-003685,Strike Tool,unknown,,private_company,,MN,United States
+outside,ORG-003894,TDA Manufacturing,unknown,,private_company,,MN,US
+outside,ORG-007725,Beacon Engineered Solutions,unknown,,,,MN,US
+pic18,ORG-000523,Pretium Packaging,unknown,,,,MO,US
+outside,ORG-003465,Columbia Packaging Group,unknown,,private_company,,MO,US
+outside,ORG-004482,Redneck Outdoor Products,unknown,,private_company,,MO,US
+outside,ORG-003334,Montana Advanced Composites,unknown,,private_company,,MT,US
+outside,ORG-004014,High Divide Minerals,unknown,,private_equity_portfolio,,MT,US
+outside,ORG-002643,Jeld-Wen,unknown,,,,NC,US
+outside,ORG-003506,Wellmark Plastics,unknown,,private_company,,NC,US
+outside,ORG-003893,Syncro Group USA,unknown,,,,NC,US
+outside,ORG-003914,IPS Adhesives,unknown,,private_company,,NC,US
+outside,ORG-004027,Archer Advanced Rubber Components,unknown,,private_company,,NC,USA
+outside,ORG-003626,Agri-Plastics Manufacturing,unknown,,private_company,,NE,US
+outside,ORG-004262,A-1 Fiberglass,unknown,,private_company,,NE,US
+outside,ORG-003274,Textiles Coated International,unknown,,private_company,,NH,US
+outside,ORG-004389,Duxbury Composite Products,unknown,,private_company,,NH,US
+outside,ORG-003222,DRTS,unknown,,private_company,,NJ,US
+outside,ORG-004003,Hosokawa Micron Powder Systems,unknown,,,,NJ,US
+outside,ORG-004509,SwimUSA Fiberglass Pools,unknown,,private_company,,NJ,US
+outside,ORG-007913,Innovative Resin Systems,unknown,,,,NJ,US
+outside,ORG-003620,Silver State Plastics,unknown,,private_company,,NV,US
+outside,ORG-003410,Precision Laser Technology,unknown,,,,NY,US
+outside,ORG-004487,Remee Casting,unknown,,private_company,,NY,US
+outside,ORG-007803,Poly Craft Industries,unknown,,,,NY,US
+pic18,ORG-000012,Akron Polymer Systems,unknown,,,,OH,US
+pic18,ORG-000016,Gabriel Performance Products,unknown,,,,OH,US
+pic18,ORG-000018,Ace Rubber Products,unknown,,,,OH,US
+pic18,ORG-000019,King Machine Molds,unknown,,,,OH,US
+pic18,ORG-000021,Paddington Group,unknown,,,,OH,US
+pic18,ORG-000024,ALCO Chemical,unknown,,,,OH,US
+pic18,ORG-000034,Akron Polymer Products,unknown,,,,OH,US
+pic18,ORG-000041,Next Generation Plastics,unknown,,,,OH,US
+pic18,ORG-000043,Alterra Energy,unknown,,,,OH,US
+pic18,ORG-000044,APV Engineered Coatings,unknown,,,,OH,US
+pic18,ORG-000047,Smithers,unknown,,,,OH,US
+pic18,ORG-000051,Continental ContiTech USA,unknown,,,,OH,US
+pic18,ORG-000056,CF Extrusion Technologies,unknown,,,,OH,US
+pic18,ORG-000062,Chemionics,unknown,,private_company,,OH,US
+pic18,ORG-000063,Akron Gasket,unknown,,,,OH,US
+pic18,ORG-000069,Design Molded Plastics,unknown,,,,OH,US
+pic18,ORG-000071,Miles Rubber & Packing,unknown,,,,OH,US
+pic18,ORG-000072,Cima Plastics Group,unknown,,,,OH,US
+pic18,ORG-000074,MRP Solutions,unknown,,,,OH,US
+pic18,ORG-000075,Industrial Mold & Machine,unknown,,,,OH,US
+pic18,ORG-000076,Crown Composites Tooling,unknown,,,,OH,US
+pic18,ORG-000080,Ace Plastics,unknown,,,,OH,US
+pic18,ORG-000096,G3 Mixing Technologies,unknown,,,,OH,US
+pic18,ORG-000099,Materium Technologies,unknown,,,,OH,US
+pic18,ORG-000102,Alpha Technologies,unknown,,,,OH,US
+pic18,ORG-000103,HEXPOL Compounding,unknown,,,,OH,US
+pic18,ORG-000106,PharoPLAST,unknown,,family_owned,,OH,US
+pic18,ORG-000108,HP Manufacturing,unknown,,,,OH,US
+pic18,ORG-000109,House of Plastics,unknown,,,,OH,US
+pic18,ORG-000115,Cuyahoga Plastics,unknown,,,,OH,US
+pic18,ORG-000116,AMD Plastics,unknown,,,,OH,US
+pic18,ORG-000117,North American Plastics-Chem,unknown,,private_company,,OH,US
+pic18,ORG-000118,GSH Industries,unknown,,private_company,,OH,US
+pic18,ORG-000128,Compking,unknown,,,,OH,US
+pic18,ORG-000129,Playground Plastics,unknown,,,,OH,US
+pic18,ORG-000130,Peak Nano,unknown,,,,OH,US
+pic18,ORG-000131,Tarkett North America,unknown,,,,OH,US
+pic18,ORG-000134,Novagard Solutions,unknown,,,,OH,US
+pic18,ORG-000135,Valtris Specialty Chemicals,unknown,,,,OH,US
+pic18,ORG-000136,Roto Polymers,unknown,,,,OH,US
+pic18,ORG-000137,Protective Industrial Polymers,unknown,,,,OH,US
+pic18,ORG-000138,Permatex,unknown,,,,OH,US
+pic18,ORG-000139,FedPro,unknown,,,,OH,US
+pic18,ORG-000141,Newko Polymers,unknown,,,,OH,US
+pic18,ORG-000143,Kennick Mold & Die,unknown,,,,OH,US
+pic18,ORG-000144,Molders Choice,unknown,,,,OH,US
+pic18,ORG-000145,Plastics Machinery Group,unknown,,,,OH,US
+pic18,ORG-000148,WV International,unknown,,,,OH,US
+pic18,ORG-000151,InterGroup International,unknown,,,,OH,US
+pic18,ORG-000152,Seglian Manufacturing Group,unknown,,,,OH,US
+pic18,ORG-000154,Lincoln Electric,unknown,,,LECO,OH,US
+pic18,ORG-000156,Swagelok,unknown,,private_company,,OH,US
+pic18,ORG-000157,GrafTech International,unknown,,,EAF,OH,US
+pic18,ORG-000175,Harwood Rubber Products,unknown,,,,OH,US
+pic18,ORG-000176,Kent Elastomer Products,unknown,,,,OH,US
+pic18,ORG-000182,Orazen Extruded Polymers,unknown,,family_owned,,OH,US
+pic18,ORG-000184,North Coast Seal,unknown,,,,OH,US
+pic18,ORG-000187,GroundScape Technologies,unknown,,,,OH,US
+pic18,ORG-000188,Universal Polymer & Rubber,unknown,,,,OH,US
+pic18,ORG-000191,Ohio Elastomers,unknown,,,,OH,US
+pic18,ORG-000196,Goldsmith & Eggleton,unknown,,,,OH,US
+pic18,ORG-000198,Ziegler Tire,unknown,,,,OH,US
+pic18,ORG-000200,Elite Elastomers of Ohio,unknown,,,,OH,US
+pic18,ORG-000207,A.R.E. Accessories,unknown,,,,OH,US
+pic18,ORG-000209,ABC Plastics,unknown,,,,OH,US
+pic18,ORG-000210,Addipel,unknown,,,,OH,US
+pic18,ORG-000212,Cutting Edge Converted Products,unknown,,,,OH,US
+pic18,ORG-000215,Advanced Polymer Coatings,unknown,,,,OH,US
+pic18,ORG-000216,Aetna Plastics Fabrication,unknown,,,,OH,US
+pic18,ORG-000217,Air Power Dynamics,unknown,,,,OH,US
+pic18,ORG-000218,Akro-Mils,unknown,,,,OH,US
+pic18,ORG-000219,Akro-Plastics,unknown,,,,OH,US
+pic18,ORG-000226,ALTTRAN,unknown,,,,OH,US
+pic18,ORG-000227,American Foam Products,unknown,,,,OH,US
+pic18,ORG-000237,Sealed Air - Automated Packaging Systems,unknown,,,,OH,US
+pic18,ORG-000238,Avery Dennison,unknown,,,AVY,OH,US
+pic18,ORG-000242,Barentz North America,unknown,,,,OH,US
+pic18,ORG-000245,Luxium Solutions,unknown,,,,OH,US
+pic18,ORG-000246,BioThane Coated Webbing,unknown,,,,OH,US
+pic18,ORG-000247,Blade-Tech Industries,unknown,,,,OH,US
+pic18,ORG-000249,BMS Burns,unknown,,,,OH,US
+pic18,ORG-000254,Briarwood Products,unknown,,,,OH,US
+pic18,ORG-000262,Carlisle Polyurethane Systems,unknown,,,,OH,US
+pic18,ORG-000265,CCL Label,unknown,,,,OH,US
+pic18,ORG-000272,ChemPak International,unknown,,,,OH,US
+pic18,ORG-000276,Turtle Plastics,unknown,,,,OH,US
+pic18,ORG-000277,Cleveland Spray Foam,unknown,,,,OH,US
+pic18,ORG-000278,Silgan Dispensing,unknown,,,,OH,US
+pic18,ORG-000279,Colonial Machine,unknown,,,,OH,US
+pic18,ORG-000282,Component Manufacturing and Design,unknown,,,,OH,US
+pic18,ORG-000291,Creative Packaging Concepts,unknown,,family_owned,,OH,US
+pic18,ORG-000296,Dalton Manufacturing and Consulting Group,unknown,,,,OH,US
+pic18,ORG-000299,DCA Construction Products,unknown,,,,OH,US
+pic18,ORG-000307,Diversified Mold & Castings,unknown,,,,OH,US
+pic18,ORG-000308,Dott Products,unknown,,family_owned,,OH,US
+pic18,ORG-000310,Dreco,unknown,,,,OH,US
+pic18,ORG-000312,Duo-Corp,unknown,,,,OH,US
+pic18,ORG-000315,Dura-Line,unknown,,,,OH,US
+pic18,ORG-000324,Elite Machinery Systems,unknown,,,,OH,US
+pic18,ORG-000328,Equalseal.com,unknown,,,,OH,US
+pic18,ORG-000331,Essential Sealing Products,unknown,,,,OH,US
+pic18,ORG-000332,Essentialware,unknown,,,,OH,US
+pic18,ORG-000333,Evans Industries,unknown,,,,OH,US
+pic18,ORG-000336,Extrudex,unknown,,,,OH,US
+pic18,ORG-000338,Valtris Specialty Chemicals,unknown,,,,OH,US
+pic18,ORG-000345,Forest City Technologies,unknown,,,,OH,US
+pic18,ORG-000347,Four Seasons Industries,unknown,,,,OH,US
+pic18,ORG-000349,Full Circle Technologies,unknown,,,,OH,US
+pic18,ORG-000352,General Color & Chemical,unknown,,,,OH,US
+pic18,ORG-000353,Glebus Alloys,unknown,,,,OH,US
+pic18,ORG-000354,GMR Companies,unknown,,,,OH,US
+pic18,ORG-000355,Godfrey & Wing,unknown,,,,OH,US
+pic18,ORG-000358,GRAFIX,unknown,,,,OH,US
+pic18,ORG-000360,H.B. Chemical,unknown,,,,OH,US
+pic18,ORG-000373,IER Fujikura,unknown,,,,OH,US
+pic18,ORG-000379,Infinity Engineered Products,unknown,,,,OH,US
+pic18,ORG-000385,Iten Defense,unknown,,,,OH,US
+pic18,ORG-000395,Jet Dock Systems,unknown,,,,OH,US
+pic18,ORG-000396,JK Plastics,unknown,,,,OH,US
+pic18,ORG-000400,JRM Chemical,unknown,,,,OH,US
+pic18,ORG-000404,Keene Building Products,unknown,,,,OH,US
+pic18,ORG-000406,Kent Pultrusion,unknown,,,,OH,US
+pic18,ORG-000407,American Marble Industries,unknown,,,,OH,US
+pic18,ORG-000408,Kes Industries,unknown,,,,OH,US
+pic18,ORG-000412,Kobelco Stewart Bolling,unknown,,,,OH,US
+pic18,ORG-000413,Knight Material Technologies,unknown,,,,OH,US
+pic18,ORG-000414,Koroseal Interior Products,unknown,,,,OH,US
+pic18,ORG-000416,GLI Pool Products,unknown,,,,OH,US
+pic18,ORG-000417,Lerner Molded Plastics,unknown,,,,OH,US
+pic18,ORG-000418,Lewart Plastics,unknown,,,,OH,US
+pic18,ORG-000423,LMT Mercer Group,unknown,,,,OH,US
+pic18,ORG-000424,LT Molding Solutions,unknown,,,,OH,US
+pic18,ORG-000432,Mitsubishi Chemical Advanced Materials,unknown,,,,OH,US
+pic18,ORG-000433,McCann Plastics,unknown,,,,OH,US
+pic18,ORG-000435,Medco Coated Products,unknown,,,,OH,US
+pic18,ORG-000436,Merit Specialty Chemicals,unknown,,,,OH,US
+pic18,ORG-000437,Metalcrete Industries,unknown,,,,OH,US
+pic18,ORG-000439,Mickey Thompson Performance Tires & Wheels,unknown,,,,OH,US
+pic18,ORG-000441,Mid-west Poly Pak,unknown,,,,OH,US
+pic18,ORG-000449,Aptyx,unknown,,,,OH,US
+pic18,ORG-000451,Molded Fiber Glass Companies,unknown,,,,OH,US
+pic18,ORG-000457,National Polymer,unknown,,,,OH,US
+pic18,ORG-000460,Newko Polymers,unknown,,,,OH,US
+pic18,ORG-000461,Nexen Tire America Technical Center,unknown,,,,OH,US
+pic18,ORG-000466,North American Coating Laboratories,unknown,,,,OH,US
+pic18,ORG-000470,Nova TLC,unknown,,,,OH,US
+pic18,ORG-000472,Resivant Medical,unknown,,,,OH,US
+pic18,ORG-000481,Paramount Tube,unknown,,,,OH,US
+pic18,ORG-000483,Pentair,unknown,,,PNR,OH,US
+pic18,ORG-000484,Performance Elastomers,unknown,,,,OH,US
+pic18,ORG-000488,Pharmacy-Lite Packaging,unknown,,family_owned,,OH,US
+pic18,ORG-000490,Philpott Solutions Group,unknown,,,,OH,US
+pic18,ORG-000491,Phoenix Associates,unknown,,,,OH,US
+pic18,ORG-000494,Plastic Extrusion Technologies,unknown,,,,OH,US
+pic18,ORG-000496,Plastics R Unique,unknown,,family_owned,,OH,US
+pic18,ORG-000498,PlastiWin Capital Equipment,unknown,,,,OH,US
+pic18,ORG-000504,Plextrusions,unknown,,,,OH,US
+pic18,ORG-000506,Greenbridge,unknown,,,,OH,US
+pic18,ORG-000508,Polymer 5,unknown,,,,OH,US
+pic18,ORG-000513,Polystar Containment,unknown,,,,OH,US
+pic18,ORG-000518,Preform Sealants,unknown,,,,OH,US
+pic18,ORG-000519,Premier Building Solutions,unknown,,,,OH,US
+pic18,ORG-000520,Premier Equipment,unknown,,,,OH,US
+pic18,ORG-000521,Premier OEM,unknown,,,,OH,US
+pic18,ORG-000524,Primeline Industries,unknown,,,,OH,US
+pic18,ORG-000527,Progressive Foam Technologies,unknown,,,,OH,US
+pic18,ORG-000528,Promerus,unknown,,,,OH,US
+pic18,ORG-000532,Q Medical Devices,unknown,,,,OH,US
+pic18,ORG-000533,Laird Performance Materials,unknown,,,,OH,US
+pic18,ORG-000534,Quality Synthetic Rubber,unknown,,,,OH,US
+pic18,ORG-000537,Rainbow Printing,unknown,,,,OH,US
+pic18,ORG-000538,Rapid Molding,unknown,,,,OH,US
+pic18,ORG-000539,Rauh Polymers,unknown,,,,OH,US
+pic18,ORG-000540,Raven Concealment Systems,unknown,,,,OH,US
+pic18,ORG-000544,Foundation Wellness,unknown,,,,OH,US
+pic18,ORG-000545,Extera,unknown,,,,OH,US
+pic18,ORG-000552,Rogers Industrial Products,unknown,,,,OH,US
+pic18,ORG-000554,RP+M,unknown,,,,OH,US
+pic18,ORG-000555,Rubbermaid,unknown,,,,OH,US
+pic18,ORG-000556,SACO AEI Polymers,unknown,,,,OH,US
+pic18,ORG-000567,Seco Machine,unknown,,,,OH,US
+pic18,ORG-000568,Sentry Protection Products,unknown,,,,OH,US
+pic18,ORG-000570,Shini USA,unknown,,,,OH,US
+pic18,ORG-000573,Silicone Solutions,unknown,,,,OH,US
+pic18,ORG-000581,Speed North America,unknown,,,,OH,US
+pic18,ORG-000595,System Seals,unknown,,,,OH,US
+pic18,ORG-000598,Team Wendy,unknown,,,,OH,US
+pic18,ORG-000600,Technoform,unknown,,,,OH,US
+pic18,ORG-000601,The Technology House,unknown,,,,OH,US
+pic18,ORG-000606,Third Dimension Division,unknown,,,,OH,US
+pic18,ORG-000608,Tomlinson Industries,unknown,,,,OH,US
+pic18,ORG-000611,Treemen Industries,unknown,,,,OH,US
+pic18,ORG-000615,Triaxis Machine & Tool,unknown,,,,OH,US
+pic18,ORG-000616,Tribotech Composites,unknown,,,,OH,US
+pic18,ORG-000617,Tymex Plastics,unknown,,private_company,,OH,US
+pic18,ORG-000621,Universal Plastics & Machine,unknown,,,,OH,US
+pic18,ORG-000623,Uniwall Mfg,unknown,,,,OH,US
+pic18,ORG-000629,Walton Plastics,unknown,,,,OH,US
+pic18,ORG-000632,West & Barker,unknown,,,,OH,US
+pic18,ORG-000636,Wrap Tite,unknown,,,,OH,US
+pic18,ORG-000640,Zehrco-Giancola Composites,unknown,,,,OH,US
+ohio_rest,ORG-000645,A.M. Toolbox,unknown,,,,OH,US
+ohio_rest,ORG-000647,A Packaging Group,unknown,,,,OH,US
+ohio_rest,ORG-000648,Ace Sanitary,unknown,,,,OH,US
+ohio_rest,ORG-000652,Advanced Plastic Recycling,unknown,,,,OH,US
+ohio_rest,ORG-000653,Advanced Plastic Systems,unknown,,,,OH,US
+ohio_rest,ORG-000654,Advanced Technology Products,unknown,,,,OH,US
+ohio_rest,ORG-000662,Allied Plastics,unknown,,,,OH,US
+ohio_rest,ORG-000663,Alpine Material Solutions,unknown,,,,OH,US
+ohio_rest,ORG-000667,American Cutting Edge,unknown,,,,OH,US
+ohio_rest,ORG-000669,American Rheinmetall,unknown,,,,OH,US
+ohio_rest,ORG-000671,ProAmpac,unknown,,,,OH,US
+ohio_rest,ORG-000677,EarthFirst Films,unknown,,,,OH,US
+ohio_rest,ORG-000678,Applied Foam Solutions,unknown,,,,OH,US
+ohio_rest,ORG-000681,Arch Polymers,unknown,,,,OH,US
+ohio_rest,ORG-000686,Atalys,unknown,,,,OH,US
+pic18,ORG-000688,Autoneum,unknown,,,,OH,US
+ohio_rest,ORG-000691,AZEK Building Products,unknown,,,,OH,US
+ohio_rest,ORG-000692,Azelis Americas,unknown,,,,OH,US
+ohio_rest,ORG-000695,Baerlocher U.S.A.,unknown,,,,OH,US
+ohio_rest,ORG-000696,Bakelite Chemicals,unknown,,,,OH,US
+ohio_rest,ORG-000701,Benchmark Industrial,unknown,,,,OH,US
+ohio_rest,ORG-000717,Mauser Packaging Solutions,unknown,,,,OH,US
+ohio_rest,ORG-000722,Centor,unknown,,,,OH,US
+ohio_rest,ORG-000723,Provient Industrial,unknown,,,,OH,US
+ohio_rest,ORG-000726,Century Label,unknown,,,,OH,US
+ohio_rest,ORG-000727,Century Mold,unknown,,,,OH,US
+pic18,ORG-000728,Charter Next Generation,unknown,,,,OH,US
+ohio_rest,ORG-000729,Chase Doors,unknown,,,,OH,US
+ohio_rest,ORG-000731,ChemPrise,unknown,,,,OH,US
+ohio_rest,ORG-000732,Choice Adhesives,unknown,,,,OH,US
+ohio_rest,ORG-000734,Cincinnati Process Technologies,unknown,,,,OH,US
+ohio_rest,ORG-000739,Cold Jet,unknown,,,,OH,US
+ohio_rest,ORG-000742,Columbus Gasket,unknown,,,,OH,US
+ohio_rest,ORG-000746,Consolidated Packaging Group,unknown,,,,OH,US
+pic18,ORG-000751,Convertapax,unknown,,,,OH,US
+ohio_rest,ORG-000754,CoolSeal USA,unknown,,,,OH,US
+pic18,ORG-000755,Cooper Standard,unknown,,,,OH,US
+ohio_rest,ORG-000757,Cornerstone Building Brands,unknown,,,,OH,US
+ohio_rest,ORG-000763,Crane ChemPharma & Energy,unknown,,,,OH,US
+ohio_rest,ORG-000764,Royal Building Products,unknown,,,,OH,US
+ohio_rest,ORG-000768,Creative Composites Group,unknown,,,,OH,US
+ohio_rest,ORG-000771,Creative Plastic Concepts,unknown,,,,OH,US
+ohio_rest,ORG-000772,Wurms Diversified Solutions,unknown,,,,OH,US
+ohio_rest,ORG-000774,Crown Plastics,unknown,,,,OH,US
+ohio_rest,ORG-000779,Custom Marble Solutions,unknown,,,,OH,US
+ohio_rest,ORG-000782,D.S. Brown,unknown,,,,OH,US
+ohio_rest,ORG-000784,Dazpak,unknown,,,,OH,US
+pic18,ORG-000790,Denney Plastics Machining,unknown,,,,OH,US
+ohio_rest,ORG-000791,DG Medical,unknown,,,,OH,US
+ohio_rest,ORG-000795,DLM Plastics,unknown,,,,OH,US
+ohio_rest,ORG-000796,DK Manufacturing,unknown,,,,OH,US
+pic18,ORG-000799,Dover High Performance Plastics,unknown,,,,OH,US
+ohio_rest,ORG-000800,Doyle Shamrock Industries,unknown,,,,OH,US
+ohio_rest,ORG-000801,Haviland Drainage Products,unknown,,,,OH,US
+ohio_rest,ORG-000802,Alleguard,unknown,,,,OH,US
+ohio_rest,ORG-000804,DSG-Canusa,unknown,,,,OH,US
+ohio_rest,ORG-000806,DuPont Electronic Polymers,unknown,,,,OH,US
+ohio_rest,ORG-000811,EarthMark,unknown,,,,OH,US
+pic18,ORG-000813,Edge Plastics,unknown,,family_owned,,OH,US
+ohio_rest,ORG-000817,Elite Precision Plastics,unknown,,,,OH,US
+pic18,ORG-000820,Emerald FX,unknown,,,,OH,US
+ohio_rest,ORG-000821,Emery Oleochemicals,unknown,,,,OH,US
+ohio_rest,ORG-000829,Expert Rotomolding,unknown,,,,OH,US
+ohio_rest,ORG-000831,F.B. Wright Cincinnati,unknown,,,,OH,US
+ohio_rest,ORG-000833,"Fabshapes, a Division of Polymershapes",unknown,,,,OH,US
+ohio_rest,ORG-000834,Fenner Dunlop,unknown,,,,OH,US
+ohio_rest,ORG-000837,Findlay Vinyl,unknown,,,,OH,US
+ohio_rest,ORG-000838,First Choice Packaging,unknown,,,,OH,US
+ohio_rest,ORG-000840,FL Tanks,unknown,,,,OH,US
+pic18,ORG-000841,Flex Technologies,unknown,,,,OH,US
+ohio_rest,ORG-000850,Franklin Adhesives & Polymers,unknown,,,,OH,US
+pic18,ORG-000851,Freudenberg-NOK Sealing Technologies,unknown,,,,OH,US
+ohio_rest,ORG-000852,Future Polytech,unknown,,,,OH,US
+ohio_rest,ORG-000854,Gerresheimer Primary Packaging Plastics,unknown,,,,OH,US
+ohio_rest,ORG-000866,Greenfield Precision Plastics,unknown,,,,OH,US
+ohio_rest,ORG-000869,Guardian Medical,unknown,,,,OH,US
+ohio_rest,ORG-000871,H&H Industries,unknown,,,,OH,US
+ohio_rest,ORG-000872,Hamilton Caster,unknown,,,,OH,US
+ohio_rest,ORG-000875,Harrington Industrial Plastics,unknown,,,,OH,US
+ohio_rest,ORG-000879,Thermoid,unknown,,,,OH,US
+ohio_rest,ORG-000885,"Huhtamaki, Inc. — New Vienna",unknown,,,,OH,US
+ohio_rest,ORG-000889,ITW Tomco,unknown,,,,OH,US
+ohio_rest,ORG-000890,Industrial Fiberglass Specialties,unknown,,,,OH,US
+ohio_rest,ORG-000891,Industrial Hauling & Recycling,unknown,,,,OH,US
+ohio_rest,ORG-000892,Industrial Recyclers,unknown,,,,OH,US
+pic18,ORG-000894,INEOS USA,unknown,,,,OH,US
+ohio_rest,ORG-000896,Integral Manufacturing,unknown,,,,OH,US
+ohio_rest,ORG-000897,Integris Composites,unknown,,,,OH,US
+ohio_rest,ORG-000898,Interior Packaging Design,unknown,,,,OH,US
+ohio_rest,ORG-000901,Intertape Polymer Group,unknown,,,,OH,US
+ohio_rest,ORG-000907,ITW Evercoat,unknown,,,,OH,US
+ohio_rest,ORG-000908,iVEX Packaging,unknown,,,,OH,US
+ohio_rest,ORG-000910,JMS Composites,unknown,,,,OH,US
+pic18,ORG-000911,Johns Manville,unknown,,,,OH,US
+ohio_rest,ORG-000912,Johnson Plastics Plus,unknown,,,,OH,US
+pic18,ORG-000913,JP Industrial Products,unknown,,,,OH,US
+ohio_rest,ORG-000915,K & B Molded Products,unknown,,,,OH,US
+ohio_rest,ORG-000920,Klarity Medical Products,unknown,,,,OH,US
+ohio_rest,ORG-000921,Klöckner Pentaplast,unknown,,,,OH,US
+ohio_rest,ORG-000926,Krom International,unknown,,,,OH,US
+pic18,ORG-000927,Prettl PMA,unknown,,,,OH,US
+ohio_rest,ORG-000932,Legacy Extrusions,unknown,,,,OH,US
+ohio_rest,ORG-000934,Liquibox,unknown,,,,OH,US
+ohio_rest,ORG-000935,Logoplaste Lima,unknown,,,,OH,US
+ohio_rest,ORG-000940,Magnum Tapes & Films,unknown,,,,OH,US
+ohio_rest,ORG-000941,Mallory Pattern Works,unknown,,,,OH,US
+ohio_rest,ORG-000943,Marble Arch Products,unknown,,,,OH,US
+ohio_rest,ORG-000944,Marcy Adhesives,unknown,,,,OH,US
+ohio_rest,ORG-000945,Mark One Manufacturing,unknown,,,,OH,US
+pic18,ORG-000947,Mason Color Works,unknown,,,,OH,US
+ohio_rest,ORG-000954,Mesa ETP,unknown,,,,OH,US
+pic18,ORG-000955,Meteor Sealing Systems,unknown,,,,OH,US
+ohio_rest,ORG-000957,Michelman,unknown,,,,OH,US
+ohio_rest,ORG-000959,Midwest Molding,unknown,,,,OH,US
+ohio_rest,ORG-000960,Midwest Plastics,unknown,,,,OH,US
+ohio_rest,ORG-000962,The Minco Group,unknown,,,,OH,US
+ohio_rest,ORG-000971,Moriroku Technology North America,unknown,,,,OH,US
+ohio_rest,ORG-000975,Nagase ChemteX America,unknown,,,,OH,US
+ohio_rest,ORG-000977,NanoSperse,unknown,,,,OH,US
+ohio_rest,ORG-000979,Neaton Auto Products Manufacturing,unknown,,,,OH,US
+ohio_rest,ORG-000982,NetProto,unknown,,,,OH,US
+ohio_rest,ORG-000989,Nissen Chemitec America,unknown,,,,OH,US
+ohio_rest,ORG-000992,NOX US,unknown,,,,OH,US
+ohio_rest,ORG-000993,Nu-Tech Polymers,unknown,,,,OH,US
+pic18,ORG-000999,Okamoto Sandusky Manufacturing,unknown,,,,OH,US
+ohio_rest,ORG-001001,OLIVER HEALTHCARE PACKAGING,unknown,,,,OH,US
+ohio_rest,ORG-001003,OPC Polymers,unknown,,,,OH,US
+ohio_rest,ORG-001006,OSI Plastics,unknown,,,,OH,US
+pic18,ORG-001007,Owens Corning,unknown,,,OC,OH,US
+ohio_rest,ORG-001008,PAC Worldwide,unknown,,,,OH,US
+ohio_rest,ORG-001016,Phoenix Recycling,unknown,,,,OH,US
+ohio_rest,ORG-001018,Pinnacle Plastic Products,unknown,,,,OH,US
+pic18,ORG-001029,PPC Flex,unknown,,,,OH,US
+ohio_rest,ORG-001034,Pmc Smart Solutions,unknown,,,,OH,US
+ohio_rest,ORG-001035,PolyBag Central,unknown,,,,OH,US
+ohio_rest,ORG-001038,Polyfill,unknown,,,,OH,US
+pic18,ORG-001040,Polyflex,unknown,,,,OH,US
+pic18,ORG-001042,Polynew,unknown,,,,OH,US
+ohio_rest,ORG-001046,SIMONA PMC,unknown,,,,OH,US
+ohio_rest,ORG-001049,ProFusion Industries,unknown,,,,OH,US
+ohio_rest,ORG-001051,Protective Packaging Solutions,unknown,,,,OH,US
+ohio_rest,ORG-001057,Putnam Plastics Farm Products,unknown,,,,OH,US
+ohio_rest,ORG-001058,PVCStrip.com,unknown,,,,OH,US
+ohio_rest,ORG-001060,Quanex Custom Mixing,unknown,,,,OH,US
+ohio_rest,ORG-001061,Queen City Polymers,unknown,,,,OH,US
+ohio_rest,ORG-001062,Quick Metals Industrial Knives,unknown,,,,OH,US
+ohio_rest,ORG-001063,R L Holdings,unknown,,,,OH,US
+ohio_rest,ORG-001064,R L Industries,unknown,,,,OH,US
+ohio_rest,ORG-001069,Re-cre8,unknown,,,,OH,US
+ohio_rest,ORG-001073,Replex Plastics,unknown,,,,OH,US
+pic18,ORG-001076,Return Polymers,unknown,,,,OH,US
+ohio_rest,ORG-001077,Revere Plastics Systems,unknown,,,,OH,US
+pic18,ORG-001078,Rhetech Colors,unknown,,,,OH,US
+ohio_rest,ORG-001081,Rieke,unknown,,,,OH,US
+pic18,ORG-001089,ROTO Solutions,unknown,,,,OH,US
+ohio_rest,ORG-001094,Rubber-Seal Medallion,unknown,,,,OH,US
+ohio_rest,ORG-001096,Edge Adhesives,unknown,,,,OH,US
+ohio_rest,ORG-001099,SaN Pallets,unknown,,,,OH,US
+ohio_rest,ORG-001101,Savaré Specialty Adhesives,unknown,,,,OH,US
+ohio_rest,ORG-001102,SCHÜTZ Container Systems,unknown,,,,OH,US
+ohio_rest,ORG-001103,Schupan Aluminum & Plastic Sales,unknown,,,,OH,US
+pic18,ORG-001105,Liquibox,unknown,,,,OH,US
+ohio_rest,ORG-001107,Seeger Metals and Plastics,unknown,,,,OH,US
+ohio_rest,ORG-001109,Shelter Works,unknown,,,,OH,US
+ohio_rest,ORG-001111,Shirley K's,unknown,,,,OH,US
+ohio_rest,ORG-001112,Shrader Retreading,unknown,,,,OH,US
+ohio_rest,ORG-001113,Shrader Tire & Oil,unknown,,,,OH,US
+ohio_rest,ORG-001115,Silgan Plastics,unknown,,,,OH,US
+ohio_rest,ORG-001117,TOPPAN Packaging Americas,unknown,,,,OH,US
+ohio_rest,ORG-001119,Spartech,unknown,,,,OH,US
+ohio_rest,ORG-001125,Starwin Industries,unknown,,,,OH,US
+ohio_rest,ORG-001129,Style Crest Enterprises,unknown,,,,OH,US
+ohio_rest,ORG-001134,SuperForm USA,unknown,,,,OH,US
+ohio_rest,ORG-001137,Cohesive Components,unknown,,,,OH,US
+ohio_rest,ORG-001138,Syscom Advanced Materials,unknown,,,,OH,US
+ohio_rest,ORG-001140,Tamco Industries,unknown,,,,OH,US
+ohio_rest,ORG-001142,TECH International,unknown,,,,OH,US
+pic18,ORG-001147,CSP,unknown,,,,OH,US
+ohio_rest,ORG-001155,Titan Tire Corporation of Bryan,unknown,,,,OH,US
+ohio_rest,ORG-001161,Tom Smith Industries,unknown,,,,OH,US
+ohio_rest,ORG-001162,Tooling Tech Group,unknown,,,,OH,US
+ohio_rest,ORG-001164,TPC Packaging Solutions,unknown,,,,OH,US
+ohio_rest,ORG-001167,Benvic Trinity,unknown,,,,OH,US
+ohio_rest,ORG-001170,UMD Automated Systems,unknown,,,,OH,US
+ohio_rest,ORG-001174,United Precision Engineering,unknown,,,,OH,US
+ohio_rest,ORG-001175,United Security Seals,unknown,,,,OH,US
+ohio_rest,ORG-001178,Valfilm USA,unknown,,,,OH,US
+ohio_rest,ORG-001179,VBH Technologies,unknown,,,,OH,US
+ohio_rest,ORG-001181,Veelo Technologies,unknown,,,,OH,US
+ohio_rest,ORG-001188,USA Vinyl,unknown,,,,OH,US
+ohio_rest,ORG-001190,Vinyl Kraft Windows and Doors,unknown,,,,OH,US
+ohio_rest,ORG-001195,Western Ohio Packaging,unknown,,,,OH,US
+pic18,ORG-001197,Engineered Plastic Components,unknown,,,,OH,US
+ohio_rest,ORG-001201,Wolf Composite Solutions,unknown,,,,OH,US
+pic18,ORG-001327,AltraSet Composite Technologies,unknown,,,,OH,US
+pic18,ORG-001330,Finite Fiber,unknown,,,,OH,US
+pic18,ORG-001331,USA Rolls,unknown,,,,OH,US
+pic18,ORG-001333,STEER America,unknown,,,,OH,US
+ohio_rest,ORG-001337,ALTA Performance Materials,unknown,,,,OH,US
+ohio_rest,ORG-001341,Hawthorn Aero,unknown,,,,OH,US
+ohio_rest,ORG-001342,Matrix Adhesives Group,unknown,,,,OH,US
+ohio_rest,ORG-001343,NAWAH US,unknown,,,,OH,US
+ohio_rest,ORG-001345,Plastinuva,unknown,,,,OH,US
+ohio_rest,ORG-001346,Rotex Global,unknown,,,,OH,US
+ohio_rest,ORG-001377,Tyrex Resources of Ohio,unknown,,,,OH,US
+pic18,ORG-001379,Elyria Plastic Products,unknown,,,,OH,US
+pic18,ORG-001382,SR Products,unknown,,,,OH,US
+pic18,ORG-001387,Etched Metal,unknown,,,,OH,US
+pic18,ORG-001393,Kaufman Container,unknown,,family_owned,,OH,US
+pic18,ORG-001395,CREO Greenhouse,unknown,,,,OH,US
+pic18,ORG-001397,PolyKinetix,unknown,,,,OH,US
+ohio_rest,ORG-001401,AeroFlexx,unknown,,,,OH,US
+ohio_rest,ORG-001405,Spinnaker,unknown,,,,OH,US
+ohio_rest,ORG-001406,Agean Marble Mfg,unknown,,,,OH,US
+ohio_rest,ORG-001407,AL-CO Products,unknown,,,,OH,US
+ohio_rest,ORG-001408,Altium Packaging,unknown,,,,OH,US
+pic18,ORG-001409,American Bath Group,unknown,,,,OH,US
+ohio_rest,ORG-001410,CCP Newco,unknown,,,,OH,US
+ohio_rest,ORG-001412,Custom Cast Marbleworks,unknown,,,,OH,US
+ohio_rest,ORG-001413,Electra Form Industries,unknown,,,,OH,US
+ohio_rest,ORG-001420,Scottdel,unknown,,,,OH,US
+ohio_rest,ORG-001442,Velocity Group,unknown,,,,OH,US
+ohio_rest,ORG-001443,Alliance Carpet Cushion,unknown,,,,OH,US
+ohio_rest,ORG-001449,Best-One Retreading of Toledo,unknown,,,,OH,US
+pic18,ORG-001454,IMCD US,unknown,,,,OH,US
+pic18,ORG-001458,Polyram USA,unknown,,,,OH,US
+ohio_rest,ORG-001467,Motion Conveyance Solutions,unknown,,,,OH,US
+pic18,ORG-001477,Aurora Material Solutions,unknown,,,,OH,US
+ohio_rest,ORG-001478,Ohio Rubber and Floors,unknown,,,,OH,US
+pic18,ORG-001480,ACE Laboratories,unknown,,,,OH,US
+pic18,ORG-001481,ACE Innovations,unknown,,,,OH,US
+ohio_rest,ORG-001482,LASK,unknown,,,,OH,US
+pic18,ORG-001490,Chardon Custom Polymers,unknown,,,,OH,US
+ohio_rest,ORG-001492,Hendrickson Composites,unknown,,,,OH,US
+ohio_rest,ORG-001496,Bosch Rexroth Corporation — Hägglunds,unknown,,,,OH,US
+pic18,ORG-001505,VisionAir Solutions,unknown,,,,OH,US
+pic18,ORG-001507,HOYA VISION CARE - CLEVELAND,unknown,,,,OH,US
+pic18,ORG-001511,Beacon Biosignals,unknown,,,,OH,US
+ohio_rest,ORG-001512,DICK MEDICAL SUPPLY,unknown,,,,OH,US
+ohio_rest,ORG-001527,Impact Printing and Design,unknown,,,,OH,US
+pic18,ORG-001528,Mabel Dental Lab,unknown,,family_owned,,OH,US
+pic18,ORG-001570,GHSP,unknown,,,,OH,US
+pic18,ORG-001581,ePac Flexible Packaging,unknown,,,,OH,US
+pic18,ORG-001587,Miniature Plastic Molding,unknown,,,,OH,US
+ohio_rest,ORG-001608,KLINGER Thermoseal,unknown,,,,OH,US
+ohio_rest,ORG-001615,Kansai Helios Coatings,unknown,,,,OH,US
+pic18,ORG-001624,ADVANCED CRYOGENIC ENTERPRISES,unknown,,employee_owned,,OH,US
+ohio_rest,ORG-001626,AEROSPORT ADDITIVE,unknown,,,,OH,US
+pic18,ORG-001635,EAGLE PLASTICS GROUP,unknown,,family_owned,,OH,US
+pic18,ORG-001636,ENGINEERED LAMINATES & COATINGS,unknown,,,,OH,US
+pic18,ORG-001637,FTM ENGINEERING GROUP,unknown,,,,OH,US
+pic18,ORG-001639,PLASTIC ENTERPRISES,unknown,,,,OH,US
+pic18,ORG-001642,MOTIVO DISPLAY SOLUTIONS,unknown,,,,OH,US
+pic18,ORG-001643,OVERMOLD EXPRESS,unknown,,,,OH,US
+pic18,ORG-001644,RPM INDUSTRIES,unknown,,,,OH,US
+pic18,ORG-001646,TUSCO PRODUCTS,unknown,,,,OH,US
+pic18,ORG-001647,V&A PROCESS,unknown,,family_owned,,OH,US
+pic18,ORG-001648,WORTHINGTON PRODUCTS,unknown,,,,OH,US
+pic18,ORG-001649,YOUNGSTOWN RUBBER PRODUCTS,unknown,,,,OH,US
+ohio_rest,ORG-001687,KSE Manufacturing,unknown,,,,OH,US
+pic18,ORG-001698,Prime Engineered Plastics,unknown,,,,OH,US
+ohio_rest,ORG-001756,Stronghold Coating Systems,unknown,,,,OH,US
+pic18,ORG-001766,Carlisle TyrFil,unknown,,,,OH,US
+pic18,ORG-001769,Adherex Packaging,unknown,,,,OH,US
+pic18,ORG-001773,Akron Special Machinery,unknown,,,,OH,US
+ohio_rest,ORG-001778,American Plastics Distributors,unknown,,,,OH,US
+ohio_rest,ORG-001790,Composite Advantage,unknown,,,,OH,US
+ohio_rest,ORG-001792,Crown Foam Technologies,unknown,,,,OH,US
+pic18,ORG-001808,Eurotech,unknown,,,,OH,US
+ohio_rest,ORG-001811,F.B. Wright Co of Cincinnati,unknown,,,,OH,US
+ohio_rest,ORG-001827,Hart Industrial Products,unknown,,,,OH,US
+pic18,ORG-001830,Impact Sleeve,unknown,,,,OH,US
+pic18,ORG-001831,Innoplast,unknown,,,,OH,US
+ohio_rest,ORG-001835,JEG Plastics,unknown,,,,OH,US
+pic18,ORG-001839,KASE Equipment,unknown,,,,OH,US
+ohio_rest,ORG-001842,Kreate,unknown,,,,OH,US
+pic18,ORG-001843,Kumho America Technical Center,unknown,,,,OH,US
+ohio_rest,ORG-001845,Marble Plastics,unknown,,,,OH,US
+pic18,ORG-001846,Barentz,unknown,,,,OH,US
+pic18,ORG-001849,Mid-Ohio Rotomolding,unknown,,,,OH,US
+ohio_rest,ORG-001850,Mil-Tek Rubber,unknown,,,,OH,US
+pic18,ORG-001854,New Image Plastics,unknown,,,,OH,US
+ohio_rest,ORG-001860,Ohio Rotational Molding,unknown,,,,OH,US
+pic18,ORG-001862,Perfect Rubber Mulch,unknown,,,,OH,US
+ohio_rest,ORG-001873,Protoduction 3D,unknown,,,,OH,US
+pic18,ORG-001881,Reduction Engineering Scheer,unknown,,,,OH,US
+pic18,ORG-001883,Rezkem Chemicals,unknown,,,,OH,US
+ohio_rest,ORG-001884,Rubber & Gasket Company of America,unknown,,,,OH,US
+ohio_rest,ORG-001889,Sanyu USA,unknown,,,,OH,US
+ohio_rest,ORG-001890,Savko Plastic Pipe & Fittings,unknown,,,,OH,US
+ohio_rest,ORG-001893,Seagate Plastics,unknown,,,,OH,US
+pic18,ORG-001894,Shooting Range Supply,unknown,,,,OH,US
+ohio_rest,ORG-001895,Sims Bros Recycling,unknown,,,,OH,US
+pic18,ORG-001899,Spacelinks International,unknown,,,,OH,US
+ohio_rest,ORG-001900,Stark's Plastics,unknown,,,,OH,US
+ohio_rest,ORG-001901,Summit Environmental Group,unknown,,,,OH,US
+ohio_rest,ORG-001906,Tosca,unknown,,,,OH,US
+pic18,ORG-001907,Total Plastics,unknown,,,,OH,US
+pic18,ORG-001910,Ascenso Tires North America,unknown,,,,OH,US
+pic18,ORG-001914,VinylOne,unknown,,,,OH,US
+ohio_rest,ORG-001915,World Resource Solutions,unknown,,,,OH,US
+pic18,ORG-001922,Faull and Son,unknown,,,,OH,US
+pic18,ORG-001940,Synthetic Rubber Technologies,unknown,,,,OH,US
+pic18,ORG-001963,M S B Machine,unknown,,,,OH,US
+pic18,ORG-001964,M Sacks International,unknown,,,,OH,US
+pic18,ORG-001970,Northcoast Inc Recycling Specialists,unknown,,,,OH,US
+ohio_rest,ORG-002028,U.S. Foam Corporation of Indiana,unknown,,,,OH,US
+pic18,ORG-002057,Quality Fiberglass,unknown,,,,OH,US
+ohio_rest,ORG-002061,Five Star Plastics,unknown,,,,OH,US
+ohio_rest,ORG-002063,KLW Plastics,unknown,,,,OH,US
+pic18,ORG-002064,Poly Tech Plastics,unknown,,,,OH,US
+ohio_rest,ORG-002074,Engineering Mechanics Corporation of Columbus,unknown,,,,OH,US
+ohio_rest,ORG-002124,NAMSA,unknown,,,,OH,US
+pic18,ORG-002133,VINYL TOOL & DIE,unknown,,,,OH,US
+pic18,ORG-002149,"Berry Global - Streetsboro, OH",unknown,,,,OH,US
+pic18,ORG-002153,Checkpoint Systems,unknown,,,,OH,US
+ohio_rest,ORG-002154,Composite Engineering,unknown,,,,OH,US
+pic18,ORG-002156,Creative Mold & Machine,unknown,,,,OH,US
+ohio_rest,ORG-002160,FELICITY PLANT,unknown,,,,OH,US
+ohio_rest,ORG-002161,EG INDUSTRIES,unknown,,,,OH,US
+ohio_rest,ORG-002162,Gerich Fiberglass,unknown,,,,OH,US
+ohio_rest,ORG-002165,MEDAL Components,unknown,,,,OH,US
+ohio_rest,ORG-002166,The Mold Shop,unknown,,,,OH,US
+ohio_rest,ORG-002171,ULTIMATE RB,unknown,,,,OH,US
+pic18,ORG-002174,Parker Rust-Proof of Cleveland,unknown,,,,OH,US
+ohio_rest,ORG-003266,Rural Path,unknown,,private_company,,OH,US
+pic18,ORG-003746,Goodyear Chemical,unknown,,private_equity_portfolio,,OH,US
+ohio_rest,ORG-004031,Axcess Infrastructure,unknown,,private_company,,OH,USA
+outside,ORG-003312,Formcrete Fiberglass Products,unknown,,private_company,,OK,US
+outside,ORG-003677,RotoMoldUSA,unknown,,private_company,,OK,United States
+pic18,ORG-000035,Saint-Gobain Performance Plastics,unknown,,,,PA,US
+pic18,ORG-000547,LANXESS Rhein Chemie,unknown,,,,PA,US
+ohio_rest,ORG-000933,Liberty Tire Recycling,unknown,,,,PA,US
+outside,ORG-002178,Lesko Enterprises,unknown,,,,PA,US
+outside,ORG-002191,New Pig Burns Ave,unknown,,,,PA,US
+outside,ORG-002197,Performax Global,unknown,,,,PA,US
+outside,ORG-002200,Anholt Tech,unknown,,,,PA,US
+outside,ORG-002201,Edlon Avondale Fac,unknown,,,,PA,US
+outside,ORG-002203,Hpe Extrusion Solutions,unknown,,,,PA,US
+outside,ORG-002204,Performance Coatings Intl Labs,unknown,,,,PA,US
+outside,ORG-002206,Kenson Plastics,unknown,,,,PA,US
+outside,ORG-002207,Bedford Reinforced Plastics,unknown,,,,PA,US
+outside,ORG-002212,Nytef Plastics,unknown,,,,PA,US
+outside,ORG-002213,Pelmor Lab,unknown,,,,PA,US
+outside,ORG-002216,L & P Berwick Div Leggett & Platt,unknown,,,,PA,US
+outside,ORG-002219,Alpha Packaging,unknown,,,,PA,US
+outside,ORG-002220,B Braun Med Bethlehem Plt,unknown,,,,PA,US
+outside,ORG-002222,Lehigh Valley Plastics,unknown,,,,PA,US
+outside,ORG-002225,Icp Industrial - Birdsboro,unknown,,,,PA,US
+outside,ORG-002230,Steve Shannon Tire,unknown,,,,PA,US
+outside,ORG-002235,Luminite Prod,unknown,,,,PA,US
+outside,ORG-002245,Jsp Intl MFG,unknown,,,,PA,US
+outside,ORG-002247,Bhb Plastic Molding,unknown,,,,PA,US
+outside,ORG-002256,Tmp Acuisitions New,unknown,,,,PA,US
+outside,ORG-002258,Pacer Ind,unknown,,,,PA,US
+outside,ORG-002263,Rpx Composites,unknown,,,,PA,US
+outside,ORG-002264,Southco Concordville Facility,unknown,,,,PA,US
+outside,ORG-002266,Corry Rubber,unknown,,,,PA,US
+outside,ORG-002271,J Lok,unknown,,,,PA,US
+outside,ORG-002276,Weaver Industries,unknown,,,,PA,US
+outside,ORG-002283,New Pig Corporation - Duncansville Site,unknown,,,,PA,US
+outside,ORG-002286,Blair Tool & Plastic,unknown,,,,PA,US
+outside,ORG-002287,Iridium Industries,unknown,,,,PA,US
+outside,ORG-002288,Crayola LLC - Kresslersville Rd Plant,unknown,,,,PA,US
+outside,ORG-002307,General Partitions,unknown,,,,PA,US
+outside,ORG-002309,Insul Board,unknown,,,,PA,US
+outside,ORG-002313,Havpak International,unknown,,,,PA,US
+outside,ORG-002314,Plastek Grp-Spectrum Molding &,unknown,,,,PA,US
+outside,ORG-002317,Polymer Molding,unknown,,,,PA,US
+outside,ORG-002318,Rehrig Pacific,unknown,,,,PA,US
+outside,ORG-002319,Rehrig Pacific Bldg 2,unknown,,,,PA,US
+outside,ORG-002321,Thermoclad - Iroquois Ave,unknown,,,,PA,US
+outside,ORG-002327,Carclo Technical Plastics,unknown,,,,PA,US
+outside,ORG-002328,Ventana USA,unknown,,,,PA,US
+outside,ORG-002330,Dsm Biomedical Inc. - Sierra Drive,unknown,,,,PA,US
+outside,ORG-002339,Formtech Enterprises,unknown,,,,PA,US
+outside,ORG-002340,Grimm Ind,unknown,,,,PA,US
+outside,ORG-002341,Hanes Erie,unknown,,,,PA,US
+outside,ORG-002342,Precise Plastics Inc-Uvlight,unknown,,,,PA,US
+outside,ORG-002345,"Novares Us, LLC - Felton Plant",unknown,,,,PA,US
+outside,ORG-002346,Custom Milling & Consulting,unknown,,,,PA,US
+outside,ORG-002354,Freeport Terminals,unknown,,,,PA,US
+outside,ORG-002359,Pannier Graphic Div.,unknown,,,,PA,US
+outside,ORG-002361,Emsco Group,unknown,,,,PA,US
+outside,ORG-002362,Jamestown Powder Coatings,unknown,,,,PA,US
+outside,ORG-002363,Cott MFG,unknown,,,,PA,US
+outside,ORG-002367,Mi Windows And Doors LLC - Gratz,unknown,,,,PA,US
+outside,ORG-002371,Wabtec Rubber Products,unknown,,,,PA,US
+outside,ORG-002373,Controlled Molding,unknown,,,,PA,US
+outside,ORG-002374,Accu Mold & Tool MFG,unknown,,,,PA,US
+outside,ORG-002376,Colonial Fiberglass Industries,unknown,,,,PA,US
+outside,ORG-002377,Hanover Plastic Prod,unknown,,,,PA,US
+outside,ORG-002380,Sonoco Plastics,unknown,,,,PA,US
+outside,ORG-002382,Martech Medical Products-Warehouse,unknown,,,,PA,US
+outside,ORG-002384,Advanced Polymer Technology,unknown,,,,PA,US
+outside,ORG-002390,Technetics Group,unknown,,,,PA,US
+outside,ORG-002391,The Rodon Group,unknown,,,,PA,US
+outside,ORG-002393,Efs Plastics,unknown,,,,PA,US
+outside,ORG-002397,Polyglass USA,unknown,,,,PA,US
+outside,ORG-002415,Fielco Industries,unknown,,,,PA,US
+outside,ORG-002416,Penn Protective Coatings,unknown,,,,PA,US
+outside,ORG-002418,Donaldson Co. Ivyland Fac,unknown,,,,PA,US
+outside,ORG-002419,Eastern Web Handling,unknown,,,,PA,US
+outside,ORG-002427,West Pharm Serv Js SW,unknown,,,,PA,US
+outside,ORG-002439,Palram Americas,unknown,,,,PA,US
+outside,ORG-002445,Interface Solutions Centerville Plt,unknown,,,,PA,US
+outside,ORG-002446,Interface Performance Materials,unknown,,,,PA,US
+outside,ORG-002449,Opsec Security,unknown,,,,PA,US
+outside,ORG-002451,True Precision Plastics,unknown,,,,PA,US
+outside,ORG-002466,Vs Rubber,unknown,,,,PA,US
+outside,ORG-002473,Westlake Plastics Iwtp,unknown,,,,PA,US
+outside,ORG-002474,Dart Container Corp. Of Pennsylvania,unknown,,,,PA,US
+outside,ORG-002475,G & T Industries Of Pennsylvania Inc. Lancaster Div,unknown,,,,PA,US
+outside,ORG-002483,Trinity Plastics,unknown,,,,PA,US
+outside,ORG-002491,Loparex,unknown,,,,PA,US
+outside,ORG-002499,Clarion Bathware,unknown,,,,PA,US
+outside,ORG-002504,Tri-Tech Molding,unknown,,,,PA,US
+outside,ORG-002507,Advantage Precision Plastics I,unknown,,,,PA,US
+outside,ORG-002508,C & J Ind,unknown,,,,PA,US
+outside,ORG-002522,Mi Profiles LLC - Millersburg,unknown,,,,PA,US
+outside,ORG-002525,Truck Accessories Npdes Stormwater,unknown,,,,PA,US
+outside,ORG-002527,Shell Chem Appalachia,unknown,,,,PA,US
+outside,ORG-002529,United Ropeworks USA,unknown,,,,PA,US
+outside,ORG-002533,Cpg Intl,unknown,,,,PA,US
+outside,ORG-002538,Regency Plus,unknown,,,,PA,US
+outside,ORG-002541,Monadnock Non-Wovens,unknown,,,,PA,US
+outside,ORG-002548,Advance Drainage Systems,unknown,,,,PA,US
+outside,ORG-002549,Charlotte Pipe & Foundry,unknown,,,,PA,US
+outside,ORG-002555,S G L Plastics,unknown,,,,PA,US
+outside,ORG-002556,Ametek,unknown,,,,PA,US
+outside,ORG-002559,Pillings FRP,unknown,,,,PA,US
+outside,ORG-002568,Crazy Aaron Enterprises,unknown,,,,PA,US
+outside,ORG-002570,Micro Dimensional Products,unknown,,,,PA,US
+outside,ORG-002571,Optinova Plymouth Meeting Facility,unknown,,,,PA,US
+outside,ORG-002576,Global Pkg,unknown,,,,PA,US
+outside,ORG-002598,Surf Technologies,unknown,,,,PA,US
+outside,ORG-002600,Solar Innovations,unknown,,,,PA,US
+outside,ORG-002603,Arieca,unknown,,,,PA,US
+outside,ORG-002605,Gateway Paint & Chemical,unknown,,,,PA,US
+outside,ORG-002607,Marvel Marking Products Inc. Garage,unknown,,,,PA,US
+outside,ORG-002614,Interstate Building Materials,unknown,,,,PA,US
+outside,ORG-002616,Optinova Valley Forge,unknown,,,,PA,US
+outside,ORG-002619,Ultra Poly Corp. - Portland,unknown,,,,PA,US
+outside,ORG-002621,Precision Polymer Prod,unknown,,,,PA,US
+outside,ORG-002622,Tredegar Film Products,unknown,,,,PA,US
+outside,ORG-002624,Associated Rubber,unknown,,,,PA,US
+outside,ORG-002626,McAdoo & Allen  Div Quaker Color Div McAdoo & Allen  Div,unknown,,,,PA,US
+outside,ORG-002627,Us Plastic Moldings,unknown,,,,PA,US
+outside,ORG-002629,Brentwood Industries Spg 621,unknown,,,,PA,US
+outside,ORG-002631,G & T Industries,unknown,,,,PA,US
+outside,ORG-002638,Apex Urethane Millwork Red Lion,unknown,,,,PA,US
+outside,ORG-002639,Custom Molds,unknown,,,,PA,US
+outside,ORG-002665,M & C Specialties Southampton Fac,unknown,,,,PA,US
+outside,ORG-002671,Transwestern Polymer,unknown,,,,PA,US
+outside,ORG-002674,Charter Plastics,unknown,,,,PA,US
+outside,ORG-002675,Checkers Safety Group,unknown,,,,PA,US
+outside,ORG-002681,Raybob Packaging,unknown,,,,PA,US
+outside,ORG-002682,Durr Marketing,unknown,,,,PA,US
+outside,ORG-002683,Snap Tite Inc.  Union City Site,unknown,,,,PA,US
+outside,ORG-002685,Double H Plastics MFG,unknown,,,,PA,US
+outside,ORG-002687,Medical Precision Plastics,unknown,,,,PA,US
+outside,ORG-002688,"Osram Sylvania Products Inc. - Warren, PA",unknown,,,,PA,US
+outside,ORG-002690,Whirley Industries Harmar Street,unknown,,,,PA,US
+outside,ORG-002694,Pleiger Plastics,unknown,,,,PA,US
+outside,ORG-002700,Liberty Pultrusions,unknown,,,,PA,US
+outside,ORG-002705,Plastic Dev,unknown,,,,PA,US
+outside,ORG-002707,West Pharm Serv Wmpt SW,unknown,,,,PA,US
+outside,ORG-002709,Finzer Roller Inc. Willow Street,unknown,,,,PA,US
+outside,ORG-002711,Bryn Hill Industries,unknown,,,,PA,US
+outside,ORG-002715,New Concept MFG,unknown,,,,PA,US
+outside,ORG-002719,Quaker Plastic Corporation Thermoforming Div.,unknown,,,,PA,US
+outside,ORG-002720,Spx Cooling Technologies,unknown,,,,PA,US
+outside,ORG-002722,W R Meadows Of Pennsylvania,unknown,,,,PA,US
+outside,ORG-002727,Essentra Components,unknown,,,,PA,US
+outside,ORG-002735,Beaumont Advanced Processing,unknown,,,,PA,US
+outside,ORG-002737,Caplugs,unknown,,,,PA,US
+outside,ORG-002739,Chelsea Building Products,unknown,,,,PA,US
+outside,ORG-002749,Griff Paper And Film,unknown,,,,PA,US
+outside,ORG-002757,National Polymers,unknown,,,,PA,US
+outside,ORG-002763,Polymar,unknown,,,,PA,US
+outside,ORG-002766,Race Tires America,unknown,,,,PA,US
+outside,ORG-002767,Rebling Plastics,unknown,,,,PA,US
+outside,ORG-002773,Westmoreland Plastics,unknown,,,,PA,US
+outside,ORG-003210,United Poly Systems,unknown,,private_company,,SC,US
+outside,ORG-003321,Jushi USA,unknown,,private_company,,SC,US
+outside,ORG-003464,Mosaic Color & Additives,unknown,,private_company,,SC,US
+outside,ORG-004416,Viaflex,unknown,,private_company,,SD,US
+ohio_rest,ORG-001082,Ring Container Technologies,unknown,,,,TN,US
+outside,ORG-003631,Caveman Plastics,unknown,,private_company,,TN,US
+outside,ORG-008105,Baxter Enterprises,unknown,,,,TN,US
+pic18,ORG-000059,Laird Plastics,unknown,,,,TX,US
+ohio_rest,ORG-001005,Orion Engineered Carbons,unknown,,,,TX,US
+outside,ORG-002936,Uni-Bell PVC Pipe Association,unknown,,nonprofit,,TX,US
+outside,ORG-002974,Hultec,unknown,,private_company,,TX,US
+outside,ORG-003249,Milford Companies,unknown,,private_company,,TX,US
+outside,ORG-003250,Modern Polymer Pipe & Extrusions,unknown,,private_company,,TX,US
+outside,ORG-003259,Plasson USA,unknown,,private_company,,TX,US
+outside,ORG-003289,Armortex,unknown,,private_company,,TX,United States
+outside,ORG-003296,Composite Access Products,unknown,,private_company,,TX,United States
+outside,ORG-003393,Impac Systems Engineering,unknown,,,,TX,US
+outside,ORG-003417,Solution Tools Mold & Die,unknown,,private_company,,TX,US
+outside,ORG-003633,Centex Rotomolding,unknown,,private_company,,TX,USA
+outside,ORG-003680,Scribner Plastics,unknown,,private_company,,TX,United States
+outside,ORG-003871,Integrated Control Technologies,unknown,,private_company,,TX,US
+outside,ORG-003878,Packwell,unknown,,family_owned,,TX,US
+outside,ORG-004490,Sawyer Oilfield Products,unknown,,private_company,,TX,US
+pic18,ORG-000033,LyondellBasell,unknown,,,,,
+pic18,ORG-000073,Professional Plastics,unknown,,family_owned,,,
+pic18,ORG-000078,Giesecke+Devrient America,unknown,,,,,
+outside,ORG-000104,OMNOVA Solutions,unknown,,,,,
+outside,ORG-000125,Lamson & Sessions,unknown,,,,,
+outside,ORG-000167,Hankook Tire America,unknown,,,,,
+pic18,ORG-000197,Kenda American Technology Center,unknown,,,,,
+outside,ORG-000203,Eliokem,unknown,,,,,
+outside,ORG-004041,Protexic,unknown,,private_company,,,US
+outside,ORG-004373,Comcast Urethane,unknown,,private_company,,,US
+outside,ORG-004374,Comfort Revolution,unknown,,private_company,,,US
+outside,ORG-004381,Dadi Bathware,unknown,,private_company,,,US
+outside,ORG-004395,Hyundai Transys,unknown,,private_company,,,US
+outside,ORG-007038,Summit Plastic Molding,unknown,,,,,
+outside,ORG-007060,Vantage Plastics,unknown,,,,,
+outside,ORG-007110,PAC Machinery Bags and Materials,unknown,,,,,
+outside,ORG-007440,Toray Advanced Composites,unknown,,,,,
+outside,ORG-009003,TG MISSOURI,unknown,,,,,
+outside,ORG-009013,KOLLER-CRAFT PLASTIC PRODUCTS,unknown,,,,,
+outside,ORG-009035,INDUSTRIAL PLASTICS & MACHINE,unknown,,,,,
+pic18,ORG-009600,Peak Performance Polymers,unknown,,,,,US
+outside,ORG-010103,Epic Plastics,unknown,,,,,
+outside,ORG-010109,Spec Formliners,unknown,,,,,
+outside,ORG-010203,American Innotek,unknown,,,,,
+outside,ORG-010205,ARGEE MANUFACTURING CORPORATION OF SAN DIEGO,unknown,,,,,
+outside,ORG-010301,TRM Manufacturing,unknown,,,,,
+outside,ORG-010505,Overwraps Packaging,unknown,,,,,
+outside,ORG-010601,ALL SOURCE,unknown,,,,,
+outside,ORG-010604,RELIANT WORLDWIDE PLASTICS,unknown,,,,,
+outside,ORG-010700,DELFINGEN-TX,unknown,,,,,
+outside,ORG-010701,Dacon Industries,unknown,,,,,
+outside,ORG-010801,Prime Industries,unknown,,,,,
+outside,ORG-003207,Aquatherm North America,unknown,,private_company,,UT,US
+outside,ORG-003646,Hive Plastics,unknown,,private_company,,UT,USA
+outside,ORG-003320,Janicki Industries,unknown,,private_company,,WA,US
+outside,ORG-003368,Eagle Beverage & Accessory Products,unknown,,,,WA,US
+outside,ORG-002944,ACS Group,unknown,,private_company,,WI,US
+outside,ORG-002970,Cumberland,unknown,,,,WI,US
+outside,ORG-003331,McClean Anderson,unknown,,private_company,,WI,US
+outside,ORG-003332,Mekco Manufacturing,unknown,,private_company,,WI,US
+outside,ORG-003509,Die-Sep,unknown,,,,WI,US
+outside,ORG-003600,Ideal Plastics & Fabrications,unknown,,private_company,,WI,US
+outside,ORG-003647,Horizon Manufacturing Group,unknown,,private_company,,WI,USA
+outside,ORG-003653,Yamaha Marine Rotational Molders,unknown,,private_company,,WI,USA
+outside,ORG-003670,Redline Plastics,unknown,,private_company,,WI,United States
+outside,ORG-003875,The Madison Group,unknown,,private_company,,WI,US
+outside,ORG-003986,Ellsworth Adhesives,unknown,,private_company,,WI,USA
+outside,ORG-007119,Nolato Contour,unknown,,,,WI,US
+outside,ORG-003636,Cowboy State Plastics,unknown,,private_company,,WY,USA

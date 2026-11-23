@@ -80,7 +80,7 @@ INLINE = {
     "ORG_STATUS": (["active", "active_idled_partial", "idled", "closed", "acquired", "merged",
                     "relocated_in_scope", "relocated_out_of_scope", "pre_revenue", "unknown"],
                    "organizations.status; sites.operating_status", "SCHEMA §4.2"),
-    "ENTITY_TYPE": (["corporation_public", "corporation_private", "llc", "partnership",
+    "ENTITY_TYPE": (["corporation", "corporation_public", "corporation_private", "llc", "partnership",
                      "sole_proprietor", "nonprofit", "government", "academic", "cooperative",
                      "unknown"], "organizations.entity_type", "SCHEMA §4.4"),
 }
