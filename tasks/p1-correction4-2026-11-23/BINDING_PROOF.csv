@@ -1,0 +1,3 @@
+evidence_id,record_id,claim_sha256,capture,capture_date,capture_sha256,quote_offset,verdict,reader_family,reader_date
+EVD-483102,SITE-001579,5171704417cc42b08a7310296d10e22623e5d41bd161bc377e79dc0b3bd434e2,https://web.archive.org/web/20261123202519id_/https://www.s4medical.com/contact/,2026-11-23,e51987dcccf8d5920fc4f19ee7a01399755df58f8a06d6145940902841f7fa47,11,VERIFIED,Claude Sonnet,2026-11-23
+EVD-483103,SITE-004107,cadf1d146496c7b5daa993e43e5abb26ac9912812ddc210dc8c1d7c31db4c845,https://web.archive.org/web/20261123202521id_/https://jacksonkayak.com/pages/contact-us,2026-11-23,057ea53d0f7cc84a265ddd8f3984b798dac85106f066062eb84c1ff5b724097d,1640,VERIFIED,Claude Sonnet,2026-11-23
