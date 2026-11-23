@@ -32,3 +32,15 @@ The MKV announcement is future-tense. The Adhesion Society quote is in the
 copyright line and establishes the location fields at association grain.
 
 The named frame check builds the eligible population without drawing a sample.
+
+`python3 tasks/blind-audit-12-protocol-2026-11-23/draw.py frame --at <head>`
+reported 0 unassignable records and 1 named exclusion (ORG-003769). Of the 31
+previously unassignable records, 3 entered PIC-18, 7 entered rest of Ohio and 20
+entered rest of country. The published site counts reconciled. The frame selftest
+refused both a missing ID and an already-assignable record.
+
+The sealed-packet replay, validator and row-loss checks passed. A planted
+omission of the Adhesion city cell and a planted FLC stratum change failed replay.
+The private exact capture replay passed for all six proofs. Direct Wayback
+fetches from the Mac intermittently refused the connection, so the hosted
+binding check replays the public proof routes independently.
