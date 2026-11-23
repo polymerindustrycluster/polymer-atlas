@@ -30,6 +30,6 @@ holds.
 
 `python3 -I tasks/p3-market-web-2026-11-23/check.py --at <head>` replays
 the sealed 40-candidate packet, exact capture and archive proofs, full data
-delta, claim ledger and frame outcome. The 16 reviewed by-hash bodies are in
-private provenance with paths sealed in `INPUTS.sha256`. The controller's
-independent store check verified all 16.
+delta, claim ledger and frame outcome. The 15 cited proof bodies are in private provenance with paths sealed in
+`INPUTS.sha256`. The controller verified all 16 landed bodies, including
+the Hapco live body from the initial replay.
