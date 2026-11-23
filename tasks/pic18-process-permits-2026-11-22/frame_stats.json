@@ -1,0 +1,15 @@
+{
+ "pic18_active_ac_sites": 881,
+ "frame_no_process_site_and_org": 336,
+ "frame_blank_street": 81,
+ "frame_with_air_id": 58,
+ "same_street_name_mismatch_no_id": 6,
+ "sites_with_id_from_frs": 40,
+ "sites_with_id_from_lake": 45,
+ "frs_only": 13,
+ "lake_only": 18,
+ "both": 27,
+ "with_id_done_2026_11_18": 24,
+ "with_id_searched_2026_11_18_no_permit": 8,
+ "with_id_new": 26
+}

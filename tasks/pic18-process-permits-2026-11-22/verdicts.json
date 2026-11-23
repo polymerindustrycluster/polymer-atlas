@@ -1,0 +1,247 @@
+{
+ "_doc": "Reader's quotes and \u00a73.1 terms only; bind, witness position, strength and route are recomputed by build.py from the stored permits and the Atlas rows.",
+ "sites": {
+  "SITE-000154": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "not_bound",
+   "quotes": [],
+   "note": "holder 'The Lincoln Electric Company' vs Atlas 'Lincoln Electric' (article); printed municipality Cleveland vs Atlas Euclid. The permit units listed are a mineral-alloy roll crusher and a kiln: no polymer process read"
+  },
+  "SITE-000164": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "not_bound",
+   "quotes": [],
+   "note": "Atlas entity is the ecosystem record for a hospital campus; holder and street differ"
+  },
+  "SITE-000220": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "not_bound",
+   "quotes": [
+    {
+     "doc": "3896812",
+     "quote": "Resin Spray-Up Station #1: polyester resin and chopped fiberglass are sprayed into a concave mold in a booth and flash-off area located within the Glassroom PTE that vents to an RTO with particulate emissions controlled by a dry filtration system",
+     "terms": [
+      "composites_spray_up"
+     ],
+     "grade": "narrative",
+     "note": "P002; spray-up is the stated operation. Held only because the Atlas street is blank"
+    }
+   ],
+   "note": "the permit prints 400 Nave Road SE; the Atlas street is blank, so nothing binds (the permit cannot supply the street it is tested against)"
+  },
+  "SITE-000981": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "not_bound",
+   "quotes": [
+    {
+     "doc": "4073758",
+     "quote": "EPDM Rubber Roofing Line: calendering/extrusion line (2 calenders and 2 extruders)",
+     "terms": [
+      "rubber_calendering",
+      "rubber_extrusion"
+     ],
+     "grade": "narrative",
+     "note": "P002 unit description; held only on the holder name"
+    }
+   ],
+   "note": "printed holder 'Johns Manville-Milan Plant' is a plant-suffixed form of the Atlas trade name 'Johns Manville (Milan)'; street and city equal"
+  },
+  "SITE-001078": {
+   "verdict": "VERIFIED",
+   "hold_reason": null,
+   "quotes": [
+    {
+     "doc": "3281747",
+     "quote": "Calendering Line dry materials handling and blending operations, and heated rolling and calendering operations",
+     "terms": [
+      "calendering"
+     ],
+     "grade": "list",
+     "note": "P028 unit description: a label that names the operation, no sentence"
+    },
+    {
+     "doc": "3281747",
+     "quote": "Kawakami Laminator",
+     "terms": [
+      "laminating"
+     ],
+     "grade": "list",
+     "note": "P030 laminator, emissions-unit-group table row"
+    },
+    {
+     "doc": "3281747",
+     "quote": "Emissions Unit Group - Rotogravure Printers: K003, K004",
+     "terms": [
+      "printing_decorating_plastics"
+     ],
+     "grade": "list",
+     "note": "rotogravure printers: the substrate printed is not stated, so the plastics term is held",
+     "hold": "substrate_not_stated"
+    }
+   ],
+   "note": "also P029, an expansion line (no foam or blowing agent stated: no term) and P010 ink mixing and storage (a coating mixed in-house for the plant's own printers: no term)"
+  },
+  "SITE-001282": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "not_bound",
+   "quotes": [
+    {
+     "doc": "3391798",
+     "quote": "Emissions Unit Group - Compression Molding Operations: P068, P069",
+     "terms": [
+      "compression_molding"
+     ],
+     "grade": "list",
+     "note": "P068/P069 heading; held only on the holder name"
+    }
+   ],
+   "note": "printed holder 'Ventra Sandusky, LLC' vs Atlas organization 'Ventra (Flex-N-Gate)'; street and city equal"
+  },
+  "SITE-001397": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "ancillary_only",
+   "quotes": [
+    {
+     "doc": "1469930",
+     "quote": "Plastic Parts Coating Operation - Paint Spray Booth #4",
+     "terms": [],
+     "grade": "list",
+     "note": "R006: a paint spray booth; the unit text does not say coating line, coater, dip station or saturation line (lane predicate)"
+    }
+   ],
+   "note": "the only units are five spray paint booths (R003-R008)"
+  },
+  "SITE-001399": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "not_bound",
+   "quotes": [
+    {
+     "doc": "1491729",
+     "quote": "P002, Rubber Mixer",
+     "terms": [
+      "rubber_mixing_compounding"
+     ],
+     "grade": "list",
+     "note": "P002 heading; held only on the holder and street format"
+    },
+    {
+     "doc": "1491729",
+     "quote": "Rotocure Line",
+     "terms": [
+      "vulcanization_curing_services"
+     ],
+     "grade": "list",
+     "note": "P005 heading: a continuous cure line, but it is a service term in \u00a73.1; held with the term unsettled"
+    }
+   ],
+   "note": "printed holder 'Tarkett USA Inc.' vs Atlas organization 'Tarkett North America'; permit prints 'INDUSTRIAL PARKWAY' vs Atlas 'Industrial Pkwy'"
+  },
+  "SITE-001433": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "no_listed_process",
+   "quotes": [
+    {
+     "doc": "1540495",
+     "quote": "6,500-gallon reactor with caustic scrubber.",
+     "terms": [],
+     "grade": "list",
+     "note": "P010/P011: a reactor; no polymerization stated"
+    },
+    {
+     "doc": "1540495",
+     "quote": "Foundary Resin Blending",
+     "terms": [],
+     "grade": "list",
+     "note": "P001: blending of foundry resins; \u00a73.1 has no resin-blending term"
+    }
+   ],
+   "note": "chemical blending, reactors and loading stations; no \u00a73.1 process is stated (a vocabulary ruling would need a resin/chemical blending term)"
+  },
+  "SITE-001654": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "not_bound",
+   "quotes": [],
+   "note": "printed municipality 'Bedford' vs Atlas 'Walton Hills' (same street); units not read for terms"
+  },
+  "SITE-001690": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "no_capability_destination",
+   "quotes": [
+    {
+     "doc": "1410376",
+     "quote": "Roofing Products Line - saturator, sand applicator and seven (7) mixers",
+     "terms": [
+      "coating_applying"
+     ],
+     "grade": "list",
+     "note": "P901 asphalt roofing line; a saturator is read as a coating step"
+    }
+   ],
+   "note": "tier A: supports_C reaches only a capability row, and coating_applying has no \u00a73.6 term. PMMA mixers (P002-P004) and SBS loading name no \u00a73.1 process"
+  },
+  "SITE-001893": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "no_listed_process",
+   "quotes": [
+    {
+     "doc": "2781977",
+     "quote": "Emissions Unit Group - Cleaning Furnaces: N001, N002",
+     "terms": [],
+     "grade": "list",
+     "note": "N001/N002 cleaning furnaces: ancillary"
+    }
+   ],
+   "note": "cleaning and induction furnaces and grit blasters at a metals recovery plant; no polymer process"
+  },
+  "SITE-001916": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "not_bound",
+   "quotes": [
+    {
+     "doc": "2085215",
+     "quote": "Emissions Unit Group -Meyers Vinyl Mixers 1 and 2: P001,P002",
+     "terms": [],
+     "grade": "list",
+     "note": "vinyl mixers: no \u00a73.1 term states vinyl mixing"
+    }
+   ],
+   "note": "the permit prints 100 Hedstrom Drive; the Atlas street is blank"
+  },
+  "SITE-001937": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "no_capability_destination",
+   "quotes": [
+    {
+     "doc": "3792297",
+     "quote": "Electric Hot Wire Cutting of Foam Boards",
+     "terms": [
+      "foam_fabrication"
+     ],
+     "grade": "list",
+     "note": "P011 unit description"
+    }
+   ],
+   "note": "tier B: supports_C reaches only a capability row, and foam_fabrication has no \u00a73.6 term. Only the newest permit binds (the two 2014/2015 permits print holder 'Trans-foam 281 SW')"
+  },
+  "SITE-002079": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "no_listed_process",
+   "quotes": [
+    {
+     "doc": "4019267",
+     "quote": "ROTARY CALCINER #4 in Building 16",
+     "terms": [],
+     "grade": "list",
+     "note": "P009 calciner at an inorganic catalyst plant"
+    }
+   ],
+   "note": "inorganic catalysts: calciners, dryers, kneader blender; no polymer process stated"
+  },
+  "SITE-002130": {
+   "verdict": "STILL_UNCERTAIN",
+   "hold_reason": "not_bound",
+   "quotes": [],
+   "note": "printed holder 'Ventra Salem, LLC' vs Atlas organization 'Ventra (Flex-N-Gate)'; the units read are paint booths and a paint line"
+  }
+ }
+}
