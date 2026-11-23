@@ -48,6 +48,14 @@ PROVENANCE_PROSE = re.compile(r"\bstaged\b|\b(?:hence|raised to|lowered to|from)
 HARD_VALUE = re.compile(r"created_by|tier[ _]?effect|supports_[ABCU]|\bEVD-\d+\b", re.I)
 
 
+# Approved F6 exceptions apply to these exact published link keys.
+F6_LINKS = {
+    ("ORG-004817", "SITE-008189", "FRS", "110070516125"),
+    ("ORG-000190", "", "LEI", "254900J2E9WR0Q5QAL72"),
+    ("ORG-003939", "", "SEC_CIK", "0001423221"),
+}
+
+
 def match_tokens(value):
     decoded = unquote(value)
     tokens = {m[0] for pattern in (a11.LEAK, EXTRA_LEAK, PROVENANCE_PROSE)
@@ -160,7 +168,9 @@ def records_for_stage(sample, extend):
             yield row
 
 
-def cited(value):
+def cited(value, *, strip_contact_url=False):
+    if strip_contact_url:
+        value = a11.URL.sub(lambda m: "" if CONTACT.search(unquote(m[0])) else m[0], value)
     value = a11.READ_DATE.sub(" ", value).replace("( )", "").replace("()", "").strip()
     return " ".join(a11.urls(value)) if a11.LEAK.search(value) or a11.PASS_DATE.search(value) else value
 
@@ -267,8 +277,12 @@ class Head(a11.Head):
 
     def child(self, table, row, number):
         values = {f: row[f] for f, k in draw.FIELD_CLASS[table].items() if k == "J"}
-        return dict(table=table, values=values, context=self.context(table, row, values),
-                    _key=cell_record(table, row, number))
+        context = self.context(table, row, values)
+        if table == "registry_links":
+            link = tuple(row[f] for f in ("org_id", "site_id", "registry", "registry_id"))
+            if link in F6_LINKS and match_tokens(context.get("match_basis", "")):
+                context.pop("match_basis")
+        return dict(table=table, values=values, context=context, _key=cell_record(table, row, number))
 
 
 # Only literal public URL segments and resolved public labels can receive an exception.
@@ -412,7 +426,7 @@ def render_row(h, entry, blind_id, approved):
     context["children"] = children
     row.update(blind_id=blind_id, stratum=entry["stratum"],
                context_json=json.dumps(context, ensure_ascii=False, sort_keys=True))
-    row["cited_sources"] = cited(row["cited_sources"])
+    row["cited_sources"] = cited(row["cited_sources"], strip_contact_url=(table, rid) == ("people", "PERSON-000194"))
     band_field = BAND_FIELDS.get(table, "")
     filings = band_filings(h.evidence[table, rid], band_field, original.get(band_field, ""))
     if filings:

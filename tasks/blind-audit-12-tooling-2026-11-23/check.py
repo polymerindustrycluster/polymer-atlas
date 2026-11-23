@@ -149,6 +149,36 @@ def packet_check(root):
     print(f"PASS packet build and leak scan ({len(rows)} stage-1 synthetic rows including {len(plants)} plants)")
 
 
+def scrub_check():
+    tables = p.draw.fixture()
+    contaminated = dict(org_id="ORG-004817", site_id="SITE-008189", registry="FRS",
+                        registry_id="110070516125", match_basis="PR #77 packet", as_of="2026-11-04")
+    unrelated = dict(contaminated, registry_id="110070516126")
+    tables["registry_links"] = [contaminated, unrelated]
+    person = tables["people"][0]
+    person["person_id"] = "PERSON-000194"
+    contact_url = "https://example.org/profile/example%40example.org"
+    public_url = "https://example.org/research-program"
+    person["sources"] = f"{contact_url}; {public_url}"
+    head = p.Head(p.draw.MemReader(tables))
+    links = head.children["sites", "SITE-008189"]
+    assert links[0]["values"]["registry_id"] == contaminated["registry_id"]
+    assert "match_basis" not in links[0]["context"]
+    assert links[1]["context"]["match_basis"] == unrelated["match_basis"]
+    entry = dict(table="people", record_id=person["person_id"], stratum="RESEARCHERS")
+    row, _, _ = p.render_row(head, entry, "test", frozenset())
+    assert public_url in row["cited_sources"] and contact_url not in row["cited_sources"]
+    p.leak_scan([row])
+    for bad in (dict(row, cited_sources=contact_url),
+                dict(row, context_json='{"reviewer_label":"builder"}')):
+        try:
+            p.leak_scan([bad])
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("unsafe data injected after serialization passed")
+
+
 def replay_check():
     # Public admission batch #502 on main. Select ten distinct parents with stored proofs.
     at = p.draw.require_ancestor("7a9731f2881e8ed5cfc6bfb7b1121167505868d2")
@@ -172,4 +202,6 @@ def replay_check():
 if __name__ == "__main__":
     with tempfile.TemporaryDirectory() as tmp:
         packet_check(Path(tmp))
+    scrub_check()
+    print("PASS targeted registry and citation scrubs; injected data still refused")
     replay_check()
