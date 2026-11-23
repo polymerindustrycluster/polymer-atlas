@@ -2101,7 +2101,7 @@ A <span class="badge">PIC member</span> badge marks an owner on PIC's public mem
 <details class="more"><summary>How to read the list</summary>
 <p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter except the member flag (which is yes or no by construction) shows how many companies are unknown.</p>
 <p><strong>Counts are companies.</strong> A company with sites in two counties has two rows (one per owner and county) and counts once in the figures above the list and beside each filter choice; the download has one row per owner and county.</p>
-<p><strong>Public member list.</strong> A row is marked "{MEMBER_YES}" or "{MEMBER_NO}". The second only means the organization is not on the public list.</p>
+<p><strong>Public member list.</strong> A row with the "PIC member" badge is {MEMBER_YES}. A row without it is not marked either way: the member filter's No choice selects the rows without the badge, and that is all it says.</p>
 <p>One row per owner and county, grouped by county; an owner with site rows in two counties is listed under both,
 with the street addresses of the site rows in that county. Ring and site tier list every value among those site rows; within one
 filter the choices are "or", across filters "and". Street addresses are as recorded; a site row with no street says so.</p>
