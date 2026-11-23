@@ -15,6 +15,7 @@ Rendering: 3d-force-graph (three.js, d3-force-3d). Only public fields are writte
 section 6, event participation). Stdlib only.
 """
 import argparse
+import html
 import importlib.util
 import json
 from collections import defaultdict
@@ -24,8 +25,9 @@ HERE = Path(__file__).resolve().parent
 _spec = importlib.util.spec_from_file_location("build_graph", HERE / "build_graph.py")
 bg = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(bg)
+plural = bg.build_site.plural
 
-FG3D = "https://cdn.jsdelivr.net/npm/3d-force-graph@1.73.4/dist/3d-force-graph.min.js"
+LIBS = ("3d-force-graph/3d-force-graph.min.js",)   # vendored, three.js included
 ROLE_RANK = {"organizer": 6, "sponsor": 5, "speaker": 4, "exhibitor": 3, "host": 2, "attendee": 1}
 
 
@@ -76,11 +78,11 @@ PAGE = r"""<div id="stage" class="stage" role="img" aria-label="3D network of tr
 </div>
 <section class="caption" id="caption" hidden aria-live="polite"></section>
 
-<script src="__FG3D__"></script>
-<script id="atlas-data" type="application/json">__DATA__</script>
-<script>
-(() => {
-  const D = JSON.parse(document.getElementById("atlas-data").textContent);
+"""
+
+
+SCRIPT = r"""(async () => {
+  const D = await fetch("trade-shows.json").then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); });
   const css = getComputedStyle(document.getElementById("stage")), v = (n) => css.getPropertyValue(n).trim();   // the dark stage scope (.viz.dark)
   const RING = { "1": v("--r1"), "2": v("--r2"), "3": v("--r3"), "4": v("--r4"), "5": v("--r5"), "": v("--rx") };
   const GOLD = v("--lime"), BG = v("--bg"), EVENT = v("--fg");
@@ -239,8 +241,7 @@ PAGE = r"""<div id="stage" class="stage" role="img" aria-label="3D network of tr
   let fitted = false;
   Graph.onEngineStop(() => { if (!fitted && !state.current) { fitted = true; Graph.zoomToFit(reduced ? 0 : 1200, 20, core); } });
   setTimeout(() => { if (!state.current) Graph.zoomToFit(reduced ? 0 : 1200, 20, core); }, 3500);
-})();
-</script>
+})().catch((e) => { document.getElementById("stage").textContent = "Could not load the trade shows (" + e.message + "). Serve the site over http rather than opening the file."; });
 """
 
 
@@ -274,31 +275,40 @@ STAGE_CSS = r"""/* trade-show stage: title top-left, control bar bottom-left, ca
 .scene-tooltip { font: 13px/1.35 var(--f-body) !important; background: var(--panel) !important; border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px !important; }
 .scene-tooltip:empty { display: none !important; }
 .scene-tooltip small { color: var(--muted); font-size: 11px; }
-@media (max-width: 720px) {
-  .viz .title p { display: none; }
-  .viz .caption { top: 112px; bottom: auto; left: var(--s-4); right: var(--s-4); width: auto; padding: 14px 16px; gap: 8px; max-height: calc(100% - 200px); overflow: auto; }
-  .viz .caption h2 { font-size: 26px; } .viz .nums b { font-size: 24px; } .viz .bar .legend { display: none; } }
 @media (prefers-reduced-motion: reduce) { .viz .progress i { transition: none !important; } }
 """
 
 
+def script_text(root="../"):
+    return SCRIPT.replace("__ORGBASE__", bg.org_base(root))
+
+
 def page(data, root="../"):
-    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    body = PAGE.replace("__FG3D__", FG3D).replace("__DATA__", blob).replace("__ORGBASE__", bg.org_base(root))
-    return bg.build_site.page(bg.shell_ctx(), "Trade shows in 3D", body, root, "shows",
-                              description="Which companies exhibit, sponsor and speak at which trade shows, as a 3D network with a presentation mode.",
-                              head_extra=f"<style>\n{STAGE_CSS}</style>", main_class="viz dark")
+    events = [n for n in data["nodes"] if n["k"] == "event"]
+    size = defaultdict(int)
+    for link in data["links"]:
+        size[link["source"]] += 1
+    top = sorted(events, key=lambda e: (-size[e["id"]], e["l"]))[:10]
+    rows = "".join(f'<li>{html.escape(e["l"])}: {plural(size[e["id"]], "organization row")}</li>' for e in top)
+    facts = (f'<p><strong>{len(events):,}</strong> trade-show series and <strong>{len(data["nodes"]) - len(events):,}</strong> organization rows '
+             f'that exhibit, sponsor, speak or take part, joined by <strong>{len(data["links"]):,}</strong> participation links '
+             f'(one per series and organization, strongest role).</p>'
+             f'<h2>Largest series by organization rows</h2><ol>{rows}</ol>')
+    body = bg.summary("Trade shows in 3D", "Which companies exhibit, sponsor and speak at which trade shows.", facts, root) + PAGE
+    return bg.explorer_page("Trade shows in 3D", "shows",
+                            "Which companies exhibit, sponsor and speak at which trade shows, as a 3D network with a presentation mode.",
+                            body, root, LIBS, "trade-shows.js", f"<style>\n{STAGE_CSS}</style>", "viz dark")
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Build the Atlas 3D events presentation (single HTML file).")
+    ap = argparse.ArgumentParser(description="Build the Atlas trade-shows page: graph/events.html with trade-shows.js and .json beside it.")
     ap.add_argument("--out", default=str(bg.ROOT / "build" / "graph" / "events.html"))
     ap.add_argument("--root", default="../", help="path from the page to the site root; ../ when published as graph/events.html")
     a = ap.parse_args()
     data = build_data()
     out = Path(a.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(data, a.root), encoding="utf-8")
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    bg.write_explorer(out, page(data, a.root), "trade-shows.js", script_text(a.root), "trade-shows.json", blob)
     ev = sum(1 for n in data["nodes"] if n["k"] == "event")
     print(f"events: {ev} event series, {len(data['nodes']) - ev} organizations, {len(data['links'])} links -> {out}")
 

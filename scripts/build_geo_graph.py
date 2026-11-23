@@ -27,8 +27,7 @@ bg = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(bg)
 
 GEO = HERE / "assets" / "us-atlas" / "counties-albers-10m.json"
-D3 = "https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"
-TOPOJSON = "https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"
+LIBS = ("d3/d3.min.js", "topojson-client/topojson-client.min.js", *bg.GRAPH_LIBS[:2])   # vendored; sigma is not used here
 TAG_KINDS = {"proc", "mat", "mkt"}
 
 
@@ -85,7 +84,6 @@ PAGE = r"""<canvas id="cv" class="stage" aria-label="Map of polymer industry sit
   <div class="vhead">
     <h1>Map + network</h1>
     <p>Where the industry is, and how it connects.</p>
-    <button class="btn mobile-toggle" id="railToggle" type="button" aria-expanded="false">Show controls</button>
   </div>
   <div class="morph" role="group" aria-label="View">
     <button type="button" id="m-geo" aria-pressed="true">Geography</button>
@@ -115,18 +113,14 @@ PAGE = r"""<canvas id="cv" class="stage" aria-label="Map of polymer industry sit
 </aside>
 <section class="card" id="card" hidden aria-live="polite"></section>
 
-<script src="__D3__"></script>
-<script src="__TOPOJSON__"></script>
-<script src="__GRAPHOLOGY__"></script>
-<script src="__GRAPHOLOGY_LIB__"></script>
-<script id="geo-data" type="application/json">__GEO__</script>
-<script id="atlas-data" type="application/json">__DATA__</script>
-<script>
-(() => {
-  const D = JSON.parse(document.getElementById("atlas-data").textContent);
-  const US = JSON.parse(document.getElementById("geo-data").textContent);
+"""
+
+
+SCRIPT = r"""(async () => {
+  const get = (u) => fetch(u).then((r) => { if (!r.ok) throw new Error(u + ": HTTP " + r.status); return r.json(); });
+  const [D, US] = await Promise.all([get("map-network.json"), get("us-counties.json")]);
   const PIC12 = new Set(__REGION__);  // PIC-18 (AGENTS.md section 8), injected from scripts/regions.py
-  const RING = { "1": "Ring 1 · producers & processors", "2": "Ring 2 · materials & compounding", "3": "Ring 3 · value chain", "4": "Ring 4 · OEMs & heavy users", "5": "Ring 5 · ecosystem", "": "Ring not set" };
+  const RING = __RING_NAMES__;   // from RINGS in build_site.py, the one list of ring names
   const $ = (id) => document.getElementById(id);
   const cv = $("cv"), ctx = cv.getContext("2d");
   let P = {};
@@ -382,8 +376,6 @@ PAGE = r"""<canvas id="cv" class="stage" aria-label="Map of polymer industry sit
   $("z-us").onclick = () => d3.select(cv).transition().duration(800).call(zoom.transform, d3.zoomIdentity);
   $("z-oh").onclick = () => { if (state.mode !== "geo") setMode("geo"); const b = boundsOf(ohio); zoomTo(b[0][0], b[0][1], b[1][0], b[1][1]); };
   $("z-p12").onclick = () => { if (state.mode !== "geo") setMode("geo"); const b = d3.geoPath().bounds({ type: "FeatureCollection", features: p12Counties }); zoomTo(b[0][0], b[0][1], b[1][0], b[1][1]); };
-  $("railToggle").onclick = () => { const c = $("rail").classList.toggle("collapsed"); $("railToggle").textContent = c ? "Show controls" : "Hide controls"; $("railToggle").setAttribute("aria-expanded", String(!c)); };
-  if (matchMedia("(max-width: 720px)").matches) $("rail").classList.add("collapsed");
 
   const LBL = O.map((o) => o.l.toLowerCase());
   $("q").addEventListener("input", () => {
@@ -424,34 +416,43 @@ PAGE = r"""<canvas id="cv" class="stage" aria-label="Map of polymer industry sit
   addEventListener("hashchange", fromHash);
   if (location.hash) setTimeout(fromHash, 60);
   (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(computeNetwork);
-})();
-</script>
+})().catch((e) => { document.getElementById("main").insertAdjacentText("afterbegin", "Could not load the map (" + e.message + "). Serve the site over http rather than opening the file."); });
 """
 
 
+def script_text(root="../"):
+    return (SCRIPT.replace("__ORGBASE__", bg.org_base(root)).replace("__REGION__", json.dumps(sorted(bg.PIC12)))
+            .replace("__RING_NAMES__", bg.ring_names()))
+
+
+def data_text(data):
+    data = dict(data, commit=bg.commit(), built=__import__("datetime").date.today().isoformat())
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+
+
 def page(data, root="../"):
-    data.update({"commit": bg.commit(), "built": __import__("datetime").date.today().isoformat()})
-    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    geo = GEO.read_text(encoding="utf-8").replace("</", "<\\/")
-    body = (PAGE.replace("__D3__", D3).replace("__TOPOJSON__", TOPOJSON).replace("__GRAPHOLOGY__", bg.GRAPHOLOGY)
-            .replace("__GRAPHOLOGY_LIB__", bg.GRAPHOLOGY_LIB).replace("__GEO__", geo).replace("__DATA__", blob)
-            .replace("__ORGBASE__", bg.org_base(root)).replace("__REGION__", json.dumps(sorted(bg.PIC12))))
-    return bg.build_site.page(bg.shell_ctx(), "Map + network", body, root, "geo",
-                              description="Every mapped site on a US map, with company networks drawn across it, then arranged by process, material and market.",
-                              main_class="viz")
+    facts = (f'<p><strong>{len(data["sites"]):,}</strong> site rows with coordinates, of <strong>{data["held_sites"]:,}</strong> site rows that are '
+             f'not closed, belonging to <strong>{len(data["orgs"]):,}</strong> organization rows, plotted on a map of the United States '
+             f'and arranged by <strong>{len(data["tags"]):,}</strong> capability tags in network view. Coordinates are reference data, never evidence. '
+             f'The street map shows the same site rows on streets.</p>')
+    body = bg.summary("Map + network", "Where the industry is, and how it connects.", facts, root) + PAGE
+    return bg.explorer_page("Map + network", "geo",
+                            "Every mapped site on a US map, with company networks drawn across it, then arranged by process, material and market.",
+                            body, root, LIBS, "map-network.js")
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Build the Atlas map/graph hybrid (single HTML file).")
+    ap = argparse.ArgumentParser(description="Build the Atlas map + network page: graph/map.html with map-network.js, .json and us-counties.json beside it.")
     ap.add_argument("--out", default=str(bg.ROOT / "build" / "graph" / "map.html"))
     ap.add_argument("--root", default="../", help="path from the page to the site root; ../ when published as graph/map.html")
     a = ap.parse_args()
     data = build_data()
     out = Path(a.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(dict(data), a.root), encoding="utf-8")
+    bg.write_explorer(out, page(data, a.root), "map-network.js", script_text(a.root), "map-network.json", data_text(data))
+    (out.parent / "us-counties.json").write_bytes(GEO.read_bytes())   # us-atlas, ISC licence (scripts/assets/us-atlas/)
     print(f"map: {len(data['sites'])} sites with coordinates (of {data['held_sites']} non-closed), "
-          f"{len(data['orgs'])} orgs, {len(data['tags'])} tags -> {out} ({out.stat().st_size / 1e6:.2f} MB)")
+          f"{len(data['orgs'])} orgs, {len(data['tags'])} tags -> {out} "
+          f"({out.stat().st_size / 1e3:.0f} kB page, {(out.parent / 'map-network.json').stat().st_size / 1e6:.2f} MB data)")
 
 
 if __name__ == "__main__":

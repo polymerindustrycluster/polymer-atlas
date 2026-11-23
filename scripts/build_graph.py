@@ -46,9 +46,8 @@ PIC12 = set(PIC18)  # the reporting region; the name is kept because the explore
 TOMBSTONE = {"merged", "acquired", "closed"}
 FREE_MIN = 3   # a free-text tag must be shared by this many organizations to appear
 TAG_FIELDS = (("processes", "proc"), ("materials", "mat"), ("markets_served", "mkt"))
-GRAPHOLOGY = "https://cdnjs.cloudflare.com/ajax/libs/graphology/0.25.4/graphology.umd.min.js"
-GRAPHOLOGY_LIB = "https://cdn.jsdelivr.net/npm/graphology-library@0.8.0/dist/graphology-library.min.js"
-SIGMA = "https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js"
+# Libraries are vendored (scripts/assets/vendor/, npm registry pins); the page loads them from <root>vendor/ on screens 720 px or wider.
+GRAPH_LIBS = ("graphology/graphology.umd.min.js", "graphology-library/graphology-library.min.js", "sigma/sigma.min.js")
 
 
 def read(path):
@@ -188,7 +187,6 @@ PAGE = r"""<div id="stage" class="stage" role="img" aria-label="Network graph of
   <div class="vhead">
     <h1>Industry graph</h1>
     <p>Organizations, institutions and the capabilities that link them.</p>
-    <button class="btn mobile-toggle" id="railToggle" type="button" aria-expanded="false">Show controls</button>
   </div>
   <div class="search">
     <input id="q" type="search" placeholder="Find a company, institution or tag" autocomplete="off" aria-label="Search the graph">
@@ -235,17 +233,14 @@ PAGE = r"""<div id="stage" class="stage" role="img" aria-label="Network graph of
 
 <section class="card" id="card" hidden aria-live="polite"></section>
 
-<script src="__GRAPHOLOGY__"></script>
-<script src="__GRAPHOLOGY_LIB__"></script>
-<script src="__SIGMA__"></script>
-<script id="atlas-data" type="application/json">__DATA__</script>
-<script>
-(() => {
-  const RAW = JSON.parse(document.getElementById("atlas-data").textContent);
+"""
+
+
+SCRIPT = r"""(async () => {
+  const RAW = await fetch("graph.json").then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); });
   const NODES = RAW.nodes, EDGES = RAW.edges;
   const lib = window.graphologyLibrary;
-  const RING_NAMES = { "1": "Ring 1 · producers & processors", "2": "Ring 2 · materials & compounding", "3": "Ring 3 · value chain",
-    "4": "Ring 4 · OEMs & heavy users", "5": "Ring 5 · ecosystem", "": "Ring not set" };
+  const RING_NAMES = __RING_NAMES__;   // from RINGS in build_site.py, the one list of ring names
   const KIND_NAMES = { proc: "Process", mat: "Material", mkt: "Market", event: "Event series" };
   const ECO_NAMES = { university_college: "University / college", trade_association: "Trade association",
     government_lab_agency: "Government lab / agency", nonprofit_rd_consortium: "R&D consortium", economic_development: "Economic development",
@@ -325,7 +320,7 @@ PAGE = r"""<div id="stage" class="stage" role="img" aria-label="Network graph of
     const L = $("legend");
     let items = [];
     if (state.color === "ring") items = ["1", "2", "3", "4", "5"].map((r) => [P.ring[r], RING_NAMES[r]]);
-    else if (state.color === "pic") items = [[P.accent, "PIC member (public list)"], [P.dim, "Not on the public member list"]];
+    else if (state.color === "pic") items = [[P.accent, "PIC member"]];   // the public member list only; absence is never stated (AGENTS 5.1)
     else items = [[commColors[0] || P.muted, "Colour = cluster found by Louvain community detection"]];
     items.push([P.proc, "Process tag"], [P.mat, "Material tag"]);
     if (state.layers.mkt) items.push([P.mkt, "Market tag"]);
@@ -515,9 +510,6 @@ PAGE = r"""<div id="stage" class="stage" role="img" aria-label="Network graph of
   $("free").addEventListener("change", (e) => { state.free = e.target.checked; render(); });
   $("relayout").addEventListener("click", () => startLayout(7000));
   $("fit").addEventListener("click", () => renderer.getCamera().animate({ x: 0.5, y: 0.5, ratio: 1, angle: 0 }, { duration: 400 }));
-  $("railToggle").addEventListener("click", () => { const r = $("rail"); const c = r.classList.toggle("collapsed");
-    $("railToggle").textContent = c ? "Show controls" : "Hide controls"; $("railToggle").setAttribute("aria-expanded", String(!c)); });
-  if (matchMedia("(max-width: 720px)").matches) $("rail").classList.add("collapsed");
   const retheme = () => { P = css(); computeCommunities(); if (renderer) { renderer.setSetting("labelColor", { color: P.label });
     renderer.setSetting("defaultEdgeColor", P.edge); renderer.refresh({ skipIndexation: true }); } legend(); };
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", retheme);
@@ -527,8 +519,7 @@ PAGE = r"""<div id="stage" class="stage" role="img" aria-label="Network graph of
   const fromHash = () => { const id = decodeURIComponent(location.hash.slice(1)); if (IDX.has(id)) goTo(IDX.get(id)); };
   addEventListener("hashchange", fromHash);
   if (location.hash) setTimeout(fromHash, 50);
-})();
-</script>
+})().catch((e) => { document.getElementById("stage").textContent = "Could not load the graph (" + e.message + "). Serve the site over http rather than opening the file."; });
 """
 
 
@@ -543,31 +534,80 @@ def org_base(root):
     return root + "orgs/"
 
 
-def page(nodes, edges, root="../"):
+def ring_names():
+    """JSON for the script: the site's one list of ring names, so the graph and the tables never disagree."""
+    names = {r: f"Ring {r} \u00b7 {n}" for r, n in build_site.RINGS.items()}
+    names[""] = "Ring not set"
+    return json.dumps(names, ensure_ascii=False)
+
+
+def summary(title, lede, facts, root):
+    """What a phone gets instead of the canvas (explorer.js loads nothing below 720 px): the same page as text, with the way
+    to the company list and the ring colours."""
+    legend = "".join(f'<li><span class="sw" style="background:var(--r{r})"></span>Ring {r} \u00b7 {html.escape(n)}</li>'
+                     for r, n in build_site.RINGS.items())
+    return (f'<section class="viz-summary" aria-labelledby="vs-title"><h1 id="vs-title">{html.escape(title)}</h1>'
+            f'<p class="lede">{lede}</p>{facts}'
+            f'<p class="hint">The picture needs a screen 720 px wide or more. The same companies are listed, with street addresses, on the company page.</p>'
+            f'<div class="btns"><a class="btn primary" href="{root}directory.html">Find companies</a> '
+            f'<a class="btn" href="{root}map.html">Street map</a> <a class="btn" href="{root}counties/index.html">Counties</a></div>'
+            f'<h2>Ring colours</h2><ul class="vlegend">{legend}</ul></section>')
+
+
+def explorer_page(title, active, description, body, root, libs, boot, head_extra="", main_class="viz"):
+    """One explorer page in the shared shell: summary and stage in <main>, libraries and script loaded by explorer.js."""
+    attrs = f' data-libs="{" ".join(root + "vendor/" + lib for lib in libs)}" data-boot="{boot}"'
+    return build_site.page(shell_ctx(), title, body, root, active, description, head_extra,
+                           f'<script src="{root}explorer.js" defer></script>', main_class, attrs)
+
+
+def write_explorer(out, html_text, boot, script_text, data_name, data_text):
+    """The page, its script and its data, side by side (the data is fetched on screens 720 px or wider, never on a phone)."""
+    out = Path(out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(html_text, encoding="utf-8")
+    (out.parent / boot).write_text(script_text, encoding="utf-8")
+    (out.parent / data_name).write_text(data_text, encoding="utf-8")
+
+
+def data_text(nodes, edges):
     data = {"nodes": nodes, "edges": [[i, j, t] for i, j, t in edges], "commit": commit(),
             "built": __import__("datetime").date.today().isoformat()}
-    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    body = (PAGE.replace("__GRAPHOLOGY__", GRAPHOLOGY).replace("__GRAPHOLOGY_LIB__", GRAPHOLOGY_LIB)
-            .replace("__SIGMA__", SIGMA).replace("__DATA__", blob).replace("__ORGBASE__", org_base(root)))
-    return build_site.page(shell_ctx(), "Industry graph", body, root, "graph",
-                           description="Companies, institutions and the processes and materials that connect them, as a network you can explore.",
-                           main_class="viz")
+    return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+
+
+def script_text(root="../"):
+    return SCRIPT.replace("__ORGBASE__", org_base(root)).replace("__RING_NAMES__", ring_names())
+
+
+def page(nodes, edges, root="../"):
+    kinds = defaultdict(int)
+    for n in nodes:
+        kinds[n["k"]] += 1
+    facts = (f'<p><strong>{kinds["org"]:,}</strong> organization rows, <strong>{kinds["eco"]:,}</strong> ecosystem organization rows, '
+             f'<strong>{kinds["proc"] + kinds["mat"] + kinds["mkt"]:,}</strong> capability tags (processes, materials, markets) and '
+             f'<strong>{kinds["event"]:,}</strong> event series, joined by <strong>{len(edges):,}</strong> links. '
+             f'Filter: organizations that are not closed, acquired or merged; all states, all verification tiers.</p>')
+    body = summary("Industry graph", "Companies, institutions and the processes and materials that connect them, drawn as a network.",
+                   facts, root) + PAGE
+    return explorer_page("Industry graph", "graph",
+                         "Companies, institutions and the processes and materials that connect them, as a network you can explore.",
+                         body, root, GRAPH_LIBS, "graph.js")
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Build the Atlas graph explorer (single HTML file).")
+    ap = argparse.ArgumentParser(description="Build the Atlas graph explorer: graph/index.html with graph.js and graph.json beside it.")
     ap.add_argument("--out", default=str(ROOT / "build" / "graph" / "index.html"))
     ap.add_argument("--root", default="../", help="path from the page to the site root (style.css, brand/, orgs/); ../ when published as graph/index.html")
     a = ap.parse_args()
     nodes, edges = build_graph()
     out = Path(a.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(nodes, edges, a.root), encoding="utf-8")
+    write_explorer(out, page(nodes, edges, a.root), "graph.js", script_text(a.root), "graph.json", data_text(nodes, edges))
     kinds = defaultdict(int)
     for n in nodes:
         kinds[n["k"]] += 1
     print(f"graph: {len(nodes)} nodes ({', '.join(f'{k} {v}' for k, v in sorted(kinds.items()))}), {len(edges)} edges -> {out}")
-    print(f"size: {out.stat().st_size / 1e6:.2f} MB")
+    print(f"size: {out.stat().st_size / 1e3:.0f} kB page, {(out.parent / 'graph.json').stat().st_size / 1e6:.2f} MB data")
 
 
 if __name__ == "__main__":

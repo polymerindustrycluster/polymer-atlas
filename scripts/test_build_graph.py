@@ -47,6 +47,7 @@ class BuildGraphTests(unittest.TestCase):
     def test_page_renders(self):
         html = bg.page(self.nodes[:5], [])
         self.assertIn("<title>Industry graph | Polymer Industry Atlas</title>", html)
+        self.assertNotIn("__DATA__", bg.data_text(self.nodes[:5], []))
         self.assertNotIn("__DATA__", html)
 
 
@@ -101,9 +102,10 @@ class GeoAndEventsTests(unittest.TestCase):
             data = self.events.build_data()
         self.assertEqual([link["target"] for link in data["links"]], [org["id"] for org in orgs])
         self.assertEqual([link["role"] for link in data["links"]], ["exhibitor"] + ["attendee"] * 8 + ["host"])
-        html = self.events.page(data)
-        self.assertIn('p12.map((p) => `<span class="chip" data-org-id="${esc(p.id)}">${esc(p.l)}</span>`)', html)
-        self.assertNotIn("p12.slice", html)
+        script = self.events.script_text()                     # the roster code lives in trade-shows.js, not in the page
+        self.assertIn('p12.map((p) => `<span class="chip" data-org-id="${esc(p.id)}">${esc(p.l)}</span>`)', script)
+        self.assertNotIn("p12.slice", script)
+        self.assertIn("10 organization rows", self.events.page(data))  # the phone summary names its unit
 
 
 if __name__ == "__main__":

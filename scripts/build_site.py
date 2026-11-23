@@ -51,9 +51,8 @@ DEFAULT_OUT = ROOT / "build" / "site"
 DEFAULT_QCEW = ROOT / "docs" / "denominators" / "qcew_county_polymer_ohio_pa_2023_2024.csv"
 DEFAULT_REPO = "https://github.com/polymerindustrycluster/polymer-atlas"
 
-LEAFLET = "https://unpkg.com/leaflet@1.9.4/dist/"
-LEAFLET_CSS_SRI = "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-LEAFLET_JS_SRI = "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+# JavaScript libraries are vendored (scripts/assets/vendor/<lib>/, npm registry pins, see vendor_libs.py) and published at vendor/<lib>/.
+VENDOR_LIBS = ("3d-force-graph", "d3", "graphology", "graphology-library", "leaflet", "sigma", "topojson-client")
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from regions import PIC18, JOBSOHIO_REGION, REGION_LABEL  # noqa: E402  (AGENTS.md section 8)
@@ -393,7 +392,7 @@ class Ctx:
                 f"{built}site generated {esc(self.built_on)}.")
 
 
-def page(ctx, title, body, root="", active="", description="", head_extra="", scripts="", main_class="wrap"):
+def page(ctx, title, body, root="", active="", description="", head_extra="", scripts="", main_class="wrap", main_attrs=""):
     """The one shell every built page goes through, the graph pages included (build_graph.py and friends import this).
     root: path from the page to the site root; main_class "viz" makes <main> a full-width stage for the explorers."""
     nav = "".join(
@@ -434,7 +433,7 @@ def page(ctx, title, body, root="", active="", description="", head_extra="", sc
 </div>
 </header>
 {views}
-<main id="main" class="{main_class}" tabindex="-1">
+<main id="main" class="{main_class}" tabindex="-1"{main_attrs}>
 {body}
 </main>
 <footer class="site-footer">
@@ -457,6 +456,22 @@ Counts here are database rows, not industry totals.</p>
 {scripts}
 </body>
 </html>
+"""
+
+
+EXPLORER_JS = r"""(function () {
+  'use strict';
+  // The graph, map + network and trade-show pages: on a screen 720 px or wider, load the page's libraries (data-libs, in order) and
+  // then its script (data-boot); below that the page shows its plain summary and loads none of them.
+  var main = document.getElementById('main');
+  if (!main || !main.hasAttribute('data-boot') || matchMedia('(max-width: 719.98px)').matches) return;
+  var urls = (main.getAttribute('data-libs') || '').split(' ').filter(Boolean).concat(main.getAttribute('data-boot'));
+  urls.forEach(function (u) {
+    var s = document.createElement('script'); s.src = u; s.async = false;   // async = false: run in the order listed
+    s.onerror = function () { var st = document.getElementById('stage'); if (st) st.textContent = 'Could not load ' + u + '.'; };
+    document.head.appendChild(s);
+  });
+})();
 """
 
 
@@ -1163,18 +1178,22 @@ main.viz{max-width:none;padding:0;position:relative;height:max(540px,calc(100svh
 .viz .close{position:absolute;top:6px;right:6px;border:0;background:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1;min-height:44px;min-width:44px;padding:0}
 .viz .legend{display:flex;flex-direction:column;gap:4px;font-size:13px}
 .viz .legend div{display:flex;align-items:center;gap:8px}
-.viz .mobile-toggle{display:none}
 .viz .tip{position:absolute;pointer-events:none;z-index:4;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-size:13px;max-width:260px}
 .viz .tip small{display:block;color:var(--muted);font-size:11px}
 /* the trade-show stage is deliberately dark, in both colour schemes: a single look for big screens */
 .viz.dark{--bg:#052e36;--panel:rgba(7,63,73,.9);--panel-2:#0a4a55;--fg:#eef3f2;--muted:#a9c2c3;--line:rgba(102,215,222,.24);--accent:#66d7de;--accent-hover:#dba8c9;--accent-fg:#052e36;
   --r1:#66c0d2;--r2:#e0a040;--r3:#c98ab2;--r4:#f08a64;--r5:#b8d637;--rx:#b0b3ae;background:var(--bg);color:var(--fg);color-scheme:dark}
 .viz.dark a{color:var(--accent)}
-@media (max-width:720px){
-  .viz .rail{right:var(--s-4);width:auto;max-height:55%}
-  .viz .rail.collapsed>:not(.vhead):not(.morph){display:none}
-  .viz .mobile-toggle{display:inline-flex;margin-top:8px}
-  .viz .card{left:var(--s-4);width:auto;top:auto;bottom:12px;max-height:45%}
+/* below 720 px an explorer is a plain summary with links (explorer.js loads nothing there); the legend and the shell header stay */
+.viz-summary{display:none}
+.viz-summary .vlegend{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-2)}
+.viz-summary .vlegend li{display:flex;align-items:center;gap:var(--s-2)}
+.viz-summary .sw{width:12px;height:12px;border-radius:50%;flex:none;display:inline-block}
+.viz-summary .btns{margin:var(--s-4) 0}
+@media (max-width:719.98px){
+  main.viz{height:auto;overflow:visible}
+  .viz-summary{display:block;padding:var(--s-5) var(--s-4)}
+  .viz .stage,.viz .rail,.viz .card,.viz .tip,.viz .title,.viz .bar,.viz .caption{display:none!important}
 }
 @media (prefers-reduced-motion:reduce){.viz *{scroll-behavior:auto!important}}
 
@@ -2102,8 +2121,8 @@ organization because the site row has no ring of its own.</div>
 <a href="counties/index.html">county page</a> (PIC-18) or its organization page, reachable via
 <a href="search.html">search</a>. Map tiles &copy; OpenStreetMap contributors.</p>
 """
-    head = (f'<link rel="stylesheet" href="{LEAFLET}leaflet.css" integrity="{LEAFLET_CSS_SRI}" crossorigin="">')
-    scripts = (f'<script src="{LEAFLET}leaflet.js" integrity="{LEAFLET_JS_SRI}" crossorigin=""></script>\n'
+    head = '<link rel="stylesheet" href="vendor/leaflet/leaflet.css">'
+    scripts = ('<script src="vendor/leaflet/leaflet.js"></script>\n'
                '<script src="map.js"></script>')
     return page(ctx, "Street map", body, "", "map", "Street map of polymer industry sites by ring.", head, scripts)
 
@@ -2908,6 +2927,7 @@ def build_site(db_path, out_dir, qcew_path=None, repo_url=DEFAULT_REPO, git=None
     write(out_dir / "directory.js", DIRECTORY_JS.replace("__PAGE__", str(DIRECTORY_PAGE)))
     write(out_dir / "sortable.js", SORTABLE_JS)
     write(out_dir / "shell.js", SHELL_JS)
+    write(out_dir / "explorer.js", EXPLORER_JS)
     shutil.copyfile(Path(__file__).resolve().parent / "assets" / "brand" / "pic-mark-color.svg", out_dir / "favicon.svg")
     og = Path(__file__).resolve().parent / "assets" / "og-image.jpg"
     if og.exists():
@@ -2936,6 +2956,8 @@ search for the company by name, or start from one of the views below.</p>
     for f in ("pic-mark-white.svg", "pic-mark-color.svg", "pic-logo-white-no-tagline.svg"):
         shutil.copyfile(assets / "brand" / f, out_dir / "brand" / f)
     shutil.copyfile(assets / "three" / "three.min.js", out_dir / "vendor" / "three.min.js")
+    for lib in VENDOR_LIBS:                  # the explorers' libraries and Leaflet, each with its LICENSE and SHA256SUMS
+        shutil.copytree(assets / "vendor" / lib, out_dir / "vendor" / lib, dirs_exist_ok=True)
     shutil.copyfile(assets / "three" / "LICENSE", out_dir / "vendor" / "three-LICENSE.txt")
 
     sj = sites_json(ctx)

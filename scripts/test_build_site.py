@@ -330,16 +330,16 @@ class BuildSiteTest(unittest.TestCase):
         self.assertEqual(row[c["inh"]], 1)
         self.assertIn("*", self.read("counties/summit.html"))
 
-    def test_external_requests_only_on_map_page(self):
+    def test_leaflet_is_vendored_and_osm_tiles_are_the_only_external_request(self):
         map_html = self.read("map.html")
-        self.assertIn("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js", map_html)
-        self.assertIn("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css", map_html)
-        self.assertIn("OpenStreetMap", self.read("map.js"))
+        self.assertIn('href="vendor/leaflet/leaflet.css"', map_html)
+        self.assertIn('src="vendor/leaflet/leaflet.js"', map_html)
+        self.assertNotIn("unpkg.com", map_html)
+        self.assertIn("tile.openstreetmap.org", self.read("map.js"))
         self.assertIn("reference data", map_html)
         pat = re.compile(r'<(?:script|link|img)\b[^>]*(?:src|href)="https?://')
         for p in self.out.rglob("*.html"):
-            if p.name != "map.html":
-                self.assertIsNone(pat.search(p.read_text(encoding="utf-8")), p.name)
+            self.assertIsNone(pat.search(p.read_text(encoding="utf-8")), p.name)
 
     def test_index_provenance_and_license(self):
         idx = self.read("index.html")
@@ -945,7 +945,9 @@ class SiteShellTest(unittest.TestCase):
         for path in self.pages:
             with self.subTest(page=str(path.relative_to(self.out))):
                 p = self.parsed(path)
-                self.assertEqual([c.rsplit("/", 1)[-1] for c in p.css if not c.startswith("http")], ["style.css"])   # the map's Leaflet CSS is vendored in PR 2
+                self.assertEqual([c.rsplit("/", 1)[-1] for c in p.css],
+                                 ["style.css", "leaflet.css"] if path.name == "map.html" and path.parent == self.out else ["style.css"])
+                self.assertFalse([c for c in p.css if c.startswith("http")])
                 self.assertEqual(p.skip, ["#main"])
                 self.assertIn("main", p.ids)
                 self.assertEqual(p.landmarks, {"main", "footer"})
@@ -998,6 +1000,54 @@ class SiteShellTest(unittest.TestCase):
         self.assertRegex(js, r"insertBefore\(bar, wrap\)")                 # above the table, not after it
         self.assertNotRegex(js, r"insertBefore\(p, wrap\.nextSibling\)")   # the old below-the-table download paragraph
         self.assertNotRegex(js, r"(?:rows|row match)[\"']\s*;?\s*$|\+ ['\"] rows['\"]")   # counts go through plural()
+
+    def test_no_page_or_script_asks_another_host_for_anything_but_osm_tiles(self):
+        html_pat = re.compile(r'<(?:script|link|img|iframe|source)\b[^>]*\b(?:src|href)="(?:https?:)?//[^"]*"')
+        for path in self.pages:
+            text = path.read_text(encoding="utf-8")
+            for m in html_pat.finditer(text):
+                if m.group(0).startswith("<link") and 'rel="noopener"' in m.group(0):
+                    continue
+                self.fail(f"{path.relative_to(self.out)}: {m.group(0)[:120]}")
+        js_pat = re.compile(r"""(?:fetch\(|importScripts\(|\.src\s*=|new URL\()\s*[`"']https?://""")
+        for path in self.out.rglob("*.js"):
+            if "vendor" in path.relative_to(self.out).parts:
+                continue
+            text = path.read_text(encoding="utf-8")
+            for m in js_pat.finditer(text):
+                self.assertIn("tile.openstreetmap.org", text[m.start():m.end() + 40], path.name)
+
+    def test_vendored_libraries_are_published_with_license_and_checksums(self):
+        for lib in build_site.VENDOR_LIBS:
+            sums = (self.out / "vendor" / lib / "SHA256SUMS").read_text(encoding="utf-8")
+            self.assertRegex(sums, r"registry integrity sha512-")
+            self.assertTrue((self.out / "vendor" / lib / "LICENSE").is_file(), lib)
+
+    def test_each_explorer_page_names_files_that_exist_and_holds_no_data(self):
+        for name, boot, data in (("index", "graph.js", "graph.json"), ("map", "map-network.js", "map-network.json"),
+                                 ("events", "trade-shows.js", "trade-shows.json")):
+            path = self.out / "graph" / f"{name}.html"
+            text = path.read_text(encoding="utf-8")
+            with self.subTest(page=name):
+                self.assertLess(len(text), 60_000)                        # the data is fetched on a big screen, never shipped to a phone
+                self.assertNotRegex(text, r"<script(?![^>]*\bsrc=)[^>]*>")  # no inline script, no inline JSON
+                libs = re.search(r'data-libs="([^"]*)"', text).group(1).split()
+                self.assertEqual(re.search(r'data-boot="([^"]*)"', text).group(1), boot)
+                for rel in [*libs, boot, data]:
+                    self.assertTrue((path.parent / rel).is_file(), rel)   # each resolves, relative to the page
+                self.assertIn('class="viz-summary"', text)                # a phone gets a summary with the ring legend
+                self.assertIn("Ring 1", text)
+                self.assertIn('href="../directory.html"', text)           # and the way to the company list
+
+    def test_explorer_loader_skips_phones_and_the_legend_wording(self):
+        js = (self.out / "explorer.js").read_text(encoding="utf-8")
+        self.assertIn("719.98", js)                                        # below 720 px: nothing is loaded
+        graph = (self.out / "graph" / "graph.js").read_text(encoding="utf-8")
+        self.assertNotIn("Not on the public member list", graph)           # absence from the public list is never stated (AGENTS 5.1)
+        for rel in ("graph.js", "map-network.js", "trade-shows.js"):
+            text = (self.out / "graph" / rel).read_text(encoding="utf-8")
+            self.assertNotRegex(text, r"--ring[1-5x]")
+            self.assertNotIn("producers & processors", text)               # ring names come from RINGS
 
     def test_phone_menu_toggles_aria_expanded(self):
         js = (self.out / "shell.js").read_text(encoding="utf-8")
