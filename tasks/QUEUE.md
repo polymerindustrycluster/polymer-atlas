@@ -671,6 +671,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 
 ## PIC-18 street repairs from dated government filings
 - [ ] `claimed:atlas-w22-size-unlock 2026-11-22` **PIC-18 street fill:** screen the 121 missing-street sites in the published size sprint. Apply unanimous, dated, physical street matches with evidence, then rerun the OSHA size matcher. First user: the Atlas controller. Check use by 2026-12-20.
+- [ ] `claimed:atlas-p2-size-10yr 2026-11-23` **PIC-18 ten-year size packet:** rerun the OSHA matcher on the current size-unknown frame and hand the packet to the integrator. Branch `agent/codex/pic18-size-10yr-2026-11-23`.
 - [ ] `claimed:atlas-w23-ohio-links 2026-11-23` **PIC-18 street-fill evidence repair:** append the American Bath Group ITA address observation for SITE-001455 to answer EVD-483012. Branch `agent/codex/pic18-street-fill-repair-2026-11-23`.
 
 ## P1 exit test
