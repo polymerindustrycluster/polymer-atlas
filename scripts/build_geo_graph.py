@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Build the Atlas map/graph hybrid: sites on a US map that morph into a network.
 
-    python3 scripts/build_geo_graph.py                  # -> build/graph/map.html
-    python3 scripts/build_geo_graph.py --fragment OUT   # body-only page (for hosts that add their own skeleton)
+    python3 scripts/build_geo_graph.py                  # -> build/graph/map.html (rendered in the shared shell; scripts/build_pages.py)
 
 Geography mode: every site with coordinates sits at its address on an Albers USA
 map (state outlines, PIC-18 counties highlighted), with optional "company network"
@@ -79,98 +78,12 @@ def build_data():
     return {"sites": out_sites, "orgs": orgs, "tags": tags, "held_sites": len(sites)}
 
 
-PAGE = r"""<title>Polymer Atlas Map</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<style>
-@font-face { font-family: "Lato"; font-weight: 400; font-display: swap; src: url(../fonts/lato-400-latin.woff2) format("woff2"); }
-@font-face { font-family: "Lato"; font-weight: 700; font-display: swap; src: url(../fonts/lato-700-latin.woff2) format("woff2"); }
-/* Layout: one full-bleed canvas (map <-> network); control rail docked left, detail card right; both stack on phones. */
-:root {
-  --bg: #faf9f7; --panel: #ffffff; --panel-2: #f1f2f0; --fg: #2b2c2a; --muted: #656661; --line: #ddd9d2;
-  --land: #ece9e3; --border: #d2cdc4; --p12: #eef4d6; --p12-line: #6f8200; --accent: #15727f; --accent-hover: #995480;
-  --arc: rgba(7, 63, 73, .16); --arc-hi: rgba(21, 114, 127, .9);
-  --ring1: #4099ac; --ring2: #bb780e; --ring3: #985a80; --ring4: #d5613b; --ring5: #2f6672; --ringx: #8d908b;
-  --proc: #073f49; --mat: #6f8200; --mkt: #5c2f4f; --free: #b9bbb6;
-  --f-display: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  --f-body: var(--f-display);
-  --f-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-}
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #052e36; --panel: #073f49; --panel-2: #0a4a55; --fg: #eef3f2; --muted: #a9c2c3; --line: #1d5662;
-  --land: #0a3f48; --border: #1d5662; --p12: #1f4a33; --p12-line: #b8d637; --accent: #66d7de; --accent-hover: #dba8c9;
-  --arc: rgba(102, 215, 222, .14); --arc-hi: rgba(102, 215, 222, .9);
-  --ring1: #66c0d2; --ring2: #e0a040; --ring3: #c98ab2; --ring4: #f08a64; --ring5: #9cc3ca; --ringx: #b0b3ae;
-  --proc: #eef3f2; --mat: #b8d637; --mkt: #f2b6d6; --free: #3c6b73; color-scheme: dark } }
-:root[data-theme="dark"] {
-  --bg: #052e36; --panel: #073f49; --panel-2: #0a4a55; --fg: #eef3f2; --muted: #a9c2c3; --line: #1d5662;
-  --land: #0a3f48; --border: #1d5662; --p12: #1f4a33; --p12-line: #b8d637; --accent: #66d7de; --accent-hover: #dba8c9;
-  --arc: rgba(102, 215, 222, .14); --arc-hi: rgba(102, 215, 222, .9);
-  --ring1: #66c0d2; --ring2: #e0a040; --ring3: #c98ab2; --ring4: #f08a64; --ring5: #9cc3ca; --ringx: #b0b3ae;
-  --proc: #eef3f2; --mat: #b8d637; --mkt: #f2b6d6; --free: #3c6b73; color-scheme: dark }
-html, body { height: 100%; }
-body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--f-body); overflow: hidden; }
-canvas#cv { position: fixed; inset: 0; width: 100%; height: 100%; cursor: grab; touch-action: none; }
-canvas#cv:active { cursor: grabbing; }
-.rail { position: fixed; top: calc(12px + env(safe-area-inset-top, 0px)); left: max(16px, env(safe-area-inset-left, 0px)); width: 296px;
-  max-height: calc(100% - 24px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)); overflow: auto; z-index: 2;
-  display: flex; flex-direction: column; gap: 14px; padding: 16px; border-radius: 10px; border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--panel) 92%, transparent); backdrop-filter: blur(8px); }
-.brand h1 { margin: 0; font: 600 26px/1 var(--f-display); letter-spacing: .02em; }
-.brand p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
-.morph { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.morph button { padding: 10px 6px; border: 0; background: var(--panel-2); color: var(--muted); font: 700 15px/1 var(--f-display); cursor: pointer; }
-.morph button[aria-pressed="true"] { background: var(--accent); color: var(--panel); }
-.morph button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-.stat { font: 500 12px/1.45 var(--f-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
-.stat b { color: var(--fg); font-weight: 500; }
-fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-legend { font: 600 12px/1 var(--f-display); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-.btns { display: flex; gap: 6px; flex-wrap: wrap; }
-.btn { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel-2); color: var(--fg); cursor: pointer; font: 500 13px var(--f-body); }
-.btn:hover { border-color: var(--accent); }
-.btn:focus-visible { outline: 2px solid var(--accent); }
-.toggles { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 10px; }
-.toggles label, .opt { display: flex; align-items: center; gap: 7px; font-size: 13.5px; cursor: pointer; }
-.sw { width: 10px; height: 10px; border-radius: 50%; flex: none; }
-input[type=checkbox] { accent-color: var(--accent); margin: 0; }
-.search { position: relative; }
-.search input { width: 100%; box-sizing: border-box; padding: 9px 11px; border-radius: 7px; border: 1px solid var(--line); background: var(--panel-2); color: var(--fg); font: 14px var(--f-body); }
-.search input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
-.sugg { position: absolute; left: 0; right: 0; top: calc(100% + 4px); background: var(--panel); border: 1px solid var(--line); border-radius: 7px; overflow: hidden; z-index: 5; }
-.sugg button { display: flex; width: 100%; justify-content: space-between; gap: 8px; padding: 7px 10px; border: 0; background: none; color: var(--fg); font: 13.5px var(--f-body); text-align: left; cursor: pointer; }
-.sugg button:hover, .sugg button:focus-visible { background: var(--panel-2); outline: none; }
-.sugg small { color: var(--muted); font: 11px var(--f-mono); white-space: nowrap; }
-.hint, .foot { margin: 0; font-size: 12.5px; color: var(--muted); }
-.foot { font: 11px/1.4 var(--f-mono); }
-.card { position: fixed; top: calc(12px + env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); width: 330px;
-  max-height: calc(100% - 24px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)); overflow: auto; z-index: 3;
-  background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
-.card .kind { font: 600 12px/1 var(--f-display); letter-spacing: .12em; text-transform: uppercase; }
-.card h2 { margin: 0; font: 600 24px/1.1 var(--f-display); text-wrap: balance; }
-.card p { margin: 0; }
-.card h3 { margin: 4px 0 0; font: 600 12px/1 var(--f-display); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-.card a { color: var(--accent); }
-.close { position: absolute; top: 10px; right: 10px; border: 0; background: none; color: var(--muted); font-size: 20px; cursor: pointer; line-height: 1; padding: 4px 8px; }
-.chips { display: flex; flex-wrap: wrap; gap: 5px; }
-.chip { border: 1px solid var(--line); background: var(--panel-2); color: var(--fg); border-radius: 999px; padding: 3px 9px; font: 12.5px var(--f-body); cursor: pointer; }
-.chip:hover, .chip:focus-visible { border-color: var(--accent); outline: none; }
-.tip { position: fixed; pointer-events: none; z-index: 4; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; font-size: 13px; max-width: 260px; }
-.tip small { display: block; color: var(--muted); font: 11px var(--f-mono); }
-.mobile-toggle { display: none; }
-@media (max-width: 720px) {
-  .rail { right: max(16px, env(safe-area-inset-right, 0px)); width: auto; max-height: 55%; }
-  .rail.collapsed > :not(.brand):not(.morph) { display: none; }
-  .mobile-toggle { display: inline-block; margin-top: 8px; }
-  .card { left: max(16px, env(safe-area-inset-left, 0px)); width: auto; top: auto; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); max-height: 45%; }
-}
-</style>
-
-<canvas id="cv" aria-label="Map of polymer industry sites that can morph into a capability network"></canvas>
+PAGE = r"""<canvas id="cv" class="stage" aria-label="Map of polymer industry sites that can morph into a capability network"></canvas>
 <div class="tip" id="tip" hidden></div>
 
 <aside class="rail" id="rail">
-  <div class="brand">
-    <h1>Polymer Atlas Map</h1>
+  <div class="vhead">
+    <h1>Map + network</h1>
     <p>Where the industry is, and how it connects.</p>
     <button class="btn mobile-toggle" id="railToggle" type="button" aria-expanded="false">Show controls</button>
   </div>
@@ -198,7 +111,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
     <label class="opt"><input type="checkbox" id="p12only" checked>Only PIC-18 sites</label>
   </fieldset>
   <p class="hint" id="modeHint"></p>
-  __HOME__<p class="foot" id="foot"></p>
+  <p class="foot" id="foot"></p>
 </aside>
 <section class="card" id="card" hidden aria-live="polite"></section>
 
@@ -220,7 +133,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   const readTheme = () => { const s = getComputedStyle(document.documentElement), g = (n) => s.getPropertyValue(n).trim();
     P = { land: g("--land"), border: g("--border"), p12: g("--p12"), p12line: g("--p12-line"), arc: g("--arc"), arcHi: g("--arc-hi"),
       accent: g("--accent"), fg: g("--fg"), muted: g("--muted"), panel: g("--panel"), line: g("--line"), bg: g("--bg"),
-      ring: { "1": g("--ring1"), "2": g("--ring2"), "3": g("--ring3"), "4": g("--ring4"), "5": g("--ring5"), "": g("--ringx") },
+      ring: { "1": g("--r1"), "2": g("--r2"), "3": g("--r3"), "4": g("--r4"), "5": g("--r5"), "": g("--rx") },
       proc: g("--proc"), mat: g("--mat"), mkt: g("--mkt"), free: g("--free"),
       font: getComputedStyle(document.body).fontFamily }; };
   readTheme();
@@ -291,7 +204,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   // --- canvas + zoom --------------------------------------------------------------------
   let dpr = 1, vw = 0, vh = 0, tf = d3.zoomIdentity, base = { k: 1, x: 0, y: 0 };
   function resize() {
-    dpr = window.devicePixelRatio || 1; vw = innerWidth; vh = innerHeight;
+    dpr = window.devicePixelRatio || 1; vw = cv.clientWidth; vh = cv.clientHeight;   // the stage inside <main>, not the window
     cv.width = vw * dpr; cv.height = vh * dpr;
     const railW = vw > 720 ? 330 : 0, k = Math.min((vw - railW - 32) / W, (vh - 32) / H);
     base = { k, x: railW + (vw - railW - W * k) / 2, y: (vh - H * k) / 2 };
@@ -422,7 +335,8 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
     if (i < 0) { tip.hidden = true; return; }
     const s = S[i];
     tip.replaceChildren(document.createTextNode(s.n), Object.assign(document.createElement("small"), { textContent: `${O[s.o].l} · ${[s.c, s.s].filter(Boolean).join(", ")}` }));
-    tip.hidden = false; tip.style.left = Math.min(ev.clientX + 14, vw - 270) + "px"; tip.style.top = (ev.clientY + 14) + "px";
+    const box = cv.getBoundingClientRect();   // the tooltip sits inside the stage, so its position is relative to the stage, not the window
+    tip.hidden = false; tip.style.left = Math.min(ev.clientX - box.left + 14, vw - 270) + "px"; tip.style.top = Math.min(ev.clientY - box.top + 14, vh - 60) + "px";
   });
   cv.addEventListener("pointerleave", () => { $("tip").hidden = true; state.hover = -1; draw(); });
   cv.addEventListener("click", (ev) => { const i = pick(ev); selectOrg(i >= 0 ? S[i].o : -1, i); });
@@ -461,7 +375,7 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   $("rings").append(...["1", "2", "3", "4", "5", ""].map((r) => {
     const cb = el("input", { type: "checkbox", checked: true, id: "r" + (r || "x") });
     cb.onchange = () => { state.rings[r] = cb.checked ? 1 : 0; quad = null; draw(); stats(); };
-    return el("label", {}, cb, el("span", { className: "sw", style: `background:var(--ring${r || "x"})` }),
+    return el("label", {}, cb, el("span", { className: "sw", style: `background:var(--r${r || "x"})` }),
       document.createTextNode(r ? `Ring ${r}` : "Ring not set"));
   }));
   $("arcs").onchange = (e) => { state.arcs = e.target.checked; draw(); };
@@ -494,9 +408,8 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
   }
   const retheme = () => { readTheme(); draw(); };
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", retheme);
-  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   addEventListener("resize", resize);
-  $("foot").textContent = `Built from data/ at ${D.commit} · ${D.built} · site positions are interpolated from addresses (reference data, not evidence)`;
+  $("foot").textContent = "Site positions are interpolated from addresses: reference data, not evidence.";
   $("m-net").disabled = true; $("m-net").textContent = "Arranging…";
   setMode("geo"); stats(); resize();
   if (!location.hash) $("z-p12").onclick();   // open on PIC-18
@@ -517,32 +430,27 @@ input[type=checkbox] { accent-color: var(--accent); margin: 0; }
 """
 
 
-def page(data, fragment, home=""):
+def page(data, root="../"):
     data.update({"commit": bg.commit(), "built": __import__("datetime").date.today().isoformat()})
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     geo = GEO.read_text(encoding="utf-8").replace("</", "<\\/")
     body = (PAGE.replace("__D3__", D3).replace("__TOPOJSON__", TOPOJSON).replace("__GRAPHOLOGY__", bg.GRAPHOLOGY)
-            .replace("__GRAPHOLOGY_LIB__", bg.GRAPHOLOGY_LIB).replace("__GEO__", geo).replace("__DATA__", blob).replace("__HOME__", bg.home_link(home)).replace("__ORGBASE__", bg.org_base(home)).replace("__REGION__", json.dumps(sorted(bg.PIC12))))
-    if fragment:
-        return body
-    return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
-            '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
-            '<style>body{margin:0}[hidden]{display:none!important}</style>\n</head>\n<body>\n' + body + "\n</body>\n</html>\n")
+            .replace("__GRAPHOLOGY_LIB__", bg.GRAPHOLOGY_LIB).replace("__GEO__", geo).replace("__DATA__", blob)
+            .replace("__ORGBASE__", bg.org_base(root)).replace("__REGION__", json.dumps(sorted(bg.PIC12))))
+    return bg.build_site.page(bg.shell_ctx(), "Map + network", body, root, "geo",
+                              description="Every mapped site on a US map, with company networks drawn across it, then arranged by process, material and market.",
+                              main_class="viz")
 
 
 def main():
     ap = argparse.ArgumentParser(description="Build the Atlas map/graph hybrid (single HTML file).")
     ap.add_argument("--out", default=str(bg.ROOT / "build" / "graph" / "map.html"))
-    ap.add_argument("--fragment", metavar="OUT")
-    ap.add_argument("--home", default="", help="href of an 'Atlas home' link")
+    ap.add_argument("--root", default="../", help="path from the page to the site root; ../ when published as graph/map.html")
     a = ap.parse_args()
     data = build_data()
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(dict(data), False, a.home), encoding="utf-8")
-    if a.fragment:
-        Path(a.fragment).parent.mkdir(parents=True, exist_ok=True)
-        Path(a.fragment).write_text(page(dict(data), True), encoding="utf-8")
+    out.write_text(page(dict(data), a.root), encoding="utf-8")
     print(f"map: {len(data['sites'])} sites with coordinates (of {data['held_sites']} non-closed), "
           f"{len(data['orgs'])} orgs, {len(data['tags'])} tags -> {out} ({out.stat().st_size / 1e6:.2f} MB)")
 

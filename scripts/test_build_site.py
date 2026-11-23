@@ -165,7 +165,7 @@ class BuildSiteTest(unittest.TestCase):
             with self.subTest(source=source):
                 html = build_site.equipment_block([{"name": "DSC", "equipment_class": "dsc",
                                                    "access_mode": "not_stated", "source_ref": source}])
-                self.assertIn("1 equipment rows", html)
+                self.assertIn("(1 equipment row)", html)
                 self.assertIn('<th scope="row">DSC</th>', html)
                 self.assertIn("host page</a></td></tr>" if source else "<td></td></tr>", html)
 
@@ -612,7 +612,7 @@ class DirectoryFixtureTest(unittest.TestCase):
 
     def test_without_javascript_the_directory_lists_every_row_on_static_county_pages(self):
         html = self.read("directory.html")
-        noscript = re.search(r"<noscript>(.*?)</noscript>", html, re.S).group(1)
+        noscript = "".join(re.findall(r"<noscript>(.*?)</noscript>", html, re.S))   # the shell adds a style-only one for the phone menu
         self.assertIn('href="directory.csv"', noscript)
         self.assertIn('href="directory/summit.html"', noscript)
         self.assertIn('<div id="dfind" hidden>', html)                     # search and filters stay hidden until the script runs
@@ -651,7 +651,7 @@ class DirectoryFixtureTest(unittest.TestCase):
 
     def test_org_page_shows_structured_evidence_only(self):
         org = self.read("orgs/ORG-000001.html")
-        self.assertIn('id="evidence">Evidence (4 rows for this organization; 1 more on its site rows below)', org)
+        self.assertIn('id="evidence">Evidence (4 rows for this organization; 1 more row listed with its sites above)', org)
         for col in ("Claim", "Source class", "Strength", "Observed", "Source"):
             self.assertIn(f'<th scope="col">{col}</th>', org)
         self.assertIn("<td>Exists</td>", org)                               # claim type, not claim text
@@ -859,6 +859,177 @@ class RealDataHeadlineTest(unittest.TestCase):
                 self.assertNotRegex(html, r"@[A-Za-z0-9-]+\.[A-Za-z]")             # no email address in any cell or link
                 self.assertNotRegex(html, r"linkedin\.com/(in|pub)/")
         self.assertGreater(shown, 1000)
+
+
+NAV_LABELS = ["Find companies", "Map", "Counties", "Research & programs", "About the data"]
+GRAPH_PAGES = ("index", "map", "events")
+
+
+class ShellParser(HTMLParser):
+    """What a page offers a visitor before its own content: stylesheet, skip link and its target, nav, landmarks."""
+
+    def __init__(self):
+        super().__init__()
+        self.css, self.skip, self.nav, self.menu_buttons, self.landmarks, self.ids = [], [], [], 0, set(), set()
+        self.scripts, self._in_nav, self._li_depth, self._text, self.headers = [], False, 0, None, 0
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if a.get("id"):
+            self.ids.add(a["id"])
+        if tag == "link" and a.get("rel") == "stylesheet":
+            self.css.append(a.get("href", ""))
+        if tag == "a" and "skip" in (a.get("class") or "").split():
+            self.skip.append(a.get("href"))
+        if tag in ("main", "footer"):
+            self.landmarks.add(tag)
+        if tag == "header":
+            self.headers += 1
+        if tag == "script" and a.get("src"):
+            self.scripts.append(a["src"])
+        if tag == "nav" and a.get("aria-label") == "Main":
+            self._in_nav = True
+        if tag == "a" and self._in_nav:
+            self._text = []
+        if tag == "button" and a.get("aria-expanded") is not None and a.get("aria-controls"):
+            self.menu_buttons += 1
+
+    def handle_endtag(self, tag):
+        if tag == "nav":
+            self._in_nav = False
+        if tag == "a" and self._text is not None:
+            self.nav.append(html_lib.unescape("".join(self._text)).strip())
+            self._text = None
+
+    def handle_data(self, data):
+        if self._text is not None:
+            self._text.append(data)
+
+
+class SiteShellTest(unittest.TestCase):
+    """ATLAS-40: every built HTML page, the three graph pages included, is the same site (one shell, one stylesheet)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        tmp = Path(cls.tmp.name)
+        make_directory_db(tmp / "f.db")
+        cls.out = tmp / "site"
+        build_site.build_site(tmp / "f.db", cls.out, None, repo_url="https://example.com/repo",
+                              git={"sha": "abc1234", "date": "2026-11-01", "dirty": False}, today="2026-11-01")
+        scripts = Path(__file__).resolve().parent
+        (cls.out / "graph").mkdir()
+        for name, script in (("index", "build_graph.py"), ("map", "build_geo_graph.py"), ("events", "build_events_3d.py")):
+            subprocess.run([sys.executable, str(scripts / script), "--out", str(cls.out / "graph" / f"{name}.html")],
+                           check=True, capture_output=True)
+        cls.pages = sorted(cls.out.rglob("*.html"))
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def parsed(self, path):
+        p = ShellParser()
+        p.feed(path.read_text(encoding="utf-8"))
+        return p
+
+    def test_the_inspected_set_has_every_kind_of_page(self):
+        names = {str(p.relative_to(self.out)) for p in self.pages}
+        for rel in ("index.html", "404.html", "prospects.html", "directory.html", "map.html", "search.html", "experts.html", "skyline.html",
+                    "counties/index.html", "counties/summit.html", "orgs/ORG-000001.html", "orgs/ORG-000501.html",
+                    "graph/index.html", "graph/map.html", "graph/events.html"):
+            self.assertIn(rel, names)
+        self.assertTrue(any(n.startswith("directory/") for n in names))
+
+    def test_every_html_page_has_the_shared_stylesheet_skip_link_nav_main_and_footer(self):
+        for path in self.pages:
+            with self.subTest(page=str(path.relative_to(self.out))):
+                p = self.parsed(path)
+                self.assertEqual([c.rsplit("/", 1)[-1] for c in p.css if not c.startswith("http")], ["style.css"])   # the map's Leaflet CSS is vendored in PR 2
+                self.assertEqual(p.skip, ["#main"])
+                self.assertIn("main", p.ids)
+                self.assertEqual(p.landmarks, {"main", "footer"})
+                self.assertEqual(p.headers, 1)
+                self.assertEqual(p.nav, NAV_LABELS)
+                self.assertEqual(p.menu_buttons, 1)                      # phones: a Menu button, not a clipped strip
+                text = path.read_text(encoding="utf-8")
+                self.assertIn("directory.csv", text)                     # the footer's two takeaways, on every page
+                self.assertIn("releases/latest", text)
+                self.assertTrue(any(s.rsplit("/", 1)[-1] == "shell.js" for s in p.scripts))   # the button works on every page
+
+    def test_graph_pages_carry_no_second_set_of_tokens_or_chrome(self):
+        for name in GRAPH_PAGES:
+            text = (self.out / "graph" / f"{name}.html").read_text(encoding="utf-8")
+            with self.subTest(page=name):
+                self.assertNotIn(":root", text)                           # tokens come from style.css only
+                self.assertNotIn("@font-face", text)
+                self.assertNotIn("claude:", text)
+                self.assertRegex(text, r"(?s)<head>.*<title>.*</title>.*</head>.*<body")   # title in the head, not the body
+                self.assertNotRegex(text, r"--ring[1-5x]")                # one Ring 1-5 palette: --r1..--r5
+
+    def test_home_hero_is_static(self):
+        home = (self.out / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("three.min.js", home)
+        self.assertNotIn('id="skyline"', home)
+        self.assertIn("<h1", home)
+        self.assertIn('href="skyline.html"', home)                          # the 3D view is one click away, on its own page
+        sky = (self.out / "skyline.html").read_text(encoding="utf-8")
+        self.assertIn("vendor/three.min.js", sky)                          # three.js loads there and nowhere else
+        self.assertIn("skyline.js", sky)
+        for rel in ("skyline.js", "skyline.json", "vendor/three.min.js"):
+            self.assertTrue((self.out / rel).is_file(), rel)
+
+    def test_no_one_row_plurals_on_any_built_page(self):
+        bad = re.compile(r"\b1 (?:[a-z]+ )?(?:rows|sites|programs|organizations|institutions|researchers)\b(?! (?:per|in|with))", re.I)
+        for path in self.pages:
+            for m in bad.finditer(re.sub(r"<[^>]+>", " ", path.read_text(encoding="utf-8"))):
+                self.fail(f"{path.relative_to(self.out)}: {m.group(0)!r}")
+        # the case exists in this fixture, so the check above could have failed
+        org = (self.out / "orgs" / "ORG-000004.html").read_text(encoding="utf-8")
+        self.assertRegex(org, r"Sites \(1 site row[;)]")
+
+    def test_no_site_row_wording_that_points_the_wrong_way(self):
+        self.assertNotIn("more on its site rows below", (self.out / "orgs" / "ORG-000001.html").read_text(encoding="utf-8"))
+
+    def test_table_toolbar_sits_above_the_table_with_count_download_and_copy_link(self):
+        js = (self.out / "sortable.js").read_text(encoding="utf-8")
+        for needle in ("Download these rows (CSV)", "Copy link", "tbar"):
+            self.assertIn(needle, js)
+        self.assertRegex(js, r"insertBefore\(bar, wrap\)")                 # above the table, not after it
+        self.assertNotRegex(js, r"insertBefore\(p, wrap\.nextSibling\)")   # the old below-the-table download paragraph
+        self.assertNotRegex(js, r"(?:rows|row match)[\"']\s*;?\s*$|\+ ['\"] rows['\"]")   # counts go through plural()
+
+    def test_street_map_dots_read_the_same_ring_palette_as_the_key(self):
+        js = (self.out / "map.js").read_text(encoding="utf-8")
+        self.assertNotRegex(js, r"'[1-5x]'\s*:\s*'#")                      # no second hex palette for the dots
+        self.assertIn("'--r' + k", js)                                     # they read --r1..--r5, --rx, the tokens the key uses
+        css = (self.out / "style.css").read_text(encoding="utf-8")
+        for k in "12345x":
+            self.assertRegex(css, rf"--r{k}:#[0-9a-f]{{6}}")
+
+    def test_atlas_wide_search_stays_one_click_from_find_companies_and_home(self):
+        for rel in ("directory.html", "index.html"):
+            self.assertIn('href="search.html"', (self.out / rel).read_text(encoding="utf-8"), rel)
+
+    def test_toolbar_does_not_depend_on_sorting(self):
+        js = (self.out / "sortable.js").read_text(encoding="utf-8")
+        self.assertNotRegex(js, r"hasAttribute\('data-nosort'\)\) return")   # data-nosort removes the sort buttons only
+        county = next((self.out / "directory").glob("*.html")).read_text(encoding="utf-8")
+        self.assertRegex(county, r"<table data-nosort>")                   # the 50-row county pages get count, download and copy link
+        self.assertNotIn("data-nocsv", county)
+        self.assertIn('id="dtable" class="stack" data-nosort data-nofilter data-nocsv', (self.out / "directory.html").read_text(encoding="utf-8"))   # the list has its own toolbar
+
+    def test_phone_menu_toggles_aria_expanded(self):
+        js = (self.out / "shell.js").read_text(encoding="utf-8")
+        self.assertIn("aria-expanded", js)
+        self.assertIn("Escape", js)
+
+    def test_graph_pages_have_a_plain_text_route_and_a_way_back_in_the_shell(self):
+        for name in GRAPH_PAGES:
+            text = (self.out / "graph" / f"{name}.html").read_text(encoding="utf-8")
+            with self.subTest(page=name):
+                self.assertIn('<main id="main"', text)
+                self.assertIn('href="../directory.html"', text)           # the list view of the same companies
 
 
 if __name__ == "__main__":

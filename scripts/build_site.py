@@ -5,11 +5,17 @@ Reads build/polymer-atlas.db (building it with scripts/build_sqlite.py when it
 is missing) and writes a self-contained static site to build/site/:
 
     index.html            what the Atlas is, headline counts (unit + filter)
+    directory.html        Northeast Ohio polymer companies (the "Find companies" page)
+    skyline.html          the 3D skyline (the only page that loads three.js)
     map.html + sites.json Leaflet map of sites that carry coordinates
     search.html + orgs.json  client-side search over organizations/ecosystem
     counties/index.html, counties/<county>.html   Ohio county pages (PIC-18 first)
     orgs/<org_id>.html    one page per organization and ecosystem org
-    style.css, map.js, search.js
+    style.css, shell.js, sortable.js, map.js, search.js
+
+Every page, the three graph pages of build_graph.py, build_geo_graph.py and
+build_events_3d.py included, is rendered by page() below: one header, five-item
+menu, footer and stylesheet.
 
 The CSVs in data/ stay canonical; this script only reads the generated SQLite
 file and a reference CSV, and never touches data/. build/ is gitignored, so
@@ -123,6 +129,11 @@ def esc(value):
 
 def fmt_int(n):
     return f"{n:,}"
+
+
+def plural(n, one, many=None):
+    """'1 site row', '2 site rows': a count with its unit, in the right number."""
+    return f"{fmt_int(n)} {one if n == 1 else (many or one + 's')}"
 
 
 def safe_id(value):
@@ -353,10 +364,12 @@ def git_info(repo_root):
 # --------------------------------------------------------------------------
 # page layout
 
-NAV = [("directory", "Companies", "directory.html"), ("graph", "Graph", "graph/index.html"), ("geo", "Map + network", "graph/map.html"),
-       ("shows", "Trade shows", "graph/events.html"), ("experts", "Programs & researchers", "experts.html"),
-       ("search", "Search", "search.html"),
-       ("counties", "Ohio counties", "counties/index.html"), ("map", "Street map", "map.html")]
+# The five menu items (owner ruling 2026-11-23, ATLAS-40). Map is the street map; the other three map and graph views and the
+# 3D skyline sit one click away in the "Views" strip shown under the header on those pages.
+NAV = [("directory", "Find companies", "directory.html"), ("map", "Map", "map.html"), ("counties", "Counties", "counties/index.html"),
+       ("experts", "Research & programs", "experts.html"), ("about", "About the data", "index.html#method")]
+VIEWS = [("map", "Street map", "map.html"), ("geo", "Map + network", "graph/map.html"), ("graph", "Industry graph", "graph/index.html"),
+         ("shows", "Trade shows in 3D", "graph/events.html"), ("sky", "3D skyline", "skyline.html")]
 # Fonts and three.js are self-hosted (copied from scripts/assets/ into the site) so the site keeps
 # its rule of no third-party requests outside the street map (test_external_requests_only_on_map_page).
 FONT_FILES = ["lato-400-latin", "lato-700-latin"]
@@ -375,20 +388,28 @@ class Ctx:
     def asof(self):
         g = self.git
         dirty = " plus uncommitted local data changes" if g["dirty"] else ""
+        built = f"database built {esc(self.db_date)}; " if self.db_date else ""
         return (f"Repository commit {esc(g['sha'])} ({esc(g['date'])}){dirty}; "
-                f"database built {esc(self.db_date)}; site generated {esc(self.built_on)}.")
+                f"{built}site generated {esc(self.built_on)}.")
 
 
-def page(ctx, title, body, root="", active="", description="", head_extra="", scripts=""):
+def page(ctx, title, body, root="", active="", description="", head_extra="", scripts="", main_class="wrap"):
+    """The one shell every built page goes through, the graph pages included (build_graph.py and friends import this).
+    root: path from the page to the site root; main_class "viz" makes <main> a full-width stage for the explorers."""
     nav = "".join(
-        '<li><a href="%s%s"%s>%s</a></li>' % (root, href, ' aria-current="page"' if key == active else "", label)
+        '<li><a href="%s%s"%s>%s</a></li>' % (root, href, ' aria-current="page"' if key == active else "", esc(label))
         for key, label, href in NAV)
+    views = ""
+    if active in {k for k, _, _ in VIEWS}:
+        views = ('<nav class="views" aria-label="Views"><div class="wrap"><ul>' + "".join(
+            '<li><a href="%s%s"%s>%s</a></li>' % (root, href, ' aria-current="page"' if key == active else "", esc(label))
+            for key, label, href in VIEWS) + "</ul></div></nav>")
     desc = esc(description or "Open, source-backed database of the US polymer, plastics and rubber industry.")
     return f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
 <meta name="description" content="{desc}">
 <title>{esc(title) + " | Polymer Industry Atlas" if title != "Home" else "Polymer Industry Atlas"}</title>
@@ -400,6 +421,7 @@ def page(ctx, title, body, root="", active="", description="", head_extra="", sc
 <meta property="og:image" content="{SITE_URL}og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="{root}style.css">
+<noscript><style>.menu-btn{{display:none}}.site-header nav{{display:block}}</style></noscript>
 {head_extra}
 </head>
 <body>
@@ -407,10 +429,12 @@ def page(ctx, title, body, root="", active="", description="", head_extra="", sc
 <header class="site-header">
 <div class="wrap">
 <a class="brand" href="{root}index.html"><img src="{root}brand/pic-mark-white.svg" alt="" width="30" height="30">Polymer Industry Atlas</a>
-<nav aria-label="Main"><ul>{nav}</ul></nav>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+<nav id="site-nav" aria-label="Main"><ul>{nav}</ul></nav>
 </div>
 </header>
-<main id="main" class="wrap">
+{views}
+<main id="main" class="{main_class}" tabindex="-1">
 {body}
 </main>
 <footer class="site-footer">
@@ -428,10 +452,26 @@ Source and data: <a href="{esc(ctx.repo_url)}" rel="noopener">{esc(ctx.repo_url)
 Counts here are database rows, not industry totals.</p>
 </div>
 </footer>
+<script src="{root}shell.js" defer></script>
 <script src="{root}sortable.js" defer></script>
 {scripts}
 </body>
 </html>
+"""
+
+
+SHELL_JS = r"""(function () {
+  'use strict';
+  // Phone menu: the Menu button shows and hides the main nav; Escape closes it and returns focus to the button.
+  var btn = document.querySelector('.menu-btn'), nav = document.getElementById('site-nav');
+  if (!btn || !nav) return;
+  function set(open) { btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { set(false); btn.focus(); }
+  });
+  nav.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+})();
 """
 
 
@@ -631,7 +671,7 @@ EXPERTS_JS = r"""(function () {
 SORTABLE_JS = r"""(function () {
   'use strict';
   // Progressive enhancement: click a column header to sort; long tables get a filter box.
-  // Tables opt out with data-nosort; rows with class "total" stay at the bottom.
+  // data-nosort: no sort buttons. data-nocsv: no download. data-nofilter: no filter box. Rows with class "total" stay at the bottom.
   function key(cell) {
     if (!cell) return { n: null, t: '' };
     var raw = (cell.getAttribute('data-sort') || cell.textContent || '').trim();
@@ -645,9 +685,9 @@ SORTABLE_JS = r"""(function () {
     if (/^[=+@]/.test(s) || /^-(?!\d)/.test(s)) s = "'" + s;   // spreadsheets would run a leading = + @ - as a formula
     return /[",]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
   }
+  function plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
   function csvButton(table) {
     var cap = table.caption ? table.caption.textContent : document.title;
-    var p = document.createElement('p'); p.className = 'tdl';
     var b = document.createElement('button'); b.type = 'button'; b.textContent = 'Download these rows (CSV)';
     b.addEventListener('click', function () {
       var head = table.tHead.rows[table.tHead.rows.length - 1];
@@ -662,17 +702,47 @@ SORTABLE_JS = r"""(function () {
       a.download = name; document.body.appendChild(a); a.click(); a.remove();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
     });
-    p.appendChild(b);
-    var wrap = table.closest('.table-wrap') || table;
-    wrap.parentNode.insertBefore(p, wrap.nextSibling);
+    return b;
+  }
+  // The one toolbar above a table: row count, optional filter box, Download these rows (CSV), Copy link.
+  function toolbar(table, rows, filterable, withCsv, idx) {
+    var body = table.tBodies[0], wrap = table.closest('.table-wrap') || table;
+    var data = rows.filter(function (r) { return !r.classList.contains('total'); });
+    var bar = document.createElement('div'); bar.className = 'tbar';
+    var count = document.createElement('span'); count.className = 'tcount'; count.setAttribute('aria-live', 'polite');
+    function show(n) { count.textContent = n === data.length ? plural(n, 'row', 'rows') : n + ' of ' + plural(data.length, 'row', 'rows'); }
+    show(data.length); bar.appendChild(count);
+    if (filterable) {
+      var box = document.createElement('label'); box.className = 'tfilter';
+      var inp = document.createElement('input'); inp.type = 'search'; inp.id = 'tfilter-' + idx; inp.placeholder = 'Filter these rows';
+      box.appendChild(document.createTextNode('Filter')); box.appendChild(inp); bar.appendChild(box);
+      inp.addEventListener('input', function () {
+        var q = inp.value.trim().toLowerCase(), shown = 0;
+        Array.prototype.forEach.call(body.rows, function (r) {
+          var hit = !q || r.classList.contains('total') || r.textContent.toLowerCase().indexOf(q) !== -1;
+          r.hidden = !hit; if (hit && !r.classList.contains('total')) shown++;
+        });
+        show(shown);
+      });
+    }
+    if (withCsv) bar.appendChild(csvButton(table));
+    var msg = document.createElement('span'); msg.className = 'tmsg'; msg.setAttribute('role', 'status');
+    var copy = document.createElement('button'); copy.type = 'button'; copy.textContent = 'Copy link';
+    copy.addEventListener('click', function () {
+      var done = function (t) { msg.textContent = t; setTimeout(function () { msg.textContent = ''; }, 2500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(function () { done('Link copied'); }, function () { done('Copy failed: copy the address bar'); });
+      else done('Copy the address bar');
+    });
+    bar.appendChild(copy); bar.appendChild(msg);
+    wrap.parentNode.insertBefore(bar, wrap);
   }
   function enhance(table, idx) {
     var head = table.tHead, body = table.tBodies[0];
-    if (!head || !body || table.hasAttribute('data-nosort')) return;
+    if (!head || !body) return;
     var rows = Array.prototype.slice.call(body.rows);
     if (rows.length < 2) return;
     var ths = head.rows[head.rows.length - 1].cells;
-    Array.prototype.forEach.call(ths, function (th, col) {
+    if (!table.hasAttribute('data-nosort')) Array.prototype.forEach.call(ths, function (th, col) {   // data-nosort: no sort buttons; the toolbar stays
       var b = document.createElement('button');
       b.type = 'button'; b.className = 'sort';
       while (th.firstChild) b.appendChild(th.firstChild);
@@ -694,24 +764,9 @@ SORTABLE_JS = r"""(function () {
         pinned.forEach(function (r) { body.appendChild(r); });
       });
     });
-    if (rows.length > 12 && !table.hasAttribute('data-nofilter')) {   // data-nofilter: the page filters its own rows
-      var wrap = table.closest('.table-wrap') || table;
-      var box = document.createElement('label'); box.className = 'tfilter';
-      var inp = document.createElement('input'); inp.type = 'search'; inp.id = 'tfilter-' + idx;
-      inp.placeholder = 'Filter ' + rows.length + ' rows';
-      var count = document.createElement('span'); count.setAttribute('aria-live', 'polite');
-      box.appendChild(document.createTextNode('Filter')); box.appendChild(inp); box.appendChild(count);
-      wrap.parentNode.insertBefore(box, wrap);
-      inp.addEventListener('input', function () {
-        var q = inp.value.trim().toLowerCase(), shown = 0;
-        Array.prototype.forEach.call(body.rows, function (r) {
-          var hit = !q || r.classList.contains('total') || r.textContent.toLowerCase().indexOf(q) !== -1;
-          r.hidden = !hit; if (hit && !r.classList.contains('total')) shown++;
-        });
-        count.textContent = q ? shown + ' of ' + rows.length : '';
-      });
-    }
-    if (!table.hasAttribute('data-nocsv')) csvButton(table);
+    var filterable = rows.length > 12 && !table.hasAttribute('data-nofilter');   // data-nofilter: the page filters its own rows
+    var withCsv = !table.hasAttribute('data-nocsv');
+    if (filterable || withCsv) toolbar(table, rows, filterable, withCsv, idx);
   }
   // Phone layout: every cell carries its column heading, so CSS can stack a row as a labelled card.
   function label(table) {
@@ -759,13 +814,23 @@ CSS = """
   --r1:#4099ac;--r2:#bb780e;--r3:#985a80;--r4:#d5613b;--r5:#809800;--rx:#8d908b;
   --shadow-sm:0 1px 2px rgba(27,29,27,.06),0 1px 1px rgba(27,29,27,.04);--shadow-md:0 4px 12px rgba(27,29,27,.08),0 2px 4px rgba(27,29,27,.04);
   --shadow-lg:0 12px 28px rgba(27,29,27,.10),0 4px 8px rgba(27,29,27,.05);
+  /* type scale (Lato 400/700) and spacing, used by the shell and the explorers */
+  --t-xs:.78rem;--t-sm:.9rem;--t-md:1rem;--t-lg:1.15rem;--t-xl:1.5rem;--t-2xl:2.25rem;
+  --s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;
+  /* data-visualisation colours of the explorer pages (graph, map + network, trade shows) */
+  --edge:#e4e1db;--edge-hi:#15727f;--dim:#e7e5e0;--label:#2b2c2a;--event:#585955;--free:#b9bbb6;
+  --proc:#073f49;--mat:#3a5a8c;--mkt:#5c2f4f;
+  --land:#ece9e3;--border:#d2cdc4;--p12:#eef4d6;--p12-line:#6f8200;--arc:rgba(7,63,73,.16);--arc-hi:rgba(21,114,127,.9);
 }
 @media (prefers-color-scheme: dark){
   :root{--bg:#052e36;--panel:#073f49;--panel-2:#0a4a55;--fg:#eef3f2;--muted:#a9c2c3;--line:#1d5662;
   --accent:#66d7de;--accent-hover:#dba8c9;--accent-fg:#052e36;
   --warn-bg:#3d2a06;--warn-fg:#ffcf85;--ok-bg:#123f30;--ok-fg:#9fe0bf;--danger:hsl(350 80% 72%);
   --r1:#66c0d2;--r2:#e0a040;--r3:#c98ab2;--r4:#f08a64;--r5:#b8d637;--rx:#b0b3ae;
-  --shadow-sm:none;--shadow-md:0 4px 12px rgba(0,0,0,.25);--shadow-lg:0 12px 28px rgba(0,0,0,.35);color-scheme:dark}
+  --shadow-sm:none;--shadow-md:0 4px 12px rgba(0,0,0,.25);--shadow-lg:0 12px 28px rgba(0,0,0,.35);color-scheme:dark;
+  --edge:#0c3f48;--edge-hi:#66d7de;--dim:#0e4650;--label:#eef3f2;--event:#c8d2d0;--free:#3c6b73;
+  --proc:#eef3f2;--mat:#9db8e8;--mkt:#f2b6d6;
+  --land:#0a3f48;--border:#1d5662;--p12:#1f4a33;--p12-line:#b8d637;--arc:rgba(102,215,222,.14);--arc-hi:rgba(102,215,222,.9)}
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -783,10 +848,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[t
 .brand{display:inline-flex;align-items:center;gap:10px;font:700 1.15rem/1 var(--f-display);text-decoration:none;color:var(--on-deep)}
 .brand img{width:30px;height:30px;display:block}
 .brand:hover{color:var(--on-deep)}
-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px}
-nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;font:700 .76rem/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase}
+main:focus{outline:none}
+.site-header nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px}
+
+.site-header nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;font:700 .76rem/1 var(--f-display);letter-spacing:.1em;text-transform:uppercase}
 .site-header nav a:hover{color:#fff;border-bottom-color:var(--light-blue)}
-nav a[aria-current=page]{border-bottom-color:var(--lime)}
+.site-header nav a[aria-current=page]{border-bottom-color:var(--lime)}
 main{padding-top:24px;padding-bottom:48px}
 h1{font:700 2.25rem/1.15 var(--f-display);margin:.2em 0 .4em;text-wrap:balance}
 h2{font:700 1.5rem/1.2 var(--f-display);margin:1.8em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:.3em;text-wrap:balance}
@@ -884,7 +951,7 @@ ul.results li{border-top:1px solid var(--line);padding:10px 0}
 ul.results .meta{color:var(--muted);font-size:.9rem}
 .leaflet-popup-content{color:#2b2c2a}
 .leaflet-popup-content a{color:#15727f}
-@media print{.site-header nav,.skip,.filters,#map{display:none}}
+@media print{.site-header nav,.menu-btn,.views,.skip,.filters,#map{display:none}}
 
 /* ---- home: industry skyline hero (deep-teal stage) + explorers ---- */
 .hero{position:relative;margin:-24px calc(50% - 50vw) 0;background:radial-gradient(120% 90% at 65% 35%,#0c6473 0%,#073f49 42%,#052e36 75%);color:var(--on-deep);overflow:hidden}
@@ -965,12 +1032,6 @@ a.url{display:inline-block;max-width:15em;overflow:hidden;text-overflow:ellipsis
   font:700 .88rem/1 var(--f-display);text-decoration:none;color:var(--accent);transition:color .15s,border-color .15s}
 .pill:hover{border-color:var(--accent-hover);color:var(--accent-hover)}
 .notfound{padding:48px 0 24px}.notfound .big404{font:700 6rem/1 var(--f-display);color:var(--accent);margin:0}
-@media (max-width:720px){
-  .site-header .wrap{gap:6px}
-  .site-header nav{width:100%;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent)}
-  .site-header nav::-webkit-scrollbar{display:none}
-  .site-header nav ul{flex-wrap:nowrap;white-space:nowrap;gap:4px 18px;padding-right:24px}
-}
 /* ---- programs & researchers finder ---- */
 .eyebrow-ink{font:700 .75rem/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:1.4em 0 0}
 .xempty{border:1px dashed var(--line);border-radius:8px;padding:18px;margin:0 0 1.5em}
@@ -1011,11 +1072,121 @@ a.url{display:inline-block;max-width:15em;overflow:hidden;text-overflow:ellipsis
 @media (max-width:720px){.xrows li{grid-template-columns:1fr}}
 #count{font-weight:700}
 
+/* ---- phone menu and the Views strip (shell) ---- */
+.menu-btn{display:none;align-items:center;min-height:44px;padding:0 var(--s-4);border:1px solid rgba(255,255,255,.4);border-radius:8px;background:transparent;color:var(--on-deep);font:700 var(--t-sm)/1 var(--f-display);cursor:pointer}
+.menu-btn:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.menu-btn:focus-visible{outline:3px solid var(--light-blue)}
+.menu-btn[aria-expanded=true]{background:rgba(255,255,255,.14);border-color:#fff}
+@media (max-width:720px){
+  .menu-btn{display:inline-flex}
+  .site-header .wrap{flex-wrap:wrap}
+  .site-header nav{display:none;width:100%}
+  .menu-btn[aria-expanded=true]+nav{display:block}
+  .site-header nav ul{flex-direction:column;gap:0;padding-bottom:var(--s-2)}
+  .site-header nav a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:var(--t-sm)}
+}
+.views{background:var(--panel-2);border-bottom:1px solid var(--line)}
+.views ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 var(--s-5)}
+.views a{display:inline-flex;align-items:center;min-height:44px;font:700 var(--t-sm)/1.2 var(--f-display);text-decoration:none;border-bottom:3px solid transparent;color:var(--fg)}
+.views a:hover{color:var(--accent-hover)}
+.views a[aria-current=page]{border-bottom-color:var(--accent);color:var(--accent)}
+
+/* ---- static home hero ---- */
+.hero-static{margin:-24px calc(50% - 50vw) 0;padding:48px 0 44px;background:radial-gradient(120% 140% at 70% 0%,#0c6473 0%,#073f49 45%,#052e36 80%);color:var(--on-deep)}
+.hero-static .wrap{max-width:1200px}
+.hero-static h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.08;margin:.25em 0 .35em;color:#fff;max-width:16em}
+.hero-static h1 em{font-style:normal;color:var(--lime)}
+.hero-static .lede{color:var(--on-deep-muted);max-width:40em;margin:0 0 var(--s-4)}
+.hero-static .hero-stats{margin:0 0 var(--s-5)}
+.hero-static .hero-links{margin:var(--s-4) 0 0}
+.hero-static .hero-links a{color:var(--light-blue);font-weight:700}
+.hero-static .hero-links a:hover{color:#fff}
+
+/* ---- one table toolbar, above every table: count, filter, Download these rows (CSV), Copy link ---- */
+.tbar{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-4);align-items:center;margin:var(--s-4) 0 var(--s-2)}
+.tbar .tcount{font-weight:700;margin-right:auto}
+.tbar .tfilter{margin:0}
+.tbar button{min-height:44px}
+.tbar .tmsg{color:var(--muted);font-size:var(--t-sm)}
+
+/* ---- explorers: the graph, map + network and trade-show pages render inside the shell as one full-width stage ---- */
+main.viz{max-width:none;padding:0;position:relative;height:max(540px,calc(100svh - 140px));overflow:hidden;font-size:15px;line-height:1.45}
+.viz h1,.viz h2,.viz h3{border:0;margin:0;padding:0;text-wrap:balance}
+.viz .stage,.viz canvas.stage{position:absolute;inset:0;width:100%;height:100%}
+.viz .rail{position:absolute;top:12px;left:var(--s-4);width:300px;max-height:calc(100% - 24px);overflow:auto;z-index:2;display:flex;flex-direction:column;gap:14px;padding:var(--s-4);
+  background:color-mix(in srgb,var(--panel) 92%,transparent);border:1px solid var(--line);border-radius:10px;backdrop-filter:blur(8px)}
+.viz .vhead h1{font:700 var(--t-xl)/1.1 var(--f-display)}
+.viz .vhead p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.viz .stat{font:500 12px/1.45 var(--f-body);color:var(--muted);font-variant-numeric:tabular-nums}
+.viz .stat b{color:var(--fg);font-weight:700}
+.viz fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;background:none;border-radius:0}
+.viz legend{font:700 12px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;padding:0}
+.viz .btns{display:flex;gap:6px;flex-wrap:wrap}
+.viz .btn{display:inline-flex;align-items:center;min-height:36px;padding:6px 10px;border-radius:6px;border:1px solid var(--line);background:var(--panel-2);color:var(--fg);cursor:pointer;font:700 13px/1.2 var(--f-body);text-decoration:none}
+.viz .btn:hover{border-color:var(--accent);background:var(--panel-2);color:var(--fg)}
+.viz .btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.viz .btn[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
+.viz .seg{display:grid;grid-template-columns:repeat(3,1fr);background:var(--panel-2);border:1px solid var(--line);border-radius:7px;padding:2px}
+.viz .seg input{position:absolute;opacity:0;pointer-events:none}
+.viz .seg label{display:flex;align-items:center;justify-content:center;min-height:36px;border-radius:5px;cursor:pointer;font-size:13px;color:var(--muted)}
+.viz .seg input:checked+label{background:var(--panel);color:var(--fg);box-shadow:0 0 0 1px var(--line);font-weight:700}
+.viz .seg input:focus-visible+label{outline:3px solid var(--accent)}
+.viz .morph{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.viz .morph button{min-height:44px;padding:0 6px;border:0;border-radius:0;background:var(--panel-2);color:var(--muted);font:700 15px/1 var(--f-display);cursor:pointer}
+.viz .morph button[aria-pressed=true]{background:var(--accent);color:var(--accent-fg)}
+.viz .morph button:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.viz .toggles{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.viz .toggles label,.viz .opt{display:flex;align-items:center;gap:8px;min-height:28px;font-size:13.5px;cursor:pointer}
+.viz input[type=checkbox]{accent-color:var(--accent);margin:0;width:18px;height:18px;flex:none}
+.viz .sw{width:10px;height:10px;border-radius:50%;flex:none;display:inline-block}
+.viz .search{position:relative}
+.viz .search input{width:100%;max-width:none;box-sizing:border-box;min-height:40px;padding:9px 11px;border-radius:7px;border:1px solid var(--line);background:var(--panel-2);color:var(--fg);font:14px var(--f-body)}
+.viz .sugg{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--panel);border:1px solid var(--line);border-radius:7px;overflow:hidden;z-index:5}
+.viz .sugg button{display:flex;width:100%;justify-content:space-between;gap:8px;min-height:36px;padding:7px 10px;border:0;border-radius:0;background:none;color:var(--fg);font:13.5px var(--f-body);text-align:left;cursor:pointer}
+.viz .sugg button:hover,.viz .sugg button:focus-visible{background:var(--panel-2)}
+.viz .sugg small{color:var(--muted);font-size:11px;white-space:nowrap}
+.viz .hint,.viz .foot{margin:0;font-size:12.5px;color:var(--muted)}
+.viz .foot{font-size:11px;line-height:1.4}
+.viz .card{position:absolute;top:12px;right:var(--s-4);width:340px;max-height:calc(100% - 24px);overflow:auto;z-index:3;box-shadow:none;
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:var(--s-4);display:flex;flex-direction:column;gap:10px}
+.viz .card .kind{font:700 12px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase}
+.viz .card h2{font:700 24px/1.1 var(--f-display)}
+.viz .card p{margin:0}
+.viz .card h3{margin:4px 0 0;font:700 12px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.viz .card a{color:var(--accent)}
+.viz .meta{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13.5px;margin:0}
+.viz .meta dt{color:var(--muted)}
+.viz .meta dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.viz .mono{font-size:12px}
+.viz .chips{display:flex;flex-wrap:wrap;gap:5px}
+.viz .chip{display:inline-block;border:1px solid var(--line);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:3px 9px;font:12.5px var(--f-body);cursor:pointer}
+.viz .chip:hover,.viz .chip:focus-visible{border-color:var(--accent)}
+.viz .close{position:absolute;top:6px;right:6px;border:0;background:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1;min-height:44px;min-width:44px;padding:0}
+.viz .legend{display:flex;flex-direction:column;gap:4px;font-size:13px}
+.viz .legend div{display:flex;align-items:center;gap:8px}
+.viz .mobile-toggle{display:none}
+.viz .tip{position:absolute;pointer-events:none;z-index:4;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-size:13px;max-width:260px}
+.viz .tip small{display:block;color:var(--muted);font-size:11px}
+/* the trade-show stage is deliberately dark, in both colour schemes: a single look for big screens */
+.viz.dark{--bg:#052e36;--panel:rgba(7,63,73,.9);--panel-2:#0a4a55;--fg:#eef3f2;--muted:#a9c2c3;--line:rgba(102,215,222,.24);--accent:#66d7de;--accent-hover:#dba8c9;--accent-fg:#052e36;
+  --r1:#66c0d2;--r2:#e0a040;--r3:#c98ab2;--r4:#f08a64;--r5:#b8d637;--rx:#b0b3ae;background:var(--bg);color:var(--fg);color-scheme:dark}
+.viz.dark a{color:var(--accent)}
+@media (max-width:720px){
+  .viz .rail{right:var(--s-4);width:auto;max-height:55%}
+  .viz .rail.collapsed>:not(.vhead):not(.morph){display:none}
+  .viz .mobile-toggle{display:inline-flex;margin-top:8px}
+  .viz .card{left:var(--s-4);width:auto;top:auto;bottom:12px;max-height:45%}
+}
+@media (prefers-reduced-motion:reduce){.viz *{scroll-behavior:auto!important}}
+
 """
 
 MAP_JS = r"""(function () {
   'use strict';
-  var COLORS = {'1': '#0072B2', '2': '#E69F00', '3': '#009E73', '4': '#CC79A7', '5': '#6d4fb3', 'x': '#777777'};
+  // Ring colours come from the page's own tokens (--r1..--r5, --rx in style.css), so the dots, the key and every other page agree.
+  var COLORS = {};
+  function readColors() { var css = getComputedStyle(document.documentElement); ['1', '2', '3', '4', '5', 'x'].forEach(function (k) { COLORS[k] = css.getPropertyValue('--r' + k).trim(); }); }
+  readColors();
   var RING_NAMES = {'1': 'Core Producers & Processors', '2': 'Materials, Compounding & Formulated Polymers',
     '3': 'Value Chain', '4': 'Downstream OEMs & Heavy Users', '5': 'Ecosystem'};
   var status = document.getElementById('map-status');
@@ -1051,8 +1222,12 @@ MAP_JS = r"""(function () {
       var m = L.circleMarker([r[C.lat], r[C.lon]], {
         renderer: canvas, radius: 5, weight: 1, color: '#222', fillColor: COLORS[key] || COLORS.x, fillOpacity: 0.85
       });
+      m.ringKey = key;
       m.bindPopup(function () { return popup(r); });
       return m;
+    });
+    matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {   // the key follows the scheme; so do the dots
+      readColors(); markers.forEach(function (m) { m.setStyle({fillColor: COLORS[m.ringKey] || COLORS.x}); });
     });
 
     function popup(r) {
@@ -1255,6 +1430,11 @@ DIRECTORY_JS = r"""(function () {
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
   });
+  document.getElementById('dcopy').addEventListener('click', function () {   // the address bar holds the filters
+    var msg = document.getElementById('dmsg'), done = function (t) { msg.textContent = t; setTimeout(function () { msg.textContent = ''; }, 2500); };
+    if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(function () { done('Link copied'); }, function () { done('Copy failed: copy the address bar'); });
+    else done('Copy the address bar');
+  });
   function turn(d) { page += d; render(); status.focus(); }
   prev.addEventListener('click', function () { turn(-1); });
   next.addEventListener('click', function () { turn(1); });
@@ -1267,6 +1447,7 @@ DIRECTORY_JS = r"""(function () {
   }).then(function (d) {
     data = d.rows;
     list.hidden = false;
+    document.getElementById('ddl').disabled = false; document.getElementById('dcopy').disabled = false;
     fromUrl(); run();
   }).catch(function (e) {
     status.textContent = 'Could not load directory.json (' + e.message + '). If you opened this file directly from disk, serve the folder over http instead (see docs/SITE_HOWTO.md). The county pages and directory.csv hold the same rows.';
@@ -1341,7 +1522,7 @@ SEARCH_JS = r"""(function () {
       out.appendChild(li);
     });
     if (!terms.length && !ring && !st) count.textContent = 'Type a name, trade name or city to search ' + recs.length.toLocaleString() + ' organization rows (organizations and ecosystem organizations, all statuses and tiers).';
-    else count.textContent = hits.length.toLocaleString() + ' organization row' + (hits.length === 1 ? '' : 's') + ' match' + (hits.length > cap ? ' (showing the first ' + cap + ')' : '') + '.';
+    else count.textContent = hits.length.toLocaleString() + ' organization row' + (hits.length === 1 ? ' matches' : 's match') + (hits.length > cap ? ' (showing the first ' + cap + ')' : '') + '.';
   }
 })();
 """
@@ -1626,6 +1807,8 @@ def build_directory_page(ctx, rows):
 <p class="lede">{fmt_int(n_orgs)} owners of active, tier A-C site rows in the 18 PIC counties: {fmt_int(n_orgs - n_eco)} organization records and
 {fmt_int(n_eco)} ecosystem records, with {fmt_int(n_sites)} such site rows. Each count below is owners with an active tier A-C site row in that county or ring.</p>
 {summary}
+<p>This page lists companies in the 18 PIC counties. For any other company in the Atlas, in any state,
+<a href="search.html">search every organization</a>.</p>
 <p class="small muted">An owner with site rows in more than one county or ring is counted in each, so these columns can
 add up to more than the All PIC-18 line. Counts are owners, not unique ultimate parents.</p>
 <noscript><p>Search, filters and the paged list need JavaScript. Without it, browse by county, {DIRECTORY_PAGE} rows a page, with street addresses:
@@ -1647,12 +1830,13 @@ own row. Bands are bands, never headcounts. "N or more" means the band starts at
 <div class="facets">{facets}</div>
 <p><a href="directory.html">Clear all filters</a></p>
 </form>
-<p id="dstatus" role="status" aria-live="polite" tabindex="-1"></p>
+<div class="tbar"><span id="dstatus" class="tcount" role="status" aria-live="polite" tabindex="-1"></span>
+<button type="button" id="ddl" disabled>Download these rows (CSV)</button><button type="button" id="dcopy" disabled>Copy link</button>
+<span class="tmsg" id="dmsg" role="status"></span></div>
 <p id="dleft" class="small" aria-live="polite"></p>
 <div id="dlist" hidden>
 {table_wrap(f'<table id="dtable" class="stack" data-nosort data-nofilter data-nocsv><caption>Northeast Ohio polymer companies: owners by PIC-18 county (operating status active; verification tiers A-C)</caption><thead><tr>{head}</tr></thead><tbody></tbody></table>', "Northeast Ohio polymer companies")}
 <p id="dpager"><button type="button" id="dprev">Previous {DIRECTORY_PAGE}</button> <span id="dpos"></span> <button type="button" id="dnext">Next {DIRECTORY_PAGE}</button></p>
-<p class="tdl"><button type="button" id="ddl">Download these rows (CSV)</button></p>
 <p class="small muted">The download saves every row that matches your filters, not only the {DIRECTORY_PAGE} on screen. For the whole table,
 take <a href="directory.csv">directory.csv</a> ({fmt_int(len(rows))} rows, one per owner and county, unfiltered).
 Evidence rows count the claim-level evidence on the owner's page (its own and its site rows').
@@ -1685,12 +1869,12 @@ def directory_static_pages(ctx, rows):
                 f'<a href="{names[n]}">Next {DIRECTORY_PAGE}</a>' if n < pages else "",
                 '<a href="../directory.html">Counts for all counties</a>'] if x)
             tbl = table_wrap(
-                f'<table data-nosort data-nofilter data-nocsv><caption>{esc(c)} County owners with an active tier A-C site row, '
+                f'<table data-nosort><caption>{esc(c)} County owners with an active tier A-C site row, '
                 f'rows {(n - 1) * DIRECTORY_PAGE + 1} to {(n - 1) * DIRECTORY_PAGE + len(part)} of {len(crows)}</caption><thead><tr>'
                 '<th scope="col">Owner</th><th scope="col">Street address</th><th scope="col">Ring</th><th scope="col">Site tier</th>'
                 f'<th scope="col">Process</th><th scope="col">Employees</th></tr></thead><tbody>{trs}</tbody></table>', f"{c} County owners")
             body = (f'<h1>{esc(c)} County: Northeast Ohio polymer companies</h1>\n'
-                    f'<p class="lede">{fmt_int(len(crows))} owners with an active tier A-C site row in {esc(c)} County; page {n} of {pages}. '
+                    f'<p class="lede">{plural(len(crows), 'owner')} with an active tier A-C site row in {esc(c)} County; page {n} of {pages}. '
                     f'This plain page needs no JavaScript; <a href="../directory.html">the directory</a> adds search and filters.</p>\n'
                     f'<p>{nav}</p>\n{tbl}\n<p>{nav}</p>')
             out[name] = page(ctx, f"Northeast Ohio polymer companies: {c} County", body, "../", "directory",
@@ -1758,10 +1942,6 @@ def build_index(ctx):
         "<table data-nosort><caption>Verification tiers</caption><thead><tr><th scope=\"col\">Tier</th>"
         "<th scope=\"col\">Meaning</th><th scope=\"col\">Typical sources</th></tr></thead>"
         f"<tbody>{tier_rows}</tbody></table>", "Verification tiers")
-    sky = skyline.payload(active_ab(sites), lambda x: x["_ring"] or "?", set(PIC12))
-    ctx.skyline = sky
-    top = "".join(f"<li>{fmt_int(h[2])} site rows: {esc(h[5])}</li>" for h in sky["hex"][:10])
-
     def xcard(href, glyph, title, text):
         return (f'<a class="xcard" href="{href}">{GLYPHS[glyph]}<h3>{esc(title)}</h3><p>{esc(text)}</p>'
                 f'<span class="go">Open &rarr;</span></a>')
@@ -1769,6 +1949,8 @@ def build_index(ctx):
     explore = "".join([
         xcard("directory.html", "directory", "Northeast Ohio polymer companies",
               "Companies in the 18 PIC counties: counts by county and ring, then search, filter by process, size and more, and download the list with street addresses."),
+        xcard("map.html", "geo", "Street map",
+              "Every mapped site on a street map, filtered by ring, tier and state."),
         xcard("graph/index.html", "graph", "Industry graph",
               "Companies, institutions and the processes and materials that connect them. Hover to trace a supply web."),
         xcard("graph/map.html", "geo", "Map + network",
@@ -1781,12 +1963,8 @@ def build_index(ctx):
               "One page per Northeast Ohio county: establishments by ring, programs, and the official benchmark."),
     ])
     body = f"""
-<section class="hero" aria-labelledby="hero-title">
-<div class="hero-stage">
-<div id="skyline" data-src="skyline.json" role="img"
- aria-label="3D map of the United States with hexagonal columns whose height shows how many polymer industry site rows the Atlas holds in each area; the tallest stand in Northeast Ohio."></div>
-<div id="sky-tip" hidden></div>
-<div class="hero-copy">
+<section class="hero-static" aria-labelledby="hero-title">
+<div class="wrap">
 <div class="eyebrow">Open data · Polymer Industry Cluster</div>
 <h1 id="hero-title">The polymer industry, <em>mapped.</em></h1>
 <p class="lede">Plants, processors, materials makers, OEMs and the schools and groups behind them,
@@ -1796,19 +1974,11 @@ every fact tied to a public source. Built in Akron for Northeast Ohio, growing n
 <div><b>{fmt_int(len(active_ab(oh)))}</b><small>in Ohio</small></div>
 <div><b>{fmt_int(len(active_ab(pic)))}</b><small>in the 18 PIC counties</small></div>
 </div>
-<div class="cta"><a class="btn primary" href="directory.html">Northeast Ohio polymer companies</a><a class="btn" href="graph/map.html">Explore the map</a>
-<a class="btn" href="graph/index.html">Industry graph</a><a class="btn" href="search.html">Search</a></div>
-</div>
-<div class="hero-legend"><span>Fewer sites</span><span class="ramp"></span><span>More</span><span>· hex ≈ 30 mi</span></div>
-<div class="hero-tools"><span class="hero-hint">Drag to rotate</span>
-<button class="btn" type="button" data-sky-focus="us" aria-pressed="true">United States</button>
-<button class="btn" type="button" data-sky-focus="ohio" aria-pressed="false">Northeast Ohio</button></div>
+<div class="cta"><a class="btn primary" href="directory.html">Find companies</a><a class="btn" href="map.html">Map</a>
+<a class="btn" href="counties/index.html">Counties</a></div>
+<p class="hero-links"><a href="search.html">Search every organization, any state</a> · <a href="skyline.html">View the 3D skyline</a></p>
 </div>
 </section>
-<div class="sr-only"><p>Largest clusters of site rows on the 3D map:</p><ol>{top}</ol></div>
-<p class="small muted">The 3D map shows {fmt_int(sky["n"])} active, tier A-C site rows with reference coordinates in the lower 48
-states, binned into hexagons; column height follows the count. Lime outlines mark the PIC-18 counties.
-Positions are interpolated from addresses and are never evidence.</p>
 
 <h2 id="explore">Explore</h2>
 <div class="explore">{explore}</div>
@@ -1855,7 +2025,46 @@ To request a correction or removal, open an issue in the repository.</li>
 Please attribute "Polymer Industry Atlas, Polymer Industry Cluster (PIC), Greater Akron Chamber".</p>
 </details>
 """
-    return page(ctx, "Home", body, "", "index",
+    return page(ctx, "Home", body, "", "index")
+
+
+def build_skyline_page(ctx):
+    """The 3D skyline (three.js), one click from the home page on its own page: the only page that loads three.js."""
+    a = ctx.atlas
+    sites = a.sites
+    oh = [s for s in sites if s.get("state") == "OH"]
+    pic = [s for s in oh if s.get("county") in PIC12]
+    sky = skyline.payload(active_ab(sites), lambda x: x["_ring"] or "?", set(PIC12))
+    ctx.skyline = sky
+    top = "".join(f"<li>{plural(h[2], 'site row')}: {esc(h[5])}</li>" for h in sky["hex"][:10])
+    body = f"""
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-stage">
+<div id="skyline" data-src="skyline.json" role="img"
+ aria-label="3D map of the United States with hexagonal columns whose height shows how many polymer industry site rows the Atlas holds in each area; the tallest stand in Northeast Ohio."></div>
+<div id="sky-tip" hidden></div>
+<div class="hero-copy">
+<div class="eyebrow">3D skyline</div>
+<h1 id="hero-title">Where the site rows <em>stand.</em></h1>
+<p class="lede">Hexagonal columns over the United States: the taller the column, the more active site rows the Atlas holds there.</p>
+<div class="hero-stats">
+<div><b>{fmt_int(len(active_ab(sites)))}</b><small>active site rows (tiers A–C)<br>across all states</small></div>
+<div><b>{fmt_int(len(active_ab(pic)))}</b><small>in the 18 PIC counties</small></div>
+</div>
+<div class="cta"><a class="btn primary" href="directory.html">Find companies</a><a class="btn" href="map.html">Map</a></div>
+</div>
+<div class="hero-legend"><span>Fewer sites</span><span class="ramp"></span><span>More</span><span>· hex ≈ 30 mi</span></div>
+<div class="hero-tools"><span class="hero-hint">Drag to rotate</span>
+<button class="btn" type="button" data-sky-focus="us" aria-pressed="true">United States</button>
+<button class="btn" type="button" data-sky-focus="ohio" aria-pressed="false">Northeast Ohio</button></div>
+</div>
+</section>
+<div class="sr-only"><p>Largest clusters of site rows on the 3D map:</p><ol>{top}</ol></div>
+<p class="small muted">The 3D map shows {fmt_int(sky["n"])} active, tier A-C site rows with reference coordinates in the lower 48
+states, binned into hexagons; column height follows the count. Lime outlines mark the PIC-18 counties.
+Positions are interpolated from addresses and are never evidence.</p>
+"""
+    return page(ctx, "3D skyline", body, "", "sky",
                 scripts=f'<script src="{THREE_JS}" defer></script>\n<script src="skyline.js" defer></script>')
 
 
@@ -2152,8 +2361,8 @@ def evidence_section(a, table, rec, kind):
                 f'the source links on the record are shown. Last verified {esc(rec.get("last_verified")) or "n/a"}; '
                 f'tier {esc(rec.get("verification_tier")) or "n/a"}.</p>{source_list(rec.get("sources"))}')
     n_sites = sum(len(evidence_view(a, "sites", x["site_id"])) for x in a.sites_by_org.get(rec["org_id"], []))
-    more = f"; {fmt_int(n_sites)} more on its site rows below" if n_sites else ""
-    return (f'<h2 id="evidence">Evidence ({fmt_int(len(shown))} rows for this {kind}{more})</h2>'
+    more = f"; {plural(n_sites, 'more row')} listed with its sites above" if n_sites else ""
+    return (f'<h2 id="evidence">Evidence ({plural(len(shown), 'row')} for this {kind}{more})</h2>'
             '<p class="small muted">Each row is one observation: the claim, the class of source, how strongly it supports the '
             "record's tier, when it was observed, and where. The wording of each claim stays in the repository's data; "
             "follow the source link to check it. Rows from a platform category or a roster list are leads, "
@@ -2173,7 +2382,7 @@ def site_evidence(a, s):
     shown = evidence_view(a, "sites", s["site_id"])
     if not shown:
         return f'<details class="srcs"><summary>Sources for this site</summary>{source_list(s.get("sources"))}</details>'
-    return (f'<details class="srcs"><summary>Evidence for this site ({fmt_int(len(shown))} rows)</summary>'
+    return (f'<details class="srcs"><summary>Evidence for this site ({plural(len(shown), 'row')})</summary>'
             f'{evidence_table(shown, "Evidence for " + str(s.get("site_name") or s["site_id"]), nocsv=True)}</details>')
 
 
@@ -2250,7 +2459,7 @@ def people_block(people, ctx):
     tbl = table_wrap("<table><thead><tr><th scope=\"col\">Name</th><th scope=\"col\">Role (as published)</th>"
                      f"<th scope=\"col\">Research specialties</th></tr></thead><tbody>{rows}</tbody></table>",
                      "Researchers")
-    return (f"<h2>Researchers ({fmt_int(len(people))} public profile rows)</h2>"
+    return (f"<h2>Researchers ({plural(len(people), 'public profile row')})</h2>"
             "<p class=\"small muted\">Name, role, research specialty and the public profile page, each from "
             "the institution's own public pages. To request a correction or removal, "
             f"<a href=\"{esc(ctx.repo_url)}/issues\" rel=\"noopener\">open an issue</a>.</p>{tbl}")
@@ -2324,7 +2533,7 @@ def build_org_page(ctx, o):
     n_active = sum(1 for s in site_rows if s.get("operating_status") == "active")
     sites_html = ""
     if site_rows:
-        sites_html = (f"<h2>Sites ({fmt_int(len(site_rows))} site rows; {fmt_int(n_active)} with operating status active)</h2>"
+        sites_html = (f"<h2>Sites ({plural(len(site_rows), 'site row')}; {fmt_int(n_active)} with operating status active)</h2>"
                       "<p class=\"small muted\">Site rows are physical establishments (plants, headquarters, "
                       "labs, warehouses). Each is owned by the operator."
                       + (" An asterisk (*) next to a ring means the site row records no ring, so the parent organization's ring is shown."
@@ -2383,7 +2592,7 @@ def equipment_block(rows):
         f'<td>{esc(str(r.get("access_mode") or "").replace("_", " "))}</td>'
         + (f'<td><a href="{esc(safe_href(r.get("source_ref")))}" rel="noopener nofollow">host page</a></td></tr>' if safe_href(r.get("source_ref")) else '<td></td></tr>')
         for r in sorted(rows, key=lambda r: (r.get("equipment_class") or "", (r.get("name") or "").lower())))
-    return (f"<h2>Equipment and testing ({fmt_int(len(rows))} equipment rows)</h2>"
+    return (f"<h2>Equipment and testing ({plural(len(rows), 'equipment row')})</h2>"
             '<p class="small muted">Instruments and pilot lines this organization lists on its own pages. Ask the host about access.</p>'
             + table_wrap('<table><thead><tr><th scope="col">Equipment</th><th scope="col">Class</th><th scope="col">Access</th>'
                          f'<th scope="col">Source</th></tr></thead><tbody>{body}</tbody></table>', "Equipment"))
@@ -2413,11 +2622,11 @@ def build_eco_page(ctx, e):
         ("Last verified", esc(e.get("last_verified"))),
     ])
     progs = a.programs_by_inst.get(eid, [])
-    progs_html = (f"<h2>Programs ({fmt_int(len(progs))} program rows)</h2>" + program_table(progs, a)) if progs else ""
+    progs_html = (f"<h2>Programs ({plural(len(progs), 'program row')})</h2>" + program_table(progs, a)) if progs else ""
     site_rows = sorted(a.sites_by_org.get(eid, []), key=lambda s: (s.get("state") or "", s.get("city") or ""))
     sites_html = ""
     if site_rows:
-        sites_html = (f"<h2>Locations ({fmt_int(len(site_rows))} site rows)</h2>"
+        sites_html = (f"<h2>Locations ({plural(len(site_rows), 'site row')})</h2>"
                       + "".join(site_article(s, a, len(site_rows) <= 3) for s in site_rows))
     body = f"""
 <p class="small"><a href="../search.html">Search</a> &rsaquo; Ecosystem organization</p>
@@ -2581,7 +2790,7 @@ that figure; it is not zero.</p>"""
 <div class="card"><div class="big">{fmt_int(len(eco))}</div><div class="unit">Ecosystem organization rows</div><div class="filter">located in the county; all statuses and tiers</div></div>
 <div class="card"><div class="big">{fmt_int(len(progs))}</div><div class="unit">Program rows</div><div class="filter">located in the county; status active; all tiers</div></div>
 </div>
-{f'<p class="small muted">{fmt_int(not_active)} further site row(s) in this county have another operating status (closed, idled, unknown, pre-revenue) and are not listed or counted.</p>' if not_active else ''}
+{f'<p class="small muted">{plural(not_active, 'further site row')} in this county {'has' if not_active == 1 else 'have'} another operating status (closed, idled, unknown, pre-revenue) and are not listed or counted.</p>' if not_active else ''}
 <h2>Establishments by ring</h2>
 {ring_tbl}
 <p class="small muted">An asterisk (*) marks a ring inherited from the parent organization because the site row records none.
@@ -2708,6 +2917,7 @@ def build_site(db_path, out_dir, qcew_path=None, repo_url=DEFAULT_REPO, git=None
     write(out_dir / "search.js", SEARCH_JS)
     write(out_dir / "directory.js", DIRECTORY_JS.replace("__PAGE__", str(DIRECTORY_PAGE)))
     write(out_dir / "sortable.js", SORTABLE_JS)
+    write(out_dir / "shell.js", SHELL_JS)
     shutil.copyfile(Path(__file__).resolve().parent / "assets" / "brand" / "pic-mark-color.svg", out_dir / "favicon.svg")
     og = Path(__file__).resolve().parent / "assets" / "og-image.jpg"
     if og.exists():
@@ -2723,6 +2933,7 @@ search for the company by name, or start from one of the views below.</p>
 <a class="pill" href="{base}index.html">Home</a></p></div>""", base))
     write(out_dir / ".nojekyll", "")
     write(out_dir / "index.html", build_index(ctx))
+    write(out_dir / "skyline.html", build_skyline_page(ctx))
     write(out_dir / "skyline.json", json.dumps(ctx.skyline, separators=(",", ":")))
     write(out_dir / "skyline.js", skyline.SKYLINE_JS)
     assets = Path(__file__).resolve().parent / "assets"
