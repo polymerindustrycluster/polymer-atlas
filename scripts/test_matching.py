@@ -126,6 +126,35 @@ class GenericLabels(unittest.TestCase):  # owner ruling 2026-11-22, "drop generi
             self.assertFalse(dl.generic_label(k), k)
 
 
+class Locality(unittest.TestCase):  # controller ruling 2026-11-22: same state, and city (either parenthetical part) or ZIP5
+    def test_parenthetical_city(self):
+        self.assertEqual(dl.city_keys("Cleveland (Solon)"), {"cleveland", "solon"})
+        for q in ("Solon", "CLEVELAND", "solon"):
+            self.assertTrue(dl.same_locality("Cleveland (Solon)", "OH", "", q, "oh", ""), q)
+            self.assertFalse(dl.city_differs("Cleveland (Solon)", "", q, ""), q)
+        self.assertFalse(dl.same_locality("Cleveland (Solon)", "OH", "", "Bedford", "OH", ""))
+        self.assertTrue(dl.city_differs("Cleveland (Solon)", "", "Bedford", ""))
+
+    def test_zip5(self):
+        for z in ("44139", "44139-2201", "441392201", " 44139 "):
+            self.assertEqual(dl.zip5(z), "44139", z)
+        for z in ("", "6599", "317E6", "H4R 2P2", "4413", "00000", "00000-0000"):
+            self.assertEqual(dl.zip5(z), "", z)  # unreadable ZIPs never match
+        self.assertFalse(dl.same_zip5("", ""))
+        self.assertTrue(dl.same_locality("Cleveland", "OH", "44139", "Bedford", "OH", "44139-2201"))
+        self.assertFalse(dl.city_differs("Cleveland", "44139", "Bedford", "44139-2201"))
+        self.assertTrue(dl.city_differs("Cleveland", "44139", "Bedford", "44146"))
+
+    def test_state_is_required(self):
+        self.assertFalse(dl.same_locality("Solon", "OH", "44139", "Solon", "PA", "44139"))
+        self.assertFalse(dl.same_locality("Solon", "", "44139", "Solon", "", "44139"))
+
+    def test_missing_city_is_not_contrary(self):
+        self.assertFalse(dl.city_differs("", "", "Solon", ""))
+        self.assertFalse(dl.city_differs("Solon", "", "", ""))
+        self.assertFalse(dl.city_differs("Summit County", "", "Akron", ""))  # a county is not a city
+
+
 class CorporateForm(unittest.TestCase):
     """Owner ruling 2026-11-22: a held name plus corporate-form words only."""
 

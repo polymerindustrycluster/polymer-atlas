@@ -126,6 +126,8 @@ SITES = [
      "street_address": "77 Kiln Rd"},
     {"site_id": "S-PHOLD", "org_id": "ORG-15", "site_name": "Acme Polymer Holdings - Elm Works", "city": "Dover",
      "state": "OH", "county": "Tuscarawas", "street_address": "9 Elm Rd"},  # a site named for its parent
+    {"site_id": "S-PAREN", "org_id": "ORG-15", "site_name": "Acme Polymer - Hub", "city": "Cleveland (Solon)",
+     "state": "OH", "zip": "44139", "street_address": "5 Hub Rd"},  # a second locality in parentheses
     {"site_id": "S-ZIP", "org_id": "ORG-15", "site_name": "Acme Polymer - Zip", "city": "Dover", "state": "OH",
      "street_address": "43000 Oak Street"},
     {"site_id": "S-PAGES", "org_id": "ORG-16", "site_name": "Acme Molding - Plant", "city": "Dover", "state": "OH",
@@ -372,6 +374,12 @@ class Verdicts(unittest.TestCase):
         self.check(ev("S-OAK3", TCEQ, permit("Acme Polymer", "DOVER", "321 OAK ST, DAYTON")), "FAIL", "city_differs")
         self.check(ev("S-BLDG", OSHA, "TAMARACK RUBBER CO, 518 FENWICK GROVE RD BLDG 1, WEST FENWICK TWP, OH 44299"),
                    "PASS")  # "Twp" and "Mt." are spellings, not other places
+
+    def test_parenthetical_city_and_zip5(self):  # controller ruling 2026-11-22: either city part, or equal ZIP5s
+        for place in ("SOLON, OH 44139", "CLEVELAND, OH 44139", "Solon, OH", "SOLON, OH 44146", "BEDFORD, OH 44139-2201"):
+            self.check(ev("S-PAREN", TCEQ, permit("Acme Polymer", "X", f"5 HUB RD, {place}")), "PASS")
+        self.check(ev("S-PAREN", TCEQ, permit("Acme Polymer", "X", "5 HUB RD, BEDFORD, OH 44146")), "FAIL", "city_differs")
+        self.check(ev("S-PAREN", TCEQ, permit("Acme Polymer", "X", "5 HUB RD, SOLON, PA 44139")), "FAIL", "state_differs")
 
     def test_bare_site_label_is_not_the_operator(self):  # owner ruling 2026-11-22, "drop generic labels only"
         for name in ("Plant 2", "Dover", "Tuscarawas County", "North Works", "Ohio"):  # labels, city, county, state

@@ -54,7 +54,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from atlas import (LOCALITY_SEP_RE, PLATFORM_HOSTS, SUFFIX, name_key, org_name_fields,  # noqa: E402
                    site_name_key, squash, street_key)
 from build_echo_spine import STATE_NAMES  # noqa: E402
-from matching import (DESIGNATOR_ONLY_RE, corporate_form_extension, generic_label, has_civic_number,  # noqa: E402
+from matching import (DESIGNATOR_ONLY_RE, city_differs, corporate_form_extension, generic_label, has_civic_number,  # noqa: E402
                       same_street, units)  # (PR #463)
 
 csv.field_size_limit(10**9)
@@ -250,28 +250,28 @@ def designator_part(x):
 
 
 def quoted_place(addr):
-    """(city, state code) a quoted address states after its street, either "" when absent: "STREET, CITY, ST ZIP",
-    "STREET, CITY, ST", "STREET, CITY ST ZIP", "STREET, CITY, State". A lone trailing word part with no state is the
-    city ("1 Elm St, Dover")."""
+    """(city, state code, ZIP as printed) a quoted address states after its street, each "" when absent: "STREET, CITY,
+    ST ZIP", "STREET, CITY, ST", "STREET, CITY ST ZIP", "STREET, CITY, State". A lone trailing word part with no state is
+    the city ("1 Elm St, Dover")."""
     parts = [x.strip() for x in (addr or "").split(",")]
     rest = [x for x in parts[len(street_part(addr).split(",")):] if x]
     if not rest:
-        return "", ""
-    last = re.sub(r"\s+\d[\dE-]{3,9}$", "", rest[-1]).strip()  # ZIPs arrive as 4, 5, 9 digits or "317E6"
-    zipped = last != rest[-1]
+        return "", "", ""
+    m = re.search(r"\s+(\d[\dE-]{3,9})$", rest[-1])  # ZIPs arrive as 4, 5, 9 digits or "317E6"
+    last, z = (rest[-1][:m.start()].strip(), m[1]) if m else (rest[-1], "")
     st = state_code(last)
     if st:
         city = rest[-2] if len(rest) > 1 else ""
         if len(rest) > 2 and re.fullmatch(r"(?i)(?:city|town|township|borough|village) of", city):
             city = rest[-3]  # ECHO prints "SPRINGFIELD, TOWNSHIP OF, OH"
-        return city, st
+        return city, st, z
     words = last.split()
     for k in range(1, len(words)):  # "DOVER OH 44101" or "DOVER OHIO" in one comma part
         if state_code(" ".join(words[k:])):
-            return " ".join(words[:k]), state_code(" ".join(words[k:]))
-    if len(rest) == 1 and not zipped and not re.search(r"\d", last):
-        return last, ""
-    return "", ""
+            return " ".join(words[:k]), state_code(" ".join(words[k:])), z
+    if len(rest) == 1 and not z and not re.search(r"\d", last):
+        return last, "", ""
+    return "", "", z
 
 
 def state_code(s):
@@ -279,28 +279,6 @@ def state_code(s):
     if len(s) == 2:
         return s.upper() if s.upper() in STATE_NAMES.values() else ""
     return STATE_NAMES.get(s.title(), "")
-
-
-CITY_WORDS = {"mt": "mount", "st": "saint", "ste": "sainte", "ft": "fort", "pk": "park", "twp": "township"}
-PLACE_KINDS = ("township", "city", "town", "village", "borough")
-
-
-def city_keys(city):
-    """Spellings of one city name, never another place: Mt/St/Ft/Pk spelled out, "City of X" and a trailing
-    Township/City/Town/Village/Borough dropped, spaces ignored ("MC COOK" = "McCook", "WEST FENWICK TWP" = "West
-    Fenwick"), and each name a record holds in parentheses ("Killingly (Dayville)"). A county is not a city: empty."""
-    out = set()
-    for name in [PAREN_RE.sub(" ", city or "")] + re.findall(r"\(([^()]*)\)", city or ""):
-        toks = [CITY_WORDS.get(t, t) for t in squash(name).split()]
-        if toks and toks[-1] in ("county", "parish"):
-            continue
-        if len(toks) > 2 and toks[1] == "of" and toks[0] in PLACE_KINDS:
-            toks = toks[2:]
-        while len(toks) > 1 and toks[-1] in PLACE_KINDS:
-            toks.pop()
-        if toks:
-            out.add("".join(toks))
-    return out
 
 
 def quote_street(addr):
@@ -428,12 +406,11 @@ def judge(ev, idx):
         info["name_basis"] = "org" if qkeys & own else "site_name_lead" if lead in qkeys else "site_name_other"
     if table == "sites":
         why = street_reason(rec.get("street_address"), p["addr"])
-        q_city, q_st = quoted_place(p["addr"])
+        q_city, q_st, q_zip = quoted_place(p["addr"])
         if q_st and rec.get("state") and q_st != rec["state"].strip().upper():
             reasons.append("state_differs")  # an explicit other state is contrary evidence (Codex review, PR #467)
-        qc, rc = city_keys(q_city), city_keys(rec.get("city"))
-        if qc and rc and not qc & rc:
-            reasons.append("city_differs")  # an explicit other city too (owner split, Codex r2 finding 2)
+        if city_differs(rec.get("city"), rec.get("zip"), q_city, q_zip):
+            reasons.append("city_differs")  # an explicit other city and ZIP too (owner split, Codex r2 finding 2)
         if why == "no_civic_number" and not reasons:
             return "UNINSPECTABLE", why, info
         if why and why != "no_civic_number":

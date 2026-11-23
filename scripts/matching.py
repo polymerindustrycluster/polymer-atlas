@@ -110,3 +110,55 @@ def generic_label(key: str, city: str = "", county: str = "") -> bool:
     return bool(key.split()) and all(t in _LABEL_WORDS or re.fullmatch(r"#?\d+|\d+(?:st|nd|rd|th)", t)
                                      for t in rest.split())
 
+
+
+# Locality (controller ruling 2026-11-22, after the source-map lane's "Cleveland (Solon)" finding): a printed place is
+# the record's place when the state is the same and the printed city is a spelling of the record's city or of either
+# part of a parenthetical city, or when the two ZIP5 values are equal. One test for the gate and the derivation.
+_CITY_WORDS = {"mt": "mount", "st": "saint", "ste": "sainte", "ft": "fort", "pk": "park", "twp": "township"}
+_PLACE_KINDS = ("township", "city", "town", "village", "borough")
+
+
+def city_keys(city: str) -> set:
+    """Spellings of one city name, never another place: Mt/St/Ft/Pk spelled out, "City of X" and a trailing
+    Township/City/Town/Village/Borough dropped, spaces ignored ("MC COOK" = "McCook", "WEST FENWICK TWP" = "West
+    Fenwick"), and both parts of a parenthetical city ("Cleveland (Solon)" -> cleveland, solon). A county is not a city."""
+    out = set()
+    for name in [re.sub(r"\([^()]*\)", " ", city or "")] + re.findall(r"\(([^()]*)\)", city or ""):
+        toks = [_CITY_WORDS.get(t, t) for t in squash(name).split()]
+        if toks and toks[-1] in ("county", "parish"):
+            continue
+        if len(toks) > 2 and toks[1] == "of" and toks[0] in _PLACE_KINDS:
+            toks = toks[2:]
+        while len(toks) > 1 and toks[-1] in _PLACE_KINDS:
+            toks.pop()
+        if toks:
+            out.add("".join(toks))
+    return out
+
+
+def zip5(z: str) -> str:
+    """The 5-digit ZIP of "44139", "44139-1234" or "441391234"; "" for anything else (a 4-digit ZIP that lost its
+    leading zero, "317E6", a Canadian postcode, the "00000" placeholder): an unreadable ZIP never matches."""
+    m = re.fullmatch(r"\s*(\d{5})(?:-?\d{4})?\s*", z or "")
+    return m[1] if m and m[1] != "00000" else ""
+
+
+def same_zip5(a: str, b: str) -> bool:
+    return bool(zip5(a)) and zip5(a) == zip5(b)
+
+
+def city_differs(rec_city: str, rec_zip: str, q_city: str, q_zip: str) -> bool:
+    """Contrary evidence: both sides name a city, no spelling of one is a spelling of the other, and the ZIP5 values are
+    not equal. A missing city is not contrary evidence (the gate's state test is separate)."""
+    qc, rc = city_keys(q_city), city_keys(rec_city)
+    return bool(qc and rc and not qc & rc) and not same_zip5(rec_zip, q_zip)
+
+
+def same_locality(rec_city: str, rec_state: str, rec_zip: str, q_city: str, q_state: str, q_zip: str) -> bool:
+    """Positive test: the same state, and the city matches (either part of a parenthetical counts) or the ZIP5 values
+    are equal."""
+    st = (rec_state or "").strip().upper()
+    if not st or st != (q_state or "").strip().upper():
+        return False
+    return bool(city_keys(q_city) & city_keys(rec_city)) or same_zip5(rec_zip, q_zip)
