@@ -662,3 +662,6 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 
 ## Working rules (owner adoption 2026-11-22)
 - [ ] `claimed:claude-code 2026-11-22` **Working rules into AGENTS.md section 2a, with checks:** `scripts/check_pr_rules.py` (rules 5 and 6), workflow `pr-rules`, `tasks/working-rules-2026-11-22/`. Board card ATLAS-4. Rules 2 and 3 land with the evidence-binding-gate branch; not built here.
+
+## Ohio OSHA employee bands (2026-11-22)
+- [ ] `claimed:atlas-w22-ohio-size-osha 2026-11-22` **Ohio outside PIC-18, OSHA size-band packet:** same size-unknown active A–C Ohio site frame as #468, outside PIC-18. Canary first, then strict name and civic-street binding and raw replay. First user: John Swanson. Check use by 2026-12-18.
