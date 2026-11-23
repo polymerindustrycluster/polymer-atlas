@@ -75,12 +75,14 @@ def apply_changes(data, changes, frames=None):
         (data / fname).write_bytes(sh.serialize())
 
 
-def diff_trees(a, b):
+def diff_trees(a, b, only=None):
     """({(file, id, column): (a, b)}, [structural problems]) between two data/ trees, cell by cell.
     Row or file additions and removals, and header changes, are reported as problems."""
     a, b = Path(a), Path(b); cells, bad = {}, []
     fa = {p.relative_to(a).as_posix() for p in a.rglob("*") if p.is_file()}
     fb = {p.relative_to(b).as_posix() for p in b.rglob("*") if p.is_file()}
+    if only is not None:      # compare just these files (the packet's own shards): another PR's files are not this packet's business
+        fa, fb = fa & set(only), fb & set(only)
     if fa != fb:
         bad.append(f"files differ: +{sorted(fb - fa)[:3]} -{sorted(fa - fb)[:3]}")
     for f in sorted(fa & fb):
@@ -194,6 +196,42 @@ def cell_lookup(data, keys):
     return out
 
 
+def tree_errors(base, data, changes):
+    """Errors when `data` differs from `base` in the packet's own shards (and its own columns) other than by whole frames of the packet.
+    Shards the packet does not touch are ignored: a later merge to main may legitimately change them."""
+    own = {c["file"] for c in changes}
+    cols = {c["column"] for c in changes}
+    cells, bad = diff_trees(base, data, own)
+    cells = {k: v for k, v in cells.items() if k[2] in cols}
+    if not (cells or bad):
+        return []
+    frames = sorted({c["frame"] for c in changes})
+    for fr in [{f} for f in frames] + [set(frames)]:
+        want = {(c["file"], c["record_id"], c["column"]): (c["before"], c["after"]) for c in changes if c["frame"] in fr}
+        if cells == want and not bad:
+            return []
+    return [f"data/ differs from base in the packet's own shards by {len(cells)} cells that are not a whole frame of this packet; {bad[:2]}"]
+
+
+def tree_clause_selftest(base, changes):
+    """The clause must (1) fail when one of the packet's own shards differs in a cell the packet does not own, and (2) stay quiet when a
+    shard the packet does not touch differs (what a later merge to main does)."""
+    errs, own = [], sorted({c["file"] for c in changes})
+    with tempfile.TemporaryDirectory(prefix="atlas-tree-") as t:
+        d = Path(t) / "data"; shutil.copytree(base, d)
+        other = next(p for p in sorted(d.glob("organizations_*.csv")) if p.name not in own) if len(own) < len(list(d.glob("organizations_*.csv"))) else None
+        if other:
+            sh = Shard(other); sh.rows[1][sh.col["notes"]] += " (planted: not this packet's shard)"; other.write_bytes(sh.serialize())
+            if tree_errors(base, d, changes):
+                errs.append("tree clause flagged a shard the packet does not touch")
+        # plant a cell in one of the packet's own shards and columns
+        sh = Shard(d / own[0]); pc = changes[0]["column"]
+        sh.rows[1][sh.col[pc]] = "PLANTED_PACKET_COLUMN_CELL"; (d / own[0]).write_bytes(sh.serialize())
+        if not tree_errors(base, d, changes):
+            errs.append("tree clause did NOT fail when one of the packet's own shards differs")
+    return errs
+
+
 def check_main(recompute, plant_cols, known=None, independent=None):
     """The packet check. recompute(base_data) -> {(file, id, column): after} for every frame the packet may carry.
     plant_cols: [(file, column)] where a planted overwrite of a non-blank cell is tried. Exit 0 = pass.
@@ -244,17 +282,9 @@ def check_main(recompute, plant_cols, known=None, independent=None):
         if not a.skip_validator:
             e2, info = verify_scratch(changes, base, frames)
             errs += e2; print("scratch apply:", info)
-        # the working tree: untouched, or exactly some whole frames of the packet applied
-        cells, bad = diff_trees(base, ROOT / "data")
-        mycols = {c["column"] for c in changes}      # another packet in the same PR may own other columns
-        cells = {k: v for k, v in cells.items() if k[2] in mycols}
-        if cells or bad:
-            ok = False
-            for fr in [{f} for f in sorted({c["frame"] for c in changes})] + [{c["frame"] for c in changes}]:
-                want = {(c["file"], c["record_id"], c["column"]): (c["before"], c["after"]) for c in changes if c["frame"] in fr}
-                ok |= (cells == want and not bad)
-            if not ok:
-                errs.append(f"working-tree data/ differs from base by {len(cells)} cells that are not a whole frame of this packet; {bad[:2]}")
+        # the working tree: in the packet's own shards, untouched or exactly some whole frames of the packet applied
+        errs += tree_errors(base, ROOT / "data", changes)
+        errs += tree_clause_selftest(base, changes)
         # no personal data in anything this folder ships
         import re
         pat = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+|\(?\b\d{3}\)?[-. ]\d{3}[-. ]\d{4}\b")
