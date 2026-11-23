@@ -173,8 +173,14 @@ class PublicOutput(unittest.TestCase):
         self.assertIn("EVD-000123", text)
         self.assertIn("HTTP 502", text)
 
-    def test_plain_label_is_shown(self):
-        self.assertEqual(nw.label_text("claude-code evidence-fix-2026-11-20"), "claude-code evidence-fix-2026-11-20")
+    def test_even_a_plain_two_word_name_is_opaque(self):
+        f = clean()
+        f["commits"][0]["evidence_added"] = {"Example Reviewer": 1001}
+        f["labels_without_provenance"] = ["Example Reviewer"]
+        text, _ = nw.report(f)
+        self.assertNotIn("Example", text)
+        self.assertNotIn("Reviewer", text)
+        self.assertIn(nw.label_text("Example Reviewer"), text)
 
 
 class Jq(unittest.TestCase):
@@ -202,6 +208,10 @@ class Windows(unittest.TestCase):
         with mock.patch.object(nw, "gh", return_value='{"created_at": "2026-11-21T11:50:00Z"}\n'):  # the previous slot's run, 33 minutes late, is fine
             nw.check_coverage(f, "o/r", since)
         self.assertEqual(f["errors"], [])
+        f = {"errors": []}  # a run created at 10:17 on 11-21 inspected only the window ending 11-20 11:17: 11-21's slot was missed
+        with mock.patch.object(nw, "gh", return_value='{"created_at": "2026-11-21T10:17:00Z"}\n'):
+            nw.check_coverage(f, "o/r", since)
+        self.assertTrue(any("coverage gap" in e for e in f["errors"]))
 
     def test_main_validate_must_have_completed_by_the_cutoff(self):
         f = {"errors": [], "ref": "main", "base": "a", "head": "b", "commits": []}
@@ -301,6 +311,20 @@ class RealGit(unittest.TestCase):
             (self.d / "baseline.txt").write_text("claude evidence-fix-2026-11-20\n")
             self.assertEqual(nw.collect("main", *self.window(), "o/r", [])["labels_without_provenance"], [])
         self.assertTrue(baseline.exists())  # the shipped baseline file is there
+
+    def test_a_name_in_created_by_never_reaches_the_report(self):
+        d = self.d
+        ev = d / "data" / "evidence_organizations_OH.csv"
+        rows = "".join(f"EVD-5{i:04d},organizations,ORG-1,existence,d,own_site,u,2026-11-21,supports_A,Example Reviewer,,\n" for i in range(1001))
+        ev.write_text(ev.read_text() + rows)
+        subprocess.run(["git", "-C", str(d), "add", "."], check=True); subprocess.run(["git", "-C", str(d), "commit", "-qm", "bulk"], check=True, capture_output=True)
+        with mock.patch.object(nw, "gh", side_effect=nw.WatchError("x")), mock.patch.object(nw, "BASELINE_FILE", d / "none.txt"):
+            (d / "none.txt").write_text("")
+            facts = nw.collect("main", *self.window(), "o/r", [])
+        text, code = nw.report(facts)
+        self.assertEqual(code, 1)
+        self.assertIn("[a]", text); self.assertIn("[f]", text)
+        self.assertNotIn("Example", text); self.assertNotIn("Reviewer", text)
 
     def test_a_regular_file_under_tasks_is_not_a_folder(self):
         d = self.d

@@ -34,14 +34,17 @@ rows. Constants are at the top of the script.
 
 **Public output.** The repository and its Actions logs are public, so the report prints only allowlisted fields: rule
 letters, counts, PR numbers, commit SHAs, timestamps, record IDs (`EVD-000123`) and repo paths of a fixed shape, and a
-`created_by` label only when it is one or two plain words (otherwise `label#<hash>`). Error text is a fixed phrase with an
+`created_by` label never, because it is free text and can be a person's or company's name: it prints as `label#<8 hex>`
+(find the label locally with `python3 scripts/nightly_watch.py --resolve-label <8 hex>`, or from the PR named in the
+same report). Error text is a fixed phrase with an
 exit code or HTTP status, never raw stderr, and removal keys that are not IDs or paths (an `inclusion_log` row, say) are
 dropped. A canary test plants a hostile label, a whole log row and an error string and checks none reaches the report.
 
 **Windows.** In the workflow a scheduled run judges the window that ends on the 11:17 UTC slot, whenever the run actually
 starts, so consecutive windows are contiguous: a 30-minute delay leaves nothing uninspected. It also asks Actions for the
-previous completed scheduled run and reports a coverage gap, as an inspection error, if that slot's run never happened (the
-first ever run says so as a note). A manual run judges the last 24 hours up to now.
+previous completed scheduled run, works out which slot that run inspected (the latest 11:17 UTC at or before its start),
+and reports a coverage gap, as an inspection error, unless that slot is the start of this window (a run that began at 10:17
+inspected the window ending the day before, so the next day is a gap; the first ever run says so as a note). A manual run judges the last 24 hours up to now.
 
 **Authority.** The thresholds, the baseline file and the rules are control-plane settings. Changing one is an owner
 ruling (AGENTS.md section 2, rule 9): an agent proposes it as a battery item and never in the pull request whose findings

@@ -18,8 +18,8 @@ the required check finished, and it was noticed only because the owner asked. Th
   g  keyed rows removed from data/ (or tracked files elsewhere) with no REMOVALS.csv entry (scripts/check_row_loss.py)
 
 Everything printed is public (the repository and its run logs are public), so only allowlisted fields appear: rule
-letters, counts, PR numbers, commit SHAs, timestamps, record IDs and repo paths of a fixed shape, and a created_by
-label only when it is one or two plain words (otherwise a short hash). Error text is a fixed phrase, never raw stderr.
+letters, counts, PR numbers, commit SHAs, timestamps, record IDs and repo paths of a fixed shape, and created_by
+labels only as an opaque id (label#<8 hex>; resolve it locally with --resolve-label). Error text is a fixed phrase, never raw stderr.
 
 Rows are counted per first-parent commit (so a batch merged and then reverted the same day still counts), never as a
 net window diff. Anything it could not inspect (a failed gh call, an unreadable file, a shallow clone) is an error
@@ -53,14 +53,12 @@ VALIDATE = "validate"     # the check-run (job) name and the workflow file valid
 # Changing any constant above, the baseline file or a rule is an owner ruling (AGENTS.md section 2, rule 9): an agent
 # proposes it as a battery item, and never in the pull request whose findings the change would silence.
 SLOT_UTC = (11, 17)       # the cron slot in nightly-watch.yml; scheduled windows end on a slot, so they are contiguous
-SLOT_GRACE = timedelta(hours=3)  # a scheduled run may start this late and still count as the previous window's inspection
 MIN_FOLDER_LEN = 6        # f: shorter folder names are too generic to name a label
 BASELINE_FILE = ROOT / "tasks" / "nightly-watch-2026-11-22" / "label_baseline.txt"  # f: labels grandfathered at ship
 
 
 SAFE_ID = re.compile(r"[A-Z]{2,12}-\d{1,8}")
 SAFE_PATH = re.compile(r"(?:tasks|scripts|docs|data)/[A-Za-z0-9_./-]{1,100}")
-SAFE_LABEL = re.compile(r"[A-Za-z0-9._-]{1,60}(?: [A-Za-z0-9._-]{1,60})?")
 SAFE_TABLE = re.compile(r"[a-z_]{1,40}")
 
 
@@ -72,8 +70,13 @@ def err_text(e):
     return str(e) if isinstance(e, WatchError) else f"unexpected {type(e).__name__}"
 
 
+def label_hash(label):
+    return hashlib.sha256(label.encode()).hexdigest()[:8]
+
+
 def label_text(label):
-    return label if SAFE_LABEL.fullmatch(label) else f"label#{hashlib.sha256(label.encode()).hexdigest()[:8]}"
+    """created_by is free text (it can be a person's or company's name), so it is never printed: an opaque id only."""
+    return f"label#{label_hash(label)}"
 
 
 def safe_keys(keys):
@@ -298,9 +301,9 @@ def check_coverage(facts, repo, since):
         return
     prev = max(parse_time(r["created_at"]) for r in runs)
     facts["coverage"] = f"previous scheduled run {iso(prev)}"
-    if prev < since - SLOT_GRACE:
-        facts["errors"].append(f"coverage gap: the last completed scheduled run was {iso(prev)}, so the window before "
-                               f"{iso(since)} was never inspected")
+    if slot_before(prev) < since:  # the run created at `prev` inspected the window ending on its own slot; we need the one ending at `since`
+        facts["errors"].append(f"coverage gap: the last completed scheduled run was {iso(prev)} (it inspected the window "
+                               f"ending {iso(slot_before(prev))}), so the window ending {iso(since)} was never inspected")
 
 
 def slot_before(now):
@@ -437,10 +440,16 @@ def main():
     ap.add_argument("--ref", help="branch to watch (default origin/main, else main)")
     ap.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY"), help="owner/name (default $GITHUB_REPOSITORY, else gh)")
     ap.add_argument("--print-label-baseline", metavar="REF", help="print the grandfathered label list at REF and exit")
+    ap.add_argument("--resolve-label", metavar="HEX", help="print the created_by label(s) at --ref whose label#<HEX> id this is (local use)")
     ap.add_argument("--facts", help="judge a saved facts JSON file instead of collecting")
     ap.add_argument("--save-facts", help="write the collected facts (counts only) to this JSON file")
     ap.add_argument("--report-file", help="also write the report text here (the workflow files an issue from it)")
     a = ap.parse_args()
+    if a.resolve_label:
+        ref = a.ref or "origin/main"
+        names = [n for n in git("ls-tree", "--name-only", ref, "data/").split() if re.match(r"data/evidence.*\.csv$", n)]
+        print("\n".join(sorted({r["created_by"] for n in names for r in csv_rows(blob(ref, n)) if label_hash(r["created_by"]) == a.resolve_label})))
+        return 0
     if a.print_label_baseline:
         print("\n".join(labels_at(a.print_label_baseline)))
         return 0

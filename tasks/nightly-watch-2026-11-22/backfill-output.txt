@@ -138,7 +138,7 @@ NIGHTLY WATCH — inspected:
   tasks/ folders read: 367; labels without provenance: 9
   PIC-18 unknown counts (process/market/size): 322/316/443 -> 322/316/443
   latest completed validate run on main: success
-FINDING [a] created_by 'spaghetti-burndown-batch2-2026-11-21': 1,728 evidence rows added (limit 1,000)
+FINDING [a] created_by 'label#364cc707': 1,728 evidence rows added (limit 1,000)
 FINDING [a] PR #443: 1,276 evidence rows added (limit 1,000)
 FINDING [a] PR #453: 1,765 registry links added (limit 1,000)
 FINDING [b] PR #440 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
@@ -173,15 +173,15 @@ FINDING [c] PR #453 merged 2026-11-22T08:19:01Z before its validate check finish
 FINDING [c] PR #454 merged 2026-11-22T08:23:38Z before its validate check finished (status completed, completed 2026-11-22T08:28:05Z)
 FINDING [c] PR #455 merged 2026-11-22T08:35:48Z before its validate check finished (status completed, completed 2026-11-22T08:40:18Z)
 FINDING [e] 15 data/ PRs merged and no PIC-18 unknown count fell: process 322->322, market 316->316, size 443->443 (of 794->794 org rows)
-FINDING [f] created_by 'spaghetti-burndown-batch2-2026-11-21': 1,728 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-burndown-batch1-2026-11-21': 507 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-burndown-batch4-2026-11-21': 240 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-burndown-batch3-2026-11-21': 124 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-drift-rewitness-2026-11-21': 53 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-phase-c-programs-2026-11-20': 32 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-phase-c-streets-2026-11-21': 22 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-phase-c-unit3-2026-11-21': 22 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-nourl-cleared-2026-11-21': 16 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#364cc707': 1,728 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#052d97b4': 507 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#16767251': 240 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#f4051a14': 124 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#2511f91c': 53 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#ca62dc89': 32 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#e266dfb3': 22 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#49955b87': 22 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#2f3a22b7': 16 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
 RESULT: FAIL — findings above
 
 ##### night 2026-11-22-partial  (python3 scripts/nightly_watch.py --facts tasks/nightly-watch-2026-11-22/backfill/night-2026-11-22-partial.json)
@@ -193,8 +193,8 @@ NIGHTLY WATCH — inspected:
   tasks/ folders read: 369; labels without provenance: 4
   PIC-18 unknown counts (process/market/size): 322/316/443 -> 322/316/443
   latest completed validate run on main: success
-FINDING [a] created_by 'spaghetti-batch6-2026-11-22': 23,564 evidence rows added (limit 1,000)
-FINDING [a] created_by 'spaghetti-batch5-2026-11-22': 10,352 evidence rows added (limit 1,000)
+FINDING [a] created_by 'label#6b2561e2': 23,564 evidence rows added (limit 1,000)
+FINDING [a] created_by 'label#e6f09791': 10,352 evidence rows added (limit 1,000)
 FINDING [a] PR #457: 10,530 evidence rows added (limit 1,000)
 FINDING [a] PR #458: 23,564 evidence rows added (limit 1,000)
 FINDING [a] PR #458: 6,837 registry links added (limit 1,000)
@@ -203,9 +203,9 @@ FINDING [b] PR #457 changed data/ and has 0 '**Review record**' comment(s) befor
 FINDING [b] PR #458 changed data/ and has 0 '**Review record**' comment(s) before merge (need 2)
 FINDING [c] PR #456 merged 2026-11-22T11:46:03Z before its validate check finished (status completed, completed 2026-11-22T11:50:39Z)
 FINDING [e] 5 data/ PRs merged and no PIC-18 unknown count fell: process 322->322, market 316->316, size 443->443 (of 794->794 org rows)
-FINDING [f] created_by 'spaghetti-batch6-2026-11-22': 23,564 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-batch5-2026-11-22': 10,352 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-burndown-batch1-2026-11-21': 122 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
-FINDING [f] created_by 'spaghetti-burndown-batch2-2026-11-21': 56 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#6b2561e2': 23,564 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#e6f09791': 10,352 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#052d97b4': 122 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
+FINDING [f] created_by 'label#364cc707': 56 evidence row(s) added; new label, and no tasks/ folder name appears in it (provenance cannot be verified by name; may be a naming mismatch)
 RESULT: FAIL — findings above
 
