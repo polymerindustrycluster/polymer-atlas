@@ -272,7 +272,7 @@ MUTANTS = {  # name: (file, original fragment, loosened replacement); each must 
     "one_sided_designators_pass": ("g", '        elif units_seen == "unequal":', "        elif False:"),
     "designator_conflict_ignored": ("g", '        if units_seen == "conflict" and', "        if False and"),
     "street_suffix_ignored": ("g", '            holds.append("street_suffix_unexplained")', "            pass"),
-    "city_with_second_state": ("g", "        if not city_is_plain(city):", "        if False:"),
+    "city_with_second_state": ("g", "return city, st, z, used == len(rest) and city_is_plain(city)", "return city, st, z, used == len(rest)"),
     "city_second_state_one_part": ("g", "len(rest) == 1 and city_is_plain(c)", "len(rest) == 1"),
     "two_records_ignored": ("g", '    if table == "sites" and not _alone:', "    if False:"),
     "building_first_digit_only": ("m", r"([a-z]?\d+(?:-?[a-z0-9]+)?|[a-z])\b", r"([a-z]?\d+[a-z]?|[a-z])\b"),

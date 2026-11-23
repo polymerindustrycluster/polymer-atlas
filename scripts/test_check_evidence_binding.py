@@ -478,12 +478,16 @@ class Verdicts(unittest.TestCase):
 
     def test_r4_2_second_state_or_zip_in_the_locality(self):  # Codex r4: EVD-999984 / SITE-999984 (S-ZEP here) and neighbours
         for place in (", DAYTON TX 75001, OH 44699", ", DAYTON TX 75001 OH 44699", ", TX, OH 44699",
-                      ", DAYTON, TX 75001, OH 44699", ", DAYTON TX, OH 44699", ", DOVER, OH 44699, 44601"):
+                      ", DAYTON, TX 75001, OH 44699", ", DAYTON TX, OH 44699", ", DOVER, OH 44699, 44601",
+                      ", DAYTON TX 75001, TOWNSHIP OF, OH 44699", ", TX, TOWNSHIP OF, OH 44699",
+                      ", DAYTON TX, TOWNSHIP OF, OH 44699"):  # Codex r5: the ECHO "TOWNSHIP OF" form
             self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", f"22 BIRCH LN{place}")), "HELD",
                        "held_for_reading:locality_not_read")
         self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", "22 BIRCH LN, OH 44699, TX 75001")), "FAIL",
                    "state_differs+city_differs")  # a printed other state stays a demonstrated conflict
         self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", "22 BIRCH LN, DOVER, OH 44699")), "PASS")  # control
+        self.check(ev("S-ZEP", TCEQ, permit("Zephyr Plastics Inc", "X", "22 BIRCH LN, DOVER, TOWNSHIP OF, OH 44699")),
+                   "PASS")  # control: the clean ECHO "TOWNSHIP OF" form still passes
 
     def test_r3_6_parentheses_are_not_dropped(self):
         for name in ("Acme Polymer (operated by Quill Resins)", "Acme Polymer (Storage Division)"):

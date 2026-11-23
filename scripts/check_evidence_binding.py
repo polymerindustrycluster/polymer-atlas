@@ -315,12 +315,11 @@ def quoted_place(addr):
     st = state_code(last)
     if st:
         used, city = 1, rest[-2] if len(rest) > 1 else ""
-        if not city_is_plain(city):
-            return city, st, z, False  # "Dayton TX 75001, OH 44699": a second state or ZIP inside the city is unexplained (Codex r4)
         used += bool(city)
         if len(rest) > 2 and re.fullmatch(r"(?i)(?:city|town|township|borough|village) of", city):
             city, used = rest[-3], 3  # ECHO prints "SPRINGFIELD, TOWNSHIP OF, OH"
-        return city, st, z, used == len(rest)
+        # "Dayton TX 75001, OH 44699": a second state or ZIP inside the final city is unexplained (Codex r4, r5)
+        return city, st, z, used == len(rest) and city_is_plain(city)
     words = last.split()
     for k in range(1, len(words)):  # "DOVER OH 44101" or "DOVER OHIO" in one comma part
         if state_code(" ".join(words[k:])):
