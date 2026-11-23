@@ -78,13 +78,14 @@ jobs:
             echo "gate not yet on main (scripts/check_evidence_binding.py is absent): cannot inspect" | tee -a "$log"
             echo cannot_inspect > "$out/state"; exit 0
           fi
+          read -r head < "$out/head" || exit 2
           worst=0
           for mode in --verify-proofs --provenance-since; do
-            echo "== python3 scripts/check_evidence_binding.py $mode $BASE --tree pr" | tee -a "$log"
+            echo "== python3 scripts/check_evidence_binding.py $mode $BASE --tree pr --pr-head $head" | tee -a "$log"
             if ! python3 scripts/check_evidence_binding.py --help 2>&1 | grep -q -- "$mode"; then
               echo "main's gate has no $mode: cannot inspect" | tee -a "$log"; r=2
             else
-              timeout 1500 python3 scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr 2>&1 | tee -a "$log"
+              timeout 1500 python3 scripts/check_evidence_binding.py "$mode" "$BASE" --tree pr --pr-head "$head" 2>&1 | tee -a "$log"
               r=${PIPESTATUS[0]}
             fi
             echo "exit $r" | tee -a "$log"

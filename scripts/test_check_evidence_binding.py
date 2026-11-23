@@ -786,6 +786,7 @@ class WebProofs(unittest.TestCase):
     CAPTURE = f"<main><p>Markets</p><p>{QUOTE}</p></main>".encode()
     FOLDER = "tasks/lane-t/"
     BASE = "0" * 40
+    PR_HEAD = "1" * 40
 
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
@@ -846,9 +847,11 @@ class WebProofs(unittest.TestCase):
             contextlib.redirect_stdout(out),
             patch.object(b, "resolve_base", return_value=self.BASE),
             patch.object(b, "rows", side_effect=tree_rows),
+            patch.object(b, "git", return_value="2026-11-23\n") as git,
             patch.object(b, "fetch_url", return_value=self.capture, side_effect=self.fetch_error) as fetch,
         ):
-            code = b.main([mode, self.BASE, "--tree", str(self.tree)])
+            code = b.main([mode, self.BASE, "--tree", str(self.tree), "--pr-head", self.PR_HEAD])
+        self.git = git
         self.fetch = fetch
         return code, out.getvalue()
 
@@ -867,6 +870,34 @@ class WebProofs(unittest.TestCase):
                 self.assertEqual(code, 0, out)
                 self.assertIn("1 PASS", out)
                 self.fetch.assert_called_once_with(self.proof["capture"])
+
+    def test_backdated_observation_cannot_admit_a_2014_archive(self):
+        self.archive("20140531000000")
+        self.ev["observed_date"] = "2014-06-01"
+        self.proof["claim_sha256"] = b.claim_sha256(self.ev)
+        self.assert_held("more than 30 days from PR head committer date")
+        self.fetch.assert_not_called()
+
+    def test_observation_40_days_from_head_is_held(self):
+        for observed in ("2026-10-14", "2027-01-02"):
+            with self.subTest(observed=observed):
+                self.ev["observed_date"] = observed
+                self.proof["claim_sha256"] = b.claim_sha256(self.ev)
+                self.assert_held("more than 30 days from PR head committer date")
+                self.fetch.assert_not_called()
+
+    def test_observation_within_30_days_of_head_passes(self):
+        for observed, stamp in (("2026-10-24", None), ("2026-11-13", "20241113000000")):
+            with self.subTest(observed=observed):
+                self.ev["observed_date"] = observed
+                self.proof["claim_sha256"] = b.claim_sha256(self.ev)
+                if stamp:
+                    self.archive(stamp)  # Exactly two years from observed_date, older if measured from the head.
+                code, out = self.run_gate()
+                self.assertEqual(code, 0, out)
+                self.assertIn("1 PASS", out)
+                self.git.assert_called_once_with("show", "--no-patch", "--format=%cs", "--end-of-options", self.PR_HEAD, "--")
+                self.fetch.assert_called_once()
 
     def test_repointed_row(self):
         self.ev["record_id"] = "ORG-T2"
@@ -925,6 +956,27 @@ class WebProofs(unittest.TestCase):
                 self.assertEqual(b.decode_capture(raw, encoding), self.CAPTURE)
         with self.assertRaises(gzip.BadGzipFile):
             b.decode_capture(self.CAPTURE, "gzip")
+
+    def test_gzip_capture_cannot_expand_past_byte_limit(self):
+        with patch.object(b, "MAX_CAPTURE_BYTES", 64):
+            raw = gzip.compress(b"x" * (b.MAX_CAPTURE_BYTES + 1))
+            self.assertLess(len(raw), b.MAX_CAPTURE_BYTES)
+            with self.assertRaisesRegex(ValueError, "decoded capture exceeds byte limit"):
+                b.decode_capture(raw, "gzip")
+
+    def test_fetch_rejects_redirects_before_reading_body(self):
+        for status in (301, 302):
+            with (
+                self.subTest(status=status),
+                patch.object(b.socket, "getaddrinfo", return_value=[(None, None, None, None, ("93.184.216.34", 443))]),
+                patch.object(b.http.client, "HTTPSConnection") as connect,
+            ):
+                response = connect.return_value.getresponse.return_value.__enter__.return_value
+                response.status = status
+                with self.assertRaisesRegex(ValueError, f"capture returned HTTP {status}"):
+                    b.fetch_url(self.SOURCE)
+                connect.assert_called_once()
+                response.read.assert_not_called()
 
     def test_quote_only_in_page_chrome(self):
         for tag in ("header", "nav", "footer"):
