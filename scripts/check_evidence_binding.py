@@ -32,6 +32,8 @@ Every evidence row gets exactly one verdict:
                   designator_not_on_both_sides, street_suffix_unexplained, locality_not_read, locality_not_matched, passes_on_two_records).
                   Web proofs are HELD for records absent from the base or observations outside the merge commit date window.
   READ_REQUIRED   a web quote awaiting a valid, replayed per-row proof in tasks/<folder>/BINDING_PROOF.csv.
+                  Programs and ecosystem records use their own names and published city/state where an address is quoted.
+                  For program and office web proofs the source must match the record's own page.
   UNINSPECTABLE   no_quote, other_table, record_not_found, unknown_source_family, parse_failed, operator_not_a_name,
                   no_civic_number. No admission path here either.
 Every verdict other than PASS fails the PR; FAIL, HELD and the rest differ only for the reader's queue.
@@ -144,31 +146,48 @@ def rows(ref, pattern):
     return out
 
 
-class Index:
-    """The records a quote can be about: sites, organizations (shards + ecosystem) by id."""
+def record_names(rec):
+    if "program_id" in rec:
+        return [rec.get("program_name") or ""]
+    names = [v for _, v in org_name_fields(rec)] if "trade_names" in rec else [rec.get("legal_name") or ""]
+    if rec.get("record_grain") == "office" and rec.get("office_name"):
+        names.append(rec["office_name"])
+    return names
 
-    def __init__(self, sites, orgs):
+
+PROGRAM_ECOSYSTEM_TABLES = {"ecosystem", "programs"}
+PROGRAM_ECOSYSTEM_CLAIMS = {"existence", "scope", "address"}
+
+
+class Index:
+    """Index records by their declared table, with a shared organization index for foreign keys."""
+
+    def __init__(self, sites, orgs, ecosystem=(), programs=()):
         self.sites = {s["site_id"]: s for s in sites}
-        self.orgs = {o["org_id"]: o for o in orgs}
+        self.tables = {"sites": self.sites, "organizations": {o["org_id"]: o for o in orgs},
+                       "ecosystem": {o["org_id"]: o for o in ecosystem},
+                       "programs": {p["program_id"]: p for p in programs}}
+        self.orgs = self.tables["organizations"] | self.tables["ecosystem"]
         self._notes = {}
 
     @classmethod
     def load(cls, ref=None):
-        return cls(rows(ref, "sites_*.csv"), rows(ref, "organizations_*.csv") + rows(ref, "ecosystem.csv"))
+        return cls(rows(ref, "sites_*.csv"), rows(ref, "organizations_*.csv"),
+                   rows(ref, "ecosystem.csv"), rows(ref, "programs.csv"))
 
     def record(self, table, rid):
-        return self.sites.get(rid) if table == "sites" else self.orgs.get(rid)
+        return self.tables.get(table, {}).get(rid)
 
     def org_keys(self, oid):
-        o = self.orgs.get(oid)
-        if not o:
-            return set()
-        names = [v for _, v in org_name_fields(o)] if "trade_names" in o else [o.get("legal_name", "")]
-        return {k for v in names for k in (name_key(v), name_key(PAREN_RE.sub(" ", v))) if k}
+        return {k for v in record_names(self.orgs.get(oid, {}))
+                for k in (name_key(v), name_key(PAREN_RE.sub(" ", v))) if k}
 
     def held_keys(self, table, rid):
         """name_keys of every name the record itself holds (strict reading: no parent, no notes, no generic site label)."""
-        if table != "sites":
+        if table in PROGRAM_ECOSYSTEM_TABLES:
+            return {k for v in record_names(self.record(table, rid)) for k in
+                    (name_key(v), name_key(PAREN_RE.sub(" ", v))) if k}
+        if table == "organizations":
             return self.org_keys(rid)
         s = self.sites[rid]
         # A site-name part made only of generic labels ("Plant 2", "North Warehouse", the site's city) is not a name;
@@ -193,6 +212,14 @@ class Index:
         give their own name; 29 in identical text)."""
         o = self.orgs.get(self.sites[rid].get("org_id")) if table == "sites" else self.orgs.get(rid)
         names, seen = set(), set()
+        if table in PROGRAM_ECOSYSTEM_TABLES:
+            rec = self.record(table, rid)
+            institution = rec.get("institution_org_id") or rec.get("parent_institution_org_id")
+            if institution and institution != rid:
+                parent = self.orgs.get(institution, {})
+                names.update(record_names(parent))
+                if table == "programs":
+                    o = parent or None
         while o and o["org_id"] not in seen:
             seen.add(o["org_id"])
             up = (o.get("ultimate_parent_name") or "").strip()
@@ -200,7 +227,7 @@ class Index:
                 names.add(up)
             o = self.orgs.get(o.get("parent_org_id") or "")
             if o:
-                names |= {v for _, v in org_name_fields(o)} if "trade_names" in o else {o.get("legal_name", "")}
+                names.update(record_names(o))
         return {n for n in names if n}
 
     def parent_keys(self, table, rid):
@@ -208,9 +235,7 @@ class Index:
 
     def own_texts(self, oid):
         """An organization's own names as written (squash only, corporate-form words kept)."""
-        o = self.orgs.get(oid) or {}
-        names = [v for _, v in org_name_fields(o)] if "trade_names" in o else [o.get("legal_name", "")]
-        return {squash(v) for v in names if squash(v)}
+        return {squash(v) for v in record_names(self.orgs.get(oid, {})) if squash(v)}
 
     def street_sites(self, key):
         """site_ids whose street_key is key (for the two-records rule)."""
@@ -443,10 +468,22 @@ def street_limit(rec_key, q_key):
     return ""
 
 
+def record_locality(rec, addr):
+    """Check a quoted address against the city and state a program or ecosystem record holds."""
+    city, state = rec.get("city"), state_code(rec.get("state"))
+    q_city, q_state, _, complete = quoted_place(addr)
+    if complete:
+        if (state and q_state and state != q_state) or city_differs(city, "", q_city, ""):
+            return "FAIL", "locality_differs"
+        if same_locality(city, state, "", q_city, q_state, ""):
+            return "", ""
+    return "UNINSPECTABLE", "locality_not_matched"
+
+
 def judge(ev, idx, _alone=False):
     """(verdict, reason, detail dict) for one evidence row. _alone skips the two-records rule (used by that rule)."""
     table, rid, detail, src = ev["record_table"], ev["record_id"], ev["claim_detail"], ev["source_ref"]
-    if table not in ("sites", "organizations", "ecosystem"):
+    if table not in idx.tables:
         return "UNINSPECTABLE", "other_table", {}
     rec = idx.record(table, rid)
     if rec is None:
@@ -456,6 +493,9 @@ def judge(ev, idx, _alone=False):
         return "UNINSPECTABLE", "no_quote", {}
     if src.startswith("http"):
         return judge_web(ev, rec, idx, detail[i + 6:].strip())
+    claim = ev["claim_type"]
+    if table in PROGRAM_ECOSYSTEM_TABLES and claim not in PROGRAM_ECOSYSTEM_CLAIMS:
+        return "UNINSPECTABLE", "claim_untested", {}
     fam = family_of(src)
     if fam is None:
         return "UNINSPECTABLE", "unknown_source_family", {}
@@ -471,7 +511,10 @@ def judge(ev, idx, _alone=False):
     alt_keys = {k for n in p["alt_names"] for k in (name_key(n), site_name_key(n, rec.get("city") or "")) if k}
     held = idx.held_keys(table, rid)
     own_org = rec.get("org_id") if table == "sites" else rid
-    own, own_texts = idx.org_keys(own_org), idx.own_texts(own_org)
+    if table in PROGRAM_ECOSYSTEM_TABLES:
+        own, own_texts = held, {squash(v) for v in record_names(rec) if squash(v)}
+    else:
+        own, own_texts = idx.org_keys(own_org), idx.own_texts(own_org)
     parents = idx.parent_keys(table, rid)
     parent_texts = {squash(n) for n in idx.parent_names(table, rid)}
     qtexts = {squash(n) for n in p["names"]}
@@ -536,7 +579,16 @@ def judge(ev, idx, _alone=False):
             holds.append("locality_not_read")  # no locality, or comma parts the parser could not read (finding 1)
         elif not same_locality(rec.get("city"), rec.get("state"), rec.get("zip"), q_city, q_st, q_zip):
             holds.append("locality_not_matched")  # state missing, or neither the city nor the ZIP5 matches (finding 1)
-    elif ev["claim_type"] == "address":
+    elif table in PROGRAM_ECOSYSTEM_TABLES:
+        if claim == "address" and fam[4] != "entity":
+            reasons.append("address_not_from_entity_source")
+        if p["addr"] or claim == "address":
+            verdict, reason = record_locality(rec, p["addr"])
+            if verdict == "FAIL":
+                reasons.append(reason)
+            elif verdict and not reasons:
+                return verdict, reason, info
+    elif claim == "address":
         basis = fam[4]
         info["hq_basis"] = basis
         if basis == "facility":
@@ -586,6 +638,10 @@ def on_platform(host):
 
 def record_website(idx, table, rec):
     """A site's website is held on its organization."""
+    if table == "programs":
+        return rec.get("url") or ""
+    if table == "ecosystem" and rec.get("record_grain") == "office":
+        return rec.get("tto_url") or ""
     org = idx.orgs.get(rec.get("org_id")) if table == "sites" else rec
     return (org or {}).get("website") or ""
 
@@ -616,6 +672,16 @@ def own_domain(src, site):
             return False
         return not wp or sp == wp or sp.startswith(wp + "/")
     return registrable(sh) == registrable(wh)
+
+
+def matches_record_page(idx, table, rec, url):
+    """Programs and offices must bind to their own page on a shared campus website."""
+    if table != "programs" and (table != "ecosystem" or rec.get("record_grain") != "office"):
+        return True
+    try:
+        return same_page(url, record_website(idx, table, rec))
+    except ValueError:
+        return False
 
 
 def street_tokens(s):
@@ -674,6 +740,13 @@ def judge_web(ev, rec, idx, quote):
     """Apply the existing mechanical floor. A separate proof supplies the independent reading and source replay."""
     table, cls, ct = ev["record_table"], ev["source_class"], ev["claim_type"]
     fails, why, info = [], "", {}
+    if table in PROGRAM_ECOSYSTEM_TABLES:
+        if ct not in PROGRAM_ECOSYSTEM_CLAIMS and not (ct == "activity" and cls == "own_site"):
+            return "UNINSPECTABLE", "claim_untested", {}
+        if ct == "address":
+            verdict, reason = record_locality(rec, quote)
+            if verdict:
+                return verdict, reason, {}
     if table == "sites" and ct in ("address", "existence"):
         w = web_street_reason(rec.get("street_address"), quote)
         if w in ("street_absent_from_quote", "unit_differs"):
@@ -692,6 +765,8 @@ def judge_web(ev, rec, idx, quote):
             host = re.sub(r"[^a-z0-9]", "", src[0])
             if any(len(k.split()[0]) >= 4 and k.split()[0] in host for k in idx.held_keys(table, ev["record_id"])):
                 info["name_alt"] = "name_in_host"  # measured: a sister or regional domain carrying a held name
+        elif not matches_record_page(idx, table, rec, ev["source_ref"]):
+            fails.append("not_own_site")
     elif cls in ("directory", "press"):
         q = f" {name_key(quote)} "
         if not any(f" {k} " in q for k in idx.held_keys(table, ev["record_id"])):
@@ -832,7 +907,6 @@ class _Text(HTMLParser):
         self.parts, self.main, self.skip = [], [], []
         self.main_tag = None
         self.main_depth = 0
-        self.has_main = False
 
     def handle_starttag(self, tag, attrs):
         if self.skip:
@@ -842,13 +916,14 @@ class _Text(HTMLParser):
         attrs = dict(attrs)
         role = attrs.get("role")
         labels = f"{attrs.get('id', '')} {attrs.get('class', '')}"
-        if (tag in self.SKIP or role in self.SKIP_ROLES or self.CHROME.search(labels)
+        # Divi labels the whole body with its header layout.
+        chrome_label = tag not in ("html", "body") and self.CHROME.search(labels)
+        if (tag in self.SKIP or role in self.SKIP_ROLES or chrome_label
                 or "hidden" in attrs or attrs.get("aria-hidden") == "true"):
             self.skip.append(tag)
         elif tag == self.main_tag:
             self.main_depth += 1
         elif not self.main_tag and (tag == "main" or role == "main"):
-            self.has_main = True
             self.main_tag, self.main_depth = tag, 1
 
     def handle_endtag(self, tag):
@@ -876,7 +951,7 @@ def capture_text(data):
     parser = _Text()
     parser.feed(data.decode("utf-8"))
     parser.close()
-    return norm_space(" ".join(parser.main if parser.has_main else parser.parts))
+    return norm_space(" ".join(parser.main)) or norm_space(" ".join(parser.parts))
 
 
 def claim_sha256(ev):
@@ -1026,7 +1101,8 @@ def proof_capture(r, ev, idx, base_idx, archive, observed):
     if record_website(base_idx, table, base_record) != record_website(idx, table, idx.record(table, rid)):
         raise ValueError("record website differs from base")
     websites = record_websites(base_idx, table, base_record, preserve_path=True)
-    if not any(own_domain(host_path(original, preserve_path=True), website) for website in websites):
+    if (not any(own_domain(host_path(original, preserve_path=True), website) for website in websites)
+            or not matches_record_page(base_idx, table, base_record, original)):
         raise ValueError("capture not_own_site")
     if not (same_page(original, source_ref) if m else original == source_ref):
         raise ValueError("capture differs from the row's cited page")
