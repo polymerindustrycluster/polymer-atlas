@@ -1,6 +1,6 @@
 """Tests for the nightly watch (scripts/nightly_watch.py): one planted case per finding a-g that must fire, one clean
 day that must pass, and API failures that must fail, never pass quietly."""
-import json, os, subprocess, sys, tempfile, unittest
+import json, os, shutil, subprocess, sys, tempfile, unittest
 from datetime import datetime, timezone
 from pathlib import Path
 from unittest import mock
@@ -155,7 +155,69 @@ class KnownAnswer(unittest.TestCase):
             self.assertEqual(self.letters(n), {"b"}, n)
 
 
+class PublicOutput(unittest.TestCase):
+    """The repository and its run logs are public: planted canaries must not reach the report."""
+
+    def test_canaries_never_printed(self):
+        f = clean()
+        label = "CANARY-label <img src=x> https://evil.example/x"
+        row = "2026-11-21|ORG-1|CANARY-whole-inclusion-log-row|free text"
+        f["commits"][0]["evidence_added"] = {label: 1500}
+        f["commits"][0]["removed"] = {"inclusion_log": {"n": 1, "e.g.": [row]}, "evidence": {"n": 2, "e.g": [], "e.g.": ["EVD-000123", "tasks/x/y.csv", "CANARY-key"]}}
+        f["labels_without_provenance"] = [label]
+        f["errors"] = [nw.err_text(RuntimeError("secret CANARY-error text")), nw.err_text(nw.WatchError("gh pr failed (exit 1, HTTP 502)"))]
+        text, _ = nw.report(f)
+        self.assertNotIn("CANARY", text)
+        self.assertNotIn("evil.example", text)
+        self.assertIn("label#", text)
+        self.assertIn("EVD-000123", text)
+        self.assertIn("HTTP 502", text)
+
+    def test_plain_label_is_shown(self):
+        self.assertEqual(nw.label_text("claude-code evidence-fix-2026-11-20"), "claude-code evidence-fix-2026-11-20")
+
+
+class Jq(unittest.TestCase):
+    @unittest.skipUnless(shutil.which("jq"), "jq not installed")
+    def test_record_expression_parses_and_matches_the_prefix(self):
+        sample = json.dumps([{"created_at": "t1", "body": "**Review record**\n- x"}, {"created_at": "t2", "body": None},
+                             {"created_at": "t3", "body": "  \n**Review record** late"}, {"created_at": "t4", "body": "see **Review record**"}])
+        out = subprocess.run(["jq", "-c", nw.RECORD_JQ], input=sample, capture_output=True, text=True, check=True).stdout.split("\n")
+        self.assertEqual([json.loads(x)["record"] for x in out if x], [True, False, True, False])
+
+
+class Windows(unittest.TestCase):
+    def test_slot_alignment_is_contiguous_whatever_the_start_delay(self):
+        ends = {nw.slot_before(nw.parse_time(t)) for t in ("2026-11-22T11:18:00Z", "2026-11-22T11:47:30Z", "2026-11-22T23:00:00Z")}
+        self.assertEqual(ends, {nw.parse_time("2026-11-22T11:17:00Z")})
+        self.assertEqual(nw.slot_before(nw.parse_time("2026-11-22T06:00:00Z")), nw.parse_time("2026-11-21T11:17:00Z"))
+
+    def test_missing_earlier_scheduled_run_is_reported(self):
+        since = nw.parse_time("2026-11-21T11:17:00Z")  # the window ending 11-22 11:17 starts at the previous slot
+        f = {"errors": []}
+        with mock.patch.object(nw, "gh", return_value='{"created_at": "2026-11-19T11:20:00Z"}\n'):
+            nw.check_coverage(f, "o/r", since)
+        self.assertTrue(any("coverage gap" in e for e in f["errors"]))
+        f = {"errors": []}
+        with mock.patch.object(nw, "gh", return_value='{"created_at": "2026-11-21T11:50:00Z"}\n'):  # the previous slot's run, 33 minutes late, is fine
+            nw.check_coverage(f, "o/r", since)
+        self.assertEqual(f["errors"], [])
+
+    def test_main_validate_must_have_completed_by_the_cutoff(self):
+        f = {"errors": [], "ref": "main", "base": "a", "head": "b", "commits": []}
+        runs = ('{"conclusion": "success", "created_at": "2026-11-22T16:15:29Z", "updated_at": "2026-11-22T16:20:41Z", "head_sha": "6a76e923"}\n'
+                '{"conclusion": "success", "created_at": "2026-11-22T11:46:05Z", "updated_at": "2026-11-22T11:50:00Z", "head_sha": "4ee02127"}\n')
+        with mock.patch.object(nw, "git", return_value=""), mock.patch.object(nw, "gh", side_effect=lambda *a: "[]" if a[:2] == ("pr", "list") else runs):
+            nw.collect_github(f, [], nw.parse_time("2026-11-22T11:17:00Z"), nw.parse_time("2026-11-22T16:15:32Z"), "o/r")
+        self.assertEqual(f["main_validate"]["head_sha"], "4ee02127")  # 6a76e923's run had not completed at the cutoff
+
+
 class CouldNotInspect(unittest.TestCase):
+    def test_missing_rule_inputs_are_errors_not_passes(self):
+        for key in ("main_validate", "unknown", "labels_without_provenance"):
+            f = clean(); del f[key]
+            self.assertEqual(nw.report(f)[1], 2, key)
+
     def test_a_commit_with_no_pr_is_an_error(self):
         errors = []
         f = clean(); f["commits"].append(dict(f["commits"][0], sha="ffffffffff", pr=None))
@@ -213,7 +275,7 @@ class RealGit(unittest.TestCase):
 
     def test_collect_counts_rows_and_a_gh_failure_fails_the_run(self):
         errors = []
-        with mock.patch.object(nw, "gh", side_effect=RuntimeError("gh api: HTTP 502")):
+        with mock.patch.object(nw, "gh", side_effect=nw.WatchError("gh api failed (exit 1, HTTP 502)")):
             facts = nw.collect("main", *self.window(), "o/r", errors)
         # base resolves to the root commit, so the one later commit is the window
         self.assertEqual(len(facts["commits"]), 1)
@@ -239,6 +301,28 @@ class RealGit(unittest.TestCase):
             (self.d / "baseline.txt").write_text("claude evidence-fix-2026-11-20\n")
             self.assertEqual(nw.collect("main", *self.window(), "o/r", [])["labels_without_provenance"], [])
         self.assertTrue(baseline.exists())  # the shipped baseline file is there
+
+    def test_a_regular_file_under_tasks_is_not_a_folder(self):
+        d = self.d
+        (d / "tasks" / "README.md").write_text("x\n")
+        ev = d / "data" / "evidence_organizations_OH.csv"
+        ev.write_text(ev.read_text() + "EVD-9,organizations,ORG-1,existence,d,own_site,u,2026-11-21,supports_A,README.md,,\n")
+        subprocess.run(["git", "-C", str(d), "add", "."], check=True); subprocess.run(["git", "-C", str(d), "commit", "-qm", "x"], check=True, capture_output=True)
+        with mock.patch.object(nw, "gh", side_effect=nw.WatchError("x")), mock.patch.object(nw, "BASELINE_FILE", d / "none.txt"):
+            (d / "none.txt").write_text("")
+            facts = nw.collect("main", *self.window(), "o/r", [])
+        self.assertIn("README.md", facts["labels_without_provenance"])
+
+    def test_blob_distinguishes_absent_from_failed(self):
+        self.assertEqual(nw.blob("HEAD", "data/not_there.csv"), "")
+        with self.assertRaises(nw.WatchError):
+            nw.blob("no-such-ref", "data/evidence_organizations_OH.csv")
+        real = subprocess.run
+        def failing(cmd, *a, **k):  # a failed read of an EXISTING blob: exit 128 with no "does not exist" text
+            r = real(cmd, *a, **k)
+            return subprocess.CompletedProcess(cmd, 128, "", "fatal: unable to read") if cmd[3:4] == ["show"] else r
+        with mock.patch.object(subprocess, "run", side_effect=failing), self.assertRaises(nw.WatchError):
+            nw.blob("HEAD", "data/evidence_organizations_OH.csv")
 
     def test_shallow_clone_is_an_error(self):
         shallow = Path(self.tmp.name) / "shallow"
@@ -282,18 +366,22 @@ class RealGit(unittest.TestCase):
         git("checkout", "-q", "main"); git("merge", "-q", "--no-ff", "-m", "train", "train")
         train = git("rev-parse", "HEAD")
         add_three = git("rev-parse", "main^1")
-        prs = [{"number": 4, "mergedAt": "2026-11-21T00:50:00Z", "mergeCommit": {"oid": add_three}, "headRefOid": "g" * 40, "comments": []},
-               {"number": 5, "mergedAt": "2026-11-21T01:00:00Z", "mergeCommit": {"oid": member}, "headRefOid": "h" * 40,
-                "comments": [{"body": "**Review record**\nok", "createdAt": "2026-11-21T00:30:00Z"},
-                             {"body": "**Review record**\nlate", "createdAt": "2026-11-21T02:00:00Z"}]},
-               {"number": 6, "mergedAt": "2026-11-21T01:05:00Z", "mergeCommit": {"oid": train}, "headRefOid": "i" * 40, "comments": []}]
+        prs = [{"number": 4, "mergedAt": "2026-11-21T00:50:00Z", "mergeCommit": {"oid": add_three}, "headRefOid": "g" * 40},
+               {"number": 5, "mergedAt": "2026-11-21T01:00:00Z", "mergeCommit": {"oid": member}, "headRefOid": "h" * 40},
+               {"number": 6, "mergedAt": "2026-11-21T01:05:00Z", "mergeCommit": {"oid": train}, "headRefOid": "i" * 40}]
+        comments = {5: [{"created_at": "2026-11-21T00:30:00Z", "record": True}, {"created_at": "2026-11-21T02:00:00Z", "record": True},
+                        {"created_at": "2026-11-21T00:31:00Z", "record": False}]}
         run = {"status": "completed", "conclusion": "success", "started_at": "2026-11-21T00:10:00Z", "completed_at": "2026-11-21T00:15:00Z"}
+        calls = []
         def fake_gh(*a):
+            calls.append(a)
             if a[:2] == ("pr", "list"):
                 return json.dumps(prs)
             if "check-runs" in a[2]:
                 return json.dumps(run) + "\n"
-            return json.dumps({"conclusion": "success", "created_at": "2026-11-21T01:06:00Z", "head_sha": "x"})
+            if "/comments" in a[2]:
+                return "".join(json.dumps(c) + "\n" for c in comments.get(int(a[2].split("/issues/")[1].split("/")[0]), []))
+            return json.dumps({"conclusion": "success", "created_at": "2026-11-21T01:06:00Z", "updated_at": "2026-11-21T01:10:00Z", "head_sha": "x"}) + "\n"
         errors = []
         with mock.patch.object(nw, "gh", side_effect=fake_gh):
             facts = nw.collect("main", datetime(2026, 11, 10, tzinfo=timezone.utc), datetime.now(timezone.utc), "o/r", errors)
@@ -301,6 +389,7 @@ class RealGit(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertTrue(by[5]["train_member"]); self.assertFalse(by[6]["train_member"])
         self.assertEqual((by[5]["data_files"], by[5]["review_records"]), (1, 1))  # the late record does not count
+        self.assertTrue(any(c[:2] == ("api", "--paginate") and "/issues/5/comments" in c[2] for c in calls))  # paginated REST
         self.assertEqual(by[5]["validate"]["conclusion"], "success")
         self.assertEqual({x[1] for x in nw.analyze(facts)[0]}, {"b"})  # one record only; the setUp label names its tasks/ folder
 

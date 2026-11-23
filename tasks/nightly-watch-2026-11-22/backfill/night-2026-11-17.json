@@ -323,6 +323,21 @@
    }
   },
   {
+   "data_files": 3,
+   "head_sha": "9d80d9f263",
+   "merge_sha": "915176b93f",
+   "merged_at": "2026-11-16T23:51:06Z",
+   "number": 352,
+   "review_records": 0,
+   "train_member": true,
+   "validate": {
+    "completed_at": "2026-11-16T22:30:56Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T22:26:43Z",
+    "status": "completed"
+   }
+  },
+  {
    "data_files": 4,
    "head_sha": "a162af5151",
    "merge_sha": "5b78ee7d25",
@@ -353,34 +368,14 @@
    }
   },
   {
-   "data_files": 3,
-   "head_sha": "9d80d9f263",
-   "merge_sha": "915176b93f",
-   "merged_at": "2026-11-16T23:51:06Z",
-   "number": 352,
-   "review_records": 0,
-   "train_member": true,
-   "validate": {
-    "completed_at": "2026-11-16T22:30:56Z",
-    "conclusion": "success",
-    "started_at": "2026-11-16T22:26:43Z",
-    "status": "completed"
-   }
-  },
-  {
    "data_files": 2,
-   "head_sha": "009fa4d387",
-   "merge_sha": "556ce16b04",
+   "head_sha": "8c947f178c",
+   "merge_sha": "c958a8f11e",
    "merged_at": "2026-11-16T23:51:07Z",
-   "number": 349,
+   "number": 354,
    "review_records": 0,
    "train_member": true,
-   "validate": {
-    "completed_at": "2026-11-16T20:02:14Z",
-    "conclusion": "success",
-    "started_at": "2026-11-16T19:58:44Z",
-    "status": "completed"
-   }
+   "validate": null
   },
   {
    "data_files": 3,
@@ -404,13 +399,18 @@
   },
   {
    "data_files": 2,
-   "head_sha": "8c947f178c",
-   "merge_sha": "c958a8f11e",
+   "head_sha": "009fa4d387",
+   "merge_sha": "556ce16b04",
    "merged_at": "2026-11-16T23:51:07Z",
-   "number": 354,
+   "number": 349,
    "review_records": 0,
    "train_member": true,
-   "validate": null
+   "validate": {
+    "completed_at": "2026-11-16T20:02:14Z",
+    "conclusion": "success",
+    "started_at": "2026-11-16T19:58:44Z",
+    "status": "completed"
+   }
   },
   {
    "data_files": 2,
@@ -425,7 +425,7 @@
  ],
  "ref": "origin/main",
  "since": "2026-11-16T11:17:00Z",
- "task_folders_read": 313,
+ "task_folders_read": 306,
  "unknown": {
   "after": {
    "band": 445,

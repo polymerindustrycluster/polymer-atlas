@@ -17,6 +17,10 @@ the required check finished, and it was noticed only because the owner asked. Th
      folder under tasks/ (260 older labels never had one; the baseline is frozen, see the task README)
   g  keyed rows removed from data/ (or tracked files elsewhere) with no REMOVALS.csv entry (scripts/check_row_loss.py)
 
+Everything printed is public (the repository and its run logs are public), so only allowlisted fields appear: rule
+letters, counts, PR numbers, commit SHAs, timestamps, record IDs and repo paths of a fixed shape, and a created_by
+label only when it is one or two plain words (otherwise a short hash). Error text is a fixed phrase, never raw stderr.
+
 Rows are counted per first-parent commit (so a batch merged and then reverted the same day still counts), never as a
 net window diff. Anything it could not inspect (a failed gh call, an unreadable file, a shallow clone) is an error
 and also exits non-zero. It always prints what it inspected. Exit code: 0 clean, 1 findings, 2 inspection errors only.
@@ -24,11 +28,12 @@ and also exits non-zero. It always prints what it inspected. Exit code: 0 clean,
 Usage (run from a full clone; the gh CLI needs GH_TOKEN, which Actions sets):
   python3 scripts/nightly_watch.py                                  # last 24 hours on origin/main (or main)
   python3 scripts/nightly_watch.py --since 2026-11-21T06:17Z --until 2026-11-22T06:17Z   # one night, for a backfill
+  python3 scripts/nightly_watch.py --scheduled                      # the workflow: window ends on the 11:17 UTC slot
   python3 scripts/nightly_watch.py --since <ref>                    # from a commit, to now
   python3 scripts/nightly_watch.py --facts FILE.json                # offline: judge a saved facts file
   python3 scripts/nightly_watch.py --save-facts FILE.json           # also write the facts it collected (counts only)
 """
-import argparse, csv, io, json, os, re, subprocess, sys
+import argparse, csv, hashlib, io, json, os, re, subprocess, sys, time
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -45,8 +50,37 @@ MIN_REVIEW_RECORDS = 2    # b
 MIN_DATA_PRS = 3          # e
 REVIEW_PREFIX = "**Review record**"
 VALIDATE = "validate"     # the check-run (job) name and the workflow file validate.yml
+# Changing any constant above, the baseline file or a rule is an owner ruling (AGENTS.md section 2, rule 9): an agent
+# proposes it as a battery item, and never in the pull request whose findings the change would silence.
+SLOT_UTC = (11, 17)       # the cron slot in nightly-watch.yml; scheduled windows end on a slot, so they are contiguous
+SLOT_GRACE = timedelta(hours=3)  # a scheduled run may start this late and still count as the previous window's inspection
 MIN_FOLDER_LEN = 6        # f: shorter folder names are too generic to name a label
 BASELINE_FILE = ROOT / "tasks" / "nightly-watch-2026-11-22" / "label_baseline.txt"  # f: labels grandfathered at ship
+
+
+SAFE_ID = re.compile(r"[A-Z]{2,12}-\d{1,8}")
+SAFE_PATH = re.compile(r"(?:tasks|scripts|docs|data)/[A-Za-z0-9_./-]{1,100}")
+SAFE_LABEL = re.compile(r"[A-Za-z0-9._-]{1,60}(?: [A-Za-z0-9._-]{1,60})?")
+SAFE_TABLE = re.compile(r"[a-z_]{1,40}")
+
+
+class WatchError(Exception):
+    """An error whose text is safe to publish (a fixed phrase and numbers)."""
+
+
+def err_text(e):
+    return str(e) if isinstance(e, WatchError) else f"unexpected {type(e).__name__}"
+
+
+def label_text(label):
+    return label if SAFE_LABEL.fullmatch(label) else f"label#{hashlib.sha256(label.encode()).hexdigest()[:8]}"
+
+
+def safe_keys(keys):
+    return [k for k in keys if SAFE_ID.fullmatch(k) or SAFE_PATH.fullmatch(k)][:3]
+
+
+RECORD_JQ = r'.[] | {created_at, record: ((.body // "") | test("^\\s*\\*\\*Review record\\*\\*"))}'
 
 
 def parse_time(s):
@@ -62,20 +96,29 @@ def iso(dt):
 def git(*args, check=True):
     r = subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True)
     if check and r.returncode:
-        raise RuntimeError(f"git {' '.join(args[:3])}: {r.stderr.strip()[:200]}")
+        raise WatchError(f"git {args[0]} failed (exit {r.returncode})")
     return r.stdout
 
 
 def gh(*args):
-    r = subprocess.run(["gh", *args], capture_output=True, text=True, timeout=300)
-    if r.returncode:
-        raise RuntimeError(f"gh {' '.join(args[:3])}: {r.stderr.strip()[:200]}")
-    return r.stdout
+    for attempt in range(3):  # transient API failures are common under parallel use; three tries, then it is an error
+        r = subprocess.run(["gh", *args], capture_output=True, text=True, timeout=300)
+        if r.returncode == 0:
+            return r.stdout
+        time.sleep(2 * (attempt + 1))
+    http = re.search(r"HTTP (\d{3})", r.stderr)
+    ep = next((x.split("?")[0] for x in args if re.fullmatch(r"repos/[\w.-]+/[\w.-]+/[\w/.-]+(\?.*)?", x)), "")
+    raise WatchError(f"gh {args[0]} {re.sub(r'[0-9a-f]{40}', '<sha>', ep)} failed (exit {r.returncode}{', HTTP ' + http.group(1) if http else ''})".replace("  ", " "))
 
 
 def blob(ref, path):
+    """File text at a ref; "" only when the path is absent there (a new or deleted file). Any other failure raises."""
     r = subprocess.run(["git", "-C", str(ROOT), "show", f"{ref}:{path}"], capture_output=True, text=True)
-    return r.stdout if r.returncode == 0 else ""  # absent at that ref: a new (or deleted) file
+    if r.returncode == 0:
+        return r.stdout
+    if r.returncode == 128 and re.search(r"does not exist in|exists on disk, but not in", r.stderr):
+        return ""
+    raise WatchError(f"git show failed (exit {r.returncode}) for {path if SAFE_PATH.fullmatch(path) else 'a path'}")
 
 
 def csv_rows(text):
@@ -104,10 +147,15 @@ def unknown_counts(ref):
     return {"n": len(gt), **unk}
 
 
+def task_folders(ref):
+    """Directory names under tasks/ at a ref (regular files such as tasks/README.md are not folders)."""
+    return [n.split("/")[-1] for n in git("ls-tree", "-d", "--name-only", ref, "tasks/").split("\n") if n]
+
+
 def labels_at(ref):
     """Distinct evidence created_by labels at a ref that name no tasks/ folder at that ref (the grandfathered set)."""
     names = [n for n in git("ls-tree", "--name-only", ref, "data/").split() if re.match(r"data/evidence.*\.csv$", n)]
-    folders = [n.split("/")[-1] for n in git("ls-tree", "--name-only", ref, "tasks/").split("\n") if n]
+    folders = task_folders(ref)
     labels = {r["created_by"] for n in names for r in csv_rows(blob(ref, n))}
     return sorted(l for l in labels if l and "\n" not in l and not label_names_a_folder(l, folders))
 
@@ -130,14 +178,14 @@ def commit_changes(sha, trees):
     allowed = {(t, k) for _, t, k in rowloss.declared_removals(sha) - rowloss.declared_removals(parent)}
     if data:
         for t, ks in rowloss.removed_keys(trees(parent), trees(sha), allowed).items():
-            removed[t] = {"n": len(ks), "e.g.": ks[:3]}
+            removed[t if SAFE_TABLE.fullmatch(t) else "table"] = {"n": len(ks), "e.g.": safe_keys(ks)}
     gone = rowloss.removed_files(rowloss.tracked_files(parent), rowloss.tracked_files(sha), allowed)
     if gone:
-        removed["file"] = {"n": len(gone), "e.g.": gone[:3]}
+        removed["file"] = {"n": len(gone), "e.g.": safe_keys(gone)}
     return {"data_files": len(data), "evidence_added": dict(added), "links_added": links, "removed": removed}
 
 
-def collect(ref, since, until, repo, errors):
+def collect(ref, since, until, repo, errors, scheduled=False):
     """Build the facts dict for the window (since, until] on ref. Failures are appended to errors, never swallowed."""
     facts = {"ref": ref, "since": iso(since), "until": iso(until), "errors": errors, "commits": [], "prs": []}
     if git("rev-parse", "--is-shallow-repository").strip() == "true":
@@ -163,21 +211,22 @@ def collect(ref, since, until, repo, errors):
             c.update(commit_changes(sha, trees))
             facts["commits"].append(c)
         except Exception as e:  # keep going: one unreadable commit must not hide the others
-            errors.append(f"commit {sha[:10]}: {e}")
+            errors.append(f"commit {sha[:10]}: {err_text(e)}")
     try:
-        names = [n for n in git("ls-tree", "--name-only", head, "tasks/").split("\n") if n]
-        facts["task_folders"] = [n.split("/")[-1] for n in names]
+        facts["task_folders"] = task_folders(head)
         baseline = set(BASELINE_FILE.read_text().splitlines())
         added = {l for c in facts["commits"] for l in c["evidence_added"]}
         facts["labels_without_provenance"] = sorted(l for l in added if l not in baseline and not label_names_a_folder(l, facts["task_folders"]))
         facts["task_folders_read"] = len(facts.pop("task_folders"))
         facts["unknown"] = {"before": unknown_counts(base), "after": unknown_counts(head)}
     except Exception as e:
-        errors.append(f"tasks/ folders, label baseline or PIC-18 unknown counts: {e}")
+        errors.append(f"tasks/ folders, label baseline or PIC-18 unknown counts: {err_text(e)}")
     try:
         collect_github(facts, shas, since, until, repo)
+        if scheduled:
+            check_coverage(facts, repo, since)
     except Exception as e:
-        errors.append(f"GitHub: {e}")
+        errors.append(f"GitHub: {err_text(e)}")
     return facts
 
 
@@ -185,7 +234,7 @@ def collect_github(facts, shas, since, until, repo):
     pad = timedelta(days=1)
     search = f"merged:{(since - pad).date()}..{(until + pad).date()}"
     prs = json.loads(gh("pr", "list", "--repo", repo, "--state", "merged", "--base", "main", "--search", search,
-                        "--limit", "1000", "--json", "number,mergedAt,mergeCommit,headRefOid,comments"))
+                        "--limit", "1000", "--json", "number,mergedAt,mergeCommit,headRefOid"))
     if len(prs) >= 1000:
         facts["errors"].append("pr list returned 1000 rows: window too large to inspect completely")
     by_merge = {p["mergeCommit"]["oid"][:10]: p for p in prs if p.get("mergeCommit")}
@@ -202,8 +251,11 @@ def collect_github(facts, shas, since, until, repo):
             data_files = sum(1 for f in git("diff", "--name-only", s + "^1", s).split() if f.startswith("data/"))
             train = True
         merged = parse_time(p["mergedAt"])
-        records = sum(1 for c in p["comments"]
-                      if c["body"].lstrip().startswith(REVIEW_PREFIX) and parse_time(c["createdAt"]) < merged)
+        # REST, paginated: `gh pr list --json comments` silently stops at 100 comments. jq tests the prefix so bodies stay out.
+        comments = [json.loads(line) for line in gh(
+            "api", "--paginate", f"repos/{repo}/issues/{p['number']}/comments?per_page=100",
+            "-q", RECORD_JQ).splitlines() if line.strip()]
+        records = sum(1 for c in comments if c["record"] and parse_time(c["created_at"]) < merged)
         runs = [json.loads(line) for line in gh(
             "api", "--paginate", f"repos/{repo}/commits/{p['headRefOid']}/check-runs?filter=all&per_page=100",
             "-q", ".check_runs[] | select(.name==\"" + VALIDATE + "\") | {status,conclusion,started_at,completed_at}"
@@ -224,13 +276,37 @@ def collect_github(facts, shas, since, until, repo):
         if p["number"] not in seen and since < parse_time(p["mergedAt"]) <= until:
             facts["errors"].append(f"PR #{p['number']} merged in the window but its merge commit is not in the "
                                    f"history of {facts['ref']} between {facts['base']} and {facts['head']}")
-    runs = gh("api", f"repos/{repo}/actions/workflows/{VALIDATE}.yml/runs?branch=main&event=push&status=completed"
-                     f"&created=<={iso(until)}&per_page=1", "-q", ".workflow_runs[0] // empty | "
-              "{conclusion, created_at, head_sha: .head_sha[:10]}").strip()
-    if runs:
-        facts["main_validate"] = json.loads(runs)
+    # latest run that had COMPLETED by the cutoff (matters when replaying history; at "now" it is simply the latest)
+    runs = [json.loads(line) for line in gh(
+        "api", f"repos/{repo}/actions/workflows/{VALIDATE}.yml/runs?branch=main&event=push&status=completed&created=<={iso(until)}&per_page=50",
+        "-q", ".workflow_runs[] | {conclusion, created_at, updated_at, head_sha: .head_sha[:10]}").splitlines() if line.strip()]
+    done = [r for r in runs if parse_time(r["updated_at"]) <= until]
+    if done:
+        latest = max(done, key=lambda r: r["created_at"])
+        facts["main_validate"] = {k: latest[k] for k in ("conclusion", "created_at", "head_sha")}
     else:
-        facts["errors"].append(f"no completed {VALIDATE} run on main found at or before {iso(until)}")
+        facts["errors"].append(f"no {VALIDATE} run on main had completed by {iso(until)} among the latest 50")
+
+
+def check_coverage(facts, repo, since):
+    """Scheduled windows are slot-aligned, so they are contiguous; this reports a slot whose run never happened."""
+    runs = [json.loads(line) for line in gh(
+        "api", f"repos/{repo}/actions/workflows/nightly-watch.yml/runs?event=schedule&status=completed&per_page=10",
+        "-q", ".workflow_runs[] | select(.conclusion == \"success\" or .conclusion == \"failure\") | {created_at}").splitlines() if line.strip()]
+    if not runs:
+        facts["coverage"] = "no earlier scheduled run (first run): earlier days were not inspected by this watch"
+        return
+    prev = max(parse_time(r["created_at"]) for r in runs)
+    facts["coverage"] = f"previous scheduled run {iso(prev)}"
+    if prev < since - SLOT_GRACE:
+        facts["errors"].append(f"coverage gap: the last completed scheduled run was {iso(prev)}, so the window before "
+                               f"{iso(since)} was never inspected")
+
+
+def slot_before(now):
+    """The most recent SLOT_UTC boundary at or before now."""
+    slot = now.replace(hour=SLOT_UTC[0], minute=SLOT_UTC[1], second=0, microsecond=0)
+    return slot if slot <= now else slot - timedelta(days=1)
 
 
 # ---------------------------------------------------------------- the judgement (pure: facts in, findings out)
@@ -252,7 +328,7 @@ def analyze(facts):
         per_label.update(c["evidence_added"])
     for label, n in sorted(per_label.items(), key=lambda kv: -kv[1]):
         if n > MAX_EVIDENCE_ROWS:
-            findings.append(f"[a] created_by '{label}': {n:,} evidence rows added (limit {MAX_EVIDENCE_ROWS:,})")
+            findings.append(f"[a] created_by '{label_text(label)}': {n:,} evidence rows added (limit {MAX_EVIDENCE_ROWS:,})")
     for c in commits:
         n, links = sum(c["evidence_added"].values()), c["links_added"]
         who = f"PR #{c['pr']}" if c["pr"] else f"commit {c['sha']} (no PR)"
@@ -282,10 +358,14 @@ def analyze(facts):
             findings.append(f"[c] PR #{p['number']} merged with {VALIDATE} = {v['conclusion']} on its head {p['head_sha']}")
 
     mv = facts.get("main_validate")
+    if not mv and not errors:
+        errors.append("d not judged: main_validate missing from the facts")
     if mv and mv["conclusion"] != "success":
         findings.append(f"[d] latest completed {VALIDATE} run on main ({mv['head_sha']}, {mv['created_at']}) is {mv['conclusion']}")
 
     unk = facts.get("unknown")
+    if not unk and not errors:
+        errors.append("e not judged: unknown counts missing from the facts")
     if unk and len(data_prs_e) >= MIN_DATA_PRS:
         b, a = unk["before"], unk["after"]
         if all(a[k] >= b[k] for k in ("proc", "mkt", "band")):
@@ -293,16 +373,20 @@ def analyze(facts):
                             f"market {b['mkt']}->{a['mkt']}, size {b['band']}->{a['band']} (of {b['n']}->{a['n']} org rows)")
 
     if "labels_without_provenance" not in facts:
-        errors.append("f not judged: labels_without_provenance missing from the facts")
+        if not errors:
+            errors.append("f not judged: labels_without_provenance missing from the facts")
     else:
         for label, n in sorted(per_label.items(), key=lambda kv: -kv[1]):
             if label in facts["labels_without_provenance"]:
-                findings.append(f"[f] created_by '{label}': {n:,} evidence row(s) added; new label, and no tasks/ folder name appears in it")
+                findings.append(f"[f] created_by '{label_text(label)}': {n:,} evidence row(s) added; new label, and no tasks/ folder name "
+                                f"appears in it (provenance cannot be verified by name; may be a naming mismatch)")
 
     for c in commits:
         for t, r in sorted(c["removed"].items()):
             who = f"PR #{c['pr']}" if c["pr"] else f"commit {c['sha']} (no PR)"
-            findings.append(f"[g] {who}: {r['n']:,} {t} key(s) removed without a REMOVALS.csv entry, e.g. {', '.join(r['e.g.'])}")
+            eg = safe_keys(r["e.g."])
+            findings.append(f"[g] {who}: {r['n']:,} {t if SAFE_TABLE.fullmatch(t) else 'table'} key(s) removed without a REMOVALS.csv entry"
+                            + (f", e.g. {', '.join(eg)}" if eg else ""))
     return findings, errors
 
 
@@ -319,6 +403,8 @@ def inspected(facts):
     if facts.get("unknown"):
         b, a = facts["unknown"]["before"], facts["unknown"]["after"]
         lines.append(f"PIC-18 unknown counts (process/market/size): {b['proc']}/{b['mkt']}/{b['band']} -> {a['proc']}/{a['mkt']}/{a['band']}")
+    if facts.get("coverage"):
+        lines.append(f"coverage: {facts['coverage']}")
     mv = facts.get("main_validate")
     lines.append(f"latest completed {VALIDATE} run on main: {mv['conclusion'] if mv else 'not read'}")
     return lines
@@ -345,6 +431,9 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--since", default="24", help="hours back from --until, an ISO date/time, or a git ref (default 24)")
     ap.add_argument("--until", help="ISO date/time (default now)")
+    ap.add_argument("--scheduled", action="store_true",
+                    help="the workflow's mode: the window ends on the latest 11:17 UTC slot (contiguous windows) and a "
+                         "missing earlier scheduled run is reported")
     ap.add_argument("--ref", help="branch to watch (default origin/main, else main)")
     ap.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY"), help="owner/name (default $GITHUB_REPOSITORY, else gh)")
     ap.add_argument("--print-label-baseline", metavar="REF", help="print the grandfathered label list at REF and exit")
@@ -361,12 +450,13 @@ def main():
         errors = []
         try:
             ref = a.ref or ("origin/main" if git("rev-parse", "--verify", "-q", "origin/main", check=False).strip() else "main")
-            until = parse_time(a.until if "T" in (a.until or "T") else a.until + "T00:00:00Z") if a.until else datetime.now(timezone.utc)
+            now = datetime.now(timezone.utc)
+            until = parse_time(a.until if "T" in a.until else a.until + "T00:00:00Z") if a.until else slot_before(now) if a.scheduled else now
             since = resolve_since(a.since, ref, until)
             repo = a.repo or gh("repo", "view", "--json", "nameWithOwner", "-q", ".nameWithOwner").strip()
-            facts = collect(ref, since, until, repo, errors)
+            facts = collect(ref, since, until, repo, errors, scheduled=a.scheduled)
         except Exception as e:  # even the setup failing must produce a loud, non-zero report
-            facts = {"ref": a.ref, "since": a.since, "until": a.until or "now", "errors": errors + [f"setup: {e}"], "commits": [], "prs": []}
+            facts = {"ref": a.ref, "since": a.since, "until": a.until or "now", "errors": errors + [f"setup: {err_text(e)}"], "commits": [], "prs": []}
     if a.save_facts:
         Path(a.save_facts).write_text(json.dumps(facts, indent=1, sort_keys=True) + "\n")
     text, code = report(facts)

@@ -56,6 +56,7 @@ claude-code atlas-w18-permit-lane
 claude-code atlas-w18-rulings
 claude-code capability-national-b01
 claude-code-evd-backfill-url-pilot
+claude-code-evd-frs-lane
 claude-code-evd-osha-lane
 claude-code-evd-tri-lane
 claude-code-integration-prep-2026-11-01

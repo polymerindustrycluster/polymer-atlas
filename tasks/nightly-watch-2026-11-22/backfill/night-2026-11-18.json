@@ -215,6 +215,16 @@
   },
   {
    "data_files": 4,
+   "head_sha": "b8827ed71b",
+   "merge_sha": "ff699da4ed",
+   "merged_at": "2026-11-17T18:46:37Z",
+   "number": 347,
+   "review_records": 0,
+   "train_member": true,
+   "validate": null
+  },
+  {
+   "data_files": 4,
    "head_sha": "6a0587763b",
    "merge_sha": "20e87b3302",
    "merged_at": "2026-11-17T18:46:37Z",
@@ -227,16 +237,6 @@
     "started_at": "2026-11-16T19:39:20Z",
     "status": "completed"
    }
-  },
-  {
-   "data_files": 4,
-   "head_sha": "b8827ed71b",
-   "merge_sha": "ff699da4ed",
-   "merged_at": "2026-11-17T18:46:37Z",
-   "number": 347,
-   "review_records": 0,
-   "train_member": true,
-   "validate": null
   },
   {
    "data_files": 2,
@@ -481,7 +481,7 @@
  ],
  "ref": "origin/main",
  "since": "2026-11-17T11:17:00Z",
- "task_folders_read": 326,
+ "task_folders_read": 319,
  "unknown": {
   "after": {
    "band": 445,

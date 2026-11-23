@@ -202,9 +202,7 @@
  ],
  "errors": [],
  "head": "e2116cc3cd",
- "labels_without_provenance": [
-  "claude-code-evd-frs-lane"
- ],
+ "labels_without_provenance": [],
  "main_validate": {
   "conclusion": "success",
   "created_at": "2026-11-21T03:20:40Z",
@@ -485,7 +483,7 @@
  ],
  "ref": "origin/main",
  "since": "2026-11-20T11:17:00Z",
- "task_folders_read": 374,
+ "task_folders_read": 367,
  "unknown": {
   "after": {
    "band": 443,
