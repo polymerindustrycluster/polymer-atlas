@@ -1,0 +1,2 @@
+site_id,org_id,source,source_file,file_sha256,row_locator,filing_year,source_date,band,r13_source,name_match,adjacent_source_file,adjacent_row_locator,adjacent_source_date,adjacent_band
+SITE-001083,ORG-000474,osha_ita,raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv,9ea2ee5d7265cddf753d22633af17d4aaba4ab81629341462a8c9912d19a99fc,|row=9914|id=2898985,2025,2025-12-31,100-249,1,exact,raw/osha/2026-11-22-archive-snapshot/raw/OSHA_inspection.zip,2026-11-20_chunk_5.csv|row=421508|id=348919424,2026-05-05,250-499
