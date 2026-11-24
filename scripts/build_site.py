@@ -313,7 +313,7 @@ TEMP_ANY_RE = re.compile(r"\bNEW(?:SITE)?:")        # a temporary record id in a
 # Build-pass prose that INTERNAL_RE (a copy of the blind-audit scan) does not name: "staged address/domain/name" (the staged record
 # under review), the evidence ladder ("Rung 1", "ladder rungs"), requeue and settling-fact bookkeeping, and tool status words.
 # "ladder" alone is not listed: ladder covers are a product.
-BUILD_PROSE_RE = re.compile(r"\bstaged\b|\brungs?\b|ladder rungs?|unchanged \(verified|browser_open|retry recovered|\bre-?queue[ds]?\b|settling facts?", re.I)
+BUILD_PROSE_RE = re.compile(r"\bstaged\b|\brungs?\b|ladder rungs?|unchanged \(verified|browser_open|retry recovered|\bre-?queue[ds]?\b|settling (?:facts?|primary|witness|legs?|sources?)|still_uncertain|\bchanged \(was", re.I)
 
 
 def internal_wording(text):

@@ -96,7 +96,8 @@ class ReleaseWithholdingTests(unittest.TestCase):
         self.assertEqual(con.execute("SELECT source_ref FROM evidence WHERE evidence_id='EVD-2'").fetchone()[0], export_release.WITHHELD)
         self.assertEqual(con.execute("SELECT description_1line FROM organizations WHERE org_id='ORG-1'").fetchone()[0], "")   # outside evidence the cell is blank
         con.close()
-        rows = list(csv.DictReader((out / "organizations_all.csv").open(newline="", encoding="utf-8")))
+        with (out / "organizations_all.csv").open(newline="", encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
         self.assertEqual([r["org_id"] for r in rows], ["ORG-1", "ORG-2", "ORG-3", "ORG-4"])   # rows are kept; only cells are blanked
         self.assertEqual(rows[0]["description_1line"], "")
         for p, before in canonical.items():
@@ -106,7 +107,8 @@ class ReleaseWithholdingTests(unittest.TestCase):
         p = self.dir / "evidence_all.csv"
         write(p, ["evidence_id", "claim_detail", "source_ref", "tier_effect"], [["E1", "legal name for NEW:CSW", "https://example.org/x", "supports_A"], ["E2", "ok", "PKT-1 NEW:A-12", "supports_C"]])
         self.assertEqual(export_release.withhold_csv(p, "evidence"), 2)
-        rows = list(csv.DictReader(p.open(newline="", encoding="utf-8")))
+        with p.open(newline="", encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
         for r in rows:
             self.assertTrue(r["claim_detail"] and r["source_ref"], r)
         self.assertEqual((rows[0]["claim_detail"], rows[1]["source_ref"]), (export_release.WITHHELD, export_release.WITHHELD))
