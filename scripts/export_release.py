@@ -243,6 +243,25 @@ def drop_notes_db(db_path):
     return done
 
 
+def marker_counts(db_path):
+    """How many evidence cells read the withheld marker in the bundled SQLite copy, by column, and how many evidence rows carry one."""
+    con = sqlite3.connect(db_path)
+    out = {}
+    for c in ("claim_detail", "source_ref", "notes"):
+        (out[c],) = con.execute(f'SELECT COUNT(*) FROM evidence WHERE "{c}" = ?', (WITHHELD,)).fetchone()
+    (out["rows"],) = con.execute("SELECT COUNT(*) FROM evidence WHERE claim_detail = ?1 OR source_ref = ?1 OR notes = ?1", (WITHHELD,)).fetchone()
+    (out["graded_rows"],) = con.execute("SELECT COUNT(*) FROM evidence WHERE (claim_detail = ?1 OR source_ref = ?1) AND tier_effect LIKE 'supports_%'", (WITHHELD,)).fetchone()
+    con.close()
+    return out
+
+
+def evidence_marker_sentence(m):
+    return (f"In the `evidence` table a withheld value reads `{WITHHELD}`: {m['claim_detail']:,} `claim_detail` cells, {m['source_ref']:,} `source_ref` cells and "
+            f"{m['notes']:,} `notes` cells, on {m['rows']:,} evidence rows. The marker names a value that is not in this release; it is not a claim or a source. "
+            f"{m['graded_rows']:,} of those rows carry a `supports_*` grade whose claim or source cannot be read here, so treat that grade as not inspectable in this bundle "
+            "(the repository CSVs hold the original text).")
+
+
 def withhold_db(db_path, held=None):
     """The same withholding in the bundled SQLite copy (never the canonical build/polymer-atlas.db), then VACUUM so no held value stays in a free page."""
     con = sqlite3.connect(db_path)
@@ -262,12 +281,63 @@ def data_inputs():
     return sorted(glob.glob(str(DATA / "*.csv")))
 
 
-def build_is_current():
-    outs = [DB, BUILD / "organizations_all.csv", BUILD / "sites_all.csv"]
+ID_COL = {"organizations": "org_id", "sites": "site_id", "evidence": "evidence_id"}
+
+
+def build_is_current(data=None, build=None, db=None):
+    data, build, db = data or DATA, build or BUILD, db or DB
+    outs = [db] + [build / f"{t}_all.csv" for t in SHARDED]   # every merged export the release is built from, evidence included
     if not all(p.exists() for p in outs):
         return False
-    newest_data = max(Path(p).stat().st_mtime for p in data_inputs())
+    newest_data = max(Path(p).stat().st_mtime for p in sorted(glob.glob(str(data / "*.csv"))))
     return min(p.stat().st_mtime for p in outs) >= newest_data
+
+
+def check_build_consistency(data=None, build=None, db=None):
+    """Problems (a list of strings, empty when consistent) between what the release is built from: each merged export must hold exactly
+    the rows of its shards, and each database table exactly the rows of its merged export, cell for cell. A timestamp or a row count
+    alone accepts a stale or edited file."""
+    data, build, db = data or DATA, build or BUILD, db or DB
+    problems = []
+    con = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+    try:
+        for t in SHARDED:
+            key = ID_COL[t]
+            cols, merged = read_csv(build / f"{t}_all.csv")
+            by_id = {r[key]: r for r in merged}
+            if len(by_id) != len(merged):
+                problems.append(f"{t}_all.csv repeats an {key}")
+            shard_rows = {}
+            shard_cols = set()
+            for p in sorted(glob.glob(str(data / f"{t}_*.csv"))):
+                if not p.endswith("_all.csv"):
+                    c, rows = read_csv(p)
+                    shard_cols.add(tuple(c))
+                    shard_rows.update({r[key]: r for r in rows})
+            if len(shard_cols) > 1:
+                problems.append(f"the {t} shards do not share one header")
+            elif shard_cols and tuple(cols) != next(iter(shard_cols)):
+                problems.append(f"{t}_all.csv columns differ from the {t} shards: missing {sorted(set(next(iter(shard_cols))) - set(cols))}, extra {sorted(set(cols) - set(next(iter(shard_cols))))}")
+            if set(shard_rows) != set(by_id):
+                problems.append(f"{t}_all.csv and the {t} shards hold different {key}s ({len(by_id)} vs {len(shard_rows)})")
+            changed = [k for k in shard_rows.keys() & by_id.keys() if any(shard_rows[k].get(c, "") != by_id[k].get(c, "") for c in cols)]
+            if changed:
+                problems.append(f"{t}_all.csv differs from its shards in {len(changed)} row(s), first {sorted(changed)[0]}")
+            db_cols = [r[1] for r in con.execute(f'PRAGMA table_info("{t}")')]
+            if set(db_cols) != set(cols):
+                problems.append(f"database table {t} columns differ from {t}_all.csv: missing {sorted(set(cols) - set(db_cols))}, extra {sorted(set(db_cols) - set(cols))}")
+            if [c for c in cols if c not in db_cols]:
+                continue
+            names = ",".join(f'"{c}"' for c in cols)
+            db_rows = {row[cols.index(key)]: row for row in con.execute(f'SELECT {names} FROM "{t}"')}
+            if set(db_rows) != set(by_id):
+                problems.append(f"database table {t} and {t}_all.csv hold different {key}s ({len(db_rows)} vs {len(by_id)})")
+            changed = [k for k in db_rows.keys() & by_id.keys() if any(("" if v is None else str(v)) != by_id[k][c] for c, v in zip(cols, db_rows[k]))]
+            if changed:
+                problems.append(f"database table {t} differs from {t}_all.csv in {len(changed)} row(s), first {sorted(changed)[0]}")
+    finally:
+        con.close()
+    return problems
 
 
 def ensure_build(mode):
@@ -440,6 +510,10 @@ def main():
         print("note: data/ has uncommitted changes; bundle describes the "
               "working tree and is marked -dirty")
 
+    problems = check_build_consistency()
+    if problems:
+        sys.exit("error: build outputs disagree with the shards or each other (rebuild with --rebuild):\n  " + "\n  ".join(problems))
+
     # fresh bundle dir (inside build/ only)
     assert RELEASE.resolve().parent == BUILD.resolve()
     if RELEASE.exists():
@@ -528,8 +602,9 @@ def main():
               "Withheld cells: the release blanks, in its own copies only, a description that "
               "carries internal build or review wording, any cell with a temporary record id "
               "of a build pass, and any cell that repeats a withheld description, the same test "
-              "the website applies (a withheld evidence cell reads `[withheld from this release]` so the row keeps its claim and source). The canonical CSVs and database keep them. Cells blanked: "
-              + ", ".join(f"{k} {v:,}" for k, v in sorted(withheld.items()) if v) + ".", ""]
+              "the website applies (an evidence cell is not blanked but marked, below). The canonical CSVs and database keep them. Cells withheld: "
+              + ", ".join(f"{k} {v:,}" for k, v in sorted(withheld.items()) if v) + ".", "",
+              evidence_marker_sentence(marker_counts(RELEASE / "polymer-atlas.db")), ""]
     (RELEASE / "COUNTS.md").write_text("\n".join(lines), encoding="utf-8")
 
     # MANIFEST.sha256 (every file except itself; sha256sum -c compatible)

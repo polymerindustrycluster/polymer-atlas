@@ -126,6 +126,131 @@ class ProcessLexiconTests(unittest.TestCase):
         con.close()
 
 
+class Round3Tests(unittest.TestCase):
+    """ATLAS-40 round 3 (Codex refute at 0a984e1): researcher role, stale evidence, the marker wording, the Hugging Face command."""
+
+    ROOT = Path(build_site.__file__).resolve().parent.parent
+
+    def setUp(self):
+        d = tempfile.TemporaryDirectory()
+        self.addCleanup(d.cleanup)
+        self.dir = Path(d.name)
+
+    def test_a_role_line_the_site_replaces_is_withheld_from_the_release_by_the_same_function(self):
+        bad = "Professor, Hightower Chair in Biopolymers (Georgia Tech). Both pages fetched/searched 2026-11-04."
+        self.assertTrue(build_site.role_withheld(bad))
+        self.assertTrue(build_site.release_withheld("people", "role_as_published", bad))
+        self.assertEqual(build_site.published_role({"role_as_published": bad, "role": "professor"}), "professor")
+        good = "Professor of Chemistry, Chair #1"
+        self.assertFalse(build_site.release_withheld("people", "role_as_published", good))
+        self.assertEqual(build_site.published_role({"role_as_published": good, "role": "professor"}), good)
+        self.assertFalse(build_site.release_withheld("people", "role", bad))                       # only the published-role field
+        p = self.dir / "people.csv"
+        write(p, ["person_id", "role", "role_as_published"], [["P1", "professor", bad], ["P2", "professor", good]])
+        self.assertEqual(export_release.withhold_csv(p, "people"), 1)
+        self.assertNotIn(b"fetched/searched", p.read_bytes())
+        db = self.dir / "x.db"
+        con = sqlite3.connect(db)
+        con.execute("CREATE TABLE people (person_id TEXT, role TEXT, role_as_published TEXT)")
+        con.executemany("INSERT INTO people VALUES (?,?,?)", [("P1", "professor", bad), ("P2", "professor", good)])
+        con.commit()
+        con.close()
+        self.assertEqual(export_release.withhold_db(db), 1)
+        self.assertNotIn(b"fetched/searched", db.read_bytes())
+
+    def test_every_real_role_the_site_replaces_is_blank_in_the_release(self):
+        csv.field_size_limit(10**9)
+        with (self.ROOT / "data" / "people.csv").open(newline="", encoding="utf-8") as f:
+            people = list(csv.DictReader(f))
+        replaced = [r for r in people if build_site.role_withheld(r["role_as_published"])]
+        self.assertTrue(replaced)                                                                    # PERSON-001437 at this writing
+        for r in replaced:
+            self.assertTrue(build_site.release_withheld("people", "role_as_published", r["role_as_published"]), r["person_id"])
+
+    def _fixture(self, evidence_claim="the claim"):
+        root = Path(tempfile.mkdtemp(dir=self.dir))
+        data, build = root / "data", root / "build"
+        data.mkdir(), build.mkdir()
+        write(data / "organizations_OH.csv", ["org_id", "legal_name"], [["ORG-1", "A"]])
+        write(data / "sites_OH.csv", ["site_id", "org_id"], [["SITE-1", "ORG-1"]])
+        write(data / "evidence_organizations_OH.csv", ["evidence_id", "claim_detail"], [["EVD-1", "the claim"]])
+        write(build / "organizations_all.csv", ["org_id", "legal_name"], [["ORG-1", "A"]])
+        write(build / "sites_all.csv", ["site_id", "org_id"], [["SITE-1", "ORG-1"]])
+        write(build / "evidence_all.csv", ["evidence_id", "claim_detail"], [["EVD-1", evidence_claim]])
+        db = build / "polymer-atlas.db"
+        con = sqlite3.connect(db)
+        con.execute("CREATE TABLE organizations (org_id TEXT, legal_name TEXT)")
+        con.execute("CREATE TABLE sites (site_id TEXT, org_id TEXT)")
+        con.execute("CREATE TABLE evidence (evidence_id TEXT, claim_detail TEXT)")
+        con.execute("INSERT INTO organizations VALUES ('ORG-1','A')")
+        con.execute("INSERT INTO sites VALUES ('SITE-1','ORG-1')")
+        con.execute("INSERT INTO evidence VALUES ('EVD-1','the claim')")
+        con.commit()
+        con.close()
+        return data, build, db
+
+    def test_a_stale_evidence_export_is_not_current(self):
+        data, build, db = self._fixture()
+        import os
+        for p in (*data.iterdir(), build / "organizations_all.csv", build / "sites_all.csv", db):
+            os.utime(p, (2_000_000_000, 2_000_000_000))
+        os.utime(build / "evidence_all.csv", (1, 1))                                                # 1970: older than every shard
+        self.assertFalse(export_release.build_is_current(data, build, db))
+        os.utime(build / "evidence_all.csv", (2_000_000_000, 2_000_000_000))
+        self.assertTrue(export_release.build_is_current(data, build, db))
+        (build / "evidence_all.csv").unlink()
+        self.assertFalse(export_release.build_is_current(data, build, db))                          # a missing evidence export too
+
+    def test_an_edited_export_with_the_same_ids_and_counts_is_refused(self):
+        data, build, db = self._fixture()
+        self.assertEqual(export_release.check_build_consistency(data, build, db), [])
+        write(build / "evidence_all.csv", ["evidence_id", "claim_detail"], [["EVD-1", "a planted claim"]])   # same id, same row count
+        problems = export_release.check_build_consistency(data, build, db)
+        self.assertTrue(any("evidence_all.csv differs from its shards" in p and "EVD-1" in p for p in problems), problems)
+        self.assertTrue(any("database table evidence differs from evidence_all.csv" in p for p in problems), problems)   # canonical claim in the DB
+
+    def test_a_missing_column_is_refused_even_when_every_id_and_count_agrees(self):
+        data, build, db = self._fixture()
+        write(build / "evidence_all.csv", ["evidence_id"], [["EVD-1"]])                              # the whole claim_detail column gone, ids and count kept
+        problems = export_release.check_build_consistency(data, build, db)
+        self.assertTrue(any("evidence_all.csv columns differ from the evidence shards: missing ['claim_detail']" in p for p in problems), problems)
+        data, build, db = self._fixture()
+        con = sqlite3.connect(db)
+        con.execute("ALTER TABLE sites DROP COLUMN org_id")                                          # the database lost a column the export has
+        con.commit()
+        con.close()
+        problems = export_release.check_build_consistency(data, build, db)
+        self.assertTrue(any("database table sites columns differ from sites_all.csv: missing ['org_id']" in p for p in problems), problems)
+        data, build, db = self._fixture()
+        self.assertEqual(export_release.check_build_consistency(data, build, db), [])
+
+    def test_counts_state_the_marker_in_evidence_cells_without_calling_it_a_claim(self):
+        db = self.dir / "x.db"
+        con = sqlite3.connect(db)
+        con.execute("CREATE TABLE evidence (evidence_id TEXT, claim_detail TEXT, source_ref TEXT, notes TEXT, tier_effect TEXT)")
+        m = export_release.WITHHELD
+        con.executemany("INSERT INTO evidence VALUES (?,?,?,?,?)", [("E1", m, "ref", "", "supports_A"), ("E2", "claim", m, m, "supports_C"), ("E3", "claim", "ref", "n", "supports_B")])
+        con.commit()
+        con.close()
+        counts = export_release.marker_counts(db)
+        self.assertEqual(counts, {"claim_detail": 1, "source_ref": 1, "notes": 1, "rows": 2, "graded_rows": 2})
+        sentence = export_release.evidence_marker_sentence(counts)
+        self.assertIn("1 `claim_detail` cells, 1 `source_ref` cells and 1 `notes` cells, on 2 evidence rows", sentence)
+        self.assertIn("not a claim or a source", sentence)
+        self.assertIn("2 of those rows carry a `supports_*` grade", sentence)
+
+    def test_the_howtos_do_not_say_the_marker_keeps_a_claim_and_source_or_use_the_removed_command(self):
+        site = (self.ROOT / "docs" / "SITE_HOWTO.md").read_text(encoding="utf-8")
+        self.assertNotIn("keeps its claim and source", site)
+        self.assertIn("The marker is not a claim or a source", site)
+        release = (self.ROOT / "docs" / "RELEASE_HOWTO.md").read_text(encoding="utf-8")
+        self.assertNotIn("huggingface-cli upload", release)
+        self.assertIn("hf upload <owner>/<dataset> build/release . --repo-type dataset", release)
+        self.assertIn("a marker only in `notes` leaves\nthe claim and source readable", release)
+        self.assertIn("huggingface.co/docs/huggingface_hub/en/concepts/migration", release)
+        self.assertIn("huggingface.co/docs/huggingface_hub/en/guides/cli", release)
+
+
 class DropNotesTests(unittest.TestCase):
     """Owner ruling 2026-11-23 22:01: the release's organization and site tables carry no notes column."""
 
@@ -258,7 +383,7 @@ class ReleaseWithholdingTests(unittest.TestCase):
         self.assertIn('withhold_db(RELEASE / "polymer-atlas.db", held)', src)
         self.assertEqual(src.count("withhold_csv(RELEASE"), 2)              # merged exports and single tables
         self.assertEqual(src.count("withhold_csv(RELEASE / path, t, held)") + src.count('f"{t}.csv", t, held)'), 2)   # the held-value pattern reaches every call
-        self.assertIn("Cells blanked:", src)
+        self.assertIn("Cells withheld:", src)
 
 
 if __name__ == "__main__":

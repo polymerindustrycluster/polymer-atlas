@@ -225,6 +225,12 @@ class BuildSiteTest(unittest.TestCase):
         self.assertIn("<dt>Processes</dt><dd>injection molding, extrusion</dd>", fields("ORG-000004"))
         self.assertIn("<dt>Processes</dt><dd>extrusion</dd>", self.read("orgs/ORG-000002.html"))
 
+    def test_county_page_has_a_jump_line_to_its_long_sections(self):
+        page = self.read("counties/summit.html")
+        for anchor in ("sites", "programs", "ecosystem"):
+            self.assertEqual(page.count(f'href="#{anchor}"'), 1, anchor)
+            self.assertEqual(page.count(f'id="{anchor}"'), 1, anchor)                  # the target exists, once
+
     def test_counts_carry_unit_and_filter(self):
         idx = self.read("index.html")
         cards = re.findall(r'<div class="big">([\d,]+)</div><div class="unit">([^<]+)</div>'

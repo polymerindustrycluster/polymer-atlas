@@ -383,12 +383,13 @@ def internal_wording(text):
 
 
 def release_withheld(table, field, value):
-    """True if the downloadable release must not carry this cell: a description the site withholds (internal_wording), or a temporary
+    """True if the downloadable release must not carry this cell: a description the site withholds (internal_wording), a researcher role line
+    the site replaces with the vocabulary role (role_withheld), or a temporary
     record id of any shape in any text cell of any table (notes, evidence quotes, logs). `table` is kept for callers; the test no longer
     depends on it."""
     if not value:
         return False
-    return bool(TEMP_ANY_RE.search(value)) or (field == "description_1line" and internal_wording(value))
+    return bool(TEMP_ANY_RE.search(value)) or (field == "description_1line" and internal_wording(value)) or (field == "role_as_published" and role_withheld(value))
 
 
 def lede(text):
@@ -2575,10 +2576,16 @@ CRED_LABELS = {"bs": "BS", "ms": "MS", "phd": "PhD", "aas_associate": "AAS", "ce
 LAB_TYPES = {"government_lab_agency", "nonprofit_rd_consortium"}
 
 
+def role_withheld(published):
+    """True if a researcher's role line carries build wording ("pages fetched/searched ..."): the site shows the vocabulary role instead,
+    and the release blanks role_as_published (its `role` column keeps the vocabulary value)."""
+    return nonempty(published) and prose_wording(published)
+
+
 def published_role(p):
-    """The role line as published, unless it carries build wording ("pages fetched/searched ..."); then the vocabulary role."""
+    """The role line as published, unless role_withheld; then the vocabulary role."""
     published = p.get("role_as_published")
-    return (published if nonempty(published) and not prose_wording(published) else "") or str(p.get("role") or "").replace("_", " ")
+    return (published if nonempty(published) and not role_withheld(published) else "") or str(p.get("role") or "").replace("_", " ")
 
 
 def experts_json(ctx):
@@ -3164,6 +3171,7 @@ that figure; it is not zero.</p>"""
     body = f"""
 <p class="small"><a href="index.html">Ohio counties</a> &rsaquo; {esc(county)}</p>
 <h1>{esc(county)} County, Ohio</h1>
+<p class="small jump">Jump to: <a href="#sites">Sites</a> &middot; <a href="#programs">Programs</a> &middot; <a href="#ecosystem">Ecosystem organizations</a></p>
 <p class="lede">One-page summary of the polymer industry records the Atlas holds for {esc(county)} County,
 {("a PIC-18 county (" + JOBSOHIO_REGION[county] + " region)") if county in PIC12 else "outside the PIC-18 counties"}. {esc(SOURCE_CLASS_NOTE)}</p>
 <div class="cards">
@@ -3189,11 +3197,11 @@ Tier U rows are candidates; they are included here because this page shows all t
 <p class="small muted">Bands, not headcounts. Where a site row records no band, the parent organization's Ohio band is counted in its own column.</p>
 <h2>Benchmark: BLS QCEW</h2>
 {qcew_html}
-<h2>Sites</h2>
+<h2 id="sites">Sites</h2>
 {sites_tbl}
-<h2>Programs in {esc(county)} County</h2>
+<h2 id="programs">Programs in {esc(county)} County</h2>
 {progs_html}
-<h2>Ecosystem organizations in {esc(county)} County</h2>
+<h2 id="ecosystem">Ecosystem organizations in {esc(county)} County</h2>
 {eco_html}
 """
     return page(ctx, f"{county} County", body, "../", "counties",

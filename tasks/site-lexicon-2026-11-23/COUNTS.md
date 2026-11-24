@@ -46,3 +46,5 @@ Notes cells with at least one hit (not withheld by design; see README):
 - release-sqlite:relationships: 253
 - release-sqlite:site: 570
 - release-sqlite:sites: 6841
+
+**Note, 2026-11-23, after #534.** The release-notes counts above (organizations 4,644, sites 6,841) describe the release as it was at the lexicon pass, before #534 removed the `notes` column from the release's organization and site tables. A scan of the post-#534 release counts neither. The evidence and other tables' counts are unchanged. This file is the dated record of that run and is not rewritten.
