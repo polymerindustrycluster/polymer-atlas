@@ -98,11 +98,11 @@ def packet_meta(folder):
     return (date[0], reader, checker) if date and reader and checker and reader != checker else None
 
 
-def load_verdicts(tree, problems, held):
+def load_verdicts(tasks, problems, held):
     """tasks/<folder>/VALUE_VERDICTS.csv lines (values.csv format), shape-checked. -> [(line dict, read date)]."""
     out = []
-    for path in sorted((tree / "tasks").glob("*/VALUE_VERDICTS.csv")):
-        rel = path.relative_to(tree)
+    for path in sorted(tasks.glob("*/VALUE_VERDICTS.csv")):
+        rel = path.relative_to(tasks.parent)
         meta = packet_meta(path.parent)
         if meta is None:
             problems.append(f"{rel}: README.md needs 'Read on: <date>', 'Read by: <family>' and 'Checked by: <a different family>'; "
@@ -142,12 +142,12 @@ def verdict_shape(v):
     return ""
 
 
-def load_proofs(tree, evidence, problems):
+def load_proofs(tasks, evidence, problems):
     """evidence_id -> (date, reader_family) for every proof line that passes the gate's offline checks."""
     out = {}
-    for path in sorted((tree / "tasks").glob("*/BINDING_PROOF.csv")):
+    for path in sorted(tasks.glob("*/BINDING_PROOF.csv")):
         folder = path.parent.name
-        proofs, shape = gate.load_proof_file(str(path.relative_to(tree)), path.read_bytes())
+        proofs, shape = gate.load_proof_file(str(path.relative_to(tasks.parent)), path.read_bytes())
         if shape:
             problems.extend(shape)
             continue
@@ -172,14 +172,13 @@ def evidence_pick(e):
     return (not e["source_ref"].startswith("http"), e["evidence_id"])
 
 
-def generate(tree=ROOT, pages=None):
+def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
     """-> (rows, problems, info). rows are dicts keyed by COLS, sorted by key; info carries the counts."""
-    tree = Path(tree)
-    data = tree / "data"
+    data, tasks = Path(data), Path(tasks)
     problems = []
     orgs, sites = table_rows(data, "organizations"), table_rows(data, "sites")
     evidence = {r["evidence_id"]: r for r in table_rows(data, "evidence")}
-    proofs = load_proofs(tree, evidence, problems)
+    proofs = load_proofs(tasks, evidence, problems)
     verdicts_by_key, unreplayed = defaultdict(list), 0
     by_record = defaultdict(list)
     for e in evidence.values():
@@ -203,7 +202,7 @@ def generate(tree=ROOT, pages=None):
                      (("organizations", "org_id", orgs), ("sites", "site_id", sites)) for r in recs for f in FIELDS}
     held = {(t, r[idc], f, tok) for t, idc, recs in (("organizations", "org_id", orgs), ("sites", "site_id", sites))
             for r in recs for f in FIELDS for tok in toks(r.get(f))}
-    for v, read_date in load_verdicts(tree, problems, held):
+    for v, read_date in load_verdicts(tasks, problems, held):
         key = (v["record_table"], v["record_id"], v["field"], v["value"])
         if v["class"] == "STATED" and pages and (why := replay(v, pages)):
             problems.append(f"{v['_at']}: STATED quote does not replay: {why}")
@@ -256,11 +255,10 @@ def render(rows):
 KEY = lambda r: (r["record_table"], r["record_id"], r["field"], r["value"])
 
 
-def check(tree=ROOT, pages=None):
+def check(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
     """Problems with data/value_basis.csv against a fresh generation (validator V-69), one specific line each."""
-    tree = Path(tree)
-    fresh, problems, info = generate(tree, pages)
-    path = tree / "data" / "value_basis.csv"
+    fresh, problems, info = generate(data, tasks, pages)
+    path = Path(data) / "value_basis.csv"
     if not path.exists():
         return problems + ["data/value_basis.csv is missing; the table is generated, run scripts/value_basis.py"], info
     with open(path, newline="", encoding="utf-8") as f:
@@ -285,11 +283,10 @@ def check(tree=ROOT, pages=None):
     return problems, info
 
 
-def pic18_summary(tree=ROOT):
+def pic18_summary(data=ROOT / "data"):
     """Counts by basis for the owners of active tier A-C PIC-18 sites: the values their display rows supply."""
     from regions import PIC18
-    tree = Path(tree)
-    data = tree / "data"
+    data = Path(data)
     orgs = {r["org_id"]: r for r in table_rows(data, "organizations")}
     eco = {r["org_id"]: r for r in read_csv(data / "ecosystem.csv")}
     owners = defaultdict(list)
@@ -315,19 +312,19 @@ def pic18_summary(tree=ROOT):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("--tree", default=str(ROOT), help="repository root to read and write (tests use a fixture)")
+    ap.add_argument("--tree", default=str(ROOT), help="repository root holding data/ and tasks/ (tests use a fixture)")
     ap.add_argument("--pages", help="store root that a verdict line's page_path is relative to: replay every STATED quote")
     ap.add_argument("--check", action="store_true", help="compare data/value_basis.csv with a fresh generation")
     ap.add_argument("--summary", action="store_true", help="print PIC-18 owner counts by basis")
     a = ap.parse_args(argv)
     if a.summary:
-        n, out = pic18_summary(a.tree)
+        n, out = pic18_summary(Path(a.tree) / "data")
         print(f"PIC-18 owners of active tier A-C sites: {n}")
         for field in FIELDS:
             print(f"{field}: {dict(out[field])}")
         return 0
     if a.check:
-        problems, info = check(a.tree, a.pages)
+        problems, info = check(Path(a.tree) / "data", Path(a.tree) / "tasks", a.pages)
         for p in problems:
             print(p)
         print(f"value basis: {'differs from' if problems else 'matches'} a fresh generation; {info['held']} held values, "
@@ -335,7 +332,7 @@ def main(argv=None):
               f"{info['stated_not_replayed']} STATED verdicts not replayed here (no --pages), "
               f"{len(info['verdict_unnamed'])} read values no bound row names")
         return 1 if problems else 0
-    rows, problems, info = generate(a.tree, a.pages)
+    rows, problems, info = generate(Path(a.tree) / "data", Path(a.tree) / "tasks", a.pages)
     if problems:
         print("\n".join(problems))
         return 1

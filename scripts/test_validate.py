@@ -852,6 +852,29 @@ class ValidatorMutationTests(unittest.TestCase):
         self.edit_rows("people.csv", lambda r: r["person_id"] == pid, lambda r: r.update(institution_org_id=other_inst))
         self.assert_fails_with(self.V68_MSG.format(t="people", rid=pid, tier=me["verification_tier"]))
 
+    # -- V-69: the generated per-value basis table (SCHEMA 4.24) -------------------------------------------------
+    def test_v69_hand_edited_basis_fails(self):
+        self.edit_rows("value_basis.csv", lambda r: r["basis"] == "not_yet_checked", lambda r: r.update(basis="stated"))
+        self.assert_fails_with("never hand-edited (V-69)")
+
+    def test_v69_value_with_no_basis_row_fails(self):
+        path = self.data / "value_basis.csv"
+        lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+        path.write_text("".join(lines[:5] + lines[6:]), encoding="utf-8")
+        self.assert_fails_with("has no basis row")
+
+    def test_v69_duplicate_key_fails(self):
+        path = self.data / "value_basis.csv"
+        lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+        path.write_text("".join(lines + [lines[2]]), encoding="utf-8")
+        self.assert_fails_with("duplicate key")
+
+    def test_v69_row_for_a_value_the_record_does_not_hold_fails(self):
+        path = self.data / "value_basis.csv"
+        lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+        path.write_text("".join(lines + [lines[1].replace(lines[1].split(",")[3], "no_such_value", 1)]), encoding="utf-8")
+        self.assert_fails_with("row names a value the record does not hold")
+
 
 if __name__ == "__main__":
     unittest.main()

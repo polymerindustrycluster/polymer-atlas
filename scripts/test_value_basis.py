@@ -66,12 +66,15 @@ class Tree:
         write(folder / "BINDING_PROOF.csv", [row], PROOF_COLS)
 
     def basis(self, pages=None):
-        rows, problems, info = vb.generate(self.root, pages)
+        rows, problems, info = vb.generate(self.root / "data", self.root / "tasks", pages)
         return {(r["record_table"], r["record_id"], r["field"], r["value"]): (r["basis"], r["evidence_id"], r["basis_date"])
                 for r in rows}, problems, info
 
+    def check(self):
+        return vb.check(self.root / "data", self.root / "tasks")[0]
+
     def write_table(self):
-        rows, problems, _ = vb.generate(self.root)
+        rows, problems, _ = vb.generate(self.root / "data", self.root / "tasks")
         assert not problems, problems
         (self.root / "data" / "value_basis.csv").write_text(vb.render(rows))
 
@@ -155,7 +158,7 @@ class Basis(unittest.TestCase):
 
     def test_generation_is_deterministic(self):
         t = Tree([ev("EVD-2", "SITE-1", "processes=custom_compounding"), ev("EVD-1", "SITE-1", "processes=custom_compounding")])
-        a, b = vb.generate(t.root)[0], vb.generate(t.root)[0]
+        a, b = vb.generate(t.root / "data", t.root / "tasks")[0], vb.generate(t.root / "data", t.root / "tasks")[0]
         self.assertEqual(vb.render(a), vb.render(b))
         self.assertEqual(a[0]["evidence_id"], "EVD-1")
 
@@ -248,7 +251,7 @@ class Check(unittest.TestCase):
         self.t.write_table()
 
     def problems(self):
-        return vb.check(self.t.root)[0]
+        return self.t.check()
 
     def test_a_fresh_table_passes(self):
         self.assertEqual(self.problems(), [])
@@ -278,9 +281,9 @@ class Check(unittest.TestCase):
         t = Tree([e])
         t.add_proof(e)
         t.write_table()
-        self.assertEqual(vb.check(t.root)[0], [])
+        self.assertEqual(t.check(), [])
         write(t.root / "data" / "evidence_sites_OH.csv", [{**e, "claim_detail": QUOTED + " (edited)"}], EVD_COLS)
-        self.assertTrue(any("stated" in p and "not_yet_checked" in p for p in vb.check(t.root)[0]))
+        self.assertTrue(any("stated" in p and "not_yet_checked" in p for p in t.check()))
 
     def test_missing_table_and_bad_header_fail(self):
         (self.t.root / "data" / "value_basis.csv").write_text("record_table,record_id\n")
@@ -291,7 +294,7 @@ class Check(unittest.TestCase):
 
 class RepoTable(unittest.TestCase):
     def test_the_committed_table_equals_a_fresh_generation(self):
-        problems, info = vb.check(vb.ROOT)
+        problems, info = vb.check()
         self.assertEqual(problems, [])
         self.assertGreater(info["held"], 0)
 
