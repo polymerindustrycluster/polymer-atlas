@@ -11,7 +11,7 @@ ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 from check_evidence_binding import claim_sha256, capture_text
 
-BASE = sys.argv[1] if len(sys.argv)>1 else '27fae8f2'
+BASE = sys.argv[1] if len(sys.argv)>1 else 'a80ad5fc'
 def read(name, base=False):
     f = ROOT / 'data' / (name+'.csv')
     data = subprocess.check_output(['git','show',f'{BASE}:data/{f.name}'],cwd=ROOT) if base else f.read_bytes()
@@ -48,6 +48,8 @@ for table, key in [('organizations','org_id'),('evidence_organizations','record_
             assert proof['capture'] == ev['source_ref'] or proof['capture'].endswith('id_/'+ev['source_ref'])
             assert proof['claim_sha256']==claim_sha256(ev) and proof['verdict']=='VERIFIED'
             old[shard].append(ev)
+    if table=='organizations':
+        old['MN'].sort(key=lambda r:r['org_id'])
     assert new==old, table
 assert sorted(tuple(c.values()) for c in packet('CLAIMS_CHECKED.csv'))==sorted(claims)
 archives=read('archive_links')
