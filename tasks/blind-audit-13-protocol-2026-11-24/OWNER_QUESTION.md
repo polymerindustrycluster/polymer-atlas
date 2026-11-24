@@ -1,4 +1,6 @@
-# Owner ruling before sampling
+# Owner questions and rulings
+
+**Recorded answers.** “Smoke only” after the remaining repairs land. “Decide after the smoke” on the rule. Bring the unresolved rate and measured per-record cost back to the owner before any draw. The original options follow. [Decision ledger](../../DECISIONS.md)
 
 ## Scope of authorization
 
