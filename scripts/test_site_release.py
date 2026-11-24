@@ -58,8 +58,9 @@ class ReleaseWithholdingTests(unittest.TestCase):
         con = sqlite3.connect(db)
         con.execute("CREATE TABLE organizations (org_id TEXT, description_1line TEXT, notes TEXT)")
         con.executemany("INSERT INTO organizations VALUES (?,?,?)", [("ORG-1", HELD_DESC, OK_NOTE), ("ORG-2", OK_DESC, HELD_NOTE), ("ORG-3", OK_DESC, f"x {TOKEN} y"), ("ORG-4", OK_DESC, f"Earlier text: {HELD_DESC}")])
-        con.execute("CREATE TABLE evidence (evidence_id TEXT, claim_detail TEXT)")
-        con.execute("INSERT INTO evidence VALUES ('EVD-1', ?)", (f"claim {TOKEN}",))
+        con.execute("CREATE TABLE evidence (evidence_id TEXT, claim_detail TEXT, source_ref TEXT, tier_effect TEXT)")
+        con.executemany("INSERT INTO evidence VALUES (?,?,?,?)", [("EVD-1", f"claim {TOKEN}", "https://example.org/a", "supports_A"),
+                                                                  ("EVD-2", "ordinary claim", "PKT-020 org design NEW:superior-sto", "supports_C")])
         con.execute("CREATE TABLE sites (site_id TEXT, notes TEXT)")                       # a held description pasted whole into another record's notes
         con.executemany("INSERT INTO sites VALUES (?,?)", [("SITE-1", f"Operator text: {HELD_DESC} (copied)"), ("SITE-2", OK_NOTE)])
         con.commit()
@@ -74,7 +75,7 @@ class ReleaseWithholdingTests(unittest.TestCase):
         self.assertRegex(f"x {HELD_DESC} y", held)
         self.assertEqual(export_release.withhold_csv(out / "organizations_all.csv", "organizations", held), 4)   # held description, held note, note with a token, note holding a copy
         self.assertEqual(export_release.withhold_csv(out / "inclusion_log.csv", "inclusion_log", held), 1)       # the token in `entity`
-        self.assertEqual(export_release.withhold_db(out / "polymer-atlas.db", held), 6)                          # the four organization cells, the evidence cell and the site note holding a copy
+        self.assertEqual(export_release.withhold_db(out / "polymer-atlas.db", held), 7)                          # the four organization cells, the two evidence cells and the site note holding a copy
         zpath = self.dir / "bundle.zip"
         with zipfile.ZipFile(zpath, "w") as z:
             for p in sorted(out.iterdir()):
@@ -87,11 +88,28 @@ class ReleaseWithholdingTests(unittest.TestCase):
         self.assertIn(OK_DESC.encode(), blobs["organizations_all.csv"])
         self.assertIn(OK_NOTE.encode(), blobs["organizations_all.csv"])
         self.assertIn(OK_DESC.encode(), blobs["polymer-atlas.db"])
+        con = sqlite3.connect(out / "polymer-atlas.db")
+        for evd, claim, ref, tier in con.execute("SELECT * FROM evidence ORDER BY evidence_id"):
+            self.assertTrue(claim and ref, evd)                              # a graded evidence row keeps both required fields (SCHEMA 4.13, V-22)
+            self.assertTrue(tier.startswith("supports_"), evd)
+        self.assertEqual(con.execute("SELECT claim_detail, source_ref FROM evidence WHERE evidence_id='EVD-1'").fetchone(), (export_release.WITHHELD, "https://example.org/a"))
+        self.assertEqual(con.execute("SELECT source_ref FROM evidence WHERE evidence_id='EVD-2'").fetchone()[0], export_release.WITHHELD)
+        self.assertEqual(con.execute("SELECT description_1line FROM organizations WHERE org_id='ORG-1'").fetchone()[0], "")   # outside evidence the cell is blank
+        con.close()
         rows = list(csv.DictReader((out / "organizations_all.csv").open(newline="", encoding="utf-8")))
         self.assertEqual([r["org_id"] for r in rows], ["ORG-1", "ORG-2", "ORG-3", "ORG-4"])   # rows are kept; only cells are blanked
         self.assertEqual(rows[0]["description_1line"], "")
         for p, before in canonical.items():
             self.assertEqual(p.read_bytes(), before)                          # the canonical inputs are untouched
+
+    def test_a_withheld_evidence_cell_in_a_csv_reads_the_marker_and_the_row_stays_complete(self):
+        p = self.dir / "evidence_all.csv"
+        write(p, ["evidence_id", "claim_detail", "source_ref", "tier_effect"], [["E1", "legal name for NEW:CSW", "https://example.org/x", "supports_A"], ["E2", "ok", "PKT-1 NEW:A-12", "supports_C"]])
+        self.assertEqual(export_release.withhold_csv(p, "evidence"), 2)
+        rows = list(csv.DictReader(p.open(newline="", encoding="utf-8")))
+        for r in rows:
+            self.assertTrue(r["claim_detail"] and r["source_ref"], r)
+        self.assertEqual((rows[0]["claim_detail"], rows[1]["source_ref"]), (export_release.WITHHELD, export_release.WITHHELD))
 
     def test_a_file_with_nothing_to_withhold_keeps_its_exact_bytes(self):
         p = self.dir / "programs.csv"

@@ -155,6 +155,14 @@ def write_organization_export(path, cols, orgs, sites):
             })
 
 
+EVIDENCE_TABLES = {"evidence", "evidence_organizations", "evidence_sites"}
+WITHHELD = "[withheld from this release]"   # in an evidence row, where claim_detail and source_ref must stay filled (SCHEMA 4.13, V-22); elsewhere the cell is blank
+
+
+def blanked(table):
+    return WITHHELD if table in EVIDENCE_TABLES else ""
+
+
 HELD_MIN = 40   # a held value shorter than this is not searched for inside other cells (too likely to match ordinary text)
 
 
@@ -192,7 +200,7 @@ def withhold_csv(path, table, held=None):
     for r in rows[1:]:
         for i, v in enumerate(r):
             if withheld_cell(table, head[i] if i < len(head) else "", v, held):
-                r[i] = ""
+                r[i] = blanked(table)
                 n += 1
     if n:
         with open(path, "w", newline="", encoding="utf-8") as f:
@@ -207,7 +215,7 @@ def withhold_db(db_path, held=None):
     for t, c in list(text_columns(con)):
         hits = [rid for rid, v in con.execute(f'SELECT rowid, "{c}" FROM "{t}" WHERE "{c}" IS NOT NULL').fetchall() if withheld_cell(t, c, v, held)]
         for rid in hits:
-            con.execute(f'UPDATE "{t}" SET "{c}" = \'\' WHERE rowid = ?', (rid,))
+            con.execute(f'UPDATE "{t}" SET "{c}" = ? WHERE rowid = ?', (blanked(t), rid))
         n += len(hits)
     con.commit()
     con.execute("VACUUM")
@@ -480,7 +488,7 @@ def main():
               "Withheld cells: the release blanks, in its own copies only, a description that "
               "carries internal build or review wording, any cell with a temporary record id "
               "of a build pass, and any cell that repeats a withheld description, the same test "
-              "the website applies. The canonical CSVs and database keep them. Cells blanked: "
+              "the website applies (a withheld evidence cell reads `[withheld from this release]` so the row keeps its claim and source). The canonical CSVs and database keep them. Cells blanked: "
               + ", ".join(f"{k} {v:,}" for k, v in sorted(withheld.items()) if v) + ".", ""]
     (RELEASE / "COUNTS.md").write_text("\n".join(lines), encoding="utf-8")
 
