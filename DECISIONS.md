@@ -703,3 +703,12 @@ states): 42 `stated`, 18 `filing`, 9,491 `not_yet_checked`, of which 2,944 are n
 quoted values (process, market) on PIC-18 display rows reconcile to these rows: 18 `filing` and 10 `stated` of the
 process values, 18 `stated` of the market values, and the rest `not_yet_checked` because the quote sits on an organization
 row for a site value (9 process, 216 market) or has no verified proof or names several values (81, 327).
+
+## 2026-11-24 · Owner rulings 12:12
+
+- **Write it + check it.** Record an organization website only after fetching a page on that site that shows both a
+  name the organization record holds and an Ohio locality. The binding gate checks changed website fills for
+  replayable own-site evidence that shows both. The site corpus fetcher refuses LinkedIn requests outright.
+- **Merge on the fix.** Merge PR #550 on its post-cap fix, with no further review round.
+- **Pilots.** Approved “Links + website leads,” “Refetch with PDFs and JS rendering,” and “New street witness (FMCSA).”
+  The Brave Search pilot was not approved.
