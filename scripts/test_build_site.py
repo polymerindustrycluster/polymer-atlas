@@ -1463,6 +1463,29 @@ class RefuteFixesTest(unittest.TestCase):
         spec.loader.exec_module(bg)
         self.assertEqual(bg.public_description("Parent (NEW:MJ-07)"), "")
 
+    def test_build_prose_families_are_withheld_everywhere_the_description_is_shown(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("bg", Path(build_site.__file__).resolve().parent / "build_graph.py")
+        bg = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(bg)
+        families = {
+            "staged": ["Own site footer: 401 Milford Parkway (matches staged address)", "Staged domain still fails to resolve", "Re-derived from staged tooling"],
+            "rung": ["Rung 1 (own website) carried. Own site: molding", "Rung 3 (DOL Form 5500) carried the address", "Rung 4 only; ladder rungs not reached"],
+            "unchanged": ["UNCHANGED (VERIFIED B). Own site opened"],
+            "browser_open": ["Own site read by browser_open: injection molding"],
+            "retry": ["RETRY RECOVERED: own site now loads"],
+            "requeue": ["Requeue after the timeout; maker of foam", "requeued for a second read"],
+            "settling": ["Settling fact met by a dated filing", "Both settling facts obtained"],
+        }
+        for family, texts in families.items():
+            for text in texts:
+                self.assertTrue(build_site.internal_wording(text), (family, text))
+                self.assertIn("withheld", build_site.lede(text), text)
+                self.assertEqual(bg.public_description(text), "", text)
+                self.assertTrue(build_site.release_withheld("organizations", "description_1line", text), text)
+        for ordinary in ("Anti-slip step, walkway and ladder covers", "Maker of stair treads and staircases"):
+            self.assertFalse(build_site.internal_wording(ordinary), ordinary)
+
     def test_internal_wording_filter_is_the_blind_audit_scan(self):
         root = Path(build_site.__file__).resolve().parent.parent
         src = (root / "tasks" / "blind-audit-11-2026-11-17" / "sample.py").read_text(encoding="utf-8")

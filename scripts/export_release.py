@@ -155,9 +155,34 @@ def write_organization_export(path, cols, orgs, sites):
             })
 
 
-def withhold_csv(path, table):
-    """Blank, in the release copy only, every cell the site would withhold (build_site.release_withheld); returns how many. A file with
-    nothing to withhold keeps its exact bytes."""
+HELD_MIN = 40   # a held value shorter than this is not searched for inside other cells (too likely to match ordinary text)
+
+
+def held_pattern(db_path):
+    """Regex of every value of at least HELD_MIN characters that release_withheld blanks in the bundled SQLite copy (read before it is blanked).
+    A withheld description is often pasted whole into another record's notes; those copies are held too."""
+    con = sqlite3.connect(db_path)
+    held = set()
+    for t, c in text_columns(con):
+        held.update(v for (v,) in con.execute(f'SELECT "{c}" FROM "{t}" WHERE "{c}" IS NOT NULL') if isinstance(v, str) and len(v) >= HELD_MIN and release_withheld(t, c, v))
+    con.close()
+    return re.compile("|".join(re.escape(v) for v in sorted(held, key=len, reverse=True))) if held else None
+
+
+def text_columns(con):
+    for (t,) in con.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'").fetchall():
+        for r in con.execute(f'PRAGMA table_info("{t}")').fetchall():
+            if (r[2] or "").upper() in ("TEXT", ""):
+                yield t, r[1]
+
+
+def withheld_cell(table, field, value, held):
+    return release_withheld(table, field, value) or bool(held and isinstance(value, str) and len(value) >= HELD_MIN and held.search(value))
+
+
+def withhold_csv(path, table, held=None):
+    """Blank, in the release copy only, every cell the site would withhold (build_site.release_withheld) or that contains a held value
+    (held_pattern); returns how many. A file with nothing to withhold keeps its exact bytes."""
     raw = Path(path).read_bytes()
     text = raw.decode("utf-8")
     rows = list(csv.reader(io.StringIO(text, newline="")))
@@ -166,7 +191,7 @@ def withhold_csv(path, table):
     head, n = rows[0], 0
     for r in rows[1:]:
         for i, v in enumerate(r):
-            if release_withheld(table, head[i] if i < len(head) else "", v):
+            if withheld_cell(table, head[i] if i < len(head) else "", v, held):
                 r[i] = ""
                 n += 1
     if n:
@@ -175,18 +200,15 @@ def withhold_csv(path, table):
     return n
 
 
-def withhold_db(db_path):
+def withhold_db(db_path, held=None):
     """The same withholding in the bundled SQLite copy (never the canonical build/polymer-atlas.db), then VACUUM so no held value stays in a free page."""
     con = sqlite3.connect(db_path)
     n = 0
-    tables = [r[0] for r in con.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")]
-    for t in tables:
-        cols = [r[1] for r in con.execute(f'PRAGMA table_info("{t}")') if (r[2] or "").upper() in ("TEXT", "")]
-        for c in cols:
-            hits = [(rid, v) for rid, v in con.execute(f'SELECT rowid, "{c}" FROM "{t}" WHERE "{c}" IS NOT NULL') if isinstance(v, str) and release_withheld(t, c, v)]
-            for rid, _ in hits:
-                con.execute(f'UPDATE "{t}" SET "{c}" = \'\' WHERE rowid = ?', (rid,))
-            n += len(hits)
+    for t, c in list(text_columns(con)):
+        hits = [rid for rid, v in con.execute(f'SELECT rowid, "{c}" FROM "{t}" WHERE "{c}" IS NOT NULL').fetchall() if withheld_cell(t, c, v, held)]
+        for rid in hits:
+            con.execute(f'UPDATE "{t}" SET "{c}" = \'\' WHERE rowid = ?', (rid,))
+        n += len(hits)
     con.commit()
     con.execute("VACUUM")
     con.close()
@@ -383,7 +405,8 @@ def main():
 
     # copy files and read them back for the descriptor
     shutil.copy2(DB, RELEASE / "polymer-atlas.db")
-    withheld = {"database": withhold_db(RELEASE / "polymer-atlas.db")}   # the canonical .db and CSVs are never touched
+    held = held_pattern(RELEASE / "polymer-atlas.db")   # read before the copy is blanked
+    withheld = {"database": withhold_db(RELEASE / "polymer-atlas.db", held)}   # the canonical .db and CSVs are never touched
     published = {}  # name -> (path, cols, rows)
     for t in ("sites", "organizations", "evidence"):
         path = f"data/{t}_all.csv"
@@ -393,12 +416,12 @@ def main():
             write_organization_export(RELEASE / path, cols, rows, published["sites"][2])
         else:
             shutil.copy2(source, RELEASE / path)
-        withheld[t] = withhold_csv(RELEASE / path, t)
+        withheld[t] = withhold_csv(RELEASE / path, t, held)
         cols, rows = read_csv(RELEASE / path)
         published[t] = (path, cols, rows)
     for t in single_tables():
         shutil.copy2(DATA / f"{t}.csv", RELEASE / "data" / f"{t}.csv")
-        withheld[t] = withhold_csv(RELEASE / "data" / f"{t}.csv", t)
+        withheld[t] = withhold_csv(RELEASE / "data" / f"{t}.csv", t, held)
         cols, rows = read_csv(RELEASE / "data" / f"{t}.csv")
         published[t] = (f"data/{t}.csv", cols, rows)
     counts = {t: len(v[2]) for t, v in published.items()}
@@ -455,9 +478,9 @@ def main():
                   "(plus views) with identical row counts; this was checked at "
                   "export time.", "",
               "Withheld cells: the release blanks, in its own copies only, a description that "
-              "carries internal build or review wording and a temporary record id "
-              "(`NEW:...`), the same test the website applies. The canonical CSVs and database "
-              "keep them. Cells blanked: "
+              "carries internal build or review wording, any cell with a temporary record id "
+              "of a build pass, and any cell that repeats a withheld description, the same test "
+              "the website applies. The canonical CSVs and database keep them. Cells blanked: "
               + ", ".join(f"{k} {v:,}" for k, v in sorted(withheld.items()) if v) + ".", ""]
     (RELEASE / "COUNTS.md").write_text("\n".join(lines), encoding="utf-8")
 

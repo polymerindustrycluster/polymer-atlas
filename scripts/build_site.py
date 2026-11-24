@@ -307,29 +307,27 @@ CRM_RE = re.compile(r"\bCRM\b", re.I)
 INTERNAL_RE = re.compile(r'#\d+|\bEVD-\d+|\bPR\b|pull request|\bpass[- ]?\d*\b|packet|(?-i:\blanes?\b|\bLanes? [A-Z0-9]{2,}\b)|\bwave\b|integration pass|integrator|codex|claude|grok|gemini|spaghetti|\bmuse\b|\bowner\b|\brulings?\b|battery|council|refut|\bminted\b|staging|banked|\bnotes?\b|created_by|tier[ _]?effect|supports_[ABCU]', re.I)
 
 
-TEMP_ID_RE = re.compile(r"NEW:[A-Z]{2,}-\d+")   # a temporary record id from a build pass, as in "(NEW:MJ-07)"
+TEMP_ID_RE = re.compile(r"NEW:[A-Z]+-\d+")   # a temporary record id from a build pass, as in "(NEW:MJ-07)" or "(NEW:A-12)"
+TEMP_ANY_RE = re.compile(r"\bNEW(?:SITE)?:")        # a temporary record id in any shape (NEW:P66, NEW:L6-08, NEWSITE:...): the all-notes repair's own test
+
+# Build-pass prose that INTERNAL_RE (a copy of the blind-audit scan) does not name: "staged address/domain/name" (the staged record
+# under review), the evidence ladder ("Rung 1", "ladder rungs"), requeue and settling-fact bookkeeping, and tool status words.
+# "ladder" alone is not listed: ladder covers are a product.
+BUILD_PROSE_RE = re.compile(r"\bstaged\b|\brungs?\b|ladder rungs?|unchanged \(verified|browser_open|retry recovered|\bre-?queue[ds]?\b|settling facts?", re.I)
 
 
 def internal_wording(text):
     t = str(text or "")
-    return bool(CRM_RE.search(t) or INTERNAL_RE.search(t) or TEMP_ID_RE.search(t))
-
-
-TEMP_ANY_RE = re.compile(r"\bNEW(?:SITE)?:")        # a temporary record id in any shape (NEW:P66, NEW:L6-08, NEWSITE:...): the all-notes repair's own test
-EVIDENCE_TABLES = {"evidence", "evidence_organizations", "evidence_sites"}
+    return bool(CRM_RE.search(t) or INTERNAL_RE.search(t) or BUILD_PROSE_RE.search(t) or TEMP_ID_RE.search(t) or TEMP_ANY_RE.search(t))
 
 
 def release_withheld(table, field, value):
-    """True if the downloadable release must not carry this cell: what the site withholds (a description with internal wording or a
-    temporary id, internal_wording) plus a temporary record id of any shape in any non-evidence table. Evidence rows are not reworded:
-    only the NEW:AB-12 shape, which the site also withholds, is dropped there."""
+    """True if the downloadable release must not carry this cell: a description the site withholds (internal_wording), or a temporary
+    record id of any shape in any text cell of any table (notes, evidence quotes, logs). `table` is kept for callers; the test no longer
+    depends on it."""
     if not value:
         return False
-    if field == "description_1line" and internal_wording(value):
-        return True
-    if TEMP_ID_RE.search(value):
-        return True
-    return table not in EVIDENCE_TABLES and bool(TEMP_ANY_RE.search(value))
+    return bool(TEMP_ANY_RE.search(value)) or (field == "description_1line" and internal_wording(value))
 
 
 def lede(text):
@@ -1909,7 +1907,7 @@ def site_address(s):
 
 def directory_rows(a):
     """One dict per owner and PIC-18 county, from that owner's PIC-18 active tier A-C site rows there. An owner is an
-    organization record or an ecosystem record (787 and 7 at the time of writing).
+    organization record or an ecosystem record (785 and 7 at the time of writing).
 
     An owner with sites in two counties has two rows, so a county's row count is its owner count.
     Employee band: the band on the row's site rows, else the organization's Ohio band. Process, material and market
