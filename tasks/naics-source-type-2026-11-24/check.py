@@ -12,12 +12,9 @@ import subprocess
 import tempfile
 
 COLUMN = "naics_primary_source_type"
-def quoted(detail, code):
-    """True: code inside a quote (label in any case). None: code only outside a parsed quote (hold). False: absent."""
-    m = re.search(r"quote:(.*)", detail, re.I | re.S)
-    if m and code in re.findall(r"\d+", m.group(1)):
-        return True
-    return None if code in re.findall(r"\d+", detail) else False
+def mentions(detail, code):
+    """Independent of build.py: the code as a whole digit run anywhere in claim_detail."""
+    return code in re.findall(r"\d+", detail)
 
 def expected(base):
     candidates = {}
@@ -26,20 +23,13 @@ def expected(base):
             before = row[COLUMN]
             if row["naics_primary"] and before not in {"company_disclosed", "directory_assigned", "researcher_inferred", "government_filing"} and row["naics_confidence"] in {"low", "medium", "high"}:
                 candidates[table, next(iter(row.values()))] = file, row, set()
-    mapping = dict(own_site="company_disclosed", government_filing="government_filing",
-                   registry="directory_assigned", directory="directory_assigned")
     for _, e in C.tagged(base, "evidence_*.csv"):
         key = e["record_table"], e["record_id"]
-        if key in candidates:
-            _, row, kinds = candidates[key]
-            found = quoted(e["claim_detail"], row["naics_primary"])
-            if found:
-                kinds.add(mapping.get(e["source_class"], "unknown") if e["tier_effect"].startswith("supports_") else "unknown")
-            elif found is None:
-                kinds.add("unknown")
+        if key in candidates and mentions(e["claim_detail"], candidates[key][1]["naics_primary"]):
+            candidates[key][2].add("held")
     for (_, rid), (file, row, kinds) in candidates.items():
-        if len(kinds) < 2 and "unknown" not in kinds:
-            yield file, rid, row[COLUMN], next(iter(kinds), "researcher_inferred")
+        if not kinds:
+            yield file, rid, row[COLUMN], "researcher_inferred"
 
 def compare(base, tree, want):
     for file in tree.rglob("*.csv"):
@@ -58,12 +48,13 @@ def compare(base, tree, want):
         raise ValueError(f"{problems} mismatched cells {keys[:3]}")
 
 if __name__ == "__main__":
-    # Known answers for the quote reader (Codex r2 finding on #539).
-    assert quoted('quote: "Our NAICS code is 326199."', "326199") is True
-    assert quoted('Quote: "Our NAICS code is 326199."', "326199") is True
-    assert quoted('\u201cOur NAICS code is 326199.\u201d', "326199") is None
-    assert quoted('quote: "custom injection molding"', "326199") is False
-    assert quoted('quote: "code 3261990"', "326199") is False
+    # Known answers (Codex r2/r3 findings on #539): any mention of the code holds the row, however it is quoted.
+    assert mentions('quote: "Our NAICS code is 326199."', "326199")
+    assert mentions('Quote: "Our NAICS code is 326199."', "326199")
+    assert mentions('\u201cOur NAICS code is 326199.\u201d', "326199")
+    assert mentions('quote: "We mold parts." NAICS 326199', "326199")
+    assert not mentions('quote: "custom injection molding"', "326199")
+    assert not mentions('quote: "code 3261990"', "326199")
     with tempfile.TemporaryDirectory() as scratch:
         base = C.export_tree((HERE / "BASE_REF").read_text().strip(), scratch)
         want = {(f, rid, COLUMN): (before, after) for f, rid, before, after in expected(base)}

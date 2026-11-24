@@ -11,16 +11,9 @@ import common as C
 
 COLUMN = "naics_primary_source_type"
 
-TYPES = {"own_site": "company_disclosed", "government_filing": "government_filing",
-         "registry": "directory_assigned", "directory": "directory_assigned"}
-
-def located(detail, code):
-    """'quote' if the code is inside a quote (label in any case), 'outside' if it appears only elsewhere, else None."""
-    pat = r"(?<!\d)" + re.escape(code) + r"(?!\d)"
-    q = re.search(r"quote:(.*)", detail, re.I | re.S)
-    if q and re.search(pat, q.group(1)):
-        return "quote"
-    return "outside" if re.search(pat, detail) else None
+def mentions(detail, code):
+    """True if the six-digit code appears anywhere in claim_detail as its own number."""
+    return re.search(r"(?<!\d)" + re.escape(code) + r"(?!\d)", detail) is not None
 
 def changes(data):
     evidence = defaultdict(list)
@@ -31,19 +24,13 @@ def changes(data):
             rid = next(iter(row.values()))
             code = row["naics_primary"]
             before = row[COLUMN]
-            if not code or before in {*TYPES.values(), "researcher_inferred"} or row["naics_confidence"] not in {"high", "medium", "low"}:
+            if not code or before in {"company_disclosed", "directory_assigned", "government_filing", "researcher_inferred"} or row["naics_confidence"] not in {"high", "medium", "low"}:
                 continue
-            matched = set()
-            for e in evidence[table, rid]:
-                where = located(e["claim_detail"], code)
-                if where == "quote":
-                    matched.add(TYPES.get(e["source_class"]) if e["tier_effect"].startswith("supports_") else None)
-                elif where == "outside":
-                    matched.add(None)  # the code appears where no quote label was parsed: hold, never infer
-            if not matched:
-                matched.add("researcher_inferred")
-            if len(matched) == 1 and None not in matched:
-                yield file, rid, before, matched.pop()
+            # A code the record's evidence mentions anywhere needs a reader (disclosure, filing or directory): hold it.
+            # Only a code no evidence row mentions is relabelled, to the residual type researcher_inferred.
+            if any(mentions(e["claim_detail"], code) for e in evidence[table, rid]):
+                continue
+            yield file, rid, before, "researcher_inferred"
 
 if __name__ == "__main__":
     packet = [dict(file=f, record_id=r, column=COLUMN, before=b, after=a)
