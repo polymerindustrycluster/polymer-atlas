@@ -490,8 +490,10 @@ sentence on enforcement, to state exactly what the harness checks.
 - “8 live children.” The controller's harness refuses a spawn while 8 or
   more of its children are unarchived, unless the command carries the
   owner's fan-out tag. Without that tag it also refuses spawns run from
-  a script file or a loop. It refuses any spawn whose brief has no
-  `Budget:` line, tag or not.
+  a script file or a loop. It refuses a spawn command it inspects
+  directly when the brief has no `Budget:` line, tag or not. It does not
+  read the briefs inside an owner-tagged script; the controller checks
+  those by hand.
 - “200M per 2 hours.” When the controller's children have spent more
   than 200M input tokens over a rolling two hours, the controller's
   outcome line turns RED. Spawns are then blocked unless marked critical
