@@ -46,7 +46,7 @@ SUBTYPE_WORDS = {
     "potting_encapsulation_casting": [r"\bcast|potting|encapsul"],
 }
 # Pinned inputs: the controller's frame (the first reader's rows) and the stability ledger rows for them.
-FRAME_SHA = "1a176b864d202614593c3b87e9e93969b5e55049539db4253cbbd730040d129e"
+FRAME_SHA = "a1844035c84e16c954c4b892d9e92643de1508a2367fc025bf9ee88158bb589c"  # the controller's frame (sha256 1a176b86…) with CRLF as LF, as git stores CSVs
 LEDGER_SHA = "d3fc8be0061221185f5da84b4424362f8c8fe4b3d15440c46b11200d5c8f1e0b"
 WINDOW = 200
 MAIL_OK = {"info", "sales", "support", "service", "office", "contact", "marketing", "orders", "customerservice", "privacy",
