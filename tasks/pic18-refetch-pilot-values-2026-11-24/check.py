@@ -225,8 +225,8 @@ def plants(s, good):
     yield "offset", mutated(lambda t: t["fills"][0].__setitem__("quote_offset", str(int(first["quote_offset"]) + 1))), good
     yield "capture sha", s, lambda f: good(f) + b" "
     yield "own page", mutated(lambda t: t["fills"][0].__setitem__("url", "https://www.alphaworld.com/")), good
-    def reject(t):
-        t["fills"][0]["record_id"] = "ORG-000378"
+    def reject(t):  # a whole REJECT row presented as a fill: same record, field and value as the second-read row
+        t["fills"][0].update(record_id="ORG-000378", field="markets_served", new="aerospace_defense")
     yield "second read", mutated(reject), good
     yield "cell diff", mutated(lambda t: t["cells"].append(("data/organizations_OH.csv", "ORG-000485", "website", "a", "b"))), good
     yield "files", mutated(lambda t: t["changed"].append("data/sites_OH.csv")), good
