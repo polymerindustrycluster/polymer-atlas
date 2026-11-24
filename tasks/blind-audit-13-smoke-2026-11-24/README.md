@@ -59,6 +59,10 @@ Receipts exist for bands from OSHA ITA and OSHA inspection filings: the cited ro
 
 Input per call is about a third of the assumption, but calls per record were 3.6 (second reads and one REQUEST round) against about 1.25 assumed: 0.090M input per record against 0.104M in `sizes.py`. Calls took 70–420 s.
 
+## Smoke run conditions
+
+Owner ruling 2026-11-24 ([DECISIONS.md](../../DECISIONS.md)): the smoke runs with one worker (`smoke.py run ... --window 1`). The controller hand-checks every record counted in k, every plant verdict and every packet's record ID against its sealed row. The report marks the size-band and child-field tallies unreliable. The nine open Codex findings (PR #556 body) are fixed before any full draw.
+
 ## Not checked
 
 The frame-mode `draw` (its frame/routes reconciliation is asserted, not exercised on a real preflight directory), packets for the real sample, and any real-frame `run`. Replays for filing NAICS and registry IDs (not inspected). The approval of the 6 leak flags. Sonnet as a second reader and the REQUEST round for a record built by the second family (selftest only). Windows paths. The label map's 91 direct-push labels are `uncertain` because their pass journals were not read.
