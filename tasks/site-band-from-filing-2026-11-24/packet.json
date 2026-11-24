@@ -1,0 +1,362 @@
+{
+  "SITE-000254": {
+    "verdict": "held",
+    "reason": "co-located same-date filings disagree; establishment unresolved",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-000448": {
+    "verdict": "held",
+    "reason": "co-located same-date filings disagree; establishment unresolved",
+    "source": "OSHA ITA CY2025 establishment 1335627 | OSHA ITA CY2025 establishment 1437176",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-000628": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 195632",
+    "source": "OSHA ITA CY2025 establishment 195632",
+    "changes": {
+      "employee_band_site": "250-499",
+      "notes": "Source: Grok team Ohio list 2026-10-28 (discovery) — requires Atlas verification wave before promotion. Grok org_id: OH-003606. Street (per Grok): 10010 AURORA HUDSON RD.. BAND-SOURCE: employee_band_site=250-499 from OSHA ITA CY2025 establishment 195632, source date 2025-12-31 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483120",
+      "record_table": "sites",
+      "record_id": "SITE-000628",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=250-499 from OSHA ITA CY2025 establishment 195632, source date 2025-12-31; quote: The Step2 Company, LLC, 10010 Aurora Hudson Road, Streetsboro, OH 44241",
+      "source_class": "government_filing",
+      "source_ref": "OSHA ITA CY2025 establishment 195632",
+      "observed_date": "2025-12-31",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-000698": {
+    "verdict": "held",
+    "reason": "co-located same-date filings disagree; establishment unresolved",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-001518": {
+    "verdict": "held",
+    "reason": "co-located same-date filings disagree; establishment unresolved",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-002137": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348779737 opened 2026-03-02",
+    "source": "OSHA inspection 348779737 opened 2026-03-02",
+    "changes": {
+      "employee_band_site": "10-49",
+      "notes": "Created 2026-10-29 in integration pass 13 from verification wave 12 (Pennsylvania) verdict W12-PA-0012 (staging working/verification-wave-12/wave12_verdicts_merged.csv, 2026-10-29). Basis: Own site presents Filmtech as a cast and cast-embossed plastic film producer (Sigma Plastics / Alpha group) at 2121 31st St SW. Re-fetch of the own site returned HTTP 403 this session, so tier held at B on the recorded own-site evidence plus group affiliation. BAND-SOURCE: employee_band_site=10-49 from OSHA inspection 348779737 opened 2026-03-02, source date 2026-03-02 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483121",
+      "record_table": "sites",
+      "record_id": "SITE-002137",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=10-49 from OSHA inspection 348779737 opened 2026-03-02, source date 2026-03-02; quote: FILMTECH CORPORATION, 2121 31ST STREET SW, ALLENTOWN, PA 18103",
+      "source_class": "government_filing",
+      "source_ref": "OSHA inspection 348779737 opened 2026-03-02",
+      "observed_date": "2026-03-02",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-002343": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1447482",
+    "source": "OSHA ITA CY2025 establishment 1447482",
+    "changes": {
+      "employee_band_site": "250-499",
+      "notes": "Created 2026-10-29 in integration pass 13 from verification wave 12 (Pennsylvania) verdict W12-PA-0499 (staging working/verification-wave-12/wave12_verdicts_merged.csv, 2026-10-29). Basis: Own site: polymer synthesis and pressure-sensitive adhesive tapes, coatings and laminates at 400 Seaks Run Rd, Glen Rock; PA DEP Title V amendment issued 2025-05-13 (expires 2030) and a Plan Approval issued 2026-05-27 (new oxidizer and coater lines) for the plant. CERT-SITE (own site, observed 2026-11-01): iso_13485; iso_9001. BAND-SOURCE: employee_band_site=250-499 from OSHA ITA CY2025 establishment 1447482, source date 2025-12-31 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483122",
+      "record_table": "sites",
+      "record_id": "SITE-002343",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=250-499 from OSHA ITA CY2025 establishment 1447482, source date 2025-12-31; quote: Adhesives Research Inc, 400 Seaks Run Rd, Glen Rock, PA 17327",
+      "source_class": "government_filing",
+      "source_ref": "OSHA ITA CY2025 establishment 1447482",
+      "observed_date": "2025-12-31",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-002519": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348822925 opened 2026-03-20",
+    "source": "OSHA inspection 348822925 opened 2026-03-20",
+    "changes": {
+      "employee_band_site": "100-249",
+      "notes": "Created 2026-10-29 in integration pass 13 from verification wave 12 (Pennsylvania) verdict W12-PA-0884 (staging working/verification-wave-12/wave12_verdicts_merged.csv, 2026-10-29). Basis: Own site (live, opened 2026-10-29): full-service custom molder (foam molding, urethane casting, injection molding, fiberglass reinforced plastics) whose site gives the plant address, 60 Choate Circle, Montoursville, PA; place data lists the plant active as a plastic manufacturer BAND-SOURCE: employee_band_site=100-249 from OSHA inspection 348822925 opened 2026-03-20, source date 2026-03-20 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483123",
+      "record_table": "sites",
+      "record_id": "SITE-002519",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=100-249 from OSHA inspection 348822925 opened 2026-03-20, source date 2026-03-20; quote: RALPH S. ALBERTS CO., INC., 60 CHOATE CIRCLE, MONTOURSVILLE, PA 17754",
+      "source_class": "government_filing",
+      "source_ref": "OSHA inspection 348822925 opened 2026-03-20",
+      "observed_date": "2026-03-20",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-002735": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 349016121 opened 2026-06-25",
+    "source": "OSHA inspection 349016121 opened 2026-06-25",
+    "changes": {
+      "employee_band_site": "100-249",
+      "notes": "Created 2026-10-29 in integration pass 13 from verification wave 12 (Pennsylvania) verdict W12-PA-0252 (staging working/verification-wave-12/wave12_verdicts_merged.csv, 2026-10-29). Basis: Current FXI job posting (Production Supervisor, Corry) carries the company's site overview: 'Our Corry, Pennsylvania facility is a non-union manufacturing plant with approximately 90 employees... specializes in producing polyurethane foam and retail mattresses.' TRI reporting through 2024 for 466 S Shady Ave. BAND-SOURCE: employee_band_site=100-249 from OSHA inspection 349016121 opened 2026-06-25, source date 2026-06-25 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483124",
+      "record_table": "sites",
+      "record_id": "SITE-002735",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=100-249 from OSHA inspection 349016121 opened 2026-06-25, source date 2026-06-25; quote: FXI, INC., 466 S. SHADY AVENUE, CORRY, PA 16407",
+      "source_class": "government_filing",
+      "source_ref": "OSHA inspection 349016121 opened 2026-06-25",
+      "observed_date": "2026-06-25",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-003082": {
+    "verdict": "held",
+    "reason": "co-located same-date filings disagree; establishment unresolved",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-003643": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348683996 opened 2026-01-13",
+    "source": "OSHA inspection 348683996 opened 2026-01-13",
+    "changes": {
+      "employee_band_site": "100-249",
+      "notes": "Created 2026-10-30 in integration pass 18 from verification wave 2 site design. Own site and its 2026 BABA certification letter list Hastings NE and Nampa ID plants; a Swedesboro NJ address appears in the same letterhead but its role was not established, so it is not designed as a site. BAND-SOURCE: employee_band_site=100-249 from OSHA inspection 348683996 opened 2026-01-13, source date 2026-01-13 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483125",
+      "record_table": "sites",
+      "record_id": "SITE-003643",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=100-249 from OSHA inspection 348683996 opened 2026-01-13, source date 2026-01-13; quote: CENTENNIAL PLASTICS, INC., 1830 CENTENNIAL AVE., HASTINGS, NE 68901",
+      "source_class": "government_filing",
+      "source_ref": "OSHA inspection 348683996 opened 2026-01-13",
+      "observed_date": "2026-01-13",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-004083": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 349144824 opened 2026-08-28",
+    "source": "OSHA inspection 349144824 opened 2026-08-28",
+    "changes": {
+      "employee_band_site": "100-249",
+      "notes": "Created 2026-10-30 in integration pass 18 from verification wave 2 site design. Second US plant in Mebane, NC established by own blog/trade press; street address not captured, not designed. [Pass 18 evidence repair, 2026-10-30] verification_tier restated to C: the wave-2 packet's weakest must-have evidence claim caps the record there (V-25; tier = weakest must-have field). BAND-SOURCE: employee_band_site=100-249 from OSHA inspection 349144824 opened 2026-08-28, source date 2026-08-28 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483126",
+      "record_table": "sites",
+      "record_id": "SITE-004083",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=100-249 from OSHA inspection 349144824 opened 2026-08-28, source date 2026-08-28; quote: CAMBRO MANUFACTURING COMPANY, 5801 SKYLAB RD., HUNTINGTON BEACH, CA 92647",
+      "source_class": "government_filing",
+      "source_ref": "OSHA inspection 349144824 opened 2026-08-28",
+      "observed_date": "2026-08-28",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-004477": {
+    "verdict": "held",
+    "reason": "co-located same-date filings disagree; establishment unresolved",
+    "source": "OSHA ITA CY2025 establishment 1321258",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-004624": {
+    "verdict": "held",
+    "reason": "co-located same-date filings disagree; establishment unresolved",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-004682": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 349056374 opened 2026-07-16",
+    "source": "OSHA inspection 349056374 opened 2026-07-16",
+    "changes": {
+      "employee_band_site": "10-49",
+      "notes": "Created 2026-10-30 in integration pass 21 from TRI national wave P007-P012 site design SITE-004682 (org ORG-000752). Operator's own March 2025 brochure prints the exact TRI street address for this plant - Tier A. BAND-SOURCE: employee_band_site=10-49 from OSHA inspection 349056374 opened 2026-07-16, source date 2026-07-16 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483127",
+      "record_table": "sites",
+      "record_id": "SITE-004682",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=10-49 from OSHA inspection 349056374 opened 2026-07-16, source date 2026-07-16; quote: POLYNT COMPOSITES USA INC., 71 BARNETT RD, FOREST PARK, GA 30297",
+      "source_class": "government_filing",
+      "source_ref": "OSHA inspection 349056374 opened 2026-07-16",
+      "observed_date": "2026-07-16",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-004920": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 826641",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-004993": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 796109",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005114": {
+    "verdict": "held",
+    "reason": "co-located same-date filings disagree; establishment unresolved",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005397": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 113774",
+    "source": "OSHA ITA CY2025 establishment 113774",
+    "changes": {
+      "employee_band_site": "50-99",
+      "notes": "Created 2026-10-30 in integration pass 23 from TRI national wave P019-P024 site design SITE-005397 (org ORG-004242). New org Milsco Manufacturing Co. (Milwaukee HQ; TRI parent string is the company itself). City-grain company facility list + TRI exact address = Tier B, per tranche precedent. BAND-SOURCE: employee_band_site=50-99 from OSHA ITA CY2025 establishment 113774, source date 2025-12-31 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483128",
+      "record_table": "sites",
+      "record_id": "SITE-005397",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=50-99 from OSHA ITA CY2025 establishment 113774, source date 2025-12-31; quote: Milsco, 650 West Bannerman Avenue, Redgranite, WI 54970",
+      "source_class": "government_filing",
+      "source_ref": "OSHA ITA CY2025 establishment 113774",
+      "observed_date": "2025-12-31",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-005457": {
+    "verdict": "held",
+    "reason": "co-located same-date filings disagree; establishment unresolved",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005591": {
+    "verdict": "held",
+    "reason": "co-located same-date filings disagree; establishment unresolved",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005679": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 349079483 opened 2026-07-29",
+    "source": "OSHA inspection 349079483 opened 2026-07-29",
+    "changes": {
+      "employee_band_site": "10-49",
+      "notes": "Created 2026-10-30 in integration pass 24 from TRI national wave P025-P030 site design SITE-005679 (org ORG-004360). Own-publication legs are city-grain (Hunt Valley); the exact street address rests on the places listing and the TRI row - tier B. Mailing locality note: 16 Alt Rd sits in the Cockeysville mailing locality; the TRI/packet city Hunt Valley is retained. Releases describe Beynon as a Tarkett Sports company (parent name only, unheld). BAND-SOURCE: employee_band_site=10-49 from OSHA inspection 349079483 opened 2026-07-29, source date 2026-07-29 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483129",
+      "record_table": "sites",
+      "record_id": "SITE-005679",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=10-49 from OSHA inspection 349079483 opened 2026-07-29, source date 2026-07-29; quote: BEYNON SPORTS SURFACES, INC., 16 ALT ROAD, HUNT VALLEY, MD 21030",
+      "source_class": "government_filing",
+      "source_ref": "OSHA inspection 349079483 opened 2026-07-29",
+      "observed_date": "2026-07-29",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-005723": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1369919",
+    "source": "OSHA ITA CY2025 establishment 1369919",
+    "changes": {
+      "employee_band_site": "250-499",
+      "notes": "Operator: Fehrer Automotive Alabama, LLC. Created 2026-10-30 in integration pass 25 from TRI national wave P031-P036 site design SITE-005723 (org ORG-003957). Net-new site under HELD ORG-003957 (Fehrer Automotive North America, LLC; HQ Duncan, SC). The coordinator's held-org lead (0.92) is CONFIRMED — but on the independent ADEM permit notice and City of Gadsden evidence, not on the lead itself. The permit applicant styling is 'Fehrer Automotive Alabama, LLC'; the TRI filer styling is 'FEHRER AUTOMOTIVE N.A. LLC' — same Gadsden establishment of the held org. TRI parent string is a lead only. BAND-SOURCE: employee_band_site=250-499 from OSHA ITA CY2025 establishment 1369919, source date 2025-12-31 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483130",
+      "record_table": "sites",
+      "record_id": "SITE-005723",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=250-499 from OSHA ITA CY2025 establishment 1369919, source date 2025-12-31; quote: Fehrer Automotive, 4330 Brooke Avenue, Gadsden, AL 35904",
+      "source_class": "government_filing",
+      "source_ref": "OSHA ITA CY2025 establishment 1369919",
+      "observed_date": "2025-12-31",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  },
+  "SITE-005739": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348733007 opened 2026-02-09",
+    "source": "OSHA inspection 348733007 opened 2026-02-09",
+    "changes": {
+      "employee_band_site": "50-99",
+      "notes": "Created 2026-10-30 in integration pass 25 from TRI national wave P031-P036 site design SITE-005739 (org ORG-004392). Coordinator held-org lead ORG-003390 'HASCO America, Inc.' is DISCARDED as a near-name magnet. The OSHA record's operator styling is 'Habasit Abt, LLC' (the Middletown belt operation's historical Habasit entity). Detailed Middletown plant color that surfaced in search came from Plastics News — used as a lead only and cited nowhere (section 5); the verdict rests on the OSHA record, the operator-domain places record and the TRI filing. TRI parent string HABASIT AG is a lead only; Habasit AG is recorded as unheld parent on the operator's own corporate identity. BAND-SOURCE: employee_band_site=50-99 from OSHA inspection 348733007 opened 2026-02-09, source date 2026-02-09 (government_filing; band only, not a headcount)."
+    },
+    "evidence": {
+      "evidence_id": "EVD-483131",
+      "record_table": "sites",
+      "record_id": "SITE-005739",
+      "claim_type": "size_band",
+      "claim_detail": "employee_band_site=50-99 from OSHA inspection 348733007 opened 2026-02-09, source date 2026-02-09; quote: HABASIT AMERICA, INC., 150 INDUSTRIAL PARK ROAD, MIDDLETOWN, CT 06457",
+      "source_class": "government_filing",
+      "source_ref": "OSHA inspection 348733007 opened 2026-02-09",
+      "observed_date": "2026-02-09",
+      "tier_effect": "supports_B",
+      "created_by": "atlas-p1 site-band-from-filing-2026-11-24",
+      "notes": "",
+      "address_role": ""
+    }
+  }
+}
