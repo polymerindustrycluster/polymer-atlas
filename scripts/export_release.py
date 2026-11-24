@@ -27,6 +27,7 @@ import csv
 import datetime
 import glob
 import hashlib
+import io
 import json
 import re
 import shutil
@@ -38,9 +39,9 @@ from collections import defaultdict
 from pathlib import Path
 
 if __package__:
-    from .build_site import org_field_sources
+    from .build_site import org_field_sources, release_withheld
 else:
-    from build_site import org_field_sources
+    from build_site import org_field_sources, release_withheld
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -152,6 +153,44 @@ def write_organization_export(path, cols, orgs, sites):
                 **{col: ";".join(org_field_sources(org, by_org.get(org["org_id"], ()), field))
                    for field, col in zip(ORG_SITE_FIELDS, ORG_SITE_COLUMNS)},
             })
+
+
+def withhold_csv(path, table):
+    """Blank, in the release copy only, every cell the site would withhold (build_site.release_withheld); returns how many. A file with
+    nothing to withhold keeps its exact bytes."""
+    raw = Path(path).read_bytes()
+    text = raw.decode("utf-8")
+    rows = list(csv.reader(io.StringIO(text, newline="")))
+    if not rows:
+        return 0
+    head, n = rows[0], 0
+    for r in rows[1:]:
+        for i, v in enumerate(r):
+            if release_withheld(table, head[i] if i < len(head) else "", v):
+                r[i] = ""
+                n += 1
+    if n:
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            csv.writer(f, lineterminator="\r\n" if "\r\n" in text else "\n").writerows(rows)
+    return n
+
+
+def withhold_db(db_path):
+    """The same withholding in the bundled SQLite copy (never the canonical build/polymer-atlas.db), then VACUUM so no held value stays in a free page."""
+    con = sqlite3.connect(db_path)
+    n = 0
+    tables = [r[0] for r in con.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")]
+    for t in tables:
+        cols = [r[1] for r in con.execute(f'PRAGMA table_info("{t}")') if (r[2] or "").upper() in ("TEXT", "")]
+        for c in cols:
+            hits = [(rid, v) for rid, v in con.execute(f'SELECT rowid, "{c}" FROM "{t}" WHERE "{c}" IS NOT NULL') if isinstance(v, str) and release_withheld(t, c, v)]
+            for rid, _ in hits:
+                con.execute(f'UPDATE "{t}" SET "{c}" = \'\' WHERE rowid = ?', (rid,))
+            n += len(hits)
+    con.commit()
+    con.execute("VACUUM")
+    con.close()
+    return n
 
 
 def data_inputs():
@@ -344,6 +383,7 @@ def main():
 
     # copy files and read them back for the descriptor
     shutil.copy2(DB, RELEASE / "polymer-atlas.db")
+    withheld = {"database": withhold_db(RELEASE / "polymer-atlas.db")}   # the canonical .db and CSVs are never touched
     published = {}  # name -> (path, cols, rows)
     for t in ("sites", "organizations", "evidence"):
         path = f"data/{t}_all.csv"
@@ -353,10 +393,12 @@ def main():
             write_organization_export(RELEASE / path, cols, rows, published["sites"][2])
         else:
             shutil.copy2(source, RELEASE / path)
+        withheld[t] = withhold_csv(RELEASE / path, t)
         cols, rows = read_csv(RELEASE / path)
         published[t] = (path, cols, rows)
     for t in single_tables():
         shutil.copy2(DATA / f"{t}.csv", RELEASE / "data" / f"{t}.csv")
+        withheld[t] = withhold_csv(RELEASE / "data" / f"{t}.csv", t)
         cols, rows = read_csv(RELEASE / "data" / f"{t}.csv")
         published[t] = (f"data/{t}.csv", cols, rows)
     counts = {t: len(v[2]) for t, v in published.items()}
@@ -411,7 +453,12 @@ def main():
                      f"{counts[t]:,} |")
     lines += ["", "The SQLite file `polymer-atlas.db` holds the same tables "
                   "(plus views) with identical row counts; this was checked at "
-                  "export time.", ""]
+                  "export time.", "",
+              "Withheld cells: the release blanks, in its own copies only, a description that "
+              "carries internal build or review wording and a temporary record id "
+              "(`NEW:...`), the same test the website applies. The canonical CSVs and database "
+              "keep them. Cells blanked: "
+              + ", ".join(f"{k} {v:,}" for k, v in sorted(withheld.items()) if v) + ".", ""]
     (RELEASE / "COUNTS.md").write_text("\n".join(lines), encoding="utf-8")
 
     # MANIFEST.sha256 (every file except itself; sha256sum -c compatible)
@@ -444,6 +491,7 @@ def main():
     print(f"zip            {zip_path} ({zip_path.stat().st_size:,} bytes)")
     print(f"zip sha256     {sha256_file(zip_path)}")
     print(f"resources      {len(descriptor['resources'])}")
+    print("withheld cells " + (", ".join(f"{k}={v}" for k, v in sorted(withheld.items()) if v) or "none"))
     print("counts (rows): " + ", ".join(f"{t}={counts[t]:,}" for t in order))
     if descriptor["x-foreignKeysNotDeclared"]:
         print("foreign keys not declared (data does not satisfy them):")

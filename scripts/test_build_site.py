@@ -757,7 +757,8 @@ class DirectoryCompaniesTest(unittest.TestCase):
         self.assertNotIn("rows (one per owner and county).'", self.js.replace(", one per owner and county).'", ""))   # the old row-only line is gone
         self.assertIn("Counts are companies.", self.html)
         self.assertIn("var lost = Object.keys(counts[f]['_'] || {}).filter(function (id) { return !companies[id]; }).length;", self.js)   # left out = no row on the list
-        self.assertIn("' company' : ' companies') + ' with unknown '", self.js)
+        self.assertIn("' with unknown ' + NAME[f] + ' in at least one county'", self.js)
+        self.assertIn("Unknown in at least one county (nothing recorded)", self.html)
         self.assertIn("Every filter except the member flag", self.html)
         self.assertIn('A row with the "PIC member" badge is on the public member list. A row without it is not marked either way', self.html)
         self.assertNotIn('is marked "on the public member list" or', self.html)                # the list shows a badge for Yes only; help must not promise a row label for No
@@ -1477,8 +1478,10 @@ class RefuteFixesTest(unittest.TestCase):
         self.assertIn("other (specified in the record&#x27;s notes, which are not published)", five.replace("&#39;", "&#x27;"))
         self.assertNotIn("other specified in notes", self.read("directory.json"))
 
-    def test_stacked_phone_headers_hold_no_reachable_sort_button(self):
-        self.assertIn("table.stack thead button.sort{display:none}", self.read("style.css"))
+    def test_stacked_phone_headers_keep_their_names_and_their_sort_buttons_take_no_focus(self):
+        css = self.read("style.css")
+        self.assertNotIn("table.stack thead button.sort{display:none}", css)           # hiding the button hid the column name from screen readers
+        self.assertRegex(self.read("sortable.js"), r"tabIndex = phone\.matches && table\.classList\.contains\('stack'\) \? -1 : 0")   # it just takes no focus
 
     def test_skyline_loads_nothing_heavy_on_a_phone(self):
         html = self.read("skyline.html")
