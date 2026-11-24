@@ -60,11 +60,22 @@ class IntegrationTests(unittest.TestCase):
         self.commit('value basis base')
         git(self.r, 'update-ref', 'refs/remotes/origin/main', 'HEAD')
 
+        (self.r / 'README.md').write_text('An unrelated change.\n')
+        unchanged = self.commit('unchanged value basis')
+        compare = [sys.executable, str(TOOLS.resolve() / 'delta_compare.py')]
+        same = subprocess.run([*compare, 'origin/main', unchanged], cwd=self.r, capture_output=True, text=True)
+        self.assertEqual(same.returncode, 0, same.stderr)
+        self.assertEqual(same.stdout.strip(), 'IDENTICAL')
+
         edited = second.replace('not_yet_checked', 'implied')
         self.write(name, header + edited + first)
         head = self.commit('one basis changed')
         key = (name, ('organizations', 'ORG-000001', 'processes', 'extrusion'))
         self.assertEqual(delta(self.r, head), {(key, 'basis'): 'implied'})
+        different = subprocess.run([*compare, unchanged, head], cwd=self.r, capture_output=True, text=True)
+        self.assertEqual(different.returncode, 1, different.stderr)
+        self.assertEqual(different.stdout.splitlines(),
+                         ['DIFFERENT: approved=0 candidate=1 cells/rows', str((key, 'basis'))])
 
         self.write(name, header + first + second + edited)
         duplicate = self.commit('duplicate basis key')
