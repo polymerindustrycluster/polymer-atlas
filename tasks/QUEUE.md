@@ -678,6 +678,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [ ] `claimed:claude-code 2026-11-22` **Working rules into AGENTS.md section 2a, with checks:** `scripts/check_pr_rules.py` (rules 5 and 6), workflow `pr-rules`, `tasks/working-rules-2026-11-22/`. Board card ATLAS-4. Rules 2 and 3 land with the evidence-binding-gate branch; not built here.
 
 ## PIC-18 street repairs from dated government filings
+- [ ] `claimed:atlas-p1-street-gaps 2026-11-24` **PIC-18 street gaps:** bind held filing addresses for the owner-approved site set. Branch `agent/codex/pic18-street-gaps-2026-11-24`. First user: City of Akron economic development staff. Check use by 2026-12-20.
 - [ ] `claimed:atlas-w22-size-unlock 2026-11-22` **PIC-18 street fill:** screen the 121 missing-street sites in the published size sprint. Apply unanimous, dated, physical street matches with evidence, then rerun the OSHA size matcher. First user: the Atlas controller. Check use by 2026-12-20.
 - [ ] `claimed:atlas-p2-size-10yr 2026-11-23` **PIC-18 ten-year size packet:** rerun the OSHA matcher on the current size-unknown frame and hand the packet to the integrator. Branch `agent/codex/pic18-size-10yr-2026-11-23`.
 - [ ] `claimed:atlas-w23-ohio-links 2026-11-23` **PIC-18 street-fill evidence repair:** append the American Bath Group ITA address observation for SITE-001455 to answer EVD-483012. Branch `agent/codex/pic18-street-fill-repair-2026-11-23`.
