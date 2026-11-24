@@ -53,6 +53,11 @@ if __name__ == "__main__":
         want = {(f, rid, COLUMN): (before, after) for f, rid, before, after in expected(base)}
         compare(base, ROOT / "data", want)
         print(f"PASS {len(want)} expected cells. All data files compared.")
+        with (HERE / "CLAIMS_CHECKED.csv").open(newline="") as fh:
+            claimed = {r["record_id"] for r in csv.DictReader(fh) if r["verdict"] == "corrected"}
+        if claimed != {rid for _, rid, _ in want}:
+            raise ValueError("CLAIMS_CHECKED.csv corrected rows differ from the changed cells")
+        print(f"PASS CLAIMS_CHECKED.csv lists the {len(claimed)} changed cells.")
 
         # Exercise the same disk reader and comparator on a two-row extract.
         before = Path(scratch) / "before"
