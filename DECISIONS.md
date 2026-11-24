@@ -531,3 +531,26 @@ tokens only when the record's primary ring is 3. Preserve the wording
 in the other-note when the term is outside the record's process vocabulary.
 Schema v1.19.8 and the V-55 pass are in
 `tasks/p1-vocab-repair-2026-11-23/`.
+
+## 2026-11-23 · Audit 13 scope and decision rule (ATLAS-7)
+
+**“Smoke only”.** After the remaining repairs land, read up to 40 random
+PIC-18 records. Stop on the third record with a confirmed error or
+unresolved claim. Return the number read, errors, unresolved rate and
+measured input tokens per record by provider to the owner before any draw.
+
+**“Decide after the smoke”.** The full draw and its decision rule await a
+separate owner ruling. With perfect reads and a true PIC-18 error rate of
+2%, the proposed stress-safe rule passes PIC-18 in only 9.9% of draws.
+The proposed plant-calibrated rule raises that probability to 80.4% and
+depends on the plants representing reader misses on real records.
+
+| Stage or design | OpenAI | Google | Anthropic | Total projected input tokens (millions) |
+|---|---:|---:|---:|---:|
+| Authorized smoke | 1.69 | 1.92 | 0.54 | 4.15 |
+| Smoke and stress-safe draw (option) | 37.43 | 39.85 | 6.54 | 83.83 |
+| Smoke, calibration and calibrated draw (option) | 60.31 | 78.39 | 7.70 | 146.40 |
+
+Estimates use short per-record calls. The smoke measures actual cost.
+The calibrated option includes 45.75M input tokens for additional plants.
+The previous audit consumed about 450M input tokens. [Sizing assumptions and calculations](tasks/blind-audit-13-protocol-2026-11-24/SIZES.md)
