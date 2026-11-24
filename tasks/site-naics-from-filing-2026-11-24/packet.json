@@ -1,0 +1,2274 @@
+{
+  "SITE-000254": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 799068; street, unit or locality does not bind: 473828; street, unit or locality does not bind: 54592",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-000258": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 942833",
+    "source": "OSHA ITA CY2025 establishment 942833",
+    "changes": {
+      "naics_primary": "424690",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-000289": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1253623",
+    "source": "OSHA ITA CY2025 establishment 1253623",
+    "changes": {
+      "naics_primary": "325998",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-000319": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 78151",
+    "source": "OSHA ITA CY2025 establishment 78151",
+    "changes": {
+      "naics_primary": "325199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-000346": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "EPA TRI RY2023 facility 44301BFGDR240WE | OSHA ITA CY2025 establishment 659073 | OSHA inspection 349089375 opened 2026-08-03",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-000363": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 930413",
+    "source": "OSHA ITA CY2025 establishment 930413",
+    "changes": {
+      "naics_primary": "424610",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-000393": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1089280",
+    "source": "OSHA ITA CY2025 establishment 1089280",
+    "changes": {
+      "naics_primary": "326299",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-000448": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1335627 | OSHA ITA CY2025 establishment 1437176",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-000519": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1448582 | OSHA inspection 346467152 opened 2023-01-27",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-000558": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 924674",
+    "source": "OSHA ITA CY2025 establishment 924674",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-000586": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1431746",
+    "source": "OSHA ITA CY2025 establishment 1431746",
+    "changes": {
+      "naics_primary": "326299",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-000601": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 956890",
+    "source": "OSHA ITA CY2025 establishment 956890",
+    "changes": {
+      "naics_primary": "326130",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-000698": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1000461; establishment name does not bind: 1454762",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-000701": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1424229",
+    "source": "OSHA ITA CY2025 establishment 1424229",
+    "changes": {
+      "naics_primary": "326121",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-000705": {
+    "verdict": "corrected",
+    "reason": "EPA TRI RY2023 facility 43211HNNCH1313W",
+    "source": "EPA TRI RY2023 facility 43211HNNCH1313W | OSHA inspection 345995401 opened 2022-06-03",
+    "changes": {
+      "naics_primary": "325510",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-000814": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 642387",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-000849": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 550647",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-000887": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 976610 | OSHA inspection 346547144 opened 2023-03-07",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-000966": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1153430",
+    "source": "OSHA ITA CY2025 establishment 1153430",
+    "changes": {
+      "naics_primary": "336992",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-000981": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1512739",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-001010": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 751394",
+    "source": "OSHA ITA CY2025 establishment 751394",
+    "changes": {
+      "naics_primary": "326299",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-001044": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1072687 | OSHA inspection 344623038 opened 2020-02-12",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-001053": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 809879",
+    "source": "OSHA ITA CY2025 establishment 809879",
+    "changes": {
+      "naics_primary": "325520",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-001061": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1424150",
+    "source": "OSHA ITA CY2025 establishment 1424150",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-001098": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1447942 | OSHA inspection 347393266 opened 2024-04-04",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-001104": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 572926 | OSHA inspection 346107196 opened 2022-07-28",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-001126": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1274746",
+    "source": "OSHA ITA CY2025 establishment 1274746",
+    "changes": {
+      "naics_primary": "326140",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-001144": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 998037",
+    "source": "OSHA ITA CY2025 establishment 998037",
+    "changes": {
+      "naics_primary": "326299",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-001153": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 915251",
+    "source": "OSHA ITA CY2025 establishment 915251",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-001181": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 350504",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-001188": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 69057",
+    "source": "OSHA ITA CY2025 establishment 69057",
+    "changes": {
+      "naics_primary": "424690",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-001199": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 735063",
+    "source": "OSHA ITA CY2025 establishment 735063",
+    "changes": {
+      "naics_primary": "326150",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-001220": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1082027",
+    "source": "OSHA ITA CY2025 establishment 1082027",
+    "changes": {
+      "naics_primary": "326140",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-001224": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1472638 | OSHA inspection 345500854 opened 2021-08-27",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-001303": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 128332",
+    "source": "OSHA ITA CY2025 establishment 128332",
+    "changes": {
+      "naics_primary": "333249",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-004485": {
+    "verdict": "held",
+    "reason": "raw replay unresolved; missing or ambiguous raw locator 29702MGNLFSCHIG",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-004534": {
+    "verdict": "corrected",
+    "reason": "EPA TRI RY2024 facility 77448MDRLLPOBOX",
+    "source": "EPA TRI RY2024 facility 77448MDRLLPOBOX",
+    "changes": {
+      "naics_primary": "325998",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-005262": {
+    "verdict": "corrected",
+    "reason": "EPA TRI RY2024 facility 67147NTNLP2600W",
+    "source": "EPA TRI RY2024 facility 67147NTNLP2600W",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-005890": {
+    "verdict": "held",
+    "reason": "raw replay unresolved; missing or ambiguous raw locator 38242PLMLYHENRY",
+    "source": "OSHA ITA CY2025 establishment 929659",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005952": {
+    "verdict": "held",
+    "reason": "raw replay unresolved; missing or ambiguous raw locator 46802SSXGR1601W",
+    "source": "OSHA ITA CY2025 establishment 53367",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005960": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "EPA TRI RY2024 facility 38834PCCRNGOLDI | OSHA ITA CY2025 establishment 1306104 | OSHA inspection 347459042 opened 2024-05-03",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005962": {
+    "verdict": "corrected",
+    "reason": "EPA TRI RY2024 facility 25703RBRLT2501G",
+    "source": "EPA TRI RY2024 facility 25703RBRLT2501G | OSHA ITA CY2025 establishment 1071618",
+    "changes": {
+      "naics_primary": "339991",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-005968": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1068143 | OSHA inspection 345281935 opened 2021-04-28",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005971": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348623901 opened 2025-12-08",
+    "source": "OSHA inspection 348623901 opened 2025-12-08",
+    "changes": {
+      "naics_primary": "326130",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-005980": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1248586 | OSHA inspection 346139454 opened 2022-08-12",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005983": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1258704; establishment name does not bind: 1258707",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005986": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1464818",
+    "source": "OSHA ITA CY2025 establishment 1464818",
+    "changes": {
+      "naics_primary": "336413",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-005989": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 1041712",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-005995": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348825779 opened 2026-03-23",
+    "source": "OSHA inspection 348825779 opened 2026-03-23",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006003": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 347677015 opened 2024-08-09",
+    "source": "OSHA inspection 347677015 opened 2024-08-09",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006006": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 212170 | OSHA inspection 343960613 opened 2019-04-19 | OSHA inspection 347313611 opened 2024-02-20",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006009": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 950390 | OSHA inspection 348168139 opened 2025-04-09",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006023": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1421253",
+    "source": "OSHA ITA CY2025 establishment 1421253",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006042": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1051388 | OSHA inspection 348235565 opened 2025-05-08",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006044": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1455940",
+    "source": "OSHA ITA CY2025 establishment 1455940 | OSHA inspection 347657389 opened 2024-07-31",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006056": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1464768",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006057": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1463668",
+    "source": "OSHA ITA CY2025 establishment 1463668",
+    "changes": {
+      "naics_primary": "326291",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006058": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1363299 | OSHA inspection 347233488 opened 2024-01-25",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006066": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1414476",
+    "source": "OSHA ITA CY2025 establishment 1414476",
+    "changes": {
+      "naics_primary": "325130",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006067": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1089007",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006071": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 346380744 opened 2022-12-08",
+    "source": "OSHA inspection 346380744 opened 2022-12-08",
+    "changes": {
+      "naics_primary": "326140",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006074": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1533255",
+    "source": "OSHA ITA CY2025 establishment 1533255",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006077": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 666909 | OSHA inspection 345424279 opened 2021-05-06",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006078": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348831603 opened 2026-03-25",
+    "source": "OSHA inspection 348831603 opened 2026-03-25",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006079": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 958826",
+    "source": "OSHA ITA CY2025 establishment 958826 | OSHA inspection 344586805 opened 2020-01-28",
+    "changes": {
+      "naics_primary": "326191",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006080": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1289509",
+    "source": "OSHA ITA CY2025 establishment 1289509 | OSHA inspection 347255879 opened 2024-01-25",
+    "changes": {
+      "naics_primary": "325510",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006081": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 663751; establishment name does not bind: 982485",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006082": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1265007",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006083": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1435145",
+    "source": "OSHA ITA CY2025 establishment 1435145",
+    "changes": {
+      "naics_primary": "325199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006101": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 953095 | OSHA inspection 345003123 opened 2020-10-30",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006102": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1081318",
+    "source": "OSHA ITA CY2025 establishment 1081318",
+    "changes": {
+      "naics_primary": "337910",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006108": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 209372",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006121": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 303644 | OSHA inspection 346413610 opened 2022-12-22",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006123": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 347059",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006133": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 344926472 opened 2020-09-11",
+    "source": "OSHA inspection 344926472 opened 2020-09-11",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006146": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 48652",
+    "source": "OSHA ITA CY2025 establishment 48652",
+    "changes": {
+      "naics_primary": "326113",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006149": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 798576",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006150": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 84990",
+    "source": "OSHA ITA CY2025 establishment 84990",
+    "changes": {
+      "naics_primary": "333511",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006158": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 346335045 opened 2022-11-09",
+    "source": "OSHA inspection 346335045 opened 2022-11-09",
+    "changes": {
+      "naics_primary": "326299",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006161": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1459781 | OSHA inspection 347639841 opened 2024-07-24",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006164": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 347130130 opened 2023-11-29",
+    "source": "OSHA inspection 347130130 opened 2023-11-29",
+    "changes": {
+      "naics_primary": "326140",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006171": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1273739",
+    "source": "OSHA ITA CY2025 establishment 1273739",
+    "changes": {
+      "naics_primary": "326111",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006174": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1082584",
+    "source": "OSHA ITA CY2025 establishment 1082584",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006190": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 346725039",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006199": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1000598",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006205": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 348001587; establishment name does not bind: 348635764",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006210": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 347000952; establishment name does not bind: 347000978",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006219": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1442303",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006224": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 257066",
+    "source": "OSHA ITA CY2025 establishment 257066",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006239": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 344373253",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006246": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 656547",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006249": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1429315",
+    "source": "OSHA ITA CY2025 establishment 1429315",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006259": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 43153",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006263": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 136770",
+    "source": "OSHA ITA CY2025 establishment 1095606 | OSHA ITA CY2025 establishment 136770",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006274": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 890805",
+    "source": "OSHA ITA CY2025 establishment 890805",
+    "changes": {
+      "naics_primary": "333511",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006281": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1431495",
+    "source": "OSHA ITA CY2025 establishment 1431495",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006288": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 444295",
+    "source": "OSHA ITA CY2025 establishment 444295",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006299": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 346256944 opened 2022-10-03",
+    "source": "OSHA inspection 346256944 opened 2022-10-03",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006311": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1442787",
+    "source": "OSHA ITA CY2025 establishment 1442787 | OSHA inspection 348581430 opened 2025-11-05",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006315": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1279179",
+    "source": "OSHA ITA CY2025 establishment 1279179",
+    "changes": {
+      "naics_primary": "333511",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006316": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 981761",
+    "source": "OSHA ITA CY2025 establishment 981761",
+    "changes": {
+      "naics_primary": "326111",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006318": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 197361",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006319": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1114336",
+    "source": "OSHA ITA CY2025 establishment 1114336",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006331": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 344201199 opened 2019-08-01",
+    "source": "OSHA inspection 344201199 opened 2019-08-01",
+    "changes": {
+      "naics_primary": "326150",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006336": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA inspection 348203779 opened 2025-04-23",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006337": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 53502 | OSHA inspection 344797352 opened 2020-06-17",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006339": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 675239 | OSHA inspection 346088263 opened 2022-07-19",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006343": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 917525 | OSHA inspection 348677535 opened 2026-01-08",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006346": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1093170 | OSHA inspection 346589294 opened 2023-03-24",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006348": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 197297",
+    "source": "OSHA inspection 346240088 opened 2022-09-16",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006350": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 345660575 opened 2021-11-30",
+    "source": "OSHA inspection 345660575 opened 2021-11-30",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006353": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1244572",
+    "source": "OSHA ITA CY2025 establishment 1244572 | OSHA inspection 347364564 opened 2024-03-12",
+    "changes": {
+      "naics_primary": "326121",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006355": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 347074015 opened 2023-11-01",
+    "source": "OSHA inspection 347074015 opened 2023-11-01",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006357": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 345737183 opened 2022-01-19",
+    "source": "OSHA inspection 345737183 opened 2022-01-19",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006358": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1493173",
+    "source": "OSHA ITA CY2025 establishment 1493173",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006365": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1041635",
+    "source": "OSHA ITA CY2025 establishment 1041635",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006387": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 346918592 opened 2023-08-16",
+    "source": "OSHA inspection 346918592 opened 2023-08-16",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006394": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 344455225 opened 2019-11-18",
+    "source": "OSHA inspection 344455225 opened 2019-11-18",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006398": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1377166 | OSHA inspection 347265985 opened 2024-02-07",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006401": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348062738 opened 2025-02-26",
+    "source": "OSHA inspection 348062738 opened 2025-02-26",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006405": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 346042682 opened 2022-06-23",
+    "source": "OSHA inspection 346042682 opened 2022-06-23",
+    "changes": {
+      "naics_primary": "325991",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006408": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1305948 | OSHA inspection 348279019 opened 2025-05-30",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006412": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 347618530 opened 2024-07-16",
+    "source": "OSHA inspection 347618530 opened 2024-07-16",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006413": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1459719 | OSHA inspection 347193708 opened 2024-01-03",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006416": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348717802 opened 2026-01-28",
+    "source": "OSHA inspection 348717802 opened 2026-01-28",
+    "changes": {
+      "naics_primary": "326299",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006417": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1459273",
+    "source": "OSHA ITA CY2025 establishment 1459273",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006422": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 347697138 opened 2024-08-20",
+    "source": "OSHA inspection 347697138 opened 2024-08-20",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006425": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1257804",
+    "source": "OSHA ITA CY2025 establishment 1257804 | OSHA inspection 347764482 opened 2024-09-19",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006426": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 424756",
+    "source": "OSHA ITA CY2025 establishment 424756",
+    "changes": {
+      "naics_primary": "333249",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006427": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1431737",
+    "source": "OSHA ITA CY2025 establishment 1431737",
+    "changes": {
+      "naics_primary": "326220",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-006428": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 345217269",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-006432": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348613720 opened 2025-11-25",
+    "source": "OSHA inspection 348613720 opened 2025-11-25",
+    "changes": {
+      "naics_primary": "326111",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006435": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 346104953 opened 2022-07-27",
+    "source": "OSHA inspection 346104953 opened 2022-07-27",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-006437": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 345074660; establishment name does not bind: 931822",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-008163": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 545388",
+    "source": "OSHA ITA CY2025 establishment 545388",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-008166": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1084958 | OSHA inspection 346281777 opened 2022-10-14",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-008177": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 649161",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-008178": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1309484",
+    "source": "OSHA ITA CY2025 establishment 1309484",
+    "changes": {
+      "naics_primary": "333248",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-008179": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1533151 | OSHA inspection 347920266 opened 2024-12-06",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010009": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1029615 | OSHA inspection 349139501 opened 2026-08-27",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010010": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1184821 | OSHA inspection 347815565 opened 2024-10-15",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010021": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 915491 | OSHA inspection 345662910 opened 2021-12-01",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010027": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348256561 opened 2025-05-16",
+    "source": "OSHA inspection 348256561 opened 2025-05-16",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010028": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1537652 | OSHA inspection 346009582 opened 2022-06-08",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010029": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1465158 | OSHA inspection 347807356 opened 2024-10-09",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010040": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 107353 | OSHA inspection 349189506 opened 2026-09-29",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010042": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1502236 | OSHA inspection 346080542 opened 2022-07-15",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010045": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 919524 | OSHA inspection 349131896 opened 2026-08-25",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010046": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 345224430 opened 2021-03-31",
+    "source": "OSHA inspection 345224430 opened 2021-03-31",
+    "changes": {
+      "naics_primary": "326299",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010048": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 96771",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010051": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1149340",
+    "source": "OSHA ITA CY2025 establishment 1149340",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010052": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1523191",
+    "source": "OSHA ITA CY2025 establishment 1523191",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010053": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1095164",
+    "source": "OSHA ITA CY2025 establishment 1095164 | OSHA inspection 348723370 opened 2026-02-03",
+    "changes": {
+      "naics_primary": "326150",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010054": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1429882",
+    "source": "OSHA ITA CY2025 establishment 1429882 | OSHA inspection 345341242 opened 2021-06-03",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010070": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 928828",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010079": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 522032 | OSHA inspection 348403197 opened 2025-07-29",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010082": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1421392",
+    "source": "OSHA ITA CY2025 establishment 1421392",
+    "changes": {
+      "naics_primary": "333248",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010083": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1265430",
+    "source": "OSHA ITA CY2025 establishment 1265430",
+    "changes": {
+      "naics_primary": "424690",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010152": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 412913 | OSHA inspection 347462616 opened 2024-05-06",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010166": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1264650 | OSHA inspection 346894173 opened 2023-08-08",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010172": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 397241 | OSHA inspection 348651613 opened 2025-12-18",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010177": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 661479 | OSHA inspection 346317951 opened 2022-11-01",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010179": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1433671; street, unit or locality does not bind: 347379554",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010180": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348663683 opened 2025-12-30",
+    "source": "OSHA inspection 348663683 opened 2025-12-30",
+    "changes": {
+      "naics_primary": "326111",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010184": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348754706 opened 2026-02-18",
+    "source": "OSHA inspection 348754706 opened 2026-02-18",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010303": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 781412 | OSHA inspection 346442973 opened 2023-01-18",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010311": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 345470652 opened 2021-08-11",
+    "source": "OSHA inspection 345470652 opened 2021-08-11",
+    "changes": {
+      "naics_primary": "326122",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010314": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 193354 | OSHA inspection 346611841 opened 2023-04-05",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010315": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1460184",
+    "source": "OSHA ITA CY2025 establishment 1460184",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010318": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 660277 | OSHA inspection 344578083 opened 2020-01-23",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010321": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 347536187 opened 2024-06-04",
+    "source": "OSHA inspection 347536187 opened 2024-06-04",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010323": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1456930",
+    "source": "OSHA ITA CY2025 establishment 1456930",
+    "changes": {
+      "naics_primary": "326121",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010326": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1305936 | OSHA inspection 349207910 opened 2026-10-07",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010332": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1440534",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010451": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA inspection 347501934 opened 2024-05-22",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010453": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 646829",
+    "source": "OSHA ITA CY2025 establishment 646829",
+    "changes": {
+      "naics_primary": "326291",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010454": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 915573",
+    "source": "OSHA ITA CY2025 establishment 915573",
+    "changes": {
+      "naics_primary": "325992",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010456": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1522607",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010457": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 749904",
+    "source": "OSHA ITA CY2025 establishment 749904",
+    "changes": {
+      "naics_primary": "326299",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010459": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348006305 opened 2025-01-28",
+    "source": "OSHA inspection 348006305 opened 2025-01-28",
+    "changes": {
+      "naics_primary": "325212",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010461": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 349027524 opened 2026-07-01",
+    "source": "OSHA inspection 349027524 opened 2026-07-01",
+    "changes": {
+      "naics_primary": "326113",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010462": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348647652 opened 2025-12-16",
+    "source": "OSHA inspection 348647652 opened 2025-12-16",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010467": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 1062706 | OSHA inspection 346918154 opened 2023-08-17",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010470": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1559999 | OSHA inspection 348012154 opened 2025-01-30",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010473": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1518119",
+    "source": "OSHA ITA CY2025 establishment 1518119",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010474": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 1414580",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010480": {
+    "verdict": "held",
+    "reason": "bound filings disagree; establishment name does not bind: 1431879; establishment name does not bind: 1431890; establishment name does not bind: 1431893; establishment name does not bind: 1431895; establishment name does not bind: 1431899; establishment name does not bind: 1431900; establishment name does not bind: 1431903",
+    "source": "OSHA ITA CY2025 establishment 1431883 | OSHA inspection 346314412 opened 2022-10-31",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010487": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1098750 | OSHA inspection 348939919 opened 2026-05-15",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010489": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1061928 | OSHA inspection 347321705 opened 2024-03-05",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010492": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 347830838 opened 2024-10-22",
+    "source": "OSHA inspection 347830838 opened 2024-10-22",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010602": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1567689 | OSHA inspection 349209148 opened 2026-10-08",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010612": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1073367 | OSHA inspection 346997760 opened 2023-09-27",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010616": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 344504626 opened 2019-12-04",
+    "source": "OSHA inspection 344504626 opened 2019-12-04",
+    "changes": {
+      "naics_primary": "326111",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010620": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1455180 | OSHA inspection 346105950 opened 2022-07-27",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010621": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 286208 | OSHA inspection 347970196 opened 2025-01-09",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010622": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348892415 opened 2026-04-22",
+    "source": "OSHA inspection 348892415 opened 2026-04-22",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010623": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 304458 | OSHA inspection 347273591 opened 2024-02-09",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010628": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 349238568 opened 2026-10-22",
+    "source": "OSHA inspection 349238568 opened 2026-10-22",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010632": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 288349 | OSHA inspection 347427692 opened 2024-04-19",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010633": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 865878 | OSHA inspection 348895780 opened 2026-04-22",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010641": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 348491721 opened 2025-09-08",
+    "source": "OSHA inspection 348491721 opened 2025-09-08",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010643": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 329894 | OSHA inspection 348502576 opened 2025-09-09",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010647": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1337321 | OSHA inspection 346474547 opened 2023-01-31",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010651": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 342405 | OSHA inspection 345546964 opened 2021-08-20",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010752": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1144590",
+    "source": "OSHA ITA CY2025 establishment 1144590",
+    "changes": {
+      "naics_primary": "326130",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-010755": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 346749187 opened 2023-06-06",
+    "source": "OSHA inspection 346749187 opened 2023-06-06",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010758": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 272314 | OSHA inspection 348385675 opened 2025-07-21",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010760": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 985022",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010768": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 349066035 opened 2026-07-22",
+    "source": "OSHA inspection 349066035 opened 2026-07-22",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010904": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 224738 | OSHA inspection 345958813 opened 2022-05-03",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010905": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1055034 | OSHA ITA CY2025 establishment 1566933 | OSHA inspection 347401820 opened 2024-04-09",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010906": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 347251829 opened 2024-02-01",
+    "source": "OSHA inspection 347251829 opened 2024-02-01",
+    "changes": {
+      "naics_primary": "326220",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010908": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA inspection 343715272 opened 2019-01-15",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-010909": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 345038889 opened 2020-11-24",
+    "source": "OSHA inspection 345038889 opened 2020-11-24",
+    "changes": {
+      "naics_primary": "326299",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-010913": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 349134957 opened 2026-08-26",
+    "source": "OSHA inspection 349134957 opened 2026-08-26",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-011007": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 1429050",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011008": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 943057",
+    "source": "OSHA ITA CY2025 establishment 943057",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011012": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 1373336",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011033": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1207032",
+    "source": "OSHA ITA CY2025 establishment 1207032",
+    "changes": {
+      "naics_primary": "326291",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011035": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 684674",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011152": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1273516 | OSHA inspection 343789921 opened 2019-02-15 | OSHA inspection 343975017 opened 2019-04-30",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011156": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 343769865 opened 2019-02-08",
+    "source": "OSHA inspection 343769865 opened 2019-02-08",
+    "changes": {
+      "naics_primary": "326150",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-011160": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1100561 | OSHA inspection 347720922 opened 2024-08-28",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011163": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1565273 | OSHA inspection 348937053 opened 2026-05-14",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011173": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1284638",
+    "source": "OSHA ITA CY2025 establishment 1284638",
+    "changes": {
+      "naics_primary": "333248",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011175": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 120122",
+    "source": "OSHA ITA CY2025 establishment 120122",
+    "changes": {
+      "naics_primary": "326291",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011301": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 992721",
+    "source": "OSHA ITA CY2025 establishment 992721 | OSHA inspection 346456825 opened 2023-01-24",
+    "changes": {
+      "naics_primary": "326299",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011304": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1062096",
+    "source": "OSHA ITA CY2025 establishment 1062096",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011309": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 870462 | OSHA inspection 346646334 opened 2023-04-20",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011310": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 838354",
+    "source": "OSHA ITA CY2025 establishment 838354",
+    "changes": {
+      "naics_primary": "326113",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011319": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 346793375 opened 2023-06-26",
+    "source": "OSHA inspection 346793375 opened 2023-06-26",
+    "changes": {
+      "naics_primary": "326113",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-011452": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1530623",
+    "source": "OSHA ITA CY2025 establishment 1530623",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011457": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1378177",
+    "source": "OSHA ITA CY2025 establishment 1378177",
+    "changes": {
+      "naics_primary": "333248",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011459": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 122301; establishment name does not bind: 85654",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011462": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 1431718",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011469": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 127974; street, unit or locality does not bind: 128546; street, unit or locality does not bind: 349069971",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011606": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA inspection 344984000 opened 2020-10-20",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011621": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 922675",
+    "source": "OSHA ITA CY2025 establishment 922675",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011751": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1372478",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011759": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 1425811",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011763": {
+    "verdict": "held",
+    "reason": "no binding cited establishment filing; establishment name does not bind: 1005010; establishment name does not bind: 345398242",
+    "source": "",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011766": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 804814",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011772": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 449937",
+    "source": "OSHA ITA CY2025 establishment 449937",
+    "changes": {
+      "naics_primary": "326140",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011775": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 1076357",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011903": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1428602 | OSHA inspection 349082750 opened 2026-07-30",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011905": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 181771 | OSHA inspection 347660318 opened 2024-08-01",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-011906": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 752076",
+    "source": "OSHA ITA CY2025 establishment 752076 | OSHA inspection 347585226 opened 2024-06-27",
+    "changes": {
+      "naics_primary": "326199",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-011911": {
+    "verdict": "corrected",
+    "reason": "OSHA inspection 346642432 opened 2023-04-17",
+    "source": "OSHA inspection 346642432 opened 2023-04-17",
+    "changes": {
+      "naics_primary": "326112",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "high"
+    },
+    "evidence": {}
+  },
+  "SITE-011913": {
+    "verdict": "corrected",
+    "reason": "OSHA ITA CY2025 establishment 1278216",
+    "source": "OSHA ITA CY2025 establishment 1278216",
+    "changes": {
+      "naics_primary": "325211",
+      "naics_primary_source_type": "government_filing",
+      "naics_confidence": "medium"
+    },
+    "evidence": {}
+  },
+  "SITE-012003": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 1303906 | OSHA inspection 345256077 opened 2021-04-15",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-012026": {
+    "verdict": "verified",
+    "reason": "binding source confirms held value",
+    "source": "OSHA ITA CY2025 establishment 1328552",
+    "changes": {},
+    "evidence": {}
+  },
+  "SITE-012035": {
+    "verdict": "held",
+    "reason": "bound filings disagree",
+    "source": "OSHA ITA CY2025 establishment 280605 | OSHA inspection 347202467 opened 2024-01-10",
+    "changes": {},
+    "evidence": {}
+  }
+}
