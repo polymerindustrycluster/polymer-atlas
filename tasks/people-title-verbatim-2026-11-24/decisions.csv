@@ -1,0 +1,294 @@
+person_id,decision,evidence_id,role_as_published,role,reason
+PERSON-000001,CHANGE,EVD-399629,"Professor, Associate Dean Arts and Science",professor,Institutional styling in the cited quotation.
+PERSON-000036,HOLD,EVD-399615,,,Emeritus or solely postdoctoral styling falls outside §4.9.
+PERSON-000042,HOLD,EVD-399627,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-000043,CHANGE,EVD-396100,W. Gerald Austen Endowed Chair and H.A. Morton Professor,professor,Institutional styling in the cited quotation.
+PERSON-000052,HOLD,EVD-396106,,,Second held quotation differs in published title.
+PERSON-000055,CHANGE,EVD-396107,"Kumho Professor, Distinguished Professor",professor,Institutional styling in the cited quotation.
+PERSON-000058,CHANGE,EVD-396109,A. Schulman Professor,professor,Institutional styling in the cited quotation.
+PERSON-000076,CHANGE,EVD-396111,"Professor, Site Director of Center for Tire Research (CenTiRe)",center_director_professor,Institutional styling in the cited quotation.
+PERSON-000077,CHANGE,EVD-396112,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000079,CHANGE,EVD-396114,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000085,CHANGE,EVD-399610,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000096,HOLD,EVD-399617,,,Neither the quotation nor its source URL identifies the person clearly.
+PERSON-000104,HOLD,EVD-396116,,,Second held quotation differs in published title.
+PERSON-000118,CHANGE,EVD-399801,"Associate Head (Education), Professor",professor,Institutional styling in the cited quotation.
+PERSON-000129,HOLD,EVD-399791,,,The abbreviated director styling in the excerpt does not independently establish a center directorship.
+PERSON-000134,CHANGE,EVD-399792,Professor Mellichamp Endowed Chair in Green Chemistry,professor,Institutional styling in the cited quotation.
+PERSON-000136,CHANGE,EVD-399794,Department Chair Professor,professor,Institutional styling in the cited quotation.
+PERSON-000138,CHANGE,EVD-399796,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000140,CHANGE,EVD-399798,Distinguished Professor,professor,Institutional styling in the cited quotation.
+PERSON-000142,CHANGE,EVD-399835,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000143,CHANGE,EVD-399836,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000144,CHANGE,EVD-399837,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000145,CHANGE,EVD-399838,Professor of Materials Chemistry and Engineering & Design,professor,Institutional styling in the cited quotation.
+PERSON-000146,CHANGE,EVD-399839,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000147,CHANGE,EVD-399840,"Professor of Chemistry, NSF-SUPER Partnerships Director",professor,Institutional styling in the cited quotation.
+PERSON-000178,CHANGE,EVD-399845,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000179,HOLD,EVD-399846,,,Professor is an honorific before the name and cannot settle the held director appointment.
+PERSON-000181,HOLD,EVD-399848,,,A named professorship and a different faculty rank appear on the held record; the quote does not settle their relation.
+PERSON-000182,CHANGE,EVD-399849,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000183,HOLD,EVD-399850,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-000184,CHANGE,EVD-399851,Conway Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000197,CHANGE,EVD-399751,"Regents’ Professor, Institute Fellow, Hercules, Inc./Thomas L. Gossage Chair",professor,Institutional styling in the cited quotation.
+PERSON-000198,HOLD,EVD-399752,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-000200,CHANGE,EVD-399753,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000212,CHANGE,EVD-399863,assistant professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000213,CHANGE,EVD-399864,Philpott-WestPoint Stevens Endowed Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000214,CHANGE,EVD-399865,Dr. Daniel F. and Josephine Breeden Professor,professor,Institutional styling in the cited quotation.
+PERSON-000232,CHANGE,EVD-399763,Distinguished Professor,professor,Institutional styling in the cited quotation.
+PERSON-000249,CHANGE,EVD-399756,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000252,HOLD,EVD-399757,,,The abbreviated director styling in the excerpt does not independently establish a center directorship.
+PERSON-000262,CHANGE,EVD-399758,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000264,CHANGE,EVD-399768,Distinguished Professor and Department Head,professor,Institutional styling in the cited quotation.
+PERSON-000267,CHANGE,EVD-399769,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000269,CHANGE,EVD-399770,S. Frank and Doris Culberson Distinguished Professor,professor,Institutional styling in the cited quotation.
+PERSON-000270,CHANGE,EVD-399771,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000272,CHANGE,EVD-399772,Alcoa Professor,professor,Institutional styling in the cited quotation.
+PERSON-000275,CHANGE,EVD-399773,"Worley H. Clark, Jr. Distinguished University Professor in Engineering",professor,Institutional styling in the cited quotation.
+PERSON-000276,CHANGE,EVD-399774,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000278,CHANGE,EVD-399775,Assoc Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000280,CHANGE,EVD-399777,Assoc Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000281,CHANGE,EVD-399778,Research Professor,research_professor,Institutional styling in the cited quotation.
+PERSON-000282,CHANGE,EVD-399779,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000284,CHANGE,EVD-399780,Assoc. Professor & University Faculty Scholar,associate_professor,Institutional styling in the cited quotation.
+PERSON-000285,CHANGE,EVD-399781,Assoc Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000293,CHANGE,EVD-399867,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000298,CHANGE,EVD-399868,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000319,CHANGE,EVD-399859,Samuel W. and M. Diane Bodman Professor in Chemical Engineering,professor,Institutional styling in the cited quotation.
+PERSON-000331,CHANGE,EVD-399861,Samuel B. Eckert Professor in Engineering,professor,Institutional styling in the cited quotation.
+PERSON-000334,CHANGE,EVD-399841,"Director, of the Michael Szwarc Polymer Research Institute & Professor",center_director_professor,Institutional styling in the cited quotation.
+PERSON-000335,CHANGE,EVD-399842,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000340,CHANGE,EVD-399653,assistant professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000341,CHANGE,EVD-399654,Chevron Professor of Chemical Engineering,professor,Institutional styling in the cited quotation.
+PERSON-000350,CHANGE,EVD-399644,"Distinguished Professor, John A. Swanson Chair of Engineering",professor,Institutional styling in the cited quotation.
+PERSON-000351,CHANGE,EVD-399645,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000352,CHANGE,EVD-399646,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000353,CHANGE,EVD-399647,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000354,CHANGE,EVD-399648,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000355,CHANGE,EVD-399649,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000356,CHANGE,EVD-399650,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000357,CHANGE,EVD-399651,"Professor, Bicentennial Board of Visitors Faculty Fellow",professor,Institutional styling in the cited quotation.
+PERSON-000358,CHANGE,EVD-399652,Distinguished Professor,professor,Institutional styling in the cited quotation.
+PERSON-000384,CHANGE,EVD-399786,professor,professor,Institutional styling in the cited quotation.
+PERSON-000385,CHANGE,EVD-399787,professor and chair,professor,Institutional styling in the cited quotation.
+PERSON-000390,CHANGE,EVD-399788,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000394,CHANGE,EVD-399789,assistant professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000432,CHANGE,EVD-399749,assistant professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000442,CHANGE,EVD-399766,Professor of Mechanical Engineering,professor,Institutional styling in the cited quotation.
+PERSON-000447,CHANGE,EVD-399767,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000484,HOLD,EVD-399664,,,The laboratory styles multiple roles together; §4.9 does not resolve their priority.
+PERSON-000487,HOLD,EVD-399666,,,The laboratory styles multiple roles together; §4.9 does not resolve their priority.
+PERSON-000501,CHANGE,EVD-399678,Staff Scientist,staff_scientist,Institutional styling in the cited quotation.
+PERSON-000502,CHANGE,EVD-399679,staff scientist,staff_scientist,Institutional styling in the cited quotation.
+PERSON-000505,HOLD,EVD-399681,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000512,HOLD,EVD-399687,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000523,HOLD,EVD-399695,,,The excerpt does not settle the separately held Corporate Fellow rank.
+PERSON-000536,CHANGE,EVD-399707,R&D Staff Scientist,staff_scientist,Institutional styling in the cited quotation.
+PERSON-000537,HOLD,EVD-399708,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000539,HOLD,EVD-399710,,,The bio uses researcher descriptively. The evidence notes explicitly say no title line was available.
+PERSON-000541,CHANGE,EVD-399712,Research Engineer,research_engineer,Institutional styling in the cited quotation.
+PERSON-000542,CHANGE,EVD-399713,staff scientist,staff_scientist,Institutional styling in the cited quotation.
+PERSON-000548,CHANGE,EVD-399721,staff scientist,staff_scientist,Institutional styling in the cited quotation.
+PERSON-000551,HOLD,EVD-399724,,,Rank or modifier has no explicit §4.9 mapping.
+PERSON-000559,CHANGE,EVD-399731,Supervisory Group Leader,group_leader,Institutional styling in the cited quotation.
+PERSON-000560,HOLD,EVD-399732,,,Emeritus or solely postdoctoral styling falls outside §4.9.
+PERSON-000570,HOLD,EVD-399740,,,Caption or generic prose does not establish an institutional title.
+PERSON-000584,CHANGE,EVD-399869,Staff Scientist,staff_scientist,Institutional styling in the cited quotation.
+PERSON-000585,CHANGE,EVD-399870,Staff Scientist,staff_scientist,Institutional styling in the cited quotation.
+PERSON-000586,CHANGE,EVD-399871,Staff Scientist,staff_scientist,Institutional styling in the cited quotation.
+PERSON-000588,CHANGE,EVD-399873,Senior Scientist,senior_scientist,Institutional styling in the cited quotation.
+PERSON-000591,CHANGE,EVD-399875,Research Scientist,research_scientist,Institutional styling in the cited quotation.
+PERSON-000592,CHANGE,EVD-399876,Senior Scientist,senior_scientist,Institutional styling in the cited quotation.
+PERSON-000593,HOLD,EVD-399877,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000594,CHANGE,EVD-399716,Group Leader,group_leader,Institutional styling in the cited quotation.
+PERSON-000613,HOLD,EVD-399886,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000632,CHANGE,EVD-399882,group leader,group_leader,Institutional styling in the cited quotation.
+PERSON-000634,HOLD,EVD-283022,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000637,HOLD,EVD-283028,,,Rank or modifier has no explicit §4.9 mapping.
+PERSON-000640,CHANGE,EVD-399883,Assistant Scientist (Research Staff 3),assistant_scientist,Institutional styling in the cited quotation.
+PERSON-000663,CHANGE,EVD-399884,Senior Scientist,senior_scientist,Institutional styling in the cited quotation.
+PERSON-000668,CHANGE,EVD-399890,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000673,CHANGE,EVD-399903,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000680,CHANGE,EVD-399908,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000694,HOLD,EVD-399824,,,Source host is not corroborated by the held institution or its program.
+PERSON-000695,HOLD,EVD-399922,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000697,CHANGE,EVD-399963,Cary C. Boshamer Distinguished Professor,professor,Institutional styling in the cited quotation.
+PERSON-000698,CHANGE,EVD-399910,Mary Jane Skogen Hagenson and Randy L. Hagenson Professor,professor,Institutional styling in the cited quotation.
+PERSON-000702,CHANGE,EVD-399964,Mackenzie Distinguished Professor of Chemistry,professor,Institutional styling in the cited quotation.
+PERSON-000711,HOLD,EVD-399826,,,Source host is not corroborated by the held institution or its program.
+PERSON-000714,HOLD,EVD-399966,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-000715,HOLD,EVD-399937,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000717,HOLD,EVD-399813,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-000724,HOLD,EVD-399827,,,Source host is not corroborated by the held institution or its program.
+PERSON-000726,CHANGE,EVD-399967,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000728,CHANGE,EVD-399923,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000731,CHANGE,EVD-399998,University Distinguished Professor,professor,Institutional styling in the cited quotation.
+PERSON-000732,CHANGE,EVD-399815,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000735,HOLD,EVD-399640,,,Neither the quotation nor its source URL identifies the person clearly.
+PERSON-000743,CHANGE,EVD-399912,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000747,CHANGE,EVD-399897,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000749,CHANGE,EVD-399924,Distinguished Professor,professor,Institutional styling in the cited quotation.
+PERSON-000751,CHANGE,EVD-399925,Bowman Endowed Professor,professor,Institutional styling in the cited quotation.
+PERSON-000752,HOLD,EVD-399934,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000756,CHANGE,EVD-399927,Gallogly Professor,professor,Institutional styling in the cited quotation.
+PERSON-000763,CHANGE,EVD-399940,"Professor, University Scholar, LAS Dean’s Distinguished Professorial Scholar and Dow Chemical Company Faculty Scholar",professor,Institutional styling in the cited quotation.
+PERSON-000765,HOLD,EVD-399641,,,Neither the quotation nor its source URL identifies the person clearly.
+PERSON-000771,CHANGE,EVD-399986,Professor of Material Engineering,professor,Institutional styling in the cited quotation.
+PERSON-000776,HOLD,EVD-399930,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000782,CHANGE,EVD-399931,"Professor Director, MAST Center",center_director_professor,Institutional styling in the cited quotation.
+PERSON-000783,CHANGE,EVD-399969,professor,professor,Institutional styling in the cited quotation.
+PERSON-000784,CHANGE,EVD-399643,professor of chemistry,professor,Institutional styling in the cited quotation.
+PERSON-000786,CHANGE,EVD-399819,Unidel Robert L. Pigford Chaired Professor of Chemical and Biomolecular Engineering,professor,Institutional styling in the cited quotation.
+PERSON-000789,CHANGE,EVD-399988,Tarpo Professor of Chemistry,professor,Institutional styling in the cited quotation.
+PERSON-000792,CHANGE,EVD-399979,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000794,HOLD,EVD-399820,,,The cited news article predates the promotion recorded in the evidence notes.
+PERSON-000799,CHANGE,EVD-399944,Professor; Ralph A. Andersen Faculty Scholar,professor,Institutional styling in the cited quotation.
+PERSON-000807,HOLD,EVD-399982,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000808,HOLD,EVD-399935,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000810,CHANGE,EVD-399990,Professor of Chemical Engineering,professor,Institutional styling in the cited quotation.
+PERSON-000821,CHANGE,EVD-399905,Associate Professor of Molecular Pharmaceutics and Drug Delivery,associate_professor,Institutional styling in the cited quotation.
+PERSON-000822,HOLD,EVD-399993,,,Professor precedes the name as an honorific and does not establish the full appointment.
+PERSON-000826,HOLD,EVD-399833,,,Source host is not corroborated by the held institution or its program.
+PERSON-000832,CHANGE,EVD-399932,assistant professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000842,CHANGE,EVD-399655,full professor,professor,Institutional styling in the cited quotation.
+PERSON-000850,HOLD,EVD-396118,,,Multiple held title quotations differ in styling.
+PERSON-000851,CHANGE,EVD-400063,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000852,CHANGE,EVD-400064,Robert Eckles Swain Professor in Chemistry,professor,Institutional styling in the cited quotation.
+PERSON-000853,CHANGE,EVD-400025,Full Professor,professor,Institutional styling in the cited quotation.
+PERSON-000854,CHANGE,EVD-400075,Professor,professor,Institutional styling in the cited quotation.
+PERSON-000856,HOLD,EVD-399809,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-000865,CHANGE,EVD-400260,Regent Distinguished Research Professor,research_professor,Institutional styling in the cited quotation.
+PERSON-000866,HOLD,EVD-400062,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-000871,HOLD,EVD-400121,,,Source host is not corroborated by the held institution or its program.
+PERSON-000874,CHANGE,EVD-400039,William White Tison Professor of Chemistry,professor,Institutional styling in the cited quotation.
+PERSON-000880,HOLD,EVD-400017,,,Caption or generic prose does not establish an institutional title.
+PERSON-000886,HOLD,EVD-400051,,,Historical appointment does not establish present institutional title.
+PERSON-000888,CHANGE,EVD-400018,professor,professor,Institutional styling in the cited quotation.
+PERSON-000889,CHANGE,EVD-400275,professor of chemical and petroleum engineering and Southern Ionics Chair,professor,Institutional styling in the cited quotation.
+PERSON-000890,HOLD,EVD-400251,,,Congratulatory use of Professor does not establish full rank.
+PERSON-000893,HOLD,EVD-283046,,,Multiple held title quotations differ in styling.
+PERSON-000905,HOLD,EVD-400137,,,Rank or modifier has no explicit §4.9 mapping.
+PERSON-000912,HOLD,EVD-400289,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-000927,CHANGE,EVD-400027,full professor,professor,Institutional styling in the cited quotation.
+PERSON-000928,HOLD,EVD-400132,,,Source host is not corroborated by the held institution or its program.
+PERSON-000930,CHANGE,EVD-400020,Biomedical Engineering Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000940,HOLD,EVD-283184,,,Source host is not corroborated by the held institution or its program.
+PERSON-000943,CHANGE,EVD-400212,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-000944,CHANGE,EVD-400314,"Presidential Research, Scholarship and Artistry Professor",professor,Institutional styling in the cited quotation.
+PERSON-000954,CHANGE,EVD-400067,LCY: K.K. Lee Professor in Chemical Engineering,professor,Institutional styling in the cited quotation.
+PERSON-000966,CHANGE,EVD-400105,Keating-Crawford Collegiate Professor of Engineering,professor,Institutional styling in the cited quotation.
+PERSON-000983,CHANGE,EVD-400151,Professor and Regents' Entrepreneur,professor,Institutional styling in the cited quotation.
+PERSON-000984,CHANGE,EVD-400100,Professor of Chemical Engineering,professor,Institutional styling in the cited quotation.
+PERSON-000987,CHANGE,EVD-400109,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-000989,HOLD,EVD-400028,,,Source host is not corroborated by the held institution or its program.
+PERSON-000991,HOLD,EVD-283080,,,Multiple held title quotations differ in styling.
+PERSON-000994,HOLD,EVD-400146,,,Caption or generic prose does not establish an institutional title.
+PERSON-001009,CHANGE,EVD-400076,professor of materials science and engineering,professor,Institutional styling in the cited quotation.
+PERSON-001010,CHANGE,EVD-400046,Frank C. Doble Professor of Engineering,professor,Institutional styling in the cited quotation.
+PERSON-001012,CHANGE,EVD-400107,Dorini Family Professor,professor,Institutional styling in the cited quotation.
+PERSON-001015,CHANGE,EVD-400292,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001017,CHANGE,EVD-400184,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001021,CHANGE,EVD-400272,Professor,professor,Institutional styling in the cited quotation.
+PERSON-001022,CHANGE,EVD-400334,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001023,HOLD,EVD-400237,,,Neither the quotation nor its source URL identifies the person clearly.
+PERSON-001029,HOLD,EVD-283094,,,Multiple held title quotations differ in styling.
+PERSON-001030,HOLD,EVD-400284,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-001037,HOLD,EVD-400274,,,The held evidence notes a different rank in the same profile header.
+PERSON-001039,CHANGE,EVD-400326,Professor / Chairperson,professor,Institutional styling in the cited quotation.
+PERSON-001040,CHANGE,EVD-400077,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001045,CHANGE,EVD-400125,Carleton Professor of Engineering,professor,Institutional styling in the cited quotation.
+PERSON-001046,CHANGE,EVD-400333,assistant professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001052,HOLD,EVD-400108,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-001053,CHANGE,EVD-400023,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001060,HOLD,EVD-400299,,,Neither the quotation nor its source URL identifies the person clearly.
+PERSON-001062,CHANGE,EVD-400320,Robert A. Welch Professor,professor,Institutional styling in the cited quotation.
+PERSON-001071,CHANGE,EVD-400291,Julia Beecherl Endowed Professor in mechanical engineering,professor,Institutional styling in the cited quotation.
+PERSON-001075,HOLD,EVD-400133,,,Source host is not corroborated by the held institution or its program.
+PERSON-001082,CHANGE,EVD-400102,professor,professor,Institutional styling in the cited quotation.
+PERSON-001089,CHANGE,EVD-400213,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001090,CHANGE,EVD-400332,Professor,professor,Institutional styling in the cited quotation.
+PERSON-001093,HOLD,EVD-399657,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-001105,CHANGE,EVD-400042,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001106,CHANGE,EVD-400316,Associate Professor of Biomedical Engineering,associate_professor,Institutional styling in the cited quotation.
+PERSON-001110,CHANGE,EVD-400031,assistant professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001115,HOLD,EVD-400240,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-001118,CHANGE,EVD-400214,assistant professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001119,CHANGE,EVD-400253,associate professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001120,HOLD,EVD-400305,,,Source host is not corroborated by the held institution or its program.
+PERSON-001122,CHANGE,EVD-400210,Professor of Mechanical Engineering,professor,Institutional styling in the cited quotation.
+PERSON-001130,HOLD,EVD-400015,,,The sentence describes concurrent appointments and does not settle the held title.
+PERSON-001131,HOLD,EVD-400301,,,The quotation styles a different concurrent appointment from the one recorded.
+PERSON-001136,CHANGE,EVD-400142,associate professor of chemistry and biochemistry,associate_professor,Institutional styling in the cited quotation.
+PERSON-001144,HOLD,EVD-400279,,,Neither the quotation nor its source URL identifies the person clearly.
+PERSON-001152,CHANGE,EVD-400276,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001154,CHANGE,EVD-400270,Professor,professor,Institutional styling in the cited quotation.
+PERSON-001156,CHANGE,EVD-400311,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001159,CHANGE,EVD-400338,Inaugural Paper Technology Foundation Endowed Professor and Chair,professor,Institutional styling in the cited quotation.
+PERSON-001161,HOLD,EVD-400010,,,Professor precedes the name as an honorific and does not establish the full appointment.
+PERSON-001166,CHANGE,EVD-400236,Full professor,professor,Institutional styling in the cited quotation.
+PERSON-001168,CHANGE,EVD-400328,associate professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001169,CHANGE,EVD-400264,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001170,HOLD,EVD-399810,,,A named professorship and a different faculty rank appear on the held record; the quote does not settle their relation.
+PERSON-001174,CHANGE,EVD-400303,professor of engineering and associate chair,professor,Institutional styling in the cited quotation.
+PERSON-001178,CHANGE,EVD-400307,"Pamela G. Hollie Endowed Chair, Global Challenges: Professor of Chemistry",professor,Institutional styling in the cited quotation.
+PERSON-001179,HOLD,EVD-400087,,,Neither the quotation nor its source URL identifies the person clearly.
+PERSON-001180,HOLD,EVD-400294,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-001183,HOLD,EVD-400308,,,The cited news article predates the promotion recorded in the evidence notes.
+PERSON-001185,CHANGE,EVD-400273,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001195,CHANGE,EVD-400226,William Marsh Rice Trustee Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001196,HOLD,EVD-400016,,,Source host is not corroborated by the held institution or its program.
+PERSON-001203,CHANGE,EVD-400088,associate professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001204,CHANGE,EVD-400277,Professor and Department Chair,professor,Institutional styling in the cited quotation.
+PERSON-001207,CHANGE,EVD-400043,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001209,HOLD,EVD-400339,,,Historical appointment does not establish present institutional title.
+PERSON-001210,CHANGE,EVD-283160,Associate Professor of Biomedical Engineering and Affiliate Associate Professor of Chemical Engineering,associate_professor,Institutional styling in the cited quotation.
+PERSON-001214,HOLD,EVD-400321,,,Several qualifying appointments are present without a single title phrase free of department wording.
+PERSON-001215,HOLD,EVD-400127,,,Professor precedes the name as an honorific and does not establish the full appointment.
+PERSON-001216,CHANGE,EVD-400322,assistant professor of organic chemistry,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001217,CHANGE,EVD-400304,"professor of chemical engineering, director of the Center for Molecular Study of Soft Condensed Matter, and professor of physics",center_director_professor,Institutional styling in the cited quotation.
+PERSON-001219,CHANGE,EVD-400309,Mechanical engineering professor,professor,Institutional styling in the cited quotation.
+PERSON-001224,CHANGE,EVD-400241,Professor,professor,Institutional styling in the cited quotation.
+PERSON-001225,HOLD,EVD-400211,,,Historical appointment does not establish present institutional title.
+PERSON-001226,CHANGE,EVD-400044,Professor,professor,Institutional styling in the cited quotation.
+PERSON-001243,HOLD,EVD-400327,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-001255,CHANGE,EVD-400217,University Distinguished Professor of Pharmaceutical Sciences and Chemical Engineering,professor,Institutional styling in the cited quotation.
+PERSON-001267,HOLD,EVD-400230,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-001268,CHANGE,EVD-400231,A.J. Hartsook Professor,professor,Institutional styling in the cited quotation.
+PERSON-001269,CHANGE,EVD-400232,Louis Calder Professor of Bioengineering and Chemical and Biomolecular Engineering,professor,Institutional styling in the cited quotation.
+PERSON-001270,CHANGE,EVD-400233,Associate Professor of Bioengineering,associate_professor,Institutional styling in the cited quotation.
+PERSON-001274,CHANGE,EVD-400071,Lester Levi Carter Professor of Chemical Engineering,professor,Institutional styling in the cited quotation.
+PERSON-001278,CHANGE,EVD-400242,Professor of Chemistry & Materials Science and Engineering,professor,Institutional styling in the cited quotation.
+PERSON-001282,CHANGE,EVD-400246,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001283,HOLD,EVD-400247,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-001284,CHANGE,EVD-400248,Professor of Chemistry; the T.Z. and Irmgard Chu Distinguished Chair in Chemistry; Professor of Molecular and Cell Biology,professor,Institutional styling in the cited quotation.
+PERSON-001286,HOLD,EVD-400250,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-001288,CHANGE,EVD-400080,Associate Professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001290,CHANGE,EVD-400082,"Dr. Myung Ki Hong Professor in Polymer Science, Professor of Chemistry and Biochemistry",professor,Institutional styling in the cited quotation.
+PERSON-001306,CHANGE,EVD-400116,associate professor,associate_professor,Institutional styling in the cited quotation.
+PERSON-001314,HOLD,EVD-400056,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-001315,CHANGE,EVD-400057,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001328,CHANGE,EVD-399620,Professor in Electrical & Computer Engineering,professor,Institutional styling in the cited quotation.
+PERSON-001333,CHANGE,EVD-399621,Professor and College of Engineering Innovation Scholar,professor,Institutional styling in the cited quotation.
+PERSON-001334,HOLD,EVD-400129,,,Historical appointment does not establish present institutional title.
+PERSON-001335,HOLD,EVD-400130,,,Historical appointment does not establish present institutional title.
+PERSON-001336,CHANGE,EVD-400131,professor of mechanical engineering,professor,Institutional styling in the cited quotation.
+PERSON-001337,HOLD,EVD-400033,,,The lab members list differs from the held rank and the faculty profile was unavailable.
+PERSON-001338,CHANGE,EVD-400034,director of the Institute for NanoBioTechnology (INBT) and a professor of materials science and engineering,center_director_professor,Institutional styling in the cited quotation.
+PERSON-001342,CHANGE,EVD-400222,University Distinguished Professor,professor,Institutional styling in the cited quotation.
+PERSON-001343,CHANGE,EVD-400083,professor,professor,Institutional styling in the cited quotation.
+PERSON-001345,CHANGE,EVD-400223,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001346,CHANGE,EVD-400224,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001353,CHANGE,EVD-399984,professor of chemical engineering and the vice dean of faculty administration,professor,Institutional styling in the cited quotation.
+PERSON-001355,CHANGE,EVD-399852,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-001360,HOLD,EVD-399901,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-001370,HOLD,EVD-399959,,,The evidence notes another named appointment or a held title component missing from the excerpt.
+PERSON-001392,HOLD,EVD-399949,,,The held evidence notes a different rank in the same profile header.
+PERSON-002004,CHANGE,EVD-280070,Rickey/Nielsen Professor in the School of Engineering,professor,Institutional styling in the cited quotation.
+PERSON-002007,CHANGE,EVD-280076,Kent H. Smith Professor II,professor,Institutional styling in the cited quotation.
+PERSON-002401,CHANGE,EVD-394002,M. Frank and Margaret Domiter Rudy Professor of Biomedical Engineering,professor,Institutional styling in the cited quotation.
+PERSON-002425,CHANGE,EVD-399166,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
+PERSON-002451,HOLD,EVD-399244,,,Several appointments or ranks are juxtaposed without a single explicit mapping for this styling.
+PERSON-002470,CHANGE,EVD-399301,professor of biomedical engineering,professor,Institutional styling in the cited quotation.
+PERSON-002471,CHANGE,EVD-399304,Professor,professor,Institutional styling in the cited quotation.
+PERSON-002497,CHANGE,EVD-399382,Assistant Professor,assistant_professor,Institutional styling in the cited quotation.
