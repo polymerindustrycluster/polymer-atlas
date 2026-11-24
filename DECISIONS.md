@@ -560,14 +560,14 @@ The previous audit consumed about 450M input tokens. [Sizing assumptions and cal
 The owner asked why accurate data has been so hard to get. The controller measured three causes:
 - The registries the Atlas links (7,992 links: FRS, TRI, EIN, SEC and others) hold identity, address, industry codes and some headcounts, but not what a plant makes or whom it sells to.
 - Company sites mostly do not state the fact. Of 27 headquarters reads left unsettled on 2026-11-24, 17 pages loaded but did not say where the headquarters is, 6 stated something the evidence rules cannot admit, and 4 failed to load.
-- Every change paid a fixed review cost. PR #539 needed four rounds for 15 cells, and every refusal that day concerned a checking script, not the data.
+- Every change paid a fixed review cost. PR #539 needed four rounds for 15 cells, and every refusal on #539 concerned a checking script, not the data.
 
-Under the audit 13 rule (stop on the third record with an error or an unresolved claim, of 40), P1 could not pass by repairs alone. Audit 12 found 74 of 189 PIC-18 records with no demonstrated error but a claim nobody could confirm.
+Under the audit 13 rule (stop on the third record with an error or an unresolved claim, of 40), the controller forecast that the smoke was likely to stop early whatever the repairs. Audit 12 found 74 of 189 PIC-18 records with no demonstrated error but a claim nobody could confirm, and repairs do not make an unstated fact confirmable.
 
-**"Publish only what's stated."** A published value that no public source states goes back to unknown and is kept internally as a lead. The audit counts only published values, and an unknown value is not an error. Unknown counts will rise before they fall. The withdrawal pass is specified and measured before any data change (AGENTS.md §4).
+**"Publish only what's stated."** A published value that no public source states goes back to unknown and is kept internally as a lead. The audit counts only published values, and an unknown value is not an error. Unknown counts will rise before they fall. The withdrawal pass is specified, with its counts measured, before any data change.
 
 **"PIC-18 only."** Repairs, reads and the audit's pass or fail cover the PIC-18 owners (organizations and ecosystem entities with an active tier A–C site in the 18 counties) and their sites. National records stay as they are, labelled unaudited. A script may still fix them at no extra cost.
 
-**"One family for mechanical."** A data PR that applies a written rule by script, with no reading or judgment, adds no evidence row, and passes a deterministic check that rejects planted defects needs one review record, from a family other than the builder's. Reads, judgments and new evidence keep two families. AGENTS.md §2a rule 4 is amended to match.
+**"One family for mechanical."** A data PR that applies a written rule by script, with no reading or judgment, adds no evidence row, and passes a deterministic check that rejects planted defects needs one review record, from Codex (OpenAI). Reads, judgments and new evidence keep two families. AGENTS.md §2a rule 4 is amended to match.
 
 Decided by the repo owner in session, 2026-11-24 07:35, by multiple choice; all three were the recommended options.

@@ -192,9 +192,8 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    Exception (owner ruling 2026-11-24, "One family for mechanical"): a data
    PR that applies a written rule by script, with no reading or judgment,
    adds no evidence row, and passes a deterministic check that rejects
-   planted defects needs one review record, from a family other than the
-   builder's. A data PR that rests on a read, a judgment or new evidence
-   keeps two. The
+   planted defects needs one review record, from Codex (OpenAI). A data PR
+   that rests on a read, a judgment or new evidence keeps two. The
    controller arranges the reviews and posts a `**Review record**` comment
    per verifier on the PR, naming the model, the verdict at the head SHA and
    what was checked. A non-data PR is capped at two review rounds; after
@@ -304,7 +303,7 @@ No data file is changed by this revision.*
 *Revision note — 2026-11-24 (owner ruling, "One family for mechanical"):
 §2a rule 4 lets a mechanical data PR (a written rule applied by script, no
 reading or judgment, no new evidence row, a deterministic check with planted
-defects) merge on one review family. Recorded in `DECISIONS.md` with the
+defects) merge on one review record, from Codex. Recorded in `DECISIONS.md` with the
 same day's rulings "Publish only what's stated" and "PIC-18 only". No data
 file is changed by this revision.*
 
