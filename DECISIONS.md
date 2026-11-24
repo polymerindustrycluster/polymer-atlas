@@ -440,3 +440,12 @@ IDs. Their active trade-association records are already in ecosystem
 as ORG-000091 and ORG-000163. Apply after the audit 12 draw and the
 all-notes repair. The existing `closed` site tombstone convention marks
 the retirement of the site records. The sections remain active.
+
+## 2026-11-23 22:01 · Drop notes from the release
+
+“Drop notes from release.” The release's organization and site CSVs omit
+the `notes` column, and so do the matching tables of the bundled SQLite
+copy. The repository keeps its notes, and the site pages keep withholding
+them. Implemented in `scripts/export_release.py`. Reason: notes are the
+build narrative ("Created ... in integration pass 17 ...") and about 4,600
+organization and 6,800 site notes cells carry process wording.

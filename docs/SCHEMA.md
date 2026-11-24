@@ -3032,6 +3032,12 @@ operating status other than `closed`. The company page shows the same
 values with their sources and displays site verification tiers.
 Canonical fields and SQLite tables retain their existing meanings.
 
+**2026-11-23 22:01 (owner ruling "Drop notes from release").** The release bundle's
+`data/organizations_all.csv`, `data/sites_all.csv` and the `organizations` and `sites` tables of
+its bundled SQLite copy omit the `notes` column. The repository shards, the merged exports in
+`build/` and `build/polymer-atlas.db` keep it; the public site pages keep withholding it.
+Other release tables are unchanged.
+
 ## 7. Validator and builder changes (specification)
 
 Validator rule numbers below are **provisional**: the applied
