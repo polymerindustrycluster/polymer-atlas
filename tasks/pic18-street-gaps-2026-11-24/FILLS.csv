@@ -1,0 +1,3 @@
+site_id,evidence_id,kind,source_id,operator,operator_field,street,city,state,zip,zip_fill,date,ref
+SITE-000650,EVD-483132,inspection,348427410,"TOWER INDUSTRIES, LTD.",estab_name,2101 9TH STREET SW,MASSILLON,OH,44647,,2025-08-08,raw/osha/2026-11-22-archive-snapshot/raw/OSHA_inspection.zip!2026-11-20_chunk_6.csv@185178
+SITE-000678,EVD-483133,ita,1172745,Wrap Tite - Site 3,establishment_name,6250 Camp Industrial Rd.,Solon,OH,44139,,2025-12-31,raw/osha/2026-11-22-archive-snapshot/raw/ita/ITA_300A_Summary_Data_2025_partial.csv@174589
