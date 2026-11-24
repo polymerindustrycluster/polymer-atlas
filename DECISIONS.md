@@ -431,3 +431,12 @@ holds the parked domain odm.com. ORG-002064 holds a 404 at
 polytechmolding.com that does not identify the firm. Clear both website
 cells, retain the date and observed condition in notes, and keep each
 organization status.
+
+## 2026-11-23 17:34 · SPE sections belong in ecosystem
+
+“Ecosystem, not sites.” Retire the Akron and Cleveland SPE site
+representations, SITE-000091 and SITE-000163, while retaining both site
+IDs. Their active trade-association records are already in ecosystem
+as ORG-000091 and ORG-000163. Apply after the audit 12 draw and the
+all-notes repair. The existing `closed` site tombstone convention marks
+the retirement of the site records. The sections remain active.
