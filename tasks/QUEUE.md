@@ -704,3 +704,4 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [ ] `claimed:atlas-p1-controller 2026-11-23` **AGENTS.md §2a rule 8 (fan-out budget):** Land the owner's 2026-11-23 rulings: rule 8 in AGENTS.md and the day's audit and fan-out rulings in DECISIONS.md. Branch `agent/claude-code/agents-rule8-fanout-2026-11-23`. First user: the Atlas controller. Check use by 2026-11-30.
 - [ ] `claimed:atlas-p1-audit13-protocol 2026-11-24` **ATLAS-7 lean audit protocol.** Document the authorized post-repair smoke and the two open draw rules, their risks and costs. Branch `agent/codex/audit13-protocol-2026-11-24`. First user is the Atlas controller at the next audit decision.
 - [ ] `claimed:atlas-p1-rule-repairs 2026-11-24` Repair naics-source-type. Branch `agent/codex/naics-source-type-2026-11-24`.
+- claimed:atlas-p1-filing-repairs 2026-11-24 — site-band-from-filing-2026-11-24 (bound establishment filings, whole-Atlas repair).
