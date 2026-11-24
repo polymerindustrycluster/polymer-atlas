@@ -51,6 +51,26 @@ class IntegrationTests(unittest.TestCase):
         proc = subprocess.run([sys.executable, str(TOOLS.resolve() / 'delta_compare.py'), a, c], cwd=self.r, capture_output=True)
         self.assertEqual(proc.returncode, 1)
 
+    def test_value_basis_delta_uses_composite_key_and_rejects_duplicates(self):
+        name = 'value_basis.csv'
+        header = 'record_table,record_id,field,value,basis,evidence_id,basis_date\n'
+        first = 'organizations,ORG-000001,processes,injection_molding,not_yet_checked,,\n'
+        second = 'organizations,ORG-000001,processes,extrusion,not_yet_checked,,\n'
+        self.write(name, header + first + second)
+        self.commit('value basis base')
+        git(self.r, 'update-ref', 'refs/remotes/origin/main', 'HEAD')
+
+        edited = second.replace('not_yet_checked', 'implied')
+        self.write(name, header + edited + first)
+        head = self.commit('one basis changed')
+        key = (name, ('organizations', 'ORG-000001', 'processes', 'extrusion'))
+        self.assertEqual(delta(self.r, head), {(key, 'basis'): 'implied'})
+
+        self.write(name, header + first + second + edited)
+        duplicate = self.commit('duplicate basis key')
+        with self.assertRaisesRegex(ValueError, r"value_basis\.csv: duplicate key .*extrusion"):
+            delta(self.r, duplicate)
+
     def test_replay_preserves_other_cells_and_refuses_concurrent_cell(self):
         a = self.lane()
         self.write('sites_OH.csv', 'site_id,name,notes\nS1,old,main-note\n')
