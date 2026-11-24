@@ -11,11 +11,14 @@ import common as C
 
 COLUMN = "public_profile_url"
 
+def parse_url(value):
+    return urlsplit(value if "://" in value or value.startswith("//") else "//" + value)
+
 def changes(data):
     people = C.read_csv(data / "people.csv")
     peers = defaultdict(set)
     for row in people:
-        url = urlsplit(row[COLUMN])
+        url = parse_url(row[COLUMN])
         host = url.hostname or ""
         path = url.path.lower()
         surname = row["full_name"].lower().split()[-1]
@@ -23,7 +26,7 @@ def changes(data):
             if surname in re.findall(r"[a-z]+", path):
                 peers[host].add(row["person_id"])
     for row in people:
-        url = urlsplit(row[COLUMN])
+        url = parse_url(row[COLUMN])
         if url.query or url.fragment or not re.fullmatch(r"/?(?:index\.[^/]+)?", url.path, re.I):
             continue
         if peers[url.hostname] - {row["person_id"]}:
