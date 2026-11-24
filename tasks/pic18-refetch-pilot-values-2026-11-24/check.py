@@ -25,7 +25,7 @@ sys.path.insert(0, str(HERE))
 import check_evidence_binding as gate  # noqa: E402
 
 LABEL = f"claude-code {TASK}"
-ALLOWED = re.compile(r"data/(organizations_[A-Z]+|evidence_organizations_[A-Z]+|value_basis)\.csv")
+ALLOWED = re.compile(r"data/(organizations_[A-Z]+|evidence_organizations_[A-Z]+|value_basis|archive_links)\.csv")
 HEADS = {"processes": "processes={v}", "markets_served": "Markets served: {v}"}
 
 
@@ -55,7 +55,7 @@ def load():
     base = git("merge-base", "HEAD", "origin/main").decode().strip()
     changed = git("diff", "--name-only", base, "--", "data/").decode().split()
     changed += git("ls-files", "--others", "--exclude-standard", "data/").decode().split()
-    cells, evidence, basis_added, basis_removed, orgs = [], {}, set(), set(), {}
+    cells, evidence, basis_added, basis_removed, orgs, archives = [], {}, set(), set(), {}, {}
     for path in git("ls-tree", "--name-only", base, "data/").decode().split():
         if re.fullmatch(r"data/organizations_[A-Z]+\.csv", path):
             for r in rows_of(git("show", f"{base}:{path}")):
@@ -80,6 +80,13 @@ def load():
             header = old.splitlines()[0].decode()
             for r in rows_of((header + "\n").encode() + new[len(old):]):
                 evidence[r["evidence_id"]] = r
+        elif path == "data/archive_links.csv":
+            if not new.startswith(old):
+                cells.append((path, "*", "archive rewrite", "", ""))
+                continue
+            header = old.splitlines()[0].decode()
+            for r in rows_of((header + "\n").encode() + new[len(old):]):
+                archives[r["evidence_id"]] = r
         else:  # value_basis.csv
             key = lambda r: tuple(r.values())
             before, after = {key(r) for r in rows_of(old)}, {key(r) for r in rows_of(new)}
@@ -87,7 +94,7 @@ def load():
     greatest = max(int(r["evidence_id"].split("-")[1])
                    for p in git("ls-tree", "--name-only", base, "data/").decode().split()
                    if re.fullmatch(r"data/evidence_[A-Za-z_]+\.csv", p) for r in rows_of(git("show", f"{base}:{p}")))
-    return dict(base=base, changed=sorted(set(changed)), cells=cells, evidence=evidence, orgs=orgs,
+    return dict(base=base, changed=sorted(set(changed)), cells=cells, evidence=evidence, orgs=orgs, archives=archives,
                 basis_added=basis_added, basis_removed=basis_removed, greatest=greatest,
                 second=read("second_read.csv"), fills=read("FILLS.csv"), proofs=read("BINDING_PROOF.csv"),
                 claims=read("CLAIMS_CHECKED.csv"), readme=(HERE / "README.md").read_bytes(),
@@ -144,6 +151,10 @@ def verify(s, bytes_for):
             add("quote", f"{tag}: evidence quote differs from the FILLS and second-read quote")
         if int(f["evidence_id"].split("-")[1]) <= s["greatest"]:
             add("evidence id", f"{f['evidence_id']} is not above the base maximum EVD-{s['greatest']}")
+        a = s["archives"].get(f["evidence_id"])
+        m = re.fullmatch(r"https://web\.archive\.org/web/(\d{4})(\d\d)(\d\d)\d{6}/(.+)", a["archive_ref"]) if a else None
+        if not m or m[4] != f["url"] or a["captured_at"] != f"{m[1]}-{m[2]}-{m[3]}" or a["created_by"] != LABEL:
+            add("archive", f"{tag}: archive_links row for {f['evidence_id']} is absent or is not a capture of {f['url']}")
         # capture replay
         try:
             data = bytes_for(f)
@@ -205,7 +216,8 @@ def plants(s, good):
         t["fills"][0]["record_id"] = "ORG-000378"
     yield "second read", mutated(reject), good
     yield "cell diff", mutated(lambda t: t["cells"].append(("data/organizations_OH.csv", "ORG-000485", "website", "a", "b"))), good
-    yield "files", mutated(lambda t: t["changed"].append("data/archive_links.csv")), good
+    yield "files", mutated(lambda t: t["changed"].append("data/sites_OH.csv")), good
+    yield "archive", mutated(lambda t: t["archives"].pop(first["evidence_id"])), good
 
 
 def main():

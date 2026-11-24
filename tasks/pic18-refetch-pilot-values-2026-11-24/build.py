@@ -149,6 +149,16 @@ def main():
         ending = "\r\n" if old.endswith(b"\r\n") else "\n"
         assert old.endswith(b"\n")
         (ROOT / path).write_bytes(old + _body(evs, ending))
+    # archive links (SCHEMA 4.22, V-66): one per evidence row, from ARCHIVES.csv (Wayback captures replayed by hand, id_ form, HTTP 200, quote present)
+    archives = {a["url"]: a for a in read_csv(HERE / "ARCHIVES.csv")}
+    old = git("show", f"{base}:data/archive_links.csv")
+    ending = "\r\n" if old.endswith(b"\r\n") else "\n"
+    assert old.endswith(b"\n")
+    links = [dict(evidence_id=p["evidence_id"], archive_ref=archives[p["url"]]["archive_ref"],
+                  captured_at=archives[p["url"]]["captured_at"], created_by=LABEL) for p in plan]
+    stream = io.StringIO(newline="")
+    csv.DictWriter(stream, ["evidence_id", "archive_ref", "captured_at", "created_by"], lineterminator=ending).writerows(links)
+    (ROOT / "data/archive_links.csv").write_bytes(old + stream.getvalue().encode())
     # this folder's CSVs
     write(HERE / "BINDING_PROOF.csv", [dict(evidence_id=p["evidence_id"], record_id=p["owner"],
           claim_sha256=gate.claim_sha256(p["ev"]), capture=p["url"], capture_date=OBSERVED, capture_sha256=p["digest"],

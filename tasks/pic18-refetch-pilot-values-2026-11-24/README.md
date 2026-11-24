@@ -15,7 +15,7 @@ Claimed by atlas-p3-refetch-apply on 2026-11-24. First user is Polymer Industry 
 | ORG-001892 Schibley Solvents and Chemicals | processes | `distribution` (ring 3) | EVD-483137 |
 | ORG-002922 Absolute Haitian Corporation | processes | `machinery_equipment` (ring 3) | EVD-483138 |
 
-Each fill is a blank cell, one `own_site` activity row (`supports_B`, label `claude-code pic18-refetch-pilot-values-2026-11-24`) whose head names exactly that value, a `BINDING_PROOF.csv` line, and the generated `value_basis.csv` row, which comes out `stated` for all four. Nothing else changes: `check.py` diffs every organization row against the merge-base and allows only these cells.
+Each fill is a blank cell, one `own_site` activity row (with its `archive_links` row, V-66) (`supports_B`, label `claude-code pic18-refetch-pilot-values-2026-11-24`) whose head names exactly that value, a `BINDING_PROOF.csv` line, and the generated `value_basis.csv` row, which comes out `stated` for all four. Nothing else changes: `check.py` diffs every organization row against the merge-base and allows only these cells.
 
 ## Step 1, second read (Claude, second family; the pilot reader was Codex)
 
@@ -38,9 +38,11 @@ Rule used for a list item: a service the owner names ("Custom Rubber Molding" un
 
 `build.py` reads `second_read.csv` (rows with `applied=yes`), fetches each page with the gate's own `fetch_url` (UA `evidence-check/1`, HTTP 200 only), requires the pilot quote to occur exactly once in `capture_text`, and records the digest and zero-based character offset from those bytes. It stores each capture in the shared store at `provenance/pic18-refetch-pilot-values-2026-11-24/captures/<sha>.html` (listed in `INPUTS.sha256`) and writes the cells, evidence rows, `BINDING_PROOF.csv`, `FILLS.csv` and `CLAIMS_CHECKED.csv`. Quotes are character-identical to the Codex reading in the pilot packet (`verdicts.csv`, `/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/p3-refetch-pilot-2026-11-24/`). Evidence IDs run from EVD-483135, above the tree-wide maximum EVD-483134 (the one open PR that adds evidence rows, #543, uses EVD-483118 and EVD-483119).
 
+**Archive links (V-66).** SCHEMA 4.22 requires an `archive_links` row for each new web evidence row, so the diff also appends four rows to `data/archive_links.csv` (`ARCHIVES.csv` lists them). I asked Wayback Save Page Now for each page on 2026-11-24. For Perry's products page and for Absolute Haitian, Wayback answered with its existing identical snapshot from 2026-11-16, and the link cites that real timestamp and date. Each capture was fetched in its `id_` form with HTTP 200 and holds the quote; the Perry, Schibley and Absolute Haitian captures hold the same text offset. The captures are copies of the pages, not part of the gate's replay, which uses the live page.
+
 **Reading by another family.** `BINDING_PROOF.csv` names the reader as Codex (OpenAI), the pilot reader, dated 2026-11-24. The builder is Claude (Anthropic). The gate requires different families. My own read (this folder's `second_read.csv`) is the second reading and also Anthropic; it is not the reading the gate counts.
 
-`check.py` is the named check. It passes on the clean tree and catches all nine planted defects: a held value overwritten, a value outside the vocabulary, a quote not in the capture, a wrong offset, a capture digest mismatch, another owner's page, a REJECTed or unapplied row applied, a changed column outside the fills, and a data file outside the allowed set. `python3 check.py --fresh` replays by live fetch instead of the store.
+`check.py` is the named check. It passes on the clean tree and catches all nine planted defects: a held value overwritten, a value outside the vocabulary, a quote not in the capture, a wrong offset, a capture digest mismatch, another owner's page, a REJECTed or unapplied row applied, a changed column outside the fills, a data file outside the allowed set, and a missing archive link. `python3 check.py --fresh` replays by live fetch instead of the store.
 
 ## What the checks cannot see
 
