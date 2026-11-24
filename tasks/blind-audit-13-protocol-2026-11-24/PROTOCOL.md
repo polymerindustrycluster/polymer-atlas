@@ -24,13 +24,15 @@ Lock first verdicts before releasing cases to a different family. Flag any error
 
 Count each real record exactly once. A demonstrated error on any in-scope field or child goes in k; absent a demonstrated error, any unsettled claim goes in u. An upheld flag cannot be erased by a vote. Verified contradictions take precedence over uncertainty. Missing values are omissions under the inherited rule. A clean record requires all applicable checks. Use k+u at both gates. Process completed decisions in sealed order; as soon as a stratum fails, cancel its remaining calls. Since one failed stratum precludes exit, cancel the remaining draw at the first decisive failure and label unfinished strata incomplete. Report audited denominator, k, u, reason classes, omissions, replay coverage, routing exceptions, check-only discoveries and plant performance. A stopped sample establishes a decision, not an exact population rate.
 
+Under the calibrated option, the controller also seals a separate pre-draw calibration after smoke approval. Sample independent, distinct challenge records from a preregistered mix of repair and error classes at the audited grains. Include hard attribution, filing, field-dependency and child-binding defects. Use a held-out challenge bank independent of the current eligible frame and exclude historical plants. Never remove eligible Atlas rows to assemble the bank. If representative distinct challenges cannot be sourced, return to the owner before calibration. Lock packets, answer keys, scoring and family assignments before releasing calls. Use the production packet and grading path, with blind fresh calls and no disclosure of membership. Score a miss unless the actual planted field is identified under the same criteria as routine controls. The calibrated allowance applies only to these extra trials. Routine smoke and draw controls retain their all-detected gate. Both primary families must qualify before the calibrated draw. A favorable pooled result cannot qualify a failing family.
+
 <!-- sizes begin -->
 ## Decision numbers
 
 Smoke: 40 random PIC-18 records. Stop on the third k+u (3/40 = 7.5% of the planned sample).
 Continue only after all 40 with k+u ≤ 2, complete replay accounting and valid controls.
 Check each unflagged record independently with probability 15%. Every flagged record gets a second read.
-Full draw: allow 2 adverse records per stratum, fail immediately on 3; no early PASS.
+Stress-safe draw: allow 2 adverse records per stratum, fail immediately on 3; no early PASS.
 Final PASS also requires the two-sided 95% Wilson upper bound at k+u ≤ the target.
 
 | Family | Assigned plant calls | Returned | Detected on planted field | Mean miss by plant | 95% interval |
@@ -40,7 +42,7 @@ Final PASS also requires the two-sided 95% Wilson upper bound at k+u ≤ the tar
 | Sonnet | 69 | 54 | 33 | 40.7% | 8.7%–72.8% |
 
 Planning miss probabilities: single 13.89%, single plus checks 12.65%, stress 45.90%.
-Minimum n satisfying Wilson and ≤2.5% boundary PASS in the stress model. Percentages below are
+Stress-safe rule: minimum n satisfying Wilson and ≤2.5% boundary PASS in the stress model. Percentages below are
 P(final PASS), conditional on starting the draw in the independent-record model. Each pair is at target / 1.5× target.
 
 | Stratum | Target | n | Stop / fail | Perfect reads | Single | Single + checks | Stress, no rescue |
@@ -69,13 +71,41 @@ Add 3 blind plant calls per provider for smoke and 6 more per provider for the f
 |---|---:|---:|---:|---:|---:|
 | Smoke only | 40 | 1.69 | 1.92 | 0.54 | 4.15 |
 | Draw only | 920 | 35.74 | 37.93 | 6.01 | 79.68 |
-| Smoke + full draw | 960 | 37.43 | 39.85 | 6.54 | 83.83 |
+| Smoke + full stress-safe draw | 960 | 37.43 | 39.85 | 6.54 | 83.83 |
+
+## Decision rule
+
+Power means probability of a stratum PASS conditional on reaching the draw, with no additional unresolved records.
+Power triplets are at true record error rates of 1%, 2%, 3%, in that order. Boundary risks use no second-reader rescue.
+
+| Rule | Stratum | n | Allow k+u / fail on | Power, perfect | Power, single + checks | PASS at target, 20% miss | PASS at target, stress | PASS at 1.5× target, 20% miss / stress |
+|---|---|---:|---:|---|---|---:|---:|---|
+| Stress-safe | PIC-18 | 265 | 2 / 3 | 50.5% / 9.9% / 1.3% | 59.2% / 15.7% / 2.9% | 0.146% | 2.472% | 0.001% / 0.128% |
+| Stress-safe | Each other stratum | 131 | 2 / 3 | 85.6% / 51.2% / 24.4% | 89.2% / 59.8% / 33.0% | 0.138% | 2.490% | 0.001% / 0.121% |
+| Plant-calibrated | PIC-18 | 583 | 14 / 15 | 99.9% / 80.4% / 23.9% | 100.0% / 90.8% / 43.6% | 2.475% | 38.687% | 0.003% / 2.117% |
+| Plant-calibrated | Each other stratum | 107 | 3 / 4 | 97.7% / 83.3% / 60.0% | 98.5% / 88.2% / 69.2% | 2.451% | 16.347% | 0.072% / 2.234% |
+
+Select the shortest fixed plant trial giving ≥80% qualification per primary at the worse historical mean miss,
+with a one-sided exact 97.5% upper limit ≤20% for each family (Bonferroni simultaneous coverage ≥95%).
+Before drawing, score 305 fresh distinct plants per primary family, 610 calls total. Allow ≤47 misses in each;
+at that cutoff the upper endpoint is 19.96%. At 13.89% true miss, each family qualifies with probability 80.4%.
+Stop on the first excess miss or missing output. A failed calibration returns to the owner without a draw or repeat trial.
+For each stratum choose the smallest n allowing ≥80% power at true 2% under perfect reads, Wilson within target,
+and ≤2.5% boundary PASS at 20% miss. Keep k+u throughout; the first count above the allowance stops the stratum.
+
+| Option (M input tokens) | OpenAI | Google | Anthropic | Total |
+|---|---:|---:|---:|---:|
+| Extra calibration alone | 15.25 | 30.50 | 0.00 | 45.75 |
+| Stress-safe | 37.43 | 39.85 | 6.54 | 83.83 |
+| Plant-calibrated | 60.31 | 78.39 | 7.70 | 146.40 |
+| Defer rule, smoke only | 1.69 | 1.92 | 0.54 | 4.15 |
+Draw-option totals include smoke, routine controls and all planned records. The calibrated total also includes the extra calibration.
 <!-- sizes end -->
 
 ## Interpreting the risks and budget
 
 The risk table models independent real-record errors with a common stratum rate and independent detections across records. Each entry is the lower binomial tail at the allowed count with observed adverse probability equal to true error probability times detection probability. Taking unsettled records as adverse can only lower PASS relative to the table if real flags are retained. Early failure has the same PASS event as reading the whole planned sample. Smoke can veto the audit but cannot certify the population. The table models the full draw; it gives no finite-population guarantee conditional on a favorable smoke from a fixed population. There is no multiplication of stratum probabilities to claim a joint confidence level.
 
-Calibration uses the frozen prior reader outputs. Within each family join assigned blind packets to the private plant key and returned field verdicts. Credit a returned FIELD_ERROR or UNRESOLVED on the exact altered field, excluding withheld-only explanations. Average miss fractions equally over distinct plants with returns. Repeated calls on one plant are replicates, so the interval uses a two-sided Hoeffding radius over distinct plants. It is a sensitivity interval under independent representative plant clusters, conditional on returns. Plants are purposive field swaps, families share plants and unfinished calls may differ. These intervals cannot validate sensitivity to subtle real errors. The stress column uses the worse primary upper endpoint and gives the second family no rescue credit. The check-share scenario uses the worse primary mean and the worst second-family mean, with independent misses conditional on error. Shared source failures could erase that gain; systematic defects invisible to all readers could evade even the stress model. Full sample sizes deliberately trade a high chance of failing a relatively clean Atlas for low modeled false-pass risk.
+Calibration uses the frozen prior reader outputs. Within each family join assigned blind packets to the private plant key and returned field verdicts. Credit a returned FIELD_ERROR or UNRESOLVED on the exact altered field, excluding withheld-only explanations. Average miss fractions equally over distinct plants with returns. Repeated calls on one plant are replicates, so the interval uses a two-sided Hoeffding radius over distinct plants. It is a sensitivity interval under independent representative plant clusters, conditional on returns. Plants are purposive field swaps, families share plants and unfinished calls may differ. These intervals cannot validate sensitivity to subtle real errors. The stress column uses the worse primary upper endpoint and gives the second family no rescue credit. The check-share scenario uses the worse primary mean and the worst second-family mean, with independent misses conditional on error. Shared source failures could erase that gain; systematic defects invisible to all readers could evade even the stress model. The stress-safe option often fails a relatively clean Atlas. The calibrated option uses its own pre-draw sensitivity gate and a larger allowance for adverse records. Its confidence limits apply to the challenge distribution; extending them to real defects in every stratum assumes equally good detection there. Neither the old purposive plants nor the new qualification test establish that transfer. If the real-record miss rate stays at the stress value despite qualification, use the stress column for the calibrated draw. Higher apparent power with imperfect reads partly reflects undetected errors.
 
 In the smoke, record k and u separately, including filing-replay and missing-dependency reasons. Log tokens from provider request records, including cache reads and retries exactly once, divided by completed real and control calls by provider; charge unsuccessful work to the same ledger. Compare measured mean input, flag share, provider eligibility and projected spend to the scenario before scaling. Short-call savings assume each request carries a bounded packet without prior conversation history. No-output or unmetered work stops. If a provider exceeds its stage budget or measured rates project an overrun, halt for repricing before further calls. Retain the owner’s fan-out controls. Smoke-only spends the first budget and gives no publication decision.
