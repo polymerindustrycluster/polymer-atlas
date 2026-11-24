@@ -1475,7 +1475,9 @@ class RefuteFixesTest(unittest.TestCase):
             "browser_open": ["Own site read by browser_open: injection molding"],
             "retry": ["RETRY RECOVERED: own site now loads"],
             "requeue": ["Requeue after the timeout; maker of foam", "requeued for a second read"],
-            "settling": ["Settling fact met by a dated filing", "Both settling facts obtained"],
+            "settling": ["Settling fact met by a dated filing", "Both settling facts obtained", "The settling primary source named in the prior fact was obtained",
+                         "The settling witness is the operator's own postings", "Both settling legs now obtained"],
+            "verdict": ["CHANGED (was STILL_UNCERTAIN). Own-site retry failed again", "STILL_UNCERTAIN until the filing is read"],
         }
         for family, texts in families.items():
             for text in texts:
@@ -1483,7 +1485,7 @@ class RefuteFixesTest(unittest.TestCase):
                 self.assertIn("withheld", build_site.lede(text), text)
                 self.assertEqual(bg.public_description(text), "", text)
                 self.assertTrue(build_site.release_withheld("organizations", "description_1line", text), text)
-        for ordinary in ("Anti-slip step, walkway and ladder covers", "Maker of stair treads and staircases"):
+        for ordinary in ("Anti-slip step, walkway and ladder covers", "Settling tanks and ponds for water treatment", "Changed ownership in 2019 (acquired by a family firm)", "Maker of stair treads and staircases"):
             self.assertFalse(build_site.internal_wording(ordinary), ordinary)
 
     def test_internal_wording_filter_is_the_blind_audit_scan(self):
