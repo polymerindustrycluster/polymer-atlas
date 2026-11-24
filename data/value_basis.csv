@@ -2197,6 +2197,7 @@ organizations,ORG-001649,markets_served,chemical_mining_metals_processing,not_ye
 organizations,ORG-001649,markets_served,energy_oil_gas,not_yet_checked,EVD-389144,
 organizations,ORG-001651,processes,injection_molding,not_yet_checked,EVD-017060,
 organizations,ORG-001655,markets_served,plastics_rubber_processors,not_yet_checked,EVD-397314,
+organizations,ORG-001655,processes,distribution,stated,EVD-483141,2026-11-24
 organizations,ORG-001657,markets_served,aerospace_defense,not_yet_checked,EVD-397352,
 organizations,ORG-001657,markets_served,agriculture,not_yet_checked,EVD-397348,
 organizations,ORG-001657,markets_served,food_processing_foodservice,not_yet_checked,EVD-397353,
@@ -2260,6 +2261,7 @@ organizations,ORG-001715,markets_served,aerospace_defense,not_yet_checked,EVD-01
 organizations,ORG-001715,markets_served,medical_device,not_yet_checked,EVD-014369,
 organizations,ORG-001715,processes,additive_manufacturing_polymer,not_yet_checked,EVD-014377,
 organizations,ORG-001715,processes,plastics_machining_cnc,not_yet_checked,EVD-014378,
+organizations,ORG-001717,processes,die_cutting_converting,stated,EVD-483140,2026-11-24
 organizations,ORG-001720,markets_served,agriculture,not_yet_checked,EVD-397325,
 organizations,ORG-001720,markets_served,industrial_machinery,not_yet_checked,EVD-397363,
 organizations,ORG-001725,markets_served,infrastructure_civil,not_yet_checked,EVD-017064,
@@ -2279,6 +2281,8 @@ organizations,ORG-001746,markets_served,food_processing_foodservice,not_yet_chec
 organizations,ORG-001748,markets_served,packaging_food_beverage,not_yet_checked,EVD-014379,
 organizations,ORG-001748,processes,extrusion_film_blown,not_yet_checked,EVD-014385,
 organizations,ORG-001749,markets_served,tire_rubber_goods,not_yet_checked,EVD-397334,
+organizations,ORG-001749,processes,machinery_equipment,stated,EVD-483142,2026-11-24
+organizations,ORG-001749,processes,testing_lab,stated,EVD-483138,2026-11-24
 organizations,ORG-001750,markets_served,medical_device,not_yet_checked,EVD-017073,
 organizations,ORG-001755,markets_served,plastics_rubber_processors,not_yet_checked,EVD-397335,
 organizations,ORG-001757,markets_served,infrastructure_civil,not_yet_checked,EVD-014386,
@@ -2367,6 +2371,8 @@ organizations,ORG-001958,markets_served,aerospace_defense,not_yet_checked,EVD-39
 organizations,ORG-001958,markets_served,medical_healthcare_general,not_yet_checked,EVD-397360,
 organizations,ORG-001958,markets_served,toys_sporting_goods,not_yet_checked,EVD-397347,
 organizations,ORG-001978,markets_served,construction_building_products,not_yet_checked,EVD-389173,
+organizations,ORG-001978,processes,chemical_equipment_supply_polymer_specific,stated,EVD-483139,2026-11-24
+organizations,ORG-001978,processes,machinery_equipment,stated,EVD-483137,2026-11-24
 organizations,ORG-001992,markets_served,industrial_machinery,not_yet_checked,EVD-370030,
 organizations,ORG-001992,markets_served,infrastructure_civil,not_yet_checked,EVD-370031,
 organizations,ORG-001992,markets_served,rail_transportation,not_yet_checked,EVD-370032,
