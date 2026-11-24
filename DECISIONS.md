@@ -646,8 +646,8 @@ checked. All 385 PIC-18 owners with such values are re-read against their stored
 
 **3. Implied and unstated values.** A value the page supports only by inference ("we make bottles" for blow molding) stays,
 labelled "implied". A value the page does not state (NOT_STATED) is hidden from public display, never deleted, until a
-fresh fetch of the company's pages finds it or confirms it is absent. After a confirmed absence the earlier ruling applies
-unchanged: a value no source states goes back to unknown.
+fresh fetch of the company's pages finds it or confirms it is absent. The ruling names no step after a confirmed absence. The controller reads the
+earlier ruling (a value no source states goes back to unknown) as applying; that is an inference, not part of this ruling.
 - Does not change: the record tables keep a hidden value throughout. The ruling states nothing about how an audit counts a
   hidden value; the look-back ruling's audit unit stands as written.
 - Written as: SCHEMA v1.20.0 §4.24 (basis `implied`; basis `not_found_pending_refetch`, withheld from display).

@@ -191,6 +191,8 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    for the operator may join `trade_names` only on the filing name-variant
    conditions, each addition checked by a second model family. Neither
    route overwrites a street, and a map listing never settles county.
+   **Not yet checked:** the gate implements neither route. No row is
+   admitted by either route until its gate route lands in a later PR.
 4. **Review is tiered by risk, recorded on the PR.** *Practice.* (Owner
    ruling 2026-11-22, "tier by risk".) A PR that changes any file under
    `data/` gets review records from two model families at the current head;

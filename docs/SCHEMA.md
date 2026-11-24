@@ -1783,9 +1783,8 @@ measured PIC-18 sites, so the listing is never the only witness.
   ignored; coordinates stay reference data.
 - **Tier ceiling.** The listing row carries at most `supports_C` (the
   `tier_effect` line above; §4.1 tier C, "Google Business Profile alone").
-  Agreement with a second source does not raise it. The street's tier is that
-  of the strongest row that independently binds it, so a street backed by a
-  listing and a held lead stays at the lead's tier or below.
+  Agreement with a second source does not raise it. The existing
+  `google-places` registry row already pairs this class with address use.
 - **Audit.** A street filled this way is audited like any other street
   against the PIC-18 5% street error bar. It has no exemption.
 
@@ -1805,16 +1804,16 @@ bind the street to a name the record holds.
 - **Evidence row.** One row per added name: `record_table=organizations`,
   `claim_type=existence`, `claim_detail` of the form `trade_names +
   <filing name> (OSHA filing name)`, `source_class=government_filing`,
-  `source_ref` the filing as §4.13's binding routes cite it. The row adds a
-  spelling of a name the Atlas already holds and carries at most
-  `supports_C`; it never raises the record's tier.
+  `source_ref` the filing as §4.13's binding routes cite it. The row's
+  `tier_effect` follows the class ceiling above and, as for every evidence
+  row, never by itself raises the record's tier.
 - **Condition.** All three must hold, each decided by script: (i) the
-  filing name's distinctive words match a held name of the organization (the
-  words left after the fixed form-word list in the binding routes above,
-  with the held name's words all present or differing only in spacing, as in
-  "C 4" and "C4"); (ii) the filing's street equals the street the Atlas
-  holds for that site, or, where the site's street is blank, the street of a
-  held lead for it; (iii) the filing's city equals the site's city.
+  filing name's distinctive words match a held name of the organization (as
+  in "Swagelok Manufacturing Company" and "C 4 Polymers"); (ii) the filing's
+  street matches the site's street; (iii) the filing's city equals the
+  site's city. The exact word-matching function, and how a blank-street
+  site's street is taken for (ii), are fixed in the implementing PR; the
+  ruling does not fix them.
 - **Second-family check.** A model family other than the builder's reads
   each addition against the filing and records a verdict. A shared parent, a
   co-tenant at the same address, or a generic facility label fails it.
@@ -2805,8 +2804,8 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
 
 | `basis` | Meaning | Public display |
 |---|---|---|
-| `stated` | A bound row's quote, re-read against its stored page, states the value in the page's words | Shown, label "stated" |
-| `filing` | A `government_filing` or `registry` row states it | Shown, label "from a filing" |
+| `stated` | The page, read against a bound row, states the value in its words (a row that already holds the quote, or a re-read of the stored page) | Shown, label "stated" |
+| `filing` | A `government_filing` row states it | Shown, label "from a filing" |
 | `implied` | The page supports the value only by inference (for example "we make bottles" for blow molding) | Shown, label "implied" |
 | `not_yet_checked` | A bound row names the value and a page but saves none of its words, and no re-read has run | Shown, label "not yet checked" |
 | `not_found_pending_refetch` | The re-read found the page neither states nor supports the value (NOT_STATED) | **Withheld from public display; never deleted** from the record tables |
@@ -2814,12 +2813,14 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
 
 - **Public display uses this table.** The site and its exports show a value's label from `basis`. A
   `not_found_pending_refetch` value is withheld from display until a fresh fetch of the company's pages finds it (the
-  basis then becomes `stated` or `implied`) or confirms it is absent. The record tables keep the value throughout. What
-  follows a confirmed absence is the existing "publish only what's stated" withdrawal (a value no source states goes
-  back to unknown after the check); this revision adds no new path for it.
+  basis then becomes `stated` or `implied`) or confirms it is absent. The record tables keep the value throughout. The
+  10:29 ruling names no step after a confirmed absence. Reading the earlier "publish only what's stated" ruling (a value
+  no source states goes back to unknown after the check) as applying is an inference, to be confirmed with the owner;
+  this revision adds no path for it.
 - **First fill.** All 385 PIC-18 owners (organizations and ecosystem entities with an active tier A–C site in the 18
-  counties) that carry process or market values of the first kind are re-read against their stored pages; the
-  generator fills the table from those reads.
+  counties) that carry process or market values whose bound row names the value and a page but saves none of its words
+  are re-read against their stored pages. Where a reader's verdict (`stated`, `implied`, NOT_STATED) is stored for the
+  generator to read is fixed in the generator's PR; this revision does not decide it.
 - **Precedence.** Where several rows bear on one key, the generator's rule and its tests are fixed in the PR that adds it.
   A `contradicts` row (§4.13) never produces `stated`, `filing` or `implied`.
 
