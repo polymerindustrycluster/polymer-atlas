@@ -188,7 +188,13 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
 4. **Review is tiered by risk, recorded on the PR.** *Practice.* (Owner
    ruling 2026-11-22, "tier by risk".) A PR that changes any file under
    `data/` gets review records from two model families at the current head;
-   every other PR gets one, from a family other than the builder's. The
+   every other PR gets one, from a family other than the builder's.
+   Exception (owner ruling 2026-11-24, "One family for mechanical"): a data
+   PR that applies a written rule by script, with no reading or judgment,
+   adds no evidence row, and passes a deterministic check that rejects
+   planted defects needs one review record, from a family other than the
+   builder's. A data PR that rests on a read, a judgment or new evidence
+   keeps two. The
    controller arranges the reviews and posts a `**Review record**` comment
    per verifier on the PR, naming the model, the verdict at the head SHA and
    what was checked. A non-data PR is capped at two review rounds; after
@@ -294,6 +300,13 @@ harness refuses a directly inspected spawn whose brief has no budget line, and, 
 owner's tag, spawns from a script or loop and spawns at its live-thread cap.
 It turns its outcome line RED above a spend line. Recorded in `DECISIONS.md`.
 No data file is changed by this revision.*
+
+*Revision note — 2026-11-24 (owner ruling, "One family for mechanical"):
+§2a rule 4 lets a mechanical data PR (a written rule applied by script, no
+reading or judgment, no new evidence row, a deterministic check with planted
+defects) merge on one review family. Recorded in `DECISIONS.md` with the
+same day's rulings "Publish only what's stated" and "PIC-18 only". No data
+file is changed by this revision.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 
