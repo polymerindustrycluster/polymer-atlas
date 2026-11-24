@@ -2,6 +2,7 @@
 
 > **Authority:** `docs/sources_registry.csv` is the source registry of record — one row per source, machine-readable. This page is its human-readable rendering, generated from the registry (2026-11-21); the two are rebuilt together and must never be edited apart. If a fact here and the registry disagree, the registry governs.
 > **Standing rule (2026-11-21):** A source is registered in `docs/sources_registry.csv` in the same PR that first uses it; a lane that pulls a new source updates the registry row (status, last_pull, raw_location) in its integration PR.
+> **Acquisition stack:** the tools, routes and experiment results for finding and capturing websites, streets and pages are in `docs/ACQUISITION.md`.
 > **Panel candidates:** the 2026-11-21 database-brainstorm panel (Anthropic + OpenAI) synthesis landed the same day; its NEW candidates are registered in the Panel candidates section below as `status=candidate` rows (21 appended in this follow-up), and candidates the registry already carried under another status were not duplicated.
 
 How this database is built: which sources feed it, what each source is actually
