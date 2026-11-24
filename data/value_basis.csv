@@ -2198,7 +2198,6 @@ organizations,ORG-001649,markets_served,energy_oil_gas,not_yet_checked,EVD-38914
 organizations,ORG-001651,processes,injection_molding,not_yet_checked,EVD-017060,
 organizations,ORG-001655,markets_served,plastics_rubber_processors,not_yet_checked,EVD-397314,
 organizations,ORG-001655,processes,distribution,stated,EVD-483141,2026-11-24
-organizations,ORG-001655,processes,recycling_unspecified,stated,EVD-483143,2026-11-24
 organizations,ORG-001657,markets_served,aerospace_defense,not_yet_checked,EVD-397352,
 organizations,ORG-001657,markets_served,agriculture,not_yet_checked,EVD-397348,
 organizations,ORG-001657,markets_served,food_processing_foodservice,not_yet_checked,EVD-397353,
@@ -2377,7 +2376,7 @@ organizations,ORG-001978,processes,machinery_equipment,stated,EVD-483137,2026-11
 organizations,ORG-001992,markets_served,industrial_machinery,not_yet_checked,EVD-370030,
 organizations,ORG-001992,markets_served,infrastructure_civil,not_yet_checked,EVD-370031,
 organizations,ORG-001992,markets_served,rail_transportation,not_yet_checked,EVD-370032,
-organizations,ORG-001992,processes,potting_encapsulation_casting,stated,EVD-483144,2026-11-24
+organizations,ORG-001992,processes,potting_encapsulation_casting,stated,EVD-483143,2026-11-24
 organizations,ORG-001998,markets_served,consumer_goods_housewares,not_yet_checked,EVD-014405,
 organizations,ORG-001998,processes,assembly_secondary_ops,not_yet_checked,EVD-014406,
 organizations,ORG-001998,processes,injection_molding,not_yet_checked,EVD-014407,

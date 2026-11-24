@@ -16,7 +16,6 @@ import io
 import re
 import subprocess
 import sys
-import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -30,21 +29,34 @@ READER = "Codex (OpenAI), refetch scale-1 reader"  # the reading, p3-refetch-sca
 ROLE_MAIL = {"info", "sales", "support", "service", "office", "contact", "marketing", "orders", "customerservice",
              "privacy", "admin", "corporate", "testing", "accounting"}  # generic mailboxes; any other address is an individual's
 sys.path.insert(0, str(ROOT / "scripts"))
-import check_evidence_binding as gate  # noqa: E402
-import functools  # noqa: E402
+import check_evidence_binding as gate  # noqa: E402  (text, claim and decode helpers only; it is never used to fetch)
+import site_corpus  # noqa: E402
+
+PACKET = Path("/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/p3-refetch-scale-1-2026-11-24/captures")
+PERSIST = PACKET.parent.parent
+CORPUS = site_corpus.Corpus()  # worker fetches go through the declared AtlasSiteCorpus/1.0 route only
+READINGS = STORE / "provenance" / TASK / "readings"
 
 
+def worker_fetch(url):
+    """Bytes of a page through scripts/site_corpus.py (robots-gated, declared agent), decoded as the gate decodes."""
+    rec = CORPUS.fetch(url)
+    if rec["http_status"] != 200:
+        raise RuntimeError(f"site_corpus could not fetch {url}: {rec['status']} {rec['http_status']}")
+    return gate.decode_capture((CORPUS.cache / rec["raw_file"]).read_bytes(), "")
 
-@functools.lru_cache(maxsize=None)
-def fetch(url):
-    """One request per URL; a refused connection (an origin rate-limiting a burst) is retried, any other failure stands."""
-    for wait in (15, 30, 60, None):
-        try:
-            return gate.fetch_url(url)
-        except ConnectionRefusedError:
-            if wait is None:
-                raise
-            time.sleep(wait)
+
+def resolve(digest, url):
+    """Pinned bytes first (the shared store, then the packet's retained captures); else a site_corpus fetch.
+    Either way the bytes must hash to the ledger digest, or the row is held."""
+    for d in (CAPTURES, PACKET):
+        for name in (f"{digest}.html", digest):
+            if (d / name).exists():
+                data = (d / name).read_bytes()
+                assert hashlib.sha256(data).hexdigest() == digest, f"{d / name} does not hash to its name"
+                return data
+    return worker_fetch(url)
+
 
 FIELD_HEAD = {"processes": "processes={v}; quote: {q}", "markets_served": "Markets served: {v}; quote: {q}"}
 EVIDENCE_COLS = ("evidence_id,record_table,record_id,claim_type,claim_detail,source_class,source_ref,observed_date,"
@@ -113,8 +125,8 @@ def individual_mail(data):
 
 
 def replay(r):
-    """Fetch the cited page as the CI gate does; return (bytes, digest, offset). Fails unless the ledger's bytes replay."""
-    data = fetch(r["apply_url"])
+    """Resolve the cited bytes; return (bytes, digest, offset). Fails unless the ledger's bytes replay."""
+    data = resolve(r["apply_sha256"], r["apply_url"])
     digest = hashlib.sha256(data).hexdigest()
     assert digest == r["apply_sha256"], f"{r['owner']} {r['value']}: the page now hashes to {digest[:12]}, the ledger says {r['apply_sha256'][:12]}"
     text = gate.capture_text(data)
@@ -122,6 +134,19 @@ def replay(r):
     assert text.index(r["quote"]) == int(r["apply_offset"]), f"{r['owner']} {r['value']}: quote moved to {text.index(r['quote'])}"
     assert not individual_mail(data), f"{r['owner']} {r['value']}: the capture holds an individual's email {individual_mail(data)}"
     return data, digest, text.index(r["quote"])
+
+
+def pin_reading(r, cited):
+    """The first reader's capture, by digest, kept in the store so the check can compare windows. Returns its bytes."""
+    if r["reading_sha256"] == r["apply_sha256"]:
+        return cited
+    frame = next(f for f in read_csv(HERE / "FRAME.csv") if (f["record_id"], f["field"], f["value"], f["url"], f["offset"]) == (
+        r["owner"], r["field"], r["value"], r["url"], r["reading_offset"]))
+    data = (PERSIST / frame["capture_file"]).read_bytes()
+    assert hashlib.sha256(data).hexdigest() == r["reading_sha256"], f"{frame['capture_file']} is not the reading's digest"
+    assert not individual_mail(data), f"reading capture of {r['owner']} holds an individual's email"
+    assert gate.capture_text(data)[int(r["reading_offset"]):][:len(r["quote"])] == r["quote"]
+    return data
 
 
 def id_form(ref):
@@ -139,7 +164,7 @@ def archive_for(r, archives):
     a = archives[r["url"]]
     cap = WAYBACK.fullmatch(id_form(a["archive_ref"]))
     assert cap and cap[4] == r["url"] and a["captured_at"] == f"{cap[1]}-{cap[2]}-{cap[3]}", f"ARCHIVES.csv row for {r['url']} is malformed"
-    held = gate.capture_text(fetch(id_form(a["archive_ref"]))).count(r["quote"])
+    held = gate.capture_text(worker_fetch(id_form(a["archive_ref"]))).count(r["quote"])
     assert held >= 1, f"the archive capture {a['archive_ref']} does not hold the quote"
     return a["archive_ref"], a["captured_at"]
 
@@ -163,10 +188,11 @@ def main():
         assert r["value"] in allowed, f"{r['value']} is outside the vocabulary for {r['owner']}"
         assert gate.own_domain(gate.host_path(r["url"]), gate.host_path(org["website"])), f"{r['url']} is not {r['owner']}'s site"
         data, digest, offset = replay(r)
+        reading = pin_reading(r, data)
         ref, day = archive_for(r, archives)
         wayback = bool(WAYBACK.fullmatch(r["apply_url"]))
         plan.append(dict(r, path=path, evidence_id=f"EVD-{greatest + n:06d}", digest=digest, offset=offset, data=data,
-                         shard=path.split("_")[-1][:-4], ring=org["ring_primary"], archive_ref=ref, archive_day=day,
+                         shard=path.split("_")[-1][:-4], ring=org["ring_primary"], reading=reading, archive_ref=ref, archive_day=day,
                          capture_date=day if wayback else OBSERVED))
         cells.setdefault((path, r["owner"], r["field"]), []).append(r["value"])
         print(f"{r['owner']} {r['field']}={r['value']} {r['apply_route']} offset {offset} sha {digest[:12]} ({len(data)} bytes) archive {ref[-40:]}")
@@ -179,6 +205,9 @@ def main():
             assert f.read_bytes() == p["data"], f"{f} exists with other bytes"
         else:
             f.write_bytes(p["data"])
+    READINGS.mkdir(parents=True, exist_ok=True)
+    for p in plan:
+        (READINGS / f"{p['reading_sha256']}.html").write_bytes(p["reading"])
     for path in sorted({k[0] for k in cells}):
         header, org_rows, ending = parse(git("show", f"{base}:{path}"))
         by_id = {o["org_id"]: o for o in org_rows}
@@ -218,7 +247,8 @@ def main():
     write(HERE / "CLAIMS_CHECKED.csv", [dict(table="organizations", record_id=p["owner"], field=p["field"],
           verdict="corrected", evidence_id=p["evidence_id"]) for p in plan])
     (HERE / "INPUTS.sha256").write_text("".join(
-        f"{d}  provenance/{TASK}/captures/{d}.html\n" for d in sorted({p['digest'] for p in plan})))
+        [f"{d}  provenance/{TASK}/captures/{d}.html\n" for d in sorted({p['digest'] for p in plan})]
+        + [f"{d}  provenance/{TASK}/readings/{d}.html\n" for d in sorted({p['reading_sha256'] for p in plan} - {p['digest'] for p in plan})]))
     subprocess.check_call([sys.executable, str(ROOT / "scripts/value_basis.py")], cwd=ROOT)
     print(f"applied {len(plan)} value(s) on {len({p['owner'] for p in plan})} owner(s)")
 

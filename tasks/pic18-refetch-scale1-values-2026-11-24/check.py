@@ -22,7 +22,8 @@ ROOT = HERE.parents[1]
 TASK = HERE.name
 STORE = Path("/Volumes/johnpswan/work/GAC/polymer-atlas/atlas-store")
 sys.path.insert(0, str(ROOT / "scripts"))
-import check_evidence_binding as gate  # noqa: E402
+import check_evidence_binding as gate  # noqa: E402  (text, claim and decode helpers; never used to fetch)
+import site_corpus  # noqa: E402
 
 LABEL = f"claude-code {TASK}"
 OBSERVED = "2026-11-24"
@@ -36,19 +37,18 @@ CONTROL_OWNERS = {"ORG-001027"}
 # is absent here fails: a gate must fail on what it could not inspect.
 SUBTYPE_WORDS = {
     "plastics_machining_cnc": [r"\bcnc\b"],
-    "injection_molding": [r"inject"],
-    "injection_molding_micro": [r"inject"], "insert_overmolding": [r"overmold"], "two_shot_molding": [r"two.?shot|2.?shot"],
-    "blow_molding_extrusion": [r"blow"], "blow_molding_injection": [r"blow"], "blow_molding_stretch": [r"blow"],
-    "blow_molding": [r"blow"], "rotational_molding": [r"rotational|rotomold|roto.?mold"],
+    "injection_molding": [r"injection[- ]?(mold|moulding)"],
     "machinery_equipment": [r"machin|equipment|\brigs?\b"],
     "chemical_equipment_supply_polymer_specific": [r"machin|equipment|\brigs?\b", r"polyurethane|polyurea|polymer|foam|plastic|resin"],
     "testing_lab": [r"test"],
     "die_cutting_converting": [r"convert|die.?cut"],
     "distribution": [r"distribut"],
-    "recycling_unspecified": [r"recycl"],
     "potting_encapsulation_casting": [r"\bcast|potting|encapsul"],
-    "rd_design_engineering": [r"engineer|design|research"],
 }
+# Pinned inputs: the controller's frame (the first reader's rows) and the stability ledger rows for them.
+FRAME_SHA = "1a176b864d202614593c3b87e9e93969b5e55049539db4253cbbd730040d129e"
+LEDGER_SHA = "d3fc8be0061221185f5da84b4424362f8c8fe4b3d15440c46b11200d5c8f1e0b"
+WINDOW = 200
 MAIL_OK = {"info", "sales", "support", "service", "office", "contact", "marketing", "orders", "customerservice", "privacy",
            "admin", "corporate", "testing", "accounting"}
 
@@ -123,10 +123,55 @@ def load():
                    if re.fullmatch(r"data/evidence_[A-Za-z_]+\.csv", p) for r in rows_of(git("show", f"{base}:{p}")))
     return dict(base=base, changed=sorted(set(changed)), cells=cells, evidence=evidence, orgs=orgs, archives=archives,
                 evidence_n=evidence_n, archives_n=archives_n, basis_added=basis_added, basis_removed=basis_removed,
-                greatest=greatest, second=read("second_read.csv"), fills=read("FILLS.csv"), proofs=read("BINDING_PROOF.csv"),
+                greatest=greatest, second=read("second_read.csv"), frame=read("FRAME.csv"), ledger=read("LEDGER.csv"),
+                pins=(hashlib.sha256((HERE / "FRAME.csv").read_bytes()).hexdigest(), hashlib.sha256((HERE / "LEDGER.csv").read_bytes()).hexdigest()),
+                reading_bytes=reading_bytes, fills=read("FILLS.csv"), proofs=read("BINDING_PROOF.csv"),
                 claims=read("CLAIMS_CHECKED.csv"), readme=(HERE / "README.md").read_bytes(),
                 inputs=(HERE / "INPUTS.sha256").read_text().split("\n"),
                 audit=(ROOT / AUDIT).read_text() if (ROOT / AUDIT).exists() else "")
+
+
+def reading_bytes(sec, cited):
+    """The first reader's capture, by digest: the cited bytes when they are the reader's, else the stored reading."""
+    if sec["reading_sha256"] == sec["apply_sha256"]:
+        return cited
+    return (STORE / "provenance" / TASK / "readings" / f"{sec['reading_sha256']}.html").read_bytes()
+
+
+def reading_problems(s, f, sec, cited):
+    """Rule 'reading': first-reader digest and offset against the pinned frame, the ledger, and the actual windows."""
+    out = []
+    fr = [r for r in s["frame"] if (r["record_id"], r["field"], r["value"], r["url"], r["offset"]) == (
+        sec["owner"], sec["field"], sec["value"], sec["url"], sec["reading_offset"])]
+    if len(fr) != 1 or (fr[0]["sha256"], fr[0]["quote"]) != (sec["reading_sha256"], sec["quote"]):
+        out.append("reading: the first reader's digest, offset or quote is not the pinned frame's")
+    led = [r for r in s["ledger"] if (r["capture_id"].split("-")[0], r["field"], r["value"], r["url"], r["offset"]) == (
+        sec["case"], sec["field"], sec["value"], sec["url"], sec["reading_offset"])]
+    if len(led) != 1:
+        return out + ["reading: no single pinned ledger row"]
+    L = led[0]
+    stable = (L["class"], L["live_1_sha256"], L["live_2_sha256"], L["live_1_quote_offset"], L["live_2_quote_offset"]) if L["class"] == "stable-live" else (
+        L["class"], L["archive_sha256"], L["archive_sha256"], L["archive_offset"], L["archive_offset"])
+    want = ("stable-live" if sec["apply_route"] == "live" else "wayback-only", sec["apply_sha256"], sec["apply_sha256"], sec["apply_offset"], sec["apply_offset"])
+    if stable != want or L["original_agrees"] != sec["original_agrees"] or L["class"] != sec["ledger_class"]:
+        out.append("reading: the cited digest, offset, route or original_agrees is not the pinned ledger's")
+    if (sec["apply_sha256"], sec["apply_offset"]) != (f["capture_sha256"], f["quote_offset"]):
+        out.append("reading: the fill's capture is not the second read's")
+    if sec["original_agrees"] == "yes" and (sec["reading_sha256"], sec["reading_offset"]) != (sec["apply_sha256"], sec["apply_offset"]):
+        out.append("reading: the page matched the reading in the ledger but the digest or offset differs")
+    try:
+        rb = s["reading_bytes"](sec, cited)
+    except Exception as e:  # an unavailable reading capture fails, never passes
+        return out + [f"reading: the first reader's capture is unavailable: {e}"]
+    if hashlib.sha256(rb).hexdigest() != sec["reading_sha256"]:
+        out.append("reading: the stored reading capture does not hash to the reader's digest")
+    rt, ct, q = gate.capture_text(rb), gate.capture_text(cited), f["quote"]
+    ro, co = int(sec["reading_offset"]), int(f["quote_offset"])
+    if rt[ro:ro + len(q)] != q:
+        out.append(f"reading: the quote is not at the reader's offset {ro} in the reader's capture")
+    elif rt[max(0, ro - WINDOW):ro + len(q) + WINDOW] != ct[max(0, co - WINDOW):co + len(q) + WINDOW]:
+        out.append("reading window: the words around the quote differ between the reader's capture and the cited bytes")
+    return out
 
 
 def verify(s, bytes_for):
@@ -137,6 +182,8 @@ def verify(s, bytes_for):
     for path in s["changed"]:
         if not (DATA.fullmatch(path) or path.startswith(f"tasks/{TASK}/") or path in (AUDIT, "tasks/QUEUE.md")):
             add("files", f"{path} is outside the allowed files")
+    if s["pins"] != (FRAME_SHA, LEDGER_SHA):
+        add("reading", "FRAME.csv or LEDGER.csv is not the pinned input")
     for k, want in (("Label:", "claude-code pic18-refetch-pilot-values-2026-11-24"), ("Result:", "PASS")):
         if not re.search(rf"^{k}\s*{re.escape(want)}\s*$", s["audit"], re.M):
             add("audit", f"{AUDIT} lacks the line '{k} {want}'")
@@ -195,15 +242,6 @@ def verify(s, bytes_for):
             add("subtype word", f"{tag}: no subtype-word rule for this token, so it cannot be inspected")
         elif not all(re.search(w, f["quote"], re.I) for w in words):
             add("subtype word", f"{tag}: the quote lacks the word the value needs ({words})")
-        if sec:
-            if (sec["apply_url"], sec["apply_route"], sec["apply_sha256"], sec["apply_offset"]) != (
-                    f["capture"], f["route"], f["capture_sha256"], f["quote_offset"]):
-                add("reading", f"{tag}: the capture (sha {f['capture_sha256'][:12]}, offset {f['quote_offset']}) is not the ledger's stable bytes ({sec['apply_sha256'][:12]}, {sec['apply_offset']})")
-            elif sec["original_agrees"] == "yes":
-                if (sec["reading_sha256"], sec["reading_offset"]) != (sec["apply_sha256"], sec["apply_offset"]):
-                    add("reading", f"{tag}: the page matched the reading in the ledger but the digest or offset differs")
-            elif sec["reading_window_same"] != "yes":
-                add("reading", f"{tag}: the cited bytes differ from the reading's and the quote's surrounding words are not shown identical")
         if int(f["evidence_id"].split("-")[1]) <= s["greatest"]:
             add("evidence id", f"{f['evidence_id']} is not above the base maximum EVD-{s['greatest']}")
         a = s["archives"].get(f["evidence_id"])
@@ -218,6 +256,7 @@ def verify(s, bytes_for):
         except Exception as e:  # An absent capture is a failure, never a pass.
             add("capture", f"{tag}: cannot inspect: {e}")
             continue
+        out.extend(reading_problems(s, f, sec, data) if sec else ["reading: no second-read row"])
         digest = hashlib.sha256(data).hexdigest()
         if digest != f["capture_sha256"]:
             add("capture sha", f"{tag}: bytes hash to {digest[:12]}, recorded {f['capture_sha256'][:12]}")
@@ -255,11 +294,20 @@ def verify(s, bytes_for):
 
 @functools.lru_cache(maxsize=None)
 def _fetch(url):
-    return gate.fetch_url(url)
+    """A page through scripts/site_corpus.py (declared AtlasSiteCorpus/1.0, robots-gated), decoded as the gate decodes it."""
+    rec = site_corpus.Corpus().fetch(url)
+    if rec["http_status"] != 200:
+        raise RuntimeError(f"site_corpus could not fetch {url}: {rec['status']} {rec['http_status']}")
+    return gate.decode_capture((site_corpus.Corpus().cache / rec["raw_file"]).read_bytes(), "")
 
 
 def fresh_bytes(f):
-    return _fetch(f["capture"])
+    """Fresh replay by the worker route; where that route is refused (C4's empty robots.txt reads as a failure) the
+    digest-pinned stored bytes stand in, and the capture-sha rule still holds them to the ledger digest."""
+    try:
+        return _fetch(f["capture"])
+    except RuntimeError:
+        return store_bytes(f)
 
 
 def store_bytes(f):
@@ -299,16 +347,25 @@ def plants(s, good):
     yield "extra rows", mutated(lambda t: t["archives"].__setitem__("EVD-999999", dict(t["archives"][first["evidence_id"]], evidence_id="EVD-999999"))), good
     yield "extra rows", mutated(lambda t: t.__setitem__("evidence_n", t["evidence_n"] + 1)), good
     yield "extra rows", mutated(lambda t: t["proofs"].append(dict(t["proofs"][0]))), good
+    changed = next(f for f in s["fills"] if sec(s, f)["original_agrees"] == "no")
     yield "reading", mutated(lambda t: sec(t, live).__setitem__("apply_sha256", "0" * 64)), good
     yield "reading", mutated(lambda t: sec(t, live).__setitem__("apply_offset", str(int(live["quote_offset"]) + 1))), good
-    def other_reading(t):  # the page matched the reading in the ledger, but the reading's digest says otherwise
-        r = next(r for r in t["second"] if r["original_agrees"] == "yes" and r["applied"] == "yes")
-        r["reading_sha256"] = "0" * 64
-    yield "reading", mutated(other_reading), good
-    def window(t):  # the cited bytes differ from the reading's and the surrounding words were not shown identical
-        r = next(r for r in t["second"] if r["original_agrees"] == "no" and r["applied"] == "yes")
-        r["reading_window_same"] = ""
-    yield "reading", mutated(window), good
+    def forged(t):  # the review's attack: a first-reader digest and offset that no input holds
+        r = sec(t, changed)
+        r["reading_sha256"], r["reading_offset"] = "0" * 64, "999999"
+    yield "reading", mutated(forged), good
+    yield "reading", mutated(lambda t: sec(t, changed).__setitem__("original_agrees", "yes")), good  # a page that changed, said unchanged
+    def unavailable(t):
+        def gone(sec_, cited):
+            raise FileNotFoundError("reading capture absent")
+        t["reading_bytes"] = gone
+    yield "reading", mutated(unavailable), good  # fails on what it could not inspect
+    yield "reading", mutated(lambda t: t.__setitem__("pins", ("0" * 64, t["pins"][1]))), good  # a frame that is not the pinned one
+    def other_window(t):  # the reader's capture shows other words round the quote, but the quote sits at the reader's offset
+        def other(sec_, cited):
+            return b"<html><body><p>" + b"y" * (int(sec_["reading_offset"]) - 1) + b" " + sec_["quote"].encode() + b" zzz</p></body></html>"
+        t["reading_bytes"] = other
+    yield "reading window", mutated(other_window), good
     yield "subtype word", mutated(lambda t: t["fills"][0].__setitem__("new", "plastics_machining_cnc")), good  # quote lacks CNC
     yield "subtype word", mutated(lambda t: t["fills"][0].__setitem__("new", "injection_molding")), good
     def control(t):  # a row from the control owner applied
