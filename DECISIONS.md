@@ -667,3 +667,32 @@ and city match. A second model family checks each addition. The street then fill
 (moving the raw pull to the shared store); the name-variant additions with their second-family checks.
 
 Decided by the repo owner in session, 2026-11-24 10:29, by multiple choice. All four were the recommended option.
+
+## 2026-11-24 · Per-value basis generator (SCHEMA v1.20.1): where verdicts live, precedence, grain
+
+Implements the 10:29 per-value basis ruling (SCHEMA §4.24). Not an owner ruling: §4.24 left these four points to the
+generator's PR, and this entry records what that PR fixed. Each is open to an owner change.
+
+- **Verdict storage.** A reader's verdict is `tasks/<folder>/VALUE_VERDICTS.csv`, in the re-read lane's `values.csv` format
+  as written. It lives under `tasks/` because lanes never write `data/` (AGENTS.md §2 rule 7); the generated
+  `data/value_basis.csv` changes in the same PR, so a verdict reaches a label only through a data PR and its review. A
+  packet counts only when its README names the reader's family and a different family that checked it (the controller's
+  instruction that labels from the 2026-11-24 re-read publish only after the Gemini check). The generator adds no
+  evidence: the line's `evidence_id` is the bound row that names the value.
+- **Precedence.** Verified quote (`BINDING_PROOF.csv` `VERIFIED`, claim hash unchanged, or a replayed STATED verdict) beats
+  a filing statement beats the latest reader verdict (IMPLIED, NOT_STATED) beats a bare naming row. A proven quote
+  outranks NOT_STATED. Two verdict classes on one latest date stop the generator.
+- **Grain.** `stated` and `filing` come only from a row on the value's own record. A row on the organization gives a
+  site's value at most `not_yet_checked`; the re-read pilot's rule is that a corporate statement does not settle a plant claim.
+- **What V-69 cannot see.** CI has no page store, so a STATED verdict's quote is replayed only where `--pages` is given;
+  V-69 warns with the count not replayed. For the proof route it checks the proof line and the claim hash and does not
+  fetch the capture again (the gate replayed it when the row merged).
+- **Open question for the owner.** 164 process and 26 market values on PIC-18 owners' display rows (counted on the unit of
+  one value on the record that supplies it) are named by no bound row. §4.24 gives them no row, and they show with no
+  label. Whether they should carry one is not decided here.
+
+Measured at the first table (6,607 rows over 9,551 held process and market values on organization and site rows, all
+states): 42 `stated`, 18 `filing`, 6,547 `not_yet_checked`; 2,944 values are named by no row. The screen's 118 and 561
+quoted values (process, market) on PIC-18 display rows reconcile to these rows: 18 `filing` and 10 `stated` of the
+process values, 18 `stated` of the market values, and the rest `not_yet_checked` because the quote sits on an organization
+row for a site value (9 process, 216 market) or has no verified proof or names several values (81, 327).

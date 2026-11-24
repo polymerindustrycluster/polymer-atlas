@@ -283,6 +283,25 @@ def check(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
     return problems, info
 
 
+RANK = {"stated": 4, "filing": 3, "implied": 2, "not_yet_checked": 1}  # which label shows when one value has several origins
+
+
+def withheld_keys(rows):
+    """Keys of the values withheld from display: a read found the page neither states nor supports them (§4.24)."""
+    return {(r["record_table"], r["record_id"], r["field"], r["value"]) for r in rows if r["basis"] == WITHHELD}
+
+
+def strip_withheld(rows, table, id_col, withheld):
+    """Display copy: remove withheld tokens from processes / markets_served cells, in place. A cell with none withheld
+    keeps its exact text; the record CSVs are never rewritten."""
+    for r in rows:
+        for f in FIELDS:
+            parts = [t.strip() for t in (r.get(f) or "").split(";")]
+            kept = [t for t in parts if (table, r[id_col], f, t) not in withheld]
+            if len(kept) != len(parts):
+                r[f] = ";".join(t for t in kept if t)
+
+
 def pic18_summary(data=ROOT / "data"):
     """Counts by basis for the owners of active tier A-C PIC-18 sites: the values their display rows supply."""
     from regions import PIC18

@@ -40,8 +40,10 @@ from pathlib import Path
 
 if __package__:
     from .build_site import org_field_sources, release_withheld
+    from . import value_basis
 else:
     from build_site import org_field_sources, release_withheld
+    import value_basis
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -73,6 +75,9 @@ UNIT = {
     "equipment": "equipment rows",
     "people_engagement": "people-engagement rows",
     "people_identifiers": "person external-identifier rows (§4.21)",
+    "value_basis": "per-value basis rows (§4.24): how well each published process and market value is supported "
+                   "(`label` is the text shown on the site: stated, from a filing, implied, not yet checked); values withheld "
+                   "from display are not listed, and are removed from the organization and site rows and from evidence text here",
     "ipeds_institutions": "IPEDS institutions reporting under a polymer or materials CIP, 1991-2023 (§4.23)",
     "ipeds_programs": "IPEDS programs: institution x CIP x award level ever observed (§4.23)",
     "ipeds_completions": "IPEDS program-year completion counts, 1991-2023 (§4.23)",
@@ -211,6 +216,77 @@ def withhold_csv(path, table, held=None):
         with open(path, "w", newline="", encoding="utf-8") as f:
             csv.writer(f, lineterminator="\r\n" if "\r\n" in text else "\n").writerows(rows)
     return n
+
+
+def csv_rewrite(path, edit):
+    """Read a release CSV, let edit(header, rows) change the rows in place, write it back with its own line ending."""
+    text = Path(path).read_bytes().decode("utf-8")
+    rows = list(csv.reader(io.StringIO(text, newline="")))
+    head, body = rows[0], rows[1:]
+    edit(head, body)
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        csv.writer(f, lineterminator="\r\n" if "\r\n" in text else "\n").writerows([head, *body])
+
+
+def evidence_names_withheld(table, rid, detail, keys, site_org):
+    """True when an evidence row's text names a value withheld from display on its record (or, for an organization row, on one of its sites)."""
+    return any(value_basis.names(detail, tok) for (t, r, f, tok) in keys
+               if (t, r) == (table, rid) or (table == "organizations" and t == "sites" and site_org.get(r) == rid))
+
+
+def withhold_values_csv(path, table, keys, site_org=None):
+    """Release copy only: drop withheld tokens from processes / markets_served cells, or blank evidence text that names one."""
+    def edit(head, rows):
+        ix = {c: i for i, c in enumerate(head)}
+        if table == "evidence":
+            for r in rows:
+                if evidence_names_withheld(r[ix["record_table"]], r[ix["record_id"]], r[ix["claim_detail"]], keys, site_org):
+                    r[ix["claim_detail"]] = WITHHELD
+            return
+        idc = {"organizations": "org_id", "sites": "site_id"}[table]
+        for r in rows:
+            cells = {f: r[ix[f]] for f in value_basis.FIELDS if f in ix}
+            d = dict(cells, **{idc: r[ix[idc]]})
+            value_basis.strip_withheld([d], table, idc, keys)
+            for f in cells:
+                r[ix[f]] = d[f]
+    csv_rewrite(path, edit)
+
+
+def value_basis_release_csv(path):
+    """Release copy of value_basis.csv: withheld rows dropped, `label` column added."""
+    def edit(head, rows):
+        rows[:] = [r for r in rows if r[head.index("basis")] != value_basis.WITHHELD]
+        head.append("label")
+        for r in rows:
+            r.append(value_basis.LABELS[r[head.index("basis")]])
+    csv_rewrite(path, edit)
+
+
+def withhold_values_db(db_path):
+    """The same in the bundled SQLite copy. Returns the withheld keys (read before the rows are removed)."""
+    con = sqlite3.connect(db_path)
+    keys = value_basis.withheld_keys([dict(zip(("record_table", "record_id", "field", "value", "basis"), r)) for r in
+                                       con.execute("SELECT record_table, record_id, field, value, basis FROM value_basis")])
+    site_org = dict(con.execute("SELECT site_id, org_id FROM sites"))
+    for table, idc in (("organizations", "org_id"), ("sites", "site_id")):
+        for rid, proc, mkt in con.execute(f"SELECT {idc}, processes, markets_served FROM {table}").fetchall():
+            d = {idc: rid, "processes": proc, "markets_served": mkt}
+            value_basis.strip_withheld([d], table, idc, keys)
+            if (d["processes"], d["markets_served"]) != (proc, mkt):
+                con.execute(f"UPDATE {table} SET processes = ?, markets_served = ? WHERE {idc} = ?",
+                            (d["processes"] or None, d["markets_served"] or None, rid))
+    for eid, table, rid, detail in con.execute("SELECT evidence_id, record_table, record_id, claim_detail FROM evidence").fetchall():
+        if detail and evidence_names_withheld(table, rid, detail, keys, site_org):
+            con.execute("UPDATE evidence SET claim_detail = ? WHERE evidence_id = ?", (WITHHELD, eid))
+    con.execute("DELETE FROM value_basis WHERE basis = ?", (value_basis.WITHHELD,))
+    con.execute("ALTER TABLE value_basis ADD COLUMN label TEXT")
+    for basis, label in value_basis.LABELS.items():
+        con.execute("UPDATE value_basis SET label = ? WHERE basis = ?", (label, basis))
+    con.commit()
+    con.execute("VACUUM")
+    con.close()
+    return keys, site_org
 
 
 NOTES_DROPPED = ("organizations", "sites")   # owner ruling 2026-11-23 22:01: the release's organization and site tables carry no notes column
@@ -525,15 +601,19 @@ def main():
     held = held_pattern(RELEASE / "polymer-atlas.db")   # read before the copy is blanked
     drop_notes_db(RELEASE / "polymer-atlas.db")   # owner ruling: no notes column in the organization and site tables
     withheld = {"database": withhold_db(RELEASE / "polymer-atlas.db", held)}   # the canonical .db and CSVs are never touched
+    value_keys, site_org = withhold_values_db(RELEASE / "polymer-atlas.db")   # SCHEMA 4.24: withheld values leave every release copy
     published = {}  # name -> (path, cols, rows)
     for t in ("sites", "organizations", "evidence"):
         path = f"data/{t}_all.csv"
         source = BUILD / f"{t}_all.csv"
         if t == "organizations":
             cols, rows = read_csv(source)
+            value_basis.strip_withheld(rows, "organizations", "org_id", value_keys)
             write_organization_export(RELEASE / path, cols, rows, published["sites"][2])
         else:
             shutil.copy2(source, RELEASE / path)
+            if t in ("sites", "evidence"):
+                withhold_values_csv(RELEASE / path, t, value_keys, site_org)
         if t in NOTES_DROPPED:
             drop_notes_csv(RELEASE / path)
         withheld[t] = withhold_csv(RELEASE / path, t, held)
@@ -541,6 +621,8 @@ def main():
         published[t] = (path, cols, rows)
     for t in single_tables():
         shutil.copy2(DATA / f"{t}.csv", RELEASE / "data" / f"{t}.csv")
+        if t == "value_basis":
+            value_basis_release_csv(RELEASE / "data" / f"{t}.csv")
         withheld[t] = withhold_csv(RELEASE / "data" / f"{t}.csv", t, held)
         cols, rows = read_csv(RELEASE / "data" / f"{t}.csv")
         published[t] = (f"data/{t}.csv", cols, rows)

@@ -37,6 +37,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_site  # noqa: E402  (the one page shell, tokens and style.css)
+import value_basis  # noqa: E402  (SCHEMA 4.24: withheld values are not graph tags)
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -87,6 +88,9 @@ def build_graph():
     orgs = [r for r in shards("organizations") if r["status"] not in TOMBSTONE]
     eco = [r for r in read(DATA / "ecosystem.csv") if r["status"] not in TOMBSTONE]
     sites = [r for r in shards("sites") if r.get("operating_status") != "closed"]
+    withheld = value_basis.withheld_keys(read(DATA / "value_basis.csv") if (DATA / "value_basis.csv").exists() else [])   # SCHEMA 4.24: a withheld value is not a graph tag
+    value_basis.strip_withheld(orgs, "organizations", "org_id", withheld)
+    value_basis.strip_withheld(sites, "sites", "site_id", withheld)
     rel = read(DATA / "relationships.csv")
     programs = read(DATA / "programs.csv")
     events = read(DATA / "events.csv")
