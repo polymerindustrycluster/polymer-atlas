@@ -22,16 +22,21 @@ python3 scripts/export_release.py           # builds build/release/ and the zip
 ```
 
 `export_release.py` prints the zip path, its sha256, the resource count and
-the row count per table. It re-runs `build_sqlite.py` itself when the build
-outputs are missing or older than `data/`, and refuses to continue if the
-merged exports or the database disagree with the CSVs
-(`--rebuild` forces a rebuild, `--no-build` requires current outputs).
+the row count per table. It re-runs `build_sqlite.py` itself when the database or
+any merged export (`organizations_all.csv`, `sites_all.csv`, `evidence_all.csv`)
+is missing or older than `data/`, and refuses to continue if a merged export
+differs from its shards, or a database table from its merged export, in any
+cell, not only in row count (`--rebuild` forces a rebuild, `--no-build` requires
+current outputs).
 
 The bundle differs from the repository in what it withholds: the `organizations` and
 `sites` tables have no `notes` column in the CSVs or in the bundled SQLite copy (owner ruling
 2026-11-23), and any cell the public site withholds (a description with internal wording, a
 temporary record id of a build pass, a copy of a withheld description) is blank, or reads
-`[withheld from this release]` in an evidence row. `COUNTS.md` says so.
+`[withheld from this release]` in an evidence row. The marker names a value that is not in
+the bundle; a graded evidence row that carries it has a grade whose claim or source a reader of
+the release cannot inspect. A researcher's `role_as_published` is blank where the site shows the
+vocabulary role instead. `COUNTS.md` states the counts of each export.
 
 Check before uploading:
 
@@ -93,8 +98,15 @@ that the repo owner has to choose. Nothing here is automated.
 1. Create a dataset repository under the owner's or organization's account.
 2. Upload the contents of `build/release/` (the `data/` folder,
    `datapackage.json`, `COUNTS.md`, `MANIFEST.sha256`, and optionally
-   `polymer-atlas.db`) with `huggingface-cli upload` or the web UI, and set
-   the dataset card license to `cc-by-4.0`.
+   `polymer-atlas.db`) with `hf upload` or the web UI, and set the dataset card
+   license to `cc-by-4.0`. For example, from the repository root,
+   `hf upload <owner>/<dataset> build/release . --repo-type dataset` uploads the bundle folder to the
+   root of the dataset repository. The `huggingface-cli` command was removed in
+   `huggingface_hub` v1.0 and replaced by `hf` ("The deprecated huggingface-cli has been
+   removed, hf (introduced in v0.34) replaces it"; checked 2026-11-23 against
+   <https://huggingface.co/docs/huggingface_hub/en/concepts/migration>). The command form,
+   including `--repo-type dataset`, is in
+   <https://huggingface.co/docs/huggingface_hub/en/guides/cli> (upload section).
 3. Treat the mirror as a copy: the GitHub repository stays canonical, and
    corrections are made in `data/` and re-released, never edited on the
    mirror.
