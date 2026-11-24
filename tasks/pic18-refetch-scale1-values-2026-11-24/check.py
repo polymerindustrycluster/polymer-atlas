@@ -2,7 +2,8 @@
 """Named check for the refetch scale-1 value fills.
 
     python3 check.py            replay captures from the shared store (fails if a capture is absent)
-    python3 check.py --fresh    replay by fetching each cited page as the CI gate does (UA evidence-check/1, HTTP 200 only)
+    python3 check.py --fresh    replay fresh through scripts/site_corpus.py (declared AtlasSiteCorpus/1.0): the cited page, else the fill's own
+                                archive capture; fails for any fill with neither, and prints how many of each it used
 
 Clean state must give no problems, then every planted defect must give a problem that names its rule.
 Exit 0 only when both hold.
@@ -122,7 +123,7 @@ def load():
                    if re.fullmatch(r"data/evidence_[A-Za-z_]+\.csv", p) for r in rows_of(git("show", f"{base}:{p}")))
     return dict(base=base, changed=sorted(set(changed)), cells=cells, evidence=evidence, orgs=orgs, archives=archives,
                 evidence_n=evidence_n, archives_n=archives_n, basis_added=basis_added, basis_removed=basis_removed,
-                greatest=greatest, second=read("second_read.csv"), frame=read("FRAME.csv"), ledger=read("LEDGER.csv"),
+                greatest=greatest, second=read("second_read.csv"), frame=read("FRAME.csv"), ledger=read("LEDGER.csv"), archive_inputs=read("ARCHIVES.csv"),
                 pins=(hashlib.sha256((HERE / "FRAME.csv").read_bytes()).hexdigest(), hashlib.sha256((HERE / "LEDGER.csv").read_bytes()).hexdigest()),
                 reading_bytes=reading_bytes, fills=read("FILLS.csv"), proofs=read("BINDING_PROOF.csv"),
                 claims=read("CLAIMS_CHECKED.csv"), readme=(HERE / "README.md").read_bytes(),
@@ -156,6 +157,14 @@ def reading_problems(s, f, sec, cited):
         out.append("reading: the cited digest, offset, route or original_agrees is not the pinned ledger's")
     if (sec["apply_sha256"], sec["apply_offset"]) != (f["capture_sha256"], f["quote_offset"]):
         out.append("reading: the fill's capture is not the second read's")
+    cited_url = L["archive_url"] if sec["apply_route"] == "wayback" else L["url"]  # the ledger's exact Wayback instant, or the live page
+    if not (sec["apply_url"] == f["capture"] == cited_url) or f["route"] != sec["apply_route"]:
+        out.append("reading: the fill's capture URL is not the pinned ledger's (a substituted Wayback instant or page)")
+    pinned = {a["url"]: a["archive_ref"] for a in s["archive_inputs"]}
+    want_ref = L["archive_url"].replace("id_/", "/", 1) if L["cdx_status"] == "INDEXED_CAPTURE_REPLAYED" else pinned.get(f["url"])
+    row = s["archives"].get(f["evidence_id"])
+    if row is None or row["archive_ref"] != want_ref:
+        out.append("reading: the archive link is not the ledger's indexed capture (or the pinned Save Page Now capture)")
     if sec["original_agrees"] == "yes" and (sec["reading_sha256"], sec["reading_offset"]) != (sec["apply_sha256"], sec["apply_offset"]):
         out.append("reading: the page matched the reading in the ledger but the digest or offset differs")
     try:
@@ -300,13 +309,21 @@ def _fetch(url):
     return gate.decode_capture((site_corpus.Corpus().cache / rec["raw_file"]).read_bytes(), "")
 
 
-def fresh_bytes(f):
-    """Fresh replay by the worker route; where that route is refused (C4's empty robots.txt reads as a failure) the
-    digest-pinned stored bytes stand in, and the capture-sha rule still holds them to the ledger digest."""
-    try:
-        return _fetch(f["capture"])
-    except RuntimeError:
-        return store_bytes(f)
+def make_fresh(fetch, archives, sources):
+    """A bytes_for that inspects only fresh pages: the cited page through the worker route, else (a refused robots.txt)
+    the fill's own archive capture through the same route. It raises when neither hashes to the recorded digest, so a
+    requested fresh verification never passes on stored bytes. `sources` records what was actually used per fill."""
+    def fresh(f):
+        for kind, url in (("live", f["capture"]), ("archive", re.sub(r"/web/(\d{14})/", r"/web/\1id_/", archives[f["evidence_id"]]["archive_ref"], count=1))):
+            try:
+                data = fetch(url)
+            except Exception:
+                continue
+            if hashlib.sha256(data).hexdigest() == f["capture_sha256"]:
+                sources[f["evidence_id"]] = kind
+                return data
+        raise RuntimeError("no fresh page hashes to the recorded digest")
+    return fresh
 
 
 def store_bytes(f):
@@ -365,6 +382,20 @@ def plants(s, good):
             return b"<html><body><p>" + b"y" * (int(sec_["reading_offset"]) - 1) + b" " + sec_["quote"].encode() + b" zzz</p></body></html>"
         t["reading_bytes"] = other
     yield "reading window", mutated(other_window), good
+    def same_day_instant(t):  # a Wayback instant of the same day, in the fill, the proof and the archive row only
+        ev = way["evidence_id"]
+        old = way["capture"]
+        new = old.replace("20261006035548", "20261006000000")
+        for rec in (next(f for f in t["fills"] if f["evidence_id"] == ev), next(p for p in t["proofs"] if p["evidence_id"] == ev)):
+            rec["capture"] = new
+        t["archives"][ev]["archive_ref"] = new.replace("id_/", "/", 1)
+    yield "reading", mutated(same_day_instant), good
+    def other_instant(t):  # a live row's archive link moved to another capture of the page
+        t["archives"][live["evidence_id"]]["archive_ref"] = "https://web.archive.org/web/20200101000000/" + live["url"]
+    yield "reading", mutated(other_instant), good
+    def nothing_fresh(url):
+        raise OSError("origin unavailable")
+    yield "capture", s, make_fresh(nothing_fresh, s["archives"], {})  # every origin down: a fresh replay must fail, not fall back
     yield "subtype word", mutated(lambda t: t["fills"][0].__setitem__("new", "plastics_machining_cnc")), good  # quote lacks CNC
     yield "subtype word", mutated(lambda t: t["fills"][0].__setitem__("new", "injection_molding")), good
     def control(t):  # a row from the control owner applied
@@ -380,8 +411,10 @@ def plants(s, good):
 
 
 def main():
-    good = fresh_bytes if "--fresh" in sys.argv else store_bytes
+    fresh = "--fresh" in sys.argv
     s = load()
+    sources = {}
+    good = make_fresh(_fetch, s["archives"], sources) if fresh else store_bytes
     problems = verify(s, good)
     for p in problems:
         print("FAIL", p)
@@ -394,7 +427,8 @@ def main():
     if problems or caught != len(cases):
         print(f"FAIL: {len(problems)} problem(s); {caught}/{len(cases)} planted defects caught")
         return 1
-    print(f"PASS: {len(s['fills'])} fills replayed from {'live fetch' if good is fresh_bytes else 'the store'}; {caught}/{len(cases)} planted defects caught")
+    used = "from the store" if not fresh else "fresh (" + ", ".join(f"{k} {list(sources.values()).count(k)}" for k in ("live", "archive")) + ")"
+    print(f"PASS: {len(s['fills'])} fills replayed {used}; {caught}/{len(cases)} planted defects caught")
     return 0
 
 
