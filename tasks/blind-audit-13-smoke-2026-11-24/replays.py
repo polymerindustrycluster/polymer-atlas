@@ -62,6 +62,10 @@ def expected(R, keys):
         rec = rows[k[0]].get(k[1], {})
         if rec.get('naics_primary') and rec.get('naics_primary_source_type') == 'government_filing':
             out.append(dict(key=k, cls='naics:government_filing', field='naics_primary', ev=None))
+    for r in R.rows('code_assignments'):
+        for k in (('organizations', r['org_id']), ('ecosystem', r['org_id'])):
+            if k in want and r['code_system'] == 'NAICS' and r['source_type'] == 'government_filing':
+                out.append(dict(key=k, cls='naics:code_assignment', field='code_assignments', ev=r))
     for r in R.rows('registry_links'):
         for k in ((('organizations', r['org_id']), ('ecosystem', r['org_id'])) if r['org_id'] else ()) + ((('sites', r['site_id']),) if r['site_id'] else ()):
             if k in want:
@@ -158,11 +162,44 @@ def receipt(site, orgs, row, kind, rel, cutoff, held_band):
         status, why = 'UNRESOLVED', 'filing_has_no_count'
     else:
         status, why = ('MATCHES', 'band_equal') if band == held_band else ('CONTRADICTS', 'band_differs_same_establishment_within_cutoff')
-    return dict(status=status, reason=why, text=text)
+    return dict(status=status, reason=why, text=text, date=date)
+
+
+NAICS_FIELDS = {'naics_primary', 'naics_primary_source_type', 'naics_primary_source_name', 'naics_confidence'}
+
+
+def band_receipt(site, orgs, ev, ita, ita_hits, insp_hits, ita_problems, insp_problems, store, cutoff):
+    """Locate the cited filing row, check it binds, then let the newest binding filing inside the cutoff decide (SCHEMA R13 precedence):
+    an older different band under a newer supporting one is a match; a newer different band contradicts."""
+    ref = ev['source_ref'] + ' ' + ev['claim_detail']
+    m = re.search(r'establishment_?id[ =:]*(\d+)' if ita else r'(?:id=|OSHA inspection )(\d{6,})', ref, re.I)
+    hits = list((ita_hits if ita else insp_hits).get(m[1], [])) if m else []
+    problems = ita_problems if ita else insp_problems
+    loc = re.search(r'(raw/\S+?\.csv)@(\d+)', ev['source_ref'])
+    if not m and loc:
+        found, why = locator_row(store, loc[1], int(loc[2]))
+        hits, problems = ([found] if found else []), ({loc[1]: why} if why else {})
+    kind = 'osha_ita' if ita else 'osha_inspection'
+    if not hits:
+        why = next(iter(problems.values()), 'filing_row_not_found_in_store')
+        return dict(status='UNRESOLVED', reason=why, text=f'The cited filing row was not located in the sealed store ({why}).')
+    year = re.search(r'CY\s?(\d{4})|\b(20[12]\d)\b', ev['source_ref'])
+    cited = [h for h in hits if year and str(h[0].get('year_filing_for', '')).split('.')[0] == (year[1] or year[2])] if ita and not loc else hits
+    if len(cited) != 1:
+        return dict(status='UNRESOLVED', reason='cited_row_not_identified', text='The cited filing year does not single out one row for this establishment ID.')
+    cited_r = receipt(site, orgs, cited[0][0], kind, cited[0][1], cutoff, site['employee_band_site'])
+    if cited_r['status'] not in ('MATCHES', 'CONTRADICTS') and cited_r['reason'] != 'stale_over_10_years':
+        return cited_r
+    binding = [r for r in (receipt(site, orgs, h[0], kind, h[1], cutoff, site['employee_band_site']) for h in hits) if r['status'] in ('MATCHES', 'CONTRADICTS')]
+    if not binding:
+        return cited_r
+    newest = max(binding, key=lambda r: r['date'])
+    return dict(newest, text=f"Cited row dated {cited_r['date']}. Newest binding filing: " + newest['text'])
 
 
 def coverage(R, keys, store=STORE):
-    """-> (receipts {'table|id': [receipt]}, blocks {reason: [keys]}, counts {class: {status: n}})."""
+    """-> (receipts {'table|id': [receipt]}, not_inspected classes {class: [keys]}, counts {class: {status: n}}, ni {'table|id': {fields, children}}).
+    A class with no replayer is NOT_INSPECTED (owner ruling 2026-11-24 15:15): counted, never a receipt, never unconfirmed."""
     exp = expected(R, keys)
     cutoff = f"{int(R.git('show', '-s', '--format=%cs', R.at).strip()[:4]) - YEARS_BACK}{R.git('show', '-s', '--format=%cs', R.at).strip()[4:]}"
     sites = {r['site_id']: r for r in R.rows('sites')}
@@ -171,7 +208,7 @@ def coverage(R, keys, store=STORE):
     insp_ids = {m[1] for x in exp if x['cls'] == 'band:osha_inspection' and (m := re.search(r'(?:id=|OSHA inspection )(\d{6,})', x['ev']['source_ref'] + ' ' + x['ev']['claim_detail']))}
     ita_hits, ita_problems = scan(store, ita_files(store), 'establishment_id', ita_ids) if ita_ids else ({}, {})
     insp_hits, insp_problems = scan(store, inspection_files(store), 'activity_nr', insp_ids) if insp_ids else ({}, {})
-    receipts, blocks, counts = defaultdict(list), defaultdict(list), defaultdict(Counter)
+    receipts, ni_classes, counts, ni = defaultdict(list), defaultdict(list), defaultdict(Counter), defaultdict(lambda: dict(fields=set(), children=set()))
     for x in exp:
         cls, k, ev = x['cls'], x['key'], x['ev']
         rid = f'R{len(receipts[f"{k[0]}|{k[1]}"]) + 1}'
@@ -183,24 +220,21 @@ def coverage(R, keys, store=STORE):
             if site is None:
                 out = dict(status='UNRESOLVED', reason='org_grain_band_not_replayable', text='This band is held at the organization; a single establishment filing cannot settle it.')
             else:
-                ita = cls == 'band:osha_ita'
-                m = re.search(r'establishment_?id[ =:]*(\d+)' if ita else r'(?:id=|OSHA inspection )(\d{6,})', ev['source_ref'] + ' ' + ev['claim_detail'], re.I)
-                hits = (ita_hits if ita else insp_hits).get(m[1], []) if m else []
-                problems = ita_problems if ita else insp_problems
-                loc = re.search(r'(raw/\S+?\.csv)@(\d+)', ev['source_ref'])
-                if not m and loc:
-                    found, why = locator_row(store, loc[1], int(loc[2]))
-                    hits, problems = ([found] if found else []), ({loc[1]: why} if why else {})
-                if not hits:
-                    why = next(iter(problems.values()), 'filing_row_not_found_in_store') if problems and not hits else 'filing_row_not_found_in_store'
-                    out = dict(status='UNRESOLVED', reason=why, text=f'The cited filing row was not located in the sealed store ({why}).')
-                else:
-                    best = max(hits, key=lambda h: h[0].get('year_filing_for') or h[0].get('open_date') or '')
-                    out = receipt(site, orgs, best[0], 'osha_ita' if ita else 'osha_inspection', best[1], cutoff, site['employee_band_site'])
-        if out is None:  # no replayer for this class: block, never an UNRESOLVED receipt
-            blocks[cls].append(k)
-            counts[cls]['no_replayer'] += 1
+                out = band_receipt(site, orgs, ev, cls == 'band:osha_ita', ita_hits, insp_hits, ita_problems, insp_problems, store, cutoff)
+        if out is None:  # no replayer for this class: reported as not inspected, never as a receipt and never as unconfirmed
+            ni_classes[cls].append(k)
+            counts[cls]['not_inspected'] += 1
+            key = f'{k[0]}|{k[1]}'
+            if cls.startswith('registry:'):
+                ni[key]['children'].add('registry_links')
+            elif cls == 'naics:code_assignment':
+                ni[key]['children'].add('code_assignments')
+            elif cls.startswith('naics'):
+                ni[key]['fields'].update(NAICS_FIELDS)
+            else:
+                ni[key]['fields'].add(x['field'])
             continue
         receipts[f'{k[0]}|{k[1]}'].append(dict(out, id=rid, cls=cls, field=x['field']))
         counts[cls][out['status']] += 1
-    return dict(receipts), {'no_replayer:' + c: v for c, v in blocks.items()}, {c: dict(v) for c, v in sorted(counts.items())}
+    ni = {k: dict(fields=sorted(v['fields']), children=sorted(v['children'])) for k, v in ni.items()}
+    return dict(receipts), dict(ni_classes), {c: dict(v) for c, v in sorted(counts.items())}, ni

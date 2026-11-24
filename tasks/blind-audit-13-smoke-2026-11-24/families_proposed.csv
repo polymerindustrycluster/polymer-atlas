@@ -109,3 +109,8 @@ spaghetti-verification-wave1-promotion,uncertain,"commit 5977ffcfb 2026-10-28; d
 spaghetti-wayne-medina-staging,uncertain,"commit 5e24ec114 2026-10-28; direct push, no PR; journal not consulted"
 tri-national/PKT-031,uncertain,"commit 14731bca2 2026-10-30; direct push, no PR; journal not consulted"
 tri-national/PKT-034,uncertain,"commit 14731bca2 2026-10-30; direct push, no PR; journal not consulted"
+atlas-L1-reverify-archive,uncertain,"commit 6cac2ff43 2026-11-06; direct push, no PR; journal not consulted"
+atlas-L14-equipment-wave2,uncertain,"commit e22cfb97c 2026-11-06; direct push, no PR; journal not consulted"
+atlas-archive-tranche3,uncertain,commit 5e768b6e4 2026-11-21; PR #446 branch agent/spaghetti/archive-tranche3-2026-11-21 names no harness
+atlas-w16-archive,uncertain,"commit ab46bb735 2026-11-17; direct push, no PR; journal not consulted"
+unknown,uncertain,the label is the word unknown: no commit can be traced to it

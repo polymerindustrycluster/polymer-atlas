@@ -723,3 +723,11 @@ The amended audit 13 protocol (PR #554) left four choices open. The owner answer
 4. **Polymer relevance.** A reader judges only whether the record, at its grain, is in or out of scope under the SCHEMA ring tests and exclusions. A different ring number is not an error.
 
 Decided by the repo owner in session, 2026-11-24 13:13, by multiple choice. All four were the recommended option.
+
+## 2026-11-24 · Owner rulings 15:15
+
+Decided by the repo owner in session, 2026-11-24 15:15, by multiple choice. All three were the recommended option.
+
+1. **HQ county stays a core field.** An organization's `hq_county` is judged and gates the audit 13 smoke like `county`.
+2. **Report filed values with no replayer as not inspected.** A filed value whose class has no replayer (PPP and other size bands, filing NAICS, every registry class, and a NAICS value whose source name is blank or withheld) no longer blocks preflight or packet issuance. It is reported by field as NOT_INSPECTED, with counts: never as checked and never as unconfirmed. The reader packet says it was not inspected. Classes with a replayer (OSHA ITA, OSHA inspection, Form 5500 lead-only) keep their receipts. Unknown builder family, an unapproved leak flag and a missing core-field dependency still block. `tasks/blind-audit-13-protocol-2026-11-24/PROTOCOL.md` carries the amended replay paragraph.
+3. **The web re-read scales by a cheap run.** Scripted fetch and passage search, one short reader call per owner, 50 owners first (about 8M input tokens), then about 47M if the batch holds at 20% or better.

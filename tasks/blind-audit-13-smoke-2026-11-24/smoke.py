@@ -26,16 +26,16 @@ from packets import draw  # noqa: E402  (audit 12 draw.py: GitReader, build_fram
 import reading  # noqa: E402
 import replays  # noqa: E402
 
-SMOKE_N = 40
+SMOKE_N = reading.SMOKE_N
 PIC18 = 'PIC18_RECORDS'
 PROVIDERS = ('astra', 'hydrogen', 'sonnet')
 FAMILY_OF_PROVIDER = dict(astra='openai', hydrogen='google', sonnet='anthropic')
 PLANTS_PER_PROVIDER = 3
 CHECK_P = 0.15
 FAMILIES = {'anthropic', 'openai', 'google', 'xai', 'uncertain'}  # uncertain: primary Astra, ALWAYS a Hydrogen second read, no check coin (controller 2026-11-24)
-DEPENDS = {  # judged field -> fields a reader needs beside it (PROTOCOL: dependency inventory)
-    'organizations': {'naics_primary': ('naics_primary_source_type', 'naics_primary_source_name')},
-    'sites': {'naics_primary': ('naics_primary_source_type',)}}
+DEPENDS = {  # a populated core field needs the locality shown beside it (a missing one blocks). NAICS source gaps are NOT_INSPECTED, not blocks.
+    'sites': {'street_address': ('city', 'state'), 'county': ('state',)},
+    'organizations': {'hq_county': ('hq_city',)}}
 SCRIPTS = ('smoke.py', 'reading.py', 'replays.py', 'READER_INSTRUCTIONS.md')
 AUDIT12 = ROOT / 'tasks/blind-audit-12-protocol-2026-11-23'
 
@@ -144,18 +144,24 @@ def builder_labels(R, keys):
             k = (t, r[draw.ID_COL[t]])
             if k in want:
                 labels[k].add(r['created_by'])
+    ev_key = {}
     for r in R.rows('evidence'):
-        if (r['record_table'], r['record_id']) in want:
-            labels[r['record_table'], r['record_id']].add(r['created_by'])
+        ev_key[r['evidence_id']] = (r['record_table'], r['record_id'])
+        if ev_key[r['evidence_id']] in want:
+            labels[ev_key[r['evidence_id']]].add(r['created_by'])
     for t, parents in packets.CHILDREN.items():
         for r in R.rows(t):
             if 'created_by' not in r:
                 continue
             for f in parents:
                 if r[f]:
-                    owner = 'sites' if f == 'site_id' else ('ecosystem' if r[f] in ecosystem else 'organizations') if f == 'org_id' else None
-                    if owner and (owner, r[f]) in want:
+                    owner = packets.LINKS[f]
+                    owner = 'ecosystem' if owner == 'organizations' and r[f] in ecosystem else owner
+                    if (owner, r[f]) in want:
                         labels[owner, r[f]].add(r['created_by'])
+    for r in R.rows('archive_links'):
+        if ev_key.get(r['evidence_id']) in want:
+            labels[ev_key[r['evidence_id']]].add(r['created_by'])
     for path in R.git('ls-tree', '-r', '--name-only', R.at, 'tasks/').splitlines():
         if path.endswith('/CLAIMS_CHECKED.csv'):
             folder = path.split('/')[1]
@@ -204,6 +210,8 @@ def label_evidence(label, at, root=ROOT):
     import os, subprocess
     env = {k: v for k, v in os.environ.items() if k not in ('GH_TOKEN', 'GITHUB_TOKEN')}
     git = lambda *a: subprocess.run(['git', *a], cwd=root, capture_output=True, text=True).stdout
+    if label.strip().lower() == 'unknown':
+        return 'uncertain', 'the label is the word unknown: no commit can be traced to it'
     where = ('tasks/' + label[7:]) if label.startswith('repair:') else 'data'
     needle = '' if label.startswith('repair:') else label
     out = (git('log', '--reverse', '--format=%H%x09%ad%x09%s', '--date=short', '--', where) if not needle else git('log', '-S' + needle, '--reverse', '--format=%H%x09%ad%x09%s', '--date=short', '--', where)).splitlines()
@@ -243,7 +251,7 @@ def cmd_labels(a):
 
 
 # ---------------------------------------------------------------- packets
-def packet_rows(R, entries, approved=frozenset(), ids=None):
+def packet_rows(R, entries, approved=frozenset(), ids=None, candidates=None):
     """Render and scan one packet per entry with audit 12's own builder. -> (rows, masked cells per row, problems per entry)."""
     head = packets.Head(R)
     out, problems = [], {}
@@ -256,6 +264,13 @@ def packet_rows(R, entries, approved=frozenset(), ids=None):
             packets.leak_scan([row], {bid: allowed}, approved=approved)
             out.append((e, row, masked))
         except (ValueError, KeyError) as exc:
+            if candidates is not None and 'row' in locals() and isinstance(exc, ValueError):
+                hits = set()
+                try:
+                    packets.leak_scan([row], {bid: allowed}, approved=approved, context_candidates=hits)
+                except ValueError:
+                    pass
+                candidates.update(hits)
             problems[(e['table'], e['record_id'])] = re.sub(r'A13-\d+|[A-Z]+-\d{4,}', '#', str(exc))[:90] or type(exc).__name__
     return out, problems
 
@@ -295,11 +310,10 @@ def cmd_preflight(a):
         if why:
             blocks[why].append(k)
         routes[route(fams) or 'blocked'] += 1
-    receipts, rblocks, rcounts = replays.coverage(R, keys, a.store)
-    for reason, ks in rblocks.items():
-        blocks[reason] += ks
+    receipts, ni_classes, rcounts, _ = replays.coverage(R, keys, a.store)
     approved = read_approved(a.approved)
-    built, problems = packet_rows(R, [dict(table=t, record_id=i) for t, i in keys], approved)
+    leak_candidates = set()
+    built, problems = packet_rows(R, [dict(table=t, record_id=i) for t, i in keys], approved, candidates=leak_candidates)
     for k, why in problems.items():
         blocks['packet:' + why].append(k)
     withheld = Counter(re.sub(r'.*/', '', c) for _, _, masked in built for c in masked)
@@ -308,17 +322,19 @@ def cmd_preflight(a):
     put(out / 'routes.csv', draw.csv_text([dict(table=t, record_id=i, families=';'.join(sorted(fam_of[t, i])), route=route(fam_of[t, i])) for t, i in keys],
                                           ['table', 'record_id', 'families', 'route']))
     put(out / 'replay_receipts.json', jdump(receipts))
+    put(out / 'leak_candidates.csv', draw.csv_text([dict(zip(packets.CANDIDATE_FIELDS, c)) for c in sorted(leak_candidates)], packets.CANDIDATE_FIELDS))
     put(out / 'blocks.csv', draw.csv_text([dict(reason=r, table=t, record_id=i) for r, ks in sorted(blocks.items()) for t, i in ks], ['reason', 'table', 'record_id']))
     summary = dict(at=R.at, frame_digest=receipt['frame_digest'], frame=receipt, routes=routes, unresolved_labels=dict(label_hits.most_common()),
                    families_file_sha256=sha(Path(a.families).read_bytes()) if a.families else None, approved_files=[sha(Path(p).read_bytes()) for p in a.approved],
-                   replay_coverage=rcounts, packets_built=len(built), packets_blocked=len(problems), withheld_judged_cells=dict(withheld),
+                   replay_coverage=rcounts, not_inspected_filed_claims={c: len(v) for c, v in sorted(ni_classes.items())}, store=str(a.store), routes_sha256=sha((out / 'routes.csv').read_bytes()),
+                   leak_candidate_cells=len(leak_candidates), packets_built=len(built), packets_blocked=len(problems), withheld_judged_cells=dict(withheld),
                    blocking_records_by_reason={r: len(set(ks)) for r, ks in sorted(blocks.items())}, blocking_records=len({k for ks in blocks.values() for k in ks}),
                    unplaced_could_be_pic18=len(unplaced), scripts=script_hashes())
     summary['status'] = 'PASS' if not summary['blocking_records'] and not unplaced else 'BLOCKED'
     put(out / 'preflight_receipt.json', jdump(summary))
     print(f"preflight at {R.at[:12]}: {len(keys)} records, digest {receipt['frame_digest'][:16]}")
     print('routes:', dict(routes), '| packets built', len(built), 'blocked', len(problems), '| withheld judged cells', dict(withheld))
-    print('replay coverage (class: status counts):')
+    print('replay coverage (class: status counts; not_inspected = no replayer, reported not blocked):')
     for c, v in sorted(rcounts.items()):
         print(f'  {c}: {v}')
     if label_hits:
@@ -363,12 +379,15 @@ def cmd_draw(a):
         assert sha(frame_text.encode()) == receipt['frame_digest'], 'frame.csv differs from the preflight receipt'
         routes = {(r['table'], r['record_id']): r for r in csv.DictReader(open(pre / 'routes.csv', newline=''))}
         ids = sorted(routes)
+        assert sha((pre / 'routes.csv').read_bytes()) == receipt['routes_sha256'], 'routes.csv differs from the preflight receipt'
+        assert set(ids) == {(r['table'], r['record_id']) for r in csv.DictReader(io.StringIO(frame_text))} and len(ids) == receipt['frame']['records'], 'routes.csv does not cover exactly the sealed frame'
+        assert a.n == SMOKE_N, 'the sealed smoke is 40 records'
         assert len(ids) >= SMOKE_N + 3 * PLANTS_PER_PROVIDER * 2, 'frame too small for the smoke and its plant pools'
         real = sorted(ids, key=lambda k: keyed(secret, 'smoke', '|'.join(k)))[:a.n]
         forced = {k: routes[k]['route'] for k in real}
         fam_of = {k: set(filter(None, routes[k]['families'].split(';'))) for k in ids}
-        inputs.update(preflight_receipt_sha256=sha((pre / 'preflight_receipt.json').read_bytes()), frame_digest=receipt['frame_digest'],
-                      routes_sha256=sha((pre / 'routes.csv').read_bytes()))
+        inputs.update(preflight_receipt_sha256=sha((pre / 'preflight_receipt.json').read_bytes()), frame_digest=receipt['frame_digest'], routes_sha256=receipt['routes_sha256'],
+                      families_file_sha256=receipt['families_file_sha256'], approved_files=sorted(receipt['approved_files']), store=receipt['store'])
         pl = make_plants(R, secret, ids, set(real), fam_of)
     sample = [dict(kind='real', table=t, record_id=i, provider=forced[t, i], plant_field='', donor_record_id='') for t, i in real]
     sample += [dict(kind='plant', table=p['table'], record_id=p['record_id'], provider=p['provider'], plant_field=p['field'], donor_record_id=p['donor_record_id']) for p in pl]
@@ -392,25 +411,45 @@ def assert_unique(ids):
     assert not dup, f'duplicate record ID refused: {dup[:3]}'
 
 
+PLANT_PREFERRED = ('street_address', 'county', 'hq_county', 'legal_name', 'site_name', 'hq_city', 'city', 'zip')  # core and locality fields first
+
+
 def make_plants(R, secret, ids, real, fam_of):
-    """3 plants per participating reader provider, each from a record eligible for that provider and outside the real sample.
-    Reuses draw.plants (a same-table, other-record value for one judged field) with a keyed seed per provider."""
+    """3 plants per participating reader provider, each from a record eligible for that provider (its family did not build it) and outside the real
+    sample. Same idea as draw.plants (one judged field swapped for another record's differing value, in the packet only), forked to try
+    the core and locality fields first: a reader can settle those from the cited pages. Order is keyed per provider."""
     values = {(t, r[draw.ID_COL[t]]): r for t in ('organizations', 'ecosystem', 'sites') for r in R.rows(t)}
     used, out = set(real), []
     for p in PROVIDERS:
         eligible = [k for k in sorted(ids, key=lambda k: keyed(secret, 'plantpool|' + p, '|'.join(k))) if k not in used and FAMILY_OF_PROVIDER[p] not in fam_of[k]]
-        pool = [dict(stratum=PIC18, table=t, record_id=i) for t, i in eligible[:60]]
-        got = draw.plants(keyed(secret, 'plant', p), R.at, pool, values, per_stratum=PLANTS_PER_PROVIDER)
+        pool, got = eligible[:60], []
+        for fields in ('preferred', 'any'):
+            for k in pool:
+                if len(got) == PLANTS_PER_PROVIDER:
+                    break
+                if k in {(g['table'], g['record_id']) for g in got}:
+                    continue
+                row = values[k]
+                cols = [c for c in PLANT_PREFERRED if c in row] if fields == 'preferred' else sorted(c for c, kind in draw.FIELD_CLASS[k[0]].items() if kind == 'J' and c not in ('status', 'verification_tier'))
+                for f in cols:
+                    donor = next((d for d in pool if d[0] == k[0] and d != k and values[d].get(f) not in ('', None, row.get(f))), None)
+                    if row.get(f) and donor:
+                        got.append(dict(stratum=PIC18, table=k[0], record_id=k[1], field=f, donor_record_id=donor[1], provider=p))
+                        break
         assert len(got) == PLANTS_PER_PROVIDER, f'no usable plant pool for {p}'
-        for g in got:
-            used.add((g['table'], g['record_id']))
-            out.append(dict(g, provider=p))
+        used |= {(g['table'], g['record_id']) for g in got}
+        out += got
     return out
 
 
 # ---------------------------------------------------------------- fetch / run / score
 def cmd_fetch(a):
-    return reading.fetch_stage(Path(a.draw), Path(a.cache), load, packet_rows, DEPENDS, a.skip_blocked)
+    receipt = json.loads((Path(a.draw) / 'draw_receipt.json').read_text())
+    inputs = receipt['inputs']
+    if 'preflight_receipt_sha256' in inputs:  # the sealed inputs carry forward: same approvals, same store
+        assert sorted(sha(Path(p).read_bytes()) for p in a.approved) == inputs['approved_files'], 'approval files differ from the sealed preflight'
+        assert str(a.store) == inputs['store'], 'store path differs from the sealed preflight'
+    return reading.fetch_stage(Path(a.draw), Path(a.cache), load, packet_rows, read_approved(a.approved), a.store, a.skip_blocked)
 
 
 def cmd_run(a):
@@ -430,9 +469,10 @@ def main(argv=None):
     f = s.add_parser('labels'); f.add_argument('--at', required=True); f.add_argument('--preflight', required=True); f.add_argument('--out', required=True)
     f = s.add_parser('draw'); f.add_argument('--at', required=True); f.add_argument('--out', required=True); f.add_argument('--secret-file', required=True)
     f.add_argument('--preflight'); f.add_argument('--records'); f.add_argument('--n', type=int, default=SMOKE_N)
-    f = s.add_parser('fetch'); f.add_argument('--draw', required=True); f.add_argument('--cache', required=True); f.add_argument('--skip-blocked', action='store_true', help='known-answer run only')
+    f = s.add_parser('fetch'); f.add_argument('--draw', required=True); f.add_argument('--cache', required=True); f.add_argument('--skip-blocked', action='store_true', help='explicit-list fixture only')
+    f.add_argument('--approved', action='append', default=[]); f.add_argument('--store', type=Path, default=replays.STORE)
     f = s.add_parser('run'); f.add_argument('--draw', required=True); f.add_argument('--cache', required=True); f.add_argument('--out', required=True)
-    f.add_argument('--stop-at', type=int, default=3); f.add_argument('--window', type=int, default=3); f.add_argument('--max-tokens-m', type=float, default=0)
+    f.add_argument('--stop-at', type=int, default=reading.STOP_AT); f.add_argument('--window', type=int, default=3); f.add_argument('--max-tokens-m', type=float, default=0)
     f = s.add_parser('score'); f.add_argument('--run', required=True)
     a = p.parse_args(argv)
     if a.cmd == 'draw' and bool(a.preflight) == bool(a.records):
