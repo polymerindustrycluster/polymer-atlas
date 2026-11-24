@@ -266,5 +266,13 @@ class ChangeFeedTests(unittest.TestCase):
                 self.assertEqual(before, {p.name: p.read_bytes() for p in out.iterdir()})
 
 
+class GeneratedTables(unittest.TestCase):
+    def test_generated_reference_tables_are_not_feed_tables(self):
+        for path in ("data/value_basis.csv", "data/ipeds_completions.csv", "data/ipeds_programs.csv"):
+            self.assertIsNone(feed.table_of(path), path)
+        with self.assertRaises(ValueError):
+            feed.table_of("data/unknown_table.csv")
+
+
 if __name__ == "__main__":
     unittest.main()

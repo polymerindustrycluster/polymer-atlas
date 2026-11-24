@@ -57,6 +57,7 @@ VENDOR_LIBS = ("3d-force-graph", "d3", "graphology", "graphology-library", "leaf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from regions import PIC18, JOBSOHIO_REGION, REGION_LABEL  # noqa: E402  (AGENTS.md section 8)
+import value_basis  # noqa: E402  (SCHEMA 4.24: per-value basis labels; withheld values never reach a page)
 PIC12 = PIC18  # the reporting region: PIC-18 since the owner ruling of 2026-11-03 (name kept for callers)
 
 RINGS = {
@@ -486,6 +487,12 @@ class Atlas:
         self.orgs = {r["org_id"]: r for r in rows_of(con, "organizations")}
         self.eco = {r["org_id"]: r for r in rows_of(con, "ecosystem")}
         self.sites = rows_of(con, "sites")
+        # [v1.20.1] SCHEMA 4.24: a value whose basis is not_found_pending_refetch is withheld from every page; the label of
+        # each other value shows beside it. The record tables are untouched: only this in-memory copy loses the value.
+        self.basis = {(r["record_table"], r["record_id"], r["field"], r["value"]): r["basis"] for r in rows_of(con, "value_basis")}
+        withheld = {k for k, b in self.basis.items() if b == value_basis.WITHHELD}
+        value_basis.strip_withheld(self.orgs.values(), "organizations", "org_id", withheld)
+        value_basis.strip_withheld(self.sites, "sites", "site_id", withheld)
         self.programs = rows_of(con, "programs")
         self.people = rows_of(con, "people")
         # [v1.9] equipment (SCHEMA 4.19) and people engagement (4.20); live rows only (no withdrawn_date)
@@ -521,6 +528,25 @@ class Atlas:
         for r in self.rels:
             if r.get("relationship_type") == "merged_into":
                 self.merged_into[r["from_org_id"]] = r["to_org_id"]
+
+    def label_of(self, table, rid, field, token):
+        return value_basis.LABELS.get(self.basis.get((table, rid, field, token), ""), "")
+
+    def best_labels(self, field, tokens, origins):
+        """{token: label} where a token has several supplying records: the strongest basis among them."""
+        out = {}
+        for t in tokens:
+            kinds = [self.basis.get((tb, rid, field, t)) for tb, rid in origins]
+            best = max((k for k in kinds if k in value_basis.RANK), key=value_basis.RANK.get, default=None)
+            if best:
+                out[t] = value_basis.LABELS[best]
+        return out
+
+    def labelled(self, table, rid, field, value):
+        """A multi-value cell as html: each token's readable name, then its basis label where one exists."""
+        return ", ".join(esc(vocab_label(t)) + (f' <span class="muted small">({esc(self.label_of(table, rid, field, t))})</span>'
+                                                 if self.label_of(table, rid, field, t) else "")
+                         for t in vals(value))
 
     def effective_ring(self, site):
         if nonempty(site.get("ring_primary")):
@@ -1989,6 +2015,9 @@ def directory_rows(a):
                 return t, "site"
             t = known(vals(rec.get(org_field)))
             return (t, "org record") if t else ([], "")
+        def picked_labels(field, picked):   # the label of each shown token, from the records that supplied it
+            origins = [("sites", s["site_id"]) for s in sites] if picked[1] == "site" else [("organizations", oid)]
+            return a.best_labels(field, picked[0], origins)
         rows.append({
             "id": oid, "name": rec.get("legal_name") or oid, "website": safe_href(rec.get("website")) or "",
             "hq_city": rec.get("hq_city") or rec.get("city") or "", "hq_state": rec.get("hq_state") or rec.get("state") or "",
@@ -1997,6 +2026,7 @@ def directory_rows(a):
             "tiers": sorted({s["verification_tier"] for s in sites}),
             "proc": pick("processes", "processes"), "mat": pick("materials", "materials"),
             "mkt": pick("markets_served", "markets_served"), "band": pick("employee_band_site", "employee_band_ohio"),
+            "proc_lbl": picked_labels("processes", pick("processes", "processes")), "mkt_lbl": picked_labels("markets_served", pick("markets_served", "markets_served")),
             "own": known(vals(rec.get("ownership_type"))), "member": rec.get("pic_member") == "true",
             "evidence": org_evidence_count(a, oid), "status": rec.get("status") or "", "org_tier": rec.get("verification_tier") or "",
         })
@@ -2072,11 +2102,12 @@ def facet_html(rows, key, heading, open_):
             f'<div class="opts">{items}</div></details>')
 
 
-def cell_text(tokens, basis, always_basis=False):
-    """A value for the list: readable vocabulary, with its basis when it comes from the organization's own record."""
+def cell_text(tokens, basis, always_basis=False, labels=None):
+    """A value for the list: readable vocabulary, with its basis when it comes from the organization's own record, and the
+    per-value label (SCHEMA 4.24) after each token that has one."""
     if not tokens:
         return "unknown"
-    text = vocab(";".join(tokens))
+    text = ", ".join(vocab_label(t) + (f" ({labels[t]})" if labels and t in labels else "") for t in tokens)
     return f"{text} ({basis})" if basis and (always_basis or basis == "org record") else text
 
 
@@ -2091,7 +2122,7 @@ def directory_json(rows):
                                          f"tier {r['org_tier']}" if r["org_tier"] else ""] if x),
             "tok": {k: row_tokens(r, k) for k, _ in DIRECTORY_FACETS if k != "mem"},   # the member filter is derived in directory.js from "member"
             "show": {"ring": ", ".join(r["rings"]) or "unknown", "tier": ", ".join(r["tiers"]),
-                     "proc": cell_text(*r["proc"]), "mat": cell_text(*r["mat"]), "mkt": cell_text(*r["mkt"]),
+                     "proc": cell_text(*r["proc"], labels=r["proc_lbl"]), "mat": cell_text(*r["mat"]), "mkt": cell_text(*r["mkt"], labels=r["mkt_lbl"]),
                      "band": cell_text(*r["band"], always_basis=True), "own": cell_text(r["own"], "")}})
     return {"rows": out}
 
@@ -2105,11 +2136,15 @@ def directory_csv(rows, base_url):
     w.writerow(["org_id", "organization", "website", "hq_city", "hq_state", "pic18_counties", "pic18_site_rows", "rings",
                 "site_tiers", "processes", "processes_basis", "materials", "materials_basis", "markets", "markets_basis",
                 "employee_band", "employee_band_basis", "ownership", "public_member_list", "evidence_rows",
-                "org_record_status", "org_record_tier", "atlas_page", "pic18_site_addresses"])
+                "org_record_status", "org_record_tier", "atlas_page", "pic18_site_addresses",
+                "processes_value_basis", "markets_value_basis"])
 
     def safe(v):   # spreadsheets run a leading = + @ - as a formula
         v = str(v)
         return "'" + v if re.match(r"[=+@]|-(?!\d)", v) else v
+
+    def basis_cell(labels):   # SCHEMA 4.24: each shown value's label; a value no bound row names carries none
+        return "; ".join(f"{t.replace('_', ' ')}: {label}" for t, label in sorted(labels.items()))
 
     def cell(tokens):   # readable vocabulary, as on the page
         return "; ".join(t.replace("_", " ") for t in tokens) if tokens else "unknown"
@@ -2121,7 +2156,7 @@ def directory_csv(rows, base_url):
             cell(r["mkt"][0]), r["mkt"][1] or "unknown", cell(r["band"][0]), r["band"][1] or "unknown",
             cell(r["own"]), "yes" if r["member"] else "", r["evidence"],
             r["status"] or "unknown", r["org_tier"] or "unknown", f"{base_url}orgs/{safe_id(r['id'])}.html",
-            "; ".join(r["addr"])]])
+            "; ".join(r["addr"]), basis_cell(r["proc_lbl"]), basis_cell(r["mkt_lbl"])]])
     return out.getvalue()
 
 
@@ -2227,7 +2262,7 @@ def directory_static_pages(ctx, rows):
                 f'<tr><th scope="row"><a href="../orgs/{esc(safe_id(r["id"]))}.html">{esc(r["name"])}</a>'
                 f'{badge if r["member"] else ""}</th><td>{"<br>".join(esc(x) for x in r["addr"])}</td>'
                 f'<td>{esc(", ".join(r["rings"]) or "unknown")}</td><td>{esc(", ".join(r["tiers"]))}</td>'
-                f'<td>{esc(cell_text(*r["proc"]))}</td><td>{esc(cell_text(*r["band"], always_basis=True))}</td></tr>' for r in part)
+                f'<td>{esc(cell_text(*r["proc"], labels=r["proc_lbl"]))}</td><td>{esc(cell_text(*r["band"], always_basis=True))}</td></tr>' for r in part)
             nav = " · ".join(x for x in [
                 f'<a href="{names[n - 2]}">Previous {DIRECTORY_PAGE}</a>' if n > 1 else "",
                 f'<a href="{names[n]}">Next {DIRECTORY_PAGE}</a>' if n < pages else "",
@@ -2800,9 +2835,9 @@ def site_article(s, a, open_=False):
         ("Operating status", status_badge(s.get("operating_status"))),
         ("Verification tier", tier_badge(s.get("verification_tier"))),
         ("Last verified", esc(s.get("last_verified"))),
-        ("NAICS (site)", naics), ("Processes", esc(vocab(s.get("processes")))),
+        ("NAICS (site)", naics), ("Processes", a.labelled("sites", s["site_id"], "processes", s.get("processes"))),
         ("Materials", esc(vocab(s.get("materials")))),
-        ("Markets served", esc(vocab(s.get("markets_served")))),
+        ("Markets served", a.labelled("sites", s["site_id"], "markets_served", s.get("markets_served"))),
         ("Site employee band", esc(s.get("employee_band_site"))),
     ])
     place = ", ".join(x for x in [s.get("city"), s.get("state")] if nonempty(x))
@@ -2871,19 +2906,22 @@ def tombstone_banner(rec, successor_id, a, kind):
     return ""
 
 
-def org_field_html(org, sites, field):
+def org_field_html(a, org, sites, field):
     if not sites:
-        return esc(vocab(org.get(field)))
+        return a.labelled("organizations", org["org_id"], field, org.get(field))
     items = []
     for token, sources in org_field_sources(org, sites, field).items():
         origins = []
         for site in sources:
+            table, rid = ("organizations", org["org_id"]) if site is None else ("sites", site["site_id"])
+            label = a.label_of(table, rid, field, token)
+            tag = f" · {esc(label)}" if label else ""
             if site is None:
-                origins.append("Company row")
+                origins.append("Company row" + tag)
                 continue
             tier = site.get("verification_tier")
             detail = f" · {TIERS[tier][0].lower()}" if tier in ("C", "U") else ""
-            origins.append(f'{esc(site.get("site_name") or site["site_id"])} {tier_badge(tier)}{detail}')
+            origins.append(f'{esc(site.get("site_name") or site["site_id"])} {tier_badge(tier)}{detail}{tag}')
         items.append(f'<div>{esc(vocab(token))} <span class="muted small">({" / ".join(origins)})</span></div>')
     return "".join(items)
 
@@ -2938,9 +2976,9 @@ def build_org_page(ctx, o):
         ("Parent organization", parent), ("Ultimate parent (as named)", ult),
         ("Year founded", esc(o.get("year_founded"))), ("Stock ticker", esc(o.get("stock_ticker"))),
         ("Ownership", esc(vocab(o.get("ownership_type")))),
-        ("Primary NAICS", naics), ("Processes", org_field_html(o, site_rows, "processes")),
-        ("Materials", org_field_html(o, site_rows, "materials")),
-        ("Markets served", org_field_html(o, site_rows, "markets_served")),
+        ("Primary NAICS", naics), ("Processes", org_field_html(a, o, site_rows, "processes")),
+        ("Materials", org_field_html(a, o, site_rows, "materials")),
+        ("Markets served", org_field_html(a, o, site_rows, "markets_served")),
         ("Certifications", esc(vocab(o.get("certifications")))),
         ("Ohio employee band", esc(o.get("employee_band_ohio"))),
         ("Public member list", member_field(o)),
@@ -3147,7 +3185,7 @@ that figure; it is not zero.</p>"""
             f'<td>{a.org_link(s["org_id"], "../orgs/") if a.name_of(s["org_id"]) else esc(parent_name)}</td>'
             f'<td>{esc(str(s.get("street_address") or "").strip() or "Street not recorded")}</td>'
             f'<td>{esc(s.get("city"))}</td><td>{esc(s.get("zip"))}</td><td>{ring_badge(s["_ring"], s["_ring_inherited"])}</td>'
-            f'<td>{esc(vocab(s.get("processes")))}</td><td>{tier_badge(s.get("verification_tier"))}</td></tr>')
+            f'<td>{a.labelled("sites", s["site_id"], "processes", s.get("processes"))}</td><td>{tier_badge(s.get("verification_tier"))}</td></tr>')
     sites_tbl = table_wrap(
         "<table><caption>Site rows (Ohio; this county; operating status active; all tiers)</caption><thead><tr>"
         "<th scope=\"col\">Site</th><th scope=\"col\">Parent organization</th><th scope=\"col\">Street address</th>"
