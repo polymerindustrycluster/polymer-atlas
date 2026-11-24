@@ -83,6 +83,30 @@ The workflows are live in `.github/workflows/`. Edit them there; there is no sec
   store; it is run by the reviewers and recorded in the Review record comment"; the `pr-rules` title then ends "source
   replay NOT RUN in hosted CI". The conclusion is still decided by the other rules.
 
+  **SCHEMA §4.13 structured address routes.** In a map-listing evidence row, use
+  `source_class=platform_category`, `source_ref=<google-places|overture-maps-places> <place ID>`, and
+  `claim_detail=<street>; quote: name: <operator>; street: <street>; city: <city>; state: <US state code>`.
+  The entire `notes` cell is `capture_sha256: <digest>; second_source: <EVD-ID or lead: exact base note>`.
+  A cited evidence row must already be held for the same site. An address quoted from the operator's site must give
+  the street and locality as one address. Held notes can cite a full `Street (per <origin>): <street>` clause or a dated
+  strong EPA FRS facility address note. Google or Overture counts as a different origin only when the note identifies
+  that provider. Other accepted lead origins are OSHA, EPA, Ohio EPA, SBA PPP and SAM.gov. Incomplete or ambiguous
+  provenance is held. The base street must be blank. Keep the listing's city and state and use its exact street in the
+  merge tree. Leave `address_role` empty for the supported provider formats, which give an address without stating
+  its role. A mailing, agent, registered-office or private-looking street cannot qualify.
+
+  The hosted gate compares the quoted fields only. The fill packet pins the raw capture in `INPUTS.sha256`. The
+  lane's `check.py` and reviewing family replay that file from the shared store. For a JSON capture, the gate also
+  offers a local check via `--verify-proofs <base> --map-store <shared store root>`. Store the Google Place JSON or
+  Overture place GeoJSON projection at `raw/map-listings/<provider>/<digest>.json`. It must contain one US address.
+  Capture reads are by exact SHA-256. Parquet inputs are replayed in the fill packet's `check.py`.
+
+  For a filing name variant, append the `(OSHA filing name)` or `(EPA filing name)` marker to the new alias and use
+  `claim_detail=trade_names + <marked alias>; quote: <filing quote>`. Cite a specific filing record in `source_ref`.
+  The gate checks the operator field, the distinctive words of a base-held organization name, parent names, the
+  private-address screen and one base-held street with the exact city and state. It also requires one passing evidence
+  row per marked addition. The second model family checks the original filing and records its verdict on the PR.
+
   **Required since 2026-11-22** (ruleset "main: require validate", id 27269436): `validate`, `pr-rules` and `binding-gate`
   are required status checks and the strict (branch up to date with `main`) policy is on, so the audit gate of AGENTS.md
   section 2a, rule 5 is re-judged against current `main` before a merge. Exactly one check run is named `pr-rules` (the

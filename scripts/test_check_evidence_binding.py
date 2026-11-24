@@ -1339,5 +1339,210 @@ class G8Routes(unittest.TestCase):
         self.assertIn("linked filer", self.replay(row, wrong.encode(), quote, b.norm_space(wrong), idx))
 
 
+class V120Routes(unittest.TestCase):
+    def setUp(self):
+        self.org = dict(org_id="O", legal_name="C4 Harbor Polymers LLC", trade_names="")
+        self.site = dict(site_id="S", org_id="O", city="Valley View", state="OH", zip="44125",
+                         street_address="", notes="")
+        self.head_site = dict(self.site, street_address="160 OH-45")
+        self.head_org = dict(self.org)
+        self.filing = ev("S", "OSHA inspection activity_nr 300000001",
+                         "C4 Harbor Polymers LLC, 160 SR 45, Valley View, OH 44125",
+                         claim="address", eid="EVD-000001", cls="government_filing")
+        self.filing["address_role"] = "physical"
+        self.base_evidence = [self.filing]
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.store = Path(tmp.name)
+
+    def map_row(self, *, provider="google-places", name=None, city="Valley View", street="160 OH-45"):
+        name = name or self.org["legal_name"]
+        if provider == "google-places":
+            raw = dict(id="placeABC", displayName={"text": name},
+                       postalAddress=dict(regionCode="US", administrativeArea="OH",
+                                          locality=city, addressLines=[street]))
+        else:
+            raw = dict(type="Feature", id="placeABC",
+                       properties=dict(theme="places", type="place", names={"primary": name},
+                                       addresses=[dict(freeform=street, locality=city, region="US-OH", country="US")]))
+        body = json.dumps(raw).encode()
+        digest = hashlib.sha256(body).hexdigest()
+        path = self.store / "raw" / "map-listings" / provider / (digest + ".json")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(body)
+        row = ev("S", f"{provider} placeABC", None, claim="address", cls="platform_category", eid="EVD-000002")
+        detail = f"{street}; quote: name: {name}; street: {street}; city: {city}; state: OH"
+        row.update(claim_detail=detail, address_role="", tier_effect="supports_C",
+                   notes=f"capture_sha256: {digest}; second_source: EVD-000001")
+        return row, path
+
+    def run_gate(self, *evs, parents=(), replay=False):
+        base = b.Index([self.site], [self.org, *parents])
+        head = b.Index([self.head_site], [self.head_org, *parents])
+        out = io.StringIO()
+
+        def rows(ref, table):
+            if table == "archive_links.csv":
+                return []
+            return self.base_evidence if ref == "base" else [*self.base_evidence, *evs]
+
+        with (patch.object(b, "resolve_base", return_value="base"),
+              patch.object(b, "rows", side_effect=rows),
+              patch.object(b.Index, "load", side_effect=lambda ref=None: base if ref == "base" else head),
+              contextlib.redirect_stdout(out)):
+            status = b.main(["--verify-proofs", "base"] + (["--map-store", str(self.store)] if replay else []))
+        return status, out.getvalue()
+
+    def test_replayed_listing_and_held_filing_agree_on_route(self):
+        for provider in ("google-places", "overture-maps-places"):
+            with self.subTest(provider=provider):
+                row, _ = self.map_row(provider=provider)
+                for replay in (False, True):
+                    status, output = self.run_gate(row, replay=replay)
+                    self.assertEqual(status, 0, output)
+                    self.assertIn("map_listing_street_bound", output)
+
+    def test_listing_defects_block_admission(self):
+        for change, reason in [
+            ({"name": "Other Operator"}, "map_operator_not_held"),
+            ({"city": "Cleveland"}, "map_city_or_state_differs"),
+            ({"street": "161 OH-45"}, "map_second_street_differs"),
+            ({"street": "160 OH-46"}, "map_second_street_differs"),
+        ]:
+            with self.subTest(change=change):
+                row, _ = self.map_row(**change)
+                self.head_site["street_address"] = row["claim_detail"].partition(";")[0]
+                status, output = self.run_gate(row)
+                self.assertEqual(status, 1, output)
+                self.assertIn(reason, output)
+        self.head_site["street_address"] = "160 OH-45"
+        row, path = self.map_row()
+        for change, reason in [
+            ({"address_role": "mailing"}, "map_address_role"),
+            ({"tier_effect": "supports_B"}, "map_claim_or_ceiling"),
+            ({"claim_detail": row["claim_detail"].replace("160 OH-45;", "999 Main St;", 1)}, "map_street_not_filled_as_listed"),
+        ]:
+            with self.subTest(change=change):
+                status, output = self.run_gate(dict(row, **change))
+                self.assertEqual(status, 1, output)
+                self.assertIn(reason, output)
+        self.site["street_address"] = "160 SR 45"
+        self.assertIn("map_base_street_already_held", self.run_gate(row)[1])
+        self.site["street_address"] = ""
+        self.filing["address_role"] = "mailing"
+        self.assertIn("map_second_source_unbound", self.run_gate(row)[1])
+        self.filing["address_role"] = "physical"
+        for body in (b"invalid", None):
+            if body is None:
+                path.unlink()
+            else:
+                path.write_bytes(body)
+            status, output = self.run_gate(row, replay=True)
+            self.assertEqual(status, 1, output)
+            self.assertIn("map_capture_unreplayable", output)
+
+    def test_listing_requires_an_independent_base_lead(self):
+        row, _ = self.map_row()
+        for origin, reason in [
+            ("Ohio EPA", "map_listing_street_bound"),
+            ("2026-11-14 Google Maps scrape", "map_second_source_same_provider"),
+            ("unknown discovery", "map_second_source_unknown_origin"),
+        ]:
+            with self.subTest(origin=origin):
+                lead = f"Street (per {origin}): 160 State Route 45"
+                self.site["notes"] = lead
+                proposal = dict(row, notes=row["notes"].replace("EVD-000001", f"lead: {lead}"))
+                status, output = self.run_gate(proposal)
+                self.assertEqual(status, 0 if origin == "Ohio EPA" else 1, output)
+                self.assertIn(reason, output)
+        self.site["notes"] = ""
+        self.head_site["notes"] = lead
+        self.assertIn("map_second_source_unbound", self.run_gate(proposal)[1])
+
+    def test_listing_reuses_the_dated_epa_frs_note_shape(self):
+        row, _ = self.map_row()
+        lead = ("Address 2026-10-28 (gov-data pipeline, EPA FRS facility 123456789012, STRONG match): "
+                "160 State Route 45, Valley View, OH 44125")
+        self.site["notes"] = lead + " (the sites schema has no street column, so the street address is recorded here)."
+        row["notes"] = row["notes"].replace("EVD-000001", f"lead: {lead}")
+        status, output = self.run_gate(row)
+        self.assertEqual(status, 0, output)
+        self.assertIn("map_listing_street_bound", output)
+
+    def test_own_site_witness_requires_the_held_domain_and_street(self):
+        row, _ = self.map_row()
+        self.org["website"] = self.head_org["website"] = "https://example.com"
+        self.filing.update(source_class="own_site", source_ref="https://example.com/contact",
+                           claim_detail="quote: Address 160 State Route 45, Valley View, OH 44125")
+        status, output = self.run_gate(row)
+        self.assertEqual(status, 0, output)
+        self.filing["source_ref"] = "https://unrelated.example"
+        self.assertIn("map_second_source_unbound", self.run_gate(row)[1])
+
+    def variant(self, label="C 4 Harbor Polymers Manufacturing Company", agency="OSHA"):
+        self.site["street_address"] = self.head_site["street_address"] = "160 OH-45"
+        source = ("OSHA inspection activity_nr 300000001" if agency == "OSHA"
+                  else "EPA ECHO RCRAInfo handler XXR000000001")
+        addr = "160 State Route 45, Valley View, OH 44125"
+        quote = f"{label}, {addr}" if agency == "OSHA" else f"{label}; {addr}; facility record"
+        row = ev("O", source, quote, table="organizations", eid="EVD-000002", cls="government_filing")
+        self.head_org["trade_names"] = marker = f"{label} ({agency} filing name)"
+        row["claim_detail"] = f"trade_names + {marker}; quote: {quote}"
+        return row
+
+    def test_filing_variant_positive_for_both_agencies(self):
+        for agency in ("OSHA", "EPA"):
+            with self.subTest(agency=agency):
+                status, output = self.run_gate(self.variant(agency=agency))
+                self.assertEqual(status, 0, output)
+                self.assertIn("filing_name_variant_bound", output)
+
+    def test_filing_variant_rejects_parent_and_missing_word(self):
+        for label, reason in [
+            ("C 4 Harbor Polymers Manufacturing Company", "filing_variant_parent_name"),
+            ("C 4 Harbor Manufacturing Company", "filing_variant_distinctive_words_missing"),
+        ]:
+            with self.subTest(label=label):
+                row = self.variant(label)
+                self.org["parent_org_id"] = "P"
+                parent = dict(org_id="P", legal_name="C4 Harbor Polymers Manufacturing LLC")
+                status, output = self.run_gate(row, parents=[parent])
+                self.assertEqual(status, 1, output)
+                self.assertIn(reason, output)
+
+    def test_filing_variant_rejects_unheld_street_mail_and_private_names(self):
+        row = self.variant()
+        detail = row["claim_detail"]
+        for old, new in [("Route 45", "Route 46"), ("Valley View", "Cleveland"), ("160 State Route 45", "PO Box 16")]:
+            with self.subTest(new=new):
+                status, output = self.run_gate(dict(row, claim_detail=detail.replace(old, new)))
+                self.assertEqual(status, 1, output)
+        self.site["street_address"] = ""
+        self.assertIn("filing_variant_site_not_held", self.run_gate(row)[1])
+        self.org["legal_name"] = "Jane Example"
+        row = self.variant("Jane Example LLC")
+        status, output = self.run_gate(row)
+        self.assertEqual(status, 1, output)
+        self.assertIn("filing_variant_private_address_screen", output)
+
+    def test_marked_alias_cannot_bypass_gate_without_evidence(self):
+        self.variant()
+        status, output = self.run_gate()
+        self.assertEqual(status, 1, output)
+        self.assertIn("filing variant addition has no matching evidence row", output)
+
+
+class OhioRouteStreets(unittest.TestCase):
+    def test_state_route_spellings_in_both_directions(self):
+        for form in ("160 OH-45", "160 SR 45", "160 State Route 45"):
+            with self.subTest(form=form):
+                self.assertTrue(b.same_street("160 OH-45", form))
+                self.assertTrue(b.same_street(form, "160 OH-45"))
+                self.assertFalse(b.same_street("160 OH-46", form))
+                self.assertFalse(b.same_street(form, "160 OH-46"))
+                self.assertFalse(b.same_street("160 US-45", form))
+        self.assertFalse(b.same_street("OH-45", "SR 45"))
+
+
 if __name__ == "__main__":
     unittest.main()
