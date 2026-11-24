@@ -106,6 +106,8 @@ python3 scripts/run_tests.py                       # all tests (parallel runner,
 | Dedupe and entity resolution | `## 5.` |
 | Which shard a record goes in | `## Appendix C` (or `atlas.py shard-of`) |
 
+Finding and capturing websites, streets and pages: what exists, what each experiment yielded, what is open, in `docs/ACQUISITION.md`.
+
 Shared own-site cache and quote check: `python3 scripts/site_corpus.py crawl` or `python3 scripts/site_corpus.py rawcheck URL QUOTE` (`--cache-dir` outside the repo); receipts/index and per-group coverage stay in controller storage. Quote presence is not claim support; `wrong_page` and `unfetchable` require review.
 
 For local keyed CSV merges, run `scripts/setup_merge_driver.sh` in each checkout. It registers a Git merge driver in local configuration and attributes; conflicting edits, changed headers, and deletions still require manual resolution and the row-loss guard remains mandatory.
