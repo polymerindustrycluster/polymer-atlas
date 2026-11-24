@@ -69,6 +69,35 @@ class SiteCorpusTests(unittest.TestCase):
                     assert request.call_count == 1
 
 
+    def test_linkedin_is_refused_before_robots_or_page_requests(self):
+        c = Corpus(self.tmp_path)
+        for target in ('https://linkedin.com/company/acme', 'https://WWW.LinkedIn.com./company/acme',
+                       'https://jobs.linkedin.com/', 'https://lnkd.in/123', 'https://linkedin%2ecom/',
+                       'https://r.jina.ai/https://linkedin.com/company/acme'):
+            with self.subTest(target=target), patch.object(c, 'request', return_value=response(code=404)) as request:
+                receipt = c.fetch(target)
+                request.assert_not_called()
+                self.assertEqual(receipt['status'], 'DOMAIN_BLOCKED')
+
+    def test_linkedin_link_remains_navigation(self):
+        link = 'https://www.linkedin.com/company/acme/'
+        parser = Text()
+        parser.feed(f'<a href="{link}">LinkedIn</a>')
+        self.assertEqual(parser.links, [link])
+
+    def test_redirect_to_linkedin_stops_before_destination_request(self):
+        c = Corpus(self.tmp_path)
+        def request_page(target, delay=1):
+            if target.endswith('/robots.txt'):
+                return response(code=404)
+            if target == 'https://example.org/':
+                return response(code=302, location='//www.linkedin.com/company/acme')
+            return response('LinkedIn content')
+        with patch.object(c, 'request', side_effect=request_page) as request:
+            receipt = c.fetch('https://example.org/')
+        self.assertEqual(request.call_count, 2)
+        self.assertEqual(receipt['status'], 'DOMAIN_BLOCKED')
+
     def test_redirect_checks_destination_robots(self):
         tmp_path = self.tmp_path
         c = Corpus(tmp_path); seen = []

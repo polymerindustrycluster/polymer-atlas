@@ -22,7 +22,7 @@ import subprocess
 import tempfile
 import time
 import unicodedata
-from urllib.parse import urljoin, urlsplit, urlunsplit
+from urllib.parse import unquote, urljoin, urlsplit, urlunsplit
 from urllib.robotparser import RobotFileParser
 import xml.etree.ElementTree as ET
 
@@ -72,10 +72,22 @@ class Text(HTMLParser):
 
 
 def url(value):
+    if re.search(r"[\x00-\x20\x7f\\]", value):
+        raise ValueError('Ambiguous URL characters')
     p = urlsplit(value)
     if p.scheme not in ('http', 'https') or not p.hostname or p.username or p.password:
         raise ValueError('Expected an HTTP(S) URL without credentials')
     return urlunsplit((p.scheme.lower(), p.netloc.lower(), p.path or '/', p.query, ''))
+
+
+def linkedin_url(target):
+    parsed = urlsplit(target)
+    host = unquote(parsed.hostname or '').encode('idna').decode().lower().rstrip('.')
+    if host == 'r.jina.ai':
+        # The first path component can contain the URL the relay will request.
+        wrapped = urlsplit(unquote(parsed.path.removeprefix('/')))
+        host = unquote(wrapped.hostname or '').encode('idna').decode().lower().rstrip('.')
+    return any(host == domain or host.endswith('.' + domain) for domain in ('linkedin.com', 'lnkd.in'))
 
 
 def same_page(a, b):
@@ -121,6 +133,8 @@ class Corpus:
 
     def request(self, target, delay=1):
         """L1 curl transport, with redirects handled by fetch so robots gates each hop."""
+        if linkedin_url(target):
+            raise ValueError('LinkedIn requests are blocked')
         with self.lock('host-' + key(urlsplit(target).hostname)) as clock:
             clock.seek(0)
             last = float(clock.read() or 0)
@@ -128,7 +142,7 @@ class Corpus:
             with self.slot(), tempfile.TemporaryDirectory(dir=self.cache) as tmp:
                 clock.seek(0); clock.truncate(); clock.write(str(time.time() + delay)); clock.flush()
                 raw, headers = Path(tmp) / 'raw', Path(tmp) / 'headers'
-                p = subprocess.run(['curl', '-sS', '-A', UA, '--max-time', '25',
+                p = subprocess.run(['curl', '-q', '-sS', '-A', UA, '--max-time', '25',
                                     '--max-filesize', '12000000', '-D', str(headers), '-o', str(raw),
                                     '-w', '%{http_code}', target], capture_output=True, text=True)
                 h = headers.read_text(errors='replace') if headers.exists() else ''
@@ -161,6 +175,8 @@ class Corpus:
 
     def fallback(self, target, delay):
         # A proxy read also consumes the original host's request budget.
+        if linkedin_url(target):
+            raise ValueError('LinkedIn requests are blocked')
         with self.lock('host-' + key(urlsplit(target).hostname)) as clock:
             clock.seek(0)
             time.sleep(max(0, float(clock.read() or 0) - time.time()))
@@ -219,8 +235,13 @@ class Corpus:
         target = url(target)
         robots = robots or urlsplit(target).path == '/robots.txt'
         with self.lock('url-' + key(target)):
+            if linkedin_url(target):
+                return self.save(target, {}, 'DOMAIN_BLOCKED', target, 'direct')
             cached = self.cached(target)
-            if cached: return cached
+            if cached:
+                if linkedin_url(cached['final_url']):
+                    return self.save(target, {}, 'DOMAIN_BLOCKED', cached['final_url'], 'direct')
+                return cached
             current, response = target, {}
             for _ in range(6):
                 allowed, delay = (True, 1) if robots else self.policy(current)
@@ -228,6 +249,8 @@ class Corpus:
                 response = self.request(current, delay)
                 if response['code'] in (301, 302, 303, 307, 308) and response['location']:
                     current = url(urljoin(current, response['location']))
+                    if linkedin_url(current):
+                        return self.save(target, {}, 'DOMAIN_BLOCKED', current, 'direct')
                     # Only robots paths are exempt from a destination robots check.
                     if robots and urlsplit(current).path != '/robots.txt': break
                     continue

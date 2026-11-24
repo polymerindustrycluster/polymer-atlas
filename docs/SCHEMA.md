@@ -1,7 +1,9 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.20.0 — 2026-11-24 (owner rulings 2026-11-24 10:29: §4.24 adds the generated per-value basis table; §4.13 adds the map-listing street route and the filing name-variant rule; §4.4 and §4.5 point to them. No data row changes).
+**Version:** v1.20.2 — 2026-11-24 (organization website admission and LinkedIn request refusal; [owner rulings 12:12](../DECISIONS.md#2026-11-24--owner-rulings-1212)).
+
+Previous: v1.20.0 — 2026-11-24 (owner rulings 2026-11-24 10:29: §4.24 adds the generated per-value basis table; §4.13 adds the map-listing street route and the filing name-variant rule; §4.4 and §4.5 point to them. No data row changes).
 
 Previous: v1.19.8 — 2026-11-23 (§3.1 admits Ring 3 subtype process tokens for Ring 3 organizations and sites, and §4.4 adds process and material other-note columns to organizations).
 
@@ -992,7 +994,7 @@ One record per ultimate controlling organization operating in scope. A Parent ma
 | `employee_band` **[v1.1]** — site-band source precedence: §1 R13 **[v1.7.7]**; | enum §4.4 bands | Nice (Ohio band = MUST if known) | The adopted Tier-2 band field. READING (flagged in the implementation plan): the existing populated column `employee_band_ohio` is this field's Ohio instance and is NOT duplicated by a second column; CRM-banked employee counts land in `employee_band_ohio` as banded values with provenance (see the migration notes). `employee_band_global` remains as defined above. |
 | `ownership_type` **[v1.1]** **[v1.4]** | enum | Nice | `public_company` \| `private_company` \| `private_equity_portfolio` \| `family_owned` \| `employee_owned` \| `nonprofit` \| `government` \| `academic` \| `cooperative` \| `unknown`. Distinct from `entity_type` (legal form): this records control. Only from a primary/authoritative source; never inferred from size or name. (Vocabulary **adopted 2026-10-29 — v1.4**; at v1.1 the adoption named the field, not its values, and the values were carried as proposed until this revision.) |
 | `certifications[]` **[v1.1]** | controlled vocab §3.4 | Nice | Promoted from the §3.4 nice-to-have list to a stored column on organizations. Values only from §3.4; self-disclosed or certificate-evidenced only. |
-| `website` | URL | **MUST** if exists; explicit `none_found` otherwise | Own domain only; a LinkedIn page goes in `sources`, not `website` |
+| `website` | URL | **MUST** if exists; explicit `none_found` otherwise | Own domain only. **[v1.20.2]** A new or changed fill requires a fetched page on the same registrable domain showing both a held organization name and an Ohio locality, with a held Ohio headquarters or site. The same PR or its base must hold an `own_site` evidence row for that organization whose cited capture passes §4.13 replay. Unchanged cells, blanked cells and `none_found` are outside the fill check. LinkedIn is a navigation link under §4.4 and the site corpus fetcher refuses requests to LinkedIn and its shortener. [Owner rulings 12:12](../DECISIONS.md#2026-11-24--owner-rulings-1212) |
 | `description_1line` | string ≤180 chars | **MUST** | Researcher-written, factual, no marketing copy-paste: "Custom injection molder, medical + automotive, Akron" |
 | `pic_relevance[]` / `pic_relationship_stage` / `pic_relevance_note` | §4.3 | **MUST** | At minimum `potential_member` / `partner` / `watchlist` / `not_a_fit` |
 | `status` + `status_date` + `status_source` + `successor_org_id` | §4.2 | **MUST** | |
@@ -1681,7 +1683,12 @@ the `PROOF_COLS` header and `claim_sha256(row)` in
 `scripts/check_evidence_binding.py`. The digest binds the claim, quote,
 observation date, source URL and class, and tier effect. The record
 must exist on the base tree and hold the same website in the PR. A web
-proof cannot serve a record that is new in the same PR.
+proof cannot serve a record that is new in the same PR. **[v1.20.2 website
+exception]** The own-site row that proves an organization website fill may
+replay against the proposed website under §4.4. The cited page must show
+the held name and Ohio locality in one quote. A proof already held with an
+unchanged evidence row is replayed without dating that observation to the
+new PR. See [owner rulings 12:12](../DECISIONS.md#2026-11-24--owner-rulings-1212).
 The capture is the original live HTTPS URL or the indexed Wayback URL
 with `id_` after its timestamp. Hash the response bytes after gzip
 decoding and record the zero-based Unicode character offset from
@@ -3580,3 +3587,5 @@ unchanged.
 - **v1.19.7 — 2026-11-23 (owner ruling, “10 years, dated”).** §1 R13 replaces the five-year cutoff with ten years, shows the filing year, and gives a newer contradictory source precedence. Blind audit 12 samples the result.
 - **v1.19.8 — 2026-11-23 (owner ruling, process and material vocabulary repair).** §3.1 admits Ring 3 service process subtype tokens for Ring 3 organizations and sites. §4.4 adds process and material other-note columns to organization shards.
 - **v1.20.0 — 2026-11-24 (owner rulings 2026-11-24 10:29, multiple choice; all four were the recommended option).** (1) §4.13 adds the map-listing street route: a street from Overture Maps places (Google listings for the remainder) fills a blank site street only where it agrees with a second held source, by script, is labelled "from a map listing", never overwrites, leaves county to the physical address, and is capped at `supports_C` (the `tier_effect` line; §4.1 tier C); source class `platform_category`, no vocabulary addition. (2) and (3) §4.24 adds the generated per-value basis table (`stated`, `filing`, `implied`, `not_yet_checked`, `not_found_pending_refetch`, `map_listing`); unquoted process and market values stay public with their label, implied values stay labelled, and NOT_STATED values are withheld from display, never deleted, until a fresh fetch finds them or confirms absence. (4) §4.13 and §4.4 add the filing name-variant rule: an OSHA or EPA filing's name for the operator joins `trade_names[]` as `(OSHA filing name)` or `(EPA filing name)` when its distinctive words match a held name and its street and city match, checked by a second model family. §4.4 and §4.5 point to these. No data rows change; the generator, gate routes and fills follow in later PRs. Recorded in `DECISIONS.md`.
+
+- **v1.20.2 — 2026-11-24.** §4.4 and §4.13 require replayable own-site name and Ohio locality evidence for changed organization website fills. The site corpus fetcher refuses LinkedIn destinations. [Owner rulings 12:12](../DECISIONS.md#2026-11-24--owner-rulings-1212).

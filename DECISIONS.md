@@ -667,3 +667,12 @@ and city match. A second model family checks each addition. The street then fill
 (moving the raw pull to the shared store); the name-variant additions with their second-family checks.
 
 Decided by the repo owner in session, 2026-11-24 10:29, by multiple choice. All four were the recommended option.
+
+## 2026-11-24 · Owner rulings 12:12
+
+- **Write it + check it.** Record an organization website only after fetching a page on that site that shows both a
+  name the organization record holds and an Ohio locality. The binding gate checks changed website fills for
+  replayable own-site evidence that shows both. The site corpus fetcher refuses LinkedIn requests outright.
+- **Merge on the fix.** Merge PR #550 on its post-cap fix, with no further review round.
+- **Pilots.** Approved “Links + website leads,” “Refetch with PDFs and JS rendering,” and “New street witness (FMCSA).”
+  The Brave Search pilot was not approved.
