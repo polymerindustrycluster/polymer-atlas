@@ -413,6 +413,64 @@ def make_directory_db(path):
     con.close()
 
 
+VB_COLS = ["record_table", "record_id", "field", "value", "basis", "evidence_id", "basis_date"]
+
+
+def add_value_basis(db, rows):
+    con = sqlite3.connect(db)
+    con.execute(f'CREATE TABLE "value_basis" ({", ".join(chr(34) + c + chr(34) + " TEXT" for c in VB_COLS)})')
+    con.executemany("INSERT INTO value_basis VALUES (?,?,?,?,?,?,?)", rows)
+    con.commit()
+    con.close()
+
+
+class ValueBasisDisplayTest(unittest.TestCase):
+    """SCHEMA 4.24: the site shows each value's label and never shows a withheld value (planted: SITE-000002 blow_molding)."""
+    ROWS = [("sites", "SITE-000001", "processes", "injection_molding", "stated", "EVD-1", "2026-11-24"),
+            ("sites", "SITE-000002", "processes", "blow_molding", "not_found_pending_refetch", "EVD-2", "2026-11-24"),
+            ("sites", "SITE-000002", "markets_served", "marine", "filing", "EVD-3", "2026-11-20"),
+            ("organizations", "ORG-000001", "processes", "extrusion", "not_yet_checked", "EVD-4", "")]
+
+    @classmethod
+    def build(cls, tmp, rows):
+        make_db(tmp / "f.db")
+        if rows:
+            add_value_basis(tmp / "f.db", rows)
+        out = tmp / "site"
+        build_site.build_site(tmp / "f.db", out, None, repo_url="https://example.com/repo",
+                              git={"sha": "abc1234", "date": "2026-11-01", "dirty": False}, today="2026-11-01")
+        return {p.relative_to(out).as_posix(): p.read_text(encoding="utf-8", errors="replace") for p in out.rglob("*") if p.is_file()}
+
+    @classmethod
+    def setUpClass(cls):
+        with tempfile.TemporaryDirectory() as a, tempfile.TemporaryDirectory() as b:
+            cls.plain = cls.build(Path(a), [])
+            cls.labelled = cls.build(Path(b), cls.ROWS)
+
+    def test_control_the_planted_value_is_on_the_site_without_a_basis_table(self):
+        self.assertTrue(any("blow molding" in t or "blow_molding" in t for t in self.plain.values()))
+
+    def test_withheld_value_appears_in_no_output_file(self):  # planted defect: a not_found_pending_refetch value shown
+        hits = [f for f, t in self.labelled.items() if "blow molding" in t.lower() or "blow_molding" in t]
+        self.assertEqual(hits, [])
+
+    def test_other_values_stay_and_carry_their_labels(self):
+        org = self.labelled["orgs/ORG-000001.html"]
+        self.assertRegex(org, r"injection molding.{0,200}stated")
+        self.assertRegex(org, r"extrusion.{0,400}not yet checked")
+        self.assertRegex(org, r"marine.{0,400}from a filing")
+        directory = json.loads(self.labelled["directory.json"])["rows"]
+        row = next(r for r in directory if r["id"] == "ORG-000001")
+        self.assertIn("injection molding (stated)", row["show"]["proc"])
+
+    def test_directory_csv_carries_the_labels(self):
+        rows = list(csv.DictReader(io.StringIO(self.labelled["directory.csv"].lstrip("\ufeff"))))
+        row = next(r for r in rows if r["org_id"] == "ORG-000001")
+        self.assertEqual(row["processes_value_basis"], "injection molding: stated")
+        self.assertIn("processes_value_basis", self.plain["directory.csv"].splitlines()[0])
+        self.assertEqual(next(r for r in csv.DictReader(io.StringIO(self.plain["directory.csv"].lstrip("\ufeff"))))["processes_value_basis"], "")
+
+
 class DirectoryFixtureTest(unittest.TestCase):
     """The directory page, its CSV, the county A-C column and the evidence section, against a fixture whose answers are known."""
 

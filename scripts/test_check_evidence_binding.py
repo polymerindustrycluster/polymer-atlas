@@ -867,7 +867,7 @@ class WebProofs(unittest.TestCase):
         (self.tree / "data/archive_links.csv").write_text(
             "evidence_id,archive_ref,captured_at,created_by\n" + line * (2 if duplicate else 1))
 
-    def run_gate(self, *, proof_bytes=None, mode="--verify-proofs", git_read=None, pr_head=PR_HEAD):
+    def run_gate(self, *, proof_bytes=None, mode="--verify-proofs", git_read=None, pr_head=PR_HEAD, held_proof=False):
         with (self.tree / "data/evidence_t.csv").open("w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, self.ev)
             writer.writeheader()
@@ -891,8 +891,14 @@ class WebProofs(unittest.TestCase):
                 return self.base_orgs if pattern == "organizations_*.csv" else self.base_tables.get(pattern, [])
             return rows(ref, pattern)
 
+        tasks_file = b.tasks_file
+
+        def read_task(ref, path):
+            return tasks_file(None if held_proof and ref == self.BASE else ref, path)
+
         with (
             contextlib.redirect_stdout(out),
+            patch.object(b, "tasks_file", side_effect=read_task),
             patch.object(b, "resolve_base", return_value=self.BASE),
             patch.object(b, "rows", side_effect=tree_rows),
             patch.object(b, "git", side_effect=git_read, return_value=f"{self.BASE} {self.PR_HEAD}\n2026-11-23\n") as git,
@@ -1061,6 +1067,113 @@ class WebProofs(unittest.TestCase):
         self.ev["tier_effect"] = "supports_B"
         self.assert_held("proof record_id or claim_sha256 differs")
         self.fetch.assert_not_called()
+
+    def website_fixture(self, quote="Acme Polymer operates at 12 Rubber Lane, Akron, OH 44301.",
+                        *, website="https://acme.example/", source="https://locations.acme.example/akron", state="OH"):
+        path = self.tree / "data/organizations_OH.csv"
+        path.write_text(
+            "org_id,legal_name,trade_names,website,hq_city,hq_state\n"
+            f"ORG-T1,Acme Polymer,,{website},Akron,{state}\n"
+            "ORG-T2,Acme Polymer II,,https://acmepolymer.example/,,\n")
+        self.ev.update(source_ref=source, claim_detail=f"Akron location; quote: {quote}")
+        self.capture = f"<main>{quote}</main>".encode()
+        self.proof.update(capture=source, claim_sha256=b.claim_sha256(self.ev), quote_offset=0,
+                          capture_sha256=hashlib.sha256(self.capture).hexdigest())
+
+    def test_website_fill_without_evidence(self):
+        self.website_fixture()
+        self.ev["record_id"] = "ORG-T2"
+        self.base_tables["evidence_*.csv"] = [self.ev.copy()]
+        self.assert_held("no own-site evidence")
+        self.fetch.assert_not_called()
+
+    def test_website_fill_evidence_on_another_domain(self):
+        self.website_fixture(source=self.SOURCE)
+        self.assert_held("no same-domain own-site evidence")
+        self.fetch.assert_not_called()
+
+    def test_website_fill_quote_without_held_name(self):
+        self.website_fixture("An unrelated company operates at 12 Rubber Lane, Akron, OH 44301.")
+        self.assert_held("no same-domain quote contains a held name")
+        self.fetch.assert_not_called()
+
+    def test_website_fill_quote_without_ohio_locality(self):
+        for quote in ("Acme Polymer makes plastic components.", "Acme Polymer operates in Akron, NY.",
+                      "Acme Polymer operates in Akron, new york.", "Acme Polymer operates in Akron, ny.",
+                      "Acme Polymer serves all of Ohio.", "Acme Polymer ships products to OH and PA."):
+            with self.subTest(quote=quote):
+                self.website_fixture(quote)
+                self.assert_held("no held-name quote contains an Ohio locality")
+                self.fetch.assert_not_called()
+
+    def test_website_fill_held_proof(self):
+        self.website_fixture()
+        self.proof["verdict"] = "STILL_UNCERTAIN"
+        self.assert_held("no own-site witness passed capture replay")
+        self.fetch.assert_not_called()
+
+    def test_website_fill_with_gate_held_observation(self):
+        self.website_fixture()
+        self.ev["observed_date"] = "2026-01-23"
+        self.proof.update(claim_sha256=b.claim_sha256(self.ev), capture_date="2026-01-23", reader_date="2026-01-24")
+        code, out = self.run_gate()
+        self.assertEqual(code, 1, out)
+        self.assertRegex(out, r"HELD +observed_date more than 30 days")
+        self.assertIn("no own-site witness passed capture replay", out)
+        self.fetch.assert_not_called()
+
+    def test_website_fill_requires_ohio_footprint(self):
+        self.website_fixture(state="NY")
+        self.assert_held("no held Ohio headquarters or site")
+        self.fetch.assert_not_called()
+
+    def test_website_fill_with_replayed_live_proof(self):
+        self.website_fixture()
+        code, out = self.run_gate()
+        self.assertEqual(code, 0, out)
+        self.assertIn("1/1 website fills passed", out)
+        self.fetch.assert_called_once_with(self.proof["capture"])
+
+    def test_website_fill_rejects_other_tenant_of_public_namespace(self):
+        for suffix in ("k12.oh.us", "blogspot.com", "org.ck"):
+            with self.subTest(suffix=suffix):
+                self.website_fixture(website=f"https://acme.{suffix}/", source=f"https://other.{suffix}/about")
+                self.assert_held("no same-domain own-site evidence")
+                self.fetch.assert_not_called()
+
+    def test_website_fill_requires_the_cited_page(self):
+        self.website_fixture()
+        self.proof["capture"] = "https://locations.acme.example/about"
+        self.assert_held("capture differs from the row's cited page")
+        self.fetch.assert_not_called()
+
+    def test_new_organization_website_with_replayed_proof(self):
+        self.base_orgs = self.base_orgs[1:]
+        self.website_fixture("Acme Polymer operates at 12 Rubber Lane, Hudson, Ohio.")
+        code, out = self.run_gate()
+        self.assertEqual(code, 0, out)
+        self.assertIn("1/1 website fills passed", out)
+
+    def test_website_fill_with_unchanged_evidence_in_base(self):
+        self.website_fixture("Acme Polymer operates in Akron.")
+        self.ev["observed_date"] = "2026-01-23"
+        self.proof.update(claim_sha256=b.claim_sha256(self.ev), capture_date="2026-01-23", reader_date="2026-01-24")
+        self.base_tables["evidence_*.csv"] = [self.ev.copy()]
+        self.assert_held("no own-site witness passed capture replay")
+        self.fetch.assert_not_called()
+        code, out = self.run_gate(held_proof=True)
+        self.assertEqual(code, 0, out)
+        self.assertIn("1/1 website fills passed", out)
+        self.fetch.assert_called_once_with(self.proof["capture"])
+
+    def test_unchanged_blanked_or_none_found_website_needs_no_evidence(self):
+        for website in ("https://acmepolymer.example/", "", "none_found"):
+            with self.subTest(website=website):
+                self.website_fixture(website=website)
+                self.base_tables["evidence_*.csv"] = [self.ev.copy()]
+                code, out = self.run_gate()
+                self.assertEqual(code, 0, out)
+                self.fetch.assert_not_called()
 
     def test_edited_website_cannot_be_used_for_proof(self):
         path = self.tree / "data/organizations_OH.csv"

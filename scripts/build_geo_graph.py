@@ -37,10 +37,13 @@ def build_data():
     sites = [s for s in bg.shards("sites") if s.get("operating_status") != "closed"]
     # org -> tag node indices (vocabulary + shared free-text tags), from the main graph
     org_tags = defaultdict(list)
-    for i, j, t in edges:
+    org_labels = defaultdict(dict)   # org node -> tag node -> SCHEMA 4.24 basis label of that link
+    for i, j, t, label in edges:
         a, b = (i, j) if nodes[i]["k"] in ("org", "eco") else (j, i)
         if nodes[b]["k"] in TAG_KINDS and nodes[a]["k"] in ("org", "eco"):
             org_tags[a].append(b)
+            if label:
+                org_labels[a][b] = label
     orgs, org_pos, tags, tag_pos, out_sites = [], {}, [], {}, []
 
     def org_ref(i):
@@ -69,11 +72,16 @@ def build_data():
         out_sites.append({"n": s["site_name"], "o": o, "c": s["city"], "s": s["state"], "y": s["county"],
                           "p": int(s["state"] == "OH" and s["county"] in bg.PIC12),
                           "la": round(lat, 4), "lo": round(lon, 4)})
-    org_tag_list = {}
+    org_tag_list, org_tag_labels = {}, {}
     for i, o in org_pos.items():
         org_tag_list[o] = sorted({tag_ref(t) for t in org_tags.get(i, [])})
+        labels = {tag_ref(t): label for t, label in org_labels[i].items()}
+        if labels:
+            org_tag_labels[o] = [labels.get(r, "") for r in org_tag_list[o]]
     for o, rec in enumerate(orgs):
         rec["t"] = org_tag_list.get(o, [])
+        if o in org_tag_labels:
+            rec["tl"] = org_tag_labels[o]   # aligned with t
     with_coords = 0
     for s in sites:
         try:
@@ -359,7 +367,7 @@ SCRIPT = r"""(async () => {
     if (org.w) kids.push(el("p", {}, el("a", { href: org.w, target: "_blank", rel: "noopener", textContent: org.w.replace(/^https?:\/\//, "").replace(/\/$/, "") })));
     kids.push(el("p", {}, el("a", { href: "__ORGBASE__" + encodeURIComponent(org.id) + ".html", textContent: "Open " + org.l + " in the Atlas \u2192" })));
     if (org.t.length) kids.push(el("h3", { textContent: `Capabilities · ${org.t.length}` }),
-      el("div", { className: "chips" }, ...org.t.map((t) => el("span", { className: "chip", textContent: T[t].l }))));
+      el("div", { className: "chips" }, ...org.t.map((t, k) => el("span", { className: "chip", textContent: T[t].l + (org.tl && org.tl[k] ? " · " + org.tl[k] : "") }))));
     kids.push(el("h3", { textContent: `Sites on the map · ${list.length}` }),
       el("div", { className: "chips" }, ...list.map((i) => el("button", { className: "chip", type: "button",
         textContent: [S[i].c, S[i].s].filter(Boolean).join(", ") || S[i].n, onclick: () => zoomToSites([i]) }))));
