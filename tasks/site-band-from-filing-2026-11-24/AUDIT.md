@@ -20,6 +20,7 @@ task folder.
 
 ## What this audit is not
 
-It is not a second read beyond the two merge reviews. The 11 held sites
-and the 104 PIC-18 bands that rest only on Form 5500 counts were not in
-the batch and were not audited.
+It is not a second read beyond the two merge reviews. The reviews checked
+the 11 hold dispositions; those sites received no edits or appended
+evidence. The separate 104 PIC-18 bands that rest only on Form 5500
+counts were outside scope.
