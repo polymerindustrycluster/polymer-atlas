@@ -39,6 +39,7 @@ LABEL_ALLOW = [
     (re.compile(r"\b(?:verification )?tiers? [A-CU](?:-C)?\b|\bLast verified\b|\bverification tiers?\b|\bverified\b", re.I), "the site's own verification-tier and last-verified labels"),
     (re.compile(r"[A-Za-z][^\s]*\b(?:council|gemini|claude|wave|battery|held|lane|pass|staging|pr|owner)\b[^\s]*|\b(?:council|gemini|claude|wave|battery|held|lane|pass|staging|owner)\b", re.I),
      "a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based"),
+    (re.compile(r"\bRing [1-5](?::| ·| -|\b)", re.I), "the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration"),
     (re.compile(r"#\d+"), "a suite, unit or street number in an address"),
     (re.compile(r"https?://\S+|\b[\w.-]+\.(?:com|org|net|edu|gov)\S*|\b\w*_\w*\b|[\w.-]*/[\w./%-]+\.(?:pdf|html?)\b|[\w-]+-[\w-]+\.(?:pdf|html?)\b"), "a URL or a vocabulary token (energy_renewables_battery): a name, not prose"),
     (re.compile(r",? PR \d{5}|\bPR\d?\b|MONTEREY PASS[- ]?|Monterey Pass[- ]?", re.I), "a Puerto Rico address or street name"),

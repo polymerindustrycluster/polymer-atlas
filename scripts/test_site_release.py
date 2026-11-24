@@ -57,12 +57,21 @@ class ProcessLexiconTests(unittest.TestCase):
         "tier": ["No own site found. Tier C: identity from a directory", "Own site prints no street address, capping tier at C", "tier held at B on the recorded site"],
         "opened": ["Own website (opened): 'CUSTOM PLASTIC INJECTION MOLDING'", "Own site opened: custom sheet fabrication", "Own website (opened in full): est. 1946",
                    "Own site (live, opened 2026-10-29): ISO 9001:2015 certified"],
+        "matcher and checks": ["Check RUN and POSITIVE: main-form filings PY2022-PY2024 at the exact address", "the matcher's ADDR_ONLY class", "Check RUN and DECISIVE against the closure claim"],
+        "ring and screen": ["which is Ring 3 coating-as-trade under the 2026-10-29 B5", "Ring 3 distribution.", "Coded as distribution per the BRIEF distribution screen.",
+                            "Distribution-coded per the distribution screen", "coded on distribution activity"],
+        "candidate": ["Own site lists the candidate address 1224 Freedom Rd: precision injection molding", "candidate city Macedonia is superseded", "The candidate suite is not confirmed",
+                      "vs candidate 3924 Miller Road"],
+        "workflow tokens": ["EXCLUSION_CONFLICT: row matches exclusion list W7-294 (final_status NOT_POLYMER)", "Recorded domain (cached copy dated 2026-10-13): pulverizers",
+                            "a third Lehigh program row, distinct from PROG-000038", "no own site found.", "Own site live: manufacturer of wheels"],
         "ladder and pass": ["passes the Ring 3 general-engineering gate on a claimed specialty", "Own site in full: manufactures bollard covers", "(carried at course grain as PROG-000034)"],
     }
     ORDINARY = ["Tier-1 automotive supplier of interior trim", "Privately held maker of intensive-use furniture", "The plant opened in 1995 and holds OSHA VPP Star status",
                 "Trinseo opened its North America Innovation Center in Exton", "OSHA inspection 1717099.015 (opened Dec 18, 2023) inspected the plant",
                 "expert witness consulting", "A Thomas Verified supplier profile", "Lane's own literature lists a Carlisle facility", "Anti-slip step and ladder covers",
-                "Small-batch maker of coatings", "Clinical-stage development of antimicrobial coatings"]
+                "Small-batch maker of coatings", "Clinical-stage development of antimicrobial coatings",
+                "Ring Container plant blow-molding PET", "O-ring and gasket distribution", "Makes extruder screen changers and screen packs", "A technical brief for the product",
+                "Screen printing of plastic containers", "FMCSA SAFER snapshot confirms the legal name"]
 
     def test_each_family_is_withheld_by_the_one_shared_test(self):
         for family, texts in self.FAMILIES.items():
@@ -89,13 +98,16 @@ class ProcessLexiconTests(unittest.TestCase):
     def test_named_records_are_withheld(self):
         d = real_descriptions()
         for org in ("ORG-001997", "ORG-002044", "ORG-002045", "ORG-002178", "ORG-002201", "ORG-002204", "ORG-001714", "ORG-001715", "ORG-001719",
-                    "ORG-001720", "ORG-001722", "ORG-001922", "ORG-003111"):
+                    "ORG-001720", "ORG-001722", "ORG-001922", "ORG-003111", "ORG-001760", "ORG-001761", "ORG-001763", "ORG-002280", "ORG-002191", "ORG-002277",
+                    "ORG-002296", "ORG-002369", "ORG-002485", "ORG-001417", "ORG-001779", "ORG-002559", "ORG-002729"):
             self.assertTrue(build_site.internal_wording(d[org]), org)
 
     def test_a_role_line_with_build_wording_falls_back_to_the_vocabulary_role(self):
         self.assertEqual(build_site.published_role({"role_as_published": "Professor of Chemistry", "role": "professor"}), "Professor of Chemistry")
         self.assertEqual(build_site.published_role({"role_as_published": "Professor. Both pages fetched/searched 2026-11-04.", "role": "professor"}), "professor")
         self.assertEqual(build_site.published_role({"role_as_published": "", "role": "research_staff"}), "research staff")
+        chair = "Professor, Ernest Cockrell, Jr. Centennial Chair in Engineering #1"      # '#1' is a chair, not a build marker
+        self.assertEqual(build_site.published_role({"role_as_published": chair, "role": "professor"}), chair)
 
     def test_a_withheld_description_is_also_withheld_where_it_is_copied_without_its_temporary_id(self):
         d = Path(tempfile.mkdtemp())

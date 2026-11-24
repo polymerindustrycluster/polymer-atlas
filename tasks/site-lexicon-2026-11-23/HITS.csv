@@ -886,6 +886,8 @@ json:directory.json,ORG-003885,org,tier c,ALLOWED:the site's own verification-ti
 json:directory.json,ORG-004022,org,tier b,ALLOWED:the site's own verification-tier and last-verified labels,"active, tier B"
 json:directory.json,ORG-004026,org,tier a,ALLOWED:the site's own verification-tier and last-verified labels,"active, tier A"
 json:directory.json,ORG-004564,org,tier b,ALLOWED:the site's own verification-tier and last-verified labels,"active, tier B"
+json:experts.json,people[1592][4],people[1592][4],rodrigo_noriega,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",https://faculty.utah.edu/u6008009-RODRIGO_NORIEGA/research/index.hml
+json:experts.json,people[1595][1],people[1595][1],#1,"ALLOWED:a suite, unit or street number in an address","ll, Jr. Centennial Chair in Engineering #1"
 json:experts.json,people[27][0],people[27][0],held,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",Michael Held
 json:experts.json,people[300][2][0],people[300][2][0],battery,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",in-situ characterization of polymeric battery materials and polymer solutions
 json:experts.json,people[328][2][1],people[328][2][1],battery,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",ymer electrolytes and polymer hosts for battery materials
@@ -906,7 +908,6 @@ json:graph/graph.json,ORG-002192,d,lane,ALLOWED:a street name,"reative Pultrusio
 json:graph/graph.json,ORG-002208,d,lane,ALLOWED:a street name,"den Products Company, 1108 Green Garden Lane, Bedford, PA 15522."
 json:graph/graph.json,ORG-002252,d,lane,ALLOWED:a company name; a supplier tier,"21-03033 (effective Nov 1, 2024) covers Lane Enterprises at 1244 Claremont Rd, Middl"
 json:graph/graph.json,ORG-002283,d,lane,ALLOWED:a street name,"5 rebrand letter) lists 102 Pig Service Lane, Duncansville with scope 'Manufacture, "
-json:graph/graph.json,ORG-002299,d,lane,ALLOWED:a street name,"lists the candidate address 516 Mecklem Lane: injection molding, blow molding and ru"
 json:graph/graph.json,ORG-002303,d,carried,ALLOWED:names the listing or record that states the fact (source attribution),age. 'Polycel' is a former company name carried in the FRS record.
 json:graph/graph.json,ORG-002314,d,audit,ALLOWED:the date of a certification audit that the certificate states,"Own-domain BRCGS certificate (audit 2025-11-17, valid to 2027-01-13) for 'T"
 json:graph/graph.json,ORG-002319,d,opened,ALLOWED:the date a government inspection was opened,"OSHA inspection record (opened 2015-06-25) for Rehrig Pacific Company,"
@@ -918,7 +919,6 @@ json:graph/graph.json,ORG-002449,d,lane,ALLOWED:a street name,"Sec's parent) for
 json:graph/graph.json,ORG-002524,d,opened,ALLOWED:the date a government inspection was opened,"locations; OSHA inspection 1717099.015 (opened Dec 18, 2023) inspected ColorCoat at th"
 json:graph/graph.json,ORG-002532,d,verif,ALLOWED:the name of a supplier-directory program,A Thomas Verified (Thomas-validated) supplier profile 
 json:graph/graph.json,ORG-002532,d,verified,ALLOWED:the name of a supplier-directory program,A Thomas Verified (Thomas-validated) supplier profile for
-json:graph/graph.json,ORG-002559,d,prior,ALLOWED:a company's former name,for the fiberglass fabrication company (prior name Pilling's Fiberglass Reinforce Pro
 json:graph/graph.json,ORG-002613,d,lane,ALLOWED:a street name,"ent Refining Company, LLC at 99 Stevens Lane, Exeter, accepting transparencies and x"
 json:graph/graph.json,ORG-002616,d,lane,ALLOWED:a street name,"Forge Inc., facility address 435 School Lane, Plymouth Meeting, SIC 3082, and descri"
 json:graph/graph.json,ORG-002681,d,carried,ALLOWED:names the listing or record that states the fact (source attribution),Company description (own text carried in its place listing): fabricates polys
@@ -966,7 +966,6 @@ json:graph/map-network.json,ORG-002072,d,carried,ALLOWED:names the listing or re
 json:graph/map-network.json,ORG-002192,d,lane,ALLOWED:a street name,"reative Pultrusions Inc, 214 Industrial Lane, Alum Bank PA 15521, scope 'Manufacturi"
 json:graph/map-network.json,ORG-002208,d,lane,ALLOWED:a street name,"den Products Company, 1108 Green Garden Lane, Bedford, PA 15522."
 json:graph/map-network.json,ORG-002252,d,lane,ALLOWED:a company name; a supplier tier,"21-03033 (effective Nov 1, 2024) covers Lane Enterprises at 1244 Claremont Rd, Middl"
-json:graph/map-network.json,ORG-002299,d,lane,ALLOWED:a street name,"lists the candidate address 516 Mecklem Lane: injection molding, blow molding and ru"
 json:graph/map-network.json,ORG-002303,d,carried,ALLOWED:names the listing or record that states the fact (source attribution),age. 'Polycel' is a former company name carried in the FRS record.
 json:graph/map-network.json,ORG-002319,d,opened,ALLOWED:the date a government inspection was opened,"OSHA inspection record (opened 2015-06-25) for Rehrig Pacific Company,"
 json:graph/map-network.json,ORG-002319,d,opened 2015-06-25,ALLOWED:the date a government inspection was opened,"OSHA inspection record (opened 2015-06-25) for Rehrig Pacific Company, 1738 W. 20"
@@ -976,7 +975,6 @@ json:graph/map-network.json,ORG-002449,d,lane,ALLOWED:a street name,"Sec's paren
 json:graph/map-network.json,ORG-002524,d,opened,ALLOWED:the date a government inspection was opened,"locations; OSHA inspection 1717099.015 (opened Dec 18, 2023) inspected ColorCoat at th"
 json:graph/map-network.json,ORG-002532,d,verif,ALLOWED:the name of a supplier-directory program,A Thomas Verified (Thomas-validated) supplier profile 
 json:graph/map-network.json,ORG-002532,d,verified,ALLOWED:the name of a supplier-directory program,A Thomas Verified (Thomas-validated) supplier profile for
-json:graph/map-network.json,ORG-002559,d,prior,ALLOWED:a company's former name,for the fiberglass fabrication company (prior name Pilling's Fiberglass Reinforce Pro
 json:graph/map-network.json,ORG-002613,d,lane,ALLOWED:a street name,"ent Refining Company, LLC at 99 Stevens Lane, Exeter, accepting transparencies and x"
 json:graph/map-network.json,ORG-002616,d,lane,ALLOWED:a street name,"Forge Inc., facility address 435 School Lane, Plymouth Meeting, SIC 3082, and descri"
 json:graph/map-network.json,ORG-002681,d,carried,ALLOWED:names the listing or record that states the fact (source attribution),Company description (own text carried in its place listing): fabricates polys
@@ -1231,7 +1229,10 @@ page,ORG-000525,text,council,"ALLOWED:a company, person, place, street or URL na
 page,ORG-000616,text,battery,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based","nergy (oil & gas), energy (renewables & battery), industrial machinery, marine"
 page,ORG-000665,text,notes,"ALLOWED:the vocabulary label 'other (specified in the record's notes, which are not published)'",g-of-2-pt-2-billion-of-senior-unsecured-notes
 page,ORG-000733,text,#713,"ALLOWED:a suite, unit or street number in an address","1046 Township Rd. #713, Ashland, OH 44805"
+page,ORG-000752,text,tceq_external_search_get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",rds.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&dID=5150504&Rendition=Web&searchType=Ex
+page,ORG-000769,text,get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",://ecm.idem.in.gov/cs/idcplg?IdcService=GET_FILE&dID=83849527&dDocName=83853570&allowInt
 page,ORG-000851,text,pr,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",https://stage-preview.fst.com/-/media/files/pr/2016/2016
+page,ORG-000853,text,get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",://ecm.idem.in.gov/cs/idcplg?IdcService=GET_FILE&allowInterrupt=1&dDocName=83231271&dID=
 page,ORG-000864,text,tier b,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-21; tier B.
 page,ORG-000864,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-21; tier B."
 page,ORG-000881,lede,tier,"ALLOWED:an automotive supplier tier, an industry term",Tier-2 automotive soft-trim supplier: foam-i
@@ -1347,6 +1348,8 @@ page,ORG-001752,text,verified,ALLOWED:the site's own verification-tier and last-
 page,ORG-001792,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,rd are shown. Last verified 2026-11-06; tier A.
 page,ORG-001792,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,rce links on the record are shown. Last verified 2026-11-06; tier A.
 page,ORG-001836,text,tier c,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-05; tier C.
+page,ORG-001836,text,tri_facility,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",https://data.epa.gov/efservice/TRI_FACILITY/TRI_FACILITY_ID/44022JHNSN16910/JSON
+page,ORG-001836,text,tri_facility_id,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",s://data.epa.gov/efservice/TRI_FACILITY/TRI_FACILITY_ID/44022JHNSN16910/JSON
 page,ORG-001836,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-05; tier C."
 page,ORG-001853,text,tier u,ALLOWED:the site's own verification-tier and last-verified labels,rd are shown. Last verified 2026-10-29; tier U.
 page,ORG-001853,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,rce links on the record are shown. Last verified 2026-10-29; tier U.
@@ -1361,6 +1364,7 @@ page,ORG-001885,text,tier u,ALLOWED:the site's own verification-tier and last-ve
 page,ORG-001885,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-04; tier U."
 page,ORG-001920,lede,carried,ALLOWED:names the listing or record that states the fact (source attribution),"d vinyl fabricating business (directory-carried, est. 1976); also builds heat-sealing e"
 page,ORG-001961,text,notes,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",https://www.lambdatechs.com/diffraction-notes/mitigating-scc-and-corrosion-fatigue-of
+page,ORG-002043,text,tceq_external_search_get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",rds.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&Rendition=Web&dID=7876569
 page,ORG-002072,lede,carried,ALLOWED:names the listing or record that states the fact (source attribution),The operator's own service description (carried verbatim in company-submitted profiles)
 page,ORG-002087,text,notes,"ALLOWED:the vocabulary label 'other (specified in the record's notes, which are not published)'","ymers, other (specified in the record's notes, which are not published), polymerizati"
 page,ORG-002088,text,held,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",Michael Held
@@ -1390,6 +1394,7 @@ page,ORG-002203,text,verified,ALLOWED:the site's own verification-tier and last-
 page,ORG-002204,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-05; tier A.
 page,ORG-002204,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-05; tier A."
 page,ORG-002208,lede,lane,ALLOWED:a street name,"den Products Company, 1108 Green Garden Lane, Bedford, PA 15522."
+page,ORG-002216,text,perm_exp_d,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",bases/dosh-pv/DOSH-PV.ASP?City=&County=&PERM_EXP_D=&RP_Name=gge&State_nbr=&Street_1=&ZIP5=
 page,ORG-002237,text,#7,"ALLOWED:a suite, unit or street number in an address","580 Mayer St. Bldg. #7, Bridgeville, PA 15017"
 page,ORG-002252,lede,lane,ALLOWED:a company name; a supplier tier,"21-03033 (effective Nov 1, 2024) covers Lane Enterprises at 1244 Claremont Rd, Middl"
 page,ORG-002252,text,lane,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",https://lane-enterprises.com/
@@ -1397,9 +1402,9 @@ page,ORG-002252,text,lane,"ALLOWED:a company, person, place, street or URL name,
 page,ORG-002260,text,tier b,ALLOWED:the site's own verification-tier and last-verified labels,rd are shown. Last verified 2026-10-30; tier B.
 page,ORG-002260,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,rce links on the record are shown. Last verified 2026-10-30; tier B.
 page,ORG-002283,lede,lane,ALLOWED:a street name,"5 rebrand letter) lists 102 Pig Service Lane, Duncansville with scope 'Manufacture, "
-page,ORG-002299,lede,lane,ALLOWED:a street name,"lists the candidate address 516 Mecklem Lane: injection molding, blow molding and ru"
 page,ORG-002303,lede,carried,ALLOWED:names the listing or record that states the fact (source attribution),age. 'Polycel' is a former company name carried in the FRS record.
 page,ORG-002314,lede,audit,ALLOWED:the date of a certification audit that the certificate states,"Own-domain BRCGS certificate (audit 2025-11-17, valid to 2027-01-13) for 'T"
+page,ORG-002314,text,accredia_brc,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",01/PDF-2025-RC-171445-2015-ABRC-IOP-USA-ACCREDIA_BRC-Pack-7-20251226-1-Erie-SMD-Jan2026.pdf
 page,ORG-002319,lede,opened,ALLOWED:the date a government inspection was opened,"OSHA inspection record (opened 2015-06-25) for Rehrig Pacific Company,"
 page,ORG-002319,lede,opened 2015-06-25,ALLOWED:the date a government inspection was opened,"OSHA inspection record (opened 2015-06-25) for Rehrig Pacific Company, 1738 W. 20"
 page,ORG-002323,text,tier b,ALLOWED:the site's own verification-tier and last-verified labels,rd are shown. Last verified 2026-11-04; tier B.
@@ -1435,9 +1440,9 @@ page,ORG-002532,lede,verified,ALLOWED:the name of a supplier-directory program,A
 page,ORG-002541,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-21; tier A.
 page,ORG-002541,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-21; tier A."
 page,ORG-002547,text,#19,"ALLOWED:a suite, unit or street number in an address","16 INDUSTRIAL RD - BUILDING #19, BELMONT, MS 38827"
-page,ORG-002559,lede,prior,ALLOWED:a company's former name,for the fiberglass fabrication company (prior name Pilling's Fiberglass Reinforce Pro
 page,ORG-002569,text,tier c,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-21; tier C.
 page,ORG-002569,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-21; tier C."
+page,ORG-002611,text,tmi_llc,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",https://www.processregister.com/TMI_LLC/Supplier/sid265348.htm
 page,ORG-002613,lede,lane,ALLOWED:a street name,"ent Refining Company, LLC at 99 Stevens Lane, Exeter, accepting transparencies and x"
 page,ORG-002616,lede,lane,ALLOWED:a street name,"Forge Inc., facility address 435 School Lane, Plymouth Meeting, SIC 3082, and descri"
 page,ORG-002670,text,#1,"ALLOWED:a suite, unit or street number in an address","734 West Penn Pike Suite #1, Tamaqua, PA 18252"
@@ -1502,12 +1507,14 @@ page,ORG-002909,text,notes,"ALLOWED:the vocabulary label 'other (specified in th
 page,ORG-002910,text,notes,"ALLOWED:the vocabulary label 'other (specified in the record's notes, which are not published)'","other (specified in the record's notes, which are not published)"
 page,ORG-002917,text,tier b,ALLOWED:the site's own verification-tier and last-verified labels,rd are shown. Last verified 2026-10-30; tier B.
 page,ORG-002917,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,rce links on the record are shown. Last verified 2026-10-30; tier B.
+page,ORG-002940,text,tceq_external_search_get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",rds.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&dID=5250852&Rendition=Web&searchType=Ex
 page,ORG-002945,text,#100,"ALLOWED:a suite, unit or street number in an address","13515 Barrett Parkway Dr #100, Ballwin, MO 63021"
 page,ORG-002952,lede,tier,"ALLOWED:an automotive supplier tier, an industry term",Tier-1 automotive supplier of interior and c
 page,ORG-002985,lede,opened,"ALLOWED:a company opened a plant, site or center (business history)","t-Jean-sur-Richelieu QC, first US plant opened 2024 in Saratoga Springs NY"
 page,ORG-002992,text,pr,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",cht.com/fileadmin/Group/pdf/mediacenter/pr/2023/CHT-Press-release-CHT-USA-celebrat
 page,ORG-002999,lede,opened,"ALLOWED:a company opened a plant, site or center (business history)","US branch (opened 2025, Dalton, GA) of Italian Main Tech:"
 page,ORG-003003,text,pr,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",https://www.pr.com/press-release/898413
+page,ORG-003005,text,tca_iso,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",m/fileadmin/user_upload/Zertifikate/TCA/TCA_ISO-45001__expires_21-11-2026_.pdf
 page,ORG-003089,text,#1300,"ALLOWED:a suite, unit or street number in an address","150 Huddleston Road #1300, Peachtree City, GA 30269"
 page,ORG-003098,lede,opened,"ALLOWED:a company opened a plant, site or center (business history)",light-truck tires at Dayton TN factory (opened 2019).
 page,ORG-003106,text,tier b,ALLOWED:the site's own verification-tier and last-verified labels,rd are shown. Last verified 2026-10-30; tier B.
@@ -1521,7 +1528,10 @@ page,ORG-003111,text,verified,ALLOWED:the site's own verification-tier and last-
 page,ORG-003112,text,tier c,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-10-31; tier C.
 page,ORG-003112,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-10-31; tier C."
 page,ORG-003146,lede,held,ALLOWED:a type of ownership,Privately held converter of flexible and specialty rig
+page,ORG-003166,text,msds_canada,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",9/VECTORT-7400-Styrenic-Block-Copolymer-MSDS_CANADA-ENGLISH.pdf
+page,ORG-003166,text,msds_singapore,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",41A-and-8508A-Styrenic-Block-Copolymers-MSDS_SINGAPORE-ENGLISH.pdf
 page,ORG-003169,text,staging,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",https://stg-tseindustriesmain-staging.kinsta.cloud/wp-content/uploads/Capabil
+page,ORG-003178,text,tceq_external_search_get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",rds.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&dID=1424630&Rendition=Web&searchType=Ex
 page,ORG-003184,text,battery,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",https://batterycouncil.org/news/essential-energy-tour-s
 page,ORG-003184,text,council,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",https://batterycouncil.org/news/essential-energy-tour-stop-5-e
 page,ORG-003212,text,pass,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based","823 S. By-Pass, McPherson, KS 67460"
@@ -1536,6 +1546,7 @@ page,ORG-003335,text,#6,"ALLOWED:a suite, unit or street number in an address","
 page,ORG-003335,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-05; tier A.
 page,ORG-003335,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-05; tier A."
 page,ORG-003342,text,#12,"ALLOWED:a suite, unit or street number in an address","4709 Highway 36 South, #12, Rosenberg, TX 77471"
+page,ORG-003343,text,get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",://ecm.idem.in.gov/cs/idcplg?IdcService=GET_FILE&dID=83747231&dDocName=83751274&allowInt
 page,ORG-003376,text,wave,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",(Blue Wave Ultrasonics HQ and plant
 page,ORG-003376,text,wave,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",Blue Wave Ultrasonics HQ and plant
 page,ORG-003376,text,wave,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",Blue Wave Ultrasonics Inc
@@ -1551,6 +1562,7 @@ page,ORG-003559,text,staging,"ALLOWED:a company, person, place, street or URL na
 page,ORG-003560,text,ruling,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",w.jdsupra.com/legalnews/artificial-turf-ruling-may-make-it-7507618/
 page,ORG-003562,text,tier c,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-21; tier C.
 page,ORG-003562,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-21; tier C."
+page,ORG-003570,text,skygreen_osha,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",w.skchemicals.com/download/TDS/SKYGREEN/SKYGREEN_OSHA.pdf
 page,ORG-003573,lede,opened,"ALLOWED:a company opened a plant, site or center (business history)","and high-performance films and pouches, opened 2019 in Bardstown, KY."
 page,ORG-003619,text,gemini,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based","9 Gemini Industrial Drive, Suite 200, Roxana, IL"
 page,ORG-003620,text,#6,"ALLOWED:a suite, unit or street number in an address","745 E. Greg St. #6, Sparks, NV 89431"
@@ -1560,6 +1572,7 @@ page,ORG-003645,text,tier b,ALLOWED:the site's own verification-tier and last-ve
 page,ORG-003645,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-11; tier B."
 page,ORG-003660,lede,held,ALLOWED:a type of ownership,Privately held maker of intensive-use furniture with o
 page,ORG-003701,text,owner,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",Capvis Equity (ultimate owner of Hennecke Group)
+page,ORG-003705,text,con_trace,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose","ge/upload/q_auto,g_center/assets/1/26/i-CON_TRACE.pdf"
 page,ORG-003708,text,council,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",nd-xii-of-regional-economic-development-council-initiative.html?print=1&page=1
 page,ORG-003717,text,#530,"ALLOWED:a suite, unit or street number in an address","1501 Lyndon B Johnson Fwy #530, Farmers Branch, TX 75234"
 page,ORG-003742,text,tier b,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-21; tier B.
@@ -1580,9 +1593,11 @@ page,ORG-003948,text,battery,"ALLOWED:a company, person, place, street or URL na
 page,ORG-003948,text,battery,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",molding and assembly of AGM battery components
 page,ORG-003948,text,battery,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based","on molding, molding and assembly of AGM battery components"
 page,ORG-003948,text,battery,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",plastics (battery components)
+page,ORG-003979,text,tceq_external_search_get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",rds.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&dID=9029049&Rendition=Web&searchType=Ex
 page,ORG-004030,text,owner,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based","Beaverton, OR · brand owner / direct sales (city grain only)"
 page,ORG-004030,text,owner,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",brand owner / direct sales (city grain only)
 page,ORG-004042,text,pr,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",s://www.axens.net/resources-events/news/pr-arcanum-infrastructure-successfully-sta
+page,ORG-004062,text,get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",://ecm.idem.in.gov/cs/idcplg?IdcService=GET_FILE&Rendition=web&dDocName=83658253&dID=836
 page,ORG-004065,text,tier c,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-05; tier C.
 page,ORG-004065,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-05; tier C."
 page,ORG-004069,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-05; tier A.
@@ -1606,10 +1621,12 @@ page,ORG-004135,text,tier c,ALLOWED:the site's own verification-tier and last-ve
 page,ORG-004135,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-10-31; tier C."
 page,ORG-004139,lede,tier,"ALLOWED:an automotive supplier tier, an industry term",Tier-1 automotive supplier molding and coati
 page,ORG-004142,lede,tier,"ALLOWED:an automotive supplier tier, an industry term",Tier-1 automotive supplier making polyuretha
+page,ORG-004166,text,tceq_external_search_get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",rds.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&dID=9477731&Rendition=Web&searchType=Ex
 page,ORG-004193,text,tier c,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-21; tier C.
 page,ORG-004193,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-21; tier C."
 page,ORG-004209,text,tier c,ALLOWED:the site's own verification-tier and last-verified labels,oof of scope. Last verified 2026-11-12; tier C.
 page,ORG-004209,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-12; tier C."
+page,ORG-004240,text,tceq_external_search_get_file,"ALLOWED:a URL or a vocabulary token (energy_renewables_battery): a name, not prose",rds.tceq.texas.gov/cs/idcplg?IdcService=TCEQ_EXTERNAL_SEARCH_GET_FILE&dID=7090237&Rendition=Web&SearchID=&sea
 page,ORG-004244,text,battery,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",molded plastic battery containers
 page,ORG-004244,text,battery,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",molded plastic battery containers and automotive products
 page,ORG-004265,text,battery,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",injection molding of polypropylene battery containers
@@ -1654,6 +1671,7 @@ page,ORG-004640,text,tier a,ALLOWED:the site's own verification-tier and last-ve
 page,ORG-004640,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,"t are leads, never proof of scope. Last verified 2026-11-12; tier A."
 page,ORG-004650,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,rd are shown. Last verified 2026-10-31; tier A.
 page,ORG-004650,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,rce links on the record are shown. Last verified 2026-10-31; tier A.
+page,ORG-004651,text,#1,"ALLOWED:a suite, unit or street number in an address","ll, Jr. Centennial Chair in Engineering #1"
 page,ORG-004651,text,tier b,ALLOWED:the site's own verification-tier and last-verified labels,rd are shown. Last verified 2026-11-12; tier B.
 page,ORG-004651,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,rce links on the record are shown. Last verified 2026-11-12; tier B.
 page,ORG-004652,text,tier b,ALLOWED:the site's own verification-tier and last-verified labels,rd are shown. Last verified 2026-10-31; tier B.
@@ -2163,6 +2181,11 @@ page,directory.html,text,owner,"ALLOWED:a company, person, place, street or URL 
 page,directory.html,text,owner,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based","One row per owner and county, grouped by county; an owner"
 page,directory.html,text,owner,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",badge marks an owner on PIC's public member list.
 page,directory.html,text,owner,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",s in two counties has two rows (one per owner and county) and counts once in the figu
+page,directory.html,text,ring 1,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 1: Core Producers & Processors
+page,directory.html,text,ring 2,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration","Ring 2: Materials, Compounding & Formulated Po"
+page,directory.html,text,ring 3,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 3: Value Chain
+page,directory.html,text,ring 4,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 4: Downstream OEMs & Heavy Users
+page,directory.html,text,ring 5,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 5: Ecosystem
 page,directory.html,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,"792 owners of active, tier A-C site rows in the 18 PIC counties: 785"
 page,directory.html,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,"PIC-18 owners with an active tier A-C site row, by county"
 page,directory.html,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,"PIC-18 owners with an active tier A-C site row, by ring"
@@ -2229,12 +2252,28 @@ page,directory/tuscarawas.html,text,tier a,ALLOWED:the site's own verification-t
 page,directory/tuscarawas.html,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,"Tuscarawas County owners with an active tier A-C site row, rows 1 to 27 of 27"
 page,directory/wayne.html,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,24 owners with an active tier A-C site row in Wayne County; page 1 of 1
 page,directory/wayne.html,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,"Wayne County owners with an active tier A-C site row, rows 1 to 24 of 24"
+page,graph/events.html,text,ring 1,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 1 · Core Producers & Processors
+page,graph/events.html,text,ring 2,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration","Ring 2 · Materials, Compounding & Formulated P"
+page,graph/events.html,text,ring 3,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 3 · Value Chain
+page,graph/events.html,text,ring 4,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 4 · Downstream OEMs & Heavy Users
+page,graph/events.html,text,ring 5,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 5 · Ecosystem
+page,graph/index.html,text,ring 1,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 1 · Core Producers & Processors
+page,graph/index.html,text,ring 2,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration","Ring 2 · Materials, Compounding & Formulated P"
+page,graph/index.html,text,ring 3,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 3 · Value Chain
+page,graph/index.html,text,ring 4,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 4 · Downstream OEMs & Heavy Users
+page,graph/index.html,text,ring 5,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 5 · Ecosystem
 page,graph/index.html,text,verification,ALLOWED:the site's own verification-tier and last-verified labels,"ed, acquired or merged; all states, all verification tiers."
+page,graph/map.html,text,ring 1,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 1 · Core Producers & Processors
+page,graph/map.html,text,ring 2,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration","Ring 2 · Materials, Compounding & Formulated P"
+page,graph/map.html,text,ring 3,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 3 · Value Chain
+page,graph/map.html,text,ring 4,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 4 · Downstream OEMs & Heavy Users
+page,graph/map.html,text,ring 5,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 5 · Ecosystem
 page,index.html,text,held,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",; verification tiers A-C; all locations held (organization rows are not split by cou
 page,index.html,text,held,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based","All locations held (US states, territories and a few non-U"
 page,index.html,text,held,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based","all locations held, not only US states"
 page,index.html,text,held,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based","status active; tiers A-C; all locations held: 6,471 in the US, 8 elsewhere)"
 page,index.html,text,held,"ALLOWED:a company, person, place, street or URL name, or the market name energy (renewables & battery); the blind-audit scan is word-based",te rows and 66 tier U organization rows held but excluded here.
+page,index.html,text,ring 5,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration","Ring 5 (schools, associations, economic develo"
 page,index.html,text,tier u,ALLOWED:the site's own verification-tier and last-verified labels,are never interchangeable. Verification tier U (unverified candidates) is not counted 
 page,index.html,text,tiers a,ALLOWED:the site's own verification-tier and last-verified labels," rows by ring (operating status active; tiers A-C; all locations held: 6,471 in the US,"
 page,index.html,text,tiers a,ALLOWED:the site's own verification-tier and last-verified labels,; operating status active; verification tiers A-C
@@ -2250,12 +2289,23 @@ page,index.html,text,verification,ALLOWED:the site's own verification-tier and l
 page,index.html,text,verification,ALLOWED:the site's own verification-tier and last-verified labels,ations. They are never interchangeable. Verification tier U (unverified candidates) is not c
 page,index.html,text,verification,ALLOWED:the site's own verification-tier and last-verified labels,"y record carries at least one source, a verification tier and the date it was last verified."
 page,index.html,text,verified,ALLOWED:the site's own verification-tier and last-verified labels,ification tier and the date it was last verified. NAICS codes are shown with their prove
+page,map.html,text,ring 1,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 1: Core Producers & Processors
+page,map.html,text,ring 2,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration","Ring 2: Materials, Compounding & Formulated Po"
+page,map.html,text,ring 3,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 3: Value Chain
+page,map.html,text,ring 4,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 4: Downstream OEMs & Heavy Users
+page,map.html,text,ring 5,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 5: Ecosystem
+page,map.html,text,ring 5,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",ating status active are shown. Dots for Ring 5 are ecosystem organizations. A ring mar
 page,map.html,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,Tier A: Primary source
 page,map.html,text,tier b,ALLOWED:the site's own verification-tier and last-verified labels,Tier B: Authoritative directory
 page,map.html,text,tier c,ALLOWED:the site's own verification-tier and last-verified labels,Tier C: Single secondary source
 page,map.html,text,tier u,ALLOWED:the site's own verification-tier and last-verified labels,Tier U: Unverified candidate
 page,map.html,text,verification,ALLOWED:the site's own verification-tier and last-verified labels,"ing. Use the filters to narrow by ring, verification tier and state. Click a dot for details"
 page,map.html,text,verification,ALLOWED:the site's own verification-tier and last-verified labels,"vidence of a site's existence, scope or verification tier. 5,364 of 7,196 site rows carry co"
+page,search.html,text,ring 1,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 1: Core Producers & Processors
+page,search.html,text,ring 2,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration","Ring 2: Materials, Compounding & Formulated Po"
+page,search.html,text,ring 3,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 3: Value Chain
+page,search.html,text,ring 4,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 4: Downstream OEMs & Heavy Users
+page,search.html,text,ring 5,"ALLOWED:the site's own ring label (Ring 1: Core Producers and Processors ...), shown as vocabulary in a legend or filter, not as free-text narration",Ring 5: Ecosystem
 page,search.html,text,verification,ALLOWED:the site's own verification-tier and last-verified labels,"tem organizations; all statuses and all verification tiers) by name, trade name or city. Res"
 page,skyline.html,text,tier a,ALLOWED:the site's own verification-tier and last-verified labels,"The 3D map shows 4,804 active, tier A-C site rows with reference coordinates "
 page,skyline.html,text,tiers a,ALLOWED:the site's own verification-tier and last-verified labels,"active site rows (tiers A-C), 6,471 in the US, 8 elsewhere;"
@@ -2273,7 +2323,6 @@ release-csv:organizations_all.csv,ORG-002192,description_1line,lane,ALLOWED:a st
 release-csv:organizations_all.csv,ORG-002208,description_1line,lane,ALLOWED:a street name,"den Products Company, 1108 Green Garden Lane, Bedford, PA 15522."
 release-csv:organizations_all.csv,ORG-002252,description_1line,lane,ALLOWED:a company name; a supplier tier,"21-03033 (effective Nov 1, 2024) covers Lane Enterprises at 1244 Claremont Rd, Middl"
 release-csv:organizations_all.csv,ORG-002283,description_1line,lane,ALLOWED:a street name,"5 rebrand letter) lists 102 Pig Service Lane, Duncansville with scope 'Manufacture, "
-release-csv:organizations_all.csv,ORG-002299,description_1line,lane,ALLOWED:a street name,"lists the candidate address 516 Mecklem Lane: injection molding, blow molding and ru"
 release-csv:organizations_all.csv,ORG-002303,description_1line,carried,ALLOWED:names the listing or record that states the fact (source attribution),age. 'Polycel' is a former company name carried in the FRS record.
 release-csv:organizations_all.csv,ORG-002314,description_1line,audit,ALLOWED:the date of a certification audit that the certificate states,"Own-domain BRCGS certificate (audit 2025-11-17, valid to 2027-01-13) for 'T"
 release-csv:organizations_all.csv,ORG-002319,description_1line,opened,ALLOWED:the date a government inspection was opened,"OSHA inspection record (opened 2015-06-25) for Rehrig Pacific Company,"
@@ -2285,7 +2334,6 @@ release-csv:organizations_all.csv,ORG-002449,description_1line,lane,ALLOWED:a st
 release-csv:organizations_all.csv,ORG-002524,description_1line,opened,ALLOWED:the date a government inspection was opened,"locations; OSHA inspection 1717099.015 (opened Dec 18, 2023) inspected ColorCoat at th"
 release-csv:organizations_all.csv,ORG-002532,description_1line,verif,ALLOWED:the name of a supplier-directory program,A Thomas Verified (Thomas-validated) supplier profile 
 release-csv:organizations_all.csv,ORG-002532,description_1line,verified,ALLOWED:the name of a supplier-directory program,A Thomas Verified (Thomas-validated) supplier profile for
-release-csv:organizations_all.csv,ORG-002559,description_1line,prior,ALLOWED:a company's former name,for the fiberglass fabrication company (prior name Pilling's Fiberglass Reinforce Pro
 release-csv:organizations_all.csv,ORG-002613,description_1line,lane,ALLOWED:a street name,"ent Refining Company, LLC at 99 Stevens Lane, Exeter, accepting transparencies and x"
 release-csv:organizations_all.csv,ORG-002616,description_1line,lane,ALLOWED:a street name,"Forge Inc., facility address 435 School Lane, Plymouth Meeting, SIC 3082, and descri"
 release-csv:organizations_all.csv,ORG-002681,description_1line,carried,ALLOWED:names the listing or record that states the fact (source attribution),Company description (own text carried in its place listing): fabricates polys
@@ -2324,7 +2372,6 @@ release-sqlite:organizations,ORG-002192,description_1line,lane,ALLOWED:a street 
 release-sqlite:organizations,ORG-002208,description_1line,lane,ALLOWED:a street name,"den Products Company, 1108 Green Garden Lane, Bedford, PA 15522."
 release-sqlite:organizations,ORG-002252,description_1line,lane,ALLOWED:a company name; a supplier tier,"21-03033 (effective Nov 1, 2024) covers Lane Enterprises at 1244 Claremont Rd, Middl"
 release-sqlite:organizations,ORG-002283,description_1line,lane,ALLOWED:a street name,"5 rebrand letter) lists 102 Pig Service Lane, Duncansville with scope 'Manufacture, "
-release-sqlite:organizations,ORG-002299,description_1line,lane,ALLOWED:a street name,"lists the candidate address 516 Mecklem Lane: injection molding, blow molding and ru"
 release-sqlite:organizations,ORG-002303,description_1line,carried,ALLOWED:names the listing or record that states the fact (source attribution),age. 'Polycel' is a former company name carried in the FRS record.
 release-sqlite:organizations,ORG-002314,description_1line,audit,ALLOWED:the date of a certification audit that the certificate states,"Own-domain BRCGS certificate (audit 2025-11-17, valid to 2027-01-13) for 'T"
 release-sqlite:organizations,ORG-002319,description_1line,opened,ALLOWED:the date a government inspection was opened,"OSHA inspection record (opened 2015-06-25) for Rehrig Pacific Company,"
@@ -2336,7 +2383,6 @@ release-sqlite:organizations,ORG-002449,description_1line,lane,ALLOWED:a street 
 release-sqlite:organizations,ORG-002524,description_1line,opened,ALLOWED:the date a government inspection was opened,"locations; OSHA inspection 1717099.015 (opened Dec 18, 2023) inspected ColorCoat at th"
 release-sqlite:organizations,ORG-002532,description_1line,verif,ALLOWED:the name of a supplier-directory program,A Thomas Verified (Thomas-validated) supplier profile 
 release-sqlite:organizations,ORG-002532,description_1line,verified,ALLOWED:the name of a supplier-directory program,A Thomas Verified (Thomas-validated) supplier profile for
-release-sqlite:organizations,ORG-002559,description_1line,prior,ALLOWED:a company's former name,for the fiberglass fabrication company (prior name Pilling's Fiberglass Reinforce Pro
 release-sqlite:organizations,ORG-002613,description_1line,lane,ALLOWED:a street name,"ent Refining Company, LLC at 99 Stevens Lane, Exeter, accepting transparencies and x"
 release-sqlite:organizations,ORG-002616,description_1line,lane,ALLOWED:a street name,"Forge Inc., facility address 435 School Lane, Plymouth Meeting, SIC 3082, and descri"
 release-sqlite:organizations,ORG-002681,description_1line,carried,ALLOWED:names the listing or record that states the fact (source attribution),Company description (own text carried in its place listing): fabricates polys

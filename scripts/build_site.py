@@ -322,6 +322,9 @@ BUILD_PROSE_RE = re.compile(
     r"|\bfetch\w*|\bre-?fetch\w*|\bHTTP [1-5]\d\d\b|\bthis session\b|\bavailability signal\b|\bbot-?walled\b"
     r"|\bretr(?:y|ied|ies)\b|\bverdict\w*|\bprior (?:fact|pass|row|record)\b|\bthis (?:row|record|pass|batch)\b"
     r"|\btiers? (?:[ABCU]\b|at\b|held|stays|kept)|\bcapping tier\b|\bheld at [ABCU]\b|\bTODO\b|\bTBD\b"
+    r"|(?-i:\bCheck RUN\b|\bADDR_ONLY\b|\bBRIEF\b|\bPOSITIVE\b|\bDECISIVE\b)|\bmatcher\b|\bRing [1-5]\b|\bdistribution screen\b|\bcoded (?:as|on|distribution|manufactur)\w*|\b(?:distribution|manufacturing)-coded\b"
+    r"|\bcandidate (?:address|city|suite|street|domain|name|\d)|\bCurrency is\b"
+    r"|(?-i:\b[A-Z]{3,}_[A-Z_]{3,}\b)|\bexclusion list\b|\bW\d{1,2}-\d+\b|\bcached copy\b|\bno own site found\b|\bown (?:site|domain|website) (?:is )?live\b|\bprogram row\b"
     r"|\bdated primary\b|\bprimary/strong\b|strong[- ]directory|\bin full\b|\bpasses? the Ring \d|\bcarried at\b"
     r"|\bW\d{1,2}-[A-Z]{2}-\d+\b|\bopened \d{4}-\d{2}-\d{2}|\(live, opened\b|\bheld\b|(?-i:\bUNCHANGED\b|\bCHANGED\b|\bVERIFIED\b)"
     r"|\b(?:site|website|page|pages|catalog|footer|domain|homepage)(?: \([^)]*\))?(?: was| were)? opened\b|\bopened in full\b|\(opened(?: in full)?\)",
@@ -333,7 +336,8 @@ BUILD_PROSE_RE = re.compile(
 PROCESS_WATCH_RE = re.compile(
     r"\bcrawl|\bverif|\bfetch|\bopened\b|\btiers?\b|\bwitness|\bsettl|\baudit\b|\bcarried\b|\bheld\b|\bretr(?:y|ied|ies)\b|\bqueue"
     r"|\blanes?\b|\bpass(?:es)?\b|\bpackets?\b|\bverdict|\bTODO|\bTBD|\bin full\b|\bprior\b|\bsession\b|\bflagged?\b|\bunresolved\b"
-    r"|\bduplicate|\bdisposition\b|\bladder\b|\bstag(?:ed|ing)\b|\brungs?\b", re.I)
+    r"|\bduplicate|\bdisposition\b|\bladder\b|\bstag(?:ed|ing)\b|\brungs?\b"
+    r"|\bring [1-5]\b|\bcandidate\b|\bcoded\b|\bmatcher\b|\bcheck run\b|\bsuperseded\b|(?-i:\bBRIEF\b)|\bB\d\b", re.I)
 
 # Ordinary uses of those words that must pass, each with its reason. A span listed here is removed before either test runs.
 PROSE_ALLOW = [
@@ -342,7 +346,6 @@ PROSE_ALLOW = [
     (re.compile(r"\bTier[ -][1-3]\b"), "an automotive supplier tier, an industry term"),
     (re.compile(r"\b[A-Z][a-z]+ Lane\b"), "a street name"),
     (re.compile(r"\b(?:privately|publicly|closely) held\b", re.I), "a type of ownership"),
-    (re.compile(r"\bprior name\b", re.I), "a company's former name"),
     (re.compile(r"\bcarried (?:in the FRS record|in its place listing|verbatim in company-submitted profiles)\b|\bdirectory-carried\b"),
      "names the listing or record that states the fact (source attribution)"),
     (re.compile(r"\bopened(?: its| in(?! full)(?: \d{4})?| \d{4}(?!-)| [A-Z][a-z]+\.? \d{4}|,)|\b(?:plant|factory|facility|line|center|centre|site) opened (?=in\b|\d{4}|[A-Z][a-z]{2,8}\.? \d{4}|,|\.)"),
@@ -368,9 +371,15 @@ def unclassified_process_words(text):
     return [m.group(0) for m in PROCESS_WATCH_RE.finditer(without_allowed(text))]
 
 
+def prose_wording(text):
+    """Build and review prose without the blind-audit word scan (which hits "#1" in an endowed chair and a company called Gemini)."""
+    t = str(text or "")
+    return bool(CRM_RE.search(t) or BUILD_PROSE_RE.search(without_allowed(t)) or TEMP_ID_RE.search(t) or TEMP_ANY_RE.search(t))
+
+
 def internal_wording(text):
     t = str(text or "")
-    return bool(CRM_RE.search(t) or INTERNAL_RE.search(t) or BUILD_PROSE_RE.search(without_allowed(t)) or TEMP_ID_RE.search(t) or TEMP_ANY_RE.search(t))
+    return bool(INTERNAL_RE.search(t) or prose_wording(t))
 
 
 def release_withheld(table, field, value):
@@ -2569,7 +2578,7 @@ LAB_TYPES = {"government_lab_agency", "nonprofit_rd_consortium"}
 def published_role(p):
     """The role line as published, unless it carries build wording ("pages fetched/searched ..."); then the vocabulary role."""
     published = p.get("role_as_published")
-    return (published if nonempty(published) and not internal_wording(published) else "") or str(p.get("role") or "").replace("_", " ")
+    return (published if nonempty(published) and not prose_wording(published) else "") or str(p.get("role") or "").replace("_", " ")
 
 
 def experts_json(ctx):

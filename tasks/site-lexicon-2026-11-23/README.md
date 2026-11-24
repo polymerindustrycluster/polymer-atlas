@@ -25,9 +25,9 @@ listed (about 40,000 cells).
 
 ## Reading the hit list
 
-- Real build prose in a description: now withheld (descriptions withheld, organizations + ecosystem records + programs: 206 -> 409 of 5,267 shown descriptions;
-  organizations alone 204 -> 397). They include Gemini's 12 audit-timing ledes, the six "settles identity" ledes, ORG-001997, ORG-002044 and ORG-002045.
-  A withheld description is withheld whole: about 190 of the new ones also describe the company, inside the process narrative; the repository CSV keeps them.
+- Real build prose in a description: now withheld (review round 1 of PR #532 added the matcher/check, standalone ring, distribution-screen, candidate-address and workflow-token families) (descriptions withheld, organizations + ecosystem records + programs: 206 -> 456 of 5,267 shown descriptions;
+  organizations alone 204 -> 442). They include Gemini's 12 audit-timing ledes, the six "settles identity" ledes, ORG-001997, ORG-002044 and ORG-002045.
+  A withheld description is withheld whole: about 240 of the new ones also describe the company, inside the process narrative; the repository CSV keeps them.
 - Ordinary uses: `PROSE_ALLOW` (descriptions) and the scan's `LABEL_ALLOW` (non-description fields: the site's own "verification tier" and "last verified" labels,
   company, street and URL names the word-based blind-audit scan catches, suite numbers). Each has its reason in the status column.
 - After: 0 SHOWN hits on every surface.
@@ -35,6 +35,6 @@ listed (about 40,000 cells).
 ## Not done, owner decision
 
 Notes cells are published as they are in the repository CSVs and the release (`notes` is the build narrative: "Created ... in integration pass 17 ..."). Cells with a
-process-word hit in the release: organizations 4,673, sites 6,875, evidence 23,859 (counts in `COUNTS.md`). Only temporary ids and copies of withheld descriptions are
+process-word hit in the release, after this pass: organizations 4,644, sites 6,841, evidence 23,116 (counts in `COUNTS.md`). Only temporary ids and copies of withheld descriptions are
 blanked there. Withholding or reducing notes in the release is a release-format and privacy-of-process choice: proposed for the owner, with the recommendation to
 drop the `notes` column from the release's organization and site CSVs and keep it in the repository. Nothing was changed.
