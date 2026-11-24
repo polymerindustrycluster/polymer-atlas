@@ -757,7 +757,8 @@ class DirectoryCompaniesTest(unittest.TestCase):
         self.assertNotIn("rows (one per owner and county).'", self.js.replace(", one per owner and county).'", ""))   # the old row-only line is gone
         self.assertIn("Counts are companies.", self.html)
         self.assertIn("var lost = Object.keys(counts[f]['_'] || {}).filter(function (id) { return !companies[id]; }).length;", self.js)   # left out = no row on the list
-        self.assertIn("' company' : ' companies') + ' with unknown '", self.js)
+        self.assertIn("' with unknown ' + NAME[f] + ' in at least one county'", self.js)
+        self.assertIn("Unknown in at least one county (nothing recorded)", self.html)
         self.assertIn("Every filter except the member flag", self.html)
         self.assertIn('A row with the "PIC member" badge is on the public member list. A row without it is not marked either way', self.html)
         self.assertNotIn('is marked "on the public member list" or', self.html)                # the list shows a badge for Yes only; help must not promise a row label for No
@@ -1462,6 +1463,29 @@ class RefuteFixesTest(unittest.TestCase):
         spec.loader.exec_module(bg)
         self.assertEqual(bg.public_description("Parent (NEW:MJ-07)"), "")
 
+    def test_build_prose_families_are_withheld_everywhere_the_description_is_shown(self):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("bg", Path(build_site.__file__).resolve().parent / "build_graph.py")
+        bg = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(bg)
+        families = {
+            "staged": ["Own site footer: 401 Milford Parkway (matches staged address)", "Staged domain still fails to resolve", "Re-derived from staged tooling"],
+            "rung": ["Rung 1 (own website) carried. Own site: molding", "Rung 3 (DOL Form 5500) carried the address", "Rung 4 only; ladder rungs not reached"],
+            "unchanged": ["UNCHANGED (VERIFIED B). Own site opened"],
+            "browser_open": ["Own site read by browser_open: injection molding"],
+            "retry": ["RETRY RECOVERED: own site now loads"],
+            "requeue": ["Requeue after the timeout; maker of foam", "requeued for a second read"],
+            "settling": ["Settling fact met by a dated filing", "Both settling facts obtained"],
+        }
+        for family, texts in families.items():
+            for text in texts:
+                self.assertTrue(build_site.internal_wording(text), (family, text))
+                self.assertIn("withheld", build_site.lede(text), text)
+                self.assertEqual(bg.public_description(text), "", text)
+                self.assertTrue(build_site.release_withheld("organizations", "description_1line", text), text)
+        for ordinary in ("Anti-slip step, walkway and ladder covers", "Maker of stair treads and staircases"):
+            self.assertFalse(build_site.internal_wording(ordinary), ordinary)
+
     def test_internal_wording_filter_is_the_blind_audit_scan(self):
         root = Path(build_site.__file__).resolve().parent.parent
         src = (root / "tasks" / "blind-audit-11-2026-11-17" / "sample.py").read_text(encoding="utf-8")
@@ -1477,8 +1501,10 @@ class RefuteFixesTest(unittest.TestCase):
         self.assertIn("other (specified in the record&#x27;s notes, which are not published)", five.replace("&#39;", "&#x27;"))
         self.assertNotIn("other specified in notes", self.read("directory.json"))
 
-    def test_stacked_phone_headers_hold_no_reachable_sort_button(self):
-        self.assertIn("table.stack thead button.sort{display:none}", self.read("style.css"))
+    def test_stacked_phone_headers_keep_their_names_and_their_sort_buttons_take_no_focus(self):
+        css = self.read("style.css")
+        self.assertNotIn("table.stack thead button.sort{display:none}", css)           # hiding the button hid the column name from screen readers
+        self.assertRegex(self.read("sortable.js"), r"tabIndex = phone\.matches && table\.classList\.contains\('stack'\) \? -1 : 0")   # it just takes no focus
 
     def test_skyline_loads_nothing_heavy_on_a_phone(self):
         html = self.read("skyline.html")

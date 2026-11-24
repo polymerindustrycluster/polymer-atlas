@@ -307,12 +307,27 @@ CRM_RE = re.compile(r"\bCRM\b", re.I)
 INTERNAL_RE = re.compile(r'#\d+|\bEVD-\d+|\bPR\b|pull request|\bpass[- ]?\d*\b|packet|(?-i:\blanes?\b|\bLanes? [A-Z0-9]{2,}\b)|\bwave\b|integration pass|integrator|codex|claude|grok|gemini|spaghetti|\bmuse\b|\bowner\b|\brulings?\b|battery|council|refut|\bminted\b|staging|banked|\bnotes?\b|created_by|tier[ _]?effect|supports_[ABCU]', re.I)
 
 
-TEMP_ID_RE = re.compile(r"NEW:[A-Z]{2,}-\d+")   # a temporary record id from a build pass, as in "(NEW:MJ-07)"
+TEMP_ID_RE = re.compile(r"NEW:[A-Z]+-\d+")   # a temporary record id from a build pass, as in "(NEW:MJ-07)" or "(NEW:A-12)"
+TEMP_ANY_RE = re.compile(r"\bNEW(?:SITE)?:")        # a temporary record id in any shape (NEW:P66, NEW:L6-08, NEWSITE:...): the all-notes repair's own test
+
+# Build-pass prose that INTERNAL_RE (a copy of the blind-audit scan) does not name: "staged address/domain/name" (the staged record
+# under review), the evidence ladder ("Rung 1", "ladder rungs"), requeue and settling-fact bookkeeping, and tool status words.
+# "ladder" alone is not listed: ladder covers are a product.
+BUILD_PROSE_RE = re.compile(r"\bstaged\b|\brungs?\b|ladder rungs?|unchanged \(verified|browser_open|retry recovered|\bre-?queue[ds]?\b|settling facts?", re.I)
 
 
 def internal_wording(text):
     t = str(text or "")
-    return bool(CRM_RE.search(t) or INTERNAL_RE.search(t) or TEMP_ID_RE.search(t))
+    return bool(CRM_RE.search(t) or INTERNAL_RE.search(t) or BUILD_PROSE_RE.search(t) or TEMP_ID_RE.search(t) or TEMP_ANY_RE.search(t))
+
+
+def release_withheld(table, field, value):
+    """True if the downloadable release must not carry this cell: a description the site withholds (internal_wording), or a temporary
+    record id of any shape in any text cell of any table (notes, evidence quotes, logs). `table` is kept for callers; the test no longer
+    depends on it."""
+    if not value:
+        return False
+    return bool(TEMP_ANY_RE.search(value)) or (field == "description_1line" and internal_wording(value))
 
 
 def lede(text):
@@ -1085,7 +1100,7 @@ select{max-width:100%}
 @media (max-width:640px){
   .table-wrap:has(table.stack){overflow-x:visible}
   table.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  table.stack thead button.sort{display:none}   /* the header is hidden on a phone, so its sort buttons must not be reachable either */
+  /* the clipped header keeps its text in the accessibility tree (column names for screen readers); its sort buttons take no focus (sortable.js sets tabindex -1 there) */
   table.stack caption{display:block}
   table.stack,table.stack tbody,table.stack tr{display:block;width:100%}
   table.stack tr{border-top:1px solid var(--line);padding:8px 0;display:grid;grid-template-columns:1fr 1fr}
@@ -1668,7 +1683,7 @@ DIRECTORY_JS = r"""(function () {
       var c = sel[f].length;
       var lost = Object.keys(counts[f]['_'] || {}).filter(function (id) { return !companies[id]; }).length;   // left out = companies with no row on the list
       boxes[f][0].closest('details').querySelector('.sel').textContent = c ? ' (' + c + ' chosen)' : '';
-      if (c && sel[f].indexOf('_') < 0 && lost) notes.push(lost.toLocaleString() + (lost === 1 ? ' company' : ' companies') + ' with unknown ' + NAME[f]);
+      if (c && sel[f].indexOf('_') < 0 && lost) notes.push(lost.toLocaleString() + (lost === 1 ? ' company' : ' companies') + ' with unknown ' + NAME[f] + ' in at least one county');
     });
     var nc = size(companies), nr = hits.length;
     status.textContent = 'Showing ' + nc.toLocaleString() + (nc === 1 ? ' company (' : ' companies (') + nr.toLocaleString() + (nr === 1 ? ' row' : ' rows') + ', one per owner and county).';
@@ -1892,7 +1907,7 @@ def site_address(s):
 
 def directory_rows(a):
     """One dict per owner and PIC-18 county, from that owner's PIC-18 active tier A-C site rows there. An owner is an
-    organization record or an ecosystem record (787 and 7 at the time of writing).
+    organization record or an ecosystem record (785 and 7 at the time of writing).
 
     An owner with sites in two counties has two rows, so a county's row count is its owner count.
     Employee band: the band on the row's site rows, else the organization's Ohio band. Process, material and market
@@ -1985,7 +2000,7 @@ def facet_html(rows, key, heading, open_):
     opts = facet_options(rows, key)
     n_unknown = len({r["id"] for r in rows if not row_tokens(r, key)})
     if key != "mem":                                # the member flag is yes or no by construction: a record without the flag is "no"
-        opts.append(("_", "Unknown (nothing recorded)", n_unknown))
+        opts.append(("_", "Unknown in at least one county (nothing recorded)", n_unknown))   # a company counts here if any one of its county rows has nothing recorded
     items = "".join(
         f'<label class="opt"><input type="checkbox" name="{key}" value="{esc(t)}"> '
         f'<span class="t">{esc(label)}</span> <span class="n">{n}</span></label>' for t, label, n in opts)
@@ -2101,7 +2116,7 @@ add up to more than the All PIC-18 line. Counts are owners, not unique ultimate 
 A <span class="badge">PIC member</span> badge marks an owner on PIC's public member list.</p>
 <div class="banner note"><p><strong>Unknown means nothing is recorded: not zero, not small.</strong> "{MEMBER_NO}" is not the same as "not a member".</p></div>
 <details class="more"><summary>How to read the list</summary>
-<p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter except the member flag (which is yes or no by construction) shows how many companies are unknown.</p>
+<p><strong>Unknown means nothing is recorded: not zero, not small.</strong> Every filter except the member flag (which is yes or no by construction) shows how many companies are unknown in at least one county (a company with one known and one unknown county row counts under both its value and Unknown).</p>
 <p><strong>Counts are companies.</strong> A company with sites in two counties has two rows (one per owner and county) and counts once in the figures above the list and beside each filter choice; the download has one row per owner and county.</p>
 <p><strong>Public member list.</strong> A row with the "PIC member" badge is {MEMBER_YES}. A row without it is not marked either way: the member filter's No choice selects the rows without the badge, and that is all it says.</p>
 <p>One row per owner and county, grouped by county; an owner with site rows in two counties is listed under both,
