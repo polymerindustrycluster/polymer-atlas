@@ -8,7 +8,8 @@ import tarfile
 
 COMPOSITE = {'registry_links.csv': ('org_id', 'registry', 'registry_id', 'site_id'),
              'people_identifiers.csv': ('person_id', 'identifier_type', 'identifier_id'),
-             'ipeds_completions.csv': ('program_key', 'year')}
+             'ipeds_completions.csv': ('program_key', 'year'),
+             'value_basis.csv': ('record_table', 'record_id', 'field', 'value')}
 
 
 def git(root, *args):
