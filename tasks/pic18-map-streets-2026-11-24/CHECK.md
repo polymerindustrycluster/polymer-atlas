@@ -5,7 +5,7 @@ Run from the repository root with the Atlas shared store mounted.
 | Command | Result on the packet |
 |---|---|
 | `python3 -I tasks/pic18-map-streets-2026-11-24/build.py` | Rewrites BASIS.csv from the packets; 153 sites, 1 filled. |
-| `python3 -I tasks/pic18-map-streets-2026-11-24/check.py` | PASS: one fill through every leg and the binding gate with capture replay, one changed cell, ledger equals the changed cells, release record equals the stored capture, 12 planted defects rejected. |
+| `python3 -I tasks/pic18-map-streets-2026-11-24/check.py` | PASS: one fill through every leg and the binding gate with capture replay, one changed cell, ledger equals the changed cells, release record equals the stored capture, 17 planted defects rejected. |
 | `python3 scripts/validate.py` | OK. The cured V-68 baseline entry for SITE-000011 is removed. |
 | `python3 -m unittest discover -s scripts -p test_validate.py -k test_v65_baseline_still_warns_only` | OK |
 | `python3 scripts/check_evidence_binding.py --new-since origin/main` | 1 row, PASS `map_listing_street_bound`. |

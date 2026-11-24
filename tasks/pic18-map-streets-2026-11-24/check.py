@@ -1,4 +1,4 @@
-"""Check the map-listing street fills: every leg of the route, the cell delta, the ledger, and ten planted defects.
+"""Check the map-listing street fills: every leg of the route, the cell delta, the ledger, and fifteen planted defects.
 
 Run from the repository root with the Atlas shared store mounted: python3 -I tasks/pic18-map-streets-2026-11-24/check.py
 The hold reasons in BASIS.csv are replayed only when the controller's measurement packets are present (see build.py).
@@ -91,6 +91,39 @@ def verify_fill(ev, capture, base_idx, evidence, store=None):
     assert verdict == "PASS", f"binding gate: {reason}"
 
 
+def verify_applied(site_street, capture):
+    """The street written to the site shard equals the street the capture states."""
+    (addr,) = json.loads(capture)["properties"]["addresses"]
+    assert site_street == addr["freeform"], "applied street differs from the captured listing street"
+
+
+def verify_inputs(lines, digest, store=STORE):
+    """INPUTS.sha256 is exactly the two capture copies and one release part, each present and hashing to its digest."""
+    entries = [line.split("  ", 1) for line in lines]
+    assert all(len(e) == 2 for e in entries) and len(entries) == 3, "INPUTS.sha256 must hold three entries"
+    capture_paths = {f"raw/overture/2026-11-18.0/{digest}.json", f"raw/map-listings/overture-maps-places/{digest}.json"}
+    parts = [e for e in entries if e[1] not in capture_paths]
+    assert {e[1] for e in entries} >= capture_paths and len(parts) == 1, "INPUTS.sha256 misses a capture or the release part"
+    for want, path in entries:
+        full = (store / path).resolve()
+        assert path.startswith("raw/") and full.is_relative_to(store / "raw") and full.is_file(), f"missing input {path}"
+        with full.open("rb") as stream:
+            assert hashlib.file_digest(stream, "sha256").hexdigest() == want, f"digest mismatch for {path}"
+    part = parts[0][1]
+    assert part.startswith(f"{build.OVERTURE_RELEASE}/") and part.endswith(".parquet"), "not a release 2026-11-18.0 part"
+    manifest = (store / "raw/MANIFEST.sha256").read_text().splitlines()
+    assert f"{parts[0][0]}  ./{part.removeprefix('raw/')}" in manifest, "release part digest is not in the store MANIFEST.sha256"
+    return store / part
+
+
+def verify_ledger(claims, changed, fills, frame):
+    """Corrected rows equal the changed cells; held rows are exactly the rest of the frame, full tuples."""
+    got = sorted(tuple(r[k] for k in CLAIM_FIELDS) for r in claims)
+    want = sorted([("sites", sid, col, "corrected", fills[sid]["evidence_id"]) for sid, col in changed]
+                  + [("sites", sid, "street_address", "held", "") for sid in frame.keys() - fills.keys()])
+    assert got == want, "claim ledger differs from the changed cells and the held frame"
+
+
 def rejects(label, plant):
     try:
         plant()
@@ -175,11 +208,7 @@ def main():
     assert set(git("diff", "--name-only", BASE, "--", "data/").decode().splitlines()) == {SITES, EVIDENCE}
     assert keyed(added, "record_id").keys() == fills.keys()
     # inputs: every cited capture is in the store at its digest, under both paths
-    manifest = [line.split("  ", 1) for line in (HERE / "INPUTS.sha256").read_text().splitlines()]
-    for digest, path in manifest:
-        assert path.startswith("raw/") and (STORE / path).resolve().is_relative_to(STORE / "raw")
-        if not path.endswith(".parquet"):  # the 740 MB release part is pinned from MANIFEST.sha256, not rehashed here
-            assert hashlib.sha256((STORE / path).read_bytes()).hexdigest() == digest, path
+    input_lines = (HERE / "INPUTS.sha256").read_text().splitlines()
     base_idx = b.Index.load(BASE)
     evidence = {e["evidence_id"]: e for e in b.rows(BASE, "evidence_*.csv")}
     controls = None
@@ -190,18 +219,26 @@ def main():
         capture = (STORE / f"raw/overture/2026-11-18.0/{digest}.json").read_bytes()
         assert capture == (STORE / f"raw/map-listings/overture-maps-places/{digest}.json").read_bytes()
         verify_fill(ev, capture, base_idx, evidence, STORE)
-        # replay the cited record from the full release in the store, not from the controller's packet
+        verify_applied(head[ev["record_id"]]["street_address"], capture)
+        part = verify_inputs(input_lines, digest)
+        # replay the cited record from the pinned release part, not from the controller's packet
         assert build.capture_body(dict(provider="overture-maps-places", id=f["place_id"], lon=float(f["lon"]),
-                                       lat=float(f["lat"]))) == capture, "release record differs from the stored capture"
-        controls = controls or (ev, capture)
-    # ledger: corrected rows equal the changed cells; held rows equal the rest of the frame
+                                       lat=float(f["lat"])), part) == capture, "release record differs from the stored capture"
+        controls = controls or (ev, capture, digest, head[ev["record_id"]]["street_address"])
     claims = csv_rows((HERE / "CLAIMS_CHECKED.csv").read_text(), CLAIM_FIELDS)
-    corrected = sorted(tuple(r[k] for k in CLAIM_FIELDS) for r in claims if r["verdict"] == "corrected")
-    held = sorted(r["record_id"] for r in claims if r["verdict"] == "held")
-    assert len(claims) == len(corrected) + len(held)
-    assert corrected == sorted(("sites", sid, col, "corrected", fills[sid]["evidence_id"]) for sid, col in changed)
-    assert held == sorted(frame.keys() - fills.keys()) and all(r["field"] == "street_address" for r in claims)
-    planted_defects(*controls, base_idx, evidence)
+    verify_ledger(claims, changed, fills, frame)
+    ev, capture, digest, street = controls
+    rejects("applied street differs from the capture", lambda: verify_applied("999 Fictional Ave", capture))
+    zeros = "0" * 64
+    rejects("INPUTS.sha256 names a nonexistent part", lambda: verify_inputs([*input_lines[:2], f"{zeros}  raw/overture/nonexistent.parquet"], digest))
+    rejects("INPUTS.sha256 digest wrong", lambda: verify_inputs([l.replace(digest, zeros, 1) if i == 0 else l for i, l in enumerate(input_lines)], digest))
+    rejects("INPUTS.sha256 drops the release part", lambda: verify_inputs(input_lines[:2], digest))
+    sid0 = sorted(frame.keys() - fills.keys())[0]
+    for label, bad in (("held ledger row with the wrong table", ("organizations", sid0, "street_address", "held", "")),
+                       ("held ledger row with an evidence ID", ("sites", sid0, "street_address", "held", "EVD-999999"))):
+        mutated = [dict(zip(CLAIM_FIELDS, bad)) if r["record_id"] == sid0 else r for r in claims]
+        rejects(label, lambda: verify_ledger(mutated, changed, fills, frame))
+    planted_defects(ev, capture, base_idx, evidence)
     # hold reasons: replayed only when the packets are there
     if all(p.exists() for p in (build.OV_PARQUET, build.GOOGLE_RAW, build.CANDIDATES)):
         _, _, frame2, results, _ = build.evaluate()
@@ -211,7 +248,7 @@ def main():
     else:
         replay = "NOT RUN: hold reasons not replayed (measurement packets absent)"
     print(f"PASS: {len(fills)} fill(s) through every leg and the binding gate, {len(changed)} changed cell(s), "
-          f"{len(frame) - len(fills)} held or status-lead sites, {len(manifest)} input hash(es); {replay}")
+          f"{len(frame) - len(fills)} held or status-lead sites, {len(input_lines)} input hash(es); {replay}")
 
 
 if __name__ == "__main__":

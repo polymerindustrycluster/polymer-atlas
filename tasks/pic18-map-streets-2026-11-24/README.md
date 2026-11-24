@@ -16,7 +16,7 @@ The expected yield was about 55. The rules give 1. The controller's 59 "listings
 |---|---|---:|
 | FILLED | listing and second source agree on every leg | 1 |
 | HELD | no Overture or Google place with a held name in the site city | 64 |
-| HELD | a listing exists, the site holds no second source in any form | 47 |
+| HELD | a listing exists, the site holds no second source in an accepted form | 47 |
 | HELD | a listing and candidate second sources exist, none in a gate-accepted form (`map_second_source_unbound`) | 21 |
 | HELD | listings disagree with each other on the street (Overture two streets, or Overture against Google) | 11 |
 | HELD | second source names a different street (`map_second_street_differs`: SITE-000061, SITE-000112) | 2 |

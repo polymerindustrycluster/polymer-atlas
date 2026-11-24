@@ -186,7 +186,7 @@ def tables(frame, results):
     return basis, fills
 
 
-def capture_body(listing):
+def capture_body(listing, part=None):
     """Project the cited Overture release record into the gate's capture shape (bytes)."""
     if listing["provider"] != "overture-maps-places":
         raise NotImplementedError("this packet cites no Google record")
@@ -194,7 +194,7 @@ def capture_body(listing):
     box = f"bbox.xmin between {lon - 0.001} and {lon + 0.001} and bbox.ymin between {lat - 0.001} and {lat + 0.001}"
     rec, = json.loads(subprocess.check_output([DUCKDB, "-json", "-c",
         f"select id, names.primary as name, addresses, operating_status, confidence, sources "
-        f"from read_parquet('{STORE}/{OVERTURE_RELEASE}/*.parquet') where {box} and id='{listing['id']}'"]))
+        f"from read_parquet('{part or f'{STORE}/{OVERTURE_RELEASE}/*.parquet'}') where {box} and id='{listing['id']}'"]))
     addr, = rec["addresses"]
     return json.dumps({"type": "Feature", "id": rec["id"], "properties": {
         "theme": "places", "type": "place", "names": {"primary": rec["name"]}, "addresses": [addr],
