@@ -1,0 +1,6 @@
+table,record_id,field,verdict,evidence_id
+organizations,ORG-000149,hq_city,corrected,EVD-483118
+organizations,ORG-000149,hq_state,corrected,EVD-483118
+organizations,ORG-000149,hq_county,corrected,EVD-483118
+organizations,ORG-000149,hq_in_scope,corrected,EVD-483118
+organizations,ORG-001776,hq_city,corrected,EVD-483119
