@@ -608,5 +608,5 @@ demonstrated error, under the previous unit.
 principle for later, not now. The first-user note to the City of Akron waits until the PIC-18 sites with no street are
 filled. The way the controller asks the owner for decisions is unchanged.
 
-Decided by the repo owner in session, 2026-11-24, by multiple choice. The audit unit was the recommended option. The
-outreach answer ("pilot, but in the future") and the Akron answer ("wait") were not.
+Decided by the repo owner in session, 2026-11-24, by multiple choice. The audit unit was the recommended option; the
+other three answers ("pilot, but in the future", "wait", "keep as now") were not.
