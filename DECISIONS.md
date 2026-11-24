@@ -581,16 +581,20 @@ Hydrogen, Gemini 4 Carbon, Gemini 4 Neon). The controller re-measured every numb
 **The census behind this morning's withdrawal figures was wrong.** It read only one OSHA citation format for size bands,
 and it was too strict for process and market: it required the 2026-11-23 proof file and exact vocabulary words. Among
 the 792 PIC-18 owners at e9bcabf:
-- 420 owners have a size band; 359 have a non–Form 5500 filing row behind it, 32 rest only on Form 5500 and 29 have no
-  size row.
-- 460 owners have a process value. A reader linked a verbatim quote to at least one value for 81 of them. Of the 961
-  process values, 118 are quoted, 679 are cited (a bound row names the value and a page, but saves none of its words) and
-  164 have no row that names them.
-- 489 owners have a market value; 234 have at least one quoted value. Of 1,358 market values, 561 are quoted, 771 are
-  cited and 26 have no row.
+- 420 owners have a size band. 359 have at least one non–Form 5500 size-evidence row behind it (357 a government
+  filing, 2 only company website statements), 32 rest only on Form 5500 and 29 have no size row.
+- 460 owners have a process value and 489 a market value. A script screened each published value against the evidence
+  rows of its record and owner. Of 961 process values, 118 have a row that names the value and carries a quote marker,
+  679 have a row that names it without one (mostly 2026-11-01 rows such as "organizations.processes includes X (org
+  scope, own-site disclosure)"), and 164 have no row that names it. For 1,358 market values the split is 561, 771 and
+  26. 81 process owners and 234 market owners have at least one value of the first kind.
+- These are screening results. The screen does not establish that a quote supports the value, that the row binds to
+  the record, or what a reader verified.
 
-The figures given to the owner at 12:52 (unknown 789 / 791 / 769 of 792 after withdrawal) are void. For the cited
-values, the stored own-site corpus holds the exact cited page for 383 of 679 process values and 511 of 771 market values.
+The figures given to the owner at 12:52 (unknown 789 / 791 / 769 of 792 after withdrawal) are void. For the values
+whose row names them without a quote, the stored own-site corpus manifest lists a page with the cited page's host and
+path for 383 of 679 process values and 511 of 771 market values (502 if the query string must also match). Whether the
+stored page is the cited page is not checked.
 
 **How "publish only what's stated" is applied.** Nothing is withdrawn in bulk. A cited value is re-read against its stored
 page first; a value no source states goes back to unknown only after that check. A pilot of the re-read runs before any
@@ -601,8 +605,9 @@ none), derived from evidence rows and shown on the site, waits for the pilot's r
 confirmed is reported as unconfirmed, by field, next to the error rate; it is not counted as an error. The PIC-18 bar
 (at most 5% wrong) gates on the core fields: organization or site name, operating status, street, county and polymer
 relevance. Process, market and size report their error rate and unconfirmed share by field and do not gate. Audit 13
-keeps its smoke-first design under this unit. Audit 12 found 74 of 189 sampled PIC-18 records unconfirmable, with no
-demonstrated error, under the previous unit.
+keeps its smoke-first design under this unit. Under the previous unit, audit 12 recorded 74 of 189 sampled PIC-18
+records whose only finding was an unresolved claim, with no demonstrated error; it also recorded 12 confirmed PIC-18
+error cases.
 
 **Also answered.** Company outreach (PIC staff asking companies to confirm their listings): a pilot is approved in
 principle for later, not now. The first-user note to the City of Akron waits until the PIC-18 sites with no street are
