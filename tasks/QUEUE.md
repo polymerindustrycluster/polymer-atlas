@@ -8,6 +8,8 @@ Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>
 
 - [ ] `claimed:atlas-p1-tradeshow 2026-11-23` **First-user task 12 — PIC-18 organizations at a trade show.** PIC staff can reach every recorded PIC-18 participant for each listed event and see the SQL-matching organization count. Branch `agent/codex/tradeshow-list-2026-11-23`.
 
+- [ ] `claimed:atlas-p1-value-basis 2026-11-24` **Per-value basis generator (SCHEMA §4.24, v1.20.1).** `scripts/value_basis.py`, validator V-69, the first `data/value_basis.csv`, site and release labels, withheld values hidden. Branch `agent/claude-code/value-basis-2026-11-24`. First user: PIC staff reading the directory and the Atlas controller. Check use by 2026-11-30.
+
 - [ ] `claimed:atlas-p1-title-hq 2026-11-24` **Verbatim researcher titles.** Replay the flagged title frame against held institutional quotations.
 
 - [ ] `claimed:atlas-p1-website-rule 2026-11-24` **Website evidence and LinkedIn request refusal.** Record and enforce the 12:12 owner rulings. Branch `agent/codex/website-rule-2026-11-24`.
@@ -713,3 +715,4 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - claimed:atlas-p1-filing-repairs 2026-11-24 — site-band-from-filing-2026-11-24 (bound establishment filings, whole-Atlas repair).
 - [ ] `claimed:atlas-p1-rulings-1029 2026-11-24` **Record the 10:29 owner rulings (ATLAS-38):** map-listing streets, per-value basis labels, implied and unstated values, filing name variants. DECISIONS.md, SCHEMA v1.20.0, AGENTS.md §2a rule 3, Overture registry row. Branch `agent/claude-code/rulings-2026-11-24-1029`. Docs only. First user: the Atlas controller. Check use by 2026-11-30.
 - [ ] `claimed:atlas-acq-record 2026-11-24` Record the acquisition stack and experiments log (`docs/ACQUISITION.md`). Branch `agent/claude-code/acquisition-record-2026-11-24`.
+- [ ] `claimed:atlas-p1-map-streets 2026-11-24` **PIC-18 map-listing streets:** fill blank active tier A-C PIC-18 site streets by the SCHEMA §4.13 map-listing route (Overture and Google listings, each seconded by an independent held source). Branch `agent/claude-code/pic18-map-streets-2026-11-24`. First user: City of Akron economic development staff. Check use by 2026-12-20.

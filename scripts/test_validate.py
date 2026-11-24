@@ -76,6 +76,13 @@ class ValidatorMutationTests(unittest.TestCase):
         return (r["site_id"] not in all_debt and r["naics_primary"]
                 and r["county"] and r["operating_status"] == "active")
 
+    def regenerate_basis(self):
+        """A test that edits a process or market cell regenerates the table, as any such PR must (V-69)."""
+        import value_basis
+        rows, problems, _ = value_basis.generate(self.data, ROOT / "tasks")
+        self.assertEqual(problems, [])
+        (self.data / "value_basis.csv").write_text(value_basis.render(rows), encoding="utf-8")
+
     def assert_fails_with(self, needle):
         code, out = run_validator(self.data)
         self.assertEqual(code, 1, f"validator should fail; output tail:\n{out[-2000:]}")
@@ -160,6 +167,7 @@ class ValidatorMutationTests(unittest.TestCase):
         for filename, _ in shards:
             self.edit_rows(filename, lambda r: r["ring_primary"] == "3",
                            lambda r: r.update(processes=subtype))
+        self.regenerate_basis()
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-1500:])
 
@@ -168,6 +176,7 @@ class ValidatorMutationTests(unittest.TestCase):
                            lambda r: r.update(processes=subtype))[id_col]
             for filename, id_col in shards
         ]
+        self.regenerate_basis()
         code, out = run_validator(self.data)
         self.assertEqual(code, 1, out[-1500:])
         for record in records:
@@ -436,6 +445,7 @@ class ValidatorMutationTests(unittest.TestCase):
     def test_new_v176_vocab_accepted(self):
         self.edit_rows("sites_OH.csv", self.clean_ohio_site,
                        lambda r: r.update(markets_served="automotive_unspecified;tire_rubber_goods"))
+        self.regenerate_basis()
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-2000:])
 
@@ -851,6 +861,29 @@ class ValidatorMutationTests(unittest.TestCase):
         other_inst = next(r["institution_org_id"] for r in people if r["institution_org_id"] not in ("", me["institution_org_id"]))
         self.edit_rows("people.csv", lambda r: r["person_id"] == pid, lambda r: r.update(institution_org_id=other_inst))
         self.assert_fails_with(self.V68_MSG.format(t="people", rid=pid, tier=me["verification_tier"]))
+
+    # -- V-69: the generated per-value basis table (SCHEMA 4.24) -------------------------------------------------
+    def test_v69_hand_edited_basis_fails(self):
+        self.edit_rows("value_basis.csv", lambda r: r["basis"] == "not_yet_checked", lambda r: r.update(basis="stated"))
+        self.assert_fails_with("never hand-edited (V-69)")
+
+    def test_v69_value_with_no_basis_row_fails(self):
+        path = self.data / "value_basis.csv"
+        lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+        path.write_text("".join(lines[:5] + lines[6:]), encoding="utf-8")
+        self.assert_fails_with("has no basis row")
+
+    def test_v69_duplicate_key_fails(self):
+        path = self.data / "value_basis.csv"
+        lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+        path.write_text("".join(lines + [lines[2]]), encoding="utf-8")
+        self.assert_fails_with("duplicate key")
+
+    def test_v69_row_for_a_value_the_record_does_not_hold_fails(self):
+        path = self.data / "value_basis.csv"
+        lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+        path.write_text("".join(lines + [lines[1].replace(lines[1].split(",")[3], "no_such_value", 1)]), encoding="utf-8")
+        self.assert_fails_with("row names a value the record does not hold")
 
 
 if __name__ == "__main__":

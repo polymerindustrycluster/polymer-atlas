@@ -668,6 +668,42 @@ and city match. A second model family checks each addition. The street then fill
 
 Decided by the repo owner in session, 2026-11-24 10:29, by multiple choice. All four were the recommended option.
 
+## 2026-11-24 · Per-value basis generator (SCHEMA v1.20.1): where verdicts live, precedence, grain
+
+Implements the 10:29 per-value basis ruling (SCHEMA §4.24). Not an owner ruling: §4.24 left these four points to the
+generator's PR, and this entry records what that PR fixed. Each is open to an owner change.
+
+- **Verdict storage.** A reader's verdict is `tasks/<folder>/VALUE_VERDICTS.csv`, in the re-read lane's `values.csv` format
+  as written. It lives under `tasks/` because lanes never write `data/` (AGENTS.md §2 rule 7); the generated
+  `data/value_basis.csv` changes in the same PR, so a verdict reaches a label only through a data PR and its review. A
+  packet counts only when its README names the reader's family and a different family that checked it (the controller's
+  instruction that labels from the 2026-11-24 re-read publish only after the Gemini check). The generator adds no
+  evidence: the line's `evidence_id` is the bound row that names the value.
+- **Precedence.** Verified quote (`BINDING_PROOF.csv` `VERIFIED`, claim hash unchanged, or a replayed STATED verdict) beats
+  a filing statement beats the latest reader verdict (IMPLIED, NOT_STATED) beats a bare naming row. A proven quote
+  outranks NOT_STATED. Two verdict classes on one latest date stop the generator.
+- **Grain.** `stated` and `filing` come only from a row on the value's own record. A row on the organization gives a
+  site's value at most `not_yet_checked`; the re-read pilot's rule is that a corporate statement does not settle a plant claim.
+- **What V-69 cannot see.** CI has no page store, so a STATED verdict's quote is replayed only where `--pages` is given;
+  V-69 warns with the count not replayed. For the proof route it checks the proof line and the claim hash and does not
+  fetch the capture again (the gate replayed it when the row merged).
+- **Values no bound row names.** Controller ruling 2026-11-24 after the first run: every published process or market value
+  gets a row. A value no bound row names is `not_yet_checked` with an empty `evidence_id`, and V-69 fails on a published
+  value with no row. 165 process and 26 market values on PIC-18 owners' display rows are in this state (unit: one value on
+  the record that supplies it).
+- **Evidence text in the release.** The release bundle also blanks evidence `claim_detail` and `notes` that name a withheld
+  value and drops the site's capability row for it (consistent with "hidden until a refetch"); the repository CSVs keep them.
+- **Round 1 review (Codex, 2026-11-24).** A verdict labels only its own record (owner, grain, page folder, own-record
+  evidence for STATED); a verdict that cannot be applied stops the generator; a verdict labels a key only for the page a bound
+  row cites (VALUE_PAGES.csv), another page of the same site gives no label and never withholds; a filing or proof row must assert this value
+  in its head; graph links carry the label; the release refuses a stale database basis table.
+
+Measured at the first table (9,551 rows, one per held process and market value on organization and site rows, all
+states): 42 `stated`, 18 `filing`, 9,491 `not_yet_checked`, of which 2,944 are named by no bound row. The screen's 118 and 561
+quoted values (process, market) on PIC-18 display rows reconcile to these rows: 18 `filing` and 10 `stated` of the
+process values, 18 `stated` of the market values, and the rest `not_yet_checked` because the quote sits on an organization
+row for a site value (9 process, 216 market) or has no verified proof or names several values (81, 327).
+
 ## 2026-11-24 · Owner rulings 12:12
 
 - **Write it + check it.** Record an organization website only after fetching a page on that site that shows both a
