@@ -172,7 +172,12 @@ def held_pattern(db_path):
     con = sqlite3.connect(db_path)
     held = set()
     for t, c in text_columns(con):
-        held.update(v for (v,) in con.execute(f'SELECT "{c}" FROM "{t}" WHERE "{c}" IS NOT NULL') if isinstance(v, str) and len(v) >= HELD_MIN and release_withheld(t, c, v))
+        for (v,) in con.execute(f'SELECT "{c}" FROM "{t}" WHERE "{c}" IS NOT NULL'):
+            if isinstance(v, str) and len(v) >= HELD_MIN and release_withheld(t, c, v):
+                held.add(v)
+                bare = re.sub(r"\s*\(?NEW(?:SITE)?:[^\s)]*\)?", "", v).strip(" .;")   # the same text copied without its temporary id
+                if len(bare) >= HELD_MIN:
+                    held.add(bare)
     con.close()
     return re.compile("|".join(re.escape(v) for v in sorted(held, key=len, reverse=True))) if held else None
 
