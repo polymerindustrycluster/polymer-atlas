@@ -1,0 +1,3 @@
+record_id,shard,field,old,new,evidence_id,url,capture_sha256,quote_offset,quote
+ORG-000485,data/organizations_OH.csv,processes,,fabrication_unspecified,EVD-483135,https://www.perryfiberglass.com/products/products.asp,9efb8fabe2f6e37936fedb5293aedc689439d627b0988079dcaf745c2fed1f94,2815,"Our FRP pipe is designed and fabricated to meet many different pressure classes including gravity fed, 50 psi, 100 psi, 150 psi and higher."
+ORG-000485,data/organizations_OH.csv,processes,,composites_filament_winding,EVD-483136,https://www.perryfiberglass.com/products/frp_tanks.asp,8b6409718c4cd232b7a431ba08cad06bdd350368f71dcf562d4112f30b7dfe42,954,Perry Fiberglass FRP tanks are manufactured using filament wound laminate or contact molded laminate techniques.

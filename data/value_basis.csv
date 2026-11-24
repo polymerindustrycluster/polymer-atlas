@@ -945,6 +945,8 @@ organizations,ORG-000483,markets_served,water_wastewater,not_yet_checked,EVD-013
 organizations,ORG-000484,processes,rubber_extrusion,not_yet_checked,EVD-170154,
 organizations,ORG-000485,markets_served,chemical_mining_metals_processing,not_yet_checked,EVD-396628,
 organizations,ORG-000485,markets_served,general_industrial,not_yet_checked,EVD-396644,
+organizations,ORG-000485,processes,composites_filament_winding,stated,EVD-483136,2026-11-24
+organizations,ORG-000485,processes,fabrication_unspecified,stated,EVD-483135,2026-11-24
 organizations,ORG-000487,markets_served,medical_device,not_yet_checked,EVD-013858,
 organizations,ORG-000487,processes,blow_molding,not_yet_checked,EVD-013860,
 organizations,ORG-000487,processes,mold_tool_making,not_yet_checked,EVD-013861,
