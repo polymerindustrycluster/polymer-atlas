@@ -1,4 +1,3 @@
 evidence_id,record_id,claim_sha256,capture,capture_date,capture_sha256,quote_offset,verdict,reader_family,reader_date
 EVD-483135,ORG-000485,eb31f4b7b514b1c6883c3ee411d305dfcc7885eb362fdf04c69319c8dd5fbc81,https://www.perryfiberglass.com/products/products.asp,2026-11-24,9efb8fabe2f6e37936fedb5293aedc689439d627b0988079dcaf745c2fed1f94,2815,VERIFIED,"Codex (OpenAI), refetch pilot reader",2026-11-24
 EVD-483136,ORG-000485,9168376f70c71fdf10b68e94339cde47da5eaf9c496a151418469990d135886f,https://www.perryfiberglass.com/products/frp_tanks.asp,2026-11-24,8b6409718c4cd232b7a431ba08cad06bdd350368f71dcf562d4112f30b7dfe42,954,VERIFIED,"Codex (OpenAI), refetch pilot reader",2026-11-24
-EVD-483137,ORG-002922,2ec1d88c5ef8ee890f9198ddc9af78fae5214ef7c3d11af2ef8cf2d59049df02,https://www.absolutehaitian.com/,2026-11-24,4ac17de54ad863a0d4ca95019b023d0cadd6f7215b8afd7b4d49396f486362fb,1244,VERIFIED,"Codex (OpenAI), refetch pilot reader",2026-11-24

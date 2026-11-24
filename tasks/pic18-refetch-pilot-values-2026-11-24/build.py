@@ -111,6 +111,8 @@ def main():
         assert r["value"] in allowed, f"{r['value']} is outside the vocabulary for {r['owner']}"
         assert gate.own_domain(gate.host_path(r["url"]), gate.host_path(org["website"])), f"{r['url']} is not {r['owner']}'s site"
         data, digest, offset = replay(r)
+        assert (digest, str(offset)) == (r["pilot_sha256"], r["pilot_offset"]), (
+            f"{r['owner']} {r['value']}: the page now hashes to {digest[:12]} at {offset}; the pilot reader read {r['pilot_sha256'][:12]} at {r['pilot_offset']}")
         plan.append(dict(r, path=path, evidence_id=f"EVD-{greatest + n:06d}", digest=digest, offset=offset, data=data,
                          shard=path.split("_")[-1][:-4], ring=org["ring_primary"]))
         cells.setdefault((path, r["owner"], r["field"]), []).append(r["value"])

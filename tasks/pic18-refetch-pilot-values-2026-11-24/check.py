@@ -56,6 +56,7 @@ def load():
     changed = git("diff", "--name-only", base, "--", "data/").decode().split()
     changed += git("ls-files", "--others", "--exclude-standard", "data/").decode().split()
     cells, evidence, basis_added, basis_removed, orgs, archives = [], {}, set(), set(), {}, {}
+    evidence_n = archives_n = 0
     for path in git("ls-tree", "--name-only", base, "data/").decode().split():
         if re.fullmatch(r"data/organizations_[A-Z]+\.csv", path):
             for r in rows_of(git("show", f"{base}:{path}")):
@@ -80,6 +81,7 @@ def load():
             header = old.splitlines()[0].decode()
             for r in rows_of((header + "\n").encode() + new[len(old):]):
                 evidence[r["evidence_id"]] = r
+                evidence_n += 1
         elif path == "data/archive_links.csv":
             if not new.startswith(old):
                 cells.append((path, "*", "archive rewrite", "", ""))
@@ -87,6 +89,7 @@ def load():
             header = old.splitlines()[0].decode()
             for r in rows_of((header + "\n").encode() + new[len(old):]):
                 archives[r["evidence_id"]] = r
+                archives_n += 1
         else:  # value_basis.csv
             key = lambda r: tuple(r.values())
             before, after = {key(r) for r in rows_of(old)}, {key(r) for r in rows_of(new)}
@@ -94,7 +97,7 @@ def load():
     greatest = max(int(r["evidence_id"].split("-")[1])
                    for p in git("ls-tree", "--name-only", base, "data/").decode().split()
                    if re.fullmatch(r"data/evidence_[A-Za-z_]+\.csv", p) for r in rows_of(git("show", f"{base}:{p}")))
-    return dict(base=base, changed=sorted(set(changed)), cells=cells, evidence=evidence, orgs=orgs, archives=archives,
+    return dict(base=base, changed=sorted(set(changed)), cells=cells, evidence=evidence, orgs=orgs, archives=archives, evidence_n=evidence_n, archives_n=archives_n,
                 basis_added=basis_added, basis_removed=basis_removed, greatest=greatest,
                 second=read("second_read.csv"), fills=read("FILLS.csv"), proofs=read("BINDING_PROOF.csv"),
                 claims=read("CLAIMS_CHECKED.csv"), readme=(HERE / "README.md").read_bytes(),
@@ -122,6 +125,14 @@ def verify(s, bytes_for):
     for c in s["cells"]:
         if c[2] not in ("processes", "markets_served"):
             add("cell diff", f"{c[1]} column {c[2]} changed")
+    # exact row sets: every appended row is one a fill accounts for, once
+    ids = {f["evidence_id"] for f in s["fills"]}
+    if len(ids) != len(s["fills"]) or set(s["evidence"]) != ids or s["evidence_n"] != len(ids):
+        add("extra rows", f"appended evidence rows ({s['evidence_n']}: {sorted(s['evidence'])}) are not exactly the fills' IDs {sorted(ids)}")
+    if set(s["archives"]) != ids or s["archives_n"] != len(ids):
+        add("extra rows", f"appended archive rows ({s['archives_n']}: {sorted(s['archives'])}) are not exactly the fills' IDs {sorted(ids)}")
+    if [p["evidence_id"] for p in s["proofs"]] != [f["evidence_id"] for f in s["fills"]]:
+        add("extra rows", "BINDING_PROOF lines are not exactly the fills, in order")
     # per fill
     seconds = {(r["owner"], r["field"], r["value"]): r for r in s["second"]}
     proofs = {p["evidence_id"]: p for p in s["proofs"]}
@@ -147,6 +158,8 @@ def verify(s, bytes_for):
                 ev["created_by"], head) != ("organizations", f["record_id"], "activity", "own_site", f["url"], "supports_B",
                                             LABEL, HEADS[f["field"]].format(v=f["new"])):
             add("evidence", f"{tag}: row {f['evidence_id']} does not name exactly this value, record, page and label")
+        if sec and (sec["pilot_sha256"], sec["pilot_offset"]) != (f["capture_sha256"], f["quote_offset"]):
+            add("pilot reading", f"{tag}: the capture (sha {f['capture_sha256'][:12]}, offset {f['quote_offset']}) is not the bytes the pilot reader read (sha {sec['pilot_sha256'][:12]}, offset {sec['pilot_offset']})")
         if quote != f["quote"] or (sec and quote != sec["quote"]):
             add("quote", f"{tag}: evidence quote differs from the FILLS and second-read quote")
         if int(f["evidence_id"].split("-")[1]) <= s["greatest"]:
@@ -218,6 +231,20 @@ def plants(s, good):
     yield "cell diff", mutated(lambda t: t["cells"].append(("data/organizations_OH.csv", "ORG-000485", "website", "a", "b"))), good
     yield "files", mutated(lambda t: t["changed"].append("data/sites_OH.csv")), good
     yield "archive", mutated(lambda t: t["archives"].pop(first["evidence_id"])), good
+    yield "extra rows", mutated(lambda t: t["evidence"].__setitem__("EVD-999999", dict(t["evidence"][first["evidence_id"]], evidence_id="EVD-999999"))), good
+    yield "extra rows", mutated(lambda t: t["archives"].__setitem__("EVD-999999", dict(t["archives"][first["evidence_id"]], evidence_id="EVD-999999"))), good
+    yield "extra rows", mutated(lambda t: t.__setitem__("evidence_n", t["evidence_n"] + 1)), good
+    yield "extra rows", mutated(lambda t: t["proofs"].append(dict(t["proofs"][0]))), good
+    def other_bytes(t):
+        for r in t["second"]:
+            if (r["owner"], r["value"]) == (first["record_id"], first["new"]):
+                r["pilot_sha256"] = "0" * 64
+    yield "pilot reading", mutated(other_bytes), good
+    def other_offset(t):
+        for r in t["second"]:
+            if (r["owner"], r["value"]) == (first["record_id"], first["new"]):
+                r["pilot_offset"] = str(int(r["pilot_offset"]) + 1)
+    yield "pilot reading", mutated(other_offset), good
 
 
 def main():
