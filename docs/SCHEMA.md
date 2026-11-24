@@ -2842,18 +2842,23 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
   integrator's generated output, so a verdict changes a label only in a PR that also changes `data/value_basis.csv`, which
   is a data PR with the §2a rule 4 review. The folder's `README.md` carries three lines: `Read on: <date>`, `Read by:
   <model family>` and `Checked by: <a different model family>`. A packet without all three, or whose checker is the
-  reader's own family, publishes no label (the generator reports it). The generator adds no evidence: it picks the
+  reader's own family, publishes no label (the generator reports it). A line labels only its own record: its `owner`
+  must be the record's organization, its `grain` `plant` for a site and `company` for an organization, and a page folder
+  named `ORG-…` in `page_path` must be that owner. A STATED line for a site value also needs a bound row on the site
+  itself (an organization row is not enough); any verdict with no bound row on its record to rest on stops the generator,
+  so a checked disposition is never dropped silently and the key goes to adjudication. The generator adds no evidence: it picks the
   bound row that names the value as the line's `evidence_id`. A STATED line replays when the page store is given
   (`python3 scripts/value_basis.py --check --pages <store>`): `<store>/<page_path>` must hash to `page_sha256` and
   `capture_text` (the binding gate's function) must hold the quote at the offset. A quote is 20 to 200 characters. CI has
   no page store, so V-69 reports "NOT_INSPECTED: N stated quotes not replayed" as a warning, never silently; the lane and the reviewing family run
   the replay, as for any packet (AGENTS.md §2a rule 2).
 - **Precedence, fixed [v1.20.1].** The first line that holds for a key decides its basis. (1) `stated`: an `own_site` row
-  on the same record that names exactly this one value and quotes the page, with a `VERIFIED` line in its folder's
+  on the same record whose head (before `quote:`) names exactly this one value and quotes the page, with a `VERIFIED` line in its folder's
   `BINDING_PROOF.csv` from a family other than the builder's, whose `claim_sha256` still matches the row (the gate
   replayed the capture when the row merged; V-69 does not fetch it again), or a latest reader verdict of STATED. (2)
   `filing`: a `government_filing` row on the same record that names exactly this one value and carries the filing's words
-  (a `quote:` of 20 or more characters, or a `process excerpt:`); a row that only restates the record's own cell is not a
+  (a `quote:` or a `process excerpt:` of 20 or more characters); the one held token the row's head names, before `quote:`,
+  must be this value (a value named only inside the quote is `not_yet_checked`); a row that only restates the record's own cell is not a
   filing statement. (3) The latest reader verdict: IMPLIED gives `implied`, NOT_STATED gives `not_found_pending_refetch`;
   two classes on one latest read date is a generator error. (4) `not_yet_checked`: any other bound row that names the value (a row on the value's own record stands for it before an organization's row), or no bound row at all (empty `evidence_id`).
   A verified quote or a filing outranks a NOT_STATED verdict (a proven quote beats a failure to find one). Ties go to the
@@ -2865,12 +2870,16 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
 - **Values no row names [v1.20.1] (controller ruling 2026-11-24, after the generator's first run).** A published value
   that no bound row names also gets a row: basis `not_yet_checked`, empty `evidence_id`, empty `basis_date`, shown with
   the label "not yet checked". V-69 fails on a published value with no row. The generator counts these values separately
-  (at the first table, 164 process and 26 market values on PIC-18 owners' display rows).
+  (at the first table, 165 process and 26 market values on PIC-18 owners' display rows).
 - **Display [v1.20.1].** The site (`build_site.py`) and the graph pages drop every `not_found_pending_refetch` value from
-  the in-memory copy they render, and show the §4.24 label after each other value ("stated", "from a filing", "implied",
+  the in-memory copy they render, and show the §4.24 label after each other value; in the graph each record-to-value
+  link carries its label (`graph.json` edges gain a fourth element; `map-network.json` organizations gain `tl`, aligned
+  with `t`), the strongest basis among the records that hold the value ("stated", "from a filing", "implied",
   "not yet checked"); `directory.csv` carries `processes_value_basis` and `markets_value_basis`. The release bundle
   (`export_release.py`) removes withheld values from its organization and site rows and their `*_incl_sites` columns,
-  blanks evidence text that names one, and ships `value_basis.csv` and its database table without withheld rows and with a
+  blanks evidence `claim_detail` and `notes` that name one (a note often repeats the claim), drops the site's
+  `site_capabilities` row for it, refuses to build when the database's `value_basis` table differs from
+  `data/value_basis.csv`, and ships `value_basis.csv` and its database table without withheld rows and with a
   `label` column. The record CSVs in `data/` are never rewritten for display.
 
 ## 5. Entity Resolution Rules — Dedupe Identically

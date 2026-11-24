@@ -88,7 +88,9 @@ def build_graph():
     orgs = [r for r in shards("organizations") if r["status"] not in TOMBSTONE]
     eco = [r for r in read(DATA / "ecosystem.csv") if r["status"] not in TOMBSTONE]
     sites = [r for r in shards("sites") if r.get("operating_status") != "closed"]
-    withheld = value_basis.withheld_keys(read(DATA / "value_basis.csv") if (DATA / "value_basis.csv").exists() else [])   # SCHEMA 4.24: a withheld value is not a graph tag
+    vb_rows = read(DATA / "value_basis.csv") if (DATA / "value_basis.csv").exists() else []
+    basis = {(r["record_table"], r["record_id"], r["field"], r["value"]): r["basis"] for r in vb_rows}
+    withheld = value_basis.withheld_keys(vb_rows)   # SCHEMA 4.24: a withheld value is not a graph tag
     value_basis.strip_withheld(orgs, "organizations", "org_id", withheld)
     value_basis.strip_withheld(sites, "sites", "site_id", withheld)
     rel = read(DATA / "relationships.csv")
@@ -126,24 +128,29 @@ def build_graph():
 
     edges = set()
 
-    def link(a, b, t):
+    def link(a, b, t, label=""):
         if a in index and b in index and a != b:
             i, j = sorted((index[a], index[b]))
-            edges.add((i, j, t))
+            edges.add((i, j, t, label))   # label: the SCHEMA 4.24 basis of this record's value ("" when none applies)
 
     # capability tags: an org's own tags plus the union of its sites' tags.
     # Values are spelling-normalized (lowercase, spaces/hyphens -> "_"); a value in the
     # controlled vocabulary becomes a tag; anything else is a free-text tag (x=1), kept
     # only when at least FREE_MIN organizations share it.
     norm = lambda v: "_".join(v.lower().replace("-", " ").replace("/", " ").split())
-    org_tags, free_count = {}, defaultdict(int)
+    org_tags, org_labels, free_count = {}, {}, defaultdict(int)
     for r in orgs:
         for field, t in TAG_FIELDS:
-            tags = {norm(v) for v in vals(r[field])}
-            for s in sites_by_org.get(r["org_id"], []):
-                tags.update(norm(v) for v in vals(s.get(field)))
+            tags, best = set(), {}
+            for table, rid, rec in [("organizations", r["org_id"], r)] + [("sites", s["site_id"], s) for s in sites_by_org.get(r["org_id"], [])]:
+                for v in vals(rec.get(field)):
+                    tags.add(norm(v))
+                    b = basis.get((table, rid, field, v))
+                    if value_basis.RANK.get(b, 0) > value_basis.RANK.get(best.get(norm(v)), 0):
+                        best[norm(v)] = b   # a value several records hold shows its strongest basis
             tags.discard("")
             org_tags[(r["org_id"], t)] = tags
+            org_labels[(r["org_id"], t)] = {v: value_basis.LABELS[b] for v, b in best.items()}
             for v in tags - VOC[t]:
                 free_count[(t, v)] += 1
     for (oid, t), tags in org_tags.items():
@@ -152,7 +159,7 @@ def build_graph():
             if free and free_count[(t, v)] < FREE_MIN:
                 continue
             add(f"{t}:{v}", k=t, l=build_site.vocab_label(v), **({"x": 1} if free else {}))
-            link(oid, f"{t}:{v}", t + ("x" if free else ""))
+            link(oid, f"{t}:{v}", t + ("x" if free else ""), org_labels[(oid, t)].get(v, ""))
     # institutions -> tags they teach or research (program specialties)
     for p in programs:
         inst = p["institution_org_id"]
@@ -173,7 +180,7 @@ def build_graph():
 
     # tag / event nodes inherit geography from the orgs they touch (for scope filters)
     deg = defaultdict(int)
-    for i, j, _ in edges:
+    for i, j, *_ in edges:
         deg[i] += 1
         deg[j] += 1
         for a, b in ((i, j), (j, i)):
@@ -276,9 +283,9 @@ SCRIPT = r"""(async () => {
     NODES.forEach((n, i) => { if (inScope(n)) keep.add(i); });
     const deg = new Map();
     const es = [];
-    for (const [i, j, t] of EDGES) {
+    for (const [i, j, t, lbl] of EDGES) {
       if (!edgeOn(t) || !keep.has(i) || !keep.has(j)) continue;
-      es.push([i, j, t]); deg.set(i, (deg.get(i) || 0) + 1); deg.set(j, (deg.get(j) || 0) + 1);
+      es.push([i, j, t, lbl || ""]); deg.set(i, (deg.get(i) || 0) + 1); deg.set(j, (deg.get(j) || 0) + 1);
     }
     for (const i of keep) {
       const n = NODES[i], d = deg.get(i) || 0;
@@ -289,9 +296,9 @@ SCRIPT = r"""(async () => {
       const a = (i * 2.399963) % (2 * Math.PI), rad = isTag ? 40 + (i % 23) * 3 : 90 + (i % 211);
       g.addNode(String(i), { x: Math.cos(a) * rad, y: Math.sin(a) * rad, size: Math.min(size, isTag ? 15 : 12), label: n.l, idx: i, tag: isTag });
     }
-    for (const [i, j, t] of es) {
+    for (const [i, j, t, lbl] of es) {
       const a = String(i), b = String(j);
-      if (g.hasNode(a) && g.hasNode(b) && !g.hasEdge(a, b)) g.addEdge(a, b, { t, size: t === "own" || t === "assoc" ? 1.1 : 0.45 });
+      if (g.hasNode(a) && g.hasNode(b) && !g.hasEdge(a, b)) g.addEdge(a, b, { t, lbl, size: t === "own" || t === "assoc" ? 1.1 : 0.45 });
     }
     return g;
   }
@@ -467,13 +474,13 @@ SCRIPT = r"""(async () => {
     const groups = [["Processes", "proc"], ["Materials", "mat"], ["Markets", "mkt"], ["Event series", "event"]];
     for (const [title, k] of groups) {
       const items = nb.filter((j) => NODES[j].k === k);
-      if (items.length) kids.push(el("h3", { textContent: `${title} · ${items.length}` }), chips(items));
+      if (items.length) kids.push(el("h3", { textContent: `${title} · ${items.length}` }), chips(items, key));
     }
     const orgsN = nb.filter((j) => NODES[j].k === "org" || NODES[j].k === "eco");
     if (orgsN.length) {
       orgsN.sort((a, b) => (NODES[b].n || 0) - (NODES[a].n || 0));
       const title = (n.k === "org" || n.k === "eco") ? "Linked organizations" : "Organizations with this tag";
-      kids.push(el("h3", { textContent: `${title} · ${orgsN.length}` }), chips(orgsN.slice(0, 60)));
+      kids.push(el("h3", { textContent: `${title} · ${orgsN.length}` }), chips(orgsN.slice(0, 60), key));
       if (orgsN.length > 60) kids.push(el("p", { className: "hint", textContent: `Showing the 60 with the most sites. Zoom into the graph for the rest.` }));
     }
     card.replaceChildren(...kids);
@@ -482,8 +489,11 @@ SCRIPT = r"""(async () => {
     const d = renderer.getNodeDisplayData(key);
     if (d) renderer.getCamera().animate({ x: d.x, y: d.y, ratio: Math.min(renderer.getCamera().ratio, 0.6) }, { duration: 500 });
   }
-  function chips(list) { return el("div", { className: "chips" }, ...list.map((j) =>
-    el("button", { className: "chip", type: "button", textContent: NODES[j].l, onclick: () => select(j) }))); }
+  // `from` is the selected node: a tag or organization chip carries the basis label of the link to it (SCHEMA 4.24)
+  function chips(list, from) { return el("div", { className: "chips" }, ...list.map((j) => {
+    const e = from == null ? null : G.edge(String(from), String(j)), lbl = e ? G.getEdgeAttribute(e, "lbl") : "";
+    return el("button", { className: "chip", type: "button", textContent: NODES[j].l + (lbl ? " · " + lbl : ""), onclick: () => select(j) });
+  })); }
 
   // search
   const LBL = NODES.map((n) => n.l.toLowerCase());
@@ -583,7 +593,7 @@ def write_explorer(out, html_text, boot, script_text, data_name, data_text):
 
 
 def data_text(nodes, edges):
-    data = {"nodes": nodes, "edges": [[i, j, t] for i, j, t in edges], "commit": commit(),
+    data = {"nodes": nodes, "edges": [[i, j, t, *([lbl] if lbl else [])] for i, j, t, lbl in edges], "commit": commit(),
             "built": __import__("datetime").date.today().isoformat()}
     return json.dumps(data, ensure_ascii=False, separators=(",", ":"))
 

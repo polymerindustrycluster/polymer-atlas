@@ -152,6 +152,27 @@ class Basis(unittest.TestCase):
         t = Tree([ev("EVD-1", "SITE-1", QUOTED, cls="government_filing")])
         self.assertEqual(t.basis()[0][KEY], ("filing", "EVD-1", "2026-11-20"))
 
+    def test_filing_row_asserting_another_value_does_not_certify_this_one(self):  # planted defect (review 2026-11-24)
+        t = Tree([ev("EVD-1", "SITE-1", "processes=lamination; quote: Our competitors use custom_compounding and we do not.", cls="government_filing")],
+                 site_processes="lamination;custom_compounding")
+        got = t.basis()[0]
+        self.assertEqual((got[("sites", "SITE-1", "processes", "lamination")][0], got[KEY][0]), ("filing", "not_yet_checked"))
+
+    def test_filing_row_without_filing_words_is_not_filing(self):  # planted defect
+        t = Tree([ev("EVD-1", "SITE-1", "processes=custom_compounding; process excerpt:", cls="government_filing")])
+        self.assertEqual(t.basis()[0][KEY][0], "not_yet_checked")
+
+    def test_filing_row_with_an_excerpt_is_filing(self):
+        t = Tree([ev("EVD-1", "SITE-1", 'processes custom_compounding authorized for the site; process excerpt: "P006, Compounding and Extruding"', cls="government_filing")])
+        self.assertEqual(t.basis()[0][KEY][0], "filing")
+
+    def test_proof_row_asserting_another_value_does_not_state_this_one(self):  # planted defect
+        e = ev("EVD-1", "SITE-1", f"processes=lamination; quote: {QUOTE}")
+        t = Tree([e], site_processes="lamination;custom_compounding")
+        t.add_proof(e)
+        got = t.basis()[0]
+        self.assertEqual((got[("sites", "SITE-1", "processes", "lamination")][0], got[KEY][0]), ("stated", "not_yet_checked"))
+
     def test_government_filing_that_restates_the_record_is_not_filing(self):
         t = Tree([ev("EVD-1", "SITE-1", "site activity per site row: processes [custom_compounding]", cls="government_filing")])
         self.assertEqual(t.basis()[0][KEY][0], "not_yet_checked")
@@ -241,10 +262,29 @@ class Verdicts(unittest.TestCase):
         t = self.tree([verdict("IMPLIED"), verdict("NOT_STATED")])
         self.assertTrue(any("share the latest read date" in p for p in t.basis()[1]))
 
-    def test_read_of_a_value_no_row_names_is_reported_and_changes_nothing(self):
+    def test_verdict_for_a_value_no_row_names_stops_the_generator(self):  # review 2026-11-24: a checked NOT_STATED must not vanish
         t = Tree([ev("EVD-1", "SITE-1", "unrelated row")], verdict_rows=[verdict("NOT_STATED")])
-        got, problems, info = t.basis()
-        self.assertEqual((got[KEY], problems, info["verdict_unnamed"]), (("not_yet_checked", "", ""), [], [KEY]))
+        self.assertTrue(any("no bound row on its own record" in p for p in t.basis()[1]))
+
+    def test_stated_verdict_with_only_organization_evidence_is_refused(self):  # planted defect
+        t = Tree([ev("EVD-1", "ORG-1", "processes=custom_compounding", table="organizations")],
+                 verdict_rows=[verdict("STATED", QUOTE, str(OFFSET))])
+        (t.root / "pages").mkdir()
+        (t.root / "pages" / "p.html").write_bytes(PAGE)
+        got, problems, _ = t.basis(t.root / "pages")
+        self.assertTrue(any("not only its organization" in p for p in problems), problems)
+        self.assertEqual(got[KEY][0], "not_yet_checked")
+
+    def test_implied_verdict_may_rest_on_organization_evidence(self):
+        t = Tree([ev("EVD-1", "ORG-1", "processes=custom_compounding", table="organizations")], verdict_rows=[verdict("IMPLIED")])
+        self.assertEqual(t.basis()[0][KEY], ("implied", "EVD-1", "2026-11-24"))
+
+    def test_verdict_for_another_owner_grain_or_page_folder_is_refused(self):  # planted defects
+        for over in ({"owner": "ORG-9"}, {"grain": "company"}, {"page_path": "corpus/ORG-9/p.html"}):
+            t = Tree(self.NAMED, verdict_rows=[{**verdict("NOT_STATED"), **over}])
+            got, problems, _ = t.basis()
+            self.assertTrue(any("labels only its own record" in p for p in problems), (over, problems))
+            self.assertEqual(got[KEY][0], "not_yet_checked")
 
 
 class Check(unittest.TestCase):

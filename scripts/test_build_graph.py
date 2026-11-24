@@ -41,7 +41,7 @@ class BuildGraphTests(unittest.TestCase):
 
     def test_edges_reference_nodes_and_are_unique(self):
         self.assertEqual(len(self.edges), len(set(self.edges)))
-        for i, j, t in self.edges:
+        for i, j, t, _ in self.edges:
             self.assertTrue(0 <= i < j < len(self.nodes), (i, j, t))
 
     def test_withheld_value_is_not_a_graph_tag(self):  # SCHEMA 4.24 plant: every holder of one token is withheld
@@ -56,9 +56,22 @@ class BuildGraphTests(unittest.TestCase):
         def holders(ns, es):   # organizations linked to the tag (an institution's program specialties can still carry it)
             idx = {n["id"]: i for i, n in enumerate(ns)}
             tag = idx.get(f"proc:{token}")
-            return {ns[i if j == tag else j]["id"] for i, j, _ in es if tag in (i, j) and ns[i if j == tag else j]["k"] == "org"}
+            return {ns[i if j == tag else j]["id"] for i, j, *_ in es if tag in (i, j) and ns[i if j == tag else j]["k"] == "org"}
         self.assertTrue(holders(self.nodes, self.edges))
         self.assertEqual(holders(nodes, edges), set())
+
+    def test_record_to_value_edge_carries_its_basis_label(self):  # review 2026-11-24: the label belongs to the link
+        token = next(n["id"].split(":", 1)[1] for n in self.nodes if n["k"] == "proc" and not n.get("x"))
+        rows = [dict(record_table=t, record_id=r[idc], field="processes", value=token, basis="filing", evidence_id="EVD-1", basis_date="")
+                for t, idc in (("organizations", "org_id"), ("sites", "site_id")) for r in bg.shards(t) if token in bg.vals(r["processes"])]
+        real_read = bg.read
+        with patch.object(bg, "read", lambda path: rows if Path(path).name == "value_basis.csv" else real_read(path)):
+            nodes, edges = bg.build_graph()
+        tag = next(i for i, n in enumerate(nodes) if n["id"] == f"proc:{token}")
+        org_edges = [e for e in edges if tag in e[:2] and nodes[e[0] if e[1] == tag else e[1]]["k"] == "org"]
+        self.assertTrue(org_edges)
+        self.assertEqual({e[3] for e in org_edges}, {"from a filing"})
+        self.assertIn("from a filing", json.dumps(json.loads(bg.data_text(nodes, edges))["edges"]))
 
     def test_links_with_an_email_are_not_exported_by_any_graph_builder(self):
         for u in ("https://x.example/?m=a%40b.example", "x.example/?m=a@b.example", "https://x.example/%2540"):
@@ -94,8 +107,15 @@ class GeoAndEventsTests(unittest.TestCase):
 
     def test_geo_fields_whitelisted(self):
         self.assertEqual({k for s in self.geo["sites"] for k in s} - {"n", "o", "c", "s", "y", "p", "la", "lo"}, set())
-        self.assertEqual({k for o in self.geo["orgs"] for k in o} - {"id", "l", "r", "c", "s", "w", "d", "m", "t"}, set())
+        self.assertEqual({k for o in self.geo["orgs"] for k in o} - {"id", "l", "r", "c", "s", "w", "d", "m", "t", "tl"}, set())   # tl: SCHEMA 4.24 basis labels aligned with t
         self.assertNotRegex(json.dumps(self.geo), r"\bCRM\b")
+
+    def test_geo_tag_labels_align_with_tags(self):
+        labelled = [o for o in self.geo["orgs"] if "tl" in o]
+        self.assertTrue(labelled)
+        for o in labelled:
+            self.assertEqual(len(o["tl"]), len(o["t"]))
+            self.assertTrue(set(o["tl"]) <= {"", "stated", "from a filing", "implied", "not yet checked"})
 
     def test_geo_refs_valid(self):
         n_o, n_t = len(self.geo["orgs"]), len(self.geo["tags"])

@@ -206,34 +206,44 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
             for r in recs for f in FIELDS for tok in toks(r.get(f))}
     for v, read_date in load_verdicts(tasks, problems, held):
         key = (v["record_table"], v["record_id"], v["field"], v["value"])
+        owner, grain = (site_org[key[1]], "plant") if key[0] == "sites" else (key[1], "company")
+        page_owner = re.search(r"(ORG-[^/]+)/", v["page_path"])
+        if (v["owner"], v["grain"]) != (owner, grain) or (page_owner and page_owner[1] != owner):
+            problems.append(f"{v['_at']}: the line's owner, grain or page folder does not match {key[0]} {key[1]} "
+                            f"(owner {owner}, grain {grain}); a verdict labels only its own record")
+            continue
         if v["class"] == "STATED" and pages and (why := replay(v, pages)):
             problems.append(f"{v['_at']}: STATED quote does not replay: {why}")
             continue
         unreplayed += v["class"] == "STATED" and not pages
         verdicts_by_key[key].append((read_date, v))
-    rows, unnamed, skipped = [], Counter(), []
+    rows, unnamed = [], Counter()
     for key in sorted(held):
         table, rid, field, tok = key
         own, up = naming(table, rid, tok)
         cands = []  # (rank, evidence_id, basis, date)
         for e in own:
             head, quote = head_and_quote(e["claim_detail"])
-            single = sum(names(head, t) for t in record_tokens[(table, rid, field)]) == 1
+            # the row asserts exactly this value: it is the one held token its head names
+            single = names(head, tok) and sum(names(head, t) for t in record_tokens[(table, rid, field)]) == 1
+            excerpt = head.partition("process excerpt:")[2].strip(' ";')
             if single and e["evidence_id"] in proofs:
                 cands.append((5, e["evidence_id"], "stated", proofs[e["evidence_id"]]))
-            elif single and e["source_class"] == "government_filing" and (len(quote) >= QUOTE_MIN or "process excerpt:" in head):
+            elif single and e["source_class"] == "government_filing" and max(len(quote), len(excerpt)) >= QUOTE_MIN:
                 cands.append((4, e["evidence_id"], "filing", e["observed_date"]))
         vs = sorted(verdicts_by_key.get(key, []), key=lambda x: x[0])
         pool = own or up  # a row on the value's own record stands for it before any organization row
-        if vs and pool:
+        if vs:
             last = [v for d, v in vs if d == vs[-1][0]]
             if len({v["class"] for v in last}) > 1:
                 problems.append(f"{key}: verdicts of different classes share the latest read date {vs[-1][0]}")
+            elif not pool or (last[0]["class"] == "STATED" and not own):
+                problems.append(f"{key}: a {last[0]['class']} verdict has no bound row on its own record to rest on"
+                                if not pool else
+                                f"{key}: a STATED verdict for a site value needs a bound row on the site itself, not only its organization")
             else:
                 first = min(pool, key=evidence_pick)
                 cands.append((5 if last[0]["class"] == "STATED" else 3, first["evidence_id"], VERDICT_CLASS[last[0]["class"]], vs[-1][0]))
-        elif vs:
-            skipped.append(key)  # a read of a value no bound row names is outside §4.24: no row, reported not hidden
         if pool:
             cands.append((2, min(pool, key=evidence_pick)["evidence_id"], "not_yet_checked", ""))
         if not cands:
@@ -242,7 +252,7 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
             continue
         _, eid, basis, date = min(cands, key=lambda c: (-c[0], c[1]))  # highest rank; lowest evidence_id on a tie
         rows.append(dict(zip(COLS, (table, rid, field, tok, basis, eid, date))))
-    info = {"unnamed": unnamed, "stated_not_replayed": unreplayed, "held": len(held), "verdict_unnamed": skipped}
+    info = {"unnamed": unnamed, "stated_not_replayed": unreplayed, "held": len(held)}
     return rows, problems, info
 
 
@@ -350,8 +360,7 @@ def main(argv=None):
             print(p)
         print(f"value basis: {'differs from' if problems else 'matches'} a fresh generation; {info['held']} held values, "
               f"{sum(info['unnamed'].values())} named by no bound row (not_yet_checked, empty evidence_id), "
-              f"NOT_INSPECTED: {info['stated_not_replayed']} STATED verdict quotes not replayed (no --pages), "
-              f"{len(info['verdict_unnamed'])} read values no bound row names")
+              f"NOT_INSPECTED: {info['stated_not_replayed']} STATED verdict quotes not replayed (no --pages)")
         return 1 if problems else 0
     rows, problems, info = generate(Path(a.tree) / "data", Path(a.tree) / "tasks", a.pages)
     if problems:

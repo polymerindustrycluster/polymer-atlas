@@ -228,10 +228,17 @@ def csv_rewrite(path, edit):
         csv.writer(f, lineterminator="\r\n" if "\r\n" in text else "\n").writerows([head, *body])
 
 
-def evidence_names_withheld(table, rid, detail, keys, site_org):
+def evidence_names_withheld(table, rid, text, keys, site_org):
     """True when an evidence row's text names a value withheld from display on its record (or, for an organization row, on one of its sites)."""
-    return any(value_basis.names(detail, tok) for (t, r, f, tok) in keys
+    return any(value_basis.names(text or "", tok) for (t, r, f, tok) in keys
                if (t, r) == (table, rid) or (table == "organizations" and t == "sites" and site_org.get(r) == rid))
+
+
+CAPABILITY_TYPE = {"processes": "process", "markets_served": "market"}   # site_capabilities is the transform of the site's own tags
+
+
+def capability_withheld(site_id, cap_type, term, keys):
+    return any((t, r, CAPABILITY_TYPE[f], tok) == ("sites", site_id, cap_type, term) for (t, r, f, tok) in keys)
 
 
 def withhold_values_csv(path, table, keys, site_org=None):
@@ -240,8 +247,12 @@ def withhold_values_csv(path, table, keys, site_org=None):
         ix = {c: i for i, c in enumerate(head)}
         if table == "evidence":
             for r in rows:
-                if evidence_names_withheld(r[ix["record_table"]], r[ix["record_id"]], r[ix["claim_detail"]], keys, site_org):
-                    r[ix["claim_detail"]] = WITHHELD
+                for col in ("claim_detail", "notes"):   # a note often repeats the claim
+                    if col in ix and evidence_names_withheld(r[ix["record_table"]], r[ix["record_id"]], r[ix[col]], keys, site_org):
+                        r[ix[col]] = WITHHELD
+            return
+        if table == "site_capabilities":   # the row is the withheld tag itself: it leaves the release
+            rows[:] = [r for r in rows if not capability_withheld(r[ix["site_id"]], r[ix["capability_type"]], r[ix["term"]], keys)]
             return
         idc = {"organizations": "org_id", "sites": "site_id"}[table]
         for r in rows:
@@ -263,11 +274,16 @@ def value_basis_release_csv(path):
     csv_rewrite(path, edit)
 
 
-def withhold_values_db(db_path):
-    """The same in the bundled SQLite copy. Returns the withheld keys (read before the rows are removed)."""
+def withhold_values_db(db_path, canonical=None):
+    """The same in the bundled SQLite copy. Returns the withheld keys (read before the rows are removed).
+    `canonical` is data/value_basis.csv's rows: the database copy must hold exactly those, or the build is stale."""
     con = sqlite3.connect(db_path)
-    keys = value_basis.withheld_keys([dict(zip(("record_table", "record_id", "field", "value", "basis"), r)) for r in
-                                       con.execute("SELECT record_table, record_id, field, value, basis FROM value_basis")])
+    cols = ("record_table", "record_id", "field", "value", "basis", "evidence_id", "basis_date")
+    held_rows = [dict(zip(cols, (c or "" for c in r))) for r in con.execute(f"SELECT {', '.join(cols)} FROM value_basis")]
+    if canonical is not None and sorted(map(tuple, (r.values() for r in held_rows))) != sorted(tuple(r[c] for c in cols) for r in canonical):
+        con.close()
+        sys.exit("error: the database's value_basis table differs from data/value_basis.csv; rebuild (--rebuild)")
+    keys = value_basis.withheld_keys(held_rows)
     site_org = dict(con.execute("SELECT site_id, org_id FROM sites"))
     for table, idc in (("organizations", "org_id"), ("sites", "site_id")):
         for rid, proc, mkt in con.execute(f"SELECT {idc}, processes, markets_served FROM {table}").fetchall():
@@ -276,9 +292,13 @@ def withhold_values_db(db_path):
             if (d["processes"], d["markets_served"]) != (proc, mkt):
                 con.execute(f"UPDATE {table} SET processes = ?, markets_served = ? WHERE {idc} = ?",
                             (d["processes"] or None, d["markets_served"] or None, rid))
-    for eid, table, rid, detail in con.execute("SELECT evidence_id, record_table, record_id, claim_detail FROM evidence").fetchall():
-        if detail and evidence_names_withheld(table, rid, detail, keys, site_org):
-            con.execute("UPDATE evidence SET claim_detail = ? WHERE evidence_id = ?", (WITHHELD, eid))
+    for eid, table, rid, detail, note in con.execute("SELECT evidence_id, record_table, record_id, claim_detail, notes FROM evidence").fetchall():
+        for col, text in (("claim_detail", detail), ("notes", note)):
+            if text and evidence_names_withheld(table, rid, text, keys, site_org):
+                con.execute(f"UPDATE evidence SET {col} = ? WHERE evidence_id = ?", (WITHHELD, eid))
+    for cid, sid, ctype, term in con.execute("SELECT capability_id, site_id, capability_type, term FROM site_capabilities").fetchall():
+        if capability_withheld(sid, ctype, term, keys):
+            con.execute("DELETE FROM site_capabilities WHERE capability_id = ?", (cid,))
     con.execute("DELETE FROM value_basis WHERE basis = ?", (value_basis.WITHHELD,))
     con.execute("ALTER TABLE value_basis ADD COLUMN label TEXT")
     for basis, label in value_basis.LABELS.items():
@@ -601,7 +621,7 @@ def main():
     held = held_pattern(RELEASE / "polymer-atlas.db")   # read before the copy is blanked
     drop_notes_db(RELEASE / "polymer-atlas.db")   # owner ruling: no notes column in the organization and site tables
     withheld = {"database": withhold_db(RELEASE / "polymer-atlas.db", held)}   # the canonical .db and CSVs are never touched
-    value_keys, site_org = withhold_values_db(RELEASE / "polymer-atlas.db")   # SCHEMA 4.24: withheld values leave every release copy
+    value_keys, site_org = withhold_values_db(RELEASE / "polymer-atlas.db", read_csv(DATA / "value_basis.csv")[1])   # SCHEMA 4.24: withheld values leave every release copy
     published = {}  # name -> (path, cols, rows)
     for t in ("sites", "organizations", "evidence"):
         path = f"data/{t}_all.csv"
@@ -623,6 +643,8 @@ def main():
         shutil.copy2(DATA / f"{t}.csv", RELEASE / "data" / f"{t}.csv")
         if t == "value_basis":
             value_basis_release_csv(RELEASE / "data" / f"{t}.csv")
+        elif t == "site_capabilities":
+            withhold_values_csv(RELEASE / "data" / f"{t}.csv", t, value_keys, site_org)
         withheld[t] = withhold_csv(RELEASE / "data" / f"{t}.csv", t, held)
         cols, rows = read_csv(RELEASE / "data" / f"{t}.csv")
         published[t] = (f"data/{t}.csv", cols, rows)

@@ -689,10 +689,13 @@ generator's PR, and this entry records what that PR fixed. Each is open to an ow
   fetch the capture again (the gate replayed it when the row merged).
 - **Values no bound row names.** Controller ruling 2026-11-24 after the first run: every published process or market value
   gets a row. A value no bound row names is `not_yet_checked` with an empty `evidence_id`, and V-69 fails on a published
-  value with no row. 164 process and 26 market values on PIC-18 owners' display rows are in this state (unit: one value on
+  value with no row. 165 process and 26 market values on PIC-18 owners' display rows are in this state (unit: one value on
   the record that supplies it).
-- **Evidence text in the release.** The release bundle also blanks evidence text that names a withheld value (consistent
-  with "hidden until a refetch"); the repository CSVs keep it.
+- **Evidence text in the release.** The release bundle also blanks evidence `claim_detail` and `notes` that name a withheld
+  value and drops the site's capability row for it (consistent with "hidden until a refetch"); the repository CSVs keep them.
+- **Round 1 review (Codex, 2026-11-24).** A verdict labels only its own record (owner, grain, page folder, own-record
+  evidence for STATED); a verdict that cannot be applied stops the generator; a filing or proof row must assert this value
+  in its head; graph links carry the label; the release refuses a stale database basis table.
 
 Measured at the first table (9,551 rows, one per held process and market value on organization and site rows, all
 states): 42 `stated`, 18 `filing`, 9,491 `not_yet_checked`, of which 2,944 are named by no bound row. The screen's 118 and 561
