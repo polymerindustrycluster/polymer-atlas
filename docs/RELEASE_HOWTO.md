@@ -27,6 +27,12 @@ outputs are missing or older than `data/`, and refuses to continue if the
 merged exports or the database disagree with the CSVs
 (`--rebuild` forces a rebuild, `--no-build` requires current outputs).
 
+The bundle differs from the repository in what it withholds: the `organizations` and
+`sites` tables have no `notes` column in the CSVs or in the bundled SQLite copy (owner ruling
+2026-11-23), and any cell the public site withholds (a description with internal wording, a
+temporary record id of a build pass, a copy of a withheld description) is blank, or reads
+`[withheld from this release]` in an evidence row. `COUNTS.md` says so.
+
 Check before uploading:
 
 - The zip name is `polymer-atlas-release-<date>-<sha>.zip`. If it ends in

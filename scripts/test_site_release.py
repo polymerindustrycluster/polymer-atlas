@@ -126,6 +126,42 @@ class ProcessLexiconTests(unittest.TestCase):
         con.close()
 
 
+class DropNotesTests(unittest.TestCase):
+    """Owner ruling 2026-11-23 22:01: the release's organization and site tables carry no notes column."""
+
+    def test_notes_column_is_dropped_from_the_csv_and_the_sqlite_copy_and_nothing_else_changes(self):
+        d = Path(tempfile.mkdtemp())
+        self.addCleanup(lambda: __import__("shutil").rmtree(d, ignore_errors=True))
+        csvp = d / "organizations_all.csv"
+        write(csvp, ["org_id", "legal_name", "notes", "website"], [["O1", "A", "Created in integration pass 17 SECRET-NOTE", "a.example"], ["O2", "B", "", "b.example"]])
+        self.assertTrue(export_release.drop_notes_csv(csvp))
+        with csvp.open(newline="", encoding="utf-8") as f:
+            rows = list(csv.reader(f))
+        self.assertEqual(rows, [["org_id", "legal_name", "website"], ["O1", "A", "a.example"], ["O2", "B", "b.example"]])
+        self.assertNotIn(b"SECRET-NOTE", csvp.read_bytes())
+        self.assertFalse(export_release.drop_notes_csv(csvp))                      # nothing left to drop; the file is untouched
+        db = d / "x.db"
+        con = sqlite3.connect(db)
+        for t in ("organizations", "sites", "programs"):
+            con.execute(f"CREATE TABLE {t} (id TEXT, notes TEXT, kept TEXT)")
+            con.execute(f"INSERT INTO {t} VALUES ('1', 'SECRET-NOTE {t}', 'kept')")
+        con.commit()
+        con.close()
+        self.assertEqual(export_release.drop_notes_db(db), ["organizations", "sites"])
+        con = sqlite3.connect(db)
+        for t in ("organizations", "sites"):
+            self.assertEqual([r[1] for r in con.execute(f"PRAGMA table_info({t})")], ["id", "kept"])
+        self.assertEqual([r[1] for r in con.execute("PRAGMA table_info(programs)")], ["id", "notes", "kept"])   # other tables are not in the ruling
+        con.close()
+        self.assertNotIn(b"SECRET-NOTE organizations", db.read_bytes())            # VACUUM: no free page keeps the text
+        self.assertNotIn(b"SECRET-NOTE sites", db.read_bytes())
+
+    def test_main_drops_notes_before_withholding(self):
+        src = Path(export_release.__file__).read_text(encoding="utf-8")
+        self.assertLess(src.index("drop_notes_db(RELEASE"), src.index("withhold_db(RELEASE"))
+        self.assertLess(src.index("drop_notes_csv(RELEASE"), src.index("withhold_csv(RELEASE / path"))
+
+
 class ReleaseWithholdingTests(unittest.TestCase):
     def setUp(self):
         d = tempfile.TemporaryDirectory()

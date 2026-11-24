@@ -213,6 +213,36 @@ def withhold_csv(path, table, held=None):
     return n
 
 
+NOTES_DROPPED = ("organizations", "sites")   # owner ruling 2026-11-23 22:01: the release's organization and site tables carry no notes column
+
+
+def drop_notes_csv(path):
+    """Remove the `notes` column from a release CSV (the repository CSV keeps it); returns True if it was there."""
+    with open(path, newline="", encoding="utf-8") as f:
+        text = f.read()
+    rows = list(csv.reader(io.StringIO(text, newline="")))
+    if not rows or "notes" not in rows[0]:
+        return False
+    i = rows[0].index("notes")
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        csv.writer(f, lineterminator="\r\n" if "\r\n" in text else "\n").writerows([r[:i] + r[i + 1:] for r in rows])
+    return True
+
+
+def drop_notes_db(db_path):
+    """The same in the bundled SQLite copy: ALTER TABLE ... DROP COLUMN, then VACUUM so no notes text stays in a free page."""
+    con = sqlite3.connect(db_path)
+    done = []
+    for t in NOTES_DROPPED:
+        if any(r[1] == "notes" for r in con.execute(f'PRAGMA table_info("{t}")')):
+            con.execute(f'ALTER TABLE "{t}" DROP COLUMN notes')
+            done.append(t)
+    con.commit()
+    con.execute("VACUUM")
+    con.close()
+    return done
+
+
 def withhold_db(db_path, held=None):
     """The same withholding in the bundled SQLite copy (never the canonical build/polymer-atlas.db), then VACUUM so no held value stays in a free page."""
     con = sqlite3.connect(db_path)
@@ -419,6 +449,7 @@ def main():
     # copy files and read them back for the descriptor
     shutil.copy2(DB, RELEASE / "polymer-atlas.db")
     held = held_pattern(RELEASE / "polymer-atlas.db")   # read before the copy is blanked
+    drop_notes_db(RELEASE / "polymer-atlas.db")   # owner ruling: no notes column in the organization and site tables
     withheld = {"database": withhold_db(RELEASE / "polymer-atlas.db", held)}   # the canonical .db and CSVs are never touched
     published = {}  # name -> (path, cols, rows)
     for t in ("sites", "organizations", "evidence"):
@@ -429,6 +460,8 @@ def main():
             write_organization_export(RELEASE / path, cols, rows, published["sites"][2])
         else:
             shutil.copy2(source, RELEASE / path)
+        if t in NOTES_DROPPED:
+            drop_notes_csv(RELEASE / path)
         withheld[t] = withhold_csv(RELEASE / path, t, held)
         cols, rows = read_csv(RELEASE / path)
         published[t] = (path, cols, rows)
@@ -490,6 +523,8 @@ def main():
     lines += ["", "The SQLite file `polymer-atlas.db` holds the same tables "
                   "(plus views) with identical row counts; this was checked at "
                   "export time.", "",
+              "Notes: the `organizations` and `sites` tables in this release have no `notes` column "
+              "(owner ruling 2026-11-23); the repository CSVs keep it.", "",
               "Withheld cells: the release blanks, in its own copies only, a description that "
               "carries internal build or review wording, any cell with a temporary record id "
               "of a build pass, and any cell that repeats a withheld description, the same test "

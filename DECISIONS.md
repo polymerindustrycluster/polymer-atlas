@@ -507,3 +507,12 @@ sentence on enforcement, to state exactly what the harness checks.
 Rule 8 is practice in this repo. CI does not check it. The controller's
 harness checks only the parts listed above, and it cannot see spawns by
 other harnesses, by children or in other projects.
+
+## 2026-11-23 22:01 · Drop notes from the release
+
+“Drop notes from release.” The release's organization and site CSVs omit
+the `notes` column, and so do the matching tables of the bundled SQLite
+copy. The repository keeps its notes, and the site pages keep withholding
+them. Implemented in `scripts/export_release.py`. Reason: notes are the
+build narrative ("Created ... in integration pass 17 ...") and about 4,600
+organization and 6,800 site notes cells carry process wording.
