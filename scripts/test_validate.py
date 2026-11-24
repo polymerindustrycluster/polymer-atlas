@@ -154,23 +154,24 @@ class ValidatorMutationTests(unittest.TestCase):
                        lambda r: r.update(processes="not_a_process_token"))
         self.assert_fails_with("not in SCHEMA §3.1/§3.2 vocabulary")
 
-    def test_v55_baselined_row_only_warns(self):
-        base = sorted(BASELINE.get("V-55", []))
-        self.assertTrue(base, "V-55 baseline must not be empty")
-        target = base[0]
-        idcol = "site_id" if target.startswith("SITE") else "org_id"
-        pat = "sites_*.csv" if target.startswith("SITE") else "organizations_*.csv"
-        hit = None
-        for path in sorted(self.data.glob(pat)):
-            with open(path, newline="", encoding="utf-8") as f:
-                if any(r[idcol] == target for r in csv.DictReader(f)):
-                    hit = path.name; break
-        self.assertIsNotNone(hit, f"{target} not found in any shard")
-        self.edit_rows(hit,
-                       lambda r: r[idcol] == target,
-                       lambda r: r.update(processes="not_a_process_token"))
+    def test_v55_ring3_subtype_process_scope(self):
+        subtype = "tooling_mold_die"
+        shards = (("organizations_OH.csv", "org_id"), ("sites_OH.csv", "site_id"))
+        for filename, _ in shards:
+            self.edit_rows(filename, lambda r: r["ring_primary"] == "3",
+                           lambda r: r.update(processes=subtype))
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-1500:])
+
+        records = [
+            self.edit_rows(filename, lambda r: r["ring_primary"] == "1",
+                           lambda r: r.update(processes=subtype))[id_col]
+            for filename, id_col in shards
+        ]
+        code, out = run_validator(self.data)
+        self.assertEqual(code, 1, out[-1500:])
+        for record in records:
+            self.assertIn(f"{record} processes/materials values ['{subtype}']", out)
 
     # [v1.10] people as a §4.13 evidence class: rows ride evidence_people.csv.
     EVD_PEOPLE_OK = {"evidence_id": "EVD-999999", "record_table": "people", "record_id": "PERSON-000001",

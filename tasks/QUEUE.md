@@ -2,6 +2,8 @@
 
 Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>` · `blocked <YYYY-MM-DD>` · `done`
 
+- [ ] `claimed:atlas-p1-vocab-repair 2026-11-23` **V-55 vocabulary repair.** Replay the owner-approved process and material migration and enforce Ring 3 process subtype scope. See `tasks/p1-vocab-repair-2026-11-23/`.
+
 - [ ] `claimed:atlas-gate-routes 2026-11-23` **ATLAS-38 G8 evidence binding routes.** Replay real cases, reject planted near-misses, and reconcile the complete main census before handing off the gate PR.
 
 - [ ] `claimed:atlas-p1-tradeshow 2026-11-23` **First-user task 12 — PIC-18 organizations at a trade show.** PIC staff can reach every recorded PIC-18 participant for each listed event and see the SQL-matching organization count. Branch `agent/codex/tradeshow-list-2026-11-23`.

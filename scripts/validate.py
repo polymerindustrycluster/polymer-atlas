@@ -170,6 +170,9 @@ PROCESSES = {"injection_molding", "injection_molding_micro", "injection_molding_
              "rubber_molding_unspecified", "reaction_injection_molding",
              # [v1.13] owner battery 2026-11-12 (S2)
              "dyeing_finishing", "fiber_formation"}
+RING3_PROCESSES = {"tooling_mold_die", "machinery_equipment", "automation_robotics",
+                   "distribution", "recycling_recovery", "testing_lab", "rd_design_engineering",
+                   "contract_services", "chemical_equipment_supply_polymer_specific"}  # §3.1 [v1.19.8]
 MATERIALS = {"thermoplastics", "thermosets", "elastomers_rubber", "thermoplastic_elastomers_tpe_tpu",
              "silicones", "fluoropolymers", "bioplastics_biobased", "recycled_content_pcr_pir",
              "composites_frp", "composites_carbon", "composites_thermoset", "composites_thermoplastic",
@@ -273,6 +276,12 @@ for col in ("county_source", "site_group_id"):
 for col in ("newsroom_url", "newsroom_feed_url", "linkedin_url"):
     if col not in org_fields:
         errors.append(f"organizations.csv: missing v1.11 column {col}")
+
+# V-3d [v1.19.8]: organization capability note columns (SCHEMA §4.4)
+for col in ("processes", "materials"):
+    note_col = f"{col}_other_note"
+    if (col, note_col) not in zip(org_fields, org_fields[1:]):
+        errors.append(f"organizations.csv: v1.19.8 requires {note_col} immediately after {col}")
 
 # V-3: organizations new columns
 for col in ("year_founded", "stock_ticker", "ownership_type", "certifications",
@@ -579,6 +588,14 @@ DEBT_FOUND = {}   # rule -> {record_id: message}
 def debt(rule, rid, msg):
     DEBT_FOUND.setdefault(rule, {})[rid] = msg
 
+
+def check_process_material_vocab(row, table, rid):
+    processes = PROCESSES | RING3_PROCESSES if (row.get("ring_primary") or "").strip() == "3" else PROCESSES
+    bad = [v for v in vals(row.get("processes")) if v not in processes]
+    bad.extend(v for v in vals(row.get("materials")) if v not in MATERIALS)
+    if bad:
+        debt("V-55", rid, f"{table} {rid} processes/materials values {bad} not in SCHEMA §3.1/§3.2 vocabulary for its primary ring")
+
 for r in sites:
     sid = r["site_id"].strip()
     st = (r.get("site_type") or "").strip()
@@ -594,10 +611,7 @@ for r in sites:
     bad_mk = [m for m in vals(r.get("markets_served")) if m not in MARKETS]
     if bad_mk:
         debt("V-49", sid, f"sites {sid} markets_served values {bad_mk} not in SCHEMA §3.3 vocabulary")
-    bad_pm = [t for t in vals(r.get("processes")) if t not in PROCESSES] + \
-             [t for t in vals(r.get("materials")) if t not in MATERIALS]
-    if bad_pm:
-        debt("V-55", sid, f"sites {sid} processes/materials values {bad_pm} not in SCHEMA §3.1/§3.2 vocabulary")
+    check_process_material_vocab(r, "sites", sid)
     band = (r.get("employee_band_site") or "").strip()
     if band and band not in EMPLOYEE_BANDS:
         debt("V-48", sid, f"sites {sid} employee_band_site {band!r} not in SCHEMA §4.4 bands")
@@ -611,10 +625,7 @@ for r in orgs:
     bad_mk = [m for m in vals(r.get("markets_served")) if m not in MARKETS]
     if bad_mk:
         debt("V-49", oid, f"organizations {oid} markets_served values {bad_mk} not in SCHEMA §3.3 vocabulary")
-    bad_pm = [t for t in vals(r.get("processes")) if t not in PROCESSES] + \
-             [t for t in vals(r.get("materials")) if t not in MATERIALS]
-    if bad_pm:
-        debt("V-55", oid, f"organizations {oid} processes/materials values {bad_pm} not in SCHEMA §3.1/§3.2 vocabulary")
+    check_process_material_vocab(r, "organizations", oid)
     band = (r.get("employee_band_ohio") or "").strip()
     if band and band not in EMPLOYEE_BANDS:
         debt("V-48", oid, f"organizations {oid} employee_band_ohio {band!r} not in SCHEMA §4.4 bands")
