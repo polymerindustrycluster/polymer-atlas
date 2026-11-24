@@ -1,8 +1,5 @@
 from pathlib import Path
-import re
 import sys
-from collections import defaultdict
-from urllib.parse import urlsplit
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]

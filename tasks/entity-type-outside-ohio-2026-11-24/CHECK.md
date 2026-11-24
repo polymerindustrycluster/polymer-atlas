@@ -1,4 +1,5 @@
 PASS 666 expected cells. All data files compared.
-wrong value rejected: [] mismatched cells [('organizations_AL.csv', 'ORG-003160', 'entity_type')]
-omission rejected: [] mismatched cells [('organizations_AL.csv', 'ORG-003160', 'entity_type')]
-overwrite rejected: [] mismatched cells [('organizations_AL.csv', 'ORG-003160', 'last_verified')]
+wrong value rejected: [] mismatched cells [('plant.csv', 'A', 'value')]
+omission rejected: [] mismatched cells [('plant.csv', 'A', 'value')]
+overwrite rejected: [] mismatched cells [('plant.csv', 'B', 'value')]
+truncated row rejected: plant.csv line 3: expected 3 cells, found 2
