@@ -1,0 +1,2 @@
+site_id,provider,place_id,name,street,city,state,zip,lon,lat,second_source,evidence_id,capture_sha256
+SITE-000011,overture-maps-places,ddb95786-fece-4e56-b124-ca5400c3e0e0,Akron Polymer Systems,62 N Summit St,Akron,OH,44308-1941,-81.51270294189453,41.085670471191406,"lead: Address 2026-10-28 (gov-data pipeline, EPA FRS facility 110044831180, STRONG match): 62 N SUMMIT ST, Akron, OH 44308",EVD-483134,f4ebb0a2b8d32f237199864e7f19fc74f761fc03e285657241d3d4a86c8e3a1b
