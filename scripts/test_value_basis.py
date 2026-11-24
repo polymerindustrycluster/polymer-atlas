@@ -219,8 +219,13 @@ class Verdicts(unittest.TestCase):
         (t.root / "pages").mkdir(exist_ok=True)
         (t.root / "pages" / "p.html").write_bytes(PAGE)
         d = t.root / "pages" / "pic18-corpus-2026-11-16" / "ORG-1"
-        write(d / "manifest.csv", [{"raw_file": "../p.html", "url": manifest[1], "final_url": manifest[0], "status": "ok"}],
-              ["raw_file", "url", "final_url", "status"])
+        other = b"<html><body><main>Another page of the same owner.</main></body></html>"
+        (t.root / "pages" / "p2.html").write_bytes(other)
+        write(d / "manifest.csv", [{"raw_file": "../p.html", "url": manifest[1], "final_url": manifest[0], "status": "ok",
+                                     "sha256": hashlib.sha256(PAGE).hexdigest()},
+                                    {"raw_file": "../p2.html", "url": manifest[1], "final_url": manifest[0], "status": "ok",
+                                     "sha256": hashlib.sha256(other).hexdigest()}],
+              ["raw_file", "url", "final_url", "status", "sha256"])
 
     def test_stated_verdict_replays_against_the_stored_page(self):
         t = self.tree([verdict("STATED", QUOTE, str(OFFSET))])
@@ -331,6 +336,25 @@ class Verdicts(unittest.TestCase):
                       page_url="https://acme.example/south", requested_url="")
         got, problems, info = t.basis(t.root / "pages")
         self.assertEqual((got[KEY][0], problems, info["verdict_unbound"]), ("not_yet_checked", [], [KEY]))
+
+    def test_line_whose_path_is_another_stored_page_with_the_digest_kept_fails(self):  # planted defects (SITE-001655, owner ruling round 5)
+        for cls in ("IMPLIED", "NOT_STATED"):
+            t = self.tree([verdict(cls, page="p2.html")])   # p2.html is a different stored page of the same owner; page_sha256 still names p.html
+            got, problems, _ = t.basis(t.root / "pages")
+            self.assertTrue(any("does not hash to the line's page_sha256" in p for p in problems), (cls, problems))
+            self.assertEqual(got[KEY][0], "not_yet_checked", cls)
+
+    def test_manifest_digest_that_differs_from_the_line_fails(self):
+        t = self.tree([verdict("NOT_STATED")])
+        m = t.root / "pages" / "pic18-corpus-2026-11-16" / "ORG-1" / "manifest.csv"
+        m.write_text(m.read_text().replace(hashlib.sha256(PAGE).hexdigest(), "0" * 64))
+        self.assertTrue(any("manifest's digest" in p for p in t.basis(t.root / "pages")[1]))
+
+    def test_honest_lines_pass_the_digest_checks(self):
+        for cls, label in (("IMPLIED", "implied"), ("NOT_STATED", "not_found_pending_refetch")):
+            t = self.tree([verdict(cls)])
+            got, problems, _ = t.basis(t.root / "pages")
+            self.assertEqual((problems, got[KEY][0]), ([], label), cls)
 
     def test_missing_manifest_entry_fails_and_no_store_reports_the_count(self):
         t = self.tree([verdict("NOT_STATED")])

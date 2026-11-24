@@ -129,30 +129,37 @@ def load_page_urls(folder, problems):
 
 
 def manifest_index(store):
-    """{resolved page path: (final_url, requested_url)} from the lane's corpus manifests and fetch receipts under the store."""
+    """{resolved page path: (final_url, requested_url, sha256)} from the lane's corpus manifests and fetch receipts under the store."""
     store = Path(store)
     out, corpus, scale = {}, store / "pic18-corpus-2026-11-16", store / "process-web-scale-2026-11-23"
     for mf in sorted(corpus.glob("ORG-*/manifest*.csv")):
         for r in read_csv(mf):
             if r["raw_file"] and r["status"] == "ok":
-                out[str((corpus / r["raw_file"]).resolve())] = (r["final_url"] or r["url"], r["url"])
+                out[str((corpus / r["raw_file"]).resolve())] = (r["final_url"] or r["url"], r["url"], r["sha256"])
     for rc in sorted(scale.glob("fetches*.jsonl")):
         for line in rc.read_text(encoding="utf-8").splitlines():
             r = json.loads(line)
             if r["kind"] == "page" and r["classification"] == "ok" and r["sha256"]:
-                out[str((scale / "captures" / (r["sha256"] + ".html")).resolve())] = (r.get("final_url") or r["url"], r["url"])
+                out[str((scale / "captures" / (r["sha256"] + ".html")).resolve())] = (r.get("final_url") or r["url"], r["url"], r["sha256"])
     if (scale / "candidates.csv").exists():
         for r in read_csv(scale / "candidates.csv"):
-            out.setdefault(str((scale / "captures" / (r["capture_sha256"] + ".html")).resolve()), (r["url"], r["url"]))
+            out.setdefault(str((scale / "captures" / (r["capture_sha256"] + ".html")).resolve()), (r["url"], r["url"], r["capture_sha256"]))
     return out
 
 
 def page_url_problem(v, manifest, store):
     """'' when the line's VALUE_PAGES.csv URLs are what the corpus manifest records for its page; else why not."""
-    hit = manifest.get(str((Path(store) / v["page_path"]).resolve()))
+    path = (Path(store) / v["page_path"]).resolve()
+    if not path.is_relative_to(Path(store).resolve()) or not path.is_file():
+        return "the stored page is missing from the store"
+    if hashlib.sha256(path.read_bytes()).hexdigest() != v["page_sha256"]:
+        return "the stored file at page_path does not hash to the line's page_sha256"
+    hit = manifest.get(str(path))
     if hit is None:
         return "the corpus manifest has no entry for the page"
-    final, requested = hit
+    final, requested, digest = hit
+    if digest != v["page_sha256"]:
+        return "the corpus manifest's digest for the page differs from the line's page_sha256"
     if v["_url"] != final or (v["_requested"] and v["_requested"] != requested):
         return f"VALUE_PAGES.csv gives {v['_url']!r} / {v['_requested']!r} but the corpus manifest records {final!r} / {requested!r}"
     return ""
