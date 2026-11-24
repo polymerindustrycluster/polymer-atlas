@@ -375,6 +375,10 @@ force-place it into a US shard or the residual.
 
 - Every record: ≥1 source, `verification_tier`, `last_verified` (the date
   a contributor actually checked it — not a scrape date alone).
+- **Organization websites.** Record a new or changed website only after a fetched page on its own domain shows
+  a name the record holds and an Ohio locality. The same PR or its base must hold the own-site evidence row,
+  and its quote must pass capture replay in the binding gate. LinkedIn stays a navigation link only. The site
+  corpus fetcher refuses LinkedIn requests. See [2026-11-24 · Owner rulings 12:12](DECISIONS.md#2026-11-24--owner-rulings-1212).
 - **NAICS codes are never company facts by default.** Companies almost
   never publish a corporate 6-digit NAICS. Every NAICS value must carry
   `naics_primary_source_type` (`company_disclosed` |

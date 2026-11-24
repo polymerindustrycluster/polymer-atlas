@@ -72,6 +72,7 @@ import subprocess
 import sys
 from collections import Counter, defaultdict
 from datetime import date, datetime
+from functools import lru_cache
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -82,6 +83,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from atlas import (LOCALITY_SEP_RE, PLATFORM_HOSTS, SUFFIX, name_key, org_name_fields,  # noqa: E402
                    site_name_key, squash, street_key, tokens_semicolon)
 from build_echo_spine import STATE_NAMES  # noqa: E402
+from site_corpus import linkedin_url  # noqa: E402
 from matching import (DESIGNATOR_ONLY_RE, city_differs, corporate_form_extension, designators_compare,  # noqa: E402
                       generic_label, has_civic_number, route_street_key, same_locality, same_street, units)  # (PR #463)
 
@@ -1230,7 +1232,7 @@ def same_page(a, b):
     return page(a) == page(b)
 
 
-def proof_capture(r, ev, idx, base_idx, archive, observed):
+def proof_capture(r, ev, idx, base_idx, archive, observed, *, website_witness=False):
     """Validate the cited page and date before the trusted job makes a request."""
     cap = r["capture"]
     url = capture_url(cap)
@@ -1276,11 +1278,13 @@ def proof_capture(r, ev, idx, base_idx, archive, observed):
         if not press_binding(quote, base_idx, rid, base_record, ev["claim_type"]):
             raise ValueError("press quote does not bind to the base record")
         return cap
-    if record_website(base_idx, table, base_record) != record_website(idx, table, idx.record(table, rid)):
+    site_idx = idx if website_witness else base_idx
+    site_record = site_idx.record(table, rid)
+    if not website_witness and record_website(base_idx, table, base_record) != record_website(idx, table, idx.record(table, rid)):
         raise ValueError("record website differs from base")
-    websites = record_websites(base_idx, table, base_record, preserve_path=True)
+    websites = record_websites(site_idx, table, site_record, preserve_path=True)
     if (not any(own_domain(host_path(original, preserve_path=True), website) for website in websites)
-            or not matches_record_page(base_idx, table, base_record, original)):
+            or not matches_record_page(site_idx, table, site_record, original)):
         raise ValueError("capture not_own_site")
     if not cited_page:
         raise ValueError("capture differs from the row's cited page")
@@ -1342,7 +1346,7 @@ def edgar_replay(ev, rec, base_record, data, quote, start):
     return ""
 
 
-def proof_problem(r, ev, idx, base_idx, archive, observed, builder, fetch):
+def proof_problem(r, ev, idx, base_idx, archive, observed, builder, fetch, *, website_witness=False):
     if r["record_id"] != ev["record_id"] or r["claim_sha256"] != claim_sha256(ev):
         return "proof record_id or claim_sha256 differs from the evidence row"
     if r["verdict"] != "VERIFIED":
@@ -1358,7 +1362,7 @@ def proof_problem(r, ev, idx, base_idx, archive, observed, builder, fetch):
     if len(quote) < 20:
         return "quote must contain at least 20 characters"
     try:
-        url = proof_capture(r, ev, idx, base_idx, archive, observed)
+        url = proof_capture(r, ev, idx, base_idx, archive, observed, website_witness=website_witness)
     except ValueError as e:
         return str(e)
     try:
@@ -1387,7 +1391,8 @@ def proof_problem(r, ev, idx, base_idx, archive, observed, builder, fetch):
     return ""
 
 
-def check_proofs(results, evs, idx, load_base, merge, pr_head, archive, read, fetch):
+def check_proofs(results, evs, idx, load_base, merge, pr_head, archive, read, fetch, *,
+                 website_witnesses=(), held_read=None):
     """Replay proofs only for web rows that cleared the existing mechanical floor."""
     need = defaultdict(list)
     for row in results:
@@ -1423,16 +1428,26 @@ def check_proofs(results, evs, idx, load_base, merge, pr_head, archive, read, fe
         if shape:
             problems.extend(shape)
             continue
-        builder = builder_family(read(f"tasks/{folder}/README.md"))
+        readme = f"tasks/{folder}/README.md"
+        builder = builder_family(read(readme))
+        held_proofs = {}
+        if held_read and builder == builder_family(held_read(readme)):
+            held_data = held_read(path)
+            if held_data is not None:
+                held_proofs, _ = load_proof_file(path, held_data)
         for result in candidates:
             eid = result["evidence_id"]
-            if base_idx.record(result["record_table"], result["record_id"]) is None:
+            website_witness = eid in website_witnesses
+            if not website_witness and base_idx.record(result["record_table"], result["record_id"]) is None:
                 result.update(verdict="HELD", reason="record absent from base")
                 continue
             if eid not in proofs:
                 problems.append(f"{eid}: no proof line in {path}")
                 continue
-            if merge_date is None:
+            at, row = proofs[eid]
+            held_proof = held_proofs.get(eid)
+            previously_held = held_proof and held_proof[1] == row
+            if merge_date is None and not previously_held:
                 merge_date = merge_committer_date(merge, pr_head)
             ev = evs[eid]
             try:
@@ -1440,11 +1455,11 @@ def check_proofs(results, evs, idx, load_base, merge, pr_head, archive, read, fe
             except ValueError:
                 result.update(verdict="HELD", reason="invalid observed_date")
                 continue
-            if abs((observed - merge_date).days) > 30:
+            if not previously_held and abs((observed - merge_date).days) > 30:
                 result.update(verdict="HELD", reason="observed_date more than 30 days from merge commit committer date")
                 continue
-            at, row = proofs[eid]
-            why = proof_problem(row, ev, idx, base_idx, archive.get(eid), observed, builder, cached_fetch)
+            why = proof_problem(row, ev, idx, base_idx, archive.get(eid), observed, builder, cached_fetch,
+                                website_witness=website_witness)
             if why:
                 problems.append(f"{at}: {eid}: {why}")
             else:
@@ -1452,6 +1467,132 @@ def check_proofs(results, evs, idx, load_base, merge, pr_head, archive, read, fe
                 result.update(verdict="PASS", reason="web_proof_replayed" if route == "mechanics_clear"
                               else f"{route}_proof_replayed")
     return problems
+
+
+# A state abbreviation by itself is ambiguous. Accept the postal form or a held locality in the quote.
+OHIO_POSTAL = re.compile(r"\b(?:OH|Ohio),?\s+4[3-5]\d{3}(?:-\d{4})?\b", re.I)
+WEB_STREET_SUFFIX = "|".join(sorted(set(SUFFIX) | set(SUFFIX.values()), key=len, reverse=True))
+OHIO_ADDRESS = re.compile(
+    rf"\b\d{{1,6}}\s+[^,;]{{2,75}}\s+(?:{WEB_STREET_SUFFIX}|way|pike)\.?,"
+    r"\s*[a-z][a-z .'-]{1,45},?\s+(?:OH|Ohio)\b", re.I)
+OTHER_STATE = re.compile(
+    r"^(?:\s*,\s*(?P<comma>[A-Za-z]{2})\b|\s+(?P<code>[A-Z]{2})\b|"
+    r"(?:\s*,\s*|\s+)(?P<name>(?i:" + "|".join(STATE_NAMES) + r"))\b)")
+
+
+def changed_websites(base_idx, idx):
+    base_orgs = base_idx.tables["organizations"]
+    return {oid: org for oid, org in idx.tables["organizations"].items()
+            if (org.get("website") or "").strip().lower() not in ("", "none_found")
+            and org["website"] != base_orgs.get(oid, {}).get("website")}
+
+
+@lru_cache(maxsize=1)
+def public_suffix_rules():
+    path = ROOT / "scripts/vendor/public_suffix_list.dat"
+    rules = {line for line in path.read_text(encoding="ascii").splitlines() if line and not line.startswith("//")}
+    if len(rules) < 9000:
+        raise ValueError("public suffix snapshot is incomplete")
+    return rules
+
+
+def website_registrable(host):
+    labels = host.rstrip(".").split(".")
+    rules = public_suffix_rules()
+    suffix_size = 1
+    for i in range(len(labels)):
+        suffix = ".".join(labels[i:])
+        if f"!{suffix}" in rules:
+            suffix_size = len(labels) - i - 1
+            break
+        if suffix in rules:
+            suffix_size = max(suffix_size, len(labels) - i)
+        if i and f"*.{suffix}" in rules:
+            suffix_size = max(suffix_size, len(labels) - i + 1)
+    return ".".join(labels[-suffix_size - 1:]) if len(labels) > suffix_size else None
+
+
+def website_domain_matches(source, website):
+    source_domain = website_registrable(capture_url(source).hostname)
+    website_domain = website_registrable(capture_url(website).hostname)
+    return bool(source_domain and source_domain == website_domain
+                and own_domain(host_path(source, preserve_path=True), host_path(website, preserve_path=True)))
+
+
+def website_witnesses(fills, idx, evidence):
+    """Return eligible witness IDs by organization and the reason where no witness reaches replay."""
+    public_suffix_rules()
+    places = defaultdict(set)
+    for oid, org in fills.items():
+        if state_code(org.get("hq_state")) == "OH":
+            county = org.get("hq_county") or ""
+            places[oid].update((org.get("hq_city") or "", f"{county} County" if county else ""))
+    for site in idx.sites.values():
+        oid = site.get("org_id")
+        if oid in fills and state_code(site.get("state")) == "OH":
+            county = site.get("county") or ""
+            places[oid].update((site.get("city") or "", f"{county} County" if county else ""))
+
+    own = defaultdict(list)
+    for ev in evidence:
+        if ev["record_table"] == "organizations" and ev["source_class"] == "own_site" and ev["record_id"] in fills:
+            own[ev["record_id"]].append(ev)
+
+    candidates, reasons = defaultdict(set), {}
+    for oid, org in fills.items():
+        if oid not in places:
+            reasons[oid] = "no held Ohio headquarters or site"
+            continue
+        website = org["website"].strip()
+        if "://" not in website:
+            website = f"https://{website}"
+        try:
+            host = capture_url(website).hostname
+            if not website_registrable(host) or linkedin_url(website):
+                raise ValueError("invalid website host")
+        except ValueError:
+            reasons[oid] = "website must name one own-site domain"
+            continue
+        stage = 0
+        names = idx.held_keys("organizations", oid) | idx.own_texts(oid)
+        for ev in own[oid]:
+            stage = max(stage, 1)
+            source = ev["source_ref"]
+            try:
+                if linkedin_url(source) or not website_domain_matches(source, website):
+                    continue
+            except ValueError:
+                continue
+            stage = max(stage, 2)
+            quote = norm_space(ev["claim_detail"].partition("quote:")[2])
+            qkey = f" {squash(quote)} "
+            if not any(f" {name} " in qkey for name in names):
+                continue
+            stage = max(stage, 3)
+            # A city word inside a company name is not a locality assertion.
+            locality_text = quote
+            for name in sorted(names, key=len, reverse=True):
+                pattern = r"\b" + r"[\W_]+".join(map(re.escape, name.split())) + r"\b"
+                locality_text = re.sub(pattern, " ", locality_text, flags=re.I)
+            if (OHIO_POSTAL.search(locality_text) or OHIO_ADDRESS.search(locality_text)
+                    or any(quoted_ohio_place(place, locality_text) for place in places[oid])):
+                candidates[oid].add(ev["evidence_id"])
+                stage = 4
+        reasons[oid] = ("no own-site evidence", "no same-domain own-site evidence",
+                        "no same-domain quote contains a held name", "no held-name quote contains an Ohio locality",
+                        "no own-site witness passed capture replay")[stage]
+    return candidates, reasons
+
+
+def quoted_ohio_place(place, quote):
+    if not place:
+        return False
+    pattern = r"\b" + re.escape(place) + r"\b"
+    for found in re.finditer(pattern, quote, re.I):
+        qualifier = OTHER_STATE.match(quote[found.end():])
+        if not qualifier or state_code(qualifier["comma"] or qualifier["code"] or qualifier["name"]) in ("", "OH"):
+            return True
+    return False
 
 
 # These routes need the base tree. The head can contain the very street or name being proposed.
@@ -1768,8 +1909,10 @@ def audit_sample(results, n, seed):
             for k, v in sorted(by_label.items())}
 
 
-def resolve_base(ref, head):
-    if TREE != ROOT:  # a plain directory has no history: compare with REF itself (check out the PR merge ref)
+def resolve_base(ref, head, pr_head=None):
+    if TREE != ROOT and pr_head:  # The checked-out merge ref pins the base even if main advances.
+        return git("rev-parse", "HEAD^1", worktree=TREE).strip()
+    if TREE != ROOT:  # A plain directory has no history: compare with REF itself.
         return git("rev-parse", ref).strip()
     return git("merge-base", ref, head or "HEAD").strip()
 
@@ -1800,7 +1943,7 @@ def main(argv=None):
     try:
         head_evs = rows(a.head, "evidence_*.csv")
         since = gate or a.provenance_since or (a.since if a.sample else None)
-        base = resolve_base(since, a.head) if since else None
+        base = resolve_base(since, a.head, a.pr_head) if since else None
         base_evs = rows(base, "evidence_*.csv") if base else []
     except subprocess.CalledProcessError as e:
         print(f"binding gate: cannot read git state ({(e.stderr or '').strip()}); failing closed")
@@ -1836,9 +1979,31 @@ def main(argv=None):
                 base_idx = Index.load(base)
                 evidence_by_id = {e["evidence_id"]: e for e in evs}
                 problems = check_address_routes(results, evidence_by_id, idx, base_idx, base_evs, a.map_store)
+                fills = changed_websites(base_idx, idx)
+                candidates, reasons = website_witnesses(fills, idx, head_evs) if fills else ({}, {})
+                witness_ids = set().union(*candidates.values())
+                read = lambda path: tasks_file(a.head, path)
                 problems += check_proofs(results, evidence_by_id, idx, lambda: base_idx,
-                                        a.head or "HEAD", a.pr_head, archive,
-                                        lambda path: tasks_file(a.head, path), fetch_url)
+                                         a.head or "HEAD", a.pr_head, archive, read, fetch_url,
+                                         website_witnesses=witness_ids)
+                if fills:
+                    passed = {r["evidence_id"] for r in results if r["verdict"] == "PASS"
+                              and r["reason"] == "web_proof_replayed"}
+                    pending = set().union(*(ids for ids in candidates.values() if ids.isdisjoint(passed)))
+                    pending.difference_update(evidence_by_id)
+                    held_evs = [ev for ev in head_evs if ev["evidence_id"] in pending]
+                    held_results = judge_all(held_evs, idx)
+                    replay_problems = check_proofs(
+                        held_results, {ev["evidence_id"]: ev for ev in held_evs}, idx, lambda: base_idx,
+                        a.head or "HEAD", a.pr_head, archive, read, fetch_url,
+                        website_witnesses=witness_ids, held_read=lambda path: tasks_file(base, path))
+                    passed.update(r["evidence_id"] for r in held_results if r["verdict"] == "PASS"
+                                  and r["reason"] == "web_proof_replayed")
+                    rejected = [f"{oid} website: {reasons[oid]}" for oid in fills
+                                if not candidates.get(oid, set()) & passed]
+                    print(f"website rule: {len(fills) - len(rejected)}/{len(fills)} website fills passed")
+                    if rejected:
+                        problems[:0] = rejected + replay_problems
         except (csv.Error, ValueError, OSError, subprocess.CalledProcessError) as e:
             print(f"binding gate: could not inspect proof inputs: {e}")
             return 2
