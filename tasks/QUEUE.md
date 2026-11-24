@@ -8,6 +8,8 @@ Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>
 
 - [ ] `claimed:atlas-p1-tradeshow 2026-11-23` **First-user task 12 — PIC-18 organizations at a trade show.** PIC staff can reach every recorded PIC-18 participant for each listed event and see the SQL-matching organization count. Branch `agent/codex/tradeshow-list-2026-11-23`.
 
+- [ ] `claimed:atlas-p1-value-basis 2026-11-24` **Per-value basis generator (SCHEMA §4.24, v1.20.1).** `scripts/value_basis.py`, validator V-69, the first `data/value_basis.csv`, site and release labels, withheld values hidden. Branch `agent/claude-code/value-basis-2026-11-24`. First user: PIC staff reading the directory and the Atlas controller. Check use by 2026-11-30.
+
 - [ ] `claimed:atlas-p1-title-hq 2026-11-24` **Verbatim researcher titles.** Replay the flagged title frame against held institutional quotations.
 
 ## Phase 0 — Foundations

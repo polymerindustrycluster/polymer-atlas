@@ -57,7 +57,8 @@ def git(repo, *args):
 
 def table_of(path):
     stem = Path(path).stem
-    if stem == "inclusion_log" or stem.endswith("_all"):
+    # Generated reference tables (SCHEMA 4.23 ipeds_*, 4.24 value_basis) are derived from other files: no feed entry.
+    if stem == "inclusion_log" or stem == "value_basis" or stem.startswith("ipeds_") or stem.endswith("_all"):
         return None
     table = "evidence" if stem.startswith("evidence_") else re.sub(r"_(?:[A-Z]{2}|INTL)$", "", stem)
     if table not in KEYS:

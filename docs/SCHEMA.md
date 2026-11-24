@@ -1,7 +1,7 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.20.0 — 2026-11-24 (owner rulings 2026-11-24 10:29: §4.24 adds the generated per-value basis table; §4.13 adds the map-listing street route and the filing name-variant rule; §4.4 and §4.5 point to them. No data row changes).
+**Version:** v1.20.1 — 2026-11-24 (§4.24 implementation: the generator, where reader verdicts are stored, the precedence, the grain rule and validator V-69; no vocabulary or ruling change). Before it, v1.20.0 — 2026-11-24 (owner rulings 2026-11-24 10:29: §4.24 adds the generated per-value basis table; §4.13 adds the map-listing street route and the filing name-variant rule; §4.4 and §4.5 point to them. No data row changes).
 
 Previous: v1.19.8 — 2026-11-23 (§3.1 admits Ring 3 subtype process tokens for Ring 3 organizations and sites, and §4.4 adds process and material other-note columns to organizations).
 
@@ -2791,10 +2791,13 @@ values stay public, each with a label that says how well it is supported. This t
 
 - **Generated, never authored.** A script derives every row from the evidence rows (§4.13) and the stored pages the rows
   cite. Nobody edits the table by hand. Like §4.23, it is reference data: never evidence and never an input to a
-  verification tier. The generator, its validator rule and the first fill arrive in later PRs that cite this revision;
-  until they land, the table does not exist and no value changes.
+  verification tier. **[v1.20.1]** The generator is `scripts/value_basis.py`; validator V-69 fails when the table differs
+  from a fresh generation, naming the defect (a value a bound row names with no row; a row for a value the record does
+  not hold; a duplicate key; a basis that is not what generation gives, including a `stated` the evidence cannot back).
+  Every published `processes[]` and `markets_served[]` value on an organization or site row has exactly one row.
 - **Scope.** `processes[]` and `markets_served[]` values on organizations and sites (ecosystem rows carry neither column), and the
-  `street_address` of sites.
+  `street_address` of sites. **[v1.20.1]** Only `processes` and `markets_served` rows are generated now; `street_address`
+  rows (basis `map_listing`) arrive with the §4.13 map-listing route.
 
 | Field | Type | Notes |
 |---|---|---|
@@ -2803,7 +2806,7 @@ values stay public, each with a label that says how well it is supported. This t
 | `field` | enum | `processes` \| `markets_served` \| `street_address` |
 | `value` | string | The controlled-vocabulary token for `processes` and `markets_served`; empty for `street_address` (one street per site) |
 | `basis` | enum | The closed vocabulary below |
-| `evidence_id` | FK → §4.13 | **MUST.** The evidence row that decides the basis: for `not_yet_checked`, the bound row that names the value and a page. A value no evidence row names has no row in this table and is outside this ruling |
+| `evidence_id` | FK → §4.13 | **MUST, except** that **[v1.20.1]** it is empty for a `not_yet_checked` row whose value no bound row names. Otherwise the evidence row that decides the basis: for `not_yet_checked`, the bound row that names the value and a page (the value's own record's row before an organization's) |
 | `basis_date` | date, nullable | The date of the read that set the basis; empty for `not_yet_checked` (no read has run) |
 
 Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
@@ -2823,12 +2826,73 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
   10:29 ruling names no step after a confirmed absence. Reading the earlier "publish only what's stated" ruling (a value
   no source states goes back to unknown after the check) as applying is an inference, to be confirmed with the owner;
   this revision adds no path for it.
-- **First fill.** All 385 PIC-18 owners (organizations and ecosystem entities with an active tier A–C site in the 18
+- **First fill (v1.20.1).** The first table is derived from evidence already on `main` and holds `stated`, `filing` and
+  `not_yet_checked` rows only; reader verdicts add `implied` and `not_found_pending_refetch` once a checked packet lands
+  (below). The ruling text follows. All 385 PIC-18 owners (organizations and ecosystem entities with an active tier A–C site in the 18
   counties) that carry process or market values whose bound row names the value and a page but saves none of its words
   are re-read against their stored pages. Where a reader's verdict (`stated`, `implied`, NOT_STATED) is stored for the
-  generator to read is fixed in the generator's PR; this revision does not decide it.
+  generator to read is fixed in the generator's PR; this revision does not decide it. **[v1.20.1] Fixed here:** see "Where
+  reader verdicts live".
 - **Precedence.** Where several rows bear on one key, the generator's rule and its tests are fixed in the PR that adds it.
   A `contradicts` row (§4.13) never produces `stated`, `filing` or `implied`.
+- **Where reader verdicts live [v1.20.1].** A reader's verdict is a line in `tasks/<folder>/VALUE_VERDICTS.csv`, in the
+  re-read lane's `values.csv` format as written (`owner, record_table, record_id, field, value, class, quote, page_path,
+  page_sha256, offset, grain, note`; `class` is STATED, IMPLIED, NOT_STATED or NO_PAGE, and a NO_PAGE line gives no label).
+  Verdicts live under `tasks/` because a lane never writes `data/` (AGENTS.md §2 rule 7); the table in `data/` is the
+  integrator's generated output, so a verdict changes a label only in a PR that also changes `data/value_basis.csv`, which
+  is a data PR with the §2a rule 4 review. The folder's `README.md` carries three lines: `Read on: <date>`, `Read by:
+  <model family>` and `Checked by: <a different model family>`. A packet without all three, or whose checker is the
+  reader's own family, publishes no label (the generator reports it). A line labels only its own record: its `owner`
+  must be the record's organization, its `grain` `plant` for a site and `company` for an organization, and a page folder
+  named `ORG-…` in `page_path` must be that owner. A STATED line for a site value also needs a bound row on the site
+  itself (an organization row is not enough); any verdict with no bound row on its record to rest on stops the generator,
+  so a checked disposition is never dropped silently and the key goes to adjudication. Every verdict line also needs
+  `tasks/<folder>/VALUE_PAGES.csv` (`page_sha256,page_url[,requested_url]`, from the lane's corpus manifest) giving the URL
+  its page was captured from (and, for a redirected capture, the URL it was requested as). A verdict labels a key only
+  when that page **is the page a bound row's `source_ref` cites** (same host and path after the binding gate's
+  normalization, or the recorded requested URL), the row being on the value's own record for STATED. A page on another
+  page of the same site gives no label, as NO_PAGE does: the key stays `not_yet_checked` on the row that cites the page
+  nobody has re-read, and a different page never withholds a value (NOT_STATED included); the line stays in
+  `VALUE_VERDICTS.csv` for a later PR that adds own-site evidence rows for that page through the binding gate. A page on a
+  site that no bound row on the record cites stops the generator. With the page store (`--check --pages <store>`), every
+  verdict line's stored file must hash to its `page_sha256` and to the manifest's digest for that path, and only then is every
+  `VALUE_PAGES.csv` `page_url` and `requested_url` checked against the lane's corpus manifest entry for the page
+  (`url`, `final_url`); a missing entry or a mismatch fails the check. Without a store V-69 reports "NOT_INSPECTED: N page
+  URLs not checked against the corpus manifest" beside the unreplayed-quote count. The generator adds no evidence: it picks the
+  bound row that names the value as the line's `evidence_id`. A STATED line replays when the page store is given
+  (`python3 scripts/value_basis.py --check --pages <store>`): `<store>/<page_path>` must hash to `page_sha256` and
+  `capture_text` (the binding gate's function) must hold the quote at the offset. A quote is 20 to 200 characters. CI has
+  no page store, so V-69 reports "NOT_INSPECTED: N stated quotes not replayed" as a warning, never silently; the lane and the reviewing family run
+  the replay, as for any packet (AGENTS.md §2a rule 2).
+- **Precedence, fixed [v1.20.1].** The first line that holds for a key decides its basis. (1) `stated`: an `own_site` row
+  on the same record whose head (before `quote:`) names exactly this one value and quotes the page, with a `VERIFIED` line in its folder's
+  `BINDING_PROOF.csv` from a family other than the builder's, whose `claim_sha256` still matches the row (the gate
+  replayed the capture when the row merged; V-69 does not fetch it again), or a latest reader verdict of STATED. (2)
+  `filing`: a `government_filing` row on the same record that names exactly this one value and carries the filing's words
+  (a `quote:` or a `process excerpt:` of 20 or more characters); the one held token the row's assertion names (the text before `quote:` or `process excerpt:`; the witness's own words never decide it),
+  must be this value (a value named only inside the quote is `not_yet_checked`); a row that only restates the record's own cell is not a
+  filing statement. (3) The latest reader verdict: IMPLIED gives `implied`, NOT_STATED gives `not_found_pending_refetch`;
+  two classes on one latest read date is a generator error. (4) `not_yet_checked`: any other bound row that names the value (a row on the value's own record stands for it before an organization's row), or no bound row at all (empty `evidence_id`).
+  A verified quote or a filing outranks a NOT_STATED verdict (a proven quote beats a failure to find one). Ties go to the
+  lowest `evidence_id`. A bound row is an `activity` or `scope` row, not `contradicts`, of source class `own_site`,
+  `government_filing`, `registry`, `press` or `directory`. **Grain:** `stated` and `filing` come only from a row on the
+  value's own record; a row on the organization gives a site's value at most `not_yet_checked`, because a corporate
+  statement does not settle a plant claim. A quoted row with no `BINDING_PROOF.csv` line is `not_yet_checked` until a
+  checked reader verdict covers it.
+- **Values no row names [v1.20.1] (controller ruling 2026-11-24, after the generator's first run).** A published value
+  that no bound row names also gets a row: basis `not_yet_checked`, empty `evidence_id`, empty `basis_date`, shown with
+  the label "not yet checked". V-69 fails on a published value with no row. The generator counts these values separately
+  (at the first table, 165 process and 26 market values on PIC-18 owners' display rows).
+- **Display [v1.20.1].** The site (`build_site.py`) and the graph pages drop every `not_found_pending_refetch` value from
+  the in-memory copy they render, and show the §4.24 label after each other value; in the graph each record-to-value
+  link carries its label (`graph.json` edges gain a fourth element; `map-network.json` organizations gain `tl`, aligned
+  with `t`), the strongest basis among the records that hold the value ("stated", "from a filing", "implied",
+  "not yet checked"); `directory.csv` carries `processes_value_basis` and `markets_value_basis`. The release bundle
+  (`export_release.py`) removes withheld values from its organization and site rows and their `*_incl_sites` columns,
+  blanks evidence `claim_detail` and `notes` that name one, in any case or spacing ("Dental Equipment" for `dental`; a note often repeats the claim), drops the site's
+  `site_capabilities` row for it, refuses to build when the database's `value_basis` table differs from
+  `data/value_basis.csv`, and ships `value_basis.csv` and its database table without withheld rows and with a
+  `label` column. The record CSVs in `data/` are never rewritten for display.
 
 ## 5. Entity Resolution Rules — Dedupe Identically
 
@@ -3580,3 +3644,4 @@ unchanged.
 - **v1.19.7 — 2026-11-23 (owner ruling, “10 years, dated”).** §1 R13 replaces the five-year cutoff with ten years, shows the filing year, and gives a newer contradictory source precedence. Blind audit 12 samples the result.
 - **v1.19.8 — 2026-11-23 (owner ruling, process and material vocabulary repair).** §3.1 admits Ring 3 service process subtype tokens for Ring 3 organizations and sites. §4.4 adds process and material other-note columns to organization shards.
 - **v1.20.0 — 2026-11-24 (owner rulings 2026-11-24 10:29, multiple choice; all four were the recommended option).** (1) §4.13 adds the map-listing street route: a street from Overture Maps places (Google listings for the remainder) fills a blank site street only where it agrees with a second held source, by script, is labelled "from a map listing", never overwrites, leaves county to the physical address, and is capped at `supports_C` (the `tier_effect` line; §4.1 tier C); source class `platform_category`, no vocabulary addition. (2) and (3) §4.24 adds the generated per-value basis table (`stated`, `filing`, `implied`, `not_yet_checked`, `not_found_pending_refetch`, `map_listing`); unquoted process and market values stay public with their label, implied values stay labelled, and NOT_STATED values are withheld from display, never deleted, until a fresh fetch finds them or confirms absence. (4) §4.13 and §4.4 add the filing name-variant rule: an OSHA or EPA filing's name for the operator joins `trade_names[]` as `(OSHA filing name)` or `(EPA filing name)` when its distinctive words match a held name and its street and city match, checked by a second model family. §4.4 and §4.5 point to these. No data rows change; the generator, gate routes and fills follow in later PRs. Recorded in `DECISIONS.md`.
+- **v1.20.1 — 2026-11-24 (implementation of §4.24; no ruling).** `scripts/value_basis.py` generates `data/value_basis.csv`; validator V-69 compares it with a fresh generation; reader verdicts are stored as `tasks/<folder>/VALUE_VERDICTS.csv` in the re-read lane's format, counted only when the folder's README names a second model family that checked the packet; precedence and the grain rule (`stated` and `filing` only from the value's own record) are fixed in §4.24; the site, graph pages and release bundle show labels and drop withheld values. `street_address` rows wait for the map-listing route. Recorded in `DECISIONS.md`.
