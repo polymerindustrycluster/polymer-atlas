@@ -14,6 +14,14 @@ COLUMN = "naics_primary_source_type"
 TYPES = {"own_site": "company_disclosed", "government_filing": "government_filing",
          "registry": "directory_assigned", "directory": "directory_assigned"}
 
+def located(detail, code):
+    """'quote' if the code is inside a quote (label in any case), 'outside' if it appears only elsewhere, else None."""
+    pat = r"(?<!\d)" + re.escape(code) + r"(?!\d)"
+    q = re.search(r"quote:(.*)", detail, re.I | re.S)
+    if q and re.search(pat, q.group(1)):
+        return "quote"
+    return "outside" if re.search(pat, detail) else None
+
 def changes(data):
     evidence = defaultdict(list)
     for _, e in C.tagged(data, "evidence_*.csv"):
@@ -25,8 +33,13 @@ def changes(data):
             before = row[COLUMN]
             if not code or before in {*TYPES.values(), "researcher_inferred"} or row["naics_confidence"] not in {"high", "medium", "low"}:
                 continue
-            matched = {(TYPES.get(e["source_class"]) if e["tier_effect"].startswith("supports_") else None) for e in evidence[table, rid]
-                       if re.search(r"(?<!\d)" + re.escape(code) + r"(?!\d)", e["claim_detail"].partition("quote:")[2])}
+            matched = set()
+            for e in evidence[table, rid]:
+                where = located(e["claim_detail"], code)
+                if where == "quote":
+                    matched.add(TYPES.get(e["source_class"]) if e["tier_effect"].startswith("supports_") else None)
+                elif where == "outside":
+                    matched.add(None)  # the code appears where no quote label was parsed: hold, never infer
             if not matched:
                 matched.add("researcher_inferred")
             if len(matched) == 1 and None not in matched:

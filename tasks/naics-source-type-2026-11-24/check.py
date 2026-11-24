@@ -12,6 +12,13 @@ import subprocess
 import tempfile
 
 COLUMN = "naics_primary_source_type"
+def quoted(detail, code):
+    """True: code inside a quote (label in any case). None: code only outside a parsed quote (hold). False: absent."""
+    m = re.search(r"quote:(.*)", detail, re.I | re.S)
+    if m and code in re.findall(r"\d+", m.group(1)):
+        return True
+    return None if code in re.findall(r"\d+", detail) else False
+
 def expected(base):
     candidates = {}
     for table in ("organizations", "sites"):
@@ -25,8 +32,11 @@ def expected(base):
         key = e["record_table"], e["record_id"]
         if key in candidates:
             _, row, kinds = candidates[key]
-            if row["naics_primary"] in re.findall(r"\d+", e["claim_detail"].split("quote:", 1)[-1] if "quote:" in e["claim_detail"] else ""):
+            found = quoted(e["claim_detail"], row["naics_primary"])
+            if found:
                 kinds.add(mapping.get(e["source_class"], "unknown") if e["tier_effect"].startswith("supports_") else "unknown")
+            elif found is None:
+                kinds.add("unknown")
     for (_, rid), (file, row, kinds) in candidates.items():
         if len(kinds) < 2 and "unknown" not in kinds:
             yield file, rid, row[COLUMN], next(iter(kinds), "researcher_inferred")
@@ -48,6 +58,12 @@ def compare(base, tree, want):
         raise ValueError(f"{problems} mismatched cells {keys[:3]}")
 
 if __name__ == "__main__":
+    # Known answers for the quote reader (Codex r2 finding on #539).
+    assert quoted('quote: "Our NAICS code is 326199."', "326199") is True
+    assert quoted('Quote: "Our NAICS code is 326199."', "326199") is True
+    assert quoted('\u201cOur NAICS code is 326199.\u201d', "326199") is None
+    assert quoted('quote: "custom injection molding"', "326199") is False
+    assert quoted('quote: "code 3261990"', "326199") is False
     with tempfile.TemporaryDirectory() as scratch:
         base = C.export_tree((HERE / "BASE_REF").read_text().strip(), scratch)
         want = {(f, rid, COLUMN): (before, after) for f, rid, before, after in expected(base)}
