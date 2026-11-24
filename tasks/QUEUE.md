@@ -603,6 +603,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [x] `done 2026-11-18` Organization-level `processes` canary: 10 PIC-18 organizations with an unknown process, filled only from corporate claims on stored own-site pages. Applied 0 of 10; draft packet, 0 data rows (PR #377, 352c6fc0).
 - [x] `done 2026-11-18` `scripts/integrate/mergepr.sh` gains `MERGE_MODE=squash`, keeping `--match-head-commit` (PR #376).
 - [x] `done 2026-11-18` People identifier URLs (owner items 1 and 1b): 29 people rows replaced or blanked, validator V-62, SCHEMA v1.13.4 (PR #379, 9c94fc65).
+- [ ] `claimed:atlas-p1-rule-repairs 2026-11-24` Repair people-generic-profile. Branch `agent/codex/people-generic-profile-2026-11-24`.
 - [x] `done 2026-11-18` Blind audit 11 correction A11-113: the UEI registry link on ORG-000889 retired, 1 row (PR #382, 4d2aa3ac).
 - [ ] `claimed:atlas-w23-ohio-links 2026-11-23` **Ohio own-site navigation links**, excluding the prior PIC-18 corpus frame. Branch `agent/codex/ohio-links-corpus-2026-11-23`. First user: John, company profile lookups. Non-use review 2026-12-23.
 - [ ] `claimed:atlas-w23-ohio-links 2026-11-23` Blind audit 11 correction A11-047 (ProVia `newsroom_feed_url`). The market and size lanes released `organizations_OH.csv` on 2026-11-18 (#383, #396 merged).
@@ -703,3 +704,4 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [ ] `claimed:atlas-p1-integrator-1 2026-11-23` **SPE site-record tombstones (ATLAS-38):** Retire the two SPE site representations after #528 and confirm their active ecosystem records. Branch `agent/codex/p1-spe-site-tombstones-2026-11-23`. First user: the Atlas controller. Check use by 2026-11-30.
 - [ ] `claimed:atlas-p1-controller 2026-11-23` **AGENTS.md §2a rule 8 (fan-out budget):** Land the owner's 2026-11-23 rulings: rule 8 in AGENTS.md and the day's audit and fan-out rulings in DECISIONS.md. Branch `agent/claude-code/agents-rule8-fanout-2026-11-23`. First user: the Atlas controller. Check use by 2026-11-30.
 - [ ] `claimed:atlas-p1-audit13-protocol 2026-11-24` **ATLAS-7 lean audit protocol.** Document the authorized post-repair smoke and the two open draw rules, their risks and costs. Branch `agent/codex/audit13-protocol-2026-11-24`. First user is the Atlas controller at the next audit decision.
+- [ ] `claimed:atlas-p1-rule-repairs 2026-11-24` Repair naics-source-type. Branch `agent/codex/naics-source-type-2026-11-24`.
