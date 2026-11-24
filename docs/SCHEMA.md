@@ -2794,6 +2794,7 @@ values stay public, each with a label that says how well it is supported. This t
   verification tier. **[v1.20.1]** The generator is `scripts/value_basis.py`; validator V-69 fails when the table differs
   from a fresh generation, naming the defect (a value a bound row names with no row; a row for a value the record does
   not hold; a duplicate key; a basis that is not what generation gives, including a `stated` the evidence cannot back).
+  Every published `processes[]` and `markets_served[]` value on an organization or site row has exactly one row.
 - **Scope.** `processes[]` and `markets_served[]` values on organizations and sites (ecosystem rows carry neither column), and the
   `street_address` of sites. **[v1.20.1]** Only `processes` and `markets_served` rows are generated now; `street_address`
   rows (basis `map_listing`) arrive with the §4.13 map-listing route.
@@ -2805,7 +2806,7 @@ values stay public, each with a label that says how well it is supported. This t
 | `field` | enum | `processes` \| `markets_served` \| `street_address` |
 | `value` | string | The controlled-vocabulary token for `processes` and `markets_served`; empty for `street_address` (one street per site) |
 | `basis` | enum | The closed vocabulary below |
-| `evidence_id` | FK → §4.13 | **MUST.** The evidence row that decides the basis: for `not_yet_checked`, the bound row that names the value and a page. A value no evidence row names has no row in this table and is outside this ruling |
+| `evidence_id` | FK → §4.13 | **MUST, except** that **[v1.20.1]** it is empty for a `not_yet_checked` row whose value no bound row names. Otherwise the evidence row that decides the basis: for `not_yet_checked`, the bound row that names the value and a page (the value's own record's row before an organization's) |
 | `basis_date` | date, nullable | The date of the read that set the basis; empty for `not_yet_checked` (no read has run) |
 
 Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
@@ -2845,7 +2846,7 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
   bound row that names the value as the line's `evidence_id`. A STATED line replays when the page store is given
   (`python3 scripts/value_basis.py --check --pages <store>`): `<store>/<page_path>` must hash to `page_sha256` and
   `capture_text` (the binding gate's function) must hold the quote at the offset. A quote is 20 to 200 characters. CI has
-  no page store, so V-69 warns with the count of STATED lines it could not replay; the lane and the reviewing family run
+  no page store, so V-69 reports "NOT_INSPECTED: N stated quotes not replayed" as a warning, never silently; the lane and the reviewing family run
   the replay, as for any packet (AGENTS.md §2a rule 2).
 - **Precedence, fixed [v1.20.1].** The first line that holds for a key decides its basis. (1) `stated`: an `own_site` row
   on the same record that names exactly this one value and quotes the page, with a `VERIFIED` line in its folder's
@@ -2854,16 +2855,17 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
   `filing`: a `government_filing` row on the same record that names exactly this one value and carries the filing's words
   (a `quote:` of 20 or more characters, or a `process excerpt:`); a row that only restates the record's own cell is not a
   filing statement. (3) The latest reader verdict: IMPLIED gives `implied`, NOT_STATED gives `not_found_pending_refetch`;
-  two classes on one latest read date is a generator error. (4) `not_yet_checked`: any other bound row that names the value.
+  two classes on one latest read date is a generator error. (4) `not_yet_checked`: any other bound row that names the value (a row on the value's own record stands for it before an organization's row), or no bound row at all (empty `evidence_id`).
   A verified quote or a filing outranks a NOT_STATED verdict (a proven quote beats a failure to find one). Ties go to the
   lowest `evidence_id`. A bound row is an `activity` or `scope` row, not `contradicts`, of source class `own_site`,
   `government_filing`, `registry`, `press` or `directory`. **Grain:** `stated` and `filing` come only from a row on the
   value's own record; a row on the organization gives a site's value at most `not_yet_checked`, because a corporate
   statement does not settle a plant claim. A quoted row with no `BINDING_PROOF.csv` line is `not_yet_checked` until a
   checked reader verdict covers it.
-- **Values no row names [v1.20.1].** A published value that no bound row names has no row here (this section's first
-  rule) and shows with no label. The generator and V-69 count them; whether they should carry a label of their own is
-  for the owner.
+- **Values no row names [v1.20.1] (controller ruling 2026-11-24, after the generator's first run).** A published value
+  that no bound row names also gets a row: basis `not_yet_checked`, empty `evidence_id`, empty `basis_date`, shown with
+  the label "not yet checked". V-69 fails on a published value with no row. The generator counts these values separately
+  (at the first table, 164 process and 26 market values on PIC-18 owners' display rows).
 - **Display [v1.20.1].** The site (`build_site.py`) and the graph pages drop every `not_found_pending_refetch` value from
   the in-memory copy they render, and show the §4.24 label after each other value ("stated", "from a filing", "implied",
   "not yet checked"); `directory.csv` carries `processes_value_basis` and `markets_value_basis`. The release bundle

@@ -94,11 +94,16 @@ class Basis(unittest.TestCase):
         t = Tree([ev("EVD-1", "SITE-1", "sites.processes includes custom_compounding (own-site disclosure)")])
         self.assertEqual(t.basis()[0][KEY], ("not_yet_checked", "EVD-1", ""))
 
-    def test_value_no_row_names_has_no_basis_row_and_is_counted(self):
+    def test_value_no_row_names_is_not_yet_checked_with_an_empty_evidence_id_and_is_counted(self):
         t = Tree([ev("EVD-1", "SITE-1", "sites.processes includes lamination")])
         got, _, info = t.basis()
-        self.assertNotIn(KEY, got)
+        self.assertEqual(got[KEY], ("not_yet_checked", "", ""))
         self.assertEqual(info["unnamed"][("sites", "processes")], 1)
+
+    def test_own_record_row_is_preferred_to_an_organization_row_as_the_standing_evidence(self):
+        t = Tree([ev("EVD-1", "ORG-1", "processes=custom_compounding", table="organizations"),
+                  ev("EVD-2", "SITE-1", "processes=custom_compounding")])
+        self.assertEqual(t.basis()[0][KEY], ("not_yet_checked", "EVD-2", ""))
 
     def test_org_row_gives_a_site_at_most_not_yet_checked(self):
         e = ev("EVD-1", "ORG-1", QUOTED, table="organizations")
@@ -108,11 +113,11 @@ class Basis(unittest.TestCase):
 
     def test_contradicts_row_is_never_a_source(self):
         t = Tree([ev("EVD-1", "SITE-1", QUOTED, effect="contradicts")])
-        self.assertNotIn(KEY, t.basis()[0])
+        self.assertEqual(t.basis()[0][KEY], ("not_yet_checked", "", ""))
 
     def test_platform_category_row_is_never_a_source(self):
         t = Tree([ev("EVD-1", "SITE-1", "processes=custom_compounding", cls="platform_category")])
-        self.assertNotIn(KEY, t.basis()[0])
+        self.assertEqual(t.basis()[0][KEY], ("not_yet_checked", "", ""))
 
     def test_verified_proof_makes_stated(self):
         e = ev("EVD-1", "SITE-1", QUOTED)
@@ -160,7 +165,7 @@ class Basis(unittest.TestCase):
         t = Tree([ev("EVD-2", "SITE-1", "processes=custom_compounding"), ev("EVD-1", "SITE-1", "processes=custom_compounding")])
         a, b = vb.generate(t.root / "data", t.root / "tasks")[0], vb.generate(t.root / "data", t.root / "tasks")[0]
         self.assertEqual(vb.render(a), vb.render(b))
-        self.assertEqual(a[0]["evidence_id"], "EVD-1")
+        self.assertEqual(next(r for r in a if r["value"] == "custom_compounding")["evidence_id"], "EVD-1")
 
 
 def verdict(cls, quote="", offset="", sha=None, key=KEY, page="p.html"):
@@ -236,10 +241,10 @@ class Verdicts(unittest.TestCase):
         t = self.tree([verdict("IMPLIED"), verdict("NOT_STATED")])
         self.assertTrue(any("share the latest read date" in p for p in t.basis()[1]))
 
-    def test_read_of_a_value_no_row_names_is_reported_and_labels_nothing(self):
+    def test_read_of_a_value_no_row_names_is_reported_and_changes_nothing(self):
         t = Tree([ev("EVD-1", "SITE-1", "unrelated row")], verdict_rows=[verdict("NOT_STATED")])
         got, problems, info = t.basis()
-        self.assertEqual((KEY in got, problems, info["verdict_unnamed"]), (False, [], [KEY]))
+        self.assertEqual((got[KEY], problems, info["verdict_unnamed"]), (("not_yet_checked", "", ""), [], [KEY]))
 
 
 class Check(unittest.TestCase):
@@ -284,6 +289,19 @@ class Check(unittest.TestCase):
         self.assertEqual(t.check(), [])
         write(t.root / "data" / "evidence_sites_OH.csv", [{**e, "claim_detail": QUOTED + " (edited)"}], EVD_COLS)
         self.assertTrue(any("stated" in p and "not_yet_checked" in p for p in t.check()))
+
+    def test_published_value_no_row_names_still_needs_its_row(self):  # planted defect: the unnamed value's row removed
+        t = Tree([ev("EVD-1", "SITE-1", "unrelated row")])
+        t.write_table()
+        self.assertEqual(t.check(), [])
+        t.lines(lambda rows: rows.clear())
+        self.assertTrue(any("has no basis row" in p and "custom_compounding" in p for p in t.check()))
+
+    def test_unnamed_value_row_carrying_an_evidence_id_or_a_stronger_basis_fails(self):  # planted defect
+        t = Tree([ev("EVD-1", "SITE-1", "unrelated row")])
+        t.write_table()
+        t.lines(lambda rows: rows[0].update(evidence_id="EVD-1"))
+        self.assertTrue(any("never hand-edited" in p for p in t.check()))
 
     def test_missing_table_and_bad_header_fail(self):
         (self.t.root / "data" / "value_basis.csv").write_text("record_table,record_id\n")

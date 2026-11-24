@@ -687,12 +687,15 @@ generator's PR, and this entry records what that PR fixed. Each is open to an ow
 - **What V-69 cannot see.** CI has no page store, so a STATED verdict's quote is replayed only where `--pages` is given;
   V-69 warns with the count not replayed. For the proof route it checks the proof line and the claim hash and does not
   fetch the capture again (the gate replayed it when the row merged).
-- **Open question for the owner.** 164 process and 26 market values on PIC-18 owners' display rows (counted on the unit of
-  one value on the record that supplies it) are named by no bound row. §4.24 gives them no row, and they show with no
-  label. Whether they should carry one is not decided here.
+- **Values no bound row names.** Controller ruling 2026-11-24 after the first run: every published process or market value
+  gets a row. A value no bound row names is `not_yet_checked` with an empty `evidence_id`, and V-69 fails on a published
+  value with no row. 164 process and 26 market values on PIC-18 owners' display rows are in this state (unit: one value on
+  the record that supplies it).
+- **Evidence text in the release.** The release bundle also blanks evidence text that names a withheld value (consistent
+  with "hidden until a refetch"); the repository CSVs keep it.
 
-Measured at the first table (6,607 rows over 9,551 held process and market values on organization and site rows, all
-states): 42 `stated`, 18 `filing`, 6,547 `not_yet_checked`; 2,944 values are named by no row. The screen's 118 and 561
+Measured at the first table (9,551 rows, one per held process and market value on organization and site rows, all
+states): 42 `stated`, 18 `filing`, 9,491 `not_yet_checked`, of which 2,944 are named by no bound row. The screen's 118 and 561
 quoted values (process, market) on PIC-18 display rows reconcile to these rows: 18 `filing` and 10 `stated` of the
 process values, 18 `stated` of the market values, and the rest `not_yet_checked` because the quote sits on an organization
 row for a site value (9 process, 216 market) or has no verified proof or names several values (81, 327).

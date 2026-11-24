@@ -6,7 +6,8 @@ site row holds that a bound evidence row names. The table is derived, never auth
 differs from a fresh generation. Run `python3 scripts/value_basis.py` to rewrite it, `--check` to compare,
 `--summary` for the PIC-18 counts by basis.
 
-Precedence (SCHEMA §4.24, v1.20.1). The first line that holds for a key decides its basis:
+Precedence (SCHEMA §4.24, v1.20.1). The first line that holds for a key decides its basis (an own-record row is preferred to an organization row when
+a row must stand for the value):
   1. stated   a verified quote: an own_site row on the SAME record, naming exactly this value, quoting the page, with a
               VERIFIED line in its folder's BINDING_PROOF.csv whose claim_sha256 still matches the row (the gate
               replayed the capture when the row merged), OR the latest reader verdict for the key is STATED and
@@ -14,7 +15,8 @@ Precedence (SCHEMA §4.24, v1.20.1). The first line that holds for a key decides
   2. filing   a government_filing row on the SAME record naming exactly this value and carrying the filing's words.
   3. latest reader verdict: IMPLIED -> implied; NOT_STATED -> not_found_pending_refetch. The latest read_date wins;
               two verdict classes on one latest date is an error, never a silent pick.
-  4. not_yet_checked   any other bound row (a row on the organization counts for its sites) that names the value.
+  4. not_yet_checked   any other bound row (a row on the organization counts for its sites) that names the value; a value
+              no bound row names also gets this basis, with an empty evidence_id (owner-controller ruling 2026-11-24).
 A `contradicts` row and a harvest_roster or platform_category row are never a source. A row on another record settles
 no `stated` or `filing`: a corporate statement does not settle a plant claim.
 """
@@ -222,7 +224,7 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
             elif single and e["source_class"] == "government_filing" and (len(quote) >= QUOTE_MIN or "process excerpt:" in head):
                 cands.append((4, e["evidence_id"], "filing", e["observed_date"]))
         vs = sorted(verdicts_by_key.get(key, []), key=lambda x: x[0])
-        pool = own + up
+        pool = own or up  # a row on the value's own record stands for it before any organization row
         if vs and pool:
             last = [v for d, v in vs if d == vs[-1][0]]
             if len({v["class"] for v in last}) > 1:
@@ -232,11 +234,11 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
                 cands.append((5 if last[0]["class"] == "STATED" else 3, first["evidence_id"], VERDICT_CLASS[last[0]["class"]], vs[-1][0]))
         elif vs:
             skipped.append(key)  # a read of a value no bound row names is outside §4.24: no row, reported not hidden
-        pool = own + up
         if pool:
             cands.append((2, min(pool, key=evidence_pick)["evidence_id"], "not_yet_checked", ""))
         if not cands:
             unnamed[(table, field)] += 1
+            rows.append(dict(zip(COLS, (table, rid, field, tok, "not_yet_checked", "", ""))))
             continue
         _, eid, basis, date = min(cands, key=lambda c: (-c[0], c[1]))  # highest rank; lowest evidence_id on a tie
         rows.append(dict(zip(COLS, (table, rid, field, tok, basis, eid, date))))
@@ -307,13 +309,13 @@ def pic18_summary(data=ROOT / "data"):
     from regions import PIC18
     data = Path(data)
     orgs = {r["org_id"]: r for r in table_rows(data, "organizations")}
-    eco = {r["org_id"]: r for r in read_csv(data / "ecosystem.csv")}
     owners = defaultdict(list)
     for s in table_rows(data, "sites"):
         if (s["state"] == "OH" and s["county"] in PIC18 and s["operating_status"] == "active"
                 and s["verification_tier"] in ("A", "B", "C")):
             owners[s["org_id"]].append(s)
-    basis = {(r["record_table"], r["record_id"], r["field"], r["value"]): r["basis"] for r in read_csv(data / "value_basis.csv")}
+    basis = {(r["record_table"], r["record_id"], r["field"], r["value"]):
+             r["basis"] + (" (no bound row names it)" if not r["evidence_id"] else "") for r in read_csv(data / "value_basis.csv")}
     out = defaultdict(Counter)
     for oid, ss in owners.items():
         for field in FIELDS:  # site rows first, else the owner's own row: the directory's rule
@@ -325,7 +327,7 @@ def pic18_summary(data=ROOT / "data"):
             out[field]["owners with values"] += 1
             for t, rid, tk in recs:
                 for tok in tk:
-                    out[field][basis.get((t, rid, field, tok), "no row (no bound row names it)")] += 1
+                    out[field][basis[(t, rid, field, tok)]] += 1
     return len(owners), out
 
 
@@ -347,8 +349,8 @@ def main(argv=None):
         for p in problems:
             print(p)
         print(f"value basis: {'differs from' if problems else 'matches'} a fresh generation; {info['held']} held values, "
-              f"{sum(info['unnamed'].values())} named by no bound row (outside §4.24), "
-              f"{info['stated_not_replayed']} STATED verdicts not replayed here (no --pages), "
+              f"{sum(info['unnamed'].values())} named by no bound row (not_yet_checked, empty evidence_id), "
+              f"NOT_INSPECTED: {info['stated_not_replayed']} STATED verdict quotes not replayed (no --pages), "
               f"{len(info['verdict_unnamed'])} read values no bound row names")
         return 1 if problems else 0
     rows, problems, info = generate(Path(a.tree) / "data", Path(a.tree) / "tasks", a.pages)

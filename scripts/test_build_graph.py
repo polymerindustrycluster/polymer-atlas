@@ -44,6 +44,22 @@ class BuildGraphTests(unittest.TestCase):
         for i, j, t in self.edges:
             self.assertTrue(0 <= i < j < len(self.nodes), (i, j, t))
 
+    def test_withheld_value_is_not_a_graph_tag(self):  # SCHEMA 4.24 plant: every holder of one token is withheld
+        token = next(n["id"].split(":", 1)[1] for n in self.nodes if n["k"] == "proc")
+        self.assertIn(f"proc:{token}", {n["id"] for n in self.nodes})
+        rows = [dict(record_table=t, record_id=r[idc], field="processes", value=token, basis="not_found_pending_refetch", evidence_id="", basis_date="")
+                for t, idc in (("organizations", "org_id"), ("sites", "site_id")) for r in bg.shards(t)
+                if token in bg.vals(r["processes"])]
+        real_read = bg.read
+        with patch.object(bg, "read", lambda path: rows if Path(path).name == "value_basis.csv" else real_read(path)):
+            nodes, edges = bg.build_graph()
+        def holders(ns, es):   # organizations linked to the tag (an institution's program specialties can still carry it)
+            idx = {n["id"]: i for i, n in enumerate(ns)}
+            tag = idx.get(f"proc:{token}")
+            return {ns[i if j == tag else j]["id"] for i, j, _ in es if tag in (i, j) and ns[i if j == tag else j]["k"] == "org"}
+        self.assertTrue(holders(self.nodes, self.edges))
+        self.assertEqual(holders(nodes, edges), set())
+
     def test_links_with_an_email_are_not_exported_by_any_graph_builder(self):
         for u in ("https://x.example/?m=a%40b.example", "x.example/?m=a@b.example", "https://x.example/%2540"):
             self.assertEqual(bg.https(u), "", u)

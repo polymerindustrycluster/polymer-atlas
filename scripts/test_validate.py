@@ -76,6 +76,13 @@ class ValidatorMutationTests(unittest.TestCase):
         return (r["site_id"] not in all_debt and r["naics_primary"]
                 and r["county"] and r["operating_status"] == "active")
 
+    def regenerate_basis(self):
+        """A test that edits a process or market cell regenerates the table, as any such PR must (V-69)."""
+        import value_basis
+        rows, problems, _ = value_basis.generate(self.data, ROOT / "tasks")
+        self.assertEqual(problems, [])
+        (self.data / "value_basis.csv").write_text(value_basis.render(rows), encoding="utf-8")
+
     def assert_fails_with(self, needle):
         code, out = run_validator(self.data)
         self.assertEqual(code, 1, f"validator should fail; output tail:\n{out[-2000:]}")
@@ -160,6 +167,7 @@ class ValidatorMutationTests(unittest.TestCase):
         for filename, _ in shards:
             self.edit_rows(filename, lambda r: r["ring_primary"] == "3",
                            lambda r: r.update(processes=subtype))
+        self.regenerate_basis()
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-1500:])
 
@@ -168,6 +176,7 @@ class ValidatorMutationTests(unittest.TestCase):
                            lambda r: r.update(processes=subtype))[id_col]
             for filename, id_col in shards
         ]
+        self.regenerate_basis()
         code, out = run_validator(self.data)
         self.assertEqual(code, 1, out[-1500:])
         for record in records:
@@ -436,6 +445,7 @@ class ValidatorMutationTests(unittest.TestCase):
     def test_new_v176_vocab_accepted(self):
         self.edit_rows("sites_OH.csv", self.clean_ohio_site,
                        lambda r: r.update(markets_served="automotive_unspecified;tire_rubber_goods"))
+        self.regenerate_basis()
         code, out = run_validator(self.data)
         self.assertEqual(code, 0, out[-2000:])
 
