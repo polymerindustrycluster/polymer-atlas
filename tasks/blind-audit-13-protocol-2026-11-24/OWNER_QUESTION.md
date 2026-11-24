@@ -1,5 +1,7 @@
 # Owner questions and rulings
 
+**Superseded in part (2026-11-24).** The owner’s look-back and step-back rulings change the unit and the frame: the audit counts records with a source-contradicted core field (k), unconfirmed claims are reported and not counted, and the frame is PIC-18 only. Below, “confirmed error or unresolved”, “k+u”, “all six strata” and the draw totals in the option text are the earlier wording; the figures table at the end is current. Open choices: [OWNER_CHOICES.md](OWNER_CHOICES.md).
+
 **Recorded answers.** “Smoke only” after the remaining repairs land. “Decide after the smoke” on the rule. Bring the unresolved rate and measured per-record cost back to the owner before any draw. The original options follow. [Decision ledger](../../DECISIONS.md)
 
 ## Scope of authorization
@@ -29,6 +31,6 @@ PIC-18 power below means the probability of passing the draw at the stated true 
 | Option (M input tokens) | OpenAI | Google | Anthropic | Total |
 |---|---:|---:|---:|---:|
 | Extra calibration alone | 15.25 | 30.50 | 0.00 | 45.75 |
-| Stress-safe | 37.43 | 39.85 | 6.54 | 83.83 |
-| Plant-calibrated | 60.31 | 78.39 | 7.70 | 146.40 |
+| Stress-safe | 12.20 | 13.28 | 2.69 | 28.17 |
+| Plant-calibrated | 39.70 | 56.68 | 4.56 | 100.94 |
 | Defer rule, smoke only | 1.69 | 1.92 | 0.54 | 4.15 |
