@@ -440,3 +440,70 @@ IDs. Their active trade-association records are already in ecosystem
 as ORG-000091 and ORG-000163. Apply after the audit 12 draw and the
 all-notes repair. The existing `closed` site tombstone convention marks
 the retirement of the site records. The sections remain active.
+
+## 2026-11-23 19:21 · Gemini stays the second review family, with a watchdog
+
+“Keep Gemini + watchdog.” Gemini remains the second review family and
+the audit 12 adjudicator. Gemini threads that hang mid-turn are stopped
+by the controller's watchdog, and messages lost mid-turn are delivered
+again once. After three hangs in two hours, that thread's work moves to
+another family.
+
+## 2026-11-23 20:00 · Audit 12 records with one independent family
+
+“Gemini + flagged read + lead.” An audit 12 record that only one family
+other than its builder can read is read by Gemini, gets a second read
+from a family flagged as the builder's, and gets a lead re-check from a
+fresh source fetch. The report shows each stratum with and without these
+records. The 21:27 stop below overtook this ruling: no lead re-checks ran,
+and the report gives no per-stratum rates with or without these records.
+
+## 2026-11-23 21:27 · Audit 12 stopped early; the next audit is lean
+
+“Stop now, verify sample.” Reader flags already placed each stratum past
+or near its fail line, so all readers and lead lanes were stopped. Some
+strata reached the line only with unresolved records counted as errors,
+which is the audit's conservative treatment. One verifier confirms flagged
+errors in rank order until each stratum fails on verified errors alone.
+It then sorts all flagged errors, most of them unverified, into repair
+classes. There is no stage 2, no third read and no lead sweep. The audit
+12 report gives the result and the error classes, not exact rates.
+
+“Lean design.” The audit after the repairs uses a smoke sample before any
+draw, fetches sources once by script and replays quotes, gives each
+record one reader with plants and a second family only for flagged
+records plus a random check share, and stops a stratum once it crosses
+its fail line. The controller drafts this as a protocol revision for an
+owner ruling, with sizes and false-pass risk recomputed.
+
+## 2026-11-23 21:43 · Fan-outs are priced and piloted (AGENTS.md §2a rule 8)
+
+“Make this a durable rule change.” Audit 12 spent about 450M input
+tokens across 20 threads to confirm a FAIL its pilot had already shown.
+The Claude and Codex shares come from their provider usage logs. The
+Gemini share comes from bb's usage events, because no Gemini usage log
+was read, so it is unverified. The owner adopted AGENTS.md §2a rule 8 as
+written: a fan-out is priced and piloted before it scales, an audit is
+lean, and spend is measured while work runs. Review corrected only its
+sentence on enforcement, to state exactly what the harness checks.
+
+- “8 live children.” The controller's harness refuses a spawn while 8 or
+  more of its children are unarchived, unless the command carries the
+  owner's fan-out tag. Without that tag it also refuses spawns run from
+  a script file or a loop. It refuses a spawn command it inspects
+  directly when the brief has no `Budget:` line, tag or not. It does not
+  read the briefs inside an owner-tagged script; the controller checks
+  those by hand.
+- “200M per 2 hours.” When the controller's children have spent more
+  than 200M input tokens over a rolling two hours, the controller's
+  outcome line turns RED. Spawns are then blocked unless marked critical
+  path or owner-approved. The meter counts only the controller's direct
+  children and reads Gemini spend from bb's events. The first week's
+  spend rate goes to the owner.
+- “Yes, skill + lesson.” The cross-project bb-orchestration skill gains a
+  fan-out budget section, and the lesson is proposed for the portfolio
+  lessons file.
+
+Rule 8 is practice in this repo. CI does not check it. The controller's
+harness checks only the parts listed above, and it cannot see spawns by
+other harnesses, by children or in other projects.
