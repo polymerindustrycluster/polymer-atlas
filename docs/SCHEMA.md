@@ -1,7 +1,9 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.19.8 — 2026-11-23 (§3.1 admits Ring 3 subtype process tokens for Ring 3 organizations and sites, and §4.4 adds process and material other-note columns to organizations).
+**Version:** v1.20.0 — 2026-11-24 (owner rulings 2026-11-24 10:29: §4.24 adds the generated per-value basis table; §4.13 adds the map-listing street route and the filing name-variant rule; §4.4 and §4.5 point to them. No data row changes).
+
+Previous: v1.19.8 — 2026-11-23 (§3.1 admits Ring 3 subtype process tokens for Ring 3 organizations and sites, and §4.4 adds process and material other-note columns to organizations).
 
 Previous: v1.19.7 — 2026-11-23 (§1 R13 allows filings up to ten years old, with source years shown and newer contradictory sources taking precedence).
 
@@ -968,7 +970,7 @@ One record per ultimate controlling organization operating in scope. A Parent ma
 |---|---|---|---|
 | `org_id` | string, immutable, `ORG-######` | **MUST** | Never reuse after merge/closure |
 | `legal_name` | string | **MUST** | As in Ohio SOS / SEC / own site legal footer. E.g., "Avient Corporation" |
-| `trade_names[]` | string[] | **MUST** | DBA / former / brand-operating names: ["GEON", "PolyOne"] |
+| `trade_names[]` | string[] | **MUST** | DBA / former / brand-operating names: ["GEON", "PolyOne"]. **[v1.20.0]** A name an OSHA or EPA filing uses for the operator at a held site is added here, marked `(OSHA filing name)` or `(EPA filing name)`, only under the filing name-variant rule in §4.13 |
 | `parent_org_id` | FK → org_id, nullable | **MUST** | Immediate parent if this org is a subsidiary that still warrants its own Parent record (see §5.2 threshold) |
 | `ultimate_parent_name` + `ultimate_parent_country` | string | **MUST** if subsidiary | Free name if ultimate parent is out-of-scope and has no org_id |
 | `entity_type` | enum | **MUST** | `corporation` \| `corporation_public` \| `corporation_private` \| `llc` \| `partnership` \| `sole_proprietor` \| `nonprofit` \| `government` \| `academic` \| `cooperative` \| `unknown` — **[v1.19.4]** `corporation` is the plain value for an organization whose legal name ends in Inc, Inc., Incorporated, Corp, Corp. or Corporation and for which public or private is not established; public or private is never guessed from a suffix. It is filled only from that suffix (owner ruling 2026-11-22, "Add 'corporation'"); Co, Company, Ltd and Limited do not set it. `llc` and `partnership` are likewise filled from an LLC or LP/LLP suffix at the end of the legal name. A cell that already holds a value is never overwritten |
@@ -979,7 +981,7 @@ One record per ultimate controlling organization operating in scope. A Parent ma
 | `hq_in_scope` | enum | **MUST** | `ne_ohio` \| `ohio_other` \| `national_us` \| `international` — **[v1.19.2]** `ne_ohio` = the HQ county is in PIC-18, and Carroll and Holmes are not `ne_ohio` (owner ruling 2026-11-22, in session, "PIC-18 exactly"; the county set is `scripts/regions.py`, the one definition, AGENTS.md §8). The earlier text here, a list of 20 counties headed "PIC/GAC 19-county working definition — confirm once, then freeze in code", is superseded: it differed from PIC-18 only by Carroll and Holmes. Any other Ohio HQ county = `ohio_other` |
 | `naics_primary` + provenance block (§2.1) | string + object | **MUST** | Primary + provenance are one atomic unit; no naked NAICS |
 | `naics_secondary[]` + provenance | array | Nice | Strongly encouraged; required if a second code appears in any source |
-| `processes[]` / `materials[]` / `markets_served[]` | controlled vocab §3 | **MUST** (at least processes OR materials non-empty) | Parent = union of sites, but do not backfill a site's process to Parent unless Parent claims it corporately — note in field source |
+| `processes[]` / `materials[]` / `markets_served[]` | controlled vocab §3 | **MUST** (at least processes OR materials non-empty) | Parent = union of sites, but do not backfill a site's process to Parent unless Parent claims it corporately — note in field source. **[v1.20.0]** Public display of each `processes[]` and `markets_served[]` value carries its basis from the generated table in §4.24 |
 | `processes_other_note` / `materials_other_note` **[v1.19.8]** | free text, nullable | Nice | Original off-vocabulary wording under §3. Each column immediately follows its corresponding capability column in every organization shard. |
 | `employee_band_global` / `employee_band_ohio` | enum | Nice (Ohio band = MUST if known) | Bands: `1-9` \| `10-49` \| `50-99` \| `100-249` \| `250-499` \| `500-999` \| `1000-4999` \| `5000+` \| `unknown`. Never store a precise headcount as fact; if a source gives one, store band + `employee_count_source_date` |
 | `founded_year` | integer | Nice | |
@@ -1089,7 +1091,7 @@ One record per distinct physical location (plant, HQ office if separate from pla
 | `site_name` | string | **MUST** | As signed/listed: "Avient — Avon Lake Plant". Default = `{Parent trade name} — {City}` |
 | `site_type` | enum | **MUST** | `manufacturing_plant` \| `hq_only` \| `hq_and_plant` \| `rd_center` \| `lab_testing` \| `warehouse_distribution` \| `sales_office` \| `tool_shop` \| `recycling_facility` \| `training_center` \| `campus` \| `virtual_incubator` \| `office_other` \| `service_repair` — last two **[v1.7.6]**; a mixed-use address takes its dominant physical function |
 | `address_street/city/state/zip` + `county` + `lat_lon` (optional in v1) | structured | **MUST** (lat/lon Nice) | Physical address, not PO Box if a physical address exists. County MUST be from address geocode/official source. **[v1.13.2] Owner ruling 2026-11-16:** a ZIP from a unique Census batch `Match, Exact` result may fill a blank `zip` as reference address normalization, with the retained Census response as provenance and no separate evidence row; an existing ZIP is never overwritten |
-| `street_address` **[v1.1]** | string | **MUST** if known | The street component as its own column (in the CSV it is the single `street_address` column alongside `city`/`state`/`zip`). This is the address-first matching key the v1.0 layout lacked: street addresses previously lived only inside notes, which capped every address join. Backfilled ONLY from named sources already on the record (own-site address, filing, parcel record) — no unsourced bulk backfill. |
+| `street_address` **[v1.1]** | string | **MUST** if known | The street component as its own column (in the CSV it is the single `street_address` column alongside `city`/`state`/`zip`). This is the address-first matching key the v1.0 layout lacked: street addresses previously lived only inside notes, which capped every address join. Backfilled ONLY from named sources already on the record (own-site address, filing, parcel record) — no unsourced bulk backfill. **[v1.20.0]** A blank street may also be filled from a map listing, under the two-source agreement rule in §4.13; the filled cell is shown with the label "from a map listing" (§4.24). County still settles from the physical address, never from the listing. |
 | `latitude` / `longitude` **[v1.1]** | decimal | Nice | From the Census batch geocoder or the coordinates supplement; always paired with `geocode_precision`. |
 | `geocode_precision` **[v1.1]** | enum | MUST if lat/lon present | `rooftop` \| `parcel` \| `address_interpolated` \| `zip_centroid` \| `city_centroid`. A centroid value never corrects a recorded county and is never presented as a rooftop location. |
 | `county_source` **[v1.6]** | enum, nullable | Nice | How this site's `county` was settled: `parcel` \| `physical_address` \| `geocoder_centroid` \| `directory`. **Doctrine:** county settles from the physical address (AGENTS.md §4 — never from the mailing city). Parcel evidence **outranks** a geocoder centroid and a postal/directory city, in that order and without exception: a county auditor/GIS parcel record for the site's situs is the strongest county evidence the Atlas takes. A centroid **never** corrects a recorded county (the §4.5 `geocode_precision` rule, restated for this field: `county_source=geocoder_centroid` is honest only where `geocode_precision ∈ {zip_centroid, city_centroid}` — a centroid-*derived* county is a weak claim and is labeled as one, and a later parcel or address-exact source replaces it, never the reverse). `physical_address` = the county was read from the site's physical street address (address-exact geocode or the address as published for that site). `directory` = the county rests on a directory-class source's address and nothing stronger — a labeled weak claim, set only by per-record adjudication, never derived in bulk from a record's source list. **Blank is an honest unknown, not a defect:** most sites carry no per-fact county provenance in their current record text, and a blank `county_source` asserts nothing about the county's correctness |
@@ -1099,7 +1101,7 @@ One record per distinct physical location (plant, HQ office if separate from pla
 | `last_activity_source` **[v1.19]** | enum, nullable | Derived | Which witness class set `last_activity_date`: `osha_ita` \| `osha_inspection` \| `echo` \| `fmcsa_mcs150` (extensible only by dated revision, as further sources are wired into the derivation). Only tier-A (name + street) matches feed the derivation — a derived record field never rests on a name/city-only match. Where two sources cover a site the later date wins; on an exact date tie the day-precise source is named. |
 | `ring_primary` (site-level) | enum 1–5 | **MUST** | May differ from Parent (Parker rule) |
 | `naics_primary` + provenance | §2.1 | **MUST** | Site NAICS often differs from Parent NAICS — never copy Parent NAICS to site without a site source or `researcher_inferred` flag |
-| `processes[]` / `materials[]` / `markets_served[]` | §3 | **MUST** (processes required for Ring 1/2/3 sites) | Site-level truth; this is the most valuable field set in the DB |
+| `processes[]` / `materials[]` / `markets_served[]` | §3 | **MUST** (processes required for Ring 1/2/3 sites) | Site-level truth; this is the most valuable field set in the DB. **[v1.20.0]** Public display of each value carries its basis from §4.24 |
 | `processes_other_note` / `materials_other_note` **[v1.9.1]** | free text, nullable | Nice | Original source wording that cannot be mapped to §3.1/§3.2 without interpretation; semicolon-joined and deduplicated. Each column immediately follows its corresponding capability column in every site shard. Not a controlled capability claim; never upgraded without a source. Owner battery B-VOC, 2026-11-03. |
 | `employee_band_site` | enum §4.4 | **MUST** if any source gives it; else `unknown` | Never allocate Parent headcount pro-rata to sites |
 | `operating_status` + dates | §4.2 vocab per site | **MUST** | A Parent can be `active` while a site is `idled`/`closed` |
@@ -1739,6 +1741,85 @@ press and SEC EDGAR sources.
 - The Kent State page wrapper `div#page.header-util-ct-3` retains its
   page body. Main-text extraction still skips nested header, footer and
   navigation elements.
+
+**Map-listing street route [v1.20.0, owner ruling 2026-11-24 10:29].**
+A street taken from a map listing may fill a **blank** `street_address` on
+a site. The route is deliberately narrow: a listing matched by name and
+city alone pointed to another plant or the headquarters for about 6 of 57
+measured PIC-18 sites, so the listing is never the only witness.
+
+- **Sources.** Overture Maps places first (registered as
+  `overture-maps-places`, release 2026-11-18.0); Google Places listings for
+  the sites Overture leaves blank. The owner accepts the terms-of-service
+  exposure of Google-derived addresses. Emails and phone numbers are never
+  pulled or recorded.
+- **Source class.** `platform_category`, with no vocabulary addition. The
+  class bar above (the PMIR rule) forbids a platform row as sole support
+  for a `scope` claim only; the `tier_effect` rule allows the class at most
+  `supports_C` on other claims, and §4.1 already places a Google Business
+  Profile at tier C. This route reads the class's "profile label" to include
+  the address a listing prints. If a reviewer reads it more narrowly, the
+  smallest addition is one new `source_class` value, `map_listing`, and
+  nothing else in this route changes.
+- **Claim.** `claim_type=address`, `record_table=sites`, the listing's
+  street in `claim_detail`, `address_role` empty unless the listing states
+  one.
+- **Two-source agreement.** The row fills the cell only when the listing's
+  name and city match the site by its held name and city **and** its street
+  equals, by script, a street from a second source the Atlas holds: a
+  government filing (OSHA, EPA, SBA PPP or SAM.gov), the company's own site,
+  or an existing held lead for that site. Same-street equality is the
+  normalized street line and designator comparison of the county-bearing
+  street route above, decided by script and never by a reader's judgment.
+- **Never overwrites.** The route fills a blank cell and nothing else. A
+  held street is never replaced by a listing street, and a listing that
+  disagrees with a held street is a lead to adjudicate.
+- **Label.** The filled street is shown with the label "from a map
+  listing": the generated §4.24 row for that site, field `street_address`,
+  carries basis `map_listing`.
+- **County.** The county settles from the physical address (the Census
+  batch geocode of the street, `county_source=physical_address`), as §4.5
+  and AGENTS.md §4 require. A county or coordinate carried by the listing is
+  ignored; coordinates stay reference data.
+- **Tier ceiling.** The listing row carries at most `supports_C` (the
+  `tier_effect` line above; §4.1 tier C, "Google Business Profile alone").
+  Agreement with a second source does not raise it. The street's tier is that
+  of the strongest row that independently binds it, so a street backed by a
+  listing and a held lead stays at the lead's tier or below.
+- **Audit.** A street filled this way is audited like any other street
+  against the PIC-18 5% street error bar. It has no exemption.
+
+**Filing name variants [v1.20.0, owner ruling 2026-11-24 10:29].** An OSHA
+or EPA filing may name an operator in a longer or older form than the Atlas
+holds ("Swagelok Manufacturing Company" for "Swagelok"; "C 4 Polymers" for
+"C4 Polymers"). The filing's name is then added to the organization's
+`trade_names[]` (§4.4) as an alternate name, so the §4.13 binding gate can
+bind the street to a name the record holds.
+
+- **Where.** `organizations.trade_names[]`, written `<filing name> (OSHA
+  filing name)` or `<filing name> (EPA filing name)`. The marker follows the
+  existing `(TRI filing name)` and `(federal registrant name)` entries. The
+  `(former name)` marker is used only where a dated source says the name is
+  a former one. An alternate name never merges records and never changes an
+  `org_id`.
+- **Evidence row.** One row per added name: `record_table=organizations`,
+  `claim_type=existence`, `claim_detail` of the form `trade_names +
+  <filing name> (OSHA filing name)`, `source_class=government_filing`,
+  `source_ref` the filing as §4.13's binding routes cite it. The row adds a
+  spelling of a name the Atlas already holds and carries at most
+  `supports_C`; it never raises the record's tier.
+- **Condition.** All three must hold, each decided by script: (i) the
+  filing name's distinctive words match a held name of the organization (the
+  words left after the fixed form-word list in the binding routes above,
+  with the held name's words all present or differing only in spacing, as in
+  "C 4" and "C4"); (ii) the filing's street equals the street the Atlas
+  holds for that site, or, where the site's street is blank, the street of a
+  held lead for it; (iii) the filing's city equals the site's city.
+- **Second-family check.** A model family other than the builder's reads
+  each addition against the filing and records a verdict. A shared parent, a
+  co-tenant at the same address, or a generic facility label fails it.
+- **Then.** The street fills through the normal binding gate. The addition
+  decides nothing else.
 
 **Claim types at people grain [v1.10].** The claim vocabulary is
 shared; four of its values have people-grain referents. `existence` =
@@ -2697,6 +2778,51 @@ under these CIP codes. Programs filed under chemistry, chemical engineering or g
 non-degree training is out of scope, and 2024 is missing. It is a floor, not a census. The reading guide and the
 corrections log are in `docs/IPEDS.md`.
 
+### 4.24 Per-value basis **[v1.20.0]** (`data/value_basis.csv`)
+
+**Owner rulings 2026-11-24 10:29.** Some published process and market values rest on a bound evidence row that names the
+value and a page but saves none of the page's words. Under "publish only what's stated" (DECISIONS.md, 2026-11-24) those
+values stay public, each with a label that says how well it is supported. This table is where the label lives.
+
+- **Generated, never authored.** A script derives every row from the evidence rows (§4.13) and the stored pages the rows
+  cite. Nobody edits the table by hand. Like §4.23, it is reference data: never evidence and never an input to a
+  verification tier. The generator, its validator rule and the first fill arrive in later PRs that cite this revision;
+  until they land, the table does not exist and no value changes.
+- **Scope.** `processes[]` and `markets_served[]` values on organizations and sites (ecosystem rows carry neither column), and the
+  `street_address` of sites.
+
+| Field | Type | Notes |
+|---|---|---|
+| `record_table` | enum | `organizations` \| `sites` |
+| `record_id` | FK | As §4.13 |
+| `field` | enum | `processes` \| `markets_served` \| `street_address` |
+| `value` | string | The controlled-vocabulary token for `processes` and `markets_served`; empty for `street_address` (one street per site) |
+| `basis` | enum | The closed vocabulary below |
+| `evidence_id` | FK → §4.13, nullable | The evidence row that decides the basis; empty only for `not_yet_checked` where no row names the value |
+| `basis_date` | date, nullable | The date of the read that set the basis; empty for `not_yet_checked` |
+
+Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
+
+| `basis` | Meaning | Public display |
+|---|---|---|
+| `stated` | A bound row's quote, re-read against its stored page, states the value in the page's words | Shown, label "stated" |
+| `filing` | A `government_filing` or `registry` row states it | Shown, label "from a filing" |
+| `implied` | The page supports the value only by inference (for example "we make bottles" for blow molding) | Shown, label "implied" |
+| `not_yet_checked` | A bound row names the value and a page but saves none of its words, and no re-read has run | Shown, label "not yet checked" |
+| `not_found_pending_refetch` | The re-read found the page neither states nor supports the value (NOT_STATED) | **Withheld from public display; never deleted** from the record tables |
+| `map_listing` | `street_address` only: a blank street filled by the §4.13 map-listing route | Shown, label "from a map listing" |
+
+- **Public display uses this table.** The site and its exports show a value's label from `basis`. A
+  `not_found_pending_refetch` value is withheld from display until a fresh fetch of the company's pages finds it (the
+  basis then becomes `stated` or `implied`) or confirms it is absent. The record tables keep the value throughout. What
+  follows a confirmed absence is the existing "publish only what's stated" withdrawal (a value no source states goes
+  back to unknown after the check); this revision adds no new path for it.
+- **First fill.** All 385 PIC-18 owners (organizations and ecosystem entities with an active tier A–C site in the 18
+  counties) that carry process or market values of the first kind are re-read against their stored pages; the
+  generator fills the table from those reads.
+- **Precedence.** Where several rows bear on one key, the generator's rule and its tests are fixed in the PR that adds it.
+  A `contradicts` row (§4.13) never produces `stated`, `filing` or `implied`.
+
 ## 5. Entity Resolution Rules — Dedupe Identically
 
 **Goal:** Three researchers given the same firm reach the same Parent/Site split, the same canonical name, and the same merge decision. When in doubt, **do not merge** — link with `related_org_ids[]` + note and flag for review. A false merge destroys data; a false split is cheap to fix.
@@ -3445,3 +3571,4 @@ unchanged.
 - **v1.19.5 — 2026-11-22 (owner ruling 2026-11-22, round 14, "Leads only").** §1 R7 and R13 and §4.13 remove Form 5500 active-participant counts as a size-band source. They stay leads. The rules for OSHA ITA establishment records and OSHA inspections are unchanged. No data rows change.
 - **v1.19.6 — 2026-11-23 (owner ruling, round 16, “Build it, archived pages count”).** §4.13 defines per-row own-site web proofs with capture replay and extends the street rule for recent archived company pages to market claims. No data rows change.
 - **v1.19.7 — 2026-11-23 (owner ruling, “10 years, dated”).** §1 R13 replaces the five-year cutoff with ten years, shows the filing year, and gives a newer contradictory source precedence. Blind audit 12 samples the result.
+- **v1.20.0 — 2026-11-24 (owner rulings 2026-11-24 10:29, multiple choice; all four were the recommended option).** (1) §4.13 adds the map-listing street route: a street from Overture Maps places (Google listings for the remainder) fills a blank site street only where it agrees with a second held source, by script, is labelled "from a map listing", never overwrites, leaves county to the physical address, and is capped at `supports_C` (the `tier_effect` line; §4.1 tier C); source class `platform_category`, no vocabulary addition. (2) and (3) §4.24 adds the generated per-value basis table (`stated`, `filing`, `implied`, `not_yet_checked`, `not_found_pending_refetch`, `map_listing`); unquoted process and market values stay public with their label, implied values stay labelled, and NOT_STATED values are withheld from display, never deleted, until a fresh fetch finds them or confirms absence. (4) §4.13 and §4.4 add the filing name-variant rule: an OSHA or EPA filing's name for the operator joins `trade_names[]` as `(OSHA filing name)` or `(EPA filing name)` when its distinctive words match a held name and its street and city match, checked by a second model family. §4.4 and §4.5 point to these. No data rows change; the generator, gate routes and fills follow in later PRs. Recorded in `DECISIONS.md`.
