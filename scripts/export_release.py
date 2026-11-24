@@ -308,18 +308,25 @@ def check_build_consistency(data=None, build=None, db=None):
             if len(by_id) != len(merged):
                 problems.append(f"{t}_all.csv repeats an {key}")
             shard_rows = {}
+            shard_cols = set()
             for p in sorted(glob.glob(str(data / f"{t}_*.csv"))):
                 if not p.endswith("_all.csv"):
-                    shard_rows.update({r[key]: r for r in read_csv(p)[1]})
+                    c, rows = read_csv(p)
+                    shard_cols.add(tuple(c))
+                    shard_rows.update({r[key]: r for r in rows})
+            if len(shard_cols) > 1:
+                problems.append(f"the {t} shards do not share one header")
+            elif shard_cols and tuple(cols) != next(iter(shard_cols)):
+                problems.append(f"{t}_all.csv columns differ from the {t} shards: missing {sorted(set(next(iter(shard_cols))) - set(cols))}, extra {sorted(set(cols) - set(next(iter(shard_cols))))}")
             if set(shard_rows) != set(by_id):
                 problems.append(f"{t}_all.csv and the {t} shards hold different {key}s ({len(by_id)} vs {len(shard_rows)})")
             changed = [k for k in shard_rows.keys() & by_id.keys() if any(shard_rows[k].get(c, "") != by_id[k].get(c, "") for c in cols)]
             if changed:
                 problems.append(f"{t}_all.csv differs from its shards in {len(changed)} row(s), first {sorted(changed)[0]}")
             db_cols = [r[1] for r in con.execute(f'PRAGMA table_info("{t}")')]
-            missing = [c for c in cols if c not in db_cols]
-            if missing:
-                problems.append(f"database table {t} lacks column(s) {missing}")
+            if set(db_cols) != set(cols):
+                problems.append(f"database table {t} columns differ from {t}_all.csv: missing {sorted(set(cols) - set(db_cols))}, extra {sorted(set(db_cols) - set(cols))}")
+            if [c for c in cols if c not in db_cols]:
                 continue
             names = ",".join(f'"{c}"' for c in cols)
             db_rows = {row[cols.index(key)]: row for row in con.execute(f'SELECT {names} FROM "{t}"')}

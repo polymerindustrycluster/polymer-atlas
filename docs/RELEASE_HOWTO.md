@@ -34,8 +34,9 @@ The bundle differs from the repository in what it withholds: the `organizations`
 2026-11-23), and any cell the public site withholds (a description with internal wording, a
 temporary record id of a build pass, a copy of a withheld description) is blank, or reads
 `[withheld from this release]` in an evidence row. The marker names a value that is not in
-the bundle; a graded evidence row that carries it has a grade whose claim or source a reader of
-the release cannot inspect. A researcher's `role_as_published` is blank where the site shows the
+the bundle. A graded evidence row whose `claim_detail` or `source_ref` is the marker has a grade
+whose claim or source a reader of the release cannot inspect; a marker only in `notes` leaves
+the claim and source readable. A researcher's `role_as_published` is blank where the site shows the
 vocabulary role instead. `COUNTS.md` states the counts of each export.
 
 Check before uploading:

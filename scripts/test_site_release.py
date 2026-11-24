@@ -168,7 +168,8 @@ class Round3Tests(unittest.TestCase):
             self.assertTrue(build_site.release_withheld("people", "role_as_published", r["role_as_published"]), r["person_id"])
 
     def _fixture(self, evidence_claim="the claim"):
-        data, build = self.dir / "data", self.dir / "build"
+        root = Path(tempfile.mkdtemp(dir=self.dir))
+        data, build = root / "data", root / "build"
         data.mkdir(), build.mkdir()
         write(data / "organizations_OH.csv", ["org_id", "legal_name"], [["ORG-1", "A"]])
         write(data / "sites_OH.csv", ["site_id", "org_id"], [["SITE-1", "ORG-1"]])
@@ -208,6 +209,21 @@ class Round3Tests(unittest.TestCase):
         self.assertTrue(any("evidence_all.csv differs from its shards" in p and "EVD-1" in p for p in problems), problems)
         self.assertTrue(any("database table evidence differs from evidence_all.csv" in p for p in problems), problems)   # canonical claim in the DB
 
+    def test_a_missing_column_is_refused_even_when_every_id_and_count_agrees(self):
+        data, build, db = self._fixture()
+        write(build / "evidence_all.csv", ["evidence_id"], [["EVD-1"]])                              # the whole claim_detail column gone, ids and count kept
+        problems = export_release.check_build_consistency(data, build, db)
+        self.assertTrue(any("evidence_all.csv columns differ from the evidence shards: missing ['claim_detail']" in p for p in problems), problems)
+        data, build, db = self._fixture()
+        con = sqlite3.connect(db)
+        con.execute("ALTER TABLE sites DROP COLUMN org_id")                                          # the database lost a column the export has
+        con.commit()
+        con.close()
+        problems = export_release.check_build_consistency(data, build, db)
+        self.assertTrue(any("database table sites columns differ from sites_all.csv: missing ['org_id']" in p for p in problems), problems)
+        data, build, db = self._fixture()
+        self.assertEqual(export_release.check_build_consistency(data, build, db), [])
+
     def test_counts_state_the_marker_in_evidence_cells_without_calling_it_a_claim(self):
         db = self.dir / "x.db"
         con = sqlite3.connect(db)
@@ -230,6 +246,7 @@ class Round3Tests(unittest.TestCase):
         release = (self.ROOT / "docs" / "RELEASE_HOWTO.md").read_text(encoding="utf-8")
         self.assertNotIn("huggingface-cli upload", release)
         self.assertIn("hf upload <owner>/<dataset> build/release . --repo-type dataset", release)
+        self.assertIn("a marker only in `notes` leaves\nthe claim and source readable", release)
         self.assertIn("huggingface.co/docs/huggingface_hub/en/concepts/migration", release)
         self.assertIn("huggingface.co/docs/huggingface_hub/en/guides/cli", release)
 
