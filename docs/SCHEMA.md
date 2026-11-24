@@ -2846,10 +2846,15 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
   must be the record's organization, its `grain` `plant` for a site and `company` for an organization, and a page folder
   named `ORG-…` in `page_path` must be that owner. A STATED line for a site value also needs a bound row on the site
   itself (an organization row is not enough); any verdict with no bound row on its record to rest on stops the generator,
-  so a checked disposition is never dropped silently and the key goes to adjudication. A STATED line also needs
-  `tasks/<folder>/VALUE_PAGES.csv` (`page_sha256,page_url`, from the lane's corpus manifest) giving the URL its page was
-  captured from; the line rests on the bound row, on its own record, whose `source_ref` is on the page's site
-  (registrable domain), and a page on a site no such row cites stops the generator. The generator adds no evidence: it picks the
+  so a checked disposition is never dropped silently and the key goes to adjudication. Every verdict line also needs
+  `tasks/<folder>/VALUE_PAGES.csv` (`page_sha256,page_url[,requested_url]`, from the lane's corpus manifest) giving the URL
+  its page was captured from (and, for a redirected capture, the URL it was requested as). A verdict labels a key only
+  when that page **is the page a bound row's `source_ref` cites** (same host and path after the binding gate's
+  normalization, or the recorded requested URL), the row being on the value's own record for STATED. A page on another
+  page of the same site gives no label, as NO_PAGE does: the key stays `not_yet_checked` on the row that cites the page
+  nobody has re-read, and a different page never withholds a value (NOT_STATED included); the line stays in
+  `VALUE_VERDICTS.csv` for a later PR that adds own-site evidence rows for that page through the binding gate. A page on a
+  site that no bound row on the record cites stops the generator. The generator adds no evidence: it picks the
   bound row that names the value as the line's `evidence_id`. A STATED line replays when the page store is given
   (`python3 scripts/value_basis.py --check --pages <store>`): `<store>/<page_path>` must hash to `page_sha256` and
   `capture_text` (the binding gate's function) must hold the quote at the offset. A quote is 20 to 200 characters. CI has

@@ -101,7 +101,7 @@ def packet_meta(folder):
     return (date[0], reader, checker) if date and reader and checker and reader != checker else None
 
 
-PAGE_COLS = ("page_sha256", "page_url")
+PAGE_COLS = ("page_sha256", "page_url")  # optional third column `requested_url`: the URL a redirected capture was requested as
 
 
 def site_of(url):
@@ -109,17 +109,22 @@ def site_of(url):
     return gate.registrable(host) if host else ""
 
 
+def page_key(url):
+    """Normalized (host, path) of a URL: the gate's own normalization (no scheme, www, query, fragment or trailing slash)."""
+    return gate.host_path(url) if url else ("", "")
+
+
 def load_page_urls(folder, problems):
-    """tasks/<folder>/VALUE_PAGES.csv: the URL each stored page (by sha256) was captured from, from the lane's corpus manifest."""
+    """tasks/<folder>/VALUE_PAGES.csv: {page sha256: (page_url, requested_url)} from the lane's corpus manifest."""
     path = folder / "VALUE_PAGES.csv"
     if not path.exists():
         return {}
     with open(path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        if tuple(reader.fieldnames or ()) != PAGE_COLS:
-            problems.append(f"{path}: header must be {','.join(PAGE_COLS)}")
+        if tuple(reader.fieldnames or ()) not in (PAGE_COLS, PAGE_COLS + ("requested_url",)):
+            problems.append(f"{path}: header must be {','.join(PAGE_COLS)}[,requested_url]")
             return {}
-        return {r["page_sha256"]: r["page_url"] for r in reader}
+        return {r["page_sha256"]: (r["page_url"], r.get("requested_url") or "") for r in reader}
 
 
 def load_verdicts(tasks, problems, held):
@@ -142,7 +147,7 @@ def load_verdicts(tasks, problems, held):
                 at = f"{rel}:{reader.line_num}"
                 v = dict(zip(VERDICT_COLS, cells))
                 v["_at"] = at
-                v["_url"] = urls.get(v.get("page_sha256"), "")
+                v["_url"], v["_requested"] = urls.get(v.get("page_sha256"), ("", ""))
                 why = verdict_shape(v) if len(cells) == len(VERDICT_COLS) else f"{len(cells)} cells, the header has {len(VERDICT_COLS)}"
                 key = (v.get("record_table"), v.get("record_id"), v.get("field"), v.get("value"))
                 if not why and v["class"] != "NO_PAGE" and key not in held:
@@ -241,7 +246,7 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
             continue
         unreplayed += v["class"] == "STATED" and not pages
         verdicts_by_key[key].append((read_date, v))
-    rows, unnamed = [], Counter()
+    rows, unnamed, unbound = [], Counter(), []
     for key in sorted(held):
         table, rid, field, tok = key
         own, up = naming(table, rid, tok)
@@ -261,17 +266,23 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
             last = [v for d, v in vs if d == vs[-1][0]]
             if len({v["class"] for v in last}) > 1:
                 problems.append(f"{key}: verdicts of different classes share the latest read date {vs[-1][0]}")
-            elif last[0]["class"] == "STATED" and own and not any(site_of(e["source_ref"]) == site_of(last[0]["_url"]) != "" for e in own):
-                problems.append(f"{key}: the STATED line's page ({last[0]['_url'] or 'no VALUE_PAGES.csv entry'}) is not on a site any bound "
-                                f"row on this record cites; a verdict rests on a row that cites the page's own site")
             elif not pool or (last[0]["class"] == "STATED" and not own):
                 problems.append(f"{key}: a {last[0]['class']} verdict has no bound row on its own record to rest on"
                                 if not pool else
                                 f"{key}: a STATED verdict for a site value needs a bound row on the site itself, not only its organization")
             else:
-                same_site = [e for e in own if site_of(e["source_ref"]) == site_of(last[0]["_url"])]
-                first = min(same_site if last[0]["class"] == "STATED" else pool, key=evidence_pick)
-                cands.append((5 if last[0]["class"] == "STATED" else 3, first["evidence_id"], VERDICT_CLASS[last[0]["class"]], vs[-1][0]))
+                v = last[0]
+                rest = own if v["class"] == "STATED" else pool
+                page_sites = {site_of(u) for u in (v["_url"], v["_requested"]) if u} - {""}
+                bound = [e for e in rest if page_key(e["source_ref"]) in {page_key(v["_url"]), page_key(v["_requested"])} - {("", "")}]
+                if not any(site_of(e["source_ref"]) in page_sites for e in rest):
+                    problems.append(f"{key}: the {v['class']} line's page ({v['_url'] or 'no VALUE_PAGES.csv entry'}) is not on a site any bound "
+                                    f"row on this record cites")
+                elif bound:  # the page is the one the row cites, or a recorded redirect to it
+                    cands.append((5 if v["class"] == "STATED" else 3, min(bound, key=evidence_pick)["evidence_id"],
+                                  VERDICT_CLASS[v["class"]], vs[-1][0]))
+                else:  # same site, another page: no label, as NO_PAGE; the key stays on the cited page's evidence
+                    unbound.append(key)
         if pool:
             cands.append((2, min(pool, key=evidence_pick)["evidence_id"], "not_yet_checked", ""))
         if not cands:
@@ -280,7 +291,7 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
             continue
         _, eid, basis, date = min(cands, key=lambda c: (-c[0], c[1]))  # highest rank; lowest evidence_id on a tie
         rows.append(dict(zip(COLS, (table, rid, field, tok, basis, eid, date))))
-    info = {"unnamed": unnamed, "stated_not_replayed": unreplayed, "held": len(held)}
+    info = {"unnamed": unnamed, "stated_not_replayed": unreplayed, "held": len(held), "verdict_unbound": unbound}
     return rows, problems, info
 
 
@@ -388,7 +399,8 @@ def main(argv=None):
             print(p)
         print(f"value basis: {'differs from' if problems else 'matches'} a fresh generation; {info['held']} held values, "
               f"{sum(info['unnamed'].values())} named by no bound row (not_yet_checked, empty evidence_id), "
-              f"NOT_INSPECTED: {info['stated_not_replayed']} STATED verdict quotes not replayed (no --pages)")
+              f"NOT_INSPECTED: {info['stated_not_replayed']} STATED verdict quotes not replayed (no --pages), "
+              f"{len(info['verdict_unbound'])} verdict lines on another page of the cited site give no label")
         return 1 if problems else 0
     rows, problems, info = generate(Path(a.tree) / "data", Path(a.tree) / "tasks", a.pages)
     if problems:

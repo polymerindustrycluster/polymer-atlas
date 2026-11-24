@@ -694,7 +694,8 @@ generator's PR, and this entry records what that PR fixed. Each is open to an ow
 - **Evidence text in the release.** The release bundle also blanks evidence `claim_detail` and `notes` that name a withheld
   value and drops the site's capability row for it (consistent with "hidden until a refetch"); the repository CSVs keep them.
 - **Round 1 review (Codex, 2026-11-24).** A verdict labels only its own record (owner, grain, page folder, own-record
-  evidence for STATED); a verdict that cannot be applied stops the generator; a filing or proof row must assert this value
+  evidence for STATED); a verdict that cannot be applied stops the generator; a verdict labels a key only for the page a bound
+  row cites (VALUE_PAGES.csv), another page of the same site gives no label and never withholds; a filing or proof row must assert this value
   in its head; graph links carry the label; the release refuses a stale database basis table.
 
 Measured at the first table (9,551 rows, one per held process and market value on organization and site rows, all

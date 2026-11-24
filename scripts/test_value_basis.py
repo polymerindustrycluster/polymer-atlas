@@ -41,7 +41,7 @@ class Tree:
     """A throwaway repository root: ORG-1 with two sites; SITE-1 holds the values under test."""
 
     def __init__(self, evidence, site_processes="custom_compounding", site_markets="", verdict_rows=None, readme=None,
-                 page_url="https://www.acme.example/other-page"):
+                 page_url="https://www.acme.example/p/", requested_url=None):
         self.root = Path(tempfile.mkdtemp())
         atexit.register(shutil.rmtree, self.root, ignore_errors=True)
         d = self.root / "data"
@@ -54,7 +54,9 @@ class Tree:
             f = self.root / "tasks" / "rq" / "VALUE_VERDICTS.csv"
             write(f, verdict_rows, list(vb.VERDICT_COLS))
             if page_url:
-                write(f.parent / "VALUE_PAGES.csv", [{"page_sha256": hashlib.sha256(PAGE).hexdigest(), "page_url": page_url}], list(vb.PAGE_COLS))
+                write(f.parent / "VALUE_PAGES.csv", [{"page_sha256": hashlib.sha256(PAGE).hexdigest(), "page_url": page_url,
+                                                      "requested_url": requested_url or ""}],
+                      list(vb.PAGE_COLS) + (["requested_url"] if requested_url else []))
             (f.parent / "README.md").write_text(readme if readme is not None else
                                                 "Read on: 2026-11-24\nRead by: Codex GPT-6.2 Sol\nChecked by: Gemini Hydrogen\n")
 
@@ -288,6 +290,23 @@ class Verdicts(unittest.TestCase):
         got, problems, _ = t.basis(t.root / "pages")
         self.assertTrue(any("is not on a site any bound row" in p for p in problems), problems)
         self.assertEqual(got[KEY][0], "not_yet_checked")
+
+    def test_verdict_on_another_page_of_the_cited_site_gives_no_label(self):  # planted defect (review round 3): /north row, /south quote
+        for cls, quote, offset in (("STATED", QUOTE, str(OFFSET)), ("NOT_STATED", "", ""), ("IMPLIED", "", "")):
+            t = self.tree([verdict(cls, quote, offset)], page_url="https://acme.example/south")
+            got, problems, info = t.basis(t.root / "pages")
+            self.assertEqual((got[KEY], problems, info["verdict_unbound"]), (("not_yet_checked", "EVD-1", ""), [], [KEY]), cls)
+
+    def test_positive_control_row_citing_the_south_page_gives_stated(self):
+        t = Tree([ev("EVD-1", "SITE-1", "processes=custom_compounding", ref="https://acme.example/south")],
+                 verdict_rows=[verdict("STATED", QUOTE, str(OFFSET))], page_url="https://www.acme.example/south")
+        (t.root / "pages").mkdir()
+        (t.root / "pages" / "p.html").write_bytes(PAGE)
+        self.assertEqual(t.basis(t.root / "pages")[0][KEY], ("stated", "EVD-1", "2026-11-24"))
+
+    def test_recorded_redirect_to_the_cited_page_counts_as_that_page(self):
+        t = self.tree([verdict("STATED", QUOTE, str(OFFSET))], page_url="https://acme.example/final", requested_url="https://acme.example/p")
+        self.assertEqual(t.basis(t.root / "pages")[0][KEY][0], "stated")
 
     def test_stated_verdict_without_a_page_url_is_refused(self):
         t = self.tree([verdict("STATED", QUOTE, str(OFFSET))], page_url="")
