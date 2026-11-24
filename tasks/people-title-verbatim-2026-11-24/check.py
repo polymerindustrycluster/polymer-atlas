@@ -4,7 +4,7 @@ import re
 import tempfile
 from pathlib import Path
 from collections import Counter
-from build import HERE, ROOT, PEOPLE, frame, decisions, institution_domains, on_domain
+from build import HERE, ROOT, PEOPLE, frame, decisions, institution_domains, on_domain, read_file
 
 
 def quoted(title, excerpt):
@@ -14,6 +14,8 @@ def quoted(title, excerpt):
 def mapped(title, lab):
     t = title.lower()
     if lab:
+        if any(word in t for word in ('deputy', 'corporate fellow', 'senior r&d staff')):
+            raise ValueError('No single explicit lab rank')
         for phrase, role in [('assistant scientist', 'assistant_scientist'), ('section head', 'group_leader'),
                              ('group leader', 'group_leader'), ('researcher', 'research_scientist')]:
             if phrase in t:
@@ -22,7 +24,7 @@ def mapped(title, lab):
             if role.replace('_',' ') in t:
                 return role
     elif 'professor' in t:
-        if 'director' in t and any(word in t for word in ('center', 'institute', 'cpos', 'shap3d')):
+        if 'director' in t and any(word in t for word in ('center', 'institute')):
             return 'center_director_professor'
         if re.search(r'research (assistant |associate )?professor', t):
             return 'research_professor'
@@ -32,6 +34,21 @@ def mapped(title, lab):
             return 'assistant_professor'
         return 'professor'
     raise ValueError(f'No explicit mapping for {title!r}')
+
+
+def rank_in_context(title, excerpt, lab):
+    """Require the quoted title to contain the entire rank at the matched position."""
+    quoted(title, excerpt)
+    rank_words = re.compile(
+        r"\b(?:(?:assistant|associate|assoc\.?|asst\.?|research|full|distinguished|clinical|adjunct|"
+        r"senior|deputy|supervisory|staff)\s+)*(?:professor|scientist|research engineer|group leader|section head)\b",
+        re.I)
+    ranks = list(rank_words.finditer(excerpt))
+    for m in re.finditer(re.escape(title), excerpt):
+        overlaps = [r for r in ranks if r.start() < m.end() and m.start() < r.end()]
+        if overlaps and all(m.start() <= r.start() and r.end() <= m.end() for r in overlaps):
+            return mapped(title, lab)
+    raise ValueError('Proposed phrase drops or lacks an institutional rank')
 
 
 def check_claims(path, expected):
@@ -47,6 +64,7 @@ def main():
     before, flagged = frame()
     assert len(flagged) == 293
     domains = institution_domains()
+    labs = {r['org_id'] for r in read_file('data/ecosystem.csv') if r['ecosystem_subtype']=='government_lab_agency'}
     packet = decisions()
     by_id = {d['person_id']: d for d in packet}
     assert len(by_id) == len(packet) and by_id.keys() == flagged.keys()
@@ -72,7 +90,7 @@ def main():
             quoted(new['role_as_published'], q)
             assert any(on_domain(match[2], root) for root in domains[old['institution_org_id']])
             assert new['role_as_published'] == d['role_as_published']
-            assert new['role'] == d['role'] == mapped(new['role_as_published'], any(on_domain(match[2], h) for h in ('ornl.gov','nist.gov','lbl.gov','bnl.gov','anl.gov','nlr.gov','sandia.gov'))), i
+            assert new['role'] == d['role'] == rank_in_context(new['role_as_published'], q, old['institution_org_id'] in labs), i
         else:
             assert d['reason'] and not changed
         for k in ('role_as_published','role'):
@@ -90,6 +108,15 @@ def main():
         else:
             raise AssertionError('Duplicate claim passed')
     assert actual == {(c['record_id'], c['field']) for c in claims if c['verdict']=='corrected'}
+    i = 'PERSON-000732'
+    excerpt = next(e[1] for e in flagged[i][2] if e[0]==by_id[i]['evidence_id'])
+    assert rank_in_context('Associate Professor', excerpt, False)=='associate_professor'
+    try:
+        rank_in_context('Professor', excerpt, False)
+    except ValueError as exc:
+        print('Dropped Associate rejected:', exc)
+    else:
+        raise AssertionError('Shortened rank passed')
     plant = next(d for d in packet if d['decision']=='CHANGE')
     quote = next(e[1] for e in flagged[plant['person_id']][2] if e[0]==plant['evidence_id'])
     try:
