@@ -54,10 +54,15 @@ if __name__ == "__main__":
         compare(base, ROOT / "data", want)
         print(f"PASS {len(want)} expected cells. All data files compared.")
         with (HERE / "CLAIMS_CHECKED.csv").open(newline="") as fh:
-            claimed = {r["record_id"] for r in csv.DictReader(fh) if r["verdict"] == "corrected"}
-        if claimed != {rid for _, rid, _ in want}:
-            raise ValueError("CLAIMS_CHECKED.csv corrected rows differ from the changed cells")
-        print(f"PASS CLAIMS_CHECKED.csv lists the {len(claimed)} changed cells.")
+            ledger = [(r["table"], r["record_id"], r["field"], r["verdict"]) for r in csv.DictReader(fh)]
+        claimed = sorted(ledger)  # a list, not a set: a duplicate row would inflate the outcome tally
+        if claimed != sorted(("organizations", rid, COLUMN, "corrected") for _, rid, _ in want):
+            raise ValueError("CLAIMS_CHECKED.csv must list each changed cell exactly once and nothing else")
+        print(f"PASS CLAIMS_CHECKED.csv lists the {len(claimed)} changed cells, each once.")
+        dup = claimed + claimed[:1]
+        if dup == sorted(("organizations", rid, COLUMN, "corrected") for _, rid, _ in want):
+            raise AssertionError("duplicate-row plant not caught")
+        print("duplicate claim row rejected (plant)")
 
         # Exercise the same disk reader and comparator on a two-row extract.
         before = Path(scratch) / "before"
