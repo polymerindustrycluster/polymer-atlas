@@ -770,6 +770,21 @@
    ],
    "note": "written inline in validate.py / SCHEMA, mirrored here"
   },
+  "RING3_PROCESSES": {
+   "governs": "processes on organizations/sites with ring_primary=3",
+   "section": "SCHEMA §3.1",
+   "values": [
+    "automation_robotics",
+    "chemical_equipment_supply_polymer_specific",
+    "contract_services",
+    "distribution",
+    "machinery_equipment",
+    "rd_design_engineering",
+    "recycling_recovery",
+    "testing_lab",
+    "tooling_mold_die"
+   ]
+  },
   "ROLES": {
    "governs": "people.role",
    "section": "SCHEMA §4.9 (v1.7.4)",

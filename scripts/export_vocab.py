@@ -39,6 +39,7 @@ EXPORT = {
     "ADDRESS_ROLES": ("evidence.address_role", "SCHEMA §4.13 (v1.19)"),
     "LAST_ACTIVITY_SOURCES": ("sites.last_activity_source", "SCHEMA §4.5 (v1.19)"),
     "PROCESSES": ("processes (multi, ';') on organizations/sites", "SCHEMA §3.1"),
+    "RING3_PROCESSES": ("processes on organizations/sites with ring_primary=3", "SCHEMA §3.1"),
     "MATERIALS": ("materials (multi, ';') on organizations/sites", "SCHEMA §3.2"),
     "RESEARCH_SUPPLEMENT": ("people/programs research areas (with PROCESSES|MATERIALS)", "SCHEMA §3.5"),
     "CREDENTIALS": ("programs.credential_types", "SCHEMA §4.11"),

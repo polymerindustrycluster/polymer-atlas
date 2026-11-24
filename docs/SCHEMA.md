@@ -1,7 +1,9 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.19.7 — 2026-11-23 (§1 R13 allows filings up to ten years old, with source years shown and newer contradictory sources taking precedence).
+**Version:** v1.19.8 — 2026-11-23 (§3.1 admits Ring 3 subtype process tokens for Ring 3 organizations and sites, and §4.4 adds process and material other-note columns to organizations).
+
+Previous: v1.19.7 — 2026-11-23 (§1 R13 allows filings up to ten years old, with source years shown and newer contradictory sources taking precedence).
 
 Previous: v1.19.6 — 2026-11-23 (§4.13 admits replayed own-site web proofs and recent archived copies for street and market claims, owner ruling “Build it, archived pages count”).
 
@@ -678,7 +680,7 @@ doctrine.
 
 ## 3. Process / Capability Taxonomy — Controlled Vocabularies
 
-**Rules:** Use ONLY terms below. If a real process does not fit, set `processes_other_note` (free text, reviewed monthly for vocabulary additions) — do not invent a new tag inline. Multiple values allowed everywhere. Suffix `_tolled` / `_captive` only via the separate boolean fields `offers_tolling`, `captive_only`, not by creating variant terms. Case: `snake_case` exactly as written.
+**Rules:** Use only the terms below for the record’s primary ring. Preserve off-vocabulary process and material wording verbatim in the corresponding `processes_other_note` or `materials_other_note` field, semicolon-joined and deduplicated. Multiple values allowed everywhere. Suffix `_tolled` / `_captive` only via the separate boolean fields `offers_tolling`, `captive_only`, not by creating variant terms. Case: `snake_case` exactly as written.
 
 ### 3.1 Processes (`processes[]`)
 
@@ -714,6 +716,16 @@ doctrine.
 `dyeing_finishing` *(textile wet processing: dyeing and finishing of fibers, yarns, and fabrics)* ·
 `fiber_formation` *(fiber spinning and fiber formation processes)*.
 
+**[v1.19.8] Ring 3 services — owner ruling 2026-11-23:** On an
+organization or site with `ring_primary=3`, these nine §1 subtype terms
+are also process tokens:
+`tooling_mold_die` · `machinery_equipment` · `automation_robotics` ·
+`distribution` · `recycling_recovery` · `testing_lab` ·
+`rd_design_engineering` · `contract_services` ·
+`chemical_equipment_supply_polymer_specific`.
+On records in any other primary ring, preserve these values in
+`processes_other_note`.
+
 ### 3.2 Materials (`materials[]`)
 
 **Families (always tag at least one family if known):**
@@ -730,9 +742,9 @@ doctrine.
 `liquid_crystals` *(liquid-crystalline polymers and mesogenic materials — dual-listed
 with the §3.5 supplement of the same name by this ruling, so the term serves both
 `research_areas[]` and `specialty_materials[]`)*.
-The proposed monomers/intermediates family is not adopted: its source text goes
-to site `materials_other_note` pending a scope ruling, and stays untouched on
-organizations, which have no corresponding note column.
+The proposed monomers/intermediates family remains outside this
+vocabulary. Its source text goes to `materials_other_note` on sites and,
+as of v1.19.8, organizations.
 
 ### 3.3 Markets Served (`markets_served[]`)
 
@@ -968,6 +980,7 @@ One record per ultimate controlling organization operating in scope. A Parent ma
 | `naics_primary` + provenance block (§2.1) | string + object | **MUST** | Primary + provenance are one atomic unit; no naked NAICS |
 | `naics_secondary[]` + provenance | array | Nice | Strongly encouraged; required if a second code appears in any source |
 | `processes[]` / `materials[]` / `markets_served[]` | controlled vocab §3 | **MUST** (at least processes OR materials non-empty) | Parent = union of sites, but do not backfill a site's process to Parent unless Parent claims it corporately — note in field source |
+| `processes_other_note` / `materials_other_note` **[v1.19.8]** | free text, nullable | Nice | Original off-vocabulary wording under §3. Each column immediately follows its corresponding capability column in every organization shard. |
 | `employee_band_global` / `employee_band_ohio` | enum | Nice (Ohio band = MUST if known) | Bands: `1-9` \| `10-49` \| `50-99` \| `100-249` \| `250-499` \| `500-999` \| `1000-4999` \| `5000+` \| `unknown`. Never store a precise headcount as fact; if a source gives one, store band + `employee_count_source_date` |
 | `founded_year` | integer | Nice | |
 | `year_founded` **[v1.1]** | integer | Nice | ADOPTED NAME for the founding-year field: `year_founded` supersedes the v1.0 draft label `founded_year` above (the two rows are one field; the v1.1 adoption text governs the name). Legal-entity formation year where a source states it; multi-inception conflicts (e.g., rename years) stay unresolved in notes until a formation convention is ruled — never silently pick one. |

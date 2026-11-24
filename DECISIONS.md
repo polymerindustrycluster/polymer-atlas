@@ -516,3 +516,18 @@ copy. The repository keeps its notes, and the site pages keep withholding
 them. Implemented in `scripts/export_release.py`. Reason: notes are the
 build narrative ("Created ... in integration pass 17 ...") and about 4,600
 organization and 6,800 site notes cells carry process wording.
+
+## 2026-11-23 22:32 · Process and material vocabulary repair
+
+“Move to other-note.” Keep off-vocabulary process and material wording
+verbatim in semicolon-joined, deduplicated `processes_other_note` and
+`materials_other_note` on organizations and sites. A fully exact spelling
+conversion may use the controlled tokens. The conversion splits on commas
+and “and”, lowercases, strips “ (secondary)”, and turns spaces, hyphens
+and slashes into underscores. Each part must match an allowed token.
+
+“Allow on Ring 3.” The nine Ring 3 subtype terms are allowed as process
+tokens only when the record's primary ring is 3. Preserve the wording
+in the other-note when the term is outside the record's process vocabulary.
+Schema v1.19.8 and the V-55 pass are in
+`tasks/p1-vocab-repair-2026-11-23/`.

@@ -80,6 +80,14 @@ class ProcessLexiconTests(unittest.TestCase):
                 self.assertTrue(build_site.release_withheld("organizations", "description_1line", text), text)
                 self.assertIn("withheld", build_site.lede(text), text)
 
+    def test_capability_notes_use_the_build_prose_lexicon_in_release(self):
+        for table in ("organizations", "sites"):
+            for field in ("processes_other_note", "materials_other_note"):
+                for texts in self.FAMILIES.values():
+                    for text in texts:
+                        self.assertTrue(build_site.release_withheld(table, field, text), (table, field, text))
+                self.assertFalse(build_site.release_withheld(table, field, "Injection molding of battery containers"))
+
     def test_ordinary_uses_pass(self):
         for text in self.ORDINARY:
             self.assertFalse(build_site.internal_wording(text), text)

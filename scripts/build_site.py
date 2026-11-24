@@ -385,10 +385,12 @@ def internal_wording(text):
 def release_withheld(table, field, value):
     """True if the downloadable release must not carry this cell: a description the site withholds (internal_wording), a researcher role line
     the site replaces with the vocabulary role (role_withheld), or a temporary
-    record id of any shape in any text cell of any table (notes, evidence quotes, logs). `table` is kept for callers; the test no longer
-    depends on it."""
+    record id of any shape in any text cell. Organization and site capability notes
+    also use the build-prose lexicon."""
     if not value:
         return False
+    if table in {"organizations", "sites"} and field in {"processes_other_note", "materials_other_note"}:
+        return prose_wording(value)
     return bool(TEMP_ANY_RE.search(value)) or (field == "description_1line" and internal_wording(value)) or (field == "role_as_published" and role_withheld(value))
 
 
