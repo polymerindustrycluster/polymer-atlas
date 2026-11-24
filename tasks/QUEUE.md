@@ -603,6 +603,7 @@ Every line below is a merged PR, verified with `gh pr list` on 2026-11-17; count
 - [x] `done 2026-11-18` Organization-level `processes` canary: 10 PIC-18 organizations with an unknown process, filled only from corporate claims on stored own-site pages. Applied 0 of 10; draft packet, 0 data rows (PR #377, 352c6fc0).
 - [x] `done 2026-11-18` `scripts/integrate/mergepr.sh` gains `MERGE_MODE=squash`, keeping `--match-head-commit` (PR #376).
 - [x] `done 2026-11-18` People identifier URLs (owner items 1 and 1b): 29 people rows replaced or blanked, validator V-62, SCHEMA v1.13.4 (PR #379, 9c94fc65).
+- [ ] `claimed:atlas-p1-rule-repairs 2026-11-24` Repair people-generic-profile. Branch `agent/codex/people-generic-profile-2026-11-24`.
 - [x] `done 2026-11-18` Blind audit 11 correction A11-113: the UEI registry link on ORG-000889 retired, 1 row (PR #382, 4d2aa3ac).
 - [ ] `claimed:atlas-w23-ohio-links 2026-11-23` **Ohio own-site navigation links**, excluding the prior PIC-18 corpus frame. Branch `agent/codex/ohio-links-corpus-2026-11-23`. First user: John, company profile lookups. Non-use review 2026-12-23.
 - [ ] `claimed:atlas-w23-ohio-links 2026-11-23` Blind audit 11 correction A11-047 (ProVia `newsroom_feed_url`). The market and size lanes released `organizations_OH.csv` on 2026-11-18 (#383, #396 merged).
