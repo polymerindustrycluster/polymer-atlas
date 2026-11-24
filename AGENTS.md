@@ -151,9 +151,11 @@ contributions. No other section is amended by this revision.*
 On 2026-11-21/22 one harness built, verified and merged about 34,000
 evidence rows in a day; 28% did not bind to their record, and every check
 was green. The owner adopted these seven rules on 2026-11-22 ("Adopt all
-seven"). A rule without a check gets one or is not called a rule, so this
-section says for each rule what is checked and what is only practice.
-**Rules 1, 4 and 7 are practice: nothing mechanical checks them.** What
+seven"), and rule 8 on 2026-11-23. A rule without a check gets one or is
+not called a rule, so this section says for each rule what is checked and
+what is only practice. **Rules 1, 4 and 7 are practice: nothing mechanical
+checks them. Rule 8 is practice in this repo; only the controller's own
+harness enforces its spawn side.** What
 each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
 
 1. **The agent that builds a batch never merges it.** *Practice.* The
@@ -234,6 +236,27 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
 7. **Decisions in `DECISIONS.md`, commitments on the board, chat for
    messages only.** *Practice.* Stated under "Start here"; no script can
    tell a decision from a message.
+8. **A fan-out is priced and piloted before it scales; an audit is lean.**
+   *Practice in this repo; the controller's harness refuses spawns that
+   skip it (not checked by CI).* (Owner ruling 2026-11-23, after audit 12
+   spent about 450M input tokens across 20 threads to confirm a FAIL its
+   pilot had already shown.)
+   a. An owner question that authorizes three or more parallel threads, or
+      an audit, states the projected token spend per provider and the
+      cheaper alternative.
+   b. A pilot of a few units runs first. Before scale-up, its rate is
+      compared with the pre-registered stop line and its tokens per unit
+      are written down; if the pilot already decides the question, the
+      work stops there.
+   c. An audit is lean: a smoke sample disjoint from the draw decides
+      whether to draw; sources are fetched once and quotes replayed by
+      script; each record gets one reader from a family that did not build
+      it, with plants; a second family reads only flagged records plus a
+      random check share; a stratum stops as soon as it crosses its fail
+      line. Sizes and false-pass risk for this design are recomputed in the
+      protocol, never assumed.
+   d. Spend is measured while work runs, from provider usage logs; a
+      thread that spends without producing output is stopped.
 
 The `pr-rules` and `binding-gate` checks are evaluated by the checker and
 workflow on `main`, never by the PR's own copy (`pull_request_target`): a PR
@@ -253,6 +276,14 @@ file is changed by this revision.*
 
 *Revision note — 2026-11-23 (owner ruling, round 15): §2a rule 5 allows
 the prior batch's audit record to be added by the next data PR.*
+
+*Revision note — 2026-11-23 (owner ruling, "make this a durable rule
+change"): §2a gains rule 8 (fan-outs priced and piloted, audits lean, spend
+measured while work runs). It is practice in this repo; the controller's
+harness refuses spawns run from a script or loop, spawns above its
+live-thread cap without the owner's tag, and briefs with no budget line, and
+turns its outcome line RED above a spend line. Recorded in `DECISIONS.md`.
+No data file is changed by this revision.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 
