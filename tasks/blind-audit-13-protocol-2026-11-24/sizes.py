@@ -249,7 +249,7 @@ def report():
     lines = [
         "## Decision numbers",
         "",
-        "Smoke: 40 random PIC-18 records (owners and their sites, published values only). k = records with a source-contradicted core field.",
+        "Smoke: 40 random PIC-18 records (organization, ecosystem and site rows, each a separate sampled record; published values only). k = distinct sampled records with a source-contradicted core field.",
         "Smoke stop count (owner ruling): stop at the 3rd record with a contradicted core field, 3/40 = 7.5% of the planned sample.",
         "A contradicted descriptive field is reported by field and never stops the smoke (owner ruling).",
         "Unconfirmed claims (u) are reported by field and never stop the smoke; there is no ceiling on the unconfirmed share now (owner ruling). The owner sets any ceiling for a draw after the smoke.",
