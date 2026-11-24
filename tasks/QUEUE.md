@@ -8,6 +8,8 @@ Status values: `open` · `claimed:<agent-or-name> <YYYY-MM-DD>` · `in-pr:<link>
 
 - [ ] `claimed:atlas-p1-tradeshow 2026-11-23` **First-user task 12 — PIC-18 organizations at a trade show.** PIC staff can reach every recorded PIC-18 participant for each listed event and see the SQL-matching organization count. Branch `agent/codex/tradeshow-list-2026-11-23`.
 
+- [ ] `claimed:atlas-p1-title-hq 2026-11-24` **Verbatim researcher titles.** Replay the flagged title frame against held institutional quotations.
+
 ## Phase 0 — Foundations
 - [x] `done 2026-10-28` GEON parent ruling (OPEN_ISSUES item 1): John ruled GEON is its own company (ORG-000010, HQ Westlake, ultimate parent SK Capital Partners); docs/SCHEMA.md §5.2 updated, item resolved
 - [x] `done 2026-11-03` PIC-12 vs 19-county canonical geography (OPEN_ISSUES item 2) — OWNER ONLY (John); county stored on every record meanwhile, region applied at report time (AGENTS.md §8) — RESOLVED 2026-11-03 by the PIC-18 ruling (AGENTS.md §8): PIC-18 is the canonical reporting geography, and OPEN_ISSUES item 2 is marked RESOLVED in-file
