@@ -30,13 +30,21 @@ def has_civic_number(key: str) -> bool:
     return any(re.search(r"\d", t) for t in toks) or bool(toks) and toks[0] in _NUMBER_WORDS
 
 
+_STATE_ROUTE = re.compile(r"^(\d+[a-z]? (?:[nsew] )?)(?:oh ?|sr ?|state rte )(\d+[a-z]?)(?= |$)")
+
+
+def route_street_key(key: str) -> str:
+    """Treat Ohio route signs and their written state-route equivalents alike."""
+    return _STATE_ROUTE.sub(r"\1state rte \2", key)
+
+
 def same_street(site_street: str, printed: str) -> bool:
     """The extract's street is the site's street: both `atlas.street_key` values are equal, non-empty, and carry a civic
     number plus at least one more token (a bare number cannot witness a street). `street_key` discards suites, so when
     the record and the extract both state a suite or unit and they differ, the row is not applied. A blank street is
-    never equal. No second normaliser lives here: variants the key misses are rejected, not guessed."""
-    key = street_key(site_street)
-    if not key or key != street_key(printed) or not has_civic_number(key) or len(key.split()) < 2:
+    never equal. Numbered state-route spellings are folded after keying."""
+    key = route_street_key(street_key(site_street))
+    if not key or key != route_street_key(street_key(printed)) or not has_civic_number(key) or len(key.split()) < 2:
         return False
     return not designators_conflict(site_street, printed)
 

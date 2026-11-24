@@ -80,10 +80,10 @@ ROOT = Path(__file__).resolve().parents[1]
 TREE = ROOT  # where data/ and tasks/ are read when no git ref is given; --tree moves it, ROOT stays the trusted code
 sys.path.insert(0, str(ROOT / "scripts"))
 from atlas import (LOCALITY_SEP_RE, PLATFORM_HOSTS, SUFFIX, name_key, org_name_fields,  # noqa: E402
-                   site_name_key, squash, street_key)
+                   site_name_key, squash, street_key, tokens_semicolon)
 from build_echo_spine import STATE_NAMES  # noqa: E402
 from matching import (DESIGNATOR_ONLY_RE, city_differs, corporate_form_extension, designators_compare,  # noqa: E402
-                      generic_label, has_civic_number, same_locality, same_street, units)  # (PR #463)
+                      generic_label, has_civic_number, route_street_key, same_locality, same_street, units)  # (PR #463)
 
 csv.field_size_limit(10**9)
 ARCHIVE_RE = re.compile(r"https://web\.archive\.org/web/([0-9]{14})(id_)?/(https?://[^\s]+)")
@@ -246,8 +246,8 @@ class Index:
         if not hasattr(self, "_by_street"):
             self._by_street = defaultdict(set)
             for sid, s in self.sites.items():
-                self._by_street[street_key(s.get("street_address"))].add(sid)
-        return self._by_street.get(key, set())
+                self._by_street[route_street_key(street_key(s.get("street_address")))].add(sid)
+        return self._by_street.get(route_street_key(key), set())
 
     def notes_text(self, table, rid):
         if (table, rid) not in self._notes:
@@ -583,6 +583,10 @@ def judge(ev, idx, _alone=False):
     rec = idx.record(table, rid)
     if rec is None:
         return "UNINSPECTABLE", "record_not_found", {}
+    if src.split(" ", 1)[0] in MAP_PROVIDERS:
+        return "HELD", "map_listing_needs_base", {}
+    if detail.startswith("trade_names +"):
+        return "HELD", "filing_variant_needs_base", {}
     i = detail.find("quote:")
     if i < 0 or not detail[i + 6:].strip():
         return "UNINSPECTABLE", "no_quote", {}
@@ -1450,6 +1454,286 @@ def check_proofs(results, evs, idx, load_base, merge, pr_head, archive, read, fe
     return problems
 
 
+# These routes need the base tree. The head can contain the very street or name being proposed.
+MAP_PROVIDERS = ("google-places", "overture-maps-places")
+MAP_REF = re.compile(r"(google-places|overture-maps-places) ([A-Za-z0-9_-]{1,256})")
+FILING_ALIAS = re.compile(r"([^;()]+) \((OSHA|EPA) filing name\)")
+PHYSICAL_ROLES = {"", "physical"}
+HELD_FRS_LEAD = re.compile(
+    r"Address \d{4}-\d{2}-\d{2} \(gov-data pipeline, EPA FRS facility \d{12}, STRONG match\): ([^;()]+)")
+FILING_LOCATOR = re.compile(
+    r"\b(?:activity_nr|establishment(?:_id| id)?|inspection|handler|facility|core_place_id|FRS registry)"
+    r"[ =]+[A-Z]*\d{5,}(?:\.\d+)?\b|; raw/(?:osha|epa)/[^;\n]+(?:@\d+|\.pdf)(?:$|;)", re.I)
+ADDRESS_RISK = re.compile(
+    r"@|\d{3}[-. ]\d{3}[-. ]\d{4}|\b(?:p\.?\s*o\.?\s*box|mail(?:ing)?|(?:registered|statutory) agent|"
+    r"registered[ _]office|apt|apartment|residence|home address|sole propriet(?:or|orship))\b", re.I)
+
+
+def physical_street(street):
+    head = street_key(street).partition(" ")[0]
+    return (has_civic_number(head) and (head[0].isdigit() or head.isalpha())
+            and not ADDRESS_RISK.search(street) and not PAREN_RE.search(street)
+            and not street_suffix_unexplained(street) and same_street(street, street)
+            and designators_compare(street, street) == "equal")
+
+
+def strict_place(site, city, state):
+    return bool(squash(city)) and squash(city) == squash(site.get("city")) and state == site.get("state")
+
+
+def bound_street(site, addr):
+    city, state, _, complete = quoted_place(addr)
+    street = street_part(addr).strip()
+    return street if complete and not PAREN_RE.search(addr) and strict_place(site, city, state) and physical_street(street) else ""
+
+
+def filing_agency(source):
+    if source.startswith("OSHA "):
+        return "OSHA"
+    if source.startswith(("EPA ECHO ", "Ohio EPA ")):
+        return "EPA"
+    return ""
+
+
+def filing_fields(quote, source):
+    fields = labelled_fields(quote)
+    if fields:
+        operators = {"operator", "permittee", "company_name", "establishment_name", "legal_name", "borrower_name"}
+        addresses = {"address", "physical_address"}
+        if (len(LABEL_RE.findall(quote)) != len(fields) or len(addresses & fields.keys()) != 1
+                or not fields.keys() <= operators | addresses | {"county"}):
+            return [], ""
+        return [fields[k] for k in operators & fields.keys()], (fields.get("physical_address") or fields.get("address", ""))
+    fam = family_of(source)
+    parsed = parse_quote(quote, fam) if fam else {}
+    return parsed.get("names", []), parsed.get("addr", "")
+
+
+def read_map_capture(root, provider, digest, place_id):
+    """Optional lane replay of the digest-named object in the shared store."""
+    root = root.resolve()
+    capture = root / f"raw/map-listings/{provider}/{digest}.json"
+    if not capture.resolve().is_relative_to(root):
+        raise ValueError("capture path escapes shared store")
+    with capture.open("rb") as stream:
+        data = stream.read(MAX_CAPTURE_BYTES + 1)
+    if len(data) > MAX_CAPTURE_BYTES or hashlib.sha256(data).hexdigest() != digest:
+        raise ValueError("capture size or digest mismatch")
+    row = json.loads(data, object_pairs_hook=unique_capture_fields)
+    if row["id"] != place_id:
+        raise ValueError("capture id mismatch")
+    if provider == "google-places":
+        if row.get("pureServiceAreaBusiness"):
+            raise ValueError("listing has no physical premises")
+        addr = row["postalAddress"]
+        street, = addr["addressLines"]
+        values = row["displayName"]["text"], street, addr["locality"], addr["administrativeArea"]
+        country = addr["regionCode"]
+    else:
+        properties = row["properties"]
+        if (row["type"], properties["theme"], properties["type"]) != ("Feature", "places", "place"):
+            raise ValueError("capture is not an Overture place")
+        addr, = properties["addresses"]
+        values = properties["names"]["primary"], addr["freeform"], addr["locality"], addr["region"].removeprefix("US-")
+        country = addr["country"]
+    if country != "US" or not all(isinstance(v, str) and v.strip() for v in values):
+        raise ValueError("incomplete US listing")
+    return values
+
+
+def unique_capture_fields(pairs):
+    fields = dict(pairs)
+    if len(fields) != len(pairs):
+        raise ValueError("capture contains duplicate fields")
+    return fields
+
+
+def map_second_source(ref, site, base_idx, evidence, provider):
+    sid = site["site_id"]
+    if ref.startswith("lead: "):
+        text = ref.removeprefix("lead: ")
+        # Match a complete held clause. Separate provenance in a site's source list does not identify this street.
+        held_notes = site.get("notes") or ""
+        clauses = re.split(r"[;\n]", held_notes)
+        frs = HELD_FRS_LEAD.fullmatch(text)
+        if frs and re.search(r"(?:^|[.;] )" + re.escape(text) + r"(?= \(the sites schema|[.;] |$)", held_notes):
+            street = bound_street(site, frs[1])
+            return (street, "") if street else ("", "map_second_source_unbound")
+        m = re.fullmatch(r"Street \(per ([^()]+)\): (.+)", text)
+        if not m or text not in {clause.strip() for clause in clauses}:
+            return "", "map_second_source_unbound"
+        origin, street = m.groups()
+        aliases = {"2026-11-14 Google Maps scrape": "google-places", "Google Maps": "google-places",
+                   "Google Places": "google-places", "Overture Maps": "overture-maps-places"}
+        origin = aliases.get(origin, origin)
+        if origin == provider:
+            return "", "map_second_source_same_provider"
+        if origin not in {*MAP_PROVIDERS, "OSHA", "EPA", "Ohio EPA", "SBA PPP", "SAM.gov"}:
+            return "", "map_second_source_unknown_origin"
+        return street, ""
+    row = evidence.get(ref)
+    if (not row or (row["record_table"], row["record_id"]) != ("sites", sid)
+            or row["claim_type"] not in ("address", "existence")
+            or (row.get("address_role") or "") not in PHYSICAL_ROLES):
+        return "", "map_second_source_unbound"
+    src, kind = row["source_ref"], row["source_class"]
+    quote = row["claim_detail"].partition("quote:")[2].strip()
+    if ADDRESS_RISK.search(quote):
+        return "", "map_second_source_unbound"
+    addr = ""
+    if kind == "own_site" and src.startswith(("https://", "http://")) and any(
+            own_domain(host_path(src), website) for website in record_websites(base_idx, "sites", site)):
+        addr = re.sub(r"(?i)^address:? ", "", quote).removesuffix(", United States")
+    elif kind == "government_filing" and (filing_agency(src) or src.startswith(("SBA PPP ", "SAM.gov "))):
+        names, reported = filing_fields(quote, src)
+        if (name_keys(names) & base_idx.held_keys("sites", sid)
+                and not name_keys(names) & base_idx.parent_keys("sites", sid)):
+            addr = reported
+    street = bound_street(site, addr)
+    return (street, "") if street else ("", "map_second_source_unbound")
+
+
+def map_listing_result(ev, base_idx, idx, evidence, store):
+    rid = ev["record_id"]
+    src = MAP_REF.fullmatch(ev["source_ref"])
+    if (not src or ev["source_class"] != "platform_category"
+            or (ev["record_table"], ev["claim_type"]) != ("sites", "address")
+            or ev.get("tier_effect") not in {"supports_C", "supports_U"}):
+        return "HELD", "map_claim_or_ceiling"
+    if ev.get("address_role"):
+        return "HELD", "map_address_role"
+    site, proposed = base_idx.sites.get(rid), idx.sites[rid]
+    if not site or site.get("org_id") != proposed.get("org_id"):
+        return "HELD", "map_site_not_held"
+    if (site.get("street_address") or "").strip():
+        return "HELD", "map_base_street_already_held"
+    notes = re.fullmatch(r"capture_sha256: ([0-9a-f]{64}); second_source: (EVD-\d+|lead: .+)", ev.get("notes") or "")
+    if not notes:
+        return "HELD", "map_capture_or_second_source_not_cited"
+    claim, sep, quote = ev["claim_detail"].partition("; quote: ")
+    fields = labelled_fields(quote)
+    if not sep or not fields or set(fields) != {"name", "street", "city", "state"} or len(LABEL_RE.findall(quote)) != 4:
+        return "HELD", "map_listing_quote_incomplete"
+    name, street, city, state = (fields[k] for k in ("name", "street", "city", "state"))
+    provider, place_id = src.groups()
+    if store is not None:
+        try:
+            if read_map_capture(store, provider, notes[1], place_id) != (name, street, city, state):
+                return "HELD", "map_capture_differs_from_quote"
+        except (AttributeError, KeyError, OSError, TypeError, ValueError):
+            return "HELD", "map_capture_unreplayable"
+    keys = name_keys([name])
+    if (not keys & base_idx.held_keys("sites", rid) or not keys & idx.held_keys("sites", rid)
+            or keys & (base_idx.parent_keys("sites", rid) | idx.parent_keys("sites", rid))):
+        return "HELD", "map_operator_not_held"
+    if not strict_place(site, city, state) or not strict_place(proposed, city, state):
+        return "HELD", "map_city_or_state_differs"
+    if not physical_street(street) or ADDRESS_RISK.search(name):
+        return "HELD", "map_address_role"
+    if norm_space(street) != norm_space(claim) or norm_space(street) != norm_space(
+            proposed.get("street_address") or ""):
+        return "HELD", "map_street_not_filled_as_listed"
+    second, reason = map_second_source(notes[2], site, base_idx, evidence, provider)
+    if reason:
+        return "HELD", reason
+    if not physical_street(second) or not same_street(street, second) or designators_compare(street, second) != "equal":
+        return "HELD", "map_second_street_differs"
+    return "PASS", "map_listing_street_bound"
+
+
+# The private-address screen uses the business words and personal-name shape from the PIC-18 street packet.
+FILING_BUSINESS_WORDS = frozenset("""inc incorporated llc corp corporation co company companies ltd lp llp plc usa us group holdings holding industries industrial industry plastics plastic rubber polymer polymers chemical chemicals
+products product manufacturing mfg machine machines machining tool tooling mold molding foam foams metal metals steel supply services service systems technologies technology tech international american america
+center centre hospital hospitals university college school city county church association society institute laboratory laboratories labs lab associates partners enterprises engineering equipment
+packaging packaged printing graphics coatings coating paint adhesives composites fiberglass fibre fiber glass wire cable seal seals sealing gasket extrusion extrusions extruded fabricating fabrication
+distribution distributors logistics transport trucking freight energy power electric electrical medical dental health care clinic pharmacy foods food farm farms mills mill works plant
+division dept department management consulting solutions design designs controls control instruments instrument optical vision labs research development bag bags box boxes container containers
+tire tires auto automotive truck trailer trailers marine boat boats pool pools roofing roof building buildings construction contractors contracting concrete cement stone wood lumber furniture
+global national united first general universal precision quality superior advanced applied custom premier standard pioneer summit eagle star""".split())
+_PERSONAL_NAME = re.compile(r"[A-Za-z][A-Za-z .,'-]*")
+_FILING_FORM = re.compile(r"(?: (?:incorporated|inc|l l c|llc|corporation|corp|company|co|limited|ltd|l l p|llp|l p|lp))+$")
+
+
+def filing_words(name):
+    key = _FILING_FORM.sub("", " " + squash(name).removeprefix("the ")).strip()
+    return tuple(re.sub(r"(?<=[a-z]) (?=\d)|(?<=\d) (?=[a-z]\b)", "", key).split())
+
+
+def private_filing_name(name):
+    if ADDRESS_RISK.search(name):
+        return True
+    for value in (name, name_key(name), " ".join(filing_words(name))):
+        words = squash(value).split()
+        if _PERSONAL_NAME.fullmatch(value) and 2 <= len(words) <= 3 and not FILING_BUSINESS_WORDS.intersection(words):
+            return True
+    return False
+
+
+def filing_variant_result(ev, base_idx, idx, base_sites, additions):
+    rid = ev["record_id"]
+    marker, sep, quote = ev["claim_detail"].removeprefix("trade_names + ").partition("; quote: ")
+    name = FILING_ALIAS.fullmatch(marker)
+    if (not sep or not name or (rid, marker) not in additions or ev["source_class"] != "government_filing"
+            or (ev["record_table"], ev["claim_type"]) != ("organizations", "existence")
+            or name[2] != filing_agency(ev["source_ref"]) or not FILING_LOCATOR.search(ev["source_ref"])
+            or (ev.get("address_role") or "") not in PHYSICAL_ROLES):
+        return "FAIL", "filing_variant_claim_or_agency"
+    if not base_idx.record("organizations", rid):
+        return "HELD", "filing_variant_org_not_held"
+    names, address = filing_fields(quote, ev["source_ref"])
+    if name[1] not in names:
+        return "FAIL", "filing_variant_not_quoted_operator"
+    if private_filing_name(name[1]) or ADDRESS_RISK.search(address):
+        return "FAIL", "filing_variant_private_address_screen"
+    words = filing_words(name[1])
+    parent_names = base_idx.parent_names("organizations", rid) | idx.parent_names("organizations", rid)
+    parents = {filing_words(parent) for parent in parent_names}
+    if not words or words in parents or any(
+            corporate_form_extension(" ".join(parent), " ".join(words)) for parent in parents):
+        return "FAIL", "filing_variant_parent_name"
+    held_words = [filing_words(PAREN_RE.sub(" ", n)) for n in record_names(base_idx.orgs[rid])]
+    if not any(held and not generic_label(" ".join(held)) and set(held) <= set(words) for held in held_words):
+        return "FAIL", "filing_variant_distinctive_words_missing"
+    matched = []
+    for site in base_sites[rid]:
+        if street := bound_street(site, address):
+            prior = site.get("street_address")
+            current = idx.sites.get(site["site_id"], {})
+            if (physical_street(prior) and same_street(prior, street) and designators_compare(prior, street) == "equal"
+                    and all(current.get(k) == site.get(k) for k in ("org_id", "street_address", "city", "state"))):
+                matched.append(site["site_id"])
+    if len(matched) != 1:
+        return "HELD", "filing_variant_site_not_held"
+    return "PASS", "filing_name_variant_bound"
+
+
+def check_address_routes(results, evs, idx, base_idx, base_evs, store):
+    additions = set()
+    for oid, org in idx.tables["organizations"].items():
+        held = base_idx.orgs.get(oid, {}).get("trade_names")
+        additions.update((oid, alias) for alias in set(tokens_semicolon(org.get("trade_names"))) - set(tokens_semicolon(held))
+                         if FILING_ALIAS.fullmatch(alias))
+    base_sites = defaultdict(list)
+    for site in base_idx.sites.values():
+        base_sites[site["org_id"]].append(site)
+    evidence = {ev["evidence_id"]: ev for ev in base_evs}
+    matched = Counter()
+    for result in results:
+        ev = evs[result["evidence_id"]]
+        if result["reason"] == "map_listing_needs_base":
+            verdict, reason = map_listing_result(ev, base_idx, idx, evidence, store)
+        elif result["reason"] == "filing_variant_needs_base":
+            verdict, reason = filing_variant_result(ev, base_idx, idx, base_sites, additions)
+            if verdict == "PASS":
+                alias = ev["claim_detail"].removeprefix("trade_names + ").partition("; quote: ")[0]
+                matched[(ev["record_id"], alias)] += 1
+        else:
+            continue
+        result.update(verdict=verdict, reason=reason)
+    return [f"{oid}: filing variant addition has {'no matching' if not matched[oid, alias] else 'more than one'} evidence row"
+            for oid, alias in sorted(additions) if matched[oid, alias] != 1]
+
+
 # ---------------------------------------------------------------- provenance
 
 
@@ -1507,7 +1791,10 @@ def main(argv=None):
                                                    "script and its rules come from the trusted checkout)")
     ap.add_argument("--pr-head", help="pinned PR head SHA to verify against the merge commit second parent")
     ap.add_argument("--out", help="write per-row verdicts to this CSV")
+    ap.add_argument("--map-store", type=Path, help="also replay map captures from this shared store when gating changes")
     a = ap.parse_args(argv)
+    if a.map_store is not None and not (a.new_since or a.verify_proofs):
+        ap.error("--map-store requires --new-since or --verify-proofs")
     TREE = Path(a.tree).resolve() if a.tree else ROOT
     gate = a.new_since or a.verify_proofs
     try:
@@ -1546,7 +1833,10 @@ def main(argv=None):
         try:
             archive, problems = archive_index(rows(a.head, "archive_links.csv"))
             if not problems:
-                problems = check_proofs(results, {e["evidence_id"]: e for e in evs}, idx, lambda: Index.load(base),
+                base_idx = Index.load(base)
+                evidence_by_id = {e["evidence_id"]: e for e in evs}
+                problems = check_address_routes(results, evidence_by_id, idx, base_idx, base_evs, a.map_store)
+                problems += check_proofs(results, evidence_by_id, idx, lambda: base_idx,
                                         a.head or "HEAD", a.pr_head, archive,
                                         lambda path: tasks_file(a.head, path), fetch_url)
         except (csv.Error, ValueError, OSError, subprocess.CalledProcessError) as e:
