@@ -205,7 +205,7 @@ def owner_figures():
 def smoke_tables(stress):
     """Measured consequences of the open smoke choices (binomial, independent records)."""
     lines = [
-        "### Smoke options (owner choices smoke-stop, descriptive-stop, unconfirmed-ceiling)",
+        "### Smoke options (answered 2026-11-24; kept for the record)",
         "",
         "smoke-stop: P(smoke reaches the end of its 40 records) at a true share of PIC-18 records with a contradicted core field.",
         "A stop at the m-th k advances with at most m−1 of 40. Perfect reads, then the stress miss.",
@@ -250,9 +250,9 @@ def report():
         "## Decision numbers",
         "",
         "Smoke: 40 random PIC-18 records (owners and their sites, published values only). k = records with a source-contradicted core field.",
-        "Smoke stop count: [OWNER CHOICE smoke-stop: stop at the m-th k; options in the table below].",
-        "A contradicted descriptive field [OWNER CHOICE descriptive-stop: stops the smoke, or is only reported].",
-        "Unconfirmed claims (u) are reported by field and never stop the smoke; [OWNER CHOICE unconfirmed-ceiling: no ceiling, or a ceiling on the core unconfirmed share].",
+        "Smoke stop count (owner ruling): stop at the 3rd record with a contradicted core field, 3/40 = 7.5% of the planned sample.",
+        "A contradicted descriptive field is reported by field and never stops the smoke (owner ruling).",
+        "Unconfirmed claims (u) are reported by field and never stop the smoke; there is no ceiling on the unconfirmed share now (owner ruling). The owner sets any ceiling for a draw after the smoke.",
         "Continue only if the stop count is not reached in all 40, with complete replay accounting and valid controls.",
         "Check each unflagged record independently with probability 15%. Every flagged record gets a second read.",
         "Stress-safe draw: allow 2 records with a contradicted core field in the PIC-18 stratum, fail immediately on 3; no early PASS.",

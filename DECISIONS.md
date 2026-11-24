@@ -667,3 +667,14 @@ and city match. A second model family checks each addition. The street then fill
 (moving the raw pull to the shared store); the name-variant additions with their second-family checks.
 
 Decided by the repo owner in session, 2026-11-24 10:29, by multiple choice. All four were the recommended option.
+
+## 2026-11-24 · Audit 13 smoke choices
+
+The amended audit 13 protocol (PR #554) left four choices open. The owner answered each; the protocol now carries the ruled option. Options and measured consequences are kept in `tasks/blind-audit-13-protocol-2026-11-24/OWNER_CHOICES.md`.
+
+1. **Smoke stop.** The smoke stops at the third record with a contradicted core field (name, operating status, street, county, polymer relevance) of the 40 it reads.
+2. **Descriptive fields.** A contradicted process, market, size or other non-core value is reported by field with its error rate and never stops the smoke.
+3. **Unconfirmed claims.** No ceiling on the unconfirmed share now. They are reported per field, and the owner sets any ceiling for a draw after the smoke.
+4. **Polymer relevance.** A reader judges only whether the record, at its grain, is in or out of scope under the SCHEMA ring tests and exclusions. A different ring number is not an error.
+
+Decided by the repo owner in session, 2026-11-24 13:13, by multiple choice. All four were the recommended option.

@@ -1,10 +1,12 @@
-# Owner choices the 2026-11-24 rulings do not settle
+# Owner choices the 2026-11-24 rulings did not settle: ANSWERED
 
-The look-back ruling fixed the unit (a value is wrong only when a source contradicts it; unconfirmed is reported by field, not counted) and the gate (core fields: name, operating status, street, county, polymer relevance; process, market and size report and do not gate). The step-back ruling fixed the frame (PIC-18 only, published values only, an unknown value is not an error). [Rulings](../../DECISIONS.md) · [PROTOCOL.md](PROTOCOL.md) carries one marked placeholder per choice below. The controller seals the protocol only after the owner answers (AGENTS §2 rule 9). Numbers come from `sizes.py` and are checked by its selftest: binomial, independent records, **perfect reads unless the stress column says otherwise**. They measure the choice, not the Atlas: no record was read for this document, and the true core-field error share is unmeasured. The only anchor is audit 12's all-field, old-unit result: 12 of 189 PIC-18 records with a confirmed error (6.3%), 74 of 189 with only an unresolved claim (39.2%).
+**Answered by the owner 2026-11-24 13:13, by multiple choice, all four as recommended:** smoke-stop A (stop at the third record with a contradicted core field), descriptive-stop A (report only), unconfirmed-ceiling A (no ceiling now), polymer-relevance B (in or out of scope). Recorded in [DECISIONS.md](../../DECISIONS.md) and written into [PROTOCOL.md](PROTOCOL.md). Options and figures below are kept for the record.
+
+The look-back ruling fixed the unit (a value is wrong only when a source contradicts it; unconfirmed is reported by field, not counted) and the gate (core fields: name, operating status, street, county, polymer relevance; process, market and size report and do not gate). The step-back ruling fixed the frame (PIC-18 only, published values only, an unknown value is not an error). [Rulings](../../DECISIONS.md) · The protocol carried one marked placeholder per choice until the answers above (AGENTS §2 rule 9). Numbers come from `sizes.py` and are checked by its selftest: binomial, independent records, **perfect reads unless the stress column says otherwise**. They measure the choice, not the Atlas: no record was read for this document, and the true core-field error share is unmeasured. The only anchor is audit 12's all-field, old-unit result: 12 of 189 PIC-18 records with a confirmed error (6.3%), 74 of 189 with only an unresolved claim (39.2%).
 
 ## 1 · smoke-stop: how many core-field contradictions stop the smoke?
 
-- **A · Stop at the third record with a contradicted core field (recommended).** Same count as sealed in the earlier protocol, now counting only contradictions. At a true core share of 2% / 5% / 8% the smoke reaches its end 95.4% / 67.7% / 36.9% of the time (90.7% at 5% if readers miss 45.9% of errors).
+- **A · Stop at the third record with a contradicted core field (recommended; chosen).** Same count as sealed in the earlier protocol, now counting only contradictions. At a true core share of 2% / 5% / 8% the smoke reaches its end 95.4% / 67.7% / 36.9% of the time (90.7% at 5% if readers miss 45.9% of errors).
 - **B · Stop at the second.** 81.0% / 39.9% / 15.9%. A clean Atlas (2% core) is stopped one time in five.
 - **C · Stop at the fourth.** 99.2% / 86.2% / 60.1%. Passes an Atlas at the 8% core share six times in ten.
 
@@ -42,7 +44,7 @@ Why B: it tests the claim the PIC-18 bar cares about (is this a polymer entity a
 - **Second reads** still go to every flagged record, including one flagged only for an unconfirmed claim. That is cost, not a gate; say if a descriptive-only flag should skip the second read.
 
 <!-- choice figures -->
-### Smoke options (owner choices smoke-stop, descriptive-stop, unconfirmed-ceiling)
+### Smoke options (answered 2026-11-24; kept for the record)
 
 smoke-stop: P(smoke reaches the end of its 40 records) at a true share of PIC-18 records with a contradicted core field.
 A stop at the m-th k advances with at most m−1 of 40. Perfect reads, then the stress miss.

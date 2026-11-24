@@ -12,11 +12,11 @@ After the remaining repairs land, the controller seals the commit, protocol, siz
 
 Owner look-back ruling: a published value is wrong only when a source contradicts it. A value that cannot be confirmed is reported as unconfirmed, by field, next to the error rate; it is not counted as an error. The bar gates on the core fields. [Ruling text](../../DECISIONS.md)
 
-- **Core fields (gate):** organization or site name (`legal_name`, `site_name`), operating status (`status`, `operating_status`), street (`street_address`), county (`county`, `hq_county`) and polymer relevance. [OWNER CHOICE polymer-relevance: the column or columns, the source a reader judges against, and what counts as contradicted. Until the owner answers, no reader grades this field and the protocol cannot be sealed.]
+- **Core fields (gate):** organization or site name (`legal_name`, `site_name`), operating status (`status`, `operating_status`), street (`street_address`), county (`county`, `hq_county`) and polymer relevance. Polymer relevance is judged in or out of scope at the record’s grain (organization or site), under the [SCHEMA ring tests and exclusions](../../docs/SCHEMA.md), from the entity’s own site or filing. It is contradicted only when a source shows no polymer, rubber, coating or comparable on-site activity at that grain (polymer only as packaging or a purchased part, retail only, a different entity). A different ring number is not an error; it is reported as a descriptive note.
 - **Contradicted** means a replayed public source states a different value, states the fact at another grain, or shows that the row is a different entity or a duplicate of a held record. A wrong-entity or duplicate row contradicts the name. An out-of-scope row follows the polymer-relevance choice. A failed fetch, a silent page, an unreachable source or a spent fetch budget is never a contradiction.
-- **Unconfirmed** means the reader could not settle a claim and no source contradicts it. The reader names the fact that would settle it. This is the inherited UNRESOLVED grade; FIELD_ERROR and CREATION_ERROR now require the contradicting source. Unconfirmed claims are reported per field with the count of published values audited in that field as denominator. They never count toward a stop or a gate. [OWNER CHOICE unconfirmed-ceiling: no ceiling, or a ceiling on the core unconfirmed share.]
+- **Unconfirmed** means the reader could not settle a claim and no source contradicts it. The reader names the fact that would settle it. This is the inherited UNRESOLVED grade; FIELD_ERROR and CREATION_ERROR now require the contradicting source. Unconfirmed claims are reported per field with the count of published values audited in that field as denominator. They never count toward a stop or a gate. There is no ceiling on the unconfirmed share now; the owner sets any ceiling for a draw after the smoke.
 - **Gate count k** is the number of audited records (owner, with its scoped children) that have at least one contradicted core field. A record counts once, however many core fields it contradicts.
-- **Descriptive fields** are process, market, size (employee bands) and every other published field that is not core. For each, report the error rate and the unconfirmed share. They do not gate. [OWNER CHOICE descriptive-stop: whether a contradicted descriptive field stops the smoke or is only reported.]
+- **Descriptive fields** are process, market, size (employee bands) and every other published field that is not core. For each, report the error rate and the unconfirmed share. They do not gate. A contradicted descriptive field is reported and never stops the smoke.
 
 ## What goes to a reader
 
@@ -40,9 +40,9 @@ Under the calibrated option, the controller also seals a separate pre-draw calib
 ## Decision numbers
 
 Smoke: 40 random PIC-18 records (owners and their sites, published values only). k = records with a source-contradicted core field.
-Smoke stop count: [OWNER CHOICE smoke-stop: stop at the m-th k; options in the table below].
-A contradicted descriptive field [OWNER CHOICE descriptive-stop: stops the smoke, or is only reported].
-Unconfirmed claims (u) are reported by field and never stop the smoke; [OWNER CHOICE unconfirmed-ceiling: no ceiling, or a ceiling on the core unconfirmed share].
+Smoke stop count (owner ruling): stop at the 3rd record with a contradicted core field, 3/40 = 7.5% of the planned sample.
+A contradicted descriptive field is reported by field and never stops the smoke (owner ruling).
+Unconfirmed claims (u) are reported by field and never stop the smoke; there is no ceiling on the unconfirmed share now (owner ruling). The owner sets any ceiling for a draw after the smoke.
 Continue only if the stop count is not reached in all 40, with complete replay accounting and valid controls.
 Check each unflagged record independently with probability 15%. Every flagged record gets a second read.
 Stress-safe draw: allow 2 records with a contradicted core field in the PIC-18 stratum, fail immediately on 3; no early PASS.
@@ -66,7 +66,7 @@ Operating cost of the tight acceptance line: at a true 2% core-field error rate 
 the PIC-18 draw passes 9.9% of the time.
 Small displayed percentages are rounded; the binomial tail is positive.
 
-### Smoke options (owner choices smoke-stop, descriptive-stop, unconfirmed-ceiling)
+### Smoke options (answered 2026-11-24; kept for the record)
 
 smoke-stop: P(smoke reaches the end of its 40 records) at a true share of PIC-18 records with a contradicted core field.
 A stop at the m-th k advances with at most m−1 of 40. Perfect reads, then the stress miss.
