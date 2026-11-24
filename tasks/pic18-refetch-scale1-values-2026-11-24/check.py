@@ -137,7 +137,7 @@ def verify(s, bytes_for):
     for path in s["changed"]:
         if not (DATA.fullmatch(path) or path.startswith(f"tasks/{TASK}/") or path in (AUDIT, "tasks/QUEUE.md")):
             add("files", f"{path} is outside the allowed files")
-    for k, want in (("Label:", "pic18-refetch-pilot-values-2026-11-24"), ("Result:", "PASS")):
+    for k, want in (("Label:", "claude-code pic18-refetch-pilot-values-2026-11-24"), ("Result:", "PASS")):
         if not re.search(rf"^{k}\s*{re.escape(want)}\s*$", s["audit"], re.M):
             add("audit", f"{AUDIT} lacks the line '{k} {want}'")
     # cell diff: exactly the filled cells, nothing else on any organization row
