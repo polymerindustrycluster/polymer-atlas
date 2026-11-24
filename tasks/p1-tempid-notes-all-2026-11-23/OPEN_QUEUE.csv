@@ -1,0 +1,30 @@
+table,record_id,field,origin,reason
+organizations,ORG-000372,notes,packet,"NEW:HUNTSMAN:S05 sits in running text ('46 record via the C-AH pass (L5 packet, NEW:HUNTSMAN:S05). ANNOTATION ONLY: press'); removing it changes the sentence"
+organizations,ORG-000647,notes,packet,"NEW:A24-27 sits in running text ('NLY — no fields changed): wave-2 create NEW:A24-27 (APackaging Group, LLC) '); removing it changes the sentence"
+organizations,ORG-000677,notes,packet,"NEW:A11-41 sits in running text ('ies ""API INDUSTRIES INC""; wave-2 create NEW:A11-41 (API Industries) is a DI'); removing it changes the sentence"
+organizations,ORG-002873,notes,packet,NEW:P66 sits in running text (' they already exist in packet XL-CPX as NEW:P66 and NEW:CHEVRON and are '); removing it changes the sentence
+organizations,ORG-002910,notes,packet,NEW:CHEVRON sits in running text ('age is proposed as parent_of edges from NEW:CHEVRON and NEW:P66 in relations'); removing it changes the sentence
+organizations,ORG-003032,notes,packet,NEW:L6-08 sits in running text ('rd agreed to acquire FB Balzanelli (see NEW:L6-08).'); removing it changes the sentence
+organizations,ORG-003408,notes,packet,"NEW:A09-18 sits in running text (""ent set to this lane's Globeius create (NEW:A09-18) per the Canadian Plasti""); removing it changes the sentence"
+organizations,ORG-003497,notes,packet,"NEW:A28-13 sits in running text ('INATOR MERGE FIX: parent_org_key set to NEW:A28-13 (Brightmark LLC, verdict'); removing it changes the sentence"
+organizations,ORG-003668,notes,packet,"NEW:A20-05 sits in running text (""ration continues. Parent is lane create NEW:A20-05. Packet entity_type 'com""); removing it changes the sentence"
+organizations,ORG-003941,notes,packet,NEW:zeus-company-llc sits in running text (' M7): SC design NEW:ZEUS and TRI design NEW:zeus-company-llc reconciled to this one r'); removing it changes the sentence
+sites,SITE-000445,notes,packet,"NEW:LATHAM sits in running text ('plant rides on the held GLI org, not on NEW:LATHAM; a parent_of edge NEW:LA'); removing it changes the sentence"
+sites,SITE-000746,notes,packet,NEW:AZEK sits in running text ('t is the missing ultimate-parent record NEW:AZEK and the parent_of edge. '); removing it changes the sentence
+sites,SITE-001035,notes,packet,NEW:HILLENBRAND sits in running text ('in guard as Batavia: do not re-point to NEW:HILLENBRAND. BAND-SOURCE: employee_b'); removing it changes the sentence
+sites,SITE-001037,notes,packet,NEW:HILLENBRAND sits in running text ('uild site and must not be re-pointed to NEW:HILLENBRAND. Address from the held O'); removing it changes the sentence
+sites,SITE-001084,notes,packet,"NEW:ORION sits in running text ('this facility. If the coordinator folds NEW:ORION into ORG-001005, this si'); removing it changes the sentence"
+sites,SITE-002370,notes,packet,NEW:ENPRO sits in running text ('e re-verified before any parent edge to NEW:ENPRO is drawn. No capability '); removing it changes the sentence
+sites,SITE-002486,notes,packet,NEW:TREDEGAR sits in running text ('egrator: merge the duplicate pair under NEW:TREDEGAR (parent edges proposed i'); removing it changes the sentence
+sites,SITE-002624,notes,packet,NEW:C-75-S1 sits in running text ('ct and are unchanged. The Q site design NEW:C-75-S1 for this establishment w'); removing it changes the sentence
+sites,SITE-002717,notes,packet,NEW:TRIB-16 sits in running text ('lded into this held row; the design org NEW:TRIB-16 flipped ALREADY_HELD to '); removing it changes the sentence
+sites,SITE-003023,notes,packet,NEW:CELANESE:S14 sits in running text ('ilt in XL-CPX-adjacent packet XL-CEL as NEW:CELANESE:S14; Kuraray America; Delrin'); removing it changes the sentence
+sites,SITE-003059,notes,packet,NEW:DOW:S08 sits in running text ('the address of wave-1 Dow Freeport site NEW:DOW:S08 (TRI trifid 77541THDWCBU'); removing it changes the sentence
+sites,SITE-003154,notes,packet,"NEW:ORION sits in running text ('his US HQ row. If the coordinator folds NEW:ORION into ORG-001005, this ro'); removing it changes the sentence"
+sites,SITE-003177,notes,packet,"NEW:CPCHEM:S14 sits in running text ('emical Complex; the Port Arthur half is NEW:CPCHEM:S14 - two TRI facilities, tw'); removing it changes the sentence"
+sites,SITE-003221,notes,packet,NEW:EXXONMOBIL sits in running text ('es leg of the build recipe. Filed under NEW:EXXONMOBIL on the Sec. 5.3 operator'); removing it changes the sentence
+sites,SITE-004091,notes,packet,NEW:A20-05 sits in running text (' NEW:A20-06-S1 (org NEW:A20-06). Parent NEW:A20-05 (PlayPower).'); removing it changes the sentence
+sites,SITE-004434,notes,packet,"NEW:A17-17 sits in running text ('7-17-S1. Freeze flip: wave-2 org create NEW:A17-17 (Ayer Sales, Inc.) resol'); removing it changes the sentence"
+sites,SITE-004435,notes,packet,"NEW:A24-27 sits in running text ('4-27-S1. Freeze flip: wave-2 org create NEW:A24-27 (APackaging Group, LLC) '); removing it changes the sentence"
+sites,SITE-004436,notes,packet,NEW:A29-05 sits in running text ('9-05-HQ. Freeze flip: wave-2 org create NEW:A29-05 (HB Chemical Company) re'); removing it changes the sentence
+sites,SITE-005311,notes,packet,NEW:carpenter-co sits in running text ('ws should use the same org. Do NOT mint NEW:carpenter-co — operator is held. [Coo'); removing it changes the sentence
