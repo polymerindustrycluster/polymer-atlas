@@ -310,15 +310,76 @@ INTERNAL_RE = re.compile(r'#\d+|\bEVD-\d+|\bPR\b|pull request|\bpass[- ]?\d*\b|p
 TEMP_ID_RE = re.compile(r"NEW:[A-Z]+-\d+")   # a temporary record id from a build pass, as in "(NEW:MJ-07)" or "(NEW:A-12)"
 TEMP_ANY_RE = re.compile(r"\bNEW(?:SITE)?:")        # a temporary record id in any shape (NEW:P66, NEW:L6-08, NEWSITE:...): the all-notes repair's own test
 
-# Build-pass prose that INTERNAL_RE (a copy of the blind-audit scan) does not name: "staged address/domain/name" (the staged record
-# under review), the evidence ladder ("Rung 1", "ladder rungs"), requeue and settling-fact bookkeeping, and tool status words.
-# "ladder" alone is not listed: ladder covers are a product.
-BUILD_PROSE_RE = re.compile(r"\bstaged\b|\brungs?\b|ladder rungs?|unchanged \(verified|browser_open|retry recovered|\bre-?queue[ds]?\b|settling (?:facts?|primary|witness|legs?|sources?)|still_uncertain|\bchanged \(was", re.I)
+# Build-pass prose that INTERNAL_RE (a copy of the blind-audit scan) does not name: words that narrate how a record was verified, not
+# what the company is. One list, so the site pages, graph.json, map-network.json and the release all withhold the same descriptions.
+# Families: the staged record under review, the evidence ladder, queue/retry/settling bookkeeping, verification timing and crawl
+# words, fetch and HTTP status words, the verification tier, workflow verdict words, and a source site "opened".
+# A description it hits is withheld whole, never half-shown. Where an ordinary use of a word must pass, PROSE_ALLOW says why.
+BUILD_PROSE_RE = re.compile(
+    r"\bstaged\b|\brungs?\b|ladder rungs?|unchanged \(verified|browser_open|retry recovered|\bre-?queue[ds]?\b"
+    r"|\bsettl(?:es|ed)\b|settling (?:facts?|primary|witness|legs?|sources?|evidence)|still_uncertain|\bchanged \(was|\bwitness\w*"
+    r"|\bcrawl(?:ed|s|ing)?\b|\bverif(?:y|ies|ied|ying|ication)\b"
+    r"|\bfetch\w*|\bre-?fetch\w*|\bHTTP [1-5]\d\d\b|\bthis session\b|\bavailability signal\b|\bbot-?walled\b"
+    r"|\bretr(?:y|ied|ies)\b|\bverdict\w*|\bprior (?:fact|pass|row|record)\b|\bthis (?:row|record|pass|batch)\b"
+    r"|\btiers? (?:[ABCU]\b|at\b|held|stays|kept)|\bcapping tier\b|\bheld at [ABCU]\b|\bTODO\b|\bTBD\b"
+    r"|(?-i:\bCheck RUN\b|\bADDR_ONLY\b|\bBRIEF\b|\bPOSITIVE\b|\bDECISIVE\b)|\bmatcher\b|\bRing [1-5]\b|\bdistribution screen\b|\bcoded (?:as|on|distribution|manufactur)\w*|\b(?:distribution|manufacturing)-coded\b"
+    r"|\bcandidate (?:address|city|suite|street|domain|name|\d)|\bCurrency is\b"
+    r"|(?-i:\b[A-Z]{3,}_[A-Z_]{3,}\b)|\bexclusion list\b|\bW\d{1,2}-\d+\b|\bcached copy\b|\bno own site found\b|\bown (?:site|domain|website) (?:is )?live\b|\bprogram row\b"
+    r"|\bdated primary\b|\bprimary/strong\b|strong[- ]directory|\bin full\b|\bpasses? the Ring \d|\bcarried at\b"
+    r"|\bW\d{1,2}-[A-Z]{2}-\d+\b|\bopened \d{4}-\d{2}-\d{2}|\(live, opened\b|\bheld\b|(?-i:\bUNCHANGED\b|\bCHANGED\b|\bVERIFIED\b)"
+    r"|\b(?:site|website|page|pages|catalog|footer|domain|homepage)(?: \([^)]*\))?(?: was| were)? opened\b|\bopened in full\b|\(opened(?: in full)?\)",
+    re.I)
+
+# Words that may narrate process, checked as a wider net than the list above: a description with one of these that is neither
+# withheld nor covered by PROSE_ALLOW (with its reason) fails test_every_process_word_is_withheld_or_allowed, so the list is
+# extended once, here, instead of one review at a time.
+PROCESS_WATCH_RE = re.compile(
+    r"\bcrawl|\bverif|\bfetch|\bopened\b|\btiers?\b|\bwitness|\bsettl|\baudit\b|\bcarried\b|\bheld\b|\bretr(?:y|ied|ies)\b|\bqueue"
+    r"|\blanes?\b|\bpass(?:es)?\b|\bpackets?\b|\bverdict|\bTODO|\bTBD|\bin full\b|\bprior\b|\bsession\b|\bflagged?\b|\bunresolved\b"
+    r"|\bduplicate|\bdisposition\b|\bladder\b|\bstag(?:ed|ing)\b|\brungs?\b"
+    r"|\bring [1-5]\b|\bcandidate\b|\bcoded\b|\bmatcher\b|\bcheck run\b|\bsuperseded\b|(?-i:\bBRIEF\b)|\bB\d\b", re.I)
+
+# Ordinary uses of those words that must pass, each with its reason. A span listed here is removed before either test runs.
+PROSE_ALLOW = [
+    (re.compile(r"\bexpert witness\b", re.I), "a legal-consulting service, not a verification witness"),
+    (re.compile(r"\bThomas Verified\b"), "the name of a supplier-directory program"),
+    (re.compile(r"\bTier[ -][1-3]\b"), "an automotive supplier tier, an industry term"),
+    (re.compile(r"\b[A-Z][a-z]+ Lane\b"), "a street name"),
+    (re.compile(r"\b(?:privately|publicly|closely) held\b", re.I), "a type of ownership"),
+    (re.compile(r"\bcarried (?:in the FRS record|in its place listing|verbatim in company-submitted profiles)\b|\bdirectory-carried\b"),
+     "names the listing or record that states the fact (source attribution)"),
+    (re.compile(r"\bopened(?: its| in(?! full)(?: \d{4})?| \d{4}(?!-)| [A-Z][a-z]+\.? \d{4}|,)|\b(?:plant|factory|facility|line|center|centre|site) opened (?=in\b|\d{4}|[A-Z][a-z]{2,8}\.? \d{4}|,|\.)"),
+     "a company opened a plant, site or center (business history)"),
+    (re.compile(r"OSHA inspection[^()]{0,60}\(opened [^)]*\)|\(opened (?:Dec|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov) \d"),
+     "the date a government inspection was opened"),
+    (re.compile(r"\bLane(?: Enterprises|'s| manufactures)|\bTier[ -]one\b"), "a company name; a supplier tier"),
+    (re.compile(r"\baudit 20\d\d-\d\d-\d\d\b"), "the date of a certification audit that the certificate states"),
+]
+
+
+def without_allowed(text):
+    t = str(text or "")
+    for rx, _ in PROSE_ALLOW:
+        t = rx.sub(" ", t)
+    return t
+
+
+def unclassified_process_words(text):
+    """Watch-list words in a description that is shown (not withheld) and not covered by PROSE_ALLOW."""
+    if internal_wording(text):
+        return []
+    return [m.group(0) for m in PROCESS_WATCH_RE.finditer(without_allowed(text))]
+
+
+def prose_wording(text):
+    """Build and review prose without the blind-audit word scan (which hits "#1" in an endowed chair and a company called Gemini)."""
+    t = str(text or "")
+    return bool(CRM_RE.search(t) or BUILD_PROSE_RE.search(without_allowed(t)) or TEMP_ID_RE.search(t) or TEMP_ANY_RE.search(t))
 
 
 def internal_wording(text):
     t = str(text or "")
-    return bool(CRM_RE.search(t) or INTERNAL_RE.search(t) or BUILD_PROSE_RE.search(t) or TEMP_ID_RE.search(t) or TEMP_ANY_RE.search(t))
+    return bool(INTERNAL_RE.search(t) or prose_wording(t))
 
 
 def release_withheld(table, field, value):
@@ -2514,6 +2575,12 @@ CRED_LABELS = {"bs": "BS", "ms": "MS", "phd": "PhD", "aas_associate": "AAS", "ce
 LAB_TYPES = {"government_lab_agency", "nonprofit_rd_consortium"}
 
 
+def published_role(p):
+    """The role line as published, unless it carries build wording ("pages fetched/searched ..."); then the vocabulary role."""
+    published = p.get("role_as_published")
+    return (published if nonempty(published) and not prose_wording(published) else "") or str(p.get("role") or "").replace("_", " ")
+
+
 def experts_json(ctx):
     """Researchers + programs for experts.html. Public professional facts only, exactly as institution pages show them."""
     a = ctx.atlas
@@ -2530,7 +2597,7 @@ def experts_json(ctx):
     for p in a.people:
         href = safe_href(p.get("public_profile_url")) or ""   # safe_href refuses a URL that embeds an email, encoded or not
         specs = specs_of(vals(p.get("research_specialties")))
-        role = p.get("role_as_published") or str(p.get("role") or "").replace("_", " ")
+        role = published_role(p)
         modes = sorted({str(g.get("mode") or "").replace("_", " ") for g in a.engagement_by_person.get(p.get("person_id"), [])} - {""})
         people.append([p.get("full_name") or "", role, specs, inst(p.get("institution_org_id")), href, modes])
     for g in a.programs:
@@ -2768,7 +2835,7 @@ def people_block(people, ctx):
         href = safe_href(p.get("public_profile_url"))   # a profile URL embedding an email address (even percent-encoded) is not published
         if href:
             name = f'<a href="{esc(href)}" rel="noopener nofollow">{name}</a>'
-        role = p.get("role_as_published") or str(p.get("role") or "").replace("_", " ")
+        role = published_role(p)
         rows += (f"<tr><td>{name}</td><td>{esc(role)}</td>"
                  f"<td>{esc(vocab(p.get('research_specialties')))}</td></tr>")
     tbl = table_wrap("<table><thead><tr><th scope=\"col\">Name</th><th scope=\"col\">Role (as published)</th>"

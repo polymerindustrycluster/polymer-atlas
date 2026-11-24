@@ -29,6 +29,103 @@ def write(path, header, rows):
         w.writerows(rows)
 
 
+def real_descriptions():
+    """Every description_1line in the canonical organization, ecosystem and program rows."""
+    csv.field_size_limit(10**9)
+    data = Path(build_site.__file__).resolve().parent.parent / "data"
+    out = {}
+    for path in sorted(data.glob("organizations_*.csv")) + [data / "ecosystem.csv", data / "programs.csv"]:
+        if path.name.endswith("_all.csv"):
+            continue
+        with path.open(newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                if r.get("description_1line"):
+                    out[r.get("org_id") or r.get("program_id")] = r["description_1line"]
+    return out
+
+
+class ProcessLexiconTests(unittest.TestCase):
+    """ATLAS-40 lexicon pass: process wording is withheld by the one shared test, or allowed with a reason (tasks/site-lexicon-2026-11-23)."""
+
+    FAMILIES = {
+        "verification timing": ["Own site live at verification: injection molding", "Company site crawled the day of verification lists the plant",
+                                "Thomasnet pages crawled within the last six months", "directory verified from the operator's facility list"],
+        "settling": ["Own website settles identity and product line", "Identity and activity settled by own site", "Two primary government witnesses plus the filing",
+                     "Polymer line witnessed on own domain"],
+        "workflow": ["CHANGED (VERIFIED C -> B). Retry 2026-10-29: the domain still fails", "Own site fetched live 2026-10-29 lists this address",
+                     "Re-fetch of the own site returned HTTP 403 this session", "so the verdict rests on dated government evidence", "TODO confirm the address"],
+        "tier": ["No own site found. Tier C: identity from a directory", "Own site prints no street address, capping tier at C", "tier held at B on the recorded site"],
+        "opened": ["Own website (opened): 'CUSTOM PLASTIC INJECTION MOLDING'", "Own site opened: custom sheet fabrication", "Own website (opened in full): est. 1946",
+                   "Own site (live, opened 2026-10-29): ISO 9001:2015 certified"],
+        "matcher and checks": ["Check RUN and POSITIVE: main-form filings PY2022-PY2024 at the exact address", "the matcher's ADDR_ONLY class", "Check RUN and DECISIVE against the closure claim"],
+        "ring and screen": ["which is Ring 3 coating-as-trade under the 2026-10-29 B5", "Ring 3 distribution.", "Coded as distribution per the BRIEF distribution screen.",
+                            "Distribution-coded per the distribution screen", "coded on distribution activity"],
+        "candidate": ["Own site lists the candidate address 1224 Freedom Rd: precision injection molding", "candidate city Macedonia is superseded", "The candidate suite is not confirmed",
+                      "vs candidate 3924 Miller Road"],
+        "workflow tokens": ["EXCLUSION_CONFLICT: row matches exclusion list W7-294 (final_status NOT_POLYMER)", "Recorded domain (cached copy dated 2026-10-13): pulverizers",
+                            "a third Lehigh program row, distinct from PROG-000038", "no own site found.", "Own site live: manufacturer of wheels"],
+        "ladder and pass": ["passes the Ring 3 general-engineering gate on a claimed specialty", "Own site in full: manufactures bollard covers", "(carried at course grain as PROG-000034)"],
+    }
+    ORDINARY = ["Tier-1 automotive supplier of interior trim", "Privately held maker of intensive-use furniture", "The plant opened in 1995 and holds OSHA VPP Star status",
+                "Trinseo opened its North America Innovation Center in Exton", "OSHA inspection 1717099.015 (opened Dec 18, 2023) inspected the plant",
+                "expert witness consulting", "A Thomas Verified supplier profile", "Lane's own literature lists a Carlisle facility", "Anti-slip step and ladder covers",
+                "Small-batch maker of coatings", "Clinical-stage development of antimicrobial coatings",
+                "Ring Container plant blow-molding PET", "O-ring and gasket distribution", "Makes extruder screen changers and screen packs", "A technical brief for the product",
+                "Screen printing of plastic containers", "FMCSA SAFER snapshot confirms the legal name"]
+
+    def test_each_family_is_withheld_by_the_one_shared_test(self):
+        for family, texts in self.FAMILIES.items():
+            for text in texts:
+                self.assertTrue(build_site.internal_wording(text), (family, text))
+                self.assertTrue(build_site.release_withheld("organizations", "description_1line", text), text)
+                self.assertIn("withheld", build_site.lede(text), text)
+
+    def test_ordinary_uses_pass(self):
+        for text in self.ORDINARY:
+            self.assertFalse(build_site.internal_wording(text), text)
+
+    def test_no_shown_description_has_an_unclassified_process_word(self):
+        """The wider watch list over every real description: a hit must be withheld or covered by PROSE_ALLOW."""
+        stray = {k: build_site.unclassified_process_words(v) for k, v in real_descriptions().items() if build_site.unclassified_process_words(v)}
+        self.assertEqual(stray, {})
+
+    def test_every_allow_entry_has_a_reason_and_is_used_on_a_real_description(self):
+        descriptions = [v for v in real_descriptions().values() if not build_site.internal_wording(v)]
+        for rx, why in build_site.PROSE_ALLOW:
+            self.assertTrue(why.strip(), rx.pattern)
+            self.assertTrue(any(rx.search(v) for v in descriptions), f"unused allowance: {why}")          # a stale entry dies here
+
+    def test_named_records_are_withheld(self):
+        d = real_descriptions()
+        for org in ("ORG-001997", "ORG-002044", "ORG-002045", "ORG-002178", "ORG-002201", "ORG-002204", "ORG-001714", "ORG-001715", "ORG-001719",
+                    "ORG-001720", "ORG-001722", "ORG-001922", "ORG-003111", "ORG-001760", "ORG-001761", "ORG-001763", "ORG-002280", "ORG-002191", "ORG-002277",
+                    "ORG-002296", "ORG-002369", "ORG-002485", "ORG-001417", "ORG-001779", "ORG-002559", "ORG-002729"):
+            self.assertTrue(build_site.internal_wording(d[org]), org)
+
+    def test_a_role_line_with_build_wording_falls_back_to_the_vocabulary_role(self):
+        self.assertEqual(build_site.published_role({"role_as_published": "Professor of Chemistry", "role": "professor"}), "Professor of Chemistry")
+        self.assertEqual(build_site.published_role({"role_as_published": "Professor. Both pages fetched/searched 2026-11-04.", "role": "professor"}), "professor")
+        self.assertEqual(build_site.published_role({"role_as_published": "", "role": "research_staff"}), "research staff")
+        chair = "Professor, Ernest Cockrell, Jr. Centennial Chair in Engineering #1"      # '#1' is a chair, not a build marker
+        self.assertEqual(build_site.published_role({"role_as_published": chair, "role": "professor"}), chair)
+
+    def test_a_withheld_description_is_also_withheld_where_it_is_copied_without_its_temporary_id(self):
+        d = Path(tempfile.mkdtemp())
+        self.addCleanup(lambda: __import__("shutil").rmtree(d, ignore_errors=True))
+        db = d / "x.db"
+        con = sqlite3.connect(db)
+        con.execute("CREATE TABLE organizations (org_id TEXT, description_1line TEXT, notes TEXT)")
+        con.execute("INSERT INTO organizations VALUES ('O1', 'Singapore tire group parent of Giti Tire (USA) Ltd. in Ohio (NEW:MJ-07).', '')")
+        con.execute("INSERT INTO organizations VALUES ('O2', 'Fine.', 'Designed endpoint parent: Singapore tire group parent of Giti Tire (USA) Ltd. in Ohio')")
+        con.commit()
+        con.close()
+        held = export_release.held_pattern(db)
+        self.assertEqual(export_release.withhold_db(db, held), 2)
+        con = sqlite3.connect(db)
+        self.assertEqual(con.execute("SELECT notes FROM organizations WHERE org_id='O2'").fetchone()[0], "")
+        con.close()
+
+
 class ReleaseWithholdingTests(unittest.TestCase):
     def setUp(self):
         d = tempfile.TemporaryDirectory()
