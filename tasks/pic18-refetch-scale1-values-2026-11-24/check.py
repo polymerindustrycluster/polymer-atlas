@@ -43,7 +43,6 @@ SUBTYPE_WORDS = {
     "testing_lab": [r"test"],
     "die_cutting_converting": [r"convert|die.?cut"],
     "distribution": [r"distribut"],
-    "potting_encapsulation_casting": [r"\bcast|potting|encapsul"],
 }
 # Pinned inputs: the controller's frame (the first reader's rows) and the stability ledger rows for them.
 FRAME_SHA = "a1844035c84e16c954c4b892d9e92643de1508a2367fc025bf9ee88158bb589c"  # the controller's frame (sha256 1a176b86…) with CRLF as LF, as git stores CSVs
