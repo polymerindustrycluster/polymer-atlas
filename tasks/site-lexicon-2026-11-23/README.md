@@ -38,3 +38,5 @@ Notes cells are published as they are in the repository CSVs and the release (`n
 process-word hit in the release, after this pass: organizations 4,644, sites 6,841, evidence 23,116 (counts in `COUNTS.md`). Only temporary ids and copies of withheld descriptions are
 blanked there. Withholding or reducing notes in the release is a release-format and privacy-of-process choice: proposed for the owner, with the recommendation to
 drop the `notes` column from the release's organization and site CSVs and keep it in the repository. Nothing was changed.
+
+**Note, 2026-11-23, after #534.** The release-notes counts above (organizations 4,644, sites 6,841) describe the release as it was at the lexicon pass, before #534 removed the `notes` column from the release's organization and site tables. A scan of the post-#534 release counts neither. The evidence and other tables' counts are unchanged. This file is the dated record of that run and is not rewritten.

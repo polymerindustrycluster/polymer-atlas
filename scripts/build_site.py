@@ -3171,6 +3171,7 @@ that figure; it is not zero.</p>"""
     body = f"""
 <p class="small"><a href="index.html">Ohio counties</a> &rsaquo; {esc(county)}</p>
 <h1>{esc(county)} County, Ohio</h1>
+<p class="small jump">Jump to: <a href="#sites">Sites</a> &middot; <a href="#programs">Programs</a> &middot; <a href="#ecosystem">Ecosystem organizations</a></p>
 <p class="lede">One-page summary of the polymer industry records the Atlas holds for {esc(county)} County,
 {("a PIC-18 county (" + JOBSOHIO_REGION[county] + " region)") if county in PIC12 else "outside the PIC-18 counties"}. {esc(SOURCE_CLASS_NOTE)}</p>
 <div class="cards">
@@ -3196,11 +3197,11 @@ Tier U rows are candidates; they are included here because this page shows all t
 <p class="small muted">Bands, not headcounts. Where a site row records no band, the parent organization's Ohio band is counted in its own column.</p>
 <h2>Benchmark: BLS QCEW</h2>
 {qcew_html}
-<h2>Sites</h2>
+<h2 id="sites">Sites</h2>
 {sites_tbl}
-<h2>Programs in {esc(county)} County</h2>
+<h2 id="programs">Programs in {esc(county)} County</h2>
 {progs_html}
-<h2>Ecosystem organizations in {esc(county)} County</h2>
+<h2 id="ecosystem">Ecosystem organizations in {esc(county)} County</h2>
 {eco_html}
 """
     return page(ctx, f"{county} County", body, "../", "counties",
