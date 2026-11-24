@@ -1,16 +1,13 @@
 #!/usr/bin/env python3
 """Named check for the refetch scale-1 value fills.
 
-    python3 check.py            replay captures from the shared store (fails if a capture is absent)
-    python3 check.py --fresh    replay fresh through scripts/site_corpus.py (declared AtlasSiteCorpus/1.0): the cited page, else the fill's own
-                                archive capture; fails for any fill with neither, and prints how many of each it used
+    python3 check.py            replay the pinned captures from the shared store (fails if one is absent)
 
 Clean state must give no problems, then every planted defect must give a problem that names its rule.
 Exit 0 only when both hold.
 """
 import copy
 import csv
-import functools
 import hashlib
 import io
 import re
@@ -23,8 +20,7 @@ ROOT = HERE.parents[1]
 TASK = HERE.name
 STORE = Path("/Volumes/johnpswan/work/GAC/polymer-atlas/atlas-store")
 sys.path.insert(0, str(ROOT / "scripts"))
-import check_evidence_binding as gate  # noqa: E402  (text, claim and decode helpers; never used to fetch)
-import site_corpus  # noqa: E402
+import check_evidence_binding as gate  # noqa: E402  (text and claim helpers only; nothing here fetches)
 
 LABEL = f"claude-code {TASK}"
 OBSERVED = "2026-11-24"
@@ -300,32 +296,6 @@ def verify(s, bytes_for):
     return out
 
 
-@functools.lru_cache(maxsize=None)
-def _fetch(url):
-    """A page through scripts/site_corpus.py (declared AtlasSiteCorpus/1.0, robots-gated), decoded as the gate decodes it."""
-    rec = site_corpus.Corpus().fetch(url)
-    if rec["http_status"] != 200:
-        raise RuntimeError(f"site_corpus could not fetch {url}: {rec['status']} {rec['http_status']}")
-    return gate.decode_capture((site_corpus.Corpus().cache / rec["raw_file"]).read_bytes(), "")
-
-
-def make_fresh(fetch, archives, sources):
-    """A bytes_for that inspects only fresh pages: the cited page through the worker route, else (a refused robots.txt)
-    the fill's own archive capture through the same route. It raises when neither hashes to the recorded digest, so a
-    requested fresh verification never passes on stored bytes. `sources` records what was actually used per fill."""
-    def fresh(f):
-        for kind, url in (("live", f["capture"]), ("archive", re.sub(r"/web/(\d{14})/", r"/web/\1id_/", archives[f["evidence_id"]]["archive_ref"], count=1))):
-            try:
-                data = fetch(url)
-            except Exception:
-                continue
-            if hashlib.sha256(data).hexdigest() == f["capture_sha256"]:
-                sources[f["evidence_id"]] = kind
-                return data
-        raise RuntimeError("no fresh page hashes to the recorded digest")
-    return fresh
-
-
 def store_bytes(f):
     return (STORE / "provenance" / TASK / "captures" / f"{f['capture_sha256']}.html").read_bytes()
 
@@ -393,9 +363,9 @@ def plants(s, good):
     def other_instant(t):  # a live row's archive link moved to another capture of the page
         t["archives"][live["evidence_id"]]["archive_ref"] = "https://web.archive.org/web/20200101000000/" + live["url"]
     yield "reading", mutated(other_instant), good
-    def nothing_fresh(url):
-        raise OSError("origin unavailable")
-    yield "capture", s, make_fresh(nothing_fresh, s["archives"], {})  # every origin down: a fresh replay must fail, not fall back
+    def absent(f):
+        raise FileNotFoundError("capture absent from the store")
+    yield "capture", s, absent  # an absent capture must fail, never pass
     yield "subtype word", mutated(lambda t: t["fills"][0].__setitem__("new", "plastics_machining_cnc")), good  # quote lacks CNC
     yield "subtype word", mutated(lambda t: t["fills"][0].__setitem__("new", "injection_molding")), good
     def control(t):  # a row from the control owner applied
@@ -411,10 +381,8 @@ def plants(s, good):
 
 
 def main():
-    fresh = "--fresh" in sys.argv
     s = load()
-    sources = {}
-    good = make_fresh(_fetch, s["archives"], sources) if fresh else store_bytes
+    good = store_bytes
     problems = verify(s, good)
     for p in problems:
         print("FAIL", p)
@@ -427,8 +395,7 @@ def main():
     if problems or caught != len(cases):
         print(f"FAIL: {len(problems)} problem(s); {caught}/{len(cases)} planted defects caught")
         return 1
-    used = "from the store" if not fresh else "fresh (" + ", ".join(f"{k} {list(sources.values()).count(k)}" for k in ("live", "archive")) + ")"
-    print(f"PASS: {len(s['fills'])} fills replayed {used}; {caught}/{len(cases)} planted defects caught")
+    print(f"PASS: {len(s['fills'])} fills replayed from the store; {caught}/{len(cases)} planted defects caught")
     return 0
 
 
