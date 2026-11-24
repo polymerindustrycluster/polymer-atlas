@@ -455,14 +455,17 @@ another family.
 other than its builder can read is read by Gemini, gets a second read
 from a family flagged as the builder's, and gets a lead re-check from a
 fresh source fetch. The report shows each stratum with and without these
-records.
+records. The 21:27 stop below overtook this ruling: no lead re-checks ran,
+and the report gives no per-stratum rates with or without these records.
 
 ## 2026-11-23 21:27 · Audit 12 stopped early; the next audit is lean
 
-“Stop now, verify sample.” Reader flags already placed each stratum at or
-past its fail line, so all readers and lead lanes were stopped. One
-verifier confirms flagged errors in rank order until each stratum fails
-on verified errors alone, then sorts the confirmed errors into repair
+“Stop now, verify sample.” Reader flags already placed each stratum past
+or near its fail line, so all readers and lead lanes were stopped. Some
+strata reached the line only with unresolved records counted as errors,
+which is the audit's conservative treatment. One verifier confirms flagged
+errors in rank order until each stratum fails on verified errors alone.
+It then sorts all flagged errors, most of them unverified, into repair
 classes. There is no stage 2, no third read and no lead sweep. The audit
 12 report gives the result and the error classes, not exact rates.
 
@@ -476,23 +479,29 @@ owner ruling, with sizes and false-pass risk recomputed.
 ## 2026-11-23 21:43 · Fan-outs are priced and piloted (AGENTS.md §2a rule 8)
 
 “Make this a durable rule change.” Audit 12 spent about 450M input
-tokens, measured from provider usage logs, across 20 threads to confirm a
-FAIL its pilot had already shown. The owner adopted AGENTS.md §2a rule 8
-as written: a fan-out is priced and piloted before it scales, an audit
-is lean, and spend is measured while work runs.
+tokens across 20 threads to confirm a FAIL its pilot had already shown.
+The Claude and Codex shares come from their provider usage logs. The
+Gemini share comes from bb's usage events, because no Gemini usage log
+was read, so it is unverified. The owner adopted AGENTS.md §2a rule 8 as
+written: a fan-out is priced and piloted before it scales, an audit is
+lean, and spend is measured while work runs. Review corrected only its
+sentence on enforcement, to state exactly what the harness checks.
 
 - “8 live children.” The controller's harness refuses a spawn while 8 or
   more of its children are unarchived, unless the command carries the
-  owner's fan-out tag. It refuses spawns run from a script file or a
-  loop, and any spawn whose brief has no `Budget:` line.
+  owner's fan-out tag. Without that tag it also refuses spawns run from
+  a script file or a loop. It refuses any spawn whose brief has no
+  `Budget:` line, tag or not.
 - “200M per 2 hours.” When the controller's children have spent more
   than 200M input tokens over a rolling two hours, the controller's
-  outcome line turns RED and non-critical spawns are blocked. The first
-  week's spend rate goes to the owner.
+  outcome line turns RED. Spawns are then blocked unless marked critical
+  path or owner-approved. The meter counts only the controller's direct
+  children and reads Gemini spend from bb's events. The first week's
+  spend rate goes to the owner.
 - “Yes, skill + lesson.” The cross-project bb-orchestration skill gains a
   fan-out budget section, and the lesson is proposed for the portfolio
   lessons file.
 
-Rule 8 is practice in this repo. CI does not check it; only the
-controller's harness enforces the spawn side, and it cannot see spawns by
-other harnesses or other projects.
+Rule 8 is practice in this repo. CI does not check it. The controller's
+harness checks only the parts listed above, and it cannot see spawns by
+other harnesses, by children or in other projects.
