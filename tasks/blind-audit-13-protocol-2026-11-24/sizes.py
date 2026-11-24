@@ -43,14 +43,31 @@ ASSIGNED = {"Astra": 108, "Hydrogen": 108, "Sonnet": 69}
 SHARE = 0.15
 ALLOW = 2
 SMOKE = 40
-STRATA = {
-    "PIC-18": 0.05,
-    "Rest of Ohio": 0.10,
-    "Rest of country": 0.10,
-    "Researchers": 0.10,
-    "Programs": 0.10,
-    "Events and participation": 0.10,
-}
+# Owner ruling 2026-11-24 ("PIC-18 only"): the audit frame is the PIC-18 owners and their sites.
+STRATA = {"PIC-18": 0.05}
+# Owner ruling 2026-11-24 (look-back): the gate counts k, a record with a contradicted core field.
+# Unconfirmed claims (u) are reported by field and never counted. The numbers below only measure
+# the open owner choices (OWNER_CHOICES.md); they decide nothing.
+STOP_OPTIONS = (2, 3, 4, 5)  # smoke stops at the m-th record with a contradicted core field
+CORE_RATES = (0.02, 0.05, 0.08)  # true shares of PIC-18 records with a contradicted core field
+DESC_RATES = (0.0, 0.05, 0.10, 0.20)  # true shares with a contradicted descriptive field
+UNCONFIRMED_SHARES = (0.10, 0.20, 392 / 1000)  # 74 of 189 audit 12 records (old unit, any field)
+CEILINGS = (8, 12, 16)  # records of the smoke with an unconfirmed core claim (20%, 30%, 40%)
+CORE = {"name", "status", "street", "county", "polymer_relevance"}
+
+
+def grade_record(verdicts):
+    """Apply the 2026-11-24 unit to one record's (field kind, verdict) pairs.
+
+    Returns (k, unconfirmed fields, contradicted descriptive fields). A blank value is not a
+    claim and never appears. UNRESOLVED is never an error; a core contradiction makes k one.
+    """
+    k = int(any(f in CORE and v in {"FIELD_ERROR", "CREATION_ERROR"} for f, v in verdicts))
+    unconfirmed = sorted(f for f, v in verdicts if v == "UNRESOLVED")
+    descriptive = sorted(
+        f for f, v in verdicts if f not in CORE and v in {"FIELD_ERROR", "CREATION_ERROR"}
+    )
+    return k, unconfirmed, descriptive
 
 
 def calibration(hist):
@@ -108,22 +125,22 @@ def choices():
     lines = [
         "## Decision rule",
         "",
-        "Power means probability of a stratum PASS conditional on reaching the draw, with no additional unresolved records.",
+        "Power means probability of a PIC-18 PASS conditional on reaching the draw. k counts records with a contradicted core field.",
         "Power triplets are at true record error rates of 1%, 2%, 3%, in that order. Boundary risks use no second-reader rescue.",
         "",
-        "| Rule | Stratum | n | Allow k+u / fail on | Power, perfect | Power, single + checks | PASS at target, 20% miss | PASS at target, stress | PASS at 1.5× target, 20% miss / stress |",
+        "| Rule | Frame | n | Allow k / fail on | Power, perfect | Power, single + checks | PASS at target, 20% miss | PASS at target, stress | PASS at 1.5× target, 20% miss / stress |",
         "|---|---|---:|---:|---|---|---:|---:|---|",
     ]
     budgets = []
     for label in ("Stress-safe", "Plant-calibrated"):
         total = 0
-        for t, region in [(0.05, "PIC-18"), (0.10, "Each other stratum")]:
+        for t, region in [(0.05, "PIC-18")]:
             n, k = (
                 (size(t, stress), ALLOW)
                 if label == "Stress-safe"
                 else powered_plan(t * 0.8, 0.02, t)
             )
-            total += n * (1 if t == 0.05 else 5)
+            total += n
             powers = [
                 " / ".join(f"{cdf(n, k, p * (1 - m)):.1%}" for p in (0.01, 0.02, 0.03))
                 for m in (0, checked)
@@ -147,8 +164,8 @@ def choices():
             f"Before drawing, score {plants} fresh distinct plants per primary family, {2 * plants} calls total. Allow ≤{misses} misses in each;",
             f"at that cutoff the upper endpoint is {exact_upper(misses, plants):.2%}. At {mean:.2%} true miss, each family qualifies with probability {cdf(plants, misses, mean):.1%}.",
             "Stop on the first excess miss or missing output. A failed calibration returns to the owner without a draw or repeat trial.",
-            "For each stratum choose the smallest n allowing ≥80% power at true 2% under perfect reads, Wilson within target,",
-            "and ≤2.5% boundary PASS at 20% miss. Keep k+u throughout; the first count above the allowance stops the stratum.",
+            "Choose the smallest n allowing ≥80% power at true 2% under perfect reads, Wilson within target,",
+            "and ≤2.5% boundary PASS at 20% miss. Keep k throughout; the first count above the allowance stops the draw.",
             "",
             "| Option (M input tokens) | OpenAI | Google | Anthropic | Total |",
             "|---|---:|---:|---:|---:|",
@@ -185,15 +202,61 @@ def owner_figures():
     return "\n".join(rows + [""] + comparison[first : first + 6]) + "\n"
 
 
+def smoke_tables(stress):
+    """Measured consequences of the open smoke choices (binomial, independent records)."""
+    lines = [
+        "### Smoke options (answered 2026-11-24; kept for the record)",
+        "",
+        "smoke-stop: P(smoke reaches the end of its 40 records) at a true share of PIC-18 records with a contradicted core field.",
+        "A stop at the m-th k advances with at most m−1 of 40. Perfect reads, then the stress miss.",
+        "",
+        "| Stop at the m-th k | " + " | ".join(f"core {p:.0%}" for p in CORE_RATES) + " | "
+        + " | ".join(f"core {p:.0%}, stress" for p in CORE_RATES) + " |",
+        "|---:|" + "---:|" * (2 * len(CORE_RATES)),
+    ]
+    for m in STOP_OPTIONS:
+        cells = [f"{cdf(SMOKE, m - 1, p * (1 - miss)):.1%}" for miss in (0, stress) for p in CORE_RATES]
+        lines.append(f"| {m} | " + " | ".join(cells) + " |")
+    lines.extend(
+        [
+            "",
+            "descriptive-stop: if a contradicted descriptive field also counted toward the stop at the third. Perfect reads;",
+            "core and descriptive errors independent. Columns are true descriptive shares.",
+            "",
+            "| True core share | " + " | ".join(f"descriptive {d:.0%}" for d in DESC_RATES) + " |",
+            "|---:|" + "---:|" * len(DESC_RATES),
+        ]
+    )
+    for p in CORE_RATES[:2]:
+        cells = [f"{cdf(SMOKE, 2, 1 - (1 - p) * (1 - d)):.1%}" for d in DESC_RATES]
+        lines.append(f"| {p:.0%} | " + " | ".join(cells) + " |")
+    lines.extend(
+        [
+            "",
+            "unconfirmed-ceiling: P(more than the ceiling of the 40 records have an unconfirmed core claim), by true share.",
+            "The 39.2% column is audit 12's any-field share under the old unit (74 of 189); the core-only share is lower and unmeasured.",
+            "",
+            "| Ceiling (records of 40) | " + " | ".join(f"true {q:.1%}" for q in UNCONFIRMED_SHARES) + " |",
+            "|---:|" + "---:|" * len(UNCONFIRMED_SHARES),
+        ]
+    )
+    for c in CEILINGS:
+        lines.append(f"| {c} | " + " | ".join(f"{1 - cdf(SMOKE, c, q):.1%}" for q in UNCONFIRMED_SHARES) + " |")
+    return lines
+
+
 def report():
     lines = [
         "## Decision numbers",
         "",
-        "Smoke: 40 random PIC-18 records. Stop on the third k+u (3/40 = 7.5% of the planned sample).",
-        "Continue only after all 40 with k+u ≤ 2, complete replay accounting and valid controls.",
+        "Smoke: 40 random PIC-18 records (organization, ecosystem and site rows, each a separate sampled record; published values only). k = distinct sampled records with a source-contradicted core field.",
+        "Smoke stop count (owner ruling): stop at the 3rd record with a contradicted core field, 3/40 = 7.5% of the planned sample.",
+        "A contradicted descriptive field is reported by field and never stops the smoke (owner ruling).",
+        "Unconfirmed claims (u) are reported by field and never stop the smoke; there is no ceiling on the unconfirmed share now (owner ruling). The owner sets any ceiling for a draw after the smoke.",
+        "Continue only if the stop count is not reached in all 40, with complete replay accounting and valid controls.",
         "Check each unflagged record independently with probability 15%. Every flagged record gets a second read.",
-        "Stress-safe draw: allow 2 adverse records per stratum, fail immediately on 3; no early PASS.",
-        "Final PASS also requires the two-sided 95% Wilson upper bound at k+u ≤ the target.",
+        "Stress-safe draw: allow 2 records with a contradicted core field in the PIC-18 stratum, fail immediately on 3; no early PASS.",
+        "Final PASS also requires the two-sided 95% Wilson upper bound at k ≤ the target.",
         "",
         "| Family | Assigned plant calls | Returned | Detected on planted field | Mean miss by plant | 95% interval |",
         "|---|---:|---:|---:|---:|---:|",
@@ -218,7 +281,7 @@ def report():
             "Stress-safe rule: minimum n satisfying Wilson and ≤2.5% boundary PASS in the stress model. Percentages below are",
             "P(final PASS), conditional on starting the draw in the independent-record model. Each pair is at target / 1.5× target.",
             "",
-            "| Stratum | Target | n | Stop / fail | Perfect reads | Single | Single + checks | Stress, no rescue |",
+            "| Frame | Target | n | Stop / fail | Perfect reads | Single | Single + checks | Stress, no rescue |",
             "|---|---:|---:|---:|---:|---:|---:|---:|",
         ]
     )
@@ -234,12 +297,12 @@ def report():
     lines.extend(
         [
             "",
-            "Operating cost of the tight acceptance line: at a true 2% error rate and perfect reads,",
-            f"PIC-18 passes {cdf(size(0.05, stress), ALLOW, 0.02):.1%} of draws and each other stratum passes {cdf(size(0.10, stress), ALLOW, 0.02):.1%};",
-            f"at a 5% true adverse rate the smoke gate alone advances {cdf(SMOKE, ALLOW, 0.05):.1%} of the time (perfect reads).",
+            "Operating cost of the tight acceptance line: at a true 2% core-field error rate and perfect reads,",
+            f"the PIC-18 draw passes {cdf(size(0.05, stress), ALLOW, 0.02):.1%} of the time.",
             "Small displayed percentages are rounded; the binomial tail is positive.",
         ]
     )
+    lines.extend(["", *smoke_tables(stress)])
     lines.extend(
         [
             "",
@@ -297,6 +360,20 @@ def check():
         n, k = powered_plan(t * 0.8, 0.02, t)
         assert cdf(n, k, 0.02) >= 0.80 and upper(k, n) <= t
         assert cdf(n, k, t * 0.8) <= 0.025 < cdf(n, k + 1, t * 0.8)
+    # Planted cases for the 2026-11-24 unit: an unconfirmed claim is never an error, a descriptive
+    # contradiction never gates, a core contradiction gates once, a blank value is no claim.
+    assert grade_record([("street", "UNRESOLVED")]) == (0, ["street"], [])
+    assert grade_record([("street", "FIELD_ERROR"), ("county", "UNRESOLVED")]) == (1, ["county"], [])
+    assert grade_record([("name", "FIELD_ERROR"), ("status", "FIELD_ERROR")])[0] == 1
+    assert grade_record([("process", "FIELD_ERROR")]) == (0, [], ["process"])
+    assert grade_record([("name", "CREATION_ERROR")]) == (1, [], [])
+    assert grade_record([("name", "AGREE"), ("market", "UNRESOLVED")]) == (0, ["market"], [])
+    assert grade_record([]) == (0, [], [])
+    # The smoke table reproduces the earlier stop-on-third value at a 5% share, perfect reads.
+    assert f"{cdf(SMOKE, 2, 0.05):.1%}" in "\n".join(smoke_tables(stress))
+    assert (HERE / "OWNER_CHOICES.md").read_text().split("<!-- choice figures -->\n")[
+        1
+    ] == "\n".join(smoke_tables(stress)) + "\n"
     assert (HERE / "OWNER_QUESTION.md").read_text().split("<!-- owner figures -->\n")[
         1
     ] == owner_figures()
@@ -308,7 +385,7 @@ def check():
     printed, after = body.split(END)
     assert printed == result, "PROTOCOL.md differs from calculation"
     # All numeric prose belongs in the computed block. Links are source locators.
-    assert not re.search(r"\d", re.sub(r"\]\([^)]*\)", "]", before + after)), (
+    assert not re.search(r"\d", re.sub(r"PIC-18", "PIC", re.sub(r"\]\([^)]*\)", "]", before + after))), (
         "untraced protocol number"
     )
     print("sizes selftest: PASS")
