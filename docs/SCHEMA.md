@@ -1101,7 +1101,7 @@ One record per distinct physical location (plant, HQ office if separate from pla
 | `last_activity_source` **[v1.19]** | enum, nullable | Derived | Which witness class set `last_activity_date`: `osha_ita` \| `osha_inspection` \| `echo` \| `fmcsa_mcs150` (extensible only by dated revision, as further sources are wired into the derivation). Only tier-A (name + street) matches feed the derivation — a derived record field never rests on a name/city-only match. Where two sources cover a site the later date wins; on an exact date tie the day-precise source is named. |
 | `ring_primary` (site-level) | enum 1–5 | **MUST** | May differ from Parent (Parker rule) |
 | `naics_primary` + provenance | §2.1 | **MUST** | Site NAICS often differs from Parent NAICS — never copy Parent NAICS to site without a site source or `researcher_inferred` flag |
-| `processes[]` / `materials[]` / `markets_served[]` | §3 | **MUST** (processes required for Ring 1/2/3 sites) | Site-level truth; this is the most valuable field set in the DB. **[v1.20.0]** Public display of each value carries its basis from §4.24 |
+| `processes[]` / `materials[]` / `markets_served[]` | §3 | **MUST** (processes required for Ring 1/2/3 sites) | Site-level truth; this is the most valuable field set in the DB. **[v1.20.0]** Public display of each `processes[]` and `markets_served[]` value carries its basis from §4.24 |
 | `processes_other_note` / `materials_other_note` **[v1.9.1]** | free text, nullable | Nice | Original source wording that cannot be mapped to §3.1/§3.2 without interpretation; semicolon-joined and deduplicated. Each column immediately follows its corresponding capability column in every site shard. Not a controlled capability claim; never upgraded without a source. Owner battery B-VOC, 2026-11-03. |
 | `employee_band_site` | enum §4.4 | **MUST** if any source gives it; else `unknown` | Never allocate Parent headcount pro-rata to sites |
 | `operating_status` + dates | §4.2 vocab per site | **MUST** | A Parent can be `active` while a site is `idled`/`closed` |
@@ -1771,6 +1771,11 @@ measured PIC-18 sites, so the listing is never the only witness.
   or an existing held lead for that site. Same-street equality is the
   normalized street line and designator comparison of the county-bearing
   street route above, decided by script and never by a reader's judgment.
+- **Physical street only.** A street that a listing, or the second source,
+  states as a mailing, agent or registered-office address (`address_role`,
+  §4.13 above) cannot qualify as the site's physical street because the
+  strings agree. A listing whose role is unspecified follows the two-source
+  rule as written.
 - **Never overwrites.** The route fills a blank cell and nothing else. A
   held street is never replaced by a listing street, and a listing that
   disagrees with a held street is a lead to adjudicate.
@@ -1803,7 +1808,8 @@ bind the street to a name the record holds.
   `org_id`.
 - **Evidence row.** One row per added name: `record_table=organizations`,
   `claim_type=existence`, `claim_detail` of the form `trade_names +
-  <filing name> (OSHA filing name)`, `source_class=government_filing`,
+  <filing name> (<OSHA or EPA> filing name)` (the agency in the marker is the
+  filing's own), `source_class=government_filing`,
   `source_ref` the filing as §4.13's binding routes cite it. The row's
   `tier_effect` follows the class ceiling above and, as for every evidence
   row, never by itself raises the record's tier.
@@ -2797,8 +2803,8 @@ values stay public, each with a label that says how well it is supported. This t
 | `field` | enum | `processes` \| `markets_served` \| `street_address` |
 | `value` | string | The controlled-vocabulary token for `processes` and `markets_served`; empty for `street_address` (one street per site) |
 | `basis` | enum | The closed vocabulary below |
-| `evidence_id` | FK → §4.13, nullable | The evidence row that decides the basis; empty only for `not_yet_checked` where no row names the value |
-| `basis_date` | date, nullable | The date of the read that set the basis; empty for `not_yet_checked` |
+| `evidence_id` | FK → §4.13 | **MUST.** The evidence row that decides the basis: for `not_yet_checked`, the bound row that names the value and a page. A value no evidence row names has no row in this table and is outside this ruling |
+| `basis_date` | date, nullable | The date of the read that set the basis; empty for `not_yet_checked` (no read has run) |
 
 Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
 
