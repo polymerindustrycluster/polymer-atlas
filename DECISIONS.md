@@ -615,3 +615,55 @@ filled. The way the controller asks the owner for decisions is unchanged.
 
 Decided by the repo owner in session, 2026-11-24, by multiple choice. The audit unit was the recommended option; the
 other three answers ("pilot, but in the future", "wait", "keep as now") were not.
+
+## 2026-11-24 · Owner rulings 10:29: map-listing streets, per-value basis labels, implied and unstated values, filing name variants
+
+The owner answered four questions by multiple choice. All four answers were the recommended option. Each ruling is
+recorded below with its measured effect. The implementation (generator, gate routes, fills) comes in later PRs that
+cite this one; this entry and its PR change no data file and no script.
+
+**1. Map-listing streets.** A street from a map listing (Overture Maps places first; Google listings for what remains; the
+owner accepts the terms-of-service exposure of Google-derived addresses) may fill a blank site `street_address` only where
+it agrees with a second source the Atlas holds: a government filing (OSHA, EPA, SBA PPP or SAM.gov), the company's own
+site, or an existing held lead. Same-street equality is decided by script. The cell carries the label "from a map
+listing". The route never overwrites a street. A filled street is audited against the PIC-18 5% street error bar like any
+other street. County still settles from the physical address (Census geocode), never from the listing.
+- Measured (PIC-18 sites with a blank street_address, 155): Overture matched 68 by held name and city; 44 of those agree
+  with a held lead. About 6 of 57 listings point elsewhere (the headquarters or another plant). That is why name and city
+  alone were not chosen.
+- Does not change: county settlement, the street error bar, the never-overwrite rule, the PMIR bar (a platform row is
+  never sole support for a scope claim). Emails and phones are never pulled.
+- Written as: SCHEMA v1.20.0 §4.13 (source class `platform_category`, no vocabulary addition; ceiling `supports_C`),
+  AGENTS.md §2a rule 3, and the `overture-maps-places` row in `docs/sources_registry.csv` and `docs/SOURCES.md`.
+
+**2. Unquoted process and market values.** A bound evidence row can name a value and a page and save none of the page's
+words. Those values stay public with a generated per-value basis label: stated, from a filing, implied or not yet
+checked. All 385 PIC-18 owners with such values are re-read against their stored pages.
+- Measured (re-quote pilot: 40 PIC-18 owners, 168 values, one Codex reader): 0 values contradicted by their page; of the
+  values with a readable page, 68% of process values and 74% of market values were stated.
+- Does not change: the binding gate and the quote rules for new rows; this ruling concerns values already public.
+- Written as: SCHEMA v1.20.0 §4.24 (the generated `value_basis` table) and the §4.4 and §4.5 pointers.
+
+**3. Implied and unstated values.** A value the page supports only by inference ("we make bottles" for blow molding) stays,
+labelled "implied". A value the page does not state (NOT_STATED) is hidden from public display, never deleted, until a
+fresh fetch of the company's pages finds it or confirms it is absent. The ruling names no step after a confirmed absence. The controller reads the
+earlier ruling (a value no source states goes back to unknown) as applying; that is an inference, not part of this ruling.
+- Does not change: the record tables keep a hidden value throughout. The ruling states nothing about how an audit counts a
+  hidden value; the look-back ruling's audit unit stands as written.
+- Written as: SCHEMA v1.20.0 §4.24 (basis `implied`; basis `not_found_pending_refetch`, withheld from display).
+
+**4. Filing name variants.** Where an OSHA or EPA filing at the same street and city names the operator in a longer or
+older form ("Swagelok Manufacturing Company" for "Swagelok"; "C 4 Polymers" for "C4 Polymers"), the filing's name is added
+to the organization as an alternate name citing that filing, when its distinctive words match a held name and its street
+and city match. A second model family checks each addition. The street then fills through the normal binding gate.
+- Measured: 17 PIC-18 sites.
+- Does not change: no records merge, no `org_id` changes, no tier rises; the binding gate's operator test is unchanged,
+  it simply sees a name the record now holds.
+- Written as: SCHEMA v1.20.0 §4.13 (the rule) and §4.4 (`trade_names[]`, marker `(OSHA filing name)` or
+  `(EPA filing name)`, following the `(TRI filing name)` entries), and AGENTS.md §2a rule 3.
+
+**Follow-on PRs (each cites this one).** The `value_basis` generator, its validator rule and the first fill from the
+385-owner re-read; the gate routes for the map-listing street and the filing name variant; the Overture street fill
+(moving the raw pull to the shared store); the name-variant additions with their second-family checks.
+
+Decided by the repo owner in session, 2026-11-24 10:29, by multiple choice. All four were the recommended option.

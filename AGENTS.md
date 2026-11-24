@@ -185,6 +185,14 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    Own-site web rows must also clear the web mechanics, replay against
    the cited main text, and carry a reading with a self-reported family
    different from the builder’s.
+   Two further routes (owner ruling 2026-11-24 10:29, SCHEMA §4.13): a
+   map-listing street may fill a blank site street only where a second
+   held source agrees on the same street by script, and a filing's name
+   for the operator may join `trade_names` only on the filing name-variant
+   conditions, each addition checked by a second model family. Neither
+   route overwrites a street, and a map listing never settles county.
+   **Not yet checked:** the gate implements neither route. No row is
+   admitted by either route until its gate route lands in a later PR.
 4. **Review is tiered by risk, recorded on the PR.** *Practice.* (Owner
    ruling 2026-11-22, "tier by risk".) A PR that changes any file under
    `data/` gets review records from two model families at the current head;
@@ -306,6 +314,14 @@ reading or judgment, no new evidence row, a deterministic check with planted
 defects) merge on one review record, from Codex. Recorded in `DECISIONS.md` with the
 same day's rulings "Publish only what's stated" and "PIC-18 only". No data
 file is changed by this revision.*
+
+*Revision note — 2026-11-24 (owner ruling 10:29, multiple choice, all four
+options as recommended): §2a rule 3 admits two routes through the binding
+gate, a map-listing street for a blank site street (two held sources must
+agree, by script) and a filing name variant added to `trade_names`
+(second-family check). SCHEMA v1.20.0 §4.13 states the conditions; the
+gate implementation follows in a later PR. Recorded in `DECISIONS.md`. No
+other rule is amended and no data file is changed by this revision.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 
