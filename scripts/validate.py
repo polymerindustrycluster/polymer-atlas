@@ -1115,8 +1115,9 @@ else:
 import value_basis
 _vb_problems, _vb_info = value_basis.check(DATA, ROOT / "tasks")
 errors.extend(f"{p} (V-69)" for p in _vb_problems)
-if _vb_info["stated_not_replayed"]:
-    warnings.append(f"V-69 NOT_INSPECTED: {_vb_info['stated_not_replayed']} stated quotes not replayed: no page store in CI; "
+if _vb_info["stated_not_replayed"] or _vb_info["page_urls_not_checked"]:
+    warnings.append(f"V-69 NOT_INSPECTED: {_vb_info['stated_not_replayed']} stated quotes not replayed and "
+                    f"{_vb_info['page_urls_not_checked']} page URLs not checked against the corpus manifest: no page store in CI; "
                     f"the lane check and reviewer replay them (value_basis.py --check --pages <store>)")
 
 evt_ids = set()

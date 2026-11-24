@@ -24,6 +24,7 @@ import argparse
 import csv
 import hashlib
 import io
+import json
 import re
 import sys
 from collections import Counter, defaultdict
@@ -127,6 +128,36 @@ def load_page_urls(folder, problems):
         return {r["page_sha256"]: (r["page_url"], r.get("requested_url") or "") for r in reader}
 
 
+def manifest_index(store):
+    """{resolved page path: (final_url, requested_url)} from the lane's corpus manifests and fetch receipts under the store."""
+    store = Path(store)
+    out, corpus, scale = {}, store / "pic18-corpus-2026-11-16", store / "process-web-scale-2026-11-23"
+    for mf in sorted(corpus.glob("ORG-*/manifest*.csv")):
+        for r in read_csv(mf):
+            if r["raw_file"] and r["status"] == "ok":
+                out[str((corpus / r["raw_file"]).resolve())] = (r["final_url"] or r["url"], r["url"])
+    for rc in sorted(scale.glob("fetches*.jsonl")):
+        for line in rc.read_text(encoding="utf-8").splitlines():
+            r = json.loads(line)
+            if r["kind"] == "page" and r["classification"] == "ok" and r["sha256"]:
+                out[str((scale / "captures" / (r["sha256"] + ".html")).resolve())] = (r.get("final_url") or r["url"], r["url"])
+    if (scale / "candidates.csv").exists():
+        for r in read_csv(scale / "candidates.csv"):
+            out.setdefault(str((scale / "captures" / (r["capture_sha256"] + ".html")).resolve()), (r["url"], r["url"]))
+    return out
+
+
+def page_url_problem(v, manifest, store):
+    """'' when the line's VALUE_PAGES.csv URLs are what the corpus manifest records for its page; else why not."""
+    hit = manifest.get(str((Path(store) / v["page_path"]).resolve()))
+    if hit is None:
+        return "the corpus manifest has no entry for the page"
+    final, requested = hit
+    if v["_url"] != final or (v["_requested"] and v["_requested"] != requested):
+        return f"VALUE_PAGES.csv gives {v['_url']!r} / {v['_requested']!r} but the corpus manifest records {final!r} / {requested!r}"
+    return ""
+
+
 def load_verdicts(tasks, problems, held):
     """tasks/<folder>/VALUE_VERDICTS.csv lines (values.csv format), shape-checked. -> [(line dict, read date)]."""
     out = []
@@ -210,7 +241,8 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
     orgs, sites = table_rows(data, "organizations"), table_rows(data, "sites")
     evidence = {r["evidence_id"]: r for r in table_rows(data, "evidence")}
     proofs = load_proofs(tasks, evidence, problems)
-    verdicts_by_key, unreplayed = defaultdict(list), 0
+    verdicts_by_key, unreplayed, urls_unchecked = defaultdict(list), 0, 0
+    manifest = manifest_index(pages) if pages else {}
     by_record = defaultdict(list)
     for e in evidence.values():
         by_record[(e["record_table"], e["record_id"])].append(e)
@@ -245,6 +277,12 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
             problems.append(f"{v['_at']}: STATED quote does not replay: {why}")
             continue
         unreplayed += v["class"] == "STATED" and not pages
+        if pages:
+            if why := page_url_problem(v, manifest, pages):
+                problems.append(f"{v['_at']}: {why}")
+                continue
+        else:
+            urls_unchecked += 1
         verdicts_by_key[key].append((read_date, v))
     rows, unnamed, unbound = [], Counter(), []
     for key in sorted(held):
@@ -291,7 +329,7 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
             continue
         _, eid, basis, date = min(cands, key=lambda c: (-c[0], c[1]))  # highest rank; lowest evidence_id on a tie
         rows.append(dict(zip(COLS, (table, rid, field, tok, basis, eid, date))))
-    info = {"unnamed": unnamed, "stated_not_replayed": unreplayed, "held": len(held), "verdict_unbound": unbound}
+    info = {"unnamed": unnamed, "stated_not_replayed": unreplayed, "held": len(held), "verdict_unbound": unbound, "page_urls_not_checked": urls_unchecked}
     return rows, problems, info
 
 
@@ -399,7 +437,8 @@ def main(argv=None):
             print(p)
         print(f"value basis: {'differs from' if problems else 'matches'} a fresh generation; {info['held']} held values, "
               f"{sum(info['unnamed'].values())} named by no bound row (not_yet_checked, empty evidence_id), "
-              f"NOT_INSPECTED: {info['stated_not_replayed']} STATED verdict quotes not replayed (no --pages), "
+              f"NOT_INSPECTED: {info['stated_not_replayed']} STATED verdict quotes not replayed and "
+              f"{info['page_urls_not_checked']} page URLs not checked against the corpus manifest (no --pages), "
               f"{len(info['verdict_unbound'])} verdict lines on another page of the cited site give no label")
         return 1 if problems else 0
     rows, problems, info = generate(Path(a.tree) / "data", Path(a.tree) / "tasks", a.pages)

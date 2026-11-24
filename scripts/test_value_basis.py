@@ -208,11 +208,19 @@ def verdict(cls, quote="", offset="", sha=None, key=KEY, page="p.html"):
 class Verdicts(unittest.TestCase):
     NAMED = [ev("EVD-1", "SITE-1", "sites.processes includes custom_compounding")]
 
-    def tree(self, rows, **kw):
+    def tree(self, rows, manifest=None, **kw):
         t = Tree(self.NAMED, verdict_rows=rows, **kw)
-        (t.root / "pages").mkdir()
-        (t.root / "pages" / "p.html").write_bytes(PAGE)
+        self.store(t, manifest or (kw.get("page_url", "https://www.acme.example/p/"), kw.get("requested_url") or kw.get("page_url", "https://www.acme.example/p/")))
         return t
+
+    @staticmethod
+    def store(t, manifest):
+        """A page store: p.html plus the corpus manifest entry (final_url, url) the sidecar's URLs are checked against."""
+        (t.root / "pages").mkdir(exist_ok=True)
+        (t.root / "pages" / "p.html").write_bytes(PAGE)
+        d = t.root / "pages" / "pic18-corpus-2026-11-16" / "ORG-1"
+        write(d / "manifest.csv", [{"raw_file": "../p.html", "url": manifest[1], "final_url": manifest[0], "status": "ok"}],
+              ["raw_file", "url", "final_url", "status"])
 
     def test_stated_verdict_replays_against_the_stored_page(self):
         t = self.tree([verdict("STATED", QUOTE, str(OFFSET))])
@@ -279,8 +287,7 @@ class Verdicts(unittest.TestCase):
     def test_stated_verdict_with_only_organization_evidence_is_refused(self):  # planted defect
         t = Tree([ev("EVD-1", "ORG-1", "processes=custom_compounding", table="organizations")],
                  verdict_rows=[verdict("STATED", QUOTE, str(OFFSET))])
-        (t.root / "pages").mkdir()
-        (t.root / "pages" / "p.html").write_bytes(PAGE)
+        Verdicts.store(t, ("https://www.acme.example/p/", "https://www.acme.example/p/"))
         got, problems, _ = t.basis(t.root / "pages")
         self.assertTrue(any("not only its organization" in p for p in problems), problems)
         self.assertEqual(got[KEY][0], "not_yet_checked")
@@ -300,13 +307,36 @@ class Verdicts(unittest.TestCase):
     def test_positive_control_row_citing_the_south_page_gives_stated(self):
         t = Tree([ev("EVD-1", "SITE-1", "processes=custom_compounding", ref="https://acme.example/south")],
                  verdict_rows=[verdict("STATED", QUOTE, str(OFFSET))], page_url="https://www.acme.example/south")
-        (t.root / "pages").mkdir()
-        (t.root / "pages" / "p.html").write_bytes(PAGE)
+        Verdicts.store(t, ("https://www.acme.example/south", "https://www.acme.example/south"))
         self.assertEqual(t.basis(t.root / "pages")[0][KEY], ("stated", "EVD-1", "2026-11-24"))
 
     def test_recorded_redirect_to_the_cited_page_counts_as_that_page(self):
         t = self.tree([verdict("STATED", QUOTE, str(OFFSET))], page_url="https://acme.example/final", requested_url="https://acme.example/p")
         self.assertEqual(t.basis(t.root / "pages")[0][KEY][0], "stated")
+
+    def test_forged_page_url_or_requested_url_fails_the_manifest_check(self):  # planted defects (review round 4)
+        true = ("https://rpm.example/final", "https://rpm.example/req")
+        t = Tree(self.NAMED, verdict_rows=[verdict("NOT_STATED")], page_url="https://acme.example/p", requested_url="https://acme.example/p")
+        self.store(t, true)   # the manifest says the page is rpm.example's; the sidecar claims it is the cited acme.example page
+        got, problems, _ = t.basis(t.root / "pages")
+        self.assertTrue(any("corpus manifest records" in p for p in problems), problems)
+        forged_page = self.tree([verdict("NOT_STATED")], manifest=("https://rpm.example/final", "https://acme.example/p"), page_url="https://acme.example/p")
+        self.assertTrue(any("corpus manifest records" in p for p in forged_page.basis(forged_page.root / "pages")[1]))
+        forged_req = self.tree([verdict("NOT_STATED")], manifest=("https://acme.example/final", "https://rpm.example/req"),
+                               page_url="https://acme.example/final", requested_url="https://acme.example/p")
+        self.assertTrue(any("corpus manifest records" in p for p in forged_req.basis(forged_req.root / "pages")[1]))
+
+    def test_true_pair_passes_the_manifest_check_and_a_different_page_gives_not_yet_checked(self):  # the RPM case, honestly recorded
+        t = self.tree([verdict("NOT_STATED")], manifest=("https://acme.example/south", "https://acme.example/south"),
+                      page_url="https://acme.example/south", requested_url="")
+        got, problems, info = t.basis(t.root / "pages")
+        self.assertEqual((got[KEY][0], problems, info["verdict_unbound"]), ("not_yet_checked", [], [KEY]))
+
+    def test_missing_manifest_entry_fails_and_no_store_reports_the_count(self):
+        t = self.tree([verdict("NOT_STATED")])
+        (t.root / "pages" / "pic18-corpus-2026-11-16" / "ORG-1" / "manifest.csv").unlink()
+        self.assertTrue(any("no entry for the page" in p for p in t.basis(t.root / "pages")[1]))
+        self.assertEqual(self.tree([verdict("NOT_STATED")]).basis()[2]["page_urls_not_checked"], 1)
 
     def test_stated_verdict_without_a_page_url_is_refused(self):
         t = self.tree([verdict("STATED", QUOTE, str(OFFSET))], page_url="")
@@ -315,8 +345,7 @@ class Verdicts(unittest.TestCase):
     def test_stated_verdict_rests_on_the_row_that_cites_the_pages_site(self):
         t = Tree([ev("EVD-1", "SITE-1", "processes=custom_compounding", ref="https://other.example/x"),
                   ev("EVD-2", "SITE-1", "processes=custom_compounding", ref="https://acme.example/p")], verdict_rows=[verdict("STATED", QUOTE, str(OFFSET))])
-        (t.root / "pages").mkdir()
-        (t.root / "pages" / "p.html").write_bytes(PAGE)
+        Verdicts.store(t, ("https://www.acme.example/p/", "https://www.acme.example/p/"))
         self.assertEqual(t.basis(t.root / "pages")[0][KEY], ("stated", "EVD-2", "2026-11-24"))
 
     def test_implied_verdict_may_rest_on_organization_evidence(self):

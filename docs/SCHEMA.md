@@ -2854,7 +2854,10 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
   page of the same site gives no label, as NO_PAGE does: the key stays `not_yet_checked` on the row that cites the page
   nobody has re-read, and a different page never withholds a value (NOT_STATED included); the line stays in
   `VALUE_VERDICTS.csv` for a later PR that adds own-site evidence rows for that page through the binding gate. A page on a
-  site that no bound row on the record cites stops the generator. The generator adds no evidence: it picks the
+  site that no bound row on the record cites stops the generator. With the page store (`--check --pages <store>`), every
+  `VALUE_PAGES.csv` `page_url` and `requested_url` is checked against the lane's corpus manifest entry for the page
+  (`url`, `final_url`); a missing entry or a mismatch fails the check. Without a store V-69 reports "NOT_INSPECTED: N page
+  URLs not checked against the corpus manifest" beside the unreplayed-quote count. The generator adds no evidence: it picks the
   bound row that names the value as the line's `evidence_id`. A STATED line replays when the page store is given
   (`python3 scripts/value_basis.py --check --pages <store>`): `<store>/<page_path>` must hash to `page_sha256` and
   `capture_text` (the binding gate's function) must hold the quote at the offset. A quote is 20 to 200 characters. CI has
