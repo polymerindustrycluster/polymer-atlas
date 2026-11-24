@@ -67,9 +67,10 @@ def names(text, token):
 
 
 def head_and_quote(detail):
-    """Same split the gate uses for a proof: the quote is everything after the first 'quote:'."""
-    head, _, quote = detail.partition("quote:")
-    return head, gate.norm_space(quote)
+    """(assertion, quote): the quote is everything after the first 'quote:', as the gate splits a proof; the assertion is
+    what comes before the first 'quote:' or 'process excerpt:', so the witness's own words never decide which value a row asserts."""
+    _, _, quote = detail.partition("quote:")
+    return re.split(r"quote:|process excerpt:", detail, maxsplit=1)[0], gate.norm_space(quote)
 
 
 def replay(v, pages):
@@ -100,6 +101,27 @@ def packet_meta(folder):
     return (date[0], reader, checker) if date and reader and checker and reader != checker else None
 
 
+PAGE_COLS = ("page_sha256", "page_url")
+
+
+def site_of(url):
+    host, _ = gate.host_path(url)
+    return gate.registrable(host) if host else ""
+
+
+def load_page_urls(folder, problems):
+    """tasks/<folder>/VALUE_PAGES.csv: the URL each stored page (by sha256) was captured from, from the lane's corpus manifest."""
+    path = folder / "VALUE_PAGES.csv"
+    if not path.exists():
+        return {}
+    with open(path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        if tuple(reader.fieldnames or ()) != PAGE_COLS:
+            problems.append(f"{path}: header must be {','.join(PAGE_COLS)}")
+            return {}
+        return {r["page_sha256"]: r["page_url"] for r in reader}
+
+
 def load_verdicts(tasks, problems, held):
     """tasks/<folder>/VALUE_VERDICTS.csv lines (values.csv format), shape-checked. -> [(line dict, read date)]."""
     out = []
@@ -110,6 +132,7 @@ def load_verdicts(tasks, problems, held):
             problems.append(f"{rel}: README.md needs 'Read on: <date>', 'Read by: <family>' and 'Checked by: <a different family>'; "
                             f"until then the packet publishes no label")
             continue
+        urls = load_page_urls(path.parent, problems)
         with open(path, newline="", encoding="utf-8") as f:
             reader = csv.reader(f, strict=True)
             if tuple(next(reader, [])) != VERDICT_COLS:
@@ -119,6 +142,7 @@ def load_verdicts(tasks, problems, held):
                 at = f"{rel}:{reader.line_num}"
                 v = dict(zip(VERDICT_COLS, cells))
                 v["_at"] = at
+                v["_url"] = urls.get(v.get("page_sha256"), "")
                 why = verdict_shape(v) if len(cells) == len(VERDICT_COLS) else f"{len(cells)} cells, the header has {len(VERDICT_COLS)}"
                 key = (v.get("record_table"), v.get("record_id"), v.get("field"), v.get("value"))
                 if not why and v["class"] != "NO_PAGE" and key not in held:
@@ -226,7 +250,7 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
             head, quote = head_and_quote(e["claim_detail"])
             # the row asserts exactly this value: it is the one held token its head names
             single = names(head, tok) and sum(names(head, t) for t in record_tokens[(table, rid, field)]) == 1
-            excerpt = head.partition("process excerpt:")[2].strip(' ";')
+            excerpt = e["claim_detail"].partition("process excerpt:")[2].partition("quote:")[0].strip(' ";')
             if single and e["evidence_id"] in proofs:
                 cands.append((5, e["evidence_id"], "stated", proofs[e["evidence_id"]]))
             elif single and e["source_class"] == "government_filing" and max(len(quote), len(excerpt)) >= QUOTE_MIN:
@@ -237,12 +261,16 @@ def generate(data=ROOT / "data", tasks=ROOT / "tasks", pages=None):
             last = [v for d, v in vs if d == vs[-1][0]]
             if len({v["class"] for v in last}) > 1:
                 problems.append(f"{key}: verdicts of different classes share the latest read date {vs[-1][0]}")
+            elif last[0]["class"] == "STATED" and own and not any(site_of(e["source_ref"]) == site_of(last[0]["_url"]) != "" for e in own):
+                problems.append(f"{key}: the STATED line's page ({last[0]['_url'] or 'no VALUE_PAGES.csv entry'}) is not on a site any bound "
+                                f"row on this record cites; a verdict rests on a row that cites the page's own site")
             elif not pool or (last[0]["class"] == "STATED" and not own):
                 problems.append(f"{key}: a {last[0]['class']} verdict has no bound row on its own record to rest on"
                                 if not pool else
                                 f"{key}: a STATED verdict for a site value needs a bound row on the site itself, not only its organization")
             else:
-                first = min(pool, key=evidence_pick)
+                same_site = [e for e in own if site_of(e["source_ref"]) == site_of(last[0]["_url"])]
+                first = min(same_site if last[0]["class"] == "STATED" else pool, key=evidence_pick)
                 cands.append((5 if last[0]["class"] == "STATED" else 3, first["evidence_id"], VERDICT_CLASS[last[0]["class"]], vs[-1][0]))
         if pool:
             cands.append((2, min(pool, key=evidence_pick)["evidence_id"], "not_yet_checked", ""))

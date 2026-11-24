@@ -71,6 +71,7 @@ class ValueBasisRelease(unittest.TestCase):
             ("EVD-1", "sites", "SITE-1", "sites.processes includes blow_molding (own-site disclosure)", "Born from the tag 'blow_molding'"),
             ("EVD-2", "organizations", "ORG-1", "organizations.processes includes blow_molding (org scope)", None),
             ("EVD-3", "sites", "SITE-1", "sites.processes includes lamination (own-site disclosure)", "lamination read on the page"),
+            ("EVD-5", "sites", "SITE-1", "sites.processes includes lamination (own-site disclosure)", "Blow Molding Equipment listed on the page"),
             ("EVD-4", "sites", "SITE-9", "sites.processes includes blow_molding (another plant)", "independent claim at another record")])
         con.executemany("INSERT INTO site_capabilities VALUES (?,?,?,?)", [
             ("CAP-1", "SITE-1", "process", "blow_molding"), ("CAP-2", "SITE-1", "process", "lamination"),
@@ -82,6 +83,11 @@ class ValueBasisRelease(unittest.TestCase):
         con.commit()
         con.close()
         return d
+
+    def test_loose_names_matches_spellings_a_note_uses(self):
+        self.assertTrue(er.loose_names("Dental Equipment", "dental"))
+        self.assertTrue(er.loose_names("Rubber-Mixing compounding", "rubber_mixing_compounding"))
+        self.assertFalse(er.loose_names("extrusion_profile", "extrusion"))
 
     def canonical(self, d):
         con = sqlite3.connect(d / "r.db")
@@ -110,6 +116,7 @@ class ValueBasisRelease(unittest.TestCase):
         self.assertEqual((ev["EVD-1"], ev["EVD-2"]), (er.WITHHELD, er.WITHHELD))   # the site's row and its organization's row name it
         self.assertIn("lamination", ev["EVD-3"])
         self.assertEqual(dict(con.execute("SELECT evidence_id, notes FROM evidence"))["EVD-1"], er.WITHHELD)   # the note repeats the value
+        self.assertEqual(dict(con.execute("SELECT evidence_id, notes FROM evidence"))["EVD-5"], er.WITHHELD)   # 'Blow Molding Equipment': case and spacing differ
         self.assertIn("independent claim", dict(con.execute("SELECT evidence_id, notes FROM evidence"))["EVD-4"])   # another record keeps its own claim
         self.assertEqual(sorted(con.execute("SELECT capability_id FROM site_capabilities")), [("CAP-2",), ("CAP-3",)])   # the site's tag copy leaves
         con.close()

@@ -228,9 +228,15 @@ def csv_rewrite(path, edit):
         csv.writer(f, lineterminator="\r\n" if "\r\n" in text else "\n").writerows([head, *body])
 
 
+def loose_names(text, token):
+    """The token as a word in any spelling a note uses: 'dental', 'Dental', 'rubber mixing compounding'. Release blanking errs toward withholding."""
+    words = r"[\s_-]+".join(map(re.escape, token.split("_")))
+    return re.search(r"(?<![A-Za-z0-9_])" + words + r"(?![A-Za-z0-9_])", text, re.I) is not None
+
+
 def evidence_names_withheld(table, rid, text, keys, site_org):
     """True when an evidence row's text names a value withheld from display on its record (or, for an organization row, on one of its sites)."""
-    return any(value_basis.names(text or "", tok) for (t, r, f, tok) in keys
+    return any(loose_names(text or "", tok) for (t, r, f, tok) in keys
                if (t, r) == (table, rid) or (table == "organizations" and t == "sites" and site_org.get(r) == rid))
 
 

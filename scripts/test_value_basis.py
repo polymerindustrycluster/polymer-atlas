@@ -40,7 +40,8 @@ def ev(eid, rid, detail, table="sites", cls="own_site", claim="activity", effect
 class Tree:
     """A throwaway repository root: ORG-1 with two sites; SITE-1 holds the values under test."""
 
-    def __init__(self, evidence, site_processes="custom_compounding", site_markets="", verdict_rows=None, readme=None):
+    def __init__(self, evidence, site_processes="custom_compounding", site_markets="", verdict_rows=None, readme=None,
+                 page_url="https://www.acme.example/other-page"):
         self.root = Path(tempfile.mkdtemp())
         atexit.register(shutil.rmtree, self.root, ignore_errors=True)
         d = self.root / "data"
@@ -52,6 +53,8 @@ class Tree:
         if verdict_rows is not None:
             f = self.root / "tasks" / "rq" / "VALUE_VERDICTS.csv"
             write(f, verdict_rows, list(vb.VERDICT_COLS))
+            if page_url:
+                write(f.parent / "VALUE_PAGES.csv", [{"page_sha256": hashlib.sha256(PAGE).hexdigest(), "page_url": page_url}], list(vb.PAGE_COLS))
             (f.parent / "README.md").write_text(readme if readme is not None else
                                                 "Read on: 2026-11-24\nRead by: Codex GPT-6.2 Sol\nChecked by: Gemini Hydrogen\n")
 
@@ -80,7 +83,8 @@ class Tree:
 
     def lines(self, mutate):
         path = self.root / "data" / "value_basis.csv"
-        rows = list(csv.DictReader(open(path)))
+        with open(path, newline="", encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
         mutate(rows)
         write(path, rows, vb.COLS)
 
@@ -160,6 +164,10 @@ class Basis(unittest.TestCase):
 
     def test_filing_row_without_filing_words_is_not_filing(self):  # planted defect
         t = Tree([ev("EVD-1", "SITE-1", "processes=custom_compounding; process excerpt:", cls="government_filing")])
+        self.assertEqual(t.basis()[0][KEY][0], "not_yet_checked")
+
+    def test_filing_whose_excerpt_names_the_token_but_whose_head_does_not_is_not_filing(self):  # planted defect (review round 2)
+        t = Tree([ev("EVD-1", "SITE-1", "process excerpt: Only our competitors do custom_compounding; this facility does not.", cls="government_filing")])
         self.assertEqual(t.basis()[0][KEY][0], "not_yet_checked")
 
     def test_filing_row_with_an_excerpt_is_filing(self):
@@ -274,6 +282,23 @@ class Verdicts(unittest.TestCase):
         got, problems, _ = t.basis(t.root / "pages")
         self.assertTrue(any("not only its organization" in p for p in problems), problems)
         self.assertEqual(got[KEY][0], "not_yet_checked")
+
+    def test_stated_verdict_whose_page_is_on_a_site_no_bound_row_cites_is_refused(self):  # planted defect (review round 2): the south plant's page
+        t = self.tree([verdict("STATED", QUOTE, str(OFFSET))], page_url="https://other.example/south-plant")
+        got, problems, _ = t.basis(t.root / "pages")
+        self.assertTrue(any("is not on a site any bound row" in p for p in problems), problems)
+        self.assertEqual(got[KEY][0], "not_yet_checked")
+
+    def test_stated_verdict_without_a_page_url_is_refused(self):
+        t = self.tree([verdict("STATED", QUOTE, str(OFFSET))], page_url="")
+        self.assertTrue(any("no VALUE_PAGES.csv entry" in p for p in t.basis(t.root / "pages")[1]))
+
+    def test_stated_verdict_rests_on_the_row_that_cites_the_pages_site(self):
+        t = Tree([ev("EVD-1", "SITE-1", "processes=custom_compounding", ref="https://other.example/x"),
+                  ev("EVD-2", "SITE-1", "processes=custom_compounding", ref="https://acme.example/p")], verdict_rows=[verdict("STATED", QUOTE, str(OFFSET))])
+        (t.root / "pages").mkdir()
+        (t.root / "pages" / "p.html").write_bytes(PAGE)
+        self.assertEqual(t.basis(t.root / "pages")[0][KEY], ("stated", "EVD-2", "2026-11-24"))
 
     def test_implied_verdict_may_rest_on_organization_evidence(self):
         t = Tree([ev("EVD-1", "ORG-1", "processes=custom_compounding", table="organizations")], verdict_rows=[verdict("IMPLIED")])

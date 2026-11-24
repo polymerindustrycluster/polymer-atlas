@@ -2846,7 +2846,10 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
   must be the record's organization, its `grain` `plant` for a site and `company` for an organization, and a page folder
   named `ORG-…` in `page_path` must be that owner. A STATED line for a site value also needs a bound row on the site
   itself (an organization row is not enough); any verdict with no bound row on its record to rest on stops the generator,
-  so a checked disposition is never dropped silently and the key goes to adjudication. The generator adds no evidence: it picks the
+  so a checked disposition is never dropped silently and the key goes to adjudication. A STATED line also needs
+  `tasks/<folder>/VALUE_PAGES.csv` (`page_sha256,page_url`, from the lane's corpus manifest) giving the URL its page was
+  captured from; the line rests on the bound row, on its own record, whose `source_ref` is on the page's site
+  (registrable domain), and a page on a site no such row cites stops the generator. The generator adds no evidence: it picks the
   bound row that names the value as the line's `evidence_id`. A STATED line replays when the page store is given
   (`python3 scripts/value_basis.py --check --pages <store>`): `<store>/<page_path>` must hash to `page_sha256` and
   `capture_text` (the binding gate's function) must hold the quote at the offset. A quote is 20 to 200 characters. CI has
@@ -2857,7 +2860,7 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
   `BINDING_PROOF.csv` from a family other than the builder's, whose `claim_sha256` still matches the row (the gate
   replayed the capture when the row merged; V-69 does not fetch it again), or a latest reader verdict of STATED. (2)
   `filing`: a `government_filing` row on the same record that names exactly this one value and carries the filing's words
-  (a `quote:` or a `process excerpt:` of 20 or more characters); the one held token the row's head names, before `quote:`,
+  (a `quote:` or a `process excerpt:` of 20 or more characters); the one held token the row's assertion names (the text before `quote:` or `process excerpt:`; the witness's own words never decide it),
   must be this value (a value named only inside the quote is `not_yet_checked`); a row that only restates the record's own cell is not a
   filing statement. (3) The latest reader verdict: IMPLIED gives `implied`, NOT_STATED gives `not_found_pending_refetch`;
   two classes on one latest read date is a generator error. (4) `not_yet_checked`: any other bound row that names the value (a row on the value's own record stands for it before an organization's row), or no bound row at all (empty `evidence_id`).
@@ -2877,7 +2880,7 @@ Key: (`record_table`, `record_id`, `field`, `value`). One row per key.
   with `t`), the strongest basis among the records that hold the value ("stated", "from a filing", "implied",
   "not yet checked"); `directory.csv` carries `processes_value_basis` and `markets_value_basis`. The release bundle
   (`export_release.py`) removes withheld values from its organization and site rows and their `*_incl_sites` columns,
-  blanks evidence `claim_detail` and `notes` that name one (a note often repeats the claim), drops the site's
+  blanks evidence `claim_detail` and `notes` that name one, in any case or spacing ("Dental Equipment" for `dental`; a note often repeats the claim), drops the site's
   `site_capabilities` row for it, refuses to build when the database's `value_basis` table differs from
   `data/value_basis.csv`, and ships `value_basis.csv` and its database table without withheld rows and with a
   `label` column. The record CSVs in `data/` are never rewritten for display.
