@@ -1219,13 +1219,14 @@ CAP_FIELDS = ["capability_id", "site_id", "org_id", "capability_type", "term",
 EVIDENCE_TABLES = ["organizations", "sites", "ecosystem", "programs",
                    "people"]  # [v1.10] people admitted (owner ruling 2026-11-04)
 CLAIM_TYPES = {"existence", "activity", "scope", "address", "parent", "liveness", "code", "size_band"}
-SIZE_BAND_CLASSES = {"government_filing", "own_site"}  # owner battery B-BAND, 2026-11-03: ceiling supports_B
+SIZE_BAND_CLASSES = {"government_filing", "own_site", "linkedin_company"}  # owner battery B-BAND, 2026-11-03: ceiling supports_B; linkedin_company [v1.21.0]: a self-declared band
 SOURCE_CLASSES = {"own_site", "government_filing", "registry", "directory", "press",
-                  "platform_category", "harvest_roster"}
+                  "platform_category", "harvest_roster", "linkedin_company"}
 TIER_EFFECTS = {"supports_A", "supports_B", "supports_C", "supports_U", "contradicts"}
 CLASS_CEIL = {"own_site": "supports_A", "government_filing": "supports_A",
               "registry": "supports_B", "directory": "supports_B", "press": "supports_B",
-              "harvest_roster": "supports_B", "platform_category": "supports_C"}
+              "harvest_roster": "supports_B", "platform_category": "supports_C",
+              "linkedin_company": "supports_A"}  # [v1.21.0] proposed: same ceiling as own_site for self-declared facts; owner ruling to confirm
 EFF_RANK = {"supports_U": 0, "supports_C": 1, "supports_B": 2, "supports_A": 3}
 REL_TYPES = {"parent_of", "successor_of", "dba_of", "spun_off_from", "member_of", "merged_into"}
 CAP_MATERIAL = {"thermoplastics", "thermosets", "elastomers_rubber",
@@ -1351,6 +1352,16 @@ if evidence or True:
             errors.append(f"evidence.csv:{i} {eid} tier_effect {te} exceeds the {sc} ceiling {CLASS_CEIL[sc]} (V-22)")
         if r["claim_type"] == "size_band" and (sc not in SIZE_BAND_CLASSES or te == "supports_A"):
             errors.append(f"evidence.csv:{i} {eid} size_band needs government_filing/own_site and caps at supports_B (V-22)")
+        if sc == "linkedin_company":
+            # [v1.21.0] §4.13: a logged-out company page, organization grain, an org-grain claim (an address claim is the HQ city only)
+            if rt != "organizations":
+                errors.append(f"evidence.csv:{i} {eid} linkedin_company supports organization facts only, never {rt} (V-22, v1.21.0)")
+            if r["claim_type"] not in ("activity", "scope", "size_band", "existence", "address"):
+                errors.append(f"evidence.csv:{i} {eid} linkedin_company cannot carry a {r['claim_type']} claim (V-22, v1.21.0)")
+            if r["claim_type"] == "address" and not (r["claim_detail"] or "").startswith("hq_city"):
+                errors.append(f"evidence.csv:{i} {eid} a linkedin_company address claim is the HQ city only, claim_detail starts hq_city (V-22, v1.21.0)")
+            if not re.fullmatch(r"https://(?:[a-z0-9-]+\.)?linkedin\.com/company/[^/\s]+(?:/about)?/?", (r["source_ref"] or "").strip()):
+                errors.append(f"evidence.csv:{i} {eid} linkedin_company source_ref must be a logged-out https://www.linkedin.com/company/<slug> page, never /in/ or /pub/ (V-22, v1.21.0)")
         if rt == "people":
             # [v1.10] §4.13 people grain: existence and scope are observations on the institution's own page;
             # address, code and size_band have no people-grain referent. (Cross-family review of #125, 2026-11-05.)

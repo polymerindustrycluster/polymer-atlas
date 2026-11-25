@@ -1,7 +1,9 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.20.2 — 2026-11-24 (organization website admission and LinkedIn request refusal; [owner rulings 12:12](../DECISIONS.md#2026-11-24--owner-rulings-1212)).
+**Version:** v1.21.0 — 2026-11-25 (§4.13 adds the `linkedin_company` evidence class; §4.4 `linkedin_url` stays a navigation link; owner rulings 2026-11-24 21:26 and 2026-11-25).
+
+Previous: v1.20.2 — 2026-11-24 (organization website admission and LinkedIn request refusal; [owner rulings 12:12](../DECISIONS.md#2026-11-24--owner-rulings-1212)).
 
 Previous: v1.20.1 — 2026-11-24 (§4.24 implementation: the generator, where reader verdicts are stored, the precedence, the grain rule and validator V-69; no vocabulary or ruling change).
 
@@ -946,7 +948,7 @@ with the instrument named in `notes`, and flag it for a vocabulary revision.
 |---|---|---|
 | **A** | Primary source | Company website (own domain), SEC/10-K, SAM.gov / Ohio SOS filing, company-issued capabilities statement, direct company confirmation |
 | **B** | Authoritative directory | Plastics News, Rubber News, Thomasnet (verified listing), D&B, state/county EDO directory, trade-association member directory, university/center official page |
-| **C** | Single secondary | Local news, LinkedIn company page alone, Google Business Profile alone, job posting, single aggregator (ZoomInfo-type) with no corroboration |
+| **C** | Single secondary | Local news, LinkedIn company page alone (a `platform_category` label; the §4.13 `linkedin_company` class is the replayed route), Google Business Profile alone, job posting, single aggregator (ZoomInfo-type) with no corroboration |
 | **U** | Unverified / candidate | Inferred NAICS only, scraped list with no profile page, Ring 4 test not yet passed, address unconfirmed |
 
 Promotion rule: C → B requires a second independent source or one B source. B → A requires a primary source for at least legal name + address + primary activity. A record's tier = the tier of its *weakest must-have field* — a glossy website does not make an unconfirmed plant address Tier A.
@@ -1009,7 +1011,7 @@ One record per ultimate controlling organization operating in scope. A Parent ma
 | `monitor_watch` **[v1.6]** | boolean (`true`/`false`), default `false` | **MUST** (column present on every row; `false` unless seeded or set) | Flags the organization for first-check treatment by the daily news monitor (contract in §5 of the lane file / the §4.4 note below). Watch is a **queue flag, not an assertion**: it records that a named reason exists to look at this organization first and often — an open liveness question, a `closure_signature`, a pending settling fact a news event could supply. Setting or clearing it changes no status, no tier, and no date. A monitor hit on a watched organization is a re-verification queue item, never an automatic status change (§5) |
 | `newsroom_url` **[v1.11]** | URL, nullable | Nice (column present on every row) | The organization's own news, press or announcements page, on the **same registrable domain as `website`** (own domain only; a wire service, a parent's site or a press aggregator never fills it). It is where the news monitor looks first. A navigation and monitoring aid, never evidence by itself: a dated release found there is cited in its own §4.13 row. Owner battery B-NEWS, 2026-11-04. Validator V-58 |
 | `newsroom_feed_url` **[v1.11]** | URL, nullable | Nice (column present on every row) | An RSS or Atom feed of the same newsroom, if the organization publishes one. It may sit on a feed host the organization uses. Same standing as `newsroom_url`. Validator V-58 |
-| `linkedin_url` **[v1.11]** | URL, nullable | Nice (column present on every row) | The organization's LinkedIn company page, `https://www.linkedin.com/company/<slug>/` form. A **navigation link only**: it is never an evidence row and never a monitoring source (LinkedIn's terms bar automated reading). A LinkedIn page alone remains tier C and its industry labels `platform_category` (§4.1). Owner battery B-LINKEDIN, 2026-11-04. Validator V-58 |
+| `linkedin_url` **[v1.11]** | URL, nullable | Nice (column present on every row) | The organization's LinkedIn company page, `https://www.linkedin.com/company/<slug>/` form. A **navigation link**: the column itself is never an evidence row and never a monitoring source. **[v1.21.0]** A logged-out company page may be cited as evidence only through a §4.13 `linkedin_company` row (organization facts, with a replayed capture); without such a row a LinkedIn page alone remains tier C and its industry labels `platform_category` (§4.1). Owner battery B-LINKEDIN, 2026-11-04, reversed for the evidence route by the owner's 2026-11-24 21:26 ruling ("LinkedIn should not be barred."). Validator V-58 |
 | `created_by` / `created_date` / `last_edited_by` | string/date | **MUST** | Researcher/agent ID for dedupe accountability |
 | `certifications[]`, revenue band, key contacts, LinkedIn URL, logos, patent counts | — | Nice | Contacts are a separate, access-controlled table in v2 — do NOT store personal emails/phones in v1 org record |
 
@@ -1653,20 +1655,71 @@ verification tier. It records what a lane actually observed.
 | `evidence_id` | string, immutable, `EVD-######` | **MUST** | Never reused; allocated at integration only, next-free at application (first allocation `EVD-000001`). Evidence rows are never deleted; a superseded or refuted observation is answered by a later row (typically `tier_effect=contradicts`, or a fresher `supports_*` row), never by editing the earlier row away |
 | `record_table` | enum | **MUST** | `organizations` \| `sites` \| `ecosystem` \| `programs` \| `people` **[v1.10]** — the table the evidenced record lives in. People records (§4.9) were deliberately out of scope at v1.6 — their every field already traces to a single cited public page per record; the owner admitted the class at **[v1.10]** (ruling 2026-11-04) so the two §4.9 gates become mechanically restatable claims (V-25) instead of prose in `sources[]` |
 | `record_id` | FK → the table named in `record_table` | **MUST** | `ORG-######` for organizations and ecosystem rows (ecosystem records carry org_ids), `SITE-######` for sites, `PROG-######` for programs, `PERSON-######` for people **[v1.10]**. Validator V-22 resolves the FK against the named table only |
-| `claim_type` | enum | **MUST** | `existence` \| `activity` \| `scope` \| `address` \| `parent` \| `liveness` \| `code` \| `size_band` **[2026-11-03, owner battery B-BAND]** — exactly one per row; `size_band` = a stated employee-size band (`employee_band_site` / `employee_band_ohio`) and its source, a band only and never a headcount; source classes `government_filing` (OSHA ITA 300A, OSHA inspection) or `own_site` only **[v1.19.5]**; ceiling `supports_B`; not a §4.13 must-have claim; an observation bearing on two claims carries two rows. `existence` = the entity is the entity claimed (legal name / identity). `activity` = the entity performs the claimed primary activity (the §1 test evidence). `scope` = the activity is in-scope polymer work under §§1–2 (the Ring decision's evidence). `address` = a stated address (HQ or site) is the entity's address, county included. `parent` = a stated parent / operator linkage. `liveness` = the entity was operating (or had ceased) at a date. `code` = a stated code (NAICS primary; CIP at program grain) and its §2.1 provenance. At v1.7 the `code` claim type also covers `code_assignments`
+| `claim_type` | enum | **MUST** | `existence` \| `activity` \| `scope` \| `address` \| `parent` \| `liveness` \| `code` \| `size_band` **[2026-11-03, owner battery B-BAND]** — exactly one per row; `size_band` = a stated employee-size band (`employee_band_site` / `employee_band_ohio`) and its source, a band only and never a headcount; source classes `government_filing` (OSHA ITA 300A, OSHA inspection) or `own_site` only **[v1.19.5]**, or `linkedin_company` **[v1.21.0]** (a self-declared band, named as such in `claim_detail`); ceiling `supports_B`; not a §4.13 must-have claim; an observation bearing on two claims carries two rows. `existence` = the entity is the entity claimed (legal name / identity). `activity` = the entity performs the claimed primary activity (the §1 test evidence). `scope` = the activity is in-scope polymer work under §§1–2 (the Ring decision's evidence). `address` = a stated address (HQ or site) is the entity's address, county included. `parent` = a stated parent / operator linkage. `liveness` = the entity was operating (or had ceased) at a date. `code` = a stated code (NAICS primary; CIP at program grain) and its §2.1 provenance. At v1.7 the `code` claim type also covers `code_assignments`
 rows: a stated SIC assignment is witnessed by a `code` evidence
 row whose `claim_detail` names the assignment ("sic 3089 stated,
 EDGAR filer CIK 0001370946") — corroboration class; assignments
 are not §4.13 must-have claims and V-25 does not restate tiers on
 them. |
 | `claim_detail` | string | **MUST** | Short, specific: which field or fact the row bears on, in the record's own terms ("hq_address + hq_county (Erie)", "naics_primary 326199", "ring_primary 1 via thermoforming on own site", "status active at 2026-10-29"). Never a bare field name when a value is in dispute, and never a narrative — the narrative lives in the verdict file the row's lane produced |
-| `source_class` | enum | **MUST** | `own_site` \| `government_filing` \| `registry` \| `directory` \| `press` \| `platform_category` \| `harvest_roster` — the class of the witness, not its prestige. `own_site` = the entity's own domain / own issued document. `government_filing` = a dated filing or government record of fact (Form 5500, TRI, WARN, SEC, court record). `registry` = a registry record keyed by an identifier (EPA FRS, GLEIF, Ohio SOS, SAM.gov, IPEDS/ROR identity records). `directory` = an authoritative directory listing (trade-association member directory, EDO directory, verified Thomasnet-class listing). `press` = dated news / trade-press reporting of a specific fact. `platform_category` = a platform-assigned category or profile label (Google Places category, LinkedIn industry, aggregator classification). `harvest_roster` = a harvested list under §4.12's harvest-only rule (exhibitor / sponsor / speaker roster for a named edition) |
+| `source_class` | enum | **MUST** | `own_site` \| `government_filing` \| `registry` \| `directory` \| `press` \| `platform_category` \| `harvest_roster` \| `linkedin_company` **[v1.21.0]** — the class of the witness, not its prestige. `own_site` = the entity's own domain / own issued document. `government_filing` = a dated filing or government record of fact (Form 5500, TRI, WARN, SEC, court record). `registry` = a registry record keyed by an identifier (EPA FRS, GLEIF, Ohio SOS, SAM.gov, IPEDS/ROR identity records). `directory` = an authoritative directory listing (trade-association member directory, EDO directory, verified Thomasnet-class listing). `press` = dated news / trade-press reporting of a specific fact. `platform_category` = a platform-assigned category or profile label (Google Places category, LinkedIn industry, aggregator classification). `linkedin_company` **[v1.21.0]** = a logged-out LinkedIn company page read as the organization's own self-declared profile, under the rules below. `harvest_roster` = a harvested list under §4.12's harvest-only rule (exhibitor / sponsor / speaker roster for a named edition) |
 | `source_ref` | string | **MUST** | The witness itself, citable by a stranger: a URL, or a named source plus its identifier where the source is keyed ("EPA FRS registry 110070870004"; "DOL EFAST2 Form 5500, sponsor THE ARTHUR CORPORATION, PY2023, plan 501"). A staging path is admissible **only** in the one case the grep rule below defines (a named raw extract a registry citation resolves into). A reference to our own verdict files, lane notes, or integration journals is **never** a `source_ref` — those are claims about evidence, not evidence (see the grep rule) |
 | `observed_date` | date | **MUST** | The date the lane observed the witness — for a filing, the filing's own as-of / period date where the row's force depends on it, with the retrieval date in `notes`; for a roster, the §4.12 `evidence_date` grammar. Never a scrape-batch date alone where the witness carries its own date |
-| `tier_effect` | enum | **MUST** | `supports_A` \| `supports_B` \| `supports_C` \| `supports_U` \| `contradicts` — how this row bears on the record's tier **for this claim**. `supports_U` **[v1.13, owner ruling 2026-11-12 S4]** is the effect for a claim on a tier-U record: it banks the witnessed claim without asserting any tier above U. The class-to-effect ceiling is §4.1's ladder restated per class: `own_site` and `government_filing` may carry `supports_A`; `registry` and `directory` may carry at most `supports_B` (a registry/directory *address* alone caps at `supports_C`, per the settled seam-2 ruling); `press` and `harvest_roster` may carry at most `supports_B` and corroborate rather than carry (a roster row is, per §4.12, A-equivalent *for the fact of participation* — as an evidence row that fact is a `liveness`/`activity` claim, and its effect is still capped at `supports_B` here, because participation attests the named organization, not its plant or scope); `platform_category` may carry at most `supports_C`, and for a `scope` claim carries **no** supporting effect at all (the PMIR rule, below). `contradicts` is class-free: any class may contradict, and an `own_site` contradiction is the strongest refutation the system records |
+| `tier_effect` | enum | **MUST** | `supports_A` \| `supports_B` \| `supports_C` \| `supports_U` \| `contradicts` — how this row bears on the record's tier **for this claim**. `supports_U` **[v1.13, owner ruling 2026-11-12 S4]** is the effect for a claim on a tier-U record: it banks the witnessed claim without asserting any tier above U. The class-to-effect ceiling is §4.1's ladder restated per class: `own_site` and `government_filing` may carry `supports_A`; `registry` and `directory` may carry at most `supports_B` (a registry/directory *address* alone caps at `supports_C`, per the settled seam-2 ruling); `press` and `harvest_roster` may carry at most `supports_B` and corroborate rather than carry (a roster row is, per §4.12, A-equivalent *for the fact of participation* — as an evidence row that fact is a `liveness`/`activity` claim, and its effect is still capped at `supports_B` here, because participation attests the named organization, not its plant or scope); `platform_category` may carry at most `supports_C`, and for a `scope` claim carries **no** supporting effect at all (the PMIR rule, below). `linkedin_company` **[v1.21.0]** may carry `supports_A`, the same ceiling as `own_site` for self-declared facts (a size band still caps at `supports_B`). `contradicts` is class-free: any class may contradict, and an `own_site` contradiction is the strongest refutation the system records |
 | `created_by` | string | **MUST** | The lane / researcher ID that produced the observation, in the `created_by` grammar of the record tables |
 | `notes` | string | Nice | One line: the observation's posture ("roster still filling at harvest"; "fetch via search-index retrieval of the exact URL; direct fetch HTTP 000 — availability noted, content dated 2024-11-14"). Licensed-source discovery provenance, where it exists, lives **here and only here** (see §5 interplay, below) |
 | `address_role` **[v1.19]** | enum, nullable | Nice | The role of the address an `address` claim witnesses: `physical` \| `mailing` \| `agent` \| `registered_office`. **Empty = unspecified** — the value on every pre-v1.19 row, and the honest value whenever the witness does not say which address it is publishing. Meaningful only on `address` claims; the validator warns on a role set on any other claim type. **ADDRESS_DIFF fires only within a role:** two witnesses of the *same* role stating different addresses are a contradiction to adjudicate; witnesses of *different* roles stating different addresses are both recorded and are not, without more, a contradiction — a carrier's filed address (FMCSA MCS-150) and a state filing's registered-agent address do not contradict a plant's physical address. New `address` claims should carry the role whenever the witness states or implies it; legacy rows are not backfilled in bulk — a role reaches a legacy row only by per-record adjudication. |
+
+**LinkedIn company pages [v1.21.0, owner rulings 2026-11-24 21:26 and
+2026-11-25].** The owner ruled "LinkedIn should not be barred." (2026-11-24
+21:26) and that LinkedIn company pages, read logged out, are full
+evidence. `source_class=linkedin_company` is that route. It reverses the
+navigation-only rule of owner battery B-LINKEDIN (2026-11-04) for the
+evidence route only; people data stays declined (§4.9, §6). The rules:
+
+- **A logged-out company page only.** `source_ref` is
+  `https://www.linkedin.com/company/<slug>` (optionally `/about`), read with no
+  account and no cookies. Never `/in/` or `/pub/`, never a staff list
+  (`/company/<slug>/people`), never a showcase or jobs page.
+- **Organization grain only.** `record_table=organizations`. The page can
+  support the organization's industry or description (`activity`, `scope`),
+  its size band (`size_band`, a **self-declared band**: name it as such in
+  `claim_detail`, never a headcount, ceiling `supports_B`), its HQ city
+  (`address`, with `claim_detail` beginning `hq_city`), its founding year
+  (`existence`) and process or market tokens derived from its specialties
+  (`activity`, `scope`).
+- **Size brackets map to Atlas bands only where they nest** (owner ruling
+  2026-11-24 21:26). LinkedIn publishes brackets (`0-1`, `2-10`, `11-50`,
+  `51-200`, `201-500`, `501-1,000`, `1,001-5,000`, `5,001-10,000`,
+  `10,001+`). A bracket sets an Atlas band (§4.4) only if every headcount
+  in it falls inside one Atlas band: `0-1` is `1-9`; `5,001-10,000` and
+  `10,001+` are `5000+`. Every other bracket straddles two bands (`2-10`
+  spans `1-9` and `10-49`, `11-50` spans `10-49` and `50-99`, and so on
+  through `1,001-5,000`, which includes 5,000): its row is stored with the
+  bracket in `claim_detail` and sets no Atlas band; it stays a lead for the
+  band. Never a precise headcount.
+- **Never** a site's facts, a street, a county, an HQ street, or anything for
+  a child unit, a site, an ecosystem entity, a program or a person. A parent
+  roll-up page (the page belongs to the parent company) supports nothing for
+  the child: the name on the page must be one the record itself holds.
+- **Tier ceiling (proposed; owner ruling to confirm).** `supports_A`, the
+  same as an own-site page for self-declared facts. The page is the
+  company's own profile, but it is a platform page that the company may not
+  maintain: this ceiling is the one point of this revision that needs the
+  owner's confirmation, and a lower ceiling (`supports_B`) is a one-line
+  change in V-22.
+- **Replay.** The quote is a verbatim phrase of at least 20 characters from a
+  stored capture of that page. The capture is a text file in the shared store
+  at `raw/linkedin/<sha256>.txt`, named in the task's `INPUTS.sha256` by its
+  sha256 and checked against it; its first line is the page title,
+  `[<id>] <company name> | LinkedIn (<url>)`. The binding gate
+  (`scripts/check_evidence_binding.py`) passes a row only if the capture is
+  named and intact, its title line carries a name the record holds, the quote
+  is on it, the claim type is allowed and the quote holds no email, phone
+  number or labelled personal name. Anything it cannot read is HELD.
+- **No personal data.** Employee names, posts and their authors are never
+  quoted or stored (§6).
+- **No data rows are added by this revision.**
 
 **Own-site web proofs [v1.19.6, owner rulings 2026-11-22 and
 2026-11-23].** A lane may use a Wayback capture of the company's own
@@ -3656,3 +3709,4 @@ unchanged.
 - **v1.20.1 — 2026-11-24 (implementation of §4.24; no ruling).** `scripts/value_basis.py` generates `data/value_basis.csv`; validator V-69 compares it with a fresh generation; reader verdicts are stored as `tasks/<folder>/VALUE_VERDICTS.csv` in the re-read lane's format, counted only when the folder's README names a second model family that checked the packet; precedence and the grain rule (`stated` and `filing` only from the value's own record) are fixed in §4.24; the site, graph pages and release bundle show labels and drop withheld values. `street_address` rows wait for the map-listing route. Recorded in `DECISIONS.md`.
 
 - **v1.20.2 — 2026-11-24.** §4.4 and §4.13 require replayable own-site name and Ohio locality evidence for changed organization website fills. The site corpus fetcher refuses LinkedIn destinations. [Owner rulings 12:12](../DECISIONS.md#2026-11-24--owner-rulings-1212).
+- **v1.21.0 — 2026-11-25 (owner rulings 2026-11-24 21:26, "LinkedIn should not be barred.", and 2026-11-25).** §4.13 adds source class `linkedin_company`: a logged-out company page, organization grain, a replayed capture, tier ceiling `supports_A` (proposed; owner to confirm); `size_band` admits it as a self-declared band capped at `supports_B`. §4.4 `linkedin_url` stays a navigation link. The binding gate gains the route and validator V-22 the class, its ceiling and its grain rules. No data rows change.

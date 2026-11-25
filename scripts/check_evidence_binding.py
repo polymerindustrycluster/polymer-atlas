@@ -585,6 +585,8 @@ def judge(ev, idx, _alone=False):
     rec = idx.record(table, rid)
     if rec is None:
         return "UNINSPECTABLE", "record_not_found", {}
+    if ev["source_class"] == "linkedin_company":
+        return judge_linkedin(ev, table, claim_detail=detail, src=src)
     if src.split(" ", 1)[0] in MAP_PROVIDERS:
         return "HELD", "map_listing_needs_base", {}
     if detail.startswith("trade_names +"):
@@ -932,6 +934,102 @@ def judge_web(ev, rec, idx, quote):
     if fails:
         return "FAIL", "+".join(fails), info
     return "READ_REQUIRED", why or "mechanics_clear", info
+
+
+# ---------------------------------------------------------------- LinkedIn company pages (SCHEMA §4.13, source_class linkedin_company)
+
+LINKEDIN_CLAIMS = {"activity", "scope", "size_band", "existence", "address"}  # org grain; an address claim is the HQ city only
+LINKEDIN_PERSONAL = re.compile(
+    r"[\w.+-]+@[\w-]+\.[\w.-]+|(?<!\d)(?:\+?1[ .-]?)?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}(?!\d)|"
+    r"\b(?:CEO|COO|CFO|CTO|President|Founder|Co-?founder|Owner|Contact|Manager|Director|VP|Vice President)\b[:,]?\s+[A-Z][a-z]+ [A-Z][a-z]+")
+LINKEDIN_CAPTURE = re.compile(r"^([0-9a-f]{64})  (raw/linkedin/([0-9a-f]{64})\.txt)$")
+LINKEDIN_TITLE = re.compile(r"\[\d+\] (.+?) \| LinkedIn \((https://[^\s)]+)\)")
+
+
+def linkedin_url_kind(url):
+    """'company' for a logged-out company page, 'profile' for /in/ or /pub/, 'other' for any other URL."""
+    p = urlsplit(url or "")
+    host, path = (p.hostname or "").lower(), unquote(p.path)
+    if host != "linkedin.com" and not host.endswith(".linkedin.com"):
+        return "other"
+    if re.match(r"/(?:in|pub)/", path):
+        return "profile"
+    return "company" if re.fullmatch(r"/company/[^/]+(?:/about)?/?", path) else "other"
+
+
+def judge_linkedin(ev, table, claim_detail, src):
+    """The mechanical floor of a linkedin_company row, before any capture is read: a company page, organization grain, an allowed claim,
+    a quote, and no personal data. A row that clears it is HELD until `check_linkedin_routes` replays its capture."""
+    kind = linkedin_url_kind(src)
+    if kind == "profile":
+        return "FAIL", "linkedin_profile", {}
+    if kind != "company":
+        return "FAIL", "linkedin_not_company_page", {}
+    if table != "organizations":
+        return "FAIL", "linkedin_not_org_grain", {}  # never a site's facts, a street, a county or a child unit
+    ct = ev["claim_type"]
+    if ct not in LINKEDIN_CLAIMS:
+        return "FAIL", "linkedin_claim_not_allowed", {}
+    if ct == "address" and not claim_detail.startswith("hq_city"):
+        return "FAIL", "linkedin_address_not_hq_city", {}
+    i = claim_detail.find("quote:")
+    if i < 0 or not claim_detail[i + 6:].strip():
+        return "UNINSPECTABLE", "no_quote", {}
+    if LINKEDIN_PERSONAL.search(claim_detail):
+        return "FAIL", "linkedin_personal_data", {}
+    return "HELD", "linkedin_needs_capture", {}
+
+
+def read_linkedin_capture(store, digest):
+    """The digest-named capture of the shared store, hashed on the way in."""
+    root = store.resolve()
+    capture = root / f"raw/linkedin/{digest}.txt"
+    if not capture.resolve().is_relative_to(root):
+        raise ValueError("capture path escapes shared store")
+    with capture.open("rb") as stream:
+        data = stream.read(MAX_CAPTURE_BYTES + 1)
+    if len(data) > MAX_CAPTURE_BYTES or hashlib.sha256(data).hexdigest() != digest:
+        raise ValueError("capture size or digest mismatch")
+    return data.decode("utf-8")
+
+
+def linkedin_result(ev, idx, store, read):
+    """PASS only if: the capture is named by sha256 in the task's INPUTS.sha256 and is that page; its title line carries a name the record holds;
+    and the quote replays verbatim on it. Anything unreadable is HELD, never a pass."""
+    folder = label_folder(ev["created_by"])
+    inputs = read(f"tasks/{folder}/INPUTS.sha256") if folder else None
+    if inputs is None:
+        return "HELD", "linkedin_inputs_missing"
+    if store is None:
+        return "HELD", "linkedin_store_not_given"
+    digests = []
+    for line in inputs.decode("utf-8", "replace").splitlines():
+        m = LINKEDIN_CAPTURE.fullmatch(line.strip())
+        if m and m[1] == m[3]:
+            digests.append(m[1])
+    want = ev["source_ref"].rstrip("/").lower()
+    for digest in digests:
+        try:
+            text = read_linkedin_capture(store, digest)
+        except (OSError, ValueError):
+            continue
+        title = LINKEDIN_TITLE.match(text.split("\n", 1)[0])
+        if not title or title[2].rstrip("/").lower() != want:
+            continue
+        if not name_keys([title[1]]) & idx.held_keys("organizations", ev["record_id"]):
+            return "FAIL", "capture_name_not_held"  # a parent roll-up page, or another company: nothing for this record
+        quote = norm_space(ev["claim_detail"].partition("quote:")[2])
+        if len(quote) < 20 or quote not in norm_space(text.split("\n", 1)[1]):
+            return "FAIL", "quote_not_on_capture"
+        return "PASS", "linkedin_company_replayed"
+    return "HELD", "linkedin_capture_not_in_inputs"
+
+
+def check_linkedin_routes(results, evs, idx, store, read):
+    for result in results:
+        if result["reason"] == "linkedin_needs_capture":
+            verdict, reason = linkedin_result(evs[result["evidence_id"]], idx, store, read)
+            result.update(verdict=verdict, reason=reason)
 
 
 # ---------------------------------------------------------------- modes
@@ -1934,7 +2032,7 @@ def main(argv=None):
                                                    "script and its rules come from the trusted checkout)")
     ap.add_argument("--pr-head", help="pinned PR head SHA to verify against the merge commit second parent")
     ap.add_argument("--out", help="write per-row verdicts to this CSV")
-    ap.add_argument("--map-store", type=Path, help="also replay map captures from this shared store when gating changes")
+    ap.add_argument("--map-store", type=Path, help="the shared store root: also replay map captures (raw/map-listings/) and LinkedIn captures (raw/linkedin/<sha256>.txt) when gating changes")
     a = ap.parse_args(argv)
     if a.map_store is not None and not (a.new_since or a.verify_proofs):
         ap.error("--map-store requires --new-since or --verify-proofs")
@@ -1979,6 +2077,7 @@ def main(argv=None):
                 base_idx = Index.load(base)
                 evidence_by_id = {e["evidence_id"]: e for e in evs}
                 problems = check_address_routes(results, evidence_by_id, idx, base_idx, base_evs, a.map_store)
+                check_linkedin_routes(results, evidence_by_id, idx, a.map_store, lambda path: tasks_file(a.head, path))
                 fills = changed_websites(base_idx, idx)
                 candidates, reasons = website_witnesses(fills, idx, head_evs) if fills else ({}, {})
                 witness_ids = set().union(*candidates.values())

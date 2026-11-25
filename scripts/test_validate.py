@@ -222,6 +222,41 @@ class ValidatorMutationTests(unittest.TestCase):
                         source_class="press", source_ref="https://example.com/news", tier_effect="supports_B"))
         self.assert_fails_with("people scope must be observed on the institution's own page (own_site) (V-22)")
 
+    # [v1.21.0] linkedin_company: a logged-out company page, organization grain, an org-grain claim; ceiling supports_A; size band caps at supports_B.
+    EVD_LINKEDIN = {"evidence_id": "EVD-999998", "record_table": "organizations", "record_id": "ORG-000001",
+                    "claim_type": "activity", "claim_detail": "industry as the page declares it; quote: Plastics Manufacturing",
+                    "source_class": "linkedin_company", "source_ref": "https://www.linkedin.com/company/example-company",
+                    "observed_date": "2026-11-25", "tier_effect": "supports_A", "created_by": "test", "notes": ""}
+
+    def linkedin_output(self, **changes):
+        self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, **changes))
+        return run_validator(self.data)[1]
+
+    def test_v22_linkedin_company_is_organization_grain_only(self):
+        self.assertNotIn("linkedin_company", self.linkedin_output())  # a clean row raises no linkedin_company message (and its supports_A is within the ceiling)
+
+    def test_v22_linkedin_company_never_supports_a_site(self):
+        self.assertIn("linkedin_company supports organization facts only, never sites (V-22, v1.21.0)",
+                      self.linkedin_output(record_table="sites", record_id="SITE-000001"))
+
+    def test_v22_linkedin_company_refuses_profiles_and_other_urls(self):
+        urls = ("https://www.linkedin.com/in/some-person", "https://www.linkedin.com/pub/x/1/2/3", "https://www.linkedin.com/company/x/people", "https://example.org/company/x")
+        for n, url in enumerate(urls):
+            self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, evidence_id=f"EVD-99999{n}", source_ref=url))
+        out = run_validator(self.data)[1]
+        for n in range(len(urls)):
+            self.assertIn(f"EVD-99999{n} linkedin_company source_ref must be a logged-out", out)
+
+    def test_v22_linkedin_company_claims_are_org_grain(self):
+        self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, evidence_id="EVD-999990", claim_type="parent"))
+        self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, evidence_id="EVD-999991", claim_type="address", claim_detail="street address; quote: 1 Main St"))
+        out = run_validator(self.data)[1]
+        self.assertIn("EVD-999990 linkedin_company cannot carry a parent claim (V-22, v1.21.0)", out)
+        self.assertIn("EVD-999991 a linkedin_company address claim is the HQ city only", out)
+
+    def test_v22_linkedin_company_size_band_caps_at_supports_b(self):
+        self.assertIn("size_band needs government_filing/own_site and caps at supports_B", self.linkedin_output(claim_type="size_band", tier_effect="supports_A"))
+
     def test_v110_people_address_has_no_referent(self):
         self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, claim_type="address"))
         self.assert_fails_with("claim_type address has no people-grain referent (V-22)")

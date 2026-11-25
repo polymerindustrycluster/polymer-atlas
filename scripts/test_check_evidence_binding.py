@@ -1657,5 +1657,90 @@ class OhioRouteStreets(unittest.TestCase):
         self.assertFalse(b.same_street("OH-45", "SR 45"))
 
 
+class LinkedInCompanyRoute(unittest.TestCase):
+    """SCHEMA §4.13 `linkedin_company`: a logged-out company page, organization grain, replayed against a stored capture. Synthetic strings only."""
+    URL = "https://www.linkedin.com/company/harbor-plastics"
+    PAGE = ("[1] Harbor Plastics, Inc. | LinkedIn (" + URL + ")\nPage crawled less than a minute ago.\nL2: ## About us\n"
+            "Harbor Plastics molds engineered thermoplastic parts for packaging and consumer products.\nIndustry Plastics Manufacturing\n"
+            "Company size 51-200 employees\nHeadquarters Cleveland, Ohio\n")
+    QUOTE = "Harbor Plastics molds engineered thermoplastic parts for packaging and consumer products."
+
+    def setUp(self):
+        self.idx = b.Index(SITES, ORGS)
+        self.store = Path(tempfile.mkdtemp(prefix="li-store-"))
+        (self.store / "raw/linkedin").mkdir(parents=True)
+
+    def capture(self, text=None):
+        data = (text or self.PAGE).encode()
+        digest = hashlib.sha256(data).hexdigest()
+        (self.store / f"raw/linkedin/{digest}.txt").write_bytes(data)
+        return digest
+
+    def row(self, quote=None, rid="ORG-1", url=None, claim="activity", table="organizations"):
+        return ev(rid, url or self.URL, self.QUOTE if quote is None else quote, claim, table, cls="linkedin_company")
+
+    def inputs(self, *digests):
+        body = "".join(f"{d}  raw/linkedin/{d}.txt\n" for d in digests).encode()
+        return lambda path: body if path == "tasks/test/INPUTS.sha256" else None
+
+    def replay(self, row, *digests, store="default"):
+        result = dict(evidence_id=row["evidence_id"], reason="linkedin_needs_capture", verdict="HELD")
+        b.check_linkedin_routes([result], {row["evidence_id"]: row}, self.idx, self.store if store == "default" else store, self.inputs(*digests))
+        return result["verdict"], result["reason"]
+
+    def test_floor_fails_profile_site_grain_claim_and_personal_data(self):
+        cases = {
+            "profile URL": (self.row(url="https://www.linkedin.com/in/some-person"), "linkedin_profile"),
+            "old public profile URL": (self.row(url="https://www.linkedin.com/pub/some-person/1/2/3"), "linkedin_profile"),
+            "not a LinkedIn company page": (self.row(url="https://example.org/company/harbor"), "linkedin_not_company_page"),
+            "staff list under the company": (self.row(url=self.URL + "/people"), "linkedin_not_company_page"),
+            "site-grain claim": (self.row(rid="S-CARN", table="sites"), "linkedin_not_org_grain"),
+            "claim type not org grain": (self.row(claim="parent"), "linkedin_claim_not_allowed"),
+            "address that is not the HQ city": (self.row(claim="address"), "linkedin_address_not_hq_city"),
+            "email in the quote": (self.row(quote=self.QUOTE + " Write to info@harbor.example today"), "linkedin_personal_data"),
+            "phone in the quote": (self.row(quote=self.QUOTE + " Call 216-555-0100 today"), "linkedin_personal_data"),
+            "labelled person in the quote": (self.row(quote=self.QUOTE + " CEO Jane Smith leads the company"), "linkedin_personal_data"),
+        }
+        for name, (row, reason) in cases.items():
+            with self.subTest(name):
+                self.assertEqual(b.judge(row, self.idx)[:2], ("FAIL", reason))
+
+    def test_clean_row_is_held_until_its_capture_is_replayed(self):
+        self.assertEqual(b.judge(self.row(), self.idx)[:2], ("HELD", "linkedin_needs_capture"))
+        self.assertEqual(b.judge(self.row(claim="address", quote=self.QUOTE).copy() | {"claim_detail": "hq_city Cleveland; quote: " + self.QUOTE}, self.idx)[:2],
+                         ("HELD", "linkedin_needs_capture"))
+
+    def test_capture_replay_passes_only_when_every_leg_holds(self):
+        digest = self.capture()
+        self.assertEqual(self.replay(self.row(), digest), ("PASS", "linkedin_company_replayed"))
+        self.assertEqual(self.replay(self.row(quote="Harbor Plastics molds rubber hoses for every industry on earth"), digest), ("FAIL", "quote_not_on_capture"))
+        self.assertEqual(self.replay(self.row(quote="short quote"), digest), ("FAIL", "quote_not_on_capture"))
+
+    def test_parent_roll_up_page_supports_nothing_for_the_child(self):
+        parent_url = "https://www.linkedin.com/company/pinecrest-industries"
+        page = self.PAGE.replace("Harbor Plastics, Inc.", "Pinecrest Industries").replace(self.URL, parent_url)
+        digest = self.capture(page)
+        row = self.row(rid="ORG-11", url=parent_url, quote="molds engineered thermoplastic parts for packaging and consumer products.")
+        self.assertEqual(self.replay(row, digest), ("FAIL", "capture_name_not_held"))
+        self.assertEqual(self.replay(self.row(rid="ORG-10", url=parent_url, quote="molds engineered thermoplastic parts for packaging and consumer products."), digest),
+                         ("PASS", "linkedin_company_replayed"))
+
+    def test_a_missing_or_unnamed_capture_is_held_never_passed(self):
+        digest = self.capture()
+        self.assertEqual(self.replay(self.row(), digest, store=None), ("HELD", "linkedin_store_not_given"))
+        self.assertEqual(self.replay(self.row()), ("HELD", "linkedin_capture_not_in_inputs"))  # the capture exists but INPUTS.sha256 does not name it
+        (self.store / f"raw/linkedin/{digest}.txt").write_bytes(self.PAGE.encode() + b"tampered")
+        self.assertEqual(self.replay(self.row(), digest), ("HELD", "linkedin_capture_not_in_inputs"))  # digest mismatch
+        other = self.row(url="https://www.linkedin.com/company/another-page")
+        self.assertEqual(self.replay(other, self.capture()), ("HELD", "linkedin_capture_not_in_inputs"))  # the capture is another page
+        self.assertEqual(b.check_linkedin_routes([], {}, self.idx, self.store, lambda p: None), None)
+
+    def test_url_kinds(self):
+        for url, kind in (("https://www.linkedin.com/company/acme/", "company"), ("https://uk.linkedin.com/company/acme/about", "company"),
+                          ("https://www.linkedin.com/in/x", "profile"), ("https://www.linkedin.com/%69n/x", "profile"), ("https://lnkd.in/x", "other"),
+                          ("https://www.linkedin.com/showcase/acme", "other"), ("https://www.linkedin.com/company/acme/people", "other")):
+            self.assertEqual(b.linkedin_url_kind(url), kind, url)
+
+
 if __name__ == "__main__":
     unittest.main()
