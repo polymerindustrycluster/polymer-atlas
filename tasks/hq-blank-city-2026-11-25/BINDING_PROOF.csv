@@ -1,0 +1,2 @@
+evidence_id,record_id,claim_sha256,capture,capture_date,capture_sha256,quote_offset,verdict,reader_family,reader_date
+EVD-483143,ORG-000197,ccc9a9e74f6be54a88ba6c5539a95d7ec3208c994385781f8e6d7fff37f16a2e,https://web.archive.org/web/20260519034412id_/https://www.kendatire.com/en-us/locations/,2026-05-19,7fe2278a7f0f5db77287c8e5582f16d97e37353b4ccf977ba10f0c0879df4753,471,VERIFIED,OpenAI Codex (GPT-6.2 Sol),2026-11-25
