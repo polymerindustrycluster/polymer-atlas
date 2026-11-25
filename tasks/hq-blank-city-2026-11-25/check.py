@@ -106,9 +106,9 @@ def problems(head, base, claims, proofs, manifest, capture, changed, count, base
             out.append(f"cells: {i} {k} is not the pinned fill from {EVD}")
         if c["verdict"] not in ("withdrawn", "corrected"):
             out.append(f"cells: {i} {k} verdict {c['verdict']!r}")
-    if {(i, k) for i, k in claimed if i in CLEARED} != {(i, "hq_county") for i in CLEARED} or \
-       {(i, k) for i, k in claimed if i == KENDA} != {(KENDA, k) for k in FILLED}:
-        out.append("cells: the claimed cells are not the 7 cleared hq_county cells and the 4 Kenda cells")
+    allowed = {(i, "hq_county") for i in CLEARED} | {(KENDA, k) for k in FILLED}
+    if claimed != allowed:  # the whole claimed set, not the part about the eight: a ninth owner must not ride in
+        out.append(f"cells: the claimed cells are not exactly the 11 allowed pairs: extra {sorted(claimed - allowed)[:5]}, missing {sorted(allowed - claimed)[:5]}")
     # 2. no organization with a county and no city; the base set is the frame, so this cannot pass vacuously
     if sorted(base_violators) != FRAME:
         out.append(f"blank city: the base's county-without-city set is not the 8 framed organizations: {sorted(base_violators)}")
@@ -277,10 +277,15 @@ def main():
     def flipped_byte(a):
         a["capture"] = a["capture"] + b" "
 
+    def ninth_owner(a):
+        org(a, "ORG-000001")["hq_county"] = ""
+        a["claims"].append(dict(table="organizations", record_id="ORG-000001", field="hq_county", verdict="withdrawn", evidence_id=""))
+
     results = [
         plant("a cell outside the claims (ORG-000022 hq_in_scope)", "cells", extra_cell),
         plant("a cleared cell left at its old value (ORG-000033 hq_county)", "cells", set_cell("ORG-000033", "hq_county", "Summit")),
         plant("a claim line dropped (ORG-000033)", "cells", drop_claim),
+        plant("a ninth owner loses a valid county and CLAIMS_CHECKED.csv is edited to match (two-file defect)", "cells: the claimed cells are not exactly", ninth_owner),
         plant("Kenda's city set to the mailing city", "cells", set_cell(KENDA, "hq_city", "North Canton")),
         plant("a county with no city on another organization", "blank city", other_county),
         plant("the base set no longer the frame (vacuous pass)", "blank city", lambda a: a.__setitem__("base_violators", FRAME[:-1])),
