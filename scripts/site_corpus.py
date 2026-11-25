@@ -462,9 +462,8 @@ class Corpus:
             clock.seek(0); clock.truncate(); clock.write(str(max(time.time() + delay, until))); clock.flush()
 
     def hop(self, current, delay):
-        """One transport step: curl, and if it fails on the TLS handshake, the certificate chain or HTTP/2 (whatever the
-        HTTP status curl had read), once more over HTTP/1.1. The retry's response is processed like any other.
-        Certificate verification stays on."""
+        """One transport step: curl, and if it fails on the TLS handshake, the certificate chain or HTTP/2 (whatever HTTP status curl had
+        read), once more over HTTP/1.1. The retry's response is processed like any other. Certificate verification stays on."""
         response = self.request(current, delay)
         if response.get('exit') in HTTP1_RETRY: response = self.request(current, delay, http1=True)
         return response

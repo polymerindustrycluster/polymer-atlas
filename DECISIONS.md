@@ -742,6 +742,29 @@ Decided by the repo owner in session, 2026-11-24, by multiple choice ("Run now, 
 - The smoke report marks the size-band and child-field tallies unreliable.
 - The findings are fixed before any full draw.
 
+## 2026-11-24 · Owner rulings 19:08 and 20:51
+
+Decided by the repo owner in session on 2026-11-24, by multiple choice. The 20:51 rulings were all the recommended option.
+
+At 19:08:
+
+1. Fill ceiling 'Measure ceiling, then floor': after the smoke, a script-only census of how many of the 327 process-blank PIC-18 owners have any own website or filing that could state a process; then any fill route stops when a batch yields under 20% of owners.
+2. Fitness 'Re-grade and ask': after the smoke, re-grade the 12 first-user tasks on current main and the owner asks the first user whether they use the Atlas and what is missing; that decides fill vs accuracy work.
+
+At 20:51:
+
+1. Smoke attempt 1 counts as stopped at a missed control (the overturned plant); its reads stay on record as partial. Next: one combined fix PR (runner persists every reader answer; a plant passes only when the swap is named; the nine #556 follow-ups), then a new sealed smoke attempt on a new snapshot.
+2. P1 exit: a clean smoke (every plant verified) unlocks the full PIC-18 draw; the draw's result is the P1 exit.
+
+## 2026-11-25 · Owner ruling 07:57 on the audit 13 plant check
+
+Decided by the repo owner in session on 2026-11-25, by multiple choice, the recommended option ("Hand-check decides"). It followed the Codex review of the script witness rule on PR #561 (comment 7162985847).
+
+- The witness rule for plants (eligibility and detection) is a flag only and never the decider.
+- For every plant read in a run, `score` requires a hand-check record written by the controller in the run folder (`handcheck.csv`: plant id, quote, verdict CAUGHT, MISSED or INELIGIBLE, reviewer, time; mode 0600, create-exclusive) and refuses while any plant lacks one or the file was altered after the lock line.
+- The published plant result comes only from those records, with the script flag shown beside it.
+- Draw-time eligibility stays a filter. The draw receipt lists every plant's eligibility quote, so the hand-check can reject an ineligible plant; it is counted as INELIGIBLE and reported.
+
 ## 2026-11-24 · Owner rulings 21:21 and 21:26 (robots.txt, bot checks, LinkedIn)
 
 Decided by the repo owner in session, 2026-11-24 and 2026-11-25.
@@ -766,4 +789,14 @@ Follows the owner rulings of 2026-11-24 21:21 ("Rule change: ignore robots.txt. 
 4. curl failures on the TLS handshake, the certificate chain or HTTP/2 get one retry over HTTP/1.1, with verification on; a chain curl still rejects goes to Chrome. No certificate verification is ever disabled.
 
 The check is `tasks/browser-fetch-2026-11-25/check.py`.
+
+## 2026-11-25 · HTTP/1.1 transport fallback; the two bare-curl runs recorded
+
+The owner's 2026-11-24 ruling ("Rule change: ignore robots.txt. Click thru bot checks.") shipped in #560 without a browser (owner ruling 2026-11-25 06:08, "Split it"). Two runs on the merged fetcher, curl only, are recorded in `docs/ACQUISITION.md` section 3: the 117 PIC-18 organizations with no readable page, of which 12 became readable (7 of 8 real robots disallows, 4 of 98 unreadable robots.txt), and the 127 LinkedIn company pages, of which 0 did (all 127 answered a Cloudflare 403). Most of the 105 still unreadable fail inside curl: certificate chain 27, HTTP/2 or empty reply 28, DNS 11, timeout 7, handshake 5.
+
+1. A curl failure on the TLS handshake, the certificate chain or HTTP/2 (exit 35, 60 or 92), whatever HTTP status curl had read, gets one retry over HTTP/1.1 inside the same transport step (page, redirect hop and robots.txt). Its response, redirects included, is processed like any other. Certificate verification stays on; nothing is ever disabled. Whether the retry recovers any of the 105 is not measured.
+2. LinkedIn now runs through Muse with raw evidence on the NAS (the owner, 2026-11-25). The fetcher's LinkedIn company-page path from #560 is unchanged and is not the route for it. A LinkedIn page stays a navigation link only until the evidence route lands.
+3. The browser retry for bot checks is a separate change and is not part of this entry.
+
+The check is `tasks/fetch-fallback-2026-11-25/check.py`.
 
