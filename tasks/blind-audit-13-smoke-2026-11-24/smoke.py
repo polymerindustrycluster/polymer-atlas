@@ -363,8 +363,7 @@ def cmd_draw(a):
     out = out_dir(a.out)
     if (out / 'draw_receipt.json').exists():
         sys.exit('refusing to draw: this folder already holds a draw (one binding draw per sealed attempt)')
-    inputs, plant_report, rejects = {}, {}, read_rejects(a.reject_plants)
-    if a.reject_plants and a.records: sys.exit('refusing: --reject-plants applies to a frame draw; an explicit-list draw has no plants')
+    inputs, plant_report = {}, {}
     if a.records:  # explicit list: no sampling, no plants. Used by the known-answer run and the selftest.
         recs = list(csv.DictReader(open(a.records, newline='')))
         ids = [(r['table'], r['record_id']) for r in recs]
@@ -395,24 +394,10 @@ def cmd_draw(a):
                       families_file_sha256=receipt['families_file_sha256'], approved_files=sorted(receipt['approved_files']), store=receipt['store'])
         assert a.cache, 'a frame draw needs --cache: plants are drawn only from records whose cached pages state the true value'
         assert sorted(sha(Path(p).read_bytes()) for p in a.approved) == sorted(receipt['approved_files']), 'approval files differ from the sealed preflight'
-        chk, memo = plant_checker(R, Path(a.cache), read_approved(a.approved)), {}
-
-        def eligible(cands):  # the cached-page check runs once per candidate set, however many times the sealed order is walked
-            key = tuple((c['table'], c['record_id'], c['field']) for c in cands)
-            memo[key] = memo[key] if key in memo else chk(cands)
-            return memo[key]
-        eligible.quotes = chk.quotes
         try:
-            done = []
-            for rej in rejects:  # a reject must name a plant of the draw made with the rejects before it
-                base = make_plants(R, secret, ids, set(real), fam_of, eligible, None, {(x['record_id'], x['field']) for x in done})
-                if (rej['record_id'], rej['field']) not in {(p['record_id'], p['field']) for p in base}:
-                    raise ValueError(f"reject {rej['record_id']}/{rej['field']} is not a drawn plant")
-                done.append(rej)
-            pl = make_plants(R, secret, ids, set(real), fam_of, eligible, plant_report, {(x['record_id'], x['field']) for x in rejects})
+            pl = make_plants(R, secret, ids, set(real), fam_of, plant_checker(R, Path(a.cache), read_approved(a.approved)), plant_report)
         except ValueError as exc:
             sys.exit(f'refusing to draw (nothing written): {exc}')
-        if a.reject_plants: inputs['plant_rejects_sha256'] = sha(Path(a.reject_plants).read_bytes())
     sample = [dict(kind='real', table=t, record_id=i, provider=forced[t, i], plant_field='', donor_record_id='') for t, i in real]
     sample += [dict(kind='plant', table=p['table'], record_id=p['record_id'], provider=p['provider'], plant_field=p['field'], donor_record_id=p['donor_record_id']) for p in pl]
     assert len({(s['table'], s['record_id']) for s in sample}) == len(sample), 'a plant overlaps a real record or another plant'
@@ -425,24 +410,9 @@ def cmd_draw(a):
     put(out / 'families.json', jdump({f'{t}|{i}': sorted(f) for (t, i), f in fam_of.items() if any(s['record_id'] == i and s['table'] == t for s in sample)}))
     put(out / 'draw_receipt.json', jdump(dict(at=R.at, secret_sha256=sha(secret), n_real=len(real), plants={p: sum(1 for s in pl if s['provider'] == p) for p in PROVIDERS},
                                               check_p=CHECK_P, method='HMAC-SHA256(secret, purpose|key): purposes smoke, plantpool|P, order, coin; real = first n by smoke order; plants = first 3 per provider in plantpool order whose cached pages pass reading.plant_reason',
-                                              inputs=inputs, **({'plant_rejects': rejects} if a.reject_plants else {}), plant_eligibility=plant_report, plants_detail=plant_details(sample, plant_report.pop('plants', [])), sample_sha256=sha((out / 'sample.csv').read_bytes()), scripts=script_hashes())))
+                                              inputs=inputs, plant_eligibility=plant_report, plants_detail=plant_details(sample, plant_report.pop('plants', [])), sample_sha256=sha((out / 'sample.csv').read_bytes()), scripts=script_hashes())))
     print(f'drew {len(real)} real + {len(pl)} plants at {R.at[:12]}; receipt written (the sample stays private)')
     return 0
-
-
-def read_rejects(path):
-    """--reject-plants FILE: a CSV `record_id,field,reason`, in the order the controller refused them. Every row names a pair and says why."""
-    if not path: return []
-    rows = list(csv.DictReader(open(path, newline='')))
-    assert rows and set(rows[0]) == {'record_id', 'field', 'reason'}, '--reject-plants needs the columns record_id,field,reason and at least one row'
-    assert all(r['record_id'] and r['field'] and r['reason'].strip() for r in rows), 'every reject needs a record_id, a field and a reason'
-    return [dict(record_id=r['record_id'], field=r['field'], reason=r['reason'].strip()) for r in rows]
-
-
-def sealed_rejects(receipt):
-    """A draw made with --reject-plants carries the reject file's sha256; without it fetch and run refuse the draw."""
-    if 'plant_rejects' in receipt and not receipt['inputs'].get('plant_rejects_sha256'):
-        sys.exit('refusing: this draw used --reject-plants but its receipt carries no sha256 of the reject file')
 
 
 def assert_unique(ids):
@@ -472,12 +442,11 @@ def plant_candidates(values, order, p):
     return pool
 
 
-def make_plants(R, secret, ids, real, fam_of, eligible=None, report=None, rejects=()):
+def make_plants(R, secret, ids, real, fam_of, eligible=None, report=None):
     """3 plants per participating reader provider, each from a record eligible for that provider (its family did not build it) and outside the real
     sample, with one judged field swapped for another record's distinct value, in the packet only. The sealed HMAC order (plantpool|P) fixes the pool.
     `eligible(candidates) -> {(table, record_id, field): reason or ''}` is draw-time proof that the ideal answer detects the plant on the cached pages
-    the reader will see (reading.plant_reason): plants are the first 3 records in sealed order with an eligible field. `rejects` = (record_id, field) pairs the controller's hand-check refused:
-    each is skipped and the next eligible pair in the same sealed order is taken. No eligible 3 -> ValueError with counts."""
+    the reader will see (reading.plant_reason): plants are the first 3 records in sealed order with an eligible field. No eligible 3 -> ValueError with counts."""
     values = {(t, r[draw.ID_COL[t]]): r for t in ('organizations', 'ecosystem', 'sites') for r in R.rows(t)}
     used, out = set(real), []
     for p in PROVIDERS:
@@ -485,7 +454,6 @@ def make_plants(R, secret, ids, real, fam_of, eligible=None, report=None, reject
         cands = plant_candidates(values, order, p)
         checked = eligible(cands) if eligible else {}
         why = {(c['table'], c['record_id'], c['field']): checked.get((c['table'], c['record_id'], c['field']), 'not_checked' if eligible else '') for c in cands}  # a pair the checker never answered is not eligible
-        why = {k: ('rejected_by_controller' if (k[1], k[2]) in rejects else v) for k, v in why.items()}
         got, seen = [], set()
         for c in cands:
             key = (c['table'], c['record_id'])
@@ -541,7 +509,6 @@ def true_value(R, table, record_id, field, _cache={}):
 # ---------------------------------------------------------------- fetch / run / score
 def cmd_fetch(a):
     receipt = json.loads((Path(a.draw) / 'draw_receipt.json').read_text())
-    sealed_rejects(receipt)
     inputs = receipt['inputs']
     if 'preflight_receipt_sha256' in inputs:  # the sealed inputs carry forward: same approvals, same store
         assert sorted(sha(Path(p).read_bytes()) for p in a.approved) == inputs['approved_files'], 'approval files differ from the sealed preflight'
@@ -550,7 +517,6 @@ def cmd_fetch(a):
 
 
 def cmd_run(a):
-    sealed_rejects(json.loads((Path(a.draw) / 'draw_receipt.json').read_text()))
     return reading.run_stage(Path(a.draw), Path(a.cache), a.out, a)
 
 
@@ -576,7 +542,6 @@ def main(argv=None):
     f = s.add_parser('draw'); f.add_argument('--at', required=True); f.add_argument('--out', required=True); f.add_argument('--secret-file', required=True)
     f.add_argument('--preflight'); f.add_argument('--records'); f.add_argument('--n', type=int, default=SMOKE_N)
     f.add_argument('--cache'); f.add_argument('--approved', action='append', default=[]); f.add_argument('--pool', type=int, default=PLANT_POOL, help='plant pool records per provider (the draw receipt reports how many were eligible)')
-    f.add_argument('--reject-plants', help='CSV record_id,field,reason: plants the controller hand-check refused; the draw skips each and takes the next eligible pair in the same sealed order')
     f = s.add_parser('fetch'); f.add_argument('--draw', required=True); f.add_argument('--cache', required=True); f.add_argument('--skip-blocked', action='store_true', help='explicit-list fixture only')
     f.add_argument('--approved', action='append', default=[]); f.add_argument('--store', type=Path, default=replays.STORE)
     f = s.add_parser('run'); f.add_argument('--draw', required=True); f.add_argument('--cache', required=True); f.add_argument('--out', required=True)
