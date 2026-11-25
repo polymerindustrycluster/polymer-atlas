@@ -238,6 +238,7 @@ class Corpus:
         if self.cache == ROOT or ROOT in self.cache.parents:
             raise ValueError('Cache must be outside the repository')
         self.cache.mkdir(parents=True, exist_ok=True)
+        self.memo = {}  # robots.txt bodies: in memory only
 
     @contextmanager
     def lock(self, name):
@@ -320,11 +321,7 @@ class Corpus:
         raw = response.get('raw', b'')
         body = raw.decode('utf-8', 'replace')
         code = dict(code=response.get('code', 0))
-        if urlsplit(target).path == '/robots.txt':
-            if body.lstrip('\ufeff').lstrip()[:1] == '<':  # HTML where the rules belong (a form, an error page): unreadable, never stored
-                response, raw, body = code, b'', ''
-                if status == 'ok': status = 'FETCH_FAILED'
-        elif private_page(final, body) or private_page(target, ''):
+        if private_page(final, body) or private_page(target, ''):
             # Discarded before storage, whatever the status: a failed or manual receipt must not keep the body either.
             response, raw, body = code, b'', ''
             if status == 'ok': status = 'CONTACT_FORM_OR_STAFF_DIRECTORY'
@@ -369,18 +366,42 @@ class Corpus:
                 w.writerow(r)
         return r
 
-    def robots(self, target):
-        """('yes'|'no'|'unreadable', crawl delay seconds). Informational: a Disallow never blocks a fetch (owner ruling 2026-11-24)."""
+    def robots_rules(self, target):
+        """(receipt, text) for the host's robots.txt. The body is parsed in memory and NEVER written to disk, whatever it
+        holds; only a receipt (url, final_url, status, http_status, bytes, sha256, fetched_at) goes to robots-<key>.json."""
         p = urlsplit(target)
         robots = urlunsplit((p.scheme, p.netloc, '/robots.txt', '', ''))
-        r = self.fetch(robots, robots=True)
+        with self.lock('url-' + key(robots)):
+            if robots in self.memo: return self.memo[robots]
+            current, response = robots, {}
+            for _ in range(6):
+                if refused(robots, current): response = {}; break
+                response = self.request(current, 1)
+                if response['code'] in (301, 302, 303, 307, 308) and response['location']:
+                    current = url(urljoin(current, response['location']))
+                    if urlsplit(current).path != '/robots.txt': break  # only robots paths are followed
+                    continue
+                break
+            raw, code = response.get('raw', b''), response.get('code', 0)
+            ok = response.get('exit') == 0 and code == 200
+            receipt = dict(url=robots, final_url=current, status='ok' if ok else 'FETCH_FAILED', http_status=code, bytes=len(raw),
+                           sha256=hashlib.sha256(raw).hexdigest(), fetched_at=datetime.now(timezone.utc).isoformat(), route='direct',
+                           raw_file='', text_file='', robots_disallowed='', error=response.get('error', ''))
+            meta = self.cache / ('robots-' + key(robots) + '.json.tmp')
+            meta.write_text(json.dumps(receipt)); meta.replace(self.cache / ('robots-' + key(robots) + '.json'))
+            self.memo[robots] = receipt, (raw.decode('utf-8', 'replace') if ok else '')
+            return self.memo[robots]
+
+    def robots(self, target):
+        """('yes'|'no'|'unreadable', crawl delay seconds). Informational: a Disallow never blocks a fetch (owner ruling 2026-11-24)."""
+        receipt, text = self.robots_rules(target)
         parser = RobotFileParser()
-        if r['status'] == 'ok':
-            parser.parse((self.cache / r['text_file']).read_text().splitlines())
+        if receipt['status'] == 'ok':
+            parser.parse(text.splitlines())
             state = 'no' if parser.can_fetch(ROBOT_AGENT, target) else 'yes'
         else:
             parser.parse([])
-            state = 'no' if r['http_status'] in (404, 410) else 'unreadable'  # unreadable: default 1 s delay, no block
+            state = 'no' if receipt['http_status'] in (404, 410) else 'unreadable'  # unreadable: default 1 s delay, no block
         delay = max(1, parser.crawl_delay(ROBOT_AGENT) or 0)
         rate = parser.request_rate(ROBOT_AGENT)
         if rate: delay = max(delay, rate.seconds / rate.requests)
@@ -400,9 +421,9 @@ class Corpus:
                 if not exists: w.writerow(['url', 'final_url', 'http_status', 'listed_at'])
                 w.writerow([target, final, code, datetime.now(timezone.utc).isoformat()])
 
-    def fetch(self, target, robots=False):
+    def fetch(self, target):
         target = url(target)
-        robots = robots or urlsplit(target).path == '/robots.txt'
+        if urlsplit(target).path == '/robots.txt': return self.robots_rules(target)[0]  # receipt only, no body on disk
         with self.lock('url-' + key(target)):
             if why := refused(target, target):
                 return self.save(target, {}, why, target, 'direct')
@@ -413,29 +434,27 @@ class Corpus:
                 return cached
             current, response, flags = target, {}, set()
             for _ in range(6):
-                state, delay = ('', 1) if robots else self.robots(current)
+                state, delay = self.robots(current)
                 flags.add(state)
                 response = self.request(current, delay)
                 if response['code'] in (301, 302, 303, 307, 308) and response['location']:
                     current = url(urljoin(current, response['location']))
                     if why := refused(target, current):
                         return self.save(target, {}, why, current, 'direct', verdict(flags))
-                    # Only robots paths are exempt from a destination robots check.
-                    if robots and urlsplit(current).path != '/robots.txt': break
                     continue
                 break
             seen = verdict(flags)
             if response.get('code') in (301, 302, 303, 307, 308):
                 return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)
-            if not robots and response.get('code') in BOT_CODES and challenged(response['code'], response['raw'].decode('utf-8', 'replace')):
+            if response.get('code') in BOT_CODES and challenged(response['code'], response['raw'].decode('utf-8', 'replace')):
                 self.manual(target, current, response['code'])  # a bot check is for a person; a browser retry waits for its own PR
                 return self.save(target, response, 'BOT_CHECK_MANUAL', current, 'direct', seen)
             if response.get('exit') == 0 and response.get('code') == 200:
                 r = self.save(target, response, 'ok', current, 'direct', seen)
-                if r['status'] in ('ok', 'CONTACT_FORM_OR_STAFF_DIRECTORY') or robots: return r  # an excluded page is not retried through a proxy
-            if not robots and private_page(current, response.get('raw', b'').decode('utf-8', 'replace')):
+                if r['status'] in ('ok', 'CONTACT_FORM_OR_STAFF_DIRECTORY'): return r  # an excluded page is not retried through a proxy
+            if private_page(current, response.get('raw', b'').decode('utf-8', 'replace')):
                 return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)  # never forwarded to a reader
-            if not robots and response.get('code') != 429 and urlsplit(current).hostname != 'r.jina.ai' and not linkedin_url(current):
+            if response.get('code') != 429 and urlsplit(current).hostname != 'r.jina.ai' and not linkedin_url(current):
                 fallback = self.fallback(current, delay)
                 if fallback['code'] == 200 and fallback['exit'] == 0:
                     source = re.search(r'(?m)^URL Source:\s*(https?://\S+)', fallback['raw'].decode('utf-8', 'replace'))

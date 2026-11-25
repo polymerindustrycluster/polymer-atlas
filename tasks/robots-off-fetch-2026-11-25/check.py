@@ -182,20 +182,21 @@ def form_page_is_never_forwarded_to_the_reader(c, tmp):
 
 
 @case
-def html_form_served_as_robots_txt_is_unreadable_and_not_stored(c, tmp):
-    with patch.object(c, 'request', side_effect=serve(resp(FORM), resp(PAGE))):
-        r = c.fetch('https://example.org/')
-    assert r['status'] == 'ok' and r.get('robots_disallowed') == 'unreadable', f"status {r['status']} robots_disallowed {r.get('robots_disallowed')!r}"
-    no_sentinel(tmp)
-
-
-@case
-def html_form_with_a_byte_order_mark_served_as_robots_txt_is_not_stored(c, tmp):
-    bom = dict(resp(FORM), raw=b'\xef\xbb\xbf' + FORM.encode())
-    with patch.object(c, 'request', side_effect=serve(bom, resp(PAGE))):
-        r = c.fetch('https://example.org/')
-    assert r['status'] == 'ok' and r.get('robots_disallowed') == 'unreadable', f"status {r['status']} robots_disallowed {r.get('robots_disallowed')!r}"
-    no_sentinel(tmp)
+def robots_txt_body_is_never_written_to_disk(c, tmp):
+    import hashlib, json
+    bodies = {'html form': FORM.encode(), 'bom': b'\xef\xbb\xbf' + FORM.encode(), 'space then bom': b'  \n\xef\xbb\xbf' + FORM.encode(),
+              'plain rules with a comment': ('User-agent: *\nDisallow: /private\n# ' + SENTINEL).encode(), 'binary': b'\x00\x01' + SENTINEL.encode()}
+    for n, (name, body) in enumerate(bodies.items()):
+        host = f'https://h{n}.example.org/'
+        with patch.object(c, 'request', side_effect=serve(dict(resp(), raw=body), resp(PAGE))):
+            r = c.fetch(host)
+            assert r['status'] == 'ok', f'{name}: status {r["status"]}'
+        no_sentinel(tmp)
+        receipts = [json.loads(f.read_text()) for f in tmp.glob('robots-*.json')]
+        assert any(x['url'] == host + 'robots.txt' and x['sha256'] == hashlib.sha256(body).hexdigest() and x['http_status'] == 200 and x['status'] == 'ok' for x in receipts), f'{name}: no robots receipt with the body hash'
+        assert not any(f.read_bytes() == body for f in tmp.iterdir() if f.is_file()), f'{name}: the body is on disk'
+    with patch.object(c, 'request', side_effect=serve(dict(resp(), raw=bodies['plain rules with a comment']), resp(PAGE))):
+        assert c.fetch('https://h3.example.org/private')['robots_disallowed'] == 'yes'  # still parsed, in memory
 
 
 @case
