@@ -1351,16 +1351,22 @@ if evidence or True:
         elif te != "contradicts" and sc in CLASS_CEIL and EFF_RANK[te] > EFF_RANK[CLASS_CEIL[sc]]:
             errors.append(f"evidence.csv:{i} {eid} tier_effect {te} exceeds the {sc} ceiling {CLASS_CEIL[sc]} (V-22)")
         if r["claim_type"] == "size_band" and (sc not in SIZE_BAND_CLASSES or te == "supports_A"):
-            errors.append(f"evidence.csv:{i} {eid} size_band needs government_filing/own_site and caps at supports_B (V-22)")
+            errors.append(f"evidence.csv:{i} {eid} size_band needs government_filing, own_site or linkedin_company and caps at supports_B (V-22)")
         if sc == "linkedin_company":
             # [v1.21.0] §4.13: a logged-out company page, organization grain, an org-grain claim (an address claim is the HQ city only)
             if rt != "organizations":
                 errors.append(f"evidence.csv:{i} {eid} linkedin_company supports organization facts only, never {rt} (V-22, v1.21.0)")
             if r["claim_type"] not in ("activity", "scope", "size_band", "existence", "address"):
                 errors.append(f"evidence.csv:{i} {eid} linkedin_company cannot carry a {r['claim_type']} claim (V-22, v1.21.0)")
-            if r["claim_type"] == "address" and not (r["claim_detail"] or "").startswith("hq_city"):
-                errors.append(f"evidence.csv:{i} {eid} a linkedin_company address claim is the HQ city only, claim_detail starts hq_city (V-22, v1.21.0)")
-            if not re.fullmatch(r"https://(?:[a-z0-9-]+\.)?linkedin\.com/company/[^/\s]+(?:/about)?/?", (r["source_ref"] or "").strip()):
+            if r["claim_type"] == "address":
+                from atlas import NOTES_STREET_RE
+                _head, _sep, _quote = (r["claim_detail"] or "").partition("quote:")
+                if (not _sep or not re.fullmatch(r"hq_city(?: [^\W\d_][\w .'\u2019-]*)?;?\s*", _head.strip())
+                        or NOTES_STREET_RE.search(_quote) or re.search(r"\bcounty\b|\b\d{5}(?:-\d{4})?\b", r["claim_detail"], re.I)):
+                    errors.append(f"evidence.csv:{i} {eid} a linkedin_company address claim is the HQ city only: claim_detail is hq_city [City]; quote: ..., no street, county or ZIP (V-22, v1.21.0)")
+            if r["claim_type"] == "size_band" and "self-declared" not in (r["claim_detail"] or "").partition("quote:")[0].lower():
+                errors.append(f"evidence.csv:{i} {eid} a linkedin_company size_band must name the self-declared band in claim_detail (V-22, v1.21.0)")
+            if not re.fullmatch(r"https://(?:[a-z0-9-]+\.)?linkedin\.com/company/[A-Za-z0-9._~-]+(?:/about)?/?", (r["source_ref"] or "").strip(), re.I):
                 errors.append(f"evidence.csv:{i} {eid} linkedin_company source_ref must be a logged-out https://www.linkedin.com/company/<slug> page, never /in/ or /pub/ (V-22, v1.21.0)")
         if rt == "people":
             # [v1.10] §4.13 people grain: existence and scope are observations on the institution's own page;

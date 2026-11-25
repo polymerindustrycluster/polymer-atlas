@@ -240,7 +240,8 @@ class ValidatorMutationTests(unittest.TestCase):
                       self.linkedin_output(record_table="sites", record_id="SITE-000001"))
 
     def test_v22_linkedin_company_refuses_profiles_and_other_urls(self):
-        urls = ("https://www.linkedin.com/in/some-person", "https://www.linkedin.com/pub/x/1/2/3", "https://www.linkedin.com/company/x/people", "https://example.org/company/x")
+        urls = ("https://www.linkedin.com/in/some-person", "https://www.linkedin.com/pub/x/1/2/3", "https://www.linkedin.com/company/x/people", "https://example.org/company/x",
+                "https://www.linkedin.com/company/x?trk=y", "https://www.linkedin.com/company/x#frag", "https://www.linkedin.com/company/x%2fpeople")
         for n, url in enumerate(urls):
             self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, evidence_id=f"EVD-99999{n}", source_ref=url))
         out = run_validator(self.data)[1]
@@ -249,13 +250,21 @@ class ValidatorMutationTests(unittest.TestCase):
 
     def test_v22_linkedin_company_claims_are_org_grain(self):
         self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, evidence_id="EVD-999990", claim_type="parent"))
-        self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, evidence_id="EVD-999991", claim_type="address", claim_detail="street address; quote: 1 Main St"))
+        bad = {"EVD-999991": "street address; quote: 1 Main St", "EVD-999992": "hq_city + hq_county (Summit); quote: Akron, Summit County",
+               "EVD-999993": "hq_city Akron; quote: 123 Main Street, Akron, OH", "EVD-999994": "hq_city Akron; quote: Akron, Ohio 44301", "EVD-999995": "hq_city Akron"}
+        for eid, detail in bad.items():
+            self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, evidence_id=eid, claim_type="address", claim_detail=detail))
+        self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, evidence_id="EVD-999996", claim_type="address", claim_detail="hq_city Akron; quote: Headquarters Akron, Ohio"))
+        self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, evidence_id="EVD-999997", claim_type="size_band", tier_effect="supports_B", claim_detail="size band 51-200; quote: 51-200 employees"))
         out = run_validator(self.data)[1]
         self.assertIn("EVD-999990 linkedin_company cannot carry a parent claim (V-22, v1.21.0)", out)
-        self.assertIn("EVD-999991 a linkedin_company address claim is the HQ city only", out)
+        for eid in bad:
+            self.assertIn(f"{eid} a linkedin_company address claim is the HQ city only", out)
+        self.assertNotIn("EVD-999996 a linkedin_company address claim", out)  # the HQ city, with its quote, is allowed
+        self.assertIn("EVD-999997 a linkedin_company size_band must name the self-declared band", out)
 
     def test_v22_linkedin_company_size_band_caps_at_supports_b(self):
-        self.assertIn("size_band needs government_filing/own_site and caps at supports_B", self.linkedin_output(claim_type="size_band", tier_effect="supports_A"))
+        self.assertIn("size_band needs government_filing, own_site or linkedin_company and caps at supports_B", self.linkedin_output(claim_type="size_band", tier_effect="supports_A", claim_detail="self-declared band; quote: 51-200 employees"))
 
     def test_v110_people_address_has_no_referent(self):
         self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, claim_type="address"))

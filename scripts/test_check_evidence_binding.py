@@ -1697,10 +1697,19 @@ class LinkedInCompanyRoute(unittest.TestCase):
             "site-grain claim": (self.row(rid="S-CARN", table="sites"), "linkedin_not_org_grain"),
             "claim type not org grain": (self.row(claim="parent"), "linkedin_claim_not_allowed"),
             "address that is not the HQ city": (self.row(claim="address"), "linkedin_address_not_hq_city"),
+            "hq_city with a county": (self.row(claim="address").copy() | {"claim_detail": "hq_city + hq_county (Summit); quote: Akron, Summit County"}, "linkedin_address_not_hq_city"),
+            "hq_city with a street in the quote": (self.row(claim="address").copy() | {"claim_detail": "hq_city Akron; quote: 123 Main Street, Akron, OH 44301"}, "linkedin_address_not_hq_city"),
+            "size band not named self-declared": (self.row(claim="size_band", quote="51-200 employees listed on the page"), "linkedin_size_band_not_named_self_declared"),
+            "query string on the page URL": (self.row(url=self.URL + "?trk=x"), "linkedin_not_company_page"),
+            "upper-case profile path": (self.row(url="https://www.linkedin.com/IN/some-person"), "linkedin_profile"),
+            "http not https": (self.row(url=self.URL.replace("https", "http")), "linkedin_not_company_page"),
             "email in the quote": (self.row(quote=self.QUOTE + " Write to info@harbor.example today"), "linkedin_personal_data"),
             "phone in the quote": (self.row(quote=self.QUOTE + " Call 216-555-0100 today"), "linkedin_personal_data"),
             "labelled person in the quote": (self.row(quote=self.QUOTE + " CEO Jane Smith leads the company"), "linkedin_personal_data"),
         }
+        for n, tail in enumerate(("Jane Smith, CEO", "CEO Jane M. Smith", "CEO Jane O'Connor", "CEO Mary-Jane Smith", "ceo Jane Smith", "CEO José García", "Plant Manager Robert Lee",
+                                  "Call (216)555-0100", "Call 2165550100", "Call +1 216 555 0100", "Contact: Jane Smith")):
+            cases[f"personal gap {n}: {tail}"] = (self.row(quote=self.QUOTE + " " + tail), "linkedin_personal_data")
         for name, (row, reason) in cases.items():
             with self.subTest(name):
                 self.assertEqual(b.judge(row, self.idx)[:2], ("FAIL", reason))
@@ -1734,6 +1743,14 @@ class LinkedInCompanyRoute(unittest.TestCase):
         other = self.row(url="https://www.linkedin.com/company/another-page")
         self.assertEqual(self.replay(other, self.capture()), ("HELD", "linkedin_capture_not_in_inputs"))  # the capture is another page
         self.assertEqual(b.check_linkedin_routes([], {}, self.idx, self.store, lambda p: None), None)
+
+    def test_generic_title_cased_copy_is_not_personal_data(self):
+        for tail in ("Contact Us Today", "Director Operations Manager", "Customer Service Manager Support Team", "Our Founder Story Page"):
+            self.assertEqual(b.judge(self.row(quote=self.QUOTE + " " + tail), self.idx)[:2], ("HELD", "linkedin_needs_capture"), tail)
+
+    def test_single_line_capture_does_not_crash_the_gate(self):
+        digest = self.capture("[1] Harbor Plastics, Inc. | LinkedIn (" + self.URL + ")")  # the title line and nothing else: no newline
+        self.assertEqual(self.replay(self.row(), digest), ("FAIL", "quote_not_on_capture"))
 
     def test_url_kinds(self):
         for url, kind in (("https://www.linkedin.com/company/acme/", "company"), ("https://uk.linkedin.com/company/acme/about", "company"),

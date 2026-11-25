@@ -939,9 +939,38 @@ def judge_web(ev, rec, idx, quote):
 # ---------------------------------------------------------------- LinkedIn company pages (SCHEMA §4.13, source_class linkedin_company)
 
 LINKEDIN_CLAIMS = {"activity", "scope", "size_band", "existence", "address"}  # org grain; an address claim is the HQ city only
-LINKEDIN_PERSONAL = re.compile(
-    r"[\w.+-]+@[\w-]+\.[\w.-]+|(?<!\d)(?:\+?1[ .-]?)?\(?\d{3}\)?[ .-]\d{3}[ .-]\d{4}(?!\d)|"
-    r"\b(?:CEO|COO|CFO|CTO|President|Founder|Co-?founder|Owner|Contact|Manager|Director|VP|Vice President)\b[:,]?\s+[A-Z][a-z]+ [A-Z][a-z]+")
+LINKEDIN_EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
+LINKEDIN_PHONE = re.compile(r"(?<![\d])(?:\+\d{1,3}[ .-]?)?(?:\(\d{3}\)|\d{3})[ .-]?\d{3}[ .-]?\d{4}(?![\d])|\+\d[\d ().-]{8,}\d")
+LINKEDIN_ROLE = re.compile(r"(?<!\w)(?:ceo|coo|cfo|cto|cmo|president|vice[ -]president|vp|founder|co-?founder|owner|proprietor|contact|"
+                           r"(?:general |plant |sales |operations |regional |branch )?manager|director|chief [a-z]+ officer)(?!\w)", re.I)
+LINKEDIN_NOT_NAMES = frozenset("us today team operations manager director sales marketing customer customers service services support information info page "
+                               "company corporation inc llc ltd our your the and for of to at in on with page details form".split())
+LINKEDIN_WORD = re.compile(r"[^\W\d_][\w'\u2019.-]*")
+
+
+def linkedin_name_tokens(words):
+    """Leading run of capitalized name-like tokens (an initial such as M. counts), at least a given name and a surname."""
+    run = []
+    for w in words:
+        if w[0].isupper() and w.lower().strip(".'\u2019-") not in LINKEDIN_NOT_NAMES:
+            run.append(w)
+        else:
+            break
+    return len(run) >= 2
+
+
+def linkedin_personal(text):
+    """An email, a phone number, or a person named beside a role (before or after it, any case, initials, apostrophes, hyphens, accents)."""
+    if LINKEDIN_EMAIL.search(text) or LINKEDIN_PHONE.search(text):
+        return True
+    for m in LINKEDIN_ROLE.finditer(text):
+        after = [w for w in LINKEDIN_WORD.findall(text[m.end():m.end() + 80])]
+        before = [w for w in LINKEDIN_WORD.findall(text[max(0, m.start() - 80):m.start()])][::-1]
+        if linkedin_name_tokens(after) or linkedin_name_tokens(before):
+            return True
+    return False
+
+
 LINKEDIN_CAPTURE = re.compile(r"^([0-9a-f]{64})  (raw/linkedin/([0-9a-f]{64})\.txt)$")
 LINKEDIN_TITLE = re.compile(r"\[\d+\] (.+?) \| LinkedIn \((https://[^\s)]+)\)")
 
@@ -952,9 +981,21 @@ def linkedin_url_kind(url):
     host, path = (p.hostname or "").lower(), unquote(p.path)
     if host != "linkedin.com" and not host.endswith(".linkedin.com"):
         return "other"
-    if re.match(r"/(?:in|pub)/", path):
+    if re.match(r"/(?:in|pub)/", path, re.I):
         return "profile"
+    if p.scheme != "https" or p.query or p.fragment or p.username or p.password or "%" in p.path.replace("%20", ""):
+        return "other"  # a logged-out company page is a plain https URL: no query, fragment, userinfo or encoded path
     return "company" if re.fullmatch(r"/company/[^/]+(?:/about)?/?", path) else "other"
+
+
+def linkedin_hq_city_claim(claim_detail):
+    """An HQ-city claim names the city and nothing more: `hq_city` or `hq_city <City>` before `; quote:`, with no street, number, county or
+    ZIP anywhere in the claim or its quote (a street or a county is never a LinkedIn fact)."""
+    from atlas import NOTES_STREET_RE
+    head, sep, quote = claim_detail.partition("quote:")
+    if not re.fullmatch(r"hq_city(?: [^\W\d_][\w .'\u2019-]*)?;?\s*", head.strip()) or not sep:
+        return False
+    return not (NOTES_STREET_RE.search(quote) or re.search(r"\bcounty\b|\b\d{5}(?:-\d{4})?\b", claim_detail, re.I))
 
 
 def judge_linkedin(ev, table, claim_detail, src):
@@ -970,12 +1011,14 @@ def judge_linkedin(ev, table, claim_detail, src):
     ct = ev["claim_type"]
     if ct not in LINKEDIN_CLAIMS:
         return "FAIL", "linkedin_claim_not_allowed", {}
-    if ct == "address" and not claim_detail.startswith("hq_city"):
-        return "FAIL", "linkedin_address_not_hq_city", {}
     i = claim_detail.find("quote:")
+    if ct == "address" and not linkedin_hq_city_claim(claim_detail):
+        return "FAIL", "linkedin_address_not_hq_city", {}
+    if ct == "size_band" and "self-declared" not in claim_detail[:max(i, 0)].lower():
+        return "FAIL", "linkedin_size_band_not_named_self_declared", {}
     if i < 0 or not claim_detail[i + 6:].strip():
         return "UNINSPECTABLE", "no_quote", {}
-    if LINKEDIN_PERSONAL.search(claim_detail):
+    if linkedin_personal(claim_detail):
         return "FAIL", "linkedin_personal_data", {}
     return "HELD", "linkedin_needs_capture", {}
 
@@ -1019,7 +1062,7 @@ def linkedin_result(ev, idx, store, read):
         if not name_keys([title[1]]) & idx.held_keys("organizations", ev["record_id"]):
             return "FAIL", "capture_name_not_held"  # a parent roll-up page, or another company: nothing for this record
         quote = norm_space(ev["claim_detail"].partition("quote:")[2])
-        if len(quote) < 20 or quote not in norm_space(text.split("\n", 1)[1]):
+        if len(quote) < 20 or quote not in norm_space(text.partition("\n")[2]):
             return "FAIL", "quote_not_on_capture"
         return "PASS", "linkedin_company_replayed"
     return "HELD", "linkedin_capture_not_in_inputs"
