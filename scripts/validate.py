@@ -1219,13 +1219,14 @@ CAP_FIELDS = ["capability_id", "site_id", "org_id", "capability_type", "term",
 EVIDENCE_TABLES = ["organizations", "sites", "ecosystem", "programs",
                    "people"]  # [v1.10] people admitted (owner ruling 2026-11-04)
 CLAIM_TYPES = {"existence", "activity", "scope", "address", "parent", "liveness", "code", "size_band"}
-SIZE_BAND_CLASSES = {"government_filing", "own_site"}  # owner battery B-BAND, 2026-11-03: ceiling supports_B
+SIZE_BAND_CLASSES = {"government_filing", "own_site", "linkedin_company"}  # owner battery B-BAND, 2026-11-03: ceiling supports_B; linkedin_company [v1.21.0]: a self-declared band
 SOURCE_CLASSES = {"own_site", "government_filing", "registry", "directory", "press",
-                  "platform_category", "harvest_roster"}
+                  "platform_category", "harvest_roster", "linkedin_company"}
 TIER_EFFECTS = {"supports_A", "supports_B", "supports_C", "supports_U", "contradicts"}
 CLASS_CEIL = {"own_site": "supports_A", "government_filing": "supports_A",
               "registry": "supports_B", "directory": "supports_B", "press": "supports_B",
-              "harvest_roster": "supports_B", "platform_category": "supports_C"}
+              "harvest_roster": "supports_B", "platform_category": "supports_C",
+              "linkedin_company": "supports_A"}  # [v1.21.0] proposed: same ceiling as own_site for self-declared facts; owner ruling to confirm
 EFF_RANK = {"supports_U": 0, "supports_C": 1, "supports_B": 2, "supports_A": 3}
 REL_TYPES = {"parent_of", "successor_of", "dba_of", "spun_off_from", "member_of", "merged_into"}
 CAP_MATERIAL = {"thermoplastics", "thermosets", "elastomers_rubber",
@@ -1350,7 +1351,25 @@ if evidence or True:
         elif te != "contradicts" and sc in CLASS_CEIL and EFF_RANK[te] > EFF_RANK[CLASS_CEIL[sc]]:
             errors.append(f"evidence.csv:{i} {eid} tier_effect {te} exceeds the {sc} ceiling {CLASS_CEIL[sc]} (V-22)")
         if r["claim_type"] == "size_band" and (sc not in SIZE_BAND_CLASSES or te == "supports_A"):
-            errors.append(f"evidence.csv:{i} {eid} size_band needs government_filing/own_site and caps at supports_B (V-22)")
+            errors.append(f"evidence.csv:{i} {eid} size_band needs government_filing, own_site or linkedin_company and caps at supports_B (V-22)")
+        if sc == "linkedin_company":
+            # [v1.21.0] §4.13: a logged-out company page, organization grain, one labelled field of the subject's About section, a capture named by sha256
+            detail, ct = (r["claim_detail"] or ""), r["claim_type"]
+            head = detail.partition("; quote:")[0].strip()
+            if rt != "organizations":
+                errors.append(f"evidence.csv:{i} {eid} linkedin_company supports organization facts only, never {rt} (V-22, v1.21.0)")
+            if ct not in ("activity", "scope", "size_band", "existence", "address"):
+                errors.append(f"evidence.csv:{i} {eid} linkedin_company cannot carry a {ct} claim (V-22, v1.21.0)")
+            if ct == "address" and (not re.fullmatch(r"hq_city [^\W\d_][\w .'\u2019-]{0,60}", head) or re.search(r"\bcounty\b|\d", detail, re.I)):
+                errors.append(f"evidence.csv:{i} {eid} a linkedin_company address claim is the HQ city only: claim_detail is 'hq_city <City>; quote: ...', no street, county, number or ZIP (V-22, v1.21.0)")
+            if ct == "size_band" and not re.fullmatch(r"(?:employee_band_global (?:1-9|10-49|50-99|100-249|250-499|500-999|1000-4999|5000\+)|linkedin_size_bracket [\d,+-]+) \(self-declared\)", head):
+                errors.append(f"evidence.csv:{i} {eid} a linkedin_company size_band is an organization-wide self-declared band (employee_band_global) or a bracket (linkedin_size_bracket), never an Ohio or site band (V-22, v1.21.0)")
+            if ct == "existence" and not re.fullmatch(r"founded: (?:1[89]|20)\d{2}", head):
+                errors.append(f"evidence.csv:{i} {eid} a linkedin_company existence claim is the founding year: 'founded: YYYY' (V-22, v1.21.0)")
+            if not re.fullmatch(r"capture_sha256: [0-9a-f]{64}; acquisition: guest(?:, logged out)?", (r["notes"] or "").strip()):
+                errors.append(f"evidence.csv:{i} {eid} a linkedin_company row names its capture and its guest acquisition in notes: 'capture_sha256: <hex>; acquisition: guest' (V-22, v1.21.0)")
+            if not re.fullmatch(r"https://(?:[a-z0-9-]+\.)?linkedin\.com/company/[A-Za-z0-9._~-]+(?:/about)?/?", (r["source_ref"] or "").strip(), re.I):
+                errors.append(f"evidence.csv:{i} {eid} linkedin_company source_ref must be a logged-out https://www.linkedin.com/company/<slug> page, never /in/ or /pub/ (V-22, v1.21.0)")
         if rt == "people":
             # [v1.10] §4.13 people grain: existence and scope are observations on the institution's own page;
             # address, code and size_band have no people-grain referent. (Cross-family review of #125, 2026-11-05.)

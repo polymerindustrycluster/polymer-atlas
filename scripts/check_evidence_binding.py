@@ -585,6 +585,8 @@ def judge(ev, idx, _alone=False):
     rec = idx.record(table, rid)
     if rec is None:
         return "UNINSPECTABLE", "record_not_found", {}
+    if ev["source_class"] == "linkedin_company":
+        return judge_linkedin(ev, table, claim_detail=detail, src=src)
     if src.split(" ", 1)[0] in MAP_PROVIDERS:
         return "HELD", "map_listing_needs_base", {}
     if detail.startswith("trade_names +"):
@@ -932,6 +934,304 @@ def judge_web(ev, rec, idx, quote):
     if fails:
         return "FAIL", "+".join(fails), info
     return "READ_REQUIRED", why or "mechanics_clear", info
+
+
+# ---------------------------------------------------------------- LinkedIn company pages (SCHEMA §4.13, source_class linkedin_company)
+# A row binds ONE labelled field of the subject company's own "About us" section to its value, in a capture the row names by sha256. Free-text
+# description claims are never passed by machine; a quote is only ever a labelled field, so no person, phone or street can ride in on it.
+
+LINKEDIN_EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
+LINKEDIN_PHONE = re.compile(r"(?<![\d])(?:\+\d{1,3}[ .-]?)?(?:\(\d{3}\)|\d{3})[ .-]?\d{3}[ .-]?\d{4}(?![\d])|\+\d[\d ().-]{8,}\d")
+LINKEDIN_ROLE = re.compile(r"(?<!\w)(?:ceo|coo|cfo|cto|cmo|president|vice[ -]president|vp|founded by|founder|co-?founder|owner|proprietor|chairman|chair|principal|"
+                           r"contact|managing director|(?:general |plant |sales |operations |regional |branch )?manager|director|chief [a-z]+ officer)(?!\w)", re.I)
+LINKEDIN_NOT_NAMES = frozenset("us today team operations manager director sales marketing customer customers service services support information info page "
+                               "company corporation inc llc ltd our your the and for of to at in on with details form".split())
+LINKEDIN_WORD = re.compile(r"[^\W\d_][\w'’.-]*")
+LINKEDIN_LABEL_NAMES = ("Website", "Industry", "Company size", "Headquarters", "Type", "Founded", "Specialties")
+LINKEDIN_BRACKETS = frozenset(("0-1", "1", "2-10", "11-50", "51-200", "201-500", "501-1,000", "1,001-5,000", "5,001-10,000", "10,001+"))  # LinkedIn's fixed size brackets
+LINKEDIN_INDUSTRY_FILE = ROOT / "docs/schema/linkedin_industry_codes_v2.csv"
+LINKEDIN_SIGNED_IN = re.compile(r"\b(?:signed in|sign out|signed out|signout|log ?out|logged in|my network|viewing as)\b", re.I)  # whole words: "designed in" is prose
+LINKEDIN_TITLE = re.compile(r"^(?:\[\d+\] )?(.+?)(?: \| LinkedIn)? \((https://[^\s)]+)\)\s*$")
+LINKEDIN_CAPTURE = re.compile(r"^([0-9a-f]{64})  (raw/linkedin/([0-9a-f]{64})\.txt)$")
+LINKEDIN_NOTES = re.compile(r"capture_sha256: ([0-9a-f]{64}); acquisition: guest(?:, logged out)?")
+LINKEDIN_BRACKET = re.compile(r"(\d[\d,]*)(?:-(\d[\d,]*)|(\+))")
+# claim_detail heads, one per field: (field, claim types allowed, grammar of the head before "; quote:")
+LINKEDIN_HEADS = (
+    ("industry", {"activity", "scope"}, re.compile(r"industry: ([^\W\d_][^\d;]{0,80})")),
+    ("specialties", {"activity", "scope"}, re.compile(r"specialties: ([^\W\d_][^;]{0,300})")),
+    ("founded", {"existence"}, re.compile(r"founded: ((?:1[89]|20)\d{2})")),
+    ("hq_city", {"address"}, re.compile(r"hq_city ([^\W\d_][\w .'’-]{0,60})")),
+    ("size_band", {"size_band"}, re.compile(r"(?:employee_band_global ([\w+-]+)|linkedin_size_bracket ([\d,+-]+)) \(self-declared\)")),
+)
+ATLAS_BANDS = (("1-9", 1, 9), ("10-49", 10, 49), ("50-99", 50, 99), ("100-249", 100, 249), ("250-499", 250, 499), ("500-999", 500, 999),
+               ("1000-4999", 1000, 4999), ("5000+", 5000, float("inf")))
+
+
+@lru_cache(maxsize=1)
+def linkedin_industries():
+    """LinkedIn's published Industry Codes V2 labels (Active), from the repo's reference file; empty if unreadable (then no industry row passes)."""
+    try:
+        lines = [ln for ln in LINKEDIN_INDUSTRY_FILE.read_text(encoding="utf-8").splitlines() if not ln.startswith("#")]
+        return frozenset(r["label"] for r in csv.DictReader(lines))
+    except (OSError, KeyError, UnicodeDecodeError):
+        return frozenset()
+
+
+def linkedin_name_tokens(words):
+    """Leading run of capitalized name-like tokens (an initial such as M. counts), at least a given name and a surname."""
+    run = []
+    for w in words:
+        if w[0].isupper() and w.lower().strip(".'’-") not in LINKEDIN_NOT_NAMES:
+            run.append(w)
+        else:
+            break
+    return len(run) >= 2
+
+
+def linkedin_personal(text):
+    """An email, a phone number, or a person named beside a role (before or after it, any case, initials, apostrophes, hyphens, accents)."""
+    if LINKEDIN_EMAIL.search(text) or LINKEDIN_PHONE.search(text):
+        return True
+    for m in LINKEDIN_ROLE.finditer(text):
+        after = LINKEDIN_WORD.findall(text[m.end():m.end() + 80])
+        lead = text[max(0, m.start() - 80):m.start()]
+        before = LINKEDIN_WORD.findall(lead)[::-1] if re.search(r"[,\-\u2013\u2014(]\s*$", lead) else []  # "Jane Smith, CEO": the role follows the name after a comma or dash
+        if linkedin_name_tokens(after) or linkedin_name_tokens(before):
+            return True
+    return False
+
+
+def linkedin_url_kind(url):
+    """'company' for a logged-out company page, 'profile' for /in/ or /pub/, 'other' for any other URL."""
+    p = urlsplit(url or "")
+    host, path = (p.hostname or "").lower(), unquote(p.path)
+    if host != "linkedin.com" and not host.endswith(".linkedin.com"):
+        return "other"
+    if re.match(r"/(?:in|pub)/", path, re.I):
+        return "profile"
+    if p.scheme != "https" or p.query or p.fragment or p.username or p.password or "%" in p.path.replace("%20", ""):
+        return "other"  # a logged-out company page is a plain https URL: no query, fragment, userinfo or encoded path
+    return "company" if re.fullmatch(r"/company/[^/]+(?:/about)?/?", path) else "other"
+
+
+def linkedin_bracket_band(bracket):
+    """The Atlas band a LinkedIn size bracket nests in, or '' (a bracket sets a band only if every headcount in it falls inside one band; 0 is in none)."""
+    m = LINKEDIN_BRACKET.fullmatch((bracket or "").strip())
+    if not m:
+        return ""
+    lo, hi = int(m[1].replace(",", "")), float("inf") if m[3] else int(m[2].replace(",", ""))
+    if lo > hi:
+        return ""  # an inverted bracket (51-20) is a mis-copy, never a band
+    return next((name for name, a, b in ATLAS_BANDS if a <= lo and hi <= b), "")
+
+
+def linkedin_bracket_valid(bracket):
+    """A well-formed, non-inverted LinkedIn size bracket (`51-200`, `10,001+`)."""
+    m = LINKEDIN_BRACKET.fullmatch((bracket or "").strip())
+    return bool(m) and (bool(m[3]) or int(m[1].replace(",", "")) <= int(m[2].replace(",", "")))
+
+
+def linkedin_claim(claim_detail, ct):
+    """(field, value-or-None, quote) of a claim_detail `<head>; quote: <quote>`; field None for a free description (never passed by machine)."""
+    head, sep, quote = claim_detail.partition("; quote:")
+    head, quote = head.strip(), quote.strip()
+    for field, cts, grammar in LINKEDIN_HEADS:
+        m = grammar.fullmatch(head)
+        if m and ct in cts:
+            return field, [g for g in m.groups() if g is not None][0] if m.groups() else None, quote
+    return None, None, (quote if sep else claim_detail.partition("quote:")[2].strip())
+
+
+def judge_linkedin(ev, table, claim_detail, src):
+    """The mechanical floor of a linkedin_company row, before any capture is read: a company page, organization grain, an allowed claim shaped
+    as one labelled field, the field's own limits (HQ city and nothing more, an organization-wide self-declared band, a bracket that nests), a
+    quote, and no personal data. A row that clears it is HELD until `check_linkedin_routes` replays its capture; a free description is HELD for
+    reading and never passed by machine."""
+    kind = linkedin_url_kind(src)
+    if kind == "profile":
+        return "FAIL", "linkedin_profile", {}
+    if kind != "company":
+        return "FAIL", "linkedin_not_company_page", {}
+    if table != "organizations":
+        return "FAIL", "linkedin_not_org_grain", {}  # never a site's facts, a street, a county or a child unit
+    ct = ev["claim_type"]
+    if ct not in ("activity", "scope", "size_band", "existence", "address"):
+        return "FAIL", "linkedin_claim_not_allowed", {}
+    head = claim_detail.partition("; quote:")[0].strip()
+    if re.match(r"employee_band_(?:ohio|site)\b|site_band", head):
+        return "FAIL", "linkedin_size_not_organization_wide", {}  # a LinkedIn size is company-wide: never an Ohio or site band
+    field, value, quote = linkedin_claim(claim_detail, ct)
+    if ct == "address" and field != "hq_city":
+        return "FAIL", "linkedin_address_not_hq_city", {}
+    if ct == "size_band" and field != "size_band":
+        return "FAIL", "linkedin_size_band_not_named_self_declared", {}
+    if ct == "existence" and field != "founded":
+        return "FAIL", "linkedin_claim_not_a_labelled_field", {}
+    if not quote:
+        return "UNINSPECTABLE", "no_quote", {}
+    if linkedin_personal(claim_detail):
+        return "FAIL", "linkedin_personal_data", {}
+    if field == "hq_city" and (re.search(r"\bcounty\b|\d", claim_detail, re.I)):
+        return "FAIL", "linkedin_address_not_hq_city", {}  # a street, a number, a county or a ZIP is never a LinkedIn fact
+    if field == "size_band":
+        band, bracket = re.fullmatch(r"(?:employee_band_global ([\w+-]+)|linkedin_size_bracket ([\d,+-]+)) \(self-declared\)", head).groups()
+        shown = LINKEDIN_BRACKET.search(quote)
+        if not shown:
+            return "FAIL", "linkedin_size_quote_has_no_bracket", {}  # "Company size" alone says nothing
+        if bracket and (shown.group(0) != bracket or not linkedin_bracket_valid(bracket)):
+            return "FAIL", "linkedin_size_bracket_not_in_quote", {}
+        if band and linkedin_bracket_band(shown.group(0)) != band:
+            return "FAIL", "linkedin_size_bracket_straddles_band", {}  # a band only where the bracket nests in it
+    if field is None:
+        return "HELD", "linkedin_description_needs_reading", {}
+    if field == "specialties":
+        return "HELD", "linkedin_specialties_needs_reading", {}  # a free list: read, never passed by machine
+    if field == "hq_city":
+        return "HELD", "linkedin_hq_city_needs_reading", {}  # whatever the record holds: the record's own city can be set in the same PR
+    return "HELD", "linkedin_needs_capture", {}
+
+
+def read_linkedin_capture(store, digest):
+    """The digest-named capture of the shared store, hashed on the way in."""
+    root = store.resolve()
+    capture = root / f"raw/linkedin/{digest}.txt"
+    if not capture.resolve().is_relative_to(root):
+        raise ValueError("capture path escapes shared store")
+    with capture.open("rb") as stream:
+        data = stream.read(MAX_CAPTURE_BYTES + 1)
+    if len(data) > MAX_CAPTURE_BYTES or hashlib.sha256(data).hexdigest() != digest:
+        raise ValueError("capture size or digest mismatch")
+    return data.decode("utf-8")
+
+
+def linkedin_about(text):
+    """(title match or None, the subject's own About-section fields {label: [value or None]}). The layout read is the label-line/value-line one, inside
+    the section headed `## About us` only: a label is a whole line equal to one of the labels; its value is exactly the next line of the next paragraph;
+    that paragraph must be that one line (so a name or a sentence on the line after the value makes the field ambiguous, None). Paragraphs are
+    separated by a blank line or, in the `L<n>:` captures, a gap in the line numbers. A label word inside a value or in prose is never a label, and
+    the flattened one-line layout (`Company size, 51-200 employees, Headquarters, ...`) is never parsed."""
+    raw = text.split("\n")
+    title = LINKEDIN_TITLE.match(raw[0]) if raw else None
+    blocks, cur, last, in_about = [], [], None, False
+    for ln in raw[1:]:
+        m = re.match(r"^L(\d+):\s?(.*)$", ln)
+        num, body = (int(m[1]), m[2].rstrip()) if m else (None, ln.rstrip())
+        if re.match(r"^#{1,6} ", body.strip()):
+            in_about = body.strip() == "## About us"
+            if cur:
+                blocks.append(cur)
+            cur, last = [], None
+            if in_about:
+                blocks.append(["## About us"])  # a second About section is kept apart, so a repeated label shows
+            continue
+        if not in_about:
+            continue
+        gap = num is not None and last is not None and num - last > 1
+        if (not body.strip() or gap) and cur:
+            blocks.append(cur)
+            cur = []
+        if body.strip():
+            cur.append(body.strip())
+        last = num if num is not None else last
+    if cur:
+        blocks.append(cur)
+    fields = {}
+    for k, block in enumerate(blocks):
+        if len(block) == 1 and block[0] in LINKEDIN_LABEL_NAMES:
+            value_block = blocks[k + 1] if k + 1 < len(blocks) else None
+            if value_block is None or (len(value_block) == 1 and value_block[0] in LINKEDIN_LABEL_NAMES) or value_block == ["## About us"]:
+                value = ""  # a label with nothing after it (the Website link text is not captured)
+            else:
+                value = norm_space(value_block[0]) if len(value_block) == 1 else None
+            fields.setdefault(block[0], []).append(value)
+    return title, fields
+
+
+def linkedin_name_verdict(title_name, idx, rid):
+    """The structured path's name and parent rules for a page title: a parent roll-up (even one that normalizes to the child's key) never passes."""
+    qkeys = name_keys([title_name])
+    held, own = idx.held_keys("organizations", rid), idx.org_keys(rid)
+    parents = idx.parent_keys("organizations", rid)
+    own_texts, parent_texts = idx.own_texts(rid), {squash(n) for n in idx.parent_names("organizations", rid)}
+
+    def is_parent(q):
+        return q in parents or any(corporate_form_extension(k, q) for k in parents)
+    if any(is_parent(q) for q in qkeys) and not qkeys & own:
+        return "FAIL", "capture_names_parent"
+    if any(is_parent(q) for q in qkeys) and not {squash(title_name)} & own_texts - parent_texts:
+        return "HELD", "linkedin_name_equals_parent_key"
+    if not qkeys & held:
+        return "FAIL", "capture_name_not_held"
+    return "", ""
+
+
+def linkedin_result(ev, idx, store, read):
+    """PASS only if: the row names its capture by sha256 (`notes: capture_sha256: <hex>; acquisition: guest`) and the task's INPUTS.sha256 names it;
+    the capture is that page, not signed in; its title carries a name the record holds and is not its parent; the claimed labelled field of the
+    About section has the claimed value; and the quote replays on that section and holds the field's label and value. Unreadable is HELD."""
+    field, value, quote = linkedin_claim(ev["claim_detail"], ev["claim_type"])
+    note = LINKEDIN_NOTES.fullmatch((ev.get("notes") or "").strip())
+    if not note:
+        return "HELD", "linkedin_capture_not_cited"
+    folder = label_folder(ev["created_by"])
+    inputs = read(f"tasks/{folder}/INPUTS.sha256") if folder else None
+    if inputs is None:
+        return "HELD", "linkedin_inputs_missing"
+    if store is None:
+        return "HELD", "linkedin_store_not_given"
+    digest = note[1]
+    named = any((m := LINKEDIN_CAPTURE.fullmatch(line.strip())) and m[1] == m[3] == digest for line in inputs.decode("utf-8", "replace").splitlines())
+    if not named:
+        return "HELD", "linkedin_capture_not_in_inputs"
+    try:
+        text = read_linkedin_capture(store, digest)
+    except (OSError, ValueError):
+        return "HELD", "linkedin_capture_unreadable"
+    title, fields = linkedin_about(text)
+    if not title:
+        return "HELD", "linkedin_title_unbound"
+    if title[2].rstrip("/").lower() != ev["source_ref"].rstrip("/").lower():
+        return "FAIL", "capture_is_another_page"
+    if LINKEDIN_SIGNED_IN.search(text):
+        return "FAIL", "capture_not_guest"
+    verdict, reason = linkedin_name_verdict(title[1], idx, ev["record_id"])
+    if reason:
+        return verdict, reason
+    label = {"industry": "Industry", "founded": "Founded", "size_band": "Company size"}.get(field)
+    if label is None:
+        return "HELD", "linkedin_hq_city_needs_reading" if field == "hq_city" else "linkedin_specialties_needs_reading"
+    values = fields.get(label, [])
+    if not values:
+        return "HELD", "linkedin_field_not_in_line_layout"  # absent, or only in the flattened one-line layout, which is never parsed
+    if len(values) > 1 or values[0] is None:
+        return "HELD", "linkedin_field_ambiguous"  # the label appears more than once, or the value line is not alone
+    held = values[0]
+    if norm_space(quote) != f"{label}, {held}":  # exactly one field as the capture shows it: no prose before or after, no second field, case kept
+        return "FAIL", "linkedin_quote_not_exact_field"
+    if field == "industry":
+        if held not in linkedin_industries():
+            return "HELD", "linkedin_industry_not_listed"
+        ok = held == norm_space(value)
+    elif field == "founded":
+        if not re.fullmatch(r"\d{4}", held):
+            return "HELD", "linkedin_founded_not_a_year"
+        ok = held == value
+    else:  # size_band
+        found = re.fullmatch(r"(\S+?)(?: employees)?", held)
+        shown = found[1] if found else ""
+        if shown not in LINKEDIN_BRACKETS:
+            return "HELD", "linkedin_size_not_a_linkedin_bracket"
+        band, bracket = re.fullmatch(r"(?:employee_band_global ([\w+-]+)|linkedin_size_bracket ([\d,+-]+)) \(self-declared\)",
+                                     ev["claim_detail"].partition("; quote:")[0].strip()).groups()
+        ok = shown == bracket if bracket else linkedin_bracket_band(shown) == band != ""
+    return ("PASS", "linkedin_company_replayed") if ok else ("FAIL", "claim_value_not_in_field")
+
+
+def check_linkedin_routes(results, evs, idx, store, read):
+    for result in results:
+        if result["reason"] == "linkedin_needs_capture":
+            verdict, reason = linkedin_result(evs[result["evidence_id"]], idx, store, read)
+            result.update(verdict=verdict, reason=reason)
 
 
 # ---------------------------------------------------------------- modes
@@ -1934,7 +2234,7 @@ def main(argv=None):
                                                    "script and its rules come from the trusted checkout)")
     ap.add_argument("--pr-head", help="pinned PR head SHA to verify against the merge commit second parent")
     ap.add_argument("--out", help="write per-row verdicts to this CSV")
-    ap.add_argument("--map-store", type=Path, help="also replay map captures from this shared store when gating changes")
+    ap.add_argument("--map-store", type=Path, help="the shared store root: also replay map captures (raw/map-listings/) and LinkedIn captures (raw/linkedin/<sha256>.txt) when gating changes")
     a = ap.parse_args(argv)
     if a.map_store is not None and not (a.new_since or a.verify_proofs):
         ap.error("--map-store requires --new-since or --verify-proofs")
@@ -1979,6 +2279,7 @@ def main(argv=None):
                 base_idx = Index.load(base)
                 evidence_by_id = {e["evidence_id"]: e for e in evs}
                 problems = check_address_routes(results, evidence_by_id, idx, base_idx, base_evs, a.map_store)
+                check_linkedin_routes(results, evidence_by_id, idx, a.map_store, lambda path: tasks_file(a.head, path))
                 fills = changed_websites(base_idx, idx)
                 candidates, reasons = website_witnesses(fills, idx, head_evs) if fills else ({}, {})
                 witness_ids = set().union(*candidates.values())

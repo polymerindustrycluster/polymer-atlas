@@ -222,6 +222,45 @@ class ValidatorMutationTests(unittest.TestCase):
                         source_class="press", source_ref="https://example.com/news", tier_effect="supports_B"))
         self.assert_fails_with("people scope must be observed on the institution's own page (own_site) (V-22)")
 
+    # [v1.21.0] linkedin_company: a logged-out company page, organization grain, one labelled field, a capture named by sha256; ceiling supports_A; size band caps at supports_B.
+    NOTE_OK = "capture_sha256: " + "a" * 64 + "; acquisition: guest"
+    EVD_LINKEDIN = {"evidence_id": "EVD-999998", "record_table": "organizations", "record_id": "ORG-000001",
+                    "claim_type": "activity", "claim_detail": "industry: Plastics Manufacturing; quote: Industry, Plastics Manufacturing",
+                    "source_class": "linkedin_company", "source_ref": "https://www.linkedin.com/company/example-company",
+                    "observed_date": "2026-11-25", "tier_effect": "supports_A", "created_by": "test", "notes": NOTE_OK}
+
+    def linkedin_rows(self, *rows):
+        for n, changes in enumerate(rows):
+            self.append_row("evidence_organizations_OH.csv", dict(self.EVD_LINKEDIN, evidence_id=f"EVD-9999{90 + n}", **changes))
+        return run_validator(self.data)[1]
+
+    def test_v22_linkedin_company_clean_row_raises_nothing_and_the_rules_hold(self):
+        bad = [dict(record_table="sites", record_id="SITE-000001"),
+               dict(source_ref="https://www.linkedin.com/in/some-person"), dict(source_ref="https://www.linkedin.com/pub/x/1/2/3"),
+               dict(source_ref="https://www.linkedin.com/company/x/people"), dict(source_ref="https://example.org/company/x"),
+               dict(source_ref="https://www.linkedin.com/company/x?trk=y"), dict(source_ref="https://www.linkedin.com/company/x%2fpeople"),
+               dict(claim_type="parent"),
+               dict(claim_type="address", claim_detail="street address; quote: 1 Main St"), dict(claim_type="address", claim_detail="hq_city + hq_county (Summit); quote: Akron, Summit County"),
+               dict(claim_type="address", claim_detail="hq_city Akron; quote: 123 Main Street, Akron, OH"),
+               dict(claim_type="size_band", tier_effect="supports_A", claim_detail="employee_band_global 5000+ (self-declared); quote: 5,001-10,000"),
+               dict(claim_type="size_band", tier_effect="supports_B", claim_detail="employee_band_ohio 50-99 (self-declared); quote: 51-200"),
+               dict(claim_type="size_band", tier_effect="supports_B", claim_detail="size band 51-200; quote: 51-200 employees"),
+               dict(claim_type="existence", claim_detail="founded in the eighties; quote: Founded, 1986"), dict(notes=""), dict(notes="capture_sha256: abc; acquisition: guest")]
+        good = [dict(), dict(claim_type="address", claim_detail="hq_city Akron; quote: Headquarters, Akron, Ohio"),
+                dict(claim_type="size_band", tier_effect="supports_B", claim_detail="employee_band_global 5000+ (self-declared); quote: Company size, 5,001-10,000 employees"),
+                dict(claim_type="size_band", tier_effect="supports_B", claim_detail="linkedin_size_bracket 51-200 (self-declared); quote: Company size, 51-200 employees"),
+                dict(claim_type="existence", claim_detail="founded: 1986; quote: Founded, 1986")]
+        out = self.linkedin_rows(*good, *bad)
+        mine = lambda n: [ln for ln in out.splitlines() if f"EVD-9999{90 + n} " in ln and "(V-22" in ln]  # the archive-link rule (V-66) is not this class's
+        for n in range(len(good)):
+            self.assertEqual(mine(n), [], f"a clean row {n} raised a linkedin_company message")
+        for n in range(len(bad)):
+            self.assertTrue(mine(len(good) + n), f"bad row {n} raised no linkedin_company message")
+        self.assertIn("linkedin_company supports organization facts only, never sites (V-22, v1.21.0)", out)
+        self.assertIn("linkedin_company cannot carry a parent claim (V-22, v1.21.0)", out)
+        self.assertIn("never an Ohio or site band (V-22, v1.21.0)", out)
+        self.assertIn("size_band needs government_filing, own_site or linkedin_company and caps at supports_B", out)
+
     def test_v110_people_address_has_no_referent(self):
         self.append_row("evidence_people.csv", dict(self.EVD_PEOPLE_OK, claim_type="address"))
         self.assert_fails_with("claim_type address has no people-grain referent (V-22)")
