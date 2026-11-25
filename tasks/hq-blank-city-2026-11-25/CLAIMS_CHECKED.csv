@@ -1,0 +1,12 @@
+table,record_id,field,verdict,evidence_id
+organizations,ORG-000197,hq_city,corrected,EVD-483143
+organizations,ORG-000197,hq_state,corrected,EVD-483143
+organizations,ORG-000197,hq_country,corrected,EVD-483143
+organizations,ORG-000197,hq_in_scope,corrected,EVD-483143
+organizations,ORG-000022,hq_county,withdrawn,
+organizations,ORG-000033,hq_county,withdrawn,
+organizations,ORG-000050,hq_county,withdrawn,
+organizations,ORG-000073,hq_county,withdrawn,
+organizations,ORG-000186,hq_county,withdrawn,
+organizations,ORG-000202,hq_county,withdrawn,
+organizations,ORG-003703,hq_county,withdrawn,
