@@ -164,7 +164,8 @@ def problems(head, base, claims, proofs, manifest, capture, changed, count, base
                 text = gate.capture_text(capture)
                 if text[int(p["quote_offset"]):int(p["quote_offset"]) + len(QUOTE)] != QUOTE:
                     out.append("capture: the quote is not at the proof's offset in the capture's main text")
-                mails = {m.lower() for m in re.findall(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+", text)}
+                # the raw bytes, not the main text: the store holds the whole page, nav and footer included
+                mails = {m.lower() for m in re.findall(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+", capture.decode("utf-8", "replace"))}
                 if mails - EMAILS_REVIEWED:
                     out.append(f"capture: an address nobody reviewed is in the capture: {sorted(mails - EMAILS_REVIEWED)}")
     else:

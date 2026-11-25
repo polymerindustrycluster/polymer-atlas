@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Apply the HQ repair to a clean checkout of origin/main (run once), then write the packet files.
 
-Reads data/ from the working tree, so run it only on an unedited tree. The Kenda capture bytes come from the
-shared store (put there by the first run); the proof fields are computed from them, never typed.
+Reads data/ from the working tree, so run it only on an unedited tree. It fetches the Kenda capture with the gate's own
+fetcher, stores it in the shared store, and computes the proof fields from those bytes, never typed.
+Usage: build.py "<reader family>" <reader date>   (the reading itself is recorded in the README).
 """
 import csv, hashlib, io, sys
 from pathlib import Path
@@ -26,7 +27,6 @@ KENDA = "ORG-000197"
 CLEARED = {"ORG-000022": "Summit", "ORG-000033": "Summit", "ORG-000050": "Portage", "ORG-000073": "Summit",
            "ORG-000186": "Cuyahoga", "ORG-000202": "Lorain", "ORG-003703": "GA"}
 KENDA_CELLS = dict(hq_city="Green", hq_state="OH", hq_country="US", hq_in_scope="ne_ohio")
-READER = ("OpenAI Codex", "2026-11-25")  # filled from the reading recorded in README
 
 
 def load(name):
@@ -40,7 +40,6 @@ def save(name, rows):
 
 
 def main(reader_family, reader_date):
-    capture = (STORE / "provenance" / TASK).glob("*.html")
     body = gate.fetch_url(CAPTURE)
     sha = hashlib.sha256(body).hexdigest()
     dest = STORE / "provenance" / TASK / f"{sha}.html"
