@@ -165,6 +165,7 @@ def receipt(site, orgs, row, kind, rel, cutoff, held_band):
     return dict(status=status, reason=why, text=text, date=date)
 
 
+REPLAYABLE = {'band:form5500', 'band:osha_ita', 'band:osha_inspection'}  # classes with a replayer: each expected claim of these is owed one receipt
 NAICS_FIELDS = {'naics_primary', 'naics_primary_source_type', 'naics_primary_source_name', 'naics_confidence'}
 
 
@@ -198,7 +199,8 @@ def band_receipt(site, orgs, ev, ita, ita_hits, insp_hits, ita_problems, insp_pr
 
 
 def coverage(R, keys, store=STORE):
-    """-> (receipts {'table|id': [receipt]}, not_inspected classes {class: [keys]}, counts {class: {status: n}}, ni {'table|id': {fields, children}}).
+    """-> (receipts {'table|id': [receipt]}, not_inspected classes {class: [keys]}, counts {class: {status: n}}, ni {'table|id': {fields, children}},
+    due {'table|id': receipts the record must be issued}).
     A class with no replayer is NOT_INSPECTED (owner ruling 2026-11-24 15:15): counted, never a receipt, never unconfirmed."""
     exp = expected(R, keys)
     cutoff = f"{int(R.git('show', '-s', '--format=%cs', R.at).strip()[:4]) - YEARS_BACK}{R.git('show', '-s', '--format=%cs', R.at).strip()[4:]}"
@@ -208,7 +210,7 @@ def coverage(R, keys, store=STORE):
     insp_ids = {m[1] for x in exp if x['cls'] == 'band:osha_inspection' and (m := re.search(r'(?:id=|OSHA inspection )(\d{6,})', x['ev']['source_ref'] + ' ' + x['ev']['claim_detail']))}
     ita_hits, ita_problems = scan(store, ita_files(store), 'establishment_id', ita_ids) if ita_ids else ({}, {})
     insp_hits, insp_problems = scan(store, inspection_files(store), 'activity_nr', insp_ids) if insp_ids else ({}, {})
-    receipts, ni_classes, counts, ni = defaultdict(list), defaultdict(list), defaultdict(Counter), defaultdict(lambda: dict(fields=set(), children=set()))
+    receipts, ni_classes, counts, ni = defaultdict(list), defaultdict(list), defaultdict(Counter), defaultdict(lambda: dict(fields=set(), children=[]))
     for x in exp:
         cls, k, ev = x['cls'], x['key'], x['ev']
         rid = f'R{len(receipts[f"{k[0]}|{k[1]}"]) + 1}'
@@ -225,10 +227,10 @@ def coverage(R, keys, store=STORE):
             ni_classes[cls].append(k)
             counts[cls]['not_inspected'] += 1
             key = f'{k[0]}|{k[1]}'
-            if cls.startswith('registry:'):
-                ni[key]['children'].add('registry_links')
+            if cls.startswith('registry:'):  # only the filed child is not inspected, matched on its own identifying values
+                ni[key]['children'].append(dict(table='registry_links', match=dict(registry=ev['registry'], registry_id=ev['registry_id'])))
             elif cls == 'naics:code_assignment':
-                ni[key]['children'].add('code_assignments')
+                ni[key]['children'].append(dict(table='code_assignments', match=dict(code_system='NAICS', source_type='government_filing', code_value=ev['code_value'])))
             elif cls.startswith('naics'):
                 ni[key]['fields'].update(NAICS_FIELDS)
             else:
@@ -236,5 +238,6 @@ def coverage(R, keys, store=STORE):
             continue
         receipts[f'{k[0]}|{k[1]}'].append(dict(out, id=rid, cls=cls, field=x['field']))
         counts[cls][out['status']] += 1
-    ni = {k: dict(fields=sorted(v['fields']), children=sorted(v['children'])) for k, v in ni.items()}
-    return dict(receipts), dict(ni_classes), {c: dict(v) for c, v in sorted(counts.items())}, ni
+    ni = {k: dict(fields=sorted(v['fields']), children=v['children']) for k, v in ni.items()}
+    due = Counter(f'{x["key"][0]}|{x["key"][1]}' for x in exp if x['cls'] in REPLAYABLE)  # counted from expected() alone, not from the loop above
+    return dict(receipts), dict(ni_classes), {c: dict(v) for c, v in sorted(counts.items())}, ni, dict(due)

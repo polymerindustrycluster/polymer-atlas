@@ -43,14 +43,14 @@ def name_equivalent(held, source):
 
 # ---------------------------------------------------------------- packet checks
 def dependency_check(row, depends):
-    """PROTOCOL 'What goes to a reader': never mask a value needed to judge another field. A populated core field whose dependency the blind
-    scan withheld cannot be judged and blocks. A dependency the data simply leaves blank is not a masking defect (a blank is not a claim)."""
+    """PROTOCOL 'What goes to a reader': never mask a value needed to judge another field. A populated core field whose declared dependency is
+    withheld or blank (the table DEPENDS says the reader needs it) cannot be judged and blocks."""
     values = json.loads(row['values_json'])
     for field, needs in depends.get(row['table'], {}).items():
         if values.get(field) and values[field] != WITHHELD:
-            held_back = [n for n in needs if values.get(n) == WITHHELD]
-            if held_back:
-                raise ValueError(f'dependency: {field} needs {",".join(held_back)} (withheld)')
+            missing = [n for n in needs if not values.get(n) or values.get(n) == WITHHELD]
+            if missing:
+                raise ValueError(f'dependency: {field} needs {",".join(missing)} (withheld or blank)')
 
 
 def drop_withheld_tokens(row, R):
@@ -95,15 +95,22 @@ NAICS_TARGETS = ('naics_primary', 'naics_primary_source_type', 'naics_primary_so
 BAND_FIELDS = ('employee_band_site', 'employee_band_ohio')
 
 
+def child_matches(ch, spec):
+    """spec: {'table': t, 'match': {column: filed value}}. A child is the filed one when every identifying column equals the filed value
+    (a withheld column cannot be judged either way, so it matches)."""
+    return ch['table'] == spec['table'] and all(ch['values'].get(c) in (v, WITHHELD) for c, v in spec['match'].items())
+
+
 def not_inspected_targets(row, ni):
-    """ni = replays.coverage's per-record record of filed values with no replayer: {'fields': [...], 'children': [tables]}. A NAICS value whose
-    source name is blank or withheld cannot be attributed, so it is also not inspected (owner ruling 2026-11-24 15:15)."""
+    """ni = replays.coverage's per-record record of filed values with no replayer: {'fields': [...], 'children': [{'table', 'match'}]}. A NAICS value
+    whose source name is blank or withheld cannot be attributed, so it is also not inspected (owner ruling 2026-11-24 15:15). Only the particular filed
+    child is excluded, never its unrelated siblings of the same table."""
     values = json.loads(row['values_json'])
     out = set(f for f in (ni or {}).get('fields', []) if f in values and values[f])
     if row['table'] == 'organizations' and values.get('naics_primary') and values.get('naics_primary_source_name') in ('', WITHHELD, None):
         out |= {f for f in NAICS_TARGETS if values.get(f)}
     for i, ch in enumerate(json.loads(row['context_json']).get('children', []), 1):
-        if ch['table'] in (ni or {}).get('children', []):
+        if any(child_matches(ch, spec) for spec in (ni or {}).get('children', [])):
             out |= {f'c{i}.{f}' for f, v in ch['values'].items() if v}
     return sorted(out)
 
@@ -127,10 +134,26 @@ def parse_answer(text):
     return None
 
 
-def values_differ(held, source):
-    """The source's stated value is incompatible with the held one: its words differ and are not a contiguous run of the held value's words."""
+LOCALITY_FIELDS = {'street_address', 'city', 'hq_city', 'county', 'hq_county', 'zip', 'state', 'hq_state'}
+
+
+def contains(big, small):
+    return any(big[i:i + len(small)] == small for i in range(len(big) - len(small) + 1))
+
+
+def values_differ(held, source, field=''):
+    """The source's stated value is incompatible with the held one: its words differ and are not a contiguous run of the held value's words.
+    For an address or locality field the comparison also runs the other way (a source that adds the city or the county word to the held value
+    agrees with it), and a street is compared by atlas.street_key (St = Street). Names and statuses get no reverse test: 'Acme Plastics' is not
+    'Acme Plastics Division of Zeta Holdings'."""
     kh, ks = words(held), words(source)
-    return bool(ks) and ks != kh and not any(kh[i:i + len(ks)] == ks for i in range(len(kh) - len(ks) + 1))
+    if not ks or ks == kh or contains(kh, ks):
+        return False
+    if field == 'street_address':
+        from atlas import street_key
+        if street_key(held) and street_key(held) == street_key(source):
+            return False
+    return not (field in LOCALITY_FIELDS and kh and contains(ks, kh))
 
 
 def read_findings(answer, sources, targets, held):
@@ -160,12 +183,12 @@ def read_findings(answer, sources, targets, held):
                 out[t] = dict(base, status='UNCONFIRMED', reason='quote_not_replayed')
             elif not sv or not quote_in_order(quote, sv):
                 out[t] = dict(base, status='UNCONFIRMED', reason='source_value_not_in_quote')
-            elif not values_differ(held.get(t, ''), sv):
+            elif not values_differ(held.get(t, ''), sv, field_of(t)):
                 out[t] = dict(base, status='UNCONFIRMED', reason='source_value_equals_held')
             else:
                 out[t] = dict(base, status='CONTRADICTED', reason='replayed')
         elif v == 'VERIFIED':
-            if text is None:
+            if not text:  # a cited source that is missing or failed to load (empty text) supports nothing
                 out[t] = dict(base, status='UNCONFIRMED', reason='verified_without_source')
             elif quote and not replays:
                 out[t] = dict(base, status='UNCONFIRMED', reason='verified_quote_not_replayed')
@@ -221,7 +244,7 @@ def record_outcome(final, not_inspected=()):
     the deciding source, value and quote of every contradiction is kept (private results)."""
     hits = {t: f for t, f in final.items() if f['status'] == 'CONTRADICTED' and is_core(t, f)}
     core = sorted({field_of(t) if '.' not in t else 'child:' + (f.get('core_effect') or '') for t, f in hits.items()})
-    return dict(k=bool(core), contradicted_core=core,
+    return dict(k=bool(core), contradicted_core=core, contradicted_core_fields=sorted({field_of(t) for t in hits}),
                 contradicted_desc=sorted(field_of(t) for t, f in final.items() if f['status'] == 'CONTRADICTED' and not is_core(t, f)),
                 unconfirmed={t: f['reason'] for t, f in final.items() if f['status'] == 'UNCONFIRMED'},
                 audited=sorted(final), notes=sorted(t for t, f in final.items() if f.get('note')), not_inspected=sorted(not_inspected),
@@ -229,11 +252,35 @@ def record_outcome(final, not_inspected=()):
                 deciding={t: dict(source_id=f['source_id'], source_value=f['source_value'], quote=f['quote'], by=f['by']) for t, f in final.items() if f['status'] == 'CONTRADICTED'})
 
 
+def distinct(field, a, b):
+    """Two stated values no reader could reconcile: neither contains the other, a street differs under street_key, a name differs beyond a legal-form word.
+    A plant is only worth drawing when its donor value is distinct from the true one."""
+    if not a or not b or WITHHELD in (a, b) or (field in NAME_FIELDS and name_equivalent(a, b)):
+        return False
+    return values_differ(a, b, field) and values_differ(b, a, field)
+
+
 def plant_detected(primary_raw, field):
-    """A control passes only when the reader marks the planted field itself CONTRADICTED, or unsettled with a specific settling fact
-    (not a blindness or availability excuse)."""
+    """A control passes only when the reader marks the planted field itself CONTRADICTED. read_findings grants that only for a quote that replays on
+    the cached bytes, contains the stated value, and names a value different from the planted one. UNCONFIRMED never detects, whatever its fact."""
     f = primary_raw.get(field)
-    return bool(f) and (f['status'] == 'CONTRADICTED' or (f['status'] == 'UNCONFIRMED' and f['reason'] == 'unsettled'))
+    return bool(f) and f['status'] == 'CONTRADICTED'
+
+
+def plant_reason(row, field, true_value, sources):
+    """'' when the ideal answer detects this plant on the excerpts the reader will see, else why it cannot be detected. The ideal answer is a CONTRADICTED
+    finding quoting the record's true value from a source, run through read_findings and plant_detected unchanged. sources: id -> {'excerpt': ...}."""
+    held = held_values(row)
+    if field not in targets_of(row):
+        return 'field_not_on_checklist'
+    if held.get(field) == WITHHELD:
+        return 'planted_cell_withheld'
+    texts = {sid: s['excerpt'] for sid, s in sources.items()}
+    for sid, text in texts.items():
+        if quote_in_order(text, true_value):
+            ideal = dict(findings=[dict(target=field, verdict='CONTRADICTED', source_id=sid, quote=true_value, source_value=true_value)])
+            return '' if plant_detected(read_findings(ideal, texts, [field], held), field) else 'planted_value_not_distinguishable_from_true_value'
+    return 'no_source_states_true_value'
 
 
 class Board:
@@ -355,7 +402,7 @@ def build_prompt(row, sources, receipts, requested=(), not_inspected=()):
 
 # ---------------------------------------------------------------- stages
 SMOKE_N, PLANTS_EACH, STOP_AT = 40, 3, 3
-CAPS_M = {'astra': 3.4, 'hydrogen': 3.8, 'sonnet': 1.1}  # twice sizes.py's smoke row per provider; passing one halts the run for repricing
+CAPS_M = {'astra': 1.691, 'hydrogen': 1.923, 'sonnet': 0.535}  # sizes.py spend(SMOKE, 3) per provider (the protocol's stage budgets); a projected overrun halts for repricing
 
 
 def read_csv(path):
@@ -401,9 +448,37 @@ def write_private(path, obj_or_lines):
         f.write(obj_or_lines)
 
 
-def fetch_stage(draw_dir, cache_dir, load, packet_rows, approved=frozenset(), store=None, skip_blocked=False):
-    import replays
+def fetch_urls(cache_dir, urls):
+    """Corpus.fetch once per distinct URL (a cached page is not fetched again). A fetch failure is availability, never evidence."""
     from site_corpus import Corpus
+    corpus = Corpus(cache_dir)
+
+    def one(u):
+        try:
+            r = corpus.fetch(u)
+            return u, dict(status=r['status'], http=r['http_status'], final_url=r['final_url'], fetched_at=r['fetched_at'], sha256=r['sha256'], text_file=r['text_file'])
+        except Exception as e:  # noqa: BLE001
+            return u, dict(status='FETCH_FAILED', error=type(e).__name__)
+    with ThreadPoolExecutor(4) as pool:
+        return dict(pool.map(one, sorted(urls)))
+
+
+def build_sources(pk, manifest, cache_dir, extra=()):
+    """The bounded source set a reader gets for one packet: id -> url, fetch time, availability, full cached text and the redacted excerpt."""
+    urls = list(dict.fromkeys(list(pk['urls']) + list(extra)))[:FETCH_BUDGET]
+    row = pk['row']
+    terms = [v for f, v in json.loads(row['values_json']).items() if f in ('legal_name', 'site_name', 'street_address', 'city', 'hq_city') and v]
+    sources = {}
+    for n, u in enumerate(urls, 1):
+        m = manifest.get(u, {})
+        text = (cache_dir / m['text_file']).read_text() if m.get('status') == 'ok' and (cache_dir / m['text_file']).exists() else ''
+        sources[f'S{n}'] = dict(url=m.get('final_url') or u, fetched_at=m.get('fetched_at', 'not fetched'), availability=m.get('status', 'NOT_FETCHED'), full=text,
+                                excerpt=excerpt(text, terms) if text else '(unavailable: a failed fetch is not evidence about the claim)')
+    return sources
+
+
+def fetch_stage(draw_dir, cache_dir, load, packet_rows, approved=frozenset(), store=None, skip_blocked=False, true_of=None):
+    import replays
     receipt = json.loads((draw_dir / 'draw_receipt.json').read_text())
     verify_seal(draw_dir, receipt)
     sample = read_csv(draw_dir / 'sample.csv')
@@ -417,29 +492,39 @@ def fetch_stage(draw_dir, cache_dir, load, packet_rows, approved=frozenset(), st
     if problems:  # explicit-list fixture only: the skipped records are listed, never silently dropped
         write_private(draw_dir / 'skipped.json', json.dumps({f'{t}|{i}': why for (t, i), why in problems.items()}, indent=1))
         print(f'SKIPPED {len(problems)} packets that fail the gate (known-answer run only): {Counter(problems.values())}')
-    corpus = Corpus(cache_dir)
-    want = {u for _, row, _ in built for u in urls_of(row)}
-
-    def one(u):
-        try:
-            r = corpus.fetch(u)
-            return u, dict(status=r['status'], http=r['http_status'], final_url=r['final_url'], fetched_at=r['fetched_at'], sha256=r['sha256'], text_file=r['text_file'])
-        except Exception as e:  # noqa: BLE001  a fetch failure is availability, never evidence
-            return u, dict(status='FETCH_FAILED', error=type(e).__name__)
-    with ThreadPoolExecutor(4) as pool:
-        manifest = dict(pool.map(one, sorted(want)))
+    manifest = fetch_urls(cache_dir, {u for _, row, _ in built for u in urls_of(row)})
+    plants = [(e, row) for e, row, _ in built if e.get('field')]
+    if plants:  # draw-time bytes are not guaranteed to be run-time bytes: every sealed plant must still be detectable on what was fetched now
+        assert true_of, 'plants need the true-value reader'
+        bad = Counter(why for e, row in plants if (why := plant_reason(row, e['field'], true_of(R, e['table'], e['record_id'], e['field']),
+                                                                       build_sources(dict(row=row, urls=urls_of(row)), manifest, cache_dir))))
+        if bad:
+            sys.exit(f'refusing to fetch: {sum(bad.values())} sealed plants are no longer detectable on the fetched pages: {dict(bad)}')
     keys = [(e['table'], e['record_id']) for e, _, _ in built]
-    rcpts, ni_classes, rcounts, ni = replays.coverage(R, keys, store or replays.STORE)
+    rcpts, ni_classes, rcounts, ni, due = replays.coverage(R, keys, store or replays.STORE)
+    for t, i in keys:
+        if len(rcpts.get(f'{t}|{i}', [])) != due.get(f'{t}|{i}', 0):
+            sys.exit(f'refusing to fetch: {t}|{i} is due {due.get(f"{t}|{i}", 0)} filing receipts and was issued {len(rcpts.get(f"{t}|{i}", []))}')
     lines = []
     for e, row, masked in built:
         k = f"{e['table']}|{e['record_id']}"
-        lines.append(json.dumps(dict(row=row, masked=masked, plant=e.get('field', ''), urls=urls_of(row), not_inspected=not_inspected_targets(row, ni.get(k)))))
+        lines.append(json.dumps(dict(row=row, masked=masked, plant=e.get('field', ''), urls=urls_of(row), not_inspected=not_inspected_targets(row, ni.get(k)), due=due.get(k, 0))))
     write_private(draw_dir / 'packets.jsonl', '\n'.join(lines) + '\n')
     (cache_dir / 'manifest.json').write_text(json.dumps(manifest, indent=1, sort_keys=True))
-    write_private(draw_dir / 'receipts.json', json.dumps(dict(receipts=rcpts, counts=rcounts, not_inspected_classes={c: len(v) for c, v in ni_classes.items()}), indent=1, default=list))
+    write_private(draw_dir / 'receipts.json', json.dumps(dict(receipts=rcpts, due=due, counts=rcounts, not_inspected_classes={c: len(v) for c, v in ni_classes.items()}), indent=1, default=list))
     ok = sum(1 for m in manifest.values() if m['status'] == 'ok')
     print(f'fetched {len(manifest)} distinct sources once ({ok} ok, {len(manifest) - ok} unavailable); {len(built)} packets; replay classes {rcounts}; not inspected {dict((c, len(v)) for c, v in ni_classes.items())}')
     return 0
+
+
+def write_new(path, text):
+    """Create-exclusive, owner-only: a reader file is never overwritten and never group- or world-readable."""
+    try:
+        fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    except FileExistsError:
+        sys.exit(f'refusing: {path.name} already exists (one run per output directory)')
+    with os.fdopen(fd, 'w') as f:
+        f.write(text)
 
 
 def run_stage(draw_dir, cache_dir, out, a):
@@ -454,74 +539,93 @@ def run_stage(draw_dir, cache_dir, out, a):
     if missing:
         sys.exit(f'refusing: {len(missing)} sealed items have no packet and are not on the fixture skip list')
     sample = [s for s in sample if s['blind_id'] in packets]
+    for s in sample:  # each packet must be the sealed row: same blind ID, table, record ID and plant assignment
+        row = packets[s['blind_id']]['row']
+        if (row.get('blind_id'), row.get('table'), row.get('record_id'), packets[s['blind_id']].get('plant', '')) != (s['blind_id'], s['table'], s['record_id'], s['plant_field']):
+            sys.exit(f"refusing: packet {s['blind_id']} is not its sealed row (blind ID, table, record ID or plant field differ)")
     manifest = json.loads((cache_dir / 'manifest.json').read_text())
     families = json.loads((draw_dir / 'families.json').read_text())
     rc_doc = json.loads((draw_dir / 'receipts.json').read_text())
+    if not isinstance(rc_doc.get('receipts'), dict) or not isinstance(rc_doc.get('due'), dict):
+        sys.exit('refusing: receipts.json lacks its receipts or due map')
+    for s in sample:  # filing receipts: the packet, the due map and the issued list must agree; a missing receipt is never an empty list
+        key = f"{s['table']}|{s['record_id']}"
+        want, issued = packets[s['blind_id']].get('due'), len(rc_doc['receipts'].get(key, []))
+        if want is None or not want == rc_doc['due'].get(key, 0) == issued:
+            sys.exit(f"refusing: {s['blind_id']} expects {want} filing receipts, receipts.json says {rc_doc['due'].get(key, 0)} due and {issued} issued")
     out = Path(out)
+    if (out / 'reads').exists():
+        sys.exit('refusing: this output directory already holds a run (one run per output directory)')
     out.mkdir(parents=True, exist_ok=True, mode=0o700)
+    (out / 'reads').mkdir(mode=0o700)
     ledger_path, procs, lock, stop = out / 'ledger.jsonl', set(), threading.Lock(), threading.Event()
-    spent = Counter()
+    spent, reserved, n_calls, seq = Counter(), Counter(), Counter(), [0]
     caps = {p: m * 1e6 for p, m in (CAPS_M if frame_mode(receipt) else getattr(a, 'caps_m', None) or {}).items()}
     halt = []
-    shared = {}  # blind_id -> requested URLs: one bounded source set per record, shared by both readers
 
     def log(**kw):
         with lock:
             with open(ledger_path, 'a') as f:
                 f.write(json.dumps(kw, sort_keys=True) + '\n')
 
-    def source_set(pk, extra=()):
-        urls = list(dict.fromkeys(list(pk['urls']) + list(extra)))[:FETCH_BUDGET]
-        row = pk['row']
-        terms = [v for f, v in json.loads(row['values_json']).items() if f in ('legal_name', 'site_name', 'street_address', 'city', 'hq_city') and v]
-        sources = {}
-        for n, u in enumerate(urls, 1):
-            m = manifest.get(u, {})
-            text = (cache_dir / m['text_file']).read_text() if m.get('status') == 'ok' and (cache_dir / m['text_file']).exists() else ''
-            sources[f'S{n}'] = dict(url=m.get('final_url') or u, fetched_at=m.get('fetched_at', 'not fetched'), availability=m.get('status', 'NOT_FETCHED'), full=text,
-                                    excerpt=excerpt(text, terms) if text else '(unavailable: a failed fetch is not evidence about the claim)')
-        return sources
+    def save_read(s, role, provider, round_, attempt, res, prompt, ans, found):
+        """Every call's raw text, parsed answer, normalised findings, round and provider, in its own file (0600, create-exclusive)."""
+        with lock:
+            seq[0] += 1
+            name = f"{seq[0]:04}-{s['blind_id']}-{role}-r{round_}-a{attempt}.json"
+        text = json.dumps(dict(blind_id=s['blind_id'], kind=s['kind'], role=role, provider=provider, round=round_, attempt=attempt, model=res['model'], usage=res['usage'],
+                               metered=res['metered'], error=res['error'], prompt_sha256=sha256(prompt.encode()), plant_field=s['plant_field'], raw_text=res['text'],
+                               parsed=ans, findings=found), sort_keys=True, indent=1)
+        write_new(out / 'reads' / name, text)
+        return name, sha256(text.encode())
 
     def read(provider, s, pk, role, extra=()):
-        """One fresh call (plus at most one REQUEST round for a primary). -> (findings, answer, extra) or None when the run must halt:
-        any failed, unmetered, wrong-model or empty call halts; only an unparseable answer from a healthy call is retried, once."""
+        """One fresh call (plus at most one REQUEST round, for either reader). -> (findings, answer, extra, file) or None when the run must halt:
+        any failed, unmetered, wrong-model or empty call halts at once; only an unparseable answer from a healthy call is retried, once."""
         row = pk['row']
         rc = rc_doc['receipts'].get(f"{s['table']}|{s['record_id']}", [])
         ni = pk.get('not_inspected', [])
         for round_ in (1, 2):
-            sources = source_set(pk, extra)
+            sources = build_sources(pk, manifest, cache_dir, extra)
             prompt = build_prompt(row, sources, rc, extra if (round_ == 2 or extra) else (), ni)
+            texts = {k: v['full'] for k, v in sources.items()} | {r['id']: r['text'] for r in rc}
             for attempt in (1, 2):
                 if stop.is_set():
                     return None
-                res = call_model(provider, prompt, procs)
+                est = max(len(prompt) // 3, spent[provider] // max(1, n_calls[provider]))  # input tokens of this call: prompt bytes / 3 overstates, else the provider's mean so far
+                with lock:
+                    if provider in caps and spent[provider] + reserved[provider] + est > caps[provider]:
+                        halt.append(f'{provider}: {spent[provider] / 1e6:.2f}M spent + {reserved[provider] / 1e6:.2f}M in flight + about {est / 1e6:.2f}M for the next call passes its {caps[provider] / 1e6:.2f}M stage budget: halt for repricing')
+                        stop.set()
+                        return None
+                    reserved[provider] += est
+                try:
+                    res = call_model(provider, prompt, procs)
+                finally:
+                    with lock:
+                        reserved[provider] -= est
                 ans = parse_answer(res['text']) if not res['error'] else None
+                found = read_findings(ans, texts, targets_of(row, ni), held_values(row)) if ans is not None else None
+                fname, fsha = save_read(s, role, provider, round_, attempt, res, prompt, ans, found)
                 log(blind_id=s['blind_id'], kind=s['kind'], role=role, provider=provider, round=round_, attempt=attempt, model=res['model'], usage=res['usage'], metered=res['metered'],
-                    elapsed=res['elapsed'], prompt_bytes=res['prompt_bytes'], error=res['error'] or ('unparseable answer' if ans is None else ''), forced=s['provider'] != provider)
-                spent[provider] += input_tokens(res['usage'])
-                if provider in caps and spent[provider] > caps[provider]:
-                    halt.append(f'{provider} passed its {caps[provider] / 1e6:.1f}M stage budget: halt for repricing')
-                    stop.set()
+                    elapsed=res['elapsed'], prompt_bytes=res['prompt_bytes'], error=res['error'] or ('unparseable answer' if ans is None else ''), forced=s['provider'] != provider,
+                    file=fname, file_sha256=fsha)
+                with lock:
+                    spent[provider] += input_tokens(res['usage'])
+                    n_calls[provider] += 1
                 if res['error']:
+                    stop.set()  # a failed or unmetered call stops every later call now, not when the ordered collector reaches it
                     return None
                 if ans is not None:
                     break
             if ans is None:
                 return None
-            targets = targets_of(row, ni)
-            texts = {k: v['full'] for k, v in sources.items()} | {r['id']: r['text'] for r in rc}
-            found = read_findings(ans, texts, targets, held_values(row))
             asks = [f['request_url'] for f in found.values() if f.get('raw') == 'REQUEST' and (f.get('request_url') or '').startswith('http')]
-            if round_ == 1 and role == 'primary' and not extra and asks and len(sources) < FETCH_BUDGET:
-                from site_corpus import Corpus
-                corpus = Corpus(cache_dir)
-                extra = [u for u in dict.fromkeys(asks)][:FETCH_BUDGET - len(sources)]
-                for u in extra:
-                    r = corpus.fetch(u)
-                    manifest[u] = dict(status=r['status'], http=r['http_status'], final_url=r['final_url'], fetched_at=r['fetched_at'], sha256=r['sha256'], text_file=r['text_file'])
-                shared[s['blind_id']] = extra
+            if round_ == 1 and not extra and asks and len(sources) < FETCH_BUDGET:  # either reader may use the one request round
+                extra = list(dict.fromkeys(asks))[:FETCH_BUDGET - len(sources)]
+                manifest.update(fetch_urls(cache_dir, extra))
                 continue
-            return found, ans, extra
+            return found, ans, extra, fname
         return None
 
     def other(provider, fams):
@@ -541,10 +645,11 @@ def run_stage(draw_dir, cache_dir, out, a):
         first = read(s['provider'], s, pk, 'primary')
         if first is None:
             return s, dict(status='NO_OUTPUT')
-        found, ans, extra = first
+        found, ans, extra, pfile = first
         lock_sha = sha256(json.dumps(found, sort_keys=True).encode())
-        log(blind_id=s['blind_id'], role='lock', provider=s['provider'], sha256=lock_sha)  # first verdicts are locked before any other family sees the case
-        item = dict(status='READ', primary=found, lock=lock_sha, second=None, exception=False, notes=Counter(n.get('kind', 'other') for n in ans.get('notes', []) if isinstance(n, dict)))
+        log(blind_id=s['blind_id'], role='lock', provider=s['provider'], sha256=lock_sha, file=pfile)  # first verdicts are locked before any other family sees the case
+        item = dict(status='READ', primary=found, primary_file=pfile, lock=lock_sha, second=None, second_file=None, exception=False,
+                    notes=Counter(n.get('kind', 'other') for n in ans.get('notes', []) if isinstance(n, dict)))
         if s['kind'] == 'real':
             rc = rc_doc['receipts'].get(f"{s['table']}|{s['record_id']}", [])
             need = flagged(found, rc) or 'uncertain' in fams
@@ -557,7 +662,7 @@ def run_stage(draw_dir, cache_dir, out, a):
                 sec = read(prov, s, pk, 'second', extra)
                 if sec is None:
                     return s, dict(item, status='SECOND_MISSING')
-                item['second'] = sec[0]
+                item['second'], item['second_file'] = sec[0], sec[3]
         return s, item
 
     board = Board(a.stop_at)
@@ -580,13 +685,15 @@ def run_stage(draw_dir, cache_dir, out, a):
             if s['kind'] == 'plant':
                 ok = plant_detected(item['primary'], s['plant_field'])
                 board.add(int(s['pos']), 'plant', detected=ok, provider=s['provider'])
-                results.append(dict(pos=int(s['pos']), blind_id=s['blind_id'], kind='plant', provider=s['provider'], plant_field=s['plant_field'], detected=ok, table=s['table'], record_id=s['record_id']))
+                results.append(dict(pos=int(s['pos']), blind_id=s['blind_id'], kind='plant', provider=s['provider'], plant_field=s['plant_field'], detected=ok, table=s['table'], record_id=s['record_id'],
+                                    primary_file=item['primary_file'], second_file=None))
             else:
                 final = combine(item['primary'], item['second'], not item['exception'])
                 outcome = record_outcome(final, ni)
                 board.add(int(s['pos']), 'real', outcome)
                 results.append(dict(pos=int(s['pos']), blind_id=s['blind_id'], kind='real', provider=s['provider'], table=s['table'], record_id=s['record_id'], coin=s['check_coin'],
                                     second_provider=item.get('second_provider'), second_for=item.get('second_for'), exception=item['exception'], lock=item['lock'], **outcome,
+                                    primary_file=item['primary_file'], second_file=item['second_file'],
                                     primary_status={t: f['status'] for t, f in item['primary'].items()}, second_status={t: f['status'] for t, f in (item['second'] or {}).items()},
                                     note_kinds=dict(item['notes']), withheld=len(packets[s['blind_id']]['masked'])))
             if board.stopped_at or board.invalid:
@@ -618,12 +725,45 @@ def run_stage(draw_dir, cache_dir, out, a):
     return 0 if status in ('COMPLETE', 'STOPPED_AT_K') else 1
 
 
+def rederive(run_dir, doc, ledger):
+    """Every verdict score reports comes from the persisted reader files: each file's sha256 must equal its ledger line, the primary file's findings
+    must equal the lock line, and plant detection and each record's outcome are recomputed from the files and must equal results.json.
+    A missing file, a hash mismatch or a disagreement exits 1; nothing is skipped."""
+    shas = {l['file']: l['file_sha256'] for l in ledger if l.get('file_sha256')}
+    locks = {l['blind_id']: l for l in ledger if l.get('role') == 'lock'}
+
+    def load_file(name):
+        path = run_dir / 'reads' / (name or '')
+        if not name or not path.is_file():
+            sys.exit(f'score refuses: reader file {name!r} is missing')
+        raw = path.read_bytes()
+        if sha256(raw) != shas.get(name):
+            sys.exit(f'score refuses: reader file {name} does not match its ledger hash')
+        return json.loads(raw)
+    for r in doc['results']:
+        prim = load_file(r.get('primary_file'))
+        lock = locks.get(r['blind_id'])
+        if not lock or lock['file'] != r['primary_file'] or sha256(json.dumps(prim['findings'], sort_keys=True).encode()) != lock['sha256']:
+            sys.exit(f"score refuses: {r['blind_id']}'s locked primary verdicts do not match its reader file")
+        if r['kind'] == 'plant':
+            if plant_detected(prim['findings'], r['plant_field']) != r['detected']:
+                sys.exit(f"score refuses: plant {r['blind_id']}: the reader file says detected={not r['detected']}, results.json says {r['detected']}")
+            continue
+        sec = load_file(r['second_file'])['findings'] if r.get('second_file') else None
+        outcome = record_outcome(combine(prim['findings'], sec, not r['exception']), r['not_inspected'])
+        bad = [k for k, v in outcome.items() if r.get(k) != v]
+        if bad:
+            sys.exit(f"score refuses: record {r['blind_id']}: results.json disagrees with its reader files on {bad}")
+    return len(doc['results'])
+
+
 def score_stage(run_dir):
     doc = json.loads((run_dir / 'results.json').read_text())
     ledger = [json.loads(l) for l in open(run_dir / 'ledger.jsonl')]
+    verified_files = rederive(run_dir, doc, ledger)
     real = [r for r in doc['results'] if r['kind'] == 'real']
     plants = [r for r in doc['results'] if r['kind'] == 'plant']
-    aud, unc, cd, cc, ni, notes = Counter(), Counter(), Counter(), Counter(), Counter(), Counter()
+    aud, unc, cd, cc, cf, ni, notes = Counter(), Counter(), Counter(), Counter(), Counter(), Counter(), Counter()
     reasons = Counter()
     for r in real:
         for t in r['audited']:
@@ -634,10 +774,11 @@ def score_stage(run_dir):
         for t in r.get('not_inspected', []):
             ni[field_of(t)] += 1
         cc.update(r['contradicted_core'])
+        cf.update(r['contradicted_core_fields'])  # the actual field of every core-impacting finding, child fields included, so it meets its own denominator
         cd.update(r['contradicted_desc'])
         notes.update(r.get('note_kinds', {}))
     fields = sorted(set(aud) | set(ni))
-    by_field = {f: dict(audited_values=aud[f], contradicted=cd[f] + cc[f], error_rate=round((cd[f] + cc[f]) / aud[f], 3) if aud[f] else None,
+    by_field = {f: dict(audited_values=aud[f], contradicted=cd[f] + cf[f], error_rate=round((cd[f] + cf[f]) / aud[f], 3) if aud[f] else None,
                         unconfirmed=unc[f], unconfirmed_share=round(unc[f] / aud[f], 3) if aud[f] else None, not_inspected=ni[f]) for f in fields}
     per = defaultdict(lambda: dict(requests=0, failed=0, completed_real=0, completed_control=0, input_tokens=0, tokens_on_failed=0))
     for l in ledger:
@@ -656,7 +797,7 @@ def score_stage(run_dir):
                     mean_input_per_completed_call=round(v['input_tokens'] / (v['completed_real'] + v['completed_control'])) if v['completed_real'] + v['completed_control'] else None) for k, v in sorted(per.items())}
     n = len(real)
     report = dict(status=doc['status'], audited_real_records=n, k=doc['k'], stop_at=doc['stop_at'], stopped_at_position=doc['stopped_at'], halt=doc.get('halt', []),
-                  contradicted_core_fields=dict(cc), by_field=by_field,
+                  contradicted_core_fields=dict(cc), by_field=by_field, reader_files_verified=verified_files,
                   not_inspected_by_field={f: ni[f] for f in sorted(ni)}, not_inspected_filed_classes=doc.get('not_inspected_classes', {}), replay_coverage=doc.get('replay_coverage', {}),
                   unconfirmed_reasons=dict(reasons), omission_and_other_notes=dict(notes), disputed_findings=sum(len(r.get('disputed', [])) for r in real),
                   plants=dict(by_provider={p: dict(planted=sum(1 for x in plants if x['provider'] == p), detected=sum(1 for x in plants if x['provider'] == p and x['detected'])) for p in sorted({x['provider'] for x in plants})},
