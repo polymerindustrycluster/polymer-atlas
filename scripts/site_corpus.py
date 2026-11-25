@@ -3,6 +3,9 @@
 
 Promotes L1 run.py's curl transport, Text extraction, hash receipts and challenge
 checks, and evidence-audit analyze.py's calibrated contiguous-word matcher.
+Owner ruling 2026-11-24: robots.txt no longer blocks a fetch (it is read for Crawl-delay and receipted as
+robots_disallowed yes/no/unreadable across every redirect hop), a bot-check page is receipted BOT_CHECK_MANUAL and listed
+for a person (a browser retry waits for its own PR), and LinkedIn company pages are fetchable logged out, with no cookies. Kept: the per-host rate limit, no solver services, no personal profiles.
 Usage: python3 scripts/site_corpus.py crawl [--cache-dir PATH]
        python3 scripts/site_corpus.py rawcheck URL QUOTE [--cache-dir PATH]
 """
@@ -40,6 +43,16 @@ KINDS = {
     'markets': r'industr|market',
     'products': r'product|capabilit|process|service',
 }
+BOT_CODES = (200, 403, 503, 999)  # 999 is LinkedIn's refusal; a bot check shows on these codes only
+# shortcut: markers copied from scripts/liveness_sweep.py (importing it pulls in the whole sweep); merge if either list grows.
+BOT_TITLES = ('just a moment', 'attention required', 'access denied', 'are you a robot', 'pardon our interruption',
+              'verify you are human', 'security check', 'captcha', 'ddos protection', 'request blocked')
+BOT_BODY = ('g-recaptcha', 'h-captcha', 'hcaptcha.com', 'px-captcha', 'cf-challenge', 'challenge-platform',
+            'cdn-cgi/challenge', 'enable javascript and cookies to continue', 'incapsula incident',
+            'sucuri website firewall', 'akamai reference')
+SIGNIN_PATH = re.compile(r'/(?:authwall|login|uas/|checkpoint)', re.I)
+STAFF_PATH = re.compile(r'/(?:staff-directory|employee-directory|our-team|team|staff)/?$', re.I)
+STALE = ('ROBOTS_BLOCKED', 'DOMAIN_BLOCKED')  # receipts written under the pre-2026-11-24 rules; refetched, never replayed
 WALLS = ('just a moment...', 'verify you are human', 'attention required! | cloudflare',
          'checking your browser', 'access to this page has been denied',
          'enable javascript and cookies to continue', 'request blocked')
@@ -90,6 +103,135 @@ def linkedin_url(target):
     return any(host == domain or host.endswith('.' + domain) for domain in ('linkedin.com', 'lnkd.in'))
 
 
+def linkedin_company_page(target):
+    """Company pages only (logged out): /company/<slug> or /showcase/<slug>, optionally /about. Never /in/, /pub/, /people."""
+    p = urlsplit(target)
+    host = unquote(p.hostname or '').encode('idna').decode().lower().rstrip('.')
+    path = unquote(p.path)
+    return (host == 'linkedin.com' or host.endswith('.linkedin.com')) and \
+        bool(re.fullmatch(r'/(?:company|showcase)/(?!\.+/?$)[^/]+(?:/about)?/?', path))
+
+
+def linkedin_blocked(target):
+    """A LinkedIn URL the fetcher refuses: anything but a company page (robots.txt aside, read for the receipt field)."""
+    return linkedin_url(target) and not (linkedin_company_page(target) or urlsplit(target).path == '/robots.txt')
+
+
+def challenged(code, body):
+    """Bot-check page: title or wall text always; widget markers only on a refusal code or a nearly empty page."""
+    lower = body.lower()
+    title = re.search(r'<title[^>]*>(.*?)</title>', lower, re.S)
+    parser = Text(); parser.feed(body); text = ' '.join(parser.parts)
+    if any(w in text.lower() for w in WALLS) or (title and any(m in title[1] for m in BOT_TITLES)): return True
+    return any(m in lower for m in BOT_BODY) and (code in (403, 503, 999) or len(words(text)) < 40)
+
+
+# A LinkedIn company page is never stored. Only these fields of it are: the page's own labelled fields and a flat JSON-LD
+# Organization. Everything else (employees, posts, nested objects, scripts, markup) is dropped.
+LI_FIELDS = {'about-us__description': 'description', 'about-us__website': 'website', 'about-us__industry': 'industry',
+             'about-us__size': 'company_size', 'about-us__headquarters': 'headquarters', 'about-us__foundedOn': 'founded',
+             'about-us__specialties': 'specialties'}
+VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
+LI_ADDRESS = ('streetAddress', 'addressLocality', 'addressRegion', 'postalCode', 'addressCountry')
+GENERIC = {'info', 'sales', 'contact', 'support', 'office', 'hello', 'customerservice', 'marketing', 'privacy', 'webmaster',
+           'enquiries', 'inquiries', 'service', 'hr', 'careers', 'orders'}
+
+
+def li_extract_only(raw):
+    """True if these bytes are an allowlisted LinkedIn extract (flat JSON of the allowed keys) or empty; anything else is a legacy page."""
+    if not raw: return True
+    try: d = json.loads(raw)
+    except ValueError: return False
+    keys = {'source_url', 'name', 'description', 'website', 'industry', 'company_size', 'headquarters', 'address', 'founded', 'specialties'}
+    return isinstance(d, dict) and set(d) <= keys and all(
+        isinstance(v, str) or (k == 'address' and isinstance(v, dict) and set(v) <= set(LI_ADDRESS) and all(isinstance(x, str) for x in v.values()))
+        for k, v in d.items())
+
+
+def li_clean(value, cap=300):
+    text = re.sub(r'\s+', ' ', value).strip()[:cap]
+    return re.sub(r'[\w.+-]{1,80}@[\w.-]{1,160}\.[a-zA-Z]{2,20}', lambda m: m[0] if m[0].split('@')[0].lower() in GENERIC else '[redacted]', text)
+
+
+class LinkedinExtract(HTMLParser):
+    """Collects the text of the allowlisted `about-us__*` fields and the JSON-LD Organization's flat fields; nothing else."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True); self.fields = {}; self.field = None; self.depth = 0; self.skip = 0; self.ld = None; self.script = False; self.org = {}
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == 'script':
+            self.script = True
+            self.ld = [] if 'ld+json' in a.get('type', '') else None; return
+        if self.field:
+            if tag not in VOID:
+                self.depth += 1
+                if tag in ('dt', 'icon', 'script', 'style') or (tag == 'p' and self.field != 'description'): self.skip += 1
+            return
+        if a.get('data-test-id') in LI_FIELDS and tag not in VOID:
+            self.field, self.depth, self.skip = LI_FIELDS[a['data-test-id']], 1, 0
+
+    def handle_endtag(self, tag):
+        if tag == 'script': self.script = False
+        if tag == 'script' and self.ld is not None:
+            try:
+                d = json.loads(''.join(self.ld)); graph = d.get('@graph', [d]) if isinstance(d, dict) else d
+                org = next(g for g in graph if isinstance(g, dict) and g.get('@type') in ('Organization', 'Corporation', 'LocalBusiness'))
+                self.org = {k: org[k] for k in ('name', 'description', 'foundingDate') if isinstance(org.get(k), str)}
+                if isinstance(org.get('address'), dict):
+                    self.org['address'] = {k: org['address'][k] for k in LI_ADDRESS if isinstance(org['address'].get(k), str)}
+            except (ValueError, AttributeError, StopIteration): pass
+            self.ld = None
+        elif self.field:
+            if tag in ('dt', 'icon', 'script', 'style') or (tag == 'p' and self.field != 'description'): self.skip = max(0, self.skip - 1)
+            self.depth -= 1
+            if self.depth == 0: self.field = None
+
+    def handle_data(self, data):
+        if self.ld is not None: self.ld.append(data)
+        elif self.field and not self.skip and not self.script: self.fields[self.field] = self.fields.get(self.field, '') + ' ' + data
+
+    def result(self, source):
+        """The allowlisted extract, or None when the page gave no name and no field (a wall, an error, a changed page)."""
+        out = {'source_url': source}
+        for k in ('name', 'description', 'foundingDate'):
+            if self.org.get(k): out[{'foundingDate': 'founded'}.get(k, k)] = li_clean(self.org[k], 3000 if k == 'description' else 300)
+        if self.org.get('address'): out['address'] = {k: li_clean(v) for k, v in self.org['address'].items()}
+        for k, v in self.fields.items():
+            if li_clean(v): out[k] = li_clean(v, 3000 if k == 'description' else 300)  # the page's own labelled text wins over JSON-LD
+        return out if len(out) > 1 else None
+
+
+def reader_challenged(body):
+    """Jina's markdown form of a bot check: its Title line and text go through the same detector as a direct page."""
+    title = re.search(r'(?m)^Title:\s*(.*)$', body)
+    text = body.split('Markdown Content:', 1)[-1]
+    return challenged(200, f'<title>{title[1] if title else ""}</title><p>{text}</p>') or (
+        len(words(text)) < 80 and bool(re.search(r'captcha|verify you are human|are you a robot|security check', text, re.I)))
+
+
+def private_page(final, body):
+    """Staff-directory paths and form-only pages carry personal data (AGENTS.md §6): never stored. Same tests as the 2026-11-16 crawl."""
+    if STAFF_PATH.search(urlsplit(final).path): return True
+    if '<form' not in body.lower(): return False
+    parser = Text(); parser.feed(re.sub(r'<form\b.*?</form>', '', body, flags=re.I | re.S))
+    return len(words(' '.join(parser.parts))) < 80
+
+
+def refused(target, current):
+    """Status for a hop the fetcher will not request, else ''. An own-site fetch never lands on LinkedIn."""
+    if not linkedin_url(current): return ''
+    if not linkedin_url(target): return 'DOMAIN_BLOCKED'
+    if SIGNIN_PATH.match(unquote(urlsplit(current).path)): return 'SIGNIN_WALL'
+    return 'DOMAIN_BLOCKED' if linkedin_blocked(current) else ''
+
+
+def verdict(flags):
+    """robots_disallowed across redirect hops: yes if any hop's URL was disallowed, else unreadable if any hop's robots.txt was."""
+    flags = flags - {''}
+    return 'yes' if 'yes' in flags else 'unreadable' if 'unreadable' in flags else 'no' if flags else ''
+
+
 def same_page(a, b):
     def identity(value):
         p = urlsplit(value)
@@ -101,12 +243,18 @@ def key(value):
     return hashlib.sha256(value.encode()).hexdigest()
 
 
+PURGED = set()  # caches already swept for legacy LinkedIn pages in this process
+
+
 class Corpus:
     def __init__(self, cache_dir=DEFAULT_CACHE):
         self.cache = Path(cache_dir).resolve()
         if self.cache == ROOT or ROOT in self.cache.parents:
             raise ValueError('Cache must be outside the repository')
         self.cache.mkdir(parents=True, exist_ok=True)
+        self.memo = {}  # robots.txt bodies: in memory only
+        if self.cache not in PURGED:
+            PURGED.add(self.cache); self.purge_linkedin()
 
     @contextmanager
     def lock(self, name):
@@ -133,33 +281,61 @@ class Corpus:
 
     def request(self, target, delay=1):
         """L1 curl transport, with redirects handled by fetch so robots gates each hop."""
-        if linkedin_url(target):
-            raise ValueError('LinkedIn requests are blocked')
+        if linkedin_blocked(target):
+            raise ValueError('Only LinkedIn company pages may be requested')
         with self.lock('host-' + key(urlsplit(target).hostname)) as clock:
             clock.seek(0)
             last = float(clock.read() or 0)
             time.sleep(max(0, last - time.time()))
-            with self.slot(), tempfile.TemporaryDirectory(dir=self.cache) as tmp:
+            with self.slot():
                 clock.seek(0); clock.truncate(); clock.write(str(time.time() + delay)); clock.flush()
-                raw, headers = Path(tmp) / 'raw', Path(tmp) / 'headers'
-                p = subprocess.run(['curl', '-q', '-sS', '-A', UA, '--max-time', '25',
-                                    '--max-filesize', '12000000', '-D', str(headers), '-o', str(raw),
-                                    '-w', '%{http_code}', target], capture_output=True, text=True)
-                h = headers.read_text(errors='replace') if headers.exists() else ''
+                cmd = ['curl', '-q', '-sS', '-A', UA, '--max-time', '25', '--max-filesize', '12000000']
+                if urlsplit(target).path == '/robots.txt':
+                    # robots.txt never touches disk: headers and body come back on stdout, no -o file, no -D file, no temp dir.
+                    p = subprocess.run(cmd + ['-i', '-o', '-', '-w', '\n%{http_code}', target], capture_output=True)
+                    out, _, status = p.stdout.rpartition(b'\n')
+                    h, _, body = out.partition(b'\r\n\r\n')
+                    h = h.decode('utf-8', 'replace'); error = p.stderr.decode('utf-8', 'replace')[:300]; code = int(status or 0)
+                else:
+                    with tempfile.TemporaryDirectory(dir=self.cache) as tmp:
+                        raw, headers = Path(tmp) / 'raw', Path(tmp) / 'headers'
+                        p = subprocess.run(cmd + ['-D', str(headers), '-o', str(raw), '-w', '%{http_code}', target], capture_output=True, text=True)
+                        h = headers.read_text(errors='replace') if headers.exists() else ''
+                        body = raw.read_bytes() if raw.exists() else b''
+                    error = p.stderr[:300]; code = int(p.stdout or 0)
                 retry = re.findall(r'(?im)^retry-after:\s*(\d+)', h)
                 if retry:
                     clock.seek(0); clock.truncate(); clock.write(str(time.time() + max(delay, int(retry[-1])))); clock.flush()
                 locations = re.findall(r'(?im)^location:\s*(.*?)\s*$', h)
                 types = re.findall(r'(?im)^content-type:\s*(.*?)\s*$', h)
-                return dict(code=int(p.stdout or 0), raw=raw.read_bytes() if raw.exists() else b'',
-                            location=locations[-1] if locations else '',
-                            content_type=types[-1] if types else '', error=p.stderr[:300], exit=p.returncode)
+                return dict(code=code, raw=body, location=locations[-1] if locations else '',
+                            content_type=types[-1] if types else '', error=error, exit=p.returncode)
+
+    def legacy_linkedin(self, r):
+        """A LinkedIn receipt whose stored file is not an allowlisted extract: written before the extract-only rule."""
+        if not (linkedin_url(r.get('url', '')) or linkedin_url(r.get('final_url', ''))) or not r.get('raw_file'): return False
+        f = self.cache / Path(r['raw_file']).name
+        return f.exists() and not li_extract_only(f.read_bytes())
+
+    def purge(self, r, meta):
+        for name in (r.get('raw_file'), r.get('text_file')):
+            if name: (self.cache / Path(name).name).unlink(missing_ok=True)
+        meta.unlink(missing_ok=True)
+
+    def purge_linkedin(self):
+        """Once per cache per process: delete every legacy LinkedIn page (raw, text and receipt), so none can replay."""
+        for meta in self.cache.glob('*.json'):
+            try: r = json.loads(meta.read_text())
+            except ValueError: continue
+            if isinstance(r, dict) and self.legacy_linkedin(r): self.purge(r, meta)
 
     def cached(self, target):
         meta = self.cache / (key(target) + '.json')
         if not meta.exists(): return None
         r = json.loads(meta.read_text())
-        if r.get('extraction_version') != 3: return None
+        if r.get('extraction_version') != 3 or r.get('status') in STALE: return None
+        if self.legacy_linkedin(r): self.purge(r, meta); return None  # never replayed
+        r.setdefault('robots_disallowed', 'not_recorded')
         if r['url'] != target: raise ValueError('Cache URL mismatch')
         if hashlib.sha256((self.cache / r['raw_file']).read_bytes()).hexdigest() != r['sha256']:
             raise ValueError('Cache hash mismatch: ' + target)
@@ -176,17 +352,32 @@ class Corpus:
     def fallback(self, target, delay):
         # A proxy read also consumes the original host's request budget.
         if linkedin_url(target):
-            raise ValueError('LinkedIn requests are blocked')
+            raise ValueError('LinkedIn pages are never read through a proxy')
         with self.lock('host-' + key(urlsplit(target).hostname)) as clock:
             clock.seek(0)
             time.sleep(max(0, float(clock.read() or 0) - time.time()))
             clock.seek(0); clock.truncate(); clock.write(str(time.time() + delay)); clock.flush()
             return self.request('https://r.jina.ai/' + target)
 
-    def save(self, target, response, status, final, route):
+    def save(self, target, response, status, final, route, robots_disallowed=''):
         stem = key(target)
         raw = response.get('raw', b'')
         body = raw.decode('utf-8', 'replace')
+        code = dict(code=response.get('code', 0))
+        if private_page(final, body) or private_page(target, ''):
+            # Discarded before storage, whatever the status: a failed or manual receipt must not keep the body either.
+            response, raw, body = code, b'', ''
+            if status == 'ok': status = 'CONTACT_FORM_OR_STAFF_DIRECTORY'
+        elif linkedin_url(final) or linkedin_url(target):
+            # Never the raw page: only the allowlisted extract of a company page that was ok, at no other status.
+            extract = None
+            if status == 'ok' and linkedin_company_page(final):
+                page = LinkedinExtract(); page.feed(body); extract = page.result(final)
+            response, raw, body = code, b'', ''
+            if extract:
+                raw = json.dumps(extract, indent=1, ensure_ascii=False).encode(); body = raw.decode()
+                response = dict(code=code['code'], raw=raw, content_type='application/json')
+            elif status == 'ok': status = 'FETCH_FAILED'
         if route == 'jina':
             text = body.split('Markdown Content:', 1)[-1] if 'Markdown Content:' in body else ''
             source = re.search(r'(?m)^URL Source:\s*(https?://\S+)', body)
@@ -205,11 +396,12 @@ class Corpus:
                  final_url=final, route=route, fetched_at=datetime.now(timezone.utc).isoformat(),
                  sha256=hashlib.sha256(raw).hexdigest(), raw_file=raw_name, text_file=text_name,
                  text_sha256=hashlib.sha256(text.encode()).hexdigest(), extraction_version=3,
-                 error=response.get('error', ''))
+                 error=response.get('error', ''), robots_disallowed=robots_disallowed)
         meta = self.cache / (stem + '.json.tmp')
         meta.write_text(json.dumps(r)); meta.replace(self.cache / (stem + '.json'))
         with self.lock('index'):
             dest = self.cache / 'index.csv'
+            if dest.exists() and dest.read_text().split('\n', 1)[0] != ','.join(r): dest = self.cache / 'index-robots.csv'
             exists = dest.exists()
             with dest.open('a', newline='') as f:
                 w = csv.DictWriter(f, list(r))
@@ -217,58 +409,105 @@ class Corpus:
                 w.writerow(r)
         return r
 
-    def policy(self, target):
+    def robots_rules(self, target):
+        """(receipt, text) for the host's robots.txt. The body is parsed in memory and NEVER written to disk, whatever it
+        holds; only a receipt (url, final_url, status, http_status, bytes, sha256, fetched_at) goes to robots-<key>.json."""
         p = urlsplit(target)
         robots = urlunsplit((p.scheme, p.netloc, '/robots.txt', '', ''))
-        r = self.fetch(robots, robots=True)
+        with self.lock('url-' + key(robots)):
+            if robots in self.memo: return self.memo[robots]
+            current, response = robots, {}
+            for _ in range(6):
+                if refused(robots, current): response = {}; break
+                response = self.request(current, 1)
+                if response['code'] in (301, 302, 303, 307, 308) and response['location']:
+                    current = url(urljoin(current, response['location']))
+                    if urlsplit(current).path != '/robots.txt': break  # only robots paths are followed
+                    continue
+                break
+            raw, code = response.get('raw', b''), response.get('code', 0)
+            ok = response.get('exit') == 0 and code == 200
+            receipt = dict(url=robots, final_url=current, status='ok' if ok else 'FETCH_FAILED', http_status=code, bytes=len(raw),
+                           sha256=hashlib.sha256(raw).hexdigest(), fetched_at=datetime.now(timezone.utc).isoformat(), route='direct',
+                           raw_file='', text_file='', robots_disallowed='', error=response.get('error', ''))
+            meta = self.cache / ('robots-' + key(robots) + '.json.tmp')
+            meta.write_text(json.dumps(receipt)); meta.replace(self.cache / ('robots-' + key(robots) + '.json'))
+            self.memo[robots] = receipt, (raw.decode('utf-8', 'replace') if ok else '')
+            return self.memo[robots]
+
+    def robots(self, target):
+        """('yes'|'no'|'unreadable', crawl delay seconds). Informational: a Disallow never blocks a fetch (owner ruling 2026-11-24)."""
+        receipt, text = self.robots_rules(target)
         parser = RobotFileParser()
-        if r['status'] == 'ok':
-            parser.parse((self.cache / r['text_file']).read_text().splitlines())
-        elif r['http_status'] in (404, 410): parser.parse([])
-        else: parser.parse(['User-agent: *', 'Disallow: /'])
+        if receipt['status'] == 'ok':
+            parser.parse(text.splitlines())
+            state = 'no' if parser.can_fetch(ROBOT_AGENT, target) else 'yes'
+        else:
+            parser.parse([])
+            state = 'no' if receipt['http_status'] in (404, 410) else 'unreadable'  # unreadable: default 1 s delay, no block
         delay = max(1, parser.crawl_delay(ROBOT_AGENT) or 0)
         rate = parser.request_rate(ROBOT_AGENT)
         if rate: delay = max(delay, rate.seconds / rate.requests)
-        return parser.can_fetch(ROBOT_AGENT, target), delay
+        return state, delay
 
-    def fetch(self, target, robots=False):
+    def policy(self, target):
+        """What the pre-2026-11-24 rule would have decided: (allowed only when robots.txt was readable and allowed, delay)."""
+        state, delay = self.robots(target)
+        return state == 'no', delay
+
+    def manual(self, target, final, code):
+        with self.lock('manual'):
+            dest = self.cache / 'manual-bot-check.csv'
+            exists = dest.exists()
+            with dest.open('a', newline='') as f:
+                w = csv.writer(f)
+                if not exists: w.writerow(['url', 'final_url', 'http_status', 'listed_at'])
+                w.writerow([target, final, code, datetime.now(timezone.utc).isoformat()])
+
+    def fetch(self, target):
         target = url(target)
-        robots = robots or urlsplit(target).path == '/robots.txt'
+        if urlsplit(target).path == '/robots.txt': return self.robots_rules(target)[0]  # receipt only, no body on disk
         with self.lock('url-' + key(target)):
-            if linkedin_url(target):
-                return self.save(target, {}, 'DOMAIN_BLOCKED', target, 'direct')
+            if why := refused(target, target):
+                return self.save(target, {}, why, target, 'direct')
             cached = self.cached(target)
             if cached:
-                if linkedin_url(cached['final_url']):
-                    return self.save(target, {}, 'DOMAIN_BLOCKED', cached['final_url'], 'direct')
+                if why := refused(target, cached['final_url']):
+                    return self.save(target, {}, why, cached['final_url'], 'direct')
                 return cached
-            current, response = target, {}
+            current, response, flags = target, {}, set()
             for _ in range(6):
-                allowed, delay = (True, 1) if robots else self.policy(current)
-                if not allowed: return self.save(target, {}, 'ROBOTS_BLOCKED', current, 'direct')
+                state, delay = self.robots(current)
+                flags.add(state)
                 response = self.request(current, delay)
                 if response['code'] in (301, 302, 303, 307, 308) and response['location']:
                     current = url(urljoin(current, response['location']))
-                    if linkedin_url(current):
-                        return self.save(target, {}, 'DOMAIN_BLOCKED', current, 'direct')
-                    # Only robots paths are exempt from a destination robots check.
-                    if robots and urlsplit(current).path != '/robots.txt': break
+                    if why := refused(target, current):
+                        return self.save(target, {}, why, current, 'direct', verdict(flags))
                     continue
                 break
+            seen = verdict(flags)
             if response.get('code') in (301, 302, 303, 307, 308):
-                return self.save(target, response, 'FETCH_FAILED', current, 'direct')
+                return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)
+            if response.get('code') in BOT_CODES and challenged(response['code'], response['raw'].decode('utf-8', 'replace')):
+                self.manual(target, current, response['code'])  # a bot check is for a person; a browser retry waits for its own PR
+                return self.save(target, response, 'BOT_CHECK_MANUAL', current, 'direct', seen)
             if response.get('exit') == 0 and response.get('code') == 200:
-                r = self.save(target, response, 'ok', current, 'direct')
-                if r['status'] == 'ok' or robots: return r
-            if not robots and response.get('code') != 429 and urlsplit(current).hostname != 'r.jina.ai':
+                r = self.save(target, response, 'ok', current, 'direct', seen)
+                if r['status'] in ('ok', 'CONTACT_FORM_OR_STAFF_DIRECTORY'): return r  # an excluded page is not retried through a proxy
+            if private_page(current, response.get('raw', b'').decode('utf-8', 'replace')):
+                return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)  # never forwarded to a reader
+            if response.get('code') != 429 and urlsplit(current).hostname != 'r.jina.ai' and not linkedin_url(current):
                 fallback = self.fallback(current, delay)
                 if fallback['code'] == 200 and fallback['exit'] == 0:
                     source = re.search(r'(?m)^URL Source:\s*(https?://\S+)', fallback['raw'].decode('utf-8', 'replace'))
                     if not source or not same_page(current, source[1]):
-                        return self.save(target, fallback, 'WRONG_PAGE', current, 'jina')
-                    allowed, _ = self.policy(source[1])
-                    return self.save(target, fallback, 'ok' if allowed else 'ROBOTS_BLOCKED', current, 'jina')
-            return self.save(target, response, 'FETCH_FAILED', current, 'direct')
+                        return self.save(target, fallback, 'WRONG_PAGE', current, 'jina', seen)
+                    if reader_challenged(fallback['raw'].decode('utf-8', 'replace')):
+                        self.manual(target, current, 200)
+                        return self.save(target, fallback, 'BOT_CHECK_MANUAL', current, 'jina', seen)
+                    return self.save(target, fallback, 'ok', current, 'jina', verdict(flags | {self.robots(source[1])[0]}))
+            return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)
 
     def rawcheck(self, target, quote):
         """Return yes/no/unfetchable; a fetch failure says nothing about the claim."""
