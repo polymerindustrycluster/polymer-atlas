@@ -779,6 +779,14 @@ Decided by the repo owner in session, 2026-11-24 and 2026-11-25.
 
 Replaces the robots-per-hop rule in `docs/ACQUISITION.md` and the exhibitor-roster exception to it. Follow-up for the owner: AGENTS.md §4 still says "The site corpus fetcher refuses LinkedIn requests"; the sentence is now stale and is not edited here. The check is `tasks/robots-off-fetch-2026-11-25/check.py`.
 
+## 2026-11-25 · Audit 13 reader rule: an own page counts
+
+Owner ruling 2026-11-25 11:27, "Reader rule: own page counts". The reader rule now reads: "An operator's own page (on its own domain) that names the operator and gives exactly one street at the record's locality speaks for the site at that locality: that street can contradict the site's street. A page that lists several locations at that locality, or labels the address as headquarters or office only, does not; a parent's headquarters street still does not contradict a plant's street."
+
+Reason: smoke attempt 2 was void. A reader marked a planted wrong street UNCONFIRMED under the rule that a company-level page cannot contradict a site value, while the operator's own home-page footer gave the true street at the record's locality, which the Atlas binds from that same page. 6 of the 9 plants had this shape, so wrong streets sourced this way were undetectable.
+
+Follow-up ruling, 2026-11-25, "Simplify: hand-check plants": two automated eligibility checks for this rule, and a `--reject-plants` re-draw option, were refuted in review, so the code is dropped. The controller decides plant eligibility by hand after fetch and before any reading (one address block on the cited source, shown in the reader's excerpt, with a name the record holds or its operator, the true value and the record's locality; the source the operator's own domain or site-specific; no headquarters-only or office-only label). There is no re-draw: a plant the hand-check rejects counts INELIGIBLE and is reported apart from caught and missed (seal rule 5, owner ruling 07:57). Changed files: `tasks/blind-audit-13-smoke-2026-11-24/READER_INSTRUCTIONS.md` and the README only.
+
 ## 2026-11-25 · Browser path for bot checks (headed Chrome, no clicks)
 
 Follows the owner rulings of 2026-11-24 21:21 ("Rule change: ignore robots.txt. Click thru bot checks."), 2026-11-24 21:26 ("LinkedIn should not be barred.") and 2026-11-25 06:08 ("Split it": the browser path comes as its own reviewed PR). Evidence: on the merged fetcher (curl only) 0 of 127 PIC-18 LinkedIn company pages and 12 of 117 own-site organizations were readable; a quarantined headed-Chrome run read 122 of 127 LinkedIn pages without a click, and headless Chrome was held by Cloudflare on 3 of 3.

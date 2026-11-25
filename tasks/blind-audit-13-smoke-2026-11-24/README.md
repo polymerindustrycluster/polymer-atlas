@@ -5,7 +5,7 @@ ATLAS-7 · `claimed:atlas-p1-smoke-runner 2026-11-24` · Built by: Claude Code (
 One record per fresh short reader call, from sources fetched once by script. [PROTOCOL.md](../blind-audit-13-protocol-2026-11-24/PROTOCOL.md) says what counts; this folder is the runner.
 
 ```sh
-python3 tasks/blind-audit-13-smoke-2026-11-24/check.py                                 # selftest, no frame, no model (41 planted cases)
+python3 tasks/blind-audit-13-smoke-2026-11-24/check.py                                 # selftest, no frame, no model (planted cases; the count is printed)
 smoke.py frame     --at SHA --out DIR                                                  # PIC-18 frame, reconciliation, exclusions, digest
 smoke.py preflight --at SHA --out DIR [--families CSV] [--approved CSV]...             # whole frame, no model calls; exit 1 on any block
 smoke.py labels    --at SHA --preflight DIR --out CSV                                  # label -> family evidence (git history), for the controller to approve
@@ -14,6 +14,20 @@ smoke.py fetch     --draw DIR --cache DIR                                       
 smoke.py run       --draw DIR --cache DIR --out DIR                                    # sealed order; stop at k = 3; cancels the rest; every call kept in OUT/reads/
 smoke.py score     --run DIR                                                           # aggregates only; re-derived from OUT/reads/, exit 1 on any mismatch
 ```
+
+## Reader rule: an own page counts (changed 2026-11-25, owner ruling 11:27, "Reader rule: own page counts")
+
+**Why.** Smoke attempt 2 was void. A reader met a planted wrong street and marked it UNCONFIRMED under the grain rule that a company-level page cannot contradict a site value, although the operator's own home-page footer gave the true street at the record's locality, and the Atlas binds that street from that same page. 6 of the 9 plants had this shape, so a wrong street sourced this way could not be detected.
+
+**What changed.**
+- `READER_INSTRUCTIONS.md`, the CONTRADICTED bullet, gains one rule: "An operator's own page (on its own domain) that names the operator and gives exactly one street at the record's locality speaks for the site at that locality: that street can contradict the site's street. A page that lists several locations at that locality, or labels the address as headquarters or office only, does not; a parent's headquarters street still does not contradict a plant's street." Every other rule is unchanged. sha256 of the file: `cdb6b4a7d2d69963f753369531291c4b617cdebba95f28f3da462df068399f48` (before: `8cdd959a587a4ecd055baf768ea59b0d06d222a3180a3d90de43218a94512568`).
+- **Plant eligibility is a hand judgment, not automated** (owner ruling 2026-11-25, "Simplify: hand-check plants"). Two automated attempts to encode the rule in `reading.py`, and a `--reject-plants` re-draw option, were refuted by review and dropped, so `reading.py`, `smoke.py` and `check.py` are as on `main`. The controller decides eligibility by hand, after fetch and before any reading.
+
+**The sealed sequence.** draw, fetch, the controller's eligibility hand-check of each plant on its built packet and the reader excerpt, then run. There is no re-draw. A plant the hand-check rejects counts INELIGIBLE and is reported apart from caught and missed (the existing seal rule 5, owner ruling 07:57).
+
+**The eligibility test the controller applies.** A plant is ELIGIBLE only if one address block on the cited source, shown in the reader's excerpt, has all of: a name the record holds or its operator; the true value; the record's locality. And the source is the operator's own domain (the held organization website) or site-specific, and no headquarters-only or office-only label applies to that block. Anything less is INELIGIBLE, with the reason.
+
+**Check.** No code changed in this folder, so `check.py` is unchanged and passes as on `main`.
 
 ## Reused, forked, and why
 
