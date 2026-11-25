@@ -20,6 +20,9 @@ class SiteCorpusTests(unittest.TestCase):
         directory = tempfile.TemporaryDirectory()
         self.addCleanup(directory.cleanup)
         self.tmp_path = Path(directory.name)
+        # No unit test launches Chrome; the browser path is exercised by tasks/browser-fetch-2026-11-25/check.py.
+        patcher = patch.object(Corpus, 'browser', return_value=dict(code=403, raw=b'<html><title>Just a moment...</title></html>', content_type='text/html', exit=0, error='', final_url='https://example.org/', flags=set(), blocked=''))  # Chrome ran and the check stayed
+        patcher.start(); self.addCleanup(patcher.stop)
 
     def test_calibrated_known_answer_and_mutations(self):
         for quote, expected in [
@@ -117,6 +120,15 @@ class SiteCorpusTests(unittest.TestCase):
         assert challenged(200, '<html><div class="g-recaptcha"></div><p>short</p></html>')
         assert not challenged(200, '<html><div class="g-recaptcha"></div><p>' + 'word ' * 80 + '</p></html>')  # a contact form is not a wall
         assert not challenged(404, '<html><title>Not found</title></html>')
+
+    def test_unavailable_browser_is_its_own_cached_outcome(self):
+        c = Corpus(self.tmp_path)
+        gone = dict(unavailable=True, error='PLAYWRIGHT_UNAVAILABLE', code=0, raw=b'', exit=127, final_url='', flags=set(), blocked='')
+        with patch.object(Corpus, 'browser', return_value=gone) as browser, patch.object(c, 'request', side_effect=lambda u, delay=1: response(code=404) if u.endswith('/robots.txt') else response('<html><title>Just a moment...</title></html>', code=403, content_type='text/html')) as request:
+            first = c.fetch('https://example.org/x'); n = request.call_count
+            second = c.fetch('https://example.org/x')
+        assert first['status'] == second['status'] == 'BROWSER_UNAVAILABLE' and browser.call_count == 1 and request.call_count == n
+        assert len((self.tmp_path / 'manual-bot-check.csv').read_text().strip().split('\n')) == 2  # header and one row
 
     def test_challenge_page_is_manual_never_ok(self):
         c = Corpus(self.tmp_path)
