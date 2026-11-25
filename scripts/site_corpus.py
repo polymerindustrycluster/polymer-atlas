@@ -3,6 +3,9 @@
 
 Promotes L1 run.py's curl transport, Text extraction, hash receipts and challenge
 checks, and evidence-audit analyze.py's calibrated contiguous-word matcher.
+Owner ruling 2026-11-24: robots.txt no longer blocks a fetch (it is read for Crawl-delay and receipted as
+robots_disallowed yes/no/unreadable), a bot-check page is retried once in a fresh local Chrome, and LinkedIn
+company pages are fetchable logged out. Kept: the per-host rate limit, no solver services, no personal profiles.
 Usage: python3 scripts/site_corpus.py crawl [--cache-dir PATH]
        python3 scripts/site_corpus.py rawcheck URL QUOTE [--cache-dir PATH]
 """
@@ -40,6 +43,16 @@ KINDS = {
     'markets': r'industr|market',
     'products': r'product|capabilit|process|service',
 }
+BOT_CODES = (200, 403, 503, 999)  # 999 is LinkedIn's refusal; other codes never reach the browser
+# shortcut: markers copied from scripts/liveness_sweep.py (importing it pulls in the whole sweep); merge if either list grows.
+BOT_TITLES = ('just a moment', 'attention required', 'access denied', 'are you a robot', 'pardon our interruption',
+              'verify you are human', 'security check', 'captcha', 'ddos protection', 'request blocked')
+BOT_BODY = ('g-recaptcha', 'h-captcha', 'hcaptcha.com', 'px-captcha', 'cf-challenge', 'challenge-platform',
+            'cdn-cgi/challenge', 'enable javascript and cookies to continue', 'incapsula incident',
+            'sucuri website firewall', 'akamai reference')
+VERIFY = re.compile(r"verify you are human|i am human|i.m not a robot|i am not a robot", re.I)
+SIGNIN_PATH = re.compile(r'/(?:authwall|login|uas/|checkpoint)', re.I)
+STALE = ('ROBOTS_BLOCKED', 'DOMAIN_BLOCKED')  # receipts written under the pre-2026-11-24 rules; refetched, never replayed
 WALLS = ('just a moment...', 'verify you are human', 'attention required! | cloudflare',
          'checking your browser', 'access to this page has been denied',
          'enable javascript and cookies to continue', 'request blocked')
@@ -90,6 +103,61 @@ def linkedin_url(target):
     return any(host == domain or host.endswith('.' + domain) for domain in ('linkedin.com', 'lnkd.in'))
 
 
+def linkedin_company_page(target):
+    """Company pages only (logged out): /company/<slug> or /showcase/<slug>, optionally /about. Never /in/, /pub/, /people."""
+    p = urlsplit(target)
+    host = unquote(p.hostname or '').encode('idna').decode().lower().rstrip('.')
+    path = unquote(p.path)
+    return (host == 'linkedin.com' or host.endswith('.linkedin.com')) and \
+        bool(re.fullmatch(r'/(?:company|showcase)/(?!\.+/?$)[^/]+(?:/about)?/?', path))
+
+
+def linkedin_blocked(target):
+    """A LinkedIn URL the fetcher refuses: anything but a company page (robots.txt aside, read for the receipt field)."""
+    return linkedin_url(target) and not (linkedin_company_page(target) or urlsplit(target).path == '/robots.txt')
+
+
+def challenged(code, body):
+    """Bot-check page: title or wall text always; widget markers only on a refusal code or a nearly empty page."""
+    lower = body.lower()
+    title = re.search(r'<title[^>]*>(.*?)</title>', lower, re.S)
+    parser = Text(); parser.feed(body); text = ' '.join(parser.parts)
+    if any(w in text.lower() for w in WALLS) or (title and any(m in title[1] for m in BOT_TITLES)): return True
+    return any(m in lower for m in BOT_BODY) and (code in (403, 503, 999) or len(words(text)) < 40)
+
+
+def refused(target, current):
+    """Status for a hop the fetcher will not request, else ''. An own-site fetch never lands on LinkedIn."""
+    if not linkedin_url(current): return ''
+    if not linkedin_url(target): return 'DOMAIN_BLOCKED'
+    if SIGNIN_PATH.match(unquote(urlsplit(current).path)): return 'SIGNIN_WALL'
+    return 'DOMAIN_BLOCKED' if linkedin_blocked(current) else ''
+
+
+def verdict(flags):
+    """robots_disallowed across redirect hops: yes if any hop's URL was disallowed, else unreadable if any hop's robots.txt was."""
+    flags = flags - {''}
+    return 'yes' if 'yes' in flags else 'unreadable' if 'unreadable' in flags else 'no' if flags else ''
+
+
+def verify_click(page):
+    """Click one plain verify-human control (never a sign-in form or a puzzle). Returns 1 if something was clicked."""
+    try:
+        for frame in page.frames:
+            names = [frame.get_by_role('button', name=VERIFY), frame.get_by_role('checkbox', name=VERIFY),
+                     frame.get_by_label(VERIFY), frame.get_by_text(VERIFY)]
+            if frame != page.main_frame: names.append(frame.get_by_role('checkbox'))
+            for loc in names:
+                if loc.count() and loc.first.is_visible():
+                    loc.first.click(timeout=3000); return 1
+        for handle in page.query_selector_all('iframe[src*="challenges.cloudflare.com"]'):
+            box = handle.bounding_box()  # Turnstile's checkbox sits in a closed shadow root: click where it is drawn
+            if box: page.mouse.click(box['x'] + 28, box['y'] + box['height'] / 2); return 1
+    except Exception:
+        pass
+    return 0
+
+
 def same_page(a, b):
     def identity(value):
         p = urlsplit(value)
@@ -133,8 +201,8 @@ class Corpus:
 
     def request(self, target, delay=1):
         """L1 curl transport, with redirects handled by fetch so robots gates each hop."""
-        if linkedin_url(target):
-            raise ValueError('LinkedIn requests are blocked')
+        if linkedin_blocked(target):
+            raise ValueError('Only LinkedIn company pages may be requested')
         with self.lock('host-' + key(urlsplit(target).hostname)) as clock:
             clock.seek(0)
             last = float(clock.read() or 0)
@@ -159,7 +227,8 @@ class Corpus:
         meta = self.cache / (key(target) + '.json')
         if not meta.exists(): return None
         r = json.loads(meta.read_text())
-        if r.get('extraction_version') != 3: return None
+        if r.get('extraction_version') != 3 or r.get('status') in STALE: return None
+        r.setdefault('robots_disallowed', 'not_recorded')
         if r['url'] != target: raise ValueError('Cache URL mismatch')
         if hashlib.sha256((self.cache / r['raw_file']).read_bytes()).hexdigest() != r['sha256']:
             raise ValueError('Cache hash mismatch: ' + target)
@@ -176,14 +245,14 @@ class Corpus:
     def fallback(self, target, delay):
         # A proxy read also consumes the original host's request budget.
         if linkedin_url(target):
-            raise ValueError('LinkedIn requests are blocked')
+            raise ValueError('LinkedIn pages are never read through a proxy')
         with self.lock('host-' + key(urlsplit(target).hostname)) as clock:
             clock.seek(0)
             time.sleep(max(0, float(clock.read() or 0) - time.time()))
             clock.seek(0); clock.truncate(); clock.write(str(time.time() + delay)); clock.flush()
             return self.request('https://r.jina.ai/' + target)
 
-    def save(self, target, response, status, final, route):
+    def save(self, target, response, status, final, route, robots_disallowed=''):
         stem = key(target)
         raw = response.get('raw', b'')
         body = raw.decode('utf-8', 'replace')
@@ -205,11 +274,12 @@ class Corpus:
                  final_url=final, route=route, fetched_at=datetime.now(timezone.utc).isoformat(),
                  sha256=hashlib.sha256(raw).hexdigest(), raw_file=raw_name, text_file=text_name,
                  text_sha256=hashlib.sha256(text.encode()).hexdigest(), extraction_version=3,
-                 error=response.get('error', ''))
+                 error=response.get('error', ''), robots_disallowed=robots_disallowed)
         meta = self.cache / (stem + '.json.tmp')
         meta.write_text(json.dumps(r)); meta.replace(self.cache / (stem + '.json'))
         with self.lock('index'):
             dest = self.cache / 'index.csv'
+            if dest.exists() and dest.read_text().split('\n', 1)[0] != ','.join(r): dest = self.cache / 'index-robots.csv'
             exists = dest.exists()
             with dest.open('a', newline='') as f:
                 w = csv.DictWriter(f, list(r))
@@ -217,58 +287,118 @@ class Corpus:
                 w.writerow(r)
         return r
 
-    def policy(self, target):
+    def robots(self, target):
+        """('yes'|'no'|'unreadable', crawl delay seconds). Informational: a Disallow never blocks a fetch (owner ruling 2026-11-24)."""
         p = urlsplit(target)
         robots = urlunsplit((p.scheme, p.netloc, '/robots.txt', '', ''))
         r = self.fetch(robots, robots=True)
         parser = RobotFileParser()
         if r['status'] == 'ok':
             parser.parse((self.cache / r['text_file']).read_text().splitlines())
-        elif r['http_status'] in (404, 410): parser.parse([])
-        else: parser.parse(['User-agent: *', 'Disallow: /'])
+            state = 'no' if parser.can_fetch(ROBOT_AGENT, target) else 'yes'
+        else:
+            parser.parse([])
+            state = 'no' if r['http_status'] in (404, 410) else 'unreadable'  # unreadable: default 1 s delay, no block
         delay = max(1, parser.crawl_delay(ROBOT_AGENT) or 0)
         rate = parser.request_rate(ROBOT_AGENT)
         if rate: delay = max(delay, rate.seconds / rate.requests)
-        return parser.can_fetch(ROBOT_AGENT, target), delay
+        return state, delay
+
+    def policy(self, target):
+        """What the pre-2026-11-24 rule would have decided: (allowed only when robots.txt was readable and allowed, delay)."""
+        state, delay = self.robots(target)
+        return state == 'no', delay
+
+    def manual(self, target, final, code):
+        with self.lock('manual'):
+            dest = self.cache / 'manual-bot-check.csv'
+            exists = dest.exists()
+            with dest.open('a', newline='') as f:
+                w = csv.writer(f)
+                if not exists: w.writerow(['url', 'final_url', 'http_status', 'listed_at'])
+                w.writerow([target, final, code, datetime.now(timezone.utc).isoformat()])
+
+    def browser(self, target, delay=1):
+        """Fresh local Chrome (no profile, cookies or login): waits out the page's own check and clicks one plain
+        verify-human control. Never a puzzle, a solver service or a proxy. Same host clock and slots as request()."""
+        gone = dict(code=0, raw=b'', location='', content_type='', exit=127, unavailable=True, final_url=target)
+        try: from playwright.sync_api import sync_playwright
+        except ImportError: return dict(gone, error='PLAYWRIGHT_UNAVAILABLE')
+        with self.lock('host-' + key(urlsplit(target).hostname)) as clock:
+            clock.seek(0)
+            time.sleep(max(0, float(clock.read() or 0) - time.time()))
+            with self.slot(), sync_playwright() as pw:
+                clock.seek(0); clock.truncate(); clock.write(str(time.time() + delay)); clock.flush()
+                try: chrome = pw.chromium.launch(channel='chrome', headless=True)
+                except Exception as e: return dict(gone, error=('CHROME_UNAVAILABLE: ' + str(e))[:300])
+                try:
+                    page = chrome.new_context(accept_downloads=False, service_workers='block').new_page()
+                    code = [0]
+                    def seen(resp):
+                        if resp.frame == page.main_frame and resp.request.is_navigation_request(): code[0] = resp.status
+                    page.on('response', seen)
+                    error = ''
+                    try: page.goto(target, wait_until='domcontentloaded', timeout=25000)
+                    except Exception as e: error = str(e)[:300]
+                    start, clicks = time.time(), 0
+                    while time.time() - start < 30:
+                        if code[0] and not challenged(code[0], page.content()): break
+                        if time.time() - start > 4 and clicks < 2: clicks += verify_click(page)
+                        page.wait_for_timeout(1000)
+                    try: page.wait_for_load_state('networkidle', timeout=5000)
+                    except Exception: pass
+                    return dict(code=code[0], raw=page.content().encode(), location='', content_type='text/html',
+                                exit=0, error=error, final_url=page.url)
+                finally:
+                    chrome.close()
 
     def fetch(self, target, robots=False):
         target = url(target)
         robots = robots or urlsplit(target).path == '/robots.txt'
         with self.lock('url-' + key(target)):
-            if linkedin_url(target):
-                return self.save(target, {}, 'DOMAIN_BLOCKED', target, 'direct')
+            if why := refused(target, target):
+                return self.save(target, {}, why, target, 'direct')
             cached = self.cached(target)
             if cached:
-                if linkedin_url(cached['final_url']):
-                    return self.save(target, {}, 'DOMAIN_BLOCKED', cached['final_url'], 'direct')
+                if why := refused(target, cached['final_url']):
+                    return self.save(target, {}, why, cached['final_url'], 'direct')
                 return cached
-            current, response = target, {}
+            current, response, flags = target, {}, set()
             for _ in range(6):
-                allowed, delay = (True, 1) if robots else self.policy(current)
-                if not allowed: return self.save(target, {}, 'ROBOTS_BLOCKED', current, 'direct')
+                state, delay = ('', 1) if robots else self.robots(current)
+                flags.add(state)
                 response = self.request(current, delay)
                 if response['code'] in (301, 302, 303, 307, 308) and response['location']:
                     current = url(urljoin(current, response['location']))
-                    if linkedin_url(current):
-                        return self.save(target, {}, 'DOMAIN_BLOCKED', current, 'direct')
+                    if why := refused(target, current):
+                        return self.save(target, {}, why, current, 'direct', verdict(flags))
                     # Only robots paths are exempt from a destination robots check.
                     if robots and urlsplit(current).path != '/robots.txt': break
                     continue
                 break
+            seen = verdict(flags)
             if response.get('code') in (301, 302, 303, 307, 308):
-                return self.save(target, response, 'FETCH_FAILED', current, 'direct')
+                return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)
+            if not robots and response.get('code') in BOT_CODES and challenged(response['code'], response['raw'].decode('utf-8', 'replace')):
+                b = self.browser(current, delay)
+                if b.get('unavailable'): response = dict(response, error=b['error'])  # no browser: old path, receipt says why
+                else:
+                    if why := refused(target, b['final_url']): return self.save(target, b, why, b['final_url'], 'browser', seen)
+                    if challenged(b['code'], b['raw'].decode('utf-8', 'replace')):
+                        self.manual(target, b['final_url'], b['code'])
+                        return self.save(target, b, 'BOT_CHECK_MANUAL', b['final_url'], 'browser', seen)
+                    return self.save(target, b, 'ok' if b['code'] in (200, 403, 503) else 'FETCH_FAILED', b['final_url'], 'browser', seen)
             if response.get('exit') == 0 and response.get('code') == 200:
-                r = self.save(target, response, 'ok', current, 'direct')
+                r = self.save(target, response, 'ok', current, 'direct', seen)
                 if r['status'] == 'ok' or robots: return r
-            if not robots and response.get('code') != 429 and urlsplit(current).hostname != 'r.jina.ai':
+            if not robots and response.get('code') != 429 and urlsplit(current).hostname != 'r.jina.ai' and not linkedin_url(current):
                 fallback = self.fallback(current, delay)
                 if fallback['code'] == 200 and fallback['exit'] == 0:
                     source = re.search(r'(?m)^URL Source:\s*(https?://\S+)', fallback['raw'].decode('utf-8', 'replace'))
                     if not source or not same_page(current, source[1]):
-                        return self.save(target, fallback, 'WRONG_PAGE', current, 'jina')
-                    allowed, _ = self.policy(source[1])
-                    return self.save(target, fallback, 'ok' if allowed else 'ROBOTS_BLOCKED', current, 'jina')
-            return self.save(target, response, 'FETCH_FAILED', current, 'direct')
+                        return self.save(target, fallback, 'WRONG_PAGE', current, 'jina', seen)
+                    return self.save(target, fallback, 'ok', current, 'jina', verdict(flags | {self.robots(source[1])[0]}))
+            return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)
 
     def rawcheck(self, target, quote):
         """Return yes/no/unfetchable; a fetch failure says nothing about the claim."""

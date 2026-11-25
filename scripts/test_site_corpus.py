@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 import tempfile
 import unittest
-from site_corpus import Corpus, ROOT, Text, frame, on_page, url
+from site_corpus import Corpus, ROOT, Text, challenged, frame, linkedin_company_page, on_page, url
 
 
 def response(body='', code=200, location='', content_type='text/plain'):
@@ -20,6 +20,9 @@ class SiteCorpusTests(unittest.TestCase):
         directory = tempfile.TemporaryDirectory()
         self.addCleanup(directory.cleanup)
         self.tmp_path = Path(directory.name)
+        # No unit test launches Chrome; the browser path is exercised by tasks/robots-off-fetch-2026-11-25/check.py.
+        patcher = patch.object(Corpus, 'browser', return_value=dict(unavailable=True, error='PLAYWRIGHT_UNAVAILABLE', code=0, raw=b'', exit=127, final_url=''))
+        patcher.start(); self.addCleanup(patcher.stop)
 
     def test_calibrated_known_answer_and_mutations(self):
         for quote, expected in [
@@ -51,8 +54,9 @@ class SiteCorpusTests(unittest.TestCase):
             with ThreadPoolExecutor(max_workers=4) as pool:
                 assert list(pool.map(lambda _: c.rawcheck('https://example.org/', 'precision polymer molding'), range(4))) == ['yes'] * 4
             assert c.rawcheck('https://example.org/', 'fabricated quote') == 'no'
-            assert c.fetch('https://example.org/private')['status'] == 'ROBOTS_BLOCKED'
-        assert calls == ['https://example.org/robots.txt', 'https://example.org/']
+            private = c.fetch('https://example.org/private')
+            assert private['status'] == 'ok' and private['robots_disallowed'] == 'yes'  # a Disallow is receipted, not obeyed
+        assert calls == ['https://example.org/robots.txt', 'https://example.org/', 'https://example.org/private']
         r = c.cached('https://example.org/')
         assert r['sha256'] == hashlib.sha256((tmp_path / r['raw_file']).read_bytes()).hexdigest()
         assert r['final_url'] == 'https://example.org/' and r['fetched_at']
@@ -60,24 +64,77 @@ class SiteCorpusTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'hash mismatch'): c.cached('https://example.org/')
 
 
-    def test_unavailable_robots_fails_closed(self):
+    def test_unreadable_robots_no_longer_blocks(self):
         for code in (403, 429, 500, 0):
             with self.subTest(code=code), tempfile.TemporaryDirectory() as directory:
                 c = Corpus(directory)
-                with patch.object(c, 'request', return_value=response(code=code)) as request:
-                    assert c.rawcheck('https://example.org/', 'some quote') == 'unfetchable'
-                    assert request.call_count == 1
+                with patch.object(c, 'request', side_effect=lambda u, delay=1: response(code=code) if u.endswith('/robots.txt') else response('Real polymer molding')) as request:
+                    assert c.rawcheck('https://example.org/', 'real polymer molding') == 'yes'
+                    assert request.call_count == 2
+                    assert c.cached('https://example.org/')['robots_disallowed'] == 'unreadable'
 
+    def test_crawl_delay_still_honored(self):
+        c = Corpus(self.tmp_path); delays = []
+        def request(u, delay=1):
+            if not u.endswith('/robots.txt'): delays.append(delay)
+            return response('User-agent: *\nCrawl-delay: 7\nDisallow: /' if u.endswith('/robots.txt') else 'Real polymer molding')
+        with patch.object(c, 'request', side_effect=request):
+            assert c.fetch('https://example.org/')['robots_disallowed'] == 'yes'
+        assert delays == [7]
 
-    def test_linkedin_is_refused_before_robots_or_page_requests(self):
+    def test_stale_blocked_receipts_are_refetched(self):
         c = Corpus(self.tmp_path)
-        for target in ('https://linkedin.com/company/acme', 'https://WWW.LinkedIn.com./company/acme',
-                       'https://jobs.linkedin.com/', 'https://lnkd.in/123', 'https://linkedin%2ecom/',
+        for status in ('ROBOTS_BLOCKED', 'DOMAIN_BLOCKED'):
+            with self.subTest(status=status):
+                target = f'https://example.org/{status}'
+                c.save(target, {}, status, target, 'direct')
+                assert c.cached(target) is None
+
+    def test_linkedin_company_pages_only(self):
+        c = Corpus(self.tmp_path)
+        for target in ('https://www.linkedin.com/in/someone', 'https://linkedin.com/pub/someone/1/2/3', 'https://jobs.linkedin.com/',
+                       'https://lnkd.in/123', 'https://linkedin%2ecom/', 'https://www.linkedin.com/company/acme/people',
+                       'https://www.linkedin.com/%69n/someone', 'https://www.linkedin.com/company/../in/someone',
                        'https://r.jina.ai/https://linkedin.com/company/acme'):
             with self.subTest(target=target), patch.object(c, 'request', return_value=response(code=404)) as request:
                 receipt = c.fetch(target)
                 request.assert_not_called()
                 self.assertEqual(receipt['status'], 'DOMAIN_BLOCKED')
+        for target in ('https://linkedin.com/company/acme', 'https://WWW.LinkedIn.com./company/acme/about/', 'https://www.linkedin.com/showcase/acme-x'):
+            with self.subTest(target=target):
+                assert linkedin_company_page(target)
+                with patch.object(c, 'request', side_effect=lambda u, delay=1: response(code=404) if u.endswith('/robots.txt') else response('Acme | LinkedIn About us polymer')):
+                    assert c.fetch(target)['status'] == 'ok'
+
+    def test_linkedin_signin_wall_is_its_own_status(self):
+        c = Corpus(self.tmp_path)
+        def request(u, delay=1):
+            if u.endswith('/robots.txt'): return response(code=404)
+            return response(code=302, location='https://www.linkedin.com/authwall?trk=x')
+        with patch.object(c, 'request', side_effect=request):
+            assert c.fetch('https://www.linkedin.com/company/acme')['status'] == 'SIGNIN_WALL'
+
+    def test_challenge_detector(self):
+        assert challenged(200, '<html><title>Just a moment...</title></html>')
+        assert challenged(403, '<html><title>x</title><div class="cf-challenge"></div></html>')
+        assert challenged(200, '<html><div class="g-recaptcha"></div><p>short</p></html>')
+        assert not challenged(200, '<html><div class="g-recaptcha"></div><p>' + 'word ' * 80 + '</p></html>')  # a contact form is not a wall
+        assert not challenged(404, '<html><title>Not found</title></html>')
+
+    def test_challenge_routes_to_browser_and_puzzle_to_manual_list(self):
+        c = Corpus(self.tmp_path)
+        wall = response('<html><title>Just a moment...</title></html>', code=403, content_type='text/html')
+        def request(u, delay=1): return response(code=404) if u.endswith('/robots.txt') else wall
+        def rendered(html):
+            return dict(code=200, raw=html.encode(), location='', content_type='text/html', exit=0, error='', final_url='https://example.org/')
+        with patch.object(c, 'request', side_effect=request), patch.object(Corpus, 'browser', return_value=rendered('<html><p>' + 'Real polymer molding ' * 20 + '</p></html>')) as browser:
+            r = c.fetch('https://example.org/')
+            assert (r['status'], r['route'], browser.call_count) == ('ok', 'browser', 1)
+            assert r['sha256'] == hashlib.sha256((self.tmp_path / r['raw_file']).read_bytes()).hexdigest()
+        with patch.object(c, 'request', side_effect=request), patch.object(Corpus, 'browser', return_value=rendered('<html><title>Security check</title><div class="g-recaptcha"></div></html>')):
+            r = c.fetch('https://example.org/puzzle')
+            assert r['status'] == 'BOT_CHECK_MANUAL'
+            assert 'https://example.org/puzzle' in (self.tmp_path / 'manual-bot-check.csv').read_text()
 
     def test_linkedin_link_remains_navigation(self):
         link = 'https://www.linkedin.com/company/acme/'
@@ -98,17 +155,18 @@ class SiteCorpusTests(unittest.TestCase):
         self.assertEqual(request.call_count, 2)
         self.assertEqual(receipt['status'], 'DOMAIN_BLOCKED')
 
-    def test_redirect_checks_destination_robots(self):
+    def test_redirect_destination_robots_is_receipted_not_obeyed(self):
         tmp_path = self.tmp_path
         c = Corpus(tmp_path); seen = []
         def request(u, delay=1):
             seen.append(u)
             if u == 'https://other.org/robots.txt': return response('User-agent: *\nDisallow: /')
             if u.endswith('/robots.txt'): return response(code=404)
-            return response(code=302, location='https://other.org/private')
+            return response('page') if u == 'https://other.org/private' else response(code=302, location='https://other.org/private')
         with patch.object(c, 'request', side_effect=request):
-            assert c.fetch('https://example.org/')['status'] == 'ROBOTS_BLOCKED'
-        assert seen == ['https://example.org/robots.txt', 'https://example.org/', 'https://other.org/robots.txt']
+            receipt = c.fetch('https://example.org/')
+        assert receipt['robots_disallowed'] == 'yes'  # the destination hop would have been disallowed
+        assert seen == ['https://example.org/robots.txt', 'https://example.org/', 'https://other.org/robots.txt', 'https://other.org/private']
 
 
     def test_jina_strips_wrapper_and_walls(self):
@@ -198,9 +256,10 @@ class SiteCorpusTests(unittest.TestCase):
         tmp_path = self.tmp_path
         c = Corpus(tmp_path)
         robots = 'User-agent: AtlasSiteCorpus\nDisallow: /\n\nUser-agent: *\nAllow: /'
-        with patch.object(c, 'request', return_value=response(robots)) as request:
-            assert c.rawcheck('https://example.org/', 'quote') == 'unfetchable'
-            assert request.call_count == 1
+        with patch.object(c, 'request', side_effect=lambda u, delay=1: response(robots) if u.endswith('/robots.txt') else response('page')):
+            assert c.fetch('https://example.org/')['robots_disallowed'] == 'yes'
+        with patch.object(c, 'request', side_effect=lambda u, delay=1: response('User-agent: *\nAllow: /') if u.endswith('/robots.txt') else response('page')):
+            assert c.fetch('https://example.net/')['robots_disallowed'] == 'no'
 
 
     def test_redirect_limit_cannot_fallback_past_policy(self):

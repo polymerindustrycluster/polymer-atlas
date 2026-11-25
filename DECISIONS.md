@@ -741,3 +741,14 @@ Decided by the repo owner in session, 2026-11-24, by multiple choice ("Run now, 
 - The controller hand-checks every record counted in k, every plant verdict and every packet's record ID against its sealed row.
 - The smoke report marks the size-band and child-field tallies unreliable.
 - The findings are fixed before any full draw.
+
+## 2026-11-24 · Owner rulings 21:21 and 21:26 (robots.txt, bot checks, LinkedIn)
+
+Decided by the repo owner in session, 2026-11-24.
+
+1. **Robots (21:21).** "Rule change: ignore robots.txt. Click thru bot checks." A robots.txt Disallow no longer blocks a fetch in `scripts/site_corpus.py`. A bot-check page is retried once in a fresh local Chrome, which may wait out the page's own check and click a plain "verify you are human" control.
+2. **LinkedIn (21:26).** "LinkedIn should not be barred." Logged out first, no account, no cookies. This reverses owner battery B-LINKEDIN (2026-11-04, navigation link only) for the fetcher. How a LinkedIn page may count as evidence is a separate change (SCHEMA and the binding gate), not made here.
+3. **Kept lines.** The per-host rate limit and Crawl-delay stay. No paid CAPTCHA-solving service and no proxy rotation. A page that still shows an interactive puzzle goes to a manual list (`BOT_CHECK_MANUAL`, `manual-bot-check.csv`). LinkedIn company pages (`/company/`, `/showcase/`) only: personal profiles (`/in/`, `/pub/`), staff lists and employee names stay out by the privacy rule (AGENTS.md §6).
+4. **Visible per page.** Each receipt records `robots_disallowed` (yes, no, unreadable), so the change shows per page. An unreadable robots.txt is no longer read as Disallow all.
+
+Replaces the robots-per-hop rule in `docs/ACQUISITION.md` and the exhibitor-roster exception to it. Follow-up for the owner: AGENTS.md §4 still says "The site corpus fetcher refuses LinkedIn requests"; the sentence is now stale and is not edited here. The check is `tasks/robots-off-fetch-2026-11-25/check.py`.
