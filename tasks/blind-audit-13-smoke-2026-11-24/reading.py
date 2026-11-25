@@ -216,7 +216,22 @@ HEDGE = re.compile(r'\b(?:former|formerly|previous|previously|prior|used to|move
                    r'competitor|competitors|acquired|closed|sold|future|branch|affiliate|subsidiary|sister|'
                    r'not|no|never|neither|nor|without|isn|aren|wasn|weren|doesn|didn|don|cannot)\b')  # another party, another time, another place, or a denial
 WITNESS_WINDOW = 12  # words each side of the stated value that must be free of those
-FIRST_PERSON = {'we', 'our', 'us', 'address', 'headquarters', 'headquartered'}  # the page speaks for its own entity
+LEGAL_TOKENS = {'inc', 'llc', 'corp', 'corporation', 'co', 'company', 'ltd', 'lp', 'llp', 'the'}
+LOCATION_CUES = {'located', 'headquartered', 'based', 'situated', 'address', 'headquarters', 'contact'}
+COPULA_GAP = LOCATION_CUES | {'is', 'are', 'at', 'in', 'on', 'found'}  # the only words allowed between the record's name and its address
+
+
+def located_entity(ws, start, own, prev=None):
+    """True when the words before the value at ws[start] make the RECORD (its name or trade name) the located entity: the nearest preceding occurrence of
+    its name is followed, up to the value, by nothing (an address line: 'Acme Plastics, Inc. 99 Oak Avenue') or only a copula and a location cue
+    ('Acme is located at', 'Acme address:'); or the value opens a segment right after a segment that is only the record's name (an address block headed
+    by it). Anything else between them ('ships pellets to Beta at', 'sponsors the library at', a bare 'address' word with no name) never qualifies."""
+    ends = [i + len(k) for k in own for i in range(start - len(k) + 1) if ws[i:i + len(k)] == k]
+    if ends:
+        gap = [w for w in ws[max(ends):start] if w not in LEGAL_TOKENS]
+        return not gap or (set(gap) <= COPULA_GAP and bool(set(gap) & LOCATION_CUES))
+    gap = [w for w in ws[:start] if w not in LEGAL_TOKENS]
+    return prev is not None and (not gap or (set(gap) <= COPULA_GAP and bool(set(gap) & LOCATION_CUES))) and [w for w in prev if w not in LEGAL_TOKENS] in own
 LEGAL_ENTITY = re.compile(r"((?:[A-Z][\w&'.-]*\s+){0,3}[A-Z][\w&'.-]*)\s*,?\s+(?:LLC|L\.L\.C|Inc|Corp|Corporation|Ltd|LP|LLP|Co)\b")
 SEGMENT_END = re.compile(r'(?<!\b[A-Za-z])(?<!\bInc)(?<!\bCo)(?<!\bCorp)(?<!\bLtd)(?<!\bLLC)(?<!\bSt)(?<!\bAve)(?<!\bRd)(?<!\bDr)(?<!\bNo)[.!?]\s+|\s\|\s|\n+')
 
@@ -260,8 +275,10 @@ def witness_reason(text, value, field, names, quote=''):
     for o in occ:
         if HEDGE.search(' '.join(tw[max(0, o - WITNESS_WINDOW):o + len(vw) + WITNESS_WINDOW])):
             continue
-        raw, ws = segs[seg_of[o]]
-        if not (any(contains(ws, k) for k in own) or FIRST_PERSON & set(ws)):
+        n = seg_of[o]
+        raw, ws = segs[n]
+        first = next(i for i, g in enumerate(seg_of) if g == n)
+        if not located_entity(ws, o - first, own, segs[n - 1][1] if n else None):
             why = 'witness_not_attributed'
             continue
         if any(not (name_key(m[1]) and any(contains(k, name_key(m[1])) or contains(name_key(m[1]), k) for k in own)) for m in LEGAL_ENTITY.finditer(raw)):
@@ -285,7 +302,8 @@ def plant_names(row, field, true_value):
     """The record's own names for the witness test: the unplanted name fields (or the true value when a name is what was planted)."""
     if field in NAME_FIELDS:
         return [true_value]
-    return [v for f, v in json.loads(row['values_json']).items() if f in NAME_FIELDS and v and v != WITHHELD]
+    values = json.loads(row['values_json'])
+    return [v for f in NAME_FIELDS for v in [values.get(f)] if v and v != WITHHELD] + [t.strip() for t in (values.get('trade_names') or '').split(';') if t.strip() and t.strip() != WITHHELD]
 
 
 def plant_witness(f, text, plant):
@@ -664,6 +682,7 @@ def run_stage(draw_dir, cache_dir, out, a):
     (out / 'reads').mkdir(mode=0o700)
     ledger_path, procs, lock, stop = out / 'ledger.jsonl', set(), threading.Lock(), threading.Event()
     spent, reserved, n_calls, seq = Counter(), Counter(), Counter(), [0]
+    total_cap = (getattr(a, 'max_tokens_m', 0) or 0) * 1e6  # the CLI's total token limit, 0 = none
     caps = {p: m * 1e6 for p, m in (CAPS_M if frame_mode(receipt) else getattr(a, 'caps_m', None) or {}).items()}
     halt = []
 
@@ -671,7 +690,7 @@ def run_stage(draw_dir, cache_dir, out, a):
         with lock:
             with open(ledger_path, 'a') as f:
                 f.write(json.dumps(kw, sort_keys=True) + '\n')
-    log(role='run', stop_at=a.stop_at, window=max(1, a.window), caps=caps, sample_sha256=receipt['sample_sha256'],  # what score checks the run against
+    log(role='run', stop_at=a.stop_at, window=max(1, a.window), caps=caps, total_cap=(getattr(a, 'max_tokens_m', 0) or 0) * 1e6, sample_sha256=receipt['sample_sha256'],  # what score checks the run against
         sample=[dict(pos=int(s['pos']), blind_id=s['blind_id'], kind=s['kind'], provider=s['provider'], plant_field=s['plant_field']) for s in sample])
 
     def save_read(s, role, provider, round_, attempt, res, prompt, ans, found, error):
@@ -729,10 +748,15 @@ def run_stage(draw_dir, cache_dir, out, a):
                     spent[provider] += input_tokens(res['usage'])
                     n_calls[provider] += 1
                     over = provider in caps and spent[provider] > caps[provider]
+                    total_over = bool(total_cap) and sum(spent.values()) > total_cap
                     if over:
                         halt.append(f'{provider}: {spent[provider] / 1e6:.3f}M actual input tokens passed its {caps[provider] / 1e6:.3f}M stage budget: halt for repricing')
+                    elif total_over:
+                        halt.append(f'total: {sum(spent.values()) / 1e6:.4f}M actual input tokens passed the configured total cap {total_cap / 1e6:.4f}M: halt for repricing')
+                    if over or total_over:
                         stop.set()
                         over_msg = halt[-1]
+                    over = over or total_over
                 fname, fsha = save_read(s, role, provider, round_, attempt, res, prompt, parsed, found, error)
                 log(blind_id=s['blind_id'], kind=s['kind'], role=role, provider=provider, round=round_, attempt=attempt, model=res['model'], usage=res['usage'], metered=res['metered'],
                     elapsed=res['elapsed'], prompt_bytes=res['prompt_bytes'], error=error, forced=s['provider'] != provider, file=fname, file_sha256=fsha)
@@ -831,7 +855,10 @@ def run_stage(draw_dir, cache_dir, out, a):
                     status = 'STOPPED_AT_K' if board.stopped_at else 'SUSPENDED_PLANT_MISSED'
                     stop.set()
                     break
-                if halt or (getattr(a, 'max_tokens_m', 0) and sum(spent.values()) > a.max_tokens_m * 1e6):
+                if total_cap and sum(spent.values()) > total_cap and not any(h.startswith('total') for h in halt):  # backstop: the settle step normally recorded it
+                    halt.append(f'total: {sum(spent.values()) / 1e6:.4f}M actual input tokens passed the configured total cap {total_cap / 1e6:.4f}M: halt for repricing')
+                    log(role='halt', reason='budget: ' + halt[-1])
+                if halt:
                     status = 'HALTED_TOKEN_BUDGET'
                     stop.set()
                     break
@@ -854,7 +881,7 @@ def run_stage(draw_dir, cache_dir, out, a):
     done = {r['pos'] for r in results}
     incomplete = [dict(pos=int(s['pos']), kind=s['kind']) for s in sample if int(s['pos']) not in done]
     over_budget = sorted(p for p in caps if spent[p] > caps[p])
-    summary = dict(status=status, k=board.k, stop_at=a.stop_at, stopped_at=board.stopped_at, invalid=board.invalid, halt=halt, budget_exceeded=over_budget, results=results, incomplete_calls=incomplete,
+    summary = dict(status=status, k=board.k, stop_at=a.stop_at, stopped_at=board.stopped_at, invalid=board.invalid, halt=halt, budget_exceeded=over_budget, total_cap_exceeded=bool(total_cap and sum(spent.values()) > total_cap), results=results, incomplete_calls=incomplete,
                    input_tokens_spent=dict(spent), replay_coverage=rc_doc.get('counts', {}), not_inspected_classes=rc_doc.get('not_inspected_classes', {}))
     write_private(out / 'results.json', json.dumps(summary, indent=1, sort_keys=True))
     print(f'run {status}: k={board.k} real={len(board.real)} plants={len(board.plants)} incomplete={len(incomplete)} tokens={dict(spent)}')
@@ -917,9 +944,10 @@ def rederive(run_dir, doc, ledger):
     for l in calls:
         spent[l['provider']] += input_tokens(l.get('usage'))
     over = sorted(p for p, cap in run['caps'].items() if spent[p] > cap)
+    over_total = bool(run.get('total_cap')) and sum(spent.values()) > run['total_cap']  # the CLI's total limit, reconciled against the aggregate ledger spend
     unscored = [dict(pos=x['pos'], kind=x['kind']) for x in sealed[len(results):]]
     halts = [l for l in ledger if l.get('role') == 'halt']
-    budget = bool(over) or any(str(l.get('reason', '')).startswith('budget') for l in halts)
+    budget = bool(over) or over_total or any(str(l.get('reason', '')).startswith('budget') for l in halts)
     if (doc['k'], doc['stopped_at'], doc['invalid'], doc['stop_at']) != (board.k, board.stopped_at, board.invalid, run['stop_at']):
         fail(f"gate totals: results.json says k={doc['k']} stopped_at={doc['stopped_at']} invalid={doc['invalid']}, the reader files give k={board.k} stopped_at={board.stopped_at} invalid={board.invalid}")
     if doc['input_tokens_spent'] != dict(spent) or doc['incomplete_calls'] != unscored:
@@ -940,8 +968,8 @@ def rederive(run_dir, doc, ledger):
         expected = 'COMPLETE'
     if doc['status'] != expected:
         fail(f"recorded status {doc['status']} but the ledger and reader files give {expected}")
-    if bool(doc['halt']) != budget or doc.get('budget_exceeded') != over:
-        fail(f"budget facts differ: halt={bool(doc['halt'])} budget_exceeded={doc.get('budget_exceeded')} against the ledger's {budget} / {over}")
+    if bool(doc['halt']) != budget or doc.get('budget_exceeded') != over or bool(doc.get('total_cap_exceeded')) != over_total:
+        fail(f"budget facts differ: halt={bool(doc['halt'])} budget_exceeded={doc.get('budget_exceeded')} total_cap_exceeded={doc.get('total_cap_exceeded')} against the ledger's {budget} / {over} / {over_total}")
     return len(calls)
 
 
@@ -985,7 +1013,7 @@ def score_stage(run_dir):
                     mean_input_per_completed_call=round(v['input_tokens'] / (v['completed_real'] + v['completed_control'])) if v['completed_real'] + v['completed_control'] else None) for k, v in sorted(per.items())}
     n = len(real)
     report = dict(status=doc['status'], audited_real_records=n, k=doc['k'], stop_at=doc['stop_at'], stopped_at_position=doc['stopped_at'], halt=doc.get('halt', []),
-                  contradicted_core_fields=dict(cc), by_field=by_field, reader_files_verified=verified_files, budget_exceeded=doc.get('budget_exceeded', []),
+                  contradicted_core_fields=dict(cc), by_field=by_field, reader_files_verified=verified_files, budget_exceeded=doc.get('budget_exceeded', []), total_cap_exceeded=bool(doc.get('total_cap_exceeded')),
                   not_inspected_by_field={f: ni[f] for f in sorted(ni)}, not_inspected_filed_classes=doc.get('not_inspected_classes', {}), replay_coverage=doc.get('replay_coverage', {}),
                   unconfirmed_reasons=dict(reasons), omission_and_other_notes=dict(notes), disputed_findings=sum(len(r.get('disputed', [])) for r in real),
                   plants=dict(by_provider={p: dict(planted=sum(1 for x in plants if x['provider'] == p), detected=sum(1 for x in plants if x['provider'] == p and x['detected'])) for p in sorted({x['provider'] for x in plants})},

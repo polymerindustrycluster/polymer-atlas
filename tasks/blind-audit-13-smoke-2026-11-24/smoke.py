@@ -353,6 +353,7 @@ def keyed(secret, purpose, ident):
 
 
 def cmd_draw(a):
+    globals()['PLANT_POOL'] = a.pool
     secret = Path(a.secret_file).read_bytes().strip()
     assert len(secret) >= 32, 'secret file must hold at least 32 bytes'
     R = load(a.at)
@@ -516,7 +517,7 @@ def main(argv=None):
     f = s.add_parser('labels'); f.add_argument('--at', required=True); f.add_argument('--preflight', required=True); f.add_argument('--out', required=True)
     f = s.add_parser('draw'); f.add_argument('--at', required=True); f.add_argument('--out', required=True); f.add_argument('--secret-file', required=True)
     f.add_argument('--preflight'); f.add_argument('--records'); f.add_argument('--n', type=int, default=SMOKE_N)
-    f.add_argument('--cache'); f.add_argument('--approved', action='append', default=[])
+    f.add_argument('--cache'); f.add_argument('--approved', action='append', default=[]); f.add_argument('--pool', type=int, default=PLANT_POOL, help='plant pool records per provider (the draw receipt reports how many were eligible)')
     f = s.add_parser('fetch'); f.add_argument('--draw', required=True); f.add_argument('--cache', required=True); f.add_argument('--skip-blocked', action='store_true', help='explicit-list fixture only')
     f.add_argument('--approved', action='append', default=[]); f.add_argument('--store', type=Path, default=replays.STORE)
     f = s.add_parser('run'); f.add_argument('--draw', required=True); f.add_argument('--cache', required=True); f.add_argument('--out', required=True)

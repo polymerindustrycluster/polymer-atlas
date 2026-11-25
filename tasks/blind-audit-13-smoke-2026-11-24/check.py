@@ -218,7 +218,7 @@ sid = lambda f, sid_: dict(f, source_id=sid_)
 
 
 def plant_row(street):
-    return dict(table='sites', columns_under_audit='street_address;site_name', values_json=json.dumps(dict(street_address=street, site_name='Acme')), context_json=json.dumps(dict(children=[])))
+    return dict(table='sites', columns_under_audit='street_address;site_name', values_json=json.dumps(dict(street_address=street, site_name='Acme Plastics')), context_json=json.dumps(dict(children=[])))
 
 
 PLANT = dict(field='street_address', true='99 Oak Avenue', names=['Acme Plastics LLC'])  # HELD's street is the planted value; the record's true street is 99 Oak Avenue
@@ -265,8 +265,8 @@ def _():
 
 @case('C: a page naming ANOTHER street is ambiguous: held by the reader check and by the draw')
 def _():
-    SRC['S9'] = 'Acme Plastics has two plants: 99 Oak Avenue, Akron and 5 Pine Road, Canton.'
-    assert not planted_det(sid(finding('street_address', 'CONTRADICTED', 'two plants 99 Oak Avenue', '99 Oak Avenue'), 'S9'))
+    SRC['S9'] = 'Acme Plastics is located at 99 Oak Avenue, Akron. Acme Plastics also operates at 5 Pine Road, Canton.'
+    assert not planted_det(sid(finding('street_address', 'CONTRADICTED', 'is located at 99 Oak Avenue', '99 Oak Avenue'), 'S9'))
     assert held_by_draw(SRC['S9']) == 'witness_ambiguous'
 
 
@@ -967,19 +967,49 @@ def _():
     assert sc['k'] == 1 and sc['by_field']['registry_id']['audited_values'] == 2 and sc['by_field']['registry_id']['contradicted'] == 2 and sc['by_field']['registry_id']['error_rate'] == 1.0, sc['by_field']['registry_id']
 
 
-@case('C: a denial and another entity\'s address never earn eligibility or detection; a positive first-person or own-name witness does')
+@case('C: a denial and another entity\'s address never earn eligibility or detection; only the record named as the located entity does')
 def _():
-    SRC['S11'] = 'Acme is not located at 99 Oak Avenue.'
-    SRC['S12'] = 'Acme makes polymers. Beta LLC is located at 99 Oak Avenue.'
+    SRC['S11'] = 'Acme Plastics is not located at 99 Oak Avenue.'
+    SRC['S12'] = 'Acme Plastics makes polymers. Beta LLC is located at 99 Oak Avenue.'
     SRC['S13'] = 'Acme Plastics and Beta LLC share a brochure. Visit us at 99 Oak Avenue, Akron.'
-    SRC['S14'] = 'Acme Plastics makes polymers. Visit us at 99 Oak Avenue, Akron.'
+    SRC['S14'] = 'Acme Plastics makes polymers. Acme Plastics is located at 99 Oak Avenue, Akron.'
     assert held_by_draw(SRC['S11']) == 'witness_hedged', held_by_draw(SRC['S11'])
     assert held_by_draw(SRC['S12']) == 'witness_not_attributed', held_by_draw(SRC['S12'])
     assert not planted_det(sid(finding('street_address', 'CONTRADICTED', 'not located at 99 Oak Avenue', '99 Oak Avenue'), 'S11')), 'the quote denies the address'
     assert not planted_det(sid(finding('street_address', 'CONTRADICTED', 'Beta LLC is located at 99 Oak Avenue', '99 Oak Avenue'), 'S12')), 'another entity\'s address'
-    assert held_by_draw(SRC['S14']) == '' and planted_det(sid(finding('street_address', 'CONTRADICTED', 'Visit us at 99 Oak Avenue, Akron', '99 Oak Avenue'), 'S14')), 'a first-person witness on a page about the record'
+    assert held_by_draw(SRC['S14']) == '' and planted_det(sid(finding('street_address', 'CONTRADICTED', 'Acme Plastics is located at 99 Oak Avenue, Akron', '99 Oak Avenue'), 'S14')), 'the record named as the located entity'
     SRC['S15'] = 'Acme Plastics, Inc. and Beta LLC: located at 99 Oak Avenue.'
-    assert held_by_draw(SRC['S15']) == 'witness_other_entity', held_by_draw(SRC['S15'])
+    assert held_by_draw(SRC['S15']) != '', held_by_draw(SRC['S15'])
+
+
+SHAPES = {  # a page that states the street but attributes it to someone else, or to no one: held by the draw, never a detection
+    'Acme ships pellets to Beta at 99 Oak Avenue.': 'Codex: a shipping destination',
+    'Acme makes resins. The library address is 99 Oak Avenue.': 'Codex: a bare address word, another party',
+    'Acme Plastics sponsors the Akron Library, located at 99 Oak Avenue.': 'a sponsored third party',
+    'Acme Plastics is a tenant of the building at 99 Oak Avenue.': 'a tenant is not the located entity',
+    'Acme Plastics: directions from the airport to 99 Oak Avenue.': 'directions to a place',
+    'Beta Corp, a customer of Acme Plastics, is located at 99 Oak Avenue.': 'a customer\'s address after the record\'s name',
+    'Acme Plastics. Our address is 99 Oak Avenue.': 'a bare first-person address',
+    'Acme Plastics makes resins. Visit us at 99 Oak Avenue.': 'a first-person cue is not the record',
+}
+
+
+@case('C: eight other-party and unattributed shapes (Codex\'s two plus six) are held by the draw and never detect; the record named as the located entity does')
+def _():
+    for text, shape in SHAPES.items():
+        assert held_by_draw(text) != '', f'eligible: {shape}: {text}'
+        SRC['S20'] = text
+        quote = text.split('. ')[-1].rstrip('.') if '. ' in text else text.rstrip('.')
+        assert not planted_det(sid(finding('street_address', 'CONTRADICTED', quote, '99 Oak Avenue'), 'S20')), f'detected: {shape}: {text}'
+    for ok in ('Acme Plastics is located at 99 Oak Avenue.', 'Acme Plastics, Inc. 99 Oak Avenue, Akron, OH 44301', 'Acme Plastics headquarters: 99 Oak Avenue', 'Acme Plastics Inc. is headquartered at 99 Oak Avenue, Akron.'):
+        assert held_by_draw(ok) == '', ok
+        SRC['S21'] = ok
+        assert planted_det(sid(finding('street_address', 'CONTRADICTED', ok.rstrip('.'), '99 Oak Avenue'), 'S21')), ok
+    SRC['S22'] = 'Acme Plastics\n99 Oak Avenue\nAkron, OH'
+    assert held_by_draw(SRC['S22']) == ''  # the excerpt collapses lines, so the address line follows the name directly
+    assert rd.witness_reason(SRC['S22'], '99 Oak Avenue', 'street_address', ['Acme Plastics']) == '', 'an address block headed by the record name'
+    assert rd.witness_reason('Acme makes resins\n99 Oak Avenue', '99 Oak Avenue', 'street_address', ['Acme Plastics']) == 'source_not_about_record'
+    assert rd.witness_reason('Acme Plastics makes resins\n99 Oak Avenue', '99 Oak Avenue', 'street_address', ['Acme Plastics']) == 'witness_not_attributed', 'a line after a heading that is more than the name'
 
 
 @case('B: score verifies the terminal stop reason against the ledger: a failed run edited to STOPPED_AT_K (or any unsupported status) refuses')
@@ -1004,6 +1034,21 @@ def _():
     assert s['status'] == 'STOPPED_AT_K' and s['budget_exceeded'] == ['hydrogen'] and s['k'] == 1
     tamper(out, edit_results(lambda d: d.update(status='HALTED_TOKEN_BUDGET')), 'recorded status')
     tamper(out, edit_results(lambda d: d.update(halt=[], budget_exceeded=[])), 'budget facts')
+
+
+@case('A3: the CLI total token limit writes a ledger halt event with the configured cap, run reports it, and score reconciles the aggregate spend')
+def _():
+    draw_dir, cache, out = run_fixture([('real', 'tot-1', 'astra'), ('real', 'tot-2', 'astra')])
+    rc = patched(lambda provider, prompt, procs, timeout=0: good(name_of(prompt), provider), lambda: rd.run_stage(draw_dir, cache, out, ARGS(max_tokens_m=0.0005)))
+    doc = json.loads((out / 'results.json').read_text())
+    ledger = [json.loads(l) for l in open(out / 'ledger.jsonl')]
+    halts = [l for l in ledger if l.get('role') == 'halt']
+    assert rc == 1 and doc['status'] == 'HALTED_TOKEN_BUDGET' and doc['total_cap_exceeded'] and halts and 'total cap 0.0005M' in halts[0]['reason'], (rc, doc['status'], halts)
+    assert next(l for l in ledger if l.get('role') == 'run')['total_cap'] == 500
+    s = score(out)  # the untouched run scores
+    assert s['status'] == 'HALTED_TOKEN_BUDGET' and s['total_cap_exceeded']
+    tamper(out, edit_results(lambda d: d.update(total_cap_exceeded=False, halt=[])), 'budget facts')
+    tamper(out, edit_results(lambda d: d.update(status='COMPLETE')), 'recorded status')
 
 
 @case('A3: a null or mistyped optional reader field (notes) never crashes the run: results.json is always written, a crash is a controlled suspension')
