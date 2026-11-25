@@ -951,13 +951,6 @@ LINKEDIN_LABEL_NAMES = ("Website", "Industry", "Company size", "Headquarters", "
 LINKEDIN_BRACKETS = frozenset(("0-1", "1", "2-10", "11-50", "51-200", "201-500", "501-1,000", "1,001-5,000", "5,001-10,000", "10,001+"))  # LinkedIn's fixed size brackets
 LINKEDIN_INDUSTRY_FILE = ROOT / "docs/schema/linkedin_industry_codes_v2.csv"
 LINKEDIN_SIGNED_IN = re.compile(r"\b(?:signed in|sign out|signed out|signout|log ?out|logged in|my network|viewing as)\b", re.I)  # whole words: "designed in" is prose
-LINKEDIN_STREET_WORDS = frozenset("road rd street st avenue ave drive dr boulevard blvd lane ln way highway hwy parkway pkwy court ct circle cir suite ste floor box route rte "
-                                  "plaza place pl terrace trail center".split())
-LINKEDIN_STATES = frozenset(x.strip().lower() for x in (
-    "Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,"
-    "Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,"
-    "Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming,District of Columbia,"
-    "AL,AK,AZ,AR,CA,CO,CT,DE,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WA,WV,WI,WY,DC").split(","))
 LINKEDIN_TITLE = re.compile(r"^(?:\[\d+\] )?(.+?)(?: \| LinkedIn)? \((https://[^\s)]+)\)\s*$")
 LINKEDIN_CAPTURE = re.compile(r"^([0-9a-f]{64})  (raw/linkedin/([0-9a-f]{64})\.txt)$")
 LINKEDIN_NOTES = re.compile(r"capture_sha256: ([0-9a-f]{64}); acquisition: guest(?:, logged out)?")
@@ -1038,18 +1031,6 @@ def linkedin_bracket_valid(bracket):
     return bool(m) and (bool(m[3]) or int(m[1].replace(",", "")) <= int(m[2].replace(",", "")))
 
 
-def linkedin_hq_city(value):
-    """The city of a Headquarters value `City, State` or `City, State, Country`, or None when it is anything else (a street, a number, extra parts, a
-    place that is not a plain locality). Only US states are recognised, so a foreign or odd headquarters is held for reading."""
-    parts = [norm_space(x) for x in value.split(",")]
-    if len(parts) not in (2, 3) or parts[1].lower() not in LINKEDIN_STATES or (len(parts) == 3 and parts[2].lower() not in ("united states", "us", "usa", "u.s.")):
-        return None
-    city = parts[0]
-    if not re.fullmatch(r"[^\W\d_][^\W\d_ .'’-]*(?:[ .'’-]+[^\W\d_][^\W\d_ .'’-]*)*\.?", city) or set(re.findall(r"[a-z]+", city.lower())) & LINKEDIN_STREET_WORDS:
-        return None
-    return city
-
-
 def linkedin_claim(claim_detail, ct):
     """(field, value-or-None, quote) of a claim_detail `<head>; quote: <quote>`; field None for a free description (never passed by machine)."""
     head, sep, quote = claim_detail.partition("; quote:")
@@ -1105,6 +1086,8 @@ def judge_linkedin(ev, table, claim_detail, src):
         return "HELD", "linkedin_description_needs_reading", {}
     if field == "specialties":
         return "HELD", "linkedin_specialties_needs_reading", {}  # a free list: read, never passed by machine
+    if field == "hq_city":
+        return "HELD", "linkedin_hq_city_needs_reading", {}  # whatever the record holds: the record's own city can be set in the same PR
     return "HELD", "linkedin_needs_capture", {}
 
 
@@ -1214,9 +1197,9 @@ def linkedin_result(ev, idx, store, read):
     verdict, reason = linkedin_name_verdict(title[1], idx, ev["record_id"])
     if reason:
         return verdict, reason
-    label = {"industry": "Industry", "founded": "Founded", "hq_city": "Headquarters", "size_band": "Company size"}.get(field)
+    label = {"industry": "Industry", "founded": "Founded", "size_band": "Company size"}.get(field)
     if label is None:
-        return "HELD", "linkedin_specialties_needs_reading"
+        return "HELD", "linkedin_hq_city_needs_reading" if field == "hq_city" else "linkedin_specialties_needs_reading"
     values = fields.get(label, [])
     if not values:
         return "HELD", "linkedin_field_not_in_line_layout"  # absent, or only in the flattened one-line layout, which is never parsed
@@ -1233,16 +1216,6 @@ def linkedin_result(ev, idx, store, read):
         if not re.fullmatch(r"\d{4}", held):
             return "HELD", "linkedin_founded_not_a_year"
         ok = held == value
-    elif field == "hq_city":
-        city = linkedin_hq_city(held)
-        if city is None:
-            return "HELD", "linkedin_hq_not_city_state"
-        if city.lower() != norm_space(value).lower():
-            return "FAIL", "claim_value_not_in_field"
-        own = norm_space((idx.orgs.get(ev["record_id"]) or {}).get("hq_city") or "")
-        ok = bool(own) and own.lower() == city.lower()  # corroboration only: the page's city is the record's own held HQ city
-        if not ok:
-            return "HELD", "linkedin_hq_needs_reading"
     else:  # size_band
         found = re.fullmatch(r"(\S+?)(?: employees)?", held)
         shown = found[1] if found else ""

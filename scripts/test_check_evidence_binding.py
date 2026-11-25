@@ -1770,7 +1770,6 @@ class LinkedInCompanyRoute(unittest.TestCase):
         spec = {
             "industry": self.row(),
             "founded": self.row(head="founded: 1986", quote="Founded, 1986", claim="existence"),
-            "hq_city": self.row(head="hq_city Cleveland", quote="Headquarters, Cleveland, Ohio", claim="address"),
             "size band 5000+": self.row(head="employee_band_global 5000+ (self-declared)", quote="Company size, 5,001-10,000 employees", claim="size_band"),
             "size bracket": self.row(head="linkedin_size_bracket 5,001-10,000 (self-declared)", quote="Company size, 5,001-10,000 employees", claim="size_band"),
         }
@@ -1826,16 +1825,24 @@ class LinkedInCompanyRoute(unittest.TestCase):
             "founded is not a year": (self.page(Founded="Since 1986"), dict(head="founded: 1986", quote="Founded, Since 1986", claim="existence"), "linkedin_founded_not_a_year"),
             "size is not a LinkedIn bracket": (self.page(**{"Company size": "51-199 employees"}), dict(head="linkedin_size_bracket 51-199 (self-declared)", quote="Company size, 51-199 employees", claim="size_band"), "linkedin_size_not_a_linkedin_bracket"),
             "size with a second number": (self.page(**{"Company size": "5,001-10,000 employees, 2,000 in Ohio"}), dict(head="linkedin_size_bracket 5,001-10,000 (self-declared)", quote="Company size, 5,001-10,000 employees, 2,000 in Ohio", claim="size_band"), "linkedin_size_not_a_linkedin_bracket"),
-            "HQ is a street": (self.page(Headquarters="Lake Road, Cleveland, Ohio"), dict(head="hq_city Lake Road", quote="Headquarters, Lake Road, Cleveland, Ohio", claim="address"), "linkedin_hq_not_city_state"),
-            "HQ street form the denylist does not know": (self.page(Headquarters="North Service Alley, Ohio"), dict(head="hq_city North Service Alley", quote="Headquarters, North Service Alley, Ohio", claim="address"), "linkedin_hq_needs_reading"),
-            "HQ city that is not the record's own": (self.page(Headquarters="Dayton, Ohio"), dict(head="hq_city Dayton", quote="Headquarters, Dayton, Ohio", claim="address"), "linkedin_hq_needs_reading"),
         }
         for name, (page, kw, reason) in cases.items():
             with self.subTest(name):
                 self.assertEqual(self.run_row(page, **kw), ("HELD", reason))
-        self.assertEqual(self.run_row(head="hq_city Dayton", quote="Headquarters, Cleveland, Ohio", claim="address"), ("FAIL", "claim_value_not_in_field"))  # the claimed city is not the page's
         self.assertEqual(self.run_row(head="industry: Resin Compounding", quote="Industry, Plastics Manufacturing"), ("FAIL", "claim_value_not_in_field"))
         self.assertEqual(self.run_row(head="linkedin_size_bracket 51-200 (self-declared)", quote="Company size, 5,001-10,000 employees", claim="size_band"), ("FAIL", "claim_value_not_in_field"))
+
+    def test_hq_city_is_always_held_for_reading_even_when_the_record_holds_it(self):
+        """Codex round 4: a record whose hq_city was set to the page's city in the same PR must not corroborate it. No hq_city row passes by machine."""
+        for held_city, page_value, city in (("North Service Alley", "North Service Alley, Ohio", "North Service Alley"), ("Cleveland", "Cleveland, Ohio", "Cleveland"),
+                                            ("Cleveland", "Dayton, Ohio", "Dayton")):
+            orgs = [dict(o, hq_city=held_city) if o["org_id"] == "ORG-1" else o for o in ORGS]
+            self.idx = b.Index(SITES, orgs)
+            row = self.row(head=f"hq_city {city}", quote=f"Headquarters, {page_value}", claim="address", digest=self.capture(self.page(Headquarters=page_value)))
+            with self.subTest(page_value):
+                self.assertEqual(b.judge(row, self.idx)[:2], ("HELD", "linkedin_hq_city_needs_reading"))
+                self.assertEqual(self.replay(row, row["notes"].split(";")[0].split(": ")[1]), ("HELD", "linkedin_hq_city_needs_reading"))
+                self.assertEqual(b.linkedin_result(row, self.idx, self.store, self.inputs(row["notes"].split(";")[0].split(": ")[1]))[:2], ("HELD", "linkedin_hq_city_needs_reading"))
 
     def test_a_signed_in_marker_anywhere_refuses_the_capture(self):
         self.assertEqual(self.run_row(self.page(extra="All products are designed in Ohio.\n")), ("PASS", "linkedin_company_replayed"))  # prose, not a marker

@@ -1708,7 +1708,7 @@ evidence route only; people data stays declined (§4.9, §6). The rules:
   | Industry | `activity` or `scope` | `industry: <value>` | the value equals a label of LinkedIn's published Industry Codes V2 (Active), kept in `docs/schema/linkedin_industry_codes_v2.csv` with its source URL and retrieval date in the header (Microsoft Learn, retrieved 2026-11-25) |
   | Specialties | `activity` or `scope` | `specialties: <token>, <token>` | never: a free list is HELD for reading (`linkedin_specialties_needs_reading`) |
   | Founded | `existence` | `founded: <YYYY>` | the value is a four-digit year and nothing else |
-  | Headquarters | `address` | `hq_city <City>` | the value is `City, State` or `City, State, Country` (a US state; country `United States`) with a plain locality **and** the city equals the record's own held `hq_city` (corroboration, not a new fact); any other value is HELD |
+  | Headquarters | `address` | `hq_city <City>` | never: every `hq_city` row is HELD for reading (`linkedin_hq_city_needs_reading`), whatever the record holds, because the record's own city can be set in the same PR (owner ruling 2026-11-25 18:11, "Drop HQ city, merge") |
   | Company size | `size_band` | `employee_band_global <band> (self-declared)` or `linkedin_size_bracket <bracket> (self-declared)` | the value is one of LinkedIn's fixed brackets (`1`, `2-10`, `11-50`, `51-200`, `201-500`, `501-1,000`, `1,001-5,000`, `5,001-10,000`, `10,001+`, and `0-1`, which sets no band), optionally followed by " employees"; the claimed bracket equals the capture's and appears in the quote; an inverted bracket (`51-20`) sets nothing |
 
   A row whose head is not one of these is a free description. A free
