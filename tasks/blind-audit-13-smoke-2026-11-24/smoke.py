@@ -487,9 +487,8 @@ def plant_checker(R, cache_dir, approved):
         for e, row, _ in built:
             key = (e['table'], e['record_id'], e['field'])
             sources = reading.build_sources(dict(row=row, urls=reading.urls_of(row)), manifest, cache_dir)
-            why[key] = reading.plant_reason(row, e['field'], true[key], sources)
-            sid, url, quote = reading.plant_context(sources, true[key])
-            check.quotes[key] = dict(source_id=sid, source_url=url, eligibility_quote=quote)  # the draw receipt lists it for the hand-check
+            why[key], sid, quote = reading.plant_verdict(row, e['field'], true[key], sources)
+            check.quotes[key] = dict(source_id=sid, source_url=sources[sid]['url'] if sid else '', eligibility_quote=quote)  # exactly what the check used; the draw receipt lists it
         return why
     check.quotes = {}
     return check

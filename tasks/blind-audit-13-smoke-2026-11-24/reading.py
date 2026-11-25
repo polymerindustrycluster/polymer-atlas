@@ -263,7 +263,7 @@ def agrees(field, a, b):
     return bool(words(a) and words(b)) and (not values_differ(a, b, field) or not values_differ(b, a, field) or (field in NAME_FIELDS and name_equivalent(a, b)))
 
 
-def witness_reason(text, value, field, names, quote=''):
+def witness_check(text, value, field, names, quote=''):
     """'' when `text` positively attributes `value` to this record: in the segment holding the occurrence (inside the reader's quote, when given) the
     record's own name appears, or the page speaks in the first person for its own entity; no other party, time, place or denial is within
     WITNESS_WINDOW words; no other legal entity is named in the segment; and the page names no other street or county. Else the reason it is held."""
@@ -273,17 +273,17 @@ def witness_reason(text, value, field, names, quote=''):
     vw = words(value)
     occ = [i for i in range(len(tw) - len(vw) + 1) if vw and tw[i:i + len(vw)] == vw]
     if not occ:
-        return 'true_value_not_stated'
+        return 'true_value_not_stated', ''
     if quote:
         qw = words(quote)
         spans = [i for i in range(len(tw) - len(qw) + 1) if qw and tw[i:i + len(qw)] == qw]
         occ = [o for o in occ if any(sp <= o and o + len(vw) <= sp + len(qw) for sp in spans)]
         if not occ:
-            return 'quote_does_not_hold_true_value'
+            return 'quote_does_not_hold_true_value', ''
     own = [k for n in names for k in (name_key(n), name_key(re.split(r'\s[-\u2013\u2014]\s', n)[0])) if k]  # a site name 'Acme - Akron' is also 'Acme'
     if not any(contains(tw, k) for k in own):
-        return 'source_not_about_record'
-    why = 'witness_hedged'
+        return 'source_not_about_record', ''
+    why, used = 'witness_hedged', ''
     for o in occ:
         if HEDGE.search(' '.join(tw[max(0, o - WITNESS_WINDOW):o + len(vw) + WITNESS_WINDOW])):
             continue
@@ -296,18 +296,21 @@ def witness_reason(text, value, field, names, quote=''):
         if any(not (name_key(m[1]) and any(contains(k, name_key(m[1])) or contains(name_key(m[1]), k) for k in own)) for m in LEGAL_ENTITY.finditer(raw)):
             why = 'witness_other_entity'
             continue
-        why = ''
+        why, used = '', ((segs[n - 1][0].strip() + '\n') if n else '') + raw.strip()[:400]  # the exact line and sentence this check accepted
         break
-    if why:
-        return why
-    if field == 'street_address':
-        from atlas import NOTES_STREET_RE, notes_candidate_key, street_key
-        if {k for k in (notes_candidate_key(m[0]) for m in NOTES_STREET_RE.finditer(text)) if k} - {street_key(value)}:
-            return 'witness_ambiguous'
-    if field in ('county', 'hq_county'):
-        if {c.lower() for c in re.findall(r'\b([A-Z][a-z]+) County\b', text)} - {(words(value) or [''])[0]}:
-            return 'witness_ambiguous'
-    return ''
+    if not why:
+        if field == 'street_address':
+            from atlas import NOTES_STREET_RE, notes_candidate_key, street_key
+            if {k for k in (notes_candidate_key(m[0]) for m in NOTES_STREET_RE.finditer(text)) if k} - {street_key(value)}:
+                why = 'witness_ambiguous'
+        if field in ('county', 'hq_county'):
+            if {c.lower() for c in re.findall(r'\b([A-Z][a-z]+) County\b', text)} - {(words(value) or [''])[0]}:
+                why = 'witness_ambiguous'
+    return why, used or witness_context(text, value)
+
+
+def witness_reason(text, value, field, names, quote=''):
+    return witness_check(text, value, field, names, quote)[0]
 
 
 def witness_context(text, value):
@@ -317,14 +320,6 @@ def witness_context(text, value):
         if vw and contains(ws, vw):
             return ((segs[n - 1][0].strip() + '\n') if n else '') + raw.strip()[:400]
     return ''
-
-
-def plant_context(sources, value):
-    """-> (source id, url, eligibility quote) for the first source whose excerpt states `value`; the draw receipt lists it for every plant."""
-    for sid, src in sources.items():
-        if quote_in_order(src['excerpt'], value):
-            return sid, src['url'], witness_context(src['excerpt'], value)
-    return '', '', ''
 
 
 def plant_names(row, field, true_value):
@@ -410,25 +405,31 @@ def plant_detected(primary_raw, field):
     return bool(f) and f['status'] == 'CONTRADICTED' and f.get('plant_witness') == ''
 
 
-def plant_reason(row, field, true_value, sources):
-    """'' when the ideal answer detects this plant on the excerpts the reader will see, else why it cannot be detected. The ideal answer is a CONTRADICTED
-    finding quoting the record's true value from a source, run through read_findings (witness test included) and plant_detected unchanged.
-    sources: id -> {'excerpt': ...}."""
+def plant_verdict(row, field, true_value, sources):
+    """-> (reason, source id, quote). reason is '' when the ideal answer detects this plant on the excerpts the reader will see, else why it cannot be;
+    source id and quote are the source and the exact line and sentence the check itself used (the accepting one when eligible; else the last source that
+    states the value). The ideal answer is a CONTRADICTED finding quoting the record's true value, run through read_findings (witness test included) and
+    plant_detected unchanged. sources: id -> {'excerpt': ...}."""
     held = held_values(row)
     if field not in targets_of(row):
-        return 'field_not_on_checklist'
+        return 'field_not_on_checklist', '', ''
     if held.get(field) == WITHHELD:
-        return 'planted_cell_withheld'
+        return 'planted_cell_withheld', '', ''
     texts = {sid: s['excerpt'] for sid, s in sources.items()}
-    plant, why = dict(field=field, true=true_value, names=plant_names(row, field, true_value)), 'no_source_states_true_value'
+    plant, why, at = dict(field=field, true=true_value, names=plant_names(row, field, true_value)), 'no_source_states_true_value', ('', '')
     for sid, text in texts.items():
         if quote_in_order(text, true_value):
             ideal = dict(findings=[dict(target=field, verdict='CONTRADICTED', source_id=sid, quote=true_value, source_value=true_value)])
             got = read_findings(ideal, texts, [field], held, plant)[field]
+            at = (sid, witness_check(text, true_value, field, plant['names'], true_value)[1])
             if plant_detected({field: got}, field):
-                return ''
+                return '', sid, at[1]
             why = 'planted_value_not_distinguishable_from_true_value' if got['status'] != 'CONTRADICTED' else got.get('plant_witness') or 'witness_held'
-    return why
+    return why, at[0], at[1]
+
+
+def plant_reason(row, field, true_value, sources):
+    return plant_verdict(row, field, true_value, sources)[0]
 
 
 class Board:
@@ -956,8 +957,9 @@ def handcheck_stage(run_dir, csv_path, now=None):
     w.writeheader(), w.writerows(rows)
     text = buf.getvalue()
     write_new(run_dir / 'handcheck.csv', text)
+    st = (run_dir / 'handcheck.csv').stat()  # recorded at creation: a replacement with the same bytes has another inode and ctime
     with open(run_dir / 'ledger.jsonl', 'a') as f:
-        f.write(json.dumps(dict(role='handcheck', file='handcheck.csv', file_sha256=sha256(text.encode()), n=len(rows), time=stamp), sort_keys=True) + '\n')
+        f.write(json.dumps(dict(role='handcheck', file='handcheck.csv', file_sha256=sha256(text.encode()), n=len(rows), time=stamp, mode=st.st_mode & 0o777, inode=st.st_ino, ctime_ns=st.st_ctime_ns), sort_keys=True) + '\n')
     print(f'sealed {len(rows)} hand-check rows')
     return 0
 
@@ -970,7 +972,8 @@ def handcheck_list(run_dir, draw_dir=None):
     if draw_dir:
         elig = {d['blind_id']: d for d in json.loads((Path(draw_dir) / 'draw_receipt.json').read_text()).get('plants_detail', [])}
     for bid, x in sorted(called_plants(ledger).items()):
-        f = next((json.loads((run_dir / 'reads' / l['file']).read_text()) for l in ledger if l.get('blind_id') == bid and l.get('role') == 'primary' and l.get('file') and not l.get('error')), None)
+        lock = next((l for l in ledger if l.get('role') == 'lock' and l.get('blind_id') == bid), None)  # the locked verdict only, never a pre-REQUEST answer
+        f = json.loads((run_dir / 'reads' / lock['file']).read_text()) if lock else None
         got = ((f or {}).get('findings') or {}).get(x['plant_field'], {})
         print(json.dumps(dict(blind_id=bid, provider=x['provider'], field=x['plant_field'], script_flag=plant_detected((f or {}).get('findings') or {}, x['plant_field']),
                               reader=dict(verdict=got.get('raw'), source_value=got.get('source_value'), quote=got.get('quote'), plant_witness=got.get('plant_witness')),
@@ -1070,6 +1073,11 @@ def rederive(run_dir, doc, ledger):
         path = run_dir / 'handcheck.csv'
         if not path.is_file() or sha256(path.read_bytes()) != mark['file_sha256']:
             fail('handcheck.csv is missing or was altered after it was sealed')
+        st = path.stat()
+        if (st.st_mode & 0o777) != 0o600:
+            fail(f'handcheck.csv is mode {oct(st.st_mode & 0o777)}, not 0600')
+        if (st.st_ino, st.st_ctime_ns) != (mark.get('inode'), mark.get('ctime_ns')) or mark.get('mode') != 0o600:
+            fail('handcheck.csv was replaced or changed after it was sealed (its inode or ctime differs from the one recorded at creation; score the run folder in place)')
         if any(n > marks[0] for n, l in enumerate(ledger) if l.get('role') == 'lock' and l['blind_id'] in need) or any(n > marks[0] for n, l in enumerate(ledger) if l.get('role') in ('primary', 'second')):
             fail('the hand-check was sealed before the run finished')
         rows = read_csv(path)

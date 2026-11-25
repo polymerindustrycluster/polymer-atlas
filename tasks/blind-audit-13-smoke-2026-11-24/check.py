@@ -1144,6 +1144,85 @@ def _():
     assert line['script_flag'] is True and line['reader']['source_value'] == '99 Oak Avenue', line
 
 
+def sealed_plant_run():
+    out = plant_run(PAGE, 'located at 99 Oak Avenue, Akron')
+    seal(out)
+    return out
+
+
+@case('H: score refuses a hand-check file that is not 0600, or that was replaced after sealing even with the same bytes (inode / ctime differ)')
+def _():
+    import shutil
+    out = sealed_plant_run()
+    assert score(out)['plants']['by_provider']['astra']['caught'] == 1  # the sealed file, untouched, scores
+    os.chmod(out / 'handcheck.csv', 0o644)
+    expect_raises(SystemExit, lambda: rd.score_stage(out), 'not 0600')
+    out = sealed_plant_run()
+    hc = out / 'handcheck.csv'
+    same = hc.read_bytes()
+    spare = out / 'spare.csv'
+    spare.write_bytes(same)
+    os.chmod(spare, 0o600)
+    os.replace(spare, hc)  # same bytes, same mode, another file
+    assert hc.read_bytes() == same and oct(hc.stat().st_mode & 0o777) == '0o600'
+    expect_raises(SystemExit, lambda: rd.score_stage(out), 'replaced or changed after it was sealed')
+    out = sealed_plant_run()
+    shutil.copy2(out / 'handcheck.csv', out / 'copy.csv')
+    (out / 'handcheck.csv').unlink()
+    shutil.copyfile(out / 'copy.csv', out / 'handcheck.csv')
+    os.chmod(out / 'handcheck.csv', 0o600)
+    expect_raises(SystemExit, lambda: rd.score_stage(out), 'replaced or changed after it was sealed')
+
+
+@case('H: the draw receipt\'s eligibility quote is the exact line the check accepted, even when an earlier source states the value but was held')
+def _():
+    held_src = 'Acme Plastics makes resins. The library is at 99 Oak Avenue.'
+    clean_src = 'Acme Plastics is located at 99 Oak Avenue, Akron.'
+    cache = Path(tempfile.mkdtemp(prefix='a13-cache-'))
+    (cache / 'a.txt').write_text(held_src)
+    (cache / 'b.txt').write_text(clean_src)
+    manifest = {'https://a.example/': dict(status='ok', final_url='https://a.example/', fetched_at='t', text_file='a.txt'), 'https://b.example/': dict(status='ok', final_url='https://b.example/', fetched_at='t', text_file='b.txt')}
+    row = dict(plant_row('7 Pine Road'), cited_sources='https://a.example/ https://b.example/', evidence_json='[]')
+    real_rows, real_fetch = smoke.packet_rows, rd.fetch_urls
+    smoke.packet_rows = lambda R, entries, approved, ids=None, candidates=None: ([(dict(table='sites', record_id='S-1', field='street_address'), row, [])], {})
+    rd.fetch_urls = lambda cache_dir, urls: manifest
+    try:
+        check = smoke.plant_checker(SimpleNamespace(at='x'), cache, set())
+        why = check([dict(table='sites', record_id='S-1', field='street_address', donor_record_id='S-2', true_value='99 Oak Avenue')])
+    finally:
+        smoke.packet_rows, rd.fetch_urls = real_rows, real_fetch
+    q = check.quotes['sites', 'S-1', 'street_address']
+    assert why['sites', 'S-1', 'street_address'] == '' and q['source_url'] == 'https://b.example/' and q['eligibility_quote'] == 'Acme Plastics is located at 99 Oak Avenue, Akron.', q
+
+
+@case('H: `handcheck --list` shows only the locked reader verdict, never a pre-REQUEST answer')
+def _():
+    import site_corpus
+    draw_dir, cache, out = run_fixture([('plant', 'plant-q', 'astra')])
+    seen = []
+    class FakeCorpus:
+        def __init__(self, d): self.d = Path(d)
+        def fetch(self, u):
+            (self.d / 'q.txt').write_text('Requested page text about Acme.')
+            return dict(status='ok', http_status=200, final_url=u, fetched_at='t', sha256='0', text_file='q.txt')
+    def fake(provider, prompt, procs, timeout=0):
+        seen.append(1)
+        street = finding('street_address', 'REQUEST', request_url='https://acme.example/about') if len(seen) == 1 else finding('street_address', 'CONTRADICTED', 'located at 99 Oak Avenue, Akron', '99 Oak Avenue')
+        return dict(good('x', provider), text=json.dumps(dict(findings=[finding('site_name', 'VERIFIED'), street, finding('polymer_relevance', 'VERIFIED')])))
+    real_corpus, site_corpus.Corpus = site_corpus.Corpus, FakeCorpus
+    try:
+        patched(fake, lambda: rd.run_stage(draw_dir, cache, out, ARGS(stop_at=99)))
+    finally:
+        site_corpus.Corpus = real_corpus
+    assert len(seen) == 2
+    import contextlib, io
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        smoke.main(['handcheck', '--run', str(out), '--list'])
+    line = json.loads(buf.getvalue().splitlines()[0])
+    assert line['reader']['verdict'] == 'CONTRADICTED' and line['reader']['source_value'] == '99 Oak Avenue' and line['script_flag'] is True, line
+
+
 @case('B: score verifies the terminal stop reason against the ledger: a failed run edited to STOPPED_AT_K (or any unsupported status) refuses')
 def _():
     draw_dir, cache, out = run_fixture([('real', 'fail-t', 'astra')])
