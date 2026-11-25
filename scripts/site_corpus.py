@@ -446,7 +446,7 @@ class Corpus:
             for name in ('index.csv', 'index-robots.csv'):  # every index, whichever historical header it has, is rewritten by named columns
                 migrate_index(self.cache / name, list(r))
             dest = self.cache / 'index.csv'
-            exists = dest.exists()
+            exists = dest.exists() and dest.stat().st_size > 0  # a zero-byte index has no header yet: write it before the first row
             with dest.open('a', newline='') as f:
                 w = csv.DictWriter(f, list(r))
                 if not exists: w.writeheader()

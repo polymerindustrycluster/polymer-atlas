@@ -597,6 +597,16 @@ def cache_index_migration_is_atomic_and_never_blanks_a_row(c, tmp):
     assert (tmp / 'index.csv').read_bytes() == before
 
 
+@case
+def empty_index_gets_its_header_and_loses_no_receipt(c, tmp):
+    import csv
+    (tmp / 'index.csv').write_bytes(b'')  # an existing zero-byte index
+    c.save('https://example.org/first', resp(PAGE), 'ok', 'https://example.org/first', 'direct')
+    c.save('https://example.org/second', resp(PAGE), 'ok', 'https://example.org/second', 'direct')
+    with (tmp / 'index.csv').open(newline='') as f: rows = list(csv.DictReader(f))
+    assert [r['url'] for r in rows] == ['https://example.org/first', 'https://example.org/second'], f"urls read back by column name: {[r.get('url') for r in rows]}"
+
+
 def mutation():
     """The kept-line case must fail when its guard is removed; meaningful only where the guard exists."""
     if not hasattr(sc, 'linkedin_blocked'):

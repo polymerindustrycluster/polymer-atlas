@@ -23,7 +23,7 @@ Follows #560, which shipped robots off, LinkedIn company pages, privacy exclusio
 
 ## Named check
 
-`python3 tasks/browser-fetch-2026-11-25/check.py scripts` (mocked transport and browser: every earlier case of #560 plus the browser and fallback cases; 42 cases including a removed-guard mutation) and
-`uv run --with playwright python3 tasks/browser-fetch-2026-11-25/check.py scripts --real-browser` (the same 42 plus 11 real headed-Chrome cases against a local fixture server, 53 in all; sandbox off; windows open),
+`python3 tasks/browser-fetch-2026-11-25/check.py scripts` (mocked transport and browser: every earlier case of #560 plus the browser and fallback cases; 43 cases including a removed-guard mutation) and
+`uv run --with playwright python3 tasks/browser-fetch-2026-11-25/check.py scripts --real-browser` (the same 43 plus 11 real headed-Chrome cases against a local fixture server, 54 in all; sandbox off; windows open),
 `python3 -m unittest discover -s scripts -p 'test_site_corpus.py'` (23 tests; none launches Chrome).
 To show the cases fail on an older ref, export its `scripts/` (`git archive REF scripts | tar -x -C DIR`) and run `check.py DIR/scripts [--real-browser]`. The PR body lists the failing lines for `3af647cb` (round 4).
