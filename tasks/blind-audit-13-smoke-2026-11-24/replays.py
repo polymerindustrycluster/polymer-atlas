@@ -250,7 +250,7 @@ def coverage(R, keys, store=STORE):
     target = {id(x): band_target(x, sites, orgs, org_sites) for x in bands}
     ita_ids = {m[1] for x in bands if x['cls'] == 'band:osha_ita' and (m := re.search(r'establishment_?id[ =:]*(\d+)', x['ev']['source_ref'], re.I))}
     insp_ids = {m[1] for x in bands if x['cls'] == 'band:osha_inspection' and (m := re.search(r'(?:id=|OSHA inspection )(\d{6,})', x['ev']['source_ref'] + ' ' + x['ev']['claim_detail']))}
-    streets = {street_key(t[0]['street_address']) for t in target.values() if t[0]}  # every other filing at a replayed band's street can supersede the cited one
+    streets = {street_key(t[0]['street_address']) for t in target.values() if t[0] and civic_key(t[0]['street_address'])}  # every other filing at a replayed band's street can supersede the cited one; a street with no number matches nothing
     civics = {civic_key(st) for st in streets}
     street_of = lambda col: (lambda r: (street_key(r.get(col, '')) if civic_key(r.get(col, '')) in civics else ''))
     ita, ita_problems = scan(store, ita_files(store), dict(id=('establishment_id', ita_ids), street=(street_of('street_address'), streets)))
@@ -274,7 +274,7 @@ def coverage(R, keys, store=STORE):
             elif scan_problems:
                 out = dict(status='UNRESOLVED', reason='filing_scan_incomplete', text=f'Other filings at this street could not all be searched ({next(iter(scan_problems.values()))}).')
             else:
-                sk = street_key(site['street_address'])
+                sk = street_key(site['street_address']) if civic_key(site['street_address']) else None  # no street number: no other filing can be bound by street
                 others = [('osha_ita', r, rel) for r, rel in ita_by_street.get(sk, [])] + [('osha_inspection', r, rel) for r, rel in insp_by_street.get(sk, [])]
                 out = band_receipt(site, orgs, ev, cls == 'band:osha_ita', ita_hits, insp_hits, ita_problems, insp_problems, store, ten_years_before(written), held, others)
         if out is None:  # no replayer for this class: reported as not inspected, never as a receipt and never as unconfirmed

@@ -804,6 +804,17 @@ def _():
     assert replays.coverage(R, [('sites', 'SITE-1')], st)[0]['sites|SITE-1'][0]['status'] == 'MATCHES', 'no newer filing: the cited one stands'
 
 
+@case('A6: a site with no street number is UNRESOLVED and is never bound through an empty street key')
+def _():
+    import replays
+    nostreet = lambda r: dict(r, street_address='Main Street')
+    site = band_world(fake_store(), [])[0].rows('sites')[0]
+    store = fake_store(ita=[ita_row(2020, 79)] + [dict(ita_row(2021, 10, str(100 + i)), street_address='Rural Route') for i in range(50)])
+    R, st = band_world(store, [band_ev()], sites=[nostreet(site)])
+    got = replays.coverage(R, [('sites', 'SITE-1')], st)[0]['sites|SITE-1'][0]
+    assert got['status'] == 'UNRESOLVED' and 'newer' not in got['text'], got
+
+
 @case('replay receipts: a matched control passes; a wrong operator, a wrong street and a 2015 vintage do not bind; a newer different band contradicts')
 def _():
     import replays
