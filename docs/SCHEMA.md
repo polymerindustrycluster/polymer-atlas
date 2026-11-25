@@ -1685,27 +1685,31 @@ evidence route only; people data stays declined (§4.9, §6). The rules:
 - **Organization grain only.** `record_table=organizations`. **Never** a
   site's facts, a street, a county, an HQ street, or anything for a child
   unit, a site, an ecosystem entity, a program or a person.
-- **One labelled field per row, from the subject's own About section.** The
-  page's "About us" section ends in a field block (`Website`, `Industry`,
-  `Company size`, `Headquarters`, `Type`, `Founded`, `Specialties`). A row
-  binds one of five fields to its value; the quote is **exactly** that one
-  labelled field as the capture shows it, `<Label>, <value>` (case kept,
-  whitespace normalized), and nothing else: no prose before or after it and
-  no second field. The capture is parsed keeping field boundaries, in both
-  layouts Muse's captures use (`Label, value` on one line, or the label on
-  its own line with the value on the next); a label that appears more than
-  once, or prose before the field block that carries a label word, is HELD
-  as ambiguous. Nothing outside the About section counts
-  (Similar pages, Updates, Locations and Employees never do). `claim_detail`
-  is `<head>; quote: <quote>` with exactly one of these heads:
+- **One closed field per row, from the subject's own About section.** The
+  gate reads one layout only, the label-line/value-line one, inside the
+  section headed "About us". A label is a whole line equal to one of
+  `Website`, `Industry`, `Company size`, `Headquarters`, `Type`, `Founded`,
+  `Specialties`; its value is exactly the next line (paragraphs are
+  separated by a blank line or, in `L<n>:` captures, a gap in the line
+  numbers); a name, a sentence or any other text on the line after the value
+  makes the field ambiguous and it is HELD. A label word anywhere else (in a
+  value, in prose) is never a label, a label that appears twice is HELD, and
+  the flattened one-line layout (`Company size, 51-200 employees,
+  Headquarters, ...`) is HELD, never parsed. Nothing outside the About
+  section counts (Similar pages, Updates, Locations and Employees never do).
+  The quote is **exactly** that one field, `<Label>, <value>` (case kept,
+  whitespace normalized), and nothing else. A row binds one of five fields to
+  its value, and each value is closed: it passes by machine only if it is one
+  of a fixed set, otherwise it is HELD for reading. `claim_detail` is
+  `<head>; quote: <quote>` with exactly one of these heads:
 
-  | Field | `claim_type` | `claim_detail` head |
-  |---|---|---|
-  | Industry | `activity` or `scope` | `industry: <value>` |
-  | Specialties (process and market tokens) | `activity` or `scope` | `specialties: <token>, <token>` (each a listed specialty) |
-  | Founded | `existence` | `founded: <YYYY>` |
-  | Headquarters | `address` | `hq_city <City>`: the Headquarters value must be `City, State` or `City, State, Country` (a US state; country `United States`), with City a plain locality (no number, no street word); anything else is HELD |
-  | Company size | `size_band` | `employee_band_global <band> (self-declared)` or `linkedin_size_bracket <bracket> (self-declared)`; the claimed bracket equals the capture's and appears in the quote, and an inverted bracket (`51-20`) sets nothing |
+  | Field | `claim_type` | `claim_detail` head | Passes by machine only if |
+  |---|---|---|---|
+  | Industry | `activity` or `scope` | `industry: <value>` | the value equals a label of LinkedIn's published Industry Codes V2 (Active), kept in `docs/schema/linkedin_industry_codes_v2.csv` with its source URL and retrieval date in the header (Microsoft Learn, retrieved 2026-11-25) |
+  | Specialties | `activity` or `scope` | `specialties: <token>, <token>` | never: a free list is HELD for reading (`linkedin_specialties_needs_reading`) |
+  | Founded | `existence` | `founded: <YYYY>` | the value is a four-digit year and nothing else |
+  | Headquarters | `address` | `hq_city <City>` | the value is `City, State` or `City, State, Country` (a US state; country `United States`) with a plain locality **and** the city equals the record's own held `hq_city` (corroboration, not a new fact); any other value is HELD |
+  | Company size | `size_band` | `employee_band_global <band> (self-declared)` or `linkedin_size_bracket <bracket> (self-declared)` | the value is one of LinkedIn's fixed brackets (`1`, `2-10`, `11-50`, `51-200`, `201-500`, `501-1,000`, `1,001-5,000`, `5,001-10,000`, `10,001+`, and `0-1`, which sets no band), optionally followed by " employees"; the claimed bracket equals the capture's and appears in the quote; an inverted bracket (`51-20`) sets nothing |
 
   A row whose head is not one of these is a free description. A free
   description is never passed by machine: the gate holds it for a reader

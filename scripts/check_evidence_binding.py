@@ -948,7 +948,8 @@ LINKEDIN_NOT_NAMES = frozenset("us today team operations manager director sales 
                                "company corporation inc llc ltd our your the and for of to at in on with details form".split())
 LINKEDIN_WORD = re.compile(r"[^\W\d_][\w'’.-]*")
 LINKEDIN_LABEL_NAMES = ("Website", "Industry", "Company size", "Headquarters", "Type", "Founded", "Specialties")
-LINKEDIN_INLINE_LABEL = re.compile(r"(?<![\w])(Website|Industry|Company size|Headquarters|Type|Founded|Specialties),{1,2}(?=\s|$)|, (Specialties)\s*$")
+LINKEDIN_BRACKETS = frozenset(("0-1", "1", "2-10", "11-50", "51-200", "201-500", "501-1,000", "1,001-5,000", "5,001-10,000", "10,001+"))  # LinkedIn's fixed size brackets
+LINKEDIN_INDUSTRY_FILE = ROOT / "docs/schema/linkedin_industry_codes_v2.csv"
 LINKEDIN_SIGNED_IN = re.compile(r"\b(?:signed in|sign out|signed out|signout|log ?out|logged in|my network|viewing as)\b", re.I)  # whole words: "designed in" is prose
 LINKEDIN_STREET_WORDS = frozenset("road rd street st avenue ave drive dr boulevard blvd lane ln way highway hwy parkway pkwy court ct circle cir suite ste floor box route rte "
                                   "plaza place pl terrace trail center".split())
@@ -971,6 +972,16 @@ LINKEDIN_HEADS = (
 )
 ATLAS_BANDS = (("1-9", 1, 9), ("10-49", 10, 49), ("50-99", 50, 99), ("100-249", 100, 249), ("250-499", 250, 499), ("500-999", 500, 999),
                ("1000-4999", 1000, 4999), ("5000+", 5000, float("inf")))
+
+
+@lru_cache(maxsize=1)
+def linkedin_industries():
+    """LinkedIn's published Industry Codes V2 labels (Active), from the repo's reference file; empty if unreadable (then no industry row passes)."""
+    try:
+        lines = [ln for ln in LINKEDIN_INDUSTRY_FILE.read_text(encoding="utf-8").splitlines() if not ln.startswith("#")]
+        return frozenset(r["label"] for r in csv.DictReader(lines))
+    except (OSError, KeyError, UnicodeDecodeError):
+        return frozenset()
 
 
 def linkedin_name_tokens(words):
@@ -1085,13 +1096,15 @@ def judge_linkedin(ev, table, claim_detail, src):
         band, bracket = re.fullmatch(r"(?:employee_band_global ([\w+-]+)|linkedin_size_bracket ([\d,+-]+)) \(self-declared\)", head).groups()
         shown = LINKEDIN_BRACKET.search(quote)
         if not shown:
-            return "FAIL", "linkedin_size_quote_has_no_bracket"  # "Company size" alone says nothing
+            return "FAIL", "linkedin_size_quote_has_no_bracket", {}  # "Company size" alone says nothing
         if bracket and (shown.group(0) != bracket or not linkedin_bracket_valid(bracket)):
-            return "FAIL", "linkedin_size_bracket_not_in_quote"
+            return "FAIL", "linkedin_size_bracket_not_in_quote", {}
         if band and linkedin_bracket_band(shown.group(0)) != band:
-            return "FAIL", "linkedin_size_bracket_straddles_band"  # a band only where the bracket nests in it
+            return "FAIL", "linkedin_size_bracket_straddles_band", {}  # a band only where the bracket nests in it
     if field is None:
         return "HELD", "linkedin_description_needs_reading", {}
+    if field == "specialties":
+        return "HELD", "linkedin_specialties_needs_reading", {}  # a free list: read, never passed by machine
     return "HELD", "linkedin_needs_capture", {}
 
 
@@ -1109,42 +1122,46 @@ def read_linkedin_capture(store, digest):
 
 
 def linkedin_about(text):
-    """(title match or None, the subject's 'About us' section as one line, its labelled fields {label: [values]}, ambiguous). Only the company's own
-    About section counts: never Similar pages, Updates, Locations or Employees. A field is `<Label>, <value>` on one line (comma-joined) or the label on
-    its own line with the value on the next (Muse's line layout); the value runs to the next label, so prose and fields never merge. The section is
-    ambiguous when anything before its first Website or Industry field carries a label word."""
-    lines = [re.sub(r"^L\d+:\s?", "", ln).rstrip() for ln in text.split("\n")]
-    title = LINKEDIN_TITLE.match(lines[0]) if lines else None
-    sections, cur = {}, None
-    for ln in lines[1:]:
-        m = re.match(r"^## (\S.*)$", ln)
-        if m:
-            cur = m[1].strip()
-            sections.setdefault(cur, [])
-        elif cur is not None:
-            sections[cur].append(ln)
-    about_lines = [ln.strip() for ln in sections.get("About us", []) if ln.strip()]
-    items = []  # ("label", name) | ("text", string), in capture order
-    for ln in about_lines:
-        if ln in LINKEDIN_LABEL_NAMES:
-            items.append(("label", ln))
+    """(title match or None, the subject's own About-section fields {label: [value or None]}). The layout read is the label-line/value-line one, inside
+    the section headed `## About us` only: a label is a whole line equal to one of the labels; its value is exactly the next line of the next paragraph;
+    that paragraph must be that one line (so a name or a sentence on the line after the value makes the field ambiguous, None). Paragraphs are
+    separated by a blank line or, in the `L<n>:` captures, a gap in the line numbers. A label word inside a value or in prose is never a label, and
+    the flattened one-line layout (`Company size, 51-200 employees, Headquarters, ...`) is never parsed."""
+    raw = text.split("\n")
+    title = LINKEDIN_TITLE.match(raw[0]) if raw else None
+    blocks, cur, last, in_about = [], [], None, False
+    for ln in raw[1:]:
+        m = re.match(r"^L(\d+):\s?(.*)$", ln)
+        num, body = (int(m[1]), m[2].rstrip()) if m else (None, ln.rstrip())
+        if re.match(r"^#{1,6} ", body.strip()):
+            in_about = body.strip() == "## About us"
+            if cur:
+                blocks.append(cur)
+            cur, last = [], None
+            if in_about:
+                blocks.append(["## About us"])  # a second About section is kept apart, so a repeated label shows
             continue
-        pos = 0
-        for m in LINKEDIN_INLINE_LABEL.finditer(ln):
-            items.append(("text", ln[pos:m.start()]))
-            items.append(("label", m[1] or m[2]))
-            pos = m.end()
-        items.append(("text", ln[pos:]))
-    fields, name = {}, None
-    for kind, val in items:
-        if kind == "label":
-            name = val
-            fields.setdefault(name, []).append("")
-        elif name is not None:
-            fields[name][-1] += " " + val
-    fields = {k: [norm_space(v).strip(" ,") for v in vs] for k, vs in fields.items()}
-    labels = [v for k, v in items if k == "label"]
-    return title, norm_space(" ".join(about_lines)), fields, bool(labels) and labels[0] not in ("Website", "Industry")
+        if not in_about:
+            continue
+        gap = num is not None and last is not None and num - last > 1
+        if (not body.strip() or gap) and cur:
+            blocks.append(cur)
+            cur = []
+        if body.strip():
+            cur.append(body.strip())
+        last = num if num is not None else last
+    if cur:
+        blocks.append(cur)
+    fields = {}
+    for k, block in enumerate(blocks):
+        if len(block) == 1 and block[0] in LINKEDIN_LABEL_NAMES:
+            value_block = blocks[k + 1] if k + 1 < len(blocks) else None
+            if value_block is None or (len(value_block) == 1 and value_block[0] in LINKEDIN_LABEL_NAMES) or value_block == ["## About us"]:
+                value = ""  # a label with nothing after it (the Website link text is not captured)
+            else:
+                value = norm_space(value_block[0]) if len(value_block) == 1 else None
+            fields.setdefault(block[0], []).append(value)
+    return title, fields
 
 
 def linkedin_name_verdict(title_name, idx, rid):
@@ -1187,7 +1204,7 @@ def linkedin_result(ev, idx, store, read):
         text = read_linkedin_capture(store, digest)
     except (OSError, ValueError):
         return "HELD", "linkedin_capture_unreadable"
-    title, about, fields, ambiguous = linkedin_about(text)
+    title, fields = linkedin_about(text)
     if not title:
         return "HELD", "linkedin_title_unbound"
     if title[2].rstrip("/").lower() != ev["source_ref"].rstrip("/").lower():
@@ -1197,35 +1214,43 @@ def linkedin_result(ev, idx, store, read):
     verdict, reason = linkedin_name_verdict(title[1], idx, ev["record_id"])
     if reason:
         return verdict, reason
-    if not about or not fields:
-        return "HELD", "linkedin_about_fields_missing"
-    if ambiguous:
-        return "HELD", "linkedin_field_ambiguous"  # prose before the field block carries a label word
-    label = {"industry": "Industry", "specialties": "Specialties", "founded": "Founded", "hq_city": "Headquarters", "size_band": "Company size"}[field]
+    label = {"industry": "Industry", "founded": "Founded", "hq_city": "Headquarters", "size_band": "Company size"}.get(field)
+    if label is None:
+        return "HELD", "linkedin_specialties_needs_reading"
     values = fields.get(label, [])
-    if len(values) > 1:
-        return "HELD", "linkedin_field_ambiguous"  # the label appears more than once
     if not values:
-        return "FAIL", "claim_field_not_in_quote"
-    held, q = values[0], norm_space(quote)
-    if q != f"{label}, {held}":  # exactly one field as the capture shows it: no prose before or after, no second field, case kept
-        return "FAIL", "quote_not_on_capture" if q not in about else "linkedin_quote_not_exact_field"
-    if field == "hq_city":
+        return "HELD", "linkedin_field_not_in_line_layout"  # absent, or only in the flattened one-line layout, which is never parsed
+    if len(values) > 1 or values[0] is None:
+        return "HELD", "linkedin_field_ambiguous"  # the label appears more than once, or the value line is not alone
+    held = values[0]
+    if norm_space(quote) != f"{label}, {held}":  # exactly one field as the capture shows it: no prose before or after, no second field, case kept
+        return "FAIL", "linkedin_quote_not_exact_field"
+    if field == "industry":
+        if held not in linkedin_industries():
+            return "HELD", "linkedin_industry_not_listed"
+        ok = held == norm_space(value)
+    elif field == "founded":
+        if not re.fullmatch(r"\d{4}", held):
+            return "HELD", "linkedin_founded_not_a_year"
+        ok = held == value
+    elif field == "hq_city":
         city = linkedin_hq_city(held)
         if city is None:
             return "HELD", "linkedin_hq_not_city_state"
-        ok = city.lower() == norm_space(value).lower()
-    elif field == "size_band":
-        found = re.fullmatch(r"(\d[\d,]*(?:-\d[\d,]*|\+))(?: employees?)?", held)
+        if city.lower() != norm_space(value).lower():
+            return "FAIL", "claim_value_not_in_field"
+        own = norm_space((idx.orgs.get(ev["record_id"]) or {}).get("hq_city") or "")
+        ok = bool(own) and own.lower() == city.lower()  # corroboration only: the page's city is the record's own held HQ city
+        if not ok:
+            return "HELD", "linkedin_hq_needs_reading"
+    else:  # size_band
+        found = re.fullmatch(r"(\S+?)(?: employees)?", held)
+        shown = found[1] if found else ""
+        if shown not in LINKEDIN_BRACKETS:
+            return "HELD", "linkedin_size_not_a_linkedin_bracket"
         band, bracket = re.fullmatch(r"(?:employee_band_global ([\w+-]+)|linkedin_size_bracket ([\d,+-]+)) \(self-declared\)",
                                      ev["claim_detail"].partition("; quote:")[0].strip()).groups()
-        shown = found[1] if found else ""
-        ok = linkedin_bracket_valid(shown) and (shown == bracket if bracket else linkedin_bracket_band(shown) == band != "")
-    elif field == "specialties":
-        have = {norm_space(t).lower() for t in re.split(r",\s*", held) if t.strip()}
-        ok = all(norm_space(t).lower() in have for t in re.split(r",\s*", value) if t.strip())
-    else:
-        ok = norm_space(held).lower() == norm_space(value).lower()
+        ok = shown == bracket if bracket else linkedin_bracket_band(shown) == band != ""
     return ("PASS", "linkedin_company_replayed") if ok else ("FAIL", "claim_value_not_in_field")
 
 
