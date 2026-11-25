@@ -118,18 +118,21 @@ def csv_rows(path, member=None):
             yield from (dict((k.lower(), v) for k, v in r.items()) for r in csv.DictReader(f))
 
 
-def scan(store, rels, id_col, wanted):
-    """One pass per verified file: rows whose id_col (a column name, or a function of the row) is in wanted. -> (hits {id: [row, file rel]}, problems per file)."""
-    hits, problems = defaultdict(list), {}
-    for rel in rels:
+def scan(store, rels, specs):
+    """One pass per verified file for several lookups at once (the inspection zip is 1.4 GB). specs: {name: (column name or row function, wanted keys)}.
+    -> ({name: {key: [(row, file rel)]}}, problems per file)."""
+    specs = {n: sp for n, sp in specs.items() if sp[1]}
+    hits, problems = {n: defaultdict(list) for n in specs}, {}
+    for rel in rels if specs else ():
         path, why = verified(store, rel)
         if not path:
             problems[rel] = why
             continue
         for r in csv_rows(path):
-            v = id_col(r) if callable(id_col) else (r.get(id_col) or '').strip()
-            if v in wanted:
-                hits[v].append((r, rel))
+            for n, (col, wanted) in specs.items():
+                v = col(r) if callable(col) else (r.get(col) or '').strip()
+                if v in wanted:
+                    hits[n][v].append((r, rel))
     return hits, problems
 
 
@@ -247,14 +250,13 @@ def coverage(R, keys, store=STORE):
     target = {id(x): band_target(x, sites, orgs, org_sites) for x in bands}
     ita_ids = {m[1] for x in bands if x['cls'] == 'band:osha_ita' and (m := re.search(r'establishment_?id[ =:]*(\d+)', x['ev']['source_ref'], re.I))}
     insp_ids = {m[1] for x in bands if x['cls'] == 'band:osha_inspection' and (m := re.search(r'(?:id=|OSHA inspection )(\d{6,})', x['ev']['source_ref'] + ' ' + x['ev']['claim_detail']))}
-    ita_hits, ita_problems = scan(store, ita_files(store), 'establishment_id', ita_ids) if ita_ids else ({}, {})
-    insp_hits, insp_problems = scan(store, inspection_files(store), 'activity_nr', insp_ids) if insp_ids else ({}, {})
     streets = {street_key(t[0]['street_address']) for t in target.values() if t[0]}  # every other filing at a replayed band's street can supersede the cited one
     civics = {civic_key(st) for st in streets}
     street_of = lambda col: (lambda r: (street_key(r.get(col, '')) if civic_key(r.get(col, '')) in civics else ''))
-    ita_by_street, ita_scan_problems = scan(store, ita_files(store), street_of('street_address'), streets) if streets else ({}, {})
-    insp_by_street, insp_scan_problems = scan(store, inspection_files(store), street_of('site_address'), streets) if streets else ({}, {})
-    scan_problems = {**ita_scan_problems, **insp_scan_problems}
+    ita, ita_problems = scan(store, ita_files(store), dict(id=('establishment_id', ita_ids), street=(street_of('street_address'), streets)))
+    insp, insp_problems = scan(store, inspection_files(store), dict(id=('activity_nr', insp_ids), street=(street_of('site_address'), streets)))
+    ita_hits, ita_by_street, insp_hits, insp_by_street = ita.get('id', {}), ita.get('street', {}), insp.get('id', {}), insp.get('street', {})
+    scan_problems = {**ita_problems, **insp_problems}
     receipts, ni_classes, counts, ni = defaultdict(list), defaultdict(list), defaultdict(Counter), defaultdict(lambda: dict(fields=set(), children=[]))
     for x in exp:
         cls, k, ev = x['cls'], x['key'], x['ev']
