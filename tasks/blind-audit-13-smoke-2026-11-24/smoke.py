@@ -353,6 +353,7 @@ def keyed(secret, purpose, ident):
 
 
 def cmd_draw(a):
+    assert a.pool >= 1, '--pool must be at least 1'
     globals()['PLANT_POOL'] = a.pool
     secret = Path(a.secret_file).read_bytes().strip()
     assert len(secret) >= 32, 'secret file must hold at least 32 bytes'

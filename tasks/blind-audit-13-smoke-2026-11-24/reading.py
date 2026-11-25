@@ -216,22 +216,34 @@ HEDGE = re.compile(r'\b(?:former|formerly|previous|previously|prior|used to|move
                    r'competitor|competitors|acquired|closed|sold|future|branch|affiliate|subsidiary|sister|'
                    r'not|no|never|neither|nor|without|isn|aren|wasn|weren|doesn|didn|don|cannot)\b')  # another party, another time, another place, or a denial
 WITNESS_WINDOW = 12  # words each side of the stated value that must be free of those
-LEGAL_TOKENS = {'inc', 'llc', 'corp', 'corporation', 'co', 'company', 'ltd', 'lp', 'llp', 'the'}
-LOCATION_CUES = {'located', 'headquartered', 'based', 'situated', 'address', 'headquarters', 'contact'}
-COPULA_GAP = LOCATION_CUES | {'is', 'are', 'at', 'in', 'on', 'found'}  # the only words allowed between the record's name and its address
+LEGAL_SUFFIX = {'inc', 'llc', 'corp', 'corporation', 'co', 'company', 'ltd', 'lp', 'llp'}
+LOCATIVES = [('is', 'located', 'at'), ('is', 'at'), ('is', 'headquartered', 'at'), ('headquartered', 'at'), ('located', 'at')]  # the only locative verb phrases
 
 
 def located_entity(ws, start, own, prev=None):
-    """True when the words before the value at ws[start] make the RECORD (its name or trade name) the located entity: the nearest preceding occurrence of
-    its name is followed, up to the value, by nothing (an address line: 'Acme Plastics, Inc. 99 Oak Avenue') or only a copula and a location cue
-    ('Acme is located at', 'Acme address:'); or the value opens a segment right after a segment that is only the record's name (an address block headed
-    by it). Anything else between them ('ships pellets to Beta at', 'sponsors the library at', a bare 'address' word with no name) never qualifies."""
-    ends = [i + len(k) for k in own for i in range(start - len(k) + 1) if ws[i:i + len(k)] == k]
-    if ends:
-        gap = [w for w in ws[max(ends):start] if w not in LEGAL_TOKENS]
-        return not gap or (set(gap) <= COPULA_GAP and bool(set(gap) & LOCATION_CUES))
-    gap = [w for w in ws[:start] if w not in LEGAL_TOKENS]
-    return prev is not None and (not gap or (set(gap) <= COPULA_GAP and bool(set(gap) & LOCATION_CUES))) and [w for w in prev if w not in LEGAL_TOKENS] in own
+    """The strict rule (owner ruling 2026-11-25 07:41), not a word list. ws = the segment's words, `start` = where the address begins in it, `own` = the
+    record's name and trade-name word lists. A location witness qualifies ONLY if
+      (b) one clause whose subject is exactly the record's name (an optional legal suffix after it) opens the segment and is followed DIRECTLY by one of
+          LOCATIVES and the address ('Acme Plastics, Inc. is located at 99 Oak Avenue'); or
+      (a) an address block: the previous line is only the record's name (optional legal suffix) and this line is the address, optionally after the label
+          'address' ('Acme Plastics' / '99 Oak Avenue, Akron').
+    A preposition-led or modified subject ('the library next to Acme', 'Acme's customer at', 'Acme and Beta are at'), a first-person cue, a bare 'address'
+    word and anything between the subject and the locative are held."""
+    def bare(words_):
+        words_ = list(words_)
+        while words_ and words_[-1] in LEGAL_SUFFIX:
+            words_.pop()
+        return words_
+    for k in own:
+        if ws[:len(k)] == k:
+            i = len(k)
+            while i < start and ws[i] in LEGAL_SUFFIX:
+                i += 1
+            if tuple(ws[i:start]) in LOCATIVES:
+                return True
+    return prev is not None and bare(prev) in own and list(ws[:start]) in ([], ['address'])
+
+
 LEGAL_ENTITY = re.compile(r"((?:[A-Z][\w&'.-]*\s+){0,3}[A-Z][\w&'.-]*)\s*,?\s+(?:LLC|L\.L\.C|Inc|Corp|Corporation|Ltd|LP|LLP|Co)\b")
 SEGMENT_END = re.compile(r'(?<!\b[A-Za-z])(?<!\bInc)(?<!\bCo)(?<!\bCorp)(?<!\bLtd)(?<!\bLLC)(?<!\bSt)(?<!\bAve)(?<!\bRd)(?<!\bDr)(?<!\bNo)[.!?]\s+|\s\|\s|\n+')
 
@@ -489,7 +501,7 @@ def instructions():
 
 def excerpt(text, terms, cap=SOURCE_SHARE_CAP):
     """Sanitised excerpt: contact data redacted; long pages keep windows around the held name, street and locality, else the head."""
-    text = CONTACT.sub('[contact redacted]', ' '.join((text or '').split()))
+    text = '\n'.join(' '.join(l.split()) for l in CONTACT.sub('[contact redacted]', text or '').splitlines() if l.strip())  # lines kept: an address block is a line structure
     if len(text) <= cap:
         return text
     spans = []

@@ -982,34 +982,56 @@ def _():
     assert held_by_draw(SRC['S15']) != '', held_by_draw(SRC['S15'])
 
 
-SHAPES = {  # a page that states the street but attributes it to someone else, or to no one: held by the draw, never a detection
-    'Acme ships pellets to Beta at 99 Oak Avenue.': 'Codex: a shipping destination',
-    'Acme makes resins. The library address is 99 Oak Avenue.': 'Codex: a bare address word, another party',
+SHAPES = {  # a page that states the street but attributes it to someone else, to a modified subject, or to no one: held by the draw, never a detection
+    'Acme ships pellets to Beta at 99 Oak Avenue.': 'a shipping destination',
+    'Acme makes resins. The library address is 99 Oak Avenue.': 'a bare address word, another party',
     'Acme Plastics sponsors the Akron Library, located at 99 Oak Avenue.': 'a sponsored third party',
     'Acme Plastics is a tenant of the building at 99 Oak Avenue.': 'a tenant is not the located entity',
     'Acme Plastics: directions from the airport to 99 Oak Avenue.': 'directions to a place',
     'Beta Corp, a customer of Acme Plastics, is located at 99 Oak Avenue.': 'a customer\'s address after the record\'s name',
     'Acme Plastics. Our address is 99 Oak Avenue.': 'a bare first-person address',
     'Acme Plastics makes resins. Visit us at 99 Oak Avenue.': 'a first-person cue is not the record',
+    'The library next to Acme Plastics is located at 99 Oak Avenue.': 'Codex 07:41: a preposition-led subject (library next to)',
+    'The warehouse across from Acme Plastics is located at 99 Oak Avenue.': 'Codex 07:41: a preposition-led subject (warehouse across from)',
+    'The warehouse leased by Beta across from Acme Plastics is located at 99 Oak Avenue.': 'a modified subject naming another party',
+    'Acme Plastics\' customer is located at 99 Oak Avenue.': 'a possessive modifier (Acme\'s customer)',
+    'Acme Plastics\' customer at 99 Oak Avenue.': 'the owner\'s own example: Acme\'s customer at',
+    'Near Acme Plastics is a diner located at 99 Oak Avenue.': 'a preposition-led clause',
+    'Acme Plastics and Beta Co. are located at 99 Oak Avenue.': 'a compound subject',
+    'Acme Plastics parent Zeta Holdings is located at 99 Oak Avenue.': 'a modified subject (the parent)',
+    'Acme Plastics, which is located at 99 Oak Avenue, makes resins.': 'a relative clause, not the locative phrase directly',
+    'Acme Plastics ships to Beta, which is at 99 Oak Avenue.': 'another clause\'s subject',
+    'In Akron, Acme Plastics is located at 99 Oak Avenue.': 'a clause that does not open with the subject',
+    'Acme Plastics\nPhone redacted\n99 Oak Avenue': 'a line after the heading that is not the address',
+    'Acme Plastics Div.\n99 Oak Avenue': 'a heading that is more than the name',
+    'Beta LLC\n99 Oak Avenue\nAcme Plastics': 'a block headed by another party',
 }
 
 
-@case('C: eight other-party and unattributed shapes (Codex\'s two plus six) are held by the draw and never detect; the record named as the located entity does')
+@case('C: the strict rule: 22 modified-subject, other-party and unattributed shapes (Codex\'s library and warehouse among them) are held by the draw and never detect; the positive controls pass')
 def _():
     for text, shape in SHAPES.items():
-        assert held_by_draw(text) != '', f'eligible: {shape}: {text}'
+        assert held_by_draw(text) != '', f'eligible: {shape}: {text!r}'
         SRC['S20'] = text
-        quote = text.split('. ')[-1].rstrip('.') if '. ' in text else text.rstrip('.')
-        assert not planted_det(sid(finding('street_address', 'CONTRADICTED', quote, '99 Oak Avenue'), 'S20')), f'detected: {shape}: {text}'
-    for ok in ('Acme Plastics is located at 99 Oak Avenue.', 'Acme Plastics, Inc. 99 Oak Avenue, Akron, OH 44301', 'Acme Plastics headquarters: 99 Oak Avenue', 'Acme Plastics Inc. is headquartered at 99 Oak Avenue, Akron.'):
+        quote = text.replace('\n', ' ').split('. ')[-1].rstrip('.')
+        assert not planted_det(sid(finding('street_address', 'CONTRADICTED', quote, '99 Oak Avenue'), 'S20')), f'detected: {shape}: {text!r}'
+    positives = ('Acme Plastics is located at 99 Oak Avenue.', 'Acme Plastics, Inc. is located at 99 Oak Avenue, Akron.', 'Acme Plastics is at 99 Oak Avenue.',
+                 'Acme Plastics headquartered at 99 Oak Avenue.', 'Acme Plastics LLC is headquartered at 99 Oak Avenue.', 'Acme Plastics located at 99 Oak Avenue.',
+                 'Acme Plastics\n99 Oak Avenue\nAkron, OH 44301', 'Acme Plastics, Inc.\nAddress: 99 Oak Avenue, Akron')
+    for ok in positives:
         assert held_by_draw(ok) == '', ok
         SRC['S21'] = ok
-        assert planted_det(sid(finding('street_address', 'CONTRADICTED', ok.rstrip('.'), '99 Oak Avenue'), 'S21')), ok
-    SRC['S22'] = 'Acme Plastics\n99 Oak Avenue\nAkron, OH'
-    assert held_by_draw(SRC['S22']) == ''  # the excerpt collapses lines, so the address line follows the name directly
-    assert rd.witness_reason(SRC['S22'], '99 Oak Avenue', 'street_address', ['Acme Plastics']) == '', 'an address block headed by the record name'
-    assert rd.witness_reason('Acme makes resins\n99 Oak Avenue', '99 Oak Avenue', 'street_address', ['Acme Plastics']) == 'source_not_about_record'
-    assert rd.witness_reason('Acme Plastics makes resins\n99 Oak Avenue', '99 Oak Avenue', 'street_address', ['Acme Plastics']) == 'witness_not_attributed', 'a line after a heading that is more than the name'
+        assert planted_det(sid(finding('street_address', 'CONTRADICTED', ok.replace('\n', ' ').rstrip('.'), '99 Oak Avenue'), 'S21')), ok
+    # a held trade name is the record's name too
+    assert rd.witness_reason('Acme Resins is located at 99 Oak Avenue.', '99 Oak Avenue', 'street_address', ['Acme Plastics', 'Acme Resins']) == ''
+    assert rd.witness_reason('Acme Resins is located at 99 Oak Avenue.', '99 Oak Avenue', 'street_address', ['Acme Plastics']) == 'source_not_about_record'
+
+
+@case('C: the excerpt keeps line structure (an address block is lines), and `draw --pool` below 1 is refused, never an uncapped pool')
+def _():
+    assert rd.excerpt('Acme Plastics   Inc.\n\n99  Oak Avenue\n', []) == 'Acme Plastics Inc.\n99 Oak Avenue'
+    for bad in ('-1', '0'):
+        expect_raises(AssertionError, lambda: smoke.main(['draw', '--at', 'x', '--out', 'x', '--secret-file', 'x', '--records', 'x', '--pool', bad]), '--pool must be at least 1')
 
 
 @case('B: score verifies the terminal stop reason against the ledger: a failed run edited to STOPPED_AT_K (or any unsupported status) refuses')
