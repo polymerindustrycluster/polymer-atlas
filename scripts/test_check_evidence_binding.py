@@ -1658,12 +1658,16 @@ class OhioRouteStreets(unittest.TestCase):
 
 
 class LinkedInCompanyRoute(unittest.TestCase):
-    """SCHEMA §4.13 `linkedin_company`: a logged-out company page, organization grain, replayed against a stored capture. Synthetic strings only."""
+    """SCHEMA §4.13 `linkedin_company`: one labelled field of the subject's own About section, in a capture the row names by sha256. Synthetic only;
+    the capture shape is the one of the reviewed Muse package (`L<n>:` lines, a comma-joined field block)."""
     URL = "https://www.linkedin.com/company/harbor-plastics"
-    PAGE = ("[1] Harbor Plastics, Inc. | LinkedIn (" + URL + ")\nPage crawled less than a minute ago.\nL2: ## About us\n"
-            "Harbor Plastics molds engineered thermoplastic parts for packaging and consumer products.\nIndustry Plastics Manufacturing\n"
-            "Company size 51-200 employees\nHeadquarters Cleveland, Ohio\n")
-    QUOTE = "Harbor Plastics molds engineered thermoplastic parts for packaging and consumer products."
+    FIELDS = ("Website,, Industry, Plastics Manufacturing, Company size, 5,001-10,000 employees, Headquarters, Cleveland, Ohio, Type, Privately Held, "
+              "Founded, 1986, Specialties")
+
+    def page(self, title="[1] Harbor Plastics, Inc. | LinkedIn (" + URL + ")", extra=""):
+        return (title + "\nPage crawled less than a minute ago (2026-11-25 14:32 UTC).\nL0: ## Plastics Manufacturing\nL2: ## About us\nL4: Harbor Plastics molds engineered "
+                "thermoplastic parts for packaging.\nL6: " + self.FIELDS + "\nL8: Injection molding, Thermoforming, Extrusion\nL10: ## Locations\nL12: ## Updates\n"
+                "L14: ## Similar pages\nL16: Other Chemical Co\nL17: Chemical Manufacturing in Dayton, Ohio\n" + extra)
 
     def setUp(self):
         self.idx = b.Index(SITES, ORGS)
@@ -1671,86 +1675,135 @@ class LinkedInCompanyRoute(unittest.TestCase):
         (self.store / "raw/linkedin").mkdir(parents=True)
 
     def capture(self, text=None):
-        data = (text or self.PAGE).encode()
+        data = (self.page() if text is None else text).encode()
         digest = hashlib.sha256(data).hexdigest()
         (self.store / f"raw/linkedin/{digest}.txt").write_bytes(data)
         return digest
 
-    def row(self, quote=None, rid="ORG-1", url=None, claim="activity", table="organizations"):
-        return ev(rid, url or self.URL, self.QUOTE if quote is None else quote, claim, table, cls="linkedin_company")
+    def row(self, head="industry: Plastics Manufacturing", quote="Industry, Plastics Manufacturing", claim="activity", rid="ORG-1", url=None, table="organizations", digest=None):
+        r = ev(rid, url or self.URL, "", claim, table, cls="linkedin_company")
+        r["claim_detail"] = f"{head}; quote: {quote}"
+        r["notes"] = f"capture_sha256: {digest}; acquisition: guest" if digest else ""
+        return r
 
     def inputs(self, *digests):
         body = "".join(f"{d}  raw/linkedin/{d}.txt\n" for d in digests).encode()
         return lambda path: body if path == "tasks/test/INPUTS.sha256" else None
 
-    def replay(self, row, *digests, store="default"):
+    def replay(self, row, *named, store="default"):
         result = dict(evidence_id=row["evidence_id"], reason="linkedin_needs_capture", verdict="HELD")
-        b.check_linkedin_routes([result], {row["evidence_id"]: row}, self.idx, self.store if store == "default" else store, self.inputs(*digests))
+        b.check_linkedin_routes([result], {row["evidence_id"]: row}, self.idx, self.store if store == "default" else store, self.inputs(*named))
         return result["verdict"], result["reason"]
+
+    def run_row(self, text=None, **kw):
+        digest = self.capture(text)
+        return self.replay(self.row(digest=digest, **kw), digest)
 
     def test_floor_fails_profile_site_grain_claim_and_personal_data(self):
         cases = {
             "profile URL": (self.row(url="https://www.linkedin.com/in/some-person"), "linkedin_profile"),
             "old public profile URL": (self.row(url="https://www.linkedin.com/pub/some-person/1/2/3"), "linkedin_profile"),
+            "upper-case profile path": (self.row(url="https://www.linkedin.com/IN/some-person"), "linkedin_profile"),
             "not a LinkedIn company page": (self.row(url="https://example.org/company/harbor"), "linkedin_not_company_page"),
             "staff list under the company": (self.row(url=self.URL + "/people"), "linkedin_not_company_page"),
+            "query string on the page URL": (self.row(url=self.URL + "?trk=x"), "linkedin_not_company_page"),
+            "http not https": (self.row(url=self.URL.replace("https", "http")), "linkedin_not_company_page"),
             "site-grain claim": (self.row(rid="S-CARN", table="sites"), "linkedin_not_org_grain"),
             "claim type not org grain": (self.row(claim="parent"), "linkedin_claim_not_allowed"),
-            "address that is not the HQ city": (self.row(claim="address"), "linkedin_address_not_hq_city"),
-            "hq_city with a county": (self.row(claim="address").copy() | {"claim_detail": "hq_city + hq_county (Summit); quote: Akron, Summit County"}, "linkedin_address_not_hq_city"),
-            "hq_city with a street in the quote": (self.row(claim="address").copy() | {"claim_detail": "hq_city Akron; quote: 123 Main Street, Akron, OH 44301"}, "linkedin_address_not_hq_city"),
-            "size band not named self-declared": (self.row(claim="size_band", quote="51-200 employees listed on the page"), "linkedin_size_band_not_named_self_declared"),
-            "query string on the page URL": (self.row(url=self.URL + "?trk=x"), "linkedin_not_company_page"),
-            "upper-case profile path": (self.row(url="https://www.linkedin.com/IN/some-person"), "linkedin_profile"),
-            "http not https": (self.row(url=self.URL.replace("https", "http")), "linkedin_not_company_page"),
-            "email in the quote": (self.row(quote=self.QUOTE + " Write to info@harbor.example today"), "linkedin_personal_data"),
-            "phone in the quote": (self.row(quote=self.QUOTE + " Call 216-555-0100 today"), "linkedin_personal_data"),
-            "labelled person in the quote": (self.row(quote=self.QUOTE + " CEO Jane Smith leads the company"), "linkedin_personal_data"),
+            "address claim that is not the HQ city": (self.row(head="street address", claim="address"), "linkedin_address_not_hq_city"),
+            "hq_city with a county": (self.row(head="hq_city + hq_county (Summit)", quote="Cleveland, Summit County", claim="address"), "linkedin_address_not_hq_city"),
+            "hq_city with a street in the quote": (self.row(head="hq_city Cleveland", quote="Headquarters, 123 Main Street, Cleveland, Ohio 44301", claim="address"), "linkedin_address_not_hq_city"),
+            "Ohio band from a company-wide size": (self.row(head="employee_band_ohio 50-99 (self-declared)", quote="Company size, 51-200 employees", claim="size_band"), "linkedin_size_not_organization_wide"),
+            "size band not named self-declared": (self.row(head="employee_band_global 5000+", quote="Company size, 5,001-10,000 employees", claim="size_band"), "linkedin_size_band_not_named_self_declared"),
+            "band from a straddling bracket": (self.row(head="employee_band_global 1000-4999 (self-declared)", quote="Company size, 1,001-5,000 employees", claim="size_band"), "linkedin_size_bracket_straddles_band"),
+            "band from 0-1": (self.row(head="employee_band_global 1-9 (self-declared)", quote="Company size, 0-1 employees", claim="size_band"), "linkedin_size_bracket_straddles_band"),
+            "email in the quote": (self.row(quote="Industry, Plastics Manufacturing info@harbor.example"), "linkedin_personal_data"),
         }
         for n, tail in enumerate(("Jane Smith, CEO", "CEO Jane M. Smith", "CEO Jane O'Connor", "CEO Mary-Jane Smith", "ceo Jane Smith", "CEO José García", "Plant Manager Robert Lee",
-                                  "Call (216)555-0100", "Call 2165550100", "Call +1 216 555 0100", "Contact: Jane Smith")):
-            cases[f"personal gap {n}: {tail}"] = (self.row(quote=self.QUOTE + " " + tail), "linkedin_personal_data")
+                                  "Managing Director Robert Lee", "founded by Robert Lee", "Call (216)555-0100", "Call 2165550100", "Call +1 216 555 0100", "Contact: Jane Smith")):
+            cases[f"personal data {n}: {tail}"] = (self.row(quote="Industry, Plastics Manufacturing " + tail), "linkedin_personal_data")
         for name, (row, reason) in cases.items():
             with self.subTest(name):
                 self.assertEqual(b.judge(row, self.idx)[:2], ("FAIL", reason))
 
-    def test_clean_row_is_held_until_its_capture_is_replayed(self):
-        self.assertEqual(b.judge(self.row(), self.idx)[:2], ("HELD", "linkedin_needs_capture"))
-        self.assertEqual(b.judge(self.row(claim="address", quote=self.QUOTE).copy() | {"claim_detail": "hq_city Cleveland; quote: " + self.QUOTE}, self.idx)[:2],
-                         ("HELD", "linkedin_needs_capture"))
+    def test_generic_title_cased_copy_is_not_personal_data(self):
+        for tail in ("Contact Us Today", "Director Operations Manager", "Customer Service Manager Support Team", "Our Founder Story Page"):
+            self.assertEqual(b.judge(self.row(quote="Industry, Plastics Manufacturing " + tail), self.idx)[:2], ("HELD", "linkedin_needs_capture"), tail)
 
-    def test_capture_replay_passes_only_when_every_leg_holds(self):
+    def test_a_free_description_is_held_for_reading_never_passed_by_machine(self):
+        row = self.row(head="what the page says the company does", quote="Harbor Plastics molds engineered thermoplastic parts for packaging.")
+        self.assertEqual(b.judge(row, self.idx)[:2], ("HELD", "linkedin_description_needs_reading"))
+
+    def test_each_labelled_field_replays_when_field_and_value_agree(self):
+        spec = {
+            "industry": self.row(),
+            "specialties": self.row(head="specialties: Injection molding, Extrusion", quote="Specialties Injection molding, Thermoforming, Extrusion"),
+            "founded": self.row(head="founded: 1986", quote="Founded, 1986", claim="existence"),
+            "hq_city": self.row(head="hq_city Cleveland", quote="Headquarters, Cleveland, Ohio", claim="address"),
+            "size band 5000+": self.row(head="employee_band_global 5000+ (self-declared)", quote="Company size, 5,001-10,000 employees", claim="size_band"),
+            "size bracket": self.row(head="linkedin_size_bracket 5,001-10,000 (self-declared)", quote="Company size, 5,001-10,000 employees", claim="size_band"),
+        }
         digest = self.capture()
-        self.assertEqual(self.replay(self.row(), digest), ("PASS", "linkedin_company_replayed"))
-        self.assertEqual(self.replay(self.row(quote="Harbor Plastics molds rubber hoses for every industry on earth"), digest), ("FAIL", "quote_not_on_capture"))
-        self.assertEqual(self.replay(self.row(quote="short quote"), digest), ("FAIL", "quote_not_on_capture"))
+        for name, row in spec.items():
+            with self.subTest(name):
+                row["notes"] = f"capture_sha256: {digest}; acquisition: guest"
+                self.assertEqual(self.replay(row, digest), ("PASS", "linkedin_company_replayed"))
 
-    def test_parent_roll_up_page_supports_nothing_for_the_child(self):
-        parent_url = "https://www.linkedin.com/company/pinecrest-industries"
-        page = self.PAGE.replace("Harbor Plastics, Inc.", "Pinecrest Industries").replace(self.URL, parent_url)
-        digest = self.capture(page)
-        row = self.row(rid="ORG-11", url=parent_url, quote="molds engineered thermoplastic parts for packaging and consumer products.")
-        self.assertEqual(self.replay(row, digest), ("FAIL", "capture_name_not_held"))
-        self.assertEqual(self.replay(self.row(rid="ORG-10", url=parent_url, quote="molds engineered thermoplastic parts for packaging and consumer products."), digest),
-                         ("PASS", "linkedin_company_replayed"))
+    def test_the_claimed_field_and_value_must_be_the_subjects_own(self):
+        digest = self.capture()
+        bad = {
+            "value differs from the field": (dict(head="industry: Chemical Manufacturing", quote="Industry, Chemical Manufacturing"), "quote_not_on_capture"),
+            "HQ city backed only by the industry sentence": (dict(head="hq_city Cleveland", quote="Industry, Plastics Manufacturing, Company size", claim="address"), "claim_field_not_in_quote"),
+            "a quote from the Similar pages entry": (dict(head="industry: Chemical Manufacturing", quote="Chemical Manufacturing in Dayton, Ohio"), "quote_not_on_capture"),
+            "wrong city": (dict(head="hq_city Dayton", quote="Headquarters, Cleveland, Ohio", claim="address"), "claim_value_not_in_field"),
+            "bracket differs from the page": (dict(head="linkedin_size_bracket 51-200 (self-declared)", quote="Company size, 5,001-10,000 employees", claim="size_band"), "claim_value_not_in_field"),
+            "short quote": (dict(quote="Industry"), "quote_not_on_capture"),
+        }
+        for name, (kw, reason) in bad.items():
+            with self.subTest(name):
+                self.assertEqual(self.replay(self.row(digest=digest, **kw), digest), ("FAIL", reason))
+
+    def test_a_signed_in_capture_is_not_guest_acquisition(self):
+        self.assertEqual(self.run_row(self.page(extra="L20: Signed in as Jane\n")), ("FAIL", "capture_not_guest"))
+        digest = self.capture()
+        row = self.row(digest=digest)
+        row["notes"] = f"capture_sha256: {digest}"  # the row does not state a guest acquisition
+        self.assertEqual(self.replay(row, digest), ("HELD", "linkedin_capture_not_cited"))
+
+    def test_a_parent_roll_up_never_passes_for_its_child_even_after_name_normalization(self):
+        parent = "https://www.linkedin.com/company/acme-resin"
+        for rid, title, url in (("ORG-17", "Acme Resin Inc", parent), ("ORG-11", "Pinecrest Industries", "https://www.linkedin.com/company/pinecrest-industries")):
+            page = self.page(title=f"[1] {title} | LinkedIn ({url})")
+            verdict, reason = self.run_row(page, rid=rid, url=url)
+            self.assertNotEqual(verdict, "PASS", rid)
+            self.assertIn(reason, ("capture_names_parent", "linkedin_name_equals_parent_key"), rid)
+        page = self.page(title=f"[1] Pinecrest Industries | LinkedIn ({url})")
+        self.assertEqual(self.run_row(page, rid="ORG-10", url=url), ("PASS", "linkedin_company_replayed"))
+
+    def test_real_muse_title_variants_replay_and_the_row_names_its_capture(self):
+        for title in ("[1] Harbor Plastics, Inc. | LinkedIn (" + self.URL + ")", "[4774708568839730714] Harbor Plastics, Inc. (" + self.URL + ")",
+                      "Harbor Plastics, Inc. | LinkedIn (" + self.URL + "/)"):
+            with self.subTest(title=title):
+                self.assertEqual(self.run_row(self.page(title=title)), ("PASS", "linkedin_company_replayed"))
+        good, other = self.capture(), self.capture(self.page().replace("Plastics Manufacturing", "Resin Compounding"))
+        row_good, row_other = self.row(digest=good), self.row(digest=other)
+        for order in ((good, other), (other, good)):  # the verdict does not depend on the manifest order
+            self.assertEqual(self.replay(row_good, *order), ("PASS", "linkedin_company_replayed"))
+            self.assertEqual(self.replay(row_other, *order), ("FAIL", "quote_not_on_capture"))
 
     def test_a_missing_or_unnamed_capture_is_held_never_passed(self):
         digest = self.capture()
-        self.assertEqual(self.replay(self.row(), digest, store=None), ("HELD", "linkedin_store_not_given"))
-        self.assertEqual(self.replay(self.row()), ("HELD", "linkedin_capture_not_in_inputs"))  # the capture exists but INPUTS.sha256 does not name it
-        (self.store / f"raw/linkedin/{digest}.txt").write_bytes(self.PAGE.encode() + b"tampered")
-        self.assertEqual(self.replay(self.row(), digest), ("HELD", "linkedin_capture_not_in_inputs"))  # digest mismatch
-        other = self.row(url="https://www.linkedin.com/company/another-page")
-        self.assertEqual(self.replay(other, self.capture()), ("HELD", "linkedin_capture_not_in_inputs"))  # the capture is another page
-        self.assertEqual(b.check_linkedin_routes([], {}, self.idx, self.store, lambda p: None), None)
+        row = self.row(digest=digest)
+        self.assertEqual(self.replay(row, digest, store=None), ("HELD", "linkedin_store_not_given"))
+        self.assertEqual(self.replay(row), ("HELD", "linkedin_capture_not_in_inputs"))  # INPUTS.sha256 does not name the cited digest
+        (self.store / f"raw/linkedin/{digest}.txt").write_bytes(self.page().encode() + b"tampered")
+        self.assertEqual(self.replay(row, digest), ("HELD", "linkedin_capture_unreadable"))  # digest mismatch
+        self.assertEqual(self.run_row(self.page(title="[1] Harbor Plastics | LinkedIn (https://www.linkedin.com/company/another-page)")), ("FAIL", "capture_is_another_page"))
+        self.assertEqual(self.run_row("[1] Harbor Plastics, Inc. | LinkedIn (" + self.URL + ")"), ("HELD", "linkedin_about_fields_missing"))  # title only, no newline: no crash
 
-    def test_generic_title_cased_copy_is_not_personal_data(self):
-        for tail in ("Contact Us Today", "Director Operations Manager", "Customer Service Manager Support Team", "Our Founder Story Page"):
-            self.assertEqual(b.judge(self.row(quote=self.QUOTE + " " + tail), self.idx)[:2], ("HELD", "linkedin_needs_capture"), tail)
-
-    def test_single_line_capture_does_not_crash_the_gate(self):
-        digest = self.capture("[1] Harbor Plastics, Inc. | LinkedIn (" + self.URL + ")")  # the title line and nothing else: no newline
-        self.assertEqual(self.replay(self.row(), digest), ("FAIL", "quote_not_on_capture"))
+    def test_size_brackets_nest_or_set_no_band(self):
+        for bracket, band in (("5,001-10,000", "5000+"), ("10,001+", "5000+"), ("0-1", ""), ("2-10", ""), ("11-50", ""), ("51-200", ""), ("201-500", ""), ("501-1,000", ""), ("1,001-5,000", "")):
+            self.assertEqual(b.linkedin_bracket_band(bracket), band, bracket)
 
     def test_url_kinds(self):
         for url, kind in (("https://www.linkedin.com/company/acme/", "company"), ("https://uk.linkedin.com/company/acme/about", "company"),

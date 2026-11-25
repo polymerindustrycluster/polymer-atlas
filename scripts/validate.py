@@ -1353,19 +1353,21 @@ if evidence or True:
         if r["claim_type"] == "size_band" and (sc not in SIZE_BAND_CLASSES or te == "supports_A"):
             errors.append(f"evidence.csv:{i} {eid} size_band needs government_filing, own_site or linkedin_company and caps at supports_B (V-22)")
         if sc == "linkedin_company":
-            # [v1.21.0] §4.13: a logged-out company page, organization grain, an org-grain claim (an address claim is the HQ city only)
+            # [v1.21.0] §4.13: a logged-out company page, organization grain, one labelled field of the subject's About section, a capture named by sha256
+            detail, ct = (r["claim_detail"] or ""), r["claim_type"]
+            head = detail.partition("; quote:")[0].strip()
             if rt != "organizations":
                 errors.append(f"evidence.csv:{i} {eid} linkedin_company supports organization facts only, never {rt} (V-22, v1.21.0)")
-            if r["claim_type"] not in ("activity", "scope", "size_band", "existence", "address"):
-                errors.append(f"evidence.csv:{i} {eid} linkedin_company cannot carry a {r['claim_type']} claim (V-22, v1.21.0)")
-            if r["claim_type"] == "address":
-                from atlas import NOTES_STREET_RE
-                _head, _sep, _quote = (r["claim_detail"] or "").partition("quote:")
-                if (not _sep or not re.fullmatch(r"hq_city(?: [^\W\d_][\w .'\u2019-]*)?;?\s*", _head.strip())
-                        or NOTES_STREET_RE.search(_quote) or re.search(r"\bcounty\b|\b\d{5}(?:-\d{4})?\b", r["claim_detail"], re.I)):
-                    errors.append(f"evidence.csv:{i} {eid} a linkedin_company address claim is the HQ city only: claim_detail is hq_city [City]; quote: ..., no street, county or ZIP (V-22, v1.21.0)")
-            if r["claim_type"] == "size_band" and "self-declared" not in (r["claim_detail"] or "").partition("quote:")[0].lower():
-                errors.append(f"evidence.csv:{i} {eid} a linkedin_company size_band must name the self-declared band in claim_detail (V-22, v1.21.0)")
+            if ct not in ("activity", "scope", "size_band", "existence", "address"):
+                errors.append(f"evidence.csv:{i} {eid} linkedin_company cannot carry a {ct} claim (V-22, v1.21.0)")
+            if ct == "address" and (not re.fullmatch(r"hq_city [^\W\d_][\w .'\u2019-]{0,60}", head) or re.search(r"\bcounty\b|\d", detail, re.I)):
+                errors.append(f"evidence.csv:{i} {eid} a linkedin_company address claim is the HQ city only: claim_detail is 'hq_city <City>; quote: ...', no street, county, number or ZIP (V-22, v1.21.0)")
+            if ct == "size_band" and not re.fullmatch(r"(?:employee_band_global (?:1-9|10-49|50-99|100-249|250-499|500-999|1000-4999|5000\+)|linkedin_size_bracket [\d,+-]+) \(self-declared\)", head):
+                errors.append(f"evidence.csv:{i} {eid} a linkedin_company size_band is an organization-wide self-declared band (employee_band_global) or a bracket (linkedin_size_bracket), never an Ohio or site band (V-22, v1.21.0)")
+            if ct == "existence" and not re.fullmatch(r"founded: (?:1[89]|20)\d{2}", head):
+                errors.append(f"evidence.csv:{i} {eid} a linkedin_company existence claim is the founding year: 'founded: YYYY' (V-22, v1.21.0)")
+            if not re.fullmatch(r"capture_sha256: [0-9a-f]{64}; acquisition: guest(?:, logged out)?", (r["notes"] or "").strip()):
+                errors.append(f"evidence.csv:{i} {eid} a linkedin_company row names its capture and its guest acquisition in notes: 'capture_sha256: <hex>; acquisition: guest' (V-22, v1.21.0)")
             if not re.fullmatch(r"https://(?:[a-z0-9-]+\.)?linkedin\.com/company/[A-Za-z0-9._~-]+(?:/about)?/?", (r["source_ref"] or "").strip(), re.I):
                 errors.append(f"evidence.csv:{i} {eid} linkedin_company source_ref must be a logged-out https://www.linkedin.com/company/<slug> page, never /in/ or /pub/ (V-22, v1.21.0)")
         if rt == "people":

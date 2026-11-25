@@ -1678,47 +1678,73 @@ navigation-only rule of owner battery B-LINKEDIN (2026-11-04) for the
 evidence route only; people data stays declined (§4.9, §6). The rules:
 
 - **A logged-out company page only.** `source_ref` is
-  `https://www.linkedin.com/company/<slug>` (optionally `/about`), read with no
-  account and no cookies. Never `/in/` or `/pub/`, never a staff list
+  `https://www.linkedin.com/company/<slug>` (optionally `/about`; plain
+  https, no query, fragment or userinfo), read with no account and no
+  cookies. Never `/in/` or `/pub/`, never a staff list
   (`/company/<slug>/people`), never a showcase or jobs page.
-- **Organization grain only.** `record_table=organizations`. The page can
-  support the organization's industry or description (`activity`, `scope`),
-  its size band (`size_band`, a **self-declared band**: name it as such in
-  `claim_detail`, never a headcount, ceiling `supports_B`), its HQ city
-  (`address`, with `claim_detail` beginning `hq_city`), its founding year
-  (`existence`) and process or market tokens derived from its specialties
-  (`activity`, `scope`).
-- **Size brackets map to Atlas bands only where they nest** (owner ruling
-  2026-11-24 21:26). LinkedIn publishes brackets (`0-1`, `2-10`, `11-50`,
-  `51-200`, `201-500`, `501-1,000`, `1,001-5,000`, `5,001-10,000`,
-  `10,001+`). A bracket sets an Atlas band (§4.4) only if every headcount
-  in it falls inside one Atlas band: `0-1` is `1-9`; `5,001-10,000` and
-  `10,001+` are `5000+`. Every other bracket straddles two bands (`2-10`
-  spans `1-9` and `10-49`, `11-50` spans `10-49` and `50-99`, and so on
-  through `1,001-5,000`, which includes 5,000): its row is stored with the
-  bracket in `claim_detail` and sets no Atlas band; it stays a lead for the
-  band. Never a precise headcount.
-- **Never** a site's facts, a street, a county, an HQ street, or anything for
-  a child unit, a site, an ecosystem entity, a program or a person. A parent
-  roll-up page (the page belongs to the parent company) supports nothing for
-  the child: the name on the page must be one the record itself holds.
+- **Organization grain only.** `record_table=organizations`. **Never** a
+  site's facts, a street, a county, an HQ street, or anything for a child
+  unit, a site, an ecosystem entity, a program or a person.
+- **One labelled field per row, from the subject's own About section.** The
+  page's "About us" section ends in a field block (`Website`, `Industry`,
+  `Company size`, `Headquarters`, `Type`, `Founded`, `Specialties`). A row
+  binds one of five fields to its value; the quote is that labelled field
+  as the capture shows it. Nothing outside the About section counts
+  (Similar pages, Updates, Locations and Employees never do). `claim_detail`
+  is `<head>; quote: <quote>` with exactly one of these heads:
+
+  | Field | `claim_type` | `claim_detail` head |
+  |---|---|---|
+  | Industry | `activity` or `scope` | `industry: <value>` |
+  | Specialties (process and market tokens) | `activity` or `scope` | `specialties: <token>, <token>` (each a listed specialty) |
+  | Founded | `existence` | `founded: <YYYY>` |
+  | Headquarters | `address` | `hq_city <City>`: the city before the first comma of the Headquarters value, and no street, number, county or ZIP anywhere in the claim or quote |
+  | Company size | `size_band` | `employee_band_global <band> (self-declared)` or `linkedin_size_bracket <bracket> (self-declared)` |
+
+  A row whose head is not one of these is a free description. A free
+  description is never passed by machine: the gate holds it for a reader
+  (`linkedin_description_needs_reading`), because free text cannot be shown
+  free of names, phone numbers and other personal data.
+- **Size is organization-wide.** A LinkedIn bracket counts all of the
+  company's employees, worldwide. It can set only the organization's
+  worldwide band `employee_band_global`, never `employee_band_ohio` and
+  never a site band; it never describes Ohio or a plant. A bracket sets a
+  band only where **every** headcount in it falls inside one Atlas band
+  (§4.4; owner ruling 2026-11-24 21:26, "map to Atlas bands only where they
+  nest"): `5,001-10,000` and `10,001+` are `5000+`. Every other bracket,
+  including `0-1`, whose zero is in no band, straddles bands or falls
+  outside them: it is stored as `linkedin_size_bracket <bracket>` and sets
+  no band. Never a headcount.
+- **The page must be the record's own, never its parent's.** The page title
+  (`<company name> | LinkedIn`, with or without the `| LinkedIn` text and
+  the `[id]` prefix) must carry a name the record itself holds and not its
+  recorded parent's. A title that normalizes to both the record's key and
+  a parent's key (`Acme Resin Inc` for `Acme Resin LLC`) never passes by
+  machine, as on the structured-source path; a parent roll-up page
+  supports nothing for the child.
 - **Tier ceiling (proposed; owner ruling to confirm).** `supports_A`, the
   same as an own-site page for self-declared facts. The page is the
   company's own profile, but it is a platform page that the company may not
-  maintain: this ceiling is the one point of this revision that needs the
-  owner's confirmation, and a lower ceiling (`supports_B`) is a one-line
-  change in V-22.
-- **Replay.** The quote is a verbatim phrase of at least 20 characters from a
-  stored capture of that page. The capture is a text file in the shared store
-  at `raw/linkedin/<sha256>.txt`, named in the task's `INPUTS.sha256` by its
-  sha256 and checked against it; its first line is the page title,
-  `[<id>] <company name> | LinkedIn (<url>)`. The binding gate
-  (`scripts/check_evidence_binding.py`) passes a row only if the capture is
-  named and intact, its title line carries a name the record holds, the quote
-  is on it, the claim type is allowed and the quote holds no email, phone
-  number or labelled personal name. Anything it cannot read is HELD.
+  maintain: this ceiling is the point of this revision that needs the
+  owner's confirmation, together with admitting `size_band` from this class
+  (capped at `supports_B`); a lower ceiling is a one-line change in V-22.
+- **Replay and acquisition.** The row's `notes` is
+  `capture_sha256: <64 hex>; acquisition: guest` and names the one capture
+  it rests on. The capture is a text file in the shared store at
+  `raw/linkedin/<sha256>.txt`; the task's `INPUTS.sha256` names that digest
+  and the gate checks the file against it. The lane's statement that the
+  capture was fetched as a guest (no account, no cookies) is the row's
+  claim, and the gate refuses a capture that shows signs of a signed-in
+  session. The binding gate (`scripts/check_evidence_binding.py`) passes a
+  row only if the capture is named and intact, is the cited page, its
+  title is the record's own name and not its parent's, the claimed
+  field of the About section has the claimed value, and the quote is on that
+  section and holds the field's label and value. Anything it cannot read is
+  HELD. The row does not depend on any other capture or on the order of
+  the `INPUTS.sha256` lines.
 - **No personal data.** Employee names, posts and their authors are never
-  quoted or stored (§6).
+  quoted or stored (§6); a quote that names a person beside a role, or
+  holds an email or a phone number, fails.
 - **No data rows are added by this revision.**
 
 **Own-site web proofs [v1.19.6, owner rulings 2026-11-22 and
@@ -3709,4 +3735,4 @@ unchanged.
 - **v1.20.1 — 2026-11-24 (implementation of §4.24; no ruling).** `scripts/value_basis.py` generates `data/value_basis.csv`; validator V-69 compares it with a fresh generation; reader verdicts are stored as `tasks/<folder>/VALUE_VERDICTS.csv` in the re-read lane's format, counted only when the folder's README names a second model family that checked the packet; precedence and the grain rule (`stated` and `filing` only from the value's own record) are fixed in §4.24; the site, graph pages and release bundle show labels and drop withheld values. `street_address` rows wait for the map-listing route. Recorded in `DECISIONS.md`.
 
 - **v1.20.2 — 2026-11-24.** §4.4 and §4.13 require replayable own-site name and Ohio locality evidence for changed organization website fills. The site corpus fetcher refuses LinkedIn destinations. [Owner rulings 12:12](../DECISIONS.md#2026-11-24--owner-rulings-1212).
-- **v1.21.0 — 2026-11-25 (owner rulings 2026-11-24 21:26, "LinkedIn should not be barred.", and 2026-11-25).** §4.13 adds source class `linkedin_company`: a logged-out company page, organization grain, a replayed capture, tier ceiling `supports_A` (proposed; owner to confirm); `size_band` admits it as a self-declared band capped at `supports_B`. §4.4 `linkedin_url` stays a navigation link. The binding gate gains the route and validator V-22 the class, its ceiling and its grain rules. No data rows change.
+- **v1.21.0 — 2026-11-25 (owner rulings 2026-11-24 21:26, "LinkedIn should not be barred.", and 2026-11-25).** §4.13 adds source class `linkedin_company`: a logged-out company page, organization grain, a replayed capture, tier ceiling `supports_A` (proposed; owner to confirm); `size_band` admits it as a self-declared band capped at `supports_B`. §4.4 `linkedin_url` stays a navigation link. The binding gate gains the route (one labelled About-section field per row, an exact capture digest, the parent rule, organization-wide size bands only) and validator V-22 the class, its ceiling and its grain rules. No data rows change.
