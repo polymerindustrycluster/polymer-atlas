@@ -52,6 +52,8 @@ BOT_BODY = ('g-recaptcha', 'h-captcha', 'hcaptcha.com', 'px-captcha', 'cf-challe
             'sucuri website firewall', 'akamai reference')
 VERIFY = re.compile(r"verify you are human|i am human|i.m not a robot|i am not a robot", re.I)
 SIGNIN_PATH = re.compile(r'/(?:authwall|login|uas/|checkpoint)', re.I)
+STAFF_PATH = re.compile(r'/(?:staff-directory|employee-directory|our-team|team|staff)/?$', re.I)
+CHALLENGE_HOSTS = ('challenges.cloudflare.com',)  # the only other origin a bot-check frame may load from
 STALE = ('ROBOTS_BLOCKED', 'DOMAIN_BLOCKED')  # receipts written under the pre-2026-11-24 rules; refetched, never replayed
 WALLS = ('just a moment...', 'verify you are human', 'attention required! | cloudflare',
          'checking your browser', 'access to this page has been denied',
@@ -126,6 +128,18 @@ def challenged(code, body):
     return any(m in lower for m in BOT_BODY) and (code in (403, 503, 999) or len(words(text)) < 40)
 
 
+def host_of(value):
+    return (urlsplit(value).hostname or '').lower().removeprefix('www.')
+
+
+def private_page(final, body):
+    """Staff-directory paths and form-only pages carry personal data (AGENTS.md §6): never stored. Same tests as the 2026-11-16 crawl."""
+    if STAFF_PATH.search(urlsplit(final).path): return True
+    if '<form' not in body.lower(): return False
+    parser = Text(); parser.feed(re.sub(r'<form\b.*?</form>', '', body, flags=re.I | re.S))
+    return len(words(' '.join(parser.parts))) < 80
+
+
 def refused(target, current):
     """Status for a hop the fetcher will not request, else ''. An own-site fetch never lands on LinkedIn."""
     if not linkedin_url(current): return ''
@@ -141,18 +155,21 @@ def verdict(flags):
 
 
 def verify_click(page):
-    """Click one plain verify-human control (never a sign-in form or a puzzle). Returns 1 if something was clicked."""
+    """Click ONE positively identified plain verify-human control and nothing else: a button, checkbox or label whose own
+    name says verify/human (not inside a form that asks for a password, email or text), or Cloudflare's Turnstile widget
+    frame. Returns 1 if clicked."""
+    def plain(loc):
+        return loc.count() == 1 and loc.first.is_visible() and loc.first.evaluate(
+            "e => { const f = e.closest('form'); return !(f && f.querySelector('input[type=password],input[type=email],input[type=text]')) }")
     try:
         for frame in page.frames:
-            names = [frame.get_by_role('button', name=VERIFY), frame.get_by_role('checkbox', name=VERIFY),
-                     frame.get_by_label(VERIFY), frame.get_by_text(VERIFY)]
-            if frame != page.main_frame: names.append(frame.get_by_role('checkbox'))
-            for loc in names:
-                if loc.count() and loc.first.is_visible():
+            for loc in (frame.get_by_role('button', name=VERIFY), frame.get_by_role('checkbox', name=VERIFY), frame.get_by_label(VERIFY)):
+                if plain(loc):
                     loc.first.click(timeout=3000); return 1
-        for handle in page.query_selector_all('iframe[src*="challenges.cloudflare.com"]'):
-            box = handle.bounding_box()  # Turnstile's checkbox sits in a closed shadow root: click where it is drawn
-            if box: page.mouse.click(box['x'] + 28, box['y'] + box['height'] / 2); return 1
+        for handle in page.query_selector_all('iframe'):
+            src, box = urlsplit(handle.get_attribute('src') or ''), handle.bounding_box()
+            if src.hostname in CHALLENGE_HOSTS and '/turnstile/' in src.path and box and 200 <= box['width'] <= 400 and 40 <= box['height'] <= 100:
+                page.mouse.click(box['x'] + 28, box['y'] + box['height'] / 2); return 1  # its checkbox sits in a closed shadow root
     except Exception:
         pass
     return 0
@@ -256,6 +273,8 @@ class Corpus:
         stem = key(target)
         raw = response.get('raw', b'')
         body = raw.decode('utf-8', 'replace')
+        if status == 'ok' and urlsplit(target).path != '/robots.txt' and (private_page(final, body) or private_page(target, '')):
+            response, raw, body, status = {}, b'', '', 'CONTACT_FORM_OR_STAFF_DIRECTORY'  # discarded before storage
         if route == 'jina':
             text = body.split('Markdown Content:', 1)[-1] if 'Markdown Content:' in body else ''
             source = re.search(r'(?m)^URL Source:\s*(https?://\S+)', body)
@@ -318,12 +337,18 @@ class Corpus:
                 if not exists: w.writerow(['url', 'final_url', 'http_status', 'listed_at'])
                 w.writerow([target, final, code, datetime.now(timezone.utc).isoformat()])
 
-    def browser(self, target, delay=1):
+    BROWSER_WAIT = 30  # seconds the page gets to finish its own check
+
+    def browser(self, target, delay=1, no_cookies=False):
         """Fresh local Chrome (no profile, cookies or login): waits out the page's own check and clicks one plain
-        verify-human control. Never a puzzle, a solver service or a proxy. Same host clock and slots as request()."""
+        verify-human control. Never a puzzle, a solver service or a proxy. Same host clock and slots as request().
+        Every navigation is checked before it loads: refused or staff-directory destinations and other hosts are aborted
+        (the 'blocked' key says why), later same-host navigations are spaced by the delay. no_cookies (LinkedIn): documents
+        only, cookies cleared after every response, and a Cookie header on any request fails the visit."""
         gone = dict(code=0, raw=b'', location='', content_type='', exit=127, unavailable=True, final_url=target)
         try: from playwright.sync_api import sync_playwright
         except ImportError: return dict(gone, error='PLAYWRIGHT_UNAVAILABLE')
+        start = host_of(target)
         with self.lock('host-' + key(urlsplit(target).hostname)) as clock:
             clock.seek(0)
             time.sleep(max(0, float(clock.read() or 0) - time.time()))
@@ -332,23 +357,53 @@ class Corpus:
                 try: chrome = pw.chromium.launch(channel='chrome', headless=True)
                 except Exception as e: return dict(gone, error=('CHROME_UNAVAILABLE: ' + str(e))[:300])
                 try:
-                    page = chrome.new_context(accept_downloads=False, service_workers='block').new_page()
-                    code = [0]
+                    ctx = chrome.new_context(accept_downloads=False, service_workers='block')
+                    page = ctx.new_page()
+                    code, last, blocked, leaked = [0], [None], [], []
+                    def guard(route):
+                        req = route.request
+                        if no_cookies and req.resource_type != 'document' or req.resource_type in ('image', 'font', 'media'):
+                            return route.abort()
+                        if req.is_navigation_request() and req.url.startswith(('http://', 'https://')):
+                            main = req.frame.parent_frame is None
+                            why = refused(target, req.url) or ('CONTACT_FORM_OR_STAFF_DIRECTORY' if STAFF_PATH.search(urlsplit(req.url).path) else '')
+                            if not why and host_of(req.url) != start and (main or host_of(req.url) not in CHALLENGE_HOSTS):
+                                why = 'CROSS_HOST_REDIRECT'
+                            if why:
+                                if main: blocked.append((why, req.url))
+                                return route.abort()
+                            if main:
+                                if last[0] is not None: time.sleep(max(0, last[0] + delay - time.time()))
+                                last[0] = time.time()
+                        route.continue_()
+                    ctx.route('**/*', guard)
                     def seen(resp):
                         if resp.frame == page.main_frame and resp.request.is_navigation_request(): code[0] = resp.status
+                        if no_cookies: ctx.clear_cookies()
                     page.on('response', seen)
+                    if no_cookies: page.on('request', lambda r: leaked.append(r.url) if 'cookie' in r.all_headers() else None)
                     error = ''
                     try: page.goto(target, wait_until='domcontentloaded', timeout=25000)
                     except Exception as e: error = str(e)[:300]
-                    start, clicks = time.time(), 0
-                    while time.time() - start < 30:
-                        if code[0] and not challenged(code[0], page.content()): break
-                        if time.time() - start > 4 and clicks < 2: clicks += verify_click(page)
+                    def html():  # None while the page is navigating
+                        try: return page.content()
+                        except Exception: return None
+                    begin, clicks = time.time(), 0
+                    while time.time() - begin < self.BROWSER_WAIT and not blocked:
+                        now = html()
+                        if now is not None and code[0] and not challenged(code[0], now): break
+                        if time.time() - begin > 4 and not clicks: clicks += verify_click(page)
                         page.wait_for_timeout(1000)
                     try: page.wait_for_load_state('networkidle', timeout=5000)
                     except Exception: pass
-                    return dict(code=code[0], raw=page.content().encode(), location='', content_type='text/html',
-                                exit=0, error=error, final_url=page.url)
+                    final = html()
+                    for _ in range(5):
+                        if final is not None: break
+                        page.wait_for_timeout(1000); final = html()
+                    out = dict(code=code[0], raw=(final or '').encode(), location='', content_type='text/html', exit=0, error=error, final_url=page.url)
+                    if blocked: return dict(out, raw=b'', blocked=blocked[0][0], final_url=blocked[0][1])
+                    if leaked: return dict(out, raw=b'', error='COOKIE_SENT: ' + leaked[0], code=0)
+                    return out
                 finally:
                     chrome.close()
 
@@ -380,17 +435,21 @@ class Corpus:
             if response.get('code') in (301, 302, 303, 307, 308):
                 return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)
             if not robots and response.get('code') in BOT_CODES and challenged(response['code'], response['raw'].decode('utf-8', 'replace')):
-                b = self.browser(current, delay)
-                if b.get('unavailable'): response = dict(response, error=b['error'])  # no browser: old path, receipt says why
-                else:
-                    if why := refused(target, b['final_url']): return self.save(target, b, why, b['final_url'], 'browser', seen)
-                    if challenged(b['code'], b['raw'].decode('utf-8', 'replace')):
-                        self.manual(target, b['final_url'], b['code'])
-                        return self.save(target, b, 'BOT_CHECK_MANUAL', b['final_url'], 'browser', seen)
-                    return self.save(target, b, 'ok' if b['code'] in (200, 403, 503) else 'FETCH_FAILED', b['final_url'], 'browser', seen)
+                b = self.browser(current, delay, no_cookies=linkedin_url(target))
+                if b.get('unavailable'):  # an unresolved bot check is for a person, never an ok receipt
+                    self.manual(target, current, response['code'])
+                    return self.save(target, dict(response, error=b['error']), 'BOT_CHECK_MANUAL', current, 'direct', seen)
+                if b.get('blocked'): return self.save(target, {}, b['blocked'], b['final_url'], 'browser', seen)
+                if why := refused(target, b['final_url']): return self.save(target, {}, why, b['final_url'], 'browser', seen)
+                if b['error'].startswith('COOKIE_SENT'): return self.save(target, {}, 'FETCH_FAILED', b['final_url'], 'browser', seen)
+                seen = verdict(flags | {self.robots(b['final_url'])[0]})  # the page may have moved within its host
+                if challenged(b['code'], b['raw'].decode('utf-8', 'replace')):
+                    self.manual(target, b['final_url'], b['code'])
+                    return self.save(target, b, 'BOT_CHECK_MANUAL', b['final_url'], 'browser', seen)
+                return self.save(target, b, 'ok' if b['code'] == 200 else 'FETCH_FAILED', b['final_url'], 'browser', seen)
             if response.get('exit') == 0 and response.get('code') == 200:
                 r = self.save(target, response, 'ok', current, 'direct', seen)
-                if r['status'] == 'ok' or robots: return r
+                if r['status'] in ('ok', 'CONTACT_FORM_OR_STAFF_DIRECTORY') or robots: return r  # an excluded page is not retried through a proxy
             if not robots and response.get('code') != 429 and urlsplit(current).hostname != 'r.jina.ai' and not linkedin_url(current):
                 fallback = self.fallback(current, delay)
                 if fallback['code'] == 200 and fallback['exit'] == 0:

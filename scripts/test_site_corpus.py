@@ -176,7 +176,7 @@ class SiteCorpusTests(unittest.TestCase):
             if u.endswith('/robots.txt'): return response(code=404)
             if u.startswith('https://r.jina.ai/'):
                 return response('Title: NOT EVIDENCE\nURL Source: https://example.org/\nMarkdown Content:\nReal polymer molding')
-            return response('verify you are human')
+            return response(code=500)  # a bot-check page never goes to the Jina proxy (see test_challenge_without_browser_is_manual)
         with patch.object(c, 'request', side_effect=request):
             assert c.rawcheck('https://example.org/', 'real polymer molding') == 'yes'
             assert c.rawcheck('https://example.org/', 'NOT EVIDENCE') == 'no'
