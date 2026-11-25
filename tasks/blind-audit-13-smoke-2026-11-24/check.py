@@ -897,7 +897,7 @@ def _():
     assert score(out)['k'] == 2
     tamper(out, edit_results(lambda d: d.update(k=99)), 'gate totals')
     tamper(out, edit_results(lambda d: d.update(stopped_at=2)), 'gate totals')
-    tamper(out, edit_results(lambda d: d.update(status='STOPPED_AT_K')), 'recorded as')
+    tamper(out, edit_results(lambda d: d.update(status='STOPPED_AT_K')), 'recorded status')
     tamper(out, edit_results(lambda d: d['input_tokens_spent'].update(astra=1)), 'input tokens')
     tamper(out, edit_results(lambda d: d['results'].pop(0)), 'prefix of the sealed order')
     tamper(out, edit_results(lambda d: d['results'].pop()), 'gate totals')
@@ -952,7 +952,7 @@ def _():
     rc = patched(lambda provider, prompt, procs, timeout=0: dict(good(name_of(prompt), provider), usage=dict(input_tokens=200_000)), lambda: rd.run_stage(draw_dir, cache, out, ARGS(caps_m=dict(astra=0.1))))
     doc = json.loads((out / 'results.json').read_text())
     assert doc['status'] == 'HALTED_TOKEN_BUDGET' and rc == 1 and any('actual' in h for h in doc['halt']) and len(doc['results']) == 1, (doc['status'], doc['halt'])
-    tamper(out, edit_results(lambda d: d.update(status='COMPLETE')), 'passed their stage budget')
+    tamper(out, edit_results(lambda d: d.update(status='COMPLETE')), 'recorded status')
 
 
 @case('A9: two core-impacting contradictions on two children of one field count twice in that field and once in k')
@@ -965,6 +965,68 @@ def _():
         return dict(good('x', provider), text=json.dumps(dict(findings=f)))
     sc = score(run_to_score([('real', 'child-m', 'astra')], fake, children=children))
     assert sc['k'] == 1 and sc['by_field']['registry_id']['audited_values'] == 2 and sc['by_field']['registry_id']['contradicted'] == 2 and sc['by_field']['registry_id']['error_rate'] == 1.0, sc['by_field']['registry_id']
+
+
+@case('C: a denial and another entity\'s address never earn eligibility or detection; a positive first-person or own-name witness does')
+def _():
+    SRC['S11'] = 'Acme is not located at 99 Oak Avenue.'
+    SRC['S12'] = 'Acme makes polymers. Beta LLC is located at 99 Oak Avenue.'
+    SRC['S13'] = 'Acme Plastics and Beta LLC share a brochure. Visit us at 99 Oak Avenue, Akron.'
+    SRC['S14'] = 'Acme Plastics makes polymers. Visit us at 99 Oak Avenue, Akron.'
+    assert held_by_draw(SRC['S11']) == 'witness_hedged', held_by_draw(SRC['S11'])
+    assert held_by_draw(SRC['S12']) == 'witness_not_attributed', held_by_draw(SRC['S12'])
+    assert not planted_det(sid(finding('street_address', 'CONTRADICTED', 'not located at 99 Oak Avenue', '99 Oak Avenue'), 'S11')), 'the quote denies the address'
+    assert not planted_det(sid(finding('street_address', 'CONTRADICTED', 'Beta LLC is located at 99 Oak Avenue', '99 Oak Avenue'), 'S12')), 'another entity\'s address'
+    assert held_by_draw(SRC['S14']) == '' and planted_det(sid(finding('street_address', 'CONTRADICTED', 'Visit us at 99 Oak Avenue, Akron', '99 Oak Avenue'), 'S14')), 'a first-person witness on a page about the record'
+    SRC['S15'] = 'Acme Plastics, Inc. and Beta LLC: located at 99 Oak Avenue.'
+    assert held_by_draw(SRC['S15']) == 'witness_other_entity', held_by_draw(SRC['S15'])
+
+
+@case('B: score verifies the terminal stop reason against the ledger: a failed run edited to STOPPED_AT_K (or any unsupported status) refuses')
+def _():
+    draw_dir, cache, out = run_fixture([('real', 'fail-t', 'astra')])
+    patched(lambda provider, prompt, procs, timeout=0: dict(good('x', provider), error='no output', text='', usage=None, metered=False), lambda: rd.run_stage(draw_dir, cache, out, ARGS()))
+    assert json.loads((out / 'results.json').read_text())['status'] == 'SUSPENDED_NO_OUTPUT' and not json.loads((out / 'results.json').read_text())['results']
+    score(out)  # the honest failed run scores as what it is
+    for bad in ('STOPPED_AT_K', 'COMPLETE', 'HALTED_TOKEN_BUDGET', 'SUSPENDED_PLANT_MISSED'):
+        tamper(out, edit_results(lambda d, b=bad: d.update(status=b)), 'recorded status')
+
+
+@case('A3: one precedence for a call that crosses the budget and the k stop: the gate result is the status, the overspend is its own fact, run and score agree')
+def _():
+    draw_dir, cache, out = run_fixture([('real', 'both-1', 'astra')])
+    def fake(provider, prompt, procs, timeout=0):
+        return dict(good(name_of(prompt), provider, street_bad=True), usage=dict(input_tokens=200_000 if provider == 'hydrogen' else 1000))
+    rc = patched(fake, lambda: rd.run_stage(draw_dir, cache, out, ARGS(stop_at=1, caps_m=dict(hydrogen=0.1))))
+    doc = json.loads((out / 'results.json').read_text())
+    assert doc['status'] == 'STOPPED_AT_K' and doc['k'] == 1 and doc['budget_exceeded'] == ['hydrogen'] and doc['halt'] and rc == 1, (doc['status'], doc['halt'], rc)
+    s = score(out)  # the untouched run must score; it carries both facts
+    assert s['status'] == 'STOPPED_AT_K' and s['budget_exceeded'] == ['hydrogen'] and s['k'] == 1
+    tamper(out, edit_results(lambda d: d.update(status='HALTED_TOKEN_BUDGET')), 'recorded status')
+    tamper(out, edit_results(lambda d: d.update(halt=[], budget_exceeded=[])), 'budget facts')
+
+
+@case('A3: a null or mistyped optional reader field (notes) never crashes the run: results.json is always written, a crash is a controlled suspension')
+def _():
+    def fake(provider, prompt, procs, timeout=0):
+        f = [finding('site_name', 'VERIFIED'), finding('street_address', 'VERIFIED'), finding('polymer_relevance', 'VERIFIED')]
+        return dict(good('x', provider), text=json.dumps(dict(findings=f, notes=None)))
+    out = run_to_score([('real', 'notes-1', 'astra'), ('real', 'notes-2', 'astra')], fake)
+    assert json.loads((out / 'results.json').read_text())['status'] == 'COMPLETE' and score(out)['audited_real_records'] == 2
+    real_cmb, n = rd.combine, Counter()
+    def boom(*a, **k):
+        n['n'] += 1
+        if n['n'] == 1:
+            raise RuntimeError('unexpected')
+        return real_cmb(*a, **k)
+    draw_dir, cache, out = run_fixture([('real', 'crash-1', 'astra')])
+    rd.combine = boom
+    try:
+        rc = patched(lambda provider, prompt, procs, timeout=0: good(name_of(prompt), provider), lambda: rd.run_stage(draw_dir, cache, out, ARGS()))
+    finally:
+        rd.combine = real_cmb
+    assert rc == 1 and json.loads((out / 'results.json').read_text())['status'] == 'SUSPENDED_NO_OUTPUT', rc
+    assert score(out)['status'] == 'SUSPENDED_NO_OUTPUT'
 
 
 @case('replay receipts: a matched control passes; a wrong operator, a wrong street and a 2015 vintage do not bind; a newer different band contradicts')

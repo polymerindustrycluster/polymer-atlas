@@ -213,8 +213,22 @@ def read_findings(answer, sources, targets, held, plant=None):
 
 
 HEDGE = re.compile(r'\b(?:former|formerly|previous|previously|prior|used to|moved|relocat\w*|supplier|suppliers|vendor|vendors|customer|customers|partner|partners|'
-                   r'competitor|competitors|acquired|closed|sold|future|branch|affiliate|subsidiary|sister)\b')
-WITNESS_WINDOW = 12  # words each side of the stated value that must be free of another party, another time or another place
+                   r'competitor|competitors|acquired|closed|sold|future|branch|affiliate|subsidiary|sister|'
+                   r'not|no|never|neither|nor|without|isn|aren|wasn|weren|doesn|didn|don|cannot)\b')  # another party, another time, another place, or a denial
+WITNESS_WINDOW = 12  # words each side of the stated value that must be free of those
+FIRST_PERSON = {'we', 'our', 'us', 'address', 'headquarters', 'headquartered'}  # the page speaks for its own entity
+LEGAL_ENTITY = re.compile(r"((?:[A-Z][\w&'.-]*\s+){0,3}[A-Z][\w&'.-]*)\s*,?\s+(?:LLC|L\.L\.C|Inc|Corp|Corporation|Ltd|LP|LLP|Co)\b")
+SEGMENT_END = re.compile(r'(?<!\b[A-Za-z])(?<!\bInc)(?<!\bCo)(?<!\bCorp)(?<!\bLtd)(?<!\bLLC)(?<!\bSt)(?<!\bAve)(?<!\bRd)(?<!\bDr)(?<!\bNo)[.!?]\s+|\s\|\s|\n+')
+
+
+def segments(text):
+    """The page as sentence-like segments: [(raw, words)]. Abbreviations (Inc., St., initials) do not end one."""
+    out, last = [], 0
+    for m in list(SEGMENT_END.finditer(text)) + [None]:
+        raw = text[last:m.start() if m else len(text)]
+        out.append((raw, words(raw)))
+        last = m.end() if m else last
+    return out
 
 
 def agrees(field, a, b):
@@ -223,9 +237,13 @@ def agrees(field, a, b):
 
 
 def witness_reason(text, value, field, names, quote=''):
-    """'' when `text` states `value` as this record's value: the source mentions the record's own name, the occurrence (inside the reader's quote,
-    when given) has no other party, time or place within WITNESS_WINDOW words, and the page names no other street or county. Else the reason it is held."""
-    tw, vw = words(text), words(value)
+    """'' when `text` positively attributes `value` to this record: in the segment holding the occurrence (inside the reader's quote, when given) the
+    record's own name appears, or the page speaks in the first person for its own entity; no other party, time, place or denial is within
+    WITNESS_WINDOW words; no other legal entity is named in the segment; and the page names no other street or county. Else the reason it is held."""
+    segs = segments(text)
+    tw = [w for _, ws in segs for w in ws]
+    seg_of = [n for n, (_, ws) in enumerate(segs) for _ in ws]
+    vw = words(value)
     occ = [i for i in range(len(tw) - len(vw) + 1) if vw and tw[i:i + len(vw)] == vw]
     if not occ:
         return 'true_value_not_stated'
@@ -235,10 +253,24 @@ def witness_reason(text, value, field, names, quote=''):
         occ = [o for o in occ if any(sp <= o and o + len(vw) <= sp + len(qw) for sp in spans)]
         if not occ:
             return 'quote_does_not_hold_true_value'
-    if not any(k and contains(tw, k) for n in names for k in (name_key(n), name_key(re.split(r'\s[-\u2013\u2014]\s', n)[0]))):  # a site name 'Acme - Akron' is also 'Acme'
+    own = [k for n in names for k in (name_key(n), name_key(re.split(r'\s[-\u2013\u2014]\s', n)[0])) if k]  # a site name 'Acme - Akron' is also 'Acme'
+    if not any(contains(tw, k) for k in own):
         return 'source_not_about_record'
-    if all(HEDGE.search(' '.join(tw[max(0, o - WITNESS_WINDOW):o + len(vw) + WITNESS_WINDOW])) for o in occ):
-        return 'witness_hedged'
+    why = 'witness_hedged'
+    for o in occ:
+        if HEDGE.search(' '.join(tw[max(0, o - WITNESS_WINDOW):o + len(vw) + WITNESS_WINDOW])):
+            continue
+        raw, ws = segs[seg_of[o]]
+        if not (any(contains(ws, k) for k in own) or FIRST_PERSON & set(ws)):
+            why = 'witness_not_attributed'
+            continue
+        if any(not (name_key(m[1]) and any(contains(k, name_key(m[1])) or contains(name_key(m[1]), k) for k in own)) for m in LEGAL_ENTITY.finditer(raw)):
+            why = 'witness_other_entity'
+            continue
+        why = ''
+        break
+    if why:
+        return why
     if field == 'street_address':
         from atlas import NOTES_STREET_RE, notes_candidate_key, street_key
         if {k for k in (notes_candidate_key(m[0]) for m in NOTES_STREET_RE.finditer(text)) if k} - {street_key(value)}:
@@ -669,11 +701,15 @@ def run_stage(draw_dir, cache_dir, out, a):
                     return None
                 est = max(len(prompt) // 3, spent[provider] // max(1, n_calls[provider]))  # input tokens of this call: prompt bytes / 3 overstates, else the provider's mean so far
                 with lock:
-                    if provider in caps and spent[provider] + reserved[provider] + est > caps[provider]:
+                    projected = provider in caps and spent[provider] + reserved[provider] + est > caps[provider]
+                    if projected:
                         halt.append(f'{provider}: {spent[provider] / 1e6:.2f}M spent + {reserved[provider] / 1e6:.2f}M in flight + about {est / 1e6:.2f}M for the next call passes its {caps[provider] / 1e6:.2f}M stage budget: halt for repricing')
                         stop.set()
-                        return None
-                    reserved[provider] += est
+                    else:
+                        reserved[provider] += est
+                if projected:
+                    log(role='halt', reason='budget: ' + halt[-1])
+                    return None
                 try:
                     res = call_model(provider, prompt, procs)
                 except BaseException:
@@ -696,9 +732,12 @@ def run_stage(draw_dir, cache_dir, out, a):
                     if over:
                         halt.append(f'{provider}: {spent[provider] / 1e6:.3f}M actual input tokens passed its {caps[provider] / 1e6:.3f}M stage budget: halt for repricing')
                         stop.set()
+                        over_msg = halt[-1]
                 fname, fsha = save_read(s, role, provider, round_, attempt, res, prompt, parsed, found, error)
                 log(blind_id=s['blind_id'], kind=s['kind'], role=role, provider=provider, round=round_, attempt=attempt, model=res['model'], usage=res['usage'], metered=res['metered'],
                     elapsed=res['elapsed'], prompt_bytes=res['prompt_bytes'], error=error, forced=s['provider'] != provider, file=fname, file_sha256=fsha)
+                if over:
+                    log(role='halt', reason='budget: ' + over_msg)
                 if res['error'] or over:
                     stop.set()  # a failed, unmetered or budget-passing call stops every later call now, not when the ordered collector reaches it
                     if res['error']:
@@ -736,7 +775,7 @@ def run_stage(draw_dir, cache_dir, out, a):
         lock_sha = sha256(json.dumps(found, sort_keys=True).encode())
         log(blind_id=s['blind_id'], role='lock', provider=s['provider'], sha256=lock_sha, file=pfile)  # first verdicts are locked before any other family sees the case
         item = dict(status='READ', primary=found, primary_file=pfile, lock=lock_sha, second=None, second_file=None, exception=False,
-                    notes=Counter(n.get('kind', 'other') for n in ans.get('notes', []) if isinstance(n, dict)))
+                    notes=Counter(text_of(n.get('kind')) or 'other' for n in (ans.get('notes') if isinstance(ans.get('notes'), list) else []) if isinstance(n, dict)))
         if s['kind'] == 'real':
             rc = rc_doc['receipts'].get(f"{s['table']}|{s['record_id']}", [])
             need = flagged(found, rc) or 'uncertain' in fams
@@ -759,41 +798,49 @@ def run_stage(draw_dir, cache_dir, out, a):
         futs = {}
         for i in range(min(window, n)):  # dispatch is bounded to the unscored window: nothing later starts while an earlier item is open
             futs[i] = pool.submit(work, sample[i])
-        for i, s in enumerate(sample):  # sealed order
-            _, item = futs[i].result()
-            if item['status'] == 'INCOMPLETE':  # a later failure or budget halt stopped this item: the run is not complete, and says why
-                status = 'HALTED_TOKEN_BUDGET' if halt else 'SUSPENDED_NO_OUTPUT'
-                break
-            if item['status'] in ('NO_OUTPUT', 'SECOND_MISSING'):
-                status = 'HALTED_TOKEN_BUDGET' if halt else 'SUSPENDED_NO_OUTPUT'
-                log(blind_id=s['blind_id'], role='halt', reason=item['status'])
-                stop.set()
-                break
-            ni = packets[s['blind_id']].get('not_inspected', [])
-            if s['kind'] == 'plant':
-                ok = plant_detected(item['primary'], s['plant_field'])
-                board.add(int(s['pos']), 'plant', detected=ok, provider=s['provider'])
-                results.append(dict(pos=int(s['pos']), blind_id=s['blind_id'], kind='plant', provider=s['provider'], plant_field=s['plant_field'], detected=ok, table=s['table'], record_id=s['record_id'],
-                                    primary_file=item['primary_file'], second_file=None))
-            else:
-                final = combine(item['primary'], item['second'], not item['exception'])
-                outcome = record_outcome(final, ni)
-                board.add(int(s['pos']), 'real', outcome)
-                results.append(dict(pos=int(s['pos']), blind_id=s['blind_id'], kind='real', provider=s['provider'], table=s['table'], record_id=s['record_id'], coin=s['check_coin'],
-                                    second_provider=item.get('second_provider'), second_for=item.get('second_for'), exception=item['exception'], lock=item['lock'], **outcome,
-                                    primary_file=item['primary_file'], second_file=item['second_file'],
-                                    primary_status={t: f['status'] for t, f in item['primary'].items()}, second_status={t: f['status'] for t, f in (item['second'] or {}).items()},
-                                    note_kinds=dict(item['notes']), withheld=len(packets[s['blind_id']]['masked'])))
-            if board.stopped_at or board.invalid:
-                status = 'STOPPED_AT_K' if board.stopped_at else 'SUSPENDED_PLANT_MISSED'
-                stop.set()
-                break
-            if halt or (getattr(a, 'max_tokens_m', 0) and sum(spent.values()) > a.max_tokens_m * 1e6):
-                status = 'HALTED_TOKEN_BUDGET'
-                stop.set()
-                break
-            if i + window < n and not stop.is_set():
-                futs[i + window] = pool.submit(work, sample[i + window])
+        try:
+            for i, s in enumerate(sample):  # sealed order
+                try:
+                    _, item = futs[i].result()
+                except Exception as exc:  # noqa: BLE001  an unexpected failure is a controlled suspension: results.json is always written
+                    item = dict(status='NO_OUTPUT', crash=f'{type(exc).__name__}: {str(exc)[:80]}')
+                if item['status'] == 'INCOMPLETE':  # a later failure or budget halt stopped this item: the run is not complete, and says why
+                    status = 'HALTED_TOKEN_BUDGET' if halt else 'SUSPENDED_NO_OUTPUT'
+                    break
+                if item['status'] in ('NO_OUTPUT', 'SECOND_MISSING'):
+                    status = 'HALTED_TOKEN_BUDGET' if halt else 'SUSPENDED_NO_OUTPUT'
+                    log(blind_id=s['blind_id'], role='halt', reason=item.get('crash') or item['status'])
+                    stop.set()
+                    break
+                ni = packets[s['blind_id']].get('not_inspected', [])
+                if s['kind'] == 'plant':
+                    ok = plant_detected(item['primary'], s['plant_field'])
+                    board.add(int(s['pos']), 'plant', detected=ok, provider=s['provider'])
+                    results.append(dict(pos=int(s['pos']), blind_id=s['blind_id'], kind='plant', provider=s['provider'], plant_field=s['plant_field'], detected=ok, table=s['table'], record_id=s['record_id'],
+                                        primary_file=item['primary_file'], second_file=None))
+                else:
+                    final = combine(item['primary'], item['second'], not item['exception'])
+                    outcome = record_outcome(final, ni)
+                    board.add(int(s['pos']), 'real', outcome)
+                    results.append(dict(pos=int(s['pos']), blind_id=s['blind_id'], kind='real', provider=s['provider'], table=s['table'], record_id=s['record_id'], coin=s['check_coin'],
+                                        second_provider=item.get('second_provider'), second_for=item.get('second_for'), exception=item['exception'], lock=item['lock'], **outcome,
+                                        primary_file=item['primary_file'], second_file=item['second_file'],
+                                        primary_status={t: f['status'] for t, f in item['primary'].items()}, second_status={t: f['status'] for t, f in (item['second'] or {}).items()},
+                                        note_kinds=dict(item['notes']), withheld=len(packets[s['blind_id']]['masked'])))
+                if board.stopped_at or board.invalid:
+                    status = 'STOPPED_AT_K' if board.stopped_at else 'SUSPENDED_PLANT_MISSED'
+                    stop.set()
+                    break
+                if halt or (getattr(a, 'max_tokens_m', 0) and sum(spent.values()) > a.max_tokens_m * 1e6):
+                    status = 'HALTED_TOKEN_BUDGET'
+                    stop.set()
+                    break
+                if i + window < n and not stop.is_set():
+                    futs[i + window] = pool.submit(work, sample[i + window])
+        except Exception as exc:  # noqa: BLE001  scoring a record failed: a controlled suspension, results.json is still written
+            status = 'SUSPENDED_NO_OUTPUT'
+            log(role='halt', reason=f'crash: {type(exc).__name__}: {str(exc)[:80]}')
+            stop.set()
         if status == 'COMPLETE' and (halt or len(results) != n):  # never COMPLETE with an unscored item or a passed budget
             status = 'HALTED_TOKEN_BUDGET' if halt else 'SUSPENDED_NO_OUTPUT'
         if stop.is_set():
@@ -806,11 +853,12 @@ def run_stage(draw_dir, cache_dir, out, a):
                 f.cancel()
     done = {r['pos'] for r in results}
     incomplete = [dict(pos=int(s['pos']), kind=s['kind']) for s in sample if int(s['pos']) not in done]
-    summary = dict(status=status, k=board.k, stop_at=a.stop_at, stopped_at=board.stopped_at, invalid=board.invalid, halt=halt, results=results, incomplete_calls=incomplete,
+    over_budget = sorted(p for p in caps if spent[p] > caps[p])
+    summary = dict(status=status, k=board.k, stop_at=a.stop_at, stopped_at=board.stopped_at, invalid=board.invalid, halt=halt, budget_exceeded=over_budget, results=results, incomplete_calls=incomplete,
                    input_tokens_spent=dict(spent), replay_coverage=rc_doc.get('counts', {}), not_inspected_classes=rc_doc.get('not_inspected_classes', {}))
     write_private(out / 'results.json', json.dumps(summary, indent=1, sort_keys=True))
     print(f'run {status}: k={board.k} real={len(board.real)} plants={len(board.plants)} incomplete={len(incomplete)} tokens={dict(spent)}')
-    return 0 if status in ('COMPLETE', 'STOPPED_AT_K') else 1
+    return 0 if status in ('COMPLETE', 'STOPPED_AT_K') and not halt else 1  # a terminal result that crossed its budget still says so
 
 
 def rederive(run_dir, doc, ledger):
@@ -870,17 +918,30 @@ def rederive(run_dir, doc, ledger):
         spent[l['provider']] += input_tokens(l.get('usage'))
     over = sorted(p for p, cap in run['caps'].items() if spent[p] > cap)
     unscored = [dict(pos=x['pos'], kind=x['kind']) for x in sealed[len(results):]]
-    want = 'STOPPED_AT_K' if board.stopped_at else 'SUSPENDED_PLANT_MISSED' if board.invalid else None
+    halts = [l for l in ledger if l.get('role') == 'halt']
+    budget = bool(over) or any(str(l.get('reason', '')).startswith('budget') for l in halts)
     if (doc['k'], doc['stopped_at'], doc['invalid'], doc['stop_at']) != (board.k, board.stopped_at, board.invalid, run['stop_at']):
         fail(f"gate totals: results.json says k={doc['k']} stopped_at={doc['stopped_at']} invalid={doc['invalid']}, the reader files give k={board.k} stopped_at={board.stopped_at} invalid={board.invalid}")
     if doc['input_tokens_spent'] != dict(spent) or doc['incomplete_calls'] != unscored:
         fail('input tokens or incomplete items differ from the ledger')
-    if over and not (doc['status'] == 'HALTED_TOKEN_BUDGET' and doc['halt']):
-        fail(f'{over} passed their stage budget but the run is recorded as {doc["status"]}')
-    if want and doc['status'] != want or not want and doc['status'] == 'COMPLETE' and (unscored or over):
-        fail(f"status {doc['status']} does not match the replay ({want or 'complete only when every sealed item is scored within budget'})")
-    if not want and not unscored and not over and doc['status'] != 'COMPLETE':
-        fail(f"every sealed item is scored within budget but the run is recorded as {doc['status']}")
+    # One precedence for the terminal reason, in run and here: a missed plant, then the k stop, then a budget halt, then another failure, else complete.
+    # A passed budget never changes a gate result's status, but is kept as its own fact (halt list, budget_exceeded) and checked against the ledger.
+    if board.invalid:
+        expected = 'SUSPENDED_PLANT_MISSED'
+    elif board.stopped_at:
+        expected = 'STOPPED_AT_K'
+    elif budget:
+        expected = 'HALTED_TOKEN_BUDGET'
+    elif unscored:
+        expected = 'SUSPENDED_NO_OUTPUT'
+        if not halts and not any(l.get('error') and l['error'] != 'unparseable answer' for l in calls):
+            fail('the run stopped early but the ledger holds no failed call and no halt line')
+    else:
+        expected = 'COMPLETE'
+    if doc['status'] != expected:
+        fail(f"recorded status {doc['status']} but the ledger and reader files give {expected}")
+    if bool(doc['halt']) != budget or doc.get('budget_exceeded') != over:
+        fail(f"budget facts differ: halt={bool(doc['halt'])} budget_exceeded={doc.get('budget_exceeded')} against the ledger's {budget} / {over}")
     return len(calls)
 
 
@@ -924,7 +985,7 @@ def score_stage(run_dir):
                     mean_input_per_completed_call=round(v['input_tokens'] / (v['completed_real'] + v['completed_control'])) if v['completed_real'] + v['completed_control'] else None) for k, v in sorted(per.items())}
     n = len(real)
     report = dict(status=doc['status'], audited_real_records=n, k=doc['k'], stop_at=doc['stop_at'], stopped_at_position=doc['stopped_at'], halt=doc.get('halt', []),
-                  contradicted_core_fields=dict(cc), by_field=by_field, reader_files_verified=verified_files,
+                  contradicted_core_fields=dict(cc), by_field=by_field, reader_files_verified=verified_files, budget_exceeded=doc.get('budget_exceeded', []),
                   not_inspected_by_field={f: ni[f] for f in sorted(ni)}, not_inspected_filed_classes=doc.get('not_inspected_classes', {}), replay_coverage=doc.get('replay_coverage', {}),
                   unconfirmed_reasons=dict(reasons), omission_and_other_notes=dict(notes), disputed_findings=sum(len(r.get('disputed', [])) for r in real),
                   plants=dict(by_provider={p: dict(planted=sum(1 for x in plants if x['provider'] == p), detected=sum(1 for x in plants if x['provider'] == p and x['detected'])) for p in sorted({x['provider'] for x in plants})},
