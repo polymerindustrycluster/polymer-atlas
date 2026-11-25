@@ -9,7 +9,7 @@ Usage: python3 check.py SCRIPTS_DIR [--real-browser]
                   Needs `uv run --with playwright` and the sandbox off; with no Chrome the cases FAIL, never skip.
 Each case prints PASS or FAIL and the check exits 1 if any case fails. Every case asserts behaviour.
 """
-import sys, tempfile
+import sys, tempfile, time
 from pathlib import Path
 from unittest.mock import patch
 
@@ -418,6 +418,82 @@ def tls_chain_failure_goes_to_the_browser_after_the_http11_retry(c, tmp):
 
 
 @case
+def pre_retry_manual_receipt_is_retried_once_in_the_browser(c, tmp):
+    target = 'https://example.org/old-manual'
+    c.save(target, {}, 'BOT_CHECK_MANUAL', target, 'direct')  # a #560-format receipt: no browser attempt on record
+    calls = []
+    def browser(self, t, delay=1, *a, **k): calls.append(t); return rendered(PAGE, t)(self, t)
+    r = with_browser(c, browser, target)
+    assert calls == [target] and r['status'] == 'ok', f"browser calls {calls}, status {r['status']} (an old manual receipt skipped the retry)"
+    with_browser(c, browser, 'https://example.org/tried', page=resp(WALL, code=403))  # exhausts its retry: stays manual, not retried again
+    r2 = with_browser(c, lambda self, t, d=1, *a, **k: rendered(PUZZLE, t)(self, t), 'https://example.org/tried2')
+    assert r2['status'] == 'BOT_CHECK_MANUAL' and r2['browser_tried'] == 'yes', f"status {r2['status']} browser_tried {r2.get('browser_tried')!r}"
+    before = len(calls)
+    with patch.object(sc.Corpus, 'browser', browser), patch.object(c, 'request', side_effect=serve(resp(code=404), resp(WALL, code=403))):
+        c.fetch('https://example.org/tried2')
+    assert len(calls) == before, 'a receipt that already exhausted the browser retry was retried again'
+
+
+@case
+def reader_bot_check_is_retried_in_chrome_on_the_original_url_and_its_body_is_not_stored(c, tmp):
+    reader = 'Title: Security check\nURL Source: https://example.org/r\nMarkdown Content:\nComplete this CAPTCHA ' + SENTINEL
+    calls = []
+    def request(u, delay=1, http1=False):
+        if u.endswith('/robots.txt'): return resp(code=404)
+        return resp(reader) if u.startswith('https://r.jina.ai/') else resp(code=500)
+    def browser(self, t, delay=1, *a, **k): calls.append(t); return rendered(PAGE, t)(self, t)
+    with patch.object(c, 'request', side_effect=request), patch.object(sc.Corpus, 'browser', browser):
+        r = c.fetch('https://example.org/r')
+    assert calls == ['https://example.org/r'] and r['status'] == 'ok', f"browser calls {calls}, status {r['status']}"
+    no_sentinel(tmp)
+
+
+@case
+def guard_admits_only_what_it_can_see_and_decide(c, tmp):
+    import json
+    st = lambda: dict(target='https://example.org/', start='example.org', main='M', delay=1, flags=set(), blocked=[], code=0)
+    ev = lambda u, **k: dict(requestId='1', frameId=k.pop('frame', 'M'), resourceType=k.pop('type', 'Document'), request=dict(url=u, headers=k.pop('headers', {'User-Agent': 'x'})), **k)
+    assert hasattr(c, 'guard'), 'no request-stage guard'
+    with patch.object(c, 'robots', return_value=('no', 1)):
+        for name, e in {'child frame document': ev('https://example.org/inner', frame='CHILD'), 'script': ev('https://example.org/s.js', type='Script'),
+                        'robots.txt document': ev('https://example.org/robots.txt'), 'staff directory': ev('https://example.org/our-team/'),
+                        'linkedin profile': ev('https://www.linkedin.com/in/someone'), 'other host, not a redirect': ev('https://other.example.net/')}.items():
+            act = c.guard(e, st())[0]
+            assert act == 'fail', f'{name}: {act}'
+        act, headers = c.guard(ev('https://example.org/', headers={'User-Agent': 'x', 'Cookie': 'a=1', 'cookie': 'b=2'}), st())
+        assert act == 'continue' and headers == [{'name': 'User-Agent', 'value': 'x'}], f'a request carrying a Cookie header goes out with it: {act} {headers}'
+        act, headers = c.guard(ev('https://other.example.net/p', redirectedRequestId='0'), st())
+        assert act == 'continue' and all(h['name'].lower() != 'cookie' for h in headers), (act, headers)
+    t0 = time.time()
+    c.guard(dict(requestId='1', frameId='M', resourceType='Document', request=dict(url='https://slow.example.net/', headers={}), responseStatusCode=429,
+                 responseHeaders=[{'name': 'Retry-After', 'value': '40'}, {'name': 'Set-Cookie', 'value': 'a=1'}]), st())
+    clock = float((tmp / ('host-' + sc.key('slow.example.net') + '.lock')).read_text() or 0)
+    assert clock >= t0 + 39, f'host clock booked {clock - t0:.1f} s ahead for a Retry-After of 40 s'
+
+
+@case
+def storage_is_decided_after_final_classification_and_robots_is_receipt_only(c, tmp):
+    c.save('https://example.org/bad', resp('Real polymer ' + SENTINEL + ' \ufffd'), 'ok', 'https://example.org/bad', 'browser')
+    assert c.cached('https://example.org/bad')['status'] == 'FETCH_FAILED'
+    no_sentinel(tmp)
+    c.save('https://example.org/robots.txt', resp('User-agent: * ' + SENTINEL), 'ok', 'https://example.org/robots.txt', 'browser')
+    no_sentinel(tmp)
+
+
+@case
+def http11_retry_happens_in_each_hop_whatever_the_status(c, tmp):
+    calls = []
+    def request(u, delay=1, http1=False):
+        if u.endswith('/robots.txt'): return resp(code=404)
+        calls.append((u, http1))
+        if u == 'https://example.org/a': return dict(resp(PAGE), exit=92) if not http1 else resp(code=301, location='https://example.org/b')
+        return resp(PAGE)
+    with patch.object(c, 'request', side_effect=request):
+        r = c.fetch('https://example.org/a')
+    assert r['status'] == 'ok' and calls == [('https://example.org/a', False), ('https://example.org/a', True), ('https://example.org/b', False)], f"status {r['status']} calls {calls}"
+
+
+@case
 def failed_browser_navigation_is_fetch_failed_without_a_robots_lookup_on_the_error_page(c, tmp):
     asked = []
     def request(u, delay=1, **kw):
@@ -464,6 +540,9 @@ def real_browser():
             elif path == '/err': code, body = 503, '<html><p>Temporarily unavailable ' + SENTINEL + '</p></html>'
             elif path == '/wall': body = '<html><title>Just a moment...</title><!-- ' + SENTINEL + ' --></html>'
             elif path == '/assets': body = '<html><script src="/s.js"></script><img src="/img.png">' + PAGE + '</html>'
+            elif path == '/frames': body = '<html><iframe src="/inner"></iframe><iframe src="http://localhost:%d/inner"></iframe><script>window.open("/popup")</script>' % port + PAGE + '</html>'
+            elif path == '/ra1': code, extra, body = 429, {'Retry-After': '6'}, '<html><p>slow down</p></html>'
+            elif path in ('/inner', '/popup'): body = PAGE
             elif path == '/nav': body = '<html><title>Security check</title><button onclick="location=\'/clicked\'">Verify you are human</button><label><input type=checkbox onchange="location=\'/clicked\'"> Verify you are human</label></html>'
             self.send_response(code); self.send_header('Content-Type', 'text/html')
             for k, v in extra.items(): self.send_header(k, v)
@@ -519,6 +598,37 @@ def real_browser():
     def b6_the_browser_never_clicks_or_types(c, tmp):
         r = c.fetch(base + '/nav')
         assert r['status'] == 'BOT_CHECK_MANUAL' and not chrome('/clicked'), f"status {r['status']}; clicked {bool(chrome('/clicked'))}"
+    @case
+    def b7_child_frames_and_popups_are_never_requested(c, tmp):
+        r = c.fetch(base + '/frames')
+        assert r['status'] == 'ok', f"status {r['status']} error {r.get('error')!r}"
+        assert not chrome('/inner') and not chrome('/popup'), f"requested {[e[1:3] for e in LOG if not e[4] and e[2] in ('/inner', '/popup')]}"
+
+    @case
+    def b8_browser_responses_honor_retry_after_on_the_host_clock(c, tmp):
+        r = c.fetch(base + '/ra1')
+        t1 = max(e[0] for e in chrome('/ra1'))
+        c.fetch(base + '/assets')
+        nxt = min(e[0] for e in LOG if e[0] > t1 and e[2] != '/ra1')
+        assert nxt - t1 >= 5.5, f'next request to the host came {nxt - t1:.1f} s after a 429 with Retry-After 6 (status {r["status"]})'
+
+    @case
+    def b9_a_browser_visit_holds_no_curl_slot_while_it_looks_up_robots(c, tmp):
+        import fcntl
+        free = []
+        orig = c.robots
+        def spy(u):
+            n = 0
+            for i in range(8):
+                f = (tmp / f'slot-{i}.lock').open('a+')
+                try: fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB); n += 1
+                except BlockingIOError: pass
+                finally: f.close()
+            free.append(n); return orig(u)
+        with patch.object(c, 'robots', side_effect=spy):
+            c.fetch(base + '/x')
+        assert free and max(free[1:] or free) == 8 or min(free) == 8, f'curl slots free during the browser-side robots lookups: {free} (of 8)'
+
     srv.shutdown()
 
 

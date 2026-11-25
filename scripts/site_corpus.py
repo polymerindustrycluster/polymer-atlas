@@ -268,11 +268,11 @@ class Corpus:
             yield f
 
     @contextmanager
-    def slot(self):
+    def slot(self, pool='slot', n=8):
         # File locks coordinate all readers/crawlers sharing this cache, not just threads.
         while True:
-            for i in range(8):
-                f = (self.cache / f'slot-{i}.lock').open('a+')
+            for i in range(n):
+                f = (self.cache / f'{pool}-{i}.lock').open('a+')
                 try:
                     fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
                 except BlockingIOError:
@@ -339,6 +339,7 @@ class Corpus:
         if not meta.exists(): return None
         r = json.loads(meta.read_text())
         if r.get('extraction_version') != 3 or r.get('status') in STALE: return None
+        if r.get('status') == 'BOT_CHECK_MANUAL' and not r.get('browser_tried'): return None  # written before the browser retry: try it once
         if self.legacy_linkedin(r): self.purge(r, meta); return None  # never replayed
         r.setdefault('robots_disallowed', 'not_recorded')
         if r['url'] != target: raise ValueError('Cache URL mismatch')
@@ -364,7 +365,7 @@ class Corpus:
             clock.seek(0); clock.truncate(); clock.write(str(time.time() + delay)); clock.flush()
             return self.request('https://r.jina.ai/' + target)
 
-    def save(self, target, response, status, final, route, robots_disallowed=''):
+    def save(self, target, response, status, final, route, robots_disallowed='', browser_tried=''):
         stem = key(target)
         raw = response.get('raw', b'')
         body = raw.decode('utf-8', 'replace')
@@ -393,6 +394,10 @@ class Corpus:
             text = body
         if status == 'ok' and (not text.strip() or '\ufffd' in text or any(w in text.lower() for w in WALLS)):
             status = 'FETCH_FAILED'
+        if status != 'ok' or '/robots.txt' in (urlsplit(target).path, urlsplit(final).path):
+            # Storage is decided after the final classification: no body for any non-ok status, and robots.txt is receipt-only.
+            if status == 'ok': status = 'FETCH_FAILED'
+            raw, text = b'', ''
         raw_name = hashlib.sha256(raw).hexdigest() + '.raw'
         text_name = hashlib.sha256(text.encode()).hexdigest() + '.txt'
         self.blob(raw_name, raw)
@@ -401,7 +406,7 @@ class Corpus:
                  final_url=final, route=route, fetched_at=datetime.now(timezone.utc).isoformat(),
                  sha256=hashlib.sha256(raw).hexdigest(), raw_file=raw_name, text_file=text_name,
                  text_sha256=hashlib.sha256(text.encode()).hexdigest(), extraction_version=3,
-                 error=response.get('error', ''), robots_disallowed=robots_disallowed)
+                 error=response.get('error', ''), robots_disallowed=robots_disallowed, browser_tried=browser_tried)
         meta = self.cache / (stem + '.json.tmp')
         meta.write_text(json.dumps(r)); meta.replace(self.cache / (stem + '.json'))
         with self.lock('index'):
@@ -414,61 +419,88 @@ class Corpus:
                 w.writerow(r)
         return r
 
-    def wait_host(self, hostname, delay):
-        """Per-host pacing for a request that is not curl's own: wait out the host clock, then book the next slot."""
+    def wait_host(self, hostname, delay, retry_after=0):
+        """Per-host pacing for a request that is not curl's own: wait out the host clock, then book the next slot, or
+        the server's Retry-After if that is longer (as curl's transport does)."""
         with self.lock('host-' + key(hostname)) as clock:
             clock.seek(0)
             time.sleep(max(0, float(clock.read() or 0) - time.time()))
-            clock.seek(0); clock.truncate(); clock.write(str(time.time() + delay)); clock.flush()
+            clock.seek(0); clock.truncate(); clock.write(str(time.time() + max(delay, retry_after))); clock.flush()
+
+    def hop(self, current, delay):
+        """One transport step: curl, and if it fails on the TLS handshake, the certificate chain or HTTP/2 (whatever the
+        HTTP status curl had read), once more over HTTP/1.1. The retry's response is processed like any other.
+        Certificate verification stays on."""
+        response = self.request(current, delay)
+        if response.get('exit') in HTTP1_RETRY: response = self.request(current, delay, http1=True)
+        return response
 
     BROWSER_WAIT = 30  # seconds the page gets to finish its own check
 
+    def guard(self, ev, st):
+        """Decides one request that Chrome paused at the CDP Fetch stage. Returns ('fail', None), ('continue', headers) or,
+        for a response, ('response', headers). `st`: target, start host, main frame id, delay, flags, blocked, code.
+        Only the main frame's documents are admitted; a child frame, popup, script, image, XHR or font is failed, so no
+        target exists that this guard does not see."""
+        u, rid = ev['request']['url'], ev['requestId']
+        if 'responseStatusCode' in ev or 'responseErrorReason' in ev:  # response stage
+            status = ev.get('responseStatusCode', 0)
+            if ev['resourceType'] == 'Document' and ev['frameId'] == st['main'] and not 300 <= status < 400: st['code'] = status
+            wait = [h['value'] for h in ev.get('responseHeaders', []) if h['name'].lower() == 'retry-after']
+            if wait and wait[0].strip().isdigit(): self.wait_host(urlsplit(u).hostname, 0, min(int(wait[0]), 3600))  # Retry-After counts for browser hops too
+            return 'response', [h for h in ev.get('responseHeaders', []) if h['name'].lower() != 'set-cookie']
+        why = ''
+        if ev['resourceType'] != 'Document' or not u.startswith(('http://', 'https://')) or ev['frameId'] != st['main']: why = 'SKIP'
+        elif refused(st['target'], u): why = refused(st['target'], u)
+        elif STAFF_PATH.search(urlsplit(u).path): why = 'CONTACT_FORM_OR_STAFF_DIRECTORY'
+        elif urlsplit(u).path == '/robots.txt': why = 'ROBOTS_TXT_IS_RECEIPT_ONLY'
+        elif host_of(u) != st['start'] and 'redirectedRequestId' not in ev: why = 'CROSS_HOST_NAVIGATION'
+        if why:
+            if why != 'SKIP': st['blocked'].append((why, u))
+            return 'fail', None
+        state, hop_delay = self.robots(u)  # robots state and the host's own Crawl-delay, for this hop
+        st['flags'].add(state)
+        self.wait_host(urlsplit(u).hostname, max(st['delay'], hop_delay))
+        return 'continue', [{'name': k, 'value': v} for k, v in ev['request'].get('headers', {}).items() if k.lower() != 'cookie']
+
     def browser(self, target, delay=1):
         """One headed local Chrome visit (it opens a window on this machine): fresh context, no profile, no clicks, no typing.
-        Every request is paused at the CDP Fetch stage, so every document hop, redirects included, is checked before it is
-        sent: refused LinkedIn URLs, staff-directory paths, other hosts (only an HTTP redirect may change host), robots
-        state and the host's pacing. Only documents load. Cookies: Set-Cookie is stripped from every response, the jar is
-        emptied before every request and document.cookie is a no-op, so no cookie is ever sent. Returns the rendered main
-        document with the robots states seen (`flags`) and, if a hop was refused, why (`blocked`)."""
+        Every request is paused at the CDP Fetch stage and decided by `guard` before it is sent, HTTP redirect hops included.
+        Chrome is started with site isolation off and popups blocked, and any extra page fails the visit, so the one guarded
+        session sees every request. Cookies: Set-Cookie is stripped from every response, the jar is emptied before every
+        request, a Cookie header is stripped from every request, and document.cookie is a no-op. Returns the rendered main document with
+        the robots states seen (`flags`) and, if a hop was refused, why (`blocked`)."""
         gone = dict(code=0, raw=b'', location='', content_type='', exit=127, unavailable=True, final_url=target, flags=set(), blocked='')
         try: from playwright.sync_api import sync_playwright
         except ImportError: return dict(gone, error='PLAYWRIGHT_UNAVAILABLE')
-        start = host_of(target)
-        flags, blocked, code = set(), [], [0]
-        with self.slot(), sync_playwright() as pw:
-            try: chrome = pw.chromium.launch(channel='chrome', headless=False)
+        # Its own two-slot pool: a visit never holds a curl slot, so the robots lookups it triggers cannot deadlock on one.
+        with self.slot('browser-slot', 2), sync_playwright() as pw:
+            try:
+                chrome = pw.chromium.launch(channel='chrome', headless=False, args=[
+                    '--disable-site-isolation-trials', '--disable-features=IsolateOrigins,site-per-process', '--block-new-web-contents'])
             except Exception as e: return dict(gone, error=('CHROME_UNAVAILABLE: ' + str(e))[:300])
             try:
                 ctx = chrome.new_context(accept_downloads=False, service_workers='block')
-                ctx.add_init_script("Object.defineProperty(document, 'cookie', {get() { return '' }, set(v) {}})")
+                ctx.add_init_script("Object.defineProperty(document, 'cookie', {get() { return '' }, set(v) {}}); window.open = () => null")
+                extra = []
+                ctx.on('page', lambda pg: extra.append(pg.url))
                 page = ctx.new_page(); cdp = ctx.new_cdp_session(page)
                 cdp.send('Network.enable')
-                main = cdp.send('Page.getFrameTree')['frameTree']['frame']['id']
+                st = dict(target=target, start=host_of(target), main=cdp.send('Page.getFrameTree')['frameTree']['frame']['id'],
+                          delay=delay, flags=set(), blocked=[], code=0)
+                extra.clear()  # the guarded page itself
 
                 def paused(ev):
-                    rid, u = ev['requestId'], ev['request']['url']
                     try:
-                        if 'responseStatusCode' in ev or 'responseErrorReason' in ev:  # response stage: drop Set-Cookie
-                            if ev['resourceType'] == 'Document' and ev['frameId'] == main and not 300 <= ev.get('responseStatusCode', 0) < 400:
-                                code[0] = ev.get('responseStatusCode', 0)
-                            cdp.send('Fetch.continueResponse', {'requestId': rid, 'responseCode': ev.get('responseStatusCode', 200),
-                                                                'responseHeaders': [h for h in ev.get('responseHeaders', []) if h['name'].lower() != 'set-cookie']})
-                            return
-                        why = ''
-                        if ev['resourceType'] != 'Document' or not u.startswith(('http://', 'https://')): why = 'SKIP'
-                        elif refused(target, u): why = refused(target, u)
-                        elif STAFF_PATH.search(urlsplit(u).path): why = 'CONTACT_FORM_OR_STAFF_DIRECTORY'
-                        elif host_of(u) != start and 'redirectedRequestId' not in ev: why = 'CROSS_HOST_NAVIGATION'
-                        if why:
-                            if why != 'SKIP': blocked.append((why, u))
-                            cdp.send('Fetch.failRequest', {'requestId': rid, 'errorReason': 'BlockedByClient'}); return
-                        state, hop_delay = self.robots(u)  # robots state and the host's own Crawl-delay, for this hop
-                        flags.add(state)
-                        self.wait_host(urlsplit(u).hostname, max(delay, hop_delay))
-                        cdp.send('Network.clearBrowserCookies')
-                        cdp.send('Fetch.continueRequest', {'requestId': rid})
+                        act, headers = self.guard(ev, st)
+                        if act == 'response':
+                            cdp.send('Fetch.continueResponse', {'requestId': ev['requestId'], 'responseCode': ev.get('responseStatusCode', 200), 'responseHeaders': headers})
+                        elif act == 'continue':
+                            cdp.send('Network.clearBrowserCookies')
+                            cdp.send('Fetch.continueRequest', {'requestId': ev['requestId'], 'headers': headers})
+                        else: cdp.send('Fetch.failRequest', {'requestId': ev['requestId'], 'errorReason': 'BlockedByClient'})
                     except Exception:
-                        try: cdp.send('Fetch.failRequest', {'requestId': rid, 'errorReason': 'Failed'})
+                        try: cdp.send('Fetch.failRequest', {'requestId': ev['requestId'], 'errorReason': 'Failed'})
                         except Exception: pass
 
                 cdp.on('Fetch.requestPaused', paused)
@@ -476,46 +508,52 @@ class Corpus:
                 error = ''
                 try: page.goto(target, wait_until='domcontentloaded', timeout=25000)
                 except Exception as e: error = str(e)[:300]
+                if error and not st['code'] and not st['blocked']:  # the navigation itself failed (certificate, DNS, reset): nothing to wait for
+                    return dict(gone, unavailable=False, exit=0, error=error, flags=st['flags'])
 
                 def html():  # None while the page is navigating
                     try: return page.content()
                     except Exception: return None
-                if error and not code[0] and not blocked:  # the navigation itself failed (certificate, DNS, reset): nothing to wait for
-                    return dict(gone, unavailable=False, exit=0, error=error, flags=flags)
                 begin = time.time()
-                while time.time() - begin < self.BROWSER_WAIT and not blocked:
+                while time.time() - begin < self.BROWSER_WAIT and not st['blocked'] and not extra:
                     now = html()
-                    if now is not None and code[0] and not challenged(code[0], now): break
+                    if now is not None and st['code'] and not challenged(st['code'], now): break
                     page.wait_for_timeout(1000)
                 final = html()
                 for _ in range(5):
                     if final is not None: break
                     page.wait_for_timeout(1000); final = html()
-                if blocked: return dict(gone, unavailable=False, exit=0, error=error, flags=flags, blocked=blocked[0][0], final_url=blocked[0][1])
-                return dict(code=code[0], raw=(final or '').encode(), location='', content_type='text/html', exit=0, error=error,
-                            final_url=page.url, flags=flags, blocked='')
+                if extra:  # a second page opened: its requests were never guarded, so nothing from this visit is kept
+                    return dict(gone, unavailable=False, exit=0, error='EXTRA_PAGE_OPENED', flags=st['flags'])
+                if st['blocked']:
+                    return dict(gone, unavailable=False, exit=0, error=error, flags=st['flags'], blocked=st['blocked'][0][0], final_url=st['blocked'][0][1])
+                return dict(code=st['code'], raw=(final or '').encode(), location='', content_type='text/html', exit=0, error=error,
+                            final_url=page.url, flags=st['flags'], blocked='')
             finally:
                 chrome.close()
 
     def visit(self, target, current, delay, flags, response, kind):
-        """The one browser retry of a page curl could not read (kind 'challenge': a bot check; 'tls': a certificate chain curl
-        rejects). Only an ok document is stored; refused hops, bot checks and error pages are never stored, at any status."""
+        """The one browser retry of a page curl could not read (kind 'challenge': a bot check; 'tls': a certificate chain or
+        handshake curl rejects). Only an ok document is stored; refused hops, bot checks and error pages never are, and every
+        receipt written after a real browser run is marked browser_tried."""
         b = self.browser(current, delay)
         seen = verdict(flags | b.get('flags', set()))
         note = dict(code=response.get('code', 0), error=b.get('error', ''))
         if b.get('unavailable'):
             if kind == 'challenge': self.manual(target, current, response.get('code', 0))
             return self.save(target, note, 'BOT_CHECK_MANUAL' if kind == 'challenge' else 'FETCH_FAILED', current, 'direct', seen)
-        if b['blocked']: return self.save(target, note, b['blocked'], b['final_url'], 'browser', seen)
-        if why := refused(target, b['final_url']): return self.save(target, note, why, b['final_url'], 'browser', seen)
+        tried = 'yes'
+        if b['blocked']: return self.save(target, note, b['blocked'], b['final_url'], 'browser', seen, tried)
+        if b['error'].startswith('EXTRA_PAGE_OPENED'): return self.save(target, note, 'FETCH_FAILED', current, 'browser', seen, tried)
+        if why := refused(target, b['final_url']): return self.save(target, note, why, b['final_url'], 'browser', seen, tried)
         if not b['code'] or not b['final_url'].startswith(('http://', 'https://')):  # no document came back
-            return self.save(target, dict(note, error=b.get('error', '') or note['error']), 'FETCH_FAILED', current, 'browser', seen)
+            return self.save(target, dict(note, error=b.get('error', '') or note['error']), 'FETCH_FAILED', current, 'browser', seen, tried)
         seen = verdict(flags | b['flags'] | {self.robots(b['final_url'])[0]})
         if challenged(b['code'], b['raw'].decode('utf-8', 'replace')):
             self.manual(target, b['final_url'], b['code'])
-            return self.save(target, dict(note, code=b['code']), 'BOT_CHECK_MANUAL', b['final_url'], 'browser', seen)
-        if b['code'] != 200: return self.save(target, dict(note, code=b['code']), 'FETCH_FAILED', b['final_url'], 'browser', seen)
-        return self.save(target, b, 'ok', b['final_url'], 'browser', seen)
+            return self.save(target, dict(note, code=b['code']), 'BOT_CHECK_MANUAL', b['final_url'], 'browser', seen, tried)
+        if b['code'] != 200: return self.save(target, dict(note, code=b['code']), 'FETCH_FAILED', b['final_url'], 'browser', seen, tried)
+        return self.save(target, b, 'ok', b['final_url'], 'browser', seen, tried)
 
     def robots_rules(self, target):
         """(receipt, text) for the host's robots.txt. The body is parsed in memory and NEVER written to disk, whatever it
@@ -527,8 +565,7 @@ class Corpus:
             current, response = robots, {}
             for _ in range(6):
                 if refused(robots, current): response = {}; break
-                response = self.request(current, 1)
-                if response.get('code') == 0 and response.get('exit') in HTTP1_RETRY: response = self.request(current, 1, http1=True)
+                response = self.hop(current, 1)
                 if response['code'] in (301, 302, 303, 307, 308) and response['location']:
                     current = url(urljoin(current, response['location']))
                     if urlsplit(current).path != '/robots.txt': break  # only robots paths are followed
@@ -588,15 +625,13 @@ class Corpus:
             for _ in range(6):
                 state, delay = self.robots(current)
                 flags.add(state)
-                response = self.request(current, delay)
+                response = self.hop(current, delay)
                 if response['code'] in (301, 302, 303, 307, 308) and response['location']:
                     current = url(urljoin(current, response['location']))
                     if why := refused(target, current):
                         return self.save(target, {}, why, current, 'direct', verdict(flags))
                     continue
                 break
-            if response.get('code') == 0 and response.get('exit') in HTTP1_RETRY:  # TLS handshake, TLS chain or HTTP/2 error: once over HTTP/1.1
-                response = self.request(current, delay, http1=True)  # certificate verification stays on
             seen = verdict(flags)
             if response.get('code') in (301, 302, 303, 307, 308):
                 return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)
@@ -615,9 +650,8 @@ class Corpus:
                     source = re.search(r'(?m)^URL Source:\s*(https?://\S+)', fallback['raw'].decode('utf-8', 'replace'))
                     if not source or not same_page(current, source[1]):
                         return self.save(target, fallback, 'WRONG_PAGE', current, 'jina', seen)
-                    if reader_challenged(fallback['raw'].decode('utf-8', 'replace')):
-                        self.manual(target, current, 200)
-                        return self.save(target, fallback, 'BOT_CHECK_MANUAL', current, 'jina', seen)
+                    if reader_challenged(fallback['raw'].decode('utf-8', 'replace')):  # the reader met a bot check: Chrome tries the original URL; its body is never stored
+                        return self.visit(target, current, delay, flags, dict(code=200), 'challenge')
                     return self.save(target, fallback, 'ok', current, 'jina', verdict(flags | {self.robots(source[1])[0]}))
             return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)
 
