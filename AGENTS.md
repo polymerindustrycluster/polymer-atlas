@@ -211,7 +211,12 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    users, publishes personal data, lets a check pass on what it could not
    inspect, or lets CI be defeated) or FOLLOW-UP; follow-ups do not hold a
    merge and are listed in the PR and on the board; a verdict is REFUTE
-   only when at least one finding is BLOCKING. **Nothing mechanical checks
+   only when at least one finding is BLOCKING. A PR that adds or changes a
+   gate or tool plants the defect it exists to catch and shows the check
+   catching it; once it does, its scope freezes, and later edge cases are
+   FOLLOW-UP unless they corrupt data, publish personal data or let the
+   gate pass what it cannot inspect, which stay BLOCKING as defined above.
+   **Nothing mechanical checks
    any of this, and the records are self-reported comments on a shared
    account.** The way to enforce it, if the owner later wants that, is
    separate GitHub accounts for builders and reviewers with GitHub-required
@@ -322,6 +327,15 @@ agree, by script) and a filing name variant added to `trade_names`
 (second-family check). SCHEMA v1.20.0 §4.13 states the conditions; the
 gate implementation follows in a later PR. Recorded in `DECISIONS.md`. No
 other rule is amended and no data file is changed by this revision.*
+
+*Revision note — 2026-11-26 (owner ruling 2026-11-25 18:25, multiple choice,
+all four options): §2a rule 4 gains the gate-scope freeze. A PR that adds or
+changes a gate or tool plants the defect it exists to catch and shows the
+check catching it; once it does, scope freezes, and later edge cases are
+FOLLOW-UP unless they corrupt data, publish personal data or let the gate
+pass what it cannot inspect (these stay BLOCKING, as rule 4 already defines).
+Recorded in `DECISIONS.md`. No other rule is amended and no data file is
+changed by this revision.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 
