@@ -13,6 +13,8 @@ sys.path.insert(0, str(scripts))
 import site_corpus as sc  # noqa: E402
 
 RESULTS = []
+if hasattr(sc.Corpus, 'browser'):  # with the browser path present (the browser PR), a handshake or chain failure that survives HTTP/1.1 goes to Chrome: here Chrome fails to navigate, so the page is FETCH_FAILED
+    sc.Corpus.browser = lambda self, target, delay=1, *a, **k: dict(unavailable=False, code=0, raw=b'', location='', content_type='', exit=0, error='net::ERR_FAILED', final_url=target, flags=set(), blocked='')
 PAGE = '<html><body><p>' + 'Real polymer molding. ' * 20 + '</p></body></html>'
 
 
