@@ -1,4 +1,5 @@
 site_id,cls,org_id,site_name,url,corpus,sha256
+SITE-000028,C,ORG-000029,"Akron Rubber Development Laboratory, Inc. — Akron",https://ardl.com/,pic18-corpus-2026-11-16,809f758702f37c53aa5c49f7ae221182b51bafb6875afb22700ac94bd10c3bb2
 SITE-000039,A,ORG-000039,Landmark Plastic Corp. — Akron,https://www.landmarkplastic.com/,pic18-corpus-2026-11-16,e356557a50a2314de9bc1f21c7eabbf97afe142392d77eb74491091d8928beb4
 SITE-000071,B,ORG-000071,Miles Rubber & Packing — Twinsburg,https://milesrubber.com/contact-us,pic18-corpus-2026-11-16,567ce80114d8767bdb7b45963aacecb7b6eb2b9d6a857647ffdb34f38d112317
 SITE-000109,A,ORG-000110,Team Plastic — Cleveland,https://teamplasticsinc.com/fabrication-services/,pic18-corpus-2026-11-16,45dd282e3fc9fe5c3e3a831a4c264b01dc690ffe6dbed470ff5a0f20b00ee0e4
@@ -8,44 +9,69 @@ SITE-000224,A,ORG-000211,Additive Engineering Solutions — Akron,https://additi
 SITE-000240,A,ORG-000226,Alttran — Hudson,https://alttran.com/iso-quality-systems/,pic18-corpus-2026-11-16,53e4334e503adb87ef95cd1ab4a5f78248a0a754a44cb2e4992b46eb40337192
 SITE-000263,A,ORG-000247,Blade-tech Industries — Streetsboro,https://blade-tech.com/,pic18-corpus-2026-11-16,696051c438daedd6714642d876b165c093fd5a041c171a0e2ac043a1d1b2f848
 SITE-000273,B,ORG-000257,BVPV Styrenics — Painesville,https://styropek.com/contact-us/,pic18-corpus-2026-11-16,d357c6e78e44b83775b37c25c60c63988e69c7339d4317738a8400065005e49a
+SITE-000279,C,ORG-000262,Carlisle Polyurethane Systems — Berea,https://carlisletyrfil.com/,pic18-corpus-2026-11-16,1b91c01aaa6edb2635b40a1d80dddfae32ce65dbf438c773631c4bd2e05d3e20
+SITE-000287,C,ORG-001490,Chardon Rubber Company — Chardon,https://www.chardoncp.com/,pic18-corpus-2026-11-16,3c7f9a20d8639504514a5cf41a54ffa41b364104fda2767a8384d0a5ed41185e
+SITE-000310,C,ORG-000291,CPC Bags — Elyria,https://creativepackagingconcepts.com/,pic18-corpus-2026-11-16,b397aa81387a9cc3265f9510135dcf6c6453635530767bb182d9f7e0e5ea50da
+SITE-000327,C,ORG-000308,Dott Foam Products — Avon,https://dottproducts.com/quality-custom-designed-products,pic18-corpus-2026-11-16,4e9c4a8e6ad56df94d1d45c78d03ba114893f5a15fa8b22eabc423afff63b256
 SITE-000337,A,ORG-000316,DURACOTE IC DISC CORPORATION — Ravenna,https://www.duracote.com/,pic18-corpus-2026-11-16,b5b3dd98dc7788029b683e3c3778b2ea817ed3b733203b5fa53a110a71bce634
 SITE-000367,A,ORG-000344,Fomo Products — Norton,https://www.handifoam.com/,pic18-corpus-2026-11-16,dba3aaf1e4df48860490257d16fcd671392775be2b09e88fb037646a0a6eb7aa
 SITE-000386,A,ORG-000361,"H & B Machine & Tool Co., Inc. — Cleveland",https://www.hb-machine.com/services.html,pic18-corpus-2026-11-16,25be82fcc0557644968dbae6ab8d7e495aecc135d5b8f41288bb89139d382d23
+SITE-000401,C,ORG-000376,IMS Industrial Molding Supplies — Chagrin Falls,https://imscompany.com/,pic18-corpus-2026-11-16,3f590de71875248d811b6e4b913bd73e1e999b49e3fe43479ae7833b9493798b
+SITE-000426,C,ORG-000397,Johnson Brothers Rubber Co. — West Salem,https://www.johnsonbrosrubbercompany.com/contact-us/,pic18-corpus-2026-11-16,d6d02fb6447cee2122bb4df8f45e6fd281ed54c11bd9d7e2847fecb643cffe5f
 SITE-000436,B,ORG-000407,Kephaco Corporation dba American Marble Industries Plant 1 — Canton,https://amisurfaces.com/,pic18-corpus-2026-11-16,4600d0a8c1188e979cb1b6c1b7f759f442568443b57f7651345a1f7ab87063ca
+SITE-000458,C,ORG-000428,"Malish Corp., Plastic Div. — Mentor",https://malishplastics.com/,pic18-corpus-2026-11-16,bda02b746524e759009b9aec8829e6e9b244a1468f25ac81555e456ccf475fbd
 SITE-000464,A,ORG-000433,McCann Plastics — North Canton,https://mccannplastics.com/,pic18-corpus-2026-11-16,5d9165a29a4a66cd62015ee7e62bf4ce831e7d0f34972a9f3ee6f52f455cf0a6
+SITE-000466,C,ORG-000435,MEDCO LABS — Bedford Heights,https://medcocoatedproducts.com/,pic18-corpus-2026-11-16,94056687c9d08f361d79d6141a73c0a3954be0cebca263a2343540b2838f71f1
 SITE-000496,A,ORG-000464,Nippon Paint Automotive Americas — Cleveland,https://www.nipponpaintamericas.com/contact/,pic18-corpus-2026-11-16,73e706fbc782652ea8a2e48241b89df567a413afd30ca5cf0d5fb30a63cf7ed8
 SITE-000506,A,ORG-000474,ORBIS Corp. — Mentor,https://www.orbiscorporation.com/en-us/about-orbis/locations/,pic18-corpus-2026-11-16,29512c5ec8bfac4d87403d1b4b9e0d2bb23a3867d1e4b36e0486b114e3817a8b
 SITE-000522,A,ORG-000487,PFC-OH — Massillon,https://pfccases.com/contact-us/,pic18-corpus-2026-11-16,b274f922d9f8a66c8844f75d06b421c60cfedfca3eada556827a0eb91105fdf6
+SITE-000523,C,ORG-000488,"Pacific Management Holdings, LLC d/b/a Pharmacy-Lite Packaging",https://pharmacylite.com/,pic18-corpus-2026-11-16,bc853bff5ef7387058f66d86aff43c5e4d8959a0401fdfe58d14e0bdfbe3e383
+SITE-000530,C,ORG-000495,Plastic Platers — Brooklyn,https://www.mpcplating.com/,pic18-corpus-2026-11-16,2ebb9a15e44c9fc8501abdd485037188ed0bdebb28c1a46d969e6d7fd4863e18
 SITE-000545,A,ORG-000511,"Polymer Packaging, Inc. — North Canton",https://www.polymerpkg.com/,pic18-corpus-2026-11-16,33c9c401a2d8bf9bcd30a7a4ec392256781c28b55aa0ffba9ff64b43e0ac503a
 SITE-000563,A,ORG-000527,Progressive Foam Technologies — Beach City,https://www.progressivefoam.com/about-pft/,pic18-corpus-2026-11-16,921747155b175698ff232962500c360dd31713e125da43786d15f996a96badae
 SITE-000569,AB,ORG-000533,Qnity Cleveland Laird Plant — Cleveland,https://www.qnityelectronics.com/about/visit-us,pic18-corpus-2026-11-16,e79d6dd68fea7f9d499b225e5e0ce8c65184abe38c8ec33f942d431ba247a820
+SITE-000574,C,ORG-000538,Rapid Molds — North Canton,https://rapidmolding.com/,pic18-corpus-2026-11-16,23c864f1325914699dc458e2566ff87cece1785f6aa4e3863b09aa758f403312
 SITE-000586,A,ORG-000549,"Robin Industries, Inc. — Fredericksburg",https://www.robin-industries.com/certifications/,pic18-corpus-2026-11-16,a0593d5f799ef65526767a60cf88b24b2ecef71dd8f488654feafe35663e188a
 SITE-000592,A,ORG-000554,RP+M — Avon Lake,https://www.rpplusm.com/,pic18-corpus-2026-11-16,5c8847bc7916f56e43e8b630c92d52289f900d58339999004160dc123ba8d77a
 SITE-000612,A,ORG-000573,Silicone Solutions — Cuyahoga Falls,https://siliconesolutions.com/,pic18-corpus-2026-11-16,526091017c2cb81b230af6fe9c121dfce260f1522525ebaf3f15d5f33457c942
+SITE-000626,C,ORG-000587,"Squire, T. L. & Co., Inc. — Akron",https://www.tlsquire.com/,pic18-corpus-2026-11-16,9dd0443edd293951fd8e44ff3d22432ffb16516cbe3ecb74af560a421fbb3500
+SITE-000627,C,ORG-000588,Steere Enterprises — Tallmadge,https://www.steere.com/,pic18-corpus-2026-11-16,59c1c1eacc506ab5ba06bc75b64c3324620482091286a669150677eed3241ee9
+SITE-000628,C,ORG-000589,The Step 2 Company — Streetsboro,https://www.step2.com/pages/product-recalls,pic18-corpus-2026-11-16,2541a352fa594eb4e35e0794efeaf9ac0f40a019340e21a0a7e926053cb07c18
 SITE-000640,A,ORG-000601,The Technology House — Streetsboro,https://www.tth.com/industries/parts-manufacturing-aerospace-defense,pic18-corpus-2026-11-16,2662ad8dc8acd3d13ab1f41ac8821dde5fd6485b276a36c5aa9ff9645447eb85
 SITE-000647,A,ORG-000607,"Timco Rubber Products, Inc. — Berea",https://www.timcorubber.com/contact-us/,pic18-corpus-2026-11-16,8c3ce27b4cf3f25298ccf2672d45cda563b60ba57d510c12c3582696bcd4e930
+SITE-000661,C,ORG-000620,"Universal Plastics Group, Inc. — Middlefield",https://www.universalplastics.com/locations/,pic18-corpus-2026-11-16,bb70e872848325b73e79b7e2a93783c07af89a3de8cb4581c4ef0e9cf43aba10
 SITE-000667,A,ORG-000626,"Vinylume Products, Inc. — Youngstown",https://www.vinylume.com/,pic18-corpus-2026-11-16,fff0e1a46da5b2b08a3cfc8c507f2e81f244a97ee91d19566eea856b8f675ddb
+SITE-000672,C,ORG-000631,Wayne County Rubber — Wooster,https://woosterelastomers.com/,pic18-corpus-2026-11-16,71ce64736f7fca3245c04776cc8bf33fc1b9b2e3d887e6441e08c0fdb161a9f9
 SITE-000813,A,ORG-000751,Convertapax — Midvale,https://www.convertapax.com/contact-us/,pic18-corpus-2026-11-16,dfd26aaee33633b76cbfff681476e262bb93d2da3b379ce9d8577d9b3095d21b
 SITE-000854,A,ORG-000790,Denney Plastics Machining — New Philadelphia,https://www.denneyplastics.com/2023/11/02/callout-1/,pic18-corpus-2026-11-16,bb6382f0167462b8729983fdc415d0457dd4b04f787aa880edc654ded3184205
+SITE-000889,C,ORG-000823,Empire Plastics — Newcomerstown,https://www.boltaron.com/,pic18-corpus-2026-11-16,426006e759aacb1ad37ac98a0f9532533fc17d1b400ea201c3c54152415066c9
 SITE-001045,A,ORG-000968,Mps Manufacturing Company — New Philadelphia,https://mpsco.com/,pic18-corpus-2026-11-16,ecd7bceb19ab93c53ce960263a5d6f6de01b57a3bfe5ebbf4eb22495d48b391e
+SITE-001109,C,ORG-001027,Plastics Family Holdings Inc (Paramont Machine Company),https://paramontmachinecompany.com/,pic18-corpus-2026-11-16,c23d683bbd674ae66a4f9397c849539e05a7c8357a62881132f4c8265fb1aefa
 SITE-001427,A,ORG-001388,Hy-Ko Products Company — Northfield,https://www.hy-ko.com/,pic18-corpus-2026-11-16,5bd7833ffab9b06710c6f2c8510ffd0e8392764df9a2fdce59744e77b9ed9a5b
 SITE-001487,B,ORG-001438,Thogus Products — Avon Lake,https://www.thogus.com/,pic18-corpus-2026-11-16,e8a9f237a05db8af4d1dfff4f5abde20b591ae58f2a1825f5968d37ba9165529
 SITE-001506,A,ORG-001455,Lamports Filter Media — Cleveland,https://lamports.com/,pic18-robots-off-main-2026-11-25,ce3d82b31a81e7a238ea40c23a3ddfcdc108dc50c9d728fa959e05c83ab256f7
 SITE-001568,A,ORG-001504,"THEKEN COMPANIES, LLC — Akron",https://www.nextsteparthropedix.com/,pic18-corpus-2026-11-16,c8a4f8e4fd33c005125f4d74fe4aa085b92c41d1a7e39d7d71b37c5569c04145
 SITE-001578,AB,ORG-001514,"Julius Zorn, Inc. (Juzo USA) — Cuyahoga Falls",https://juzousa.com/,pic18-corpus-2026-11-16,63dfc536b6dd56ed1d5ac5c3021c73d945ddf2bb0c1a8154ff294c02dd575091
 SITE-001613,B,ORG-001548,Frantz Medical Development Ltd. (Frantz Medical Group) — Mentor,https://frantzgroup.com/,pic18-corpus-2026-11-16,75735c28dd596d4d415a95ff77461fa4d7dfe1329bd09a5b5a1fb79982402f1a
+SITE-001640,C,ORG-001573,Prentke Romich Company dba PRC-Saltillo — Wooster,https://prc-saltillo.com/contact,pic18-corpus-2026-11-16,7b3288887dc8b6c2028ec097a2a732e2e70c0d626908712b64972c6fd4824a1b
 SITE-001657,AB,ORG-001585,High Tech Extrusions Ltd — Chardon,https://hitechextrusions.com/,pic18-corpus-2026-11-16,808376b4c96abba0b427b011f697d3ce91b6c9710f00943f77a7530383ad0eaf
 SITE-001755,A,ORG-001679,Hollo Plastics Equipment Inc — Northfield,https://www.holloplastics.com/contact-us/,pic18-corpus-2026-11-16,93a4f17313db1b966ab9fc98e38c8037a0584060e2ac9f8538573d92eb25096d
 SITE-001776,AB,ORG-001700,"Certon Technologies, Inc.",https://www.haradhesive.com/,pic18-corpus-2026-11-16,91b66c6efd1f5384cb50ab8971022985a1b72b3b896924417f0c0d8ef66071af
+SITE-001785,C,ORG-001709,Goodlevel Enterprises LLC dba The Maple City Rubber Company (TUFTEX Balloons),https://www.tuftexballoons.com/,pic18-corpus-2026-11-16,f25be403097941e31fd3f1cf2e7e261f07c8789f58423dd0e008c47f252a318d
 SITE-001801,AB,ORG-001725,Thorworks Industries Inc,https://sealmaster.net/locations/,pic18-corpus-2026-11-16,a75979d73d07889b8482007be1eb3001b1cddfa45e42cb8c03095521749c37db
 SITE-001823,A,ORG-001747,P3 Infrastructure Inc.,https://p3-i.com/about-us/,pic18-corpus-2026-11-16,726867fe4763ea4b8acc6f42d01ccfa2a546e855ed19a9ee12aa7352f71601c8
 SITE-001825,A,ORG-001749,"Standards Testing Laboratories, Inc.",https://www.stllabs.com/,pic18-corpus-2026-11-16,31e670327f4226e270ea6bf528793be7239d9d986708e74cfee4f3bcadf18700
 SITE-001833,B,ORG-001757,"ACO Polymer Products, Inc.",https://www.acousa.com/contact/,pic18-corpus-2026-11-16,a7ed1325d7a5ef2c0729f970f7953e08e09e3d4b365bf87a875c993698e8b639
 SITE-001834,A,ORG-001758,Niles Building Products Company,https://nilesbldg.com/,pic18-corpus-2026-11-16,f1cde649db1ae17084648b7863999fc0d9288a8432bf659d9c5fa3ca28571f5a
+SITE-001846,C,ORG-001763,Rubber Mold Design LLC,https://dalinmold.com/,pic18-corpus-2026-11-16,3a155cfd769960d12262789f467d01d31e67dd73b20e493b166c2097bde9a89e
 SITE-001851,A,ORG-001768,"Action Super Abrasive Products, Inc.",https://actionsuper.com/about-us/,pic18-corpus-2026-11-16,a430e0ca10d008ec6794d42b45c71e9df054bc6bac3667a5f42c1758e29b6e70
+SITE-001856,C,ORG-001777,American Consolidated Industries Inc (Anchor Industries),https://anchor-online.com/,pic18-corpus-2026-11-16,9115c97e762c2aa34f7414c3fef7efe2ad54bc70728dd2b5dd8ac964a492b38e
 SITE-001861,A,ORG-001783,Beacon Gasket & Seals Co,https://www.beacongasket.com/,pic18-corpus-2026-11-16,b814c680b4838cbe24ce22354aceb2afa174ae4ff063cfe032040de896b57b45
 SITE-001862,A,ORG-001784,BF Plastics Inc,https://bfplasticsinc.com/,pic18-corpus-2026-11-16,880e03a077ebe30df7776aadacf3a09daf2704dd54a53cb6fd07fd4aba608169
 SITE-001880,A,ORG-001826,Hapco Inc,https://hapcoinc.com/all-products/,pic18-corpus-2026-11-16,aaebd48b90d1c134957ff74e40ea8403f2bd8c9de4f4aac4a90cf41d7943cd37
+SITE-001882,C,ORG-001829,HP Enterprise Inc (Horsemen's Pride),https://horsemenspride.com/,pic18-corpus-2026-11-16,0c4da21c5c1af2231f9e89ef91553977053701c9c8219bf3f000b0ce1774f69b
+SITE-001894,C,ORG-001869,Pro-Line Automation Systems Ltd. (USA),https://www.prolineautomation.com/,pic18-corpus-2026-11-16,bd3daf586777185ee52f66531e5e15ed60dda602aebf29475a0d4fe4a4926a2a
+SITE-001905,C,ORG-001911,"United Feed Screws, Ltd. (United Feed Screws LLC)",https://www.unitedfeedscrews.com/,pic18-corpus-2026-11-16,6e942dc25e255902d796aa013bb10ef5303e27c82fa273b3e3e3dfae5b3fe551
 SITE-001924,B,ORG-001930,Industrial Thermoset Plastics (IT Plastics),http://itplastics.com/,pic18-corpus-2026-11-16,7183527abcaa2f407242bdab04225f4e9dacd701d97dd292e4a5573d78d9ea01
 SITE-001931,A,ORG-001937,"Smetzer's Tire Center, Inc.",https://www.smetzertire.com/About-Us,pic18-corpus-2026-11-16,e54284e88c9e21628790515cdd5b5cd61a43c9dbbfad949f182a259ac22e0819
 SITE-001943,A,ORG-001949,Akron Steel Fabricators Co.,https://www.polinggroup.com/contact,pic18-corpus-2026-11-16,c8886d583d55fc4efde3fff9e42a8de8ad187d83520f30d284eeb2fa353b6f93

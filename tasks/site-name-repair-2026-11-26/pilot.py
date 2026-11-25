@@ -47,7 +47,20 @@ PILOT = {
  'SITE-001613': (R, 'Address: 7740 Metric Drive, Mentor, Ohio 44060', 'Held name carries Frantz Medical Group, which the page uses.'),
  'SITE-001833': (R, 'North East Office 9470 Pinecone Dr. Mentor, OH 44060', 'A label, no name.'),
  'SITE-001924': (R, 'Contact Us 7675 Jenther Dr Mentor, Ohio 44060', 'No name beside the street.'),
+ # class C: the page prints the legal or a trade name beside the street, never the site_name's own part (10 of 26 read, chosen by snippet triage)
+ 'SITE-000672': (V, 'Wooster Elastomers 1205 E Bowman Street Wooster, OH 44691', 'Own site footer prints the legal name Wooster Elastomers at the street; the held site_name Wayne County Rubber is a held trade name.'),
+ 'SITE-000889': (V, 'SIMONA Boltaron Inc. 1 General Street Newcomerstown, OH 43832 USA', 'Own site prints the legal name SIMONA Boltaron Inc. at the street; the held site_name Empire Plastics is a held trade name, on no retained page.'),
+ 'SITE-001846': (V, 'Dalin Mold & Machine Contact Us Get in Touch 2915 Industrial Pk Dr Austinburg, OH 44010', 'Own site prints the held trade name Dalin Mold & Machine at the street; the held site_name is the legal name Rubber Mold Design LLC, on no retained page.'),
+ 'SITE-000279': (V, 'Contact Carlisle TyrFil 140 Sheldon Rd, Berea, OH 44017', 'Own site prints the held trade name Carlisle TyrFil at the street; the held site_name is the legal name, on no retained page.'),
+ 'SITE-001843': (V, 'Contact Pioneer Athletics 4529 Industrial Parkway Cleveland, OH 44135', 'Own site (held website) prints Pioneer Athletics at the street; The Pioneer Manufacturing Company is on no retained page. Not found by the finder (one-word held name).'),
+ 'SITE-000401': (V, 'Address IMS Company 10373 Stafford Road Chagrin Falls, Ohio 44023-5296 USA', 'Own site prints the legal name IMS Company at the street; the held site_name IMS Industrial Molding Supplies is a held trade name, on no retained page.'),
+ 'SITE-000466': (U, 'Medco Coated Products - Adhesive Coating Liners, Films, Foams & Fabrics 5156 Richmond Road, Bedford Heights, Ohio', 'Page header and street line run together; held MEDCO LABS is also on the site. Settling fact: the address block alone naming the operator.'),
+ 'SITE-000310': (U, 'Creative Packaging Concepts 214 Brace Avenue, Elyria, OH 44035', 'Footer prints the legal name, and the held site_name CPC Bags is a brand the site also uses. Owner call on which name the site carries.'),
+ 'SITE-000327': (U, 'OEM and Custom Manufacturing by Dott Products in Avon, OH 1273 Lear Industrial Pkwy. Avon, OH 44011', 'Sentence names Dott Products (legal name); held Dott Foam Products differs by one word. Reader call, not a division or parent.'),
+ 'SITE-000574': (R, 'ADDRESS: HQ/Engineering/R&D 9107 PLEASANTWOOD AVE NW NORTH CANTON, OH 44720', 'Page says Rapid Molding, held Rapid Molds: a variant of one word on the held domain, label before the street.'),
 }
+# the page evidence is clean either way; whether a brand, trade name or legal-name difference is a rename is an owner question
+STATES_DIVISION = {'SITE-001568'}
 
 
 def main():
@@ -56,6 +69,7 @@ def main():
     a = ap.parse_args()
     sites = {r['site_id']: r for p in glob.glob(str(c.ROOT / 'data/sites_*.csv')) for r in c.read(p)}
     pages = c.load_pages(c.CORPORA)
+    klass = {r['site_id']: r['cls'] for r in c.read(a.candidates / 'CANDIDATES.csv')}
     out = []
     for sid, (verdict, quote, fact) in PILOT.items():
         s = sites[sid]; rx = c.street_regex(s['street_address'])
@@ -66,7 +80,8 @@ def main():
                 found = p; break
         assert found, f'{sid}: quote not on any retained page: {quote!r}'
         out.append(dict(site_id=sid, org_id=s['org_id'], held_site_name=s['site_name'], verdict=verdict, quote=quote, page_url=found['url'],
-                        capture_sha256=found['sha256'], corpus=found['corpus'], deciding_or_settling_fact=fact))
+                        capture_sha256=found['sha256'], corpus=found['corpus'], finder_class=klass.get(sid, '-'),
+                        names_division_link='yes' if sid in STATES_DIVISION else '', deciding_or_settling_fact=fact))
     with open(Path(__file__).parent / 'PILOT.csv', 'w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, list(out[0])); w.writeheader(); w.writerows(out)
     tally = {v: sum(r['verdict'] == v for r in out) for v in (V, R, U)}

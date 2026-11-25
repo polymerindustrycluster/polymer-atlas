@@ -57,10 +57,11 @@ def street_regex(street):
     return re.compile(r'(?<![A-Za-z0-9])' + r'[^A-Za-z0-9]+'.join(parts) + r'(?![A-Za-z0-9])', re.I) if parts else None
 
 
-def held_names(site, org):
+def held_names(site, org, site_only=False):
     """Normalized (name_key) names a page could print for this site: not the city, not generic words."""
     skip = GENERIC | set(squash(site['city']).split())
-    raw = re.split(r'\s[—–-]\s', site['site_name']) + [org['legal_name']] + [x for x in org['trade_names'].split(';') if x.strip()]
+    raw = re.split(r'\s[—–-]\s', site['site_name'])
+    if not site_only: raw += [org['legal_name']] + [x for x in org['trade_names'].split(';') if x.strip()]
     out = set()
     for r in raw:
         toks = name_key(re.sub(r'\((?:OSHA|EPA) filing name\)', '', r)).split()
@@ -150,6 +151,7 @@ def main():
         if not own: continue
         counts['frame_sites_with_own_domain_page'] += 1
         rx, names, city = street_regex(s['street_address']), held_names(s, org), squash(s['city'])
+        own_names = held_names(s, org, site_only=True)
         hits, site_words = [], ''
         for p in own:
             text = cache.get(p['text_file']) or cache.setdefault(p['text_file'], Path(p['text_file']).read_text(encoding='utf-8', errors='replace'))
@@ -161,7 +163,7 @@ def main():
                 shown, pkey = printed_name(before)
                 # a printed name different from every held name: not covered by one, and not a part of one
                 differs = bool(pkey) and not any(same(pkey, n) for n in names) and pkey != city
-                hits.append(dict(site_id=s['site_id'], org_id=s['org_id'], site_name=s['site_name'], street=s['street_address'], city=s['city'],
+                hits.append(dict(site_part_beside=any(contains(squash(before + ' ' + after), n) for n in own_names), site_id=s['site_id'], org_id=s['org_id'], site_name=s['site_name'], street=s['street_address'], city=s['city'],
                                  url=p['url'], corpus=p['corpus'], via=p['via'], sha256=p['sha256'], held_name_beside=bool(held), printed=shown, differs=differs,
                                  before=' '.join(before.split()), match=m.group(0), after=' '.join(after.split())))
         if not hits: continue
@@ -172,10 +174,12 @@ def main():
         absent = not any(contains(site_words, n) or n.replace(' ', '') in site_words.replace(' ', '') for n in names)
         counts['held_name_beside_street'] += stood
         counts['no_name_beside_street'] += not stood and not diff
-        cls = 'A' * (not stood and bool(diff)) + 'B' * absent
+        # C: the page prints another held name (legal or trade name) beside the street, never the site_name's own part
+        cls = 'A' * (not stood and bool(diff)) + 'B' * absent + 'C' * (stood and not any(h['site_part_beside'] for h in hits))
         if cls: cands.append(dict((diff or hits)[0], cls=cls, held_names_on_site=not absent))
     tally.update(counts, candidates_A_other_name_beside_street=sum('A' in c['cls'] for c in cands),
-                 candidates_B_held_name_nowhere_on_site=sum('B' in c['cls'] for c in cands), candidates_union=len(cands))
+                 candidates_B_held_name_nowhere_on_site=sum('B' in c['cls'] for c in cands),
+                 candidates_C_only_legal_or_trade_name_beside_street=sum('C' in c['cls'] for c in cands), candidates_union=len(cands))
     a.out.mkdir(parents=True, exist_ok=True)
     keep = ['site_id', 'cls', 'org_id', 'site_name', 'url', 'corpus', 'sha256']  # no page excerpts: they can hold a person's name
     for path, cols in ((a.out / 'CANDIDATES.csv', keep), (a.raw, keep[:4] + ['street', 'city', 'url', 'sha256', 'printed', 'before', 'match', 'after'])):

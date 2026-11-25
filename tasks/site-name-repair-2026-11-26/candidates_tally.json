@@ -6,5 +6,6 @@
  "no_name_beside_street": 102,
  "candidates_A_other_name_beside_street": 46,
  "candidates_B_held_name_nowhere_on_site": 13,
- "candidates_union": 53
+ "candidates_C_only_legal_or_trade_name_beside_street": 26,
+ "candidates_union": 79
 }
