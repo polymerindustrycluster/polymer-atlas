@@ -305,7 +305,7 @@ class Corpus:
         body = raw.decode('utf-8', 'replace')
         code = dict(code=response.get('code', 0))
         if urlsplit(target).path == '/robots.txt':
-            if body.lstrip()[:1] == '<':  # HTML where the rules belong (a form, an error page): unreadable, never stored
+            if body.lstrip('\ufeff').lstrip()[:1] == '<':  # HTML where the rules belong (a form, an error page): unreadable, never stored
                 response, raw, body = code, b'', ''
                 if status == 'ok': status = 'FETCH_FAILED'
         elif private_page(final, body) or private_page(target, ''):

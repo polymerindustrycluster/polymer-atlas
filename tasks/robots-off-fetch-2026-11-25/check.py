@@ -190,6 +190,15 @@ def html_form_served_as_robots_txt_is_unreadable_and_not_stored(c, tmp):
 
 
 @case
+def html_form_with_a_byte_order_mark_served_as_robots_txt_is_not_stored(c, tmp):
+    bom = dict(resp(FORM), raw=b'\xef\xbb\xbf' + FORM.encode())
+    with patch.object(c, 'request', side_effect=serve(bom, resp(PAGE))):
+        r = c.fetch('https://example.org/')
+    assert r['status'] == 'ok' and r.get('robots_disallowed') == 'unreadable', f"status {r['status']} robots_disallowed {r.get('robots_disallowed')!r}"
+    no_sentinel(tmp)
+
+
+@case
 def reader_bot_check_is_manual_never_ok(c, tmp):
     for n, body in enumerate(['Title: Security check\nURL Source: https://example.org/{n}\nMarkdown Content:\nComplete this CAPTCHA to proceed.',
                               'Title: Just a moment...\nURL Source: https://example.org/{n}\nMarkdown Content:\n' + 'Checking your browser before accessing the site. ' * 3]):
