@@ -755,3 +755,15 @@ Decided by the repo owner in session, 2026-11-24 and 2026-11-25.
 7. **Visible per page.** Each receipt records `robots_disallowed` (yes, no, unreadable), so the change shows per page. An unreadable robots.txt is no longer read as Disallow all.
 
 Replaces the robots-per-hop rule in `docs/ACQUISITION.md` and the exhibitor-roster exception to it. Follow-up for the owner: AGENTS.md §4 still says "The site corpus fetcher refuses LinkedIn requests"; the sentence is now stale and is not edited here. The check is `tasks/robots-off-fetch-2026-11-25/check.py`.
+
+## 2026-11-25 · Browser path for bot checks (headed Chrome, no clicks)
+
+Follows the owner rulings of 2026-11-24 21:21 ("Rule change: ignore robots.txt. Click thru bot checks."), 2026-11-24 21:26 ("LinkedIn should not be barred.") and 2026-11-25 06:08 ("Split it": the browser path comes as its own reviewed PR). Evidence: on the merged fetcher (curl only) 0 of 127 PIC-18 LinkedIn company pages and 12 of 117 own-site organizations were readable; a quarantined headed-Chrome run read 122 of 127 LinkedIn pages without a click, and headless Chrome was held by Cloudflare on 3 of 3.
+
+1. A page the curl path calls a bot check is retried once in headed local Chrome (a window opens on the machine). No clicks, no typing: headed Chrome cleared every LinkedIn check without them, and the click findings of the earlier review stay closed by not clicking.
+2. Every request the browser makes is checked before it is sent (privacy exclusions, LinkedIn profile refusal, other hosts, robots state, per-host pacing), HTTP redirect hops included. No cookie is ever sent. Only documents load.
+3. Bodies of excluded destinations, bot-check pages and error pages are never stored. LinkedIn pages are reduced to the allowlisted extract, as on main.
+4. curl failures on the TLS handshake, the certificate chain or HTTP/2 get one retry over HTTP/1.1, with verification on; a chain curl still rejects goes to Chrome. No certificate verification is ever disabled.
+
+The check is `tasks/browser-fetch-2026-11-25/check.py`.
+

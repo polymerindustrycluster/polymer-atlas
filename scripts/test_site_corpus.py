@@ -20,6 +20,9 @@ class SiteCorpusTests(unittest.TestCase):
         directory = tempfile.TemporaryDirectory()
         self.addCleanup(directory.cleanup)
         self.tmp_path = Path(directory.name)
+        # No unit test launches Chrome; the browser path is exercised by tasks/browser-fetch-2026-11-25/check.py.
+        patcher = patch.object(Corpus, 'browser', return_value=dict(unavailable=True, error='PLAYWRIGHT_UNAVAILABLE', code=0, raw=b'', exit=127, final_url='', flags=set(), blocked=''))
+        patcher.start(); self.addCleanup(patcher.stop)
 
     def test_calibrated_known_answer_and_mutations(self):
         for quote, expected in [
