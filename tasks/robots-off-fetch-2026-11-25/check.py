@@ -165,6 +165,62 @@ def privacy_exclusion_holds_through_fetch_for_ok_and_failed(c, tmp):
     no_sentinel(tmp)
 
 
+def jina(body):
+    return lambda u, delay=1: resp(code=404) if u.endswith('/robots.txt') else (resp(body) if u.startswith('https://r.jina.ai/') else resp(code=500))
+
+
+@case
+def form_page_is_never_forwarded_to_the_reader(c, tmp):
+    reader = 'Title: Contact\nURL Source: https://example.org/contact\nMarkdown Content:\n' + SENTINEL + ' ' + 'reader text ' * 40
+    def request(u, delay=1):
+        if u.endswith('/robots.txt'): return resp(code=404)
+        return resp(reader) if u.startswith('https://r.jina.ai/') else resp(FORM, code=500)
+    with patch.object(c, 'request', side_effect=request) as req:
+        r = c.fetch('https://example.org/contact')
+    assert r['status'] != 'ok' and not any('r.jina.ai' in x.args[0] for x in req.call_args_list), f"status {r['status']}, reader called"
+    no_sentinel(tmp)
+
+
+@case
+def html_form_served_as_robots_txt_is_unreadable_and_not_stored(c, tmp):
+    with patch.object(c, 'request', side_effect=serve(resp(FORM), resp(PAGE))):
+        r = c.fetch('https://example.org/')
+    assert r['status'] == 'ok' and r.get('robots_disallowed') == 'unreadable', f"status {r['status']} robots_disallowed {r.get('robots_disallowed')!r}"
+    no_sentinel(tmp)
+
+
+@case
+def reader_bot_check_is_manual_never_ok(c, tmp):
+    for n, body in enumerate(['Title: Security check\nURL Source: https://example.org/{n}\nMarkdown Content:\nComplete this CAPTCHA to proceed.',
+                              'Title: Just a moment...\nURL Source: https://example.org/{n}\nMarkdown Content:\n' + 'Checking your browser before accessing the site. ' * 3]):
+        with patch.object(c, 'request', side_effect=jina(body.replace('{n}', str(n)))):
+            r = c.fetch(f'https://example.org/{n}')
+        assert r['status'] == 'BOT_CHECK_MANUAL' and f'https://example.org/{n}' in (tmp / 'manual-bot-check.csv').read_text(), f'reader body {n}: status {r["status"]}'
+
+
+@case
+def linkedin_company_page_keeps_about_but_never_stores_employees_or_posts(c, tmp):
+    graph = '{"@graph":[{"@type":"Organization","name":"Acme","description":"Polymer molder"},{"@type":"Article","author":{"name":"%s"}}]}' % SENTINEL
+    page = ('<html><head><script type="application/ld+json">' + graph + '</script><script>var d="' + SENTINEL + '"</script></head><body>'
+            '<section data-test-id="about-us"><p>' + 'About us. Acme molds polymer parts. ' * 6 + '</p></section>'
+            '<section data-test-id="employees-at"><ul><li>' + SENTINEL + '</li></ul></section>'
+            '<section data-test-id="updates"><div class="feed-shared">' + SENTINEL + '</div></section><div class="top-card__members">' + SENTINEL + '</div></body></html>')
+    with patch.object(c, 'request', side_effect=serve(resp(code=404), resp(page))):
+        r = c.fetch('https://www.linkedin.com/company/acme')
+    assert r['status'] == 'ok', f"status {r['status']}"
+    assert 'Acme molds polymer parts' in (tmp / r['text_file']).read_text() and 'Polymer molder' in (tmp / r['raw_file']).read_text(), 'the permitted content was lost'
+    no_sentinel(tmp)
+
+
+@case
+def linkedin_page_with_unclosed_people_block_is_withheld(c, tmp):
+    page = '<html><body><p>' + 'About us. Acme. ' * 20 + '</p><section data-test-id="employees-at"><div>' + SENTINEL + '</section></body></html>'
+    with patch.object(c, 'request', side_effect=serve(resp(code=404), resp(page))):
+        r = c.fetch('https://www.linkedin.com/company/acme')
+    assert r['status'] != 'ok', f"status {r['status']}"
+    no_sentinel(tmp)
+
+
 def mutation():
     """The kept-line case must fail when its guard is removed; meaningful only where the guard exists."""
     if not hasattr(sc, 'linkedin_blocked'):

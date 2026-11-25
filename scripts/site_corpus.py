@@ -126,6 +126,63 @@ def challenged(code, body):
     return any(m in lower for m in BOT_BODY) and (code in (403, 503, 999) or len(words(text)) < 40)
 
 
+PEOPLE = re.compile(r'employee|people|member|updates|feed-|author', re.I)  # id, class or data-test-id of a block that names individuals
+VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
+
+
+class StripPeople(HTMLParser):
+    """Re-emits a LinkedIn page without employee, post and member blocks and without scripts (JSON-LD keeps only the
+    Organization). result() is None if a skipped block never closed or closed out of order: the caller then withholds the page."""
+    def __init__(self):
+        super().__init__(convert_charrefs=False); self.out = []; self.stack = []; self.script = None; self.bad = False
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'script':
+            self.script = [dict(attrs).get('type', ''), self.get_starttag_text(), []]; return
+        if self.stack or any(v and PEOPLE.search(v) for k, v in attrs if k in ('id', 'class', 'data-test-id')):
+            if tag not in VOID: self.stack.append(tag)
+            return
+        self.out.append(self.get_starttag_text())
+
+    def handle_startendtag(self, tag, attrs):
+        if not self.stack and tag != 'script' and not any(v and PEOPLE.search(v) for k, v in attrs if k in ('id', 'class', 'data-test-id')):
+            self.out.append(self.get_starttag_text())
+
+    def handle_endtag(self, tag):
+        if tag == 'script' and self.script:
+            kind, start, data = self.script; self.script = None
+            if 'ld+json' in kind and not self.stack:
+                try:
+                    d = json.loads(''.join(data)); graph = d.get('@graph', [d]) if isinstance(d, dict) else d
+                    keep = [{k: v for k, v in g.items() if k not in ('employee', 'member', 'founder', 'author')} for g in graph
+                            if isinstance(g, dict) and g.get('@type') in ('Organization', 'Corporation', 'LocalBusiness')]
+                    self.out.append(start + json.dumps({'@context': 'https://schema.org', '@graph': keep}) + '</script>')
+                except (ValueError, AttributeError): pass
+        elif self.stack:
+            if self.stack.pop() != tag: self.bad = True  # a skipped block closed by something else: markup not understood
+        else: self.out.append(f'</{tag}>')
+
+    def emit(self, text):
+        if self.script: self.script[2].append(text)
+        elif not self.stack: self.out.append(text)
+    def handle_data(self, data): self.emit(data)
+    def handle_entityref(self, name): self.emit(f'&{name};')
+    def handle_charref(self, name): self.emit(f'&#{name};')
+    def handle_decl(self, decl): self.emit(f'<!{decl}>')
+
+    def result(self):
+        self.close()
+        return ''.join(self.out) if not self.stack and not self.bad and self.script is None else None
+
+
+def reader_challenged(body):
+    """Jina's markdown form of a bot check: its Title line and text go through the same detector as a direct page."""
+    title = re.search(r'(?m)^Title:\s*(.*)$', body)
+    text = body.split('Markdown Content:', 1)[-1]
+    return challenged(200, f'<title>{title[1] if title else ""}</title><p>{text}</p>') or (
+        len(words(text)) < 80 and bool(re.search(r'captcha|verify you are human|are you a robot|security check', text, re.I)))
+
+
 def private_page(final, body):
     """Staff-directory paths and form-only pages carry personal data (AGENTS.md §6): never stored. Same tests as the 2026-11-16 crawl."""
     if STAFF_PATH.search(urlsplit(final).path): return True
@@ -246,10 +303,21 @@ class Corpus:
         stem = key(target)
         raw = response.get('raw', b'')
         body = raw.decode('utf-8', 'replace')
-        if urlsplit(target).path != '/robots.txt' and (private_page(final, body) or private_page(target, '')):
+        code = dict(code=response.get('code', 0))
+        if urlsplit(target).path == '/robots.txt':
+            if body.lstrip()[:1] == '<':  # HTML where the rules belong (a form, an error page): unreadable, never stored
+                response, raw, body = code, b'', ''
+                if status == 'ok': status = 'FETCH_FAILED'
+        elif private_page(final, body) or private_page(target, ''):
             # Discarded before storage, whatever the status: a failed or manual receipt must not keep the body either.
-            response, raw, body = {}, b'', ''
+            response, raw, body = code, b'', ''
             if status == 'ok': status = 'CONTACT_FORM_OR_STAFF_DIRECTORY'
+        elif (linkedin_url(final) or linkedin_url(target)) and body:
+            clean = StripPeople(); clean.feed(body); cleaned = clean.result()
+            if cleaned is None:  # markup the stripper could not close: withhold the capture, keep the status
+                response, raw, body = code, b'', ''
+                if status == 'ok': status = 'FETCH_FAILED'
+            else: response, raw, body = dict(response, raw=cleaned.encode()), cleaned.encode(), cleaned
         if route == 'jina':
             text = body.split('Markdown Content:', 1)[-1] if 'Markdown Content:' in body else ''
             source = re.search(r'(?m)^URL Source:\s*(https?://\S+)', body)
@@ -345,12 +413,17 @@ class Corpus:
             if response.get('exit') == 0 and response.get('code') == 200:
                 r = self.save(target, response, 'ok', current, 'direct', seen)
                 if r['status'] in ('ok', 'CONTACT_FORM_OR_STAFF_DIRECTORY') or robots: return r  # an excluded page is not retried through a proxy
+            if not robots and private_page(current, response.get('raw', b'').decode('utf-8', 'replace')):
+                return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)  # never forwarded to a reader
             if not robots and response.get('code') != 429 and urlsplit(current).hostname != 'r.jina.ai' and not linkedin_url(current):
                 fallback = self.fallback(current, delay)
                 if fallback['code'] == 200 and fallback['exit'] == 0:
                     source = re.search(r'(?m)^URL Source:\s*(https?://\S+)', fallback['raw'].decode('utf-8', 'replace'))
                     if not source or not same_page(current, source[1]):
                         return self.save(target, fallback, 'WRONG_PAGE', current, 'jina', seen)
+                    if reader_challenged(fallback['raw'].decode('utf-8', 'replace')):
+                        self.manual(target, current, 200)
+                        return self.save(target, fallback, 'BOT_CHECK_MANUAL', current, 'jina', seen)
                     return self.save(target, fallback, 'ok', current, 'jina', verdict(flags | {self.robots(source[1])[0]}))
             return self.save(target, response, 'FETCH_FAILED', current, 'direct', seen)
 
