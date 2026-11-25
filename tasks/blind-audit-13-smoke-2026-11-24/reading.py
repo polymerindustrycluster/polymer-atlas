@@ -214,10 +214,12 @@ def read_findings(answer, sources, targets, held, plant=None):
 
 HEDGE = re.compile(r'\b(?:former|formerly|previous|previously|prior|used to|moved|relocat\w*|supplier|suppliers|vendor|vendors|customer|customers|partner|partners|'
                    r'competitor|competitors|acquired|closed|sold|future|branch|affiliate|subsidiary|sister|'
+                   r'headquarters|headquartered|hq|office|offices|'  # an address labelled headquarters or office only does not speak for the site (owner ruling 2026-11-25 11:27)
+
                    r'not|no|never|neither|nor|without|isn|aren|wasn|weren|doesn|didn|don|cannot)\b')  # another party, another time, another place, or a denial
 WITNESS_WINDOW = 12  # words each side of the stated value that must be free of those
 LEGAL_SUFFIX = {'inc', 'llc', 'corp', 'corporation', 'co', 'company', 'ltd', 'lp', 'llp'}
-LOCATIVES = [('is', 'located', 'at'), ('is', 'at'), ('is', 'headquartered', 'at'), ('headquartered', 'at'), ('located', 'at')]  # the only locative verb phrases
+LOCATIVES = [('is', 'located', 'at'), ('is', 'at'), ('located', 'at')]  # the only locative verb phrases; 'headquartered at' is no longer one (owner ruling 2026-11-25 11:27)
 
 
 def located_entity(ws, start, own, prev=None):
@@ -263,7 +265,7 @@ def agrees(field, a, b):
     return bool(words(a) and words(b)) and (not values_differ(a, b, field) or not values_differ(b, a, field) or (field in NAME_FIELDS and name_equivalent(a, b)))
 
 
-def witness_check(text, value, field, names, quote=''):
+def witness_check(text, value, field, names, quote='', city=''):
     """'' when `text` positively attributes `value` to this record: in the segment holding the occurrence (inside the reader's quote, when given) the
     record's own name appears, or the page speaks in the first person for its own entity; no other party, time, place or denial is within
     WITNESS_WINDOW words; no other legal entity is named in the segment; and the page names no other street or county. Else the reason it is held."""
@@ -301,7 +303,10 @@ def witness_check(text, value, field, names, quote=''):
     if not why:
         if field == 'street_address':
             from atlas import NOTES_STREET_RE, notes_candidate_key, street_key
-            if {k for k in (notes_candidate_key(m[0]) for m in NOTES_STREET_RE.finditer(text)) if k} - {street_key(value)}:
+            # Several streets at the record's locality make the page ambiguous; a street in another city does not (a parent's or sister plant's address
+            # elsewhere never speaks for this site). With no locality on the record every street on the page counts, as before.
+            at_locality = lambda m: not words(city) or contains(words(text[m.end():m.end() + 80]), words(city))
+            if {k for k in (notes_candidate_key(m[0]) for m in NOTES_STREET_RE.finditer(text) if at_locality(m)) if k} - {street_key(value)}:
                 why = 'witness_ambiguous'
         if field in ('county', 'hq_county'):
             if {c.lower() for c in re.findall(r'\b([A-Z][a-z]+) County\b', text)} - {(words(value) or [''])[0]}:
@@ -309,8 +314,8 @@ def witness_check(text, value, field, names, quote=''):
     return why, used or witness_context(text, value)
 
 
-def witness_reason(text, value, field, names, quote=''):
-    return witness_check(text, value, field, names, quote)[0]
+def witness_reason(text, value, field, names, quote='', city=''):
+    return witness_check(text, value, field, names, quote, city)[0]
 
 
 def witness_context(text, value):
@@ -330,11 +335,17 @@ def plant_names(row, field, true_value):
     return [v for f in NAME_FIELDS for v in [values.get(f)] if v and v != WITHHELD] + [t.strip() for t in (values.get('trade_names') or '').split(';') if t.strip() and t.strip() != WITHHELD]
 
 
+def plant_city(row):
+    """The record's locality for the witness test: its site or HQ city when the cell is readable, else '' (every street on the page then counts)."""
+    values = json.loads(row['values_json'])
+    return next((v for v in (values.get('city'), values.get('hq_city')) if v and v != WITHHELD), '')
+
+
 def plant_witness(f, text, plant):
     """'' only when the finding's source_value agrees with the record's true value and the quote's occurrence of it is a clean witness."""
     if not agrees(plant['field'], plant['true'], f['source_value']):
         return 'source_value_not_true_value'
-    return witness_reason(text, plant['true'], plant['field'], plant['names'], f['quote'])
+    return witness_reason(text, plant['true'], plant['field'], plant['names'], f['quote'], plant.get('city', ''))
 
 
 def specific_fact(fact):
@@ -416,12 +427,12 @@ def plant_verdict(row, field, true_value, sources):
     if held.get(field) == WITHHELD:
         return 'planted_cell_withheld', '', ''
     texts = {sid: s['excerpt'] for sid, s in sources.items()}
-    plant, why, at = dict(field=field, true=true_value, names=plant_names(row, field, true_value)), 'no_source_states_true_value', ('', '')
+    plant, why, at = dict(field=field, true=true_value, names=plant_names(row, field, true_value), city=plant_city(row)), 'no_source_states_true_value', ('', '')
     for sid, text in texts.items():
         if quote_in_order(text, true_value):
             ideal = dict(findings=[dict(target=field, verdict='CONTRADICTED', source_id=sid, quote=true_value, source_value=true_value)])
             got = read_findings(ideal, texts, [field], held, plant)[field]
-            at = (sid, witness_check(text, true_value, field, plant['names'], true_value)[1])
+            at = (sid, witness_check(text, true_value, field, plant['names'], true_value, plant['city'])[1])
             if plant_detected({field: got}, field):
                 return '', sid, at[1]
             why = 'planted_value_not_distinguishable_from_true_value' if got['status'] != 'CONTRADICTED' else got.get('plant_witness') or 'witness_held'
@@ -740,7 +751,7 @@ def run_stage(draw_dir, cache_dir, out, a):
         row = pk['row']
         rc = rc_doc['receipts'].get(f"{s['table']}|{s['record_id']}", [])
         ni = pk.get('not_inspected', [])
-        plant = dict(field=s['plant_field'], true=pk['plant_true'], names=plant_names(row, s['plant_field'], pk['plant_true'])) if s['kind'] == 'plant' else None
+        plant = dict(field=s['plant_field'], true=pk['plant_true'], names=plant_names(row, s['plant_field'], pk['plant_true']), city=plant_city(row)) if s['kind'] == 'plant' else None
         for round_ in (1, 2):
             sources = build_sources(pk, manifest, cache_dir, extra)
             prompt = build_prompt(row, sources, rc, extra if (round_ == 2 or extra) else (), ni)

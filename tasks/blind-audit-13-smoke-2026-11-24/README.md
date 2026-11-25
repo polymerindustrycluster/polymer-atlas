@@ -5,7 +5,7 @@ ATLAS-7 · `claimed:atlas-p1-smoke-runner 2026-11-24` · Built by: Claude Code (
 One record per fresh short reader call, from sources fetched once by script. [PROTOCOL.md](../blind-audit-13-protocol-2026-11-24/PROTOCOL.md) says what counts; this folder is the runner.
 
 ```sh
-python3 tasks/blind-audit-13-smoke-2026-11-24/check.py                                 # selftest, no frame, no model (41 planted cases)
+python3 tasks/blind-audit-13-smoke-2026-11-24/check.py                                 # selftest, no frame, no model (planted cases; the count is printed)
 smoke.py frame     --at SHA --out DIR                                                  # PIC-18 frame, reconciliation, exclusions, digest
 smoke.py preflight --at SHA --out DIR [--families CSV] [--approved CSV]...             # whole frame, no model calls; exit 1 on any block
 smoke.py labels    --at SHA --preflight DIR --out CSV                                  # label -> family evidence (git history), for the controller to approve
@@ -14,6 +14,17 @@ smoke.py fetch     --draw DIR --cache DIR                                       
 smoke.py run       --draw DIR --cache DIR --out DIR                                    # sealed order; stop at k = 3; cancels the rest; every call kept in OUT/reads/
 smoke.py score     --run DIR                                                           # aggregates only; re-derived from OUT/reads/, exit 1 on any mismatch
 ```
+
+## Reader rule: an own page counts (changed 2026-11-25, owner ruling 11:27, "Reader rule: own page counts")
+
+**Why.** Smoke attempt 2 was void. A reader met a planted wrong street and marked it UNCONFIRMED under the grain rule that a company-level page cannot contradict a site value, although the operator's own home-page footer gave the true street at the record's locality, and the Atlas binds that street from that same page. 6 of the 9 plants had this shape, so a wrong street sourced this way could not be detected.
+
+**What changed.**
+- `READER_INSTRUCTIONS.md`, the CONTRADICTED bullet, gains one rule: "An operator's own page (on its own domain) that names the operator and gives exactly one street at the record's locality speaks for the site at that locality: that street can contradict the site's street. A page that lists several locations at that locality, or labels the address as headquarters or office only, does not; a parent's headquarters street still does not contradict a plant's street." Every other rule is unchanged. sha256 of the file: `cdb6b4a7d2d69963f753369531291c4b617cdebba95f28f3da462df068399f48` (before: `8cdd959a587a4ecd055baf768ea59b0d06d222a3180a3d90de43218a94512568`).
+- Draw eligibility (`reading.py`, the witness test behind `plant_reason`) now agrees with it, in two places where it did not. (1) A page that labels the street headquarters or office no longer qualifies: `is headquartered at` and `headquartered at` are not locative phrases any more, and `headquarters`, `headquartered`, `hq`, `office`, `offices` hedge a witness within the usual 12 words. (2) The ambiguity test counts only streets at the record's locality (a street that follows the record's city within 80 characters); a street in another city, such as a sister plant, no longer makes the page ambiguous. With no locality on the record every street still counts, as before. A page that lists two streets at the locality is held as before.
+- One own-domain filter was not added: the witness test never required the page to be on the operator's domain, and the rule only gives an own page that power; a third-party page that qualifies today still does. The reader prompt carries the domain condition.
+
+**Check.** `check.py` (70 planted cases) has four new ones, `R:`. On `origin/main` the four fail: the instruction text lacks the rule; a one-street footer with a street in another city on the page is held as ambiguous and the plant is not detected; the same page is ineligible at draw time (the two-streets half of that case is held on `main` too, so it fails there on its one-street contrast); and a page labelling the street headquarters or office is eligible and detected. Two older positive shapes that accepted `headquartered at` as a witness were moved to the held side of the same case.
 
 ## Reused, forked, and why
 

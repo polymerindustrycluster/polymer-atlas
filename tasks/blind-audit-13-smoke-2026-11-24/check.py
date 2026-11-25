@@ -1035,7 +1035,7 @@ def _():
         quote = text.replace('\n', ' ').split('. ')[-1].rstrip('.')
         assert not planted_det(sid(finding('street_address', 'CONTRADICTED', quote, '99 Oak Avenue'), 'S20')), f'detected: {shape}: {text!r}'
     positives = ('Acme Plastics is located at 99 Oak Avenue.', 'Acme Plastics, Inc. is located at 99 Oak Avenue, Akron.', 'Acme Plastics is at 99 Oak Avenue.',
-                 'Acme Plastics headquartered at 99 Oak Avenue.', 'Acme Plastics LLC is headquartered at 99 Oak Avenue.', 'Acme Plastics located at 99 Oak Avenue.',
+                 'Acme Plastics located at 99 Oak Avenue.',
                  'Acme Plastics\n99 Oak Avenue\nAkron, OH 44301', 'Acme Plastics, Inc.\nAddress: 99 Oak Avenue, Akron')
     for ok in positives:
         assert held_by_draw(ok) == '', ok
@@ -1298,6 +1298,57 @@ def _():
     assert got(street_address='99 Oak Ave')['reason'] == 'filing_does_not_bind_operator_and_street'
     assert got(year_filing_for='2015')['reason'] == 'stale_over_10_years'
     assert got(annual_average_employees='300')['status'] == 'CONTRADICTS'
+
+
+RULE = ("An operator's own page (on its own domain) that names the operator and gives exactly one street at the record's locality speaks for the site at that locality: "
+        "that street can contradict the site's street. A page that lists several locations at that locality, or labels the address as headquarters or office only, does not; "
+        "a parent's headquarters street still does not contradict a plant's street.")
+FILLER = 'Injection molding and thermoforming since 1986 with ISO certified quality systems and in house tooling for packaging programs.'
+ONE_AT_LOCALITY = f'Acme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio 44301\n{FILLER}\nAcme Plastics Canton plant\n500 Corporate Drive, Canton, Ohio'  # a second street, in another city
+TWO_AT_LOCALITY = f'Acme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio 44301\n{FILLER}\nAcme Plastics Annex\n5 Pine Road, Akron, Ohio'
+CITY_PLANT = dict(PLANT, city='Akron')
+
+
+def plant_row_city(street):
+    return dict(plant_row(street), values_json=json.dumps(dict(street_address=street, site_name='Acme Plastics', city='Akron')))
+
+
+def draw_reason(text):
+    return rd.plant_reason(plant_row_city('7 Pine Road'), 'street_address', '99 Oak Avenue', {'S1': dict(excerpt=text)})
+
+
+@case('R: the reader instructions carry the own-page rule, and no other rule of the CONTRADICTED bullet changed')
+def _():
+    text = ' '.join((HERE / 'READER_INSTRUCTIONS.md').read_text().split())
+    assert RULE in text, 'the own-page rule is missing from READER_INSTRUCTIONS.md'
+    assert "A parent's headquarters street does not contradict a plant's street; a page saying an address belongs only to headquarters would." in text, 'an existing rule changed'
+
+
+@case('R: a scripted CONTRADICTED answer quoting a one-street own-domain footer at the locality is a detected plant, and the draw keeps that record eligible')
+def _():
+    SRC['S11'] = ONE_AT_LOCALITY
+    f = sid(finding('street_address', 'CONTRADICTED', '99 Oak Avenue, Akron, Ohio 44301', '99 Oak Avenue'), 'S11')
+    assert rd.plant_detected(readp(with_(street_address=f), CITY_PLANT), 'street_address'), 'one street at the locality (another city\'s street elsewhere on the page) must detect'
+    assert draw_reason(ONE_AT_LOCALITY) == '', draw_reason(ONE_AT_LOCALITY)
+
+
+@case('R: a footer listing two streets at the locality is ineligible at draw time and not detected, while the one-street footer beside it is eligible')
+def _():
+    SRC['S12'] = TWO_AT_LOCALITY
+    f = sid(finding('street_address', 'CONTRADICTED', '99 Oak Avenue, Akron, Ohio 44301', '99 Oak Avenue'), 'S12')
+    assert not rd.plant_detected(readp(with_(street_address=f), CITY_PLANT), 'street_address'), 'two streets at the locality must not detect'
+    assert draw_reason(TWO_AT_LOCALITY) == 'witness_ambiguous', draw_reason(TWO_AT_LOCALITY)
+    assert draw_reason(ONE_AT_LOCALITY) == '', 'the contrast: one street at the locality stays eligible'
+
+
+@case('R: a page labelling the street headquarters or office is ineligible at draw time and not detected')
+def _():
+    for n, page in enumerate(['Acme Plastics headquartered at 99 Oak Avenue.', 'Acme Plastics LLC is headquartered at 99 Oak Avenue.', 'Acme Plastics, Inc. is headquartered at 99 Oak Avenue, Akron, Ohio.', 'Acme Plastics, Inc. headquarters\n99 Oak Avenue, Akron, Ohio 44301',
+                              'Acme Plastics, Inc. is located at 99 Oak Avenue, Akron, Ohio. Corporate office.']):
+        assert draw_reason(page) == 'witness_hedged' or draw_reason(page) == 'witness_not_attributed', f'page {n}: {draw_reason(page)}'
+        SRC[f'S13{n}'] = page
+        f = sid(finding('street_address', 'CONTRADICTED', '99 Oak Avenue', '99 Oak Avenue'), f'S13{n}')
+        assert not rd.plant_detected(readp(with_(street_address=f), CITY_PLANT), 'street_address'), f'page {n} detected a plant it should hold'
 
 
 if __name__ == '__main__':
