@@ -342,7 +342,7 @@ def run_fixture(items, fams=None, packets_extra=None, receipt_extra=None, skip_p
     sample, pk = [], []
     for pos, (kind, name, prov) in enumerate(items, 1):
         bid = f'A13-{pos:04}'
-        row = dict(blind_id=bid, record_label=name, table='sites', record_id=name, columns_under_audit='site_name;street_address', values_json=json.dumps(dict(site_name=site_name, street_address='12 Elm Street', website='https://acme.example/')),
+        row = dict(blind_id=bid, record_label=name, table='sites', record_id=name, columns_under_audit='site_name;street_address', values_json=json.dumps(dict(site_name=site_name, street_address='12 Elm Street')),
                    context_json=json.dumps(dict(children=list(children))), cited_sources='https://acme.example/', evidence_json='[]')
         if name not in skip_packet:
             pk.append(json.dumps(dict(row=row, masked=[], plant='street_address' if kind == 'plant' else '', urls=['https://acme.example/'], not_inspected=[], **({} if packet_due is None else dict(due=packet_due)), **({'plant_true': '99 Oak Avenue'} if kind == 'plant' else {}))))
@@ -663,7 +663,7 @@ def _():
     row = json.loads((draw_dir / 'packets.jsonl').read_text().splitlines()[0])['row']
     (draw_dir / 'packets.jsonl').unlink()
     R = SimpleNamespace(at='x')
-    pr = lambda R_, entries, approved, ids: ([(e, dict(row, values_json=json.dumps(dict(site_name='Acme Plastics', street_address='12 Elm Street', website='https://acme.example/'))), []) for e in entries], {})
+    pr = lambda R_, entries, approved, ids: ([(e, dict(row, values_json=json.dumps(dict(site_name='Acme Plastics', street_address='12 Elm Street'))), []) for e in entries], {})
     manifest = {'https://acme.example/': dict(status='ok', final_url='https://acme.example/', fetched_at='t', text_file='page.txt')}
     real_fetch, real_cov = rd.fetch_urls, replays.coverage
     rd.fetch_urls = lambda cache_dir, urls: manifest
@@ -1035,7 +1035,7 @@ def _():
         quote = text.replace('\n', ' ').split('. ')[-1].rstrip('.')
         assert not planted_det(sid(finding('street_address', 'CONTRADICTED', quote, '99 Oak Avenue'), 'S20')), f'detected: {shape}: {text!r}'
     positives = ('Acme Plastics is located at 99 Oak Avenue.', 'Acme Plastics, Inc. is located at 99 Oak Avenue, Akron.', 'Acme Plastics is at 99 Oak Avenue.',
-                 'Acme Plastics located at 99 Oak Avenue.',
+                 'Acme Plastics headquartered at 99 Oak Avenue.', 'Acme Plastics LLC is headquartered at 99 Oak Avenue.', 'Acme Plastics located at 99 Oak Avenue.',
                  'Acme Plastics\n99 Oak Avenue\nAkron, OH 44301', 'Acme Plastics, Inc.\nAddress: 99 Oak Avenue, Akron')
     for ok in positives:
         assert held_by_draw(ok) == '', ok
@@ -1182,7 +1182,7 @@ def _():
     (cache / 'a.txt').write_text(held_src)
     (cache / 'b.txt').write_text(clean_src)
     manifest = {'https://a.example/': dict(status='ok', final_url='https://a.example/', fetched_at='t', text_file='a.txt'), 'https://b.example/': dict(status='ok', final_url='https://b.example/', fetched_at='t', text_file='b.txt')}
-    row = dict(plant_row('7 Pine Road'), cited_sources='https://a.example/ https://b.example/', evidence_json=json.dumps([dict(url='https://b.example/')]))  # b is the record's own evidence page
+    row = dict(plant_row('7 Pine Road'), cited_sources='https://a.example/ https://b.example/', evidence_json='[]')
     real_rows, real_fetch = smoke.packet_rows, rd.fetch_urls
     smoke.packet_rows = lambda R, entries, approved, ids=None, candidates=None: ([(dict(table='sites', record_id='S-1', field='street_address'), row, [])], {})
     rd.fetch_urls = lambda cache_dir, urls: manifest
@@ -1303,77 +1303,99 @@ def _():
 RULE = ("An operator's own page (on its own domain) that names the operator and gives exactly one street at the record's locality speaks for the site at that locality: "
         "that street can contradict the site's street. A page that lists several locations at that locality, or labels the address as headquarters or office only, does not; "
         "a parent's headquarters street still does not contradict a plant's street.")
-FILLER = 'Injection molding and thermoforming since 1986 with ISO certified quality systems and in house tooling for packaging programs.'
-CITY_PLANT = dict(PLANT, city='Akron')
-OWN, DIRECTORY = 'https://acme.example/contact', 'https://directory.example/acme-plastics'
 
 
-def plant_row_city(street):
-    return dict(plant_row(street), values_json=json.dumps(dict(street_address=street, site_name='Acme Plastics', city='Akron', website='https://acme.example/')), evidence_json='[]')
-
-
-def draw_reason(text, url=OWN, excerpt=None):
-    return rd.plant_reason(plant_row_city('7 Pine Road'), 'street_address', '99 Oak Avenue', {'S1': dict(excerpt=text if excerpt is None else excerpt, full=text, url=url)})
-
-
-def scored(text, standing='own', quote='99 Oak Avenue'):
-    SRC['S14'] = text
-    f = sid(finding('street_address', 'CONTRADICTED', quote, '99 Oak Avenue'), 'S14')
-    return rd.plant_detected(readp(with_(street_address=f), dict(CITY_PLANT, standing={'S14': standing})), 'street_address')
-
-
-FOOTER = 'Acme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio 44301'
-SISTER = 'Acme Plastics Canton plant\n500 Corporate Drive, Canton, Ohio'
-
-
-@case('R: the reader instructions carry the own-page rule, and no other rule of the CONTRADICTED bullet changed')
+@case('R: the reader instructions carry the own-page rule (owner ruling 2026-11-25 11:27), and the rule they already had about a parent headquarters is kept')
 def _():
     text = ' '.join((HERE / 'READER_INSTRUCTIONS.md').read_text().split())
     assert RULE in text, 'the own-page rule is missing from READER_INSTRUCTIONS.md'
     assert "A parent's headquarters street does not contradict a plant's street; a page saying an address belongs only to headquarters would." in text, 'an existing rule changed'
 
 
-@case('R1: the street must be at the record locality, judged per address block: a street in another city is not a witness, a locality heading over two streets is ambiguous, and page order changes nothing')
+def draw_fixture(work):
+    """A frame draw on synthetic records: preflight folder, secret, the plant checker answering 'eligible' for every candidate. Returns (call, R): call(out, reject_file=None)."""
+    keys = [('sites', f'SITE-{i:04}') for i in range(200)]
+    rows = [dict(site_id=k[1], org_id='O', site_name=f'Plant {i}', street_address=f'{i} Main St', city='Akron', county='Summit', employee_band_site='10-49') for i, k in enumerate(keys)]
+    R = SimpleNamespace(at='a' * 40, rows=lambda t: rows if t == 'sites' else [])
+    pre = work / 'pre'; pre.mkdir()
+    frame_text = draw_csv_text([dict(table=t, record_id=i) for t, i in keys], ['table', 'record_id'])
+    (pre / 'frame.csv').write_text(frame_text)
+    (pre / 'routes.csv').write_text(draw_csv_text([dict(table=t, record_id=i, route='astra', families='') for t, i in keys], ['table', 'record_id', 'route', 'families']))
+    (pre / 'preflight_receipt.json').write_text(json.dumps(dict(status='PASS', at=R.at, frame_digest=smoke.sha(frame_text.encode()), routes_sha256=smoke.sha((pre / 'routes.csv').read_bytes()),
+                                                                families_file_sha256='x', approved_files=[], store='x', frame=dict(records=len(keys)))))
+    (work / 'secret').write_bytes(b'draw-secret-' * 4)
+
+    def checker(R_, cache, approved):
+        chk = lambda cands: {(c['table'], c['record_id'], c['field']): '' for c in cands}
+        chk.quotes = {}
+        return chk
+
+    def call(out, reject_file=None):
+        a = SimpleNamespace(at=R.at, out=str(out), secret_file=str(work / 'secret'), preflight=str(pre), records=None, n=smoke.SMOKE_N, cache=str(work / 'cache'), approved=[], pool=smoke.PLANT_POOL, reject_plants=reject_file)
+        real_load, real_pc = smoke.load, smoke.plant_checker
+        smoke.load, smoke.plant_checker = lambda at: R, checker
+        try:
+            return smoke.cmd_draw(a)
+        finally:
+            smoke.load, smoke.plant_checker = real_load, real_pc
+    return call, R
+
+
+draw_csv_text = lambda rows, cols: smoke.draw.csv_text(rows, cols)
+
+
+def sample_of(out):
+    return list(csv.DictReader(open(Path(out) / 'sample.csv', newline='')))
+
+
+@case('P: with one reject the real sample, its order and the check coin are byte for byte the same, and the plant moves to the next eligible pair of the same sealed order')
 def _():
-    elsewhere = 'Acme Plastics, Inc.\n99 Oak Avenue, Canton, Ohio 44701'
-    assert draw_reason(elsewhere) == 'witness_not_at_locality' and not scored(elsewhere), 'the only street is in another city'
-    heading = 'Akron\nAcme Plastics, Inc. is located at 99 Oak Avenue\n5 Pine Road'
-    assert draw_reason(heading) == 'witness_ambiguous' and not scored(heading), 'a target-city heading over two street lines'
-    before, after = f'{SISTER}\n{FILLER}\n{FOOTER}', f'{FOOTER}\n{FILLER}\n{SISTER}'
-    for name, page in (('different-city location before the footer', before), ('after the footer', after)):
-        assert draw_reason(page) == '' and scored(page), f'{name}: one street at the locality must be eligible and detected'
+    work = Path(tempfile.mkdtemp(prefix='a13-rej-'))
+    call, R = draw_fixture(work)
+    call(work / 'plain')
+    plain = sample_of(work / 'plain')
+    plants = [r for r in plain if r['kind'] == 'plant']
+    gone = plants[0]
+    (work / 'rejects.csv').write_text(f"record_id,field,reason\n{gone['record_id']},{gone['plant_field']},no own-domain block names the locality\n")
+    call(work / 'rej', str(work / 'rejects.csv'))
+    rej = sample_of(work / 'rej')
+    real = lambda rows: [(r['table'], r['record_id'], r['provider'], r['check_coin']) for r in rows if r['kind'] == 'real']
+    assert real(plain) == real(rej) and len(real(plain)) == smoke.SMOKE_N, 'the real sample, its order or the check coin changed'
+    new = [r for r in rej if r['kind'] == 'plant']
+    assert len(new) == len(plants) and (gone['record_id'], gone['plant_field']) not in {(r['record_id'], r['plant_field']) for r in new}, 'the rejected pair was drawn again'
+    assert {(r['record_id'], r['plant_field']) for r in plants} - {(gone['record_id'], gone['plant_field'])} <= {(r['record_id'], r['plant_field']) for r in new}, 'a plant that was not rejected moved'
+    assert [r['kind'] for r in rej].count('plant') == [r['kind'] for r in plain].count('plant')
 
 
-@case('R2: the own-page exception needs the operator\'s held domain: the same corporate footer qualifies on it and not on a directory; the record\'s own evidence page still qualifies')
+@case('P: a reject that names a pair which is not a drawn plant is refused and nothing is written')
 def _():
-    assert draw_reason(FOOTER, OWN) == '' and scored(FOOTER, 'own')
-    assert draw_reason(FOOTER, DIRECTORY) == 'source_not_own_page' and not scored(FOOTER, 'other'), 'a third-party directory footer'
-    row = dict(plant_row_city('7 Pine Road'), evidence_json=json.dumps([dict(url=DIRECTORY)]))
-    assert rd.plant_reason(row, 'street_address', '99 Oak Avenue', {'S1': dict(excerpt=FOOTER, full=FOOTER, url=DIRECTORY)}) == '', 'a URL the record\'s own evidence rows cite is site-specific'
-    assert rd.source_standing(plant_row_city('x'), 'https://www.acme.example/about') == 'own' and rd.source_standing(plant_row_city('x'), DIRECTORY) == 'other'
+    work = Path(tempfile.mkdtemp(prefix='a13-rej-'))
+    call, R = draw_fixture(work)
+    call(work / 'plain')
+    real_rec = next(r for r in sample_of(work / 'plain') if r['kind'] == 'real')
+    for name, line in (('a real record', f"{real_rec['record_id']},street_address,reason"), ('an unknown pair', 'SITE-9999,street_address,reason')):
+        (work / 'bad.csv').write_text('record_id,field,reason\n' + line + '\n')
+        out = work / ('bad-' + name.replace(' ', '-'))
+        expect_raises(SystemExit, lambda: call(out, str(work / 'bad.csv')), 'is not a drawn plant')
+        assert not (out / 'draw_receipt.json').exists(), f'{name}: a receipt was written'
 
 
-@case('R3: the headquarters/office exclusion is the role of that address block: a heading label counts, "office hours" below a valid footer does not, and an HQ county block keeps the base rule')
+@case('P: the receipt lists the rejected pairs with their reasons and the reject file sha256; fetch and run refuse a draw whose receipt lacks that sha256')
 def _():
-    hq_heading = 'Headquarters\nOur main facility serves the whole region.\nAcme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio 44301'
-    assert draw_reason(hq_heading) == 'witness_hq_or_office_label' and not scored(hq_heading), 'a block headed Headquarters, with a sentence before the address'
-    for n, page in enumerate(['Acme Plastics headquartered at 99 Oak Avenue.', 'Acme Plastics LLC is headquartered at 99 Oak Avenue.', 'Corporate Office\nAcme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio',
-                              'Headquarters: Acme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio']):
-        assert draw_reason(page) != '' and not scored(page), f'page {n} labels the address headquarters or office'
-    hours = f'{FOOTER}\nOffice hours: Monday to Friday, 8 to 5.'
-    assert draw_reason(hours) == '' and scored(hours), 'office hours below a valid site footer are not a label of its address'
-    county = 'Corporate Headquarters\nAcme Plastics, Inc.\nSummit County, Ohio'
-    assert rd.witness_reason(county, 'Summit', 'hq_county', ['Acme Plastics']) == '', 'an organization HQ county block labelled corporate headquarters keeps the base rule'
-
-
-@case('R4: the draw judges page-wide disqualifiers on the full cached page, as the scorer does, and requires the supporting passage in the reader excerpt')
-def _():
-    full = f'{FOOTER}\n{FILLER * 6}\nAcme Plastics Annex\n5 Pine Road, Akron, Ohio'
-    short = FOOTER + '\n' + FILLER
-    assert draw_reason(full, excerpt=short) == 'witness_ambiguous', 'the excerpt kept only one of two streets at the locality'
-    assert not scored(full), 'the scorer judges the same full page'
-    page = f'{FILLER * 4}\n{FOOTER}'
-    assert draw_reason(page, excerpt=FILLER) == 'supporting_passage_not_in_excerpt', draw_reason(page, excerpt=FILLER)
+    work = Path(tempfile.mkdtemp(prefix='a13-rej-'))
+    call, R = draw_fixture(work)
+    call(work / 'plain')
+    plants = [r for r in sample_of(work / 'plain') if r['kind'] == 'plant']
+    (work / 'rejects.csv').write_text(f"record_id,field,reason\n{plants[0]['record_id']},{plants[0]['plant_field']},office label only\n")
+    call(work / 'rej', str(work / 'rejects.csv'))
+    receipt = json.loads((work / 'rej' / 'draw_receipt.json').read_text())
+    assert receipt['plant_rejects'] == [dict(record_id=plants[0]['record_id'], field=plants[0]['plant_field'], reason='office label only')], receipt.get('plant_rejects')
+    assert receipt['inputs']['plant_rejects_sha256'] == smoke.sha((work / 'rejects.csv').read_bytes())
+    assert 'plant_rejects' not in json.loads((work / 'plain' / 'draw_receipt.json').read_text()), 'a draw without the flag carries no reject key'
+    del receipt['inputs']['plant_rejects_sha256']
+    (work / 'rej' / 'draw_receipt.json').write_text(json.dumps(receipt))
+    for cmd, args in (('fetch', ['--draw', str(work / 'rej'), '--cache', str(work / 'cache')]), ('run', ['--draw', str(work / 'rej'), '--cache', str(work / 'cache'), '--out', str(work / 'o')])):
+        expect_raises(SystemExit, lambda: smoke.main([cmd] + args), 'carries no sha256 of the reject file')
 
 
 if __name__ == '__main__':
