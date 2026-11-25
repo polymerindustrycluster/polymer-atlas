@@ -778,3 +778,14 @@ Decided by the repo owner in session, 2026-11-24 and 2026-11-25.
 7. **Visible per page.** Each receipt records `robots_disallowed` (yes, no, unreadable), so the change shows per page. An unreadable robots.txt is no longer read as Disallow all.
 
 Replaces the robots-per-hop rule in `docs/ACQUISITION.md` and the exhibitor-roster exception to it. Follow-up for the owner: AGENTS.md §4 still says "The site corpus fetcher refuses LinkedIn requests"; the sentence is now stale and is not edited here. The check is `tasks/robots-off-fetch-2026-11-25/check.py`.
+
+## 2026-11-25 · HTTP/1.1 transport fallback; the two bare-curl runs recorded
+
+The owner's 2026-11-24 ruling ("Rule change: ignore robots.txt. Click thru bot checks.") shipped in #560 without a browser (owner ruling 2026-11-25 06:08, "Split it"). Two runs on the merged fetcher, curl only, are recorded in `docs/ACQUISITION.md` section 3: the 117 PIC-18 organizations with no readable page, of which 12 became readable (7 of 8 real robots disallows, 4 of 98 unreadable robots.txt), and the 127 LinkedIn company pages, of which 0 did (all 127 answered a Cloudflare 403). Most of the 105 still unreadable fail inside curl: certificate chain 27, HTTP/2 or empty reply 28, DNS 11, timeout 7, handshake 5.
+
+1. A curl failure on the TLS handshake, the certificate chain or HTTP/2 (exit 35, 60 or 92), whatever HTTP status curl had read, gets one retry over HTTP/1.1 inside the same transport step (page, redirect hop and robots.txt). Its response, redirects included, is processed like any other. Certificate verification stays on; nothing is ever disabled. Whether the retry recovers any of the 105 is not measured.
+2. LinkedIn now runs through Muse with raw evidence on the NAS (the owner, 2026-11-25). The fetcher's LinkedIn company-page path from #560 is unchanged and is not the route for it. A LinkedIn page stays a navigation link only until the evidence route lands.
+3. The browser retry for bot checks is a separate change and is not part of this entry.
+
+The check is `tasks/fetch-fallback-2026-11-25/check.py`.
+

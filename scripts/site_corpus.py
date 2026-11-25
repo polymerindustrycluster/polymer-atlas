@@ -43,6 +43,7 @@ KINDS = {
     'markets': r'industr|market',
     'products': r'product|capabilit|process|service',
 }
+HTTP1_RETRY = (35, 60, 92)  # curl exits worth one HTTP/1.1 retry: SSL connect, certificate chain, HTTP/2 stream error
 BOT_CODES = (200, 403, 503, 999)  # 999 is LinkedIn's refusal; a bot check shows on these codes only
 # shortcut: markers copied from scripts/liveness_sweep.py (importing it pulls in the whole sweep); merge if either list grows.
 BOT_TITLES = ('just a moment', 'attention required', 'access denied', 'are you a robot', 'pardon our interruption',
@@ -279,7 +280,7 @@ class Corpus:
                 return
             time.sleep(.1)
 
-    def request(self, target, delay=1):
+    def request(self, target, delay=1, http1=False):
         """L1 curl transport, with redirects handled by fetch so robots gates each hop."""
         if linkedin_blocked(target):
             raise ValueError('Only LinkedIn company pages may be requested')
@@ -289,7 +290,7 @@ class Corpus:
             time.sleep(max(0, last - time.time()))
             with self.slot():
                 clock.seek(0); clock.truncate(); clock.write(str(time.time() + delay)); clock.flush()
-                cmd = ['curl', '-q', '-sS', '-A', UA, '--max-time', '25', '--max-filesize', '12000000']
+                cmd = ['curl', '-q', '-sS', '-A', UA, '--max-time', '25', '--max-filesize', '12000000'] + (['--http1.1'] if http1 else [])
                 if urlsplit(target).path == '/robots.txt':
                     # robots.txt never touches disk: headers and body come back on stdout, no -o file, no -D file, no temp dir.
                     p = subprocess.run(cmd + ['-i', '-o', '-', '-w', '\n%{http_code}', target], capture_output=True)
@@ -409,6 +410,13 @@ class Corpus:
                 w.writerow(r)
         return r
 
+    def hop(self, current, delay):
+        """One transport step: curl, and if it fails on the TLS handshake, the certificate chain or HTTP/2 (whatever HTTP status curl had
+        read), once more over HTTP/1.1. The retry's response is processed like any other. Certificate verification stays on."""
+        response = self.request(current, delay)
+        if response.get('exit') in HTTP1_RETRY: response = self.request(current, delay, http1=True)
+        return response
+
     def robots_rules(self, target):
         """(receipt, text) for the host's robots.txt. The body is parsed in memory and NEVER written to disk, whatever it
         holds; only a receipt (url, final_url, status, http_status, bytes, sha256, fetched_at) goes to robots-<key>.json."""
@@ -419,7 +427,7 @@ class Corpus:
             current, response = robots, {}
             for _ in range(6):
                 if refused(robots, current): response = {}; break
-                response = self.request(current, 1)
+                response = self.hop(current, 1)
                 if response['code'] in (301, 302, 303, 307, 308) and response['location']:
                     current = url(urljoin(current, response['location']))
                     if urlsplit(current).path != '/robots.txt': break  # only robots paths are followed
@@ -479,7 +487,7 @@ class Corpus:
             for _ in range(6):
                 state, delay = self.robots(current)
                 flags.add(state)
-                response = self.request(current, delay)
+                response = self.hop(current, delay)
                 if response['code'] in (301, 302, 303, 307, 308) and response['location']:
                     current = url(urljoin(current, response['location']))
                     if why := refused(target, current):
