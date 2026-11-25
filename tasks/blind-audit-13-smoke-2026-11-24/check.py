@@ -217,19 +217,64 @@ SRC['S4'] = 'Moved to 112 Elm Street, Akron.'
 sid = lambda f, sid_: dict(f, source_id=sid_)
 
 
+def plant_row(street):
+    return dict(table='sites', columns_under_audit='street_address;site_name', values_json=json.dumps(dict(street_address=street, site_name='Acme')), context_json=json.dumps(dict(children=[])))
+
+
+PLANT = dict(field='street_address', true='99 Oak Avenue', names=['Acme Plastics LLC'])  # HELD's street is the planted value; the record's true street is 99 Oak Avenue
+
+
+def readp(findings, plant=PLANT):
+    try:
+        return rd.read_findings(dict(findings=findings), SRC, T, HELD, plant)
+    except TypeError:  # origin/main has no plant witness: the same answer, judged as it was
+        return rd.read_findings(dict(findings=findings), SRC, T, HELD)
+
+
 @case('C: a plant passes only when the swap is named: UNCONFIRMED never, an unreplayed or restating CONTRADICTED never, a replaying different value does')
 def _():
-    det = lambda f: rd.plant_detected(read(with_(street_address=f), T), 'street_address')
+    det = lambda f: rd.plant_detected(readp(with_(street_address=f)), 'street_address')
     for fact in ('the street printed on the plant contact page', 'We need more information', 'withheld'):
         assert not det(finding('street_address', 'UNCONFIRMED', settling_fact=fact)), fact  # planted value is HELD's street
     assert not det(finding('street_address', 'CONTRADICTED', 'moved to 7 Pine Road', '7 Pine Road')), 'a quote that does not replay on the cached bytes'
     assert not det(sid(finding('street_address', 'CONTRADICTED', 'Visit us at 12 Elm Street, Akron', '12 Elm Street'), 'S3')), 'a contradiction restating the planted value'
     assert not det(sid(finding('street_address', 'CONTRADICTED', 'Visit us at 12 Elm Street, Akron', '12 Elm Street, Akron'), 'S3')), 'restating it with the city added'
-    assert det(finding('street_address', 'CONTRADICTED', 'located at 99 Oak Avenue, Akron', '99 Oak Avenue')), 'a replaying quote that states a different value detects'
+    assert det(finding('street_address', 'CONTRADICTED', 'located at 99 Oak Avenue, Akron', '99 Oak Avenue')), 'a replaying quote that states the true value detects'
 
 
-def plant_row(street):
-    return dict(table='sites', columns_under_audit='street_address;site_name', values_json=json.dumps(dict(street_address=street, site_name='Acme')), context_json=json.dumps(dict(children=[])))
+def planted_det(f):
+    return rd.plant_detected(readp(with_(street_address=f)), 'street_address')
+
+
+def held_by_draw(text):
+    return rd.plant_reason(plant_row('7 Pine Road'), 'street_address', '99 Oak Avenue', {'S1': dict(excerpt=text)})
+
+
+@case('C: a replaying quote about another FIELD (processes for a street) is held, not detected')
+def _():
+    assert not planted_det(finding('street_address', 'CONTRADICTED', 'We mold thermoplastic parts', 'thermoplastic parts')), 'a quote about processes is not the street'
+    assert not planted_det(finding('street_address', 'CONTRADICTED', 'located at 99 Oak Avenue, Akron', 'Akron')), 'a stated value that is not the true street'
+
+
+@case('C: a quote about another PARTY and another TIME (a former supplier) is held by the reader check and by the draw')
+def _():
+    SRC['S8'] = 'Acme Plastics news: our former supplier used to be at 99 Oak Avenue, Akron.'
+    assert not planted_det(sid(finding('street_address', 'CONTRADICTED', 'former supplier used to be at 99 Oak Avenue', '99 Oak Avenue'), 'S8'))
+    assert held_by_draw(SRC['S8']) == 'witness_hedged', 'the draw holds the same witness'
+
+
+@case('C: a page naming ANOTHER street is ambiguous: held by the reader check and by the draw')
+def _():
+    SRC['S9'] = 'Acme Plastics has two plants: 99 Oak Avenue, Akron and 5 Pine Road, Canton.'
+    assert not planted_det(sid(finding('street_address', 'CONTRADICTED', 'two plants 99 Oak Avenue', '99 Oak Avenue'), 'S9'))
+    assert held_by_draw(SRC['S9']) == 'witness_ambiguous'
+
+
+@case('C: a page that never names the record (another establishment) is held by the reader check and by the draw')
+def _():
+    SRC['S10'] = 'Zeta Holdings is located at 99 Oak Avenue, Akron.'
+    assert not planted_det(sid(finding('street_address', 'CONTRADICTED', 'located at 99 Oak Avenue', '99 Oak Avenue'), 'S10'))
+    assert held_by_draw(SRC['S10']) == 'source_not_about_record'
 
 
 @case('C: a record is plant-eligible only if its cached pages state the true value and the ideal answer would detect the swap; the draw gets the same verdict')
@@ -300,7 +345,7 @@ def run_fixture(items, fams=None, packets_extra=None, receipt_extra=None, skip_p
         row = dict(blind_id=bid, record_label=name, table='sites', record_id=name, columns_under_audit='site_name;street_address', values_json=json.dumps(dict(site_name='Acme Plastics', street_address='12 Elm Street')),
                    context_json=json.dumps(dict(children=list(children))), cited_sources='https://acme.example/', evidence_json='[]')
         if name not in skip_packet:
-            pk.append(json.dumps(dict(row=row, masked=[], plant='street_address' if kind == 'plant' else '', urls=['https://acme.example/'], not_inspected=[], **({} if packet_due is None else dict(due=packet_due)))))
+            pk.append(json.dumps(dict(row=row, masked=[], plant='street_address' if kind == 'plant' else '', urls=['https://acme.example/'], not_inspected=[], **({} if packet_due is None else dict(due=packet_due)), **({'plant_true': '99 Oak Avenue'} if kind == 'plant' else {}))))
         sample.append(dict(pos=pos, blind_id=bid, kind=kind, table='sites', record_id=name, provider=prov, check_coin='0', plant_field='street_address' if kind == 'plant' else '', donor_record_id=''))
     with open(draw_dir / 'sample.csv', 'w', newline='') as f:
         w = csv.DictWriter(f, list(sample[0]))
@@ -552,13 +597,13 @@ def _():
     fake = lambda provider, prompt, procs, timeout=0: good(name_of(prompt), provider, street_bad=name_of(prompt) != 'clean-s')
     out = run_to_score(items, fake)
     s = score(out)
-    assert s['reader_files_verified'] == 3 and s['plants']['by_provider']['astra'] == dict(planted=1, detected=1) and s['k'] == 1
+    assert s['reader_files_verified'] == 4 and s['plants']['by_provider']['astra'] == dict(planted=1, detected=1) and s['k'] == 1
     def broken(mutate, why):
         d = Path(tempfile.mkdtemp(prefix='a13-score-')) / 'run'
         shutil.copytree(out, d)
         mutate(d)
         expect_raises(SystemExit, lambda: rd.score_stage(d), why)
-    broken(lambda d: next((d / 'reads').glob('*A13-0002-primary*')).unlink(), 'is missing')
+    broken(lambda d: next((d / 'reads').glob('*A13-0002-primary*')).unlink(), 'reads/ holds')
     broken(lambda d: next((d / 'reads').glob('*A13-0002-primary*')).write_text('{}'), 'does not match its ledger hash')
     def flip(d):
         doc = json.loads((d / 'results.json').read_text())
@@ -813,6 +858,113 @@ def _():
     R, st = band_world(store, [band_ev()], sites=[nostreet(site)])
     got = replays.coverage(R, [('sites', 'SITE-1')], st)[0]['sites|SITE-1'][0]
     assert got['status'] == 'UNRESOLVED' and 'newer' not in got['text'], got
+
+
+def tamper(out, mutate, why):
+    import shutil
+    d = Path(tempfile.mkdtemp(prefix='a13-score-')) / 'run'
+    shutil.copytree(out, d)
+    mutate(d)
+    expect_raises(SystemExit, lambda: rd.score_stage(d), why)
+
+
+def edit_results(fn):
+    def go(d):
+        doc = json.loads((d / 'results.json').read_text())
+        fn(doc)
+        (d / 'results.json').write_text(json.dumps(doc))
+    return go
+
+
+@case('B: score verifies EVERY ledger call (a deleted retry, a stray file, a hash-edited file), not only the files the result rows name')
+def _():
+    seen = Counter()
+    def fake(provider, prompt, procs, timeout=0):
+        name = name_of(prompt)
+        seen[name] += 1
+        return dict(good(name, provider), text='not json at all') if seen[name] == 1 else good(name, provider)
+    out = run_to_score([('real', 'retry-1', 'astra')], fake)
+    assert len(list((out / 'reads').iterdir())) == 2 and score(out)['reader_files_verified'] == 2, 'the failed first attempt is kept beside the retry'
+    tamper(out, lambda d: next((d / 'reads').glob('*-a1.json')).unlink(), 'reads/ holds')
+    tamper(out, lambda d: (d / 'reads' / '9999-stray.json').write_text('{}'), 'reads/ holds')
+    tamper(out, lambda d: next((d / 'reads').glob('*-a1.json')).write_text('{}'), 'does not match its ledger hash')
+
+
+@case('B: score replays the gate: an edited summary (k, stop position, status, tokens, incomplete list) or a dropped result refuses')
+def _():
+    out = run_to_score([('real', 'clean-g', 'astra'), ('real', 'bad-g1', 'astra'), ('real', 'bad-g2', 'astra')],
+                       lambda provider, prompt, procs, timeout=0: good(name_of(prompt), provider, street_bad=name_of(prompt).startswith('bad')))
+    assert score(out)['k'] == 2
+    tamper(out, edit_results(lambda d: d.update(k=99)), 'gate totals')
+    tamper(out, edit_results(lambda d: d.update(stopped_at=2)), 'gate totals')
+    tamper(out, edit_results(lambda d: d.update(status='STOPPED_AT_K')), 'recorded as')
+    tamper(out, edit_results(lambda d: d['input_tokens_spent'].update(astra=1)), 'input tokens')
+    tamper(out, edit_results(lambda d: d['results'].pop(0)), 'prefix of the sealed order')
+    tamper(out, edit_results(lambda d: d['results'].pop()), 'gate totals')
+
+
+@case('B: a metered call whose answer is typed garbage is kept as a file and retried once; it never loses the raw call')
+def _():
+    seen = Counter()
+    def fake(provider, prompt, procs, timeout=0):
+        name = name_of(prompt)
+        seen[name] += 1
+        f = [dict(finding('site_name', 'CONTRADICTED', 'located at 99 Oak Avenue, Akron', ['99 Oak Avenue']), core_effect=['x'], target='site_name', settling_fact={'a': 1}), finding('street_address', 'VERIFIED'), finding('polymer_relevance', 'VERIFIED')]
+        return dict(good(name, provider), text=json.dumps(dict(findings=f, notes='junk')))
+    out = run_to_score([('real', 'garbage-1', 'astra')], fake)
+    assert len(list((out / 'reads').iterdir())) >= 1 and score(out)['audited_real_records'] == 1, 'array-valued fields are empty text, not a crash'
+    real_rf, calls = rd.read_findings, Counter()
+    def boom(*a, **k):
+        calls['n'] += 1
+        if calls['n'] == 1:
+            raise TypeError('unhashable type')
+        return real_rf(*a, **k)
+    rd.read_findings = boom
+    try:
+        out = run_to_score([('real', 'garbage-2', 'astra')], lambda provider, prompt, procs, timeout=0: good(name_of(prompt), provider))
+    finally:
+        rd.read_findings = real_rf
+    docs = [json.loads(f.read_text()) for f in sorted((out / 'reads').iterdir())]
+    assert len(docs) == 2 and docs[0]['error'].startswith('malformed answer') and docs[0]['raw_text'] and docs[0]['parsed'] and docs[1]['findings'], [d['error'] for d in docs]
+
+
+@case('A3: a failed later primary can never leave a COMPLETE run with unscored items; the run says why and exits non-zero')
+def _():
+    import threading, time
+    draw_dir, cache, out = run_fixture([('real', 'a-2', 'astra'), ('real', 'b-2', 'astra')])
+    b_failed = threading.Event()
+    def fake(provider, prompt, procs, timeout=0):
+        name = name_of(prompt)
+        if name == 'b-2':
+            b_failed.set()
+            return dict(good('x', provider), error='no output', text='', usage=None, metered=False)
+        b_failed.wait(5)
+        time.sleep(0.5)
+        return good(name, provider, street_bad=True)
+    rc = patched(fake, lambda: rd.run_stage(draw_dir, cache, out, ARGS(window=2, stop_at=99)))
+    doc = json.loads((out / 'results.json').read_text())
+    assert doc['status'] == 'SUSPENDED_NO_OUTPUT' and rc == 1 and len(doc['incomplete_calls']) == 2 and not doc['results'], (doc['status'], rc)
+
+
+@case('A3: the actual spend of the last call is checked: a call that passes the stage budget halts the run, never COMPLETE')
+def _():
+    draw_dir, cache, out = run_fixture([('real', 'last-1', 'astra')])
+    rc = patched(lambda provider, prompt, procs, timeout=0: dict(good(name_of(prompt), provider), usage=dict(input_tokens=200_000)), lambda: rd.run_stage(draw_dir, cache, out, ARGS(caps_m=dict(astra=0.1))))
+    doc = json.loads((out / 'results.json').read_text())
+    assert doc['status'] == 'HALTED_TOKEN_BUDGET' and rc == 1 and any('actual' in h for h in doc['halt']) and len(doc['results']) == 1, (doc['status'], doc['halt'])
+    tamper(out, edit_results(lambda d: d.update(status='COMPLETE')), 'passed their stage budget')
+
+
+@case('A9: two core-impacting contradictions on two children of one field count twice in that field and once in k')
+def _():
+    children = [dict(table='registry_links', values=dict(registry='FRS', registry_id='1'), context={}), dict(table='registry_links', values=dict(registry='TRI', registry_id='2'), context={})]
+    def fake(provider, prompt, procs, timeout=0):
+        f = [finding('site_name', 'VERIFIED'), finding('street_address', 'VERIFIED'), finding('polymer_relevance', 'VERIFIED')]
+        for i in (1, 2):
+            f += [finding(f'c{i}.registry', 'VERIFIED'), dict(finding(f'c{i}.registry_id', 'CONTRADICTED', 'located at 99 Oak Avenue, Akron', '99 Oak Avenue'), core_effect='name')]
+        return dict(good('x', provider), text=json.dumps(dict(findings=f)))
+    sc = score(run_to_score([('real', 'child-m', 'astra')], fake, children=children))
+    assert sc['k'] == 1 and sc['by_field']['registry_id']['audited_values'] == 2 and sc['by_field']['registry_id']['contradicted'] == 2 and sc['by_field']['registry_id']['error_rate'] == 1.0, sc['by_field']['registry_id']
 
 
 @case('replay receipts: a matched control passes; a wrong operator, a wrong street and a 2015 vintage do not bind; a newer different band contradicts')

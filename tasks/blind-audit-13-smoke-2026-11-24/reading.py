@@ -156,14 +156,20 @@ def values_differ(held, source, field=''):
     return not (field in LOCALITY_FIELDS and kh and contains(ks, kh))
 
 
-def read_findings(answer, sources, targets, held):
+def text_of(x):
+    """A reader's field as text: anything but a string (a list, a number, null) is empty, never an exception."""
+    return x if isinstance(x, str) else ''
+
+
+def read_findings(answer, sources, targets, held, plant=None):
     """Normalise one reader's answer to {target: dict(status, reason, ...)}. sources: id -> text (S pages and R receipts). held: target -> held value.
     A contradiction counts only when it binds the incompatible fact, source and grain: a stated source_value that differs from the held value,
     a quote that replays in order against the cited source and contains that value. A verified claim needs a cited source that exists, and
-    a quote it gives must replay. A missing assessment or an unserved REQUEST is unconfirmed."""
+    a quote it gives must replay. A missing assessment or an unserved REQUEST is unconfirmed. plant = dict(field, true, names) adds `plant_witness`
+    to the planted field's finding ('' only when the contradiction names the record's true value from a clean witness). Typed garbage is empty text."""
     got = {}
-    for f in answer.get('findings', []):
-        if isinstance(f, dict) and f.get('target') in targets and f['target'] not in got:
+    for f in answer.get('findings', []) if isinstance(answer.get('findings'), list) else []:
+        if isinstance(f, dict) and isinstance(f.get('target'), str) and f['target'] in targets and f['target'] not in got:
             got[f['target']] = f
     out = {}
     for t in targets:
@@ -171,8 +177,10 @@ def read_findings(answer, sources, targets, held):
         if f is None:
             out[t] = dict(status='UNCONFIRMED', reason='missing_assessment')
             continue
-        v, quote, sv, text = str(f.get('verdict', '')).upper(), f.get('quote') or '', f.get('source_value') or '', sources.get(f.get('source_id'))
-        base = dict(raw=v, source_id=f.get('source_id'), settling_fact=f.get('settling_fact'), core_effect=f.get('core_effect'), source_value=sv, quote=quote)
+        sid = f.get('source_id') if isinstance(f.get('source_id'), str) else None
+        v, quote, sv, text = text_of(f.get('verdict')).upper(), text_of(f.get('quote')), text_of(f.get('source_value')), sources.get(sid)
+        fact, effect, url = text_of(f.get('settling_fact')), text_of(f.get('core_effect')) or None, text_of(f.get('request_url'))
+        base = dict(raw=v, source_id=sid, settling_fact=fact, core_effect=effect, source_value=sv, quote=quote)
         replays = bool(quote and text is not None and quote_in_order(text, quote))
         if v not in VERDICTS:
             out[t] = dict(base, status='UNCONFIRMED', reason='invalid_verdict')
@@ -195,10 +203,64 @@ def read_findings(answer, sources, targets, held):
             else:
                 out[t] = dict(base, status='VERIFIED', reason='ok')
         elif v == 'REQUEST':
-            out[t] = dict(base, status='UNCONFIRMED', reason='unserved_request', request_url=f.get('request_url'))
+            out[t] = dict(base, status='UNCONFIRMED', reason='unserved_request', request_url=url)
         else:
-            out[t] = dict(base, status='UNCONFIRMED', reason='unsettled' if specific_fact(f.get('settling_fact')) else 'unsettled_without_fact')
+            out[t] = dict(base, status='UNCONFIRMED', reason='unsettled' if specific_fact(fact) else 'unsettled_without_fact')
+    if plant and plant['field'] in out:
+        f = out[plant['field']]
+        f['plant_witness'] = plant_witness(f, sources.get(f['source_id']) or '', plant) if f['status'] == 'CONTRADICTED' else 'not_contradicted'
     return out
+
+
+HEDGE = re.compile(r'\b(?:former|formerly|previous|previously|prior|used to|moved|relocat\w*|supplier|suppliers|vendor|vendors|customer|customers|partner|partners|'
+                   r'competitor|competitors|acquired|closed|sold|future|branch|affiliate|subsidiary|sister)\b')
+WITNESS_WINDOW = 12  # words each side of the stated value that must be free of another party, another time or another place
+
+
+def agrees(field, a, b):
+    """The two stated values name the same thing: one contains the other, a street matches by street_key, a name differs only by legal form."""
+    return bool(words(a) and words(b)) and (not values_differ(a, b, field) or not values_differ(b, a, field) or (field in NAME_FIELDS and name_equivalent(a, b)))
+
+
+def witness_reason(text, value, field, names, quote=''):
+    """'' when `text` states `value` as this record's value: the source mentions the record's own name, the occurrence (inside the reader's quote,
+    when given) has no other party, time or place within WITNESS_WINDOW words, and the page names no other street or county. Else the reason it is held."""
+    tw, vw = words(text), words(value)
+    occ = [i for i in range(len(tw) - len(vw) + 1) if vw and tw[i:i + len(vw)] == vw]
+    if not occ:
+        return 'true_value_not_stated'
+    if quote:
+        qw = words(quote)
+        spans = [i for i in range(len(tw) - len(qw) + 1) if qw and tw[i:i + len(qw)] == qw]
+        occ = [o for o in occ if any(sp <= o and o + len(vw) <= sp + len(qw) for sp in spans)]
+        if not occ:
+            return 'quote_does_not_hold_true_value'
+    if not any(k and contains(tw, k) for n in names for k in (name_key(n), name_key(re.split(r'\s[-\u2013\u2014]\s', n)[0]))):  # a site name 'Acme - Akron' is also 'Acme'
+        return 'source_not_about_record'
+    if all(HEDGE.search(' '.join(tw[max(0, o - WITNESS_WINDOW):o + len(vw) + WITNESS_WINDOW])) for o in occ):
+        return 'witness_hedged'
+    if field == 'street_address':
+        from atlas import NOTES_STREET_RE, notes_candidate_key, street_key
+        if {k for k in (notes_candidate_key(m[0]) for m in NOTES_STREET_RE.finditer(text)) if k} - {street_key(value)}:
+            return 'witness_ambiguous'
+    if field in ('county', 'hq_county'):
+        if {c.lower() for c in re.findall(r'\b([A-Z][a-z]+) County\b', text)} - {(words(value) or [''])[0]}:
+            return 'witness_ambiguous'
+    return ''
+
+
+def plant_names(row, field, true_value):
+    """The record's own names for the witness test: the unplanted name fields (or the true value when a name is what was planted)."""
+    if field in NAME_FIELDS:
+        return [true_value]
+    return [v for f, v in json.loads(row['values_json']).items() if f in NAME_FIELDS and v and v != WITHHELD]
+
+
+def plant_witness(f, text, plant):
+    """'' only when the finding's source_value agrees with the record's true value and the quote's occurrence of it is a clean witness."""
+    if not agrees(plant['field'], plant['true'], f['source_value']):
+        return 'source_value_not_true_value'
+    return witness_reason(text, plant['true'], plant['field'], plant['names'], f['quote'])
 
 
 def specific_fact(fact):
@@ -244,7 +306,8 @@ def record_outcome(final, not_inspected=()):
     the deciding source, value and quote of every contradiction is kept (private results)."""
     hits = {t: f for t, f in final.items() if f['status'] == 'CONTRADICTED' and is_core(t, f)}
     core = sorted({field_of(t) if '.' not in t else 'child:' + (f.get('core_effect') or '') for t, f in hits.items()})
-    return dict(k=bool(core), contradicted_core=core, contradicted_core_fields=sorted({field_of(t) for t in hits}),
+    return dict(k=bool(core), contradicted_core=core, contradicted_core_fields=sorted(field_of(t) for t in hits),  # one entry per finding: two children on one field count twice, k counts the record once
+                
                 contradicted_desc=sorted(field_of(t) for t, f in final.items() if f['status'] == 'CONTRADICTED' and not is_core(t, f)),
                 unconfirmed={t: f['reason'] for t, f in final.items() if f['status'] == 'UNCONFIRMED'},
                 audited=sorted(final), notes=sorted(t for t, f in final.items() if f.get('note')), not_inspected=sorted(not_inspected),
@@ -261,26 +324,32 @@ def distinct(field, a, b):
 
 
 def plant_detected(primary_raw, field):
-    """A control passes only when the reader marks the planted field itself CONTRADICTED. read_findings grants that only for a quote that replays on
-    the cached bytes, contains the stated value, and names a value different from the planted one. UNCONFIRMED never detects, whatever its fact."""
+    """A control passes only when the reader marks the planted field itself CONTRADICTED with a quote that replays on the cached bytes and a source_value
+    that names the record's TRUE value from a clean witness (`plant_witness` == ''): a quote about another field, another party, another time or an
+    ambiguous page is held. UNCONFIRMED never detects, whatever its settling fact."""
     f = primary_raw.get(field)
-    return bool(f) and f['status'] == 'CONTRADICTED'
+    return bool(f) and f['status'] == 'CONTRADICTED' and f.get('plant_witness') == ''
 
 
 def plant_reason(row, field, true_value, sources):
     """'' when the ideal answer detects this plant on the excerpts the reader will see, else why it cannot be detected. The ideal answer is a CONTRADICTED
-    finding quoting the record's true value from a source, run through read_findings and plant_detected unchanged. sources: id -> {'excerpt': ...}."""
+    finding quoting the record's true value from a source, run through read_findings (witness test included) and plant_detected unchanged.
+    sources: id -> {'excerpt': ...}."""
     held = held_values(row)
     if field not in targets_of(row):
         return 'field_not_on_checklist'
     if held.get(field) == WITHHELD:
         return 'planted_cell_withheld'
     texts = {sid: s['excerpt'] for sid, s in sources.items()}
+    plant, why = dict(field=field, true=true_value, names=plant_names(row, field, true_value)), 'no_source_states_true_value'
     for sid, text in texts.items():
         if quote_in_order(text, true_value):
             ideal = dict(findings=[dict(target=field, verdict='CONTRADICTED', source_id=sid, quote=true_value, source_value=true_value)])
-            return '' if plant_detected(read_findings(ideal, texts, [field], held), field) else 'planted_value_not_distinguishable_from_true_value'
-    return 'no_source_states_true_value'
+            got = read_findings(ideal, texts, [field], held, plant)[field]
+            if plant_detected({field: got}, field):
+                return ''
+            why = 'planted_value_not_distinguishable_from_true_value' if got['status'] != 'CONTRADICTED' else got.get('plant_witness') or 'witness_held'
+    return why
 
 
 class Board:
@@ -508,7 +577,8 @@ def fetch_stage(draw_dir, cache_dir, load, packet_rows, approved=frozenset(), st
     lines = []
     for e, row, masked in built:
         k = f"{e['table']}|{e['record_id']}"
-        lines.append(json.dumps(dict(row=row, masked=masked, plant=e.get('field', ''), urls=urls_of(row), not_inspected=not_inspected_targets(row, ni.get(k)), due=due.get(k, 0))))
+        lines.append(json.dumps(dict(row=row, masked=masked, plant=e.get('field', ''), urls=urls_of(row), not_inspected=not_inspected_targets(row, ni.get(k)), due=due.get(k, 0),
+                                     **({'plant_true': true_of(R, e['table'], e['record_id'], e['field'])} if e.get('field') else {}))))
     write_private(draw_dir / 'packets.jsonl', '\n'.join(lines) + '\n')
     (cache_dir / 'manifest.json').write_text(json.dumps(manifest, indent=1, sort_keys=True))
     write_private(draw_dir / 'receipts.json', json.dumps(dict(receipts=rcpts, due=due, counts=rcounts, not_inspected_classes={c: len(v) for c, v in ni_classes.items()}), indent=1, default=list))
@@ -543,6 +613,8 @@ def run_stage(draw_dir, cache_dir, out, a):
         row = packets[s['blind_id']]['row']
         if (row.get('blind_id'), row.get('table'), row.get('record_id'), packets[s['blind_id']].get('plant', '')) != (s['blind_id'], s['table'], s['record_id'], s['plant_field']):
             sys.exit(f"refusing: packet {s['blind_id']} is not its sealed row (blind ID, table, record ID or plant field differ)")
+        if s['kind'] == 'plant' and not packets[s['blind_id']].get('plant_true'):
+            sys.exit(f"refusing: plant packet {s['blind_id']} carries no true value for the witness test")
     manifest = json.loads((cache_dir / 'manifest.json').read_text())
     families = json.loads((draw_dir / 'families.json').read_text())
     rc_doc = json.loads((draw_dir / 'receipts.json').read_text())
@@ -567,14 +639,16 @@ def run_stage(draw_dir, cache_dir, out, a):
         with lock:
             with open(ledger_path, 'a') as f:
                 f.write(json.dumps(kw, sort_keys=True) + '\n')
+    log(role='run', stop_at=a.stop_at, window=max(1, a.window), caps=caps, sample_sha256=receipt['sample_sha256'],  # what score checks the run against
+        sample=[dict(pos=int(s['pos']), blind_id=s['blind_id'], kind=s['kind'], provider=s['provider'], plant_field=s['plant_field']) for s in sample])
 
-    def save_read(s, role, provider, round_, attempt, res, prompt, ans, found):
+    def save_read(s, role, provider, round_, attempt, res, prompt, ans, found, error):
         """Every call's raw text, parsed answer, normalised findings, round and provider, in its own file (0600, create-exclusive)."""
         with lock:
             seq[0] += 1
             name = f"{seq[0]:04}-{s['blind_id']}-{role}-r{round_}-a{attempt}.json"
         text = json.dumps(dict(blind_id=s['blind_id'], kind=s['kind'], role=role, provider=provider, round=round_, attempt=attempt, model=res['model'], usage=res['usage'],
-                               metered=res['metered'], error=res['error'], prompt_sha256=sha256(prompt.encode()), plant_field=s['plant_field'], raw_text=res['text'],
+                               metered=res['metered'], error=error, prompt_sha256=sha256(prompt.encode()), plant_field=s['plant_field'], raw_text=res['text'],
                                parsed=ans, findings=found), sort_keys=True, indent=1)
         write_new(out / 'reads' / name, text)
         return name, sha256(text.encode())
@@ -585,6 +659,7 @@ def run_stage(draw_dir, cache_dir, out, a):
         row = pk['row']
         rc = rc_doc['receipts'].get(f"{s['table']}|{s['record_id']}", [])
         ni = pk.get('not_inspected', [])
+        plant = dict(field=s['plant_field'], true=pk['plant_true'], names=plant_names(row, s['plant_field'], pk['plant_true'])) if s['kind'] == 'plant' else None
         for round_ in (1, 2):
             sources = build_sources(pk, manifest, cache_dir, extra)
             prompt = build_prompt(row, sources, rc, extra if (round_ == 2 or extra) else (), ni)
@@ -601,21 +676,33 @@ def run_stage(draw_dir, cache_dir, out, a):
                     reserved[provider] += est
                 try:
                     res = call_model(provider, prompt, procs)
-                finally:
+                except BaseException:
                     with lock:
                         reserved[provider] -= est
-                ans = parse_answer(res['text']) if not res['error'] else None
-                found = read_findings(ans, texts, targets_of(row, ni), held_values(row)) if ans is not None else None
-                fname, fsha = save_read(s, role, provider, round_, attempt, res, prompt, ans, found)
-                log(blind_id=s['blind_id'], kind=s['kind'], role=role, provider=provider, round=round_, attempt=attempt, model=res['model'], usage=res['usage'], metered=res['metered'],
-                    elapsed=res['elapsed'], prompt_bytes=res['prompt_bytes'], error=res['error'] or ('unparseable answer' if ans is None else ''), forced=s['provider'] != provider,
-                    file=fname, file_sha256=fsha)
-                with lock:
+                    raise
+                parsed = ans = parse_answer(res['text']) if not res['error'] else None
+                found = bad = None
+                if ans is not None:
+                    try:
+                        found = read_findings(ans, texts, targets_of(row, ni), held_values(row), plant)
+                    except (TypeError, AttributeError, ValueError, KeyError) as exc:  # typed garbage: the raw call is still kept; retried once like an unparseable answer
+                        bad, ans = f'malformed answer: {type(exc).__name__}', None
+                error = res['error'] or bad or ('unparseable answer' if ans is None else '')
+                with lock:  # settle the reservation and the actual charge together
+                    reserved[provider] -= est
                     spent[provider] += input_tokens(res['usage'])
                     n_calls[provider] += 1
-                if res['error']:
-                    stop.set()  # a failed or unmetered call stops every later call now, not when the ordered collector reaches it
-                    return None
+                    over = provider in caps and spent[provider] > caps[provider]
+                    if over:
+                        halt.append(f'{provider}: {spent[provider] / 1e6:.3f}M actual input tokens passed its {caps[provider] / 1e6:.3f}M stage budget: halt for repricing')
+                        stop.set()
+                fname, fsha = save_read(s, role, provider, round_, attempt, res, prompt, parsed, found, error)
+                log(blind_id=s['blind_id'], kind=s['kind'], role=role, provider=provider, round=round_, attempt=attempt, model=res['model'], usage=res['usage'], metered=res['metered'],
+                    elapsed=res['elapsed'], prompt_bytes=res['prompt_bytes'], error=error, forced=s['provider'] != provider, file=fname, file_sha256=fsha)
+                if res['error'] or over:
+                    stop.set()  # a failed, unmetered or budget-passing call stops every later call now, not when the ordered collector reaches it
+                    if res['error']:
+                        return None
                 if ans is not None:
                     break
             if ans is None:
@@ -674,7 +761,8 @@ def run_stage(draw_dir, cache_dir, out, a):
             futs[i] = pool.submit(work, sample[i])
         for i, s in enumerate(sample):  # sealed order
             _, item = futs[i].result()
-            if item['status'] == 'INCOMPLETE':
+            if item['status'] == 'INCOMPLETE':  # a later failure or budget halt stopped this item: the run is not complete, and says why
+                status = 'HALTED_TOKEN_BUDGET' if halt else 'SUSPENDED_NO_OUTPUT'
                 break
             if item['status'] in ('NO_OUTPUT', 'SECOND_MISSING'):
                 status = 'HALTED_TOKEN_BUDGET' if halt else 'SUSPENDED_NO_OUTPUT'
@@ -706,8 +794,8 @@ def run_stage(draw_dir, cache_dir, out, a):
                 break
             if i + window < n and not stop.is_set():
                 futs[i + window] = pool.submit(work, sample[i + window])
-        if halt and status == 'COMPLETE':
-            status = 'HALTED_TOKEN_BUDGET'
+        if status == 'COMPLETE' and (halt or len(results) != n):  # never COMPLETE with an unscored item or a passed budget
+            status = 'HALTED_TOKEN_BUDGET' if halt else 'SUSPENDED_NO_OUTPUT'
         if stop.is_set():
             for p in list(procs):
                 try:
@@ -726,35 +814,74 @@ def run_stage(draw_dir, cache_dir, out, a):
 
 
 def rederive(run_dir, doc, ledger):
-    """Every verdict score reports comes from the persisted reader files: each file's sha256 must equal its ledger line, the primary file's findings
-    must equal the lock line, and plant detection and each record's outcome are recomputed from the files and must equal results.json.
-    A missing file, a hash mismatch or a disagreement exits 1; nothing is skipped."""
-    shas = {l['file']: l['file_sha256'] for l in ledger if l.get('file_sha256')}
+    """Nothing score reports is taken from results.json alone. It rebuilds the run from the ledger and the persisted reader files and refuses (exit 1) on any
+    disagreement: (1) the directory holds exactly the files the ledger's call lines name, each with its recorded hash, run, role, round and provider
+    (retries, REQUEST rounds and calls on unscored records included); (2) every lock names a primary call file and equals its findings; (3) the scored
+    positions are a prefix of the sealed order the run line recorded; (4) plant detection and each record's outcome are recomputed from the files;
+    (5) the gate (k, stop position, invalidation) is replayed over a Board; (6) tokens are re-summed from the ledger; (7) the recorded status is the one
+    the replay and the budgets imply, and COMPLETE needs every sealed item scored."""
+    def fail(msg):
+        sys.exit(f'score refuses: {msg}')
+    runs = [l for l in ledger if l.get('role') == 'run']
+    if len(runs) != 1 or ledger[0].get('role') != 'run':
+        fail('the ledger does not open with exactly one run line')
+    run = runs[0]
+    calls = [l for l in ledger if l.get('role') in ('primary', 'second')]
+    names = [l.get('file') for l in calls]
+    on_disk = sorted(p.name for p in (run_dir / 'reads').iterdir())
+    if sorted(names) != on_disk or len(set(names)) != len(names):
+        fail(f'reads/ holds {len(on_disk)} files, the ledger names {len(names)} calls (missing: {sorted(set(names) - set(on_disk))[:3]}, stray: {sorted(set(on_disk) - set(names))[:3]})')
+    files = {}
+    for l in calls:
+        raw = (run_dir / 'reads' / l['file']).read_bytes()
+        if sha256(raw) != l.get('file_sha256'):
+            fail(f"reader file {l['file']} does not match its ledger hash")
+        d = files[l['file']] = json.loads(raw)
+        if any(d.get(k) != l.get(k) for k in ('blind_id', 'role', 'provider', 'round', 'attempt', 'model')):
+            fail(f"reader file {l['file']} disagrees with its ledger line")
     locks = {l['blind_id']: l for l in ledger if l.get('role') == 'lock'}
-
-    def load_file(name):
-        path = run_dir / 'reads' / (name or '')
-        if not name or not path.is_file():
-            sys.exit(f'score refuses: reader file {name!r} is missing')
-        raw = path.read_bytes()
-        if sha256(raw) != shas.get(name):
-            sys.exit(f'score refuses: reader file {name} does not match its ledger hash')
-        return json.loads(raw)
-    for r in doc['results']:
-        prim = load_file(r.get('primary_file'))
+    sealed = run['sample']
+    results = doc['results']
+    if [(r['pos'], r['blind_id'], r['kind'], r['provider']) for r in results] != [(x['pos'], x['blind_id'], x['kind'], x['provider']) for x in sealed[:len(results)]]:
+        fail('scored positions are not a prefix of the sealed order')
+    board = Board(run['stop_at'])
+    for r in results:
         lock = locks.get(r['blind_id'])
-        if not lock or lock['file'] != r['primary_file'] or sha256(json.dumps(prim['findings'], sort_keys=True).encode()) != lock['sha256']:
-            sys.exit(f"score refuses: {r['blind_id']}'s locked primary verdicts do not match its reader file")
+        prim = files.get(r.get('primary_file'))
+        if not lock or not prim or lock['file'] != r['primary_file'] or prim['role'] != 'primary' or prim['findings'] is None or sha256(json.dumps(prim['findings'], sort_keys=True).encode()) != lock['sha256']:
+            fail(f"{r['blind_id']}'s locked primary verdicts do not match its reader file")
         if r['kind'] == 'plant':
             if plant_detected(prim['findings'], r['plant_field']) != r['detected']:
-                sys.exit(f"score refuses: plant {r['blind_id']}: the reader file says detected={not r['detected']}, results.json says {r['detected']}")
-            continue
-        sec = load_file(r['second_file'])['findings'] if r.get('second_file') else None
-        outcome = record_outcome(combine(prim['findings'], sec, not r['exception']), r['not_inspected'])
-        bad = [k for k, v in outcome.items() if r.get(k) != v]
-        if bad:
-            sys.exit(f"score refuses: record {r['blind_id']}: results.json disagrees with its reader files on {bad}")
-    return len(doc['results'])
+                fail(f"plant {r['blind_id']}: the reader file says detected={not r['detected']}, results.json says {r['detected']}")
+            board.add(r['pos'], 'plant', detected=r['detected'], provider=r['provider'])
+        else:
+            sec = files[r['second_file']]['findings'] if r.get('second_file') else None
+            if r.get('second_file') and (files[r['second_file']]['role'] != 'second' or sec is None):
+                fail(f"record {r['blind_id']}: its second-read file holds no findings")
+            outcome = record_outcome(combine(prim['findings'], sec, not r['exception']), r['not_inspected'])
+            bad = [k for k, v in outcome.items() if r.get(k) != v]
+            if bad:
+                fail(f"record {r['blind_id']}: results.json disagrees with its reader files on {bad}")
+            board.add(r['pos'], 'real', outcome)
+        if (board.stopped_at or board.invalid) and r is not results[-1]:
+            fail('results continue after the stop or invalidation')
+    spent = Counter()
+    for l in calls:
+        spent[l['provider']] += input_tokens(l.get('usage'))
+    over = sorted(p for p, cap in run['caps'].items() if spent[p] > cap)
+    unscored = [dict(pos=x['pos'], kind=x['kind']) for x in sealed[len(results):]]
+    want = 'STOPPED_AT_K' if board.stopped_at else 'SUSPENDED_PLANT_MISSED' if board.invalid else None
+    if (doc['k'], doc['stopped_at'], doc['invalid'], doc['stop_at']) != (board.k, board.stopped_at, board.invalid, run['stop_at']):
+        fail(f"gate totals: results.json says k={doc['k']} stopped_at={doc['stopped_at']} invalid={doc['invalid']}, the reader files give k={board.k} stopped_at={board.stopped_at} invalid={board.invalid}")
+    if doc['input_tokens_spent'] != dict(spent) or doc['incomplete_calls'] != unscored:
+        fail('input tokens or incomplete items differ from the ledger')
+    if over and not (doc['status'] == 'HALTED_TOKEN_BUDGET' and doc['halt']):
+        fail(f'{over} passed their stage budget but the run is recorded as {doc["status"]}')
+    if want and doc['status'] != want or not want and doc['status'] == 'COMPLETE' and (unscored or over):
+        fail(f"status {doc['status']} does not match the replay ({want or 'complete only when every sealed item is scored within budget'})")
+    if not want and not unscored and not over and doc['status'] != 'COMPLETE':
+        fail(f"every sealed item is scored within budget but the run is recorded as {doc['status']}")
+    return len(calls)
 
 
 def score_stage(run_dir):

@@ -748,8 +748,8 @@ Decided by the repo owner in session on 2026-11-24, by multiple choice. The 20:5
 
 At 19:08:
 
-1. **Fill ceiling "Measure ceiling, then floor".** After the smoke, a script-only census of how many of the 327 process-blank PIC-18 owners have any own website or filing that could state a process; then any fill route stops when a batch yields under 20% of owners.
-2. **Fitness "Re-grade and ask".** After the smoke, re-grade the 12 first-user tasks on current main and the owner asks the first user whether they use the Atlas and what is missing; that decides fill vs accuracy work.
+1. Fill ceiling 'Measure ceiling, then floor': after the smoke, a script-only census of how many of the 327 process-blank PIC-18 owners have any own website or filing that could state a process; then any fill route stops when a batch yields under 20% of owners.
+2. Fitness 'Re-grade and ask': after the smoke, re-grade the 12 first-user tasks on current main and the owner asks the first user whether they use the Atlas and what is missing; that decides fill vs accuracy work.
 
 At 20:51:
 
