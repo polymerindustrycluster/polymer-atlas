@@ -342,7 +342,7 @@ def run_fixture(items, fams=None, packets_extra=None, receipt_extra=None, skip_p
     sample, pk = [], []
     for pos, (kind, name, prov) in enumerate(items, 1):
         bid = f'A13-{pos:04}'
-        row = dict(blind_id=bid, record_label=name, table='sites', record_id=name, columns_under_audit='site_name;street_address', values_json=json.dumps(dict(site_name=site_name, street_address='12 Elm Street')),
+        row = dict(blind_id=bid, record_label=name, table='sites', record_id=name, columns_under_audit='site_name;street_address', values_json=json.dumps(dict(site_name=site_name, street_address='12 Elm Street', website='https://acme.example/')),
                    context_json=json.dumps(dict(children=list(children))), cited_sources='https://acme.example/', evidence_json='[]')
         if name not in skip_packet:
             pk.append(json.dumps(dict(row=row, masked=[], plant='street_address' if kind == 'plant' else '', urls=['https://acme.example/'], not_inspected=[], **({} if packet_due is None else dict(due=packet_due)), **({'plant_true': '99 Oak Avenue'} if kind == 'plant' else {}))))
@@ -663,7 +663,7 @@ def _():
     row = json.loads((draw_dir / 'packets.jsonl').read_text().splitlines()[0])['row']
     (draw_dir / 'packets.jsonl').unlink()
     R = SimpleNamespace(at='x')
-    pr = lambda R_, entries, approved, ids: ([(e, dict(row, values_json=json.dumps(dict(site_name='Acme Plastics', street_address='12 Elm Street'))), []) for e in entries], {})
+    pr = lambda R_, entries, approved, ids: ([(e, dict(row, values_json=json.dumps(dict(site_name='Acme Plastics', street_address='12 Elm Street', website='https://acme.example/'))), []) for e in entries], {})
     manifest = {'https://acme.example/': dict(status='ok', final_url='https://acme.example/', fetched_at='t', text_file='page.txt')}
     real_fetch, real_cov = rd.fetch_urls, replays.coverage
     rd.fetch_urls = lambda cache_dir, urls: manifest
@@ -1182,7 +1182,7 @@ def _():
     (cache / 'a.txt').write_text(held_src)
     (cache / 'b.txt').write_text(clean_src)
     manifest = {'https://a.example/': dict(status='ok', final_url='https://a.example/', fetched_at='t', text_file='a.txt'), 'https://b.example/': dict(status='ok', final_url='https://b.example/', fetched_at='t', text_file='b.txt')}
-    row = dict(plant_row('7 Pine Road'), cited_sources='https://a.example/ https://b.example/', evidence_json='[]')
+    row = dict(plant_row('7 Pine Road'), cited_sources='https://a.example/ https://b.example/', evidence_json=json.dumps([dict(url='https://b.example/')]))  # b is the record's own evidence page
     real_rows, real_fetch = smoke.packet_rows, rd.fetch_urls
     smoke.packet_rows = lambda R, entries, approved, ids=None, candidates=None: ([(dict(table='sites', record_id='S-1', field='street_address'), row, [])], {})
     rd.fetch_urls = lambda cache_dir, urls: manifest
@@ -1304,17 +1304,26 @@ RULE = ("An operator's own page (on its own domain) that names the operator and 
         "that street can contradict the site's street. A page that lists several locations at that locality, or labels the address as headquarters or office only, does not; "
         "a parent's headquarters street still does not contradict a plant's street.")
 FILLER = 'Injection molding and thermoforming since 1986 with ISO certified quality systems and in house tooling for packaging programs.'
-ONE_AT_LOCALITY = f'Acme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio 44301\n{FILLER}\nAcme Plastics Canton plant\n500 Corporate Drive, Canton, Ohio'  # a second street, in another city
-TWO_AT_LOCALITY = f'Acme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio 44301\n{FILLER}\nAcme Plastics Annex\n5 Pine Road, Akron, Ohio'
 CITY_PLANT = dict(PLANT, city='Akron')
+OWN, DIRECTORY = 'https://acme.example/contact', 'https://directory.example/acme-plastics'
 
 
 def plant_row_city(street):
-    return dict(plant_row(street), values_json=json.dumps(dict(street_address=street, site_name='Acme Plastics', city='Akron')))
+    return dict(plant_row(street), values_json=json.dumps(dict(street_address=street, site_name='Acme Plastics', city='Akron', website='https://acme.example/')), evidence_json='[]')
 
 
-def draw_reason(text):
-    return rd.plant_reason(plant_row_city('7 Pine Road'), 'street_address', '99 Oak Avenue', {'S1': dict(excerpt=text)})
+def draw_reason(text, url=OWN, excerpt=None):
+    return rd.plant_reason(plant_row_city('7 Pine Road'), 'street_address', '99 Oak Avenue', {'S1': dict(excerpt=text if excerpt is None else excerpt, full=text, url=url)})
+
+
+def scored(text, standing='own', quote='99 Oak Avenue'):
+    SRC['S14'] = text
+    f = sid(finding('street_address', 'CONTRADICTED', quote, '99 Oak Avenue'), 'S14')
+    return rd.plant_detected(readp(with_(street_address=f), dict(CITY_PLANT, standing={'S14': standing})), 'street_address')
+
+
+FOOTER = 'Acme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio 44301'
+SISTER = 'Acme Plastics Canton plant\n500 Corporate Drive, Canton, Ohio'
 
 
 @case('R: the reader instructions carry the own-page rule, and no other rule of the CONTRADICTED bullet changed')
@@ -1324,31 +1333,47 @@ def _():
     assert "A parent's headquarters street does not contradict a plant's street; a page saying an address belongs only to headquarters would." in text, 'an existing rule changed'
 
 
-@case('R: a scripted CONTRADICTED answer quoting a one-street own-domain footer at the locality is a detected plant, and the draw keeps that record eligible')
+@case('R1: the street must be at the record locality, judged per address block: a street in another city is not a witness, a locality heading over two streets is ambiguous, and page order changes nothing')
 def _():
-    SRC['S11'] = ONE_AT_LOCALITY
-    f = sid(finding('street_address', 'CONTRADICTED', '99 Oak Avenue, Akron, Ohio 44301', '99 Oak Avenue'), 'S11')
-    assert rd.plant_detected(readp(with_(street_address=f), CITY_PLANT), 'street_address'), 'one street at the locality (another city\'s street elsewhere on the page) must detect'
-    assert draw_reason(ONE_AT_LOCALITY) == '', draw_reason(ONE_AT_LOCALITY)
+    elsewhere = 'Acme Plastics, Inc.\n99 Oak Avenue, Canton, Ohio 44701'
+    assert draw_reason(elsewhere) == 'witness_not_at_locality' and not scored(elsewhere), 'the only street is in another city'
+    heading = 'Akron\nAcme Plastics, Inc. is located at 99 Oak Avenue\n5 Pine Road'
+    assert draw_reason(heading) == 'witness_ambiguous' and not scored(heading), 'a target-city heading over two street lines'
+    before, after = f'{SISTER}\n{FILLER}\n{FOOTER}', f'{FOOTER}\n{FILLER}\n{SISTER}'
+    for name, page in (('different-city location before the footer', before), ('after the footer', after)):
+        assert draw_reason(page) == '' and scored(page), f'{name}: one street at the locality must be eligible and detected'
 
 
-@case('R: a footer listing two streets at the locality is ineligible at draw time and not detected, while the one-street footer beside it is eligible')
+@case('R2: the own-page exception needs the operator\'s held domain: the same corporate footer qualifies on it and not on a directory; the record\'s own evidence page still qualifies')
 def _():
-    SRC['S12'] = TWO_AT_LOCALITY
-    f = sid(finding('street_address', 'CONTRADICTED', '99 Oak Avenue, Akron, Ohio 44301', '99 Oak Avenue'), 'S12')
-    assert not rd.plant_detected(readp(with_(street_address=f), CITY_PLANT), 'street_address'), 'two streets at the locality must not detect'
-    assert draw_reason(TWO_AT_LOCALITY) == 'witness_ambiguous', draw_reason(TWO_AT_LOCALITY)
-    assert draw_reason(ONE_AT_LOCALITY) == '', 'the contrast: one street at the locality stays eligible'
+    assert draw_reason(FOOTER, OWN) == '' and scored(FOOTER, 'own')
+    assert draw_reason(FOOTER, DIRECTORY) == 'source_not_own_page' and not scored(FOOTER, 'other'), 'a third-party directory footer'
+    row = dict(plant_row_city('7 Pine Road'), evidence_json=json.dumps([dict(url=DIRECTORY)]))
+    assert rd.plant_reason(row, 'street_address', '99 Oak Avenue', {'S1': dict(excerpt=FOOTER, full=FOOTER, url=DIRECTORY)}) == '', 'a URL the record\'s own evidence rows cite is site-specific'
+    assert rd.source_standing(plant_row_city('x'), 'https://www.acme.example/about') == 'own' and rd.source_standing(plant_row_city('x'), DIRECTORY) == 'other'
 
 
-@case('R: a page labelling the street headquarters or office is ineligible at draw time and not detected')
+@case('R3: the headquarters/office exclusion is the role of that address block: a heading label counts, "office hours" below a valid footer does not, and an HQ county block keeps the base rule')
 def _():
-    for n, page in enumerate(['Acme Plastics headquartered at 99 Oak Avenue.', 'Acme Plastics LLC is headquartered at 99 Oak Avenue.', 'Acme Plastics, Inc. is headquartered at 99 Oak Avenue, Akron, Ohio.', 'Acme Plastics, Inc. headquarters\n99 Oak Avenue, Akron, Ohio 44301',
-                              'Acme Plastics, Inc. is located at 99 Oak Avenue, Akron, Ohio. Corporate office.']):
-        assert draw_reason(page) == 'witness_hedged' or draw_reason(page) == 'witness_not_attributed', f'page {n}: {draw_reason(page)}'
-        SRC[f'S13{n}'] = page
-        f = sid(finding('street_address', 'CONTRADICTED', '99 Oak Avenue', '99 Oak Avenue'), f'S13{n}')
-        assert not rd.plant_detected(readp(with_(street_address=f), CITY_PLANT), 'street_address'), f'page {n} detected a plant it should hold'
+    hq_heading = 'Headquarters\nOur main facility serves the whole region.\nAcme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio 44301'
+    assert draw_reason(hq_heading) == 'witness_hq_or_office_label' and not scored(hq_heading), 'a block headed Headquarters, with a sentence before the address'
+    for n, page in enumerate(['Acme Plastics headquartered at 99 Oak Avenue.', 'Acme Plastics LLC is headquartered at 99 Oak Avenue.', 'Corporate Office\nAcme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio',
+                              'Headquarters: Acme Plastics, Inc.\n99 Oak Avenue, Akron, Ohio']):
+        assert draw_reason(page) != '' and not scored(page), f'page {n} labels the address headquarters or office'
+    hours = f'{FOOTER}\nOffice hours: Monday to Friday, 8 to 5.'
+    assert draw_reason(hours) == '' and scored(hours), 'office hours below a valid site footer are not a label of its address'
+    county = 'Corporate Headquarters\nAcme Plastics, Inc.\nSummit County, Ohio'
+    assert rd.witness_reason(county, 'Summit', 'hq_county', ['Acme Plastics']) == '', 'an organization HQ county block labelled corporate headquarters keeps the base rule'
+
+
+@case('R4: the draw judges page-wide disqualifiers on the full cached page, as the scorer does, and requires the supporting passage in the reader excerpt')
+def _():
+    full = f'{FOOTER}\n{FILLER * 6}\nAcme Plastics Annex\n5 Pine Road, Akron, Ohio'
+    short = FOOTER + '\n' + FILLER
+    assert draw_reason(full, excerpt=short) == 'witness_ambiguous', 'the excerpt kept only one of two streets at the locality'
+    assert not scored(full), 'the scorer judges the same full page'
+    page = f'{FILLER * 4}\n{FOOTER}'
+    assert draw_reason(page, excerpt=FILLER) == 'supporting_passage_not_in_excerpt', draw_reason(page, excerpt=FILLER)
 
 
 if __name__ == '__main__':

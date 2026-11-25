@@ -214,7 +214,6 @@ def read_findings(answer, sources, targets, held, plant=None):
 
 HEDGE = re.compile(r'\b(?:former|formerly|previous|previously|prior|used to|moved|relocat\w*|supplier|suppliers|vendor|vendors|customer|customers|partner|partners|'
                    r'competitor|competitors|acquired|closed|sold|future|branch|affiliate|subsidiary|sister|'
-                   r'headquarters|headquartered|hq|office|offices|'  # an address labelled headquarters or office only does not speak for the site (owner ruling 2026-11-25 11:27)
 
                    r'not|no|never|neither|nor|without|isn|aren|wasn|weren|doesn|didn|don|cannot)\b')  # another party, another time, another place, or a denial
 WITNESS_WINDOW = 12  # words each side of the stated value that must be free of those
@@ -265,7 +264,40 @@ def agrees(field, a, b):
     return bool(words(a) and words(b)) and (not values_differ(a, b, field) or not values_differ(b, a, field) or (field in NAME_FIELDS and name_equivalent(a, b)))
 
 
-def witness_check(text, value, field, names, quote='', city=''):
+HQ_ROLE = re.compile(r'\b(?:headquarters|headquartered|hq|(?:head|corporate|main|home|executive|administrative|registered)\s+offices?|offices?)\b', re.I)
+UNIT_WORDS = {'suite', 'ste', 'unit', 'bldg', 'building', 'floor', 'fl', 'room', 'rm', 'apt', 'dept', 'po', 'box'}
+
+
+def street_blocks(text, city):
+    """Each street on the page with the address block it sits in: [dict(key, at, hq)]. `at`: the block names the record's locality `city`, read from the street's own line
+    after it (up to the next street), else the next line, else the nearest heading line above that is not itself a street; with no locality named it is False.
+    `hq`: the role label of THAT block (its own line before the street and up to three non-street lines above it) says headquarters or office; lines below never count.
+    Order on the page changes nothing: each street is judged by its own block."""
+    from atlas import NOTES_STREET_RE, notes_candidate_key
+    lines, pos = [], 0
+    for ln in text.split('\n'):
+        lines.append((pos, ln)); pos += len(ln) + 1
+    ms = [m for m in NOTES_STREET_RE.finditer(text)]
+    street_line = lambda i: any(lines[i][0] <= m.start() < lines[i][0] + len(lines[i][1]) + 1 for m in ms)
+    out = []
+    for n, m in enumerate(ms):
+        li = max(i for i, (a, _) in enumerate(lines) if a <= m.start())
+        end = min([x.start() for x in ms[n + 1:] if x.start() < lines[li][0] + len(lines[li][1]) + 1] + [lines[li][0] + len(lines[li][1])])
+        tail = text[m.end():end][:80]
+        prev_end = ms[n - 1].end() if n and ms[n - 1].end() > lines[li][0] else lines[li][0]
+        prefix = text[prev_end:m.start()][-80:]
+        heads, k = [], li - 1
+        while k >= 0 and len(heads) < 3 and li - k <= 6:  # the nearest non-street lines above, at most six lines up
+            if not street_line(k) and lines[k][1].strip(): heads.append(lines[k][1])
+            k -= 1
+        if [w for w in words(tail) if w not in UNIT_WORDS and not w.isdigit()]: loc = tail
+        elif li + 1 < len(lines) and lines[li + 1][1].strip() and not street_line(li + 1): loc = lines[li + 1][1]
+        else: loc = heads[0] if heads else ''
+        out.append(dict(key=notes_candidate_key(m[0]), at=bool(words(city)) and contains(words(loc), words(city)), hq=bool(HQ_ROLE.search(' '.join([prefix] + heads)))))
+    return [b for b in out if b['key']]
+
+
+def witness_check(text, value, field, names, quote='', city='', standing=None):
     """'' when `text` positively attributes `value` to this record: in the segment holding the occurrence (inside the reader's quote, when given) the
     record's own name appears, or the page speaks in the first person for its own entity; no other party, time, place or denial is within
     WITNESS_WINDOW words; no other legal entity is named in the segment; and the page names no other street or county. Else the reason it is held."""
@@ -285,6 +317,8 @@ def witness_check(text, value, field, names, quote='', city=''):
     own = [k for n in names for k in (name_key(n), name_key(re.split(r'\s[-\u2013\u2014]\s', n)[0])) if k]  # a site name 'Acme - Akron' is also 'Acme'
     if not any(contains(tw, k) for k in own):
         return 'source_not_about_record', ''
+    if field == 'street_address' and standing is not None and standing not in ('own', 'evidence'):
+        return 'source_not_own_page', ''  # a third-party page cannot use the own-page exception (owner ruling 2026-11-25 11:27)
     why, used = 'witness_hedged', ''
     for o in occ:
         if HEDGE.search(' '.join(tw[max(0, o - WITNESS_WINDOW):o + len(vw) + WITNESS_WINDOW])):
@@ -302,20 +336,24 @@ def witness_check(text, value, field, names, quote='', city=''):
         break
     if not why:
         if field == 'street_address':
-            from atlas import NOTES_STREET_RE, notes_candidate_key, street_key
-            # Several streets at the record's locality make the page ambiguous; a street in another city does not (a parent's or sister plant's address
-            # elsewhere never speaks for this site). With no locality on the record every street on the page counts, as before.
-            at_locality = lambda m: not words(city) or contains(words(text[m.end():m.end() + 80]), words(city))
-            if {k for k in (notes_candidate_key(m[0]) for m in NOTES_STREET_RE.finditer(text) if at_locality(m)) if k} - {street_key(value)}:
-                why = 'witness_ambiguous'
+            from atlas import street_key
+            blocks, mine = street_blocks(text, city), street_key(value)
+            ours = [b for b in blocks if b['key'] == mine]
+            seen_here = [b for b in ours if b['at']] if words(city) else ours  # with no locality on the record every occurrence counts, as before
+            if not seen_here:
+                why = 'witness_not_at_locality'
+            elif all(b['hq'] for b in seen_here):
+                why = 'witness_hq_or_office_label'
+            elif {b['key'] for b in blocks if (b['at'] or not words(city)) and b['key'] != mine}:
+                why = 'witness_ambiguous'  # another street at the record's locality
         if field in ('county', 'hq_county'):
             if {c.lower() for c in re.findall(r'\b([A-Z][a-z]+) County\b', text)} - {(words(value) or [''])[0]}:
                 why = 'witness_ambiguous'
     return why, used or witness_context(text, value)
 
 
-def witness_reason(text, value, field, names, quote='', city=''):
-    return witness_check(text, value, field, names, quote, city)[0]
+def witness_reason(text, value, field, names, quote='', city='', standing=None):
+    return witness_check(text, value, field, names, quote, city, standing)[0]
 
 
 def witness_context(text, value):
@@ -335,6 +373,17 @@ def plant_names(row, field, true_value):
     return [v for f in NAME_FIELDS for v in [values.get(f)] if v and v != WITHHELD] + [t.strip() for t in (values.get('trade_names') or '').split(';') if t.strip() and t.strip() != WITHHELD]
 
 
+def source_standing(row, url):
+    """'own' for a page on the operator's held website domain, 'evidence' for a URL the record's own evidence rows cite (site-specific by construction), else
+    'other' (a directory, a press page, a corporate parent): only the first two may speak for the site."""
+    from urllib.parse import urlsplit
+    host = lambda u: (urlsplit(u or '').hostname or '').lower().removeprefix('www.')
+    site, h = host(json.loads(row['values_json']).get('website', '')), host(url)
+    if site and h and (h == site or h.endswith('.' + site) or site.endswith('.' + h)): return 'own'
+    if any((e.get('url') or '').rstrip('/') == (url or '').rstrip('/') for e in json.loads(row.get('evidence_json') or '[]')): return 'evidence'
+    return 'other'
+
+
 def plant_city(row):
     """The record's locality for the witness test: its site or HQ city when the cell is readable, else '' (every street on the page then counts)."""
     values = json.loads(row['values_json'])
@@ -345,7 +394,7 @@ def plant_witness(f, text, plant):
     """'' only when the finding's source_value agrees with the record's true value and the quote's occurrence of it is a clean witness."""
     if not agrees(plant['field'], plant['true'], f['source_value']):
         return 'source_value_not_true_value'
-    return witness_reason(text, plant['true'], plant['field'], plant['names'], f['quote'], plant.get('city', ''))
+    return witness_reason(text, plant['true'], plant['field'], plant['names'], f['quote'], plant.get('city', ''), (plant.get('standing') or {}).get(f['source_id']))
 
 
 def specific_fact(fact):
@@ -426,14 +475,21 @@ def plant_verdict(row, field, true_value, sources):
         return 'field_not_on_checklist', '', ''
     if held.get(field) == WITHHELD:
         return 'planted_cell_withheld', '', ''
-    texts = {sid: s['excerpt'] for sid, s in sources.items()}
-    plant, why, at = dict(field=field, true=true_value, names=plant_names(row, field, true_value), city=plant_city(row)), 'no_source_states_true_value', ('', '')
+    # Page-wide disqualifiers (another street at the locality, a third-party source) are judged on the FULL cached page, as the scorer judges them; the passage the
+    # check accepts must also be visible in the excerpt the reader will actually see.
+    texts = {sid: s.get('full') or s['excerpt'] for sid, s in sources.items()}
+    standing = {sid: source_standing(row, s.get('url')) for sid, s in sources.items() if s.get('url')}
+    plant, why, at = dict(field=field, true=true_value, names=plant_names(row, field, true_value), city=plant_city(row), standing=standing), 'no_source_states_true_value', ('', '')
     for sid, text in texts.items():
         if quote_in_order(text, true_value):
             ideal = dict(findings=[dict(target=field, verdict='CONTRADICTED', source_id=sid, quote=true_value, source_value=true_value)])
             got = read_findings(ideal, texts, [field], held, plant)[field]
-            at = (sid, witness_check(text, true_value, field, plant['names'], true_value, plant['city'])[1])
+            at = (sid, witness_check(text, true_value, field, plant['names'], true_value, plant['city'], standing.get(sid))[1])
             if plant_detected({field: got}, field):
+                shown = sources[sid]['excerpt']
+                if not (quote_in_order(shown, true_value) and contains(words(shown), words(at[1].split('\n')[-1]))):
+                    why = 'supporting_passage_not_in_excerpt'
+                    continue
                 return '', sid, at[1]
             why = 'planted_value_not_distinguishable_from_true_value' if got['status'] != 'CONTRADICTED' else got.get('plant_witness') or 'witness_held'
     return why, at[0], at[1]
@@ -756,6 +812,7 @@ def run_stage(draw_dir, cache_dir, out, a):
             sources = build_sources(pk, manifest, cache_dir, extra)
             prompt = build_prompt(row, sources, rc, extra if (round_ == 2 or extra) else (), ni)
             texts = {k: v['full'] for k, v in sources.items()} | {r['id']: r['text'] for r in rc}
+            if plant: plant['standing'] = {k: source_standing(row, v['url']) for k, v in sources.items()}  # ownership of each source, as at the draw
             for attempt in (1, 2):
                 if stop.is_set():
                     return None
