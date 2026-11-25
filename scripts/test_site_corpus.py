@@ -20,9 +20,6 @@ class SiteCorpusTests(unittest.TestCase):
         directory = tempfile.TemporaryDirectory()
         self.addCleanup(directory.cleanup)
         self.tmp_path = Path(directory.name)
-        # No unit test launches Chrome; the browser path is exercised by tasks/robots-off-fetch-2026-11-25/check.py.
-        patcher = patch.object(Corpus, 'browser', return_value=dict(unavailable=True, error='PLAYWRIGHT_UNAVAILABLE', code=0, raw=b'', exit=127, final_url=''))
-        patcher.start(); self.addCleanup(patcher.stop)
 
     def test_calibrated_known_answer_and_mutations(self):
         for quote, expected in [
@@ -121,20 +118,13 @@ class SiteCorpusTests(unittest.TestCase):
         assert not challenged(200, '<html><div class="g-recaptcha"></div><p>' + 'word ' * 80 + '</p></html>')  # a contact form is not a wall
         assert not challenged(404, '<html><title>Not found</title></html>')
 
-    def test_challenge_routes_to_browser_and_puzzle_to_manual_list(self):
+    def test_challenge_page_is_manual_never_ok(self):
         c = Corpus(self.tmp_path)
-        wall = response('<html><title>Just a moment...</title></html>', code=403, content_type='text/html')
-        def request(u, delay=1): return response(code=404) if u.endswith('/robots.txt') else wall
-        def rendered(html):
-            return dict(code=200, raw=html.encode(), location='', content_type='text/html', exit=0, error='', final_url='https://example.org/')
-        with patch.object(c, 'request', side_effect=request), patch.object(Corpus, 'browser', return_value=rendered('<html><p>' + 'Real polymer molding ' * 20 + '</p></html>')) as browser:
-            r = c.fetch('https://example.org/')
-            assert (r['status'], r['route'], browser.call_count) == ('ok', 'browser', 1)
-            assert r['sha256'] == hashlib.sha256((self.tmp_path / r['raw_file']).read_bytes()).hexdigest()
-        with patch.object(c, 'request', side_effect=request), patch.object(Corpus, 'browser', return_value=rendered('<html><title>Security check</title><div class="g-recaptcha"></div></html>')):
-            r = c.fetch('https://example.org/puzzle')
-            assert r['status'] == 'BOT_CHECK_MANUAL'
-            assert 'https://example.org/puzzle' in (self.tmp_path / 'manual-bot-check.csv').read_text()
+        for n, (code, html) in enumerate([(403, '<html><title>Just a moment...</title></html>'), (200, '<html><title>Security check</title><div class="g-recaptcha"></div></html>')]):
+            with self.subTest(code=code), patch.object(c, 'request', side_effect=lambda u, delay=1: response(code=404) if u.endswith('/robots.txt') else response(html, code=code, content_type='text/html')):
+                r = c.fetch(f'https://example.org/{n}')
+                assert r['status'] == 'BOT_CHECK_MANUAL'
+                assert f'https://example.org/{n}' in (self.tmp_path / 'manual-bot-check.csv').read_text()
 
     def test_linkedin_link_remains_navigation(self):
         link = 'https://www.linkedin.com/company/acme/'
