@@ -4,10 +4,12 @@ tasks/blind-audit-13-protocol-2026-11-24 says what each step means; README.md he
 
     smoke.py frame     --at SHA --out DIR
     smoke.py preflight --at SHA --out DIR [--families CSV] [--approved CSV]... [--store PATH]
-    smoke.py draw      --at SHA --preflight DIR --secret-file PATH --out DIR      (the controller runs this)
+    smoke.py draw      --at SHA --preflight DIR --secret-file PATH --out DIR --cache DIR [--approved CSV]...   (the controller runs this)
     smoke.py draw      --at SHA --records CSV --secret-file PATH --out DIR        (explicit list: known-answer run, selftest)
     smoke.py fetch     --draw DIR --cache DIR
     smoke.py run       --draw DIR --cache DIR
+    smoke.py handcheck --run DIR --list [--draw DIR]       (the controller: what each plant read shows, beside the script flag)
+    smoke.py handcheck --run DIR --csv PATH                (the controller: seal handcheck.csv; score refuses without it)
     smoke.py score     --run DIR
 
 Never run `draw` against the PIC-18 frame except as the controller. Tools only: no data/ writes anywhere.
@@ -310,7 +312,7 @@ def cmd_preflight(a):
         if why:
             blocks[why].append(k)
         routes[route(fams) or 'blocked'] += 1
-    receipts, ni_classes, rcounts, _ = replays.coverage(R, keys, a.store)
+    receipts, ni_classes, rcounts, _, _ = replays.coverage(R, keys, a.store)
     approved = read_approved(a.approved)
     leak_candidates = set()
     built, problems = packet_rows(R, [dict(table=t, record_id=i) for t, i in keys], approved, candidates=leak_candidates)
@@ -353,13 +355,15 @@ def keyed(secret, purpose, ident):
 
 
 def cmd_draw(a):
+    assert a.pool >= 1, '--pool must be at least 1'
+    globals()['PLANT_POOL'] = a.pool
     secret = Path(a.secret_file).read_bytes().strip()
     assert len(secret) >= 32, 'secret file must hold at least 32 bytes'
     R = load(a.at)
     out = out_dir(a.out)
     if (out / 'draw_receipt.json').exists():
         sys.exit('refusing to draw: this folder already holds a draw (one binding draw per sealed attempt)')
-    inputs = {}
+    inputs, plant_report = {}, {}
     if a.records:  # explicit list: no sampling, no plants. Used by the known-answer run and the selftest.
         recs = list(csv.DictReader(open(a.records, newline='')))
         ids = [(r['table'], r['record_id']) for r in recs]
@@ -388,7 +392,12 @@ def cmd_draw(a):
         fam_of = {k: set(filter(None, routes[k]['families'].split(';'))) for k in ids}
         inputs.update(preflight_receipt_sha256=sha((pre / 'preflight_receipt.json').read_bytes()), frame_digest=receipt['frame_digest'], routes_sha256=receipt['routes_sha256'],
                       families_file_sha256=receipt['families_file_sha256'], approved_files=sorted(receipt['approved_files']), store=receipt['store'])
-        pl = make_plants(R, secret, ids, set(real), fam_of)
+        assert a.cache, 'a frame draw needs --cache: plants are drawn only from records whose cached pages state the true value'
+        assert sorted(sha(Path(p).read_bytes()) for p in a.approved) == sorted(receipt['approved_files']), 'approval files differ from the sealed preflight'
+        try:
+            pl = make_plants(R, secret, ids, set(real), fam_of, plant_checker(R, Path(a.cache), read_approved(a.approved)), plant_report)
+        except ValueError as exc:
+            sys.exit(f'refusing to draw (nothing written): {exc}')
     sample = [dict(kind='real', table=t, record_id=i, provider=forced[t, i], plant_field='', donor_record_id='') for t, i in real]
     sample += [dict(kind='plant', table=p['table'], record_id=p['record_id'], provider=p['provider'], plant_field=p['field'], donor_record_id=p['donor_record_id']) for p in pl]
     assert len({(s['table'], s['record_id']) for s in sample}) == len(sample), 'a plant overlaps a real record or another plant'
@@ -400,8 +409,8 @@ def cmd_draw(a):
     put(out / 'sample.csv', draw.csv_text(sample, cols))
     put(out / 'families.json', jdump({f'{t}|{i}': sorted(f) for (t, i), f in fam_of.items() if any(s['record_id'] == i and s['table'] == t for s in sample)}))
     put(out / 'draw_receipt.json', jdump(dict(at=R.at, secret_sha256=sha(secret), n_real=len(real), plants={p: sum(1 for s in pl if s['provider'] == p) for p in PROVIDERS},
-                                              check_p=CHECK_P, method='HMAC-SHA256(secret, purpose|key): purposes smoke, plantpool|P, plant|P, order, coin; real = first n by smoke order',
-                                              inputs=inputs, sample_sha256=sha((out / 'sample.csv').read_bytes()), scripts=script_hashes())))
+                                              check_p=CHECK_P, method='HMAC-SHA256(secret, purpose|key): purposes smoke, plantpool|P, order, coin; real = first n by smoke order; plants = first 3 per provider in plantpool order whose cached pages pass reading.plant_reason',
+                                              inputs=inputs, plant_eligibility=plant_report, plants_detail=plant_details(sample, plant_report.pop('plants', [])), sample_sha256=sha((out / 'sample.csv').read_bytes()), scripts=script_hashes())))
     print(f'drew {len(real)} real + {len(pl)} plants at {R.at[:12]}; receipt written (the sample stays private)')
     return 0
 
@@ -412,34 +421,89 @@ def assert_unique(ids):
 
 
 PLANT_PREFERRED = ('street_address', 'county', 'hq_county', 'legal_name', 'site_name', 'hq_city', 'city', 'zip')  # core and locality fields first
+PLANT_POOL = 40  # records tried per provider before the draw gives up; the draw receipt counts how many were eligible
+FIELDS_PER_RECORD = 4  # (record, field) pairs tried per pool record: a page may state the county but not the street
 
 
-def make_plants(R, secret, ids, real, fam_of):
+def plant_candidates(values, order, p):
+    """Pool for provider p in sealed order: per record, up to FIELDS_PER_RECORD populated judged fields (core and locality first) each with a donor
+    whose value is distinct from the true one (reading.distinct), never `status` or `verification_tier`."""
+    pool, recs = [], set()
+    for k in order:
+        if len(recs) == PLANT_POOL:
+            break
+        row = values[k]
+        cols = [c for c in PLANT_PREFERRED if c in row] + sorted(c for c, kind in draw.FIELD_CLASS[k[0]].items() if kind == 'J' and c not in ('status', 'verification_tier') and c not in PLANT_PREFERRED)
+        for f in cols:
+            donor = next((d for d in order if d[0] == k[0] and d != k and reading.distinct(f, row.get(f), values[d].get(f))), None) if row.get(f) else None
+            if donor and sum(1 for c in pool if (c['table'], c['record_id']) == k) < FIELDS_PER_RECORD:
+                pool.append(dict(stratum=PIC18, table=k[0], record_id=k[1], field=f, donor_record_id=donor[1], provider=p, true_value=row[f]))
+                recs.add(k)
+    return pool
+
+
+def make_plants(R, secret, ids, real, fam_of, eligible=None, report=None):
     """3 plants per participating reader provider, each from a record eligible for that provider (its family did not build it) and outside the real
-    sample. Same idea as draw.plants (one judged field swapped for another record's differing value, in the packet only), forked to try
-    the core and locality fields first: a reader can settle those from the cited pages. Order is keyed per provider."""
+    sample, with one judged field swapped for another record's distinct value, in the packet only. The sealed HMAC order (plantpool|P) fixes the pool.
+    `eligible(candidates) -> {(table, record_id, field): reason or ''}` is draw-time proof that the ideal answer detects the plant on the cached pages
+    the reader will see (reading.plant_reason): plants are the first 3 records in sealed order with an eligible field. No eligible 3 -> ValueError with counts."""
     values = {(t, r[draw.ID_COL[t]]): r for t in ('organizations', 'ecosystem', 'sites') for r in R.rows(t)}
     used, out = set(real), []
     for p in PROVIDERS:
-        eligible = [k for k in sorted(ids, key=lambda k: keyed(secret, 'plantpool|' + p, '|'.join(k))) if k not in used and FAMILY_OF_PROVIDER[p] not in fam_of[k]]
-        pool, got = eligible[:60], []
-        for fields in ('preferred', 'any'):
-            for k in pool:
-                if len(got) == PLANTS_PER_PROVIDER:
-                    break
-                if k in {(g['table'], g['record_id']) for g in got}:
-                    continue
-                row = values[k]
-                cols = [c for c in PLANT_PREFERRED if c in row] if fields == 'preferred' else sorted(c for c, kind in draw.FIELD_CLASS[k[0]].items() if kind == 'J' and c not in ('status', 'verification_tier'))
-                for f in cols:
-                    donor = next((d for d in pool if d[0] == k[0] and d != k and values[d].get(f) not in ('', None, row.get(f))), None)
-                    if row.get(f) and donor:
-                        got.append(dict(stratum=PIC18, table=k[0], record_id=k[1], field=f, donor_record_id=donor[1], provider=p))
-                        break
-        assert len(got) == PLANTS_PER_PROVIDER, f'no usable plant pool for {p}'
+        order = [k for k in sorted(ids, key=lambda k: keyed(secret, 'plantpool|' + p, '|'.join(k))) if k not in used and FAMILY_OF_PROVIDER[p] not in fam_of[k]]
+        cands = plant_candidates(values, order, p)
+        checked = eligible(cands) if eligible else {}
+        why = {(c['table'], c['record_id'], c['field']): checked.get((c['table'], c['record_id'], c['field']), 'not_checked' if eligible else '') for c in cands}  # a pair the checker never answered is not eligible
+        got, seen = [], set()
+        for c in cands:
+            key = (c['table'], c['record_id'])
+            if len(got) < PLANTS_PER_PROVIDER and key not in seen and not why.get((c['table'], c['record_id'], c['field'])):
+                got.append({k: v for k, v in c.items() if k != 'true_value'})
+                seen.add(key)
+        counts = dict(pool_records=len({(c['table'], c['record_id']) for c in cands}), pairs=len(cands), eligible_records=len({(c['table'], c['record_id']) for c in cands if not why.get((c['table'], c['record_id'], c['field']))}),
+                      reasons=dict(Counter(why.get((c['table'], c['record_id'], c['field'])) or 'eligible' for c in cands)), checked=eligible is not None)
+        if report is not None:
+            report[p] = counts
+            quotes = getattr(eligible, 'quotes', {})
+            report.setdefault('plants', []).extend(dict(provider=p, table=g['table'], record_id=g['record_id'], field=g['field'], planted_value=values[(g['table'], g['donor_record_id'])][g['field']],
+                                                        true_value=next(c['true_value'] for c in cands if (c['table'], c['record_id'], c['field']) == (g['table'], g['record_id'], g['field'])),
+                                                        **quotes.get((g['table'], g['record_id'], g['field']), {})) for g in got)
+        if len(got) != PLANTS_PER_PROVIDER:
+            raise ValueError(f'plant pool exhausted for {p}: {counts}')
         used |= {(g['table'], g['record_id']) for g in got}
         out += got
     return out
+
+
+def plant_checker(R, cache_dir, approved):
+    """The draw-time eligibility test: build each candidate's planted packet exactly as fetch will, fetch its sources into the cache (the same cache the
+    fetch stage reuses), and ask reading.plant_reason whether the ideal answer detects it on the excerpts a reader would see."""
+    def check(cands):
+        entries = [dict(table=c['table'], record_id=c['record_id'], field=c['field'], donor_record_id=c['donor_record_id'], stratum=PIC18) for c in cands]
+        built, problems = packet_rows(R, entries, approved)
+        manifest = reading.fetch_urls(cache_dir, {u for _, row, _ in built for u in reading.urls_of(row)})
+        true = {(c['table'], c['record_id'], c['field']): c['true_value'] for c in cands}
+        why = {(t, i, f): 'packet_gate' for (t, i) in problems for f in {c['field'] for c in cands if (c['table'], c['record_id']) == (t, i)}}
+        for e, row, _ in built:
+            key = (e['table'], e['record_id'], e['field'])
+            sources = reading.build_sources(dict(row=row, urls=reading.urls_of(row)), manifest, cache_dir)
+            why[key], sid, quote = reading.plant_verdict(row, e['field'], true[key], sources)
+            check.quotes[key] = dict(source_id=sid, source_url=sources[sid]['url'] if sid else '', eligibility_quote=quote)  # exactly what the check used; the draw receipt lists it
+        return why
+    check.quotes = {}
+    return check
+
+
+def plant_details(sample, details):
+    """The draw receipt's per-plant list: each chosen plant with its blind ID, provider, planted and true value, source and eligibility quote (controller-private)."""
+    ids = {(s['table'], s['record_id']): s['blind_id'] for s in sample if s['kind'] == 'plant'}
+    return [dict(d, blind_id=ids[d['table'], d['record_id']]) for d in details]
+
+
+def true_value(R, table, record_id, field, _cache={}):
+    if (R.at, table) not in _cache:
+        _cache[R.at, table] = {r[draw.ID_COL[table]]: r for r in R.rows(table)}
+    return _cache[R.at, table][record_id][field]
 
 
 # ---------------------------------------------------------------- fetch / run / score
@@ -449,11 +513,19 @@ def cmd_fetch(a):
     if 'preflight_receipt_sha256' in inputs:  # the sealed inputs carry forward: same approvals, same store
         assert sorted(sha(Path(p).read_bytes()) for p in a.approved) == inputs['approved_files'], 'approval files differ from the sealed preflight'
         assert str(a.store) == inputs['store'], 'store path differs from the sealed preflight'
-    return reading.fetch_stage(Path(a.draw), Path(a.cache), load, packet_rows, read_approved(a.approved), a.store, a.skip_blocked)
+    return reading.fetch_stage(Path(a.draw), Path(a.cache), load, packet_rows, read_approved(a.approved), a.store, a.skip_blocked, true_value)
 
 
 def cmd_run(a):
     return reading.run_stage(Path(a.draw), Path(a.cache), a.out, a)
+
+
+def cmd_handcheck(a):
+    if a.list:
+        return reading.handcheck_list(a.run, a.draw)
+    if not a.csv:
+        sys.exit('handcheck needs --csv (to seal) or --list')
+    return reading.handcheck_stage(a.run, a.csv)
 
 
 def cmd_score(a):
@@ -469,10 +541,12 @@ def main(argv=None):
     f = s.add_parser('labels'); f.add_argument('--at', required=True); f.add_argument('--preflight', required=True); f.add_argument('--out', required=True)
     f = s.add_parser('draw'); f.add_argument('--at', required=True); f.add_argument('--out', required=True); f.add_argument('--secret-file', required=True)
     f.add_argument('--preflight'); f.add_argument('--records'); f.add_argument('--n', type=int, default=SMOKE_N)
+    f.add_argument('--cache'); f.add_argument('--approved', action='append', default=[]); f.add_argument('--pool', type=int, default=PLANT_POOL, help='plant pool records per provider (the draw receipt reports how many were eligible)')
     f = s.add_parser('fetch'); f.add_argument('--draw', required=True); f.add_argument('--cache', required=True); f.add_argument('--skip-blocked', action='store_true', help='explicit-list fixture only')
     f.add_argument('--approved', action='append', default=[]); f.add_argument('--store', type=Path, default=replays.STORE)
     f = s.add_parser('run'); f.add_argument('--draw', required=True); f.add_argument('--cache', required=True); f.add_argument('--out', required=True)
     f.add_argument('--stop-at', type=int, default=reading.STOP_AT); f.add_argument('--window', type=int, default=3); f.add_argument('--max-tokens-m', type=float, default=0)
+    f = s.add_parser('handcheck'); f.add_argument('--run', required=True); f.add_argument('--csv'); f.add_argument('--list', action='store_true'); f.add_argument('--draw')
     f = s.add_parser('score'); f.add_argument('--run', required=True)
     a = p.parse_args(argv)
     if a.cmd == 'draw' and bool(a.preflight) == bool(a.records):

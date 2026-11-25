@@ -742,6 +742,29 @@ Decided by the repo owner in session, 2026-11-24, by multiple choice ("Run now, 
 - The smoke report marks the size-band and child-field tallies unreliable.
 - The findings are fixed before any full draw.
 
+## 2026-11-24 · Owner rulings 19:08 and 20:51
+
+Decided by the repo owner in session on 2026-11-24, by multiple choice. The 20:51 rulings were all the recommended option.
+
+At 19:08:
+
+1. Fill ceiling 'Measure ceiling, then floor': after the smoke, a script-only census of how many of the 327 process-blank PIC-18 owners have any own website or filing that could state a process; then any fill route stops when a batch yields under 20% of owners.
+2. Fitness 'Re-grade and ask': after the smoke, re-grade the 12 first-user tasks on current main and the owner asks the first user whether they use the Atlas and what is missing; that decides fill vs accuracy work.
+
+At 20:51:
+
+1. Smoke attempt 1 counts as stopped at a missed control (the overturned plant); its reads stay on record as partial. Next: one combined fix PR (runner persists every reader answer; a plant passes only when the swap is named; the nine #556 follow-ups), then a new sealed smoke attempt on a new snapshot.
+2. P1 exit: a clean smoke (every plant verified) unlocks the full PIC-18 draw; the draw's result is the P1 exit.
+
+## 2026-11-25 · Owner ruling 07:57 on the audit 13 plant check
+
+Decided by the repo owner in session on 2026-11-25, by multiple choice, the recommended option ("Hand-check decides"). It followed the Codex review of the script witness rule on PR #561 (comment 7162985847).
+
+- The witness rule for plants (eligibility and detection) is a flag only and never the decider.
+- For every plant read in a run, `score` requires a hand-check record written by the controller in the run folder (`handcheck.csv`: plant id, quote, verdict CAUGHT, MISSED or INELIGIBLE, reviewer, time; mode 0600, create-exclusive) and refuses while any plant lacks one or the file was altered after the lock line.
+- The published plant result comes only from those records, with the script flag shown beside it.
+- Draw-time eligibility stays a filter. The draw receipt lists every plant's eligibility quote, so the hand-check can reject an ineligible plant; it is counted as INELIGIBLE and reported.
+
 ## 2026-11-24 · Owner rulings 21:21 and 21:26 (robots.txt, bot checks, LinkedIn)
 
 Decided by the repo owner in session, 2026-11-24 and 2026-11-25.
