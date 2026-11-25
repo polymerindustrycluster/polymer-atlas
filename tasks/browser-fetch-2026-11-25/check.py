@@ -552,6 +552,51 @@ def cache_index_is_migrated_by_named_columns(c, tmp):
     assert named[0]['url'] == 'old-index.csv' and named[0]['browser_tried'] == '' and named[-1]['url'] == 'https://example.org/new', named
 
 
+@case
+def retry_after_http_date_deadline_is_never_before_the_servers_time(c, tmp):
+    from email.utils import formatdate
+    now = 1_000_000.75  # a fixed clock with a fraction: a wait rounded down would land before the server's second
+    date = formatdate(1_007_200, usegmt=True)
+    with patch.object(sc.time, 'time', lambda: now), patch.object(sc.time, 'sleep', lambda s: None):
+        c.guard(dict(requestId='1', frameId='M', resourceType='Document', request=dict(url='https://dated.example.net/', headers={}), responseStatusCode=429,
+                     responseHeaders=[{'name': 'Retry-After', 'value': date}]), dict(target='https://example.org/', start='example.org', main='M', delay=1, flags=set(), blocked=[], code=0))
+    booked = float((tmp / ('host-' + sc.key('dated.example.net') + '.lock')).read_text() or 0)
+    assert booked >= 1_007_200, f'host deadline {booked} is {1_007_200 - booked:.2f} s before the server date 1007200'
+
+
+@case
+def cache_index_migration_is_atomic_and_never_blanks_a_row(c, tmp):
+    import csv
+    cols = ['url', 'status', 'http_status', 'final_url', 'route', 'fetched_at', 'sha256', 'raw_file', 'text_file', 'text_sha256', 'extraction_version', 'error', 'robots_disallowed', 'browser_tried']
+    h13 = cols[:13]
+    def plant(rows, head=h13, name='index.csv'):
+        with (tmp / name).open('w', newline='') as f:
+            w = csv.writer(f); w.writerow(head); w.writerows(rows)
+    row13 = ['u13'] + ['x'] * 12
+    row14 = ['u14'] + ['x'] * 12 + ['yes']  # a current-width row that an older code wrote under the 13-column header
+    plant([row13, row14])
+    sc.migrate_index(tmp / 'index.csv', cols) if hasattr(sc, 'migrate_index') else c.save('https://example.org/m', resp(PAGE), 'ok', 'https://example.org/m', 'direct')
+    with (tmp / 'index.csv').open(newline='') as f: named = list(csv.DictReader(f))
+    got = {r['url']: r['browser_tried'] for r in named}
+    assert got.get('u14') == 'yes' and got.get('u13') == '', f'browser_tried after migration: {got} (the u14 row was blanked or lost)'
+    # an injected write error leaves the original byte for byte
+    plant([row13])
+    before = (tmp / 'index.csv').read_bytes()
+    boom = lambda self, rows: (_ for _ in ()).throw(OSError('injected write error'))
+    try:
+        with patch.object(sc.csv.DictWriter, 'writerows', boom): c.save('https://example.org/n', resp(PAGE), 'ok', 'https://example.org/n', 'direct')
+        raise AssertionError('the write error was swallowed')
+    except OSError: pass
+    assert (tmp / 'index.csv').read_bytes() == before, 'a failed migration changed the original index'
+    # a row of an unrecoverable width is rejected loudly, the index untouched
+    plant([row13, ['short', 'row']])
+    before = (tmp / 'index.csv').read_bytes()
+    try:
+        c.save('https://example.org/o', resp(PAGE), 'ok', 'https://example.org/o', 'direct'); raise AssertionError('an unrecoverable row was accepted')
+    except ValueError: pass
+    assert (tmp / 'index.csv').read_bytes() == before
+
+
 def mutation():
     """The kept-line case must fail when its guard is removed; meaningful only where the guard exists."""
     if not hasattr(sc, 'linkedin_blocked'):
@@ -564,6 +609,13 @@ def mutation():
 
 
 mutation()
+
+
+WORKERS_PAGE = r"""<html><script>
+const o = location.origin;
+try { new Worker(URL.createObjectURL(new Blob(["fetch(" + JSON.stringify(o + "/w-fetch") + ")"]))) } catch (e) {}
+try { new SharedWorker(URL.createObjectURL(new Blob(["onconnect = () => fetch(" + JSON.stringify(o + "/sw-fetch") + ")"]))) } catch (e) {}
+</script>"""
 
 
 def real_browser():
@@ -592,6 +644,8 @@ def real_browser():
             elif path in ('/inner', '/popup'): body = PAGE
             elif path == '/early': body = '<html><head><script>window.open("/popup2"); new Worker(URL.createObjectURL(new Blob(["fetch(\'" + location.origin + "/w-fetch\')"]))); </script></head>' + PAGE + '<iframe src="/frame2"></iframe></html>'
             elif path in ('/popup2', '/w-fetch', '/frame2'): body = PAGE
+            elif path == '/workers': body = WORKERS_PAGE + PAGE + '</html>'
+            elif path in ('/w-fetch', '/sw-fetch'): body = PAGE
             elif path == '/nav': body = '<html><title>Security check</title><button onclick="location=\'/clicked\'">Verify you are human</button><label><input type=checkbox onchange="location=\'/clicked\'"> Verify you are human</label></html>'
             self.send_response(code); self.send_header('Content-Type', 'text/html')
             for k, v in extra.items(): self.send_header(k, v)
@@ -699,6 +753,26 @@ def real_browser():
         assert not reached, f'reached the server: {reached} (status {r["status"]})'
         control, leaked = early(False)  # the fixture is only meaningful if, without the boundary, something does get out
         assert leaked, 'control: with the boundary off nothing reached the server, so this fixture proves nothing'
+
+    def workers(layers):
+        keys = ('BROWSER_DENY', 'BROWSER_GUARD', 'BROWSER_NO_WORKERS')
+        old = {k: getattr(sc.Corpus, k, None) for k in keys}
+        for k in keys: setattr(sc.Corpus, k, layers)
+        before = len(LOG)
+        try:
+            with tempfile.TemporaryDirectory() as d: r = sc.Corpus(d).fetch(base + '/workers')
+        finally:
+            for k, v in old.items():
+                if v is None: delattr(sc.Corpus, k)
+                else: setattr(sc.Corpus, k, v)
+        return r, sorted({e[2] for e in LOG[before:] if not e[4] and e[2] in ('/w-fetch', '/sw-fetch')})
+
+    @case
+    def b11_dedicated_and_shared_worker_requests_never_reach_the_server(c, tmp):
+        r, reached = workers(True)
+        assert not reached, f'with every layer on, a worker request reached the server: {reached} (status {r["status"]})'
+        control, arrived = workers(False)  # all three layers off: the fixture must then get BOTH worker requests out, or it proves nothing
+        assert arrived == ['/sw-fetch', '/w-fetch'], f'control with the layers off: worker requests that arrived {arrived} (want both)'
 
     srv.shutdown()
 

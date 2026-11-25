@@ -232,11 +232,12 @@ def refused(target, current):
     return 'DOMAIN_BLOCKED' if linkedin_blocked(current) else ''
 
 
-def retry_seconds(value):
-    """Seconds a Retry-After says to wait: delta-seconds or an HTTP-date, no cap; 0 if neither parses."""
+def retry_until(value):
+    """The absolute time a Retry-After says to wait until: now plus delta-seconds, or the HTTP-date itself (never earlier than the
+    server's time, no cap); 0 if neither parses."""
     value = (value or '').strip()
-    if value.isdigit(): return int(value)
-    try: return max(0, int(parsedate_to_datetime(value).timestamp() - time.time()))
+    if value.isdigit(): return time.time() + int(value)
+    try: return parsedate_to_datetime(value).timestamp()
     except (TypeError, ValueError, IndexError): return 0
 
 
@@ -255,6 +256,29 @@ def same_page(a, b):
 
 def key(value):
     return hashlib.sha256(value.encode()).hexdigest()
+
+
+def migrate_index(path, cols):
+    """Rewrite an index whose header is not `cols` by named columns: into a temp file, verified (row count, width), then os.replace
+    over the original, so a failure leaves the original byte for byte. A row as wide as the current header sitting under an older
+    header was written by the current code and keeps its columns by position; any other width raises instead of being blanked."""
+    if not path.exists(): return
+    with path.open(newline='') as f: rows = list(csv.reader(f))
+    if not rows or rows[0] == cols: return
+    head, kept = rows[0], []
+    for row in rows[1:]:
+        if len(row) == len(head): kept.append(dict(zip(head, row)))
+        elif len(row) == len(cols): kept.append(dict(zip(cols, row)))
+        else: raise ValueError(f'{path.name}: a row of {len(row)} fields under a header of {len(head)}; index left unchanged')
+    tmp = path.with_name(path.name + '.tmp')
+    try:
+        with tmp.open('w', newline='') as f:
+            w = csv.DictWriter(f, cols); w.writeheader(); w.writerows({k: x.get(k, '') for k in cols} for x in kept)
+        with tmp.open(newline='') as f: check = list(csv.reader(f))
+        if len(check) != len(kept) + 1 or any(len(x) != len(cols) for x in check): raise ValueError(f'{path.name}: migrated index failed verification')
+        os.replace(tmp, path)
+    finally:
+        tmp.unlink(missing_ok=True)
 
 
 PURGED = set()  # caches already swept for legacy LinkedIn pages in this process
@@ -317,9 +341,9 @@ class Corpus:
                         h = headers.read_text(errors='replace') if headers.exists() else ''
                         body = raw.read_bytes() if raw.exists() else b''
                     error = p.stderr[:300]; code = int(p.stdout or 0)
-                retry = [retry_seconds(v) for v in re.findall(r'(?im)^retry-after:\s*(.*?)\s*$', h)]
+                retry = [retry_until(v) for v in re.findall(r'(?im)^retry-after:\s*(.*?)\s*$', h)]
                 if retry and retry[-1]:
-                    clock.seek(0); clock.truncate(); clock.write(str(time.time() + max(delay, retry[-1]))); clock.flush()
+                    clock.seek(0); clock.truncate(); clock.write(str(max(time.time() + delay, retry[-1]))); clock.flush()
                 locations = re.findall(r'(?im)^location:\s*(.*?)\s*$', h)
                 types = re.findall(r'(?im)^content-type:\s*(.*?)\s*$', h)
                 return dict(code=code, raw=body, location=locations[-1] if locations else '',
@@ -420,11 +444,7 @@ class Corpus:
         meta.write_text(json.dumps(r)); meta.replace(self.cache / (stem + '.json'))
         with self.lock('index'):
             for name in ('index.csv', 'index-robots.csv'):  # every index, whichever historical header it has, is rewritten by named columns
-                old = self.cache / name
-                if old.exists() and old.read_text().split('\n', 1)[0] != ','.join(r):
-                    with old.open(newline='') as f: rows = list(csv.DictReader(f))
-                    with old.open('w', newline='') as f:
-                        w = csv.DictWriter(f, list(r)); w.writeheader(); w.writerows({k: x.get(k, '') for k in r} for x in rows)
+                migrate_index(self.cache / name, list(r))
             dest = self.cache / 'index.csv'
             exists = dest.exists()
             with dest.open('a', newline='') as f:
@@ -433,13 +453,13 @@ class Corpus:
                 w.writerow(r)
         return r
 
-    def wait_host(self, hostname, delay, retry_after=0):
+    def wait_host(self, hostname, delay, until=0):
         """Per-host pacing for a request that is not curl's own: wait out the host clock, then book the next slot, or
-        the server's Retry-After if that is longer (as curl's transport does)."""
+        the server's Retry-After deadline if that is later (as curl's transport does)."""
         with self.lock('host-' + key(hostname)) as clock:
             clock.seek(0)
             time.sleep(max(0, float(clock.read() or 0) - time.time()))
-            clock.seek(0); clock.truncate(); clock.write(str(time.time() + max(delay, retry_after))); clock.flush()
+            clock.seek(0); clock.truncate(); clock.write(str(max(time.time() + delay, until))); clock.flush()
 
     def hop(self, current, delay):
         """One transport step: curl, and if it fails on the TLS handshake, the certificate chain or HTTP/2 (whatever the
@@ -450,7 +470,10 @@ class Corpus:
         return response
 
     BROWSER_WAIT = 30  # seconds the page gets to finish its own check
-    BROWSER_DENY = True  # the context-level boundary; the check turns it off only to prove its fixture would otherwise reach the server
+    # Layers of the request boundary. The check turns them off, all together, only to prove its worker fixtures would otherwise reach the server.
+    BROWSER_DENY = True       # context-level route on every target Playwright attaches
+    BROWSER_GUARD = True      # request-stage CDP guard on the page
+    BROWSER_NO_WORKERS = True # Worker and SharedWorker do not exist in the page, so no worker target can be created
     BROWSER_ARGS = ['--disable-site-isolation-trials', '--disable-features=IsolateOrigins,site-per-process', '--block-new-web-contents']
 
     def guard(self, ev, st):
@@ -463,7 +486,7 @@ class Corpus:
             status = ev.get('responseStatusCode', 0)
             if ev['resourceType'] == 'Document' and ev['frameId'] == st['main'] and not 300 <= status < 400: st['code'] = status
             wait = [h['value'] for h in ev.get('responseHeaders', []) if h['name'].lower() == 'retry-after']
-            if wait and retry_seconds(wait[0]): self.wait_host(urlsplit(u).hostname, 0, retry_seconds(wait[0]))  # Retry-After (seconds or date, no cap) counts for browser hops too
+            if wait and retry_until(wait[0]): self.wait_host(urlsplit(u).hostname, 0, retry_until(wait[0]))  # Retry-After (seconds or date, no cap) counts for browser hops too
             return 'response', [h for h in ev.get('responseHeaders', []) if h['name'].lower() != 'set-cookie']
         why = ''
         if ev['resourceType'] != 'Document' or not u.startswith(('http://', 'https://')) or ev['frameId'] != st['main']: why = 'SKIP'
@@ -497,6 +520,7 @@ class Corpus:
             try:
                 ctx = chrome.new_context(accept_downloads=False, service_workers='block')
                 ctx.add_init_script("Object.defineProperty(document, 'cookie', {get() { return '' }, set(v) {}})")
+                if self.BROWSER_NO_WORKERS: ctx.add_init_script("for (const k of ['Worker', 'SharedWorker']) Object.defineProperty(window, k, {value: undefined, configurable: false})")
                 opened = []  # every page this context opens: the first is the guarded one, any other fails the visit
                 page = None
 
@@ -528,7 +552,12 @@ class Corpus:
                         except Exception: pass
 
                 cdp.on('Fetch.requestPaused', paused)
-                cdp.send('Fetch.enable', {'patterns': [{'urlPattern': '*', 'requestStage': 'Request'}, {'urlPattern': '*', 'requestStage': 'Response'}]})
+                if self.BROWSER_GUARD: cdp.send('Fetch.enable', {'patterns': [{'urlPattern': '*', 'requestStage': 'Request'}, {'urlPattern': '*', 'requestStage': 'Response'}]})
+                kinds = []  # every target type Chrome creates: anything but the page itself fails the visit, fail-closed
+                bcdp = chrome.new_browser_cdp_session()
+                bcdp.on('Target.targetCreated', lambda ev: kinds.append(ev['targetInfo']['type']))
+                bcdp.send('Target.setDiscoverTargets', {'discover': True})
+                odd = lambda: [k for k in kinds if k not in ('page', 'tab', 'browser', 'browser_ui')]  # browser_ui: headed Chrome's own toolbar
                 error = ''
                 try: page.goto(target, wait_until='domcontentloaded', timeout=25000)
                 except Exception as e: error = str(e)[:300]
@@ -539,7 +568,7 @@ class Corpus:
                     try: return page.content()
                     except Exception: return None
                 begin = time.time()
-                while time.time() - begin < self.BROWSER_WAIT and not st['blocked'] and len(opened) < 2:
+                while time.time() - begin < self.BROWSER_WAIT and not st['blocked'] and len(opened) < 2 and not odd():
                     now = html()
                     if now is not None and st['code'] and not challenged(st['code'], now): break
                     page.wait_for_timeout(1000)
@@ -547,6 +576,8 @@ class Corpus:
                 for _ in range(5):
                     if final is not None: break
                     page.wait_for_timeout(1000); final = html()
+                if odd():  # a target the guard does not handle (shared worker, worker, other): nothing from the visit is kept
+                    return dict(gone, unavailable=False, exit=0, error='EXTRA_TARGET: ' + odd()[0], flags=st['flags'])
                 if len(opened) > 1:  # a second page opened: its requests were never guarded, so nothing from this visit is kept
                     return dict(gone, unavailable=False, exit=0, error='EXTRA_PAGE_OPENED', flags=st['flags'])
                 if st['blocked']:
@@ -568,7 +599,7 @@ class Corpus:
             return self.save(target, note, 'BROWSER_UNAVAILABLE', current, 'direct', seen)
         tried = 'yes'
         if b['blocked']: return self.save(target, note, b['blocked'], b['final_url'], 'browser', seen, tried)
-        if b['error'].startswith('EXTRA_PAGE_OPENED'): return self.save(target, note, 'FETCH_FAILED', current, 'browser', seen, tried)
+        if b['error'].startswith(('EXTRA_PAGE_OPENED', 'EXTRA_TARGET')): return self.save(target, note, 'FETCH_FAILED', current, 'browser', seen, tried)
         if why := refused(target, b['final_url']): return self.save(target, note, why, b['final_url'], 'browser', seen, tried)
         if not b['code'] or not b['final_url'].startswith(('http://', 'https://')):  # no document came back
             return self.save(target, dict(note, error=b.get('error', '') or note['error']), 'FETCH_FAILED', current, 'browser', seen, tried)
