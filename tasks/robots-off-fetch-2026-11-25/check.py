@@ -200,6 +200,54 @@ def robots_txt_body_is_never_written_to_disk(c, tmp):
 
 
 @case
+def robots_curl_command_writes_no_file(c, tmp):
+    argv = []
+    def run(cmd, **kw):
+        argv.append(cmd)
+        return type('P', (), dict(stdout=b'HTTP/1.1 200 OK\r\n\r\nUser-agent: *\n\n200', stderr=b'', returncode=0))()
+    with patch.object(sc.subprocess, 'run', side_effect=run):
+        r = c.request('https://example.org/robots.txt')
+    cmd = argv[0]
+    assert cmd[cmd.index('-o') + 1] == '-' and '-D' not in cmd and r['code'] == 200 and r['raw'] == b'User-agent: *\n', f'robots curl command {cmd}'
+
+
+@case
+def real_curl_never_writes_a_robots_body_to_any_file(c, tmp):
+    import http.server, threading, time, os
+    class H(http.server.BaseHTTPRequestHandler):
+        def do_GET(self):
+            self.send_response(200); self.send_header('Content-Type', 'text/html'); self.end_headers()
+            if self.path == '/robots.txt':
+                self.wfile.write(FORM.encode()); self.wfile.flush(); time.sleep(1.5)  # curl holds the body for 1.5 s: a temp file would show
+            else:
+                self.wfile.write(PAGE.encode())
+        def log_message(self, *a): pass
+    srv = http.server.ThreadingHTTPServer(('127.0.0.1', 0), H)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    sys_tmp = Path(tempfile.mkdtemp()); seen, stop = [], threading.Event()
+    def watch():
+        while not stop.is_set():
+            for root in (tmp, sys_tmp):
+                for f in root.rglob('*'):
+                    try:
+                        if f.is_file() and SENTINEL.encode() in f.read_bytes(): seen.append(str(f))
+                    except OSError: pass
+            time.sleep(0.01)
+    t = threading.Thread(target=watch); t.start()
+    old = os.environ.get('TMPDIR'); os.environ['TMPDIR'] = str(sys_tmp)  # curl and Python temp files would land here
+    try:
+        r = c.fetch(f'http://127.0.0.1:{srv.server_port}/')
+    finally:
+        stop.set(); t.join(); srv.shutdown()
+        if old is None: os.environ.pop('TMPDIR')
+        else: os.environ['TMPDIR'] = old
+    assert r['status'] == 'ok' and r['robots_disallowed'] in ('no', 'yes'), f"status {r['status']}"
+    assert not seen, f'the robots body was on disk at: {seen[:2]}'
+    assert not [f for f in sys_tmp.rglob('*') if f.is_file()], 'files left in the temp dir'
+    no_sentinel(tmp)
+
+
+@case
 def reader_bot_check_is_manual_never_ok(c, tmp):
     for n, body in enumerate(['Title: Security check\nURL Source: https://example.org/{n}\nMarkdown Content:\nComplete this CAPTCHA to proceed.',
                               'Title: Just a moment...\nURL Source: https://example.org/{n}\nMarkdown Content:\n' + 'Checking your browser before accessing the site. ' * 3]):

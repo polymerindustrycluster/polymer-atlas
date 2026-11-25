@@ -287,21 +287,29 @@ class Corpus:
             clock.seek(0)
             last = float(clock.read() or 0)
             time.sleep(max(0, last - time.time()))
-            with self.slot(), tempfile.TemporaryDirectory(dir=self.cache) as tmp:
+            with self.slot():
                 clock.seek(0); clock.truncate(); clock.write(str(time.time() + delay)); clock.flush()
-                raw, headers = Path(tmp) / 'raw', Path(tmp) / 'headers'
-                p = subprocess.run(['curl', '-q', '-sS', '-A', UA, '--max-time', '25',
-                                    '--max-filesize', '12000000', '-D', str(headers), '-o', str(raw),
-                                    '-w', '%{http_code}', target], capture_output=True, text=True)
-                h = headers.read_text(errors='replace') if headers.exists() else ''
+                cmd = ['curl', '-q', '-sS', '-A', UA, '--max-time', '25', '--max-filesize', '12000000']
+                if urlsplit(target).path == '/robots.txt':
+                    # robots.txt never touches disk: headers and body come back on stdout, no -o file, no -D file, no temp dir.
+                    p = subprocess.run(cmd + ['-i', '-o', '-', '-w', '\n%{http_code}', target], capture_output=True)
+                    out, _, status = p.stdout.rpartition(b'\n')
+                    h, _, body = out.partition(b'\r\n\r\n')
+                    h = h.decode('utf-8', 'replace'); error = p.stderr.decode('utf-8', 'replace')[:300]; code = int(status or 0)
+                else:
+                    with tempfile.TemporaryDirectory(dir=self.cache) as tmp:
+                        raw, headers = Path(tmp) / 'raw', Path(tmp) / 'headers'
+                        p = subprocess.run(cmd + ['-D', str(headers), '-o', str(raw), '-w', '%{http_code}', target], capture_output=True, text=True)
+                        h = headers.read_text(errors='replace') if headers.exists() else ''
+                        body = raw.read_bytes() if raw.exists() else b''
+                    error = p.stderr[:300]; code = int(p.stdout or 0)
                 retry = re.findall(r'(?im)^retry-after:\s*(\d+)', h)
                 if retry:
                     clock.seek(0); clock.truncate(); clock.write(str(time.time() + max(delay, int(retry[-1])))); clock.flush()
                 locations = re.findall(r'(?im)^location:\s*(.*?)\s*$', h)
                 types = re.findall(r'(?im)^content-type:\s*(.*?)\s*$', h)
-                return dict(code=int(p.stdout or 0), raw=raw.read_bytes() if raw.exists() else b'',
-                            location=locations[-1] if locations else '',
-                            content_type=types[-1] if types else '', error=p.stderr[:300], exit=p.returncode)
+                return dict(code=code, raw=body, location=locations[-1] if locations else '',
+                            content_type=types[-1] if types else '', error=error, exit=p.returncode)
 
     def legacy_linkedin(self, r):
         """A LinkedIn receipt whose stored file is not an allowlisted extract: written before the extract-only rule."""
