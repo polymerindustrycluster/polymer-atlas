@@ -310,6 +310,23 @@ def witness_reason(text, value, field, names, quote=''):
     return ''
 
 
+def witness_context(text, value):
+    """The line before and the segment holding the first occurrence of `value`: what the hand-check reads to accept or reject a plant."""
+    segs, vw = segments(text), words(value)
+    for n, (raw, ws) in enumerate(segs):
+        if vw and contains(ws, vw):
+            return ((segs[n - 1][0].strip() + '\n') if n else '') + raw.strip()[:400]
+    return ''
+
+
+def plant_context(sources, value):
+    """-> (source id, url, eligibility quote) for the first source whose excerpt states `value`; the draw receipt lists it for every plant."""
+    for sid, src in sources.items():
+        if quote_in_order(src['excerpt'], value):
+            return sid, src['url'], witness_context(src['excerpt'], value)
+    return '', '', ''
+
+
 def plant_names(row, field, true_value):
     """The record's own names for the witness test: the unplanted name fields (or the true value when a name is what was planted)."""
     if field in NAME_FIELDS:
@@ -900,6 +917,67 @@ def run_stage(draw_dir, cache_dir, out, a):
     return 0 if status in ('COMPLETE', 'STOPPED_AT_K') and not halt else 1  # a terminal result that crossed its budget still says so
 
 
+HANDCHECK_FIELDS = ['blind_id', 'quote', 'verdict', 'reviewer', 'time']
+HANDCHECK_VERDICTS = ('CAUGHT', 'MISSED', 'INELIGIBLE')
+
+
+def called_plants(ledger):
+    """The plants of the sealed sample that were read at least once: each needs a hand-check record. A plant never called has nothing to check."""
+    run = next(l for l in ledger if l.get('role') == 'run')
+    called = {l['blind_id'] for l in ledger if l.get('role') in ('primary', 'second')}
+    return {x['blind_id']: x for x in run['sample'] if x['kind'] == 'plant' and x['blind_id'] in called}
+
+
+def handcheck_stage(run_dir, csv_path, now=None):
+    """The controller's hand-check of every plant read in this run, sealed into the run folder: handcheck.csv (0600, create-exclusive) with one row per plant
+    (blind_id, quote, verdict CAUGHT / MISSED / INELIGIBLE, reviewer, time) and a ledger line carrying its sha256. `score` refuses without it, and refuses
+    if the file changed after it was sealed. The script's plant flag is shown beside the verdict; it never decides."""
+    run_dir = Path(run_dir)
+    ledger = [json.loads(l) for l in open(run_dir / 'ledger.jsonl')]
+    plants = called_plants(ledger)
+    if (run_dir / 'handcheck.csv').exists() or any(l.get('role') == 'handcheck' for l in ledger):
+        sys.exit('refusing: this run already holds a sealed hand-check')
+    rows = read_csv(csv_path)
+    if not rows or list(rows[0]) != HANDCHECK_FIELDS:
+        sys.exit(f'refusing: the hand-check CSV header must be {",".join(HANDCHECK_FIELDS)}')
+    seen, stamp = set(), (now or time.strftime('%Y-%m-%dT%H:%M:%S%z'))
+    for r in rows:
+        if r['blind_id'] not in plants or r['blind_id'] in seen:
+            sys.exit(f"refusing: {r['blind_id']!r} is not a plant read in this run, or appears twice")
+        if r['verdict'] not in HANDCHECK_VERDICTS or not r['reviewer'].strip() or not r['quote'].strip():
+            sys.exit(f"refusing: {r['blind_id']}: verdict must be one of {HANDCHECK_VERDICTS}, with a reviewer and the quote relied on")
+        r['time'] = r['time'].strip() or stamp
+        seen.add(r['blind_id'])
+    if seen != set(plants):
+        sys.exit(f'refusing: {len(set(plants) - seen)} plants read in this run have no hand-check row')
+    import csv, io
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, HANDCHECK_FIELDS, lineterminator='\n')
+    w.writeheader(), w.writerows(rows)
+    text = buf.getvalue()
+    write_new(run_dir / 'handcheck.csv', text)
+    with open(run_dir / 'ledger.jsonl', 'a') as f:
+        f.write(json.dumps(dict(role='handcheck', file='handcheck.csv', file_sha256=sha256(text.encode()), n=len(rows), time=stamp), sort_keys=True) + '\n')
+    print(f'sealed {len(rows)} hand-check rows')
+    return 0
+
+
+def handcheck_list(run_dir, draw_dir=None):
+    """What the controller needs to hand-check: per plant read, the script flag, what the reader quoted and, with the draw folder, the draw's eligibility quote."""
+    run_dir = Path(run_dir)
+    ledger = [json.loads(l) for l in open(run_dir / 'ledger.jsonl')]
+    elig = {}
+    if draw_dir:
+        elig = {d['blind_id']: d for d in json.loads((Path(draw_dir) / 'draw_receipt.json').read_text()).get('plants_detail', [])}
+    for bid, x in sorted(called_plants(ledger).items()):
+        f = next((json.loads((run_dir / 'reads' / l['file']).read_text()) for l in ledger if l.get('blind_id') == bid and l.get('role') == 'primary' and l.get('file') and not l.get('error')), None)
+        got = ((f or {}).get('findings') or {}).get(x['plant_field'], {})
+        print(json.dumps(dict(blind_id=bid, provider=x['provider'], field=x['plant_field'], script_flag=plant_detected((f or {}).get('findings') or {}, x['plant_field']),
+                              reader=dict(verdict=got.get('raw'), source_value=got.get('source_value'), quote=got.get('quote'), plant_witness=got.get('plant_witness')),
+                              draw_eligibility=elig.get(bid, {}).get('eligibility_quote')), ensure_ascii=False))
+    return 0
+
+
 def rederive(run_dir, doc, ledger):
     """Nothing score reports is taken from results.json alone. It rebuilds the run from the ledger and the persisted reader files and refuses (exit 1) on any
     disagreement: (1) the directory holds exactly the files the ledger's call lines name, each with its recorded hash, run, role, round and provider
@@ -982,13 +1060,47 @@ def rederive(run_dir, doc, ledger):
         fail(f"recorded status {doc['status']} but the ledger and reader files give {expected}")
     if bool(doc['halt']) != budget or doc.get('budget_exceeded') != over or bool(doc.get('total_cap_exceeded')) != over_total:
         fail(f"budget facts differ: halt={bool(doc['halt'])} budget_exceeded={doc.get('budget_exceeded')} total_cap_exceeded={doc.get('total_cap_exceeded')} against the ledger's {budget} / {over} / {over_total}")
-    return len(calls)
+    hc = {}
+    need = called_plants(ledger)
+    marks = [n for n, l in enumerate(ledger) if l.get('role') == 'handcheck']
+    if need:
+        if len(marks) != 1:
+            fail(f'{len(need)} plants were read but the run holds {len(marks)} sealed hand-checks (smoke.py handcheck)')
+        mark = ledger[marks[0]]
+        path = run_dir / 'handcheck.csv'
+        if not path.is_file() or sha256(path.read_bytes()) != mark['file_sha256']:
+            fail('handcheck.csv is missing or was altered after it was sealed')
+        if any(n > marks[0] for n, l in enumerate(ledger) if l.get('role') == 'lock' and l['blind_id'] in need) or any(n > marks[0] for n, l in enumerate(ledger) if l.get('role') in ('primary', 'second')):
+            fail('the hand-check was sealed before the run finished')
+        rows = read_csv(path)
+        if not rows or list(rows[0]) != HANDCHECK_FIELDS or {r['blind_id'] for r in rows} != set(need) or len(rows) != len(need) or any(r['verdict'] not in HANDCHECK_VERDICTS or not r['reviewer'].strip() or not r['quote'].strip() for r in rows):
+            fail('handcheck.csv does not hold exactly one valid row per plant read')
+        hc = {r['blind_id']: r for r in rows}
+    elif marks:
+        fail('a hand-check is sealed for a run that read no plant')
+    return len(calls), hc, need
+
+
+def plant_report(doc, hc, called):
+    """Published plant results come only from the controller's hand-check records. The script flag is shown beside them and never decides."""
+    flags = {r['blind_id']: r['detected'] for r in doc['results'] if r['kind'] == 'plant'}
+    by = defaultdict(lambda: dict(called=0, caught=0, missed=0, ineligible=0))
+    pair = Counter()
+    for bid, x in called.items():
+        v = hc[bid]['verdict']
+        row = by[x['provider']]
+        row['called'] += 1
+        row[{'CAUGHT': 'caught', 'MISSED': 'missed', 'INELIGIBLE': 'ineligible'}[v]] += 1
+        pair[f"script_flag_{'detected' if flags.get(bid) else 'missed_or_unscored' if bid not in flags else 'missed'}|hand_check_{v}"] += 1
+    return dict(by_provider={p: dict(v) for p, v in sorted(by.items())}, script_flag_vs_hand_check=dict(sorted(pair.items())), source='hand-check records (handcheck.csv)',
+                stage_invalid_by_hand_check='a plant was MISSED at the hand-check' if any(r['verdict'] == 'MISSED' for r in hc.values()) else None,
+                script_flag_suspended=doc['invalid'], ineligible_plants=sum(1 for r in hc.values() if r['verdict'] == 'INELIGIBLE'))
 
 
 def score_stage(run_dir):
     doc = json.loads((run_dir / 'results.json').read_text())
     ledger = [json.loads(l) for l in open(run_dir / 'ledger.jsonl')]
-    verified_files = rederive(run_dir, doc, ledger)
+    verified_files, hc, called = rederive(run_dir, doc, ledger)
     real = [r for r in doc['results'] if r['kind'] == 'real']
     plants = [r for r in doc['results'] if r['kind'] == 'plant']
     aud, unc, cd, cc, cf, ni, notes = Counter(), Counter(), Counter(), Counter(), Counter(), Counter(), Counter()
@@ -1028,8 +1140,7 @@ def score_stage(run_dir):
                   contradicted_core_fields=dict(cc), by_field=by_field, reader_files_verified=verified_files, budget_exceeded=doc.get('budget_exceeded', []), total_cap_exceeded=bool(doc.get('total_cap_exceeded')),
                   not_inspected_by_field={f: ni[f] for f in sorted(ni)}, not_inspected_filed_classes=doc.get('not_inspected_classes', {}), replay_coverage=doc.get('replay_coverage', {}),
                   unconfirmed_reasons=dict(reasons), omission_and_other_notes=dict(notes), disputed_findings=sum(len(r.get('disputed', [])) for r in real),
-                  plants=dict(by_provider={p: dict(planted=sum(1 for x in plants if x['provider'] == p), detected=sum(1 for x in plants if x['provider'] == p and x['detected'])) for p in sorted({x['provider'] for x in plants})},
-                              stage_invalid=doc['invalid']),
+                  plants=plant_report(doc, hc, called),
                   routing_exceptions=sum(1 for r in real if r['exception']), second_reads=sum(1 for r in real if r.get('second_provider')),
                   check_only_discoveries=sum(1 for r in real if r.get('second_for') == 'check' and r['k']), incomplete_calls=len(doc['incomplete_calls']),
                   cost_by_provider=cost, cost_per_completed_real_record_input_m=round(sum(v['total_input_m'] for v in cost.values()) / n, 3) if n else None)

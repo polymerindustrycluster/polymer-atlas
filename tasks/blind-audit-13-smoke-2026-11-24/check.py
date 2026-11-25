@@ -333,16 +333,16 @@ def _():
     assert smoke.route({'uncertain', 'openai'}) == 'hydrogen' and smoke.route({'uncertain'}) == 'astra'
 
 
-def run_fixture(items, fams=None, packets_extra=None, receipt_extra=None, skip_packet=(), rc=None, packet_due=0, children=()):
+def run_fixture(items, fams=None, packets_extra=None, receipt_extra=None, skip_packet=(), rc=None, packet_due=0, children=(), site_name='Acme Plastics', page=None):
     work = Path(tempfile.mkdtemp(prefix='a13-check-'))
     draw_dir, cache, out = work / 'draw', work / 'cache', work / 'run'
     draw_dir.mkdir(), cache.mkdir()
-    (cache / 'page.txt').write_text(PAGE)
+    (cache / 'page.txt').write_text(page or PAGE)
     (cache / 'manifest.json').write_text(json.dumps({'https://acme.example/': dict(status='ok', final_url='https://acme.example/', fetched_at='t', text_file='page.txt')}))
     sample, pk = [], []
     for pos, (kind, name, prov) in enumerate(items, 1):
         bid = f'A13-{pos:04}'
-        row = dict(blind_id=bid, record_label=name, table='sites', record_id=name, columns_under_audit='site_name;street_address', values_json=json.dumps(dict(site_name='Acme Plastics', street_address='12 Elm Street')),
+        row = dict(blind_id=bid, record_label=name, table='sites', record_id=name, columns_under_audit='site_name;street_address', values_json=json.dumps(dict(site_name=site_name, street_address='12 Elm Street')),
                    context_json=json.dumps(dict(children=list(children))), cited_sources='https://acme.example/', evidence_json='[]')
         if name not in skip_packet:
             pk.append(json.dumps(dict(row=row, masked=[], plant='street_address' if kind == 'plant' else '', urls=['https://acme.example/'], not_inspected=[], **({} if packet_due is None else dict(due=packet_due)), **({'plant_true': '99 Oak Avenue'} if kind == 'plant' else {}))))
@@ -564,8 +564,27 @@ def run_to_score(items, fake, children=(), args=None):
     return out
 
 
-def score(out):
+def seal(out, verdicts=None, reviewer='controller'):
+    """The controller's hand-check of every plant read in a run, by default agreeing with the script's flag; sealed into the run folder."""
     import contextlib, io
+    ledger = [json.loads(l) for l in open(out / 'ledger.jsonl')]
+    need = rd.called_plants(ledger)
+    if not need or (out / 'handcheck.csv').exists():
+        return
+    doc = json.loads((out / 'results.json').read_text())
+    flags = {r['blind_id']: r['detected'] for r in doc['results'] if r['kind'] == 'plant'}
+    rows = [dict(blind_id=b, quote='checked against the cached page', verdict=(verdicts or {}).get(b) or ('CAUGHT' if flags.get(b) else 'MISSED'), reviewer=reviewer, time='') for b in sorted(need)]
+    path = out.parent / (out.name + '-hc.csv')
+    with open(path, 'w', newline='') as f:
+        w = csv.DictWriter(f, rd.HANDCHECK_FIELDS)
+        w.writeheader(), w.writerows(rows)
+    with contextlib.redirect_stdout(io.StringIO()):
+        rd.handcheck_stage(out, path)
+
+
+def score(out, verdicts=None):
+    import contextlib, io
+    seal(out, verdicts)
     with contextlib.redirect_stdout(io.StringIO()):
         rd.score_stage(out)
     return json.loads((out / 'score.json').read_text())
@@ -597,7 +616,7 @@ def _():
     fake = lambda provider, prompt, procs, timeout=0: good(name_of(prompt), provider, street_bad=name_of(prompt) != 'clean-s')
     out = run_to_score(items, fake)
     s = score(out)
-    assert s['reader_files_verified'] == 4 and s['plants']['by_provider']['astra'] == dict(planted=1, detected=1) and s['k'] == 1
+    assert s['reader_files_verified'] == 4 and s['plants']['by_provider']['astra'] == dict(called=1, caught=1, missed=0, ineligible=0) and s['k'] == 1
     def broken(mutate, why):
         d = Path(tempfile.mkdtemp(prefix='a13-score-')) / 'run'
         shutil.copytree(out, d)
@@ -1032,6 +1051,97 @@ def _():
     assert rd.excerpt('Acme Plastics   Inc.\n\n99  Oak Avenue\n', []) == 'Acme Plastics Inc.\n99 Oak Avenue'
     for bad in ('-1', '0'):
         expect_raises(AssertionError, lambda: smoke.main(['draw', '--at', 'x', '--out', 'x', '--secret-file', 'x', '--records', 'x', '--pool', bad]), '--pool must be at least 1')
+
+
+def plant_run(page, quote, site_name='Acme Plastics'):
+    """A run of one plant whose reader contradicts the planted street with `quote` about 99 Oak Avenue, on a cached page `page`."""
+    draw_dir, cache, out = run_fixture([('plant', 'plant-h', 'astra')], site_name=site_name, page=page)
+    f = [finding('site_name', 'VERIFIED'), finding('street_address', 'CONTRADICTED', quote, '99 Oak Avenue'), finding('polymer_relevance', 'VERIFIED')]
+    patched(lambda provider, prompt, procs, timeout=0: dict(good('x', provider), text=json.dumps(dict(findings=f))), lambda: rd.run_stage(draw_dir, cache, out, ARGS(stop_at=99)))
+    return out
+
+
+def csv_of(path, rows):
+    with open(path, 'w', newline='') as f:
+        w = csv.DictWriter(f, rd.HANDCHECK_FIELDS)
+        w.writeheader(), w.writerows(rows)
+    return path
+
+
+@case('H: score refuses to score while any plant read lacks a sealed hand-check, or the file was altered, replaced or sealed twice')
+def _():
+    out = plant_run(PAGE, 'located at 99 Oak Avenue, Akron')
+    expect_raises(SystemExit, lambda: rd.score_stage(out), 'sealed hand-checks')
+    bid = next(iter(rd.called_plants([json.loads(l) for l in open(out / 'ledger.jsonl')])))
+    row = dict(blind_id=bid, quote='Acme Plastics is located at 99 Oak Avenue', verdict='CAUGHT', reviewer='controller', time='2026-11-25T08:00:00')
+    tmp = out.parent / 'hc-bad'
+    tmp.mkdir()
+    for bad, why in ((dict(row, verdict='YES'), 'verdict must be'), (dict(row, reviewer=''), 'verdict must be'), (dict(row, quote=''), 'verdict must be'), (dict(row, blind_id='A13-9999'), 'not a plant read')):
+        expect_raises(SystemExit, lambda b=bad: rd.handcheck_stage(out, csv_of(tmp / 'x.csv', [b])), why)
+    (out / 'handcheck.csv').write_text('blind_id,quote,verdict,reviewer,time\n')  # written by hand, never sealed into the ledger
+    expect_raises(SystemExit, lambda: rd.score_stage(out), 'sealed hand-checks')
+    (out / 'handcheck.csv').unlink()
+    import contextlib, io
+    with contextlib.redirect_stdout(io.StringIO()):
+        rd.handcheck_stage(out, csv_of(tmp / 'ok.csv', [row]))
+    assert oct((out / 'handcheck.csv').stat().st_mode & 0o777) == '0o600'
+    expect_raises(SystemExit, lambda: rd.handcheck_stage(out, tmp / 'ok.csv'), 'already holds a sealed hand-check')
+    assert score(out)['plants']['by_provider']['astra']['caught'] == 1
+    tamper(out, lambda d: (d / 'handcheck.csv').write_text((d / 'handcheck.csv').read_text().replace('CAUGHT', 'MISSED')), 'altered after it was sealed')
+    tamper(out, lambda d: (d / 'handcheck.csv').unlink(), 'missing or was altered')
+
+
+@case('H: the published plant result comes only from the hand-check records, the script flag shown beside it; INELIGIBLE is counted and reported')
+def _():
+    out = plant_run(PAGE, 'located at 99 Oak Avenue, Akron')  # the script flag says detected
+    bid = next(iter(rd.called_plants([json.loads(l) for l in open(out / 'ledger.jsonl')])))
+    s = score(out, {bid: 'MISSED'})
+    pl = s['plants']
+    assert pl['by_provider']['astra'] == dict(called=1, caught=0, missed=1, ineligible=0) and pl['script_flag_vs_hand_check'] == {'script_flag_detected|hand_check_MISSED': 1}, pl
+    assert pl['stage_invalid_by_hand_check'] and pl['source'].startswith('hand-check')
+    out = plant_run(PAGE, 'located at 99 Oak Avenue, Akron')
+    s = score(out, {bid: 'INELIGIBLE'})
+    assert s['plants']['by_provider']['astra'] == dict(called=1, caught=0, missed=0, ineligible=1) and s['plants']['ineligible_plants'] == 1 and s['plants']['stage_invalid_by_hand_check'] is None, s['plants']
+    out = plant_run('Our page says nothing about the street.', 'Our page says nothing')  # the script flag says missed; the hand-check may overrule it
+    assert score(out, {bid: 'CAUGHT'})['plants']['script_flag_vs_hand_check'] == {'script_flag_missed|hand_check_CAUGHT': 1}
+
+
+@case('H: Codex\'s line-wrap and short-name fixtures: the script FLAG may be wrong, the score depends only on the hand-check')
+def _():
+    wrapped = 'the municipal library next to\nAcme Plastics is located at 99 Oak Avenue.'
+    out = plant_run(wrapped, 'Acme Plastics is located at 99 Oak Avenue')
+    bid = next(iter(rd.called_plants([json.loads(l) for l in open(out / 'ledger.jsonl')])))
+    s = score(out, {bid: 'MISSED'})  # the line break made the flag pass a sentence about the library's neighbour; the hand-check overrules it
+    assert s['plants']['script_flag_vs_hand_check'] == {'script_flag_detected|hand_check_MISSED': 1} and s['plants']['by_provider']['astra']['caught'] == 0
+    short = plant_run('Acme Plastics is located at 99 Oak Avenue, Cleveland.', 'Acme Plastics is located at 99 Oak Avenue', site_name='Acme Plastics - Akron')
+    bid = next(iter(rd.called_plants([json.loads(l) for l in open(short / 'ledger.jsonl')])))
+    s = score(short, {bid: 'MISSED'})  # the part before the dash credited a Cleveland address to the Akron site
+    assert s['plants']['script_flag_vs_hand_check'] == {'script_flag_detected|hand_check_MISSED': 1} and s['plants']['by_provider']['astra']['missed'] == 1
+
+
+@case('H: the draw receipt lists every plant with its eligibility quote, planted and true value and blind ID; the controller can list what each plant read shows')
+def _():
+    keys = [('sites', f'SITE-{i:04}') for i in range(200)]
+    rows = [dict(site_id=k[1], org_id='O', site_name=f'Plant {i}', street_address=f'{i} Main St', city='Akron', county='Summit', employee_band_site='10-49') for i, k in enumerate(keys)]
+    R = SimpleNamespace(at='0' * 40, rows=lambda t: rows if t == 'sites' else [])
+    def checker(cands):
+        checker.quotes.update({(c['table'], c['record_id'], c['field']): dict(source_id='S1', source_url='https://x.example/', eligibility_quote=f"{c['record_id']} is located at {c['true_value']}") for c in cands})
+        return {(c['table'], c['record_id'], c['field']): '' for c in cands}
+    checker.quotes = {}
+    report = {}
+    plants = smoke.make_plants(R, b'plant-secret-' * 4, keys, set(), {k: set() for k in keys}, checker, report)
+    sample = [dict(kind='plant', table=p['table'], record_id=p['record_id'], blind_id=f'A13-{n:04}') for n, p in enumerate(plants, 1)]
+    detail = smoke.plant_details(sample, report['plants'])
+    assert len(detail) == 9 and all(d['eligibility_quote'].endswith(d['true_value']) and d['planted_value'] != d['true_value'] and d['blind_id'].startswith('A13-') and d['source_url'] for d in detail), detail[:1]
+    ctx = rd.witness_context('Intro line\nAcme Plastics is located at 99 Oak Avenue.\nTail', '99 Oak Avenue')
+    assert ctx == 'Intro line\nAcme Plastics is located at 99 Oak Avenue', ctx
+    out = plant_run(PAGE, 'located at 99 Oak Avenue, Akron')
+    import contextlib, io
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        assert smoke.main(['handcheck', '--run', str(out), '--list']) == 0
+    line = json.loads(buf.getvalue().splitlines()[0])
+    assert line['script_flag'] is True and line['reader']['source_value'] == '99 Oak Avenue', line
 
 
 @case('B: score verifies the terminal stop reason against the ledger: a failed run edited to STOPPED_AT_K (or any unsupported status) refuses')

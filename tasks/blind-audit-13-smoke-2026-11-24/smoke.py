@@ -8,6 +8,8 @@ tasks/blind-audit-13-protocol-2026-11-24 says what each step means; README.md he
     smoke.py draw      --at SHA --records CSV --secret-file PATH --out DIR        (explicit list: known-answer run, selftest)
     smoke.py fetch     --draw DIR --cache DIR
     smoke.py run       --draw DIR --cache DIR
+    smoke.py handcheck --run DIR --list [--draw DIR]       (the controller: what each plant read shows, beside the script flag)
+    smoke.py handcheck --run DIR --csv PATH                (the controller: seal handcheck.csv; score refuses without it)
     smoke.py score     --run DIR
 
 Never run `draw` against the PIC-18 frame except as the controller. Tools only: no data/ writes anywhere.
@@ -408,7 +410,7 @@ def cmd_draw(a):
     put(out / 'families.json', jdump({f'{t}|{i}': sorted(f) for (t, i), f in fam_of.items() if any(s['record_id'] == i and s['table'] == t for s in sample)}))
     put(out / 'draw_receipt.json', jdump(dict(at=R.at, secret_sha256=sha(secret), n_real=len(real), plants={p: sum(1 for s in pl if s['provider'] == p) for p in PROVIDERS},
                                               check_p=CHECK_P, method='HMAC-SHA256(secret, purpose|key): purposes smoke, plantpool|P, order, coin; real = first n by smoke order; plants = first 3 per provider in plantpool order whose cached pages pass reading.plant_reason',
-                                              inputs=inputs, plant_eligibility=plant_report, sample_sha256=sha((out / 'sample.csv').read_bytes()), scripts=script_hashes())))
+                                              inputs=inputs, plant_eligibility=plant_report, plants_detail=plant_details(sample, plant_report.pop('plants', [])), sample_sha256=sha((out / 'sample.csv').read_bytes()), scripts=script_hashes())))
     print(f'drew {len(real)} real + {len(pl)} plants at {R.at[:12]}; receipt written (the sample stays private)')
     return 0
 
@@ -462,6 +464,10 @@ def make_plants(R, secret, ids, real, fam_of, eligible=None, report=None):
                       reasons=dict(Counter(why.get((c['table'], c['record_id'], c['field'])) or 'eligible' for c in cands)), checked=eligible is not None)
         if report is not None:
             report[p] = counts
+            quotes = getattr(eligible, 'quotes', {})
+            report.setdefault('plants', []).extend(dict(provider=p, table=g['table'], record_id=g['record_id'], field=g['field'], planted_value=values[(g['table'], g['donor_record_id'])][g['field']],
+                                                        true_value=next(c['true_value'] for c in cands if (c['table'], c['record_id'], c['field']) == (g['table'], g['record_id'], g['field'])),
+                                                        **quotes.get((g['table'], g['record_id'], g['field']), {})) for g in got)
         if len(got) != PLANTS_PER_PROVIDER:
             raise ValueError(f'plant pool exhausted for {p}: {counts}')
         used |= {(g['table'], g['record_id']) for g in got}
@@ -480,9 +486,19 @@ def plant_checker(R, cache_dir, approved):
         why = {(t, i, f): 'packet_gate' for (t, i) in problems for f in {c['field'] for c in cands if (c['table'], c['record_id']) == (t, i)}}
         for e, row, _ in built:
             key = (e['table'], e['record_id'], e['field'])
-            why[key] = reading.plant_reason(row, e['field'], true[key], reading.build_sources(dict(row=row, urls=reading.urls_of(row)), manifest, cache_dir))
+            sources = reading.build_sources(dict(row=row, urls=reading.urls_of(row)), manifest, cache_dir)
+            why[key] = reading.plant_reason(row, e['field'], true[key], sources)
+            sid, url, quote = reading.plant_context(sources, true[key])
+            check.quotes[key] = dict(source_id=sid, source_url=url, eligibility_quote=quote)  # the draw receipt lists it for the hand-check
         return why
+    check.quotes = {}
     return check
+
+
+def plant_details(sample, details):
+    """The draw receipt's per-plant list: each chosen plant with its blind ID, provider, planted and true value, source and eligibility quote (controller-private)."""
+    ids = {(s['table'], s['record_id']): s['blind_id'] for s in sample if s['kind'] == 'plant'}
+    return [dict(d, blind_id=ids[d['table'], d['record_id']]) for d in details]
 
 
 def true_value(R, table, record_id, field, _cache={}):
@@ -505,6 +521,14 @@ def cmd_run(a):
     return reading.run_stage(Path(a.draw), Path(a.cache), a.out, a)
 
 
+def cmd_handcheck(a):
+    if a.list:
+        return reading.handcheck_list(a.run, a.draw)
+    if not a.csv:
+        sys.exit('handcheck needs --csv (to seal) or --list')
+    return reading.handcheck_stage(a.run, a.csv)
+
+
 def cmd_score(a):
     return reading.score_stage(Path(a.run))
 
@@ -523,6 +547,7 @@ def main(argv=None):
     f.add_argument('--approved', action='append', default=[]); f.add_argument('--store', type=Path, default=replays.STORE)
     f = s.add_parser('run'); f.add_argument('--draw', required=True); f.add_argument('--cache', required=True); f.add_argument('--out', required=True)
     f.add_argument('--stop-at', type=int, default=reading.STOP_AT); f.add_argument('--window', type=int, default=3); f.add_argument('--max-tokens-m', type=float, default=0)
+    f = s.add_parser('handcheck'); f.add_argument('--run', required=True); f.add_argument('--csv'); f.add_argument('--list', action='store_true'); f.add_argument('--draw')
     f = s.add_parser('score'); f.add_argument('--run', required=True)
     a = p.parse_args(argv)
     if a.cmd == 'draw' and bool(a.preflight) == bool(a.records):
