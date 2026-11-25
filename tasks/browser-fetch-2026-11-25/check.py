@@ -19,7 +19,7 @@ import site_corpus as sc  # noqa: E402
 
 RESULTS = []
 REAL_BROWSER = getattr(sc.Corpus, 'browser', None)
-sc.Corpus.browser = lambda self, target, delay=1, *a, **k: dict(unavailable=True, error='PLAYWRIGHT_UNAVAILABLE', code=0, raw=b'', exit=127, final_url=target, flags=set(), blocked='')  # mocked cases never launch Chrome
+sc.Corpus.browser = lambda self, target, delay=1, *a, **k: dict(code=403, raw=WALL.encode(), location='', content_type='text/html', exit=0, error='', final_url=target, flags=set(), blocked='')  # mocked cases never launch Chrome: Chrome ran and the check stayed
 PAGE = '<html><body><p>' + 'Real polymer molding. ' * 20 + '</p></body></html>'
 WALL = '<html><title>Just a moment...</title><body>Checking your browser</body></html>'
 PUZZLE = '<html><title>Security check</title><body><div class="g-recaptcha"></div></body></html>'
@@ -414,7 +414,7 @@ def tls_chain_failure_goes_to_the_browser_after_the_http11_retry(c, tmp):
     assert r['status'] == 'ok' and calls == [False, True] and seen == ['https://example.org/'], f"status {r['status']} calls {calls} browser {seen}"
     with patch.object(c, 'request', side_effect=request), patch.object(sc.Corpus, 'browser', lambda self, t, d=1, *a, **k: dict(unavailable=True, error='CHROME_UNAVAILABLE', code=0, raw=b'', exit=127, final_url=t, flags=set(), blocked='')):
         r = c.fetch('https://example.org/two')
-    assert r['status'] == 'FETCH_FAILED', f"status {r['status']} (a TLS failure with no browser is not a bot check)"
+    assert r['status'] == 'BROWSER_UNAVAILABLE', f"status {r['status']} (a TLS failure with no browser is not a bot check)"
 
 
 @case
@@ -505,6 +505,53 @@ def failed_browser_navigation_is_fetch_failed_without_a_robots_lookup_on_the_err
     assert r['status'] == 'FETCH_FAILED' and not any(u.startswith('chrome-error') for u in asked), f"status {r['status']}, asked {asked}"
 
 
+GONE = lambda self, t, d=1, *a, **k: dict(unavailable=True, error='CHROME_UNAVAILABLE', code=0, raw=b'', exit=127, final_url=t, flags=set(), blocked='')
+
+
+@case
+def unavailable_chrome_is_its_own_cached_outcome_with_one_manual_row(c, tmp):
+    calls = []
+    def request(u, delay=1, http1=False):
+        calls.append(u)
+        return resp(code=404) if u.endswith('/robots.txt') else resp(WALL, code=403)
+    with patch.object(c, 'request', side_effect=request), patch.object(sc.Corpus, 'browser', GONE):
+        first = c.fetch('https://example.org/gone'); n = len(calls)
+        second = c.fetch('https://example.org/gone')
+    assert first['status'] == second['status'] == 'BROWSER_UNAVAILABLE', f"statuses {first['status']}, {second['status']}"
+    assert len(calls) == n, f'the second fetch made {len(calls) - n} new network request(s)'
+    rows = (tmp / 'manual-bot-check.csv').read_text().strip().split('\n')
+    assert len(rows) == 2, f'manual list rows: {len(rows) - 1}'
+
+
+@case
+def retry_after_in_both_forms_is_honoured_without_a_cap(c, tmp):
+    from email.utils import formatdate
+    def booked(host, value):
+        t0 = time.time()
+        c.guard(dict(requestId='1', frameId='M', resourceType='Document', request=dict(url=f'https://{host}/', headers={}), responseStatusCode=429,
+                     responseHeaders=[{'name': 'Retry-After', 'value': value}]), dict(target='https://example.org/', start='example.org', main='M', delay=1, flags=set(), blocked=[], code=0))
+        return float((tmp / ('host-' + sc.key(host) + '.lock')).read_text() or 0) - t0
+    with patch.object(sc.time, 'sleep', lambda s: None):
+        assert booked('a.example.net', '7200') >= 7190, 'delta-seconds of 7200 were capped'
+        assert booked('b.example.net', formatdate(time.time() + 7200, usegmt=True)) >= 7100, 'an HTTP-date two hours ahead booked no deadline'
+
+
+@case
+def cache_index_is_migrated_by_named_columns(c, tmp):
+    import csv
+    h12 = 'url,status,http_status,final_url,route,fetched_at,sha256,raw_file,text_file,text_sha256,extraction_version,error'.split(',')
+    for name, cols in (('index.csv', h12), ('index-robots.csv', h12 + ['robots_disallowed'])):
+        with (tmp / name).open('w', newline='') as f:
+            w = csv.writer(f); w.writerow(cols); w.writerow([f'old-{name}'] + ['x'] * (len(cols) - 1))
+    with patch.object(c, 'request', side_effect=serve(resp(code=404), resp(PAGE))):
+        c.fetch('https://example.org/new')
+    for name in ('index.csv', 'index-robots.csv'):
+        with (tmp / name).open(newline='') as f: rows = list(csv.reader(f))
+        assert 'browser_tried' in rows[0] and all(len(r) == len(rows[0]) for r in rows), f'{name}: header {len(rows[0])} wide, rows {[len(r) for r in rows]}'
+    with (tmp / 'index.csv').open(newline='') as f: named = list(csv.DictReader(f))
+    assert named[0]['url'] == 'old-index.csv' and named[0]['browser_tried'] == '' and named[-1]['url'] == 'https://example.org/new', named
+
+
 def mutation():
     """The kept-line case must fail when its guard is removed; meaningful only where the guard exists."""
     if not hasattr(sc, 'linkedin_blocked'):
@@ -543,6 +590,8 @@ def real_browser():
             elif path == '/frames': body = '<html><iframe src="/inner"></iframe><iframe src="http://localhost:%d/inner"></iframe><script>window.open("/popup")</script>' % port + PAGE + '</html>'
             elif path == '/ra1': code, extra, body = 429, {'Retry-After': '6'}, '<html><p>slow down</p></html>'
             elif path in ('/inner', '/popup'): body = PAGE
+            elif path == '/early': body = '<html><head><script>window.open("/popup2"); new Worker(URL.createObjectURL(new Blob(["fetch(\'" + location.origin + "/w-fetch\')"]))); </script></head>' + PAGE + '<iframe src="/frame2"></iframe></html>'
+            elif path in ('/popup2', '/w-fetch', '/frame2'): body = PAGE
             elif path == '/nav': body = '<html><title>Security check</title><button onclick="location=\'/clicked\'">Verify you are human</button><label><input type=checkbox onchange="location=\'/clicked\'"> Verify you are human</label></html>'
             self.send_response(code); self.send_header('Content-Type', 'text/html')
             for k, v in extra.items(): self.send_header(k, v)
@@ -614,8 +663,8 @@ def real_browser():
 
     @case
     def b9_a_browser_visit_holds_no_curl_slot_while_it_looks_up_robots(c, tmp):
-        import fcntl
-        free = []
+        import fcntl, inspect
+        inside, outside = [], []
         orig = c.robots
         def spy(u):
             n = 0
@@ -624,10 +673,32 @@ def real_browser():
                 try: fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB); n += 1
                 except BlockingIOError: pass
                 finally: f.close()
-            free.append(n); return orig(u)
+            (inside if any(fr.function == 'paused' for fr in inspect.stack()) else outside).append(n)  # 'paused' = Chrome is mid-visit
+            return orig(u)
         with patch.object(c, 'robots', side_effect=spy):
             c.fetch(base + '/x')
-        assert free and max(free[1:] or free) == 8 or min(free) == 8, f'curl slots free during the browser-side robots lookups: {free} (of 8)'
+        assert inside, 'no robots lookup happened while Chrome was mid-visit'
+        assert min(inside) == 8, f'curl slots free during the {len(inside)} robots lookups made while Chrome held its slot: {inside} (of 8)'
+
+    def early(deny):
+        old_args, old_deny = getattr(sc.Corpus, 'BROWSER_ARGS', None), getattr(sc.Corpus, 'BROWSER_DENY', None)
+        sc.Corpus.BROWSER_ARGS = ['--disable-site-isolation-trials']  # popups allowed: only the request boundary stands between them and the server
+        sc.Corpus.BROWSER_DENY = deny
+        before = len(LOG)
+        try:
+            with tempfile.TemporaryDirectory() as d: r = sc.Corpus(d).fetch(base + '/early')
+        finally:
+            for k, v in (('BROWSER_ARGS', old_args), ('BROWSER_DENY', old_deny)):
+                if v is None: delattr(sc.Corpus, k)
+                else: setattr(sc.Corpus, k, v)
+        return r, [e[2] for e in LOG[before:] if not e[4] and e[2] in ('/popup2', '/w-fetch', '/frame2')]
+
+    @case
+    def b10_popup_opened_before_navigation_and_a_dedicated_worker_never_reach_the_server(c, tmp):
+        r, reached = early(True)
+        assert not reached, f'reached the server: {reached} (status {r["status"]})'
+        control, leaked = early(False)  # the fixture is only meaningful if, without the boundary, something does get out
+        assert leaked, 'control: with the boundary off nothing reached the server, so this fixture proves nothing'
 
     srv.shutdown()
 
