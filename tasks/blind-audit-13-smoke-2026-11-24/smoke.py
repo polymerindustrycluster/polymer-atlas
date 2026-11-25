@@ -448,7 +448,8 @@ def make_plants(R, secret, ids, real, fam_of, eligible=None, report=None):
     for p in PROVIDERS:
         order = [k for k in sorted(ids, key=lambda k: keyed(secret, 'plantpool|' + p, '|'.join(k))) if k not in used and FAMILY_OF_PROVIDER[p] not in fam_of[k]]
         cands = plant_candidates(values, order, p)
-        why = eligible(cands) if eligible else {}
+        checked = eligible(cands) if eligible else {}
+        why = {(c['table'], c['record_id'], c['field']): checked.get((c['table'], c['record_id'], c['field']), 'not_checked' if eligible else '') for c in cands}  # a pair the checker never answered is not eligible
         got, seen = [], set()
         for c in cands:
             key = (c['table'], c['record_id'])

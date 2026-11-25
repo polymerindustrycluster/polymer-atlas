@@ -252,6 +252,7 @@ def _():
     assert len(plants) == 9 and all(int(p['record_id'][-4:]) % 2 == 0 for p in plants), 'plants come only from eligible records'
     assert all(report[p]['eligible_records'] < report[p]['pool_records'] and report[p]['checked'] for p in smoke.PROVIDERS), report
     expect_raises(ValueError, lambda: smoke.make_plants(R, b'plant-secret-' * 4, keys, set(), fams, lambda cands: {(c['table'], c['record_id'], c['field']): 'no_source_states_true_value' for c in cands}), 'plant pool exhausted')
+    expect_raises(ValueError, lambda: smoke.make_plants(R, b'plant-secret-' * 4, keys, set(), fams, lambda cands: {}), 'plant pool exhausted')  # a checker that answers nothing proves nothing
 
 
 @case('plants prefer core and locality fields and come only from eligible records outside the sample')
@@ -571,7 +572,7 @@ def _():
     broken(other_outcome, 'disagrees with its reader files')
 
 
-@case('A1: a street that differs only by suffix or an added city is not a contradiction; names and statuses get no reverse test; a failed source supports no VERIFIED')
+@case('A1: a street that differs only by suffix or an added city is not a contradiction; names and statuses get no reverse test')
 def _():
     f = lambda held, q, sv, src='S3': outcome(with_(street_address=sid(finding('street_address', 'CONTRADICTED', q, sv), src)), held=dict(HELD, street_address=held))
     assert not f('12 Elm St', 'at 12 Elm Street, Akron', '12 Elm Street')['k'], 'St vs Street'
@@ -583,6 +584,10 @@ def _():
     SRC['S6'] = 'Status: not active since 2024.'
     o = rd.record_outcome(rd.combine(rd.read_findings(dict(findings=[sid(finding('status', 'CONTRADICTED', 'not active since 2024', 'not active'), 'S6')]), SRC, ['status'], dict(status='active')), None))
     assert o['k'], 'a status is not widened by reverse containment'
+
+
+@case('A1: a VERIFIED answer citing a source that failed to load (empty text) supports nothing')
+def _():
     got = rd.read_findings(dict(findings=[finding('street_address', 'VERIFIED')]), {'S1': ''}, ['street_address'], HELD)
     assert got['street_address']['status'] == 'UNCONFIRMED' and got['street_address']['reason'] == 'verified_without_source', 'an empty (failed) source cannot verify'
 
@@ -621,7 +626,7 @@ def _():
     tamper(lambda ls: ls[1]['row'].update(table='organizations'))
 
 
-@case('A3: a failed call stops every later call at once, and a projected overrun halts before the call')
+@case('A3: a failed call stops every later call at once, not when the ordered collector reaches it')
 def _():
     import threading, time
     draw_dir, cache, out = run_fixture([('real', 'a-1', 'astra'), ('real', 'b-1', 'astra')])
@@ -637,8 +642,12 @@ def _():
         return good(name, provider, street_bad=True)
     patched(fake, lambda: rd.run_stage(draw_dir, cache, out, ARGS(window=2, stop_at=99)))
     assert sorted(calls) == [('a-1', 'astra'), ('b-1', 'astra')], f'A started a second read after B failed: {calls}'
+
+
+@case('A3: a projected overrun halts before the call, and the stage caps are the sizes.py budgets, not twice them')
+def _():
     draw_dir, cache, out = run_fixture([('real', 'big-p', 'astra')])
-    calls.clear()
+    calls = []
     patched(lambda provider, prompt, procs, timeout=0: calls.append(1) or good(name_of(prompt), provider), lambda: rd.run_stage(draw_dir, cache, out, ARGS(caps_m=dict(astra=0.0005))))
     doc = json.loads((out / 'results.json').read_text())
     assert not calls and doc['status'] == 'HALTED_TOKEN_BUDGET' and 'before the next call' not in ' '.join(doc['halt']) and 'stage budget' in ' '.join(doc['halt']), (calls, doc['halt'])
@@ -715,6 +724,84 @@ def _():
         return dict(good('x', provider), text=json.dumps(dict(findings=f)))
     sc = score(run_to_score([('real', 'child-9', 'astra')], fake, children=[child]))
     assert sc['k'] == 1 and sc['by_field']['registry_id'] == dict(audited_values=1, contradicted=1, error_rate=1.0, unconfirmed=0, unconfirmed_share=0.0, not_inspected=0), sc['by_field']
+
+
+def fake_store(ita=(), insp=()):
+    """A tiny sealed store: one ITA csv and the inspection zip, each with its checksum sidecar, in the real relative layout."""
+    import replays, zipfile
+    root = Path(tempfile.mkdtemp(prefix='a13-store-'))
+    raw = root / replays.OSHA
+    (raw / 'ita').mkdir(parents=True)
+    ita_cols = ['establishment_id', 'establishment_name', 'company_name', 'street_address', 'city', 'zip_code', 'annual_average_employees', 'year_filing_for', 'ein']
+    insp_cols = ['activity_nr', 'estab_name', 'site_address', 'site_city', 'site_zip', 'open_date', 'nr_in_estab']
+    def table(cols, rows):
+        import io
+        buf = io.StringIO()
+        w = csv.DictWriter(buf, cols)
+        w.writeheader(), w.writerows([{c: r.get(c, '') for c in cols} for r in rows])
+        return buf.getvalue()
+    (raw / 'ita' / 'ITA-fake.csv').write_text(table(ita_cols, ita))
+    with zipfile.ZipFile(raw / 'OSHA_inspection.zip', 'w') as z:
+        z.writestr('osha_inspection.csv', table(insp_cols, insp))
+    for f in (raw / 'ita' / 'ITA-fake.csv', raw / 'OSHA_inspection.zip'):
+        Path(str(f) + '.sha256').write_text(hashlib.sha256(f.read_bytes()).hexdigest() + '  ' + f.name + '\n')
+    return root
+
+
+def band_world(store, evidence, sites=None, orgs=None):
+    import replays
+    site = dict(site_id='SITE-1', org_id='ORG-1', site_name='Acme Plastics - Akron', street_address='12 Elm Street', city='Akron', state='OH', zip='44301', employee_band_site='50-99', naics_primary='', naics_primary_source_type='')
+    org = dict(org_id='ORG-1', legal_name='Acme Plastics, Inc.', trade_names='', parent_org_id='', ultimate_parent_name='', successor_org_id='', employee_band_ohio='50-99', naics_primary='', naics_primary_source_type='')
+    R = FakeR(sites=sites or [site], organizations=orgs or [org], ecosystem=[], evidence=evidence)
+    R.git = lambda *a: '2027-01-15'  # the snapshot is dated later than every band write: a cutoff taken from it would be wrong
+    return R, store
+
+
+def band_ev(table='sites', rid='SITE-1', ref='OSHA ITA Form 300A CY2020, establishment_id 5', notes='backfill of 2026-11-02 band', created_by='claude-code size-band-evidence-2026-11-03'):
+    return dict(evidence_id='E1', record_table=table, record_id=rid, claim_type='size_band', source_class='government_filing', source_ref=ref, claim_detail='', notes=notes, created_by=created_by)
+
+
+ita_row = lambda year, n, eid='5': dict(establishment_id=eid, establishment_name='Acme Plastics', street_address='12 Elm St', city='Akron', zip_code='44301', annual_average_employees=str(n), year_filing_for=str(year))
+
+
+@case('A6: the ten-year cutoff is dated from the band-write date (note or pass label), never the snapshot; an unknown write date is UNRESOLVED with its reason')
+def _():
+    import replays
+    store = fake_store(ita=[ita_row(2016, 79)])
+    R, st = band_world(store, [band_ev(ref='OSHA ITA Form 300A CY2016, establishment_id 5')])
+    r = replays.coverage(R, [('sites', 'SITE-1')], st)[0]['sites|SITE-1'][0]
+    assert (r['status'], r['reason']) == ('MATCHES', 'band_equal'), r  # 2016-12-31 is inside write date 2026-11-02 minus ten years
+    R, st = band_world(store, [band_ev(ref='OSHA ITA Form 300A CY2016, establishment_id 5', notes='', created_by='atlas-L6-corr-ca-tx')])
+    r = replays.coverage(R, [('sites', 'SITE-1')], st)[0]['sites|SITE-1'][0]
+    assert (r['status'], r['reason']) == ('UNRESOLVED', 'band_write_date_unknown'), r
+    R, st = band_world(store, [band_ev(ref='OSHA ITA Form 300A CY2016, establishment_id 5', notes='', created_by='codex pic18-size-10yr-2026-11-23')])
+    assert replays.coverage(R, [('sites', 'SITE-1')], st)[0]['sites|SITE-1'][0]['status'] == 'MATCHES', 'a pass label date is a write date'
+
+
+@case('A6: an organization-grain band is judged at its only Ohio site; an organization with two sites is UNRESOLVED org_grain_not_single_site')
+def _():
+    import replays
+    store = fake_store(ita=[ita_row(2020, 79), ita_row(2020, 79, '6')])
+    site2 = lambda i, st: dict(site_id=f'SITE-{i}', org_id='ORG-2', site_name='Beta Molding', street_address=st, city='Akron', state='OH', zip='44301', employee_band_site='', naics_primary='', naics_primary_source_type='')
+    org2 = dict(org_id='ORG-2', legal_name='Beta Molding', trade_names='', parent_org_id='', ultimate_parent_name='', successor_org_id='', employee_band_ohio='50-99', naics_primary='', naics_primary_source_type='')
+    org1, site1 = band_world(store, [])[0].rows('organizations')[0], band_world(store, [])[0].rows('sites')[0]
+    R, st = band_world(store, [band_ev('organizations', 'ORG-1'), band_ev('organizations', 'ORG-2', ref='OSHA ITA Form 300A CY2020, establishment_id 6')], sites=[site1, site2(2, '5 A St'), site2(3, '6 B St')], orgs=[org1, org2])
+    got = replays.coverage(R, [('organizations', 'ORG-1'), ('organizations', 'ORG-2')], st)[0]
+    assert got['organizations|ORG-1'][0]['status'] == 'MATCHES', got['organizations|ORG-1']
+    assert got['organizations|ORG-2'][0]['reason'] == 'org_grain_not_single_site', got['organizations|ORG-2']
+
+
+@case('A6: a newer qualifying inspection at the same establishment supersedes an older cited ITA filing, found by operator and street, not by ID')
+def _():
+    import replays
+    insp = dict(activity_nr='123456789', estab_name='Acme Plastics', site_address='12 Elm St', site_city='Akron', site_zip='44301', open_date='2024-03-01', nr_in_estab='300')
+    store = fake_store(ita=[ita_row(2020, 79)], insp=[insp])
+    R, st = band_world(store, [band_ev()])
+    r = replays.coverage(R, [('sites', 'SITE-1')], st)[0]['sites|SITE-1'][0]
+    assert r['status'] == 'CONTRADICTS' and '2024-03-01' in r['text'], r
+    store = fake_store(ita=[ita_row(2020, 79)])
+    R, st = band_world(store, [band_ev()])
+    assert replays.coverage(R, [('sites', 'SITE-1')], st)[0]['sites|SITE-1'][0]['status'] == 'MATCHES', 'no newer filing: the cited one stands'
 
 
 @case('replay receipts: a matched control passes; a wrong operator, a wrong street and a 2015 vintage do not bind; a newer different band contradicts')

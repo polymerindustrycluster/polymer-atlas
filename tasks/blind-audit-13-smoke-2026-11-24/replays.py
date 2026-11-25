@@ -16,6 +16,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))  # atlas.street_key
 STORE = Path('/Volumes/johnpswan/work/GAC/polymer-atlas/atlas-store')
 OSHA = 'raw/osha/2026-11-22-archive-snapshot/raw'
 YEARS_BACK = 10  # SCHEMA R13 (owner ruling 2026-11-23): a band written on date D accepts filings dated on or after D minus ten years
@@ -31,6 +32,18 @@ def sprint():
         _M = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(_M)
     return _M
+
+
+def band_write_date(ev):
+    """When the band was written (SCHEMA R13's cutoff is that date minus ten years): the date in the evidence note 'backfill of D band', else the date in
+    the pass label of `created_by`, else '' (unknown: the band is UNRESOLVED, never dated from the snapshot). Git blame was tried and rejected: the
+    2026-11-22 reshard collapsed 2,329 of 2,414 filing rows to one commit date."""
+    m = re.search(r'backfill of (\d{4}-\d{2}-\d{2}) band', ev.get('notes', '')) or re.search(r'(\d{4}-\d{2}-\d{2})', ev.get('created_by', ''))
+    return m[1] if m else ''
+
+
+def ten_years_before(date):
+    return f'{int(date[:4]) - YEARS_BACK}{date[4:]}'
 
 
 def band_kind(ev):
@@ -106,7 +119,7 @@ def csv_rows(path, member=None):
 
 
 def scan(store, rels, id_col, wanted):
-    """One pass per verified file: rows whose id_col is in wanted. -> (hits {id: [row, file rel]}, problems per file)."""
+    """One pass per verified file: rows whose id_col (a column name, or a function of the row) is in wanted. -> (hits {id: [row, file rel]}, problems per file)."""
     hits, problems = defaultdict(list), {}
     for rel in rels:
         path, why = verified(store, rel)
@@ -114,7 +127,7 @@ def scan(store, rels, id_col, wanted):
             problems[rel] = why
             continue
         for r in csv_rows(path):
-            v = (r.get(id_col) or '').strip()
+            v = id_col(r) if callable(id_col) else (r.get(id_col) or '').strip()
             if v in wanted:
                 hits[v].append((r, rel))
     return hits, problems
@@ -169,9 +182,11 @@ REPLAYABLE = {'band:form5500', 'band:osha_ita', 'band:osha_inspection'}  # class
 NAICS_FIELDS = {'naics_primary', 'naics_primary_source_type', 'naics_primary_source_name', 'naics_confidence'}
 
 
-def band_receipt(site, orgs, ev, ita, ita_hits, insp_hits, ita_problems, insp_problems, store, cutoff):
+def band_receipt(site, orgs, ev, ita, ita_hits, insp_hits, ita_problems, insp_problems, store, cutoff, held_band=None, others=()):
     """Locate the cited filing row, check it binds, then let the newest binding filing inside the cutoff decide (SCHEMA R13 precedence):
-    an older different band under a newer supporting one is a match; a newer different band contradicts."""
+    an older different band under a newer supporting one is a match; a newer different band contradicts. `others` are the other filing rows (ITA and
+    inspections) found at the same street, so a newer inspection can supersede an older ITA filing and the reverse; they bind or not like any row."""
+    held = held_band or site['employee_band_site']
     ref = ev['source_ref'] + ' ' + ev['claim_detail']
     m = re.search(r'establishment_?id[ =:]*(\d+)' if ita else r'(?:id=|OSHA inspection )(\d{6,})', ref, re.I)
     hits = list((ita_hits if ita else insp_hits).get(m[1], [])) if m else []
@@ -188,28 +203,58 @@ def band_receipt(site, orgs, ev, ita, ita_hits, insp_hits, ita_problems, insp_pr
     cited = [h for h in hits if year and str(h[0].get('year_filing_for', '')).split('.')[0] == (year[1] or year[2])] if ita and not loc else hits
     if len(cited) != 1:
         return dict(status='UNRESOLVED', reason='cited_row_not_identified', text='The cited filing year does not single out one row for this establishment ID.')
-    cited_r = receipt(site, orgs, cited[0][0], kind, cited[0][1], cutoff, site['employee_band_site'])
+    cited_r = receipt(site, orgs, cited[0][0], kind, cited[0][1], cutoff, held)
     if cited_r['status'] not in ('MATCHES', 'CONTRADICTS') and cited_r['reason'] != 'stale_over_10_years':
         return cited_r
-    binding = [r for r in (receipt(site, orgs, h[0], kind, h[1], cutoff, site['employee_band_site']) for h in hits) if r['status'] in ('MATCHES', 'CONTRADICTS')]
+    binding = [r for r in [receipt(site, orgs, h[0], kind, h[1], cutoff, held) for h in hits] + [receipt(site, orgs, row, k2, rel, cutoff, held) for k2, row, rel in others]
+               if r['status'] in ('MATCHES', 'CONTRADICTS')]
     if not binding:
         return cited_r
     newest = max(binding, key=lambda r: r['date'])
     return dict(newest, text=f"Cited row dated {cited_r['date']}. Newest binding filing: " + newest['text'])
 
 
+def civic_key(addr):
+    m = re.match(r'\s*(\d+)', addr or '')
+    return m[1] if m else ''
+
+
+def band_target(x, sites, orgs, org_sites):
+    """-> (site row, held band, reason). A site-grain band is judged at its site. An organization-grain band is judged at the organization's only site, and
+    only when it has exactly one site and that site is in Ohio (the PPP rule's single-site, Ohio-only test: a choice the protocol does not state)."""
+    k = x['key']
+    if k[0] == 'sites':
+        site = sites.get(k[1])
+        return (site, site[x['field']], '') if site else (None, None, 'site_row_not_found')
+    only = org_sites.get(k[1], [])
+    if len(only) == 1 and only[0]['state'] == 'OH':
+        return only[0], orgs[k[1]][x['field']], ''
+    return None, None, 'org_grain_not_single_site'
+
+
 def coverage(R, keys, store=STORE):
     """-> (receipts {'table|id': [receipt]}, not_inspected classes {class: [keys]}, counts {class: {status: n}}, ni {'table|id': {fields, children}},
     due {'table|id': receipts the record must be issued}).
     A class with no replayer is NOT_INSPECTED (owner ruling 2026-11-24 15:15): counted, never a receipt, never unconfirmed."""
+    from atlas import street_key
     exp = expected(R, keys)
-    cutoff = f"{int(R.git('show', '-s', '--format=%cs', R.at).strip()[:4]) - YEARS_BACK}{R.git('show', '-s', '--format=%cs', R.at).strip()[4:]}"
     sites = {r['site_id']: r for r in R.rows('sites')}
+    org_sites = defaultdict(list)
+    for r in sites.values():
+        org_sites[r['org_id']].append(r)
     orgs = {r['org_id']: r for t in ('organizations', 'ecosystem') for r in R.rows(t)}
-    ita_ids = {m[1] for x in exp if x['cls'] == 'band:osha_ita' and (m := re.search(r'establishment_?id[ =:]*(\d+)', x['ev']['source_ref'], re.I))}
-    insp_ids = {m[1] for x in exp if x['cls'] == 'band:osha_inspection' and (m := re.search(r'(?:id=|OSHA inspection )(\d{6,})', x['ev']['source_ref'] + ' ' + x['ev']['claim_detail']))}
+    bands = [x for x in exp if x['cls'] in ('band:osha_ita', 'band:osha_inspection')]
+    target = {id(x): band_target(x, sites, orgs, org_sites) for x in bands}
+    ita_ids = {m[1] for x in bands if x['cls'] == 'band:osha_ita' and (m := re.search(r'establishment_?id[ =:]*(\d+)', x['ev']['source_ref'], re.I))}
+    insp_ids = {m[1] for x in bands if x['cls'] == 'band:osha_inspection' and (m := re.search(r'(?:id=|OSHA inspection )(\d{6,})', x['ev']['source_ref'] + ' ' + x['ev']['claim_detail']))}
     ita_hits, ita_problems = scan(store, ita_files(store), 'establishment_id', ita_ids) if ita_ids else ({}, {})
     insp_hits, insp_problems = scan(store, inspection_files(store), 'activity_nr', insp_ids) if insp_ids else ({}, {})
+    streets = {street_key(t[0]['street_address']) for t in target.values() if t[0]}  # every other filing at a replayed band's street can supersede the cited one
+    civics = {civic_key(st) for st in streets}
+    street_of = lambda col: (lambda r: (street_key(r.get(col, '')) if civic_key(r.get(col, '')) in civics else ''))
+    ita_by_street, ita_scan_problems = scan(store, ita_files(store), street_of('street_address'), streets) if streets else ({}, {})
+    insp_by_street, insp_scan_problems = scan(store, inspection_files(store), street_of('site_address'), streets) if streets else ({}, {})
+    scan_problems = {**ita_scan_problems, **insp_scan_problems}
     receipts, ni_classes, counts, ni = defaultdict(list), defaultdict(list), defaultdict(Counter), defaultdict(lambda: dict(fields=set(), children=[]))
     for x in exp:
         cls, k, ev = x['cls'], x['key'], x['ev']
@@ -218,11 +263,18 @@ def coverage(R, keys, store=STORE):
         if cls == 'band:form5500':
             out = dict(status='LEAD_ONLY', reason='plan_participants_cannot_establish_a_headcount', text='Form 5500 plan-year participant count: a lead only; it cannot establish an employee band.')
         elif cls in ('band:osha_ita', 'band:osha_inspection'):
-            site = sites.get(k[1]) if k[0] == 'sites' else None
+            site, held, why = target[id(x)]
+            written = band_write_date(ev)
             if site is None:
-                out = dict(status='UNRESOLVED', reason='org_grain_band_not_replayable', text='This band is held at the organization; a single establishment filing cannot settle it.')
+                out = dict(status='UNRESOLVED', reason=why, text='This band is held at the organization and cannot be tied to one establishment (it needs exactly one Ohio site); a single establishment filing cannot settle it.' if why == 'org_grain_not_single_site' else 'The band\'s site row was not found.')
+            elif not written:
+                out = dict(status='UNRESOLVED', reason='band_write_date_unknown', text='The date this band was written is not recorded, so the ten-year filing cutoff cannot be applied.')
+            elif scan_problems:
+                out = dict(status='UNRESOLVED', reason='filing_scan_incomplete', text=f'Other filings at this street could not all be searched ({next(iter(scan_problems.values()))}).')
             else:
-                out = band_receipt(site, orgs, ev, cls == 'band:osha_ita', ita_hits, insp_hits, ita_problems, insp_problems, store, cutoff)
+                sk = street_key(site['street_address'])
+                others = [('osha_ita', r, rel) for r, rel in ita_by_street.get(sk, [])] + [('osha_inspection', r, rel) for r, rel in insp_by_street.get(sk, [])]
+                out = band_receipt(site, orgs, ev, cls == 'band:osha_ita', ita_hits, insp_hits, ita_problems, insp_problems, store, ten_years_before(written), held, others)
         if out is None:  # no replayer for this class: reported as not inspected, never as a receipt and never as unconfirmed
             ni_classes[cls].append(k)
             counts[cls]['not_inspected'] += 1
