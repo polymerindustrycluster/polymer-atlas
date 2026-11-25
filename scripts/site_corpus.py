@@ -137,6 +137,17 @@ GENERIC = {'info', 'sales', 'contact', 'support', 'office', 'hello', 'customerse
            'enquiries', 'inquiries', 'service', 'hr', 'careers', 'orders'}
 
 
+def li_extract_only(raw):
+    """True if these bytes are an allowlisted LinkedIn extract (flat JSON of the allowed keys) or empty; anything else is a legacy page."""
+    if not raw: return True
+    try: d = json.loads(raw)
+    except ValueError: return False
+    keys = {'source_url', 'name', 'description', 'website', 'industry', 'company_size', 'headquarters', 'address', 'founded', 'specialties'}
+    return isinstance(d, dict) and set(d) <= keys and all(
+        isinstance(v, str) or (k == 'address' and isinstance(v, dict) and set(v) <= set(LI_ADDRESS) and all(isinstance(x, str) for x in v.values()))
+        for k, v in d.items())
+
+
 def li_clean(value, cap=300):
     text = re.sub(r'\s+', ' ', value).strip()[:cap]
     return re.sub(r'[\w.+-]{1,80}@[\w.-]{1,160}\.[a-zA-Z]{2,20}', lambda m: m[0] if m[0].split('@')[0].lower() in GENERIC else '[redacted]', text)
@@ -232,6 +243,9 @@ def key(value):
     return hashlib.sha256(value.encode()).hexdigest()
 
 
+PURGED = set()  # caches already swept for legacy LinkedIn pages in this process
+
+
 class Corpus:
     def __init__(self, cache_dir=DEFAULT_CACHE):
         self.cache = Path(cache_dir).resolve()
@@ -239,6 +253,8 @@ class Corpus:
             raise ValueError('Cache must be outside the repository')
         self.cache.mkdir(parents=True, exist_ok=True)
         self.memo = {}  # robots.txt bodies: in memory only
+        if self.cache not in PURGED:
+            PURGED.add(self.cache); self.purge_linkedin()
 
     @contextmanager
     def lock(self, name):
@@ -287,11 +303,30 @@ class Corpus:
                             location=locations[-1] if locations else '',
                             content_type=types[-1] if types else '', error=p.stderr[:300], exit=p.returncode)
 
+    def legacy_linkedin(self, r):
+        """A LinkedIn receipt whose stored file is not an allowlisted extract: written before the extract-only rule."""
+        if not (linkedin_url(r.get('url', '')) or linkedin_url(r.get('final_url', ''))) or not r.get('raw_file'): return False
+        f = self.cache / Path(r['raw_file']).name
+        return f.exists() and not li_extract_only(f.read_bytes())
+
+    def purge(self, r, meta):
+        for name in (r.get('raw_file'), r.get('text_file')):
+            if name: (self.cache / Path(name).name).unlink(missing_ok=True)
+        meta.unlink(missing_ok=True)
+
+    def purge_linkedin(self):
+        """Once per cache per process: delete every legacy LinkedIn page (raw, text and receipt), so none can replay."""
+        for meta in self.cache.glob('*.json'):
+            try: r = json.loads(meta.read_text())
+            except ValueError: continue
+            if isinstance(r, dict) and self.legacy_linkedin(r): self.purge(r, meta)
+
     def cached(self, target):
         meta = self.cache / (key(target) + '.json')
         if not meta.exists(): return None
         r = json.loads(meta.read_text())
         if r.get('extraction_version') != 3 or r.get('status') in STALE: return None
+        if self.legacy_linkedin(r): self.purge(r, meta); return None  # never replayed
         r.setdefault('robots_disallowed', 'not_recorded')
         if r['url'] != target: raise ValueError('Cache URL mismatch')
         if hashlib.sha256((self.cache / r['raw_file']).read_bytes()).hexdigest() != r['sha256']:

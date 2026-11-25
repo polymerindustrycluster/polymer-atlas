@@ -239,6 +239,39 @@ def linkedin_company_page_stores_only_the_allowlisted_extract(c, tmp):
     no_sentinel(tmp)
 
 
+def plant_legacy_linkedin(tmp, target='https://www.linkedin.com/company/acme'):
+    """A receipt written before the extract-only rule: the raw company page and its text, with a valid hash receipt."""
+    import hashlib, json
+    raw = LI_PAGE.encode(); text = LI_PAGE.replace('<', ' <').encode()
+    rf, tf = hashlib.sha256(raw).hexdigest() + '.raw', hashlib.sha256(text).hexdigest() + '.txt'
+    (tmp / rf).write_bytes(raw); (tmp / tf).write_bytes(text)
+    r = dict(url=target, status='ok', http_status=200, final_url=target, route='direct', fetched_at='2026-11-20T00:00:00+00:00', sha256=hashlib.sha256(raw).hexdigest(),
+             raw_file=rf, text_file=tf, text_sha256=hashlib.sha256(text).hexdigest(), extraction_version=3, error='')
+    (tmp / (sc.key(target) + '.json')).write_text(json.dumps(r))
+
+
+@case
+def legacy_linkedin_page_is_never_replayed_and_is_purged(c, tmp):
+    plant_legacy_linkedin(tmp)
+    assert SENTINEL.encode() in cache_text(tmp), 'the plant failed'
+    assert c.cached('https://www.linkedin.com/company/acme') is None, 'an old raw company page replayed from the cache'
+    no_sentinel(tmp)  # purged on the lookup
+    plant_legacy_linkedin(tmp)
+    sc.PURGED.discard(tmp.resolve()) if hasattr(sc, 'PURGED') else None
+    sc.Corpus(tmp)  # a new run sweeps the cache
+    no_sentinel(tmp)
+
+
+@case
+def linkedin_extract_receipt_still_replays_and_legacy_is_replaced_by_one(c, tmp):
+    plant_legacy_linkedin(tmp)
+    target = 'https://www.linkedin.com/company/acme'
+    with patch.object(c, 'request', side_effect=serve(resp(code=404), resp(LI_PAGE))) as req:
+        first = c.fetch(target); n = req.call_count; second = c.fetch(target)
+    assert first['status'] == 'ok' and second['sha256'] == first['sha256'] and req.call_count == n, f"status {first['status']}, replay re-requested ({n} -> {req.call_count})"
+    no_sentinel(tmp)
+
+
 @case
 def linkedin_page_without_an_extractable_field_is_withheld(c, tmp):
     page = '<html><body><p>' + 'Sign in to see more. ' * 30 + SENTINEL + '</p></body></html>'
