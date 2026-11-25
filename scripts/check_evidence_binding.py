@@ -947,8 +947,16 @@ LINKEDIN_ROLE = re.compile(r"(?<!\w)(?:ceo|coo|cfo|cto|cmo|president|vice[ -]pre
 LINKEDIN_NOT_NAMES = frozenset("us today team operations manager director sales marketing customer customers service services support information info page "
                                "company corporation inc llc ltd our your the and for of to at in on with details form".split())
 LINKEDIN_WORD = re.compile(r"[^\W\d_][\w'’.-]*")
-LINKEDIN_LABELS = re.compile(r"(?<![\w])(?:(Website|Industry|Company size|Headquarters|Type|Founded),\s|(Specialties)(?:,|\s))")
-LINKEDIN_SIGNED_IN = re.compile(r"signed in as|sign out|signout|log ?out|logged in|my network|\bviewing as\b", re.I)
+LINKEDIN_LABEL_NAMES = ("Website", "Industry", "Company size", "Headquarters", "Type", "Founded", "Specialties")
+LINKEDIN_INLINE_LABEL = re.compile(r"(?<![\w])(Website|Industry|Company size|Headquarters|Type|Founded|Specialties),{1,2}(?=\s|$)|, (Specialties)\s*$")
+LINKEDIN_SIGNED_IN = re.compile(r"\b(?:signed in|sign out|signed out|signout|log ?out|logged in|my network|viewing as)\b", re.I)  # whole words: "designed in" is prose
+LINKEDIN_STREET_WORDS = frozenset("road rd street st avenue ave drive dr boulevard blvd lane ln way highway hwy parkway pkwy court ct circle cir suite ste floor box route rte "
+                                  "plaza place pl terrace trail center".split())
+LINKEDIN_STATES = frozenset(x.strip().lower() for x in (
+    "Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,"
+    "Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,"
+    "Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming,District of Columbia,"
+    "AL,AK,AZ,AR,CA,CO,CT,DE,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WA,WV,WI,WY,DC").split(","))
 LINKEDIN_TITLE = re.compile(r"^(?:\[\d+\] )?(.+?)(?: \| LinkedIn)? \((https://[^\s)]+)\)\s*$")
 LINKEDIN_CAPTURE = re.compile(r"^([0-9a-f]{64})  (raw/linkedin/([0-9a-f]{64})\.txt)$")
 LINKEDIN_NOTES = re.compile(r"capture_sha256: ([0-9a-f]{64}); acquisition: guest(?:, logged out)?")
@@ -983,7 +991,7 @@ def linkedin_personal(text):
     for m in LINKEDIN_ROLE.finditer(text):
         after = LINKEDIN_WORD.findall(text[m.end():m.end() + 80])
         lead = text[max(0, m.start() - 80):m.start()]
-        before = LINKEDIN_WORD.findall(lead)[::-1] if re.search(r"[,\-\u2013\u2014]\s*$", lead) else []  # "Jane Smith, CEO": the role follows the name after a comma or dash
+        before = LINKEDIN_WORD.findall(lead)[::-1] if re.search(r"[,\-\u2013\u2014(]\s*$", lead) else []  # "Jane Smith, CEO": the role follows the name after a comma or dash
         if linkedin_name_tokens(after) or linkedin_name_tokens(before):
             return True
     return False
@@ -1008,7 +1016,27 @@ def linkedin_bracket_band(bracket):
     if not m:
         return ""
     lo, hi = int(m[1].replace(",", "")), float("inf") if m[3] else int(m[2].replace(",", ""))
+    if lo > hi:
+        return ""  # an inverted bracket (51-20) is a mis-copy, never a band
     return next((name for name, a, b in ATLAS_BANDS if a <= lo and hi <= b), "")
+
+
+def linkedin_bracket_valid(bracket):
+    """A well-formed, non-inverted LinkedIn size bracket (`51-200`, `10,001+`)."""
+    m = LINKEDIN_BRACKET.fullmatch((bracket or "").strip())
+    return bool(m) and (bool(m[3]) or int(m[1].replace(",", "")) <= int(m[2].replace(",", "")))
+
+
+def linkedin_hq_city(value):
+    """The city of a Headquarters value `City, State` or `City, State, Country`, or None when it is anything else (a street, a number, extra parts, a
+    place that is not a plain locality). Only US states are recognised, so a foreign or odd headquarters is held for reading."""
+    parts = [norm_space(x) for x in value.split(",")]
+    if len(parts) not in (2, 3) or parts[1].lower() not in LINKEDIN_STATES or (len(parts) == 3 and parts[2].lower() not in ("united states", "us", "usa", "u.s.")):
+        return None
+    city = parts[0]
+    if not re.fullmatch(r"[^\W\d_][^\W\d_ .'’-]*(?:[ .'’-]+[^\W\d_][^\W\d_ .'’-]*)*\.?", city) or set(re.findall(r"[a-z]+", city.lower())) & LINKEDIN_STREET_WORDS:
+        return None
+    return city
 
 
 def linkedin_claim(claim_detail, ct):
@@ -1054,10 +1082,14 @@ def judge_linkedin(ev, table, claim_detail, src):
     if field == "hq_city" and (re.search(r"\bcounty\b|\d", claim_detail, re.I)):
         return "FAIL", "linkedin_address_not_hq_city", {}  # a street, a number, a county or a ZIP is never a LinkedIn fact
     if field == "size_band":
-        band = re.fullmatch(r"(?:employee_band_global ([\w+-]+)|linkedin_size_bracket ([\d,+-]+)) \(self-declared\)", head)[1]
+        band, bracket = re.fullmatch(r"(?:employee_band_global ([\w+-]+)|linkedin_size_bracket ([\d,+-]+)) \(self-declared\)", head).groups()
         shown = LINKEDIN_BRACKET.search(quote)
-        if band and (not shown or linkedin_bracket_band(shown.group(0)) != band):
-            return "FAIL", "linkedin_size_bracket_straddles_band", {}  # a band only where the bracket nests in it
+        if not shown:
+            return "FAIL", "linkedin_size_quote_has_no_bracket"  # "Company size" alone says nothing
+        if bracket and (shown.group(0) != bracket or not linkedin_bracket_valid(bracket)):
+            return "FAIL", "linkedin_size_bracket_not_in_quote"
+        if band and linkedin_bracket_band(shown.group(0)) != band:
+            return "FAIL", "linkedin_size_bracket_straddles_band"  # a band only where the bracket nests in it
     if field is None:
         return "HELD", "linkedin_description_needs_reading", {}
     return "HELD", "linkedin_needs_capture", {}
@@ -1077,8 +1109,10 @@ def read_linkedin_capture(store, digest):
 
 
 def linkedin_about(text):
-    """(title match or None, the subject's 'About us' section as one line, its labelled fields). Only the company's own About section counts:
-    never Similar pages, Updates, Locations or Employees."""
+    """(title match or None, the subject's 'About us' section as one line, its labelled fields {label: [values]}, ambiguous). Only the company's own
+    About section counts: never Similar pages, Updates, Locations or Employees. A field is `<Label>, <value>` on one line (comma-joined) or the label on
+    its own line with the value on the next (Muse's line layout); the value runs to the next label, so prose and fields never merge. The section is
+    ambiguous when anything before its first Website or Industry field carries a label word."""
     lines = [re.sub(r"^L\d+:\s?", "", ln).rstrip() for ln in text.split("\n")]
     title = LINKEDIN_TITLE.match(lines[0]) if lines else None
     sections, cur = {}, None
@@ -1089,14 +1123,28 @@ def linkedin_about(text):
             sections.setdefault(cur, [])
         elif cur is not None:
             sections[cur].append(ln)
-    about = norm_space(" ".join(sections.get("About us", [])))
-    fields, marks = {}, list(LINKEDIN_LABELS.finditer(about))
-    start = next((k for k, m in enumerate(marks) if (m[1] or m[2]) in ("Website", "Industry")), None)
-    for k in range(start, len(marks)) if start is not None else ():
-        label = marks[k][1] or marks[k][2]
-        end = marks[k + 1].start() if k + 1 < len(marks) else len(about)
-        fields.setdefault(label, about[marks[k].end():end].strip(" ,"))
-    return title, about, fields
+    about_lines = [ln.strip() for ln in sections.get("About us", []) if ln.strip()]
+    items = []  # ("label", name) | ("text", string), in capture order
+    for ln in about_lines:
+        if ln in LINKEDIN_LABEL_NAMES:
+            items.append(("label", ln))
+            continue
+        pos = 0
+        for m in LINKEDIN_INLINE_LABEL.finditer(ln):
+            items.append(("text", ln[pos:m.start()]))
+            items.append(("label", m[1] or m[2]))
+            pos = m.end()
+        items.append(("text", ln[pos:]))
+    fields, name = {}, None
+    for kind, val in items:
+        if kind == "label":
+            name = val
+            fields.setdefault(name, []).append("")
+        elif name is not None:
+            fields[name][-1] += " " + val
+    fields = {k: [norm_space(v).strip(" ,") for v in vs] for k, vs in fields.items()}
+    labels = [v for k, v in items if k == "label"]
+    return title, norm_space(" ".join(about_lines)), fields, bool(labels) and labels[0] not in ("Website", "Industry")
 
 
 def linkedin_name_verdict(title_name, idx, rid):
@@ -1139,7 +1187,7 @@ def linkedin_result(ev, idx, store, read):
         text = read_linkedin_capture(store, digest)
     except (OSError, ValueError):
         return "HELD", "linkedin_capture_unreadable"
-    title, about, fields = linkedin_about(text)
+    title, about, fields, ambiguous = linkedin_about(text)
     if not title:
         return "HELD", "linkedin_title_unbound"
     if title[2].rstrip("/").lower() != ev["source_ref"].rstrip("/").lower():
@@ -1151,29 +1199,34 @@ def linkedin_result(ev, idx, store, read):
         return verdict, reason
     if not about or not fields:
         return "HELD", "linkedin_about_fields_missing"
-    q = norm_space(quote)
-    if len(q) < 12 or q.lower() not in about.lower():
-        return "FAIL", "quote_not_on_capture"
+    if ambiguous:
+        return "HELD", "linkedin_field_ambiguous"  # prose before the field block carries a label word
     label = {"industry": "Industry", "specialties": "Specialties", "founded": "Founded", "hq_city": "Headquarters", "size_band": "Company size"}[field]
-    held = fields.get(label)
-    if held is None or label.lower() not in q.lower():
+    values = fields.get(label, [])
+    if len(values) > 1:
+        return "HELD", "linkedin_field_ambiguous"  # the label appears more than once
+    if not values:
         return "FAIL", "claim_field_not_in_quote"
+    held, q = values[0], norm_space(quote)
+    if q != f"{label}, {held}":  # exactly one field as the capture shows it: no prose before or after, no second field, case kept
+        return "FAIL", "quote_not_on_capture" if q not in about else "linkedin_quote_not_exact_field"
     if field == "hq_city":
-        ok = norm_space(held.partition(",")[0]).lower() == norm_space(value).lower() and not re.search(r"\d", held)
+        city = linkedin_hq_city(held)
+        if city is None:
+            return "HELD", "linkedin_hq_not_city_state"
+        ok = city.lower() == norm_space(value).lower()
     elif field == "size_band":
-        found = LINKEDIN_BRACKET.match(held)
+        found = re.fullmatch(r"(\d[\d,]*(?:-\d[\d,]*|\+))(?: employees?)?", held)
         band, bracket = re.fullmatch(r"(?:employee_band_global ([\w+-]+)|linkedin_size_bracket ([\d,+-]+)) \(self-declared\)",
                                      ev["claim_detail"].partition("; quote:")[0].strip()).groups()
-        shown = found.group(0) if found else ""
-        ok = bool(found) and (shown == bracket if bracket else linkedin_bracket_band(shown) == band != "")
+        shown = found[1] if found else ""
+        ok = linkedin_bracket_valid(shown) and (shown == bracket if bracket else linkedin_bracket_band(shown) == band != "")
     elif field == "specialties":
         have = {norm_space(t).lower() for t in re.split(r",\s*", held) if t.strip()}
-        ok = all(norm_space(t).lower() in have and norm_space(t).lower() in q.lower() for t in re.split(r",\s*", value) if t.strip())
+        ok = all(norm_space(t).lower() in have for t in re.split(r",\s*", value) if t.strip())
     else:
         ok = norm_space(held).lower() == norm_space(value).lower()
-    if not ok or norm_space(value or "").lower() not in q.lower() and field not in ("size_band", "specialties"):
-        return "FAIL", "claim_value_not_in_field"
-    return "PASS", "linkedin_company_replayed"
+    return ("PASS", "linkedin_company_replayed") if ok else ("FAIL", "claim_value_not_in_field")
 
 
 def check_linkedin_routes(results, evs, idx, store, read):

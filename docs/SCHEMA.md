@@ -1688,8 +1688,14 @@ evidence route only; people data stays declined (§4.9, §6). The rules:
 - **One labelled field per row, from the subject's own About section.** The
   page's "About us" section ends in a field block (`Website`, `Industry`,
   `Company size`, `Headquarters`, `Type`, `Founded`, `Specialties`). A row
-  binds one of five fields to its value; the quote is that labelled field
-  as the capture shows it. Nothing outside the About section counts
+  binds one of five fields to its value; the quote is **exactly** that one
+  labelled field as the capture shows it, `<Label>, <value>` (case kept,
+  whitespace normalized), and nothing else: no prose before or after it and
+  no second field. The capture is parsed keeping field boundaries, in both
+  layouts Muse's captures use (`Label, value` on one line, or the label on
+  its own line with the value on the next); a label that appears more than
+  once, or prose before the field block that carries a label word, is HELD
+  as ambiguous. Nothing outside the About section counts
   (Similar pages, Updates, Locations and Employees never do). `claim_detail`
   is `<head>; quote: <quote>` with exactly one of these heads:
 
@@ -1698,8 +1704,8 @@ evidence route only; people data stays declined (§4.9, §6). The rules:
   | Industry | `activity` or `scope` | `industry: <value>` |
   | Specialties (process and market tokens) | `activity` or `scope` | `specialties: <token>, <token>` (each a listed specialty) |
   | Founded | `existence` | `founded: <YYYY>` |
-  | Headquarters | `address` | `hq_city <City>`: the city before the first comma of the Headquarters value, and no street, number, county or ZIP anywhere in the claim or quote |
-  | Company size | `size_band` | `employee_band_global <band> (self-declared)` or `linkedin_size_bracket <bracket> (self-declared)` |
+  | Headquarters | `address` | `hq_city <City>`: the Headquarters value must be `City, State` or `City, State, Country` (a US state; country `United States`), with City a plain locality (no number, no street word); anything else is HELD |
+  | Company size | `size_band` | `employee_band_global <band> (self-declared)` or `linkedin_size_bracket <bracket> (self-declared)`; the claimed bracket equals the capture's and appears in the quote, and an inverted bracket (`51-20`) sets nothing |
 
   A row whose head is not one of these is a free description. A free
   description is never passed by machine: the gate holds it for a reader
@@ -1734,12 +1740,12 @@ evidence route only; people data stays declined (§4.9, §6). The rules:
   `raw/linkedin/<sha256>.txt`; the task's `INPUTS.sha256` names that digest
   and the gate checks the file against it. The lane's statement that the
   capture was fetched as a guest (no account, no cookies) is the row's
-  claim, and the gate refuses a capture that shows signs of a signed-in
-  session. The binding gate (`scripts/check_evidence_binding.py`) passes a
+  claim, and the gate refuses a capture that shows any sign-in marker
+  (including "You are signed in"). The binding gate (`scripts/check_evidence_binding.py`) passes a
   row only if the capture is named and intact, is the cited page, its
   title is the record's own name and not its parent's, the claimed
-  field of the About section has the claimed value, and the quote is on that
-  section and holds the field's label and value. Anything it cannot read is
+  field of the About section has the claimed value, and the quote is that
+  field exactly. Anything it cannot read is
   HELD. The row does not depend on any other capture or on the order of
   the `INPUTS.sha256` lines.
 - **No personal data.** Employee names, posts and their authors are never

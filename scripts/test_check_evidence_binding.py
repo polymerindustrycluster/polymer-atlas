@@ -1737,7 +1737,7 @@ class LinkedInCompanyRoute(unittest.TestCase):
     def test_each_labelled_field_replays_when_field_and_value_agree(self):
         spec = {
             "industry": self.row(),
-            "specialties": self.row(head="specialties: Injection molding, Extrusion", quote="Specialties Injection molding, Thermoforming, Extrusion"),
+            "specialties": self.row(head="specialties: Injection molding, Extrusion", quote="Specialties, Injection molding, Thermoforming, Extrusion"),
             "founded": self.row(head="founded: 1986", quote="Founded, 1986", claim="existence"),
             "hq_city": self.row(head="hq_city Cleveland", quote="Headquarters, Cleveland, Ohio", claim="address"),
             "size band 5000+": self.row(head="employee_band_global 5000+ (self-declared)", quote="Company size, 5,001-10,000 employees", claim="size_band"),
@@ -1753,11 +1753,11 @@ class LinkedInCompanyRoute(unittest.TestCase):
         digest = self.capture()
         bad = {
             "value differs from the field": (dict(head="industry: Chemical Manufacturing", quote="Industry, Chemical Manufacturing"), "quote_not_on_capture"),
-            "HQ city backed only by the industry sentence": (dict(head="hq_city Cleveland", quote="Industry, Plastics Manufacturing, Company size", claim="address"), "claim_field_not_in_quote"),
+            "HQ city backed only by the industry sentence": (dict(head="hq_city Cleveland", quote="Industry, Plastics Manufacturing, Company size", claim="address"), "linkedin_quote_not_exact_field"),
             "a quote from the Similar pages entry": (dict(head="industry: Chemical Manufacturing", quote="Chemical Manufacturing in Dayton, Ohio"), "quote_not_on_capture"),
             "wrong city": (dict(head="hq_city Dayton", quote="Headquarters, Cleveland, Ohio", claim="address"), "claim_value_not_in_field"),
             "bracket differs from the page": (dict(head="linkedin_size_bracket 51-200 (self-declared)", quote="Company size, 5,001-10,000 employees", claim="size_band"), "claim_value_not_in_field"),
-            "short quote": (dict(quote="Industry"), "quote_not_on_capture"),
+            "short quote": (dict(quote="Industry"), "linkedin_quote_not_exact_field"),
         }
         for name, (kw, reason) in bad.items():
             with self.subTest(name):
@@ -1800,6 +1800,88 @@ class LinkedInCompanyRoute(unittest.TestCase):
         self.assertEqual(self.replay(row, digest), ("HELD", "linkedin_capture_unreadable"))  # digest mismatch
         self.assertEqual(self.run_row(self.page(title="[1] Harbor Plastics | LinkedIn (https://www.linkedin.com/company/another-page)")), ("FAIL", "capture_is_another_page"))
         self.assertEqual(self.run_row("[1] Harbor Plastics, Inc. | LinkedIn (" + self.URL + ")"), ("HELD", "linkedin_about_fields_missing"))  # title only, no newline: no crash
+
+    def about_page(self, *lines, title=None):
+        """A capture whose About section is exactly `lines` (the rest of the page as in `page`)."""
+        return (title or "[1] Harbor Plastics, Inc. | LinkedIn (" + self.URL + ")") + "\nL0: ## Plastics Manufacturing\nL2: ## About us\n" + "\n".join(lines) + "\nL90: ## Locations\n"
+
+    def replay_page(self, page, **kw):
+        digest = self.capture(page)
+        return self.replay(self.row(digest=digest, **kw), digest)
+
+    def test_the_quote_is_exactly_one_labelled_field_as_the_capture_shows_it(self):
+        fields = "Website,, Industry, Plastics Manufacturing, Company size, 51-200 employees, Headquarters, Cleveland, Ohio, Type, Privately Held, Founded, 1986"
+        prose = "Our managing director is Jane Example."
+        subsidiary = "Harbor Films, our subsidiary: Industry, Plastic Films."
+        nowebsite = fields.replace("Website,, ", "")
+        bad = {
+            "prose before the field (Jane Example)": (self.about_page(prose, nowebsite), dict(quote=prose + " Industry, Plastics Manufacturing")),
+            "prose after the field": (self.about_page(prose, fields), dict(quote="Industry, Plastics Manufacturing, Company size")),
+            "a second field in the quote": (self.about_page(prose, fields), dict(quote="Industry, Plastics Manufacturing, Company size, 51-200 employees")),
+            "all-uppercase quote": (self.about_page(prose, fields), dict(quote="INDUSTRY, PLASTICS MANUFACTURING")),
+            "subsidiary industry in the narrative": (self.about_page(subsidiary, fields), dict(head="industry: Plastic Films", quote="Industry, Plastic Films")),
+        }
+        for name, (page, kw) in bad.items():
+            with self.subTest(name):
+                verdict, reason = self.replay_page(page, **kw)
+                self.assertNotEqual(verdict, "PASS", (name, reason))
+        self.assertEqual(self.replay_page(self.about_page(prose, fields)), ("PASS", "linkedin_company_replayed"))  # control: the exact field
+        self.assertEqual(self.replay_page(self.about_page(prose, nowebsite), quote=prose + " Industry, Plastics Manufacturing"), ("FAIL", "linkedin_quote_not_exact_field"))
+        self.assertEqual(self.replay_page(self.about_page(subsidiary, fields), head="industry: Plastic Films", quote="Industry, Plastic Films"), ("HELD", "linkedin_field_ambiguous"))
+        row = self.row(quote="Industry, Plastics Manufacturing; Jane Smith (CEO)")  # a parenthesised role names a person
+        self.assertEqual(b.judge(row, self.idx)[:2], ("FAIL", "linkedin_personal_data"))
+        twice = self.about_page("Website,, Industry, Plastics Manufacturing, Industry, Resin Compounding, Founded, 1986")
+        self.assertEqual(self.replay_page(twice), ("HELD", "linkedin_field_ambiguous"))  # a label that appears more than once
+        carries = self.about_page("Type, of work we do: molding.", fields)
+        self.assertEqual(self.replay_page(carries), ("HELD", "linkedin_field_ambiguous"))  # prose that carries a label word
+
+    def test_muse_line_per_field_layout_replays(self):
+        layout = ("L10: Harbor Plastics molds parts.", "L12: Website", "L14:", "L16: Industry", "L18: Plastics Manufacturing",
+                  "L20: Company size, 5,001-10,000 employees, Headquarters, Cleveland, Ohio, Type, Privately", "L21: Held, Founded, 1986, Specialties",
+                  "L23: Injection molding, Extrusion")
+        page = self.about_page(*layout)
+        self.assertEqual(self.replay_page(page), ("PASS", "linkedin_company_replayed"))  # label on its own line, value on the next
+        self.assertEqual(self.replay_page(page, head="specialties: Extrusion", quote="Specialties, Injection molding, Extrusion"), ("PASS", "linkedin_company_replayed"))
+        self.assertEqual(self.replay_page(page, head="founded: 1986", quote="Founded, 1986", claim="existence"), ("PASS", "linkedin_company_replayed"))
+        self.assertEqual(self.replay_page(page, head="hq_city Cleveland", quote="Headquarters, Cleveland, Ohio", claim="address"), ("PASS", "linkedin_company_replayed"))
+        self.assertEqual(self.replay_page(page, head="industry: Resin Compounding", quote="Industry, Resin Compounding"), ("FAIL", "quote_not_on_capture"))
+
+    def test_hq_city_is_city_state_or_city_state_country_with_a_plain_locality(self):
+        def hq(value):
+            page = self.about_page("Website,, Industry, Plastics Manufacturing, Headquarters, " + value + ", Type, Privately Held")
+            return self.replay_page(page, head="hq_city Cleveland", quote="Headquarters, " + value, claim="address")
+        self.assertEqual(hq("Cleveland, Ohio"), ("PASS", "linkedin_company_replayed"))
+        self.assertEqual(hq("Cleveland, OH, United States"), ("PASS", "linkedin_company_replayed"))
+        for value in ("Lake Road, Cleveland, Ohio", "123 Main Street, Cleveland, Ohio", "Cleveland", "Cleveland, Ohio, 44301", "Cleveland, Ohio, United States, Earth",
+                      "Cleveland, Summit County, Ohio", "Cleveland, Ohio 44301"):
+            with self.subTest(value):
+                self.assertEqual(hq(value), ("HELD", "linkedin_hq_not_city_state"))
+
+    def test_a_signed_in_marker_anywhere_refuses_the_capture(self):
+        self.assertEqual(self.run_row(self.page(extra="L20: All products are designed in Ohio.\n")), ("PASS", "linkedin_company_replayed"))  # prose, not a marker
+        for marker in ("You are signed in.", "Signed in as Jane", "Sign out"):
+            with self.subTest(marker):
+                self.assertEqual(self.run_row(self.page(extra="L20: " + marker + "\n")), ("FAIL", "capture_not_guest"))
+
+    def test_the_claimed_bracket_equals_the_captures_and_an_inverted_one_sets_nothing(self):
+        digest = self.capture(self.about_page("Website,, Industry, Plastics Manufacturing, Company size, 51-200 employees, Headquarters, Cleveland, Ohio"))
+        floor = {
+            "51-200 page vs a 5,001-10,000 claim": (dict(head="linkedin_size_bracket 5,001-10,000 (self-declared)", quote="Company size, 51-200 employees"), "linkedin_size_bracket_not_in_quote"),
+            "Company size alone": (dict(head="linkedin_size_bracket 5,001-10,000 (self-declared)", quote="Company size"), "linkedin_size_quote_has_no_bracket"),
+            "Company size alone, band claim": (dict(head="employee_band_global 5000+ (self-declared)", quote="Company size"), "linkedin_size_quote_has_no_bracket"),
+            "inverted bracket claim": (dict(head="linkedin_size_bracket 51-20 (self-declared)", quote="Company size, 51-20 employees"), "linkedin_size_bracket_not_in_quote"),
+            "inverted bracket as a band": (dict(head="employee_band_global 10-49 (self-declared)", quote="Company size, 51-20 employees"), "linkedin_size_bracket_straddles_band"),
+        }
+        for name, (kw, reason) in floor.items():
+            with self.subTest(name):
+                self.assertEqual(b.judge(self.row(claim="size_band", **kw), self.idx)[:2], ("FAIL", reason))
+        row = self.row(digest=digest, claim="size_band", head="linkedin_size_bracket 51-200 (self-declared)", quote="Company size, 51-200 employees")
+        self.assertEqual(self.replay(row, digest), ("PASS", "linkedin_company_replayed"))  # control
+        inverted = self.capture(self.about_page("Website,, Industry, Plastics Manufacturing, Company size, 51-20 employees, Headquarters, Cleveland, Ohio"))
+        row = self.row(digest=inverted, claim="size_band", head="linkedin_size_bracket 51-20 (self-declared)", quote="Company size, 51-20 employees")
+        self.assertEqual(self.replay(row, inverted), ("FAIL", "claim_value_not_in_field"))
+        self.assertEqual(b.linkedin_bracket_band("51-20"), "")
+        self.assertEqual(b.linkedin_bracket_band("10-49"), "10-49")
 
     def test_size_brackets_nest_or_set_no_band(self):
         for bracket, band in (("5,001-10,000", "5000+"), ("10,001+", "5000+"), ("0-1", ""), ("2-10", ""), ("11-50", ""), ("51-200", ""), ("201-500", ""), ("501-1,000", ""), ("1,001-5,000", "")):
