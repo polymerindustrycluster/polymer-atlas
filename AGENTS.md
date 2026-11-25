@@ -328,7 +328,7 @@ agree, by script) and a filing name variant added to `trade_names`
 gate implementation follows in a later PR. Recorded in `DECISIONS.md`. No
 other rule is amended and no data file is changed by this revision.*
 
-*Revision note — 2026-11-26 (owner ruling 2026-11-25 18:25, multiple choice,
+*Revision note — 2026-11-25 (owner ruling 2026-11-25 18:25, multiple choice,
 all four options): §2a rule 4 gains the gate-scope freeze. A PR that adds or
 changes a gate or tool plants the defect it exists to catch and shows the
 check catching it; once it does, scope freezes, and later edge cases are
