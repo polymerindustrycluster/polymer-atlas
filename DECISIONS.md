@@ -786,3 +786,14 @@ Owner ruling 2026-11-25 11:27, "Reader rule: own page counts". The reader rule n
 Reason: smoke attempt 2 was void. A reader marked a planted wrong street UNCONFIRMED under the rule that a company-level page cannot contradict a site value, while the operator's own home-page footer gave the true street at the record's locality, which the Atlas binds from that same page. 6 of the 9 plants had this shape, so wrong streets sourced this way were undetectable.
 
 Follow-up ruling, 2026-11-25, "Simplify: hand-check plants": two automated eligibility checks for this rule were refuted in review, so the code is dropped. The controller decides plant eligibility by hand after fetch and before any reading (one address block on the cited source, shown in the reader's excerpt, with a name the record holds or its operator, the true value and the record's locality; the source the operator's own domain or site-specific; no headquarters-only or office-only label), and `smoke.py draw --reject-plants` carries rejected pairs into a re-draw with the same secret. Changed files: `tasks/blind-audit-13-smoke-2026-11-24/READER_INSTRUCTIONS.md`, `smoke.py`, `check.py`, README. The check is `python3 tasks/blind-audit-13-smoke-2026-11-24/check.py`.
+
+## 2026-11-25 · HTTP/1.1 transport fallback; the two bare-curl runs recorded
+
+The owner's 2026-11-24 ruling ("Rule change: ignore robots.txt. Click thru bot checks.") shipped in #560 without a browser (owner ruling 2026-11-25 06:08, "Split it"). Two runs on the merged fetcher, curl only, are recorded in `docs/ACQUISITION.md` section 3: the 117 PIC-18 organizations with no readable page, of which 12 became readable (7 of 8 real robots disallows, 4 of 98 unreadable robots.txt), and the 127 LinkedIn company pages, of which 0 did (all 127 answered a Cloudflare 403). Most of the 105 still unreadable fail inside curl: certificate chain 27, HTTP/2 or empty reply 28, DNS 11, timeout 7, handshake 5.
+
+1. A curl failure on the TLS handshake, the certificate chain or HTTP/2 (exit 35, 60 or 92), whatever HTTP status curl had read, gets one retry over HTTP/1.1 inside the same transport step (page, redirect hop and robots.txt). Its response, redirects included, is processed like any other. Certificate verification stays on; nothing is ever disabled. Whether the retry recovers any of the 105 is not measured.
+2. LinkedIn now runs through Muse with raw evidence on the NAS (the owner, 2026-11-25). The fetcher's LinkedIn company-page path from #560 is unchanged and is not the route for it. A LinkedIn page stays a navigation link only until the evidence route lands.
+3. The browser retry for bot checks is a separate change and is not part of this entry.
+
+The check is `tasks/fetch-fallback-2026-11-25/check.py`.
+
