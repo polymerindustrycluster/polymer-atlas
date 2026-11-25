@@ -111,7 +111,7 @@ def linkedin_company_page_is_fetched_logged_out_without_cookies(c, tmp):
     assert argv, 'no request was made for a LinkedIn company page'
     flat = ' '.join(argv[0]).lower().split()
     assert '-q' in flat and not any(f in flat for f in ('-b', '--cookie', '--cookie-jar', '-c', '-h', '--header', '-u', '--user')), flat  # -q: no curlrc
-    with patch.object(c, 'request', side_effect=serve(resp(code=404), resp('<html>Acme | LinkedIn ' + 'About us polymer molding. ' * 10 + '</html>'))):
+    with patch.object(c, 'request', side_effect=serve(resp(code=404), resp('<html><section data-test-id="about-us"><p data-test-id="about-us__description">' + 'About us polymer molding. ' * 10 + '</p></section></html>'))):
         r = c.fetch(target)
     assert r['status'] == 'ok', f"status {r['status']}"
 
@@ -207,23 +207,40 @@ def reader_bot_check_is_manual_never_ok(c, tmp):
         assert r['status'] == 'BOT_CHECK_MANUAL' and f'https://example.org/{n}' in (tmp / 'manual-bot-check.csv').read_text(), f'reader body {n}: status {r["status"]}'
 
 
+LI_PAGE = ('<html><head><script type="application/ld+json">{"@graph":[{"@type":"Organization","name":"Acme Polymers","description":"Polymer molder",'
+           '"foundingDate":"1986","address":{"streetAddress":"1 Main St","addressLocality":"Akron","addressRegion":"Ohio","postalCode":"44301","member":{"name":"%(s)s"}},'
+           '"department":{"employee":{"name":"%(s)s"}},"employee":[{"name":"%(s)s"}]},{"@type":"Article","author":{"name":"%(s)s"}}]}</script>'
+           '<script>var people="%(s)s"</script></head><body>'
+           '<section data-test-id="about-us"><h2>About us</h2><p data-test-id="about-us__description">Acme molds polymer parts for medical devices.</p><dl>'
+           '<div data-test-id="about-us__website"><dt>Website</dt><dd><a href="https://www.linkedin.com/redir/x">http://www.acme.example</a><p class="hidden">External link %(s)s</p></dd></div>'
+           '<div data-test-id="about-us__industry"><dt>Industry</dt><dd>Plastics Manufacturing</dd></div>'
+           '<div data-test-id="about-us__size"><dt>Company size</dt><dd>51-200 employees</dd></div>'
+           '<div data-test-id="about-us__headquarters"><dt>Headquarters</dt><dd>Akron, Ohio</dd></div>'
+           '<div data-test-id="about-us__foundedOn"><dt>Founded</dt><dd>1986</dd></div>'
+           '<div data-test-id="about-us__specialties"><dt>Specialties</dt><dd>Injection molding, thermoforming</dd></div>'
+           '<div data-test-id="about-us__organizationType"><dt>Type</dt><dd>%(s)s Privately Held</dd></div></dl></section>'
+           '<section data-test-id="employees-at"><ul><li>%(s)s</li></ul></section><div class="anything-new">%(s)s</div></body></html>') % dict(s=SENTINEL)
+
+
 @case
-def linkedin_company_page_keeps_about_but_never_stores_employees_or_posts(c, tmp):
-    graph = '{"@graph":[{"@type":"Organization","name":"Acme","description":"Polymer molder"},{"@type":"Article","author":{"name":"%s"}}]}' % SENTINEL
-    page = ('<html><head><script type="application/ld+json">' + graph + '</script><script>var d="' + SENTINEL + '"</script></head><body>'
-            '<section data-test-id="about-us"><p>' + 'About us. Acme molds polymer parts. ' * 6 + '</p></section>'
-            '<section data-test-id="employees-at"><ul><li>' + SENTINEL + '</li></ul></section>'
-            '<section data-test-id="updates"><div class="feed-shared">' + SENTINEL + '</div></section><div class="top-card__members">' + SENTINEL + '</div></body></html>')
-    with patch.object(c, 'request', side_effect=serve(resp(code=404), resp(page))):
+def linkedin_company_page_stores_only_the_allowlisted_extract(c, tmp):
+    with patch.object(c, 'request', side_effect=serve(resp(code=404), resp(LI_PAGE))):
         r = c.fetch('https://www.linkedin.com/company/acme')
     assert r['status'] == 'ok', f"status {r['status']}"
-    assert 'Acme molds polymer parts' in (tmp / r['text_file']).read_text() and 'Polymer molder' in (tmp / r['raw_file']).read_text(), 'the permitted content was lost'
+    stored = (tmp / r['raw_file']).read_bytes()
+    import hashlib, json
+    got = json.loads(stored)
+    assert got['name'] == 'Acme Polymers' and got['specialties'] == 'Injection molding, thermoforming' and got['industry'] == 'Plastics Manufacturing', got
+    assert got['company_size'] == '51-200 employees' and got['headquarters'] == 'Akron, Ohio' and got['founded'] == '1986' and got['website'] == 'http://www.acme.example', got
+    assert got['address'] == {'streetAddress': '1 Main St', 'addressLocality': 'Akron', 'addressRegion': 'Ohio', 'postalCode': '44301'}, got['address']
+    assert set(got) <= {'source_url', 'name', 'description', 'website', 'industry', 'company_size', 'headquarters', 'address', 'founded', 'specialties'}, set(got)
+    assert b'<' not in stored and r['sha256'] == hashlib.sha256(stored).hexdigest() and r['url'] and r['fetched_at'] and r['final_url'], 'not a plain extract with its receipt'
     no_sentinel(tmp)
 
 
 @case
-def linkedin_page_with_unclosed_people_block_is_withheld(c, tmp):
-    page = '<html><body><p>' + 'About us. Acme. ' * 20 + '</p><section data-test-id="employees-at"><div>' + SENTINEL + '</section></body></html>'
+def linkedin_page_without_an_extractable_field_is_withheld(c, tmp):
+    page = '<html><body><p>' + 'Sign in to see more. ' * 30 + SENTINEL + '</p></body></html>'
     with patch.object(c, 'request', side_effect=serve(resp(code=404), resp(page))):
         r = c.fetch('https://www.linkedin.com/company/acme')
     assert r['status'] != 'ok', f"status {r['status']}"
@@ -231,15 +248,10 @@ def linkedin_page_with_unclosed_people_block_is_withheld(c, tmp):
 
 
 @case
-def linkedin_capture_is_refused_if_an_employee_block_remains(c, tmp):
-    page = '<html><body><p>' + 'About us. Acme. ' * 20 + '</p><section data-test-id="employees-at">' + SENTINEL + '</section></body></html>'
-    class Passthrough(sc.HTMLParser):  # a stripper that missed the block
-        def __init__(self): super().__init__(); self.raw = ''
-        def feed(self, data): self.raw = data
-        def result(self): return self.raw
-    with patch.object(sc, 'StripPeople', Passthrough, create=True), patch.object(c, 'request', side_effect=serve(resp(code=404), resp(page))):
-        r = c.fetch('https://www.linkedin.com/company/acme')
-    assert r['status'] != 'ok', f"status {r['status']} (an employee block remained in the capture)"
+def linkedin_pages_at_other_statuses_store_no_body(c, tmp):
+    for n, (code, html) in enumerate([(403, WALL.replace('Checking', SENTINEL)), (500, LI_PAGE), (200, PUZZLE.replace('Security', SENTINEL))]):
+        with patch.object(c, 'request', side_effect=serve(resp(code=404), resp(html, code=code))):
+            c.fetch(f'https://www.linkedin.com/company/acme{n}')
     no_sentinel(tmp)
 
 

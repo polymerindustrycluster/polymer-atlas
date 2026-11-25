@@ -126,53 +126,69 @@ def challenged(code, body):
     return any(m in lower for m in BOT_BODY) and (code in (403, 503, 999) or len(words(text)) < 40)
 
 
-PEOPLE = re.compile(r'employee|people|member|updates|feed-|author', re.I)  # id, class or data-test-id of a block that names individuals
+# A LinkedIn company page is never stored. Only these fields of it are: the page's own labelled fields and a flat JSON-LD
+# Organization. Everything else (employees, posts, nested objects, scripts, markup) is dropped.
+LI_FIELDS = {'about-us__description': 'description', 'about-us__website': 'website', 'about-us__industry': 'industry',
+             'about-us__size': 'company_size', 'about-us__headquarters': 'headquarters', 'about-us__foundedOn': 'founded',
+             'about-us__specialties': 'specialties'}
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
+LI_ADDRESS = ('streetAddress', 'addressLocality', 'addressRegion', 'postalCode', 'addressCountry')
+GENERIC = {'info', 'sales', 'contact', 'support', 'office', 'hello', 'customerservice', 'marketing', 'privacy', 'webmaster',
+           'enquiries', 'inquiries', 'service', 'hr', 'careers', 'orders'}
 
 
-class StripPeople(HTMLParser):
-    """Re-emits a LinkedIn page without employee, post and member blocks and without scripts (JSON-LD keeps only the
-    Organization). result() is None if a skipped block never closed or closed out of order: the caller then withholds the page."""
+def li_clean(value, cap=300):
+    text = re.sub(r'\s+', ' ', value).strip()[:cap]
+    return re.sub(r'[\w.+-]{1,80}@[\w.-]{1,160}\.[a-zA-Z]{2,20}', lambda m: m[0] if m[0].split('@')[0].lower() in GENERIC else '[redacted]', text)
+
+
+class LinkedinExtract(HTMLParser):
+    """Collects the text of the allowlisted `about-us__*` fields and the JSON-LD Organization's flat fields; nothing else."""
     def __init__(self):
-        super().__init__(convert_charrefs=False); self.out = []; self.stack = []; self.script = None; self.bad = False
+        super().__init__(convert_charrefs=True); self.fields = {}; self.field = None; self.depth = 0; self.skip = 0; self.ld = None; self.script = False; self.org = {}
 
     def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
         if tag == 'script':
-            self.script = [dict(attrs).get('type', ''), self.get_starttag_text(), []]; return
-        if self.stack or any(v and PEOPLE.search(v) for k, v in attrs if k in ('id', 'class', 'data-test-id')):
-            if tag not in VOID: self.stack.append(tag)
+            self.script = True
+            self.ld = [] if 'ld+json' in a.get('type', '') else None; return
+        if self.field:
+            if tag not in VOID:
+                self.depth += 1
+                if tag in ('dt', 'icon', 'script', 'style') or (tag == 'p' and self.field != 'description'): self.skip += 1
             return
-        self.out.append(self.get_starttag_text())
-
-    def handle_startendtag(self, tag, attrs):
-        if not self.stack and tag != 'script' and not any(v and PEOPLE.search(v) for k, v in attrs if k in ('id', 'class', 'data-test-id')):
-            self.out.append(self.get_starttag_text())
+        if a.get('data-test-id') in LI_FIELDS and tag not in VOID:
+            self.field, self.depth, self.skip = LI_FIELDS[a['data-test-id']], 1, 0
 
     def handle_endtag(self, tag):
-        if tag == 'script' and self.script:
-            kind, start, data = self.script; self.script = None
-            if 'ld+json' in kind and not self.stack:
-                try:
-                    d = json.loads(''.join(data)); graph = d.get('@graph', [d]) if isinstance(d, dict) else d
-                    keep = [{k: v for k, v in g.items() if k not in ('employee', 'member', 'founder', 'author')} for g in graph
-                            if isinstance(g, dict) and g.get('@type') in ('Organization', 'Corporation', 'LocalBusiness')]
-                    self.out.append(start + json.dumps({'@context': 'https://schema.org', '@graph': keep}) + '</script>')
-                except (ValueError, AttributeError): pass
-        elif self.stack:
-            if self.stack.pop() != tag: self.bad = True  # a skipped block closed by something else: markup not understood
-        else: self.out.append(f'</{tag}>')
+        if tag == 'script': self.script = False
+        if tag == 'script' and self.ld is not None:
+            try:
+                d = json.loads(''.join(self.ld)); graph = d.get('@graph', [d]) if isinstance(d, dict) else d
+                org = next(g for g in graph if isinstance(g, dict) and g.get('@type') in ('Organization', 'Corporation', 'LocalBusiness'))
+                self.org = {k: org[k] for k in ('name', 'description', 'foundingDate') if isinstance(org.get(k), str)}
+                if isinstance(org.get('address'), dict):
+                    self.org['address'] = {k: org['address'][k] for k in LI_ADDRESS if isinstance(org['address'].get(k), str)}
+            except (ValueError, AttributeError, StopIteration): pass
+            self.ld = None
+        elif self.field:
+            if tag in ('dt', 'icon', 'script', 'style') or (tag == 'p' and self.field != 'description'): self.skip = max(0, self.skip - 1)
+            self.depth -= 1
+            if self.depth == 0: self.field = None
 
-    def emit(self, text):
-        if self.script: self.script[2].append(text)
-        elif not self.stack: self.out.append(text)
-    def handle_data(self, data): self.emit(data)
-    def handle_entityref(self, name): self.emit(f'&{name};')
-    def handle_charref(self, name): self.emit(f'&#{name};')
-    def handle_decl(self, decl): self.emit(f'<!{decl}>')
+    def handle_data(self, data):
+        if self.ld is not None: self.ld.append(data)
+        elif self.field and not self.skip and not self.script: self.fields[self.field] = self.fields.get(self.field, '') + ' ' + data
 
-    def result(self):
-        self.close()
-        return ''.join(self.out) if not self.stack and not self.bad and self.script is None else None
+    def result(self, source):
+        """The allowlisted extract, or None when the page gave no name and no field (a wall, an error, a changed page)."""
+        out = {'source_url': source}
+        for k in ('name', 'description', 'foundingDate'):
+            if self.org.get(k): out[{'foundingDate': 'founded'}.get(k, k)] = li_clean(self.org[k], 3000 if k == 'description' else 300)
+        if self.org.get('address'): out['address'] = {k: li_clean(v) for k, v in self.org['address'].items()}
+        for k, v in self.fields.items():
+            if li_clean(v): out[k] = li_clean(v, 3000 if k == 'description' else 300)  # the page's own labelled text wins over JSON-LD
+        return out if len(out) > 1 else None
 
 
 def reader_challenged(body):
@@ -312,13 +328,16 @@ class Corpus:
             # Discarded before storage, whatever the status: a failed or manual receipt must not keep the body either.
             response, raw, body = code, b'', ''
             if status == 'ok': status = 'CONTACT_FORM_OR_STAFF_DIRECTORY'
-        elif (linkedin_url(final) or linkedin_url(target)) and body:
-            clean = StripPeople(); clean.feed(body); cleaned = clean.result()
-            if cleaned is None or re.search(r'(?:id|class|data-test-id)\s*=\s*["\'][^"\']*(?:employee|people|member|updates|feed-|author)', cleaned, re.I):
-                # markup the stripper could not close, or a people block that remains: withhold the capture, keep the status
-                response, raw, body = code, b'', ''
-                if status == 'ok': status = 'FETCH_FAILED'
-            else: response, raw, body = dict(response, raw=cleaned.encode()), cleaned.encode(), cleaned
+        elif linkedin_url(final) or linkedin_url(target):
+            # Never the raw page: only the allowlisted extract of a company page that was ok, at no other status.
+            extract = None
+            if status == 'ok' and linkedin_company_page(final):
+                page = LinkedinExtract(); page.feed(body); extract = page.result(final)
+            response, raw, body = code, b'', ''
+            if extract:
+                raw = json.dumps(extract, indent=1, ensure_ascii=False).encode(); body = raw.decode()
+                response = dict(code=code['code'], raw=raw, content_type='application/json')
+            elif status == 'ok': status = 'FETCH_FAILED'
         if route == 'jina':
             text = body.split('Markdown Content:', 1)[-1] if 'Markdown Content:' in body else ''
             source = re.search(r'(?m)^URL Source:\s*(https?://\S+)', body)

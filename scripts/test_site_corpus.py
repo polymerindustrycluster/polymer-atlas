@@ -100,7 +100,7 @@ class SiteCorpusTests(unittest.TestCase):
         for target in ('https://linkedin.com/company/acme', 'https://WWW.LinkedIn.com./company/acme/about/', 'https://www.linkedin.com/showcase/acme-x'):
             with self.subTest(target=target):
                 assert linkedin_company_page(target)
-                with patch.object(c, 'request', side_effect=lambda u, delay=1: response(code=404) if u.endswith('/robots.txt') else response('Acme | LinkedIn About us polymer')):
+                with patch.object(c, 'request', side_effect=lambda u, delay=1: response(code=404) if u.endswith('/robots.txt') else response('<html><section data-test-id="about-us"><p data-test-id="about-us__description">Acme molds polymer parts</p></section></html>', content_type='text/html')):
                     assert c.fetch(target)['status'] == 'ok'
 
     def test_linkedin_signin_wall_is_its_own_status(self):
