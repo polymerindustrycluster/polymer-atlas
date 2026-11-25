@@ -221,6 +221,19 @@ def linkedin_page_with_unclosed_people_block_is_withheld(c, tmp):
     no_sentinel(tmp)
 
 
+@case
+def linkedin_capture_is_refused_if_an_employee_block_remains(c, tmp):
+    page = '<html><body><p>' + 'About us. Acme. ' * 20 + '</p><section data-test-id="employees-at">' + SENTINEL + '</section></body></html>'
+    class Passthrough(sc.HTMLParser):  # a stripper that missed the block
+        def __init__(self): super().__init__(); self.raw = ''
+        def feed(self, data): self.raw = data
+        def result(self): return self.raw
+    with patch.object(sc, 'StripPeople', Passthrough, create=True), patch.object(c, 'request', side_effect=serve(resp(code=404), resp(page))):
+        r = c.fetch('https://www.linkedin.com/company/acme')
+    assert r['status'] != 'ok', f"status {r['status']} (an employee block remained in the capture)"
+    no_sentinel(tmp)
+
+
 def mutation():
     """The kept-line case must fail when its guard is removed; meaningful only where the guard exists."""
     if not hasattr(sc, 'linkedin_blocked'):

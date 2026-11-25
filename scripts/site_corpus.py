@@ -314,7 +314,8 @@ class Corpus:
             if status == 'ok': status = 'CONTACT_FORM_OR_STAFF_DIRECTORY'
         elif (linkedin_url(final) or linkedin_url(target)) and body:
             clean = StripPeople(); clean.feed(body); cleaned = clean.result()
-            if cleaned is None:  # markup the stripper could not close: withhold the capture, keep the status
+            if cleaned is None or re.search(r'(?:id|class|data-test-id)\s*=\s*["\'][^"\']*(?:employee|people|member|updates|feed-|author)', cleaned, re.I):
+                # markup the stripper could not close, or a people block that remains: withhold the capture, keep the status
                 response, raw, body = code, b'', ''
                 if status == 'ok': status = 'FETCH_FAILED'
             else: response, raw, body = dict(response, raw=cleaned.encode()), cleaned.encode(), cleaned
