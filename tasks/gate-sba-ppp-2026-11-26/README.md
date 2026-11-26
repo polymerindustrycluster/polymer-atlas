@@ -19,7 +19,9 @@ The PPP re-run (owner rulings 2026-11-26 07:20, "PPP now, street route next" and
 
 Row format: `source_ref` `SBA PPP LoanNumber <n> (<file>, release <date>)`; `claim_detail` `<band field>=<band>; historical <year> borrower-reported employment figure, JobsReported=<n>, band only; quote: borrower_name: X; business_type: T; address: STREET, CITY, ST ZIP`.
 
-`judge_ppp` rules: claim must be `size_band` (every other use of PPP data stays a lead); the quote has exactly the three fields; `business_type` must be one of the five whitelisted types (Corporation, Subchapter S Corporation, Limited Liability Company(LLC), Partnership, Limited Liability Partnership); a site row then meets the existing name, street, designator and locality legs unchanged; an organization row is judged on its one active site, and is HELD unless the organization has exactly one active site and every held site is in Ohio.
+`judge_ppp` rules: source class `government_filing`; `source_ref` a full match of the form above with a valid date; claim `size_band` (every other use of PPP data stays a lead); the quote has exactly the three fields; `business_type` one of the five whitelisted types (Corporation, Subchapter S Corporation, Limited Liability Company(LLC), Partnership, Limited Liability Partnership). A site row then meets the shared street and designator legs, with PPP-specific name, city and ZIP legs: the borrower key must be one of the operator's own names (legal, trade, former; never a site label, and no corporate-words extension), the quoted city must equal the record's, and the quoted ZIP5 must equal the record's where the record holds one (a quote with no ZIP is HELD). An organization row is judged on its one active site, and is HELD unless the organization has exactly one active site and every held site is in Ohio.
+
+Round 1 review (Codex, REFUTE at d5d2d80) found four false passes, each observed through `judge` and each now a planted test: a source_ref of `SBA PPP garbage`; city and ZIP accepted as alternatives (Akron OH 99999 and Canton OH 44305 against Akron 44305); a borrower equal to a site label; and `source_class` other than `government_filing`. A DECISIONS wording follow-up is also done.
 
 **Departure from the controller's format, flagged:** the quote carries `business_type` as a third field. The controller's brief asked for "an individual borrower type if the row carries one"; the proposed quote had no such field, so the privacy line (no sole proprietor, self-employed or individual borrower) could not be inspected. A gate has to fail on what it cannot inspect, so a quote without it is HELD (`ppp_quote_fields`).
 
@@ -31,7 +33,12 @@ Row format: `source_ref` `SBA PPP LoanNumber <n> (<file>, release <date>)`; `cla
 |---|---|
 | wrong borrower name | FAIL `name_not_held` |
 | wrong street | FAIL `street_differs` |
-| wrong city (and ZIP) | FAIL `city_differs` |
+| wrong city and ZIP | FAIL `city_differs` |
+| right ZIP, wrong city | FAIL `ppp_city_differs` |
+| right city, wrong ZIP | FAIL `ppp_zip_differs` |
+| garbage, truncated or impossible-date source_ref | UNINSPECTABLE `ppp_source_ref` |
+| source class other than `government_filing` | UNINSPECTABLE `ppp_source_class` |
+| borrower equal only to a site label, or the operator name plus extra words | FAIL `name_not_held` |
 | missing quote | UNINSPECTABLE `no_quote` |
 | sole proprietor / self-employed borrower type | FAIL `ppp_individual_borrower_type` |
 | business type not stated | UNINSPECTABLE `ppp_quote_fields` |
@@ -39,9 +46,9 @@ Row format: `source_ref` `SBA PPP LoanNumber <n> (<file>, release <date>)`; `cla
 | a different suite | FAIL `unit_differs` |
 | claim other than `size_band` | UNINSPECTABLE `ppp_claim_not_size_band` |
 | organization with two active sites, a held site outside Ohio, or no active site | HELD `ppp_not_single_site_ohio_organization` |
-| the correct row, and the same suite on both sides | PASS |
+| the correct row, the same suite on both sides, a trade-name borrower | PASS |
 
-It also mutates the gate to show each guard is what catches its defect: without the type whitelist a sole proprietor PASSES; without the site delegation a wrong organization street PASSES; without the family a correct row is `unknown_source_family` (the state before this PR).
+It also mutates the gate to show each guard is what catches its defect: without the type whitelist a sole proprietor PASSES; without the site delegation a wrong organization street PASSES; without the PPP guards all five round-1 false passes PASS on the site grain; without the family a correct row is `unknown_source_family` (the state before this PR).
 
 ## Not done, and a prediction
 

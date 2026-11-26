@@ -2296,12 +2296,14 @@ The evidence table is a public table in a public repo, and AGENTS.md
 `source_class=government_filing`, `claim_type=size_band`, `source_ref` `SBA PPP LoanNumber <n> (<file>, release <yyyy-mm-dd>)`,
 `observed_date` the loan's approval date, `tier_effect` `supports_B` (`supports_U` on a tier-U record), and `claim_detail`
 `<employee_band_ohio or employee_band_site>=<band>; historical <year> borrower-reported employment figure, JobsReported=<n>, band only; quote: borrower_name: <BorrowerName>; business_type: <BusinessType>; address: <BorrowerAddress>, <BorrowerCity>, <BorrowerState> <BorrowerZip>`.
-The quote holds exactly those three labelled fields as the SBA filed them. The binding gate passes a row only if the claim is
+The quote holds exactly those three labelled fields as the SBA filed them. The binding gate passes a row only if the source class is
+`government_filing`; the `source_ref` is exactly `SBA PPP LoanNumber <10 digits> (<file>.csv, release <valid ISO date>)`; the claim is
 `size_band` (every other use of PPP data stays a lead); `business_type` is Corporation, Subchapter S Corporation, Limited Liability
 Company(LLC), Partnership or Limited Liability Partnership (a sole proprietor, self-employed, individual or unstated type never passes);
-the borrower name is a name the record holds; and the street and locality equal the record's under the rules for any site row (a suite
-on one side only is HELD, a different suite FAILS). An organization row is judged on the organization's one active site, and only where
-every held site is in Ohio. The gate does not read the loan date or the job count: the pass's own check applies the ten-year limit
+the borrower name is the operator's own legal, trade or former name (a site label, or the name plus extra words, never passes); the street
+equals the record's, with a suite on one side only HELD and a different suite FAILED; the quoted city equals the record's city; and the
+quoted ZIP5 equals the record's ZIP5 where the record holds one (a quote with no ZIP is HELD). An organization row is judged on the
+organization's one active site, and only where every held site is in Ohio. The gate does not read the loan date or the job count: the pass's own check applies the ten-year limit
 and the band mapping.
 
 ### 4.14 Relationship records **[v1.6]** (`data/relationships.csv`)

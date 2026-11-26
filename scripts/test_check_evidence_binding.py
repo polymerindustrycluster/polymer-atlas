@@ -1909,16 +1909,20 @@ class SbaPppRoute(unittest.TestCase):
                         operating_status=status, country="US")
         orgs = [dict(org_id=f"O-{n}", legal_name=name, trade_names="") for n, name in (
             ("ONE", "Harbor Rubber Products Inc"), ("TWO", "Harbor Rubber Products Inc"), ("MI", "Harbor Rubber Products Inc"),
-            ("SUITE", "Harbor Rubber Products Inc"), ("NONE", "Harbor Rubber Products Inc"))]
+            ("SUITE", "Harbor Rubber Products Inc"), ("NONE", "Harbor Rubber Products Inc"), ("LABEL", "Harbor Rubber Products Inc"),
+            ("NOZIP", "Harbor Rubber Products Inc"))]
+        orgs.append(dict(org_id="O-TRADE", legal_name="Tamarack Holdings Inc", trade_names="Lakeside Rubber Works; Harbor Tire"))
         cls.idx = b.Index([
             site("S-ONE", "O-ONE", "1070 Evans Ave"),
             site("S-TWO-A", "O-TWO", "1100 Evans Ave"), site("S-TWO-B", "O-TWO", "9 Other Rd"),
             site("S-MI", "O-MI", "1110 Evans Ave"), site("S-MI-OLD", "O-MI", "5 Old St", status="inactive", state="MI", city="Troy", zip_="48083"),
             site("S-SUITE", "O-SUITE", "1200 Evans Ave, Suite 500"),
-            site("S-DEAD", "O-NONE", "1300 Evans Ave", status="inactive")], orgs)
+            site("S-DEAD", "O-NONE", "1300 Evans Ave", status="inactive"),
+            dict(site("S-LABEL", "O-LABEL", "1400 Evans Ave"), site_name="Kestrel Molding"),  # a site label that is not the operator's name
+            site("S-TRADE", "O-TRADE", "1500 Evans Ave"), site("S-NOZIP", "O-NOZIP", "1600 Evans Ave", zip_="")], orgs)
 
-    def row(self, rid, quote, table="organizations", claim="size_band"):
-        return ev(rid, self.SRC, quote, claim=claim, table=table, cls="government_filing")
+    def row(self, rid, quote, table="organizations", claim="size_band", src=None, cls="government_filing"):
+        return ev(rid, src or self.SRC, quote, claim=claim, table=table, cls=cls)
 
     def check(self, row, verdict, reason=""):
         v, why, info = b.judge(row, self.idx)
@@ -1927,6 +1931,13 @@ class SbaPppRoute(unittest.TestCase):
     def both(self, quote, verdict, reason="", org="O-ONE", site="S-ONE"):
         self.check(self.row(org, quote), verdict, reason)
         self.check(self.row(site, quote, table="sites"), verdict, reason)
+
+    def fails(self, quote, reason, org="O-ONE", site="S-ONE"):
+        """FAIL on both grains, the named reason among the demonstrated conflicts (a wrong city also moves the ZIP)."""
+        for rid, table in ((org, "organizations"), (site, "sites")):
+            v, why, info = b.judge(self.row(rid, quote, table=table), self.idx)
+            self.assertEqual(v, "FAIL", (why, info))
+            self.assertIn(reason, why.split("+"))
 
     def test_correct_row_passes_on_organization_and_site(self):
         self.both(self.OK, "PASS")
@@ -1943,7 +1954,44 @@ class SbaPppRoute(unittest.TestCase):
         self.both(self.OK.replace("1070 EVANS AVE", "1090 EVANS AVE"), "FAIL", "street_differs")
 
     def test_wrong_city_and_zip(self):
-        self.both(self.OK.replace("AKRON, OH 44305", "CANTON, OH 44702"), "FAIL", "city_differs")
+        self.fails(self.OK.replace("AKRON, OH 44305", "CANTON, OH 44702"), "city_differs")
+
+    def test_city_and_zip_are_not_alternatives(self):  # Codex #572 r1: same_locality accepts either, the rule is name, street and city
+        self.fails(self.OK.replace("AKRON, OH 44305", "CANTON, OH 44305"), "ppp_city_differs")  # right ZIP, wrong city
+        self.fails(self.OK.replace("AKRON, OH 44305", "AKRON, OH 99999"), "ppp_zip_differs")  # right city, wrong ZIP
+        self.both(self.OK.replace("AKRON, OH 44305", "AKRON, OH 44305-1234"), "PASS")  # ZIP+4 agrees on ZIP5
+        for quote in (self.OK.replace("AKRON, OH 44305", "AKRON, OH"), self.OK.replace("AKRON, OH 44305", "AKRON")):
+            for rid, table in (("O-ONE", "organizations"), ("S-ONE", "sites")):
+                v, why, _ = b.judge(self.row(rid, quote, table=table), self.idx)
+                self.assertNotEqual(v, "PASS", (quote, why))
+        # a record that holds no ZIP is judged on the city alone
+        self.both(self.OK.replace("1070 EVANS AVE", "1600 EVANS AVE"), "PASS", org="O-NOZIP", site="S-NOZIP")
+        self.fails(self.OK.replace("1070 EVANS AVE", "1600 EVANS AVE").replace("AKRON", "CANTON"), "city_differs", org="O-NOZIP", site="S-NOZIP")
+
+    def test_source_ref_must_be_the_documented_form(self):  # Codex #572 r1: the prefix alone dispatched
+        for ref in ("SBA PPP garbage", "SBA PPP LoanNumber 8921367107", "SBA PPP LoanNumber 8921367107 (public_150k_plus_240930.csv)",
+                    "SBA PPP LoanNumber 89213671 (public_150k_plus_240930.csv, release 2024-09-30)",
+                    "SBA PPP LoanNumber 8921367107 (public_150k_plus_240930.csv, release 2024-13-45)",
+                    "SBA PPP LoanNumber 8921367107 (public_150k_plus_240930, release 2024-09-30)",
+                    self.SRC + " extra", "SBA PPP LoanNumber 8921367107 (a b.csv, release 2024-09-30)"):
+            for rid, table in (("O-ONE", "organizations"), ("S-ONE", "sites")):
+                self.check(self.row(rid, self.OK, table=table, src=ref), "UNINSPECTABLE", "ppp_source_ref")
+
+    def test_source_class_must_be_government_filing(self):  # Codex #572 r1: own_site passed without an own-site URL or capture
+        for cls in ("own_site", "registry", "directory", "press", "platform_category", "linkedin_company"):
+            for rid, table in (("O-ONE", "organizations"), ("S-ONE", "sites")):
+                v, why, _ = b.judge(self.row(rid, self.OK, table=table, cls=cls), self.idx)
+                self.assertEqual((v, why), ("UNINSPECTABLE", "ppp_source_class") if cls != "linkedin_company" else (v, why))
+                self.assertNotEqual(v, "PASS", cls)
+
+    def test_borrower_must_be_an_operator_name_not_a_site_label(self):  # Codex #572 r1: held_keys includes the site label
+        label = self.OK.replace("HARBOR RUBBER PRODUCTS INC", "KESTREL MOLDING").replace("1070", "1400")
+        self.both(label, "FAIL", "name_not_held", org="O-LABEL", site="S-LABEL")
+        for name in ("LAKESIDE RUBBER WORKS INC", "HARBOR TIRE LLC"):  # trade names
+            self.both(self.OK.replace("HARBOR RUBBER PRODUCTS INC", name).replace("1070", "1500"), "PASS", org="O-TRADE", site="S-TRADE")
+        self.both(self.OK.replace("HARBOR RUBBER PRODUCTS INC", "TAMARACK HOLDINGS INC").replace("1070", "1500"), "PASS", org="O-TRADE", site="S-TRADE")
+        # the held name plus extra corporate words is not the held name here
+        self.both(self.OK.replace("HARBOR RUBBER PRODUCTS INC", "HARBOR RUBBER PRODUCTS HOLDINGS INC"), "FAIL", "name_not_held")
 
     def test_wrong_state(self):
         self.both(self.OK.replace("OH 44305", "MI 44305"), "FAIL", "state_differs")

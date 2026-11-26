@@ -582,9 +582,17 @@ def route_registry(ev, idx, rec, fam, quote):
 
 
 PPP_PREFIX = "SBA PPP "
+PPP_REF = re.compile(r"SBA PPP LoanNumber (\d{10}) \(([A-Za-z0-9_.-]+\.csv), release (\d{4}-\d{2}-\d{2})\)")
 # The scout's privacy whitelist, in the SBA's own spelling (SCHEMA §1 R13 source 4, owner ruling 2026-11-16 "Strict matches").
 PPP_TYPES = frozenset({"Corporation", "Subchapter S Corporation", "Limited Liability Company(LLC)", "Partnership",
                        "Limited Liability Partnership"})
+
+
+def _iso_date(text):
+    try:
+        return date.fromisoformat(text)
+    except ValueError:
+        return None
 
 
 def judge_ppp(ev, idx, quote):
@@ -594,6 +602,11 @@ def judge_ppp(ev, idx, quote):
     one active site, and only where every held site is in Ohio (the single-site, Ohio-only rule)."""
     if ev["claim_type"] != "size_band":
         return "UNINSPECTABLE", "ppp_claim_not_size_band", {}
+    if ev["source_class"] != "government_filing":
+        return "UNINSPECTABLE", "ppp_source_class", {}
+    ref = PPP_REF.fullmatch(ev["source_ref"])
+    if not ref or not _iso_date(ref[3]):
+        return "UNINSPECTABLE", "ppp_source_ref", {}
     fields = labelled_fields(quote)
     if not fields or set(fields) != {"borrower_name", "business_type", "address"} or len(LABEL_RE.findall(quote)) != 3:
         return "UNINSPECTABLE", "ppp_quote_fields", {}
@@ -661,6 +674,9 @@ def judge(ev, idx, _alone=False):
     alt_keys = {k for n in p["alt_names"] for k in (name_key(n), site_name_key(n, rec.get("city") or "")) if k}
     held = idx.held_keys(table, rid)
     own_org = rec.get("org_id") if table == "sites" else rid
+    ppp = src.startswith(PPP_PREFIX)
+    if ppp:
+        held = idx.org_keys(own_org)  # the operator's legal, trade and former names: never a site label (SCHEMA §1 R13 source 4)
     if table in PROGRAM_ECOSYSTEM_TABLES:
         own, own_texts = held, {squash(v) for v in record_names(rec) if squash(v)}
     else:
@@ -684,7 +700,7 @@ def judge(ev, idx, _alone=False):
         # Inc" for subsidiary "Acme Polymer LLC"): never PASS (Codex r3 finding 5), but no demonstrated conflict either,
         # because most such parents are the organization itself spelled another way ("... Co" against "... Company").
         holds.append("name_equals_parent_key")
-    elif not qkeys & held and table == "sites" and not street_reason(rec.get("street_address"), p["addr"]) and any(
+    elif not ppp and not qkeys & held and table == "sites" and not street_reason(rec.get("street_address"), p["addr"]) and any(
             corporate_form_extension(h, q) for h in held for q in qkeys):
         info["name_basis"] = "corporate_form"  # owner ruling 2026-11-22: held name + corporate-form words, street passes
     elif not qkeys & held:
@@ -707,10 +723,18 @@ def judge(ev, idx, _alone=False):
             rec = dict(rec, street_address=re.sub(r"\s+", " ", PAREN_RE.sub(" ", rec.get("street_address") or "")).strip())
         why = street_reason(rec.get("street_address"), p["addr"])
         q_city, q_st, q_zip, complete = quoted_place(p["addr"])
+        if ppp:  # strict name, street and city (owner ruling 2026-11-16): the city must match, and a held ZIP5 must agree
+            zip5 = lambda z: re.sub(r"\D", "", z or "")[:5]
+            if not zip5(q_zip):
+                holds.append("ppp_quote_zip_missing")
+            elif zip5(rec.get("zip")) and zip5(rec.get("zip")) != zip5(q_zip):
+                reasons.append("ppp_zip_differs")
         if q_st and rec.get("state") and q_st != rec["state"].strip().upper():
             reasons.append("state_differs")  # an explicit other state is contrary evidence (Codex review, PR #467)
         if city_differs(rec.get("city"), rec.get("zip"), q_city, q_zip):
             reasons.append("city_differs")  # an explicit other city and ZIP too (controller rulings 2026-11-22, Codex r2 finding 2)
+        if ppp and q_city and squash(q_city) != squash(rec.get("city")) and "city_differs" not in reasons:
+            reasons.append("ppp_city_differs")  # the city alone differs: the generic leg would let a matching ZIP stand in for it
         if why == "no_civic_number" and not reasons:
             return "UNINSPECTABLE", why, info
         if why and why != "no_civic_number":
