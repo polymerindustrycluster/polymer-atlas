@@ -37,7 +37,8 @@ owners; 235 of the 792 PIC-18 owners (organizations and ecosystem entities) gain
 
 `VALUE_VERDICTS.csv`: the pack's `values.csv` lines (STATED 915, IMPLIED 92), class replaced where a second-family adjudication says so; an IMPLIED line carries
 no quote or offset (SCHEMA §4.24). Of the 21 adjudications, 17 are STATED to IMPLIED (applied) and 4 are held (above). `VALUE_PAGES.csv`: page sha256 to the URL the page was
-captured from, from the lane's corpus manifest (builder: `value-pages-builder/build_value_pages.py`). `HOLDS.csv`, `UNBOUND.csv`: above. `INPUTS.sha256`: the pack files and this folder's
+captured from, from the lane's corpus manifest (builder: `value-pages-builder/build_value_pages.py`). `HOLDS.csv`, `UNBOUND.csv`: above. `CLAIMS_CHECKED.csv`: one `verified` row for each of the 615 labelled keys (the harness's format has no value column, so `check.py` compares the rows with the keys whose basis changed as a multiset;
+`python3 -I check.py --write-claims` writes it). `INPUTS.sha256`: the pack files and this folder's
 files. `build.py` rebuilds the three csv files from the pack (`python3 -I build.py PERSIST_DIR`). `check.py` is the named check. `data/value_basis.csv` is regenerated with
 `python3 scripts/value_basis.py --pages PERSIST_DIR`; nobody edits it.
 

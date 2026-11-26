@@ -867,3 +867,13 @@ Owner rulings of 2026-11-26 at 08:11, 10:53 and 12:10, recorded by the controlle
    - "Default list with caps": the controller takes the listed operational choices itself, each capped at 3M tokens and reported daily for the owner's veto. It is a one-week trial, 2026-11-26 to 2026-12-03, and it stops if the owner overrides 3 or more listed defaults. Scope, vocabulary, publication and rule changes stay with the owner.
 
 **Correction to the 07:20 ruling.** The ruling's "street route next" (as the controller recorded it) rested on a stale premise, that the street route was unbuilt. AGENTS.md §2a rule 3 and `docs/ACQUISITION.md` said so, and both were wrong. The gate routes for the map-listing street and the filing name variant were implemented in PR #549 (2026-11-24, `map_listing_result` and `filing_name_variant_bound` in `scripts/check_evidence_binding.py`), and the street route ran in PR #552: 1 of 153 blank PIC-18 streets filled, and 36 note-street agreements held pending a decision on lead forms (`tasks/pic18-map-streets-2026-11-24/README.md`). The 2026-11-24 10:29 entry above says the gate routes come "in later PRs"; that was true when written and stands as history. The PR that adds this entry corrects AGENTS.md §2a rule 3 and `docs/ACQUISITION.md` (the lines naming either route as unbuilt or planned). It amends no rule and changes no data file.
+
+## 2026-11-26 · Owner ruling 14:51: note streets
+
+Owner ruling of 2026-11-26 at 14:51, recorded by the controller from its board. The question below is the controller's paraphrase; only the words in quotation marks are the owner's answer. The question and option text is on the controller board.
+
+**Question.** How should a free-text note street that agrees with a map listing count as the second source under the 2026-11-24 10:29 ruling 1, after a lineage check found that 11 of the 36 such notes name an independent source?
+
+**Answer.** "Look up named source".
+
+**Effect.** Free-text note streets stay leads; no rule changes. The 6 notes that name the company's own site or an OSHA or EPA filing are looked up, and any that state the operator at that street fill through an existing route.

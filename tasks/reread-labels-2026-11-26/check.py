@@ -7,6 +7,7 @@ data/value_basis.csv with the pinned base: same key set, same order and format, 
 each not_yet_checked -> stated or implied. Nothing is withheld, every line is STATED or IMPLIED, and (with the store) every STATED quote
 replays and the lines equal the pack's lines. Then each planted defect must be rejected by the rule it names."""
 import csv, hashlib, io, os, shutil, subprocess, sys, tempfile
+from collections import Counter
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -23,6 +24,22 @@ key = lambda r: (r["record_table"], r["record_id"], r["field"], r["value"])
 
 def table(text):
     return {key(r): r for r in csv.DictReader(io.StringIO(text))}
+
+
+CLAIM_COLS = ["table", "record_id", "field", "verdict", "evidence_id"]
+
+
+def expected_claims(head_text, base_text):
+    """CLAIMS_CHECKED.csv: one `verified` row per key whose basis changed, with the bound row the label rests on."""
+    head, base = table(head_text), table(base_text)
+    return [dict(zip(CLAIM_COLS, (k[0], k[1], k[2], "verified", head[k]["evidence_id"]))) for k in sorted(head) if head[k] != base[k]]
+
+
+def claims_problems(claims, head_text, base_text):
+    """The file has no value column (the harness's format), so its rows are compared with the changed keys as a multiset."""
+    row = lambda r: tuple(r[c] for c in CLAIM_COLS)
+    have, want = Counter(map(row, claims)), Counter(map(row, expected_claims(head_text, base_text)))
+    return [("claims", f"CLAIMS_CHECKED.csv differs from the keys whose basis changed: {sum((have - want).values())} rows not wanted, {sum((want - have).values())} missing")] if have != want else []
 
 
 def tasks_tree(tmp, verdicts, urls):
@@ -92,12 +109,19 @@ def main():
     urls = {r["page_sha256"]: (r["page_url"], r["requested_url"]) for r in build.read(HERE / "VALUE_PAGES.csv")}
     head_text = (ROOT / "data/value_basis.csv").read_text(encoding="utf-8")
     base_text = subprocess.run(["git", "-C", str(ROOT), "show", f"{BASE}:data/value_basis.csv"], capture_output=True, text=True, check=True).stdout
+    if "--write-claims" in sys.argv:
+        return build.write(HERE / "CLAIMS_CHECKED.csv", CLAIM_COLS, expected_claims(head_text, base_text))
     pack = None
     if store:
         lines, _ = build.candidates(store / "requote-all-2026-11-24")
         held = {key(r) for r in holds}
         pack = {key(r): r for r in lines if key(r) not in held}
     bad = verify(verdicts, urls, head_text, base_text, store, pack)
+    claims = build.read(HERE / "CLAIMS_CHECKED.csv")
+    bad += claims_problems(claims, head_text, base_text)
+    with open(HERE / "CLAIMS_CHECKED.csv", newline="", encoding="utf-8") as f:
+        if next(csv.reader(f)) != CLAIM_COLS:
+            bad.append(("claims", f"CLAIMS_CHECKED.csv header must be {','.join(CLAIM_COLS)}"))
     for line in (HERE / "INPUTS.sha256").read_text().splitlines():  # `persist/...` paths are in the controller's store, the rest in the repo
         digest, path = line.split("  ", 1)
         f = store / path.removeprefix("persist/") if path.startswith("persist/") and store else ROOT / path
@@ -133,6 +157,10 @@ def main():
         got = verify(vs, us, ht, base_text, st, pack if st else None)
         hit = [m for c, m in got if c == code]
         print(f"plant {'REJECTED' if hit else 'NOT REJECTED'}: {name} -> {hit[0][:160] if hit else got[:2]}")
+        failed |= not hit
+    for name, mutated in (("a dropped CLAIMS_CHECKED row", claims[1:]), ("a CLAIMS_CHECKED row with another bound row", [dict(claims[0], evidence_id="EVD-000000")] + claims[1:])):
+        hit = claims_problems(mutated, head_text, base_text)
+        print(f"plant {'REJECTED' if hit else 'NOT REJECTED'}: {name} -> {hit[0][1][:120] if hit else ''}")
         failed |= not hit
     sys.exit(1 if bad or (failed and store) else 3 if failed else 0)
 
