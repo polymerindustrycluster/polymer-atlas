@@ -62,4 +62,5 @@ sites,SITE-000611,processes,adhesive_sealant_formulation,STATED,STATED COMPANY_W
 sites,SITE-001712,processes,injection_molding,STATED,STATED COMPANY_WIDE,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
 sites,SITE-000082,processes,foam_fabrication,,,"a STATED verdict for a site value needs a bound row on the site itself, not only its organization"
 sites,SITE-000107,processes,plastics_machining_cnc,,,"a STATED verdict for a site value needs a bound row on the site itself, not only its organization"
+sites,SITE-000136,processes,custom_compounding,,,site value rests on an organization row only (EVD-013534): SCHEMA 4.24 grain caps it at not_yet_checked
 sites,SITE-001375,markets_served,construction_building_products,,,"a STATED verdict for a site value needs a bound row on the site itself, not only its organization"

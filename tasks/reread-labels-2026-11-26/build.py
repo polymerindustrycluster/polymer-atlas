@@ -67,11 +67,16 @@ def candidates(pack, census=True):
 
 
 def run(pack, pages, lines):
-    """Write the candidate files, run the generator, return its problems."""
+    """Write the candidate files, run the generator, return its problems plus the grain rule's (SCHEMA §4.24: a row on the organization gives a
+    site's value at most not_yet_checked; the generator only enforces that for STATED, so a site label whose bound row is on the organization is held)."""
     write(HERE / "VALUE_VERDICTS.csv", vb.VERDICT_COLS, lines)
     subprocess.run([sys.executable, "-I", str(pages / "requote-all-2026-11-24/value-pages-builder/build_value_pages.py"), str(pages),
                     str(HERE / "VALUE_VERDICTS.csv"), str(HERE / "VALUE_PAGES.csv")], check=True)
-    _, problems, info = vb.generate(ROOT / "data", ROOT / "tasks", pages)
+    rows, problems, info = vb.generate(ROOT / "data", ROOT / "tasks", pages)
+    if not problems:
+        at = {e["evidence_id"]: (e["record_table"], e["record_id"]) for e in vb.table_rows(ROOT / "data", "evidence")}
+        problems = [f"{key(r)}: site value rests on an organization row only ({r['evidence_id']}): SCHEMA 4.24 grain caps it at not_yet_checked"
+                    for r in rows if r["record_table"] == "sites" and r["basis"] in ("stated", "implied") and at[r["evidence_id"]] != ("sites", r["record_id"])]
     return problems, info
 
 
@@ -118,7 +123,7 @@ def main():
     holds += [{"record_table": k[0], "record_id": k[1], "field": k[2], "value": k[3], "pack_class": "", "adjudicated_class": "", "reason": why}
               for k, why in sorted(drop.items())]
     write(HERE / "HOLDS.csv", ["record_table", "record_id", "field", "value", "pack_class", "adjudicated_class", "reason"], holds)
-    print(f"{len(lines)} lines {dict(Counter(r['class'] for r in lines))}; holds {len(holds)}")
+    print(f"{len(lines)} lines {dict(Counter(r['class'] for r in lines))}; holds {len(holds)}; grain rule held {sum('organization row only' in why for why in drop.values())}")
 
 
 if __name__ == "__main__":

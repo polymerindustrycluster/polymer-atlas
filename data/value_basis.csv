@@ -4464,7 +4464,7 @@ sites,SITE-000134,markets_served,electronics_electrical,not_yet_checked,EVD-0147
 sites,SITE-000134,markets_served,energy_renewables_battery,not_yet_checked,EVD-014738,
 sites,SITE-000134,markets_served,medical_device,not_yet_checked,EVD-014739,
 sites,SITE-000134,processes,silicone_formulation,not_yet_checked,,
-sites,SITE-000136,processes,custom_compounding,implied,EVD-013534,2026-11-24
+sites,SITE-000136,processes,custom_compounding,not_yet_checked,EVD-013534,
 sites,SITE-000136,processes,pulverizing_grinding_resin,not_yet_checked,,
 sites,SITE-000137,processes,coating_formulation,not_yet_checked,,
 sites,SITE-000138,processes,adhesive_sealant_formulation,not_yet_checked,,

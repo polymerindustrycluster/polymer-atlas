@@ -19,7 +19,7 @@ import value_basis as vb  # noqa: E402
 
 BASE = "f921eba8d809acbba29dae22f1723a95e3cc82eb"  # origin/main after #573
 MOVES = {("not_yet_checked", "stated"), ("not_yet_checked", "implied")}
-EXPECT = {"stated": 490, "implied": 68}  # keys moved, after the 2026-11-26 census adjudication (558 keys, 558 CLAIMS_CHECKED rows)
+EXPECT = {"stated": 490, "implied": 67}  # keys moved, after the census adjudication and the grain hold (557 keys, 557 CLAIMS_CHECKED rows)
 key = lambda r: (r["record_table"], r["record_id"], r["field"], r["value"])
 
 
@@ -87,7 +87,10 @@ def verify(verdicts, urls, head_text, base_text, store, pack_lines, held=frozens
     if not bad and vb.render(fresh_rows) != head_text:
         err("format", "data/value_basis.csv differs from a fresh generation in row order or formatting")
     moved = {k for k in fresh.keys() & base.keys() if fresh[k] != base[k]}
+    at = {e["evidence_id"]: (e["record_table"], e["record_id"]) for e in vb.table_rows(ROOT / "data", "evidence")}
     for k in sorted(moved):
+        if k[0] == "sites" and at.get(fresh[k]["evidence_id"]) != ("sites", k[1]):  # SCHEMA §4.24: an organization row gives a site value at most not_yet_checked
+            err("grain", f"{k}: labelled {fresh[k]['basis']} from {fresh[k]['evidence_id']}, which is not a row on the site itself")
         if (base[k]["basis"], fresh[k]["basis"]) not in MOVES:
             err("basis_change", f"{k}: {base[k]['basis']} -> {fresh[k]['basis']}; only not_yet_checked -> stated or implied is allowed here")
     if Counter(fresh[k]["basis"] for k in moved) != Counter(EXPECT):
@@ -149,7 +152,13 @@ def main():
     dropped = "".join(rows[:i] + rows[i + 1:])
     first_hold = next(a for a in build.read(HERE / "second-family/ADJUDICATION-census.csv") if a["action"] == "hold")
     putback = [r for r in (build.candidates(store / "requote-all-2026-11-24", census=False)[0] if store else []) if key(r) == key(first_hold)]
-    plants = [  # (name, expected code, needs the page store, args)
+    grain_keys = {key(h) for h in holds if "organization row only" in h["reason"]}
+    grain_line = [r for r in (build.candidates(store / "requote-all-2026-11-24")[0] if store else []) if key(r) in grain_keys]
+    grain_urls = dict(urls)  # the reinstated line's page URL, from the corpus manifest, so the generator accepts the line and only the grain assertion can reject it
+    for r in grain_line:
+        final, requested, _ = vb.manifest_index(store)[str((store / r["page_path"]).resolve())]
+        grain_urls[r["page_sha256"]] = (final, requested if requested != final else "")
+    plants = [  # (name, expected code, needs the page store, args); the grain plant runs with no HOLDS list, so only the grain assertion can reject it
         ("a NOT_STATED line slipped in (a withheld key appears)", "withheld", False, (not_stated, urls, head_text, store)),
         ("a STATED quote with a moved offset", "generator", True, (moved_offset, urls, head_text, store)),
         ("a line whose page is on no site a bound row cites", "generator", False, (verdicts, elsewhere, head_text, None)),
@@ -157,13 +166,14 @@ def main():
         ("a dropped value_basis key", "dropped_key", False, (verdicts, urls, dropped, store)),
         ("a dropped verdict line", "line_dropped", True, ([r for r in verdicts if r is not stated], urls, head_text, store)),
         ("a held census line put back", "held_line", True, (verdicts + putback, urls, head_text, store)),
+        ("a site label resting on an organization row put back (SITE-000136 custom_compounding)", "grain", True, (verdicts + grain_line, grain_urls, head_text, store, frozenset())),
     ]
     failed = not store
-    for name, code, needs_store, (vs, us, ht, st) in plants:
+    for name, code, needs_store, (vs, us, ht, st, *hd) in plants:
         if needs_store and not store:
             print(f"NOT_INSPECTED plant: {name} (needs the page store)")
             continue
-        got = verify(vs, us, ht, base_text, st, pack if st else None, held)
+        got = verify(vs, us, ht, base_text, st, pack if st else None, *(hd or [held]))
         hit = [m for c, m in got if c == code]
         print(f"plant {'REJECTED' if hit else 'NOT REJECTED'}: {name} -> {hit[0][:160] if hit else got[:2]}")
         failed |= not hit

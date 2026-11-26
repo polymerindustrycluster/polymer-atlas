@@ -15,13 +15,13 @@ This PR applies **labels only**: the STATED and IMPLIED lines. No NOT_STATED lin
 | Change to `data/value_basis.csv` | processes | markets_served | all |
 |---|---:|---:|---:|
 | `not_yet_checked` to `stated` | 185 | 305 | **490** |
-| `not_yet_checked` to `implied` | 38 | 30 | **68** |
+| `not_yet_checked` to `implied` | 37 | 30 | **67** |
 | any other change of basis | 0 | 0 | 0 |
 | `not_found_pending_refetch` (withheld) | 0 | 0 | **0** |
 
-558 keys change (`CLAIMS_CHECKED.csv` has 558 rows). By table: organizations 263 stated and 35 implied; sites 227 stated and 33 implied. All 558 are on records of
-active tier A-C PIC-18 sites or their owners; 220 of the 792 PIC-18 owners (organizations and ecosystem entities) gain at least one label (processes 117, markets 153).
-The table keeps its 9,566 keys: stated 57 to 547, implied 0 to 68, filing 18, not_yet_checked 9,491 to 8,933. On 6 of the 558 keys the deciding evidence row moves to the
+557 keys change (`CLAIMS_CHECKED.csv` has 557 rows). By table: organizations 263 stated and 35 implied; sites 227 stated and 32 implied. All 557 are on records of
+active tier A-C PIC-18 sites or their owners; 219 of the 792 PIC-18 owners (organizations and ecosystem entities) gain at least one label (processes 116, markets 153).
+The table keeps its 9,566 keys: stated 57 to 547, implied 0 to 67, filing 18, not_yet_checked 9,491 to 8,934. On 6 of the 557 keys the deciding evidence row moves to the
 row that cites the read page.
 
 ## What is not labelled here, and why
@@ -31,6 +31,7 @@ row that cites the read page.
 | The reader read another page of the cited site than the page the bound row cites (SCHEMA §4.24: no label, the key stays `not_yet_checked`) | **392**: processes 207 (178 STATED, 29 IMPLIED), markets_served 185 (157 STATED, 28 IMPLIED) | the lines stay in `VALUE_VERDICTS.csv` and are listed in `UNBOUND.csv` with the read page and the page the row cites. **Follow-up, a later PR:** own-site evidence rows for the read pages through the binding gate; the lines then label with no change to this folder. |
 | The 2026-11-26 second-family census held the line (below) | **57**: processes 40, markets_served 17 | `HOLDS.csv`, reason as the census gave it; the key stays `not_yet_checked` |
 | A STATED site value with only an organization-level bound row (the generator stops on it) | 3 | `HOLDS.csv`: SITE-000082 `foam_fabrication`, SITE-000107 `plastics_machining_cnc`, SITE-001375 `construction_building_products` |
+| An IMPLIED site value whose only bound row is on the organization: SCHEMA §4.24 grain caps it at `not_yet_checked`, and the generator enforces that for STATED only, so `build.py` holds it by rule (Codex round 1, BLOCKING) | 1 | `HOLDS.csv`: SITE-000136 `custom_compounding` (EVD-013534 is an organization row) |
 | Second-family adjudication to NOT_STATED (the hiding PR's scope) | 2 | `HOLDS.csv`: ORG-000534 `automotive_unspecified`, SITE-001867 `plastics_fabrication_welding` |
 | Pack NOT_STATED adjudicated up (a label needs a quote and offset, or a witness page that is not the cited page) | 2 | `HOLDS.csv`: ORG-001666 `rv_powersports_trailers` (to STATED), SITE-001729 `appliances` (to IMPLIED) |
 | Every NOT_STATED line (249 after the adjudications) and every NO_PAGE line (189) | 249 and 189 | not in this PR. NOT_STATED maps to withholding (ruling 3): a separate PR with its own counts. |
@@ -50,15 +51,15 @@ the rule, because SCHEMA §4.24 says a corporate statement does not settle a pla
 are in `second-family/`, as the controller delivered them except that the repo's CSV rule (LF line endings, `.gitattributes`) converted CRLF to LF; nothing else differs (the delivered files have sha256 `011633f88fec1f5b65a220c46f7b633374f436de6e66fb5ca59b4ce5c2ce8d34` and `326aeeed54b969aa922067fbda4a862df8c7a61114be13427b97fef452e0e377`; `INPUTS.sha256` holds the LF forms). On the 33 IMPLIED lines the class changes and the quote and offset are cleared, because the
 generator's IMPLIED format carries neither (SCHEMA §4.24); nothing else on the line changes.
 
-With the census, every key labelled here has a second-family reading: 119 `stated` and 35 `implied` from the 2026-11-24 rounds, the rest from the census. The 392 unbound lines are labelled by nothing here.
+With the census, every key labelled here has a second-family reading: 119 `stated` and 34 `implied` from the 2026-11-24 rounds, the rest from the census. The 392 unbound lines are labelled by nothing here.
 
 ## Files
 
-`VALUE_VERDICTS.csv`: the pack's `values.csv` lines (STATED 825, IMPLIED 125), class replaced where an adjudication or the census says so; an IMPLIED line carries no quote or offset (SCHEMA §4.24).
+`VALUE_VERDICTS.csv`: the pack's `values.csv` lines (STATED 825, IMPLIED 124), class replaced where an adjudication or the census says so; an IMPLIED line carries no quote or offset (SCHEMA §4.24).
 `VALUE_PAGES.csv`: page sha256 to the URL the page was captured from, from the lane's corpus manifest (builder: `value-pages-builder/build_value_pages.py`). `HOLDS.csv`, `UNBOUND.csv`: above.
-`CLAIMS_CHECKED.csv`: one `verified` row for each of the 558 labelled keys (the harness's format has no value column, so `check.py` compares the rows with the keys whose basis changed as a
+`CLAIMS_CHECKED.csv`: one `verified` row for each of the 557 labelled keys (the harness's format has no value column, so `check.py` compares the rows with the keys whose basis changed as a
 multiset; `python3 -I check.py --write-claims` writes it). `second-family/`: the census files. `INPUTS.sha256`: the pack files, the census files and this folder's files. `build.py` rebuilds the three
-csv files from the pack and the census (`python3 -I build.py PERSIST_DIR`). `check.py` is the named check. `data/value_basis.csv` is regenerated with
+csv files from the pack and the census (`python3 -I build.py PERSIST_DIR`). `check.py` is the named check; it also asserts that every labelled site key's bound evidence row is on the site itself. `data/value_basis.csv` is regenerated with
 `python3 scripts/value_basis.py --pages PERSIST_DIR`; nobody edits it.
 
 ## Pilot (AGENTS §2a rule 8b)
