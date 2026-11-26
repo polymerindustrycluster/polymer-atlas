@@ -16,7 +16,7 @@ The page labels the street "Shipping/Receiving", not plant or headquarters, and 
 
 ## Reading by another family
 
-**Pending.** `BINDING_PROOF.csv` holds `PENDING_READ` and `check.py` fails closed on it. The reader must be a family other than Anthropic, must read the page's main text (1,208 characters) with the quote at offset 596, and must say whether "Shipping/Receiving" is enough to call the street the establishment's physical street. Then the line becomes `VERIFIED,<family>,<date>`; the claim hash does not change.
+Codex (OpenAI, GPT-6.2 Astra, `council-ask codex --effort deep`, 2026-11-26) read the page's whole 1,208-character main text with the quote and offset, told to try to refute: quote exact at offset 596 (67 characters); the page is the operator's own and names CF Extrusion Technologies beside the address; "Shipping/Receiving" is the physical premises, with the P.O. Box listed separately for office mail; no individual's email, direct line, mobile or home address attached to the quote; no conflicting street, move or closure notice on either copy. VERDICT: VERIFIED. The reading is `READING_CODEX.md`; `BINDING_PROOF.csv` holds the line (claim hash unchanged from the evidence row).
 
 ## Checks
 
