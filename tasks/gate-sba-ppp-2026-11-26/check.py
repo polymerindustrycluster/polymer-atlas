@@ -34,6 +34,7 @@ DEFECTS = [
     ("wrong city and ZIP", lambda r, tb: mk(r, OK.replace("AKRON, OH 44305", "CANTON, OH 44702"), tb), ("FAIL", "city_differs")),
     ("right ZIP, wrong city", lambda r, tb: mk(r, OK.replace("AKRON, OH 44305", "CANTON, OH 44305"), tb), ("FAIL", "ppp_city_differs")),
     ("right city, wrong ZIP", lambda r, tb: mk(r, OK.replace("AKRON, OH 44305", "AKRON, OH 99999"), tb), ("FAIL", "ppp_zip_differs")),
+    ("city omitted, ZIP matches", lambda r, tb: mk(r, OK.replace("AKRON, OH 44305", "OH 44305"), tb), ("HELD", "held_for_reading:ppp_quote_city_missing")),
     ("garbage source_ref", lambda r, tb: mk(r, OK, tb, src="SBA PPP garbage"), ("UNINSPECTABLE", "ppp_source_ref")),
     ("truncated source_ref", lambda r, tb: mk(r, OK, tb, src="SBA PPP LoanNumber 8921367107"), ("UNINSPECTABLE", "ppp_source_ref")),
     ("impossible release date", lambda r, tb: mk(r, OK, tb, src=T.SRC.replace("2024-09-30", "2024-13-45")), ("UNINSPECTABLE", "ppp_source_ref")),
@@ -89,18 +90,19 @@ def mutations():
     assert verdict(wrong_street) == ("FAIL", "street_differs")
     with mock.patch.object(gate, "judge_ppp", lambda ev, idx, quote: None):  # an organization row then meets only the name leg
         assert verdict(wrong_street) == ("PASS", ""), "delegation to the active site is not what tests an organization row's street"
-    # with the PPP-specific guards off (the prefix no longer dispatches), the four false passes of Codex's round 1 return on the site grain
+    # with the PPP-specific guards off (the prefix no longer dispatches), the false passes of Codex's rounds 1 and 2 return on the site grain
     label = OK.replace("HARBOR RUBBER PRODUCTS INC", "KESTREL MOLDING").replace("1070", "1400")
     false_passes = {"garbage source_ref": mk("S-ONE", OK, "sites", src="SBA PPP garbage"), "own_site class": mk("S-ONE", OK, "sites", cls="own_site"),
                     "site label as borrower": mk("S-LABEL", label, "sites"), "right ZIP, wrong city": mk("S-ONE", OK.replace("AKRON, OH 44305", "CANTON, OH 44305"), "sites"),
-                    "right city, wrong ZIP": mk("S-ONE", OK.replace("AKRON, OH 44305", "AKRON, OH 99999"), "sites")}
+                    "right city, wrong ZIP": mk("S-ONE", OK.replace("AKRON, OH 44305", "AKRON, OH 99999"), "sites"),
+                    "city omitted, ZIP matches": mk("S-ONE", OK.replace("AKRON, OH 44305", "OH 44305"), "sites")}
     assert all(verdict(row)[0] != "PASS" for row in false_passes.values())
     with mock.patch.object(gate, "PPP_PREFIX", "SBA PPP\0"):
         passed = {k for k, row in false_passes.items() if verdict(row) == ("PASS", "")}
         assert passed == set(false_passes), passed
     with mock.patch.object(gate, "FAMILIES", [f for f in gate.FAMILIES if f[0] != gate.PPP_PREFIX]):
         assert verdict(mk("O-ONE", OK)) == ("UNINSPECTABLE", "unknown_source_family"), "before this route no PPP row could pass"
-    print("mutations: without the type whitelist a sole proprietor PASSES; without the site delegation a wrong organization street PASSES; without the PPP guards all five round-1 false passes PASS; without the family a correct row is unknown_source_family")
+    print("mutations: without the type whitelist a sole proprietor PASSES; without the site delegation a wrong organization street PASSES; without the PPP guards all six false passes of rounds 1 and 2 PASS; without the family a correct row is unknown_source_family")
 
 
 def main():

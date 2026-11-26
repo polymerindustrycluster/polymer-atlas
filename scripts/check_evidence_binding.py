@@ -733,7 +733,9 @@ def judge(ev, idx, _alone=False):
             reasons.append("state_differs")  # an explicit other state is contrary evidence (Codex review, PR #467)
         if city_differs(rec.get("city"), rec.get("zip"), q_city, q_zip):
             reasons.append("city_differs")  # an explicit other city and ZIP too (controller rulings 2026-11-22, Codex r2 finding 2)
-        if ppp and q_city and squash(q_city) != squash(rec.get("city")) and "city_differs" not in reasons:
+        if ppp and not squash(q_city):
+            holds.append("ppp_quote_city_missing")  # no city stated: the generic leg would let a matching ZIP stand in for it
+        elif ppp and squash(q_city) != squash(rec.get("city")) and "city_differs" not in reasons:
             reasons.append("ppp_city_differs")  # the city alone differs: the generic leg would let a matching ZIP stand in for it
         if why == "no_civic_number" and not reasons:
             return "UNINSPECTABLE", why, info

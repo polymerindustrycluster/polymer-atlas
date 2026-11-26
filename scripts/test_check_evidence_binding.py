@@ -1964,6 +1964,16 @@ class SbaPppRoute(unittest.TestCase):
             for rid, table in (("O-ONE", "organizations"), ("S-ONE", "sites")):
                 v, why, _ = b.judge(self.row(rid, quote, table=table), self.idx)
                 self.assertNotEqual(v, "PASS", (quote, why))
+
+    def test_a_quote_without_a_city_is_held_even_when_the_zip_matches(self):  # Codex #572 r2: "OH 44305" passed on ZIP alone
+        for quote in (self.OK.replace("AKRON, OH 44305", "OH 44305"), self.OK.replace("AKRON, OH 44305", ", OH 44305"),
+                      self.OK.replace("AKRON, OH 44305", "OH, 44305")):
+            self.both(quote, "HELD", "held_for_reading:ppp_quote_city_missing")
+        # a record that holds no ZIP still needs the quoted city
+        for rid, table in (("O-NOZIP", "organizations"), ("S-NOZIP", "sites")):
+            v, why, _ = b.judge(self.row(rid, self.OK.replace("1070 EVANS AVE", "1600 EVANS AVE").replace("AKRON, OH 44305", "OH"), table=table), self.idx)
+            self.assertEqual(v, "HELD", why)
+            self.assertIn("ppp_quote_city_missing", why)
         # a record that holds no ZIP is judged on the city alone
         self.both(self.OK.replace("1070 EVANS AVE", "1600 EVANS AVE"), "PASS", org="O-NOZIP", site="S-NOZIP")
         self.fails(self.OK.replace("1070 EVANS AVE", "1600 EVANS AVE").replace("AKRON", "CANTON"), "city_differs", org="O-NOZIP", site="S-NOZIP")

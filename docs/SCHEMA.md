@@ -2301,8 +2301,8 @@ The quote holds exactly those three labelled fields as the SBA filed them. The b
 `size_band` (every other use of PPP data stays a lead); `business_type` is Corporation, Subchapter S Corporation, Limited Liability
 Company(LLC), Partnership or Limited Liability Partnership (a sole proprietor, self-employed, individual or unstated type never passes);
 the borrower name is the operator's own legal, trade or former name (a site label, or the name plus extra words, never passes); the street
-equals the record's, with a suite on one side only HELD and a different suite FAILED; the quoted city equals the record's city; and the
-quoted ZIP5 equals the record's ZIP5 where the record holds one (a quote with no ZIP is HELD). An organization row is judged on the
+equals the record's, with a suite on one side only HELD and a different suite FAILED; the quoted city is stated and equals the record's city
+(a quote with no city is HELD); and the quoted ZIP5 equals the record's ZIP5 where the record holds one (a quote with no ZIP is HELD). An organization row is judged on the
 organization's one active site, and only where every held site is in Ohio. The gate does not read the loan date or the job count: the pass's own check applies the ten-year limit
 and the band mapping.
 
