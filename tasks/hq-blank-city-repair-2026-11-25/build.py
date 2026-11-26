@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Apply the repair to an unedited checkout of main (run once): clear ORG-000197's HQ cells and move it back to the residual shard.
 
-Rule applied is the one of PR #563 for the seven organizations whose HQ no source states: no HQ cells, no county.
+Rule applied is the one of PR #563 for the seven organizations whose HQ no readable source stated within its effort cap: no HQ cells, no county.
 Reads and writes data/ in the working tree; adds no evidence row.
 """
 import csv
@@ -13,7 +13,7 @@ CLEAR = ("hq_city", "hq_state", "hq_country", "hq_in_scope", "hq_county")
 NOTE = (" | 2026-11-25: HQ not established (census audit of #563, FAIL): the company's locations page lists this centre under "
         "Offices and never calls it the headquarters, and SITE-000988 (Reynoldsburg) is noted as a distribution/HQ establishment, "
         "so hq_city, hq_state, hq_country, hq_in_scope and hq_county are blank, as for the seven other organizations whose HQ no "
-        "source states. The physical location of this unit (Green, Summit County) stays on SITE-000204 and in the county note "
+        "readable source stated within the effort cap (#563). The physical location of this unit (Green, Summit County) stays on SITE-000204 and in the county note "
         "above; it is not an HQ statement. Settles it: a page or filing that names the headquarters of this organization.")
 
 

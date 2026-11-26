@@ -10,7 +10,7 @@ The Codex census audit of label `claude-code hq-blank-city-2026-11-25` (PR #563)
 
 ## Rule applied
 
-The rule of #563 for the seven organizations whose HQ no source states: **no HQ cells and no county**. Kenda is the eighth. No reading and no new evidence.
+The rule of #563 for the seven organizations whose HQ no readable source stated within its effort cap: **no HQ cells and no county**. Kenda is the eighth. No reading and no new evidence.
 
 ## Result
 
