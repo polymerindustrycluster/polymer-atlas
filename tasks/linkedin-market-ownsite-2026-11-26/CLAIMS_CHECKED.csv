@@ -1,0 +1,10 @@
+table,record_id,field,verdict,evidence_id
+organizations,ORG-001936,markets_served,corrected,EVD-483150
+organizations,ORG-001497,markets_served,corrected,EVD-483151
+organizations,ORG-001497,markets_served,corrected,EVD-483152
+organizations,ORG-001497,markets_served,corrected,EVD-483153
+organizations,ORG-001497,markets_served,corrected,EVD-483154
+organizations,ORG-000147,markets_served,corrected,EVD-483155
+organizations,ORG-000147,markets_served,corrected,EVD-483156
+organizations,ORG-001584,markets_served,held,
+organizations,ORG-001470,markets_served,held,
