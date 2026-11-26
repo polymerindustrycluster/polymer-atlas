@@ -55,6 +55,7 @@ LABELS = {'address', 'addresses', 'location', 'locations', 'contact', 'contacts'
           'information', 'quote', 'request', 'a', 'north', 'america', 'united', 'states'} | GENERIC
 DIVISION = {'division', 'group', 'unit', 'subsidiary', 'dba'}  # words that name an organizational unit; never dropped from a printed run
 CONNECT = {'and', '&', 'of', 'the'}
+RANK_KIND = {'D': 0, 'A': 1, 'E': 2, '': 3}
 STOP = (LABELS | UI) - DIVISION - CONNECT  # a run printed before the street ends at one of these
 
 
