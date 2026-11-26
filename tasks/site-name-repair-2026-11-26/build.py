@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Apply the frozen PACKET.csv: rename site_name (owner ruling 2026-11-25 20:12, "Name on the door"), keep the old name in the site's
-notes, append one own-site evidence row per rename, write BINDING_PROOF.csv and INPUTS.sha256. Refuses a second run.
+notes, append one own-site evidence row per rename (the proof is the row's Wayback id_ capture), the archive link, write BINDING_PROOF.csv and INPUTS.sha256. Refuses a second run.
 Usage: build.py --apply   (--claims rewrites CLAIMS_CHECKED.csv only)"""
 import csv, hashlib, io, sys
 from pathlib import Path
@@ -42,7 +42,7 @@ def main():
         shards.setdefault(path, read(path))
     ev_path = ROOT / 'data/evidence_sites_OH.csv'; ev = read(ev_path); eh = ev[0]
     proof = [['evidence_id', 'record_id', 'claim_sha256', 'capture', 'capture_date', 'capture_sha256', 'quote_offset', 'verdict', 'reader_family', 'reader_date']]
-    claims = [['table', 'record_id', 'field', 'verdict', 'evidence_id']]; inputs = []
+    claims = [['table', 'record_id', 'field', 'verdict', 'evidence_id']]; inputs = []; archive = []
     for i, r in enumerate(packet):
         rows = shards[next(p for p, rs in shards.items() if any(x[0] == r['site_id'] for x in rs[1:]))]
         h = rows[0]; row = next(x for x in rows[1:] if x[0] == r['site_id'])
@@ -51,14 +51,16 @@ def main():
         n = h.index('notes'); row[n] = (row[n] + ' ' if row[n] else '') + f"Former site_name (renamed by {LABEL}, {RULING}): {r['old_site_name']}."
         e = dict(evidence_id=f'EVD-{FIRST_EVD + i}', record_table='sites', record_id=r['site_id'], claim_type='existence',
                  claim_detail=f"site_name '{r['new_site_name']}' as printed at the recorded address; quote: {r['quote']}", source_class='own_site',
-                 source_ref=r['capture_url'], observed_date=r['capture_date'], tier_effect='supports_A', created_by=LABEL,
+                 source_ref=r['capture_url'], observed_date=r['observed_date'], tier_effect='supports_A', created_by=LABEL,
                  notes=f"Name on the door ({RULING}). The operator's own page prints this name at the held street. Former site_name: {r['old_site_name']}.", address_role='')
         ev.append([e[k] for k in eh])
-        proof.append([e['evidence_id'], r['site_id'], g.claim_sha256(e), r['capture_url'], r['capture_date'], r['capture_sha256'], r['quote_offset'], 'VERIFIED', r['reader_family'], r['reader_date']])
+        proof.append([e['evidence_id'], r['site_id'], g.claim_sha256(e), r['proof_capture'], r['capture_date'], r['capture_sha256'], r['quote_offset'], 'VERIFIED', r['reader_family'], r['reader_date']])
         claims.append(['sites', r['site_id'], 'site_name', 'corrected', e['evidence_id']])
+        archive.append([e['evidence_id'], r['archive_ref'], r['archive_captured_at'], f'claude-code {LABEL}'])
         inputs.append(f"{r['capture_sha256']}  provenance/{LABEL}/captures/{r['capture_sha256']}.html")
     for p, rows in shards.items(): write(p, rows)
     write(ev_path, ev); write(D / 'BINDING_PROOF.csv', proof)
+    arch = read(ROOT / 'data/archive_links.csv'); write(ROOT / 'data/archive_links.csv', arch + archive)
     (D / 'INPUTS.sha256').write_text('\n'.join(sorted(set(inputs))) + '\n')
     write(D / 'CLAIMS_CHECKED.csv', claims_rows())
     print(len(packet), 'renames applied')
