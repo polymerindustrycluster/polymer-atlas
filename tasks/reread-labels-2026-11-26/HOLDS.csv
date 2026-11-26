@@ -1,0 +1,8 @@
+record_table,record_id,field,value,pack_class,adjudicated_class,reason
+organizations,ORG-000534,markets_served,automotive_unspecified,IMPLIED,NOT_STATED,adjudicated to NOT_STATED: for the hiding PR
+sites,SITE-001867,processes,plastics_fabrication_welding,IMPLIED,NOT_STATED,adjudicated to NOT_STATED: for the hiding PR
+organizations,ORG-001666,markets_served,rv_powersports_trailers,NOT_STATED,STATED,pack NOT_STATED adjudicated to STATED: a label needs a quote and offset
+sites,SITE-001729,markets_served,appliances,NOT_STATED,IMPLIED,"pack NOT_STATED adjudicated to IMPLIED: a label needs its witness page, which is not the cited page"
+sites,SITE-000082,processes,foam_fabrication,,,"a STATED verdict for a site value needs a bound row on the site itself, not only its organization"
+sites,SITE-000107,processes,plastics_machining_cnc,,,"a STATED verdict for a site value needs a bound row on the site itself, not only its organization"
+sites,SITE-001375,markets_served,construction_building_products,,,"a STATED verdict for a site value needs a bound row on the site itself, not only its organization"
