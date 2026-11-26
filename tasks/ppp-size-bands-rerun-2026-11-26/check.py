@@ -5,7 +5,7 @@ edited; the only row changes allowed are the planned blank-to-band cells), pins 
 every fill to a dated evidence row and to CLAIMS_CHECKED.csv, replays each evidence row through the binding gate, and then
 plants defects (deleted row, edited row, overwritten non-empty band, loan older than ten years, individual borrower type, fill
 with no evidence row) and requires each to be rejected by the rule it exists to trip."""
-import copy,hashlib,subprocess,sys
+import copy,functools,hashlib,subprocess,sys
 from collections import Counter
 from build import *
 
@@ -14,6 +14,7 @@ TYPE={'organizations':'organizations_OH.csv','sites':'sites_OH.csv'}
 def rows_at(rev,name):return parse(git('show',f'{rev}:data/{name}')) if rev else read(ROOT/'data'/name)
 def bag(rows):return Counter(tuple(r.items()) for r in rows)
 def tables(rev):return {n:rows_at(rev,n) for n in TOUCHED}
+size_evidence=functools.cache(size_evidence)  # the base's size_band evidence, read once
 
 T1=('tier1_qualifier','tier1_qualifier_basis')  # derived columns: only scripts/derive_tier1.py output, pinned in tier1_changes.csv, may change
 BANDS250={'250-499','500-999','1000-4999','5000+'}
@@ -37,11 +38,16 @@ def verify(base,head,fills,evs,claims,raw,tier1):
   if table=='organizations' and not set(tier1)<=set(new):err('tier1_unplanned','a tier-1 re-derivation row is not a filled organization')
   for f in mine:
    if f['record_id'] in new and new[f['record_id']][field]!=f['new']:err('band_mismatch',f"{f['record_id']}: head {new[f['record_id']][field]!r} != fill {f['new']!r}")
- for name in ['evidence_organizations_OH.csv','evidence_sites_OH.csv']:
+ for table in TYPE:  # each shard's own delta must be exactly the planned rows of its record_table: a row in the other shard, missing or extra fails
+  name=f'evidence_{table}_OH.csv'
   if bag(base[name])-bag(head[name]):err('evidence_removed_or_edited',f'{name}: an existing evidence row was deleted or edited')
- if bag([r for n in ('evidence_organizations_OH.csv','evidence_sites_OH.csv') for r in head[n]])-bag([r for n in ('evidence_organizations_OH.csv','evidence_sites_OH.csv') for r in base[n]])!=bag(evs):err('evidence_additions','added evidence rows differ from evidence_rows.csv')
- ids=[e['evidence_id'] for e in evs]
- if ids!=[f'EVD-{FIRST_EVD+i:06d}' for i in range(len(ids))]:err('evidence_ids','evidence ids are not the contiguous range from EVD-%d'%FIRST_EVD)
+  if bag(head[name])-bag(base[name])!=bag([e for e in evs if e['record_table']==table]):err('evidence_additions',f'{name}: added rows differ from the planned {table} evidence rows')
+ ids=[e['evidence_id'] for e in evs];retired={h['retired_evidence_id'] for h in read(D/'holds.csv') if h['retired_evidence_id']}
+ if ids!=[i for i in (f'EVD-{FIRST_EVD+k:06d}' for k in range(len(ids)+len(retired))) if i not in retired]:err('evidence_ids','evidence ids are not the range from EVD-%d less the retired ids of the held loans'%FIRST_EVD)
+ orgs={r['org_id']:r for r in base['organizations_OH.csv']};sitebyid={r['site_id']:r for r in base['sites_OH.csv']}
+ for f in fills:  # SCHEMA R13 v1.19.7: a different band already held on the same establishment from a newer admissible dated source wins
+  klass,_=precedence(f,orgs,sitebyid,size_evidence())
+  if klass.startswith('newer_contradicting'):err('newer_contradicting',f"{f['record_id']}: the establishment holds a different band from a newer source ({klass})")
  for f in fills:
   e=evidence.get(f['evidence_id']);r=raw.get(f['loan_id'])
   if not e or (e['record_table'],e['record_id'],e['claim_type'])!=(f['record_table'],f['record_id'],'size_band'):err('no_evidence',f"{f['record_id']}: no size_band evidence row {f['evidence_id']}");continue
@@ -71,7 +77,8 @@ def main():
  tier1={r['org_id']:r for r in read(D/'tier1_changes.csv')}
  drift=subprocess.run([sys.executable,str(ROOT/'scripts/derive_tier1.py')],capture_output=True,text=True,cwd=ROOT);assert drift.returncode==0,'tier1_qualifier drift remains:\n'+drift.stdout[-800:]
  p=plan();assert fills==p['fills'] and evs==p['evidence'],'omitted, added, reordered or altered proposal'
- assert read(D/'holds.csv')==p['holds'] and read(D/'gate_holds.csv')==p['gate_holds']
+ assert read(D/'holds.csv')==p['holds'] and read(D/'gate_holds.csv')==p['gate_holds'] and read(D/'precedence.csv')==[dict((k.rstrip('_'),v) for k,v in r.items()) for r in p['precedence']]
+ assert all(h['reason']=='newer_contradicting_filing' for h in p['holds'] if h['retired_evidence_id']) and len(p['contradicted'])==3,'expected the three newer_contradicting_filing holds'
  base,head=tables(BASE),tables(None)
  bad=verify(base,head,fills,evs,claims,raw,tier1);assert not bad,bad
  all_e=[e for q in (ROOT/'data').glob('evidence_*.csv') for e in read(q)];assert len({e['evidence_id'] for e in all_e})==len(all_e),'tree-wide evidence id collision'
@@ -95,7 +102,12 @@ def main():
  r2=copy.deepcopy(raw);r2[fo['loan_id']]['DateApproved']='04/15/2015';expect('loan older than ten years',verify(base,head,fills,evs,claims,r2,tier1),'loan_age')
  r2=copy.deepcopy(raw);r2[fo['loan_id']]['BusinessType']='Sole Proprietorship';expect('individual borrower type',verify(base,head,fills,evs,claims,r2,tier1),'borrower_type')
  e2=[e for e in evs if e['evidence_id']!=fo['evidence_id']];expect('fill with no evidence row',verify(base,head,fills,e2,claims,raw,tier1),'no_evidence')
+ fl,ev=p['contradicted'][0];h=copy.deepcopy(head);t=fl['record_table']  # a fill the precedence rule held, put back with consistent data, evidence and claims
+ for r in h[TYPE[t]]:
+  if r[KEYS[t]]==fl['record_id']:r[FIELDS[t]]=fl['new']
+ h[f'evidence_{t}_OH.csv'].append(ev);expect(f"{fl['record_id']} fill against a newer different ITA band on its sole site",verify(base,h,fills+[fl],evs+[ev],claims+[dict(table=t,record_id=fl['record_id'],field=fl['field'],verdict='corrected',evidence_id=fl['evidence_id'])],raw,tier1),'newer_contradicting')
+ mv=next(e for e in reversed(evs) if e['record_table']=='sites');h=copy.deepcopy(head);h['evidence_sites_OH.csv'].remove(mv);h['evidence_organizations_OH.csv'].append(mv);expect(f"evidence row {mv['evidence_id']} moved to the wrong shard",verify(base,h,fills,evs,claims,raw,tier1),'evidence_additions')
  c2=[c for c in claims if c['evidence_id']!=fo['evidence_id']];expect('changed cell missing from CLAIMS_CHECKED',verify(base,head,fills,evs,c2,raw,tier1),'claims_checked')
  assert CUTOFF==WRITE.replace(year=WRITE.year-10).isoformat()=='2016-11-26'
- print('PASS: PPP re-run additions pinned, whole-row multisets equal to the base plus the planned cells, gate PASS on every row, 10 planted defects rejected')
+ print('PASS: PPP re-run additions pinned, whole-row multisets equal to the base plus the planned cells, gate PASS on every row, 12 planted defects rejected')
 if __name__=='__main__':main()
