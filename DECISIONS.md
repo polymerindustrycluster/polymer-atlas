@@ -840,7 +840,6 @@ Owner ruling 2026-11-26 07:36, "Gate PR for PPP first" (the controller's option 
 
 This entry is the gate route. A labelled `SBA PPP ` family is added to the binding gate for `size_band` claims only (every other use of PPP data stays a lead). The quote carries three fields, `borrower_name`, `business_type` and `address`; the gate FAILS a business type outside the five on the scout's privacy whitelist and holds a quote that does not state one, so a sole proprietor, self-employed or individual borrower never passes; the borrower name must be the operator's own legal, trade or former name (never a site label), the street must equal the record's, the quote must state a city that equals the record's (no city is HELD), and a ZIP5 the record holds must agree. An organization row is judged on its one active site and only where every held site is in Ohio. The `business_type` field is an addition to the quote shape the controller proposed: without it the gate could not inspect the privacy line, and a gate must fail on what it cannot inspect (AGENTS.md section 7). The gate does not read the loan date or the job count; the re-run's own check does. SCHEMA v1.21.1 states the row format and extends the ten-year limit to source 4 in the same revision. The 2026-11-16 row format stays unadmitted, because it has no quote.
 
-
 ## 2026-11-26 · Owner rulings 04:04 and 04:26
 
 Carried here from the SITE-001778 fix, which stopped, so the rulings are on the record in the repo. Three answers at 04:04; the third was replaced at 04:26.
@@ -854,3 +853,17 @@ Carried here from the SITE-001778 fix, which stopped, so the rulings are on the 
 Two answers at 07:20 to multiple-choice questions after the census found 38 size-unknown PIC-18 owners that the 2026-11-16 PPP rule binds today. (1) On what to do first: "PPP now, street route next", that is, re-run the 2026-11-16 PPP pass on current main now and take the street-fill route after. (2) On whether an age limit applies to PPP loans: "Same ten-year rule", that is, the v1.19.7 ten-year limit applies to source 4 as it does to sources 1 and 2. The 07:36 ruling "Gate PR for PPP first" and SCHEMA v1.21.1 are in the entry above; the gate route merged as #572.
 
 Applied in `tasks/ppp-size-bands-rerun-2026-11-26/`: blank bands only, the strict name, street and city rule, the latest qualifying loan per organization and a loan dated on or after 2016-11-26. Every candidate evidence row went through the binding gate; the five it did not pass are dropped and listed with their reasons (ORG-001525 and its site, held by the controller's ruling for a different suite; ORG-001590, SITE-001662 and SITE-001694, a suite on one side only). No suite rule was added to the copied matching logic.
+
+## 2026-11-26 · Owner rulings 08:11, 10:53 and 12:10
+
+Owner rulings of 2026-11-26 at 08:11, 10:53 and 12:10, recorded by the controller from its board. The questions below are the controller's paraphrases; only the words in quotation marks are the owner's answers. The question and option text is on the controller board.
+
+1. **08:11.** On a multi-model review of how the Atlas would be built from scratch (Claude, GPT-6.2 Astra and Gemini 4 Neon), the owner answered "Evidence-bound round", "Me now, alongside PPP" and "Price them, you rule after".
+2. **10:53, "One regression-only check".** PR #572 was past its two-round cap (AGENTS.md §2a rule 4), and the owner authorized Codex to recheck only the empty-city fix and its regression tests.
+3. **12:10, the outcome of that review.**
+   - "Keep the street hold": the Akron first-user note still waits for street fills.
+   - "Keep deferred": company confirmation outreach.
+   - "Weekly repair batch" and "Strict gate defaults": small repairs go in one weekly PR, with current reviews. After the PPP data PR, filing families get strict defaults, replayed over past verdicts first.
+   - "Default list with caps": the controller takes the listed operational choices itself, each capped at 3M tokens and reported daily for the owner's veto. It is a one-week trial, 2026-11-26 to 2026-12-03, and it stops if the owner overrides 3 or more listed defaults. Scope, vocabulary, publication and rule changes stay with the owner.
+
+**Correction to the 07:20 ruling.** The ruling's "street route next" (as the controller recorded it) rested on a stale premise, that the street route was unbuilt. AGENTS.md §2a rule 3 and `docs/ACQUISITION.md` said so, and both were wrong. The gate routes for the map-listing street and the filing name variant were implemented in PR #549 (2026-11-24, `map_listing_result` and `filing_name_variant_bound` in `scripts/check_evidence_binding.py`), and the street route ran in PR #552: 1 of 153 blank PIC-18 streets filled, and 36 note-street agreements held pending a decision on lead forms (`tasks/pic18-map-streets-2026-11-24/README.md`). The 2026-11-24 10:29 entry above says the gate routes come "in later PRs"; that was true when written and stands as history. The PR that adds this entry corrects AGENTS.md §2a rule 3 and `docs/ACQUISITION.md` (the lines naming either route as unbuilt or planned). It amends no rule and changes no data file.

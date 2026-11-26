@@ -191,8 +191,10 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    for the operator may join `trade_names` only on the filing name-variant
    conditions, each addition checked by a second model family. Neither
    route overwrites a street, and a map listing never settles county.
-   **Not yet checked:** the gate implements neither route. No row is
-   admitted by either route until its gate route lands in a later PR.
+   **Implemented:** the binding gate has implemented both routes since
+   PR #549 (2026-11-24). The street route ran on the 153 blank PIC-18
+   streets in PR #552 and admitted 1. A free-text street in a site note
+   is not an accepted second source.
 4. **Review is tiered by risk, recorded on the PR.** *Practice.* (Owner
    ruling 2026-11-22, "tier by risk".) A PR that changes any file under
    `data/` gets review records from two model families at the current head;
@@ -352,6 +354,13 @@ rounds on the same evidence; and a new kind of finding raised in round 2 or
 later is FOLLOW-UP unless it corrupts data, publishes personal data or lets a
 check pass what it could not inspect. Recorded in `DECISIONS.md`. No other rule
 is amended and no data file is changed by this revision.*
+
+*Revision note — 2026-11-26 (correction, no rule amended): §2a rule 3 said the
+binding gate implemented neither the map-listing street route nor the filing
+name-variant route. Both were implemented in PR #549 (2026-11-24), and the
+street route ran in PR #552 (1 of 153 blank PIC-18 streets filled). The text
+now says so. No rule is amended and no data file is changed by this revision.
+Recorded in `DECISIONS.md`.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 
