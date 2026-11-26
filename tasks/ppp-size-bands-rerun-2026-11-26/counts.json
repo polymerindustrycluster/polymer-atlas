@@ -1,0 +1,54 @@
+{
+  "base": "8be53fd74ab624734cb24843b7cbc7a825499cc0",
+  "cutoff": "2016-11-26",
+  "strict_organizations": 246,
+  "fills": {
+    "sites": 45,
+    "organizations": 48
+  },
+  "owners_filled": 56,
+  "evidence_rows": 93,
+  "held_loan_org_pairs": 183,
+  "newer_contradicting_held": 3,
+  "precedence_classes": {
+    "newer_contradicting_filing": 3,
+    "undated_or_other": 1,
+    "lead_only": 1
+  },
+  "retired_evidence_ids": [
+    "EVD-483215",
+    "EVD-483238",
+    "EVD-483271"
+  ],
+  "candidate_cells": 101,
+  "gate_dropped": 5,
+  "gate_drop_reasons": {
+    "FAIL unit_differs": 2,
+    "HELD held_for_reading:designator_not_on_both_sides": 3
+  },
+  "held_reasons": {
+    "active-site street missing or not equal": 183,
+    "newer_contradicting_filing": 3
+  },
+  "skipped_nonblank": 391,
+  "loan_years": {
+    "2021": 57,
+    "2020": 36
+  },
+  "tiers": {
+    "sites:C": 14,
+    "organizations:A": 17,
+    "organizations:C": 3,
+    "sites:A": 14,
+    "organizations:B": 27,
+    "sites:B": 17,
+    "organizations:U": 1
+  },
+  "reconciliation": {
+    "pass_owners": 56,
+    "census_ppp_strict": 38,
+    "in_both": 37,
+    "pass_only": 19,
+    "census_only": 1
+  }
+}

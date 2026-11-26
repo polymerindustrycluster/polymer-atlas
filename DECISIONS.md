@@ -840,6 +840,20 @@ Owner ruling 2026-11-26 07:36, "Gate PR for PPP first" (the controller's option 
 
 This entry is the gate route. A labelled `SBA PPP ` family is added to the binding gate for `size_band` claims only (every other use of PPP data stays a lead). The quote carries three fields, `borrower_name`, `business_type` and `address`; the gate FAILS a business type outside the five on the scout's privacy whitelist and holds a quote that does not state one, so a sole proprietor, self-employed or individual borrower never passes; the borrower name must be the operator's own legal, trade or former name (never a site label), the street must equal the record's, the quote must state a city that equals the record's (no city is HELD), and a ZIP5 the record holds must agree. An organization row is judged on its one active site and only where every held site is in Ohio. The `business_type` field is an addition to the quote shape the controller proposed: without it the gate could not inspect the privacy line, and a gate must fail on what it cannot inspect (AGENTS.md section 7). The gate does not read the loan date or the job count; the re-run's own check does. SCHEMA v1.21.1 states the row format and extends the ten-year limit to source 4 in the same revision. The 2026-11-16 row format stays unadmitted, because it has no quote.
 
+## 2026-11-26 · Owner rulings 04:04 and 04:26
+
+Carried here from the SITE-001778 fix, which stopped, so the rulings are on the record in the repo. Three answers at 04:04; the third was replaced at 04:26.
+
+1. The question on the SITE-001778 site-name fix: "Fix in P2, one small PR." The fix was tried on 2026-11-26 and stopped: tensile.com, where the held website redirects, does not print the held name. It waits on the filing name-variant gate route.
+2. The question on the eight site names that rest only on a page footer: "Keep them held." There is no footer gate route; those names stay held.
+3. The question on the next pilot: "Air-permit pilot first", replaced at 04:26 by "Size-ceiling census". The premise of the question was wrong: the 85 held Ohio air-permit PDFs had already been read by the 2026-11-23 permit lane. The census ran and is recorded in `docs/ACQUISITION.md`. The audit of the #571 market fills, `tasks/linkedin-market-ownsite-2026-11-26/AUDIT.md`, is carried in the same PR.
+
+## 2026-11-26 · Owner rulings: PPP re-run and PPP age
+
+Two answers at 07:20 to multiple-choice questions after the census found 38 size-unknown PIC-18 owners that the 2026-11-16 PPP rule binds today. (1) On what to do first: "PPP now, street route next", that is, re-run the 2026-11-16 PPP pass on current main now and take the street-fill route after. (2) On whether an age limit applies to PPP loans: "Same ten-year rule", that is, the v1.19.7 ten-year limit applies to source 4 as it does to sources 1 and 2. The 07:36 ruling "Gate PR for PPP first" and SCHEMA v1.21.1 are in the entry above; the gate route merged as #572.
+
+Applied in `tasks/ppp-size-bands-rerun-2026-11-26/`: blank bands only, the strict name, street and city rule, the latest qualifying loan per organization and a loan dated on or after 2016-11-26. Every candidate evidence row went through the binding gate; the five it did not pass are dropped and listed with their reasons (ORG-001525 and its site, held by the controller's ruling for a different suite; ORG-001590, SITE-001662 and SITE-001694, a suite on one side only). No suite rule was added to the copied matching logic.
+
 ## 2026-11-26 · Owner rulings 08:11, 10:53 and 12:10
 
 Owner rulings of 2026-11-26 at 08:11, 10:53 and 12:10, recorded by the controller from its board. The questions below are the controller's paraphrases; only the words in quotation marks are the owner's answers. The question and option text is on the controller board.

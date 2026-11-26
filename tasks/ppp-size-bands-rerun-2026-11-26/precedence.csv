@@ -1,0 +1,6 @@
+record_table,record_id,org_id,loan_id,loan_date,loan_band,held_record,held_band,held_evidence_id,held_source_class,held_source_date,class
+organizations,ORG-000322,ORG-000322,4566397101,2020-04-13,50-99,SITE-000343,100-249,EVD-020312,government_filing,2025-12-31,newer_contradicting_filing
+organizations,ORG-001394,ORG-001394,1895968306,2021-01-20,50-99,SITE-001437,10-49,EVD-481055,government_filing,2025-12-31,newer_contradicting_filing
+sites,SITE-001632,ORG-001565,5044737104,2020-04-13,100-249,ORG-001565,50-99,,,,undated_or_other
+sites,SITE-001651,ORG-001580,8809277202,2020-04-28,50-99,ORG-001580,100-249,EVD-022238,government_filing,,lead_only
+organizations,ORG-001710,ORG-001710,3251308605,2021-03-16,50-99,SITE-001786,10-49,EVD-483015,government_filing,2025-12-31,newer_contradicting_filing

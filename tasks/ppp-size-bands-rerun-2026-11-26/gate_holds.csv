@@ -1,0 +1,6 @@
+record_table,record_id,org_id,loan_id,verdict,reason
+organizations,ORG-001525,ORG-001525,1165287207,FAIL,unit_differs
+sites,SITE-001590,ORG-001525,1165287207,FAIL,unit_differs
+organizations,ORG-001590,ORG-001590,4505898504,HELD,held_for_reading:designator_not_on_both_sides
+sites,SITE-001662,ORG-001590,4505898504,HELD,held_for_reading:designator_not_on_both_sides
+sites,SITE-001694,ORG-001623,5796378603,HELD,held_for_reading:designator_not_on_both_sides
