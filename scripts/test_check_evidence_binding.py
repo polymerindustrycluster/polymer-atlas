@@ -1896,5 +1896,106 @@ class LinkedInCompanyRoute(unittest.TestCase):
             self.assertEqual(b.linkedin_url_kind(url), kind, url)
 
 
+class SbaPppRoute(unittest.TestCase):
+    """SBA PPP size_band rows (SCHEMA §1 R13 source 4, §4.13): `borrower_name; business_type; address`, judged on the record's
+    name, street and locality. Synthetic only. Planted defects must not PASS; a correct row must."""
+    SRC = "SBA PPP LoanNumber 8921367107 (public_150k_plus_240930.csv, release 2024-09-30)"
+    OK = "borrower_name: HARBOR RUBBER PRODUCTS INC; business_type: Corporation; address: 1070 EVANS AVE, AKRON, OH 44305"
+
+    @classmethod
+    def setUpClass(cls):
+        def site(sid, oid, street, status="active", state="OH", city="Akron", zip_="44305"):
+            return dict(site_id=sid, org_id=oid, site_name="Plant", city=city, state=state, zip=zip_, street_address=street,
+                        operating_status=status, country="US")
+        orgs = [dict(org_id=f"O-{n}", legal_name=name, trade_names="") for n, name in (
+            ("ONE", "Harbor Rubber Products Inc"), ("TWO", "Harbor Rubber Products Inc"), ("MI", "Harbor Rubber Products Inc"),
+            ("SUITE", "Harbor Rubber Products Inc"), ("NONE", "Harbor Rubber Products Inc"))]
+        cls.idx = b.Index([
+            site("S-ONE", "O-ONE", "1070 Evans Ave"),
+            site("S-TWO-A", "O-TWO", "1100 Evans Ave"), site("S-TWO-B", "O-TWO", "9 Other Rd"),
+            site("S-MI", "O-MI", "1110 Evans Ave"), site("S-MI-OLD", "O-MI", "5 Old St", status="inactive", state="MI", city="Troy", zip_="48083"),
+            site("S-SUITE", "O-SUITE", "1200 Evans Ave, Suite 500"),
+            site("S-DEAD", "O-NONE", "1300 Evans Ave", status="inactive")], orgs)
+
+    def row(self, rid, quote, table="organizations", claim="size_band"):
+        return ev(rid, self.SRC, quote, claim=claim, table=table, cls="government_filing")
+
+    def check(self, row, verdict, reason=""):
+        v, why, info = b.judge(row, self.idx)
+        self.assertEqual((v, why), (verdict, reason), info)
+
+    def both(self, quote, verdict, reason="", org="O-ONE", site="S-ONE"):
+        self.check(self.row(org, quote), verdict, reason)
+        self.check(self.row(site, quote, table="sites"), verdict, reason)
+
+    def test_correct_row_passes_on_organization_and_site(self):
+        self.both(self.OK, "PASS")
+
+    def test_every_whitelisted_type_passes_and_the_sba_double_space_is_read(self):
+        for kind in ("Corporation", "Subchapter S Corporation", "Limited  Liability Company(LLC)", "Partnership",
+                     "Limited Liability Partnership"):
+            self.both(self.OK.replace("Corporation;", kind + ";", 1), "PASS")
+
+    def test_wrong_borrower_name(self):
+        self.both(self.OK.replace("HARBOR RUBBER PRODUCTS INC", "KESTREL MOLDING LLC"), "FAIL", "name_not_held")
+
+    def test_wrong_street(self):
+        self.both(self.OK.replace("1070 EVANS AVE", "1090 EVANS AVE"), "FAIL", "street_differs")
+
+    def test_wrong_city_and_zip(self):
+        self.both(self.OK.replace("AKRON, OH 44305", "CANTON, OH 44702"), "FAIL", "city_differs")
+
+    def test_wrong_state(self):
+        self.both(self.OK.replace("OH 44305", "MI 44305"), "FAIL", "state_differs")
+
+    def test_missing_quote(self):
+        for rid, table in (("O-ONE", "organizations"), ("S-ONE", "sites")):
+            self.check(self.row(rid, None, table=table), "UNINSPECTABLE", "no_quote")
+
+    def test_individual_borrower_types_fail(self):
+        for kind in ("Sole Proprietorship", "Self-Employed Individuals", "Independent Contractors", "Individual", "Non-Profit Organization", ""):
+            self.both(self.OK.replace("Corporation;", kind + ";", 1), "FAIL", "ppp_individual_borrower_type")
+
+    def test_business_type_must_be_stated(self):
+        self.both("borrower_name: HARBOR RUBBER PRODUCTS INC; address: 1070 EVANS AVE, AKRON, OH 44305", "UNINSPECTABLE", "ppp_quote_fields")
+
+    def test_extra_or_missing_fields_are_not_read(self):
+        self.both(self.OK + "; jobs_reported: 24", "UNINSPECTABLE", "ppp_quote_fields")
+        self.both("borrower_name: HARBOR RUBBER PRODUCTS INC; business_type: Corporation", "UNINSPECTABLE", "ppp_quote_fields")
+
+    def test_one_sided_suite_is_held_and_a_conflicting_suite_fails(self):
+        self.both(self.OK.replace("1070 EVANS AVE", "1070 EVANS AVE STE 110"), "HELD",
+                  "held_for_reading:designator_not_on_both_sides")  # borrower names a suite the record lacks
+        suite = self.OK.replace("1070 EVANS AVE", "1200 EVANS AVE")
+        self.both(suite, "HELD", "held_for_reading:designator_not_on_both_sides", org="O-SUITE", site="S-SUITE")  # record names a suite the borrower omits
+        self.both(suite.replace("AVE,", "AVE STE 110,"), "FAIL", "unit_differs", org="O-SUITE", site="S-SUITE")  # SPR Therapeutics' case
+        self.both(suite.replace("AVE,", "AVE SUITE 500,"), "PASS", org="O-SUITE", site="S-SUITE")
+
+    def test_the_same_quote_passing_on_two_site_records_is_held(self):
+        idx = b.Index([dict(site_id=f"S-{n}", org_id="O-ONE", site_name="Plant", city="Akron", state="OH", zip="44305",
+                            street_address="1070 Evans Ave", operating_status="active", country="US") for n in "AB"],
+                      [dict(org_id="O-ONE", legal_name="Harbor Rubber Products Inc", trade_names="")])
+        self.assertEqual(b.judge(self.row("S-A", self.OK, table="sites"), idx)[:2], ("HELD", "held_for_reading:passes_on_two_records"))
+        self.assertEqual(b.judge(self.row("O-ONE", self.OK), idx)[:2], ("HELD", "held_for_reading:ppp_not_single_site_ohio_organization"))
+
+    def test_only_size_band_claims_are_read(self):
+        for claim in ("address", "existence", "scope", "activity"):
+            self.check(self.row("S-ONE", self.OK, table="sites", claim=claim), "UNINSPECTABLE", "ppp_claim_not_size_band")
+
+    def test_organization_must_be_single_site_and_ohio_only(self):
+        hold = "held_for_reading:ppp_not_single_site_ohio_organization"
+        for oid in ("O-TWO", "O-MI", "O-NONE"):  # two active sites, a held site in Michigan, no active site
+            self.check(self.row(oid, self.OK), "HELD", hold)
+
+    def test_other_tables_are_not_read(self):
+        self.check(ev("O-ONE", self.SRC, self.OK, claim="size_band", table="equipment", cls="government_filing"), "UNINSPECTABLE", "other_table")
+
+    def test_the_2026_11_16_row_format_has_no_quote_and_stays_held(self):
+        row = ev("O-ONE", "https://data.sba.gov/sites/default/files/distribution/SBA-OCA-2022-07-001/public_150k_plus_240930.csv (SBA PPP LoanNumber 8921367107)",
+                 None, claim="size_band", table="organizations", cls="government_filing")
+        row["claim_detail"] = 'employee_band_ohio=10-49; SBA PPP BorrowerName="HARBOR RUBBER PRODUCTS INC"; JobsReported="24"'
+        self.check(row, "UNINSPECTABLE", "no_quote")
+
+
 if __name__ == "__main__":
     unittest.main()

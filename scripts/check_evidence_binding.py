@@ -38,6 +38,9 @@ Every evidence row gets exactly one verdict:
                   no_civic_number. No admission path here either.
 Every verdict other than PASS fails the PR; FAIL, HELD and the rest differ only for the reader's queue.
 
+SBA PPP rows (SCHEMA §4.13, v1.21.1): `size_band` only, source_ref `SBA PPP LoanNumber ...`, quote `borrower_name; business_type; address`;
+judge_ppp refuses a borrower type off the privacy whitelist and judges an organization row on its one active site (all held sites in Ohio).
+
 Strict reading (owner questions, measured in the name_alt column, never passing): a name found only in the record's
 notes, a permit's facility label, a quoted name that merely starts with a held name, one comma part of an operator
 field. A recorded parent's name never binds, on any path (DECISIONS.md, 2026-11-22).
@@ -107,6 +110,7 @@ FAMILIES = [
     ("state-entity-files-bulk", "labelled", ("legal_name",), "principal_address", "s5"),
     ("USAspending bulk", "labelled", ("recipient_name",), "recipient_address", "entity"),
     ("SBIR/STTR bulk", "labelled", ("firm_name",), "address", "entity"),
+    ("SBA PPP ", "labelled", ("borrower_name",), "address", "entity"),  # size_band only: judge_ppp
 ] + [(p, "labelled") + PERMIT for p in (
     "TCEQ Central Registry", "PA DEP ", "NC DEQ ArcGIS", "Ohio EPA ", "CA DTSC ", "CA SWRCB ", "IN IGMAP ", "NJDEP ",
     "GA EPD ")]
@@ -577,6 +581,35 @@ def route_registry(ev, idx, rec, fam, quote):
     return "PASS", "+".join([*basis, place]), {}
 
 
+PPP_PREFIX = "SBA PPP "
+# The scout's privacy whitelist, in the SBA's own spelling (SCHEMA §1 R13 source 4, owner ruling 2026-11-16 "Strict matches").
+PPP_TYPES = frozenset({"Corporation", "Subchapter S Corporation", "Limited Liability Company(LLC)", "Partnership",
+                       "Limited Liability Partnership"})
+
+
+def judge_ppp(ev, idx, quote):
+    """SBA PPP loan rows, `quote: borrower_name: X; business_type: T; address: STREET, CITY, OH ZIP` (SCHEMA §4.13).
+    size_band only (every other use of PPP data stays a lead) and only a whitelisted borrower type. Returns a verdict, or None for a
+    site row, which the structured name, street and locality legs then judge. An organization row is judged on the organization's
+    one active site, and only where every held site is in Ohio (the single-site, Ohio-only rule)."""
+    if ev["claim_type"] != "size_band":
+        return "UNINSPECTABLE", "ppp_claim_not_size_band", {}
+    fields = labelled_fields(quote)
+    if not fields or set(fields) != {"borrower_name", "business_type", "address"} or len(LABEL_RE.findall(quote)) != 3:
+        return "UNINSPECTABLE", "ppp_quote_fields", {}
+    if " ".join(fields["business_type"].split()) not in PPP_TYPES:
+        return "FAIL", "ppp_individual_borrower_type", {}
+    if ev["record_table"] == "sites":
+        return None
+    if ev["record_table"] != "organizations":
+        return "UNINSPECTABLE", "ppp_record_table", {}
+    owned = [s for s in idx.sites.values() if s.get("org_id") == ev["record_id"]]
+    active = [s for s in owned if s.get("operating_status") == "active"]
+    if len(active) != 1 or any(s.get("state") != "OH" or (s.get("country") or "") not in ("", "US", "USA") for s in owned):
+        return "HELD", "held_for_reading:ppp_not_single_site_ohio_organization", {}
+    return judge(dict(ev, record_table="sites", record_id=active[0]["site_id"]), idx)
+
+
 def judge(ev, idx, _alone=False):
     """(verdict, reason, detail dict) for one evidence row. _alone skips the two-records rule (used by that rule)."""
     table, rid, detail, src = ev["record_table"], ev["record_id"], ev["claim_detail"], ev["source_ref"]
@@ -603,6 +636,10 @@ def judge(ev, idx, _alone=False):
     if fam is None:
         return "UNINSPECTABLE", "unknown_source_family", {}
     quote = detail[i + 6:].strip()
+    if src.startswith(PPP_PREFIX):
+        early = judge_ppp(ev, idx, quote)
+        if early:
+            return early  # a site row falls through to the name, street and locality legs below
     route = route_registry(ev, idx, rec, fam, quote)
     if route is not None:
         if route[0] == "PASS" and table == "sites" and not _alone:
