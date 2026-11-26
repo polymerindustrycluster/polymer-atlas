@@ -59,7 +59,7 @@ def blank_street_count(sites):
                and r["verification_tier"] in "ABC" and not r["street_address"].strip())
 
 
-def problems(head, base, claims, proofs, manifest, capture, changed, gate_rows):
+def problems(head, base, claims, proofs, manifest, capture, changed, verdict):
     out = []
     hs, bs = {r["site_id"]: r for r in head["sites"]}, {r["site_id"]: r for r in base["sites"]}
     if set(hs) != set(bs):
@@ -86,9 +86,8 @@ def problems(head, base, claims, proofs, manifest, capture, changed, gate_rows):
         out.append("evidence: the row is not the pinned physical own-site address row for the site under the label")
     if gate.norm_space(ev["claim_detail"].partition("quote:")[2]) != QUOTE or STREET not in QUOTE:
         out.append("evidence: the row's quote is not the pinned quote")
-    if any(g["evidence_id"] == EVD and (g["verdict"], g["reason"]) != ("READ_REQUIRED", "mechanics_clear") for g in gate_rows) \
-            or not any(g["evidence_id"] == EVD for g in gate_rows):
-        out.append(f"gate: the row's mechanical verdict is {[(g['verdict'], g['reason']) for g in gate_rows if g['evidence_id'] == EVD]}, not READ_REQUIRED mechanics_clear")
+    if tuple(verdict) != ("READ_REQUIRED", "mechanics_clear"):
+        out.append(f"gate: the row's mechanical verdict is {tuple(verdict)}, not READ_REQUIRED mechanics_clear")
     if len(proofs) != 1 or proofs[0]["evidence_id"] != EVD:
         return out + ["proof: BINDING_PROOF.csv must hold exactly the one line for the new row"]
     p = proofs[0]
@@ -122,15 +121,12 @@ def problems(head, base, claims, proofs, manifest, capture, changed, gate_rows):
     return out
 
 
-def gate_rows():
-    out = subprocess.run(["python3", str(ROOT / "scripts/check_evidence_binding.py"), "--new-since", BASE],
-                         capture_output=True, text=True, cwd=ROOT).stdout
-    return _parse_gate(out)
-
-
-def _parse_gate(out):
-    return [dict(verdict=m[1], reason=m[2], evidence_id=m[3]) for m in
-            re.finditer(r"^\s+(READ_REQUIRED|HELD|FAIL|UNINSPECTABLE)\s+(\S+)\s+(EVD-\d+)", out, re.M)]
+def gate_verdict(ev, street=None):
+    """The gate's own mechanical verdict for the new row against the head record, optionally with another street planted."""
+    idx = gate.Index.load()
+    rec = dict(idx.record("sites", SITE), **({"street_address": street} if street else {}))
+    v, why, _ = gate.judge_web(ev, rec, idx, ev["claim_detail"].partition("quote:")[2].strip())
+    return v, why
 
 
 def main():
@@ -142,7 +138,7 @@ def main():
     capture = cap.read_bytes() if cap.exists() else None
     changed = sorted(set(git("diff", "--name-only", BASE).decode().split() + git("ls-files", "--others", "--exclude-standard").decode().split()))
     args = dict(head=head, base=base, claims=claims, proofs=proofs, manifest=manifest, capture=capture, changed=changed,
-                gate_rows=gate_rows())
+                verdict=gate_verdict(head["evs"][EVD]) if EVD in head["evs"] else ("absent", ""))
     clean = problems(**args)
     for p in clean:
         print("CLEAN STATE PROBLEM:", p)
@@ -187,7 +183,8 @@ def main():
         plant("reading still pending", "proof: verdict", lambda a: a["proofs"][0].__setitem__("verdict", "PENDING_READ")),
         plant("archive row dropped", "archive", lambda a: a["head"].__setitem__("archive", a["head"]["archive"][:-1])),
         plant("a data file outside the allowed set changed", "files", lambda a: a["changed"].append("data/ecosystem.csv")),
-        plant("gate verdict for the row is a FAIL", "gate", lambda a: a.__setitem__("gate_rows", [dict(evidence_id=EVD, verdict="FAIL", reason="street_absent_from_quote")])),
+        plant("street on the record is not the street in the quote (the gate itself judges it)", "gate",
+              lambda a: a.__setitem__("verdict", gate_verdict(head["evs"][EVD], "2750 2nd Street Suite C"))),
     ]
     if not all(results):
         print("FAIL: a planted defect was not caught")
