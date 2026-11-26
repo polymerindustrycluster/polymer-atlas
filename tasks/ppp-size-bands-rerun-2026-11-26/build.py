@@ -1,0 +1,123 @@
+"""Re-run of the 2026-11-16 PPP size-band pass on pinned current main (owner rulings 2026-11-26 07:20).
+
+Rule: SCHEMA §1 R13 source 4 (v1.13.3) plus the ten-year age limit (v1.21.1): blank bands only; single-site, Ohio-only
+organization; borrower name (atlas.name_key over the held names), street and city all equal; latest qualifying loan per
+organization; loan dated on or after the write date minus ten years. Matching is tasks/ppp-size-bands-2026-11-16/build.py's,
+not rebuilt. The base is read from git, so the plan is reproducible after --apply changes the working tree."""
+import argparse,csv,hashlib,io,json,os,re,subprocess,sys
+from collections import defaultdict,Counter
+from datetime import date,datetime
+from decimal import Decimal,InvalidOperation
+from pathlib import Path
+D=Path(__file__).resolve().parent;ROOT=D.parents[1];sys.path.insert(0,str(ROOT/'scripts'))
+import atlas
+from regions import PIC18
+from build_form5500_spine import band_of,BANDS
+from shard_io import append_sorted
+META=json.loads((D/'base.json').read_text());BASE=META['base'];WRITE=date.fromisoformat(META['write_date'])
+CUTOFF=WRITE.replace(year=WRITE.year-10).isoformat()  # a loan dated on or after this date qualifies (SCHEMA v1.21.1)
+SOURCE=Path(os.environ.get('PPP_INPUT_DIR','/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist/ppp-loan-scout'))
+FIELDS={'organizations':'employee_band_ohio','sites':'employee_band_site'}
+KEYS={'organizations':'org_id','sites':'site_id'}
+ORDER=[b[2] for b in BANDS]+['5000+']
+ALLOWED={'Corporation','Subchapter S Corporation','Limited  Liability Company(LLC)','Partnership','Limited Liability Partnership'}
+LABEL='claude-code ppp-size-bands-rerun-2026-11-26'
+FIRST_EVD=483200  # another open PR holds the range just above EVD-483156
+RULINGS='Owner John Swanson 2026-11-26 07:20: "PPP now, street route next" and "Same ten-year rule"; SCHEMA R13 source 4 (v1.13.3), ten-year limit v1.21.1'
+
+csv.field_size_limit(10**9)
+def git(*a):return subprocess.check_output(['git',*a],cwd=ROOT,text=True)
+def parse(text):return list(csv.DictReader(io.StringIO(text,newline='')))
+def read(p):return list(csv.DictReader(Path(p).open(newline='')))
+def base_tables(prefix):
+ """{shard file name: rows} of data/<prefix>_<TAG>.csv at the pinned base."""
+ names=[p for p in git('ls-tree','-r','--name-only',BASE,'data').splitlines() if re.fullmatch(rf'data/{prefix}_[A-Za-z]+\.csv',p)]
+ return {Path(p).name:parse(git('show',f'{BASE}:{p}')) for p in sorted(names)}
+def write(p,rows,fields):
+ with Path(p).open('w',newline='') as f:
+  w=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');w.writeheader();w.writerows(rows)
+def band(value):
+ try:n=Decimal(value)
+ except InvalidOperation:return ''
+ return band_of(int(n)) if n.is_finite() and n>=1 and n==n.to_integral_value() else ''
+def loan_date(r):return datetime.strptime(r['DateApproved'],'%m/%d/%Y').date().isoformat()
+def safe(r):return r['BusinessType'] in ALLOWED and r['BorrowerName'].strip().upper() not in {'','N/A','NOT AVAILABLE','EXEMPTION 6'}
+def loans():
+ out=[]
+ for m in json.loads((D/'source_manifest.json').read_text()):
+  p=SOURCE/(m['file']+'.filtered.csv');assert hashlib.sha256(p.read_bytes()).hexdigest()==m['filtered_sha256'],'PPP input differs from source_manifest.json'
+  rr=read(p);assert len(rr)==m['counts']['retained'];out.extend(dict(r,source_url=m['url'],source_sha256=m['sha256']) for r in rr)
+ assert len(out)==1953 and len({r['LoanNumber'] for r in out})==1953
+ assert all(safe(r) for r in out)
+ return out
+def shard_tag(name):return name.split('_',1)[1][:-4]
+
+def plan():
+ """-> dict(fills, evidence, holds, skipped, strict): everything derived from the base tree and the PPP input, nothing written."""
+ otabs,stabs=base_tables('organizations'),base_tables('sites')
+ orgs={r['org_id']:r for t in otabs.values() for r in t};oshard={r['org_id']:n for n,t in otabs.items() for r in t}
+ sites=[r for t in stabs.values() for r in t];sshard={r['site_id']:n for n,t in stabs.items() for r in t}
+ assert len({s['site_id'] for s in sites})==len(sites)
+ byorg=defaultdict(list)
+ for s in sites:byorg[s['org_id']].append(s)
+ name_index=defaultdict(set)
+ for oid,o in orgs.items():
+  for field,n in atlas.org_name_fields(o):
+   if atlas.name_key(n):name_index[atlas.name_key(n)].add(oid)
+ strict=defaultdict(list);held=[]
+ for r in loans():
+  if not band(r['JobsReported']):continue
+  for oid in sorted(name_index[atlas.name_key(r['BorrowerName'])]):
+   ss=byorg[oid];active=[s for s in ss if s['operating_status']=='active']
+   if len(active)!=1 or any(s['state']!='OH' or s['country'] not in ('','US','USA') for s in ss):continue
+   s=active[0]
+   if s['county'] not in PIC18 or s['city'].casefold()!=r['BorrowerCity'].casefold():continue
+   pair=dict(org_id=oid,site_id=s['site_id'],loan_id=r['LoanNumber'])
+   if not s['street_address'] or not r['BorrowerAddress'] or atlas.street_key(s['street_address'])!=atlas.street_key(r['BorrowerAddress']):
+    held.append(dict(pair,reason='active-site street missing or not equal'));continue
+   if loan_date(r)<CUTOFF:held.append(dict(pair,reason='stale_over_10_years'));continue
+   strict[oid].append((s,r))
+ have={e['evidence_id'] for p in subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'data'],cwd=ROOT,text=True).splitlines()
+       if re.fullmatch(r'data/evidence_[A-Za-z]+_[A-Za-z]+\.csv',p) for e in parse(git('show',f'{BASE}:{p}'))}
+ fills=[];evs=[];skipped=[];eid=FIRST_EVD
+ for oid,pairs in sorted(strict.items()):
+  s,r=max(pairs,key=lambda pair:(loan_date(pair[1]),pair[1]['LoanNumber']))
+  for table,record,shard in [('organizations',orgs[oid],oshard[oid]),('sites',s,sshard[s['site_id']])]:
+   rid=record[KEYS[table]];cur=record[FIELDS[table]]
+   if cur.strip():skipped.append(dict(record_table=table,record_id=rid,org_id=oid,existing_band=cur,loan_band=band(r['JobsReported']),loan_id=r['LoanNumber']));continue
+   assert f'EVD-{eid:06d}' not in have,'evidence ID collision'
+   effect='supports_U' if record['verification_tier']=='U' else 'supports_B'
+   ev=dict(evidence_id=f'EVD-{eid:06d}',record_table=table,record_id=rid,claim_type='size_band',
+    claim_detail=f'{FIELDS[table]}={band(r["JobsReported"])}; SBA PPP BorrowerName="{r["BorrowerName"]}"; BorrowerAddress="{r["BorrowerAddress"]}"; BorrowerCity="{r["BorrowerCity"]}"; JobsReported="{r["JobsReported"]}"; DateApproved="{r["DateApproved"]}"; historical {loan_date(r)[:4]} borrower-reported employment figure, band only',
+    source_class='government_filing',source_ref=f'{r["source_url"]} (SBA PPP LoanNumber {r["LoanNumber"]})',observed_date=loan_date(r),tier_effect=effect,
+    created_by=LABEL,notes=f'{RULINGS}; historical {loan_date(r)[:4]} loan approval date {loan_date(r)}; employment reference period unspecified; release 2024-09-30; source SHA256 {r["source_sha256"]}; exact normalized legal/trade/recorded former name + active-site street key + city; single active site, all held sites Ohio; blank-only fill',address_role='')
+   fills.append(dict(record_table=table,record_id=rid,shard=shard,field=FIELDS[table],old='',new=band(r['JobsReported']),org_id=oid,site_id=s['site_id'],loan_id=r['LoanNumber'],borrower_name=r['BorrowerName'],jobs_reported=r['JobsReported'],loan_date=loan_date(r),tier=record['verification_tier'],evidence_id=ev['evidence_id']))
+   evs.append(ev);eid+=1
+ return dict(fills=fills,evidence=evs,holds=held,skipped=skipped,strict=len(strict))
+
+def counts(p):
+ f=p['fills'];return dict(base=BASE,cutoff=CUTOFF,strict_organizations=p['strict'],fills=dict(Counter(r['record_table'] for r in f)),
+  owners_filled=len({r['org_id'] for r in f}),evidence_rows=len(p['evidence']),held_loan_org_pairs=len(p['holds']),
+  held_reasons=dict(Counter(h['reason'] for h in p['holds'])),skipped_nonblank=len(p['skipped']),loan_years=dict(Counter(r['loan_date'][:4] for r in f)),
+  tiers=dict(Counter(f"{r['record_table']}:{r['tier']}" for r in f)))
+
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--apply',action='store_true');a=ap.parse_args()
+ p=plan();fills,evs=p['fills'],p['evidence']
+ write(D/'fills.csv',fills,list(fills[0]));write(D/'evidence_rows.csv',evs,list(evs[0]));write(D/'holds.csv',p['holds'],['org_id','site_id','loan_id','reason'])
+ (D/'counts.json').write_text(json.dumps(counts(p),indent=2)+'\n')
+ if a.apply:
+  for table in FIELDS:
+   for shard in sorted({r['shard'] for r in fills if r['record_table']==table}):
+    target=ROOT/'data'/shard;rows=read(target);updates={r['record_id']:r for r in fills if r['record_table']==table and r['shard']==shard}
+    for r in rows:
+     u=updates.get(r[KEYS[table]])
+     if u:assert r[FIELDS[table]]=='' or r[FIELDS[table]]==u['new'],'refuse to overwrite a band';r[FIELDS[table]]=u['new']
+    write(target,rows,list(rows[0]))
+    ep=ROOT/'data'/f'evidence_{table}_{shard_tag(shard)}.csv';held={r['evidence_id']:r for r in read(ep)}
+    new=[e for e in evs if e['record_table']==table and e['record_id'] in updates]
+    for e in new:
+     if e['evidence_id'] in held:assert held[e['evidence_id']]==e
+    append_sorted(ep,[e for e in new if e['evidence_id'] not in held],'evidence_id')
+ print(json.dumps(counts(p)))
+if __name__=='__main__':main()

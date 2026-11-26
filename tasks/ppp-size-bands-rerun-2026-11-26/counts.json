@@ -1,0 +1,29 @@
+{
+  "base": "e4fd658566cfd251154179725a3b7931fd80d37a",
+  "cutoff": "2016-11-26",
+  "strict_organizations": 246,
+  "fills": {
+    "sites": 48,
+    "organizations": 53
+  },
+  "owners_filled": 62,
+  "evidence_rows": 101,
+  "held_loan_org_pairs": 183,
+  "held_reasons": {
+    "active-site street missing or not equal": 183
+  },
+  "skipped_nonblank": 391,
+  "loan_years": {
+    "2021": 62,
+    "2020": 39
+  },
+  "tiers": {
+    "sites:C": 14,
+    "organizations:A": 20,
+    "organizations:C": 3,
+    "sites:A": 15,
+    "organizations:B": 29,
+    "sites:B": 19,
+    "organizations:U": 1
+  }
+}
