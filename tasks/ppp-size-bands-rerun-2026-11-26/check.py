@@ -5,7 +5,7 @@ edited; the only row changes allowed are the planned blank-to-band cells), pins 
 every fill to a dated evidence row and to CLAIMS_CHECKED.csv, replays each evidence row through the binding gate, and then
 plants defects (deleted row, edited row, overwritten non-empty band, loan older than ten years, individual borrower type, fill
 with no evidence row) and requires each to be rejected by the rule it exists to trip."""
-import copy,hashlib
+import copy,hashlib,subprocess,sys
 from collections import Counter
 from build import *
 
@@ -15,7 +15,9 @@ def rows_at(rev,name):return parse(git('show',f'{rev}:data/{name}')) if rev else
 def bag(rows):return Counter(tuple(r.items()) for r in rows)
 def tables(rev):return {n:rows_at(rev,n) for n in TOUCHED}
 
-def verify(base,head,fills,evs,claims,raw):
+T1=('tier1_qualifier','tier1_qualifier_basis')  # derived columns: only scripts/derive_tier1.py output, pinned in tier1_changes.csv, may change
+BANDS250={'250-499','500-999','1000-4999','5000+'}
+def verify(base,head,fills,evs,claims,raw,tier1):
  """-> list of (code, message); empty means every rule held. Pure over its arguments so planted defects can be injected."""
  bad=[];err=lambda code,msg:bad.append((code,msg))
  evidence={e['evidence_id']:e for e in evs}
@@ -29,8 +31,10 @@ def verify(base,head,fills,evs,claims,raw):
   if set(new)!={f['record_id'] for f in mine}:err('unplanned_change',f'{name}: changed rows differ from the planned fills')
   for rid in set(old)&set(new):
    o,n=old[rid],new[rid]
-   if {k for k in o if o[k]!=n[k]}-{field}:err('row_edited',f'{rid}: a field other than {field} changed')
+   extra={k for k in o if o[k]!=n[k]}-{field}
+   if extra and not (table=='organizations' and extra<=set(T1) and rid in tier1 and (n['tier1_qualifier'],n['tier1_qualifier_basis'])==(tier1[rid]['new_tier1_qualifier'],tier1[rid]['new_tier1_qualifier_basis']) and (o['tier1_qualifier'],o['tier1_qualifier_basis'])==(tier1[rid]['old_tier1_qualifier'],tier1[rid]['old_tier1_qualifier_basis']) and n[field] in BANDS250):err('row_edited',f'{rid}: a field other than {field} changed ({sorted(extra)})')
    if o[field].strip():err('overwrite',f'{rid}: {field} was {o[field]!r} at the base')
+  if table=='organizations' and not set(tier1)<=set(new):err('tier1_unplanned','a tier-1 re-derivation row is not a filled organization')
   for f in mine:
    if f['record_id'] in new and new[f['record_id']][field]!=f['new']:err('band_mismatch',f"{f['record_id']}: head {new[f['record_id']][field]!r} != fill {f['new']!r}")
  for name in ['evidence_organizations_OH.csv','evidence_sites_OH.csv']:
@@ -64,10 +68,12 @@ def main():
   assert hashlib.sha256((STORE/path).read_bytes()).hexdigest()==digest,f'store file differs from INPUTS.sha256: {path}'
  raw={r['LoanNumber']:r for r in loans()}
  fills,evs,claims=read(D/'fills.csv'),read(D/'evidence_rows.csv'),read(D/'CLAIMS_CHECKED.csv')
+ tier1={r['org_id']:r for r in read(D/'tier1_changes.csv')}
+ drift=subprocess.run([sys.executable,str(ROOT/'scripts/derive_tier1.py')],capture_output=True,text=True,cwd=ROOT);assert drift.returncode==0,'tier1_qualifier drift remains:\n'+drift.stdout[-800:]
  p=plan();assert fills==p['fills'] and evs==p['evidence'],'omitted, added, reordered or altered proposal'
  assert read(D/'holds.csv')==p['holds'] and read(D/'gate_holds.csv')==p['gate_holds']
  base,head=tables(BASE),tables(None)
- bad=verify(base,head,fills,evs,claims,raw);assert not bad,bad
+ bad=verify(base,head,fills,evs,claims,raw,tier1);assert not bad,bad
  all_e=[e for q in (ROOT/'data').glob('evidence_*.csv') for e in read(q)];assert len({e['evidence_id'] for e in all_e})==len(all_e),'tree-wide evidence id collision'
  idx=gate.Index.load(BASE);verdicts=Counter(gate.judge(dict(e,_at='check'),idx)[0] for e in evs);assert verdicts=={'PASS':len(evs)},verdicts
  print(f'rows: {len(fills)} fills ({Counter(f["record_table"] for f in fills)}) on {len({f["org_id"] for f in fills})} owners; {len(evs)} evidence rows, binding gate PASS {verdicts["PASS"]}; every touched table equal to base as a row multiset plus the planned cells')
@@ -77,17 +83,19 @@ def main():
  else:print(f'NOT INSPECTED: census rows {CENSUS} absent, reconciliation.csv not re-derived')
  # planted defects, each on a copy of the verified state
  org=TYPE['organizations'];kept=lambda n:next(r for r in head[n] if r[KEYS['organizations' if n==org else 'sites']] not in {f['record_id'] for f in fills})
- h=copy.deepcopy(head);h[org].remove(kept(org));expect('deleted existing row',verify(base,h,fills,evs,claims,raw),'row_deleted_or_added')
- h=copy.deepcopy(head);k=kept(org);i=h[org].index(k);h[org][i]=dict(k,website='https://edited.example/');expect('edited existing row',verify(base,h,fills,evs,claims,raw),'unplanned_change')
- h=copy.deepcopy(head);k=kept(org);i=h[org].index(k);h[org][i]=dict(k,hq_city='Elsewhere');expect('edited existing row (other field)',verify(base,h,fills,evs,claims,raw),'unplanned_change')
+ h=copy.deepcopy(head);h[org].remove(kept(org));expect('deleted existing row',verify(base,h,fills,evs,claims,raw,tier1),'row_deleted_or_added')
+ h=copy.deepcopy(head);k=kept(org);i=h[org].index(k);h[org][i]=dict(k,website='https://edited.example/');expect('edited existing row',verify(base,h,fills,evs,claims,raw,tier1),'unplanned_change')
+ h=copy.deepcopy(head);k=kept(org);i=h[org].index(k);h[org][i]=dict(k,hq_city='Elsewhere');expect('edited existing row (other field)',verify(base,h,fills,evs,claims,raw,tier1),'unplanned_change')
+ h=copy.deepcopy(head);k=kept(org);i=h[org].index(k);h[org][i]=dict(k,tier1_qualifier='public_parent');expect('hand-edited tier1_qualifier on an unfilled organization',verify(base,h,fills,evs,claims,raw,tier1),'row_edited')
+ t=next(iter(tier1));h=copy.deepcopy(head);i=next(j for j,r in enumerate(h[org]) if r['org_id']==t);h[org][i]=dict(h[org][i],tier1_qualifier='public_parent;employees_250plus');expect('tier1_qualifier differing from the pinned derivation',verify(base,h,fills,evs,claims,raw,tier1),'row_edited')
  fo=next(f for f in fills if f['record_table']=='organizations');b=copy.deepcopy(base)
  for r in b[org]:
   if r['org_id']==fo['record_id']:r[FIELDS['organizations']]=next(x for x in ORDER if x!=fo['new'])  # a different held band that the fill would overwrite
- expect('overwritten non-empty band',verify(b,head,fills,evs,claims,raw),'overwrite')
- r2=copy.deepcopy(raw);r2[fo['loan_id']]['DateApproved']='04/15/2015';expect('loan older than ten years',verify(base,head,fills,evs,claims,r2),'loan_age')
- r2=copy.deepcopy(raw);r2[fo['loan_id']]['BusinessType']='Sole Proprietorship';expect('individual borrower type',verify(base,head,fills,evs,claims,r2),'borrower_type')
- e2=[e for e in evs if e['evidence_id']!=fo['evidence_id']];expect('fill with no evidence row',verify(base,head,fills,e2,claims,raw),'no_evidence')
- c2=[c for c in claims if c['evidence_id']!=fo['evidence_id']];expect('changed cell missing from CLAIMS_CHECKED',verify(base,head,fills,evs,c2,raw),'claims_checked')
+ expect('overwritten non-empty band',verify(b,head,fills,evs,claims,raw,tier1),'overwrite')
+ r2=copy.deepcopy(raw);r2[fo['loan_id']]['DateApproved']='04/15/2015';expect('loan older than ten years',verify(base,head,fills,evs,claims,r2,tier1),'loan_age')
+ r2=copy.deepcopy(raw);r2[fo['loan_id']]['BusinessType']='Sole Proprietorship';expect('individual borrower type',verify(base,head,fills,evs,claims,r2,tier1),'borrower_type')
+ e2=[e for e in evs if e['evidence_id']!=fo['evidence_id']];expect('fill with no evidence row',verify(base,head,fills,e2,claims,raw,tier1),'no_evidence')
+ c2=[c for c in claims if c['evidence_id']!=fo['evidence_id']];expect('changed cell missing from CLAIMS_CHECKED',verify(base,head,fills,evs,c2,raw,tier1),'claims_checked')
  assert CUTOFF==WRITE.replace(year=WRITE.year-10).isoformat()=='2016-11-26'
- print('PASS: PPP re-run additions pinned, whole-row multisets equal to the base plus the planned cells, gate PASS on every row, 8 planted defects rejected')
+ print('PASS: PPP re-run additions pinned, whole-row multisets equal to the base plus the planned cells, gate PASS on every row, 10 planted defects rejected')
 if __name__=='__main__':main()
