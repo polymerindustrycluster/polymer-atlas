@@ -1,104 +1,93 @@
-"""Blank-only strict-match checker, pinned known answers and adversarial defect injections."""
-import copy,csv,hashlib,io,json,subprocess,sys
+"""Named check for the 2026-11-26 PPP size-band re-run. Run: python3 tasks/ppp-size-bands-rerun-2026-11-26/check.py
+
+Compares every data table the PR touches with the pinned base as WHOLE-ROW MULTISETS (an existing row may not be deleted or
+edited; the only row changes allowed are the planned blank-to-band cells), pins the additions to what the rule yields, ties
+every fill to a dated evidence row and to CLAIMS_CHECKED.csv, replays each evidence row through the binding gate, and then
+plants defects (deleted row, edited row, overwritten non-empty band, loan older than ten years, individual borrower type, fill
+with no evidence row) and requires each to be rejected by the rule it exists to trip."""
+import copy,hashlib
 from collections import Counter
 from build import *
 
-def at(rev,path):return list(csv.DictReader(io.StringIO(subprocess.check_output(['git','show',f'{rev}:{path}'],cwd=ROOT,text=True))))
+TOUCHED={'organizations_OH.csv','sites_OH.csv','evidence_organizations_OH.csv','evidence_sites_OH.csv'}
+TYPE={'organizations':'organizations_OH.csv','sites':'sites_OH.csv'}
+def rows_at(rev,name):return parse(git('show',f'{rev}:data/{name}')) if rev else read(ROOT/'data'/name)
+def bag(rows):return Counter(tuple(r.items()) for r in rows)
+def tables(rev):return {n:rows_at(rev,n) for n in TOUCHED}
 
-def payload(fills,evs):
- raw={r['LoanNumber']:r for r in loans()};before=P/'pre-pass'
- orgs={r['org_id']:r for p in before.glob('organizations_*.csv') for r in read(p)}
- ss=[r for p in before.glob('sites_*.csv') for r in read(p)];sites={r['site_id']:r for r in ss}
- assert len({(r['record_table'],r['record_id']) for r in fills})==len(fills)
- assert len(evs)==len(fills) and len({r['evidence_id'] for r in evs})==len(evs)
- evidence={r['evidence_id']:r for r in evs}
- for u in fills:
-  r=raw[u['loan_id']];o=orgs[u['org_id']];s=sites[u['site_id']];table=u['record_table']
-  assert safe(r) and r['BorrowerState']=='OH'
-  assert u['old']=='' and (o if table=='organizations' else s)[FIELDS[table]]==''
-  assert u['new']==band(r['JobsReported']) and u['new'] in ORDER
-  assert u['borrower_name']==r['BorrowerName'] and u['jobs_reported']==r['JobsReported']
-  assert atlas.name_key(r['BorrowerName']) in {atlas.name_key(n) for _,n in atlas.org_name_fields(o)}
-  assert s['org_id']==u['org_id'] and s['operating_status']=='active' and s['county'] in PIC18
-  assert r['BorrowerCity'].casefold()==s['city'].casefold()
-  assert s['street_address'] and r['BorrowerAddress'] and atlas.street_key(s['street_address'])==atlas.street_key(r['BorrowerAddress'])
-  os=[x for x in ss if x['org_id']==u['org_id']]
-  assert sum(x['operating_status']=='active' for x in os)==1 and all(x['state']=='OH' and x['country'] in ('','US','USA') for x in os)
-  assert u['record_id']==(o if table=='organizations' else s)[KEYS[table]]
-  assert u['field']==FIELDS[table] and u['loan_date']==loan_date(r) and u['loan_date'][:4] in ('2020','2021')
-  e=evidence[u['evidence_id']]
-  assert e['record_table']==table and e['record_id']==u['record_id'] and e['claim_type']=='size_band'
-  assert e['source_class']=='government_filing' and e['tier_effect']==('supports_U' if (o if table=='organizations' else s)['verification_tier']=='U' else 'supports_B')
-  assert 376000<=int(e['evidence_id'][4:])<=376999 and e['observed_date']==loan_date(r)
-  for key in ['BorrowerName','BorrowerAddress','BorrowerCity','JobsReported','DateApproved']:assert f'{key}="{r[key]}"' in e['claim_detail']
-  assert 'historical '+loan_date(r)[:4] in e['claim_detail'] and r['source_url'] in e['source_ref'] and r['LoanNumber'] in e['source_ref']
- expected,ee,held,n=plan(before)
- assert fills==expected and evs==ee,'omitted, added, reordered or altered proposal'
- return held,n
+def verify(base,head,fills,evs,claims,raw):
+ """-> list of (code, message); empty means every rule held. Pure over its arguments so planted defects can be injected."""
+ bad=[];err=lambda code,msg:bad.append((code,msg))
+ evidence={e['evidence_id']:e for e in evs}
+ if len(evidence)!=len(evs) or len({(f['record_table'],f['record_id']) for f in fills})!=len(fills):err('duplicate','duplicate evidence id or fill')
+ for table,name in TYPE.items():
+  mine=[f for f in fills if f['record_table']==table];key=KEYS[table];field=FIELDS[table]
+  rem=bag(base[name])-bag(head[name]);add=bag(head[name])-bag(base[name])
+  old={dict(r)[key]:dict(r) for r in rem.elements()};new={dict(r)[key]:dict(r) for r in add.elements()}
+  if sum(rem.values())!=len(old) or sum(add.values())!=len(new):err('row_multiset',f'{name}: duplicate ids in the changed rows')
+  if set(old)!=set(new):err('row_deleted_or_added',f'{name}: removed ids {sorted(set(old)-set(new))[:5]} added ids {sorted(set(new)-set(old))[:5]}')
+  if set(new)!={f['record_id'] for f in mine}:err('unplanned_change',f'{name}: changed rows differ from the planned fills')
+  for rid in set(old)&set(new):
+   o,n=old[rid],new[rid]
+   if {k for k in o if o[k]!=n[k]}-{field}:err('row_edited',f'{rid}: a field other than {field} changed')
+   if o[field].strip():err('overwrite',f'{rid}: {field} was {o[field]!r} at the base')
+  for f in mine:
+   if f['record_id'] in new and new[f['record_id']][field]!=f['new']:err('band_mismatch',f"{f['record_id']}: head {new[f['record_id']][field]!r} != fill {f['new']!r}")
+ for name in ['evidence_organizations_OH.csv','evidence_sites_OH.csv']:
+  if bag(base[name])-bag(head[name]):err('evidence_removed_or_edited',f'{name}: an existing evidence row was deleted or edited')
+ if bag([r for n in ('evidence_organizations_OH.csv','evidence_sites_OH.csv') for r in head[n]])-bag([r for n in ('evidence_organizations_OH.csv','evidence_sites_OH.csv') for r in base[n]])!=bag(evs):err('evidence_additions','added evidence rows differ from evidence_rows.csv')
+ ids=[e['evidence_id'] for e in evs]
+ if ids!=[f'EVD-{FIRST_EVD+i:06d}' for i in range(len(ids))]:err('evidence_ids','evidence ids are not the contiguous range from EVD-%d'%FIRST_EVD)
+ for f in fills:
+  e=evidence.get(f['evidence_id']);r=raw.get(f['loan_id'])
+  if not e or (e['record_table'],e['record_id'],e['claim_type'])!=(f['record_table'],f['record_id'],'size_band'):err('no_evidence',f"{f['record_id']}: no size_band evidence row {f['evidence_id']}");continue
+  if not r:err('no_loan',f"{f['record_id']}: loan {f['loan_id']} not in the input");continue
+  if loan_date(r)<CUTOFF or loan_date(r)!=f['loan_date'] or e['observed_date']!=loan_date(r):err('loan_age',f"{f['record_id']}: loan dated {loan_date(r)}, cutoff {CUTOFF}")
+  if r['BusinessType'] not in ALLOWED or not safe(r):err('borrower_type',f"{f['record_id']}: BusinessType {r['BusinessType']!r} is not a named corporation, S corporation, LLC, partnership or LLP")
+  if f['new']!=band(r['JobsReported']):err('band_value',f"{f['record_id']}: band {f['new']} != JobsReported {r['JobsReported']}")
+  if e['source_class']!='government_filing' or not e['source_ref'].startswith(f"SBA PPP LoanNumber {f['loan_id']} (") or f"borrower_name: {r['BorrowerName']}; business_type: {r['BusinessType']}; address: {r['BorrowerAddress']}, {r['BorrowerCity']}, {r['BorrowerState']} {r['BorrowerZip']}" not in e['claim_detail'] or not e['claim_detail'].startswith(f"{f['field']}={f['new']}; "):err('evidence_content',f"{e['evidence_id']}: row does not quote the loan")
+ changed={(t,dict(r)[KEYS[t]],FIELDS[t]) for t,n in TYPE.items() for r in (bag(head[n])-bag(base[n])).elements()}
+ if {(c['table'],c['record_id'],c['field']) for c in claims}!=changed or len(claims)!=len(changed) or any(c['verdict']!='corrected' for c in claims):err('claims_checked','CLAIMS_CHECKED.csv differs from the changed cells')
+ if {(c['table'],c['record_id'],c['evidence_id']) for c in claims}!={(f['record_table'],f['record_id'],f['evidence_id']) for f in fills}:err('claims_evidence','CLAIMS_CHECKED evidence ids differ from the fills')
+ return bad
 
-def check_tree(fills,evs):
- before=P/'pre-pass';updates={(r['record_table'],r['record_id']):r for r in fills}
- for table in FIELDS:
-  name=f'{table}_OH.csv';b=read(before/name);now=read(ROOT/'data'/name)
-  assert {r[KEYS[table]] for r in b}=={r[KEYS[table]] for r in now},'row loss or extra row'
-  expected=copy.deepcopy(b)
-  for r in expected:
-   u=updates.get((table,r[KEYS[table]]))
-   if u:r[FIELDS[table]]=u['new']
-  assert now==expected,'unauthorized field edit or omitted fill'
-  name=f'evidence_{table}_OH.csv';b=read(before/name);now=read(ROOT/'data'/name)
-  assert now==sorted(b+[e for e in evs if e['record_table']==table],key=lambda e:e['evidence_id']),'evidence append mismatch'
- all_e=[e for p in (ROOT/'data').glob('evidence_*.csv') for e in read(p)]
- assert len({e['evidence_id'] for e in all_e})==len(all_e),'global evidence ID collision'
-
-def known_answers():
- rows=[r for r in read(D/'known_answers.csv') if r['grain']=='organizations' and r['single_site_ohio']=='True' and r['atlas_band'] in ORDER]
- assert len({r['record_id'] for r in rows})==len(rows)
- raw={r['LoanNumber']:r for r in loans()};base=json.loads((D/'base.json').read_text())['known_answer_base']
- names=subprocess.check_output(['git','ls-tree','-r','--name-only',base,'data'],text=True,cwd=ROOT).splitlines()
- old={r['org_id']:r for p in names if p.startswith('data/organizations_') and p.endswith('.csv') for r in at(base,p)}
- good=0
- for r in rows:
-  assert r['atlas_band']==old[r['record_id']]['employee_band_ohio']
-  new=band(raw[r['loan_id']]['JobsReported']);assert new==r['loan_band']
-  good+=abs(ORDER.index(new)-ORDER.index(r['atlas_band']))<=1
- assert len(rows)==106 and good==104
- print('known answers: 104/106 within one organization band, recomputed from SBA figures + pinned Atlas bands')
+def codes(bad):return sorted({c for c,_ in bad})
+def expect(label,bad,code):
+ assert code in codes(bad),f'silent pass: planted {label} was not rejected by {code} (got {codes(bad)})'
+ print(f'planted {label}: rejected ({code})')
 
 def main():
- for p in (P/'pre-pass').glob('*.csv'):
-  assert p.read_bytes()==subprocess.check_output(['git','show',f'{BASE}:data/{p.name}'],cwd=ROOT),'pre-pass backup differs from base'
- fills=read(D/'fills.csv');evs=read(D/'evidence_rows.csv');held,n=payload(fills,evs);check_tree(fills,evs);known_answers()
- approved=read(D/'approved_fills.csv');original={(u['record_table'],u['record_id']):u for u in approved}
- assert (D/'approved_fills.csv').read_bytes()==subprocess.check_output(['git','show','9976de8:tasks/ppp-size-bands-2026-11-16/fills.csv'],cwd=ROOT)
- assert all(u==original[(u['record_table'],u['record_id'])] for u in fills),'not a strict subset of approved fills'
- dropped=set(original)-{(u['record_table'],u['record_id']) for u in fills}
- expected_dropped={('sites',sid) for sid in ['SITE-000039','SITE-000048','SITE-000082','SITE-000134','SITE-000201','SITE-000611']}
- assert dropped==expected_dropped
- retired={original[key]['evidence_id'] for key in dropped}
- assert not retired.intersection({e['evidence_id'] for e in evs})
- approved_e={e['evidence_id']:e for e in at('9976de8','tasks/ppp-size-bands-2026-11-16/evidence_rows.csv')}
- assert all(e==approved_e[e['evidence_id']] for e in evs),'surviving evidence changed'
- print('replay subset: six filled sites dropped, six IDs retired; surviving fills/evidence identical')
- counts=json.loads((D/'counts.json').read_text());assert counts['fills']==dict(Counter(r['record_table'] for r in fills)) and counts['evidence_rows']==len(evs)
- assert counts['strict_organizations']==n and counts['held_loan_org_pairs']==len(held)
- assert read(D/'holds.csv')==held and counts['loan_years']==dict(Counter(r['loan_date'][:4] for r in fills))
- for defect in ['nonblank','wrong_band','wrong_identity']:
-  bad=copy.deepcopy(fills)
-  if defect=='nonblank':bad[0]['old']='1-9'
-  elif defect=='wrong_band':bad[0]['new']=next(b for b in ORDER if b!=bad[0]['new'])
-  else:bad[0]['org_id']=next(r['org_id'] for r in fills if r['org_id']!=bad[0]['org_id'])
-  try:payload(bad,evs)
-  except AssertionError:print('injected defect rejected:',defect)
-  else:raise AssertionError('silent pass: '+defect)
- for key in ['BorrowerAddress','BorrowerCity']:
-  bad=copy.deepcopy(evs);u=fills[0];r=next(r for r in loans() if r['LoanNumber']==u['loan_id'])
-  bad[0]['claim_detail']=bad[0]['claim_detail'].replace(f'; {key}="{r[key]}"','')
-  try:payload(fills,bad)
-  except AssertionError:print('injected evidence defect rejected:',key)
-  else:raise AssertionError('silent pass: missing '+key)
- snapshots={p:p.read_bytes() for p in [ROOT/'data'/n for n in ['organizations_OH.csv','sites_OH.csv','evidence_organizations_OH.csv','evidence_sites_OH.csv']]}
- subprocess.run([sys.executable,str(D/'build.py'),'--apply'],check=True)
- assert all(p.read_bytes()==b for p,b in snapshots.items()),'apply not idempotent'
- print('PASS: strict blank-only bands, evidence parity, known answers, three defects and idempotence')
+ assert git('merge-base','HEAD',BASE).strip()==BASE,'the pinned base is not an ancestor of HEAD'
+ changed=set(git('diff','--name-only',BASE,'--','data').split());assert changed=={f'data/{n}' for n in TOUCHED},f'data files touched: {sorted(changed)}'
+ for line in (D/'INPUTS.sha256').read_text().splitlines():
+  digest,path=line.split('  ',1);assert path.startswith(('raw/','provenance/')),path
+  assert hashlib.sha256((STORE/path).read_bytes()).hexdigest()==digest,f'store file differs from INPUTS.sha256: {path}'
+ raw={r['LoanNumber']:r for r in loans()}
+ fills,evs,claims=read(D/'fills.csv'),read(D/'evidence_rows.csv'),read(D/'CLAIMS_CHECKED.csv')
+ p=plan();assert fills==p['fills'] and evs==p['evidence'],'omitted, added, reordered or altered proposal'
+ assert read(D/'holds.csv')==p['holds'] and read(D/'gate_holds.csv')==p['gate_holds']
+ base,head=tables(BASE),tables(None)
+ bad=verify(base,head,fills,evs,claims,raw);assert not bad,bad
+ all_e=[e for q in (ROOT/'data').glob('evidence_*.csv') for e in read(q)];assert len({e['evidence_id'] for e in all_e})==len(all_e),'tree-wide evidence id collision'
+ idx=gate.Index.load(BASE);verdicts=Counter(gate.judge(dict(e,_at='check'),idx)[0] for e in evs);assert verdicts=={'PASS':len(evs)},verdicts
+ print(f'rows: {len(fills)} fills ({Counter(f["record_table"] for f in fills)}) on {len({f["org_id"] for f in fills})} owners; {len(evs)} evidence rows, binding gate PASS {verdicts["PASS"]}; every touched table equal to base as a row multiset plus the planned cells')
+ if CENSUS.exists():
+  before=(D/'reconciliation.csv').read_bytes();r=reconcile(p);assert (D/'reconciliation.csv').read_bytes()==before,'reconciliation.csv is stale'
+  print('census reconciliation:',r)
+ else:print(f'NOT INSPECTED: census rows {CENSUS} absent, reconciliation.csv not re-derived')
+ # planted defects, each on a copy of the verified state
+ org=TYPE['organizations'];kept=lambda n:next(r for r in head[n] if r[KEYS['organizations' if n==org else 'sites']] not in {f['record_id'] for f in fills})
+ h=copy.deepcopy(head);h[org].remove(kept(org));expect('deleted existing row',verify(base,h,fills,evs,claims,raw),'row_deleted_or_added')
+ h=copy.deepcopy(head);k=kept(org);i=h[org].index(k);h[org][i]=dict(k,website='https://edited.example/');expect('edited existing row',verify(base,h,fills,evs,claims,raw),'unplanned_change')
+ h=copy.deepcopy(head);k=kept(org);i=h[org].index(k);h[org][i]=dict(k,hq_city='Elsewhere');expect('edited existing row (other field)',verify(base,h,fills,evs,claims,raw),'unplanned_change')
+ fo=next(f for f in fills if f['record_table']=='organizations');b=copy.deepcopy(base)
+ for r in b[org]:
+  if r['org_id']==fo['record_id']:r[FIELDS['organizations']]=next(x for x in ORDER if x!=fo['new'])  # a different held band that the fill would overwrite
+ expect('overwritten non-empty band',verify(b,head,fills,evs,claims,raw),'overwrite')
+ r2=copy.deepcopy(raw);r2[fo['loan_id']]['DateApproved']='04/15/2015';expect('loan older than ten years',verify(base,head,fills,evs,claims,r2),'loan_age')
+ r2=copy.deepcopy(raw);r2[fo['loan_id']]['BusinessType']='Sole Proprietorship';expect('individual borrower type',verify(base,head,fills,evs,claims,r2),'borrower_type')
+ e2=[e for e in evs if e['evidence_id']!=fo['evidence_id']];expect('fill with no evidence row',verify(base,head,fills,e2,claims,raw),'no_evidence')
+ c2=[c for c in claims if c['evidence_id']!=fo['evidence_id']];expect('changed cell missing from CLAIMS_CHECKED',verify(base,head,fills,evs,c2,raw),'claims_checked')
+ assert CUTOFF==WRITE.replace(year=WRITE.year-10).isoformat()=='2016-11-26'
+ print('PASS: PPP re-run additions pinned, whole-row multisets equal to the base plus the planned cells, gate PASS on every row, 8 planted defects rejected')
 if __name__=='__main__':main()

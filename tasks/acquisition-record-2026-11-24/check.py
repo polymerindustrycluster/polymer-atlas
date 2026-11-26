@@ -11,7 +11,7 @@ PACKETS = {"overture-pic18-2026-11-24", "google-places-pic18-2026-11-24", "requo
            "requote-all-2026-11-24", "matcher-eval-2026-11-22", "hq-reads-2026-11-24", "p1-contradictions-2-2026-11-24",
            "p1-hq-class-2026-11-24", "p1-read-contradictions-2-2026-11-24", "p3-refetch-pilot-2026-11-24",
            "p3-refetch-scale-1-2026-11-24", "p4-coverage-pilot-2026-11-24", "read-class-candidates-2026-11-24",
-           "read-class-pilot-2026-11-24", "rule-repairs-2026-11-24", "stated-census-2026-11-24"}  # controller packets outside the repo
+           "read-class-pilot-2026-11-24", "rule-repairs-2026-11-24", "stated-census-2026-11-24", "size-ceiling-census-2026-11-26"}  # controller packets outside the repo
 LEAKS = re.compile(r"thr_[a-z0-9]{6,}|/Users/|\.bb/|~/workspace|\btokens?\b|\$\d|per 1,000", re.I)
 
 

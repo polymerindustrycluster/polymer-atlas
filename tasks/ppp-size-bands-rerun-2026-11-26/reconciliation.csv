@@ -1,0 +1,24 @@
+org_id,in_pass,in_census_38,reason
+ORG-000012,True,False,not in the census frame: its other record already holds a band (organizations 10-49); the PPP fill is on the blank record
+ORG-000085,True,False,not in the census frame: its other record already holds a band (sites 10-49); the PPP fill is on the blank record
+ORG-000183,True,False,not in the census frame: its other record already holds a band (organizations 1-9); the PPP fill is on the blank record
+ORG-000214,True,False,not in the census frame: its other record already holds a band (sites 100-249); the PPP fill is on the blank record
+ORG-000227,True,False,not in the census frame: its other record already holds a band (sites 10-49); the PPP fill is on the blank record
+ORG-000322,True,False,not in the census frame: its other record already holds a band (sites 100-249); the PPP fill is on the blank record
+ORG-000442,True,False,not in the census frame: its other record already holds a band (sites 10-49); the PPP fill is on the blank record
+ORG-000527,True,False,not in the census frame: its other record already holds a band (organizations 100-249); the PPP fill is on the blank record
+ORG-000573,True,False,not in the census frame: its other record already holds a band (organizations 10-49); the PPP fill is on the blank record
+ORG-000613,True,False,not in the census frame: its other record already holds a band (organizations 10-49); the PPP fill is on the blank record
+ORG-000823,True,False,not in the census frame: its other record already holds a band (sites 100-249); the PPP fill is on the blank record
+ORG-000955,True,False,not in the census frame: its other record already holds a band (sites 250-499); the PPP fill is on the blank record
+ORG-001380,True,False,not in the census frame: its other record already holds a band (sites 10-49); the PPP fill is on the blank record
+ORG-001392,True,False,not in the census frame: its other record already holds a band (organizations 10-49); the PPP fill is on the blank record
+ORG-001394,True,False,not in the census frame: its other record already holds a band (sites 10-49); the PPP fill is on the blank record
+ORG-001461,True,False,not in the census frame: its other record already holds a band (sites 10-49); the PPP fill is on the blank record
+ORG-001544,True,False,not in the census frame: its other record already holds a band (sites 10-49); the PPP fill is on the blank record
+ORG-001565,True,False,not in the census frame: its other record already holds a band (organizations 50-99); the PPP fill is on the blank record
+ORG-001580,True,False,not in the census frame: its other record already holds a band (organizations 100-249); the PPP fill is on the blank record
+ORG-001590,False,True,gate HELD held_for_reading:designator_not_on_both_sides
+ORG-001710,True,False,not in the census frame: its other record already holds a band (sites 10-49); the PPP fill is on the blank record
+ORG-001764,True,False,not in the census frame: its other record already holds a band (sites 10-49); the PPP fill is on the blank record
+ORG-002050,True,False,not in the census frame: its other record already holds a band (sites 10-49); the PPP fill is on the blank record
