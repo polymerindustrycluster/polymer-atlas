@@ -106,8 +106,11 @@ def main():
  for r in h[TYPE[t]]:
   if r[KEYS[t]]==fl['record_id']:r[FIELDS[t]]=fl['new']
  h[f'evidence_{t}_OH.csv'].append(ev);expect(f"{fl['record_id']} fill against a newer different ITA band on its sole site",verify(base,h,fills+[fl],evs+[ev],claims+[dict(table=t,record_id=fl['record_id'],field=fl['field'],verdict='corrected',evidence_id=fl['evidence_id'])],raw,tier1),'newer_contradicting')
+ ita=dict(source_class='government_filing',source_ref='OSHA ITA Form 300A; raw/osha/2026-11-22-archive-snapshot/raw/ita/x.csv',claim_detail='employee_band_site=100-249; OSHA ITA 300A CY2019; quote: X',observed_date='2026-11-01',evidence_id='EVD-T',band='100-249')  # Codex #573 r2: CY2019 text, retrieval date in observed_date
+ klass,_=precedence(dict(record_table='organizations',record_id='O',org_id='O',site_id='S',loan_id='1',loan_date='2020-04-13',new='50-99'),{},{'S':{FIELDS['sites']:'100-249'}},{('sites','S'):[ita]})
+ assert klass=='older_differs',f'silent pass: a 2019 filing with a retrieval observed_date was read as newer than a 2020 loan ({klass})';print('planted 2019 ITA filing with a retrieval observed_date: read as older, not a hold (older_differs)')
  mv=next(e for e in reversed(evs) if e['record_table']=='sites');h=copy.deepcopy(head);h['evidence_sites_OH.csv'].remove(mv);h['evidence_organizations_OH.csv'].append(mv);expect(f"evidence row {mv['evidence_id']} moved to the wrong shard",verify(base,h,fills,evs,claims,raw,tier1),'evidence_additions')
  c2=[c for c in claims if c['evidence_id']!=fo['evidence_id']];expect('changed cell missing from CLAIMS_CHECKED',verify(base,head,fills,evs,c2,raw,tier1),'claims_checked')
  assert CUTOFF==WRITE.replace(year=WRITE.year-10).isoformat()=='2016-11-26'
- print('PASS: PPP re-run additions pinned, whole-row multisets equal to the base plus the planned cells, gate PASS on every row, 12 planted defects rejected')
+ print('PASS: PPP re-run additions pinned, whole-row multisets equal to the base plus the planned cells, gate PASS on every row, 13 planted defects rejected')
 if __name__=='__main__':main()

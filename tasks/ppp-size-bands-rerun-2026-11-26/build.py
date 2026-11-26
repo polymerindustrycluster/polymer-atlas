@@ -70,12 +70,12 @@ def size_evidence():
  return out
 def source_date(e):
  """The date of the filing a size_band row rests on, or '' when it has none (R13: ITA is 31 December of its year; inspection its open date; old
- 2026-11-01 rows carry a retrieval date in observed_date, so the date is read from the claim text; PPP and own-site rows carry theirs in observed_date)."""
+ 2026-11-01 rows carry a retrieval date in observed_date, so a date stated in the claim text wins, then observed_date for v1.19.7 and raw/osha/ rows; PPP and own-site rows carry theirs in observed_date)."""
  t=e['claim_detail']+' '+e['source_ref']
- if ('filing year' in t or 'raw/osha/' in t) and re.fullmatch(r'\d{4}-\d{2}-\d{2}',e['observed_date']):return e['observed_date']  # rows written since v1.19.7 (and the packet rows citing raw/osha/) carry the filing's own date
  for rx,fmt in ((r'source date (\d{4}-\d{2}-\d{2})','{}'),(r'\bITA\b[^;]*?\bCY(\d{4})','{}-12-31'),(r'\bITA Form 300A (\d{4})\b','{}-12-31'),(r'\bCY(\d{4})\b','{}-12-31'),(r'opened (\d{4}-\d{2}-\d{2})','{}')):
   m=re.search(rx,t)
   if m and (rx!=r'\bCY(\d{4})\b' or 'ITA' in t):return fmt.format(m[1])
+ if ('filing year' in t or 'raw/osha/' in t) and re.fullmatch(r'\d{4}-\d{2}-\d{2}',e['observed_date']):return e['observed_date']  # no date in the claim text: rows written since v1.19.7 (and the packet rows citing raw/osha/) carry the filing's own date
  if 'SBA PPP' in e['source_ref'] or e['source_class']=='own_site':return e['observed_date'] if re.fullmatch(r'\d{4}-\d{2}-\d{2}',e['observed_date']) else ''
  return ''
 def admissible(e):
