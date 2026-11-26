@@ -22,6 +22,7 @@ ROOT = HERE.parents[1]
 TASK = HERE.name
 LABEL = f"claude-code {TASK}"
 OBSERVED = "2026-11-25"  # the day the pages were read
+FIRST_ID = 483150  # PR #569 holds EVD-483144 to EVD-483149; allocate above it whatever the base maximum is
 STORE = Path("/Volumes/johnpswan/work/GAC/polymer-atlas/atlas-store/provenance") / TASK / "captures"
 WAYBACK = re.compile(r"https://web\.archive\.org/web/(\d{4})(\d\d)(\d\d)(\d{6})id_/(.+)")
 ROLE_MAIL = {"info", "sales", "support", "service", "office", "contact", "marketing", "orders", "customerservice",
@@ -140,6 +141,7 @@ def apply(captures):
     assert rows, "no VERIFIED rows in READS.csv"
     greatest = max(int(e["evidence_id"].split("-")[1]) for p in git("ls-tree", "--name-only", base, "data/").decode().split()
                    if re.fullmatch(r"data/evidence_[A-Za-z_]+\.csv", p) for e in parse(git("show", f"{base}:{p}"))[1])
+    greatest = max(greatest, FIRST_ID - 1)
     plan, cells = [], {}
     for n, r in enumerate(rows, start=1):
         data = pinned(r["capture_sha256"], *captures)

@@ -12,9 +12,9 @@ The LinkedIn reading pilot (`persist/linkedin-reading-pilot-2026-11-26`, outside
 
 | Owner | Values | Own page (immutable Wayback `id_` copy) | Evidence |
 |---|---|---|---|
-| ORG-001936 Rotocast Technologies | `plastics_rubber_processors` | `http://rotocastmold.com/`, 2026-05-16 | EVD-483144 |
-| ORG-001497 Budzar Industries | `pharmaceutical_biotech`, `chemical_mining_metals_processing`, `food_processing_foodservice`, `plastics_rubber_processors` | `https://www.budzar.com/`, 2025-04-17 | EVD-483145 to EVD-483148 |
-| ORG-000147 Chem-Materials | `plastics_rubber_processors`, `construction_building_products` | `https://www.chem-materials.com/`, 2025-03-30 | EVD-483149, EVD-483150 |
+| ORG-001936 Rotocast Technologies | `plastics_rubber_processors` | `http://rotocastmold.com/`, 2026-05-16 | EVD-483150 |
+| ORG-001497 Budzar Industries | `pharmaceutical_biotech`, `chemical_mining_metals_processing`, `food_processing_foodservice`, `plastics_rubber_processors` | `https://www.budzar.com/`, 2025-04-17 | EVD-483151 to EVD-483154 |
+| ORG-000147 Chem-Materials | `plastics_rubber_processors`, `construction_building_products` | `https://www.chem-materials.com/`, 2025-03-30 | EVD-483155, EVD-483156 |
 | ORG-001584 Green Innovations | held, NOT_STATED | live `www` services page and the 2026-07-17 home capture | none |
 | ORG-001470 The Pittsburgh Paints Company | held, NOT_STATED | six own pages | none |
 
