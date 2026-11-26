@@ -1,11 +1,12 @@
 {
  "frame": 727,
- "frame_sites_with_own_domain_page": 606,
- "sites_street_and_city_on_own_page": 387,
- "held_name_beside_street": 239,
- "no_name_beside_street": 102,
- "candidates_A_other_name_beside_street": 46,
- "candidates_B_held_name_nowhere_on_site": 13,
- "candidates_C_only_legal_or_trade_name_beside_street": 26,
- "candidates_union": 79
+ "frame_sites_with_own_domain_page": 617,
+ "sites_street_and_city_on_own_page": 391,
+ "held_name_beside_street": 240,
+ "candidates_A": 35,
+ "candidates_B": 14,
+ "candidates_C": 27,
+ "candidates_D": 19,
+ "candidates_E": 37,
+ "candidates_union": 115
 }
