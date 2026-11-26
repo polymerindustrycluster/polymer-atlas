@@ -1,0 +1,462 @@
+batch,n,record_table,record_id,field,value,grain,gemini,batch_void
+1,1,sites,SITE-001876,processes,coating_applying,plant,STATED,False
+1,2,organizations,ORG-002039,markets_served,plastics_rubber_processors,company,IMPLIED,False
+1,3,sites,SITE-000256,processes,plastics_fabrication_welding,plant,STATED,False
+1,4,sites,SITE-001889,processes,silicone_formulation,plant,IMPLIED,False
+1,5,sites,SITE-000354,processes,die_cutting_converting,plant,STATED,False
+1,6,organizations,ORG-000997,markets_served,automotive_unspecified,company,STATED,False
+1,7,sites,SITE-000200,markets_served,consumer_goods_housewares,plant,STATED,False
+1,8,sites,SITE-000271,markets_served,toys_sporting_goods,plant,STATED,False
+1,9,sites,SITE-000065,processes,extrusion_pipe_tube,plant,STATED,False
+1,10,sites,SITE-000239,markets_served,appliances,plant,STATED,False
+1,11,sites,SITE-000398,markets_served,automotive_aftermarket,plant,STATED,False
+1,12,organizations,ORG-000246,markets_served,medical_healthcare_general,company,STATED,False
+1,13,organizations,ORG-000010,markets_served,medical_device,company,STATED,False
+1,14,organizations,ORG-000088,markets_served,energy_oil_gas,company,STATED,False
+1,15,sites,SITE-001846,markets_served,plastics_rubber_processors,plant,IMPLIED,False
+1,16,sites,SITE-000348,processes,printing_decorating_plastics,plant,STATED,False
+1,17,sites,SITE-000573,processes,die_cutting_converting,plant,STATED,False
+1,18,sites,SITE-000612,processes,silicone_formulation,plant,STATED,False
+1,19,sites,SITE-000240,processes,rubber_mixing_compounding,plant,STATED,False
+1,20,sites,SITE-000202,processes,rubber_mixing_compounding,plant,STATED,False
+1,21,organizations,ORG-000506,markets_served,appliances,company,STATED,False
+1,22,organizations,ORG-000569,markets_served,medical_healthcare_general,company,STATED,False
+1,24,sites,SITE-000521,processes,compounding_extrusion,plant,IMPLIED,False
+1,25,sites,SITE-000083,processes,custom_compounding,plant,STATED,False
+1,26,organizations,ORG-001601,markets_served,energy_renewables_battery,company,STATED,False
+1,27,organizations,ORG-000010,markets_served,rail_transportation,company,STATED,False
+1,28,organizations,ORG-002135,markets_served,water_wastewater,company,STATED,False
+1,29,sites,SITE-000439,processes,latex_dipping_foaming,plant,STATED,False
+1,30,sites,SITE-000386,processes,rubber_molding_injection,plant,STATED,False
+1,31,sites,SITE-000201,processes,rubber_calendering,plant,STATED,False
+1,32,organizations,ORG-000449,processes,injection_molding,company,STATED,False
+1,33,sites,SITE-000603,processes,compression_molding,plant,STATED,False
+1,34,sites,SITE-000658,processes,regrind_pelletizing,plant,STATED,False
+1,35,sites,SITE-001741,processes,ink_formulation,plant,STATED,False
+1,36,organizations,ORG-000628,markets_served,medical_device,company,STATED,False
+1,37,sites,SITE-000574,processes,injection_molding,plant,STATED,False
+1,38,sites,SITE-000083,markets_served,lawn_garden_recreation,plant,STATED,False
+1,39,sites,SITE-000196,markets_served,medical_device,plant,STATED,False
+1,40,organizations,ORG-000340,markets_served,automotive_unspecified,company,STATED,False
+1,41,organizations,ORG-001395,markets_served,consumer_goods_housewares,company,STATED,False
+1,42,organizations,ORG-000525,markets_served,agriculture,company,STATED,False
+1,43,sites,SITE-000329,processes,ultrasonic_solvent_bonding,plant,STATED,False
+1,44,organizations,ORG-002043,markets_served,automotive_unspecified,company,STATED,False
+1,45,organizations,ORG-000997,markets_served,marine,company,STATED,False
+1,46,sites,SITE-000278,processes,custom_compounding,plant,STATED,False
+1,47,organizations,ORG-001147,markets_served,automotive_unspecified,company,STATED,False
+1,48,organizations,ORG-000007,markets_served,pharmaceutical_biotech,company,STATED,False
+1,49,organizations,ORG-000208,processes,die_cutting_converting,company,STATED,False
+1,50,organizations,ORG-000449,processes,blow_molding,company,STATED,False
+1,51,organizations,ORG-000697,markets_served,toys_sporting_goods,company,STATED,False
+1,52,organizations,ORG-000601,markets_served,medical_device,company,STATED,False
+1,53,sites,SITE-001783,processes,hose_belting_manufacturing,plant,IMPLIED,False
+1,54,organizations,ORG-000549,markets_served,rail_transportation,company,STATED,False
+1,55,sites,SITE-001632,processes,insert_overmolding,plant,STATED,False
+1,57,sites,SITE-000486,markets_served,automotive_unspecified,plant,STATED,False
+1,58,sites,SITE-000186,processes,rubber_molding_compression,plant,NOT_STATED,False
+1,59,organizations,ORG-000340,markets_served,agriculture,company,STATED,False
+1,60,sites,SITE-000813,processes,laminating,plant,STATED,False
+1,61,sites,SITE-000672,processes,rubber_mixing_compounding,plant,STATED,False
+1,62,organizations,ORG-002039,markets_served,construction_building_products,company,STATED,False
+1,64,organizations,ORG-000130,markets_served,aerospace_defense,company,STATED,False
+1,65,sites,SITE-000486,processes,injection_molding,plant,STATED,False
+1,66,organizations,ORG-000397,processes,rubber_molding_injection,company,STATED,False
+1,68,organizations,ORG-000601,markets_served,aerospace_defense,company,STATED,False
+1,70,sites,SITE-001722,markets_served,marine,plant,STATED,False
+1,71,sites,SITE-000631,processes,injection_molding,plant,STATED,False
+1,72,sites,SITE-000465,markets_served,medical_device,plant,STATED,False
+1,73,organizations,ORG-000088,markets_served,packaging_food_beverage,company,STATED,False
+1,74,sites,SITE-001846,processes,tooling_repair_maintenance,plant,STATED,False
+1,75,organizations,ORG-001477,markets_served,aerospace_defense,company,STATED,False
+1,76,sites,SITE-000083,markets_served,furniture_office,plant,STATED,False
+1,77,sites,SITE-000196,markets_served,marine,plant,STATED,False
+1,78,sites,SITE-000200,processes,die_cutting_converting,plant,STATED,False
+1,79,organizations,ORG-000458,processes,compression_molding,company,STATED,False
+1,80,organizations,ORG-000124,markets_served,electronics_electrical,company,STATED,False
+1,81,sites,SITE-000247,markets_served,rail_transportation,plant,STATED,False
+1,82,sites,SITE-001534,processes,coating_formulation,plant,NOT_STATED,False
+1,83,organizations,ORG-000458,markets_served,appliances,company,STATED,False
+1,84,sites,SITE-000603,processes,transfer_molding,plant,STATED,False
+1,85,sites,SITE-000466,processes,coating_applying,plant,STATED,False
+1,86,organizations,ORG-000607,markets_served,food_processing_foodservice,company,STATED,False
+1,87,organizations,ORG-000556,markets_served,construction_building_products,company,STATED,False
+1,88,sites,SITE-000549,processes,die_cutting_converting,plant,STATED,False
+1,89,organizations,ORG-000188,markets_served,agriculture,company,STATED,False
+1,90,sites,SITE-001693,processes,custom_compounding,plant,STATED,False
+1,91,sites,SITE-001793,markets_served,packaging_industrial,plant,STATED,False
+1,92,organizations,ORG-000997,markets_served,medical_healthcare_general,company,STATED,False
+1,93,organizations,ORG-000290,markets_served,electronics_electrical,company,STATED,False
+1,94,organizations,ORG-000054,markets_served,aerospace_defense,company,STATED,False
+1,95,organizations,ORG-000569,markets_served,consumer_goods_housewares,company,STATED,False
+1,96,sites,SITE-000197,processes,die_cutting_converting,plant,STATED,False
+1,97,sites,SITE-000603,processes,insert_overmolding,plant,STATED,False
+1,98,organizations,ORG-000549,markets_served,automotive_unspecified,company,STATED,False
+2,1,sites,SITE-000239,processes,extrusion_profile,plant,STATED,False
+2,2,organizations,ORG-000354,markets_served,rail_transportation,company,STATED,False
+2,3,organizations,ORG-000007,markets_served,cosmetics_personal_care,company,STATED,False
+2,4,sites,SITE-000329,processes,tooling_repair_maintenance,plant,STATED,False
+2,5,sites,SITE-000186,processes,rubber_mixing_compounding,plant,STATED,False
+2,6,organizations,ORG-000640,processes,composites_hand_layup,company,STATED,False
+2,7,sites,SITE-000429,markets_served,lawn_garden_recreation,plant,IMPLIED,False
+2,8,organizations,ORG-000525,markets_served,toys_sporting_goods,company,STATED,False
+2,9,sites,SITE-000083,markets_served,automotive_unspecified,plant,STATED,False
+2,10,organizations,ORG-000135,markets_served,cosmetics_personal_care,company,STATED,False
+2,11,sites,SITE-001702,markets_served,food_processing_foodservice,plant,NOT_STATED,False
+2,13,sites,SITE-000330,processes,assembly_secondary_ops,plant,STATED,False
+2,14,sites,SITE-001390,processes,ultrasonic_solvent_bonding,plant,STATED,False
+2,15,sites,SITE-000275,markets_served,tire_rubber_goods,plant,IMPLIED COMPANY_WIDE,False
+2,16,organizations,ORG-000607,markets_served,industrial_machinery,company,STATED,False
+2,17,sites,SITE-000063,processes,rubber_molding_compression,plant,IMPLIED,False
+2,18,sites,SITE-000329,processes,injection_molding,plant,STATED,False
+2,19,sites,SITE-001924,markets_served,electronics_electrical,plant,STATED,False
+2,20,organizations,ORG-000556,markets_served,electronics_electrical,company,STATED,False
+2,21,sites,SITE-000190,processes,die_cutting_converting,plant,STATED,False
+2,22,sites,SITE-000109,processes,plastics_fabrication_welding,plant,STATED COMPANY_WIDE,False
+2,23,sites,SITE-000615,markets_served,construction_building_products,plant,IMPLIED COMPANY_WIDE,False
+2,24,sites,SITE-000428,markets_served,aerospace_defense,plant,STATED,False
+2,25,organizations,ORG-000354,markets_served,food_processing_foodservice,company,STATED,False
+2,26,sites,SITE-000864,markets_served,electronics_electrical,plant,STATED,False
+2,27,organizations,ORG-001384,markets_served,consumer_goods_housewares,company,STATED,False
+2,28,sites,SITE-000179,processes,rubber_calendering,plant,IMPLIED,False
+2,29,sites,SITE-000083,processes,compounding_extrusion,plant,IMPLIED,False
+2,30,organizations,ORG-000640,processes,composites_filament_winding,company,STATED,False
+2,31,sites,SITE-001875,markets_served,pharmaceutical_biotech,plant,STATED,False
+2,32,sites,SITE-000241,processes,die_cutting_converting,plant,STATED,False
+2,33,sites,SITE-000489,processes,adhesive_sealant_formulation,plant,STATED,False
+2,34,sites,SITE-002016,processes,rotational_molding,plant,STATED COMPANY_WIDE,False
+2,35,organizations,ORG-000007,markets_served,electronics_electrical,company,STATED,False
+2,36,organizations,ORG-000620,processes,blow_molding,company,STATED,False
+2,37,sites,SITE-001798,markets_served,packaging_consumer,plant,STATED,False
+2,38,sites,SITE-000489,processes,polymerization,plant,STATED,False
+2,39,sites,SITE-000286,markets_served,lawn_garden_recreation,plant,STATED,False
+2,40,organizations,ORG-000523,markets_served,cosmetics_personal_care,company,STATED,False
+2,41,organizations,ORG-000997,markets_served,furniture_office,company,STATED,False
+2,42,organizations,ORG-000458,markets_served,electronics_electrical,company,STATED,False
+2,43,sites,SITE-000241,processes,laminating,plant,STATED,False
+2,44,sites,SITE-000542,processes,additive_dry_blending,plant,IMPLIED,False
+2,45,organizations,ORG-000607,processes,die_cutting_converting,company,STATED,False
+2,46,sites,SITE-000354,processes,thermoforming_vacuum,plant,STATED,False
+2,47,organizations,ORG-000511,markets_served,packaging_industrial,company,STATED,False
+2,48,sites,SITE-001632,processes,assembly_secondary_ops,plant,STATED COMPANY_WIDE,False
+2,49,sites,SITE-000521,processes,custom_compounding,plant,STATED COMPANY_WIDE,False
+2,50,sites,SITE-000017,processes,die_cutting_converting,plant,STATED COMPANY_WIDE,False
+2,51,organizations,ORG-000199,markets_served,water_wastewater,company,STATED,False
+2,52,sites,SITE-000486,markets_served,agriculture,plant,STATED,False
+2,53,sites,SITE-000542,processes,compounding_extrusion,plant,STATED,False
+2,55,sites,SITE-000087,processes,rubber_extrusion,plant,STATED,False
+2,56,sites,SITE-000619,processes,assembly_secondary_ops,plant,STATED COMPANY_WIDE,False
+2,57,sites,SITE-001876,processes,die_cutting_converting,plant,STATED,False
+2,58,sites,SITE-000293,processes,adhesive_sealant_formulation,plant,NOT_STATED,False
+2,59,sites,SITE-001649,markets_served,lawn_garden_recreation,plant,STATED,False
+2,60,organizations,ORG-000706,markets_served,agriculture,company,STATED,False
+2,62,organizations,ORG-000010,markets_served,marine,company,STATED,False
+2,63,organizations,ORG-000883,markets_served,packaging_food_beverage,company,NOT_STATED,False
+2,64,organizations,ORG-001725,processes,coating_formulation,company,IMPLIED,False
+2,65,organizations,ORG-000132,markets_served,automotive_unspecified,company,STATED,False
+2,66,organizations,ORG-000315,markets_served,energy_oil_gas,company,IMPLIED,False
+2,67,organizations,ORG-000523,markets_served,packaging_food_beverage,company,NOT_STATED,False
+2,68,sites,SITE-000202,processes,rubber_extrusion,plant,STATED,False
+2,69,sites,SITE-000428,markets_served,agriculture,plant,STATED,False
+2,70,organizations,ORG-000057,markets_served,chemical_mining_metals_processing,company,STATED,False
+2,71,organizations,ORG-000569,markets_served,construction_building_products,company,STATED,False
+2,73,sites,SITE-000278,markets_served,furniture_office,plant,STATED COMPANY_WIDE,False
+2,74,sites,SITE-000125,processes,ultrasonic_solvent_bonding,plant,STATED,False
+2,75,sites,SITE-001747,processes,thermoforming_vacuum,plant,STATED,False
+2,76,organizations,ORG-000589,markets_served,toys_sporting_goods,company,STATED,False
+2,77,organizations,ORG-000569,markets_served,electronics_electrical,company,STATED,False
+2,78,organizations,ORG-000628,markets_served,aerospace_defense,company,STATED,False
+2,79,sites,SITE-000489,processes,custom_compounding,plant,STATED,False
+2,80,organizations,ORG-000238,markets_served,automotive_unspecified,company,STATED,False
+2,81,sites,SITE-000190,markets_served,medical_healthcare_general,plant,STATED,False
+2,82,sites,SITE-000573,processes,printing_decorating_plastics,plant,STATED,False
+2,83,organizations,ORG-000354,markets_served,telecom_datacom,company,STATED,False
+2,84,organizations,ORG-000458,markets_served,aerospace_defense,company,STATED,False
+2,85,organizations,ORG-000607,markets_served,energy_oil_gas,company,STATED,False
+2,87,organizations,ORG-000208,processes,printing_decorating_plastics,company,STATED,False
+2,88,organizations,ORG-000425,markets_served,pharmaceutical_biotech,company,STATED,False
+2,89,organizations,ORG-000341,markets_served,food_processing_foodservice,company,STATED,False
+2,90,sites,SITE-001889,markets_served,electronics_electrical,plant,STATED,False
+2,91,sites,SITE-000592,processes,additive_manufacturing_polymer_production,plant,STATED COMPANY_WIDE,False
+2,92,organizations,ORG-000354,markets_served,electronics_electrical,company,STATED,False
+2,93,organizations,ORG-000397,processes,rubber_molding_compression,company,STATED,False
+2,94,sites,SITE-000256,processes,thermoforming_vacuum,plant,STATED,False
+2,95,sites,SITE-000386,processes,rubber_molding_compression,plant,STATED,False
+2,96,sites,SITE-001875,processes,die_cutting_converting,plant,STATED,False
+2,97,organizations,ORG-001477,markets_served,automotive_unspecified,company,STATED,False
+3,1,organizations,ORG-000607,markets_served,medical_healthcare_general,company,STATED,False
+3,2,sites,SITE-000271,markets_served,appliances,plant,STATED,False
+3,3,sites,SITE-000971,markets_served,furniture_office,plant,STATED,False
+3,4,organizations,ORG-001757,markets_served,water_wastewater,company,STATED,False
+3,5,organizations,ORG-001624,processes,pulverizing_grinding_resin,company,STATED,False
+3,6,sites,SITE-000337,processes,custom_compounding,plant,STATED,False
+3,7,sites,SITE-000864,markets_served,automotive_unspecified,plant,STATED,False
+3,8,sites,SITE-000390,processes,plastics_machining_cnc,plant,STATED COMPANY_WIDE,False
+3,9,sites,SITE-000603,processes,tooling_repair_maintenance,plant,STATED,False
+3,10,sites,SITE-000625,markets_served,construction_building_products,plant,STATED,False
+3,11,sites,SITE-000658,processes,pulverizing_grinding_resin,plant,STATED COMPANY_WIDE,False
+3,12,sites,SITE-000202,markets_served,electronics_electrical,plant,STATED,False
+3,13,organizations,ORG-000683,markets_served,construction_building_products,company,STATED,False
+3,14,sites,SITE-000348,processes,injection_molding,plant,STATED,False
+3,15,sites,SITE-000456,markets_served,construction_building_products,plant,STATED,False
+3,16,sites,SITE-000063,processes,rubber_extrusion,plant,IMPLIED,False
+3,17,organizations,ORG-000883,markets_served,cosmetics_personal_care,company,STATED,False
+3,18,sites,SITE-000631,processes,assembly_secondary_ops,plant,STATED,False
+3,19,sites,SITE-000619,markets_served,medical_healthcare_general,plant,STATED COMPANY_WIDE,False
+3,20,sites,SITE-000432,markets_served,rail_transportation,plant,STATED,False
+3,22,sites,SITE-001924,processes,assembly_secondary_ops,plant,STATED,False
+3,23,sites,SITE-001861,processes,die_cutting_converting,plant,IMPLIED,False
+3,24,organizations,ORG-000010,markets_served,electronics_electrical,company,STATED,False
+3,25,sites,SITE-000864,markets_served,medical_healthcare_general,plant,STATED,False
+3,26,organizations,ORG-000549,processes,coating_applying,company,STATED,False
+3,27,organizations,ORG-001477,markets_served,electronics_electrical,company,STATED,False
+3,28,organizations,ORG-000640,markets_served,infrastructure_civil,company,STATED,False
+3,29,sites,SITE-000271,markets_served,packaging_food_beverage,plant,NOT_STATED,False
+3,30,sites,SITE-000655,processes,assembly_secondary_ops,plant,STATED,False
+3,31,organizations,ORG-000054,markets_served,electronics_electrical,company,STATED,False
+3,32,sites,SITE-000331,markets_served,construction_building_products,plant,IMPLIED,False
+3,33,sites,SITE-000286,processes,assembly_secondary_ops,plant,STATED,False
+3,34,sites,SITE-000039,processes,printing_decorating_plastics,plant,STATED,False
+3,36,organizations,ORG-000010,markets_served,aerospace_defense,company,STATED,False
+3,37,organizations,ORG-000088,markets_served,energy_renewables_battery,company,STATED,False
+3,38,organizations,ORG-000607,markets_served,chemical_mining_metals_processing,company,STATED,False
+3,39,organizations,ORG-000449,markets_served,medical_device,company,STATED,False
+3,40,sites,SITE-001712,processes,mold_tool_making,plant,STATED,False
+3,41,organizations,ORG-000607,processes,rubber_molding_compression,company,STATED,False
+3,42,sites,SITE-001741,markets_served,toys_sporting_goods,plant,IMPLIED,False
+3,43,sites,SITE-001889,processes,pigment_colorant_dispersion,plant,STATED COMPANY_WIDE,False
+3,44,sites,SITE-000072,processes,injection_molding,plant,STATED,False
+3,45,sites,SITE-000206,processes,coating_applying,plant,STATED,False
+3,47,organizations,ORG-001667,markets_served,pharmaceutical_biotech,company,STATED,False
+3,48,organizations,ORG-000431,processes,extrusion_profile,company,STATED,False
+3,49,organizations,ORG-000425,markets_served,packaging_food_beverage,company,IMPLIED,False
+3,50,sites,SITE-001846,processes,mold_tool_making,plant,STATED COMPANY_WIDE,False
+3,51,sites,SITE-000186,processes,rubber_molding_injection,plant,STATED COMPANY_WIDE,False
+3,52,sites,SITE-000658,processes,additive_dry_blending,plant,STATED,False
+3,53,sites,SITE-001708,processes,injection_molding,plant,STATED,False
+3,54,sites,SITE-000640,processes,additive_manufacturing_polymer,plant,STATED,False
+3,55,sites,SITE-000187,markets_served,food_processing_foodservice,plant,STATED COMPANY_WIDE,False
+3,56,sites,SITE-001657,markets_served,electronics_electrical,plant,STATED,False
+3,57,organizations,ORG-000088,markets_served,infrastructure_civil,company,STATED,False
+3,58,sites,SITE-000271,markets_served,packaging_industrial,plant,STATED,False
+3,59,sites,SITE-000064,markets_served,consumer_goods_housewares,plant,STATED,False
+3,60,organizations,ORG-000506,markets_served,agriculture,company,STATED,False
+3,61,sites,SITE-000864,markets_served,construction_building_products,plant,STATED,False
+3,62,sites,SITE-001657,processes,extrusion_pipe_tube,plant,STATED,False
+3,63,sites,SITE-000017,processes,rubber_mixing_compounding,plant,IMPLIED,False
+3,64,organizations,ORG-000549,processes,transfer_molding,company,STATED,False
+3,65,organizations,ORG-000683,markets_served,automotive_unspecified,company,STATED,False
+3,66,sites,SITE-001924,processes,potting_encapsulation_casting,plant,STATED,False
+3,67,organizations,ORG-000841,markets_served,automotive_unspecified,company,STATED,False
+3,68,organizations,ORG-000088,markets_served,automotive_oem,company,STATED,False
+3,69,organizations,ORG-000431,processes,extrusion_pipe_tube,company,STATED,False
+3,71,sites,SITE-000489,processes,coating_applying,plant,STATED,False
+3,72,organizations,ORG-000397,processes,rubber_extrusion,company,IMPLIED,False
+3,73,organizations,ORG-001033,markets_served,packaging_food_beverage,company,STATED,False
+3,74,sites,SITE-000201,processes,hose_belting_manufacturing,plant,STATED,False
+3,75,organizations,ORG-002043,markets_served,medical_healthcare_general,company,STATED,False
+3,76,organizations,ORG-000909,markets_served,construction_building_products,company,STATED,False
+3,77,sites,SITE-000654,markets_served,medical_device,plant,STATED COMPANY_WIDE,False
+3,78,organizations,ORG-000549,markets_served,aerospace_defense,company,STATED,False
+3,79,organizations,ORG-000544,processes,laminating,company,STATED,False
+3,80,sites,SITE-001721,processes,rotational_molding,plant,STATED COMPANY_WIDE,False
+3,81,sites,SITE-000189,markets_served,construction_building_products,plant,STATED,False
+3,82,organizations,ORG-000208,markets_served,packaging_food_beverage,company,STATED,False
+3,83,sites,SITE-000109,processes,die_cutting_converting,plant,STATED,False
+3,84,sites,SITE-001889,markets_served,medical_healthcare_general,plant,STATED,False
+3,85,sites,SITE-002016,markets_served,consumer_goods_housewares,plant,STATED,False
+3,87,sites,SITE-000486,markets_served,rail_transportation,plant,STATED,False
+3,88,sites,SITE-001823,processes,coating_formulation,plant,STATED COMPANY_WIDE,False
+3,89,organizations,ORG-000386,processes,assembly_secondary_ops,company,STATED,False
+3,90,sites,SITE-000063,processes,die_cutting_converting,plant,STATED,False
+3,91,sites,SITE-001876,markets_served,electronics_electrical,plant,STATED,False
+3,92,organizations,ORG-000544,processes,mold_tool_making,company,STATED,False
+3,93,organizations,ORG-000909,markets_served,furniture_office,company,STATED,False
+3,94,sites,SITE-000107,processes,assembly_secondary_ops,plant,STATED,False
+3,95,organizations,ORG-000883,processes,blow_molding_extrusion,company,STATED,False
+3,96,organizations,ORG-000354,markets_served,appliances,company,STATED,False
+3,97,sites,SITE-000879,processes,injection_molding,plant,STATED COMPANY_WIDE,False
+4,1,organizations,ORG-000569,markets_served,automotive_unspecified,company,STATED,False
+4,2,organizations,ORG-000628,markets_served,food_processing_foodservice,company,IMPLIED,False
+4,3,sites,SITE-000612,processes,adhesive_sealant_formulation,plant,STATED COMPANY_WIDE,False
+4,4,organizations,ORG-000098,markets_served,agriculture,company,STATED,False
+4,5,organizations,ORG-000088,markets_served,marine,company,STATED,False
+4,6,sites,SITE-001823,markets_served,infrastructure_civil,plant,STATED,False
+4,7,organizations,ORG-001601,markets_served,automotive_unspecified,company,STATED,False
+4,8,organizations,ORG-001667,markets_served,chemical_mining_metals_processing,company,STATED,False
+4,9,organizations,ORG-000549,markets_served,medical_healthcare_general,company,STATED,False
+4,10,organizations,ORG-000841,markets_served,medical_healthcare_general,company,STATED,False
+4,11,organizations,ORG-000997,markets_served,agriculture,company,STATED,False
+4,12,sites,SITE-000486,markets_served,electronics_electrical,plant,STATED,False
+4,13,organizations,ORG-000057,markets_served,medical_healthcare_general,company,STATED,False
+4,14,sites,SITE-000286,markets_served,toys_sporting_goods,plant,STATED,False
+4,15,organizations,ORG-000589,processes,rotational_molding,company,STATED,False
+4,16,sites,SITE-000386,processes,mold_tool_making,plant,STATED,False
+4,17,organizations,ORG-001657,processes,rotational_molding,company,IMPLIED,False
+4,18,organizations,ORG-000909,markets_served,agriculture,company,STATED,False
+4,19,organizations,ORG-000544,processes,foam_fabrication,company,STATED,False
+4,20,organizations,ORG-000010,markets_served,automotive_unspecified,company,STATED,False
+4,21,organizations,ORG-000054,markets_served,footwear_apparel,company,STATED,False
+4,22,organizations,ORG-000005,markets_served,cosmetics_personal_care,company,STATED,False
+4,23,organizations,ORG-000544,markets_served,footwear_apparel,company,STATED,False
+4,24,sites,SITE-000062,processes,custom_compounding,plant,STATED COMPANY_WIDE,False
+4,25,organizations,ORG-000354,markets_served,infrastructure_civil,company,STATED,False
+4,26,sites,SITE-000655,processes,mold_tool_making,plant,IMPLIED,False
+4,27,sites,SITE-000657,markets_served,industrial_machinery,plant,STATED,False
+4,28,sites,SITE-001657,markets_served,construction_building_products,plant,STATED,False
+4,29,organizations,ORG-000569,markets_served,medical_device,company,IMPLIED,False
+4,30,organizations,ORG-000344,markets_served,construction_building_products,company,STATED,False
+4,31,sites,SITE-000337,processes,laminating,plant,STATED,False
+4,32,organizations,ORG-001033,processes,blow_molding_stretch,company,IMPLIED,False
+4,33,organizations,ORG-000553,markets_served,electronics_electrical,company,STATED,False
+4,34,sites,SITE-000486,markets_served,construction_building_products,plant,STATED,False
+4,35,sites,SITE-000202,markets_served,appliances,plant,STATED,False
+4,36,sites,SITE-000190,markets_served,aerospace_defense,plant,STATED,False
+4,37,organizations,ORG-001477,markets_served,construction_building_products,company,STATED,False
+4,38,sites,SITE-000017,processes,rubber_molding_compression,plant,IMPLIED,False
+4,39,organizations,ORG-000628,markets_served,automotive_unspecified,company,STATED,False
+4,40,organizations,ORG-000883,markets_served,agriculture,company,IMPLIED,False
+4,41,organizations,ORG-000607,markets_served,water_wastewater,company,STATED,False
+4,42,sites,SITE-000271,markets_served,packaging_consumer,plant,NOT_STATED,False
+4,43,organizations,ORG-001666,markets_served,automotive_unspecified,company,STATED,False
+4,44,sites,SITE-000864,markets_served,aerospace_defense,plant,STATED,False
+4,45,sites,SITE-000206,processes,calendering,plant,STATED,False
+4,46,sites,SITE-001657,markets_served,marine,plant,STATED,False
+4,47,organizations,ORG-000008,markets_served,tire_rubber_goods,company,STATED,False
+4,48,organizations,ORG-000909,markets_served,lawn_garden_recreation,company,STATED,False
+4,49,sites,SITE-000398,markets_served,automotive_oem,plant,STATED,False
+4,50,sites,SITE-001876,processes,laminating,plant,STATED,False
+4,51,sites,SITE-000318,processes,mold_tool_making,plant,STATED,False
+4,52,sites,SITE-000125,processes,assembly_secondary_ops,plant,STATED,False
+4,53,organizations,ORG-000955,markets_served,automotive_unspecified,company,STATED,False
+4,54,organizations,ORG-001601,markets_served,aerospace_defense,company,STATED,False
+4,55,organizations,ORG-001666,markets_served,marine,company,STATED,False
+4,56,organizations,ORG-000344,processes,adhesive_sealant_formulation,company,NOT_STATED,False
+4,57,sites,SITE-001632,markets_served,energy_oil_gas,plant,STATED,False
+4,58,organizations,ORG-000997,processes,foam_fabrication,company,STATED,False
+4,59,organizations,ORG-000883,markets_served,automotive_unspecified,company,STATED,False
+4,60,sites,SITE-000348,processes,assembly_secondary_ops,plant,STATED,False
+4,61,sites,SITE-001783,processes,extrusion_pipe_tube,plant,STATED,False
+4,62,organizations,ORG-000511,markets_served,packaging_food_beverage,company,STATED,False
+4,63,organizations,ORG-000188,markets_served,water_wastewater,company,STATED,False
+4,64,organizations,ORG-001657,processes,insert_overmolding,company,STATED,False
+4,65,sites,SITE-000241,processes,ultrasonic_solvent_bonding,plant,STATED,False
+4,66,organizations,ORG-002039,markets_served,cosmetics_personal_care,company,STATED,False
+4,67,organizations,ORG-000607,processes,rubber_extrusion,company,STATED,False
+4,69,sites,SITE-001770,processes,injection_molding,plant,STATED,False
+4,70,organizations,ORG-002053,processes,die_cutting_converting,company,IMPLIED,False
+4,71,organizations,ORG-000138,markets_served,automotive_aftermarket,company,STATED,False
+4,72,organizations,ORG-000202,markets_served,chemical_mining_metals_processing,company,STATED,False
+4,73,sites,SITE-000072,processes,mold_tool_making,plant,STATED,False
+4,74,sites,SITE-000657,markets_served,marine,plant,STATED,False
+4,75,organizations,ORG-000124,markets_served,telecom_datacom,company,STATED,False
+4,76,organizations,ORG-000010,markets_served,consumer_goods_housewares,company,STATED,False
+4,77,sites,SITE-000125,processes,printing_decorating_plastics,plant,STATED,False
+4,79,sites,SITE-000017,markets_served,agriculture,plant,STATED,False
+4,80,sites,SITE-000286,processes,printing_decorating_plastics,plant,IMPLIED,False
+4,81,organizations,ORG-001715,markets_served,medical_device,company,STATED,False
+4,83,sites,SITE-000348,markets_served,appliances,plant,STATED,False
+4,84,organizations,ORG-000088,markets_served,aerospace_defense,company,STATED,False
+4,85,sites,SITE-000247,processes,rubber_extrusion,plant,STATED COMPANY_WIDE,False
+4,86,sites,SITE-001924,processes,mold_tool_making,plant,STATED COMPANY_WIDE,False
+4,87,organizations,ORG-000132,markets_served,energy_oil_gas,company,STATED,False
+4,88,organizations,ORG-000188,markets_served,automotive_oem,company,STATED,False
+4,90,sites,SITE-001935,processes,coating_applying,plant,STATED,False
+4,91,organizations,ORG-000458,processes,transfer_molding,company,STATED,False
+4,92,organizations,ORG-000430,markets_served,food_processing_foodservice,company,STATED,False
+4,93,organizations,ORG-000188,markets_served,rail_transportation,company,STATED,False
+4,94,sites,SITE-000486,markets_served,consumer_goods_housewares,plant,STATED,False
+4,95,sites,SITE-000611,processes,silicone_formulation,plant,IMPLIED,False
+4,97,organizations,ORG-000246,markets_served,toys_sporting_goods,company,STATED,False
+5,1,sites,SITE-001657,processes,extrusion_profile,plant,STATED COMPANY_WIDE,False
+5,2,sites,SITE-000065,processes,extrusion_profile,plant,STATED COMPANY_WIDE,False
+5,3,organizations,ORG-000051,markets_served,rail_transportation,company,STATED,False
+5,4,sites,SITE-000640,processes,injection_molding,plant,STATED,False
+5,5,sites,SITE-000386,processes,plastics_machining_cnc,plant,STATED,False
+5,6,sites,SITE-001986,markets_served,construction_building_products,plant,STATED COMPANY_WIDE,False
+5,7,sites,SITE-000566,markets_served,chemical_mining_metals_processing,plant,STATED COMPANY_WIDE,False
+5,8,organizations,ORG-000607,markets_served,lawn_garden_recreation,company,STATED,False
+5,9,organizations,ORG-000188,markets_served,food_processing_foodservice,company,STATED,False
+5,10,sites,SITE-000329,processes,assembly_secondary_ops,plant,STATED,False
+5,12,organizations,ORG-000522,processes,transfer_molding,company,STATED,False
+5,13,organizations,ORG-000469,processes,printing_decorating_plastics,company,STATED,False
+5,14,sites,SITE-001891,processes,extrusion_pipe_tube,plant,NOT_STATED COMPANY_WIDE,False
+5,15,sites,SITE-000202,processes,rubber_molding_injection,plant,STATED,False
+5,16,sites,SITE-000549,markets_served,automotive_unspecified,plant,STATED COMPANY_WIDE,False
+5,17,organizations,ORG-000640,processes,transfer_molding,company,STATED,False
+5,18,sites,SITE-000592,processes,additive_manufacturing_polymer,plant,STATED COMPANY_WIDE,False
+5,19,sites,SITE-000240,markets_served,food_processing_foodservice,plant,STATED COMPANY_WIDE,False
+5,20,organizations,ORG-000449,processes,extrusion_pipe_tube,company,STATED,False
+5,21,organizations,ORG-000997,processes,laminating,company,STATED,False
+5,22,organizations,ORG-000458,markets_served,consumer_goods_housewares,company,STATED,False
+5,23,organizations,ORG-000569,markets_served,aerospace_defense,company,STATED,False
+5,24,organizations,ORG-001757,markets_served,infrastructure_civil,company,STATED,False
+5,25,sites,SITE-000465,markets_served,aerospace_defense,plant,STATED,False
+5,26,sites,SITE-000447,processes,injection_molding,plant,STATED COMPANY_WIDE,False
+5,27,organizations,ORG-000199,markets_served,infrastructure_civil,company,STATED,False
+5,28,organizations,ORG-000584,markets_served,agriculture,company,STATED,False
+5,29,organizations,ORG-000051,markets_served,industrial_machinery,company,STATED,False
+5,31,organizations,ORG-000640,processes,injection_molding,company,STATED,False
+5,32,organizations,ORG-000607,processes,rubber_molding_injection,company,STATED,False
+5,33,sites,SITE-000241,processes,foam_fabrication,plant,STATED,False
+5,34,sites,SITE-000200,processes,assembly_secondary_ops,plant,STATED,False
+5,35,sites,SITE-000109,processes,plastics_machining_cnc,plant,STATED,False
+5,36,organizations,ORG-000607,markets_served,agriculture,company,STATED,False
+5,37,sites,SITE-000337,processes,coating_applying,plant,STATED,False
+5,38,sites,SITE-000494,processes,laminating,plant,IMPLIED COMPANY_WIDE,False
+5,39,sites,SITE-001710,processes,injection_molding,plant,STATED COMPANY_WIDE,False
+5,40,organizations,ORG-000997,processes,die_cutting_converting,company,STATED,False
+5,41,sites,SITE-000625,processes,adhesive_sealant_formulation,plant,IMPLIED COMPANY_WIDE,False
+5,42,organizations,ORG-001609,processes,pressure_sensitive_tape_manufacture,company,IMPLIED,False
+5,43,organizations,ORG-001657,processes,assembly_secondary_ops,company,STATED,False
+5,44,organizations,ORG-000569,processes,rubber_mixing_compounding,company,IMPLIED,False
+5,45,organizations,ORG-001398,markets_served,medical_device,company,STATED,False
+5,46,sites,SITE-000657,markets_served,energy_oil_gas,plant,STATED,False
+5,47,sites,SITE-000612,processes,coating_formulation,plant,STATED COMPANY_WIDE,False
+5,48,organizations,ORG-000009,markets_served,consumer_goods_housewares,company,STATED,False
+5,49,organizations,ORG-001033,markets_served,packaging_consumer,company,STATED,False
+5,50,sites,SITE-001843,markets_served,lawn_garden_recreation,plant,STATED,False
+5,51,sites,SITE-000398,markets_served,medical_device,plant,STATED,False
+5,52,organizations,ORG-000077,markets_served,construction_building_products,company,STATED,False
+5,53,organizations,ORG-000628,markets_served,medical_healthcare_general,company,STATED,False
+5,54,organizations,ORG-001183,markets_served,automotive_unspecified,company,STATED,False
+5,55,organizations,ORG-001666,markets_served,telecom_datacom,company,STATED,False
+5,56,sites,SITE-000271,markets_served,construction_building_products,plant,STATED,False
+5,57,organizations,ORG-000057,markets_served,construction_building_products,company,STATED,False
+5,58,sites,SITE-000239,processes,extrusion_pipe_tube,plant,STATED,False
+5,59,sites,SITE-001591,markets_served,medical_device,plant,STATED COMPANY_WIDE,False
+5,60,sites,SITE-000603,processes,injection_molding,plant,STATED COMPANY_WIDE,False
+5,61,organizations,ORG-000007,markets_served,dental,company,STATED,False
+5,62,organizations,ORG-000607,markets_served,marine,company,STATED,False
+5,63,organizations,ORG-000077,markets_served,automotive_unspecified,company,STATED,False
+5,64,organizations,ORG-000188,markets_served,electronics_electrical,company,STATED,False
+5,65,sites,SITE-000466,processes,laminating,plant,STATED,False
+5,67,sites,SITE-000286,markets_served,automotive_unspecified,plant,STATED,False
+5,68,organizations,ORG-000132,markets_served,infrastructure_civil,company,STATED,False
+5,69,organizations,ORG-000430,markets_served,appliances,company,STATED,False
+5,70,sites,SITE-000072,processes,assembly_secondary_ops,plant,STATED COMPANY_WIDE,False
+5,71,sites,SITE-000086,processes,rubber_molding_injection,plant,NOT_STATED,False
+5,72,organizations,ORG-001769,processes,printing_decorating_plastics,company,IMPLIED,False
+5,73,organizations,ORG-000458,processes,injection_molding,company,STATED,False
+5,74,sites,SITE-000549,processes,foam_fabrication,plant,STATED,False
+5,75,organizations,ORG-001667,markets_served,food_processing_foodservice,company,STATED,False
+5,76,organizations,ORG-000883,markets_served,pharmaceutical_biotech,company,STATED,False
+5,77,organizations,ORG-001666,markets_served,agriculture,company,STATED,False
+5,78,organizations,ORG-000132,markets_served,marine,company,STATED,False
+5,79,sites,SITE-000256,processes,plastics_machining_cnc,plant,STATED,False
+5,80,organizations,ORG-000549,processes,rubber_molding_injection,company,IMPLIED,False
+5,81,sites,SITE-000486,markets_served,rv_powersports_trailers,plant,STATED,False
+5,82,organizations,ORG-000640,markets_served,medical_device,company,STATED,False
+5,83,organizations,ORG-000651,markets_served,infrastructure_civil,company,STATED,False
+5,85,sites,SITE-000489,processes,coating_formulation,plant,STATED COMPANY_WIDE,False
+5,86,sites,SITE-000117,processes,injection_molding,plant,STATED COMPANY_WIDE,False
+5,87,organizations,ORG-000549,processes,mold_tool_making,company,STATED,False
+5,88,organizations,ORG-001715,markets_served,aerospace_defense,company,STATED,False
+5,89,sites,SITE-000864,markets_served,appliances,plant,STATED COMPANY_WIDE,False
+5,90,sites,SITE-000072,processes,printing_decorating_plastics,plant,NOT_STATED,False
+5,92,organizations,ORG-000549,processes,injection_molding_lsr_silicone,company,STATED,False
+5,93,sites,SITE-000611,processes,adhesive_sealant_formulation,plant,STATED COMPANY_WIDE,False
+5,94,organizations,ORG-000607,markets_served,appliances,company,STATED,False
+5,95,organizations,ORG-000522,processes,compression_molding,company,STATED,False
+5,96,organizations,ORG-000522,processes,injection_molding,company,STATED,False
+5,97,sites,SITE-001712,processes,injection_molding,plant,STATED COMPANY_WIDE,False

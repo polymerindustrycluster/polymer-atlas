@@ -1,0 +1,12 @@
+deb6d38065db8f9dd254faf49c695eb8ee47e6a5ae4ff4a94e7f3c629ede16b7  persist/requote-all-2026-11-24/values.csv
+88470e72fd9b83ffb9e6a0e41abca191f1c8f1e5e17f1339a156cd8e46655829  persist/requote-all-2026-11-24/second-family/adjudicated.csv
+8754e69fb2683f4962f7fd597ad36ae7962fd4b07bf18cc19ab75061381b2416  persist/requote-all-2026-11-24/second-family/round2/verdicts.csv
+d50ef5a8e445fff9072c4b62365541f996708e0b8be8078503e352ff60f196bb  persist/requote-all-2026-11-24/second-family/verdicts.csv
+5ec69151b49b1787a10a6347cffce19abb5e20afb9fd8d6b16d96b57d3bff19e  persist/requote-all-2026-11-24/value-pages-builder/build_value_pages.py
+fb0c63397e777a505d752ef95430beb22444ee50be09c461248d4b88b016c299  tasks/reread-labels-2026-11-26/second-family/ADJUDICATION-census.csv
+e20db739088a371e31d2db415521cbdf26c2bc9a6d1f1f7f5239c02224e7ec77  tasks/reread-labels-2026-11-26/second-family/census_scored.csv
+712927e2c4cf0407a419e5551707277e2e4719dfe78913185011a47f9971c4c4  tasks/reread-labels-2026-11-26/VALUE_VERDICTS.csv
+18a20e676e64d53b1dc81cadfcf0ad350f617cf4056d7af178e8e2258300411f  tasks/reread-labels-2026-11-26/VALUE_PAGES.csv
+50a64508310b5ba4451ad0aa404d3a4706234085a2423861cd3a99cd031735b6  tasks/reread-labels-2026-11-26/HOLDS.csv
+83fa39bc509a816906da776a174cd31072af3cabe7271ced500fbd33ce139a8d  tasks/reread-labels-2026-11-26/UNBOUND.csv
+55517424efce9899a0580507b5090007a8e86f87a7fcef59dc83036becf073f6  tasks/reread-labels-2026-11-26/build.py
