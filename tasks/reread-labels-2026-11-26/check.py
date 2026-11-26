@@ -1,12 +1,12 @@
 """Named check for the 2026-11-26 re-read basis labels. Run: python3 -I tasks/reread-labels-2026-11-26/check.py [--store PERSIST_DIR]
-PERSIST_DIR is the controller's page store (default: the 2026-11 atlas persist dir); without it the replay, the manifest and the
+PERSIST_DIR is the controller's page store (or set ATLAS_PAGE_STORE); without it the replay, the manifest and the
 rebuild-from-the-pack checks are NOT_INSPECTED and the exit code is 3, never 0.
 
 verify() regenerates the table from the repo's data and this folder's VALUE_VERDICTS.csv with scripts/value_basis.py and compares the WHOLE
 data/value_basis.csv with the pinned base: same key set, same order and format, and the only differences are the keys of the labelled lines,
 each not_yet_checked -> stated or implied. Nothing is withheld, every line is STATED or IMPLIED, and (with the store) every STATED quote
 replays and the lines equal the pack's lines. Then each planted defect must be rejected by the rule it names."""
-import csv, hashlib, io, shutil, subprocess, sys, tempfile
+import csv, hashlib, io, os, shutil, subprocess, sys, tempfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -17,7 +17,6 @@ import build  # noqa: E402
 import value_basis as vb  # noqa: E402
 
 BASE = "f921eba8d809acbba29dae22f1723a95e3cc82eb"  # origin/main after #573
-STORE = Path("/Users/johnswanson/.bb/thread-storage/thr_9i2c6byhcz/2026-11-06-atlas/persist")
 MOVES = {("not_yet_checked", "stated"), ("not_yet_checked", "implied")}
 key = lambda r: (r["record_table"], r["record_id"], r["field"], r["value"])
 
@@ -87,7 +86,7 @@ def verify(verdicts, urls, head_text, base_text, store, pack_lines):
 
 
 def main():
-    store = Path(sys.argv[sys.argv.index("--store") + 1]) if "--store" in sys.argv else STORE
+    store = Path(sys.argv[sys.argv.index("--store") + 1] if "--store" in sys.argv else os.environ.get("ATLAS_PAGE_STORE", "/nonexistent"))
     store = store if (store / "requote-all-2026-11-24/values.csv").exists() else None
     verdicts, holds = build.read(HERE / "VALUE_VERDICTS.csv"), build.read(HERE / "HOLDS.csv")
     urls = {r["page_sha256"]: (r["page_url"], r["requested_url"]) for r in build.read(HERE / "VALUE_PAGES.csv")}
