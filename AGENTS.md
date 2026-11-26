@@ -216,6 +216,12 @@ each check cannot catch is in `tasks/working-rules-2026-11-22/README.md`.
    catching it; once it does, its scope freezes, and later edge cases are
    FOLLOW-UP unless they corrupt data, publish personal data or let the
    gate pass what it cannot inspect, which stay BLOCKING as defined above.
+   Reviewers' criteria are set before round 1. The builder fixes every
+   BLOCKING finding of a round in one push, each with a planted test; later
+   rounds are a regression check on those tests and the diff. The
+   two-round cap counts rounds on the same evidence. A new kind of finding
+   raised in round 2 or later is FOLLOW-UP unless it corrupts data,
+   publishes personal data or lets a check pass what it could not inspect.
    **Nothing mechanical checks
    any of this, and the records are self-reported comments on a shared
    account.** The way to enforce it, if the owner later wants that, is
@@ -336,6 +342,16 @@ FOLLOW-UP unless they corrupt data, publish personal data or let the gate
 pass what it cannot inspect (these stay BLOCKING, as rule 4 already defines).
 Recorded in `DECISIONS.md`. No other rule is amended and no data file is
 changed by this revision.*
+
+*Revision note — 2026-11-25 (owner ruling 2026-11-25 19:21, multiple choice,
+"Adopt, same PR"; extends the note above): §2a rule 4 also gains the review-round
+discipline. Reviewers' criteria are set before round 1; the builder fixes every
+BLOCKING finding of a round in one push, each with a planted test; later rounds
+are a regression check on those tests and the diff; the two-round cap counts
+rounds on the same evidence; and a new kind of finding raised in round 2 or
+later is FOLLOW-UP unless it corrupts data, publishes personal data or lets a
+check pass what it could not inspect. Recorded in `DECISIONS.md`. No other rule
+is amended and no data file is changed by this revision.*
 
 ## 3. Creating a record — the dedupe check (in order, stop at first hit)
 
