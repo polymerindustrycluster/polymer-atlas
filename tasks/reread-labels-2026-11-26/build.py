@@ -35,8 +35,10 @@ key = lambda r: (r["record_table"], r["record_id"], r["field"], r["value"])
 rank = lambda r: hashlib.sha256((SEED + "|" + "|".join(key(r))).encode()).hexdigest()
 
 
-def candidates(pack):
-    """-> (lines to try, holds): the pack's STATED and IMPLIED lines with adjudications applied."""
+def candidates(pack, census=True):
+    """-> (lines to try, holds): the pack's STATED and IMPLIED lines with the 2026-11-24 adjudications applied and, unless census=False,
+    the 2026-11-26 Gemini census adjudication (second-family/ADJUDICATION-census.csv): `implied` sets the class (and clears the quote and offset an
+    IMPLIED line may not carry); `hold` removes the line, listed in HOLDS.csv with the census reason."""
     lines, holds = read(pack / "values.csv"), []
     by_key = {(r["owner"],) + key(r)[1:]: r for r in lines}
     for a in read(pack / "second-family/adjudicated.csv"):
@@ -50,6 +52,16 @@ def candidates(pack):
                       f"pack NOT_STATED adjudicated to {new}: a label needs {'a quote and offset' if new == 'STATED' else 'its witness page, which is not the cited page'}")
             holds.append({"record_table": r["record_table"], "record_id": r["record_id"], "field": r["field"], "value": r["value"],
                           "pack_class": r["class"], "adjudicated_class": new, "reason": reason})
+            r["class"] = "HELD"
+    for a in read(HERE / "second-family/ADJUDICATION-census.csv") if census else []:
+        (r,) = [r for r in lines if key(r) == key(a)]
+        assert (r["class"], a["pack_class"]) == ("STATED", "STATED"), f"census line {key(a)}: the line is {r['class']}"
+        if a["action"] == "implied":
+            r.update({"class": "IMPLIED", "quote": "", "offset": ""})
+        else:
+            assert a["action"] == "hold", a
+            holds.append({"record_table": r["record_table"], "record_id": r["record_id"], "field": r["field"], "value": r["value"],
+                          "pack_class": "STATED", "adjudicated_class": a["census_class"], "reason": a["reason"]})
             r["class"] = "HELD"
     return [r for r in lines if r["class"] in ("STATED", "IMPLIED")], holds
 

@@ -19,6 +19,7 @@ import value_basis as vb  # noqa: E402
 
 BASE = "f921eba8d809acbba29dae22f1723a95e3cc82eb"  # origin/main after #573
 MOVES = {("not_yet_checked", "stated"), ("not_yet_checked", "implied")}
+EXPECT = {"stated": 490, "implied": 68}  # keys moved, after the 2026-11-26 census adjudication (558 keys, 558 CLAIMS_CHECKED rows)
 key = lambda r: (r["record_table"], r["record_id"], r["field"], r["value"])
 
 
@@ -58,12 +59,14 @@ def tasks_tree(tmp, verdicts, urls):
     return t
 
 
-def verify(verdicts, urls, head_text, base_text, store, pack_lines):
+def verify(verdicts, urls, head_text, base_text, store, pack_lines, held=frozenset()):
     """-> [(code, message)]; empty means every rule held. Pure over its arguments so planted defects can be injected."""
     bad, err = [], lambda code, msg: bad.append((code, msg))
     for r in verdicts:
         if r["class"] not in ("STATED", "IMPLIED"):
             err("class", f"{key(r)}: a {r['class']} line is outside this PR's scope (labels only)")
+        if key(r) in held:
+            err("held_line", f"{key(r)}: a line listed in HOLDS.csv (held out, not labelled) is back in VALUE_VERDICTS.csv")
     with tempfile.TemporaryDirectory() as tmp:
         fresh_rows, problems, info = vb.generate(ROOT / "data", tasks_tree(tmp, verdicts, urls), store)
     for p in problems:
@@ -87,6 +90,8 @@ def verify(verdicts, urls, head_text, base_text, store, pack_lines):
     for k in sorted(moved):
         if (base[k]["basis"], fresh[k]["basis"]) not in MOVES:
             err("basis_change", f"{k}: {base[k]['basis']} -> {fresh[k]['basis']}; only not_yet_checked -> stated or implied is allowed here")
+    if Counter(fresh[k]["basis"] for k in moved) != Counter(EXPECT):
+        err("counts", f"keys moved by basis {dict(Counter(fresh[k]['basis'] for k in moved))}, expected {EXPECT}")
     want = {key(r) for r in verdicts} - set(info["verdict_unbound"])
     if moved != want:
         err("scope", f"{len(moved ^ want)} keys differ between the keys the table moved and the keys of the lines that bind a page")
@@ -116,7 +121,8 @@ def main():
         lines, _ = build.candidates(store / "requote-all-2026-11-24")
         held = {key(r) for r in holds}
         pack = {key(r): r for r in lines if key(r) not in held}
-    bad = verify(verdicts, urls, head_text, base_text, store, pack)
+    held = {key(r) for r in holds}
+    bad = verify(verdicts, urls, head_text, base_text, store, pack, held)
     claims = build.read(HERE / "CLAIMS_CHECKED.csv")
     bad += claims_problems(claims, head_text, base_text)
     with open(HERE / "CLAIMS_CHECKED.csv", newline="", encoding="utf-8") as f:
@@ -141,6 +147,8 @@ def main():
     i = next(n for n, line in enumerate(rows) if ",stated," in line)
     edited = "".join(rows[:i] + [rows[i].replace(",stated,", ",not_yet_checked,", 1)] + rows[i + 1:])
     dropped = "".join(rows[:i] + rows[i + 1:])
+    first_hold = next(a for a in build.read(HERE / "second-family/ADJUDICATION-census.csv") if a["action"] == "hold")
+    putback = [r for r in (build.candidates(store / "requote-all-2026-11-24", census=False)[0] if store else []) if key(r) == key(first_hold)]
     plants = [  # (name, expected code, needs the page store, args)
         ("a NOT_STATED line slipped in (a withheld key appears)", "withheld", False, (not_stated, urls, head_text, store)),
         ("a STATED quote with a moved offset", "generator", True, (moved_offset, urls, head_text, store)),
@@ -148,13 +156,14 @@ def main():
         ("an edited value_basis row", "edited_row", False, (verdicts, urls, edited, store)),
         ("a dropped value_basis key", "dropped_key", False, (verdicts, urls, dropped, store)),
         ("a dropped verdict line", "line_dropped", True, ([r for r in verdicts if r is not stated], urls, head_text, store)),
+        ("a held census line put back", "held_line", True, (verdicts + putback, urls, head_text, store)),
     ]
     failed = not store
     for name, code, needs_store, (vs, us, ht, st) in plants:
         if needs_store and not store:
             print(f"NOT_INSPECTED plant: {name} (needs the page store)")
             continue
-        got = verify(vs, us, ht, base_text, st, pack if st else None)
+        got = verify(vs, us, ht, base_text, st, pack if st else None, held)
         hit = [m for c, m in got if c == code]
         print(f"plant {'REJECTED' if hit else 'NOT REJECTED'}: {name} -> {hit[0][:160] if hit else got[:2]}")
         failed |= not hit

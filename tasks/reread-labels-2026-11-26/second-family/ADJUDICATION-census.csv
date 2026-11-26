@@ -1,0 +1,91 @@
+record_table,record_id,field,value,pack_class,census_class,action,reason
+organizations,ORG-002039,markets_served,plastics_rubber_processors,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-001889,processes,silicone_formulation,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-001846,markets_served,plastics_rubber_processors,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000521,processes,compounding_extrusion,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-001783,processes,hose_belting_manufacturing,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000186,processes,rubber_molding_compression,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+sites,SITE-001534,processes,coating_formulation,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+sites,SITE-000429,markets_served,lawn_garden_recreation,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-001702,markets_served,food_processing_foodservice,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+sites,SITE-000275,markets_served,tire_rubber_goods,STATED,IMPLIED COMPANY_WIDE,hold,Gemini 4 Hydrogen census IMPLIED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000063,processes,rubber_molding_compression,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000109,processes,plastics_fabrication_welding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000615,markets_served,construction_building_products,STATED,IMPLIED COMPANY_WIDE,hold,Gemini 4 Hydrogen census IMPLIED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000179,processes,rubber_calendering,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000083,processes,compounding_extrusion,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-002016,processes,rotational_molding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000542,processes,additive_dry_blending,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-001632,processes,assembly_secondary_ops,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000521,processes,custom_compounding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000017,processes,die_cutting_converting,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000619,processes,assembly_secondary_ops,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000293,processes,adhesive_sealant_formulation,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+organizations,ORG-000883,markets_served,packaging_food_beverage,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+organizations,ORG-001725,processes,coating_formulation,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+organizations,ORG-000315,markets_served,energy_oil_gas,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+organizations,ORG-000523,markets_served,packaging_food_beverage,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+sites,SITE-000278,markets_served,furniture_office,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000592,processes,additive_manufacturing_polymer_production,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000390,processes,plastics_machining_cnc,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000658,processes,pulverizing_grinding_resin,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000063,processes,rubber_extrusion,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000619,markets_served,medical_healthcare_general,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-001861,processes,die_cutting_converting,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000271,markets_served,packaging_food_beverage,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+sites,SITE-000331,markets_served,construction_building_products,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-001741,markets_served,toys_sporting_goods,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-001889,processes,pigment_colorant_dispersion,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+organizations,ORG-000425,markets_served,packaging_food_beverage,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-001846,processes,mold_tool_making,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000186,processes,rubber_molding_injection,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000187,markets_served,food_processing_foodservice,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000017,processes,rubber_mixing_compounding,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+organizations,ORG-000397,processes,rubber_extrusion,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000654,markets_served,medical_device,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-001721,processes,rotational_molding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-001823,processes,coating_formulation,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000879,processes,injection_molding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+organizations,ORG-000628,markets_served,food_processing_foodservice,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000612,processes,adhesive_sealant_formulation,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+organizations,ORG-001657,processes,rotational_molding,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000062,processes,custom_compounding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000655,processes,mold_tool_making,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+organizations,ORG-000569,markets_served,medical_device,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+organizations,ORG-001033,processes,blow_molding_stretch,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000017,processes,rubber_molding_compression,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+organizations,ORG-000883,markets_served,agriculture,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000271,markets_served,packaging_consumer,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+organizations,ORG-000344,processes,adhesive_sealant_formulation,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+organizations,ORG-002053,processes,die_cutting_converting,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000286,processes,printing_decorating_plastics,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000247,processes,rubber_extrusion,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-001924,processes,mold_tool_making,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000611,processes,silicone_formulation,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-001657,processes,extrusion_profile,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000065,processes,extrusion_profile,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-001986,markets_served,construction_building_products,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000566,markets_served,chemical_mining_metals_processing,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-001891,processes,extrusion_pipe_tube,STATED,NOT_STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+sites,SITE-000549,markets_served,automotive_unspecified,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000592,processes,additive_manufacturing_polymer,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000240,markets_served,food_processing_foodservice,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000447,processes,injection_molding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000494,processes,laminating,STATED,IMPLIED COMPANY_WIDE,hold,Gemini 4 Hydrogen census IMPLIED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-001710,processes,injection_molding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000625,processes,adhesive_sealant_formulation,STATED,IMPLIED COMPANY_WIDE,hold,Gemini 4 Hydrogen census IMPLIED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+organizations,ORG-001609,processes,pressure_sensitive_tape_manufacture,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+organizations,ORG-000569,processes,rubber_mixing_compounding,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000612,processes,coating_formulation,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-001591,markets_served,medical_device,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000603,processes,injection_molding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000072,processes,assembly_secondary_ops,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000086,processes,rubber_molding_injection,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+organizations,ORG-001769,processes,printing_decorating_plastics,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+organizations,ORG-000549,processes,rubber_molding_injection,STATED,IMPLIED,implied,Gemini 4 Hydrogen census IMPLIED: stricter class adopted
+sites,SITE-000489,processes,coating_formulation,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000117,processes,injection_molding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000864,markets_served,appliances,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-000072,processes,printing_decorating_plastics,STATED,NOT_STATED,hold,Gemini 4 Hydrogen census NOT_STATED vs pack STATED: second-family disagreement; adjudicate before any hiding (hiding PR scope)
+sites,SITE-000611,processes,adhesive_sealant_formulation,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
+sites,SITE-001712,processes,injection_molding,STATED,STATED COMPANY_WIDE,hold,Gemini 4 Hydrogen census STATED COMPANY_WIDE on a site key: a corporate statement does not settle a plant claim (SCHEMA 4.24 grain); stays not_yet_checked
