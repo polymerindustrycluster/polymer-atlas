@@ -1,0 +1,6 @@
+table,record_id,field,verdict,evidence_id
+organizations,ORG-000197,hq_city,withdrawn,
+organizations,ORG-000197,hq_state,withdrawn,
+organizations,ORG-000197,hq_country,withdrawn,
+organizations,ORG-000197,hq_in_scope,withdrawn,
+organizations,ORG-000197,hq_county,withdrawn,
