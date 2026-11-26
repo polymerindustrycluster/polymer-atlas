@@ -25,7 +25,7 @@ def write(p, rows):
     Path(p).write_bytes(buf.getvalue().encode('utf-8'))
 
 
-HELD_EXTRA = ('SITE-001778', 'SITE-000439')  # known answer whose held website redirects (the gate's own-domain test); a block naming two entities
+HELD_EXTRA = ('SITE-001778', 'SITE-000439', 'SITE-000361')  # held website redirects (the gate's own-domain test); a block naming two entities; bytes differ between two fetches
 
 
 def claims_rows():
