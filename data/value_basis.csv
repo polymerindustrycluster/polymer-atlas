@@ -393,6 +393,8 @@ organizations,ORG-000139,processes,adhesive_sealant_formulation,not_yet_checked,
 organizations,ORG-000140,markets_served,plastics_rubber_processors,not_yet_checked,EVD-370001,
 organizations,ORG-000143,processes,mold_tool_making,not_yet_checked,,
 organizations,ORG-000145,markets_served,plastics_rubber_processors,not_yet_checked,EVD-370002,
+organizations,ORG-000147,markets_served,construction_building_products,stated,EVD-483150,2026-11-25
+organizations,ORG-000147,markets_served,plastics_rubber_processors,stated,EVD-483149,2026-11-25
 organizations,ORG-000148,markets_served,plastics_rubber_processors,not_yet_checked,EVD-396612,
 organizations,ORG-000148,processes,custom_compounding,stated,EVD-483031,2026-11-23
 organizations,ORG-000150,markets_served,aerospace_defense,not_yet_checked,EVD-396613,
@@ -2092,6 +2094,10 @@ organizations,ORG-001490,markets_served,energy_oil_gas,not_yet_checked,EVD-24021
 organizations,ORG-001490,markets_served,general_industrial,not_yet_checked,EVD-240223,
 organizations,ORG-001490,markets_served,toys_sporting_goods,not_yet_checked,EVD-240224,
 organizations,ORG-001490,processes,custom_compounding,not_yet_checked,EVD-170029,
+organizations,ORG-001497,markets_served,chemical_mining_metals_processing,stated,EVD-483146,2026-11-25
+organizations,ORG-001497,markets_served,food_processing_foodservice,stated,EVD-483147,2026-11-25
+organizations,ORG-001497,markets_served,pharmaceutical_biotech,stated,EVD-483145,2026-11-25
+organizations,ORG-001497,markets_served,plastics_rubber_processors,stated,EVD-483148,2026-11-25
 organizations,ORG-001501,markets_served,plastics_rubber_processors,not_yet_checked,EVD-370020,
 organizations,ORG-001504,markets_served,medical_device,not_yet_checked,EVD-396201,
 organizations,ORG-001505,markets_served,medical_device,not_yet_checked,EVD-396637,
@@ -2351,6 +2357,7 @@ organizations,ORG-001928,markets_served,automotive_unspecified,not_yet_checked,E
 organizations,ORG-001931,markets_served,general_industrial,not_yet_checked,EVD-017085,
 organizations,ORG-001931,processes,extrusion_unspecified,not_yet_checked,EVD-170157,
 organizations,ORG-001931,processes,molding_unspecified,not_yet_checked,EVD-170158,
+organizations,ORG-001936,markets_served,plastics_rubber_processors,stated,EVD-483144,2026-11-25
 organizations,ORG-001936,processes,tooling_repair_maintenance,stated,EVD-483038,2026-11-23
 organizations,ORG-001937,markets_served,automotive_aftermarket,not_yet_checked,EVD-370068,
 organizations,ORG-001941,markets_served,automotive_unspecified,not_yet_checked,EVD-370102,
