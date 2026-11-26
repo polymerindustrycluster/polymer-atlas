@@ -1,0 +1,14 @@
+deb6d38065db8f9dd254faf49c695eb8ee47e6a5ae4ff4a94e7f3c629ede16b7  persist/requote-all-2026-11-24/values.csv
+88470e72fd9b83ffb9e6a0e41abca191f1c8f1e5e17f1339a156cd8e46655829  persist/requote-all-2026-11-24/second-family/adjudicated.csv
+d50ef5a8e445fff9072c4b62365541f996708e0b8be8078503e352ff60f196bb  persist/requote-all-2026-11-24/second-family/verdicts.csv
+8754e69fb2683f4962f7fd597ad36ae7962fd4b07bf18cc19ab75061381b2416  persist/requote-all-2026-11-24/second-family/round2/verdicts.csv
+5ec69151b49b1787a10a6347cffce19abb5e20afb9fd8d6b16d96b57d3bff19e  persist/requote-all-2026-11-24/value-pages-builder/build_value_pages.py
+6d4558c5ead6702d5e84355205e718faae8f5e49122bc117358ddfe39e68449d  tasks/hide-not-stated-2026-11-26/second-family/ADJUDICATION-hide.csv
+c8eb894dff5f7c67f8455ac9003f3cc301c7a4f5eb92b8d7d4acf4aef6c1320b  tasks/hide-not-stated-2026-11-26/second-family/read_scored.csv
+5f7ac8971aeb8e5c8289b06c535a865e1eb96aa0290420d6a2550bb06701ed2a  tasks/hide-not-stated-2026-11-26/VALUE_VERDICTS.csv
+08a52d09658c379b444bffc89ea728847ba762e10378c55430dfca19406c2058  tasks/hide-not-stated-2026-11-26/VALUE_PAGES.csv
+cc6de96a78a245222bcc8efb07efb56a33815aa97b5d25b39c59024153331c5c  tasks/hide-not-stated-2026-11-26/HOLDS.csv
+005d30e205055c86412210c9d7ec75a7b01833249ca94cba23d71043f9da3f6f  tasks/hide-not-stated-2026-11-26/REJECTED.csv
+a21b2297b5862a7d40df9d9299bdf2cc2268f8c527fe6ac1311ec2e3bdc212e6  tasks/hide-not-stated-2026-11-26/build.py
+6ed7e6031ae197c3a8eb9e2d585f220d50aa22be61e86bf4f9fda147642b3586  tasks/hide-not-stated-2026-11-26/frame.py
+50a64508310b5ba4451ad0aa404d3a4706234085a2423861cd3a99cd031735b6  tasks/reread-labels-2026-11-26/HOLDS.csv
