@@ -1,0 +1,2 @@
+evidence_id,record_id,claim_sha256,capture,capture_date,capture_sha256,quote_offset,verdict,reader_family,reader_date
+EVD-483296,SITE-000056,6898560c733ee5dc1ff6bf19953a1b040ee9d0db0a74823ca37d316c747e5716,https://web.archive.org/web/20260811080031id_/https://cfextrusion.com/site/contact/,2026-08-11,8f75b5fe205e41a905d37319350995163ae1d25da832ed6001dc72fb1f6f4484,596,PENDING_READ,,
