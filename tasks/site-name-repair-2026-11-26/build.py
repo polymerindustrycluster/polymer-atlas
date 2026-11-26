@@ -11,6 +11,11 @@ import check_evidence_binding as g  # noqa: E402
 LABEL = 'site-name-repair-2026-11-26'; FIRST_EVD = 483144; RULING = 'owner ruling 2026-11-25 20:12, "Name on the door"'
 
 
+def former_note(old):
+    """The sentence appended to a renamed site's notes; check.py expects exactly this."""
+    return f"Former site_name (renamed by {LABEL}, {RULING}): {old}."
+
+
 def read(p):
     with open(p, newline='', encoding='utf-8') as f: return list(csv.reader(f))
 
@@ -48,7 +53,7 @@ def main():
         h = rows[0]; row = next(x for x in rows[1:] if x[0] == r['site_id'])
         assert row[h.index('site_name')] == r['old_site_name'], f"{r['site_id']}: already applied or held name differs"
         row[h.index('site_name')] = r['new_site_name']
-        n = h.index('notes'); row[n] = (row[n] + ' ' if row[n] else '') + f"Former site_name (renamed by {LABEL}, {RULING}): {r['old_site_name']}."
+        n = h.index('notes'); row[n] = (row[n] + ' ' if row[n] else '') + former_note(r['old_site_name'])
         e = dict(evidence_id=f'EVD-{FIRST_EVD + i}', record_table='sites', record_id=r['site_id'], claim_type='existence',
                  claim_detail=f"site_name '{r['new_site_name']}' as printed at the recorded address; quote: {r['quote']}", source_class='own_site',
                  source_ref=r['capture_url'], observed_date=r['observed_date'], tier_effect='supports_A', created_by=LABEL,
