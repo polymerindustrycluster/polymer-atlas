@@ -79,6 +79,12 @@ a withhold key whose second-family class is not NOT_STATED (`second_family`); a 
 
 `check.py` of `tasks/reread-labels-2026-11-26/` (PR #575) is a point-in-time check: it regenerates the table from its own folder alone and asserts "nothing is withheld", so it fails on any tree that holds this PR (37 `edited_row` findings); CI does not run folder checks. It is left as it is (follow-up: have it include other folders or retire it).
 
+## One test changed
+
+`scripts/test_build_site.py` `RealDataHeadlineTest.test_filter_counts_match_the_csvs` recomputes the directory's process-filter counts from the CSVs with the csv module alone and did not drop withheld values, so it failed on this tree
+(the page gives 88 companies with `injection_molding`, the oracle 89: SITE-001891's `injection_molding`, ORG-001859, is withheld). #575 withheld nothing, so the oracle's gap never showed. The oracle now reads `data/value_basis.csv` and drops `not_found_pending_refetch` keys (6 lines).
+Planted defect: with `value_basis.strip_withheld` replaced by a no-op (the page shows withheld values) the test fails, 89 != 88.
+
 ## Files
 
 `VALUE_VERDICTS.csv`: the pack's `values.csv` lines for the 37 withhold keys, class NOT_STATED, no quote or offset, as the pack gives them (SCHEMA §4.24). `VALUE_PAGES.csv`: page sha256 to the URL the page was captured from, from the lane's corpus manifest (builder: `value-pages-builder/build_value_pages.py`).

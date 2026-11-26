@@ -859,8 +859,11 @@ class RealDataHeadlineTest(unittest.TestCase):
         for s in cls.sites:
             by.setdefault(s["org_id"], []).append(s)
 
-        def tokens(v):
-            return {t.strip() for t in (v or "").split(";") if t.strip() and t.strip() != "unknown"}
+        # SCHEMA 4.24: a value whose basis is not_found_pending_refetch is on no page, so the oracle drops it too (read from the CSV, not from the generator)
+        withheld = {(r["record_table"], r["record_id"], r["field"], r["value"]) for r in read("value_basis.csv") if r["basis"] == "not_found_pending_refetch"}
+
+        def tokens(v, table=None, rid=None, field="processes"):
+            return {t.strip() for t in (v or "").split(";") if t.strip() and t.strip() != "unknown" and (table, rid, field, t.strip()) not in withheld}
         cls.eco_ids = {r["org_id"] for r in read("ecosystem.csv")}
         by_key = {}
         for s in cls.sites:
@@ -870,7 +873,7 @@ class RealDataHeadlineTest(unittest.TestCase):
         cls.member_rows = {k for k in by_key if orgs[k[0]].get("pic_member") == "true"}
         cls.injection = set()
         for (o, c), ss in by_key.items():
-            t = set().union(*(tokens(s["processes"]) for s in ss)) or tokens(orgs[o].get("processes"))   # site first, else org
+            t = set().union(*(tokens(s["processes"], "sites", s["site_id"]) for s in ss)) or tokens(orgs[o].get("processes"), "organizations", o)   # site first, else org
             if "injection_molding" in t:
                 cls.injection.add((o, c))
         cls.by_org = by
