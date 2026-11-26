@@ -7,12 +7,14 @@ Offline: it fetches nothing. The captures are replayed from DIR or the shared st
 the hosted binding gate replays every Wayback capture independently. What it asserts, against the merge-base:
   * the only organization cells that changed are markets_served, on exactly the owners with a `corrected` line in
     CLAIMS_CHECKED.csv, and each cell's new values equal that owner's corrected evidence values (so a mismatch either way fails);
-  * the other data changes are exactly the appended evidence, archive and value_basis lines of this label, one of each per fill;
+  * evidence, archive_links and value_basis.csv are compared as multisets of whole rows against the merge-base: no existing row is
+    deleted or edited, and the additions are exactly one evidence, one archive and one `stated` value_basis row per fill;
   * a `held` owner's cell, and any evidence of it, are unchanged;
   * each fill has a VERIFIED reading by a family other than Anthropic, a proof line whose claim digest matches its evidence row,
     and a capture that hashes to its name and holds the quote exactly once at the proof's offset, without an individual's email.
 """
 import argparse
+from collections import Counter
 import copy
 import csv
 import hashlib
@@ -65,11 +67,14 @@ def load(base, captures):
     return s
 
 
-def added(rows, key):
-    base = {r[key]: r for r in rows["base"]}
-    assert all(base[k] == r for k, r in ((r[key], r) for r in rows["work"] if r[key] in base)), "a base row changed"
-    assert {r[key] for r in rows["base"]} <= {r[key] for r in rows["work"]}, "a base row disappeared"
-    return [r for r in rows["work"] if r[key] not in base]
+def rowkey(r):
+    return tuple(sorted(r.items()))
+
+
+def delta(rows):
+    """(removed, added) as multisets of whole rows: a deletion is a removed row alone, an edit a removed row plus an added one."""
+    base, work = Counter(map(rowkey, rows["base"])), Counter(map(rowkey, rows["work"]))
+    return [dict(k) for k in (base - work).elements()], [dict(k) for k in (work - base).elements()]
 
 
 def problems(s):
@@ -89,8 +94,12 @@ def problems(s):
             say(f"{oid}: changed columns {cols}, not markets_served alone")
         if base_orgs[oid]["markets_served"].strip():
             say(f"{oid}: a held markets_served value was overwritten")
-    ev_new = [e for e in added({"base": s["evidence"]["base"], "work": s["evidence"]["work"]}, "evidence_id")]
+    ev_gone, ev_new = delta(s["evidence"])
+    if ev_gone:
+        say(f"{len(ev_gone)} existing evidence row(s) deleted or edited, e.g. {[e['evidence_id'] for e in ev_gone][:3]}")
     ev = {e["evidence_id"]: e for e in ev_new}
+    if len(ev) != len(ev_new):
+        say("a duplicate evidence_id among the added evidence rows")
     corrected = [c for c in s["CLAIMS_CHECKED"] if c["verdict"] == "corrected"]
     held = [c for c in s["CLAIMS_CHECKED"] if c["verdict"] == "held"]
     if any(c["table"] != "organizations" or c["field"] != "markets_served" for c in s["CLAIMS_CHECKED"]):
@@ -125,16 +134,26 @@ def problems(s):
     for h in s["HELD"]:
         if h["owner"] in changed:
             say(f"{h['owner']}: NOT_STATED in HELD.csv but its cell changed")
-    # archive rows and value_basis
-    arch = {a["evidence_id"]: a for a in added(s["archive"], "evidence_id")}
-    if set(arch) != set(ev):
+    # archive rows and value_basis: no existing row deleted or edited, and the additions are exactly the expected ones
+    a_gone, a_new = delta(s["archive"])
+    if a_gone:
+        say(f"{len(a_gone)} existing archive_links row(s) deleted or edited, e.g. {[a['evidence_id'] for a in a_gone][:3]}")
+    arch = {a["evidence_id"]: a for a in a_new}
+    if set(arch) != set(ev) or len(a_new) != len(ev):
         say("archive_links lines are not one per appended evidence row")
-    basis = {(b["record_id"], b["value"]): b for b in s["basis"]["work"] if b["field"] == "markets_served" and b["evidence_id"] in ev}
+    b_gone, b_new = delta(s["basis"])
+    if b_gone:
+        say(f"{len(b_gone)} existing value_basis row(s) deleted or edited, e.g. {[(b['record_id'], b['value']) for b in b_gone][:3]}")
+    read_date = {p["evidence_id"]: p["reader_date"] for p in s["BINDING_PROOF"]}
+    expected = []
     for c in corrected:
         e = ev.get(c["evidence_id"])
         m = HEAD.fullmatch(e["claim_detail"]) if e else None
-        if m and basis.get((c["record_id"], m[1]), {}).get("basis") != "stated":
-            say(f"{c['record_id']} {m[1]}: no `stated` value_basis line citing its evidence row")
+        if m:
+            expected.append(dict(record_table="organizations", record_id=c["record_id"], field="markets_served", value=m[1],
+                                 basis="stated", evidence_id=c["evidence_id"], basis_date=read_date.get(c["evidence_id"], "")))
+    if sorted(map(rowkey, b_new)) != sorted(map(rowkey, expected)):
+        say(f"value_basis additions ({len(b_new)}) are not exactly the {len(expected)} `stated` lines for the corrected rows")
     # readings, proofs, captures
     reads = {(r["owner"], r["value"]): r for r in s["READS"]}
     proofs = {p["evidence_id"]: p for p in s["BINDING_PROOF"]}
@@ -207,6 +226,13 @@ def plants(clean):
         "a value outside the vocabulary": lambda s: next(e for e in s["evidence"]["work"] if e["evidence_id"] == s["BINDING_PROOF"][0]["evidence_id"]).update(
             claim_detail=re.sub(r"Markets served: [a-z_]+", "Markets served: made_up_market", next(e for e in s["evidence"]["work"] if e["evidence_id"] == s["BINDING_PROOF"][0]["evidence_id"])["claim_detail"])),
         "a missing archive line": lambda s: s["archive"]["work"].pop(),
+        "an existing value_basis row deleted": lambda s: s["basis"]["work"].pop(0),
+        "an existing value_basis row edited": lambda s: s["basis"]["work"][0].update(basis_date=s["basis"]["work"][0]["basis_date"] + "x"),
+        "an extra value_basis row added": lambda s: s["basis"]["work"].append(dict(s["basis"]["work"][0], record_id=held_owner(s))),
+        "an existing evidence row deleted": lambda s: s["evidence"]["work"].pop(0),
+        "an existing evidence row edited": lambda s: s["evidence"]["work"][0].update(notes=s["evidence"]["work"][0]["notes"] + " x"),
+        "an existing archive_links row deleted": lambda s: s["archive"]["work"].pop(0),
+        "an existing archive_links row edited": lambda s: s["archive"]["work"][0].update(captured_at=s["archive"]["work"][0]["captured_at"] + "x"),
     }, make
 
 
