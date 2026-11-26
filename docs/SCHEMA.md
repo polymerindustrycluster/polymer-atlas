@@ -1,7 +1,9 @@
 # Polymer / Plastics / Rubber Industry Database — Taxonomy & Record Schema
 
 **Owner:** Polymer Industry Cluster (PIC), Greater Akron Chamber — Director of Innovation Portfolio
-**Version:** v1.21.0 — 2026-11-25 (§4.13 adds the `linkedin_company` evidence class; §4.4 `linkedin_url` stays a navigation link; owner rulings 2026-11-24 21:26 and 2026-11-25).
+**Version:** v1.21.1 — 2026-11-26 (§4.13 gives SBA PPP `size_band` rows a quote format and a binding-gate route; §1 R13 extends the ten-year age limit to source 4; owner rulings 2026-11-26 07:20 and 07:36).
+
+Previous: v1.21.0 — 2026-11-25 (§4.13 adds the `linkedin_company` evidence class; §4.4 `linkedin_url` stays a navigation link; owner rulings 2026-11-24 21:26 and 2026-11-25).
 
 Previous: v1.20.2 — 2026-11-24 (organization website admission and LinkedIn request refusal; [owner rulings 12:12](../DECISIONS.md#2026-11-24--owner-rulings-1212)).
 
@@ -470,6 +472,12 @@ R11. **No data row is changed by this revision.**
      only for a single-site, Ohio-only organization whose borrower name, street and city all match. A
      name-and-city match, and every other use of the PPP data, stays a lead. Applied in PR #348;
      recorded in `tasks/owner-rulings-2026-11-18/README.md`.
+
+  **[v1.21.1]** **Age limit for source 4 (owner ruling 2026-11-26 07:20, "Same ten-year rule").** A PPP loan sets a band
+  only when its approval date is on or after the band-write date minus ten years; the cutoff for the pass dated
+  2026-11-26 is 2016-11-26. Hold an older loan with reason `stale_over_10_years`. The blank-band-only, strict
+  name-street-city, single-site Ohio-only and latest-qualifying-loan rules are unchanged. The row format and the binding-gate
+  route are in §4.13.
 
   **[v1.19.7]** **Age limit (owner ruling 2026-11-23, “10 years, dated”).** A filing under sources 1 and 2
   can set a band when its date is on or after the band-write date minus ten years. For ITA 300A use 31 December
@@ -1655,7 +1663,7 @@ verification tier. It records what a lane actually observed.
 | `evidence_id` | string, immutable, `EVD-######` | **MUST** | Never reused; allocated at integration only, next-free at application (first allocation `EVD-000001`). Evidence rows are never deleted; a superseded or refuted observation is answered by a later row (typically `tier_effect=contradicts`, or a fresher `supports_*` row), never by editing the earlier row away |
 | `record_table` | enum | **MUST** | `organizations` \| `sites` \| `ecosystem` \| `programs` \| `people` **[v1.10]** — the table the evidenced record lives in. People records (§4.9) were deliberately out of scope at v1.6 — their every field already traces to a single cited public page per record; the owner admitted the class at **[v1.10]** (ruling 2026-11-04) so the two §4.9 gates become mechanically restatable claims (V-25) instead of prose in `sources[]` |
 | `record_id` | FK → the table named in `record_table` | **MUST** | `ORG-######` for organizations and ecosystem rows (ecosystem records carry org_ids), `SITE-######` for sites, `PROG-######` for programs, `PERSON-######` for people **[v1.10]**. Validator V-22 resolves the FK against the named table only |
-| `claim_type` | enum | **MUST** | `existence` \| `activity` \| `scope` \| `address` \| `parent` \| `liveness` \| `code` \| `size_band` **[2026-11-03, owner battery B-BAND]** — exactly one per row; `size_band` = a stated employee-size band (`employee_band_site` / `employee_band_ohio`) and its source, a band only and never a headcount; source classes `government_filing` (OSHA ITA 300A, OSHA inspection) or `own_site` only **[v1.19.5]**, or `linkedin_company` **[v1.21.0]** (a self-declared band, named as such in `claim_detail`); ceiling `supports_B`; not a §4.13 must-have claim; an observation bearing on two claims carries two rows. `existence` = the entity is the entity claimed (legal name / identity). `activity` = the entity performs the claimed primary activity (the §1 test evidence). `scope` = the activity is in-scope polymer work under §§1–2 (the Ring decision's evidence). `address` = a stated address (HQ or site) is the entity's address, county included. `parent` = a stated parent / operator linkage. `liveness` = the entity was operating (or had ceased) at a date. `code` = a stated code (NAICS primary; CIP at program grain) and its §2.1 provenance. At v1.7 the `code` claim type also covers `code_assignments`
+| `claim_type` | enum | **MUST** | `existence` \| `activity` \| `scope` \| `address` \| `parent` \| `liveness` \| `code` \| `size_band` **[2026-11-03, owner battery B-BAND]** — exactly one per row; `size_band` = a stated employee-size band (`employee_band_site` / `employee_band_ohio`) and its source, a band only and never a headcount; source classes `government_filing` (OSHA ITA 300A, OSHA inspection, and SBA PPP loan records under §1 R13 source 4, row format below **[v1.21.1]**) or `own_site` only **[v1.19.5]**, or `linkedin_company` **[v1.21.0]** (a self-declared band, named as such in `claim_detail`); ceiling `supports_B`; not a §4.13 must-have claim; an observation bearing on two claims carries two rows. `existence` = the entity is the entity claimed (legal name / identity). `activity` = the entity performs the claimed primary activity (the §1 test evidence). `scope` = the activity is in-scope polymer work under §§1–2 (the Ring decision's evidence). `address` = a stated address (HQ or site) is the entity's address, county included. `parent` = a stated parent / operator linkage. `liveness` = the entity was operating (or had ceased) at a date. `code` = a stated code (NAICS primary; CIP at program grain) and its §2.1 provenance. At v1.7 the `code` claim type also covers `code_assignments`
 rows: a stated SIC assignment is witnessed by a `code` evidence
 row whose `claim_detail` names the assignment ("sic 3089 stated,
 EDGAR filer CIK 0001370946") — corroboration class; assignments
@@ -2283,6 +2291,20 @@ The evidence table is a public table in a public repo, and AGENTS.md
   records: the bar is mechanical because the failure mode is known.
 
 ---
+
+**SBA PPP `size_band` rows [v1.21.1]** (§1 R13 source 4; owner ruling 2026-11-26 07:36, "Gate PR for PPP first"). A row is
+`source_class=government_filing`, `claim_type=size_band`, `source_ref` `SBA PPP LoanNumber <n> (<file>, release <yyyy-mm-dd>)`,
+`observed_date` the loan's approval date, `tier_effect` `supports_B` (`supports_U` on a tier-U record), and `claim_detail`
+`<employee_band_ohio or employee_band_site>=<band>; historical <year> borrower-reported employment figure, JobsReported=<n>, band only; quote: borrower_name: <BorrowerName>; business_type: <BusinessType>; address: <BorrowerAddress>, <BorrowerCity>, <BorrowerState> <BorrowerZip>`.
+The quote holds exactly those three labelled fields as the SBA filed them. The binding gate passes a row only if the source class is
+`government_filing`; the `source_ref` is exactly `SBA PPP LoanNumber <10 digits> (<file>.csv, release <valid ISO date>)`; the claim is
+`size_band` (every other use of PPP data stays a lead); `business_type` is Corporation, Subchapter S Corporation, Limited Liability
+Company(LLC), Partnership or Limited Liability Partnership (a sole proprietor, self-employed, individual or unstated type never passes);
+the borrower name is the operator's own legal, trade or former name (a site label, or the name plus extra words, never passes); the street
+equals the record's, with a suite on one side only HELD and a different suite FAILED; the quoted city is stated and equals the record's city
+(a quote with no city is HELD); and the quoted ZIP5 equals the record's ZIP5 where the record holds one (a quote with no ZIP is HELD). An organization row is judged on the
+organization's one active site, and only where every held site is in Ohio. The gate does not read the loan date or the job count: the pass's own check applies the ten-year limit
+and the band mapping.
 
 ### 4.14 Relationship records **[v1.6]** (`data/relationships.csv`)
 
@@ -3746,3 +3768,4 @@ unchanged.
 
 - **v1.20.2 — 2026-11-24.** §4.4 and §4.13 require replayable own-site name and Ohio locality evidence for changed organization website fills. The site corpus fetcher refuses LinkedIn destinations. [Owner rulings 12:12](../DECISIONS.md#2026-11-24--owner-rulings-1212).
 - **v1.21.0 — 2026-11-25 (owner rulings 2026-11-24 21:26, "LinkedIn should not be barred.", and 2026-11-25).** §4.13 adds source class `linkedin_company`: a logged-out company page, organization grain, a replayed capture, tier ceiling `supports_A` (proposed; owner to confirm); `size_band` admits it as a self-declared band capped at `supports_B`. §4.4 `linkedin_url` stays a navigation link. The binding gate gains the route (one labelled About-section field per row, an exact capture digest, the parent rule, organization-wide size bands only) and validator V-22 the class, its ceiling and its grain rules. No data rows change.
+- **v1.21.1 — 2026-11-26 (owner rulings 2026-11-26 07:20, "Same ten-year rule", and 07:36, "Gate PR for PPP first").** §1 R13 extends the ten-year age limit (v1.19.7) to source 4, SBA PPP loans: a loan dated on or after the band-write date minus ten years. §4.13 states the PPP `size_band` row format and the binding-gate route that admits it (labelled `SBA PPP ` quote family, whitelisted borrower type, name, street and locality, size_band only). The gate PR carries both lines; the data PR that re-runs the PPP pass changes no SCHEMA text. No data row changes.
