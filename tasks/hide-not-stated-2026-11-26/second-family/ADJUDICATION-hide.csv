@@ -1,0 +1,80 @@
+record_table,record_id,owner,field,value,source,reader_class,second_family_class,action,reason
+organizations,ORG-000001,ORG-000001,markets_served,dental,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000001,ORG-000001,markets_served,medical_device,values,NOT_STATED,IMPLIED,hold,Gemini 4 Hydrogen blind read 2026-11-26 IMPLIED vs re-read NOT_STATED: disagreement; stays public
+organizations,ORG-000119,ORG-000119,processes,die_cutting_converting,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000132,ORG-000132,markets_served,agriculture,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000132,ORG-000132,markets_served,rail_transportation,values,NOT_STATED,NOT_STATED,withhold,earlier second-family read NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000132,ORG-000132,markets_served,water_wastewater,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000181,ORG-000181,markets_served,agriculture,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000181,ORG-000181,markets_served,automotive_unspecified,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000181,ORG-000181,markets_served,construction_building_products,values,NOT_STATED,IMPLIED,hold,Gemini 4 Hydrogen blind read 2026-11-26 IMPLIED vs re-read NOT_STATED: disagreement; stays public
+organizations,ORG-000181,ORG-000181,markets_served,electronics_electrical,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000181,ORG-000181,markets_served,energy_oil_gas,values,NOT_STATED,NOT_STATED,withhold,earlier second-family read NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000181,ORG-000181,markets_served,marine,values,NOT_STATED,NOT_STATED,withhold,earlier second-family read NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000181,ORG-000181,markets_served,rail_transportation,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000344,ORG-000344,processes,adhesive_sealant_formulation,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+organizations,ORG-000397,ORG-000397,processes,transfer_molding,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+organizations,ORG-000523,ORG-000523,markets_served,packaging_food_beverage,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+organizations,ORG-000581,ORG-000581,markets_served,agriculture,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+organizations,ORG-000581,ORG-000581,markets_served,toys_sporting_goods,values,NOT_STATED,IMPLIED,hold,Gemini 4 Hydrogen blind read 2026-11-26 IMPLIED vs re-read NOT_STATED: disagreement; stays public
+organizations,ORG-000607,ORG-000607,processes,transfer_molding,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+organizations,ORG-000665,ORG-000665,markets_served,pharmaceutical_biotech,values,NOT_STATED,IMPLIED,hold,Gemini 4 Hydrogen blind read 2026-11-26 IMPLIED vs re-read NOT_STATED: disagreement; stays public
+organizations,ORG-000666,ORG-000666,markets_served,cosmetics_personal_care,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-000883,ORG-000883,markets_served,packaging_food_beverage,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+organizations,ORG-001147,ORG-001147,markets_served,construction_building_products,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-001477,ORG-001477,markets_served,agriculture,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+organizations,ORG-001600,ORG-001600,markets_served,packaging_industrial,values,NOT_STATED,IMPLIED,hold,Gemini 4 Hydrogen blind read 2026-11-26 IMPLIED vs re-read NOT_STATED: disagreement; stays public
+organizations,ORG-001666,ORG-001666,markets_served,rv_powersports_trailers,values,NOT_STATED,STATED,hold,re-read NOT_STATED vs second family STATED: disagreement; stays public
+organizations,ORG-001700,ORG-001700,processes,adhesive_sealant_formulation,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000031,ORG-000031,processes,assembly_secondary_ops,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000031,ORG-000031,processes,composites_pultrusion,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000051,ORG-000051,processes,hose_belting_manufacturing,values,NOT_STATED,,hold,site value rests on an organization row only: SCHEMA 4.24 grain; not withheld
+sites,SITE-000063,ORG-000063,processes,transfer_molding,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000072,ORG-000072,processes,printing_decorating_plastics,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+sites,SITE-000077,ORG-000077,processes,rubber_extrusion,values,NOT_STATED,,hold,site value rests on an organization row only: SCHEMA 4.24 grain; not withheld
+sites,SITE-000086,ORG-000086,processes,rubber_molding_injection,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+sites,SITE-000086,ORG-000086,processes,transfer_molding,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000114,ORG-000115,processes,custom_compounding,values,NOT_STATED,,hold,site value rests on an organization row only: SCHEMA 4.24 grain; not withheld
+sites,SITE-000117,ORG-000118,processes,rotational_molding,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000171,ORG-000088,processes,coating_formulation,values,NOT_STATED,,hold,site value rests on an organization row only: SCHEMA 4.24 grain; not withheld
+sites,SITE-000185,ORG-000178,markets_served,appliances,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000185,ORG-000178,markets_served,rail_transportation,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000185,ORG-000178,processes,rubber_extrusion,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000185,ORG-000178,processes,rubber_mixing_compounding,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000186,ORG-000179,processes,rubber_molding_compression,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+sites,SITE-000186,ORG-000179,processes,transfer_molding,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000187,ORG-000180,processes,compression_molding,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000187,ORG-000180,processes,transfer_molding,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000202,ORG-000195,processes,transfer_molding,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000216,ORG-000011,processes,tire_manufacturing,values,NOT_STATED,,hold,site value rests on an organization row only: SCHEMA 4.24 grain; not withheld
+sites,SITE-000271,ORG-000255,markets_served,packaging_consumer,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+sites,SITE-000271,ORG-000255,markets_served,packaging_food_beverage,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+sites,SITE-000293,ORG-000274,processes,adhesive_sealant_formulation,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+sites,SITE-000329,ORG-000310,processes,insert_overmolding,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000386,ORG-000361,processes,transfer_molding,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000421,ORG-000392,markets_served,industrial_machinery,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000421,ORG-000392,markets_served,toys_sporting_goods,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000466,ORG-000435,markets_served,electronics_electrical,values,NOT_STATED,IMPLIED,hold,Gemini 4 Hydrogen blind read 2026-11-26 IMPLIED vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000466,ORG-000435,markets_served,pharmaceutical_biotech,values,NOT_STATED,IMPLIED,hold,Gemini 4 Hydrogen blind read 2026-11-26 IMPLIED vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-000489,ORG-000457,markets_served,aerospace_defense,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000489,ORG-000457,markets_served,construction_building_products,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000489,ORG-000457,markets_served,electronics_electrical,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000655,ORG-000614,markets_served,aerospace_defense,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000655,ORG-000614,markets_served,automotive_unspecified,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000655,ORG-000614,markets_served,industrial_machinery,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000655,ORG-000614,markets_served,lawn_garden_recreation,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-000655,ORG-000614,markets_served,marine,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-001045,ORG-000968,markets_served,food_processing_foodservice,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-001428,ORG-001389,processes,injection_molding,values,NOT_STATED,,hold,site value rests on an organization row only: SCHEMA 4.24 grain; not withheld
+sites,SITE-001439,ORG-001396,markets_served,energy_oil_gas,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-001534,ORG-001472,processes,coating_formulation,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+sites,SITE-001702,ORG-001630,markets_served,food_processing_foodservice,census,STATED,NOT_STATED,hold,re-read STATED vs second family NOT_STATED: disagreement; stays public
+sites,SITE-001856,ORG-001777,markets_served,automotive_aftermarket,values,NOT_STATED,STATED,hold,Gemini 4 Hydrogen blind read 2026-11-26 STATED (verbatim quote replays on the stored page) vs re-read NOT_STATED: disagreement; stays public
+sites,SITE-001891,ORG-001859,processes,extrusion_pipe_tube,census,STATED,NOT_STATED COMPANY_WIDE,hold,re-read STATED vs second family NOT_STATED COMPANY_WIDE: disagreement; stays public
+sites,SITE-001891,ORG-001859,processes,injection_molding,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-001908,ORG-001916,processes,die_cutting_converting,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-001908,ORG-001916,processes,rubber_calendering,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-001908,ORG-001916,processes,rubber_mixing_compounding,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-001908,ORG-001916,processes,silicone_formulation,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-001931,ORG-001937,processes,tire_retreading,values,NOT_STATED,NOT_STATED,withhold,Gemini 4 Hydrogen blind read 2026-11-26 NOT_STATED agrees with the re-read NOT_STATED
+sites,SITE-002932,ORG-000088,processes,coating_formulation,values,NOT_STATED,,hold,site value rests on an organization row only: SCHEMA 4.24 grain; not withheld
